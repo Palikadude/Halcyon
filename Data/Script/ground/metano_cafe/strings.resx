@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.NetStandard.ResXResourceReader, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.NetStandard.ResXResourceWriter, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <data name="test" xml:space="preserve">
+    <value>test</value>
+  </data>
+  <data name="Cafe_Intro" xml:space="preserve">
+    <value>Welcome to Dion's Café! How can I help you today?</value>
+  </data>
+  <data name="Cafe_Intro_Return" xml:space="preserve">
+    <value>Will there be anything else today?</value>
+  </data>
+  <data name="Cafe_Option_Ferment" xml:space="preserve">
+    <value>Ferment</value>
+  </data>
+  <data name="Cafe_Option_Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
+  <data name="Cafe_Setting_Up" xml:space="preserve">
+    <value>We're still setting up,[pause=10] come back when I've come up with some drinks to sell!</value>
+  </data>
+  <data name="Cafe_Bought_Special" xml:space="preserve">
+    <value>Sorry you two,[pause=10] I can only sell one special a day.[pause=0] Come back tomorrow!</value>
+  </data>
+  <data name="Cafe_Daily_Special" xml:space="preserve">
+    <value>Today's special is {0} and it'll cost ya {1} \uE024,[pause=10] is that ok?</value>
+  </data>
+  <data name="Cafe_No_Money" xml:space="preserve">
+    <value>Looks like you haven't got enough money.</value>
+  </data>
+  <data name="Cafe_Bag_Full" xml:space="preserve">
+    <value>Looks like your bag is full.[pause=0] Go visit (kanga) and then visit again!</value>
+  </data>
+  <data name="Cafe_Special_Complete" xml:space="preserve">
+    <value>Here's your {0}![pause=0] Enjoy!</value>
+  </data>
+  <data name="Cafe_Info_1" xml:space="preserve">
+    <value>Welcome to my Café![pause=0] I can ferment tasty and useful drinks for you!</value>
+  </data>
+  <data name="Cafe_Info_2" xml:space="preserve">
+    <value>Just give me the ingredients,[pause=10] and I'll ferment the drink for you overnight.</value>
+  </data>
+  <data name="Cafe_Info_3" xml:space="preserve">
+    <value>You can check the drinks' recipes and their effects on that sign there.</value>
+  </data>
+  <data name="Cafe_Info_4" xml:space="preserve">
+    <value>I also sell a daily special on the side.[pause=0] The special can be quite a treat sometimes!</value>
+  </data>
+  <data name="Cafe_Info_5" xml:space="preserve">
+    <value>I change my special everyday,[pause=10] so be sure to stop in often!</value>
+  </data>
+  <data name="Cafe_Goodbye" xml:space="preserve">
+    <value>Don't be a stranger![pause=0] Come back soon!</value>
+  </data>
+  <data name="Cafe_Fermented_Give_Item" xml:space="preserve">
+    <value>Hey,[pause=10] welcome back![pause=0] I finished fermenting that {0} for you!</value>
+  </data>
+  <data name="Cafe_Fermented_Item_Received" xml:space="preserve">
+    <value>You received a {0} from Dion!</value>
+  </data>
+  <data name="Cafe_Expedition_Item_Intro_1" xml:space="preserve">
+    <value>You two are leaving on that expedition tomorrow right?</value>
+  </data>
+  <data name="Cafe_Expedition_Item_Intro_2" xml:space="preserve">
+    <value>Have a little something on the house.[pause=0] I hope it keeps you in high spirits on your journey!</value>
+  </data>
+  <data name="Cafe_Expedition_Prevent_Fermenting_1" xml:space="preserve">
+    <value>You two have that expedition tomorrow.[pause=0] It'll take too long for me to ferment anything before you leave.</value>
+  </data>
+  <data name="Cafe_Expedition_Prevent_Fermenting_2" xml:space="preserve">
+    <value>Come see me after your journey,[pause=10] and I'll gladly ferment something for you!</value>
+  </data>
+  <data name="Cafe_Option_Domi" xml:space="preserve">
+    <value>Domi Blend</value>
+  </data>
+  <data name="Cafe_Option_Cider" xml:space="preserve">
+    <value>Apple Cider</value>
+  </data>
+  <data name="Cafe_Ferment_Prompt" xml:space="preserve">
+    <value>What drink would you like me to ferment for you?</value>
+  </data>
+  <data name="Cafe_Sign_Intro" xml:space="preserve">
+    <value>Dion's drink recipes and effects are listed on the sign.</value>
+  </data>
+  <data name="Cafe_Sign_Which_Drinks" xml:space="preserve">
+    <value>Which would you like to know more about?</value>
+  </data>
+  <data name="Cafe_Sign_Domi_1" xml:space="preserve">
+    <value>Fully restores the party's HP/PP and cures status. Lowers Atk/Sp. Atk and raises Def and Sp. Def as well. </value>
+  </data>
+  <data name="Cafe_Sign_Domi_2" xml:space="preserve">
+    <value>Requires 3 Oran berries, 3 Lum berries, 3 Leppa berries, and 5 Sticks. </value>
+  </data>
+  <data name="Cafe_Sign_Cider_1" xml:space="preserve">
+    <value>Initially comes with 4 servings. Restores HP by half and fills belly somewhat.</value>
+  </data>
+  <data name="Cafe_Sign_Cider_2" xml:space="preserve">
+    <value>Requires 3 Apples and 1 Oran berry.</value>
+  </data>
+</root>

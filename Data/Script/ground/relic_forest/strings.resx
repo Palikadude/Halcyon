@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.NetStandard.ResXResourceReader, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.NetStandard.ResXResourceWriter, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </resheader>
+  <data name="Opening_Cutscene_001" xml:space="preserve">
+    <value>......</value>
+  </data>
+  <data name="Opening_Cutscene_002" xml:space="preserve">
+    <value>..................</value>
+  </data>
+  <data name="Opening_Cutscene_003" xml:space="preserve">
+    <value>... What is this...?</value>
+  </data>
+  <data name="Opening_Cutscene_004" xml:space="preserve">
+    <value>Something seems different...</value>
+  </data>
+  <data name="Opening_Cutscene_005" xml:space="preserve">
+    <value>I feel a gentle breeze...</value>
+  </data>
+  <data name="Opening_Cutscene_006" xml:space="preserve">
+    <value>...[pause=0] No...[pause=0] Losing consciousness...</value>
+  </data>
+  <data name="Personality_Quiz_001" xml:space="preserve">
+    <value>Welcome to the world of Pokémon!</value>
+  </data>
+  <data name="Personality_Quiz_002" xml:space="preserve">
+    <value>Ahead of you lies a world full of exciting adventures\n and mysteries to discover!</value>
+  </data>
+  <data name="Personality_Quiz_003" xml:space="preserve">
+    <value>Before you go, you need to answer some questions.</value>
+  </data>
+  <data name="Personality_Quiz_004" xml:space="preserve">
+    <value>Please be honest when answering!</value>
+  </data>
+  <data name="Personality_Quiz_005" xml:space="preserve">
+    <value>Let the questions begin!</value>
+  </data>
+  <data name="Test_Hero" xml:space="preserve">
+    <value>Select a hero (personality quiz will be implemented later).</value>
+  </data>
+  <data name="Test_Partner" xml:space="preserve">
+    <value>Select a partner.</value>
+  </data>
+  <data name="Gender_Prompt_Hero" xml:space="preserve">
+    <value>Are you a boy or a girl?</value>
+  </data>
+  <data name="Gender_Prompt_Partner" xml:space="preserve">
+    <value>Your partner, are they a boy or a girl?</value>
+  </data>
+  <data name="Partner_Name_Prompt" xml:space="preserve">
+    <value>What is your partner's name?</value>
+  </data>
+</root>
