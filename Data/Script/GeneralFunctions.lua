@@ -181,7 +181,7 @@ function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections
 end
 	
 --This function makes it easy to keep the camera in sync with a character moving
-function GeneralFunctions.MoveCharAndCamera(chara, x, y, charSpeed, run, cameraFrames)
+function GeneralFunctions.MoveCharAndCamera(chara, x, y, run, charSpeed, cameraFrames)
 	local startX = chara.Position.X
 	local startY = chara.Position.Y
 	--characters position starts from their top left corner. 
@@ -217,4 +217,64 @@ function GeneralFunctions.HeroSpeak(chara, duration, anim)
 	GROUND:CharSetAnim(chara, "Walk", true)
 	GAME:WaitFrames(duration)
 	GROUND:CharSetAnim(chara, anim, true)
+end
+
+--wait frames, then move to target location. Intended use is to desync characters that are walking together to make it look more natural
+function GeneralFunctions.WaitThenMove(chara, x, y, run, speed, waitFrames)
+	GAME:WaitFrames(waitFrames)
+	GROUND:MoveToPosition(chara, x, y, run, speed)
+end
+
+--generic emote function with standardized SFX and pause duration. Shouldn't ALWAYS be used to emote, but is useful to cut down on lines...
+function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
+	local sfx = 'null'
+	local emt = 'null'
+	local pause = 0
+	
+	if repetitions == nil then repetitions = 1 end
+	
+	if emote == 'Happy' then
+		emt = 1
+		sfx = "EVT_Emote_Startled_2"
+		pause = 20--test this one 
+	elseif emote == 'Notice' then 
+		emt = 2
+		sfx = 'EVT_Emote_Exclaim'
+		pause = 20
+	elseif emote == 'Exclaim' then 
+		emt = 3
+		sfx = 'EVT_Emote_Exclaim_2'
+		pause = 20
+	elseif emote == 'Glowing' then 
+		emt = 4
+		sfx = 'EVT_Emote_Startled_2'
+		pause = 20--test this one
+	elseif emote == 'Sweating' then
+		emt = 5
+		sfx = 'EVT_Emote_Sweating'
+		pause = 40 
+	elseif emote == 'Question' then
+		emt = 6
+		sfx = 'EVT_Emote_Confused'
+		pause = 40
+	elseif emote == 'Angry' then
+		emt = 7
+		sfx = 'EVT_Emote_Complain_2'
+		pause = 40 --test this one
+	elseif emote == 'Shock' then
+		emt = 8
+		sfx = 'EVT_Emote_Shock'
+		pause = 40
+	else--sweatdrop
+		emt = 9
+		sfx = 'EVT_Emote_Sweatdrop'
+		pause = 40
+	end
+	
+	GROUND:CharSetEmote(chara, emt, repetitions)
+	
+	if sound and sfx ~= 'null' then 
+		SOUND:PlayBattleSE(sfx)
+	end	
+	GAME:WaitFrames(pause)
 end
