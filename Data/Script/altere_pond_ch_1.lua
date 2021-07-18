@@ -4,6 +4,10 @@ require 'GeneralFunctions'
 
 altere_pond_ch_1 = {}
 
+function altere_pond_ch_1.LeaveNorthWalkSequence(chara)
+	GROUND:MoveToPosition(chara, 312, 128, false, 1)
+	GROUND:MoveToPosition(chara, 264, -32, false, 1)
+end
 
 
 function altere_pond_ch_1.PrologueGoToRelicForest()
@@ -70,14 +74,15 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GROUND:CharSetEmote(partner, 5, 1)
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I can't let " .. oldman:GetDisplayName() .. " see me go into " .. zone:GetColoredName() .. '.')
-	UI:WaitShowDialogue("Last time he caught me I got an earful about how it's dangerous...")
-	UI:WaitShowDialogue("Supposedly there's some strong forces at work in there.")--foreshadow: the hero is the thing referred to here in a way. 
+	UI:WaitShowDialogue("Last time he caught me I got an earful about how dangerous it is...")
+	UI:WaitShowDialogue('Supposedly there are "powerful" forces at work in there.')--foreshadow: the hero is the thing referred to here in a way. 
 	
 	--todo: hop twice
-	GAME:WaitFrames(40)
-	GROUND:CharSetEmote(partner, 6, 1)
-	SOUND:PlayBattleSE("EVT_Emote_Confused")
-	GAME:WaitFrames(40)
+	GAME:WaitFrames(20)
+	--GROUND:CharSetEmote(partner, 6, 1)
+	--SOUND:PlayBattleSE("EVT_Emote_Confused")
+	--GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("But I've been there plenty of times and nothing bad's ever happened.")
 
@@ -86,7 +91,8 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	UI:SetSpeakerEmotion("Normal")
 	GAME:WaitFrames(20)
 	--TODO:make him do a little jump
-	UI:WaitShowDialogue("That old coot is always overexaggerating...[br] Something like that would never be right next to town.")
+	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
+	UI:WaitShowDialogue("That old coot is always overexaggerating...[br] Something like that could never be right next to town.")
 	GROUND:CharAnimateTurn(partner, Direction.Down, 4, false)
 	GeneralFunctions.LookAround(partner, 3, 4, true, false, GeneralFunctions.RandBool(), Direction.Down)
 	UI:WaitShowDialogue("I am going to need to sneak around though.[pause=0] I don't want " .. oldman:GetDisplayName() .. " seeing me.")
@@ -200,7 +206,6 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	--todo: hide player
-	GROUND:TeleportTo(CH('PLAYER'), 800, 0, Direction.Down)
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -224,36 +229,48 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("For someone who claims to be a human,[pause=10] you were pretty impressive in that dungeon,[pause=10] " .. hero:GetDisplayName() .. ".")
 	UI:SetSpeakerEmotion("Happy")
-	UI:CharSetEmote(partner, 1, 0)
+	GROUND:CharSetEmote(partner, 4, 0)
 	UI:WaitShowDialogue("If I didn't know any better,[pause=10] I'd say you've done this before,[pause=10] hehe!")
 	GAME:WaitFrames(20)
-	UI:CharSetEmote(partner, -1, 0)
+	GROUND:CharSetEmote(partner, -1, 0)
 	
+	--look towards relicanth, partner suggests talking elsewhere
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	GAME:WaitFrames(40)
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Uh...[pause=0] This isn't really the place to talk...[pause=0] Follow me.")
+	GeneralFunctions.EmoteAndPause(hero, 'Question', true)
+	GeneralFunctions.HeroDialogue(hero, "(Huh?[pause=0] What's the problem with talking here?)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(I guess I should follow " .. partner:GetDisplayName() .. " nonetheless...)", "Worried")
+	GAME:WaitFrames(20)
+	GROUND:CharSetAnim(hero, 'Nod', false)
+	GAME:WaitFrames(20)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GAME:WaitFrames(20)
+
+	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 824, 424, false, 1))
+	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 824, 392, false, 1, 20) end)
+	GAME:WaitFrames(40)
+	GAME:FadeOut(false, 20)
+	TASK:JoinCoroutines({coro1, coro2})	
+
+	--Show them walking towards the transitionary map
+	GROUND:TeleportTo(partner, 312, 256, Direction.Up)
+	GROUND:TeleportTo(hero, 312, 288, Direction.Up)
+	GAME:FadeIn(20)
+	coro1 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(partner) end)
+	altere_pond_ch_1.LeaveNorthWalkSequence(hero)
+	TASK:JoinCoroutines({coro1})	
+	GAME:FadeOut(20)
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("metano_altere_transition", "Main_Entrance_Marker")
 	
-	UI:WaitShowDialogue("This isn't really the place to talk...[pause=0] Follow me please.")
-
-
-
-
-
-
-	--gush about how cool it is to be an adventurer
-	GROUND:CharAnimateTurnTo(partner, Direction.UpLeft, 4)
-	UI:WaitFrames(30)
-	UI:WaitShowDialogue("Being an adventurer would be the best...")
-	UI:SetSpeakerEmotion("Inspired")
-	UI:WaitShowDialogue("Exploring lands untouched by civilization with hidden treasures...")
-	UI:WaitShowDialogue("Helping Pokémon in need and bringing outlaws to justice...")
-	UI:WaitShowDialogue("Meeting Pokémon from around the world and forging friendships with compatriots...")
 	
-	UI:CharAnimateTurnTo(partner, Direction.Left, 4)
 	
-	UI:WaitShowDialogue("It's what I've always dreamed about![pause=0] Don't you think it's exciting too?")
-	
-	GeneralFunctions.HeroDialogue(hero, "(That does sound pretty cool,[pause=10] actually.[pause=0] Being an adventurer sounds like a lot of fun.)", "Inspired")
-	GeneralFunctions.HeroDialogue(hero, "(But...[pause=0] )", "Inspired")
+
+
+
+
 
 end

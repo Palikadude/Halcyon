@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_altere_transition.metano_altere_transition_ch_1'
 
 -- Package name
 local metano_altere_transition = {}

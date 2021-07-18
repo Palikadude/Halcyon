@@ -36,18 +36,18 @@ end
 ---altere_pond.Enter
 --Engine callback function
 function altere_pond.Enter(map)
-
+--[[
 	if SV.ChapterProgression.Chapter == 1 then 
-		if not SV.Chapter1.PartnerEnteredForest then
+		if not SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerMetHero then
 			altere_pond_ch_1.PrologueGoToRelicForest()
-		elseif SV.Chapter1.PartnerEnteredForest and not SV.PartnerCompletedForest then
+		elseif SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then
 			altere_pond_ch_1.WipedInForest()
 		elseif SV.Chapter1.PartnerMetHero then 
 			altere_pond_ch_1.PartnerHeroReturn()
 		end 
-	else 
+	else ]]--
 		GAME:FadeIn(20)
-	end
+	--end
 end
 
 ---altere_pond.Exit

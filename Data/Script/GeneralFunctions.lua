@@ -278,3 +278,33 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	end	
 	GAME:WaitFrames(pause)
 end
+
+
+
+function GeneralFunctions.GetPronoun(chara, form)
+--used to get proper pronoun depending on gender of character (gender check command)
+	--form should be given as they, them, their, theirs, themself, or they're
+	local gender = chara.CurrentForm.Gender
+	local value = 'shart'
+	
+	if gender == Gender.Female then
+		if form == 'they' then value = 'she'
+		elseif form == 'them' then value = 'her'
+		elseif form == 'their' then value = 'her'
+		elseif form == 'theirs' then value = 'hers'
+		elseif form == 'themself' then value = 'herself'
+		elseif form == "they're" then value = "she's"
+		end
+	elseif gender == Gender.Male then
+		if form == 'they' then value = 'he'
+		elseif form == 'them' then value = 'him'
+		elseif form == 'their' then value = 'his'
+		elseif form == 'theirs' then value = 'his'
+		elseif form == 'themself' then value = 'himself'
+		elseif form == "they're" then value = "he's"
+	else--if not male or female, it's a they so just return the form 
+		value = form
+	end
+	
+	return value
+end
