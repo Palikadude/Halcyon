@@ -41,8 +41,11 @@ end
 --Engine callback function
 function metano_altere_transition.Enter(map)
 
-  GAME:FadeIn(20)
-
+	if SV.ChapterProgression.Chapter == 1 then
+		metano_altere_transition_ch_1.HeartToHeartCutscene()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---metano_altere_transition.Exit

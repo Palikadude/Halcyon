@@ -35,7 +35,7 @@ function GeneralFunctions.CalculateCameraFrames(startX, startY, endX, endY, spee
 	
 	local distance = math.sqrt((distX * distX) + (distY * distY))
 	
-	return distance / speed
+	return math.floor(distance / speed)
 	
 end 
 
@@ -302,6 +302,7 @@ function GeneralFunctions.GetPronoun(chara, form)
 		elseif form == 'theirs' then value = 'his'
 		elseif form == 'themself' then value = 'himself'
 		elseif form == "they're" then value = "he's"
+		end
 	else--if not male or female, it's a they so just return the form 
 		value = form
 	end

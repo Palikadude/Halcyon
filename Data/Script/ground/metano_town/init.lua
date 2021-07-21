@@ -40,13 +40,15 @@ function metano_town.Enter(map)
 	DEBUG.EnableDbgCoro()
 	print('Enter_metano_town')
 	UI:ResetSpeaker()
-	if SV.ChapterProgression.Chapter == 1 then 
-		if not SV.Chapter1.PartnerCompletedForest then
-			metano_town_ch_1.PartnerLongingCutscene()
-		end
-	else 
+	--if SV.ChapterProgression.Chapter == 1 then 
+		--if not SV.Chapter1.PartnerCompletedForest then
+			--metano_town_ch_1.PartnerLongingCutscene()
+		--elseif SV.Chapter1.TeamCompletedForest then
+			--metano_town_ch_1.EnterGuild()
+		--end
+	--else 
 		GAME:FadeIn(20)
-	end
+--	end
 	--GAME:MoveCamera(0,0,60, true)
 end
 

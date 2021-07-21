@@ -119,7 +119,6 @@ SV.Chapter1 =
 	PartnerCompletedForest = false,--Did partner complete solo run of first dungeon?
 	PartnerMetHero = false,--Finished partner meeting hero cutscene in the relic forest?
 	TeamCompletedForest = false --completed backtrack to town?
-	
 }
 
 
