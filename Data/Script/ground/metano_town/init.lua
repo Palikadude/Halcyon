@@ -1,6 +1,6 @@
 require 'common'
 require 'PartnerEssentials'
-require 'metano_town_ch_1'
+require 'ground.metano_town.metano_town_ch_1'
 
 local MapStrings = {}
 
@@ -40,16 +40,15 @@ function metano_town.Enter(map)
 	DEBUG.EnableDbgCoro()
 	print('Enter_metano_town')
 	UI:ResetSpeaker()
-	--if SV.ChapterProgression.Chapter == 1 then 
-		--if not SV.Chapter1.PartnerCompletedForest then
-			--metano_town_ch_1.PartnerLongingCutscene()
-		--elseif SV.Chapter1.TeamCompletedForest then
-			--metano_town_ch_1.EnterGuild()
-		--end
-	--else 
+	if SV.ChapterProgression.Chapter == 1 then 
+		if not SV.Chapter1.PartnerCompletedForest then
+			metano_town_ch_1.PartnerLongingCutscene()
+		elseif SV.Chapter1.PartnerMetHero then
+			metano_town_ch_1.EnterGuild()
+		end
+	else 
 		GAME:FadeIn(20)
---	end
-	--GAME:MoveCamera(0,0,60, true)
+	end
 end
 
 function metano_town.Update(map, time)

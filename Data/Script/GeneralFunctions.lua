@@ -219,6 +219,7 @@ function GeneralFunctions.HeroSpeak(chara, duration, anim)
 	GROUND:CharSetAnim(chara, anim, true)
 end
 
+
 --wait frames, then move to target location. Intended use is to desync characters that are walking together to make it look more natural
 function GeneralFunctions.WaitThenMove(chara, x, y, run, speed, waitFrames)
 	GAME:WaitFrames(waitFrames)
@@ -237,11 +238,11 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 		emt = 1
 		sfx = "EVT_Emote_Startled_2"
 		pause = 20--test this one 
-	elseif emote == 'Notice' then 
+	elseif emote == 'Notice' then --this one is the 3 lines
 		emt = 2
 		sfx = 'EVT_Emote_Exclaim'
 		pause = 20
-	elseif emote == 'Exclaim' then 
+	elseif emote == 'Exclaim' then --this one is the !
 		emt = 3
 		sfx = 'EVT_Emote_Exclaim_2'
 		pause = 20
@@ -279,13 +280,33 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	GAME:WaitFrames(pause)
 end
 
+--generic function to do an animation once then go back to the anim you were doing before (i.e. nod, get up, be surprised) 
+--Has standardized wait times
+--has some special instances... 
+function GeneralFunctions.DoAnimation(chara, anim, sound)
+	if sound == nil then sound = false end
+	local pause = 0
+	--todo: return character to their animation from before. For now just set them back to None
+	local prevAnim = 'None'
+	
+	if anim == 'Nod' then 
+		pause = 20
+	elseif anim == 'DeepBreath' then
+		pause = 80
+	end
 
+	GROUND:CharSetAnim(chara, anim, false)
+	GAME:WaitFrames(pause)
+	GROUND:CharSetAnim(chara, prevAnim, true)
+end
 
-function GeneralFunctions.GetPronoun(chara, form)
+function GeneralFunctions.GetPronoun(chara, form, uppercase)
 --used to get proper pronoun depending on gender of character (gender check command)
 	--form should be given as they, them, their, theirs, themself, or they're
 	local gender = chara.CurrentForm.Gender
 	local value = 'shart'
+	
+	if uppercase == nil then uppercase = false end 
 	
 	if gender == Gender.Female then
 		if form == 'they' then value = 'she'
@@ -294,6 +315,7 @@ function GeneralFunctions.GetPronoun(chara, form)
 		elseif form == 'theirs' then value = 'hers'
 		elseif form == 'themself' then value = 'herself'
 		elseif form == "they're" then value = "she's"
+		elseif form == "are" then value = "is"
 		end
 	elseif gender == Gender.Male then
 		if form == 'they' then value = 'he'
@@ -302,10 +324,63 @@ function GeneralFunctions.GetPronoun(chara, form)
 		elseif form == 'theirs' then value = 'his'
 		elseif form == 'themself' then value = 'himself'
 		elseif form == "they're" then value = "he's"
+		elseif form == "are" then value = "is"
 		end
 	else--if not male or female, it's a they so just return the form 
 		value = form
 	end
 	
-	return value
+	print(uppercase)
+	if uppercase then
+		return value:gsub("^%l", string.upper)
+	else	
+		return value
+	end
 end
+
+--centers the camera on the given characters. Moves at a rate of speed.
+--give no speed for instant speed 
+function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
+	local totalX = 0
+	local totalY = 0
+	local length = 0
+	local frameDur = 0
+	DEBUG.EnableDbgCoro()
+
+	for key, value in pairs(charList) do
+		totalX = totalX + value.Position.X + 8--offset char's pos by 8 to get camera on their center
+		totalY = totalY + value.Position.Y + 8
+		length = length + 1
+		print(value:GetDisplayName() .. "'s position: " .. value.Position.X .. " " .. value.Position.Y)
+	end
+	
+	local avgX = math.floor(totalX / length)
+	local avgY = math.floor(totalY / length)
+	
+	if speed == nil or startX == nil or startY == nil then
+		frameDur = 1
+	else
+		frameDur = GeneralFunctions.CalculateCameraFrames(startX, startY, avgX, avgY, speed)
+	end
+	
+	print('CenterCamera: X = ' .. avgX .. '    Y = ' .. avgY)
+	GAME:MoveCamera(avgX, avgY, frameDur, false)
+	
+end
+
+--useful for having characters face constantly towards someone who's moving
+function GeneralFunctions.FaceMovingCharacter(chara, target)
+	local currentLocX = -999
+	local currentLocY = -999
+	while not (currentLocX == target.Position.X and currentLocY == target.Position.Y) do
+		GROUND:CharTurnToChar(chara, target)
+		currentLocX = target.Position.X
+		currentLocY = target.Position.Y
+		GAME:WaitFrames(4)
+	end
+end
+
+
+function GeneralFunctions.DialogueWithEmote(chara, emote, str)
+
+end  

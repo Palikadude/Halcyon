@@ -39,16 +39,16 @@ function relic_forest.Enter(map)
 	--relic_forest.PartnerFindsHeroCutscene()  
 
 	if SV.ChapterProgression.Chapter == 1 then 
-	 -- if not SV.Chapter1.PlayedIntroCutscene then --Opening Cutscene on a fresh save
-	--	relic_forest.Intro_Cutscene()
-	--  elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.PartnerMetHero then --our duo meet
+	  if not SV.Chapter1.PlayedIntroCutscene then --Opening Cutscene on a fresh save
+		relic_forest.Intro_Cutscene()
+	  elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.PartnerMetHero then --our duo meet
 		relic_forest.PartnerFindsHeroCutscene()  
-	 -- elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.TeamCompletedForest then--team wiped in the dungeon
-	--	relic_forest.WipedInForest()
+	  elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.TeamCompletedForest then--team wiped in the dungeon
+		relic_forest.WipedInForest()
 	  end
-	--else 
-	--	GAME:FadeIn(20)
---	end
+	else 
+		GAME:FadeIn(20)
+	end
 end
 
 ---relic_forest.Exit
@@ -186,11 +186,22 @@ function relic_forest.Intro_Cutscene()
     _DATA.Save:UpdateTeamProfile(true)
     _DATA.Save.ActiveTeam.Leader.IsFounder = true
   
-    UI:NameMenu(STRINGS:Format(MapStrings['Partner_Name_Prompt']), "")
-	UI:WaitForChoice()
-	result = UI:ChoiceResult()
+	local yesnoResult = false 
+	while not yesnoResult do
+		UI:NameMenu(STRINGS:Format(MapStrings['Partner_Name_Prompt']), "It is highly recommended to give a nickname.")
+		UI:WaitForChoice()
+		result = UI:ChoiceResult()
+		UI:ChoiceMenuYesNo("Is [color=#FFFF00]" .. result .. "[color] correct?")
+		UI:WaitForChoice()
+		yesnoResult = UI:ChoiceResult()
+	end
+
 	
 	local partner = GAME:GetPlayerPartyMember(1)
+	--if no name given, set name to species name
+	--if result == "" then result = _DATA:GetMonster(partner.CurrentForm.Species).Name:ToLocal() end
+
+	
 	GAME:SetCharacterNickname(partner, result)
 	_DATA.Save.ActiveTeam.Name = result --set team name to partner's name temporarily
 	COMMON.RespawnAllies()
@@ -345,7 +356,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	
 	--amnesia
 	local hero_species = _DATA:GetMonster(hero.CurrentForm.Species):GetColoredName()
-	local hero_species = _DATA:GetMonster(partner.CurrentForm.Species):GetColoredName()
+	local partner_species = _DATA:GetMonster(partner.CurrentForm.Species):GetColoredName()
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)
 	GAME:WaitFrames(20)
@@ -433,7 +444,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Hey...[pause=0] Seeing that expression on your face...")
-	UI:WaitShowDialogue("I don't think you're lying after all,[pause=10] I think you're being genuine.")
+	UI:WaitShowDialogue("I don't think you're lying after all,[pause=10] you seem genuine.")
 	UI:WaitShowDialogue("Someone wouldn't just lie unconscious in a mystery dungeon claiming what you are for a prank.")
 	UI:WaitShowDialogue("Even if it turns out your story isn't one-hundred percent true...")
 	UI:WaitShowDialogue("I do think that you're being honest at least.[pause=0] Something weird certainly happened to you.")
@@ -448,10 +459,17 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(I guess I can just pick something that I'd like to be called,[pause=10] at least...)", "Normal")
 	GAME:WaitFrames(20)
-	UI:NameMenu("What will your name be?", "")
-	UI:WaitForChoice()
-	result = UI:ChoiceResult()
-	GAME:SetCharacterNickname(GAME:GetPlayerPartyMember(0), result)
+	UI:ResetSpeaker()
+	local yesnoResult = false
+	while not yesnoResult do
+		UI:NameMenu("What will your name be?", "")
+		UI:WaitForChoice()
+		result = UI:ChoiceResult()
+		GAME:SetCharacterNickname(GAME:GetPlayerPartyMember(0), result)
+		UI:ChoiceMenuYesNo("Is " .. hero:GetDisplayName() .. " correct?")
+		UI:WaitForChoice()
+		yesnoResult = UI:ChoiceResult()
+	end
 
 	--partner makes an excuse as to why they were acting odd. the truth is they're scared of the omen
 	GAME:WaitFrames(20)
@@ -514,9 +532,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " seems kind enough though.[pause=0] Sticking with them for now seems like a good idea.)", "Normal")
 	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(hero, 'Nod', false)
-	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(hero, 'None', true)
+	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
 	
 	--hooray we'll have to go thru the dungeon though

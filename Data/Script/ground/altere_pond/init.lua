@@ -6,7 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
-require 'altere_pond_ch_1'
+require 'ground.altere_pond.altere_pond_ch_1'
 
 -- Package name
 local altere_pond = {}
@@ -36,7 +36,7 @@ end
 ---altere_pond.Enter
 --Engine callback function
 function altere_pond.Enter(map)
---[[
+
 	if SV.ChapterProgression.Chapter == 1 then 
 		if not SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerMetHero then
 			altere_pond_ch_1.PrologueGoToRelicForest()
@@ -45,9 +45,9 @@ function altere_pond.Enter(map)
 		elseif SV.Chapter1.PartnerMetHero then 
 			altere_pond_ch_1.PartnerHeroReturn()
 		end 
-	else ]]--
+	else
 		GAME:FadeIn(20)
-	--end
+	end
 end
 
 ---altere_pond.Exit

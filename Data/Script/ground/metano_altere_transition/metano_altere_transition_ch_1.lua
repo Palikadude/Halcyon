@@ -124,9 +124,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(I have to say...[pause=0] That does sound like a lot of fun!)", "Inspired")
 	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(hero, 'Nod', false)
-	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(hero, 'None', true)
+	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
 	
 	--why cant the partner join the guild themself?
