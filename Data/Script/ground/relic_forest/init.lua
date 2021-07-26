@@ -251,6 +251,11 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
 
+	--add hero back to the team
+    local p = GAME:GetPlayerAssemblyMember(0)
+	GAME:RemovePlayerAssembly(0)
+	GAME:AddPlayerTeam(p)
+
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -610,7 +615,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("You should rub it for luck too,[pause=10] " .. hero:GetDisplayName() .. "!")
 	
 	--partner moves out of way, hero tries looking and touching
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 317, 218, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 317, 218, false, 1) end)
 	GAME:WaitFrames(20)
 	GROUND:MoveToPosition(hero, 293, 218, false, 1)	
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
@@ -662,7 +667,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("Alright![pause=0] Let's get a move on!")
 
 	--leave together, 
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 317, 298, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 317, 298, false, 1) end)
 	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 293, 298, false, 1, 20) end)
 	GAME:WaitFrames(40)
 	GAME:FadeOut(false, 20)
@@ -670,8 +675,10 @@ function relic_forest.PartnerFindsHeroCutscene()
 
 	SV.Chapter1.PartnerMetHero = true
 	GAME:CutsceneMode(false)
-	--todo: enter the dungeon and related stuff
-	GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker")
+
+	--relic forest dungeon round 2
+	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+
 end
 
 

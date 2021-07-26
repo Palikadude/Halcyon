@@ -24,11 +24,11 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GAME:FadeIn(20)
 	
 	--Move to about mid screen, and have the conversation there.
-	local coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 240, 176, false, 1))
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 240, 176, false, 1) end)
 	GROUND:MoveToPosition(hero, 240, 208, false, 1)
 	TASK:JoinCoroutines({coro1})
 	
-	local coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(hero, 240, 176, false, 1))
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 240, 176, false, 1) end)
 	GROUND:MoveToPosition(partner, 208, 176, false, 1)
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	TASK:JoinCoroutines({coro1})
@@ -316,7 +316,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GROUND:CharSetEmote(partner, -1, 0)
 	
 	--partner runs off to the guild in excitement, player has to run to catch up
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 208, -32, true, 4))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 208, -32, true, 4) end)
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	GeneralFunctions.EmoteAndPause(hero, "Exclaim", true)

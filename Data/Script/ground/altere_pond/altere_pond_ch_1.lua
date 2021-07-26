@@ -104,7 +104,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	UI:WaitShowDialogue("I'll have to stick to the trees as usual.")
 	GAME:WaitFrames(20)
 
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 224, 400, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 224, 400, false, 1) end)
 	GAME:WaitFrames(40)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
@@ -130,18 +130,23 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 
 
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 920, 296, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 920, 296, false, 1) end)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
 	
 	SV.Chapter1.PartnerEnteredForest = true
-	--todo: change party data so its partner alone, enter dungeon
-	SV.Chapter1.PartnerCompletedForest = true
+
+	--move hero to assembly for first dungeon
+	local p = GAME:GetPlayerPartyMember(0)
+	GAME:RemovePlayerTeam(0)
+	GAME:AddPlayerAssembly(p)
 	
-	
+	--enter dungeon
 	GAME:FadeOut(false, 20)
 	GAME:CutsceneMode(false)
-	GAME:EnterGroundMap("relic_forest", "Main_Entrance_Marker")
+	GAME:UnlockDungeon(50)
+	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	--GAME:EnterGroundMap("relic_forest", "Main_Entrance_Marker")
 	
 	
 	
@@ -190,11 +195,14 @@ function altere_pond_ch_1.WipedInForest()
 	UI:WaitShowDialogue("Alright.[pause=0] I think I'm ready to give it another go.")
 	UI:WaitShowDialogue("I'll make it through this time for sure!")
 	
-	--todo: enter dungeon code
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 936, 280, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 936, 280, false, 1) end)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
+	
+	--relic forest
+	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+
 end 
 	
 	
@@ -216,7 +224,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GAME:FadeIn(20)
 	
 	--move into frame then look around 
-	local coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 792, 344, false, 1))
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 792, 344, false, 1) end)
 	GROUND:MoveToPosition(hero, 824, 344, false, 1)
 	TASK:JoinCoroutines({coro1})	
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, true, false, false, Direction.Right) end)
@@ -240,7 +248,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GAME:WaitFrames(40)
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Uh...[pause=0] This isn't really the place to talk...[pause=0] Follow me.")
+	UI:WaitShowDialogue("Uh...[pause=0] This isn't really the place to talk...[pause=0] Can you come with me?")
 	GeneralFunctions.EmoteAndPause(hero, 'Question', true)
 	GeneralFunctions.HeroDialogue(hero, "(Huh?[pause=0] What's the problem with talking here?)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(I guess I should follow " .. partner:GetDisplayName() .. " anyway...)", "Worried")
@@ -248,7 +256,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
 
-	coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 824, 424, false, 1))
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 824, 424, false, 1) end)
 	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 824, 392, false, 1, 20) end)
 	GAME:WaitFrames(40)
 	GAME:FadeOut(false, 20)
@@ -274,3 +282,19 @@ function altere_pond_ch_1.PartnerHeroReturn()
 
 
 end
+
+function altere_pond_ch_1.test()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	AI:DisableCharacterAI(partner)
+	GAME:CutsceneMode(true)
+	GAME:MoveCamera(272, 8, 1, false)
+	GROUND:TeleportTo(partner, 312, 256, Direction.Up)
+	GROUND:TeleportTo(hero, 312, 288, Direction.Up)
+	GAME:FadeIn(20)
+	coro1 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(hero) end)
+	coro2 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(partner) end)
+	TASK:JoinCoroutines({coro1, coro2})	
+	GAME:CutsceneMode(false)
+
+end 

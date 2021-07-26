@@ -37,7 +37,7 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	GROUND:CharAnimateTurnTo(parntner, Direction.Left, 4)
 
 	
-	local coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(partner, 444, 1200, false, 1))
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 444, 1200, false, 1) end)
 	GAME:WaitFrames(166)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
@@ -98,11 +98,12 @@ function metano_town_ch_1.PartnerPushedBack()
 	local chara = CH('Teammate1')
 	GROUND:CharSetEmote(chara, 8, 1)
 	GROUND:MoveToPosition(chara, 696, 900, false, 4)--todo: proper animation
-	GROUND:EntTurn(chara, Direction.Down)
-	GAME:WaitFrames(6)
-	GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
-	GAME:WaitFrames(20)
-	GROUND:CharAnimateTurnTo(chara, Direction.UpRight, 4)
+	--GROUND:EntTurn(chara, Direction.Down)
+	--GAME:WaitFrames(12)
+	--GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
+	--GAME:WaitFrames(12)
+	--GROUND:CharAnimateTurnTo(chara, Direction.UpRight, 4)
+	GeneralFunctions.FaceMovingCharacter(chara, CH('Growlithe'))
 end
 
 function metano_town_ch_1.HeroPushedBack()
@@ -120,6 +121,7 @@ function metano_town_ch_1.EnterGuild()
 	local growlithe = CH('Growlithe')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
+	GROUND:Hide("Guild_Entrance")--disable map transition object
 	UI:ResetSpeaker()
 	GAME:MoveCamera(640, 1208, 1, false)
 	GROUND:TeleportTo(partner, 444, 1200, Direction.Right)
@@ -127,7 +129,7 @@ function metano_town_ch_1.EnterGuild()
 	GAME:FadeIn(20)
 	
 	--the partner runs in due to excitement, hero struggling to keep up
-	local coro1 = TASK:BranchCoroutine(GROUND:_MoveToPosition(hero, 616, 1200, false, 2))
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 616, 1200, false, 2) end)
 	local coro2 = TASK:BranchCoroutine(metano_town_ch_1.RunSequencePartner)
 	TASK:JoinCoroutines({coro1, coro2})	
 		
@@ -295,11 +297,11 @@ function metano_town_ch_1.EnterGuild()
 	coro3 = TASK:BranchCoroutine(metano_town_ch_1.HeroPushedBack)
 	TASK:JoinCoroutines({coro1, coro2, coro3})	
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(60)
 	GROUND:CharSetEmote(partner, 9, 1)
 	GROUND:CharSetEmote(hero, 9, 1)
 	SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
-	GAME:WaitFrames(120)
+	GAME:WaitFrames(60)
 	
 	--hyko is easily excitable
 	GeneralFunctions.HeroDialogue(hero, '(...)', 'Stunned')
@@ -312,13 +314,12 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeakerEmotion("Inspired")
 	UI:WaitShowDialogue(growlithe:GetDisplayName() .. " seemed very glad to hear we wanted to join the guild!")
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("That's gotta help our chances,[pause=10] surely?[pause=0] I feel more confident now,[pause=10] anyway.")
+	UI:WaitShowDialogue("That's gotta be a good sign,[pause=10] surely?[pause=0] I feel more confident now,[pause=10] anyway.")
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(It's reassuring that we only just got here and we're being taken kindly...)", "Normal")
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
-	GeneralFunctions.HeroDialogue(hero, "(...but is this really the guild?[pause=0] It's a tree?", "Worried")
-	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+	GeneralFunctions.HeroDialogue(hero, "(...but is this really the guild?[pause=0] It's a tree?[pause=0] I was expecting something different...)", "Worried")
 	GAME:WaitFrames(60)
 	
 	--hyko returns
@@ -349,17 +350,18 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Thanks " .. growlithe:GetDisplayName() .. "![pause=0] We'll go find [color=#00FFFF]Phileas[color] on the second floor now then!")
+	UI:SetSpeaker(growlithe)
 	
 	GAME:WaitFrames(20)
-	coro1 = TASK:BranchCoroutine(function() metano_town_ch_1.TeamEnterGuild(hero) end)
-	coro2 = TASK:BranchCoroutine(function() metano_town_ch_1.TeamEnterGuild(partner) end)
-	coro3 = TASK:BranchCourtine(UI:_WaitShowTimedDialogue(growlithe, "Good luck![pause=20] I know you two can do it!", 60))
-	coro3 = TASK:BranchCourtine(function () GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(growlithe, Direction.UpRight, 4) end)
+	coro1 = TASK:BranchCoroutine(metano_town_ch_1.TeamEnterGuildHero)
+	coro2 = TASK:BranchCoroutine(metano_town_ch_1.TeamEnterGuildPartner)
+	coro3 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Good luck![pause=20] I know you two can do it!", 60) end)
+	coro4 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(growlithe, Direction.UpRight, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})	
 
 	GAME:WaitFrames(20)
 	GAME:FadeOut(false, 20)
-	GAME:EnterGroundMap("guild_first_floor ", "Main_Entrance_Marker")
+	GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker")
 	
 
 
@@ -367,9 +369,19 @@ end
 
 
 
-function metano_town_ch_1.TeamEnterGuild(chara)
+function metano_town_ch_1.TeamEnterGuildPartner()
+	local chara = CH('Teammate1')
 	GROUND:MoveToPosition(chara, 712, 908, false, 1)
 	GROUND:MoveToPosition(chara, 712, 876, false, 1)
+	GROUND:Hide(chara.EntName)
+end
+
+
+function metano_town_ch_1.TeamEnterGuildHero()
+	local chara = CH('PLAYER')
+	GROUND:MoveToPosition(chara, 712, 908, false, 1)
+	GROUND:MoveToPosition(chara, 712, 876, false, 1)
+	GROUND:Hide('PLAYER')
 end
 
 --comes back from inside the guild to tell you to go on in

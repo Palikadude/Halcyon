@@ -17,14 +17,20 @@ function GeneralFunctions.ResetDailyFlags()
 	}
 end 
 
-
---to be called at the end of the day 
+--to be called at the end of the day. A generic function for generic days (i.e. no cutscene) 
 function GeneralFunctions.EndOfDay()
 	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
 	GeneralFunctions.ResetDailyFlags()
 
 end
 
+function GeneralFunctions.EndDungeonRun(outcome)
+	--todo: more sophisticated logic once more stuff is figured out
+	--outcome can be things like wipe, success, completed a mission, etc
+	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+	print("GeneralFunctions.EndDungeonRun outcome: " .. outcome)
+	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+end
 
 --given the line to travel between two points, how many frames must the camera move for to get the desired speed?
 --2 is standard walking speed... This will mostly be useful for diagonal lines
@@ -376,7 +382,7 @@ function GeneralFunctions.FaceMovingCharacter(chara, target)
 		GROUND:CharTurnToChar(chara, target)
 		currentLocX = target.Position.X
 		currentLocY = target.Position.Y
-		GAME:WaitFrames(4)
+		GAME:WaitFrames(1)
 	end
 end
 

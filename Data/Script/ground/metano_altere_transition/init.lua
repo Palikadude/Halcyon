@@ -29,7 +29,8 @@ function metano_altere_transition.Init(map)
   MapStrings = COMMON.AutoLoadLocalizedStrings()
   COMMON.RespawnAllies()
   PartnerEssentials.InitializePartnerSpawn()
-  
+  GROUND:AddMapStatus(6)
+
   local chara = CH('Teammate1')
   AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
   chara.CollisionDisabled = true

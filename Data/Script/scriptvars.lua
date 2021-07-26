@@ -123,6 +123,30 @@ SV.Chapter1 =
 
 
 
+----------------------------------
+--Dungeon relevant flags 
+----------------------------------
+SV.DungeonFlags = 
+{
+	GenericEnding = false--do a generic ending for the end of a dungeon in the relevant zone/ground
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
