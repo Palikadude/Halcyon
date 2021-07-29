@@ -388,5 +388,76 @@ end
 
 
 function GeneralFunctions.DialogueWithEmote(chara, emote, str)
+	
+end 
 
-end  
+--shorthand function 
+function GeneralFunctions.TeleportToMarker(chara, marker)
+	GROUND:TeleportTo(chara, marker.Position.X, marker.Position.Y, marker.Direction)
+end
+
+
+--todo: add some way to interrupt the loop for whatever arbitrary reason
+--has characters emote at each other randomly as though they were talking amongst themselves
+--this should always be used as a coroutine, as it's intended for background characters
+function GeneralFunctions.Converse(charaList, turnWhenEmoting)
+	
+	--turn towards another while emoting, then turn back afterwards if this is true
+	if turnWhenEmoting == nil then turnWhenEmoting = false end
+	
+	while true do
+		for order, chara in ipairs(charaList) do 
+			if false then break end--todo
+			
+			--todo: get current animation
+			
+			--todo: do a couple little hops before emoting if randomly chosen...
+			local rand = GAME.Rand:Next(1, 2)
+			
+			if rand == 1 then
+				--todo: do the hops
+			end 
+			
+			--set one of 4 emotes, bias towards picking happy emote
+			rand = GAME.Rand:Next(1, 6)
+			local emote = -1
+			if rand == 1 then--exclaim emote
+				emote = 3
+			elseif rand == 2 then --glowing emote
+				emote = 4
+			elseif rand == 3 then--question emote
+				emote = 6
+			else--happy emote
+				emote = 1
+			end
+			
+			local olddir = chara.Direction
+			local turnTo = 0
+			
+			--Emote for a random amount of frames, then pause for a random amount of frames before having someone else talk			
+			GROUND:CharSetEmote(chara, emote, 0)
+			
+			--turn towards a random person in the conversation
+			if turnWhenEmoting then 
+				while turnTo != order do--dont turn to ourselves
+					turnTo = GAME.Rand:Next(1, #charaList)
+				end
+				turnTo = charaList[turnTo]--get the character to turn to
+				GROUND:CharAnimateTurnTo(chara, turnTo, 4)
+			end
+			
+			rand = GAME.Rand:Next(40, 80)
+			GAME:WaitFrames(rand)
+			GROUND:CharSetEmote(chara, -1, 0)
+			
+			if turnWhenEmoting then
+				GROUND:CharAnimateTurnTo(chara, olddir, 4)
+			end
+			
+			rand = GAME.Rand:Next(20, 60)
+			GAME:WaitFrames(rand)
+			
+			
+		end
+	end 
+end

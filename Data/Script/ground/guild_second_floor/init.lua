@@ -6,21 +6,17 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_second_floor.guild_second_floor_ch_1'
 
 -- Package name
 local guild_second_floor = {}
 
--- Local, localized strings table
--- Use this to display the named strings you added in the strings files for the map!
--- Ex:
---      local localizedstring = MapStrings['SomeStringName']
 local MapStrings = {}
 
 -------------------------------
 -- Map Callbacks
 -------------------------------
 ---guild_second_floor.Init
---Engine callback function
 function guild_second_floor.Init(map)
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_guild_second_floor<<=')
@@ -31,7 +27,6 @@ function guild_second_floor.Init(map)
 end
 
 ---guild_second_floor.Enter
---Engine callback function
 function guild_second_floor.Enter(map)
 
   GAME:FadeIn(20)
@@ -39,18 +34,50 @@ function guild_second_floor.Enter(map)
 end
 
 ---guild_second_floor.Exit
---Engine callback function
 function guild_second_floor.Exit(map)
 
 
 end
 
 ---guild_second_floor.Update
---Engine callback function
 function guild_second_floor.Update(map)
 
 
 end
+
+
+
+
+
+--[[
+Markers used for generic NPC spawning (i.e. where flavor NPCs should be going)
+
+Teams gathered around the left message board 
+Left_Trio_1, 2, 3 
+Left_Duo_1, 2
+Left_Solo
+
+Teams gathered around the right message board
+Right_Trio_1, 2, 3 
+Right_Duo_1, 2
+Right_Solo
+
+Teams having a conversation:
+Generic_Spawn_Duo_1, 2, 3 ,4
+TODO: Add a couple sets of trio spawn markers 
+
+Generic Spawns:
+Generic_Spawn_1, 2, 3, 4, 5, 6, 7, 8
+]]--
+
+
+
+
+
+
+
+
+
 
 -------------------------------
 -- Entities Callbacks
@@ -59,6 +86,24 @@ function guild_second_floor.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---------------------------
 -- Map Transitions

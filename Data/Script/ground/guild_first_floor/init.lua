@@ -6,38 +6,37 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_first_floor.guild_first_floor_ch_1'
 
 -- Package name
 local guild_first_floor = {}
 
--- Local, localized strings table
--- Use this to display the named strings you added in the strings files for the map!
--- Ex:
---      local localizedstring = MapStrings['SomeStringName']
 local MapStrings = {}
 
 -------------------------------
 -- Map Callbacks
 -------------------------------
 ---guild_first_floor.Enter
---Engine callback function
 function guild_first_floor.Enter(map)
-	DEBUG.EnableDbgCoro()
-	print('Enter_guild_first_floor')
-	GAME:FadeIn(20)
-	--GAME:MoveCamera(0,0,60, true)
-	UI:ResetSpeaker()
+
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.PartnerMetHero then 
+			guild_first_floor_ch_1.EnterGuild()
+		else
+			GAME:FadeIn(20)--this should never happen
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---guild_first_floor.Update
---Engine callback function
 function guild_first_floor.Update(map, time)
 
 
 end
 
 ---guild_first_floor.Init
---Engine callback function
 function guild_first_floor.Init(map)
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_guild_first_floor <<=')
@@ -51,10 +50,6 @@ end
 -------------------------------
 -- Entities Callbacks
 -------------------------------
-
-function guild_first_floor.test_Action(obj, activator)
-	GAME:FadeIn(20)
-end
 
 function guild_first_floor.Main_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
