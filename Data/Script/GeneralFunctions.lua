@@ -345,7 +345,6 @@ function GeneralFunctions.GetPronoun(chara, form, uppercase)
 		value = form
 	end
 	
-	print(uppercase)
 	if uppercase then
 		return value:gsub("^%l", string.upper)
 	else	

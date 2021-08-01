@@ -39,11 +39,15 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GeneralFunctions.MoveCharAndCamera(partner, 312, 128, false, 1)
 	
 	UI:SetSpeaker(partner)
-	GeneralFunctions.LookAround(partner, 4, 4, false, false, GeneralFunctions.RandBool(), Direction.Down)
+	GeneralFunctions.LookAround(partner, 2, 4, false, false, GeneralFunctions.RandBool(), Direction.Down)
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("Sigh...")
-	UI:WaitShowDialogue("I always end up going to " .. zone:GetColoredName() .. " when I'm feeling down.")
+	UI:WaitShowDialogue("I always end up going to " .. zone:GetColoredName() .. " when I'm feeling like this...")
+	UI:WaitShowDialogue("It's the only thing that takes my mind off the guild...")
 	GAME:WaitFrames(20)
+	GeneralFunctions.ShakeHead(partner, 4)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Let's not think about that anymore though.[pause=0] That's why I'm here after all.")
 
 	
 	--walk down the steps
@@ -75,7 +79,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I can't let " .. oldman:GetDisplayName() .. " see me go into " .. zone:GetColoredName() .. '.')
 	UI:WaitShowDialogue("Last time he caught me I got an earful about how dangerous it is...")
-	UI:WaitShowDialogue('Supposedly there are "powerful" forces at work in there.')--foreshadow: the hero is the thing referred to here in a way. 
+	UI:WaitShowDialogue('He says there are powerful and unpredictable forces sleeping within there...')--foreshadow: the hero is the thing referred to here in a way. 
 	
 	--todo: hop twice
 	GAME:WaitFrames(20)
@@ -93,8 +97,12 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	--TODO:make him do a little jump
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	UI:WaitShowDialogue("That old coot is always overexaggerating...[br]Something like that could never be right next to town.")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Besides,[pause=10] it's too much fun exploring in there to pass up anyway!")
+	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurn(partner, Direction.Down, 4, false)
 	GeneralFunctions.LookAround(partner, 3, 4, true, false, GeneralFunctions.RandBool(), Direction.Down)
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I am going to need to sneak around though.[pause=0] I don't want " .. oldman:GetDisplayName() .. " seeing me.")
 	
 	
@@ -124,9 +132,11 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GROUND:CharAnimateTurn(partner, Direction.UpRight, 4, false)
 	
 
+	--todo: different dialogue here?
 	GAME:WaitFrames(20)
-	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("Sigh...")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Alright " .. zone:GetColoredName() .. ",[pause=10] here I come!")
+	GAME:WaitFrames(20)
 
 
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
@@ -155,7 +165,7 @@ end
 
 --play this cutscene if you wiped in the forest as just the partner
 function altere_pond_ch_1.WipedInForest()
-	local partner = CH('Teammate1')	
+	local partner = CH('PLAYER')	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	--todo: hide player
 	GAME:CutsceneMode(true)
@@ -193,11 +203,13 @@ function altere_pond_ch_1.WipedInForest()
 	UI:WaitShowDialogue("Alright.[pause=0] I think I'm ready to give it another go.")
 	UI:WaitShowDialogue("I'll make it through this time for sure!")
 	
+	GAME:WaitFrames(20)
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 936, 280, false, 1) end)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
 	
+	GAME:CutsceneMode(false)
 	--relic forest
 	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 

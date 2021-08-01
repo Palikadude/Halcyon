@@ -98,6 +98,7 @@ function relic_forest.Intro_Cutscene()
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Personality_Quiz_003']), -1)  
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Personality_Quiz_004']), -1)  
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Personality_Quiz_005']), -1) 
+	GAME:WaitFrames(40)
 
 	--Hero data
 	--This will be replaced by a personality quiz when I get around to it.
@@ -184,10 +185,15 @@ function relic_forest.Intro_Cutscene()
 	GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move)
 
 	--set player and partner to founders so they cannot be released
+	--set them as partner so they cannot be taken off the active team
 	--todo: mark them as "is partner" so they cannot be taken off the active team
     _DATA.Save:UpdateTeamProfile(true)
     _DATA.Save.ActiveTeam.Players[0].IsFounder = true
+	_DATA.Save.ActiveTeam.Players[0].IsPartner = true
+
 	_DATA.Save.ActiveTeam.Players[1].IsFounder = true
+	_DATA.Save.ActiveTeam.Players[1].IsPartner = true
+
 
   
 	local yesnoResult = false 
@@ -226,12 +232,19 @@ function relic_forest.Intro_Cutscene()
 	
 	--todo: show a screen for Chapter 1:
 	
+	--set auto finish has it so the voiceover fades in and out as the complete line
+	--rather than typing it out like in the personality quiz
+	UI:SetAutoFinish(true)
+
 	
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Opening_Cutscene_001']), -1)
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Opening_Cutscene_002']), -1)
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Opening_Cutscene_003']), -1)
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Opening_Cutscene_004']), -1)
 	UI:WaitShowVoiceOver(STRINGS:Format(MapStrings['Opening_Cutscene_005']), -1)
+	
+	UI:SetAutoFinish(false)
+
 	
 	GAME:WaitFrames(60)
 	GAME:FadeIn(120)
@@ -271,6 +284,7 @@ function relic_forest.PartnerFindsHeroCutscene()
     
 	
 	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
 	local marker = MRKR("WakeupLocation")
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
@@ -305,6 +319,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("I can't help but feel glad everytime I make it here.")
 	GROUND:CharSetEmote(partner, 4, 0)
 	UI:WaitShowDialogue("My own little adventuring triumph!")
+	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, -1, 0)
 	GAME:WaitFrames(20)
 
@@ -344,9 +359,13 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("H-hey![pause=0] What happened!?[pause=0] Are you alright!?")
 	GAME:WaitFrames(80)
 	
+	--step in and out twice, facing forward the entire time
 	UI:WaitShowDialogue("Oh no,[pause=10] c'mon,[pause=10] wake up!")
-	GROUND:MoveInDirection(partner, Direction.Left, 4)
-	--todo: move in and out twice, moving backwards where applicable
+	GROUND:MoveInDirection(partner, Direction.Left, 4, false, 2)
+	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
+	GAME:WaitFrames(10)
+	GROUND:MoveInDirection(partner, Direction.Left, 4, false, 2)
+	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
 	
 	--wakeup
 	--todo: shake before getting up
@@ -357,12 +376,10 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(40)
 	GROUND:CharSetAnim(hero, 'None', true)
 	GAME:WaitFrames(20)
-	--todo: walk backwards
 	GROUND:CharSetEmote(partner, 3, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim")
 	GAME:WaitFrames(40)
-	GROUND:MoveInDirection(partner,Direction.Right, 4)
-	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
 	
 	GeneralFunctions.LookAround(hero, 4, 4, true, true, false, Direction.Right)
 	GAME:WaitFrames(40)
@@ -445,7 +462,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	
 	
-	--todo: have partner emote in some way while this is going on to show that they're stressed out the whole time.
+	--todo: have partner emote in some way while this is going on to show that they're stressed out the whole time?
 	SOUND:PlayBattleSE('EVT_Emote_Sweating')
 	GROUND:CharSetEmote(hero, 5, 1)
 	GAME:WaitFrames(40)
@@ -469,7 +486,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Hey...[pause=0] Seeing that expression on your face...")
-	UI:WaitShowDialogue("I don't think you're lying after all,[pause=10] you seem genuine.")
+	UI:WaitShowDialogue("Maybe you're not lying after all,[pause=10] you seem genuine.")
 	UI:WaitShowDialogue("Someone wouldn't just lie unconscious in a mystery dungeon claiming what you are for a prank.")
 	UI:WaitShowDialogue("Even if it turns out your story isn't one-hundred percent true...")
 	UI:WaitShowDialogue("I do think that you're being honest at least.[pause=0] Something weird certainly happened to you.")
@@ -563,7 +580,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	--hooray we'll have to go thru the dungeon though
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Great![pause=0] I think you'll like Metano Town.")
+	UI:WaitShowDialogue("Great![pause=0] I'm glad to hear that!")
 	UI:SetSpeakerEmotion("Worried")
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(16)
@@ -621,12 +638,15 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	GROUND:CharPoseAnim(partner, 'Pose')
 	GAME:WaitFrames(40)
-	--todo: center the text
-	UI:WaitShowMonologue(partner:GetDisplayName() .. " rubbed the ancient stone tablet.")
+	--reset speaker to have monologue, center text as well for the monologue
+	UI:ResetSpeaker()
+	UI:SetCenter(true)
+	UI:WaitShowDialogue(partner:GetDisplayName() .. " rubbed the ancient stone tablet.")
+	UI:SetCenter(false)
+	UI:SetSpeaker(partner)
 	GAME:WaitFrames(40)
 	GROUND:CharSetAnim(partner, 'None', true)
-	--todo: walk backwards
-	GROUND:MoveToPosition(partner, 293, 218, false, 1)
+	GROUND:AnimateToPosition(partner, "Walk", Direction.Up, 293, 218, 1, 1)
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.DownLeft, 4)
 	
@@ -649,7 +669,10 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GROUND:MoveToPosition(hero, 293, 210, false, 1)	
 	GROUND:CharPoseAnim(hero, 'Pose')
 	GAME:WaitFrames(40)
-	UI:WaitShowMonologue(hero:GetDisplayName() .. " rubbed the ancient stone tablet.")
+	UI:ResetSpeaker(UI)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue(hero:GetDisplayName() .. " rubbed the ancient stone tablet.")
+	UI:SetCenter(false)
 	GROUND:CharSetEmote(hero, 2, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim")
 	GAME:WaitFrames(20)
@@ -660,7 +683,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 
 	GROUND:CharSetAnim(hero, 'None', true)
 	--todo: walk backwards
-	GROUND:MoveToPosition(hero, 293, 218, false, 1)	
+	GROUND:AnimateToPosition(hero, "Walk", Direction.Up, 293, 218, 1, 1)
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.Right, 4)
 	GAME:WaitFrames(16)

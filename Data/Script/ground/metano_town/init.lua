@@ -1566,40 +1566,40 @@ end
 function metano_town.Guild_Bridge_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Guild_Bridge_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Guild_Bridge_1']))
 end
 
 
 function metano_town.Crossroads_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Crossroads_1']))
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Crossroads_2']))
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Crossroads_3']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_2']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_3']))
 end
 
 function metano_town.Dojo_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Dojo_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Dojo_1']))
 end
 
 function metano_town.To_Dungeons_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_To_Dungeons_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Dungeons_1']))
 end
 
 function metano_town.Wishing_Well_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_Wishing_Well_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Wishing_Well_1']))
 end
 
 function metano_town.To_Spring_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(STRINGS:Format(MapStrings['Sign_To_Spring_1']))
+  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Spring_1']))
 end
 
 
