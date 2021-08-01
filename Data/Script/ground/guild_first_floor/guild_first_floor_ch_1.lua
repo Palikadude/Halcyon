@@ -13,6 +13,7 @@ function guild_first_floor_ch_1.EnterGuild()
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
+	GAME:MoveCamera(160, 160, 1, false)
 	GROUND:TeleportTo(partner, leftPos.X, leftPos.Y, Direction.Up)
 	GROUND:TeleportTo(hero, rightPos.X, rightPos.Y, Direction.Up)
 	GAME:FadeIn(20)
@@ -20,11 +21,12 @@ function guild_first_floor_ch_1.EnterGuild()
 	--wow we're inside a tree!
 	--do a little hop
 	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(partner, 'Hurt', true)
+	GROUND:CharSetAnim(hero, 'Hurt', true)
 	SOUND:PlayBattleSE('EVT_Emote_Startled')
 	GAME:WaitFrames(20)
-	GROUND:CharSetAnim(partner, 'None', true)
-	GROUND:CharSetEmote(partner, 8, 1)	GeneralFunctions.HeroDialogue(hero, "(Wow![pause=0] The guild is all inside a tree!?)", "Surprised")
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetEmote(hero, 8, 1)	
+	GeneralFunctions.HeroDialogue(hero, "(Wow![pause=0] The guild is all inside a tree!?)", "Surprised")
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	UI:SetSpeaker(partner)
@@ -83,7 +85,7 @@ function guild_first_floor_ch_1.EnterGuild()
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Thank you " .. hero:GetDisplayName() ".[pause=0] I promise we'll get to the bottom of your amnesia someday.")
+	UI:WaitShowDialogue("Thank you " .. hero:GetDisplayName() .. ".[pause=0] I promise we'll get to the bottom of your amnesia someday.")
 	GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
@@ -101,6 +103,8 @@ function guild_first_floor_ch_1.EnterGuild()
 	GROUND:MoveToPosition(hero, 92, 100, false, 1)
 	TASK:JoinCoroutines({coro1, coro2})	
 
-	
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")
+
 	
 end

@@ -47,7 +47,19 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	local cacnea = GROUND:CreateCharacter("Cacnea", "Cacnea", 544, 280, "", "")
 	local luxio = GROUND:CreateCharacter("Noctowl", "Noctowl", 480, 280, "", "")
 
-	
+	GROUND:SpawnerSetSpawn("TEAMMATE_1", jigglypuff)
+	local chara = GROUND:SpawnerDoSpawn("TEAMMATE_1")
+	chara = GROUND:SpawnerDoSpawn("Spheal")
+	chara = GROUND:SpawnerDoSpawn("Marill")
+	chara = GROUND:SpawnerDoSpawn("Cleffa")
+	chara = GROUND:SpawnerDoSpawn("Aggron")
+	chara = GROUND:SpawnerDoSpawn("Mareep")
+	chara = GROUND:SpawnerDoSpawn("Cranidos")
+	chara = GROUND:SpawnerDoSpawn("Luxio")
+	chara = GROUND:SpawnerDoSpawn("Glameow")
+	chara = GROUND:SpawnerDoSpawn("Cacnea")
+	chara = GROUND:SpawnerDoSpawn("Noctowl")
+
 	
 	GAME:FadeIn(20)
 

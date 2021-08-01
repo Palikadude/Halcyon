@@ -42,7 +42,7 @@ function altere_pond.Enter(map)
 			altere_pond_ch_1.PrologueGoToRelicForest()
 		elseif SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then
 			altere_pond_ch_1.WipedInForest()
-		elseif SV.Chapter1.PartnerMetHero then 
+		elseif SV.Chapter1.TeamCompletedForest then 
 			altere_pond_ch_1.PartnerHeroReturn()
 		end 
 	else

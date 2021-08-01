@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'GeneralFunctions'
 
 -- Package name
 local metano_cave = {}

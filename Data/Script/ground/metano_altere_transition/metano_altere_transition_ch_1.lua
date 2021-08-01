@@ -88,7 +88,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	UI:WaitShowDialogue('...')
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
-	UI:WaitShowDialogue('I go there a lot because...[pause=0] I want to be a great adventurer.')
+	UI:WaitShowDialogue('I go there a lot because...[pause=0] I want to be an adventurer.')
 	
 	--wtf is an adventurer
 	GeneralFunctions.EmoteAndPause(hero, 'Question', true)
@@ -108,12 +108,12 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	--gush over how great adventuring is
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Inspired')
-	UI:WaitShowDialogue('Adventurers are...[pause=0] the best.[pause=0] They do all sorts of amazing things!')
+	UI:WaitShowDialogue('Adventurers are the best![pause=0] They do all sorts of amazing things!')
 	GAME:WaitFrames(20)
 --	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 	UI:WaitShowDialogue("Exploring lands untouched by civilization with hidden treasures...")
 	UI:WaitShowDialogue("Helping Pokémon in need and bringing outlaws to justice...")
-	UI:WaitShowDialogue("Forging friendships with Pokémon you meet from all around the world...")
+	UI:WaitShowDialogue("Forging friendships with Pokémon from all around the world...")
 	
 	--GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	
@@ -155,8 +155,8 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Teary-Eyed')
-	UI:WaitShowDialogue("I don't know anyone who would form a team with me...")
-	UI:WaitShowDialogue("So I'm ineligible to join the guild...[pause=0] Even though I want nothing more...")
+	UI:WaitShowDialogue("I don't have anyone who would form a team with me...")
+	UI:WaitShowDialogue("So I can't join the guild...[pause=0] Even though I want nothing more...")
 	GAME:WaitFrames(20)
 	GeneralFunctions.ShakeHead(partner, 4)
 	GAME:WaitFrames(20)
@@ -306,7 +306,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	
 	--lets go to the guild
 	--maybe do a little dance here?
-	GAME:WaitFrames(20)
+	--GAME:WaitFrames(20)
 	SOUND:PlayBattleSE("EVT_Emote_Startled_2")
 	--todo: do a little hop
 	UI:SetSpeakerEmotion("Inspired")

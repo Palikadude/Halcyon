@@ -158,7 +158,6 @@ function altere_pond_ch_1.WipedInForest()
 	local partner = CH('Teammate1')	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	--todo: hide player
-	GROUND:TeleportTo(CH('PLAYER'), 800, 0, Direction.Down)
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -169,8 +168,7 @@ function altere_pond_ch_1.WipedInForest()
 	
 	--wake up and look around
 	GAME:WaitFrames(120)
-	GROUND:CharSetAnim(partner, 'Wake', false)
-	GAME:WaitFrames(40)
+	GeneralFunctions.DoAnimation(partner, 'Wake')
 	GROUND:CharSetAnim(partner, 'None', true)
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(20)

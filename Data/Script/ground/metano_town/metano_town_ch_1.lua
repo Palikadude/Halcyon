@@ -280,10 +280,12 @@ function metano_town_ch_1.EnterGuild()
 	--todo: do two hops
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Inspired")
+	GROUND:CharSetAnim(growlithe, 'Idle', true)
 	GROUND:CharSetEmote(growlithe, 1, 0)
 	UI:WaitShowDialogue("Wow![pause=0] Really!?[pause=0] I would love to have more guildmates!")
 	UI:WaitShowDialogue("More friends is always good,[pause=10] ruff![pause=0] I hope you two are accepted!")
 	GROUND:CharSetEmote(growlithe, -1, 0)
+	GROUND:CharSetAnim(growlithe, 'None', true)
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Wait here you guys![pause=0] I need to let them know you're coming before you go in!")
@@ -381,7 +383,7 @@ function metano_town_ch_1.TeamEnterGuildHero()
 	local chara = CH('PLAYER')
 	GROUND:MoveToPosition(chara, 712, 908, false, 1)
 	GROUND:MoveToPosition(chara, 712, 876, false, 1)
-	GROUND:Hide('PLAYER')
+	GROUND:Hide(chara.EntName)
 end
 
 --comes back from inside the guild to tell you to go on in

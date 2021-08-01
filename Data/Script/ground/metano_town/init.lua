@@ -43,7 +43,7 @@ function metano_town.Enter(map)
 	if SV.ChapterProgression.Chapter == 1 then 
 		if not SV.Chapter1.PartnerCompletedForest then
 			metano_town_ch_1.PartnerLongingCutscene()
-		elseif SV.Chapter1.PartnerMetHero then
+		elseif SV.Chapter1.TeamCompletedForest then
 			metano_town_ch_1.EnterGuild()
 		end
 	else 

@@ -183,8 +183,12 @@ function relic_forest.Intro_Cutscene()
 	
 	GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move)
 
+	--set player and partner to founders so they cannot be released
+	--todo: mark them as "is partner" so they cannot be taken off the active team
     _DATA.Save:UpdateTeamProfile(true)
-    _DATA.Save.ActiveTeam.Leader.IsFounder = true
+    _DATA.Save.ActiveTeam.Players[0].IsFounder = true
+	_DATA.Save.ActiveTeam.Players[1].IsFounder = true
+
   
 	local yesnoResult = false 
 	while not yesnoResult do
@@ -213,6 +217,12 @@ function relic_forest.Intro_Cutscene()
 	local marker = MRKR("WakeupLocation")
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
+	
+	--assign custom variables to the hero and partner to mark them as hero and partner
+	local hTbl = LTBL(hero)
+	local pTbl = LTBL(partner)
+	hTbl.Importance = 'Hero'
+	pTbl.Importance = 'Partner'
 	
 	--todo: show a screen for Chapter 1:
 	
@@ -245,16 +255,26 @@ end
 function relic_forest.PartnerFindsHeroCutscene()
 --[color=#FFFF00]Riolu[color]
 --[color=#00FFFF]Erleuchtet[color]
+
+	--clear party, set up party with hero as player and partner as partner
+	local h = GAME:GetPlayerAssemblyMember(0)
+	local p = GAME:GetPlayerPartyMember(0)
+	GAME:RemovePlayerAssembly(0)
+	GAME:RemovePlayerTeam(0)
+	
+	GAME:AddPlayerTeam(h)
+	GAME:AddPlayerTeam(p)
+	GAME:SetTeamLeaderIndex(0)	
+	
+	--spawn partner in manually, this is a special case because of party shenanigans
+	COMMON.RespawnAllies()
+    
+	
 	local hero = CH('PLAYER')
-	local partner = CH('Teammate1')
 	local marker = MRKR("WakeupLocation")
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
 
-	--add hero back to the team
-    local p = GAME:GetPlayerAssemblyMember(0)
-	GAME:RemovePlayerAssembly(0)
-	GAME:AddPlayerTeam(p)
 
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
@@ -502,7 +522,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("I think you should come with me to the town where I live.")
 	UI:WaitShowDialogue("You've lost your memory and turned into a Pokémon for some reason...")
 	UI:WaitShowDialogue("It wouldn't be right to leave you all alone after what you've told me.")
-	UI:BeginChoiceMenu("So,[pause=10] what do you say?[pause=0] Will you come back with me to the town?", {"Go with them", "Refuse"}, 1, 2)
+	UI:BeginChoiceMenu("So,[pause=10] what do you say?[pause=0] Will you come back with me to the town?", {"Go with " .. GeneralFunctions.GetPronoun(partner, 'them'), "Refuse"}, 1, 2)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()	
 	--if you say no, loop a dialogue until you say yes
@@ -526,7 +546,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Sad")
 		UI:WaitShowDialogue("I can't in good conscience leave you out here...")
-		UI:BeginChoiceMenu("So please...[pause=0] Will you come back with me?", {"Go with them", "Refuse"}, 1, 2)
+		UI:BeginChoiceMenu("So please...[pause=0] Will you come back with me?", {"Go with " ..  GeneralFunctions.GetPronoun(partner, 'them'), "Refuse"}, 1, 2)
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()	
 	end
@@ -535,7 +555,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(40)
 	GeneralFunctions.HeroDialogue(hero, "(I don't exactly have many options here...)", "Worried")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " seems kind enough though.[pause=0] Sticking with them for now seems like a good idea.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " seems kind enough though.[pause=0] Sticking with " ..  GeneralFunctions.GetPronoun(partner, 'them') .. " for now seems like a good idea.)", "Normal")
 	GAME:WaitFrames(20)
 	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
@@ -681,9 +701,68 @@ function relic_forest.PartnerFindsHeroCutscene()
 
 end
 
-
+--the duo wiped trying to make it back to town
 function relic_forest.WipedInForest()
+	--reset party
+	GeneralFunctions.DefaultParty(true, false)
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	GAME:MoveCamera(294, 520, 1, false)
+	GROUND:TeleportTo(hero, 272, 512, Direction.Down)
+	GROUND:TeleportTo(partner, 304, 512, Direction.Down)
+	GROUND:CharSetAnim(partner, 'EventSleep', true)
+	GROUND:CharSetAnim(hero, 'EventSleep', true)
 
+	GAME:FadeIn(20)
+	
+	GAME:WaitFrames(120)
+	local coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake') end)
+	local coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
+	coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(20)
+	
+	coro1 = TASK:BranchCoroutine(function () GeneralFunctions.LookAround(hero, 2, 4, false, false, false, Direction.Right) end)
+	coro2 = TASK:BranchCoroutine(function () GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.Left) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion('Pain')
+	GeneralFunctions.EmoteAndPause(partner, 'Sweating', true)	
+	UI:WaitShowDialogue('Ouch... That was tougher than I expected...')
+	UI:SetSpeakerEmotion('Normal')
+	UI:WaitShowDialogue('Are you okay ' .. hero:GetDisplayName() .. '?')
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.DoAnimation(hero, 'Nod')
+
+	UI:WaitShowDialogue("I guess if either of us get knocked out,[pause=10] then the other can't continue...")
+	UI:WaitShowDialogue("I wonder why that is?")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+	GAME:WaitFrames(40)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	UI:WaitShowDialogue("Well we can't dawdle here.[pause=0] We got to make it back to town before it gets any later.")
+	UI:WaitShowDialogue("Let's give it another shot,[pause=10]" .. hero:GetDisplayName() .. "!")
+	--todo: do a little hop at the end of the dialogue
+	GAME:WaitFrames(20)
+
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 304, 612, false, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 272, 612, false, 1, 20) end)
+	GAME:WaitFrames(60)
+	GAME:FadeOut(false, 20)
+	TASK:JoinCoroutines({coro1, coro2})	
+	
+	GAME:CutsceneMode(false)
+
+	--relic forest dungeon round 2
+	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 end
 
 

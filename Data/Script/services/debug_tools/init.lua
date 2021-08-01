@@ -60,14 +60,23 @@ function DebugTools:OnNewGame()
   _DATA.Save.ActiveTeam.Bank = 999999
   
   local mon_id = RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Male)
-  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
+  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0)
+  local tbl = LTBL(p)
+  tbl.Importance = 'Hero'
+  p.IsFounder = true
+  _DATA.Save.ActiveTeam.Players:Add(p)
+  
   mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Male)
-  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
+  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0)
+  tbl = LTBL(p)
+  tbl.Importance = 'Partner'
+  p.IsFounder = true
+  _DATA.Save.ActiveTeam.Players:Add(p)
+  
   mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
   _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
   _DATA.Save:UpdateTeamProfile(true)
 
-  _DATA.Save.ActiveTeam.Leader.IsFounder = true
   
   for ii = 1, _DATA.Save.DungeonUnlocks.Length, 1 do
     _DATA.Save.DungeonUnlocks[ii-1] = RogueEssence.Data.GameProgress.UnlockState.Discovered

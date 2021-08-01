@@ -4,7 +4,12 @@ GeneralFunctions = {}
 --[[These are functions/procedures that are useful in a multitude of different maps or situations. Things such as
 reseting daily flags, a function to have the pokemon look in a random number of randections, etc.
 
+List of custom variables attached to pokemon:
+Importance: used mainly to mark the Hero and the Partner. is equal to 'Hero' if hero and 'Partner' if partner.
+nil otherwise, but may be used in future to flag other party members/npcs as being important in someway.
 
+AddBack: Marks the character to be added back when the party is reset,value is the slot to add them back at.
+If it's nil then don't add them back. Set it to nil after adding them back
 ]]--
 
 function GeneralFunctions.ResetDailyFlags()
@@ -24,12 +29,14 @@ function GeneralFunctions.EndOfDay()
 
 end
 
-function GeneralFunctions.EndDungeonRun(outcome)
+function GeneralFunctions.EndDungeonRun(result, zone, structure, mapid, entryid, display, fanfare)
 	--todo: more sophisticated logic once more stuff is figured out
 	--outcome can be things like wipe, success, completed a mission, etc
 	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-	print("GeneralFunctions.EndDungeonRun outcome: " .. outcome)
-	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+	
+	GAME:EndDungeonRun(result, zone, structure, mapid, entryid, display, fanfare)
+	
+	--GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 end
 
 --given the line to travel between two points, how many frames must the camera move for to get the desired speed?
@@ -297,6 +304,8 @@ function GeneralFunctions.DoAnimation(chara, anim, sound)
 	
 	if anim == 'Nod' then 
 		pause = 20
+	elseif anim == 'Wake' then
+		pause = 40
 	elseif anim == 'DeepBreath' then
 		pause = 80
 	end
@@ -387,6 +396,7 @@ function GeneralFunctions.FaceMovingCharacter(chara, target)
 end
 
 
+--todo?
 function GeneralFunctions.DialogueWithEmote(chara, emote, str)
 	
 end 
@@ -439,7 +449,7 @@ function GeneralFunctions.Converse(charaList, turnWhenEmoting)
 			
 			--turn towards a random person in the conversation
 			if turnWhenEmoting then 
-				while turnTo != order do--dont turn to ourselves
+				while turnTo ~= order do--dont turn to ourselves
 					turnTo = GAME.Rand:Next(1, #charaList)
 				end
 				turnTo = charaList[turnTo]--get the character to turn to
@@ -460,4 +470,68 @@ function GeneralFunctions.Converse(charaList, turnWhenEmoting)
 			
 		end
 	end 
+end
+
+
+--set party to Hero as 1st, partner as 2nd member. 
+--Just those two if others is false, allow other party members to remain in 3/4 slot if false
+--if spawn is true run spawners for teammates 1 (through 3 if applicable)
+function GeneralFunctions.DefaultParty(spawn, others)
+	--Clear party 
+	local partyCount = GAME:GetPlayerPartyCount()
+	local p = 0
+	local tbl = 0
+	
+	--this depends on partner and hero not being able to be shifted out of slot 1 and 2... keep in mind
+	--will need to be adjusted in future most likely unless Audino adds IsPartner being nonshiftable as an option
+    for i = partyCount,1,-1 do
+      p = GAME:GetPlayerPartyMember(i-1)
+	  GAME:RemovePlayerTeam(i-1)
+	  GAME:AddPlayerAssembly(p)
+	  tbl = LTBL(p)
+	  if tbl.Importance ~= 'Hero' and tbl.Importance ~= 'Partner' and others then
+		tbl.AddBack = i
+	  end
+	end
+    
+	--set party (player then partner)
+	local assemblyCount = GAME:GetPlayerAssemblyCount()
+	for i = 1, assemblyCount, 1 do
+		p = GAME:GetPlayerAssemblyMember(i - 1)
+		local tbl = LTBL(p)
+		GAME:RemovePlayerAssembly(i-1)
+		if tbl.Importance == 'Hero' then --hero goes in slot 1
+			_DATA.Save.ActiveTeam.Players[0] = p
+			GAME:SetTeamLeaderIndex(0)
+		elseif tbl.Importance == 'Partner' then --partner in slot 2
+			_DATA.Save.ActiveTeam.Players[1] = p
+			--if spawn then --call teammate 1 spawner
+			--	GROUND:SpawnerSetSpawn('TEAMMATE_1', p)
+			--	GROUND:SpawnerDoSpawn("TEAMMATE_1", p)
+			--end
+		elseif tbl.AddBack ~= nil then--misc goons go in remaining slots
+			_DATA.Save.ActiveTeam.Players[tbl.AddBack - 1] = p--indexing needs that -1
+			--if spawn then --WARNING: Most places won't have teammate 2 and 3 spawners. Cafe and zone grounds are probably it.
+			--	GROUND:SpawnerSetSpawn('TEAMMATE_' .. tostring(tbl.AddBack - 1), p)
+			--	GROUND:SpawnerDoSpawn("TEAMMATE_" .. tostring(tbl.AddBack - 1), p)	
+			--end
+			tbl.AddBack = nil--clear addback flag
+		end
+	end 
+	
+	if spawn then 	
+		COMMON.RespawnAllies()
+	end
+	--_DATA.Save:UpdateTeamProfile(true)
+
+		
+		
+end
+
+
+--todo: this is a bootleg "template". 
+--give a character name, and the details assigned to the character in this function will spawn them
+--it's so that characters are standardized. The same Hyko (name, species, gender, etc) is spawnned everytime you want hyko to spawn.
+function GeneralFunctions.SpawnCharacter(charaName)
+
 end

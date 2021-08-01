@@ -20,7 +20,7 @@ local MapStrings = {}
 function guild_first_floor.Enter(map)
 
 	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.PartnerMetHero then 
+		if SV.Chapter1.TeamCompletedForest then 
 			guild_first_floor_ch_1.EnterGuild()
 		else
 			GAME:FadeIn(20)--this should never happen

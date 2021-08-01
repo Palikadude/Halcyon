@@ -4,15 +4,18 @@ PartnerEssentials = {}
 
 --This function is called to move partner to a specific marker on loading a new map
 function PartnerEssentials.InitializePartnerSpawn(dir)
-	--FYI: Each map has an initial point where the partner spawns. 
-	--Set the PartnerSpawn variable to default to let the partner spawn there
+	--Each map has an initial point where the partner spawns. 
+	--Set the Partner Spawn variable to default to let the partner spawn there
 	--My nomenclature, to keep things consistent, is to just copy the player's spawn marker's name,
 	--add _Partner to the end for the partner's marker.
 	--You can specify the dir parameter for a custom direction to spawn as if you want.
 	--This function also assigns ground partner AI to the partner so they actually follow you.
+	
+	if GAME:GetPlayerPartyCount() < 2 then return end --do nothing if party is only size 1 
+	
+	local partner = CH('Teammate1')
 	if SV.partner.Spawn ~= 'Default' then
 		local player = CH('PLAYER')
-		local partner = CH('Teammate1')
 		local marker = MRKR(SV.partner.Spawn)
 		dir = dir or marker.Direction or partner.Direction
 		
@@ -21,9 +24,8 @@ function PartnerEssentials.InitializePartnerSpawn(dir)
 	end	
 	
 
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-    chara.CollisionDisabled = true
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+    partner.CollisionDisabled = true
 	
 end
 
