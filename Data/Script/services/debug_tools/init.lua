@@ -64,6 +64,7 @@ function DebugTools:OnNewGame()
   local tbl = LTBL(p)
   tbl.Importance = 'Hero'
   p.IsFounder = true
+  p.IsPartner = true
   _DATA.Save.ActiveTeam.Players:Add(p)
   
   mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Male)
@@ -71,6 +72,7 @@ function DebugTools:OnNewGame()
   tbl = LTBL(p)
   tbl.Importance = 'Partner'
   p.IsFounder = true
+  p.IsPartner = true
   _DATA.Save.ActiveTeam.Players:Add(p)
   
   mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)

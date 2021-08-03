@@ -50,3 +50,9 @@ end
 
 
 
+
+function PartnerEssentials.GetPartnerDungeonDialogue()
+end
+
+
+

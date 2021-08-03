@@ -152,6 +152,7 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I know you're probably curious about the town.[pause=0] But we need go to the guild before it gets any later!")
 	UI:WaitShowDialogue("I'll show you around town tomorrow.")
+	GAME:WaitFrames(20)
 	
 	--turn towards  the guild
 	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)

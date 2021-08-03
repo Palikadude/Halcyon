@@ -87,6 +87,12 @@ function COMMON.AutoLoadLocalizedStrings()
   return STRINGS:MakePackageStringTable(packagepath)
 end
 
+COMMON.MISSION_TYPE_RESCUE = 0
+COMMON.MISSION_TYPE_ESCORT = 1
+COMMON.MISSION_TYPE_OUTLAW = 2
+
+COMMON.MISSION_INCOMPLETE = 0
+COMMON.MISSION_COMPLETE = 1
 
 COMMON.PERSONALITY = { }
 COMMON.PERSONALITY[0] = { -- partner
@@ -258,6 +264,19 @@ COMMON.PERSONALITY[37] = { -- escort
   WAIT = {190}
 }
 
+
+
+--indexing on these start at 1000
+COMMON.PERSONALITY[50] = { --Hero
+
+
+}
+
+COMMON.PERSONALITY[51] = { --The partner
+
+
+}
+
 COMMON.ESSENTIALS = {
   { Index = 1, Hidden = 0, Price = 50},
   { Index = 2, Hidden = 0, Price = 150},
@@ -416,10 +435,10 @@ function COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	    dest = RogueEssence.Dungeon.ZoneLoc(open_dungeons[1], RogueEssence.Dungeon.SegLoc(0,0))
 	  end
 	elseif #open_grounds == 1 then
-	  local ground_id = open_grounds[1].ID
+	  local ground_id = open_grounds[1].Zone
 	  local zone = RogueEssence.Data.DataManager.Instance:GetZone(ground_id)
 	  local ground = RogueEssence.Data.DataManager.Instance:GetGround(zone.GroundMaps[open_grounds[1].ID])
-	  local ground_name = ground:GetSingleLineName()
+	  local ground_name = ground:GetColoredName()
       
 	  UI:ChoiceMenuYesNo(STRINGS:FormatKey("DLG_ASK_ENTER_GROUND", ground_name))
       UI:WaitForChoice()
@@ -449,10 +468,11 @@ end
 
 function COMMON.UnlockWithFanfare(dungeon_id)
   if not GAME:DungeonUnlocked(dungeon_id) then
+    UI:WaitShowDialogue(STRINGS:FormatKey("DLG_NEW_AREA_TO"))
     GAME:UnlockDungeon(dungeon_id)
-	local zone = RogueEssence.Data.DataManager.Instance:GetZone(dungeon_id)
+	local zone = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dungeon_id]
     SOUND:PlayFanfare("Fanfare/NewArea")
-    UI:WaitShowDialogue(STRINGS:FormatKey("DLG_NEW_AREA", zone.Name:ToLocal()))
+    UI:WaitShowDialogue(STRINGS:FormatKey("DLG_NEW_AREA", zone:GetColoredName()))
   end
 
 end
@@ -498,8 +518,8 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   	  local chosen_pool_idx = running_pool[chosen_idx]
       chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
   	
-      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara.BaseName)
-      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target.BaseName)
+      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
+      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
       
       if string.find(chosen_quote, "%[move%]") then
         local moves = {}
@@ -510,7 +530,7 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   	    end
   	    if #moves > 0 then
   	      local chosen_move = RogueEssence.Data.DataManager.Instance:GetSkill(moves[math.random(1, #moves)])
-  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move.Name:ToLocal())
+  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
   	    else
   	      valid_quote = false
   	    end
@@ -523,7 +543,7 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   	      if chosen_list.Count > 0 then
   	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
   	        local mon = RogueEssence.Data.DataManager.Instance:GetMonster(chosen_mob.BaseForm.Species)
-            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon.Name:ToLocal())
+            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
   	      else
   	        valid_quote = false
   	      end
@@ -535,7 +555,7 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
       if string.find(chosen_quote, "%[item%]") then
         if GAME:GetCurrentFloor().ItemSpawns.CanPick then
           local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
-          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetName())
+          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
   	    else
   	      valid_quote = false
   	    end
@@ -562,7 +582,7 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
     UI:ResetSpeaker()
 	
 	local chosen_quote = RogueEssence.StringKey("TALK_CANT"):ToLocal()
-    chosen_quote = string.gsub(chosen_quote, "%[myname%]", target.BaseName)
+    chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
 	
     UI:WaitShowDialogue(chosen_quote)
   
@@ -697,37 +717,6 @@ function COMMON.ShowTeamStorageMenu()
 	
   end
   
-  local mon = RogueEssence.Data.DataManager.Instance:GetMonster(target.CurrentForm.Species)
-  local form = mon.Forms[target.CurrentForm.Form]
-  
-  local personality = form:GetPersonalityType(target.Data.Discriminator)
-  
-  local personality_group = COMMON.PERSONALITY[personality]
-  local pool = personality_group.WAIT
-  local key = "TALK_WAIT_%04d"
-  
-  local running_pool = {table.unpack(pool)}
-  local valid_quote = false
-  local chosen_quote = ""
-  
-  while not valid_quote and #running_pool > 0 do
-    valid_quote = true
-    local chosen_idx = math.random(1, #running_pool)
-	local chosen_pool_idx = running_pool[chosen_idx]
-    chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
-	
-    chosen_quote = string.gsub(chosen_quote, "%[hero%]", chara:GetDisplayName())
-    
-	if not valid_quote then
-      -- PrintInfo("Rejected "..chosen_quote)
-	  table.remove(running_pool, chosen_idx)
-	  chosen_quote = ""
-	end
-  end
-  -- PrintInfo("Selected "..chosen_quote)
-  
-  
-  UI:WaitShowDialogue(chosen_quote)
 end
 
 function COMMON.GroundInteract(chara, target)
@@ -813,10 +802,10 @@ function COMMON.Rescued(zone, mail)
 
 
                 --//TODO: make the rescuers talk
-                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader.BaseName, new EmoteStyle(Emotion.Normal), true, Text.Format("{0}, right?", ActiveTeam.Name)));
-                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader.BaseName, new EmoteStyle(Emotion.Normal), true, Text.Format("Glad we could make it! We got your SOS just in time!")));
-                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader.BaseName, new EmoteStyle(Emotion.Normal), true, Text.Format("It's all in a day's work for {0}!", team.Name)));
-                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader.BaseName, new EmoteStyle(Emotion.Normal), true, Text.Format("Good luck, the rest is up to you!")));
+                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader:GetDisplayName(true), new EmoteStyle(Emotion.Normal), true, Text.Format("{0}, right?", ActiveTeam:GetDisplayName())));
+                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader:GetDisplayName(true), new EmoteStyle(Emotion.Normal), true, Text.Format("Glad we could make it! We got your SOS just in time!")));
+                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader:GetDisplayName(true), new EmoteStyle(Emotion.Normal), true, Text.Format("It's all in a day's work for {0}!", team:GetDisplayName())));
+                --yield return CoroutineManager.Instance.StartCoroutine(MenuManager.Instance.SetDialogue(team.Leader.Appearance, team.Leader:GetDisplayName(true), new EmoteStyle(Emotion.Normal), true, Text.Format("Good luck, the rest is up to you!")));
 
                 --//warp them out
 
@@ -843,6 +832,75 @@ function COMMON.EndRescue(zone, result, rescue, segmentID)
   GAME:EndDungeonRun(result, zoneId, structureId, mapId, entryId, true, true)
   SV.General.Rescue = result
   GAME:EnterZone(zoneId, structureId, mapId, entryId)
+end
+
+function COMMON.BeginDungeon(zoneId, segmentID, mapId)
+  COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
+end
+
+function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
+  for name, mission in pairs(SV.test_grounds.Missions) do
+    PrintInfo("Checking Mission: "..tostring(name))
+	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
+	  if mission.Type == 1 then -- escort
+		
+		-- add escort to team
+		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, 0, Gender.Male)
+        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, -1)
+        _DATA.Save.ActiveTeam.Guests:Add(new_mob)
+		
+		-- place in a legal position on map
+		local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
+        local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
+		if dest.HasValue then
+		  endLoc = dest
+		end
+        new_mob.CharLoc = endLoc
+		
+		local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
+        new_mob.ActionEvents:Add(talk_evt)
+		
+		local tbl = LTBL(new_mob)
+		tbl.Escort = name
+	    
+        UI:ResetSpeaker()
+        UI:WaitShowDialogue("Added ".. new_mob.Name .." to the party as a guest.")
+	  end
+	end
+  end
+end
+
+
+function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
+  for name, mission in pairs(SV.test_grounds.Missions) do
+    PrintInfo("Checking Mission: "..tostring(name))
+	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
+	  if mission.Type == 1 then -- escort
+	    -- remove the escort from the party
+		local escort = COMMON.FindMissionEscort(name)
+		if escort then
+		  _DUNGEON:RemoveChar(escort)
+		end
+	  end
+	end
+  end
+end
+
+
+
+function COMMON.FindMissionEscort(missionId)
+  local escort = nil
+  PrintInfo("Name: "..missionId)
+  local party = GAME:GetPlayerGuestTable()
+  for i, p in ipairs(party) do
+    local e_tbl = LTBL(p)
+	PrintInfo("Escort: "..e_tbl.Escort)
+	if e_tbl.Escort == missionId then
+	  escort = p
+	  break
+	end
+  end
+  return escort
 end
 
 function COMMON.EndDungeonDay(result, zoneId, structureId, mapId, entryId)

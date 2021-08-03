@@ -34,7 +34,7 @@ SV.General =
 
 SV.checkpoint = 
 {
-  Zone    = 1, Structure  = -1,
+  Zone    = 0, Structure  = -1,
   Map  = 1, Entry  = 0,
 }
 

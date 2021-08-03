@@ -29,13 +29,15 @@ function GeneralFunctions.EndOfDay()
 
 end
 
+--this places Common.EndDungeonDay
 function GeneralFunctions.EndDungeonRun(result, zone, structure, mapid, entryid, display, fanfare)
 	--todo: more sophisticated logic once more stuff is figured out
 	--outcome can be things like wipe, success, completed a mission, etc
 	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 	
 	GAME:EndDungeonRun(result, zone, structure, mapid, entryid, display, fanfare)
-	
+	GAME:EnterZone(zone, structure, mapid, entryid)
+
 	--GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 end
 
@@ -495,21 +497,27 @@ function GeneralFunctions.DefaultParty(spawn, others)
     
 	--set party (player then partner)
 	local assemblyCount = GAME:GetPlayerAssemblyCount()
+	local found = 1 --start at 1 due to indexing
 	for i = 1, assemblyCount, 1 do
-		p = GAME:GetPlayerAssemblyMember(i - 1)
-		local tbl = LTBL(p)
-		GAME:RemovePlayerAssembly(i-1)
+		p = GAME:GetPlayerAssemblyMember(i - found)
+		tbl = LTBL(p)
+		print(tbl.Importance)
+		print(p.Nickname)
+		GAME:RemovePlayerAssembly(i-found)
 		if tbl.Importance == 'Hero' then --hero goes in slot 1
-			_DATA.Save.ActiveTeam.Players[0] = p
+			_DATA.Save.ActiveTeam.Players:Insert(0, p)
+			found = found + 1
 			GAME:SetTeamLeaderIndex(0)
 		elseif tbl.Importance == 'Partner' then --partner in slot 2
-			_DATA.Save.ActiveTeam.Players[1] = p
+			_DATA.Save.ActiveTeam.Players:Insert(1, p)
+			found = found + 1
 			--if spawn then --call teammate 1 spawner
 			--	GROUND:SpawnerSetSpawn('TEAMMATE_1', p)
 			--	GROUND:SpawnerDoSpawn("TEAMMATE_1", p)
 			--end
 		elseif tbl.AddBack ~= nil then--misc goons go in remaining slots
-			_DATA.Save.ActiveTeam.Players[tbl.AddBack - 1] = p--indexing needs that -1
+			_DATA.Save.ActiveTeam.Players:Insert(tbl.AddBack - 1, p)--indexing needs that -1
+			found = found + 1
 			--if spawn then --WARNING: Most places won't have teammate 2 and 3 spawners. Cafe and zone grounds are probably it.
 			--	GROUND:SpawnerSetSpawn('TEAMMATE_' .. tostring(tbl.AddBack - 1), p)
 			--	GROUND:SpawnerDoSpawn("TEAMMATE_" .. tostring(tbl.AddBack - 1), p)	
@@ -527,6 +535,15 @@ function GeneralFunctions.DefaultParty(spawn, others)
 		
 end
 
+--does a monologue, centering the text, having it appear instantly and turning off the keysound, then turn centering and auto finish off after.
+function GeneralFunctions.Monologue(str)
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:SetAutoFinish(true)
+	UI:WaitShowDialogue(str)
+	UI:SetAutoFinish(false)
+	UI:SetCenter(false)
+end 
 
 --todo: this is a bootleg "template". 
 --give a character name, and the details assigned to the character in this function will spawn them

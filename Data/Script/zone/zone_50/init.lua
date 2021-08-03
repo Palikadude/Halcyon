@@ -37,30 +37,29 @@ function zone_50.ExitSegment(zone, result, rescue, segmentID, mapID)
         }
 		]]--
 	if SV.ChapterProgression.Chapter == 1 then 
-		GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 		
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner died solo before clearing
-				GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker")
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 1, 0, false, false)
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo wiped before making it back to town
-				GAME:EnterGroundMap("relic_forest", "Main_Entrance_Marker")
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)
 			
 			else --failsafe
-
+				print("error in resulting relic forest completion")
 			end
 		else 
 		
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner made it through solo
-				SV.Chapter1.PartnerCompletedForest = true		
-				GAME:EnterGroundMap("relic_forest", "Main_Entrance_Marker")	
+				SV.Chapter1.PartnerCompletedForest = true	
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)				
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo made it back to town
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 1, 0, false, false)
 				SV.Chapter1.TeamCompletedForest = true
-				GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker")
 				
 			else--failsafe 
-
+				print("error in resulting relic forest completion")
 			end
 		end
 	else--todo: generic case (no special cutscenes to be played)
