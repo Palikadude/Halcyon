@@ -31,7 +31,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	
 
 	
-	local coro1 = TASK:BranchCoroutine(GAME:_FadeIn(20))
+	local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(20) end)
 	GeneralFunctions.MoveCharAndCamera(partner, 264, 112, false, 1)
 	TASK:JoinCoroutines({coro1})
 	

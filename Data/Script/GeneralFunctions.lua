@@ -210,7 +210,7 @@ function GeneralFunctions.MoveCharAndCamera(chara, x, y, run, charSpeed, cameraF
 	--default run to false 
 	if run == nil then run = false end 
 
-	local coro1 = TASK:BranchCoroutine(GAME:_MoveCamera(camX, camY, cameraFrames, false))
+	local coro1 = TASK:BranchCoroutine(function() GAME:MoveCamera(camX, camY, cameraFrames, false) end)
 	GROUND:MoveToPosition(chara, x, y, run, charSpeed)
 	TASK:JoinCoroutines({coro1})
 

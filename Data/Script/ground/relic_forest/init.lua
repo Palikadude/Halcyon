@@ -194,6 +194,20 @@ function relic_forest.Intro_Cutscene()
 	_DATA.Save.ActiveTeam.Players[1].IsFounder = true
 	_DATA.Save.ActiveTeam.Players[1].IsPartner = true
 
+	--give the duo a small perma stat bonus
+	_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 5
+	_DATA.Save.ActiveTeam.Players[0].AtkBonus = 3
+	_DATA.Save.ActiveTeam.Players[0].DefBonus = 3
+	_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 3
+	_DATA.Save.ActiveTeam.Players[0].MDefBonus = 3
+	_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 3
+
+	_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 5
+	_DATA.Save.ActiveTeam.Players[1].AtkBonus = 3
+	_DATA.Save.ActiveTeam.Players[1].DefBonus = 3
+	_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 3
+	_DATA.Save.ActiveTeam.Players[1].MDefBonus = 3
+	_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 3
 
   
 	local yesnoResult = false 
