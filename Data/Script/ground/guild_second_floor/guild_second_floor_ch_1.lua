@@ -75,10 +75,19 @@ function guild_second_floor_ch_1.MeetNoctowl()
 			{"Noctowl", 480, 280, Direction.Left}
 		})
 		
-	GROUND:CharSetAnim(marill, 'Appeal', true)
-		
+	GROUND:CharSetAnim(marill, 'Idle', true)
+	GROUND:CharSetAnim(jigglypuff, 'Idle', true)
+	GROUND:CharSetAnim(spheal, 'Idle', true)
+	
+	GROUND:CharSetAnim(cleffa, 'Idle', true)
+	
+	GROUND:CharSetAnim(mareep, 'Idle', true)
+
 	GAME:FadeIn(20)
+	
+	AI:SetCharacterAI(jigglypuff, "ai.ground_talking", marill, true)
+	AI:SetCharacterAI(marill, "ai.ground_talking", jigglypuff, true)
 
-
+--TASK:BranchCoroutine(guild_second_floor_ch_1.MeetNoctowl)
 
 end

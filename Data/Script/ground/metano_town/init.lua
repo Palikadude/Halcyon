@@ -554,7 +554,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 	}
 	
 	if SV.DailyFlags.RedMerchantItem == -1 then 
-		SV.DailyFlags.RedMerchantItem = GAME.Rand:Next(1, #merchant_catalog)
+		SV.DailyFlags.RedMerchantItem = math.random(1, #merchant_catalog)
 	end
 	
 	local chara = CH('Red_Merchant')
@@ -722,7 +722,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 	}
 	
 	if SV.DailyFlags.GreenMerchantItem == -1 then 
-		SV.DailyFlags.GreenMerchantItem = GAME.Rand:Next(1, #merchant_catalog)
+		SV.DailyFlags.GreenMerchantItem = math.random(1, #merchant_catalog)
 	end
 	
 	local chara = CH('Green_Merchant')

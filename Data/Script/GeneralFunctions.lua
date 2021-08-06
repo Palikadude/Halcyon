@@ -60,7 +60,7 @@ end
 
 --randomly returns true or false
 function GeneralFunctions.RandBool()
-	return GAME.Rand:Next(0, 1) == 0
+	return math.random(0, 1) == 0
 end
 
 --assigns a number value to each direction, useful for figuring out how many turn a direction is from another
@@ -163,7 +163,7 @@ function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections
 			local diff = 0
 			local rand = 0
 			repeat
-				rand = GAME.Rand:Next(0, 7)--pick a random direction
+				rand = math.random(0, 7)--pick a random direction
 				diff = math.abs(numDir - rand)
 			until (diff > 1 and diff < 7)--chosen direction must be at least 90 degrees different 
 			dir = GeneralFunctions.NumToDir(rand)
@@ -407,6 +407,7 @@ function GeneralFunctions.TeleportToMarker(chara, marker)
 	GROUND:TeleportTo(chara, marker.Position.X, marker.Position.Y, marker.Direction)
 end
 
+--[[
 
 --todo: add some way to interrupt the loop for whatever arbitrary reason
 --has characters emote at each other randomly as though they were talking amongst themselves
@@ -415,64 +416,80 @@ function GeneralFunctions.Converse(charaList, turnWhenEmoting)
 	
 	--turn towards another while emoting, then turn back afterwards if this is true
 	if turnWhenEmoting == nil then turnWhenEmoting = false end
-	
+	local length = #charaList
+	local rand = 0
+	local repetitions = 0
+	local chara = 0
 	while true do
-		for order, chara in ipairs(charaList) do 
-			if false then break end--todo
-			
-			--todo: get current animation
-			
-			--todo: do a couple little hops before emoting if randomly chosen...
-			local rand = GAME.Rand:Next(1, 2)
-			
-			if rand == 1 then
-				--todo: do the hops
-			end 
-			
-			--set one of 4 emotes, bias towards picking happy emote
-			rand = GAME.Rand:Next(1, 6)
-			local emote = -1
-			if rand == 1 then--exclaim emote
-				emote = 3
-			elseif rand == 2 then --glowing emote
-				emote = 4
-			elseif rand == 3 then--question emote
-				emote = 6
-			else--happy emote
-				emote = 1
-			end
-			
-			local olddir = chara.Direction
-			local turnTo = 0
-			
-			--Emote for a random amount of frames, then pause for a random amount of frames before having someone else talk			
-			GROUND:CharSetEmote(chara, emote, 0)
-			
-			--turn towards a random person in the conversation
-			if turnWhenEmoting then 
-				while turnTo ~= order do--dont turn to ourselves
-					turnTo = GAME.Rand:Next(1, #charaList)
-				end
-				turnTo = charaList[turnTo]--get the character to turn to
-				GROUND:CharAnimateTurnTo(chara, turnTo, 4)
-			end
-			
-			rand = GAME.Rand:Next(40, 80)
-			GAME:WaitFrames(rand)
-			GROUND:CharSetEmote(chara, -1, 0)
-			
-			if turnWhenEmoting then
-				GROUND:CharAnimateTurnTo(chara, olddir, 4)
-			end
-			
-			rand = GAME.Rand:Next(20, 60)
-			GAME:WaitFrames(rand)
-			
-			
+		--if false then break end--todo
+		print(turnWhenEmoting)
+		--todo: get current animation
+		
+		--todo: do a couple little hops before emoting if randomly chosen...
+		--local rand = math.random(1, 2)
+		
+		--if rand == 1 then
+			--todo: do the hops
+		--end 
+		
+		--set one of 4 emotes, bias towards picking happy emote
+		local index = math.random(1, length)
+		--print('index ' .. tostring(index))
+		chara = charaList[index]
+		
+		
+		rand = math.random(1, 6)
+	--	print('length ' .. tostring(length))
+	--	print('emote rand' .. tostring(rand))
+		local emote = -1
+		if rand == 1 then--exclaim emote
+			emote = 3
+			repetitions = 1
+		elseif rand == 2 then --glowing emote
+			emote = 4
+			repetitions = 0
+		elseif rand == 3 then--question emote
+			emote = 6
+			repetitions = 1
+		else--happy emote
+			emote = 1
+			repetitions = 0
 		end
+		
+		local olddir = chara.Direction
+		local turnTo = 0
+		
+		--Emote for a random amount of frames, then pause for a random amount of frames before having someone else talk			
+		GROUND:CharSetEmote(chara, emote, repetitions)
+		
+		--turn towards a random person in the conversation
+		if turnWhenEmoting then 
+			while turnTo == index do--dont turn to ourselves
+				turnTo = math.random(1, length)
+			--	print('turnto ' .. tostring(turnTo))
+			end
+			local charTurn = charaList[turnTo]--get the character to turn to
+			GROUND:CharTurnToCharAnimated(chara, charTurn, 4)
+		end
+		
+		
+		if repetitions == 1 then rand = math.random(0, 40) else rand = math.random(120, 160) end
+		GAME:WaitFrames(rand)
+		--print('emote wait rand' .. tostring(rand))
+		GROUND:CharSetEmote(chara, -1, 0)
+		
+		if turnWhenEmoting then
+			GROUND:CharAnimateTurnTo(chara, olddir, 4)
+		end
+		
+		rand = math.random(100, 140)
+		--print('wait rand '.. tostring(rand))
+		GAME:WaitFrames(rand)
+		
+		
 	end 
 end
-
+]]--
 
 --set party to Hero as 1st, partner as 2nd member. 
 --Just those two if others is false, allow other party members to remain in 3/4 slot if false
@@ -545,9 +562,3 @@ function GeneralFunctions.Monologue(str)
 	UI:SetCenter(false)
 end 
 
---todo: this is a bootleg "template". 
---give a character name, and the details assigned to the character in this function will spawn them
---it's so that characters are standardized. The same Hyko (name, species, gender, etc) is spawnned everytime you want hyko to spawn.
-function GeneralFunctions.SpawnCharacter(charaName)
-
-end
