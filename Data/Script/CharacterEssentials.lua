@@ -10,6 +10,14 @@ local characters = {
 			form = 0,
 			skin = 0
 		},
+		Zigzagoon = {
+			species = 263, 
+			nickname = '???',
+			instance = 'Zigzagoon',
+			gender = Gender.Male,
+			form = 0, 
+			skin = 0
+		},
 		Growlithe = {
 			species = 58,
 			nickname = 'Hyko',
@@ -118,17 +126,28 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 	retTable = retTable or false--return a table of chars rather than multiple chars if this is true
 	local charTable = {}
 	local chara = 0
+	local length = 0
 	for i = 1, #list, 1 do
-		if #list[i] == 2 then --may be inefficient to do a length lookup so often...
-			local name = list[i][1]
+		local name = list[i][1]
+		length = #list[i]
+		if length == 1 then--this case is so we can reference characters that aren't on the map. Put them at 0, 0 and hide them
+			local monster = RogueEssence.Dungeon.MonsterID(characters[name].species,
+															characters[name].form,
+															characters[name].skin,
+															characters[name].gender)
+			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(0, 0), Direction.Down, characters[name].nickname, characters[name].instance)
+			GAME:GetCurrentGround():AddTempChar(chara)
+			GROUND:Hide(chara.EntName)
+			
+		elseif length == 2 then --may be inefficient to do a length lookup so often...
 			local marker = MRKR(list[i][2])
 			local monster = RogueEssence.Dungeon.MonsterID(characters[name].species,
 															characters[name].form,
 															characters[name].skin,
 															characters[name].gender)
 			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(marker.Position.X, marker.Position.Y), marker.Direction, characters[name].nickname, characters[name].instance)
+			GAME:GetCurrentGround():AddTempChar(chara)
 		else
-			local name = list[i][1]
 			local x = list[i][2]
 			local y = list[i][3]
 			local direction = list[i][4]
@@ -137,8 +156,8 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].skin,
 															characters[name].gender)
 			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(x, y), direction, characters[name].nickname, characters[name].instance)
+			GAME:GetCurrentGround():AddTempChar(chara)
 		end
-		GAME:GetCurrentGround():AddTempChar(chara)
 		charTable[i] = chara
 	end
 	if retTable then 

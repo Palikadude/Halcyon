@@ -385,11 +385,18 @@ function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
 end
 
 --useful for having characters face constantly towards someone who's moving
-function GeneralFunctions.FaceMovingCharacter(chara, target)
+--offset is if you want the characters to look at 
+function GeneralFunctions.FaceMovingCharacter(chara, target, turnFrames, breakDirection)
 	local currentLocX = -999
 	local currentLocY = -999
+	turnFrames = turnFrames or 4
+
+	breakDirection = breakDirection or Direction.None
+	
+	GAME:WaitFrames(1)--gives the pokemon a chance to start moving
 	while not (currentLocX == target.Position.X and currentLocY == target.Position.Y) do
-		GROUND:CharTurnToChar(chara, target)
+		if chara.Direction == breakDirection then break end
+		GROUND:CharTurnToCharAnimated(chara, target, turnFrames)
 		currentLocX = target.Position.X
 		currentLocY = target.Position.Y
 		GAME:WaitFrames(1)

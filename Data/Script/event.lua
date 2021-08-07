@@ -88,7 +88,7 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 					GAME:WaitFrames(60)
 				end
 			end
-			TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))
+			--TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))
 		end
 	end
 			

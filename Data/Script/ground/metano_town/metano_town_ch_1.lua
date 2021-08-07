@@ -145,9 +145,9 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:CharSetAnim(partner, 'Idle', true)
 	UI:WaitShowDialogue("C'mon,[pause=10] you gotta keep up, " .. hero:GetDisplayName() .. "!")
 	GROUND:CharSetAnim(partner, 'None', true)
+	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, -1, 0)
 	
-	GAME:WaitFrames(20)
 	GeneralFunctions.LookAround(partner, 2, 4, false, false, false)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I know you're probably curious about the town.[pause=0] But we need go to the guild before it gets any later!")
@@ -382,6 +382,7 @@ end
 
 function metano_town_ch_1.TeamEnterGuildHero()
 	local chara = CH('PLAYER')
+	GAME:WaitFrames(10)
 	GROUND:MoveToPosition(chara, 712, 908, false, 1)
 	GROUND:MoveToPosition(chara, 712, 876, false, 1)
 	GROUND:Hide(chara.EntName)

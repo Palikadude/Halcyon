@@ -28,9 +28,16 @@ end
 
 ---guild_second_floor.Enter
 function guild_second_floor.Enter(map)
-
-  GAME:FadeIn(20)
-
+	
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest then 
+			guild_second_floor_ch_1.MeetNoctowl()
+		else
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---guild_second_floor.Exit
