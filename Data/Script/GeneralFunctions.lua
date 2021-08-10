@@ -211,12 +211,43 @@ function GeneralFunctions.MoveCharAndCamera(chara, x, y, run, charSpeed, cameraF
 	if run == nil then run = false end 
 
 	local coro1 = TASK:BranchCoroutine(function() GAME:MoveCamera(camX, camY, cameraFrames, false) end)
-	GROUND:MoveToPosition(chara, x, y, run, charSpeed)
-	TASK:JoinCoroutines({coro1})
+	local coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(chara, x, y, run, charSpeed) end)
+	TASK:JoinCoroutines({coro1, coro2})
 
 
 end
 
+--old movetoposition behavior
+--move diagonially, then on one axis to get to the destination (2 movements)
+--only moves in 8 directions 
+function GeneralFunctions.EightWayMove(chara, x, y, run, speed)
+
+	local diffX = x - chara.Position.X
+	local diffY = y - chara.Position.Y
+	
+	
+	local xSign = 1
+	local ySign = 1
+	
+	if diffX < 0 then xSign = -1 end
+	if diffY < 0 then ySign = -1 end
+
+	diffX = math.abs(diffX)
+	diffY = math.abs(diffY)
+	
+	
+	local diff = 0 
+	
+	if diffX < diffY then
+		diff = diffX
+		GROUND:MoveToPosition(chara, chara.Position.X + (diff * xSign), chara.Position.Y + (diff * ySign), run, speed)
+	elseif math.abs(diffX) > math.abs(diffY) then
+		diff = diffY
+		GROUND:MoveToPosition(chara, chara.Position.X + (diff * xSign), chara.Position.Y + (diff * ySign), run, speed)
+	end
+	
+	GROUND:MoveToPosition(chara, x, y, run, speed)
+end
 
 --shortcut for doing hero dialogue (i.e., no sfx, no nameplate at the start)
 function GeneralFunctions.HeroDialogue(chara, str, emotion)
@@ -506,6 +537,7 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	local partyCount = GAME:GetPlayerPartyCount()
 	local p = 0
 	local tbl = 0
+	others = others or false
 	
 	--this depends on partner and hero not being able to be shifted out of slot 1 and 2... keep in mind
 	--will need to be adjusted in future most likely unless Audino adds IsPartner being nonshiftable as an option
@@ -552,8 +584,9 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	
 	if spawn then 	
 		COMMON.RespawnAllies()
+		--AI:SetCharacterAI(CH('Teammate1'), "ai.ground_partner", CH('PLAYER'),CH('Teammate1').Position)
 	end
-	--_DATA.Save:UpdateTeamProfile(true)
+	_DATA.Save:UpdateTeamProfile(true)
 
 		
 		

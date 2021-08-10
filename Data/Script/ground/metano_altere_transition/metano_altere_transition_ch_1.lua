@@ -13,23 +13,24 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	--todo: music (beach music?)
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
+	GROUND:AddMapStatus(51)--dusk
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	--todo: hide player
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
 	--GAME:MoveCamera(232, 184, 1, false)
-	GeneralFunctions.CenterCamera({partner, hero})
 	GROUND:TeleportTo(partner, 260, 340, Direction.Right)
 	GROUND:TeleportTo(hero, 264, 372, Direction.Right)
+	GAME:MoveCamera(236, 184, 1, false)
 	GAME:FadeIn(20)
 	
 	--Move to about mid screen, and have the conversation there.
-	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 240, 176, false, 1) end)
-	GROUND:MoveToPosition(hero, 240, 208, false, 1)
-	TASK:JoinCoroutines({coro1})
+	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 240, 176, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 240, 208, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2})
 	
-	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 240, 176, false, 1) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 240, 176, false, 1) end)
 	GROUND:MoveToPosition(partner, 208, 176, false, 1)
 	GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	TASK:JoinCoroutines({coro1})

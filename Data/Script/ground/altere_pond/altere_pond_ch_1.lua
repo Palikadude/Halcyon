@@ -6,7 +6,7 @@ altere_pond_ch_1 = {}
 
 function altere_pond_ch_1.LeaveNorthWalkSequence(chara)
 	GROUND:MoveToPosition(chara, 312, 128, false, 1)
-	GROUND:MoveToPosition(chara, 264, -32, false, 1)
+	GeneralFunctions.EightWayMove(chara, 264, -32, false, 1)
 end
 
 
@@ -46,9 +46,10 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	UI:WaitShowDialogue("It's the only thing that takes my mind off the guild...")
 	GAME:WaitFrames(20)
 	GeneralFunctions.ShakeHead(partner, 4)
+	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Let's not think about that anymore though.[pause=0] That's why I'm here after all.")
-
+	GAME:WaitFrames(20)
 	
 	--walk down the steps
 	GeneralFunctions.MoveCharAndCamera(partner, 312, 320, false, 1)
@@ -63,6 +64,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim_2")
 	UI:WaitShowDialogue("Oh![pause=0] I almost forgot!")
 	print(oldman:GetDisplayName())
+	GAME:WaitFrames(20)
 
 	--Move camera to show relicanth, then move back
 	coro1 = TASK:BranchCoroutine(GAME:_MoveCamera(544, 328, 112, false))
@@ -227,6 +229,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	--todo: create map effect for evening shading
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
+	GROUND:AddMapStatus(51)--dusk
 	--todo: hide player
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
@@ -272,8 +275,9 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
 
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 840, 424, false, 1) end)
-	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 840, 392, false, 1, 30) end)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 840, 424, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(30) 
+									   GeneralFunctions.EightWayMove(hero, 840, 392, false, 1) end)
 	GAME:WaitFrames(40)
 	GAME:FadeOut(false, 20)
 	GAME:MoveCamera(272, 8, 1, false)

@@ -2,6 +2,15 @@ require 'common'
 CharacterEssentials = {}
 
 local characters = {
+		--the guild
+		Tropius = {
+			species = 357,
+			nickname = 'Pernicus',
+			instance = 'Tropius',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
 		Noctowl = {
 			species = 164, 
 			nickname = 'Phileas',

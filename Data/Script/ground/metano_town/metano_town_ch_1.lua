@@ -57,7 +57,7 @@ end
 --walking up to growlithe.
 function metano_town_ch_1.WalkSequenceHero()
 	GROUND:MoveToPosition(CH('PLAYER'), 648, 1032, false, 1)
-	GROUND:MoveToPosition(CH('PLAYER'), 696, 986, false, 1)
+	GeneralFunctions.EightWayMove(CH('PLAYER'), 696, 986, false, 1)
 	GROUND:MoveToPosition(CH('PLAYER'), 696, 948, false, 1)
 	GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Growlithe'), 4)
 end
@@ -65,7 +65,7 @@ end
 --walking up to growlithe
 function metano_town_ch_1.WalkSequencePartner()
 	GROUND:MoveToPosition(CH('Teammate1'), 648, 1032, false, 1)
-	GROUND:MoveToPosition(CH('Teammate1'), 696, 986, false, 1)
+	GeneralFunctions.EightWayMove(CH('Teammate1'), 696, 986, false, 1)
 	GROUND:MoveToPosition(CH('Teammate1'), 696, 924, false, 1)
 	GROUND:CharTurnToCharAnimated(CH('Teammate1'), CH('Growlithe'), 4)
 end
@@ -85,10 +85,9 @@ end
 --growlithe leaving his post to go inside the guild
 function metano_town_ch_1.GrowlitheRunInside()
 	local chara = CH('Growlithe')
-	--todo: proper animations
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
 	--GROUND:CharSetAnim(chara, 'Rumble', false)--this wont do anything until that new function comes
-	GROUND:MoveToPosition(chara, 696, 924, false, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Right, 696, 924, 1, 2)
 	GROUND:MoveToPosition(chara, 712, 924, true, 4)
 	GROUND:MoveToPosition(chara, 712, 876, true, 4)
 	GROUND:Hide('Growlithe')	
@@ -119,6 +118,7 @@ function metano_town_ch_1.EnterGuild()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	local growlithe = CH('Growlithe')
+	GROUND:AddMapStatus(51)--dusk
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	GROUND:Hide("Guild_Entrance")--disable map transition object
@@ -395,7 +395,7 @@ function metano_town_ch_1.GrowlitheReturn()
 	GROUND:MoveToPosition(chara, 696, 924, false, 2)
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
 	--todo: add the jump  to get back over the desk
-	GROUND:MoveToPosition(chara, 664, 924, false, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Left, 664, 924, 1, 2)
 	GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
 end 
 
