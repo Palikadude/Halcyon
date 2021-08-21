@@ -140,7 +140,9 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	--todo: different dialogue here?
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Alright " .. zone:GetColoredName() .. ",[pause=10] here I come!")
+	UI:WaitShowDialogue(zone:GetColoredName() .. " is pretty samey most times I explore it...")
+	UI:WaitShowDialogue("But I have a feeling this time that I'll find something special!")
+	UI:WaitShowDialogue("Alright![pause=0] Time to see what I find this time!")
 	GAME:WaitFrames(20)
 
 

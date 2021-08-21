@@ -118,7 +118,8 @@ SV.Chapter1 =
 	PartnerEnteredForest = false,--Did partner go into the forest yet?
 	PartnerCompletedForest = false,--Did partner complete solo run of first dungeon?
 	PartnerMetHero = false,--Finished partner meeting hero cutscene in the relic forest?
-	TeamCompletedForest = false --completed backtrack to town?
+	TeamCompletedForest = false, --completed backtrack to town?
+	TeamJoinedGuild = false--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
 }
 
 

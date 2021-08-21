@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_1'
 
 -- Package name
 local guild_guildmasters_room = {}
@@ -34,8 +35,15 @@ end
 --Engine callback function
 function guild_guildmasters_room.Enter(map)
 
-  GAME:FadeIn(20)
-
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest then 
+			guild_guildmasters_room_ch_1.MeetGuildmaster()
+		else
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---guild_guildmasters_room.Exit

@@ -287,7 +287,7 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	elseif emote == 'Notice' then --this one is the 3 lines
 		emt = 2
 		sfx = 'EVT_Emote_Exclaim'
-		pause = 20
+		pause = 30
 	elseif emote == 'Exclaim' then --this one is the !
 		emt = 3
 		sfx = 'EVT_Emote_Exclaim_2'

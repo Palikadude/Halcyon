@@ -38,6 +38,8 @@ function guild_third_floor_lobby.Enter(map)
 	if SV.ChapterProgression.Chapter == 1 then
 		if SV.Chapter1.TeamCompletedForest then 
 			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
+		elseif SV.Chapter1.TeamJoinedGuild then
+
 		else
 			GAME:FadeIn(20)
 		end

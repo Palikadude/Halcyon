@@ -264,7 +264,7 @@ function metano_town_ch_1.EnterGuild()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("W-we're here to...[pause=0] Uh...")
+	UI:WaitShowDialogue("W-we've come to...[pause=0] Uh...")
 	GROUND:CharAnimateTurnTo(partner,Direction.Down,4)
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	GeneralFunctions.EmoteAndPause(partner, "Sweating", true)
@@ -273,7 +273,7 @@ function metano_town_ch_1.EnterGuild()
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	GROUND:EntTurn(hero, Direction.UpLeft)
-	UI:WaitShowDialogue("We're here to...[pause=0] speak with the Guildmaster about apprenticing here.")
+	UI:WaitShowDialogue("We've come to...[pause=0] speak with the Guildmaster about apprenticing here.")
 	
 	--woah im glad! more friends :) I'll go let them know you're coming
 	GeneralFunctions.EmoteAndPause(growlithe, "Exclaim", true)

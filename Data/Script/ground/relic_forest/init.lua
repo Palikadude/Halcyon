@@ -227,7 +227,7 @@ function relic_forest.Intro_Cutscene()
 
 	
 	GAME:SetCharacterNickname(partner, result)
-	_DATA.Save.ActiveTeam.Name = result --set team name to partner's name temporarily
+	GAME:SetTeamName(result) --set team name to partner's name temporarily
 	COMMON.RespawnAllies()
 	
 	GAME:WaitFrames(180)
@@ -593,7 +593,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(40)
 	GeneralFunctions.HeroDialogue(hero, "(I don't exactly have many options here...)", "Worried")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " seems kind enough though.[pause=0] Sticking with " ..  GeneralFunctions.GetPronoun(partner, 'them') .. " for now seems like a good idea.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " seems kind though.[pause=0] Sticking with " ..  GeneralFunctions.GetPronoun(partner, 'them') .. " for now seems like a good idea.)", "Normal")
 	GAME:WaitFrames(20)
 	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)
@@ -601,7 +601,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	--hooray we'll have to go thru the dungeon though
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Great![pause=0] I'm glad to hear that!")
+	UI:WaitShowDialogue("Great!")
 	UI:SetSpeakerEmotion("Worried")
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(16)
@@ -618,7 +618,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Before we leave,[pause=10] could you look at something with me for a moment?")
-	UI:WaitShowDialogue("I want to show you something special.")
+	UI:WaitShowDialogue("I want to show you something cool.")
 	
 
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCharAndCamera(partner, 276, 235, false, 1)
@@ -638,7 +638,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	UI:WaitShowDialogue("I've explored here many times,[pause=10] but this marker has always mystified me.")
 	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
-	UI:WaitShowDialogue("If you look closely at it,[pause=10] you can there's an ancient script written on it.")
+	UI:WaitShowDialogue("If you look closely at it,[pause=10] you can there's some sort of ancient script written on it.")
 	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
 
 	UI:SetSpeaker(partner)
@@ -646,11 +646,11 @@ function relic_forest.PartnerFindsHeroCutscene()
 	GROUND:CharAnimateTurnTo(partner, Direction.DownLeft, 4)
 	UI:WaitShowDialogue("This is the only place I've ever seen letters like this!")
 	UI:SetSpeakerEmotion('Worried')
-	UI:WaitShowDialogue('Unfortunately,[pause=10] I have no clue what the letters or the writing means...')
+	UI:WaitShowDialogue('But...[pause=0] I have no clue what the letters or the writing means...')
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Normal')
-	UI:WaitShowDialogue('But I always rub the stone for good luck when I come out here.')
+	UI:WaitShowDialogue('Anyways,[pause=10] I always rub the stone for good luck when I come out here.')
 	
 	
 	
@@ -738,7 +738,7 @@ function relic_forest.PartnerFindsHeroCutscene()
 
 	SV.Chapter1.PartnerMetHero = true
 	--set team name temporarily to hero and partners name
-	_DATA.Save.ActiveTeam.Name = hero.Nickname .. " and " .. partner.Nickname
+	GAME:SetTeamName(hero.Nickname .. " and " .. partner.Nickname)
 	GAME:CutsceneMode(false)
 
 	--relic forest dungeon round 2
