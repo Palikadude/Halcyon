@@ -65,6 +65,7 @@ function DebugTools:OnNewGame()
   tbl.Importance = 'Hero'
   p.IsFounder = true
   p.IsPartner = true
+  p.Nickname = 'Palika'
   _DATA.Save.ActiveTeam.Players:Add(p)
   
   mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Male)
@@ -73,11 +74,18 @@ function DebugTools:OnNewGame()
   tbl.Importance = 'Partner'
   p.IsFounder = true
   p.IsPartner = true
+  p.Nickname = 'Genshi'
   _DATA.Save.ActiveTeam.Players:Add(p)
   
   mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
   _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
+  
+  
+    mon_id = RogueEssence.Dungeon.MonsterID(531, 0, 0, Gender.Female)
+  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
+ 
   _DATA.Save:UpdateTeamProfile(true)
+  
 
   
   for ii = 1, _DATA.Save.DungeonUnlocks.Length, 1 do

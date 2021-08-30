@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'AudinoAssembly'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 
 -- Package name
@@ -71,6 +72,12 @@ function guild_third_floor_lobby.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
+
+
+function guild_third_floor_lobby.Assembly_Action(obj, activator)
+	AudinoAssembly.Assembly(CH('Assembly'))
+end
+
 ---------------------------
 -- Map Transitions
 ---------------------------
@@ -108,6 +115,7 @@ function guild_third_floor_lobby.Stairs_Exit_Touch(obj, activator)
   GAME:EnterGroundMap("guild_second_floor", 'Guild_Second_Floor_Upwards_Stairs_Marker')
   SV.partner.Spawn = 'Guild_Second_Floor_Upwards_Stairs_Marker_Partner'
 end
+
 
 
 

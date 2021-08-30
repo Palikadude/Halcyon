@@ -58,4 +58,58 @@
   <resheader name="writer">
     <value>System.Resources.NetStandard.ResXResourceWriter, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </resheader>
+  <data name="Assembly_Intro" xml:space="preserve">
+    <value>Welcome to the [color=#00FF00]Audino[color] Assembly! </value>
+  </data>
+  <data name="Assembly_Intro_Return" xml:space="preserve">
+    <value>Can I help you with anything else?</value>
+  </data>
+  <data name="Assembly_Goodbye" xml:space="preserve">
+    <value>So long![pause=0] Good luck with your adventures!</value>
+  </data>
+  <data name="Assembly_Option_Members" xml:space="preserve">
+    <value>Members</value>
+  </data>
+  <data name="Assembly_Members_Shuffled" xml:space="preserve">
+    <value>Just shuffling party order around?[pause=0] No problem!</value>
+  </data>
+  <data name="Assembly_Leader_Changed" xml:space="preserve">
+    <value>{0}{1} will become the leader of the party{2}</value>
+  </data>
+  <data name="Assembly_Members_Added" xml:space="preserve">
+    <value>{0}{1} will be added to the party{2}</value>
+  </data>
+  <data name="Assembly_Members_Removed" xml:space="preserve">
+    <value>{0}{1} will be removed from the party{2}</value>
+  </data>
+  <data name="Assembly_Make_Changes" xml:space="preserve">
+    <value>Alright![pause=0] With a ring of this bell I'll change your party accordingly!</value>
+  </data>
+  <data name="Assembly_Make_Changes_Done" xml:space="preserve">
+    <value>All done!</value>
+  </data>
+  <data name="Assembly_Info_001" xml:space="preserve">
+    <value>info 1</value>
+  </data>
+  <data name="Assembly_Info_002" xml:space="preserve">
+    <value>info 2</value>
+  </data>
+  <data name="Assembly_Info_003" xml:space="preserve">
+    <value>info 3</value>
+  </data>
+  <data name="Assembly_Info_004" xml:space="preserve">
+    <value>info 4</value>
+  </data>
+  <data name="Assembly_Info_005" xml:space="preserve">
+    <value>info 5</value>
+  </data>
+  <data name="Assembly_Info_006" xml:space="preserve">
+    <value>info 6</value>
+  </data>
+  <data name="Assembly_Info_007" xml:space="preserve">
+    <value>info 7</value>
+  </data>
+  <data name="Assembly_Info_008" xml:space="preserve">
+    <value>info 8</value>
+  </data>
 </root>

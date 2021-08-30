@@ -211,7 +211,7 @@ function metano_town.Shop_Action(obj, activator)
 	while state > -1 do
 		if state == 0 then
 			local msg = STRINGS:Format(MapStrings['Shop_Intro'])
-			if repeated == true then
+			if repeated then
 				msg = STRINGS:Format(MapStrings['Shop_Intro_Return'])
 			end
 			local shop_choices = {STRINGS:Format(MapStrings['Shop_Option_Buy']), STRINGS:Format(MapStrings['Shop_Option_Sell']),

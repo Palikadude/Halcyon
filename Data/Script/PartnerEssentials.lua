@@ -1,9 +1,8 @@
-require 'common'
 PartnerEssentials = {}
 
 
 --This function is called to move partner to a specific marker on loading a new map
-function PartnerEssentials.InitializePartnerSpawn(dir)
+function PartnerEssentials.InitializePartnerSpawn(dir, customPosition)
 	--Each map has an initial point where the partner spawns. 
 	--Set the Partner Spawn variable to default to let the partner spawn there
 	--My nomenclature, to keep things consistent, is to just copy the player's spawn marker's name,
@@ -14,7 +13,15 @@ function PartnerEssentials.InitializePartnerSpawn(dir)
 	if GAME:GetPlayerPartyCount() < 2 then return end --do nothing if party is only size 1 
 	
 	local partner = CH('Teammate1')
-	if SV.partner.Spawn ~= 'Default' then
+	local player = CH('PLAYER')
+
+	
+	--used with respawnallies. Also in case a custom position is ever needed
+	if customPosition ~= nil then 
+		dir = dir or partner.Direction
+		GROUND:TeleportTo(partner, customPosition.X, customPosition.Y, dir)
+	--otherwise use the marker system
+	elseif SV.partner.Spawn ~= 'Default' then
 		local player = CH('PLAYER')
 		local marker = MRKR(SV.partner.Spawn)
 		dir = dir or marker.Direction or partner.Direction

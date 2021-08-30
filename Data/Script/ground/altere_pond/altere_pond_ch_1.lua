@@ -19,7 +19,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	
 	local partner = CH('Teammate1')
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
-	print(partner:GetDisplayName())
+	--print(partner:GetDisplayName())
 	--todo: hide player
 	GROUND:TeleportTo(CH('PLAYER'), 800, 0, Direction.Down)
 	GAME:CutsceneMode(true)
@@ -63,7 +63,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GROUND:CharSetEmote(partner, 3, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim_2")
 	UI:WaitShowDialogue("Oh![pause=0] I almost forgot!")
-	print(oldman:GetDisplayName())
+	--print(oldman:GetDisplayName())
 	GAME:WaitFrames(20)
 
 	--Move camera to show relicanth, then move back
@@ -241,7 +241,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GROUND:TeleportTo(hero, 968, 248, Direction.Right)
 	GAME:FadeIn(20)
 	
-	print(DUNGEON:DungeonDisplayName())
+	--print(DUNGEON:DungeonDisplayName())
 	--move into frame then look around 
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 792, 344, false, 1) end)
 	GROUND:MoveToPosition(hero, 824, 344, false, 1)

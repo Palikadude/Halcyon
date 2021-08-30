@@ -80,6 +80,7 @@ function relic_forest.Intro_Cutscene()
 	_DATA.Save.ActiveTeam:SetRank(0)
 	_DATA.Save.ActiveTeam.Money = 0
 	_DATA.Save.ActiveTeam.Bank = 0
+	_DATA.Save.NoSwitching = true--switching is not allowed
 	
 	--remove any team members that may exist by default for some reason
 	local party_count = _DATA.Save.ActiveTeam.Players.Count

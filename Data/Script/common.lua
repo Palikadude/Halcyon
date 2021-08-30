@@ -3,6 +3,7 @@
     A collection of frequently used functions and values!
 ]]--
 require 'common_gen'
+require 'PartnerEssentials'
 
 ----------------------------------------
 -- Debugging
@@ -376,7 +377,16 @@ function COMMON.RespawnAllies()
 
   local party = GAME:GetPlayerPartyTable()
   local playeridx = GAME:GetTeamLeaderIndex()
-
+ 
+ --custom Halcyon addition to handle partner respawning 
+  local partnerPosition =  RogueElements.Loc(0, 0)
+  local partnerDirection = Direction.None
+  local partner = CH('Teammate1')
+  if partner ~= nil then
+	partnerPosition = partner.Position
+	partnerDirection = partner.Direction
+  end
+	
   --Place player teammates
   for i = 1,3,1
   do
@@ -391,6 +401,12 @@ function COMMON.RespawnAllies()
       total = total + 1
     end
   end
+  
+  --custom Halcyon addition: Move partner to their original Position and direction
+  if partner ~= nil then 
+	PartnerEssentials.InitializePartnerSpawn(partnerDirection, partnerPosition)
+  end
+	
 end
 function COMMON.ShowTeamAssemblyMenu(init_fun)
   SOUND:PlaySE("Menu/Skip")

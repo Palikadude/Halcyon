@@ -602,3 +602,12 @@ function GeneralFunctions.Monologue(str)
 	UI:SetCenter(false)
 end 
 
+function GeneralFunctions.Hop(chara, anim, height, duration)
+	anim = anim or 'None'
+	height = height or 10
+	duration = duration or 10
+	
+	GROUND:CharHopAnim(chara, anim, height, duration)
+	GAME:WaitFrames(duration)
+
+end
