@@ -53,6 +53,23 @@ local characters = {
 			skin = 0	
 		},
 		
+		Snubbull = {
+			species = 209,
+			nickname = '???',
+			instance = 'Snubbull',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		Audino = {
+			species = 531,
+			nickname = 'Rin',
+			instance = 'Audino',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
 		
 		
 		

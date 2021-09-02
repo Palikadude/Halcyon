@@ -6,6 +6,8 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_dining_room.guild_dining_room_ch_1'
+
 
 -- Package name
 local guild_dining_room = {}
@@ -27,6 +29,7 @@ function guild_dining_room.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+	
 
 end
 
@@ -34,6 +37,9 @@ end
 --Engine callback function
 function guild_dining_room.Enter(map)
 
+	if SV.ChapterProgression.Chapter == 1 then
+		guild_dining_room_ch_1.SetupGround()
+	end 
   GAME:FadeIn(20)
 
 end
@@ -58,6 +64,10 @@ end
 function guild_dining_room.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+end
+
+function guild_dining_room.Snubbull_Action(chara, activator)
+ assert(pcall(load("guild_dining_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(chara, activator)")))
 end
 
 ---------------------------

@@ -20,8 +20,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	local partner = CH('Teammate1')
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	--print(partner:GetDisplayName())
-	--todo: hide player
-	GROUND:TeleportTo(CH('PLAYER'), 800, 0, Direction.Down)
+	GROUND:Hide(CH('PLAYER'))
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -174,7 +173,7 @@ end
 function altere_pond_ch_1.WipedInForest()
 	local partner = CH('PLAYER')	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
-	--todo: hide player
+	GROUND:Hide(CH('PLAYER'))
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
