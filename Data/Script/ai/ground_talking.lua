@@ -31,7 +31,7 @@ end
 function StateIdle:Begin(prevstate, entity)
   assert(self, "StateIdle:Begin(): Error, self is nil!")
   StateIdle.super.Begin(self, prevstate, entity)
-    print("idle")
+    --print("idle")
   self.idletimer = self.parentAI.IdleTime
 
   local ent = LUA_ENGINE:CastToGroundAIUser(entity)
@@ -103,7 +103,7 @@ function StateEmoteIdle:Begin(prevstate, entity)
   --Stop Idle anim
     self.timeEmoting = self.parentAI.EmoteIdleTime
   
-  print("EmoteIdle")
+  --print("EmoteIdle")
 end
 
 function StateEmoteIdle:Run(entity)
@@ -155,7 +155,7 @@ end
 function StateStopEmote:Begin(prevstate, entity)
   assert(self, "StateStopEmote:Begin(): Error, self is nil!")
   StateStopEmote.super.Begin(self, prevstate, entity)
-    print("stopemote")
+    --print("stopemote")
   self.taskSet = false
 
   self:SetTask(entity)
@@ -195,7 +195,7 @@ end
 function StateSetEmote:Begin(prevstate, entity)
   assert(self, "StateSetEmote:Begin(): Error, self is nil!")
   StateSetEmote.super.Begin(self, prevstate, entity)
-    print("SetEmote")
+    --print("SetEmote")
 	--this gets assigned based on the chosen personality
 	local EmoteSet = {}
 	self.taskSet = false
@@ -216,7 +216,7 @@ function StateSetEmote:Begin(prevstate, entity)
 	end
 	
 	self.parentAI.Emote = EmoteSet[rand]
-	print(self.parentAI.Emote)
+	--print(self.parentAI.Emote)
 	
 	--todo: make this cleaner
 	self.parentAI.Repetitions = 1
@@ -288,7 +288,7 @@ function ground_talking:initialize(turn, IdleTime, EmoteIdleTime, InitialDelay, 
   self.Memory = {} -- Where the AI will store any state shared variables it needs to keep track of at runtime (not serialized)
   self.NextState = "Idle" --Always set the initial state as the next state, so "Begin" is run!
   
-  print('start')
+  --print('start')
   
   --friends in the conversation
   if not friends then

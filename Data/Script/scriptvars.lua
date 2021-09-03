@@ -121,7 +121,8 @@ SV.Chapter1 =
 	TeamCompletedForest = false, --completed backtrack to town?
 	TeamJoinedGuild = false,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
 
-	MetSnubbull = false--talked to snubbull?
+	MetSnubbull = false,--talked to snubbull?
+	MetZigzagoon = false
 }
 
 

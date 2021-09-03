@@ -12,7 +12,6 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	GeneralFunctions.CenterCamera({hero, partner})
-	--swap the partner and hero's spawn points, as the partner is leading in this instance
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -95,7 +94,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	AI:SetCharacterAI(jigglypuff, "ai.ground_talking", true, 240, 60, 130, false, 'Default', {marill, spheal})
 	AI:SetCharacterAI(marill, "ai.ground_talking", true, 240, 60, 0, false, 'Default', {jigglypuff})
 	
-	AI:SetCharacterAI(cleffa, "ai.ground_talking", true, 240, 60, 210, false, 'Angry', {aggron})
+	AI:SetCharacterAI(cleffa, "ai.ground_talking", false, 240, 60, 210, false, 'Angry', {aggron})
 	--AI:SetCharacterAI(aggron, "ai.ground_talking", true, 240, 120, 110, false, 'Scared', {cleffa})
 	
 	AI:SetCharacterAI(mareep, "ai.ground_talking", true, 240, 60, 90, false, 'Default', {cranidos})
@@ -390,3 +389,161 @@ function guild_second_floor_ch_1.TeamStyleLeaving(chara, isLeader)
 	GROUND:Hide(chara.EntName)
 
 end
+
+
+function guild_second_floor_ch_1.SetupGround()
+	local spheal, jigglypuff, marill, mareep, cranidos, cleffa, aggron, zigzagoon = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Spheal', 'Left_Trio_1'},
+			{'Jigglypuff', 'Left_Trio_2'},
+			{'Marill', 'Left_Trio_3'},
+			{'Mareep', 'Right_Duo_1'},
+			{'Cranidos', 'Right_Duo_2'},
+			{'Cleffa', 'Generic_Spawn_Duo_1'},
+			{'Aggron', 'Generic_Spawn_Duo_2'},
+			{"Zigzagoon", 336, 336, Direction.Down}
+		})
+	
+	GROUND:CharSetAnim(marill, 'Idle', true)
+	GROUND:CharSetAnim(jigglypuff, 'Idle', true)
+	GROUND:CharSetAnim(spheal, 'Idle', true)
+	
+	GROUND:CharSetAnim(cleffa, 'Idle', true)
+	GROUND:CharSetAnim(aggron, 'Idle', true)
+
+	GROUND:CharSetAnim(mareep, 'Idle', true)
+	GROUND:CharSetAnim(cranidos, 'Idle', true)
+
+	GROUND:CharSetAnim(zigzagoon, 'Idle', true)
+	
+	AI:SetCharacterAI(jigglypuff, "ai.ground_talking", true, 240, 60, 130, false, 'Default', {marill, spheal})
+	AI:SetCharacterAI(marill, "ai.ground_talking", true, 240, 60, 0, false, 'Default', {jigglypuff})
+	AI:SetCharacterAI(spheal, "ai.ground_talking", true, 240, 60, 50, false, 'Default', {jigglypuff})
+
+	AI:SetCharacterAI(cleffa, "ai.ground_talking", false, 240, 60, 210, false, 'Angry', {aggron})
+	--AI:SetCharacterAI(aggron, "ai.ground_talking", true, 240, 120, 110, false, 'Scared', {cleffa})
+	
+	AI:SetCharacterAI(mareep, "ai.ground_talking", true, 240, 60, 90, false, 'Default', {cranidos})
+	
+	AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(320, 320), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+	
+	GAME:FadeIn(20)
+end
+
+
+
+
+function guild_second_floor_ch_1.Cleffa_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion('Angry')
+	UI:WaitShowDialogue("You dolt![pause=0] We fainted back there because you aren't doing your job to protect me!")
+	UI:WaitShowDialogue("How is Team ??? ever going to make a name for itself if you don't pick up the slack!")
+end
+
+function guild_second_floor_ch_1.Aggron_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion('Sad')
+	print(GAME:GetTeamName())
+	UI:WaitShowDialogue("Sorry boss...[pause=0] I'll try to do better next time...")
+end
+
+
+function guild_second_floor_ch_1.Marill_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion('Normal')
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because we our signature attack is the move Round!")
+	GROUND:EntTurn(chara, olddir)
+end
+
+function guild_second_floor_ch_1.Jigglypuff_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion('Normal')
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("It's too late to go on missions now,[pause=10] so we're figuring out which might be good to go on tomorrow.")
+	GROUND:EntTurn(chara, olddir)
+end
+
+function guild_second_floor_ch_1.Spheal_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion('Normal')
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("There aren't that many requests left...")
+	UI:WaitShowDialogue("I think the boards get updated in the morning,[pause=10] so most of the day's were probably already taken.")
+	GROUND:EntTurn(chara, olddir)
+end
+
+
+function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
+	local zigzagoon = chara
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	UI:SetSpeaker(zigzagoon)
+	UI:SetSpeakerEmotion("Normal")
+	
+
+	if not SV.Chapter1.MetZigzagoon then
+		GROUND:CharTurnToCharAnimated(hero, zigzagoon, 4)
+		GROUND:CharTurnToCharAnimated(zigzagoon, hero, 4)
+		GROUND:CharTurnToCharAnimated(partner, zigzagoon, 4)
+		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
+		UI:WaitShowDialogue("Um...[pause=0] I don't think I've seen your faces before.[pause=0] Are you guys a new adventuring team?")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeakerEmotion("Happy")
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("Yes![pause=0] We're Team " .. GAME:GetTeamName() .. "![pause=0] We just joined the guild today!")
+		
+		GROUND:CharTurnToCharAnimated(zigzagoon, partner)
+		GAME:WaitFrames(10)
+		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Oh,[pause=10] good.[pause=0] I was worried I had forgotten someone I'd met before.")
+		GAME:WaitFrames(40)
+		GeneralFunctions.EmoteAndPause(zigzagoon, "Exclaim", true)
+		UI:SetSpeakerEmotion("Surprised")
+		UI:WaitShowDialogue("Wait,[pause=10] did you just say you signed up with the guild?")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("That's right!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
+		UI:WaitShowDialogue("That means we're guildmates![pause=0] I'm " .. zigzagoon:GetDisplayName() .. "![pause=0] I was the newest member at the guild until you two joined.")
+		UI:SetSpeaker(zigzagoon)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("It'll be nice not being the biggest rookie anymore...[pause=0] " .. CH('Cranidos'):GetDisplayName() .. " might not pick on me as much now...")
+		GAME:WaitFrames(20)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I hope he doesn't start bullying you now...[pause=0] He's a real jerk sometimes...")
+		GAME:WaitFrames(20)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Enough about him though...[pause=0] What are your names?")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("My name's " .. partner:GetDisplayName() .. ",[pause=10] and my partner here is " .. hero:GetDisplayName() ..".")
+		
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(zigzagoon)
+		UI:WaitShowDialogue(partner:GetDisplayName() .." and " .. hero:GetDisplayName() .. ".[pause=0] OK,[pause=10] got it.[pause=0] I'll be real careful not to forget those names!")
+		SV.Chapter1.MetZigzagoon = true
+	end
+	GROUND:CharTurnToChar(zigzagoon, hero)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("I'm looking forward to training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
+	UI:WaitShowDialogue("I hope we can all learn how to be great adventurers!")
+	
+end	
+
+
+	
+
+return guild_second_floor_ch_1

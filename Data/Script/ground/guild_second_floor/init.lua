@@ -28,12 +28,14 @@ end
 
 ---guild_second_floor.Enter
 function guild_second_floor.Enter(map)
-	
+	DEBUG.EnableDbgCoro()
+	print('Enter_guild_second_floor')
+	UI:ResetSpeaker()
 	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest then 
+		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
 			guild_second_floor_ch_1.MeetNoctowl()
 		else
-			GAME:FadeIn(20)
+			guild_second_floor_ch_1.SetupGround()
 		end
 	else
 		GAME:FadeIn(20)
@@ -96,11 +98,35 @@ end
 
 
 
+function guild_second_floor.Cleffa_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cleffa_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Aggron_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Aggron_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Zigzagoon_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Marill_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Marill_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Spheal_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Spheal_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Jigglypuff_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Jigglypuff_Action(...,...)"), chara, activator))
+end
 
 
 

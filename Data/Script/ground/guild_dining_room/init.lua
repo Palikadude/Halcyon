@@ -67,7 +67,7 @@ function guild_dining_room.Teammate1_Action(chara, activator)
 end
 
 function guild_dining_room.Snubbull_Action(chara, activator)
- assert(pcall(load("guild_dining_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(chara, activator)")))
+ assert(pcall(load("guild_dining_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), chara, activator))
 end
 
 ---------------------------

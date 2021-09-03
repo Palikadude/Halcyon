@@ -162,7 +162,7 @@ function StateIdleWander:SetTask(entity)
   local state = self
   TASK:StartEntityTask(entity, 
     function()
-      GROUND:MoveToPosition(entity, wanderpos.X, wanderpos.Y, false, self.parentAI.WanderSpeed)
+      EightWayMove(entity, wanderpos.X, wanderpos.Y, false, self.parentAI.WanderSpeed)
       state.WanderComplete = true
     end)
 end
@@ -302,6 +302,39 @@ function ground_default:initialize(wanderzoneloc, wanderzonesize, wanderspeed, w
   self.States.IdleWander  = StateIdleWander:new(self)
   self.States.IdleTurn    = StateIdleTurn:new(self)
 end
+
+
+--Halcyon addition: I only want 8 way movement, since movements outside the 8 directions look awkward
+function EightWayMove(chara, x, y, run, speed)
+
+	local diffX = x - chara.Position.X
+	local diffY = y - chara.Position.Y
+	
+	
+	local xSign = 1
+	local ySign = 1
+	
+	if diffX < 0 then xSign = -1 end
+	if diffY < 0 then ySign = -1 end
+
+	diffX = math.abs(diffX)
+	diffY = math.abs(diffY)
+	
+	
+	local diff = 0 
+	
+	if diffX < diffY then
+		diff = diffX
+		GROUND:MoveToPosition(chara, chara.Position.X + (diff * xSign), chara.Position.Y + (diff * ySign), run, speed)
+	elseif math.abs(diffX) > math.abs(diffY) then
+		diff = diffY
+		GROUND:MoveToPosition(chara, chara.Position.X + (diff * xSign), chara.Position.Y + (diff * ySign), run, speed)
+	end
+	
+	GROUND:MoveToPosition(chara, x, y, run, speed)
+end
+
+
 
 --Return the class
 return ground_default
