@@ -611,3 +611,17 @@ function GeneralFunctions.Hop(chara, anim, height, duration)
 	GAME:WaitFrames(duration)
 
 end
+
+function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
+
+	anim = anim or 'Pain'
+	height = height or 10
+	duration = duration or 10
+	if sound == nil then sound = true end
+	
+	GROUND:CharSetEmote(chara, 8, 1)
+	SOUND:PlayBattleSE('EVT_Emote_Startled')
+	GROUND:CharHopAnim(chara, anim, height, duration)
+	GAME:WaitFrames(duration)
+	
+end

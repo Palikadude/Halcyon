@@ -96,7 +96,9 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	UI:WaitShowDialogue("It's alright if you don't have experience![pause=0] That's what apprenticing is for,[pause=10] right?")
 	GAME:WaitFrames(20)
 	
+	--[[
 	--Huh? trying times? what do you mean? something's wrong with the world or something?
+	--this part rmeoved because I decided that the calamity (the blight) should only start to manifest once the hero comes to the world
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Frankly,[pause=10] it amazes me that so many Pokémon still wish to become adventurers ...")
 	UI:WaitShowDialogue("...given the life force issues in recent times...")
@@ -105,10 +107,11 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GeneralFunctions.EmoteAndPause(hero, "Question", true)
 	GeneralFunctions.HeroDialogue(hero, "(Huh?[pause=0] Issues with life forces?[pause=0] What is he talking about?)", "Worried")
 	GAME:WaitFrames(20)
+	]]--
 	
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("But I'm getting offtopic.[pause=0] What's important right now is your apprenticeship!")
+--	UI:WaitShowDialogue("But I'm getting offtopic.[pause=0] What's important right now is your apprenticeship!")
 	UI:WaitShowDialogue("Before you can sign up with us though,[pause=10] I do need to ask the two of you an important question.")
 	UI:WaitShowDialogue("Don't be nervous.[pause=0] This isn't some sort of test of knowledge or anything.")
 	UI:WaitShowDialogue("...So it's crucial that you answer honestly.[pause=0] Your answer is only wrong if you lie.")

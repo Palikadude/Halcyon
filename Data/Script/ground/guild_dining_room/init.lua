@@ -39,9 +39,9 @@ function guild_dining_room.Enter(map)
 
 	if SV.ChapterProgression.Chapter == 1 then
 		guild_dining_room_ch_1.SetupGround()
-	end 
-  GAME:FadeIn(20)
-
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---guild_dining_room.Exit
@@ -67,6 +67,7 @@ function guild_dining_room.Teammate1_Action(chara, activator)
 end
 
 function guild_dining_room.Snubbull_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("guild_dining_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), chara, activator))
 end
 

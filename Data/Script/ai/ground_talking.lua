@@ -228,20 +228,7 @@ function StateSetEmote:Begin(prevstate, entity)
 	
 
 	local ent = LUA_ENGINE:CastToGroundAIUser(entity)
-	--which friend do we turn to?
-	if self.parentAI.Turn then 
-		self.TurnToChar = self.parentAI.Friends[math.random(1, self.parentAI.NumOfFriends)]
-	end
-	
-	--this would cause emoting desyncs
-	
-	--wait less time if it's a single emote chosen rather than a looping one
-	--if self.parentAI.RandomTalk then 
-	--	if self.parentAI.Repetitions == 0 then self.timeEmoting = self.timeEmoting / 2 end 
-	--end
-	
-  self:SetTask(entity)
-  self.taskSet = true
+
 end
 
 
@@ -260,13 +247,32 @@ function StateSetEmote:Run(entity)
   StateSetEmote.super.Run(self, entity)
   
   local ent = LUA_ENGINE:CastToGroundChar(entity)
-  -- If a task is set, move to EmoteIdle
-  if self.taskSet then self.parentAI:SetState("EmoteIdle") end
   
+  	--which friend do we turn to?
+	if self.parentAI.Turn then 
+		self.TurnToChar = self.parentAI.Friends[math.random(1, self.parentAI.NumOfFriends)]
+	end
+
+	--this would cause emoting desyncs
+
+	--wait less time if it's a single emote chosen rather than a looping one
+	--if self.parentAI.RandomTalk then 
+	--	if self.parentAI.Repetitions == 0 then self.timeEmoting = self.timeEmoting / 2 end 
+	--end
+	if (self.parentAI.Turn and not self.TurnToChar.IsInteracting) or not self.parentAI.Turn then 
+	  self:SetTask(entity)
+	  self.taskSet = true
+	  -- When a task is set, move to EmoteIdle
+	  self.parentAI:SetState("EmoteIdle") 
+	end 
+	
+	
   --Suspend while interacting with the entity
   if ent.IsInteracting then 
-    self.parentAI:SetState("StopEmote")
+	self.parentAI:SetState("StopEmote")
   end
+  --wait a bit before trying to set another emote
+  GAME:WaitFrames(10)
 
 end
 

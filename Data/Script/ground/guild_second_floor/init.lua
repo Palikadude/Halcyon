@@ -96,6 +96,30 @@ function guild_second_floor.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
+function guild_second_floor.Mission_Board_Action(chara, activator)
+	if SV.ChapterProgression.Chapter < 3 then 
+		GROUND:CharTurnToCharAnimated(CH('Teammate1'), CH('PLAYER'),  4)
+		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
+		UI:SetSpeaker(CH('Teammate1'))
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we're supposed to be taking jobs from this board quite yet...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Let's come back once we're allowed to take jobs from the board.")
+	end
+end
+
+function guild_second_floor.Outlaw_Board_Action(chara, activator)
+	if SV.ChapterProgression.Chapter < 3 then 
+		GROUND:CharTurnToCharAnimated(CH('Teammate1'), CH('PLAYER'),  4)
+		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
+		UI:SetSpeaker(CH('Teammate1'))
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we're supposed to be taking jobs from this board quite yet...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Let's come back once we're allowed to take jobs from the board.")
+	end
+end
+
 
 
 function guild_second_floor.Cleffa_Action(chara, activator)
@@ -128,8 +152,15 @@ function guild_second_floor.Jigglypuff_Action(chara, activator)
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Jigglypuff_Action(...,...)"), chara, activator))
 end
 
+function guild_second_floor.Cranidos_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cranidos_Action(...,...)"), chara, activator))
+end
 
-
+function guild_second_floor.Mareep_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Mareep_Action(...,...)"), chara, activator))
+end
 
 
 

@@ -70,6 +70,32 @@ local characters = {
 			skin = 0
 		},
 		
+		Breloom = {
+			species = 286,
+			nickname = 'Kino',
+			instance = 'Breloom',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Girafarig = {
+			species = 203,
+			nickname = 'Reinier',
+			instance = 'Girafarig',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Tail = {--girafarig's tail
+			species = 203,
+			nickname = 'Crum',
+			instance = 'Tail',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
 		
 		
 		
@@ -162,6 +188,7 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].skin,
 															characters[name].gender)
 			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(0, 0), Direction.Down, characters[name].nickname, characters[name].instance)
+			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
 			GROUND:Hide(chara.EntName)
 			
@@ -172,6 +199,7 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].skin,
 															characters[name].gender)
 			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(marker.Position.X, marker.Position.Y), marker.Direction, characters[name].nickname, characters[name].instance)
+			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
 		else
 			local x = list[i][2]
@@ -182,8 +210,12 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].skin,
 															characters[name].gender)
 			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(x, y), direction, characters[name].nickname, characters[name].instance)
+			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
+
 		end
+		chara:OnMapInit()
+		TASK:WaitTask(chara:RunEvent(RogueEssence.Script.LuaEngine.EEntLuaEventTypes.EntSpawned, chara))
 		charTable[i] = chara
 	end
 	if retTable then 
@@ -198,10 +230,8 @@ function CharacterEssentials.MakeCharacterAtMarker(charName, markerName)
 	local marker = MRKR(markerName)
 	local p = CharacterEssentials.GetCharacter(charName, marker.Position.X, marker.Position.Y, marker.Direction)
 	GAME:GetCurrentGround():AddTempChar(p)
-
 	return chara
 end
-
 --get a character whose data is stored in this script
 --can give either species name (if they're the only one) or actual name
 function CharacterEssentials.GetCharacter(name, x, y, direction)
@@ -225,11 +255,9 @@ function CharacterEssentials.GetCharacter(name, x, y, direction)
 	gender = characters[name].gender
 	form = characters[name].form
 	skin = characters[name].skin
-
 	local monster = RogueEssence.Dungeon.MonsterID(species, form, skin, gender)
 	local chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(x, y), direction, nickname, instance)
 	return chara
-
 --TASK:BranchCoroutine(function() CharacterEssentials.MakeCharacter('Spheal', 'Generic_Spawn_1') end)
 end
 ]]--

@@ -122,7 +122,8 @@ SV.Chapter1 =
 	TeamJoinedGuild = false,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
 
 	MetSnubbull = false,--talked to snubbull?
-	MetZigzagoon = false
+	MetZigzagoon = false,
+	MetCranidosMareep = false
 }
 
 
