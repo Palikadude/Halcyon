@@ -59,6 +59,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		
 		UI:SetSpeaker(partner)
 		GROUND:CharSetEmote(partner, 5, 1)
+		SOUND:PlayBattleSE('EVT_Emote_Sweating')
 		UI:SetSpeakerEmotion("Surprised")
 		UI:WaitShowDialogue("No no![pause=0] We didn't even know there was food in here!")
 		GAME:WaitFrames(20)
@@ -156,26 +157,26 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Sounds like you're a great chef.[pause=0] Can't wait to have some of your food tomorrow!")
+		UI:WaitShowDialogue("Sounds like you're a great chef![pause=0] Can't wait to have some of your food tomorrow!")
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeaker(snubbull)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Tomorrow's meal won't be my best work because of the ingredients...")
 		UI:WaitShowDialogue("But I'm sure with my skill you'll enjoy it nonetheless. " .. STRINGS:Format("\\u266A"))
-		UI:WaitShowDialogue("One day though you'll get to enjoy a truly exquisite meal using the finest ingredients.[pause=0] I'm looking forward to then. " .. STRINGS:Format("\\u266A"))
+		UI:WaitShowDialogue("One day though you'll get to enjoy a truly exquisite meal using the finest ingredients.")
+		UI:WaitShowDialogue("I'm looking forward to then. " .. STRINGS:Format("\\u266A"))
 		SV.Chapter1.MetSnubbull = true
 	else
-		GROUND:CharAnimateTurnTo(snubbull, hero)
+		GROUND:CharTurnToChar(snubbull, hero)
+		UI:SetSpeaker(snubbull)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Tomorrow's meal won't be my best work because of the ingredients...")
+		UI:WaitShowDialogue("But I'm sure with my skill you'll enjoy it nonetheless. " .. STRINGS:Format("\\u266A"))
+		UI:WaitShowDialogue("One day though you'll get to enjoy a truly exquisite meal using the finest ingredients.")
+		UI:WaitShowDialogue("I'm looking forward to then. " .. STRINGS:Format("\\u266A"))
 	end
 	
-	UI:SetSpeaker(snubbull)
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Tomorrow's meal won't be my best work because of the ingredients...")
-	UI:WaitShowDialogue("But I'm sure with my skill you'll enjoy it nonetheless. " .. STRINGS:Format("\\u266A"))
-	UI:WaitShowDialogue("One day though you'll get to enjoy a truly exquisite meal using the finest ingredients.[pause=0] I'm looking forward to then. " .. STRINGS:Format("\\u266A"))
-
-
 
 end
 

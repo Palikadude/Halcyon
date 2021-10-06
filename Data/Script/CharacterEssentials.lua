@@ -110,7 +110,7 @@ local characters = {
 			},
 		Glameow = {
 			species = 431,
-			nickname = '???',
+			nickname = 'Priscilla',
 			instance = 'Glameow',
 			gender = Gender.Female,
 			form = 0,
@@ -118,7 +118,7 @@ local characters = {
 		},
 		Cacnea = {
 			species = 331,
-			nickname = '???',
+			nickname = 'Lummsy',
 			instance = 'Cacnea',
 			gender = Gender.Male,
 			form = 0,
@@ -224,6 +224,16 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 		return table.unpack(charTable)
 	end
 end
+
+
+
+
+--get a character's name without having to create them
+function CharacterEssentials.GetCharacterName(name)
+	return "[color=#00FFFF]" .. characters[name].nickname .. "[color]"
+end 
+
+
 
 --[[
 function CharacterEssentials.MakeCharacterAtMarker(charName, markerName)

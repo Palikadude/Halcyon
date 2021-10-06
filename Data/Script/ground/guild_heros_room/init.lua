@@ -39,7 +39,7 @@ function guild_heros_room.Enter(map)
 		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
 			guild_heros_room_ch_1.RoomIntro()
 		else
-			GAME:FadeIn(20)
+			guild_heros_room_ch_1.SetupGround()
 		end		
 	else	
 		GAME:FadeIn(20)
@@ -59,6 +59,61 @@ function guild_heros_room.Update(map)
 
 
 end
+
+
+
+
+---------------------------------
+-- Event Trigger
+-- This is a temporary object created by a script used to trigger events that only happen
+-- once, typically a cutscene of sorts for a particular chapter.
+---------------------------------
+function guild_heros_room.Event_Trigger_1_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_heros_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_1_Touch(...,...)"), obj, activator))
+end
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------
+--Special Functions
+------------------------------------
+function guild_heros_room.Bedtime(generic)
+--if generic is true, do a generic nighttime cutscene and relevant processing. 
+--if generic is false, just make the room look like it's night and put the duo in bed.
+	if generic == nil then generic = true end
+	
+	if not generic then 
+		local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
+														RogueElements.Rect(176, 56, 64, 64),
+														RogueElements.Loc(0, 0), 
+														false, 
+														"Window")
+		groundObj:ReloadEvents()
+		GAME:GetCurrentGround():AddObject(groundObj)
+		GROUND:AddMapStatus(50)
+		
+		local hero_bed = MRKR('Hero_Bed')
+		local partner_bed = MRKR('Partner_Bed')
+		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
+		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
+	 
+	end
+	--todo: generic 
+
+end
+
+
+
+
 
 -------------------------------
 -- Entities Callbacks

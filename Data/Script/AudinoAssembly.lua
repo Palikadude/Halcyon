@@ -51,7 +51,7 @@ function AudinoAssembly.Assembly(owner)
 					message_count = message_count + 1
 				end
 				
-				if #added > 0 then print('shart') end
+				--if #added > 0 then print('shart') end
 				
 				--if message count is 0, then the player swapped members around without
 				--actually doing something noteworthy (the above conditions). In that case player
@@ -131,19 +131,19 @@ function AudinoAssembly.MemberDifference(a, b)
 	local list = {} 
 	a = a or {}
 	b = b or {}
-	print(#a)
-	print(#b)
+	--print(#a)
+	--print(#b)
 	local found = false
 	for i = 1, #a, 1 do
 		for j = 1, #b, 1 do
-			print(a[i].Name)
-			print(b[j]:GetDisplayName(true))
+			--print(a[i].Name)
+			--print(b[j]:GetDisplayName(true))
 			if a[i].Name == b[j].Name and a[i].BaseForm.Species == b[j].BaseForm.Species then found = true break end
 		end
 		if found then found = false else list[#list + 1] = a[i] end 
 	end
-	print(#list)
-	for i,v in ipairs(list) do print(v) end
+	--print(#list)
+	--for i,v in ipairs(list) do print(v) end
 	return list
 end
 

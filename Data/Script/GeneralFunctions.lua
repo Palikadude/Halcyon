@@ -178,11 +178,11 @@ function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections
 		for i = 1, rotations, 1 do
 			if turnLeft then
 				GROUND:CharAnimateTurn(chara, leftDir, turnframes, turnLeft)
-				GAME:WaitFrames(12)--pause
+				GAME:WaitFrames(10)--pause
 				turnLeft = false
 			else
 				GROUND:CharAnimateTurn(chara, rightDir, turnframes, turnLeft)
-				GAME:WaitFrames(12)--pause
+				GAME:WaitFrames(10)--pause
 				turnLeft = true
 			end
 		end
@@ -267,6 +267,7 @@ end
 
 
 --wait frames, then move to target location. Intended use is to desync characters that are walking together to make it look more natural
+--This function got phased out when I realized I could fit multiple commands into one coroutine
 function GeneralFunctions.WaitThenMove(chara, x, y, run, speed, waitFrames)
 	GAME:WaitFrames(waitFrames)
 	GROUND:MoveToPosition(chara, x, y, run, speed)
@@ -385,6 +386,16 @@ function GeneralFunctions.GetPronoun(chara, form, uppercase)
 	end
 end
 
+
+function GeneralFunctions.NameStutter(chara)
+	--used to get a stutter on a character's name with proper coloring
+	local name = chara.Nickname
+	local prefix = "[color=#00FFFF]" .. string.sub(name, 1, 1) .. "[color]-"
+	
+	return prefix .. chara:GetDisplayName()
+
+end
+
 --centers the camera on the given characters. Moves at a rate of speed.
 --give no speed for instant speed 
 function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
@@ -410,7 +421,7 @@ function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
 		frameDur = GeneralFunctions.CalculateCameraFrames(startX, startY, avgX, avgY, speed)
 	end
 	
-	print('CenterCamera: X = ' .. avgX .. '    Y = ' .. avgY)
+	--print('CenterCamera: X = ' .. avgX .. '    Y = ' .. avgY)
 	GAME:MoveCamera(avgX, avgY, frameDur, false)
 	
 end
@@ -557,8 +568,8 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	for i = 1, assemblyCount, 1 do
 		p = GAME:GetPlayerAssemblyMember(i - found)
 		tbl = LTBL(p)
-		print(tbl.Importance)
-		print(p.Nickname)
+		--print(tbl.Importance)
+		--print(p.Nickname)
 		GAME:RemovePlayerAssembly(i-found)
 		if tbl.Importance == 'Hero' then --hero goes in slot 1
 			_DATA.Save.ActiveTeam.Players:Insert(0, p)

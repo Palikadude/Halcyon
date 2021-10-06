@@ -426,10 +426,39 @@ function guild_second_floor_ch_1.SetupGround()
 	AI:SetCharacterAI(mareep, "ai.ground_talking", true, 240, 60, 90, false, 'Default', {cranidos})
 	
 	AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(320, 320), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+
+	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 0), 
+													RogueElements.Rect(184, 192, 144, 16),
+													RogueElements.Loc(0, 8), 
+													true, 
+													"Event_Trigger_1")
+	groundObj:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(groundObj)
+	
 	
 	GAME:FadeIn(20)
 end
 
+
+
+
+function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] where are you going?")
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GAME:WaitFrames(10)
+	UI:WaitShowDialogue("I know you might be curious about town,[pause=10] but since we just joined I don't think we should leave the tree tonight.")
+	if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
+		UI:WaitShowDialogue("Plus it's getting late...[pause=0] We should probably head to bed now actually.")
+		UI:WaitShowDialogue("But we can look around a bit more if you want!")
+	else 
+		UI:WaitShowDialogue("Let's go look around the guild some more.[pause=0] I think there's more guild mates for us to meet!")
+	end
+end
 
 
 

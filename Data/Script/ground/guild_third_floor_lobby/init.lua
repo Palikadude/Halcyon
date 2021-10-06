@@ -72,7 +72,15 @@ function guild_third_floor_lobby.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
-
+function guild_third_floor_lobby.Test_Action(chara, activator)
+	SV.Chapter1.MetSnubbull = true
+	SV.Chapter1.MetZigzagoon = true
+	SV.Chapter1.MetCranidosMareep = true
+	SV.Chapter1.MetBreloomGirafarig = true
+	SV.Chapter1.MetAudino = true
+	UI:SetSpeaker(chara)
+	UI:WaitShowDialogue("All guildmates now considered met.")
+end
 
 function guild_third_floor_lobby.Assembly_Action(obj, activator)
 	AudinoAssembly.Assembly(CH('Assembly'))

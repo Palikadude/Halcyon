@@ -55,9 +55,6 @@ function guild_second_floor.Update(map)
 end
 
 
-
-
-
 --[[
 Markers used for generic NPC spawning (i.e. where flavor NPCs should be going)
 
@@ -82,6 +79,15 @@ Generic_Spawn_1, 2, 3, 4, 5, 6, 7, 8
 
 
 
+---------------------------------
+-- Event Trigger
+-- This is a temporary object created by a script used to trigger events that only happen
+-- once, typically a cutscene of sorts for a particular chapter.
+---------------------------------
+function guild_second_floor.Event_Trigger_1_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_1_Touch(...,...)"), obj, activator))
+end
 
 
 

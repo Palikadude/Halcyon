@@ -1,31 +1,41 @@
 require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
+require 'CharacterEssentials'
 
 metano_town_ch_1 = {}
 
 
 --partner passes by guild with a sad expression
+--Team Style sees him and talk about how they're so great and gonna join the guild
+--partner walks away wistfully
 function metano_town_ch_1.PartnerLongingCutscene()
 	--Cutscene where partner looks longingly at the guild, then walks away
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
-	GAME:MoveCamera(648, 1208, 1, false)
+	GAME:MoveCamera(648, 1216, 1, false)
 	GROUND:TeleportTo(partner, 840, 1232, Direction.Left)
-	GROUND:Unhide("Growlithe")
+	--GROUND:Unhide("Growlithe")
+	GROUND:Hide("Green_Merchant")
+	GROUND:Hide("Red_Merchant")
+	
+	local luxio, glameow, cacnea = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Luxio', 440, 1208, Direction.Right},
+			{'Glameow', 416, 1192, Direction.Right},
+			{'Cacnea', 416, 1224, Direction.Right}
+		})
+	
 	GAME:FadeIn(20)
 
-	--todo: hide everyone that isn't being used for the cutscene, or put the function
-	--to do so in the init for the map itself
 	
-	--todo: put strings into "map strings" but for chapters instead or whatever audino comes up with 
 
 	--walk from offscreen to under the bridge
 	GROUND:MoveToPosition(partner, 704, 1232, false, 1)
-	GROUND:MoveToPosition(partner, 672, 1200, false, 1)
-	GROUND:MoveToPosition(partner, 640, 1200, false, 1)
+	GROUND:MoveToPosition(partner, 680, 1208, false, 1)
+	GROUND:MoveToPosition(partner, 640, 1208, false, 1)
 	GAME:WaitFrames(20)
 	--they turn towards the guild and pause
 	GROUND:CharAnimateTurn(partner, Direction.Up, 4, false)
@@ -34,7 +44,92 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("...")
 	GAME:WaitFrames(60)
-	GROUND:CharAnimateTurnTo(parntner, Direction.Left, 4)
+		
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Hey,[pause=10] you there!")
+	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
+	
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4) end)
+	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.CenterCamera({partner, luxio}, 648, 1208, 2) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(60)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(luxio, Direction.Right, 160, false, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:MoveInDirection(glameow, Direction.Right, 160, false, 1) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
+												  GROUND:MoveInDirection(cacnea, Direction.Right, 160, false, 1) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:MoveCamera(628, 1216, 80, false) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.LookAround(partner, 2, 4, false, true, true, Direction.Left)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Who,[pause=10] me?")
+	GAME:WaitFrames(20)
+
+
+--tone should be condescending and smug, but not necessarily mean
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Yeah.[pause=0] Do you know where the adventurer's guild is?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("The adventurer's guild?")
+	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+	GAME:WaitFrames(12)
+	
+	UI:WaitShowDialogue("It's just across this bridge here.")
+	GROUND:CharTurnToCharAnimated(partner, luxio, 4)
+	GAME:WaitFrames(12)
+	
+	UI:SetSpeaker(luxio)
+	UI:WaitShowDialogue("Oh,[pause=10] we're a lot closer than I thought we were.[pause=0] Thanks.")
+	GROUND:CharAnimateTurnTo(luxio, Direction.Left, 4)
+	UI:WaitShowDialogue("Let's get a move on team.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(glameow)
+	UI:WaitShowDialogue("Of course,[pause=10] darling.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(cacnea)
+	UI:WaitShowDialogue("Uhhh,[pause=10] OK boss.")
+		--they walk a bit closer
+		
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("H-hey![pause=0] Hold up a second!")
+	GAME:WaitFrames(20)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(luxio, partner, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:CharTurnToCharAnimated(glameow, partner, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
+											GROUND:CharTurnToCharAnimated(cacnea, partner, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Hmm?[pause=0] What's up?[pause=0] Something you wanna say?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue(
+	
+	
+	
+	
+	
+	
+	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 444, 1200, false, 1) end)

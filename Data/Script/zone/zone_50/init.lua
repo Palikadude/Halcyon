@@ -38,9 +38,9 @@ function zone_50.ExitSegment(zone, result, rescue, segmentID, mapID)
 		]]--
 	if SV.ChapterProgression.Chapter == 1 then 
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
-		
+			--todo: make zone numbering consistent and perhaps better ordered
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner died solo before clearing
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 1, 0, false, false)
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo wiped before making it back to town
 				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)
@@ -55,7 +55,7 @@ function zone_50.ExitSegment(zone, result, rescue, segmentID, mapID)
 				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)				
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo made it back to town
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 1, 0, false, false)
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
 				SV.Chapter1.TeamCompletedForest = true
 				
 			else--failsafe 

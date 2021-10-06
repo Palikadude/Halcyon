@@ -121,9 +121,12 @@ SV.Chapter1 =
 	TeamCompletedForest = false, --completed backtrack to town?
 	TeamJoinedGuild = false,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
 
+	--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
 	MetSnubbull = false,--talked to snubbull?
 	MetZigzagoon = false,
-	MetCranidosMareep = false
+	MetCranidosMareep = false,
+	MetBreloomGirafarig = false,
+	MetAudino = false
 }
 
 

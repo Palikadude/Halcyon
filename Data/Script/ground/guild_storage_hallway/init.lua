@@ -6,6 +6,8 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_storage_hallway.guild_storage_hallway_ch_1'
+
 
 -- Package name
 local guild_storage_hallway = {}
@@ -33,9 +35,15 @@ end
 ---guild_storage_hallway.Enter
 --Engine callback function
 function guild_storage_hallway.Enter(map)
-
-  GAME:FadeIn(20)
-
+	if SV.ChapterProgression.Chapter == 1 then
+		if not SV.Chapter1.MetAudino then --bump into audino for first time if you haven't yet
+			guild_storage_hallway_ch_1.MeetAudino()
+		else 
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 ---guild_storage_hallway.Exit
@@ -51,6 +59,23 @@ function guild_storage_hallway.Update(map)
 
 
 end
+
+
+
+---------------------------------
+-- Event Trigger
+-- This is a temporary object created by a script used to trigger events that only happen
+-- once, typically a cutscene of sorts for a particular chapter.
+---------------------------------
+function guild_storage_hallway.Event_Trigger_1_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_storage_hallway_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_1_Touch(...,...)"), obj, activator))
+end
+
+
+
+
+
 
 -------------------------------
 -- Entities Callbacks
