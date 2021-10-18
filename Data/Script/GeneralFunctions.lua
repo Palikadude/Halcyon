@@ -344,8 +344,8 @@ function GeneralFunctions.DoAnimation(chara, anim, sound)
 		pause = 80
 	end
 
-	GROUND:CharSetAnim(chara, anim, false)
-	GAME:WaitFrames(pause)
+	GROUND:CharWaitAnim(chara, anim)
+	--GAME:WaitFrames(pause)
 	GROUND:CharSetAnim(chara, prevAnim, true)
 end
 
@@ -543,6 +543,7 @@ end
 --set party to Hero as 1st, partner as 2nd member. 
 --Just those two if others is false, allow other party members to remain in 3/4 slot if false
 --if spawn is true run spawners for teammates 1 (through 3 if applicable)
+--this is somewhat shoddily written, i feel like it will break with the right conditions...
 function GeneralFunctions.DefaultParty(spawn, others)
 	--Clear party 
 	local partyCount = GAME:GetPlayerPartyCount()
@@ -565,6 +566,8 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	--set party (player then partner)
 	local assemblyCount = GAME:GetPlayerAssemblyCount()
 	local found = 1 --start at 1 due to indexing
+	local bufferTable = {'dummy', 'dummy', 'dummy', 'dummy'}
+	
 	for i = 1, assemblyCount, 1 do
 		p = GAME:GetPlayerAssemblyMember(i - found)
 		tbl = LTBL(p)
@@ -572,18 +575,17 @@ function GeneralFunctions.DefaultParty(spawn, others)
 		--print(p.Nickname)
 		GAME:RemovePlayerAssembly(i-found)
 		if tbl.Importance == 'Hero' then --hero goes in slot 1
-			_DATA.Save.ActiveTeam.Players:Insert(0, p)
+			bufferTable[1] = p
 			found = found + 1
-			GAME:SetTeamLeaderIndex(0)
 		elseif tbl.Importance == 'Partner' then --partner in slot 2
-			_DATA.Save.ActiveTeam.Players:Insert(1, p)
+			bufferTable[2] = p
 			found = found + 1
 			--if spawn then --call teammate 1 spawner
 			--	GROUND:SpawnerSetSpawn('TEAMMATE_1', p)
 			--	GROUND:SpawnerDoSpawn("TEAMMATE_1", p)
 			--end
 		elseif tbl.AddBack ~= nil then--misc goons go in remaining slots
-			_DATA.Save.ActiveTeam.Players:Insert(tbl.AddBack - 1, p)--indexing needs that -1
+			bufferTable[tbl.AddBack] = p
 			found = found + 1
 			--if spawn then --WARNING: Most places won't have teammate 2 and 3 spawners. Cafe and zone grounds are probably it.
 			--	GROUND:SpawnerSetSpawn('TEAMMATE_' .. tostring(tbl.AddBack - 1), p)
@@ -592,6 +594,13 @@ function GeneralFunctions.DefaultParty(spawn, others)
 			tbl.AddBack = nil--clear addback flag
 		end
 	end 
+	
+	--add characters back into team in order, set leader to 1st member
+	for i = 1, found - 1, 1 do
+		GAME:AddPlayerTeam(bufferTable[i])
+	end
+	GAME:SetTeamLeaderIndex(0)
+
 	
 	if spawn then 	
 		COMMON.RespawnAllies()
@@ -613,19 +622,52 @@ function GeneralFunctions.Monologue(str)
 	UI:SetCenter(false)
 end 
 
-function GeneralFunctions.Hop(chara, anim, height, duration)
+function GeneralFunctions.Hop(chara, anim, height, duration, pause, sound)
 	anim = anim or 'None'
 	height = height or 10
 	duration = duration or 10
+	if pause == nil then pause = true end
+	if sound == nil then sound = false end
+
 	
 	GROUND:CharHopAnim(chara, anim, height, duration)
-	GAME:WaitFrames(duration)
+	
+	if sound then
+		SOUND:PlayBattleSE("EVT_Emote_Startled")
+	end
+	
+	if pause then 
+		GAME:WaitFrames(duration)
+	end
 
 end
 
+--do two hops instead of just one
+function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
+	anim = anim or 'None'
+	height = height or 10
+	duration = duration or 10
+	if pause == nil then pause = true end
+	
+	if sound then
+		SOUND:PlayBattleSE("EVT_Emote_Startled_2")
+	end
+	
+	GROUND:CharHopAnim(chara, anim, height, duration)
+	GAME:WaitFrames(duration)--need to pause no matter what here because only one hop will show otherwise
+	GROUND:CharHopAnim(chara, anim, height, duration)
+
+	if pause then --only pause on 2nd hop if pause needed
+		GAME:WaitFrames(duration)
+	end
+
+end
+
+
+
 function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
 
-	anim = anim or 'Pain'
+	anim = anim or 'Hurt'
 	height = height or 10
 	duration = duration or 10
 	if sound == nil then sound = true end
@@ -634,5 +676,6 @@ function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
 	SOUND:PlayBattleSE('EVT_Emote_Startled')
 	GROUND:CharHopAnim(chara, anim, height, duration)
 	GAME:WaitFrames(duration)
+	GROUND:CharSetEmote(chara, -1, 0)
 	
 end

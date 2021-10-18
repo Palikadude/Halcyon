@@ -55,9 +55,8 @@ function zone_50.ExitSegment(zone, result, rescue, segmentID, mapID)
 				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)				
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo made it back to town
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
 				SV.Chapter1.TeamCompletedForest = true
-				
+				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
 			else--failsafe 
 				print("error in resulting relic forest completion")
 			end

@@ -21,13 +21,13 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	GROUND:Hide("Green_Merchant")
 	GROUND:Hide("Red_Merchant")
 	
-	local luxio, glameow, cacnea = 
+	--[[local luxio, glameow, cacnea = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Luxio', 440, 1208, Direction.Right},
 			{'Glameow', 416, 1192, Direction.Right},
 			{'Cacnea', 416, 1224, Direction.Right}
 		})
-	
+	]]--
 	GAME:FadeIn(20)
 
 	
@@ -44,7 +44,8 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("...")
 	GAME:WaitFrames(60)
-		
+
+--[[		
 	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Hey,[pause=10] you there!")
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
@@ -124,7 +125,7 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue(
 	
-	
+	]]--
 	
 	
 	
@@ -132,7 +133,7 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 
 	
-	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 444, 1200, false, 1) end)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 444, 1208, false, 1) end)
 	GAME:WaitFrames(166)
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1})	
@@ -167,7 +168,6 @@ end
 
 --growlithe turning as you walk towards him, with him getting excited
 function metano_town_ch_1.GrowlitheSequence()
-	--todo: add a little hop either in here or when growlithe first speaks
 	GAME:WaitFrames(20)
 	local chara = CH('Growlithe')
 	GROUND:CharSetEmote(chara, 2, 1)
@@ -181,8 +181,7 @@ end
 function metano_town_ch_1.GrowlitheRunInside()
 	local chara = CH('Growlithe')
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
-	--GROUND:CharSetAnim(chara, 'Rumble', false)--this wont do anything until that new function comes
-	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Right, 696, 924, 1, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Right, 694, 924, 1, 2)
 	GROUND:MoveToPosition(chara, 712, 924, true, 4)
 	GROUND:MoveToPosition(chara, 712, 876, true, 4)
 	GROUND:Hide('Growlithe')	
@@ -208,7 +207,6 @@ end
 --hero and partner enter the guild
 function metano_town_ch_1.EnterGuild()
 	--center of guild: 744, 796
-	--todo: hide all ground characters besides those needed
 	
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
@@ -216,6 +214,8 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:AddMapStatus(51)--dusk
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
+	GROUND:Hide("Green_Merchant")--hide merchants 
+	GROUND:Hide("Red_Merchant")
 	GROUND:Hide("Guild_Entrance")--disable map transition object
 	UI:ResetSpeaker()
 	GAME:MoveCamera(640, 1208, 1, false)
@@ -238,15 +238,15 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetAnim(partner, 'Idle', true)
-	UI:WaitShowDialogue("C'mon,[pause=10] you gotta keep up, " .. hero:GetDisplayName() .. "!")
+	UI:WaitShowDialogue("Heheh,[pause=10] sorry " .. hero:GetDisplayName() .. ".[pause=0] I guess I got a little too excited.")
 	GROUND:CharSetAnim(partner, 'None', true)
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, -1, 0)
+	GAME:WaitFrames(10)
 	
 	GeneralFunctions.LookAround(partner, 2, 4, false, false, false)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I know you're probably curious about the town.[pause=0] But we need go to the guild before it gets any later!")
-	UI:WaitShowDialogue("I'll show you around town tomorrow.")
 	GAME:WaitFrames(20)
 	
 	--turn towards  the guild
@@ -254,6 +254,7 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("The Adventurer's Guild is just across that bridge.")
+	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:WaitShowDialogue("I'm very excited,[pause=10] and I hope you are too but...")
@@ -272,20 +273,22 @@ function metano_town_ch_1.EnterGuild()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
-	--todo a little hop when text reaches the end of the string
-	UI:WaitShowDialogue("Yeah I know...[pause=0] With you I should have nothing to worry about.")
+	UI:WaitShowDialogue("Yeah,[pause=10] I know...[pause=0] With you I shouldn't have anything to worry about.")
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("I still have butterflies in my stomach though...")
+	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(20)
 	GeneralFunctions.DoAnimation(partner, "DeepBreath")
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Alright,[pause=10] I'm think I'm as good as I'm gonna be.[pause=0] Let's go!")
+	UI:WaitShowDialogue("Alright,[pause=10] I think I'm as ready as I'm gonna be.[pause=0] Let's go!")
+	GAME:WaitFrames(20)
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, 'Nod') end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, 'Nod') end)
 	TASK:JoinCoroutines({coro1, coro2})	
+	GAME:WaitFrames(20)
 	GAME:FadeOut(false, 20)
 	
 	--show the guild
@@ -311,7 +314,8 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, growlithe.CurrentForm.Species, growlithe.CurrentForm.Form, growlithe.CurrentForm.Skin, growlithe.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetEmote(growlithe, 4, 0)
-	UI:WaitShowDialogue("Hi " .. partner:GetDisplayName() .. "![pause=0] Glad to see you![pause=0] I am on sentry duty as usual!")
+	GeneralFunctions.Hop(growlithe)
+	UI:WaitShowDialogue("Hi " .. partner:GetDisplayName() .. "![pause=0] Glad to see you![pause=0] I'm on sentry duty as usual!")
 	GROUND:EntTurn(growlithe, Direction.DownRight)
 	GROUND:CharSetEmote(growlithe, -1, 0)
 	GAME:WaitFrames(20)
@@ -337,16 +341,22 @@ function metano_town_ch_1.EnterGuild()
 	GAME:WaitFrames(12)
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	GROUND:EntTurn(hero, Direction.UpLeft)
-	UI:WaitShowDialogue(GeneralFunctions.GetPronoun(hero, "they're", true) .. " a friend of mine who's new to town.")
-	
-	
+	UI:WaitShowDialogue(GeneralFunctions.GetPronoun(hero, "they're", true) .. "...")
 	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(partner, "Notice", true)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("(Hmm...[pause=0] I probably shouldn't tell anyone that " .. hero:GetDisplayName() .. " was a human...)")
+	GAME:WaitFrames(20)
+	
+	UI:WaitShowDialogue(GeneralFunctions.GetPronoun(hero, "they're", true) .. "...[pause=0] a friend of mine who's new to town.")	
+	GAME:WaitFrames(20)
+	
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Happy")
-	--todo:  little hop
 	GROUND:CharSetEmote(growlithe, 4, 0)
 	GROUND:EntTurn(growlithe, Direction.DownRight)
 	GROUND:CharSetAnim(growlithe, 'Idle', true)
+--	GeneralFunctions.Hop(growlithe)
 	UI:WaitShowDialogue("It's nice to meet you " .. hero:GetDisplayName() .. "![pause=0] My name is " .. growlithe:GetDisplayName() .. "!")
 	GROUND:CharSetEmote(growlithe, -1, 0)
 	GROUND:CharSetAnim(growlithe, 'None', true)
@@ -369,17 +379,18 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 	GROUND:EntTurn(hero, Direction.UpLeft)
 	UI:WaitShowDialogue("We've come to...[pause=0] speak with the Guildmaster about apprenticing here.")
+	GAME:WaitFrames(20)
 	
 	--woah im glad! more friends :) I'll go let them know you're coming
 	GeneralFunctions.EmoteAndPause(growlithe, "Exclaim", true)
 	GAME:WaitFrames(20)
-	--todo: do two hops
+	GeneralFunctions.DoubleHop(growlithe, 'None', 10, 10, true, true)
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Inspired")
 	GROUND:CharSetAnim(growlithe, 'Idle', true)
 	GROUND:CharSetEmote(growlithe, 1, 0)
 	UI:WaitShowDialogue("Wow![pause=0] Really!?[pause=0] I would love to have more guildmates!")
-	UI:WaitShowDialogue("More friends is always good,[pause=10] ruff![pause=0] I hope you two are accepted!")
+	UI:WaitShowDialogue("More friends is always good,[pause=10] ruff![pause=0] I hope you two get to join!")
 	GROUND:CharSetEmote(growlithe, -1, 0)
 	GROUND:CharSetAnim(growlithe, 'None', true)
 	GAME:WaitFrames(20)
@@ -412,12 +423,12 @@ function metano_town_ch_1.EnterGuild()
 	UI:SetSpeakerEmotion("Inspired")
 	UI:WaitShowDialogue(growlithe:GetDisplayName() .. " seemed very glad to hear we wanted to join the guild!")
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("That's gotta be a good sign,[pause=10] surely?[pause=0] I feel more confident now,[pause=10] anyway.")
+	UI:WaitShowDialogue("That's gotta be a good sign,[pause=10] surely?[pause=0] I feel more confident now,[pause=10] at least.")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(It's reassuring that we only just got here and we're being taken kindly...)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(It's reassuring that we only just got here and we're already being taken so positively...)", "Normal")
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
-	GeneralFunctions.HeroDialogue(hero, "(...but is this really the guild?[pause=0] It's a tree?[pause=0] I was expecting something different...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(..But is this really the guild?[pause=0] It's a tree?[pause=0] I was expecting something different...)", "Worried")
 	GAME:WaitFrames(60)
 	
 	--hyko returns
@@ -430,7 +441,9 @@ function metano_town_ch_1.EnterGuild()
 	--he tells you to meet up with phileas on the 2nd floor
 	GAME:WaitFrames(10)
 	GROUND:MoveToPosition(partner, 696, 924, false, 1)
-	GROUND:CharTurnToCharAnimated(partner, growlithe, 4)	--todo: two little hops
+	GROUND:CharTurnToCharAnimated(partner, growlithe, 4)	
+	GAME:WaitFrames(20)
+	GeneralFunctions.DoubleHop(growlithe)
 	GROUND:CharSetEmote(growlithe, 1, 0)
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Happy")
@@ -444,7 +457,7 @@ function metano_town_ch_1.EnterGuild()
 
 
 	GAME:WaitFrames(20)
-	--todo: a hop
+	GeneralFunctions.Hop(partner)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Thanks " .. growlithe:GetDisplayName() .. "![pause=0] We'll go find [color=#00FFFF]Phileas[color] on the second floor now then!")
@@ -469,8 +482,8 @@ end
 
 function metano_town_ch_1.TeamEnterGuildPartner()
 	local chara = CH('Teammate1')
-	GROUND:MoveToPosition(chara, 712, 908, false, 1)
-	GROUND:MoveToPosition(chara, 712, 876, false, 1)
+	GeneralFunctions.EightWayMove(chara, 712, 908, false, 1)
+	GeneralFunctions.EightWayMove(chara, 712, 876, false, 1)
 	GROUND:Hide(chara.EntName)
 end
 
@@ -478,8 +491,8 @@ end
 function metano_town_ch_1.TeamEnterGuildHero()
 	local chara = CH('PLAYER')
 	GAME:WaitFrames(10)
-	GROUND:MoveToPosition(chara, 712, 908, false, 1)
-	GROUND:MoveToPosition(chara, 712, 876, false, 1)
+	GeneralFunctions.EightWayMove(chara, 712, 908, false, 1)
+	GeneralFunctions.EightWayMove(chara, 712, 876, false, 1)
 	GROUND:Hide(chara.EntName)
 end
 
@@ -487,10 +500,9 @@ end
 function metano_town_ch_1.GrowlitheReturn()
 	local chara = CH('Growlithe')
 	GROUND:MoveToPosition(chara, 712, 924, false, 2)
-	GROUND:MoveToPosition(chara, 696, 924, false, 2)
+	GROUND:MoveToPosition(chara, 694, 924, false, 2)
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
-	--todo: add the jump  to get back over the desk
-	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Left, 664, 924, 1, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Left, 662, 924, 1, 2)
 	GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
 end 
 

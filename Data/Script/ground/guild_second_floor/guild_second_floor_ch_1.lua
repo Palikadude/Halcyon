@@ -125,7 +125,8 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetEmote(partner, 4, 0)
-	UI:WaitShowDialogue("Haha,[pause=10] I was surprised when I stepped inside the guild for the first time too!")
+	UI:WaitShowDialogue("Haha,[pause=10] I was stunned when I stepped inside the guild for the first time too!")
+	UI:WaitShowDialogue("It's surprising to see so many Pokémon inside this tree,[pause=10] right?")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
 	GROUND:CharSetEmote(partner, -1, 0)
@@ -138,13 +139,11 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	coro2 = TASK:BranchCoroutine(function () guild_second_floor_ch_1.TeamStyleLeaving(glameow, false) end)
 	coro3 = TASK:BranchCoroutine(function () guild_second_floor_ch_1.TeamStyleLeaving(luxio, true) end)
 
-	UI:WaitShowDialogue("It's a lot to take in,[pause=10] isn't it?[pause=0] All these Pokémon inside of a hollowed out tree!")
-	GAME:WaitFrames(20)
 	GeneralFunctions.LookAround(hero, 2, 4, true, false, false, Direction.Left)
-	GeneralFunctions.HeroDialogue(hero, "(It sure is a lot to take in...[pause=0] This certainly isn't what I was expecting...)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(It sure is a lot to take in...[pause=0] There's so many Pokémon...)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(I imagine most of these Pokémon are adventurers...)", "Normal")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(I have to say,[pause=10] this place is strangely comforting for some reason though.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(I have to say,[pause=10] I feel strangely comforted being here.)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(...I wonder why?)", "Worried")
 	GAME:WaitFrames(40)
 	UI:SetSpeaker(partner)
@@ -153,7 +152,8 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
-	UI:WaitShowDialogue("Hmm...[pause=0] I wonder where " .. noctowl:GetDisplayName() .. " is?[pause=0] I'm starting to get antsy...")
+	UI:WaitShowDialogue("Hmm...[pause=0] I wonder where " .. noctowl:GetDisplayName() .. " is?")
+	UI:WaitShowDialogue("I'm getting anxious waiting to see him...")
 	GAME:WaitFrames(40)
 	
 	
@@ -161,7 +161,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	coro1 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(hero, "Exclaim", true) GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) end)
 	coro2 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(partner, "Exclaim", false) end)
-	UI:WaitShowTimedDialogue("You two![pause=20] Who just came in!", 60)
+	UI:WaitShowTimedDialogue("You two,[pause=20] who just came in!", 60)
 	
 	TASK:JoinCoroutines({coro1, coro2})
 	
@@ -182,7 +182,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:WaitShowDialogue(growlithe:GetDisplayName() .. " informed me that two Pokémon were coming in who required me.[pause=0] That's the pair of you,[pause=10] correct?")
 	GAME:WaitFrames(20)
 
-	--todo: do a little hop
+	GeneralFunctions.Hop(partner)
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Y-yes![pause=0] That would be us!")
 	
@@ -199,12 +199,13 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(partner, "Sweating", true)
 	UI:SetSpeakerEmotion("Stunned")
-	UI:WaitShowDialogue("Uh...")
-	
-	--UI:SetSpeakerEmotion("Pain")
-	--UI:WaitShowDialogue("(C'mon![pause=0] I can't wuss out now![pause=0] Just ask!)")
-	
+	UI:WaitShowDialogue("Um...")
 	GAME:WaitFrames(20)
+	
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("(O-oh man,[pause=10] I'm t-too nervous to say anything...)")
+	
+	GAME:WaitFrames(40)
 	GeneralFunctions.EmoteAndPause(hero, "Notice", true)
 	
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
@@ -228,19 +229,20 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 	GAME:WaitFrames(12)
 	
-	--todo: do a little hop
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Surprised")
+	GeneralFunctions.Hop(partner)
 	UI:WaitShowDialogue("Y-yes![pause=0] T-that's right!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Oh,[pause=10] I believe I recall.")
+	UI:WaitShowDialogue("Oh,[pause=10] I believe I recall now.")
 	GROUND:CharAnimateTurnTo(noctowl, Direction.DownLeft, 4)
 	GAME:WaitFrames(16)
 	
 	UI:WaitShowDialogue("You've been here before haven't you?[pause=0] " .. partner:GetDisplayName() .. " wasn't it?")
+	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(partner, 'Sweating', true)
 	
 	--yes ive been here before...
@@ -252,7 +254,8 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Aha,[pause=10] I remember now.[pause=0] You tried to apply here before but didn't have a partner.")
+	UI:WaitShowDialogue("Aha,[pause=10] I remember now.[pause=0] You tried to apply here before but you didn't have a partner.")
+	GAME:WaitFrames(10)
 	
 	GROUND:CharAnimateTurnTo(noctowl, Direction.DownRight, 4)
 	GAME:WaitFrames(12)
@@ -321,7 +324,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:WaitShowDialogue("...no-one is to be on the uppermost level except those associated with the guild.")
 	UI:WaitShowDialogue("So please stay nearby me at all times.")
 	UI:WaitShowDialogue("Additionally,[pause=10] you must treat the Guildmaster with the utmost respect.")
-	UI:WaitShowDialogue("There will be consequences if you do not obey.[pause=0] Do you understand?")
+	UI:WaitShowDialogue("There will be consequences if you do not heed these rules.[pause=0] Do you understand?")
 	
 	
 	--todo: two hops

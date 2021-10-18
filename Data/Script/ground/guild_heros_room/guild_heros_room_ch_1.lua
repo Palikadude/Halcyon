@@ -136,7 +136,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	
 	UI:WaitShowDialogue("(.........)")
 	UI:WaitShowDialogue("(I guess there isn't any point in trying to get myself psyched out about my situation.)")
-	UI:WaitShowDialogue("(It's probably for the best I'm enjoying this rather than being afraid.)")
+	UI:WaitShowDialogue("(It's probably for the best I'm enjoying this rather than feeling afraid.)")
 	UI:WaitShowDialogue("(I should just go along with things for now and enjoy guild life with " .. partner:GetDisplayName() .. "...)")
 	UI:WaitShowDialogue("(I'm sure " .. partner:GetDisplayName() .. " and I will get to the bottom of this eventually...)")
 	GAME:WaitFrames(20)

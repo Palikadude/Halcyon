@@ -123,7 +123,6 @@ function relic_forest_ch_1.Intro_Cutscene()
 
 	--set player and partner to founders so they cannot be released
 	--set them as partner so they cannot be taken off the active team
-	--todo: mark them as "is partner" so they cannot be taken off the active team
     _DATA.Save:UpdateTeamProfile(true)
     _DATA.Save.ActiveTeam.Players[0].IsFounder = true
 	_DATA.Save.ActiveTeam.Players[0].IsPartner = true
@@ -161,11 +160,12 @@ function relic_forest_ch_1.Intro_Cutscene()
 
 	
 	local partner = GAME:GetPlayerPartyMember(1)
-	GROUND:Hide('Teammate1')--hide partner
 
 	
 	GAME:SetCharacterNickname(partner, result)
 	GAME:SetTeamName(result) --set team name to partner's name temporarily
+	partner:FullRestore()--set hp/pp to full for player and partner
+	hero:FullRestore()
 	COMMON.RespawnAllies()
 	
 	GAME:WaitFrames(180)
@@ -182,6 +182,8 @@ function relic_forest_ch_1.Intro_Cutscene()
 	hTbl.Importance = 'Hero'
 	pTbl.Importance = 'Partner'
 	
+	GROUND:Hide('Teammate1')--hide partner
+
 	--todo: show a screen for Chapter 1:
 	
 	--set auto finish has it so the voiceover fades in and out as the complete line
@@ -190,10 +192,10 @@ function relic_forest_ch_1.Intro_Cutscene()
 
 	
   	UI:WaitShowVoiceOver(".........", -1)  
-  	UI:WaitShowVoiceOver("...The gift of life is very precious...", -1)  
+  	UI:WaitShowVoiceOver("...Life is a precious gift..", -1)  
 	UI:WaitShowVoiceOver("...Many take it for granted...", -1)  
 	UI:WaitShowVoiceOver("...Until it is too late.", -1)  
-	UI:WaitShowVoiceOver("I hope that you don't make that same mistake.", -1) 
+	UI:WaitShowVoiceOver("Please don't make the same mistake.", -1) 
 	
 	UI:SetAutoFinish(false)
 
@@ -222,7 +224,6 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 --[color=#00FFFF]Erleuchtet[color]
 
 	--clear party, set up party with hero as player and partner as partner
-	
 	GeneralFunctions.DefaultParty(true)
 	--[[
 	local h = GAME:GetPlayerAssemblyMember(0)
@@ -270,13 +271,13 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("I'll never understand why [color=#00FFFF]Erleuchtet[color] thinks the forest is so dangerous.")
-	--todo: do a little hop
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I've been here plenty of times before,[pause=10] but...")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("I can't help but feel glad everytime I make it here.")
+	GeneralFunctions.Hop(partner)
 	GROUND:CharSetEmote(partner, 4, 0)
-	UI:WaitShowDialogue("My own little adventuring triumph!")
+	UI:WaitShowDialogue("My own little adventuring success!")
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, -1, 0)
 	GAME:WaitFrames(20)
@@ -287,6 +288,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Normal')
 	UI:WaitShowDialogue("I may as well look around while I'm here.")
+	GAME:WaitFrames(20)
 
 	--huh? something's over there?
 	GeneralFunctions.MoveCharAndCamera(partner, 292, 408, false, 1)
@@ -301,24 +303,24 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GROUND:CharAnimateTurnTo(partner, Direction.UpLeft, 4)
 	
 	--"Waah! Someone has collapsed on the sand!" 
-	SOUND:PlayBattleSE('EVT_Emote_Startled')
-	GROUND:CharSetAnim(partner, 'Hurt', true)
-	GROUND:CharSetEmote(partner, 8, 1)
-	--todo: do a little hop
+	--SOUND:PlayBattleSE('EVT_Emote_Startled')
+	--GROUND:CharSetAnim(partner, 'Hurt', true)
+	--GROUND:CharSetEmote(partner, 8, 1)
+	GeneralFunctions.Recoil(partner)
 	GAME:WaitFrames(20)
 	GROUND:CharSetAnim(partner, 'None', true)
 	
 	UI:SetSpeakerEmotion("Surprised")
-	UI:WaitShowDialogue("Ahhh![pause=0] Someone's passed out in the grass!")
+	UI:WaitShowDialogue("Waah![pause=0] Someone's passed out in the grass!")
 	GeneralFunctions.MoveCharAndCamera(partner, 292, 272, true, 4)
 	GeneralFunctions.MoveCharAndCamera(partner, 268, 272, true, 4)
 	
-	--todo: a little hop
+	GeneralFunctions.Hop(partner)
 	UI:WaitShowDialogue("H-hey![pause=0] What happened!?[pause=0] Are you alright!?")
 	GAME:WaitFrames(80)
 	
 	--step in and out twice, facing forward the entire time
-	UI:WaitShowDialogue("Oh no,[pause=10] c'mon,[pause=10] wake up!")
+	UI:WaitShowDialogue("Oh no,[pause=10] c'mon,[pause=10] you gotta wake up!")
 	GROUND:MoveInDirection(partner, Direction.Left, 4, false, 2)
 	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
 	GAME:WaitFrames(10)
@@ -349,10 +351,10 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 		
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Well,[pause=10] I'm glad to see you're alright.[pause=0] My name's " .. partner:GetDisplayName() ..".")
+	UI:WaitShowDialogue("Well,[pause=10] I'm glad to see you're alright.[pause=0] My name's " .. partner:GetDisplayName() .."!")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("How did you end up here anyway?[pause=0] Nobody is supposed to be out here.")
+	UI:WaitShowDialogue("How did you end up here anyway?[pause=0] Nobody's really supposed to be out here.")
 	
 	--amnesia
 	local hero_species = _DATA:GetMonster(hero.CurrentForm.Species):GetColoredName()
@@ -376,20 +378,22 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GROUND:CharSetEmote(hero, 8, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Shock")
 	GAME:WaitFrames(40)
-	GeneralFunctions.HeroDialogue(hero, "(W-what!?[pause=0] I am a " .. hero_species .. "!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(Wh-what!?[pause=0] I am a " .. hero_species .. "!)", "Surprised")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(This must be a dream![pause=0] That's all![pause=0] I just need to wake myself up!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(This must be a dream![pause=0] There's no way I really turned into a " .. hero_species .. "!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(I'll pinch myself right now and wake up!)", "Surprised")
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(hero, 8, 1)
 	SOUND:PlayBattleSE("DUN_Bounced")--pinch sfx
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(Yowch!)", "Pain")
 	GAME:WaitFrames(40)
-	GeneralFunctions.HeroDialogue(hero, "(I'm still here!?[pause=0] Is this actually real!?)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(I'm still here!?[pause=0] This is actually real!?)", "Surprised")
 	GAME:WaitFrames(10)
 	SOUND:PlayBattleSE('EVT_Emote_Sweating')
 	GROUND:CharSetEmote(hero, 5, 1)
 	GAME:WaitFrames(40)
+	GeneralFunctions.HeroDialogue(hero, "(I can't believe this...[pause=0] I'm really a Pokémon...)", "Worried")--at some point, should comment on how being a Pokémon is actually sick, just initially shocked and overwhelmed which is why they reacted like this
 	GeneralFunctions.HeroDialogue(hero, "(But how did this happen?[pause=0] I can't remember anything...)", "Worried")
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)
@@ -406,9 +410,9 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	--todo: a little hop
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Is that some kind of joke?[pause=0] Humans are just some myth if I remember right...")
-	UI:WaitShowDialogue("You look like a  " ..  hero_species .. " to me...")
-
+	UI:WaitShowDialogue("Are you trying to pull a fast one on me?[pause=0] I thought humans were just some myth...")
+	UI:WaitShowDialogue("Besides,[pause=10] you look like a " ..  hero_species .. " to me...")
+	
 	
 	GROUND:CharSetEmote(hero, 3, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim_2")
@@ -417,38 +421,39 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("You're pretty adamant that you're a human,[pause=10] huh?")
+	UI:WaitShowDialogue("You're adamant that you're a human,[pause=10] huh?")
+	UI:WaitShowDialogue("I'm having a hard time believing that a human could turn into a Pokémon...")
 	GAME:WaitFrames(20)
 	
 	
-	--todo: have partner emote in some way while this is going on to show that they're stressed out the whole time?
 	SOUND:PlayBattleSE('EVT_Emote_Sweating')
 	GROUND:CharSetEmote(hero, 5, 1)
 	GAME:WaitFrames(40)
 	GeneralFunctions.HeroDialogue(hero, "(Is it really that hard to trust that I was a human?)", "Sad")
 	GAME:WaitFrames(60)
-	GeneralFunctions.HeroDialogue(hero, "(What am I going to do?)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(This " .. partner_species .. " doesn't believe me...[pause=0] Would anyone else?)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(I can't remember anything...[pause=0] What am I going to do?)", "Worried")
+
 
 	--partner realizes you're scared and lost
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(40)
 	SOUND:PlayBattleSE('EVT_Emote_Exclaim')
 	GROUND:CharSetEmote(partner, 2, 1)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("(Hmm...[pause=0] " .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " look sincerely worried...[pause=0] Maybe they're telling the truth after all?)")
-	UI:WaitShowDialogue("(There's no reason to lie about this sort of thing,[pause=10] is there?)")
+	UI:WaitShowDialogue("(Hmm...[pause=0] " .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " looks stunned,[pause=10] actually...[pause=0] Maybe " .. GeneralFunctions.GetPronoun(hero, "they're", false) .. " telling the truth after all?)")
+	UI:WaitShowDialogue("(Nobody would lie about this sort of thing,[pause=10] right?)")
 	GAME:WaitFrames(40)
 	
 	--ok i believe you kinda 
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Hey...[pause=0] Seeing that expression on your face...")
-	UI:WaitShowDialogue("Maybe you're not lying after all,[pause=10] you seem genuine.")
-	UI:WaitShowDialogue("Someone wouldn't just lie unconscious in a mystery dungeon claiming what you are for a prank.")
+	UI:WaitShowDialogue("Hey...[pause=0] Um...[pause=0] Seeing that expression on your face...")
+	UI:WaitShowDialogue("I think now that maybe you're not lying after all,[pause=10] your reaction seems genuine.")
+	UI:WaitShowDialogue("Someone wouldn't just lie unconscious in a mystery dungeon claiming what you are as a joke.")
 	UI:WaitShowDialogue("Even if it turns out your story isn't one-hundred percent true...")
-	UI:WaitShowDialogue("I do think that you're being honest at least.[pause=0] Something weird certainly happened to you.")
+	UI:WaitShowDialogue("I do think that you're being honest at least.[pause=0] Something strange certainly happened to you.")
 	GAME:WaitFrames(20)
 
 	--name yourself	
@@ -458,7 +463,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(...I don't think I even remember something as simple as that...)", "Sad")
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(I guess I can just pick something that I'd like to be called,[pause=10] at least...)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(I could just pick something that I'd like to be called,[pause=10] I suppose.)", "Normal")
 	GAME:WaitFrames(20)
 	UI:ResetSpeaker()
 	local yesnoResult = false
@@ -472,18 +477,20 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 		yesnoResult = UI:ChoiceResult()
 	end
 
-	--partner makes an excuse as to why they were acting odd. the truth is they're scared of the omen
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("I see. So " .. hero:GetDisplayName() .. " is your name.")
+	UI:WaitShowDialogue("I see.[pause=0] So " .. hero:GetDisplayName() .. " is your name.")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Glad to meet you,[pause=10] " .. hero:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I'm sorry for being so skeptical before.[pause=0] It's just hard to believe that a human could turn into a Pokémon.")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Even if you weren't a human,[pause=10] you truly think you were one and that's good enough for me.")
+	UI:WaitShowDialogue("Even if you weren't a human,[pause=10] you think you were one and that's good enough for me.")
 	
 	
 	
@@ -492,26 +499,22 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.Left)
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Hmm...[pause=0] It's getting late...")
+	UI:WaitShowDialogue("But um...[pause=0] It's getting late...")
 	--GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I think you should come with me to the town where I live.")
 	UI:WaitShowDialogue("You've lost your memory and turned into a Pokémon for some reason...")
-	UI:WaitShowDialogue("It wouldn't be right to leave you all alone after what you've told me.")
-	UI:BeginChoiceMenu("So,[pause=10] what do you say?[pause=0] Will you come back with me to the town?", {"Go with " .. GeneralFunctions.GetPronoun(partner, 'them'), "Refuse"}, 1, 2)
+	UI:WaitShowDialogue("It wouldn't be right to leave you all alone after all that you've told me.")
+	UI:BeginChoiceMenu("So,[pause=10] what do you say?[pause=0] Will you come with me?", {"Go with " .. GeneralFunctions.GetPronoun(partner, 'them'), "Refuse"}, 1, 2)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()	
 	--if you say no, loop a dialogue until you say yes
 	while result == 2 do 
 		GAME:WaitFrames(20)
-		GROUND:CharSetAnim(partner, 'Hurt', true)
-		SOUND:PlayBattleSE('EVT_Emote_Startled')
-		GROUND:CharSetEmote(partner, 8, 1)
-		--todo: do a little hop
-		GAME:WaitFrames(20)
+		GeneralFunctions.Recoil(partner)
 		GROUND:CharSetAnim(partner, 'None', true)
 		UI:SetSpeakerEmotion("Surprised")
-		UI:WaitShowDialogue("W-what!?")
+		UI:WaitShowDialogue("Wh-what!?")
 		SOUND:PlayBattleSE('EVT_Emote_Sweating')
 		GROUND:CharSetEmote(partner, 5, 1)
 		GAME:WaitFrames(40)
@@ -539,7 +542,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	--hooray we'll have to go thru the dungeon though
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Great!")
+	UI:WaitShowDialogue("Great![pause=0] Glad to hear it!")
 	UI:SetSpeakerEmotion("Worried")
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(16)
@@ -559,7 +562,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("I want to show you something cool.")
 	
 
-	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCharAndCamera(partner, 276, 235, false, 1)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCharAndCamera(partner, 293, 235, false, 1)
 											GeneralFunctions.MoveCharAndCamera(partner, 293, 218, false, 1) end)
 	GAME:WaitFrames(40)
 	GeneralFunctions.EightWayMove(hero, 270, 236, false, 1)
@@ -587,9 +590,16 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue('But...[pause=0] I have no clue what the letters or the writing means...')
 	
 	GAME:WaitFrames(20)
-	UI:SetSpeakerEmotion('Normal')
+	UI:SetSpeakerEmotion('Inspired')
+	GeneralFunctions.Hop(partner)
+	GROUND:CharSetEmote(partner, 1, 0)
+	UI:WaitShowDialogue("Isn't it amazing though?[br]There must be some important history behind this tablet and the writing on it!")
+	UI:WaitShowDialogue("Things like this just fascinate me so much!")
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	GROUND:CharSetEmote(partner, -1, 0)
 	UI:WaitShowDialogue('Anyways,[pause=10] I always rub the stone for good luck when I come out here.')
-	
+	GAME:WaitFrames(20)
 	
 	
 	--touch the tablet
@@ -613,7 +623,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	
 	--partner moves out of way, hero tries looking and touching
 	coro1 = TASK:BranchCoroutine(function() GROUND:AnimateToPosition(partner, "Walk", Direction.Left, 317, 218, 1, 1) end)
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(32)
 	GROUND:MoveToPosition(hero, 293, 218, false, 1)	
 	TASK:JoinCoroutines({coro1})
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
@@ -621,24 +631,23 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	--sense a vague connection with the tablet
 
 	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. "'s right.[pause=0] There is bizarre writing on the tablet.)", "Normal")
-	GeneralFunctions.HeroDialogue(hero, "(I'll give it a rub for good luck too then.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(I'll give it a rub for luck too then.)", "Normal")
 	GROUND:MoveToPosition(hero, 293, 210, false, 1)	
 	GAME:WaitFrames(20)
 	GROUND:CharPoseAnim(hero, 'Pose')
 	
 	GAME:WaitFrames(40)
 	GeneralFunctions.Monologue(hero:GetDisplayName() .. " rubbed the ancient stone tablet.")
-	GAME:WaitFrames(10)
+	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(hero, 2, 1)
 	SOUND:PlayBattleSE("EVT_Emote_Exclaim")
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(Nothing seems out of the ordinary here,[pause=10] but...)", "Worried")
-	GeneralFunctions.HeroDialogue(hero, "(Something about this tablet feels strange to me.)", "Worried")
-	GeneralFunctions.HeroDialogue(hero, "(But why?[pause=0] There doesn't seem to be anything outstanding about this tablet...", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(Something about this tablet feels...[pause=30] strange to me.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(But why?[pause=0] There doesn't seem to be anything outstanding about this tablet...)", "Worried")
 	GAME:WaitFrames(20)
 
 	GROUND:CharSetAnim(hero, 'None', true)
-	--todo: walk backwards
 	GROUND:AnimateToPosition(hero, "Walk", Direction.Up, 293, 218, 1, 1)
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.Right, 4)
@@ -649,13 +658,13 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("When you touched the obelisk,[pause=10] you sensed something odd about it?")
+	UI:WaitShowDialogue("When you touched the obelisk,[pause=10] you had a strange feeling?")
 	GAME:WaitFrames(20)
 	--UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("That's weird...[pause=0] But if you don't know anything about it,[pause=10] we don't know if that feeling means something.")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("It's something to keep in mind I suppose.[pause=0] Too bad we don't know more...")
+	UI:WaitShowDialogue("It's something to keep in mind I suppose.[pause=0] Too bad we don't know more about this tablet...")
 	GAME:WaitFrames(20)
 	
 	--nothing else is nearby. Let's leave.
@@ -730,7 +739,7 @@ function relic_forest_ch_1.WipedInForest()
 	GAME:WaitFrames(20)
 
 	UI:WaitShowDialogue("I guess if either of us get knocked out,[pause=10] then the other can't continue...")
-	UI:WaitShowDialogue("I wonder why that is?")
+	--UI:WaitShowDialogue("I wonder why that is?")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
