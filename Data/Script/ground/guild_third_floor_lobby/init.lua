@@ -35,6 +35,9 @@ end
 ---guild_third_floor_lobby.Enter
 --Engine callback function
 function guild_third_floor_lobby.Enter(map)
+	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
+		GROUND:Hide('Assembly')
+	end
 
 	if SV.ChapterProgression.Chapter == 1 then
 		if SV.Chapter1.TeamCompletedForest then 
@@ -80,6 +83,17 @@ function guild_third_floor_lobby.Test_Action(chara, activator)
 	SV.Chapter1.MetAudino = true
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("All guildmates now considered met.")
+	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 1\n\noh god im sharting\n", 20)
+												  GAME:WaitFrames(120)
+												  UI:WaitHideTitle(20) end)
+	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Dusknoir", 120, 20)
+												  GAME:WaitFrames(120)
+												  UI:WaitHideBG(20) end)
+	TASK:JoinCoroutines({coro1, coro2})
+end
+
+function guild_third_floor_lobby.Noctowl_Action(chara, activator)
+	print("im sharting")
 end
 
 function guild_third_floor_lobby.Assembly_Action(obj, activator)

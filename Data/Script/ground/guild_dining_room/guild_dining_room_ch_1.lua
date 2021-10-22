@@ -9,8 +9,7 @@ guild_dining_room_ch_1 = {}
 
 function guild_dining_room_ch_1.SetupGround()
 	local snubbull = CharacterEssentials.MakeCharactersFromList({
-		{'Snubbull', 320, 160, Direction.Down},
-		{'Breloom'}
+		{'Snubbull', 320, 160, Direction.Down}
 	})
 	
 	AI:SetCharacterAI(snubbull, "ai.ground_default", RogueElements.Loc(320, 160), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
@@ -24,7 +23,6 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 	local snubbull = chara
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	local breloom = CH('Breloom')
 	
 	if not SV.Chapter1.MetSnubbull then
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, snubbull.CurrentForm.Species, snubbull.CurrentForm.Form, snubbull.CurrentForm.Skin, snubbull.CurrentForm.Gender)
@@ -40,7 +38,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeakerEmotion("Worried")
-		UI:WaitShowDialogue("Hold on...[pause=0] You're not " .. breloom:GetDisplayName() .. "...")
+		UI:WaitShowDialogue("Hold on...[pause=0] You're not " .. CharacterEssentials.GetCharacterName("Breloom") .. "...")
 		UI:WaitShowDialogue("Who are you?[pause=0] The top floor is for guild members only,[pause=10] don't you know?")
 		GAME:WaitFrames(20)
 		
@@ -66,7 +64,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, snubbull.CurrentForm.Species, snubbull.CurrentForm.Form, snubbull.CurrentForm.Skin, snubbull.CurrentForm.Gender)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Oh.[pause=0] Sorry.[pause=0] I'm a bit on edge because " .. breloom:GetDisplayName() .. " keeps trying to sneak food after dinner.")
+		UI:WaitShowDialogue("Oh.[pause=0] Sorry.[pause=0] I'm a bit on edge because " .. CharacterEssentials.GetCharacterName("Breloom") .. " keeps trying to sneak food after dinner.")
 		UI:SetSpeakerEmotion("Angry")
 		GROUND:CharSetEmote(snubbull, 7, 0)
 		UI:WaitShowDialogue("If he's so hungry,[pause=10] he should just eat more at dinner![pause=0] I can't stand him sometimes!")

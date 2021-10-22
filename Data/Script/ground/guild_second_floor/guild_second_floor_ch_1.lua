@@ -59,7 +59,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	local cleffa = CharacterEssentials.MakeCharacterAtMarker('Cleffa', 'Generic_Spawn_Duo_1')
 	local aggron = CharacterEssentials.MakeCharacterAtMarker('Aggron', 'Generic_Spawn_Duo_2')
 	]]--
-	local spheal, jigglypuff, marill, mareep, cranidos, cleffa, aggron, cacnea, glameow, luxio, noctowl, growlithe, zigzagoon = 
+	local spheal, jigglypuff, marill, mareep, cranidos, cleffa, aggron, cacnea, glameow, luxio, noctowl, zigzagoon = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Spheal', 'Left_Trio_1'},
 			{'Jigglypuff', 'Left_Trio_2'},
@@ -72,7 +72,6 @@ function guild_second_floor_ch_1.MeetNoctowl()
 			{"Glameow", 512, 280, Direction.Left},
 			{"Luxio", 544, 280, Direction.Left},
 			{"Noctowl", 440, 272, Direction.Left},
-			{"Growlithe"},
 			{"Zigzagoon", 336, 336, Direction.Down}
 		})
 	
@@ -179,7 +178,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue(growlithe:GetDisplayName() .. " informed me that two Pokémon were coming in who required me.[pause=0] That's the pair of you,[pause=10] correct?")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Growlithe") .. " informed me that two Pokémon were coming in who required me.[pause=0] That's the pair of you,[pause=10] correct?")
 	GAME:WaitFrames(20)
 
 	GeneralFunctions.Hop(partner)
@@ -254,7 +253,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Aha,[pause=10] I remember now.[pause=0] You tried to apply here before but you didn't have a partner.")
+	UI:WaitShowDialogue("Ahh,[pause=10] I remember now.[pause=0] You tried to apply here before but you didn't have a partner.")
 	GAME:WaitFrames(10)
 	
 	GROUND:CharAnimateTurnTo(noctowl, Direction.DownRight, 4)
@@ -270,7 +269,6 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GAME:WaitFrames(20)
 	
 	UI:WaitShowDialogue("Ah...[pause=0] So " .. hero:GetDisplayName() .. " is your name...")
-	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("It is a pleasure to meet you,[pause=10] " .. hero:GetDisplayName() .. ".")
 	GAME:WaitFrames(20)
 	GROUND:EntTurn(noctowl, Direction.Down)	
@@ -308,23 +306,24 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GROUND:CharSetAnim(partner, "Idle", true)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Inspired")
-	UI:WaitShowDialogue("Please take us to meet the Guildmaster then![pause=0] Please please please!")
+	UI:WaitShowDialogue("Please let us speak with the Guildmaster then![pause=0] Please please please!")
 	GAME:WaitFrames(20)
 	GROUND:CharSetAnim(partner, "None", true)
 
 	--I will take you to the guildmaster
-	GROUND:CharSetEmote(noctowl, 4, 0)
+	--GROUND:CharSetEmote(noctowl, 4, 0)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Ho ho ho![pause=0] Aren't we an eager one?")
+	UI:WaitShowDialogue("Aren't we an eager one?")
 	GAME:WaitFrames(20)
-	GROUND:CharSetEmote(noctowl, -1, 0)
-	UI:WaitShowDialogue("The Guildmaster is not always at the guild,[pause=10] but fortunately for you he is in his chambers right now.")
-	UI:WaitShowDialogue("I will take you to him.[pause=0] But do bear in mind...")
-	UI:WaitShowDialogue("...no-one is to be on the uppermost level except those associated with the guild.")
-	UI:WaitShowDialogue("So please stay nearby me at all times.")
-	UI:WaitShowDialogue("Additionally,[pause=10] you must treat the Guildmaster with the utmost respect.")
-	UI:WaitShowDialogue("There will be consequences if you do not heed these rules.[pause=0] Do you understand?")
+	--GROUND:CharSetEmote(noctowl, -1, 0)
+	UI:WaitShowDialogue("Hmm...[br]Very well,[pause=10] I will take you to see the Guildmaster.")
+	UI:WaitShowDialogue("When I bring you to the top floor,[pause=10] I must ask that you follow a couple of rules.")
+	UI:WaitShowDialogue("First,[pause=10] please follow any instructions I give you before and after your meeting with the Guildmaster.")
+--	UI:WaitShowDialogue("...no-one is to be on the uppermost level except those associated with the guild.")
+--	UI:WaitShowDialogue("So please stay nearby me at all times.")
+ 	UI:WaitShowDialogue("Second,[pause=10] you must treat the Guildmaster with the utmost respect.")
+ 	UI:WaitShowDialogue("There will be consequences if you do not heed these rules.[pause=0] Do you understand?")
 	
 	
 	--todo: two hops
@@ -345,7 +344,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue("Wonderful.[pause=0] Now,[pause=10] please follow me to the Guildmaster's chambers.")
+	UI:WaitShowDialogue("Wonderful.[pause=0] Now,[pause=10] please follow me to the Guildmaster's office.")
 	
 	GAME:WaitFrames(20)
 	

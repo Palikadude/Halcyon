@@ -117,6 +117,7 @@ end
 
 function GeneralFunctions.ShakeHead(chara, turnframes, startLeft)
 	
+	if turnframes == nil then turnframes = 4 end
 	if startLeft == nil then startLeft = true end 
 	
 	initDir = chara.Direction

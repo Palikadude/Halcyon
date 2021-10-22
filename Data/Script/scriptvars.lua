@@ -103,12 +103,14 @@ SV.guild =
 ----------------------------------------------------------------------------
 
 
---Keeps track of 
+--Keeps track of overall game progression flags (chapter number, important overarching flags, etc)
 SV.ChapterProgression = 
 {
 	DaysPassed = 0,--total number of in game days played in the game
 	DaysToReach = -1, --Used to figure out what day needs to be reached to continue the story
-	Chapter = 1
+	Chapter = 1,
+	
+	UnlockedAssembly = false--this is set to true when player is allowed to recruit team members, unhides assembly objects
 }
 
 

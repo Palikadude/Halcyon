@@ -183,24 +183,29 @@ function relic_forest_ch_1.Intro_Cutscene()
 	pTbl.Importance = 'Partner'
 	
 	GROUND:Hide('Teammate1')--hide partner
-
-	--todo: show a screen for Chapter 1:
+	
 	
 	--set auto finish has it so the voiceover fades in and out as the complete line
 	--rather than typing it out like in the personality quiz
 	UI:SetAutoFinish(true)
 
+	--todo: add background to chapter title card
+	UI:WaitShowTitle("Chapter 1\n\nA New Life\n", 20)
+	GAME:WaitFrames(180)
+	UI:WaitHideTitle(20)
+	
 	
   	UI:WaitShowVoiceOver(".........", -1)  
-  	UI:WaitShowVoiceOver("...Life is a precious gift..", -1)  
+  	UI:WaitShowVoiceOver("...Life is a precious gift...", -1)  
 	UI:WaitShowVoiceOver("...Many take it for granted...", -1)  
 	UI:WaitShowVoiceOver("...Until it is too late.", -1)  
 	UI:WaitShowVoiceOver("Please don't make the same mistake.", -1) 
 	
 	UI:SetAutoFinish(false)
-
 	
 	GAME:WaitFrames(60)
+	
+	UI:WaitShowVoiceOver(
 	GAME:FadeIn(120)
 	GAME:WaitFrames(120)
 	UI:ResetSpeaker()
@@ -381,7 +386,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GeneralFunctions.HeroDialogue(hero, "(Wh-what!?[pause=0] I am a " .. hero_species .. "!)", "Surprised")
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(This must be a dream![pause=0] There's no way I really turned into a " .. hero_species .. "!)", "Surprised")
-	GeneralFunctions.HeroDialogue(hero, "(I'll pinch myself right now and wake up!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(I'll just pinch myself right now and wake up!)", "Surprised")
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(hero, 8, 1)
 	SOUND:PlayBattleSE("DUN_Bounced")--pinch sfx
@@ -502,7 +507,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("But um...[pause=0] It's getting late...")
 	--GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("I think you should come with me to the town where I live.")
+	UI:WaitShowDialogue("I think you should come with me to the nearby town.")
 	UI:WaitShowDialogue("You've lost your memory and turned into a Pokémon for some reason...")
 	UI:WaitShowDialogue("It wouldn't be right to leave you all alone after all that you've told me.")
 	UI:BeginChoiceMenu("So,[pause=10] what do you say?[pause=0] Will you come with me?", {"Go with " .. GeneralFunctions.GetPronoun(partner, 'them'), "Refuse"}, 1, 2)
