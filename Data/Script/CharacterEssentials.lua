@@ -215,7 +215,8 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 
 		end
 		chara:OnMapInit()
-		TASK:WaitTask(chara:RunEvent(RogueEssence.Script.LuaEngine.EEntLuaEventTypes.EntSpawned, chara))
+		local result = RogueEssence.Script.TriggerResult()
+		TASK:WaitTask(chara:RunEvent(RogueEssence.Script.LuaEngine.EEntLuaEventTypes.EntSpawned, result, chara))
 		charTable[i] = chara
 	end
 	if retTable then 
