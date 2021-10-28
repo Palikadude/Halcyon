@@ -231,7 +231,7 @@ function metano_town_ch_1.EnterGuild()
 	GeneralFunctions.EmoteAndPause(hero, "Sweating", true)
 	UI:SetSpeaker('', false, hero.CurrentForm.Species, hero.CurrentForm.Form, hero.CurrentForm.Skin, hero.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Pain")
-	--UI:WaitShowTimedDialogue("*huff*[pause=20] *huff*", 60)
+	UI:WaitShowTimedDialogue("*huff*[pause=20] *huff*", 60)
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, 4, 0)

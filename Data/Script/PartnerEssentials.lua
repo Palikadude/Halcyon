@@ -91,13 +91,13 @@ function PartnerEssentials.Chapter_1_Dialogue(partner)
 			UI:WaitShowDialogue("I just hope " .. CharacterEssentials.GetCharacterName("Snubbull") .. " is as good as a chef as she claims.")
 		else
 			UI:SetSpeakerEmotion("Worried")
-			UI:WaitShowDialogue("I wonder what room this is?[pause=0] And what's this table is for?")
+			UI:WaitShowDialogue("Hmm...[pause=0] This looks like the dining room,[pause=10] I think.")
 		end
 		
 	elseif ground == 'guild_heros_room' then
-		UI:WaitShowDialogue("Can you believe we got a room this nice?[pause=0] Man oh man!")
+		UI:WaitShowDialogue("Can you believe we got a room this nice?")
 		UI:WaitShowDialogue("The rest of the guild must be this nice as well!")
-		UI:WaitShowDialogue("We should go around and say hi to all of our new guildmates while we explore the guild.")
+		UI:WaitShowDialogue("We should go around and say hi to all of our new guildmates while we explore the guild!")
 		
 	elseif ground == 'guild_bottom_left_bedroom' then 
 		if SV.Chapter1.MetBreloomGirafarig then 

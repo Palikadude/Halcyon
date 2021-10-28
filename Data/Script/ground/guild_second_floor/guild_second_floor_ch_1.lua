@@ -429,7 +429,7 @@ function guild_second_floor_ch_1.SetupGround()
 	
 	AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(320, 320), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
-	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 0), 
+	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
 													RogueElements.Rect(184, 192, 144, 16),
 													RogueElements.Loc(0, 8), 
 													true, 

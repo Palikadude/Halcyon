@@ -217,9 +217,49 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 end
 
 
---special interact script for the hero
-function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
 
+
+
+--special interact script for the hero
+--very simplified version of partner script, only dialogue possible is "(.........)"
+function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
+	  action_cancel.Cancel = true
+  -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
+  if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
+    
+    local ratio = target.HP * 100 // target.MaxHP 
+
+    if ratio <= 25 then
+      UI:SetSpeakerEmotion("Pain")
+    elseif ratio <= 50 then
+      UI:SetSpeakerEmotion("Worried")
+    else
+	  UI:SetSpeakerEmotion("Normal")
+    end
+
+    local chosen_quote = ""
+    
+   
+	
+	local oldDir = target.CharDir
+    DUNGEON:CharTurnToChar(target, chara)
+  
+    UI:SetSpeaker(target)
+	chosen_quote = '(.........)'
+  
+    UI:WaitShowDialogue(chosen_quote)
+  
+    target.CharDir = oldDir
+  else
+  
+    UI:ResetSpeaker()
+	
+	local chosen_quote = RogueEssence.StringKey("TALK_CANT"):ToLocal()
+    chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
+	
+    UI:WaitShowDialogue(chosen_quote)
+  
+  end
 end
 
 function BATTLE_SCRIPT.EscortInteract(owner, ownerChar, context, args)
@@ -297,6 +337,15 @@ function BATTLE_SCRIPT.CountTalkTest(owner, ownerChar, context, args)
   
   context.Target.CharDir = oldDir
 end
+
+--custom Halcyon BATTLE_SCRIPT scripts
+
+--vibrant scarf passive should only activate if a nearby ally is also wearing a vibrant scarf
+function BATTLE_SCRIPT.VibrantScarfPassive(owner, ownerChar, context, args)
+
+end
+
+
 
 
 STATUS_SCRIPT = {}

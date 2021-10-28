@@ -8,7 +8,7 @@ guild_storage_hallway_ch_1 = {}
 
 
 --[[function guild_storage_hallway_ch_1.SetupGround()
-	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 0), 
+	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
 														RogueElements.Rect(144, 88, 64, 16),
 														RogueElements.Loc(0, 8), 
 														true, 

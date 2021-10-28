@@ -5,7 +5,7 @@ local characters = {
 		--the guild
 		Tropius = {
 			species = 357,
-			nickname = 'Pernicus',
+			nickname = 'Penticus',
 			instance = 'Tropius',
 			gender = Gender.Male,
 			form = 0,
