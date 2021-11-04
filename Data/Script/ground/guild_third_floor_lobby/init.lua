@@ -40,10 +40,8 @@ function guild_third_floor_lobby.Enter(map)
 	end
 
 	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest then 
+		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
 			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
-		elseif SV.Chapter1.TeamJoinedGuild then
-
 		else
 			GAME:FadeIn(20)
 		end
@@ -78,7 +76,7 @@ end
 function guild_third_floor_lobby.Test_Action(chara, activator)
 	SV.Chapter1.MetSnubbull = true
 	SV.Chapter1.MetZigzagoon = true
-	SV.Chapter1.MetCranidosMareep = true
+	SV.Chapter1.MetCranidosMareep = false
 	SV.Chapter1.MetBreloomGirafarig = true
 	SV.Chapter1.MetAudino = true
 	SV.Chapter1.TeamJoinedGuild = true
@@ -91,10 +89,9 @@ function guild_third_floor_lobby.Test_Action(chara, activator)
 												  GAME:WaitFrames(120)
 												  UI:WaitHideBG(20) end)
 	TASK:JoinCoroutines({coro1, coro2})
-end
+	
+	UI:WaitShowDialogue("poop " .. STRINGS:LocalKeyString(9))
 
-function guild_third_floor_lobby.Noctowl_Action(chara, activator)
-	print("im sharting")
 end
 
 function guild_third_floor_lobby.Assembly_Action(obj, activator)

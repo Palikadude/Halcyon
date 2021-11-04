@@ -68,6 +68,8 @@ end
 function PartnerEssentials.Chapter_1_Dialogue(partner)
 	local ground = GAME:GetCurrentGround().AssetName--get ground's internal name
 	UI:SetSpeaker(partner)
+	GROUND:CharTurnToCharAnimated(partner, CH('PLAYER'), 4)
+	GROUND:CharTurnToCharAnimated(CH('PLAYER'), partner, 4)
 	--UI:SetSpeakerEmotion('Normal')
 
 	if ground == 'guild_second_floor' then

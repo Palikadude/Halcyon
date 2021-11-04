@@ -19,7 +19,10 @@ end
 
 function guild_top_right_bedroom_ch_1.Audino_Action(chara, activator)
 	local audino = CH('Audino')
-	GeneralFunctions.Monologue("(" .. audino:GetDisplayName() .. " is sleeping.)\n (Best to let her rest.)")
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("(" .. audino:GetDisplayName() .. " is sleeping.)\n(Best to let her rest.)")
+	UI:SetCenter(false)
 end
 
 

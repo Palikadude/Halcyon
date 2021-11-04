@@ -205,7 +205,6 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	GAME:WaitFrames(60)
 	
-	UI:WaitShowVoiceOver(
 	GAME:FadeIn(120)
 	GAME:WaitFrames(120)
 	UI:ResetSpeaker()

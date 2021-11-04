@@ -310,6 +310,18 @@ function guild_bottom_left_bedroom_ch_1.Breloom_Action(chara, activator)
 		GROUND:CharTurnToCharAnimated(breloom, girafarig)
 		AI:EnableCharacterAI(partner)
 		SV.Chapter1.MetBreloomGirafarig = true
+		--every guildmate is talked to, signal player that they can go sleep now
+		if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
+			GAME:WaitFrames(60)
+			GROUND:CharTurnToCharAnimated(partner, hero, 4)
+			UI:SetSpeaker(partner)
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hmm...[pause=0] It's getting pretty late...")
+			GROUND:CharTurnToCharAnimated(hero, partner, 4)
+			GAME:WaitFrames(12)
+			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
+			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=0] " .. hero:GetDisplayName() .. ".")
+		end
 		GAME:CutsceneMode(false)
 	else 
 		local olddir = breloom.Direction

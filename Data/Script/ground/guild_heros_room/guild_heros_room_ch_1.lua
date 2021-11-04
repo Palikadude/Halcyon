@@ -47,6 +47,8 @@ function guild_heros_room_ch_1.Event_Trigger_1_Touch(obj, activator)
 		end
 	else
 		UI:WaitShowDialogue("It's not that late yet...[pause=0] Let's look around the guild and try to meet all of the other guild members!")
+		GAME:WaitFrames(20)
+		GeneralFunctions.PromptSaveAndQuit()
 	end
 end
 
@@ -169,7 +171,7 @@ function guild_heros_room_ch_1.RoomIntro()
 			{"Noctowl", 0, 200, Direction.Right},
 		})
 
-	GAME:MoveCamera(248, 168, 1, false)
+	GAME:MoveCamera(192, 160, 1, false)
 	GROUND:TeleportTo(partner, -32, 188, Direction.Right)
 	GROUND:TeleportTo(hero, -32, 212, Direction.Right)
 
@@ -204,7 +206,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:SetSpeakerEmotion("Joyous")
 	GROUND:CharSetEmote(partner, 4, 0)
 	GROUND:CharSetAnim(partner, "Idle", true)
-	UI:WaitShowDialogue("Thank you so much " .. noctowl:GetDisplayName() .. "![pause=0] This room is amazing!")
+	UI:WaitShowDialogue("This room is amazing![pause=0] Thank you so much " .. noctowl:GetDisplayName() .. "!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, -1, 0)
@@ -225,7 +227,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("These are some nice beds![pause=0] " .. hero:GetDisplayName() .. ",[pause=10] come sit on one of these!")
 	
-	GAME:WaitFrames(10)
+	GAME:WaitFrames(20)
 	
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, bed1.Position.X, bed1.Position.Y, false, 1) 
 											GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
@@ -253,6 +255,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:WaitShowDialogue("Haha,[pause=10] told you,[pause=10] didn't I?")
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(hero, 4, 0)
 	
 	GAME:WaitFrames(60)
@@ -274,20 +277,20 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Your training starts tomorrow.[pause=0] Make sure to get plenty of rest.")
 	UI:WaitShowDialogue("Our daily routine starts bright and early.[pause=0] Don't be late!")
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(40)
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue("...Hmm...[pause=0] But it isn't quite that late in the night quite yet,[pause=10] is it?.")
+	UI:WaitShowDialogue("Hmm...[pause=0] But it isn't quite that late in the night quite yet,[pause=10] is it?")
 	UI:WaitShowDialogue("I suggest you use this time to explore the guild and meet some of your fellow guild members.")
 	GAME:WaitFrames(20)
 	
 	--we should go meet our guildmembers
 	GeneralFunctions.Hop(partner)
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("That sounds like a great idea![pause=0] We'll get to it after we're settled in!")
+	UI:WaitShowDialogue("That's a great idea![pause=0] We'll get to it after we're settled in!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue("Very good,[pause=10] I will leave you to it then.[pause=0] I am off to assist the Guildmaster in updating our records.")
+	UI:WaitShowDialogue("Very good,[pause=10] I will leave you to it then.[br]I am off to assist the Guildmaster in updating our records.")
 	GAME:WaitFrames(20)
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 0, 200, false, 1) end)
@@ -328,7 +331,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	GAME:WaitFrames(20)
 	SOUND:FadeOutBGM()
 	
-	GAME:MoveCamera(0, 0, 60, true)
+	GeneralFunctions.PanCamera(192, 160)
 	GAME:WaitFrames(40)
 	
 	SOUND:PlayFanfare("Fanfare/Note")
@@ -339,14 +342,15 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:WaitShowDialogue("Adventurer's Tip")
 	UI:WaitShowDialogue("The game will automatically save your progress every step you make in a dungeon.")
 	UI:WaitShowDialogue("You can manually make a record of your progress by climbing into bed.")
-	UI:WaitShowDialogue("You can also save your progress by pressing {0} and selecting Save.")
+	UI:WaitShowDialogue("You can also save your progress by pressing " .. STRINGS:LocalKeyString(9) .. " and selecting Save.")
 	UI:SetCenter(false)
 
-	GAME:CutsceneMode(false)
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 	GROUND:Unhide("Bedroom_Exit")
 	SV.Chapter1.TeamJoinedGuild = true
+	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GAME:CutsceneMode(false)
 
 											
 end

@@ -427,6 +427,39 @@ function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
 	
 end
 
+--pan the camera back towards the target location, horizontally first then vertically
+--give no parameters to center on player
+function GeneralFunctions.PanCamera(startX, startY, toPlayer, speed, endX, endY)
+	endX = endX or CH('PLAYER').Position.X + 8
+	endY = endY or CH('PLAYER').Position.Y + 8
+	speed = speed or 1
+	startX = startX or 0 --todo:get current cam coords
+	startY = startY or 0 
+	toPlayer = toPlayer or true
+	local difference = 0
+	local duration = 0
+	
+	if endX ~= startX then
+		difference = math.abs(endX - startX)
+		duration = math.ceil(difference / speed)
+		print(difference)
+		print(duration)
+		GAME:MoveCamera(endX, startY, duration, false)
+	end
+	
+	if endY ~= startY then
+		difference = math.abs(endY - startY)
+		duration = math.ceil(difference / speed)
+		print(difference)
+		print(duration)
+		GAME:MoveCamera(endX, endY, duration, false)
+	end
+	
+	if toPlayer then GAME:MoveCamera(0, 0, 1, true) end
+	
+	
+end
+
 --useful for having characters face constantly towards someone who's moving
 --offset is if you want the characters to look at 
 function GeneralFunctions.FaceMovingCharacter(chara, target, turnFrames, breakDirection)
@@ -679,4 +712,37 @@ function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
 	GAME:WaitFrames(duration)
 	GROUND:CharSetEmote(chara, -1, 0)
 	
+end
+
+
+
+function GeneralFunctions.PromptSaveAndQuit()
+	UI:ResetSpeaker()
+	UI:BeginChoiceMenu("What would you like to do?", {"Save and continue.", "Save and quit.", "Cancel"}, 1, 3)
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	if result == 1 then 
+		GAME:GroundSave()
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Game saved!")
+	elseif result == 2 then 
+		GAME:GroundSave()
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Game saved! Returning to title.")
+		GAME:FadeOut(false, 20)
+		GAME:RestartToTitle()
+	end
+end
+
+
+function GeneralFunctions.PromptSave()
+	UI:ResetSpeaker()
+	UI:ChoiceMenuYesNo("Would you like to save your game?")
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	if result == 1 then 
+		GAME:GroundSave()
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Game saved!")
+	end
 end
