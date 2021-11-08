@@ -89,7 +89,7 @@ end
 function guild_heros_room.Bedtime(generic)
 --if generic is true, do a generic nighttime cutscene and relevant processing. 
 --if generic is false, just make the room look like it's night and put the duo in bed.
-	if generic == nil then generic = true end
+	if generic == nil then generic = false end
 	
 	if not generic then 
 		local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
@@ -112,7 +112,9 @@ function guild_heros_room.Bedtime(generic)
 end
 
 
-
+function guild_heros_room.Save_Point_Touch(obj, activator)
+	GeneralFunctions.PromptSaveAndQuit()
+end
 
 
 -------------------------------

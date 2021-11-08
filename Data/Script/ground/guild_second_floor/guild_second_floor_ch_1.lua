@@ -527,13 +527,14 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Happy")
 		UI:SetSpeaker(partner)
-		UI:WaitShowDialogue("Yes![pause=0] We're Team " .. GAME:GetTeamName() .. "![pause=0] We just joined the guild today!")
+		UI:WaitShowDialogue("Yeah![pause=0] We're Team " .. GAME:GetTeamName() .. "![pause=0] We just joined the guild today!")
 		
 		GROUND:CharTurnToCharAnimated(zigzagoon, partner)
 		GAME:WaitFrames(10)
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Oh,[pause=10] good.[pause=0] I was worried I had forgotten someone I'd met before.[pause=0] I'm pretty bad with faces.")
+		UI:WaitShowDialogue("Hmm,[pause=10] OK.[pause=0] I was worried there was a local team I hadn't documented in my almanac.")
+		UI:WaitShowDialogue("I didn't recognize your faces,[pause=10] so I thought maybe I missed a team.")
 		GAME:WaitFrames(40)
 		GeneralFunctions.EmoteAndPause(zigzagoon, "Exclaim", true)
 		UI:SetSpeakerEmotion("Surprised")
@@ -546,31 +547,75 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
-		UI:WaitShowDialogue("That means we're guildmates![pause=0] I'm " .. zigzagoon:GetDisplayName() .. "![pause=0] I was the newest member at the guild until you two joined.")
+		GeneralFunctions.DoubleHop(zigzagoon)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Then that means we're guildmates![pause=0] I'm " .. zigzagoon:GetDisplayName() .. "![pause=0] I was the newest member at the guild before you two came along.")
+		GAME:WaitFrames(20)
+		
 		UI:SetSpeaker(zigzagoon)
 		UI:SetSpeakerEmotion("Inspired")
-		UI:WaitShowDialogue("It'll be nice not being the biggest rookie anymore...[pause=0] " .. CH('Cranidos'):GetDisplayName() .. " might not pick on me as much now...")
+		UI:WaitShowDialogue("This is great![pause=0] I finally have juniors that I can teach stuff to!")
+		UI:WaitShowDialogue("I'll have to show you guys my almanac,[pause=10] I think maybe you could learn a lot from it!")
 		GAME:WaitFrames(20)
-		UI:SetSpeakerEmotion("Worried")
-		UI:WaitShowDialogue("I hope he doesn't start bullying you now...[pause=0] He's a real jerk sometimes...")
-		GAME:WaitFrames(20)
-		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Enough about him though...[pause=0] What are your names?")
 		
+		GeneralFunctions.EmoteAndPause(partner, "Question", true)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Almanac?")
 		GAME:WaitFrames(20)
+	
+		UI:SetSpeaker(zigzagoon)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Yeah![pause=0] Everything I learn about adventuring I write down in my almanac!")--todo: hop at the end of this
+		UI:WaitShowDialogue("Adventurering teams,[pause=10] expedition discoveries,[pause=10] and dungeoneering techniques and knowledge!")
+		UI:WaitShowDialogue("It's all in my almanac so that myself and others can all learn everything there is to know about adventuring!")
+		GAME:WaitFrames(20)
+	
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Wow,[pause=10] that's amazing!")
+		UI:WaitShowDialogue("I bet me and " .. hero:GetDisplayName() .. " could learn a lot of useful things from something like that!")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("When do you think we could look at your almanac?")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(zigzagoon)
+		UI:SetSpeakerEmotion("Joyous")
+		--GeneralFunctions.DoubleHop(zigzagoon)
+		GROUND:CharSetEmote(zigzagoon, 4, 0)
+		--SOUND:PlayBattleSE('EVT_Emote_Startled_2')
+		UI:WaitShowDialogue("Anytime you want![pause=0] I'm always happy to share everything I've documented!")
+		GAME:WaitFrames(20)
+		GROUND:CharSetEmote(zigzagoon, -1, 0)
+		
+		UI:SetSpeakerEmotion('Normal')
+		UI:WaitShowDialogue("But just so you know,[pause=10] there's actually a few books I write stuff in.")
+		UI:WaitShowDialogue("It helps me keep the information more organized.[pause=0] Each book is for a different topic!")		
+		UI:WaitShowDialogue("Since I'm still kinda new there isn't too much in them yet...")
+		UI:WaitShowDialogue("But I add to them as I learn![pause=0] So I'm sure soon enough there'll be more pages than you can count!")
+		GAME:WaitFrames(20)
+		
+		UI:WaitShowDialogue("Anyway,[pause=10] I keep them in my room.[pause=0] Feel free to read through them anytime...[pause=0] Err...")
+		GeneralFunctions.EmoteAndPause(zigzagoon, 'Sweatdrop', true)
+		UI:WaitShowDialogue("I,[pause=10] um,[pause=10] never got your names.")
+		GAME:WaitFrames(20)
+		
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("My name's " .. partner:GetDisplayName() .. ",[pause=10] and my partner here is " .. hero:GetDisplayName() ..".")
-		
-		
 		GAME:WaitFrames(20)
+		
 		UI:SetSpeaker(zigzagoon)
-		UI:WaitShowDialogue(partner:GetDisplayName() .." and " .. hero:GetDisplayName() .. ".[pause=0] OK,[pause=10] got it.[pause=0] I'll be real careful not to forget those names!")
+		UI:WaitShowDialogue(partner:GetDisplayName() .." and " .. hero:GetDisplayName() .. ".[pause=0] OK,[pause=10] I'll have to make a note of that!")
 		SV.Chapter1.MetZigzagoon = true
 	
 		GROUND:CharTurnToChar(zigzagoon, hero)
+		GeneralFunctions.Hop(zigzagoon)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("I'm looking forward to training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
-		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers!")
+		UI:WaitShowDialogue("I'm looking forward to learning and training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
+		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers![pause=0] I just know it!")
+		
 		
 		--every guildmate is talked to, signal player that they can go sleep now
 		if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
@@ -578,7 +623,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 			GROUND:CharTurnToCharAnimated(partner, hero, 4)
 			UI:SetSpeaker(partner)
 			UI:SetSpeakerEmotion("Normal")
-			UI:WaitShowDialogue("Hmm...[pause=0] It's getting pretty late...")
+			UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 			GROUND:CharTurnToCharAnimated(hero, partner, 4)
 			GAME:WaitFrames(12)
 			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
@@ -588,7 +633,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		GROUND:CharTurnToChar(zigzagoon, hero)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("I'm looking forward to training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
-		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers!")
+		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers![pause=0] I just know it!")
 	end
 	
 	
@@ -880,13 +925,13 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		SV.Chapter1.MetCranidosMareep = true
 		GeneralFunctions.PanCamera(400, 272)
 		
-				--every guildmate is talked to, signal player that they can go sleep now
+		--every guildmate is talked to, signal player that they can go sleep now
 		if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
 			GAME:WaitFrames(60)
 			GROUND:CharTurnToCharAnimated(partner, hero, 4)
 			UI:SetSpeaker(partner)
 			UI:SetSpeakerEmotion("Normal")
-			UI:WaitShowDialogue("Hmm...[pause=0] It's getting pretty late...")
+			UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 			GROUND:CharTurnToCharAnimated(hero, partner, 4)
 			GAME:WaitFrames(12)
 			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")

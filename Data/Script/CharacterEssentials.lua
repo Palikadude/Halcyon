@@ -21,7 +21,7 @@ local characters = {
 		},
 		Zigzagoon = {
 			species = 263, 
-			nickname = '???',
+			nickname = 'Almotz',
 			instance = 'Zigzagoon',
 			gender = Gender.Male,
 			form = 0, 

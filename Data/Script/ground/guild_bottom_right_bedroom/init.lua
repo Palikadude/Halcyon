@@ -60,6 +60,14 @@ function guild_bottom_right_bedroom.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
+
+function guild_bottom_right_bedroom.Almanac_Action(chara, activator)
+	UI:ResetSpeaker(false)
+	UI:WaitShowDialogue("This is Almotz's almanac (along with the books/papers on the floor)")
+	UI:WaitShowDialogue("But there's a lot of work that needs to go into this almanac...")
+	UI:WaitShowDialogue("Which will be done at a later date.[pause=0] It'll have some lore,[pause=10] gameplay tips,[pause=10] etc.")
+	UI:WaitShowDialogue("So look forward to it!")
+end
 ---------------------------
 -- Map Transitions
 ---------------------------

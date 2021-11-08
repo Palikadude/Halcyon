@@ -106,8 +106,14 @@ function BATTLE_SCRIPT.AllyInteract(owner, ownerChar, context, args)
 end
 
 
---special script for the partner
+--special Halcyon script for the partner
 function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
+	local chara = context.User
+	local target = context.Target
+	local action_cancel = context.CancelState
+	local turn_cancel = context.TurnCancel
+
+
 	  action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
   if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
@@ -220,10 +226,16 @@ end
 
 
 
---special interact script for the hero
+--special Halcyon interact script for the hero
 --very simplified version of partner script, only dialogue possible is "(.........)"
 function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
-	  action_cancel.Cancel = true
+	local chara = context.User
+	local target = context.Target
+	local action_cancel = context.CancelState
+	local turn_cancel = context.TurnCancel
+	 
+
+	 action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
   if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
     

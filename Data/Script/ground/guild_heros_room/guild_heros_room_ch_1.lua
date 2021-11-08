@@ -16,6 +16,7 @@ function guild_heros_room_ch_1.SetupGround()
 															"Event_Trigger_1")
 		  groundObj:ReloadEvents()
 		  GAME:GetCurrentGround():AddObject(groundObj)
+		  GROUND:Hide('Save_Point')
 	  end
 	  GAME:FadeIn(20)
 end
@@ -56,21 +57,10 @@ end
 function guild_heros_room_ch_1.Bedtalk()
 	
 	--Set nighttime, put duo in beds asleep
-	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
-													RogueElements.Rect(176, 56, 64, 64),
-													RogueElements.Loc(0, 0), 
-													false, 
-													"Window")
-	groundObj:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(groundObj)
-	GROUND:Hide("Event_Trigger_1")
-	GROUND:AddMapStatus(50)
-	
-	local hero_bed = MRKR('Hero_Bed')
-	local partner_bed = MRKR('Partner_Bed')
-	GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
-	GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
 
+	GROUND:Hide("Event_Trigger_1")
+	GROUND:Hide("Save_Point")--just in case it isn't hidden by setupground for some reason
+	guild_heros_room.Bedtime()--set nighttime scene, put duo in their beds
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 
@@ -130,7 +120,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	UI:WaitShowDialogue("(But...[pause=0] I think that's what puzzles me the most.)")
 	UI:WaitShowDialogue("(Shouldn't I be feeling scared instead?[pause=0] Why do I feel so at ease?)")
 	UI:WaitShowDialogue("(I turned into a Pokémon without any memories and was lying unconscious near a strange tablet in a forest...)")
-	UI:WaitShowDialogue("(So shouldn't I be a nervous wreck?)")
+	UI:WaitShowDialogue("(So shouldn't I be feeling more uneasy?)")
 	GAME:WaitFrames(60)
 	
 	UI:WaitShowDialogue("(Even more troubling...)")
@@ -152,6 +142,33 @@ function guild_heros_room_ch_1.Bedtalk()
 	SV.ChapterProgression.Chapter = 2
 	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
 	
+	--ch1 done, demo end message: REMOVE WHEN CHAPTER 2 BUILD IS COMING ALONG
+	GAME:WaitFrames(120)
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("That's the end of Chapter 1![pause=0] Thanks for playing!")
+	UI:WaitShowDialogue("I'm starting work on Chapter 2 next.[pause=0] But give me your thoughts on Chapter 1!")
+	UI:WaitShowDialogue("Hopefully it won't take as long to do the next chapters.[pause=0] I'm hoping that your guys help will speed things along.")
+	UI:WaitShowDialogue("Let me know if you managed to find any bugs as well.")
+	UI:WaitShowDialogue("In the meantime, I've set the flags so that you can freeroam in this debug-esque state.")
+	UI:WaitShowDialogue("I don't think any cutscenes should be triggering now, but don't expect anything to be looking too normal in this state.")
+	UI:WaitShowDialogue("Do let me know if any story cutscenes trigger.[pause=0] Because if any do I messed up.")
+	UI:WaitShowDialogue("And anything you see is subject to change, just so you know.")
+	UI:WaitShowDialogue("I already have some plans to modify some things around the town...")
+	UI:WaitShowDialogue("Also be sure to check the discord for updates and notes on known bugs/issues, chapter 2 progress, etc.")
+	UI:WaitShowDialogue("Alright.[pause=0] I'm enabling free roam now...[pause=0] Thanks again for playing!")
+	
+	GAME:CutsceneMode(false)
+    GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+	--[[GAME:CutsceneMode(false)
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:RemoveMapStatus(50)
+	SOUND:PlayBGM("Wigglytuff's Guild.ogg", false)
+	GROUND:
+	GAME:FadeIn(20)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)]]--
+		
 end
 
 
@@ -165,27 +182,28 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:ResetSpeaker()
 	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	GROUND:Hide('Bedroom_Exit')--disable map transition object
+	GROUND:Hide("Save_Point")--disable bed saving
 	
 	local noctowl =
 		CharacterEssentials.MakeCharactersFromList({
-			{"Noctowl", 0, 200, Direction.Right},
+			{"Noctowl", 0, 204, Direction.Right},
 		})
 
-	GAME:MoveCamera(192, 160, 1, false)
-	GROUND:TeleportTo(partner, -32, 188, Direction.Right)
-	GROUND:TeleportTo(hero, -32, 212, Direction.Right)
+	GAME:MoveCamera(192, 176, 1, false)
+	GROUND:TeleportTo(partner, -32, 192, Direction.Right)
+	GROUND:TeleportTo(hero, -32, 216, Direction.Right)
 
 	GAME:FadeIn(20)
 
 	local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
-												  GROUND:MoveToPosition(partner, 172, 188, false, 1) 
+												  GROUND:MoveToPosition(partner, 172, 192, false, 1) 
 												  GeneralFunctions.EmoteAndPause(partner, "Exclaim", true) 
 												  end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
-												  GROUND:MoveToPosition(hero, 172, 212, false, 1)
+												  GROUND:MoveToPosition(hero, 172, 216, false, 1)
 												  GeneralFunctions.EmoteAndPause(hero, "Exclaim", false)
 												  end)
-	local coro3 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 200, 200, false, 1) 
+	local coro3 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 200, 204, false, 1) 
 											      GROUND:CharAnimateTurnTo(noctowl, Direction.Left, 4)
 												  end)
 												
@@ -293,7 +311,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:WaitShowDialogue("Very good,[pause=10] I will leave you to it then.[br]I am off to assist the Guildmaster in updating our records.")
 	GAME:WaitFrames(20)
 	
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 0, 200, false, 1) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 0, 204, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(hero, noctowl, 4, Direction.DownLeft) end)
 	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, noctowl, 4, Direction.DownLeft) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
@@ -322,8 +340,8 @@ function guild_heros_room_ch_1.RoomIntro()
 	
 	--let's go meet our guildmates!!
 	GAME:WaitFrames(10)
-	GROUND:CharSetAnim(partner, "None", true)
-	GROUND:CharSetAnim(hero, "None", true)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(partner)
 	GeneralFunctions.DoubleHop(partner)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
@@ -350,6 +368,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	SV.Chapter1.TeamJoinedGuild = true
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+
 	GAME:CutsceneMode(false)
 
 											

@@ -261,13 +261,13 @@ function guild_storage_hallway_ch_1.MeetAudino()
 		GROUND:CharTurnToCharAnimated(partner, hero, 4)
 		UI:SetSpeaker(partner)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Hmm...[pause=0] It's getting pretty late...")
+		UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		GAME:WaitFrames(12)
 		UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
 		UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=0] " .. hero:GetDisplayName() .. ".")
 	end
-	
+
 	GROUND:Unhide("Top_Exit")
 	GAME:GetCurrentGround():RemoveTempChar(audino)
 	GeneralFunctions.PanCamera(180, 148)

@@ -144,11 +144,23 @@ function relic_forest_ch_1.Intro_Cutscene()
 	_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
 	_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
 	_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
+	
+	_DATA.Save.ActiveTeam.Players[0]:FullRestore()--set hp/pp to full for player and partner
+	_DATA.Save.ActiveTeam.Players[1]:FullRestore()
+	
+	
+	--assign dungeon AIs
+	--TODO: make the partner one more unique/original/detailed, basically just copying audino's for now
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("HeroInteract")
+	_DATA.Save.ActiveTeam.Players[0].ActionEvents:Add(talk_evt)
+	
+	talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
+	_DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 
   
 	local yesnoResult = false 
 	while not yesnoResult do
-		UI:NameMenu("What is your partner's name?", "It is highly recommended to give a nickname.")
+		UI:NameMenu("What is your partner's name?", "It is highly recommended to give a nickname.", 60)
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
 		--if no name given, set name to species name
@@ -164,14 +176,11 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	GAME:SetCharacterNickname(partner, result)
 	GAME:SetTeamName(result) --set team name to partner's name temporarily
-	partner:FullRestore()--set hp/pp to full for player and partner
-	hero:FullRestore()
 	COMMON.RespawnAllies()
 	
 	GAME:WaitFrames(180)
   
-  
-  	local hero = CH('PLAYER')
+    local hero = CH('PLAYER')
 	local marker = MRKR("WakeupLocation")
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
@@ -193,6 +202,8 @@ function relic_forest_ch_1.Intro_Cutscene()
 	UI:WaitShowTitle("Chapter 1\n\nA New Life\n", 20)
 	GAME:WaitFrames(180)
 	UI:WaitHideTitle(20)
+	
+	GAME:WaitFrames(180)
 	
 	
   	UI:WaitShowVoiceOver(".........", -1)  
@@ -279,7 +290,8 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("I've been here plenty of times before,[pause=10] but...")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("I can't help but feel glad everytime I make it here.")
-	GeneralFunctions.Hop(partner)
+	GeneralFunctions.DoubleHop(partner)
+	SOUND:PlayBattleSE('EVT_Emote_Startled_2')
 	GROUND:CharSetEmote(partner, 4, 0)
 	UI:WaitShowDialogue("My own little adventuring success!")
 	GAME:WaitFrames(20)
@@ -319,12 +331,13 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GeneralFunctions.MoveCharAndCamera(partner, 292, 272, true, 4)
 	GeneralFunctions.MoveCharAndCamera(partner, 268, 272, true, 4)
 	
+	GAME:WaitFrames(10)
 	GeneralFunctions.Hop(partner)
 	UI:WaitShowDialogue("H-hey![pause=0] What happened!?[pause=0] Are you alright!?")
 	GAME:WaitFrames(80)
 	
 	--step in and out twice, facing forward the entire time
-	UI:WaitShowDialogue("Oh no,[pause=10] c'mon,[pause=10] you gotta wake up!")
+	UI:WaitShowDialogue("Oh no,[pause=10] c'mon,[pause=10] please be okay!")
 	GROUND:MoveInDirection(partner, Direction.Left, 4, false, 2)
 	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
 	GAME:WaitFrames(10)
@@ -397,9 +410,9 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	SOUND:PlayBattleSE('EVT_Emote_Sweating')
 	GROUND:CharSetEmote(hero, 5, 1)
 	GAME:WaitFrames(40)
-	GeneralFunctions.HeroDialogue(hero, "(I can't believe this...[pause=0] I'm really a Pokémon...)", "Worried")--at some point, should comment on how being a Pokémon is actually sick, just initially shocked and overwhelmed which is why they reacted like this
+	GeneralFunctions.HeroDialogue(hero, "(I can't believe this...[pause=0] I'm really a " .. hero_species .. "...)", "Worried")--at some point, should comment on how being a Pokémon is actually sick, just initially shocked and overwhelmed which is why they reacted like this
 	GeneralFunctions.HeroDialogue(hero, "(But how did this happen?[pause=0] I can't remember anything...)", "Worried")
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(40)
 	GeneralFunctions.HeroSpeak(hero, 60)
 	GAME:WaitFrames(20)
 	
@@ -472,7 +485,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:ResetSpeaker()
 	local yesnoResult = false
 	while not yesnoResult do
-		UI:NameMenu("What will your name be?", "")
+		UI:NameMenu("What will your name be?", "", 60)
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
 		GAME:SetCharacterNickname(GAME:GetPlayerPartyMember(0), result)
@@ -491,7 +504,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("Glad to meet you,[pause=10] " .. hero:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("I'm sorry for being so skeptical before.[pause=0] It's just hard to believe that a human could turn into a Pokémon.")
+	UI:WaitShowDialogue("I'm sorry for being skeptical before.[pause=0] It's just hard to believe that a human could turn into a Pokémon.")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Even if you weren't a human,[pause=10] you think you were one and that's good enough for me.")
@@ -565,9 +578,10 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Before we leave,[pause=10] could you look at something with me for a moment?")
 	UI:WaitShowDialogue("I want to show you something cool.")
+	GAME:WaitFrames(20)
 	
 
-	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCharAndCamera(partner, 293, 235, false, 1)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCharAndCamera(partner, 293, 247, false, 1)
 											GeneralFunctions.MoveCharAndCamera(partner, 293, 218, false, 1) end)
 	GAME:WaitFrames(40)
 	GeneralFunctions.EightWayMove(hero, 270, 236, false, 1)
