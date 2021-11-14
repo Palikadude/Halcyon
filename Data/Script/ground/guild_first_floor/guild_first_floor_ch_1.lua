@@ -94,6 +94,7 @@ function guild_first_floor_ch_1.EnterGuild()
 	GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
 	GAME:WaitFrames(40)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Alright,[pause=10] let's not keep [color=#00FFFF]Phileas[color] waiting any longer.")
 	GAME:WaitFrames(20)
 	

@@ -37,7 +37,7 @@ local characters = {
 		},
 		Mareep = {
 			species = 179,
-			nickname = '???',
+			nickname = 'Shuca',
 			instance = 'Mareep',
 			gender = Gender.Female,
 			form = 0,
@@ -46,7 +46,7 @@ local characters = {
 		
 		Cranidos = {
 			species = 408,
-			nickname = '???',
+			nickname = 'Ganlon',
 			instance = 'Cranidos',
 			gender = Gender.Male,
 			form = 0,
@@ -55,7 +55,7 @@ local characters = {
 		
 		Snubbull = {
 			species = 209,
-			nickname = '???',
+			nickname = 'Coco',
 			instance = 'Snubbull',
 			gender = Gender.Female,
 			form = 0,
@@ -130,7 +130,7 @@ local characters = {
 	--Team Round
 		Spheal = { 
 			species = 363,
-			nickname = '???',
+			nickname = 'Chumby',
 			instance = 'Spheal',
 			gender = Gender.Male,
 			form = 0,
@@ -138,25 +138,25 @@ local characters = {
 			},
 		Marill = { 
 			species = 183,
-			nickname = '???',
+			nickname = 'Rolund',
 			instance = 'Marill',
-			gender = Gender.Female,
+			gender = Gender.Male,
 			form = 0,
 			skin = 0	
 		},
 		Jigglypuff = { 
 			species = 39,
-			nickname = '???',
+			nickname = 'Plum',
 			instance = 'Jigglypuff',
 			gender = Gender.Female,
 			form = 0,
 			skin = 0
 		},
 		
-	--Team ???
+	--Team Starlight
 		Cleffa = {
 			species = 173,
-			nickname = '???',
+			nickname = 'Primonna',
 			instance = 'Cleffa',
 			gender = Gender.Female,
 			form = 0,

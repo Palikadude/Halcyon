@@ -128,7 +128,10 @@ SV.Chapter1 =
 	MetZigzagoon = false,
 	MetCranidosMareep = false,
 	MetBreloomGirafarig = false,
-	MetAudino = false
+	MetAudino = false,
+	
+	--partner dialogue flag on second floor
+	PartnerSecondFloorDialogue = 0
 }
 
 

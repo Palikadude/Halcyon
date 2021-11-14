@@ -53,9 +53,10 @@ function StateIdle:Run(entity)
 
   
   
-  --Suspend while interacting with the entity
+  --Suspend while interacting with the entity after forcing them to look at the player whose interacting 
   if ent.IsInteracting then 
-    return 
+    GROUND:CharTurnToChar(entity, CH('PLAYER'))--hardcoded turn to player, todo maybe not hardcode it?
+	return
   end
   
   --If enough time passed, wander or turn
@@ -113,12 +114,13 @@ function StateEmoteIdle:Run(entity)
   
     local ent = LUA_ENGINE:CastToGroundAIUser(entity)
 
-  --When interaction stopped, go idle or stop emoting if we're emoting
-  if self.parentAI.Emoting and self.timeEmoting < 0 then 
+  --Stop emoting if we've emoted for too long or if the entity is being interacted with
+  if self.parentAI.Emoting and (self.timeEmoting < 0 or ent.IsInteracting) then 
 	  self.parentAI:SetState("StopEmote")
  -- elseif not self.parentAI.Emoting and not ent:CurrentTask() then
 	--  self.parentAI:SetState("Idle")
 	end
+		
 	self.timeEmoting = self.timeEmoting - 1
   end
 
@@ -168,8 +170,11 @@ function StateStopEmote:SetTask(entity)
   TASK:StartEntityTask(entity, 
     function()
       GROUND:CharSetEmote(entity, -1, 0)
-	  if self.parentAI.Turn then GROUND:CharAnimateTurnTo(entity, self.parentAI.OldDir, 4) end
-    end)
+	  if self.parentAI.Turn and not LUA_ENGINE:CastToGroundChar(entity).IsInteracting then
+		GROUND:CharAnimateTurnTo(entity, self.parentAI.OldDir, 4)
+      end
+	--dont turn back to original direction if someone's talking to you
+   end)
 end
 	
 

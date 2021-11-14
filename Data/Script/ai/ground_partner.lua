@@ -101,8 +101,8 @@ function StateFollow:SetTask(entity)
   local run = false
   local speed = 2
   
-  --run if the distance is above a certain threshold
-  if self.parentAI.TravelLength > self.parentAI.ComfortZone + 2 then
+  --run if the distance is above a certain threshold, but don't run if the distance the partner needs to walk is a "walkable" distance
+  if self.parentAI.TravelLength > self.parentAI.ComfortZone + 2 and distance > 2 then
     run = true
 	speed = 5
   end 
@@ -183,7 +183,7 @@ function ground_partner:initialize(targetentity, initialposition)
   self.InitialSteps = 6--AI will be this many "steps" behind the player, plus two additional ones. 
   self.QueueLength = 0--How many entries in the queue?
   self.TravelLength = 0--How long is the combined travel length in the queue?
-  self.ComfortZone = 32
+  self.ComfortZone = 32--How far away can the partner be before running to catch up?
   
   --Who is the partner following? 
   if not targetentity then
@@ -263,10 +263,10 @@ function ground_partner:CalculateNextPosition(entity)
 end
 
 
-function GetDistance(pos1, pos2)--distance between two positions 
+function GetDistance(pos1, pos2)--distance between two positions, take greater of x and y differential due to how diagonal movement works 
   local diffX = pos1.X - pos2.X
   local diffY = pos1.Y - pos2.Y
-  local distance = math.sqrt((diffX * diffX) + (diffY * diffY))  
+  local distance = math.max(math.abs(diffX), math.abs(diffY))
   
   return distance
 end 

@@ -13,7 +13,6 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	local hero = CH('PLAYER')
 	GROUND:AddMapStatus(51)--dusk
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
-	--todo: hide player
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()

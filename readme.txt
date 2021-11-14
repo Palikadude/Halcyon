@@ -1,7 +1,7 @@
 Halcyon is a mod for PMDO created by Palika that is essentially its own brand new PMD game. 
 
 Please keep it under wraps until I go public with it. This will happen when enough work has been done to release a demo. 
-This will be when the expedition arc is completed (about 8-10 dungeons).
+The first one will be after the 3rd chapter (first outlaw job).
 
 Credits:
 Palika - scripting, writing, balancing, etc. (all non-engine work)
@@ -13,7 +13,4 @@ D4yz - guild interior tilesets and original guild decorations pixel art
 
 
 Special thanks:
-VDX
-Genshi
-Kikoho
-Shitpost Sunkern
+borzoiteeth - for inspiring the game in the first place

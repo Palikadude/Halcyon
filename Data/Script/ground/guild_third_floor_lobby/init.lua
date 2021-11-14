@@ -43,7 +43,7 @@ function guild_third_floor_lobby.Enter(map)
 		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
 			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 		else
-			GAME:FadeIn(20)
+			guild_third_floor_lobby_ch_1.SetupGround()
 		end
 	else
 		GAME:FadeIn(20)
@@ -65,6 +65,26 @@ function guild_third_floor_lobby.Update(map)
 
 end
 
+
+
+---------------------------------
+-- Event Object
+-- This is a temporary object created by a script used for temporary objects events that only happen
+-- that only exist when certain story flag conditions are met.
+---------------------------------
+function guild_third_floor_lobby.Event_Object_1_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_third_floor_lobby_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Object_1_Action(...,...)"), obj, activator))
+end
+
+function guild_third_floor_lobby.Event_Object_2_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_third_floor_lobby_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Object_2_Action(...,...)"), obj, activator))
+end
+
+
+
+
 -------------------------------
 -- Entities Callbacks
 -------------------------------
@@ -76,17 +96,17 @@ end
 function guild_third_floor_lobby.Test_Action(chara, activator)
 	SV.Chapter1.MetSnubbull = true
 	SV.Chapter1.MetZigzagoon = true
-	SV.Chapter1.MetCranidosMareep = false
+	SV.Chapter1.MetCranidosMareep = true
 	SV.Chapter1.MetBreloomGirafarig = true
-	SV.Chapter1.MetAudino = true
+	SV.Chapter1.MetAudino = false
 	SV.Chapter1.TeamJoinedGuild = true
 
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("All guildmates now considered met.")
-	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 1\n\noh god im sharting\n", 20)
+	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 1\n\nAnother Beginning\n", 20)
 												  GAME:WaitFrames(120)
 												  UI:WaitHideTitle(20) end)
-	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Dusknoir", 120, 20)
+	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Chapter_1", 120, 20)
 												  GAME:WaitFrames(120)
 												  UI:WaitHideBG(20) end)
 	TASK:JoinCoroutines({coro1, coro2})

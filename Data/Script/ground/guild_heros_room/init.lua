@@ -96,7 +96,7 @@ function guild_heros_room.Bedtime(generic)
 														RogueElements.Rect(176, 56, 64, 64),
 														RogueElements.Loc(0, 0), 
 														false, 
-														"Window")
+														"Window_Cutscene")
 		groundObj:ReloadEvents()
 		GAME:GetCurrentGround():AddObject(groundObj)
 		GROUND:AddMapStatus(50)

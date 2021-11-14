@@ -18,13 +18,13 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	
 	local box = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Yellow_Box", 1), --anim data. Don't set that number to 0 for valid anims
 								 				 RogueElements.Rect(184, 144, 16, 16),--xy coords, then size
-								  				 RogueElements.Loc(4, 8), --offset
+								  				 RogueElements.Loc(4, 14), --offset
 												 true, 
 												 "Yellow_Box")--object entity name
 	box:ReloadEvents()
 	GAME:GetCurrentGround():AddObject(box)
 	GROUND:ObjectSetDefaultAnim(box, 'Yellow_Box', 0, 0, 0,Direction.Down)
-	
+	GROUND:Hide(box.EntName)
 	local noctowl = 
 		CharacterEssentials.MakeCharactersFromList({
 			{"Noctowl", 184, 288, Direction.Up}
@@ -56,7 +56,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 --	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("These are the two Pokémon I told you about,[pause=10] Guildmaster.")
+	UI:WaitShowDialogue("These are the two Pokémon I informed you of,[pause=10] Guildmaster.")
 	
 	GROUND:CharTurnToCharAnimated(noctowl, hero, 4)
 	GAME:WaitFrames(40)
@@ -154,8 +154,8 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	GAME:WaitFrames(12)
-	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(hero, 'Sweating', true) end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(partner, 'Sweating') end)
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(hero, 'Sweating', false) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(partner, 'Sweating', true) end)
 	TASK:JoinCoroutines({coro1, coro2})	
 	GAME:WaitFrames(20)	
 	
@@ -229,7 +229,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 		UI:WaitShowDialogue("But keep in mind that it's not always fun and games.[pause=0] It can be very serious work at times.")--foreshadowing
 	
 	elseif result == 2 then 
-		GeneralFunctions.HeroDialogue(hero, "(Truthfully,[pause=10] I'd like to figure out who I used to be and how I lost my memory.", "Worried")
+		GeneralFunctions.HeroDialogue(hero, "(Truthfully,[pause=10] I'd like to figure out who I used to be and how I lost my memory.)", "Worried")
 		GeneralFunctions.HeroDialogue(hero, "(Being an adventurer seems like it could help me with that...)", "Worried")
 		GeneralFunctions.HeroDialogue(hero, "(But " .. partner:GetDisplayName() .. " said I shouldn't tell anyone that I was a human...)", "Worried")
 		GAME:WaitFrames(20)
@@ -314,6 +314,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GROUND:CharSetAnim(hero, "Idle", true)
 	UI:SetSpeakerEmotion("Joyous")
 	GeneralFunctions.DoubleHop(partner, "Idle")
+	GROUND:CharSetAnim(partner, "Idle", true)
 	UI:WaitShowDialogue("We did it![pause=0] We're in the guild,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] I can't believe it!")
 	
 	GAME:WaitFrames(40)
@@ -366,7 +367,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
 		GAME:SetTeamName(result)
-		UI:ChoiceMenuYesNo("Is Team " .. GAME:GetTeamName() .. " correct?")
+		UI:ChoiceMenuYesNo("Is Team " .. GAME:GetTeamName() .. " correct?", true)
 		UI:WaitForChoice()
 		yesnoResult = UI:ChoiceResult()
 	end
@@ -415,15 +416,19 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	
 	--pipe dream todo: have scarves for the sprites from now on
 	GAME:WaitFrames(20)
-	GeneralFunctions.Monologue("Inside the box there was...")
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("Inside the box there was...")
 	SOUND:PlayFanfare("Fanfare/Item")
-	GeneralFunctions.Monologue("A map...")
+	UI:WaitShowDialogue("A map...")
 	SOUND:PlayFanfare("Fanfare/Item")
-	GeneralFunctions.Monologue("A set of adventurer's badges...")
+	UI:WaitShowDialogue("A set of adventurer's badges...")
 	SOUND:PlayFanfare("Fanfare/Item")
-	GeneralFunctions.Monologue("An item bag...")
+	UI:WaitShowDialogue("An item bag...")
 	SOUND:PlayFanfare("Fanfare/Item")
-	GeneralFunctions.Monologue("And a pair of " .. scarf_name .. "!")
+	UI:WaitShowDialogue("And a pair of " .. scarf_name .. "!")
+	UI:SetCenter(false)
+	
 	
 	GAME:WaitFrames(30)
 	GeneralFunctions.Hop(partner)
@@ -503,6 +508,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
 	_DATA.Save.ActiveTeam:SetRank(1)
 	GAME:CutsceneMode(false)
+	GAME:WaitFrames(60)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
  	
 end

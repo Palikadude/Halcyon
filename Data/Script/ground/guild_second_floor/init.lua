@@ -105,24 +105,24 @@ end
 function guild_second_floor.Mission_Board_Action(chara, activator)
 	if SV.ChapterProgression.Chapter < 3 then 
 		GROUND:CharTurnToCharAnimated(CH('Teammate1'), CH('PLAYER'),  4)
-		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
 		UI:SetSpeaker(CH('Teammate1'))
 		UI:SetSpeakerEmotion("Worried")
-		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we're supposed to be taking jobs from this board quite yet...")
+		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...")
+		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Let's come back once we're allowed to take jobs from the board.")
+		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")
 	end
 end
 
 function guild_second_floor.Outlaw_Board_Action(chara, activator)
 	if SV.ChapterProgression.Chapter < 3 then 
 		GROUND:CharTurnToCharAnimated(CH('Teammate1'), CH('PLAYER'),  4)
-		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
 		UI:SetSpeaker(CH('Teammate1'))
 		UI:SetSpeakerEmotion("Worried")
-		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we're supposed to be taking jobs from this board quite yet...")
+		UI:WaitShowDialogue("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...")
+		GROUND:CharTurnToCharAnimated(CH('PLAYER'), CH('Teammate1'), 4)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Let's come back once we're allowed to take jobs from the board.")
+		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")
 	end
 end
 

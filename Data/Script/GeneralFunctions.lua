@@ -410,7 +410,7 @@ function GeneralFunctions.CenterCamera(charList, startX, startY, speed)
 		totalX = totalX + value.Position.X + 8--offset char's pos by 8 to get camera on their center
 		totalY = totalY + value.Position.Y + 8
 		length = length + 1
-		print(value:GetDisplayName() .. "'s position: " .. value.Position.X .. " " .. value.Position.Y)
+		--print(value:GetDisplayName() .. "'s position: " .. value.Position.X .. " " .. value.Position.Y)
 	end
 	
 	local avgX = math.floor(totalX / length)
@@ -442,16 +442,12 @@ function GeneralFunctions.PanCamera(startX, startY, toPlayer, speed, endX, endY)
 	if endX ~= startX then
 		difference = math.abs(endX - startX)
 		duration = math.ceil(difference / speed)
-		print(difference)
-		print(duration)
 		GAME:MoveCamera(endX, startY, duration, false)
 	end
 	
 	if endY ~= startY then
 		difference = math.abs(endY - startY)
 		duration = math.ceil(difference / speed)
-		print(difference)
-		print(duration)
 		GAME:MoveCamera(endX, endY, duration, false)
 	end
 	

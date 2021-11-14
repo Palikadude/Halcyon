@@ -27,12 +27,13 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	local audino = CharacterEssentials.MakeCharactersFromList({
 		{'Audino', -20, 172, Direction.Right}
 	})
-	
+	--need to spawn the partner at same location as hero and wait 32 frames before moving rather than 32 behind partner
+	--putting partner too far out of bounds breaks their talk to script for whatever reason until the map reloads
 	GAME:CutsceneMode(true)
+	GROUND:Hide("Top_Exit")
 	AI:DisableCharacterAI(partner)
 	GROUND:TeleportTo(hero, 168, -24, Direction.Down)
-	GROUND:TeleportTo(partner, 168, -56, Direction.Down)
-	GROUND:Hide("Top_Exit")
+	GROUND:TeleportTo(partner, 168, -24, Direction.Down)
 	GAME:MoveCamera(180, 148, 1, false)
 	GAME:FadeIn(20)
 	--GROUND:Hide("Event_Trigger")
@@ -52,13 +53,15 @@ function guild_storage_hallway_ch_1.MeetAudino()
 											      GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end) ]]--
 					
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 168, 172, false, 1) end)
-	local coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 168, 140, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(32)
+												  GROUND:MoveToPosition(partner, 168, 140, false, 1) end)
 	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(153) 
 												  GROUND:MoveToPosition(audino, 152, 172, true, 4) end)
-	TASK:JoinCoroutines({coro1, coro2})
+	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
 	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, audino.CurrentForm.Species, audino.CurrentForm.Form, audino.CurrentForm.Skin, audino.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Pain")
+	SOUND:StopBGM()
 	
 	--you two dopes run into each other
 	SOUND:PlayBattleSE('EVT_Tackle')
@@ -117,6 +120,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	GAME:WaitFrames(20)
 	
 	--GROUND:CharTurnToChar(partner, audino)
+	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	UI:SetSpeakerEmotion("Sigh")
 	UI:WaitShowDialogue("Oh thank goodness.[pause=0] I'm glad you're not hurt.")
 	UI:SetSpeakerEmotion("Normal")
@@ -218,7 +222,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	UI:WaitShowDialogue("I promise I won't r-ram into you again like earlier![pause=0]\nS-Sorry again!")
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("I have to get back to my chores before it gets any later.[pause=0] Stay safe!")
-	--runs, realizes it'll happen again, starts to walk
+	GAME:WaitFrames(20)
 	
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(40)
 											GROUND:MoveToPosition(audino, 168, audino.Position.Y, false, 2)
@@ -226,6 +230,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 											GROUND:Hide("Audino") end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(partner, Direction.Right, 24, false, 1) 
 											GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+											GAME:WaitFrames(26)
 											GeneralFunctions.FaceMovingCharacter(partner, audino, 4, Direction.UpLeft) end)
 	coro3 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(hero, "Walk", Direction.Left, Direction.Right, 8, 1, 1)
 											GAME:WaitFrames(42)
@@ -233,9 +238,9 @@ function guild_storage_hallway_ch_1.MeetAudino()
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
+	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
-	UI:SetSpeaker(partner)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Well,[pause=10] that was something.[pause=0] I wonder how often she bumps into others like that...")
@@ -255,6 +260,12 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	UI:WaitShowDialogue("We can't go in there though...[pause=0] I'd like to see some of his treasure some day though.")
 	GAME:WaitFrames(20)
 	
+	GROUND:CharEndAnim(hero)
+	GeneralFunctions.PanCamera(180, 148)
+	GROUND:Unhide("Top_Exit")
+	GAME:GetCurrentGround():RemoveTempChar(audino)
+	SV.Chapter1.MetAudino = true
+
 	--every guildmate is talked to, signal player that they can go sleep now
 	if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
 		GAME:WaitFrames(60)
@@ -268,12 +279,9 @@ function guild_storage_hallway_ch_1.MeetAudino()
 		UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=0] " .. hero:GetDisplayName() .. ".")
 	end
 
-	GROUND:Unhide("Top_Exit")
-	GAME:GetCurrentGround():RemoveTempChar(audino)
-	GeneralFunctions.PanCamera(180, 148)
-	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+
 	AI:EnableCharacterAI(partner)
-	SV.Chapter1.MetAudino = true
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 
 	GAME:CutsceneMode(false)
 	

@@ -5,6 +5,38 @@ require 'CharacterEssentials'
 
 guild_third_floor_lobby_ch_1 = {}
 
+function guild_third_floor_lobby_ch_1.SetupGround()
+	local door = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Closed_Guild_Door", 1, 0, 0), 
+													RogueElements.Rect(424, 160, 48, 64),
+													RogueElements.Loc(8, -8), 
+													false, 
+													"Event_Object_1")
+	door:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(door)
+	
+	local board = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+													RogueElements.Rect(264, 216, 48, 8),
+													RogueElements.Loc(0, 0), 
+													false, 
+													"Event_Object_2")
+	
+	board:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(board)
+	GROUND:Hide('Door_Exit')
+	GAME:FadeIn(20)	
+end
+
+function guild_third_floor_lobby_ch_1.Event_Object_1_Action(obj, activator)
+	GeneralFunctions.Monologue("(The door is locked.)")
+end
+
+function guild_third_floor_lobby_ch_1.Event_Object_2_Action(obj, activator)
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("(There are a number of internal guild postings here...)")
+	UI:WaitShowDialogue("(...But you're not really sure what to make of them yet.)")
+	UI:SetCenter(false)
+end
 
 --TASK:BranchCoroutine(guild_third_floor_lobby_ch_1.GoToGuildmasterRoom)
 --follow noctowl to guildmaster's room
@@ -17,6 +49,14 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	GAME:MoveCamera(600, 240, 1, false)
 	
 	
+	local door = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Closed_Guild_Door", 1, 0, 0), 
+													RogueElements.Rect(416, 160, 64, 64),
+													RogueElements.Loc(0, -8), 
+													false, 
+													"Closed_Door")
+	door:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(door)
+		
 	local noctowl = 
 		CharacterEssentials.MakeCharactersFromList({
 			{"Noctowl", 600, 240, Direction.Up}
@@ -52,7 +92,6 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("Please wait here.[pause=0] I am going to notify the Guildmaster of your arrival.")
 	
 	GeneralFunctions.DoubleHop(partner, 'None', 6, 6)
-	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("OK![pause=0] We'll wait right here!")
 	GAME:WaitFrames(20)
@@ -61,14 +100,24 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("Very good.[pause=0] I shall return momentarily.")
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(noctowl, Direction.Up, 4)
-	--todo: he opens and closes the door
 
 	
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(noctowl, Direction.Up, 24, false, 1)
-											GROUND:Hide(noctowl.EntName) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(noctowl, Direction.Up, 16, false, 1)
+											end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(hero, noctowl) end)
 	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, noctowl) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	--open and close the door
+	GROUND:Hide(door.EntName)
+	SOUND:PlayBattleSE('EVT_Chest_Click')
+	GAME:WaitFrames(40)
+	GROUND:MoveInDirection(noctowl, Direction.Up, 8, false, 1)
+	GROUND:Hide(noctowl.EntName) 
+	GAME:WaitFrames(20)
+	GROUND:Unhide(door.EntName)
+	SOUND:PlayBattleSE('EVT_Chest_Click')
+
 	
 	GAME:WaitFrames(60)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
@@ -168,12 +217,12 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("I feel so uneasy about this...[pause=0] Do you really think they'll let us join,[pause=10] " .. hero:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
 	
-	GeneralFunctions.HeroDialogue(hero, "(Truthfully,[pause=10] I can't know what's gonna happen once we step through that door...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(Truthfully,[pause=10] I don't know what's gonna happen once we step through that door...)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(But given my amnesia and " .. partner:GetDisplayName() .. "'s nerves,[pause=10] our odds don't seem too great to me...)", "Worried")
 	GAME:WaitFrames(20)
 	
-	GeneralFunctions.HeroDialogue(hero, "(Even so...[pause=0] I have this strong feeling that everything's going to be OK.)", "Normal")
-	GeneralFunctions.HeroDialogue(hero, "(This feeling... It makes me certain we can get into the guild!)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(Even so...[pause=0] I have this strong feeling that everything's going to work out.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(This feeling...[pause=0] It makes me certain we will join the guild!)", "Normal")
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.HeroSpeak(hero, 60)
@@ -189,13 +238,14 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("As long as I do my best to keep my nerves in check,[pause=10] I'm sure we'll do fine!")
 	GAME:WaitFrames(60)
 	
-	
+	GROUND:Hide(door.EntName)
+	SOUND:PlayBattleSE('EVT_Chest_Click')
 	--noctowl returns
 	--in general, when both the hero and partner are emoting at the same time to the same event, the hero should have a less extreme reaction
 	--notice hero vs exclaim partner in this example
-	GROUND:EntTurn(noctowl, Direction.Down)
-	GROUND:Unhide(noctowl.EntName)
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(40)
+											GROUND:EntTurn(noctowl, Direction.Down)
+											GROUND:Unhide(noctowl.EntName)
 											GROUND:MoveInDirection(noctowl, Direction.Down, 24, false, 1)
 											GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)

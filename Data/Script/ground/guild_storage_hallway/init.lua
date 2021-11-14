@@ -102,5 +102,19 @@ function guild_storage_hallway.Right_Exit_Touch(obj, activator)
   SV.partner.Spawn = 'Default'
 end
 
+--you aren't allowed to go into the guildmaster's room, at least for now
+function guild_storage_hallway.Left_Exit_Touch(obj, activator)
+  DEBUG.EnableDbgCoro()
+  local partner = CH('Teammate1')
+  local hero = CH('PLAYER')
+  UI:SetSpeaker(partner)
+  UI:SetSpeakerEmotion('Surprised')
+  GROUND:CharTurnToCharAnimated(partner, hero,  4)
+  UI:WaitShowDialogue("H-Hey,[pause=10] that's the way to the Guildmaster's room!")
+  GROUND:CharTurnToCharAnimated(hero, partner,  4)
+  UI:SetSpeakerEmotion("Worried")
+  UI:WaitShowDialogue("We aren't allowed in there.[pause=0] Let's turn back before we get into any trouble.")
+end
+
 return guild_storage_hallway
 

@@ -84,7 +84,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I can't let " .. oldman:GetDisplayName() .. " see me go into the forest.")
 	UI:WaitShowDialogue("Last time he caught me I got an earful about how dangerous it is...")
-	UI:WaitShowDialogue('He says there are ancient,[pause=10] powerful forces sleeping within there...')--foreshadow: the hero is the thing referred to here in a way. 
+	UI:WaitShowDialogue('Something about ancient,[pause=10] powerful forces sleeping within there...')--foreshadow: the hero is the thing referred to here in a way. 
 	
 	GAME:WaitFrames(20)
 	--GROUND:CharSetEmote(partner, 6, 1)
@@ -148,7 +148,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("But who knows?[pause=0] In a mystery dungeon,[pause=10] you'll never know what you might find!")
+	UI:WaitShowDialogue("But who knows?[pause=0] In a mystery dungeon,[pause=10] you never know what you might find!")
 	UI:WaitShowDialogue("Maybe this time it'll be different?")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")

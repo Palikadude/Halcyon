@@ -361,7 +361,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 520, 272, false, 1) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(52)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(54)
 								GROUND:MoveInDirection(hero, Direction.UpRight, 32, false, 1)
 								GROUND:MoveToPosition(hero, 500, 272, false, 1)  end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) 
@@ -380,20 +380,28 @@ end
 
 
 function guild_second_floor_ch_1.TeamStyleLeaving(chara, isLeader)
-	GROUND:MoveToPosition(chara, 312, 280, false, 1)
-	GROUND:MoveToPosition(chara, 248, 216, false, 1)
+	GROUND:MoveToPosition(chara, 336, 280, false, 1)
+	GROUND:MoveToPosition(chara, 272, 216, false, 1)
 	if isLeader then 
 		GROUND:CharAnimateTurnTo(chara, Direction.Down, 4)
 		GAME:WaitFrames(60)
 		GROUND:CharAnimateTurnTo(chara, Direction.Up, 4)
 	end 
-	GROUND:MoveToPosition(chara, 248, 160, false, 1)
+	GROUND:MoveToPosition(chara, 272, 160, false, 1)
 	GROUND:Hide(chara.EntName)
 
 end
 
 
 function guild_second_floor_ch_1.SetupGround()
+	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+													RogueElements.Rect(184, 192, 144, 16),
+													RogueElements.Loc(0, 0), 
+													true, 
+													"Event_Trigger_1")
+	groundObj:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(groundObj)
+	
 	local spheal, jigglypuff, marill, mareep, cranidos, cleffa, aggron, zigzagoon = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Spheal', 'Left_Trio_1'},
@@ -429,13 +437,6 @@ function guild_second_floor_ch_1.SetupGround()
 	
 	AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(320, 320), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
-	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-													RogueElements.Rect(184, 192, 144, 16),
-													RogueElements.Loc(0, 8), 
-													true, 
-													"Event_Trigger_1")
-	groundObj:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(groundObj)
 	
 	
 	GAME:FadeIn(20)
@@ -453,13 +454,15 @@ function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
 	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] where are you going?")
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	GAME:WaitFrames(10)
-	UI:WaitShowDialogue("I know you might be curious about town,[pause=10] but since we just joined I don't think we should leave the tree tonight.")
+	UI:WaitShowDialogue("I know you might want to look around town...")
+	UI:WaitShowDialogue("But since we just joined,[pause=10] I don't think we should leave the tree tonight.")
 	if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
 		UI:WaitShowDialogue("Plus it's getting late...[pause=0] We should probably head to bed now actually.")
 		UI:WaitShowDialogue("But we can look around a bit more if you want!")
 	else 
 		UI:WaitShowDialogue("Let's go look around the guild some more.[pause=0] I think there's more guild mates for us to meet!")
 	end
+--may want to put some sort of buffer so player doesnt accidentally initiate dialogue with partner via mashing if partner is right behind them
 end
 
 
@@ -467,8 +470,8 @@ end
 function guild_second_floor_ch_1.Cleffa_Action(chara, activator)
 	UI:SetSpeaker(chara)
 	UI:SetSpeakerEmotion('Angry')
-	UI:WaitShowDialogue("You dolt![pause=0] We fainted back there because you aren't doing your job to protect me!")
-	UI:WaitShowDialogue("How is Team ??? ever going to make a name for itself if you don't pick up the slack!")
+	UI:WaitShowDialogue("You dolt![pause=0] We couldn't reach the end because you aren't doing your part!")
+	UI:WaitShowDialogue("How is Team Starlight ever going to make a name for itself if you don't pick up the slack!")
 end
 
 function guild_second_floor_ch_1.Aggron_Action(chara, activator)
@@ -482,29 +485,27 @@ end
 function guild_second_floor_ch_1.Marill_Action(chara, activator)
 	UI:SetSpeaker(chara)
 	UI:SetSpeakerEmotion('Normal')
-	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
 	UI:WaitShowDialogue("We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because we our signature attack is the move Round!")
-	GROUND:EntTurn(chara, olddir)
+	GROUND:EntTurn(chara, Direction.UpLeft)
 end
 
 function guild_second_floor_ch_1.Jigglypuff_Action(chara, activator)
 	UI:SetSpeaker(chara)
 	UI:SetSpeakerEmotion('Normal')
-	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("It's too late to go on a mission now,[pause=10] so we're figuring out which might be good to go on tomorrow.")
-	GROUND:EntTurn(chara, olddir)
+	UI:WaitShowDialogue("Not all adventuring teams work for the guild.")
+	UI:WaitShowDialogue("Some teams,[pause=10] like ours,[pause=10] come here to find jobs posted on the boards.")
+	GROUND:EntTurn(chara, Direction.Up)
 end
 
 function guild_second_floor_ch_1.Spheal_Action(chara, activator)
 	UI:SetSpeaker(chara)
 	UI:SetSpeakerEmotion('Normal')
-	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Not every team works directly for the guild.")
-	UI:WaitShowDialogue("A lot of teams,[pause=10] like mine,[pause=10] come to the guild to take jobs from the boards here.")
-	GROUND:EntTurn(chara, olddir)
+	UI:WaitShowDialogue("Let's hurry up and find tomorrow's job,[pause=10] guys...")
+	UI:WaitShowDialogue("It's getting late and I wanna eeeeeaaatttt![pause=0] I'm starving!")
+	GROUND:EntTurn(chara, Direction.UpRight)
 end
 
 
@@ -599,11 +600,11 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		
 		UI:WaitShowDialogue("Anyway,[pause=10] I keep them in my room.[pause=0] Feel free to read through them anytime...[pause=0] Err...")
 		GeneralFunctions.EmoteAndPause(zigzagoon, 'Sweatdrop', true)
-		UI:WaitShowDialogue("I,[pause=10] um,[pause=10] never got your names.")
+		UI:WaitShowDialogue("Hmm.[pause=0] I,[pause=10] um,[pause=10] never got your names.")
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeaker(partner)
-		UI:WaitShowDialogue("My name's " .. partner:GetDisplayName() .. ",[pause=10] and my partner here is " .. hero:GetDisplayName() ..".")
+		UI:WaitShowDialogue("My name's " .. partner:GetDisplayName() .. ",[pause=10] and my partner over there is " .. hero:GetDisplayName() ..".")
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeaker(zigzagoon)
@@ -822,7 +823,9 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		UI:WaitShowDialogue(cranidos:GetDisplayName() .. "?[pause=0] Aren't you going to say something to our new friends?")
 		GAME:WaitFrames(20)
 		
-		GeneralFunctions.EmoteAndPause(cranidos, "Exclaim", true)
+		GROUND:CharSetEmote(cranidos, 8, 1)
+		SOUND:PlayBattleSE('EVT_Emote_Shock_Bad')
+		GAME:WaitFrames(40)
 		GROUND:CharTurnToCharAnimated(cranidos, mareep, 4)
 		UI:SetSpeaker(cranidos)
 		UI:SetSpeakerEmotion("Surprised")
@@ -921,6 +924,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GROUND:CharAnimateTurnTo(mareep, Direction.Up, 4)
 		GROUND:CharSetAnim(cranidos, 'Idle', true)
 		GROUND:CharSetAnim(mareep, 'Idle', true)
+		GROUND:CharSetAnim(CH('Zigzagoon'), 'Idle', true)
 		AI:EnableCharacterAI(mareep)
 		SV.Chapter1.MetCranidosMareep = true
 		GeneralFunctions.PanCamera(400, 272)
@@ -937,7 +941,9 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
 			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=0] " .. hero:GetDisplayName() .. ".")
 		end
-		
+		GROUND:CharEndAnim(cranidos)
+		GROUND:CharEndAnim(mareep)
+		GROUND:CharEndAnim(CH('Zigzagoon'))
 		AI:EnableCharacterAI(partner)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		
