@@ -117,7 +117,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	--sneak off towards the treeline, fade to black
 	GROUND:CharAnimateTurn(partner, Direction.DownLeft, 4, false)
 	GAME:WaitFrames(16)
-	UI:WaitShowDialogue("I'll need to stick to the trees so he won't spot me.")
+	UI:WaitShowDialogue("I need to stick to the trees so he won't spot me.")
 	GAME:WaitFrames(20)
 
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 224, 400, false, 1) end)
@@ -136,6 +136,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	
 	--look all around
 	GeneralFunctions.LookAround(partner, 5, 4, true, false, GeneralFunctions.RandBool(), Direction.Left)
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Looks like he didn't notice.[pause=0] Now I won't have to hear him later...")
 	GROUND:CharAnimateTurn(partner, Direction.Right, 4, false)
 	GAME:WaitFrames(20)
