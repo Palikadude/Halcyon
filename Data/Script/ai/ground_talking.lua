@@ -53,10 +53,9 @@ function StateIdle:Run(entity)
 
   
   
-  --Suspend while interacting with the entity after forcing them to look at the player whose interacting 
-  if ent.IsInteracting and self.parentAI.Turn then 
-    GROUND:CharTurnToChar(entity, CH('PLAYER'))--hardcoded turn to player, todo maybe not hardcode it?
-	return
+  --Suspend while interacting with the entity
+  if ent.IsInteracting then 
+    return 
   end
   
   --If enough time passed, wander or turn
@@ -86,8 +85,7 @@ end
 
 --[[------------------------------------------------------------------------
     EmoteIdle state:
-      In this special state, the AI will run the currently assigned
-      task if there is one. Then fall back to idle!
+		In this state, the AI will emote for a period of time, then go to StopEmote to stop emoting.
 ]]--------------------------------------------------------------------------
 local StateEmoteIdle = Class('StateEmoteIdle', BaseState)
 
@@ -114,13 +112,12 @@ function StateEmoteIdle:Run(entity)
   
     local ent = LUA_ENGINE:CastToGroundAIUser(entity)
 
-  --Stop emoting if we've emoted for too long or if the entity is being interacted with
+  --When interaction stopped, go idle or stop emoting if we're emoting
   if self.parentAI.Emoting and (self.timeEmoting < 0 or ent.IsInteracting) then 
 	  self.parentAI:SetState("StopEmote")
  -- elseif not self.parentAI.Emoting and not ent:CurrentTask() then
 	--  self.parentAI:SetState("Idle")
 	end
-		
 	self.timeEmoting = self.timeEmoting - 1
   end
 
@@ -173,15 +170,14 @@ function StateStopEmote:SetTask(entity)
 	  if self.parentAI.Turn and not LUA_ENGINE:CastToGroundChar(entity).IsInteracting then
 		GROUND:CharAnimateTurnTo(entity, self.parentAI.OldDir, 4)
       end
-	--dont turn back to original direction if someone's talking to you
-   end)
+    end)
 end
 	
 
 
 
 --[[------------------------------------------------------------------------
-    IdleWander state:
+    SetEmote state:
       When the entity is in this state, it will pick a random emote and do it for a random amount of time (if applicable)
 ]]--------------------------------------------------------------------------
 local StateSetEmote = Class('StateSetEmote', BaseState)

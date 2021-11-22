@@ -25,8 +25,8 @@ function metano_town.Init(map)
 	
 	local chara = CH('Aggron')
 	metano_town.CreateWalkArea(chara, 1264, 560, 32, 32)
-	chara = CH('Delcatty')
-	metano_town.CreateWalkArea(chara, 1122, 888, 32, 32)
+	--chara = CH('Delcatty')
+	--metano_town.CreateWalkArea(chara, 1122, 888, 32, 32)
 	
 
 

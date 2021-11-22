@@ -303,6 +303,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("Hmm...[pause=0] But it is not that late in the day quite yet,[pause=10] is it?")
 	UI:WaitShowDialogue("I suggest you use this time to explore the guild and meet some of your fellow guildmates.")
+	UI:WaitShowDialogue("We could save time on introductions tomorrow that way.")
 	GAME:WaitFrames(20)
 	
 	--we should go meet our guildmembers

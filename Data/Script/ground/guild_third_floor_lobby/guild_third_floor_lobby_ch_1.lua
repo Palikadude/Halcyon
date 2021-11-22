@@ -214,7 +214,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("I'm excited to meet the Guildmaster,[pause=10] but...")
 	GROUND:CharSetEmote(partner, 5, 1)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("I'm also kind of intimidated.[pause=0] I've got butterflies in my stomach again...")
+	UI:WaitShowDialogue("I'm also kinda intimidated.[pause=0] I've got butterflies in my stomach again...")
 	UI:WaitShowDialogue("I feel so uneasy about this...[pause=0] Do you really think they'll let us join,[pause=10] " .. hero:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
 	
