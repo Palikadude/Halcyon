@@ -370,7 +370,7 @@ COMMON.SPECIAL = {
 ----------------------------------------------------------
 -- Convenience Scription Functions
 ----------------------------------------------------------
-function COMMON.RespawnAllies()
+function COMMON.RespawnAllies(reviveAll)
   GROUND:RefreshPlayer()
   
 
@@ -386,8 +386,15 @@ function COMMON.RespawnAllies()
 	partnerDirection = partner.Direction
   end
 	
+  --Halcyon change: reviveAll parameter. If false, only respawn player+partner. If true, then revive player+Teammates1-3
   --Place player teammates
-  for i = 1,3,1
+  if reviveAll == nil then reviveAll = false end
+  local allies = 1
+  if reviveAll then 
+	allies = 3
+  end
+  
+  for i = 1,allies,1
   do
     GROUND:RemoveCharacter("Teammate" .. tostring(i))
   end

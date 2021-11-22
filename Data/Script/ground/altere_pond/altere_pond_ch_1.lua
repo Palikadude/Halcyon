@@ -83,6 +83,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GROUND:CharSetEmote(partner, 5, 1)
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I can't let " .. oldman:GetDisplayName() .. " see me go into the forest.")
+	--[[this spot of dialogue commented out for being redundant with some things the partner tells the player later
 	UI:WaitShowDialogue("Last time he caught me I got an earful about how dangerous it is...")
 	UI:WaitShowDialogue('Something about ancient,[pause=10] powerful forces sleeping within there...')--foreshadow: the hero is the thing referred to here in a way. 
 	
@@ -111,12 +112,12 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GeneralFunctions.LookAround(partner, 3, 4, true, false, GeneralFunctions.RandBool(), Direction.Down)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I am going to need to sneak around though.[pause=0] I don't want " .. oldman:GetDisplayName() .. " seeing me.")
-	
+	]]--
 	
 	--sneak off towards the treeline, fade to black
 	GROUND:CharAnimateTurn(partner, Direction.DownLeft, 4, false)
 	GAME:WaitFrames(16)
-	UI:WaitShowDialogue("I should stick to the trees so he won't see me.")
+	UI:WaitShowDialogue("I'll need to stick to the trees so he won't spot me.")
 	GAME:WaitFrames(20)
 
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 224, 400, false, 1) end)
@@ -137,8 +138,12 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GeneralFunctions.LookAround(partner, 5, 4, true, false, GeneralFunctions.RandBool(), Direction.Left)
 	UI:WaitShowDialogue("Looks like he didn't notice.[pause=0] Now I won't have to hear him later...")
 	GROUND:CharAnimateTurn(partner, Direction.Right, 4, false)
+	GAME:WaitFrames(20)
 	
-
+	UI:WaitShowDialogue("Guess I should head on into " .. zone:GetColoredName() .. " before he looks my way.")
+	GAME:WaitFrames(20)
+	
+	--[[ removed as partner doesn't really need to hint that they're about to find the player
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue(zone:GetColoredName() .. "...")
@@ -154,7 +159,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Only one way to find out!")
 	GAME:WaitFrames(20)
-
+]]--
 
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 920, 296, false, 1) end)
@@ -217,7 +222,7 @@ function altere_pond_ch_1.WipedInForest()
 	GeneralFunctions.ShakeHead(partner, 4)
 	UI:SetSpeakerEmotion('Normal')
 	UI:WaitShowDialogue("Alright.[pause=0] I think I'm ready to give it another go.")
-	UI:WaitShowDialogue("I''m sure I can make it through this time!")
+	UI:WaitShowDialogue("I'm sure I can make it through this time!")
 	
 	GAME:WaitFrames(20)
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)

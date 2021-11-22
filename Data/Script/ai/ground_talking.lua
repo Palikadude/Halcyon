@@ -54,7 +54,7 @@ function StateIdle:Run(entity)
   
   
   --Suspend while interacting with the entity after forcing them to look at the player whose interacting 
-  if ent.IsInteracting then 
+  if ent.IsInteracting and self.parentAI.Turn then 
     GROUND:CharTurnToChar(entity, CH('PLAYER'))--hardcoded turn to player, todo maybe not hardcode it?
 	return
   end

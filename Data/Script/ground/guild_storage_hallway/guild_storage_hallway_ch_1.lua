@@ -276,7 +276,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		GAME:WaitFrames(12)
 		UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
-		UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=0] " .. hero:GetDisplayName() .. ".")
+		UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
 	end
 
 

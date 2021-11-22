@@ -91,13 +91,14 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("Please wait here.[pause=0] I am going to notify the Guildmaster of your arrival.")
 	
-	GeneralFunctions.DoubleHop(partner, 'None', 6, 6)
+	--[[GeneralFunctions.DoubleHop(partner, 'None', 6, 6)
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("OK![pause=0] We'll wait right here!")
 	GAME:WaitFrames(20)
 
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("Very good.[pause=0] I shall return momentarily.")
+	]]--
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(noctowl, Direction.Up, 4)
 
@@ -213,7 +214,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("I'm excited to meet the Guildmaster,[pause=10] but...")
 	GROUND:CharSetEmote(partner, 5, 1)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("I'm still feeling anxious.[pause=0] I've got butterflies in my stomach again...")
+	UI:WaitShowDialogue("I'm also kind of intimidated.[pause=0] I've got butterflies in my stomach again...")
 	UI:WaitShowDialogue("I feel so uneasy about this...[pause=0] Do you really think they'll let us join,[pause=10] " .. hero:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
 	
