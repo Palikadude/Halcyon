@@ -582,7 +582,6 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	others = others or false
 	
 	--this depends on partner and hero not being able to be shifted out of slot 1 and 2... keep in mind
-	--will need to be adjusted in future most likely unless Audino adds IsPartner being nonshiftable as an option
     for i = partyCount,1,-1 do
       p = GAME:GetPlayerPartyMember(i-1)
 	  GAME:RemovePlayerTeam(i-1)

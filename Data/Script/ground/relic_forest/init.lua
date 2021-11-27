@@ -29,9 +29,10 @@ function relic_forest.Init(map)
   DEBUG.EnableDbgCoro()
   print('=>> Init_relic_forest <<=')
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  COMMON.RespawnAllies()
-  PartnerEssentials.InitializePartnerSpawn()
-
+  if SV.Chapter1.PlayedIntroCutscene then --Don't spawn when the game first initializes, causes errors
+	  COMMON.RespawnAllies()
+	  PartnerEssentials.InitializePartnerSpawn()
+  end
 
 end
 

@@ -372,8 +372,7 @@ COMMON.SPECIAL = {
 ----------------------------------------------------------
 function COMMON.RespawnAllies(reviveAll)
   GROUND:RefreshPlayer()
-  
-
+ 
   local party = GAME:GetPlayerPartyTable()
   local playeridx = GAME:GetTeamLeaderIndex()
   local partnerPosition = nil
@@ -400,7 +399,7 @@ function COMMON.RespawnAllies(reviveAll)
   end
   local total = 1
   for i,p in ipairs(party) do
-    if i ~= (playeridx + 1) then --Indices in lua tables begin at 1
+    if i ~= (playeridx + 1) and i <= allies + 1  then --Indices in lua tables begin at 1. Only spawn Teammate1 if reviveAll was false
       GROUND:SpawnerSetSpawn("TEAMMATE_" .. tostring(total),p)
       local chara = GROUND:SpawnerDoSpawn("TEAMMATE_" .. tostring(total))
       --GROUND:GiveCharIdleChatter(chara)
