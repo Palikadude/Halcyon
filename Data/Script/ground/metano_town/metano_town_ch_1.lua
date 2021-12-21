@@ -403,7 +403,6 @@ function metano_town_ch_1.EnterGuild()
 	
 	--he hops over his little post, pushing you to the side, and runs inside the guild.
 	--partner and hero reflect on how well it's going, growlithe comes back out after a while
-	--todo: proper animations to jump over post, and for partner to be knocked back
 	coro1 = TASK:BranchCoroutine(metano_town_ch_1.GrowlitheRunInside)
 	coro2 = TASK:BranchCoroutine(metano_town_ch_1.PartnerPushedBack)
 	coro3 = TASK:BranchCoroutine(metano_town_ch_1.HeroPushedBack)

@@ -7,22 +7,10 @@ guild_heros_room_ch_1 = {}
 
 
 
-function guild_heros_room_ch_1.SetupGround()
-	if SV.Chapter1.TeamJoinedGuild then 
-		local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-															RogueElements.Rect(168, 144, 24, 24),
-															RogueElements.Loc(0, 8), 
-															true, 
-															"Event_Trigger_1")
-		  groundObj:ReloadEvents()
-		  GAME:GetCurrentGround():AddObject(groundObj)
-		  GROUND:Hide('Save_Point')
-	  end
-	  GAME:FadeIn(20)
-end
 
---Event Trigger 1 is the hero's bed. Event is to go to bed at the end of the chapter to trigger final cutscene.
-function guild_heros_room_ch_1.Event_Trigger_1_Touch(obj, activator)
+
+--This is for the hero's bed. Event is to go to bed at the end of the chapter to trigger final cutscene.
+function guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
@@ -60,8 +48,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	
 	--Set nighttime, put duo in beds asleep
 
-	GROUND:Hide("Event_Trigger_1")
-	GROUND:Hide("Save_Point")--just in case it isn't hidden by setupground for some reason
+	GROUND:Hide("Save_Point")
 	guild_heros_room.Bedtime()--set nighttime scene, put duo in their beds
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
@@ -371,6 +358,7 @@ function guild_heros_room_ch_1.RoomIntro()
 
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 	GROUND:Unhide("Bedroom_Exit")
+	GROUND:Unhide("Save_Point")
 	SV.Chapter1.TeamJoinedGuild = true
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)

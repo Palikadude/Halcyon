@@ -83,7 +83,7 @@ function DebugTools:OnNewGame()
   --audino 
    -- mon_id = RogueEssence.Dungeon.MonsterID(531, 0, 0, Gender.Female)
   --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
- 
+ _DATA.Save.ActiveTeam:SetRank(1)
   _DATA.Save:UpdateTeamProfile(true)
   
 

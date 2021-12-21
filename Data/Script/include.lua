@@ -25,3 +25,13 @@ PMDC = import 'PMDC'
 PMDC.Data = luanet.namespace('PMDC.Data')
 PMDC.Dungeon = luanet.namespace('PMDC.Dungeon')
 PMDC.LevelGen = luanet.namespace('PMDC.LevelGen')
+
+FrameType   = luanet.import_type('RogueEssence.Content.FrameType')
+DrawLayer   = luanet.import_type('RogueEssence.Content.DrawLayer')
+MonsterID       = luanet.import_type('RogueEssence.Dungeon.MonsterID')
+Gender      = luanet.import_type('RogueEssence.Data.Gender')
+Direction   = luanet.import_type('RogueElements.Dir8')
+GameTime    = luanet.import_type('Microsoft.Xna.Framework.GameTime')
+Color       = luanet.import_type('Microsoft.Xna.Framework.Color')
+ActivityType = luanet.import_type('RogueEssence.Network.ActivityType')
+TimeSpan    = luanet.import_type('System.TimeSpan')

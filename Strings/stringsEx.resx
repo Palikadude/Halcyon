@@ -3390,4 +3390,12 @@
   <data name="TALK_WAIT_0190" xml:space="preserve">
     <value>Good to see you!</value>
     <comment></comment>  </data>
+	
+	
+	
+	
+	
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_1" xml:space="preserve">
+    <value>I'm sharting</value>
+    <comment>All data values below this and including this string are all Halcyon additions. These particular strings are for the first tutorial dungeon</comment>  </data>
 </root>

@@ -39,7 +39,7 @@ function guild_heros_room.Enter(map)
 		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
 			guild_heros_room_ch_1.RoomIntro()
 		else
-			guild_heros_room_ch_1.SetupGround()
+			GAME:FadeIn(20)
 		end		
 	else	
 		GAME:FadeIn(20)
@@ -113,7 +113,11 @@ end
 
 
 function guild_heros_room.Save_Point_Touch(obj, activator)
-	GeneralFunctions.PromptSaveAndQuit()
+	if SV.ChapterProgression.Chapter == 1 then
+		guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)--partner talks to you a bit in chapter 1 before you try to save, as going to sleep is the trigger to end the chapter
+	else
+		GeneralFunctions.PromptSaveAndQuit()
+	end
 end
 
 
