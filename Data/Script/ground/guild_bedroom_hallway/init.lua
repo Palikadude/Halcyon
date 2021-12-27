@@ -33,9 +33,7 @@ end
 ---guild_bedroom_hallway.Enter
 --Engine callback function
 function guild_bedroom_hallway.Enter(map)
-
-  GAME:FadeIn(20)
-
+	guild_bedroom_hallway.PlotScripting()
 end
 
 ---guild_bedroom_hallway.Exit
@@ -58,6 +56,19 @@ end
 function guild_bedroom_hallway.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+end
+
+function guild_bedroom_hallway.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_bedroom_hallway.PlotScripting()
+end
+
+function guild_bedroom_hallway.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_bedroom_hallway.PlotScripting()
+	GAME:FadeIn(20)
 end
 
 ---------------------------

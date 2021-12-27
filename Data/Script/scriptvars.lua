@@ -41,7 +41,10 @@ SV.checkpoint =
 SV.partner = 
 {
 	Spawn = 'Default',
-	Dialogue = 'Default'
+	Dialogue = 'Default',
+	LoadPositionX = -1,
+	LoadPositionY = -1,
+	LoadDirection = -1
 
 }
 

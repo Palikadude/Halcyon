@@ -33,9 +33,7 @@ end
 ---guild_storage_room.Enter
 --Engine callback function
 function guild_storage_room.Enter(map)
-
-  GAME:FadeIn(20)
-
+	guild_storage_room.PlotScripting()
 end
 
 ---guild_storage_room.Exit
@@ -50,6 +48,19 @@ end
 function guild_storage_room.Update(map)
 
 
+end
+
+function guild_storage_room.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_storage_room.PlotScripting()
+end
+
+function guild_storage_room.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_storage_room.PlotScripting()
+  GAME:FadeIn(20)
 end
 
 -------------------------------

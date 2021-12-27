@@ -35,15 +35,7 @@ end
 ---guild_top_right_bedroom.Enter
 --Engine callback function
 function guild_top_right_bedroom.Enter(map)
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
-			guild_top_right_bedroom_ch_1.SetupGround()--audino finishes all her chores by the time you finish talking to everyone and immediately passes out due to exhaustion
-		else
-			GAME:FadeIn(20)
-		end
-	else
-		GAME:FadeIn(20)
-	end
+	guild_top_right_bedroom.PlotScripting()
 end
 
 ---guild_top_right_bedroom.Exit
@@ -59,6 +51,30 @@ function guild_top_right_bedroom.Update(map)
 
 
 end
+
+
+function guild_top_right_bedroom.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_top_right_bedroom.PlotScripting()
+end
+
+function guild_top_right_bedroom.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_top_right_bedroom.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
+			guild_top_right_bedroom_ch_1.SetupGround()--audino finishes all her chores by the time you finish talking to everyone and immediately passes out due to exhaustion
+		else
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
+end
+
 
 -------------------------------
 -- Entities Callbacks

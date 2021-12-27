@@ -33,25 +33,13 @@ function relic_forest.Init(map)
 	  COMMON.RespawnAllies()
 	  PartnerEssentials.InitializePartnerSpawn()
   end
-
+  
 end
 
 ---relic_forest.Enter
 --Engine callback function
 function relic_forest.Enter(map)
-	--relic_forest.PartnerFindsHeroCutscene()  
-
-	if SV.ChapterProgression.Chapter == 1 then 
-	  if not SV.Chapter1.PlayedIntroCutscene then --Opening Cutscene on a fresh save
-		relic_forest_ch_1.Intro_Cutscene()
-	  elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.PartnerMetHero then --our duo meet
-		relic_forest_ch_1.PartnerFindsHeroCutscene()  
-	  elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.TeamCompletedForest then--team wiped in the dungeon
-		relic_forest_ch_1.WipedInForest()
-	  end
-	else 
-		GAME:FadeIn(20)
-	end
+	relic_forest.PlotScripting()
 end
 
 ---relic_forest.Exit
@@ -68,6 +56,30 @@ function relic_forest.Update(map)
 
 end
 
+
+function relic_forest.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	relic_forest.PlotScripting()
+end
+
+function relic_forest.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function relic_forest.PlotScripting()
+  --plot scripting
+  if SV.ChapterProgression.Chapter == 1 then 
+	if not SV.Chapter1.PlayedIntroCutscene then --Opening Cutscene on a fresh save
+	  relic_forest_ch_1.Intro_Cutscene()
+	elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.PartnerMetHero then --our duo meet
+	  relic_forest_ch_1.PartnerFindsHeroCutscene()  
+	elseif SV.Chapter1.PartnerCompletedForest and not SV.Chapter1.TeamCompletedForest then--team wiped in the dungeon
+	  relic_forest_ch_1.WipedInForest()
+	end
+  else 
+	GAME:FadeIn(20)
+  end
+end
 
 function relic_forest.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine

@@ -18,16 +18,7 @@ local MapStrings = {}
 -------------------------------
 ---guild_first_floor.Enter
 function guild_first_floor.Enter(map)
-
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest then 
-			guild_first_floor_ch_1.EnterGuild()
-		else
-			GAME:FadeIn(20)--this should never happen
-		end
-	else
-		GAME:FadeIn(20)
-	end
+	guild_first_floor_ch_1.PlotScripting()
 end
 
 ---guild_first_floor.Update
@@ -43,8 +34,29 @@ function guild_first_floor.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+end
 
+function guild_first_floor.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_first_floor_ch_1.PlotScripting()
+end
 
+function guild_first_floor.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+ 
+function guild_first_floor_ch_1.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest then 
+			guild_first_floor_ch_1.EnterGuild()
+		else
+			GAME:FadeIn(20)--this should never happen
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------

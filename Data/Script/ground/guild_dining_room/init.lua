@@ -29,19 +29,12 @@ function guild_dining_room.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-	
-
 end
 
 ---guild_dining_room.Enter
 --Engine callback function
 function guild_dining_room.Enter(map)
-
-	if SV.ChapterProgression.Chapter == 1 then
-		guild_dining_room_ch_1.SetupGround()
-	else
-		GAME:FadeIn(20)
-	end
+	guild_dining_room.PlotScripting()
 end
 
 ---guild_dining_room.Exit
@@ -56,6 +49,24 @@ end
 function guild_dining_room.Update(map)
 
 
+end
+
+function guild_dining_room.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_dining_room.PlotScripting()
+end
+
+function guild_dining_room.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_dining_room.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		guild_dining_room_ch_1.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------

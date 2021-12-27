@@ -31,7 +31,6 @@ function metano_town.Init(map)
 
 
 
-
 end
 
 
@@ -39,7 +38,26 @@ end
 function metano_town.Enter(map)
 	DEBUG.EnableDbgCoro()
 	print('Enter_metano_town')
-	UI:ResetSpeaker()
+	metano_town.PlotScripting()
+end
+
+function metano_town.Update(map, time)
+
+end
+
+function metano_town.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_town.PlotScripting()
+end
+
+function metano_town.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+
+function metano_town.PlotScripting()
+	--plot scripting
 	if SV.ChapterProgression.Chapter == 1 then 
 		if not SV.Chapter1.PartnerCompletedForest then
 			metano_town_ch_1.PartnerLongingCutscene()
@@ -51,9 +69,6 @@ function metano_town.Enter(map)
 	end
 end
 
-function metano_town.Update(map, time)
-
-end
 
 --------------------------------------------------
 -- Map Begin Functions

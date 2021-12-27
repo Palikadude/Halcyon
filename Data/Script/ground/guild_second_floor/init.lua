@@ -23,7 +23,6 @@ function guild_second_floor.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-
 end
 
 ---guild_second_floor.Enter
@@ -31,15 +30,7 @@ function guild_second_floor.Enter(map)
 	DEBUG.EnableDbgCoro()
 	print('Enter_guild_second_floor')
 	UI:ResetSpeaker()
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
-			guild_second_floor_ch_1.MeetNoctowl()
-		else
-			guild_second_floor_ch_1.SetupGround()
-		end
-	else
-		GAME:FadeIn(20)
-	end
+	guild_second_floor.PlotScripting()
 end
 
 ---guild_second_floor.Exit
@@ -52,6 +43,29 @@ end
 function guild_second_floor.Update(map)
 
 
+end
+
+
+function guild_second_floor.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_second_floor.PlotScripting()
+end
+
+function guild_second_floor.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_second_floor.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
+			guild_second_floor_ch_1.MeetNoctowl()
+		else
+			guild_second_floor_ch_1.SetupGround()
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 

@@ -27,7 +27,10 @@ function guild_third_floor_lobby_ch_1.SetupGround()
 end
 
 function guild_third_floor_lobby_ch_1.Event_Object_1_Action(obj, activator)
-	GeneralFunctions.Monologue("(The door is locked.)")
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("(The door is locked.)")
+	UI:SetCenter(false)
 end
 
 function guild_third_floor_lobby_ch_1.Event_Object_2_Action(obj, activator)

@@ -29,21 +29,13 @@ function guild_heros_room.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 
+
 end
 
 ---guild_heros_room.Enter
 --Engine callback function
 function guild_heros_room.Enter(map)
-
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
-			guild_heros_room_ch_1.RoomIntro()
-		else
-			GAME:FadeIn(20)
-		end		
-	else	
-		GAME:FadeIn(20)
-	end
+	guild_heros_room.PlotScripting()
 end
 
 ---guild_heros_room.Exit
@@ -60,6 +52,27 @@ function guild_heros_room.Update(map)
 
 end
 
+function guild_heros_room.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_heros_room.PlotScripting()
+end
+
+function guild_heros_room.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_heros_room.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
+			guild_heros_room_ch_1.RoomIntro()
+		else
+			GAME:FadeIn(20)
+		end		
+	else	
+		GAME:FadeIn(20)
+	end
+end
 
 
 

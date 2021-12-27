@@ -142,7 +142,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		UI:WaitShowDialogue("Of course,[pause=10] the meals I'd like to prepare,[pause=10] like the ones I just told you,[pause=10] require exotic ingredients...")
 		--UI:WaitShowDialogue("The kind of ingredients that only a skilled adventurer would be able to procure!")		
 		UI:SetSpeakerEmotion("Sad")	
-		UI:WaitShowDialogue("But it's hard for to come across those sorts of delicacies,[pause=10] and the Guildmaster only stocks more basic provisions...")
+		UI:WaitShowDialogue("But it's hard to find those sorts of delicacies,[pause=10] and the Guildmaster only stocks basic provisions...")
 		UI:WaitShowDialogue("So I typically only get to make more plebian meals...")
 		GAME:WaitFrames(20)
 		

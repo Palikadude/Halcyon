@@ -30,22 +30,12 @@ function metano_altere_transition.Init(map)
   PartnerEssentials.InitializePartnerSpawn()
   GROUND:AddMapStatus(6)
 
-  local chara = CH('Teammate1')
-  AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-  chara.CollisionDisabled = true
-
-
 end
 
 ---metano_altere_transition.Enter
 --Engine callback function
 function metano_altere_transition.Enter(map)
-
-	if SV.ChapterProgression.Chapter == 1 then
-		metano_altere_transition_ch_1.HeartToHeartCutscene()
-	else
-		GAME:FadeIn(20)
-	end
+	metano_altere_transition.PlotScripting()
 end
 
 ---metano_altere_transition.Exit
@@ -63,8 +53,23 @@ function metano_altere_transition.Update(map)
 end
 
 
+function metano_altere_transition.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_altere_transition.PlotScripting()
+end
 
+function metano_altere_transition.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
 
+function metano_altere_transition.PlotScripting()
+  --plot scripting
+  if SV.ChapterProgression.Chapter == 1 then
+	metano_altere_transition_ch_1.HeartToHeartCutscene()
+  else
+	GAME:FadeIn(20)
+  end
+end
 ---------------------------
 -- Map Transitions 
 ---------------------------

@@ -30,25 +30,18 @@ function guild_third_floor_lobby.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 
+
+	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
+		GROUND:Hide('Assembly')
+	end
+
+
 end
 
 ---guild_third_floor_lobby.Enter
 --Engine callback function
 function guild_third_floor_lobby.Enter(map)
-	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
-		GROUND:Hide('Assembly')
-	end
-
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
-			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
-		else
-			guild_third_floor_lobby_ch_1.SetupGround()
-		end
-	else
-		GAME:FadeIn(20)
-	end
-
+	guild_third_floor_lobby.PlotScripting()
 end
 
 ---guild_third_floor_lobby.Exit
@@ -63,6 +56,29 @@ end
 function guild_third_floor_lobby.Update(map)
 
 
+end
+
+
+function guild_third_floor_lobby.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_third_floor_lobby.PlotScripting()
+end
+
+function guild_third_floor_lobby.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_third_floor_lobby.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
+			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
+		else
+			guild_third_floor_lobby_ch_1.SetupGround()
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 

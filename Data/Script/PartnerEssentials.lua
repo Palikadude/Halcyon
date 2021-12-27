@@ -47,7 +47,72 @@ function PartnerEssentials.InitializePartnerSpawn(dir, customPosition)
 	
 end
 
+--when reloading a save, load the partner back in at the proper coordinates.
+function PartnerEssentials.LoadGamePartnerPosition(partner)
+	print("loading partner in, activating their AI")
+	GROUND:TeleportTo(partner, SV.partner.LoadPositionX, SV.partner.LoadPositionY, PartnerEssentials.NumToDir(SV.partner.LoadDirection))--sv doesn't seem to like storing custom classes
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	AI:EnableCharacterAI(partner)
+end
 
+--when saving the game, make note of where the partner is and where they're facing so we can reload them that way.
+function PartnerEssentials.SaveGamePartnerPosition(partner)
+	SV.partner.LoadPositionX = partner.Position.X
+	SV.partner.LoadPositionY = partner.Position.Y
+	SV.partner.LoadDirection = PartnerEssentials.DirToNum(partner.Direction)--sv doesnt seem to like storing custom classes
+end
+
+
+--assigns a number value to each direction, useful for figuring out how many turn a direction is from another
+function PartnerEssentials.DirToNum(dir)
+	--up is 0, upright is 1, ... up left is 7
+	local num = -1
+	if dir == Direction.Up then
+		num = 0
+	elseif dir == Direction.UpRight then
+		num = 1
+	elseif dir == Direction.Right then
+		num = 2
+	elseif dir == Direction.DownRight then
+		num = 3
+	elseif dir == Direction.Down then
+		num = 4
+	elseif dir == Direction.DownLeft then
+		num = 5
+	elseif dir == Direction.Left then
+		num = 6
+	elseif dir == Direction.UpLeft then
+		num = 7
+	end
+	
+	return num
+	
+end
+
+
+--converts a number to a direction
+function PartnerEssentials.NumToDir(num)
+	local dir = Direction.None
+	if num % 8 == 0 then 
+		dir = Direction.Up
+	elseif num % 8 == 1 then
+		dir = Direction.UpRight
+	elseif num % 8 == 2 then
+		dir = Direction.Right
+	elseif num % 8 == 3 then
+		dir = Direction.DownRight
+	elseif num % 8 == 4 then
+		dir = Direction.Down
+	elseif num % 8 == 5 then
+		dir = Direction.DownLeft
+	elseif num % 8 == 6 then
+		dir = Direction.Left
+	elseif num % 8 == 7 then
+		dir = Direction.UpLeft
+	end
+
+	return dir
+end
 
 
 
@@ -139,8 +204,10 @@ function PartnerEssentials.Chapter_1_Dialogue(partner)
 			UI:WaitShowDialogue("Yawn...[pause=0] I'm getting pretty sleepy...")
 			UI:WaitShowDialogue("Let's get some shut-eye so we're ready for the start of our training tomorrow!")
 		else 
+			UI:SetSpeakerEmotion("Inspired")
 			UI:WaitShowDialogue("Can you believe we got a room this nice?")
 			UI:WaitShowDialogue("The rest of the guild must be this nice as well!")
+			UI:SetSpeakerEmotion("Normal")
 			UI:WaitShowDialogue("We should go explore the guild and say hi to all of our new guildmates!")
 		end
 	elseif ground == 'guild_bottom_left_bedroom' then 

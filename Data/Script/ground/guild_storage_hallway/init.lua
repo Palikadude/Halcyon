@@ -30,20 +30,13 @@ function guild_storage_hallway.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 
+
 end
 
 ---guild_storage_hallway.Enter
 --Engine callback function
 function guild_storage_hallway.Enter(map)
-	if SV.ChapterProgression.Chapter == 1 then
-		if not SV.Chapter1.MetAudino then --bump into audino for first time if you haven't yet
-			guild_storage_hallway_ch_1.MeetAudino()
-		else 
-			GAME:FadeIn(20)
-		end
-	else
-		GAME:FadeIn(20)
-	end
+	guild_storage_hallway.PlotScripting()
 end
 
 ---guild_storage_hallway.Exit
@@ -60,7 +53,27 @@ function guild_storage_hallway.Update(map)
 
 end
 
+function guild_storage_hallway.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_storage_hallway.PlotScripting()
+end
 
+function guild_storage_hallway.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_storage_hallway.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		if not SV.Chapter1.MetAudino then --bump into audino for first time if you haven't yet
+			guild_storage_hallway_ch_1.MeetAudino()
+		else 
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
+end
 
 ---------------------------------
 -- Event Trigger

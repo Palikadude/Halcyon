@@ -141,7 +141,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GROUND:CharAnimateTurn(partner, Direction.Right, 4, false)
 	GAME:WaitFrames(20)
 	
-	UI:WaitShowDialogue("Guess I should head on into " .. zone:GetColoredName() .. " before he looks my way.")
+	UI:WaitShowDialogue("I need to head on into " .. zone:GetColoredName() .. " before he looks my way.")
 	GAME:WaitFrames(20)
 	
 	--[[ removed as partner doesn't really need to hint that they're about to find the player

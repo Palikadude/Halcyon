@@ -32,12 +32,7 @@ end
 ---guild_bottom_left_bedroom.Enter
 --Engine callback function
 function guild_bottom_left_bedroom.Enter(map)
-
-  if SV.ChapterProgression.Chapter == 1 then
-	guild_bottom_left_bedroom_ch_1.SetupGround()
-  else
-	GAME:FadeIn(20)
-	end 
+	guild_bottom_left_bedroom.PlotScripting()
 end
 
 ---guild_bottom_left_bedroom.Exit
@@ -54,6 +49,23 @@ function guild_bottom_left_bedroom.Update(map)
 
 end
 
+function guild_bottom_left_bedroom.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_bottom_left_bedroom.PlotScripting()
+end
+
+function guild_bottom_left_bedroom.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_bottom_left_bedroom.PlotScripting()
+	--plot scripting
+	if SV.ChapterProgression.Chapter == 1 then
+		guild_bottom_left_bedroom_ch_1.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end 
+end
 -------------------------------
 -- Entities Callbacks
 -------------------------------

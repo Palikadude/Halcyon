@@ -114,7 +114,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 264, 304, false, 1, 20) end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharAnimateTurn(partner, Direction.Up, 4, true) GeneralFunctions.FaceMovingCharacter(partner, hero) end)
-	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GAME:MoveCamera(256, 300, 92, false) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GAME:MoveCamera(256, 300, 84, false) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
@@ -208,7 +208,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GeneralFunctions.EmoteAndPause(hero, "Notice", true)
 	
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
-	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. " is all tensed up.[pause=0] " .. GeneralFunctions.GetPronoun(partner, "they're", true) .. " too nervous to speak.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. " seems tensed up.[pause=0] Is " .. GeneralFunctions.GetPronoun(partner, "they", false) .. " too nervous to speak?)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(I'd better say something...)", "Normal")
 	
 	
@@ -347,7 +347,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(54)
 								GROUND:MoveInDirection(hero, Direction.UpRight, 32, false, 1)
 								GROUND:MoveToPosition(hero, 500, 272, false, 1)  end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) 
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(58) 
 								GROUND:MoveInDirection(partner, Direction.UpRight, 32, false, 1)
 								GROUND:MoveToPosition(partner, 500, 272, false, 1) end)
 	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(160) GAME:FadeOut(false, 20) end)

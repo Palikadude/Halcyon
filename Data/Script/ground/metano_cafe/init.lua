@@ -52,8 +52,17 @@ function metano_cafe.Update(map, time)
 
 end
 
+function metano_cafe.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+end
 
+function metano_cafe.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
 
+function metano_cafe.PlotScripting()
+
+end
 
 -------------------------------
 -- Map Transition

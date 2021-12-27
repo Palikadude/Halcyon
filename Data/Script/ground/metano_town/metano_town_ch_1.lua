@@ -430,7 +430,7 @@ function metano_town_ch_1.EnterGuild()
 	GeneralFunctions.HeroDialogue(hero, "(It's reassuring that we only just got here and we're already being taken so kindly...)", "Normal")
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
-	GeneralFunctions.HeroDialogue(hero, "(..But is this really the guild?[pause=0] It's a tree?[pause=0] I was expecting something different...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(...But is this really the guild?[pause=0] It's a tree?[pause=0] I was expecting something different...)", "Worried")
 	GAME:WaitFrames(60)
 	
 	--hyko returns

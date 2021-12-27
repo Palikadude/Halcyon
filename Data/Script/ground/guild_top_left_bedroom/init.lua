@@ -33,9 +33,7 @@ end
 ---guild_Top_Left_bedroom.Enter
 --Engine callback function
 function guild_Top_Left_bedroom.Enter(map)
-
-  GAME:FadeIn(20)
-
+	guild_Top_Left_bedroom.PlotScripting()
 end
 
 ---guild_Top_Left_bedroom.Exit
@@ -50,6 +48,19 @@ end
 function guild_Top_Left_bedroom.Update(map)
 
 
+end
+
+function guild_Top_Left_bedroom.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	guild_Top_Left_bedroom.PlotScripting()
+end
+
+function guild_Top_Left_bedroom.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function guild_Top_Left_bedroom.PlotScripting()
+	GAME:FadeIn(20)
 end
 
 -------------------------------
