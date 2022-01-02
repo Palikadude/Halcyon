@@ -71,7 +71,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	UI:WaitShowDialogue("That's wonderful![pause=0] The world could always use more adventurers!")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("I don't think I got your names though.[pause=0] Could you tell me them please?")
+	UI:WaitShowDialogue("I don't think I got your names,[pause=10] though.[pause=0] Could you tell me them please?")
 	
 	--partner speaks up
 	GAME:WaitFrames(20)

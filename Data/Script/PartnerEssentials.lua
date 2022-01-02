@@ -182,7 +182,7 @@ function PartnerEssentials.Chapter_1_Dialogue(partner)
 			UI:SetSpeakerEmotion('Worried')
 			UI:WaitShowDialogue("Do you think " .. CharacterEssentials.GetCharacterName('Zigzagoon') .. " is going to put us in his almanac?")
 			UI:SetSpeakerEmotion("Normal")
-			UI:WaitShowDialogue("We'll have to check it out after a while to see I guess.[pause=0] I want to know what he'd write about us!")
+			UI:WaitShowDialogue("We'll have to check it out after a while to see,[pause=10] I guess.[pause=0] I want to know what he'd write about us!")
 			SV.Chapter1.PartnerSecondFloorDialogue = 1
 		end
 	elseif ground == 'guild_third_floor_lobby' then

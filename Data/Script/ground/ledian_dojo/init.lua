@@ -5,6 +5,8 @@
 ]]--
 -- Commonly included lua functions and data
 require 'common'
+require 'PartnerEssentials'
+
 
 -- Package name
 local ledian_dojo = {}
@@ -21,10 +23,13 @@ local MapStrings = {}
 ---ledian_dojo.Init
 --Engine callback function
 function ledian_dojo.Init(map)
+	DEBUG.EnableDbgCoro()
+	print('=>> Init_ledian_dojo <<=')
+	MapStrings = COMMON.AutoLoadLocalizedStrings()
+	COMMON.RespawnAllies()
+	PartnerEssentials.InitializePartnerSpawn()
 
-  --This will fill the localized strings table automatically based on the locale the game is 
-  -- currently in. You can use the MapStrings table after this line!
-  MapStrings = COMMON.AutoLoadLocalizedStrings()
+	GROUND:AddMapStatus(50)--darkness
 
 end
 
@@ -32,7 +37,7 @@ end
 --Engine callback function
 function ledian_dojo.Enter(map)
 
-  GAME:FadeIn(20)
+  ledian_dojo.PlotScripting()
 
 end
 
@@ -53,21 +58,45 @@ end
 ---ledian_dojo.GameSave
 --Engine callback function
 function ledian_dojo.GameSave(map)
-
-
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 end
 
 ---ledian_dojo.GameLoad
 --Engine callback function
 function ledian_dojo.GameLoad(map)
-
-
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	ledian_dojo.PlotScripting()
 end
+
+function ledian_dojo.PlotScripting()
+	GAME:FadeIn(20)
+end
+
+
+
+
+
+-------------------------------
+-- Map Transition
+-------------------------------
+
+function ledian_dojo.Dojo_Exit_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:FadeOut(false, 20)
+  GAME:EnterGroundMap("metano_town", "Dojo_Entrance_Marker")
+  SV.partner.Spawn = 'Dojo_Entrance_Marker_Partner'
+end
+
+
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
 
+function ledian_dojo.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+end
 
 return ledian_dojo
 

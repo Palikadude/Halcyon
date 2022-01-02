@@ -172,7 +172,12 @@ function metano_town.Cave_Entrance_Touch(obj, activator)
   SV.partner.Spawn = 'Default'
 end
 
-
+function metano_town.Dojo_Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:FadeOut(false, 20)
+  GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker")
+  SV.partner.Spawn = 'Default'
+end
 
 
 

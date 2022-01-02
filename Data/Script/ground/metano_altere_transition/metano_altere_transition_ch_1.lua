@@ -253,7 +253,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GeneralFunctions.HeroDialogue(hero, "(I feel like I can trust " .. GeneralFunctions.GetPronoun(partner, 'them') .. ".[pause=0] I can't think of any good reason not to.)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(And being an adventurer sounded really cool...)", "Inspired")
 	GeneralFunctions.HeroDialogue(hero, "(Alright![pause=0] Then it's decided!)", "Normal")	
-	GeneralFunctions.HeroDialogue(hero, "(Who knows?[pause=0] Maybe togther we will figure out why I turned into a Pokémon.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(Who knows?[pause=0] Maybe together we'll figure out why I turned into a Pokémon.)", "Normal")
 
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)

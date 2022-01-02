@@ -181,7 +181,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Glad to meet you " .. audino:GetDisplayName() .. "!")
+	UI:WaitShowDialogue("Glad to meet you,[pause=10] " .. audino:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
 	
 	--what were you doing here rin? oh i was in the guldmasters room tidying up, dont go in there though

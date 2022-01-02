@@ -6,7 +6,6 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
-require 'GeneralFunctions'
 
 -- Package name
 local metano_cave = {}
@@ -28,14 +27,9 @@ function metano_cave.Init(map, time)
 	print('=>> Init_metano_cave <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
+	PartnerEssentials.InitializePartnerSpawn()
 
 	GROUND:AddMapStatus(50)--darkness
-
-
-	--set partner to follow us, disable his collision
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-	chara.CollisionDisabled = true
 
 end
 
@@ -44,9 +38,7 @@ end
 function metano_cave.Enter(map, time)
 	DEBUG.EnableDbgCoro()
 	print('Enter_metano_cave')
-	GAME:FadeIn(20)
-	UI:ResetSpeaker()
-
+	metano_cave.PlotScripting()
 end
 
 ---metano_cave.Exit
@@ -63,6 +55,23 @@ function metano_cave.Update(map, time)
 
 end
 
+---metano_cave.GameSave
+--Engine callback function
+function metano_cave.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+---metano_cave.GameLoad
+--Engine callback function
+function metano_cave.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_cave.PlotScripting()
+end
+
+function metano_cave.PlotScripting()
+	GAME:FadeIn(20)
+end
+
 -------------------------------
 -- Map Transitions
 -------------------------------
@@ -76,12 +85,14 @@ end
 
 
 
-------------------
---NPCS 
-----------------
+-------------------------------
+-- Entities Callbacks
+-------------------------------
+
 function metano_cave.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))end
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+end
 
 return metano_cave
 

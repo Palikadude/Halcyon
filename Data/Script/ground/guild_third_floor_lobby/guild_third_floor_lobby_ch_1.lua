@@ -226,7 +226,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.HeroDialogue(hero, "(Even so...[pause=0] I have this strong feeling that everything's going to work out.)", "Normal")
-	GeneralFunctions.HeroDialogue(hero, "(This feeling...[pause=0] It makes me certain we will join the guild!)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(This feeling...[pause=0] It makes me certain we'll join the guild!)", "Normal")
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.HeroSpeak(hero, 60)

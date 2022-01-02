@@ -6,7 +6,6 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
-require 'GeneralFunctions'
 require 'ground.relic_forest.relic_forest_ch_1'
 
 

@@ -90,7 +90,7 @@ end
 
 
 -------------------------------
--- NPCS
+-- Entities Callbacks
 -------------------------------
 
 function metano_altere_transition.Teammate1_Action(chara, activator)

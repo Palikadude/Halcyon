@@ -298,7 +298,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Indeed.[pause=0] However it is not up to me to decide.")
+	UI:WaitShowDialogue("Indeed.[pause=0] However,[pause=10] it is not up to me to decide.")
 	UI:WaitShowDialogue("You would have to speak with the Guildmaster.[pause=0] He is the one who decides who may study here.")
 	
 	--todo: two hops
@@ -316,7 +316,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:WaitShowDialogue("Hmm...")
 	GAME:WaitFrames(40)
 	
-	UI:WaitShowDialogue("Very well,[pause=10] I will take you to see the Guildmaster.")
+	UI:WaitShowDialogue("Very well.[pause=0] I will take you to see the Guildmaster.")
 	
 	
 	GAME:WaitFrames(20)
@@ -551,7 +551,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		UI:SetSpeaker(zigzagoon)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Yeah![pause=0] Everything I learn about adventuring I write down in my almanac!")--todo: hop at the end of this
-		UI:WaitShowDialogue("Adventurering teams,[pause=10] expedition discoveries,[pause=10] and dungeoneering techniques and knowledge!")
+		UI:WaitShowDialogue("Adventuring teams,[pause=10] expedition discoveries,[pause=10] and dungeoneering techniques and knowledge!")
 		UI:WaitShowDialogue("It's all in my almanac so that myself and others can all learn everything there is to know about adventuring!")
 		GAME:WaitFrames(20)
 	
@@ -577,7 +577,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		UI:SetSpeakerEmotion('Normal')
 		UI:WaitShowDialogue("But just so you know,[pause=10] there's actually a few books I write stuff in.")
 		UI:WaitShowDialogue("It helps me keep the information more organized.[pause=0] Each book is for a different topic!")		
-		UI:WaitShowDialogue("Since I'm still kinda new there isn't too much in them yet...")
+		UI:WaitShowDialogue("Since I'm still kinda new,[pause=10] there isn't too much in them yet...")
 		UI:WaitShowDialogue("But I add to them as I learn![pause=0] So I'm sure soon enough there'll be more pages than you can count!")
 		GAME:WaitFrames(20)
 		
@@ -896,12 +896,12 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		
 		UI:SetSpeaker(partner)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("That sounds great " .. mareep:GetDisplayName() .. "![pause=0] I can't wait!")
+		UI:WaitShowDialogue("That sounds great,[pause=10] " .. mareep:GetDisplayName() .. "![pause=0] I can't wait!")
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeaker(mareep)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("Good luck you two![pause=0] It's back to finding tomorrow's ba-a-a-addie to beat for me now!")
+		UI:WaitShowDialogue("Good luck,[pause=10] you two![pause=0] It's back to finding tomorrow's ba-a-a-addie to beat for me now!")
 		GAME:WaitFrames(20)
 		
 		GROUND:CharAnimateTurnTo(mareep, Direction.Up, 4)
