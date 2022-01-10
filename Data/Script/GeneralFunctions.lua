@@ -636,6 +636,13 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 	else 
 		GAME:SetTeamLeaderIndex(0)--this doesn't work in dungeons right now
 	end
+	
+	
+	--guests are temporary and are for plot or missions. Delete them all, if they're needed again, whatever put them into your team will place them back in
+	local guestCount = GAME:GetPlayerGuestCount()
+	for i = 1, guestCount, 1 do 
+		local g = GAME:RemovePlayerGuest(i-1)
+	end
 
 	
 	if spawn then 	

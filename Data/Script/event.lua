@@ -102,7 +102,7 @@ end
 
 --Halcyon dungeon scripts
 
---For Ledian's speeches at the start of each floor of the beginner lesson
+--For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
   if character == nil then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map
 	if args.Speech == 1 then
@@ -318,8 +318,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	if result == 1 then 
-		print(SV.Tutorial.Lesson.. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)")
-		assert(pcall(load(SV.Tutorial.Lesson.. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)"), owner, ownerChar, target, args))
+		print(SV.Tutorial.Lesson .. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)")
+		assert(pcall(load(SV.Tutorial.Lesson .. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)"), owner, ownerChar, target, args))
 	elseif result == 2 then
 		UI:WaitShowDialogue("Wahtah![pause=0] Very well![pause=0] Allow me to reset this floor!")
 		GAME:WaitFrames(20)
@@ -334,12 +334,12 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		emitter.StartColor = Color(0, 0, 0, 0)
 		emitter.Layer = DrawLayer.Top
 		emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
-		GROUND:PlayVFX(emitter, chara.MapLoc.X, chara.MapLoc.Y)
+		GROUND:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
 	    SOUND:PlayBattleSE("EVT_Battle_Flash")
-	    GAME:WaitFrames(20)
-	    GROUND:PlayVFX(emitter, chara.MapLoc.X, chara.MapLoc.Y)
+	    GAME:WaitFrames(15)
+	    GROUND:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
 	    SOUND:PlayBattleSE("EVT_Battle_Flash")
-		UI:WaitShowTimedDialogue("HWACHA!", 60)		
+		UI:WaitShowTimedDialogue("HWACHA!", 40)		
 		--Reset floor
 		local resetEvent = PMDC.Dungeon.ResetFloorEvent()
 		TASK:WaitTask(resetEvent:Apply(owner, ownerChar, chara))--chara is the one who's "activating the reset tile"

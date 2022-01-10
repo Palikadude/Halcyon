@@ -11,10 +11,10 @@ function zone_51.Init(zone)
     GeneralFunctions.DefaultParty(false, false, true)
 	local mon_id = RogueEssence.Dungeon.MonsterID(166, 0, 0, Gender.Female)
 	local sensei = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0)
-	sensei.Discriminator = _DATA.Save.Rand:Next()
+	sensei.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
 	sensei.Level = 5
 	sensei.Nickname = 'Lotus'
-	sensei.IsPartner = true
+	sensei.IsPartner = true-- if they somehow manage to die, end the run
 	_DATA.Save.ActiveTeam.Guests:Add(sensei)
     local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("SenseiInteract")
     sensei.ActionEvents:Add(talk_evt)
