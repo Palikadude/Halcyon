@@ -87,7 +87,14 @@ function ledian_dojo.Dojo_Exit_Touch(obj, activator)
   SV.partner.Spawn = 'Dojo_Entrance_Marker_Partner'
 end
 
-
+function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:UnlockDungeon(51)--this is to be moved to a cutscene
+  local dungeon_entrances = { 51 }
+  local ground_entrances = {}
+  COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
+	
+end
 
 -------------------------------
 -- Entities Callbacks

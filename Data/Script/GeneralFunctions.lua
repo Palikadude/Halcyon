@@ -574,12 +574,13 @@ end
 --Just those two if others is false, allow other party members to remain in 3/4 slot if false
 --if spawn is true run spawners for teammates 1 (through 3 if applicable)
 --this is somewhat shoddily written, i feel like it will break with the right conditions...
-function GeneralFunctions.DefaultParty(spawn, others)
+function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 	--Clear party 
 	local partyCount = GAME:GetPlayerPartyCount()
 	local p = 0
 	local tbl = 0
 	others = others or false
+	in_dungeon = in_dungeon or false
 	
 	--this depends on partner and hero not being able to be shifted out of slot 1 and 2... keep in mind
     for i = partyCount,1,-1 do
@@ -628,7 +629,13 @@ function GeneralFunctions.DefaultParty(spawn, others)
 	for i = 1, found - 1, 1 do
 		GAME:AddPlayerTeam(bufferTable[i])
 	end
-	GAME:SetTeamLeaderIndex(0)
+	
+	--TODO: Remove this when audino updates set team leader index to work in dungeons. Only dungeon init scripts should have the in dungeon parameter set
+	if in_dungeon then
+		_DATA.Save.ActiveTeam.LeaderIndex = 0
+	else 
+		GAME:SetTeamLeaderIndex(0)--this doesn't work in dungeons right now
+	end
 
 	
 	if spawn then 	

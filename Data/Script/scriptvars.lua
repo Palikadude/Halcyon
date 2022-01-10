@@ -137,6 +137,12 @@ SV.Chapter1 =
 	PartnerSecondFloorDialogue = 0
 }
 
+SV.Chapter2 = 
+{
+
+}
+
+
 
 
 ----------------------------------
@@ -147,6 +153,13 @@ SV.DungeonFlags =
 	GenericEnding = false--do a generic ending for the end of a dungeon in the relevant zone/ground
 }
 
+--For dojo lessons
+SV.Tutorial = 
+{
+	Lesson = "null",
+	LastSpeech = "null",--remember which function for a dialogue set was spoken last.
+	Progression = 0--a number value that corresponds to how many dialogues Ledian has said so far. Used to remember if ledian said anything already when the floor is reset so she doesn't repeat herself.
+}
 
 
 
