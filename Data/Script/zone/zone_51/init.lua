@@ -49,6 +49,11 @@ function zone_51.ExitSegment(zone, result, rescue, segmentID, mapID)
         }
 		]]--
 	
+	--no matter the result, clear the tutorial flags back to their defaults
+	SV.Tutorial.Lesson = 'null'
+	SV.Tutorial.LastSpeech = 'null'
+	SV.Tutorial.Progression = 0
+	
 	--failed or gave up on the tutorial
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
 		if SV.ChapterProgression.Chapter == 2 then --todo: cutscenes

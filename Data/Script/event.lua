@@ -104,7 +104,9 @@ end
 
 --For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
-  if character == nil then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map
+  print("i'm sharting??")
+  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map
+	print(args.Speech)
 	if args.Speech == 1 then
 		beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
 	elseif args.Speech == 2 then
@@ -318,8 +320,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	if result == 1 then 
-		print(SV.Tutorial.Lesson .. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)")
-		assert(pcall(load(SV.Tutorial.Lesson .. "." .. SV.Tutorial.LastSpeech .. "(...,...,...,...)"), owner, ownerChar, target, args))
+		args.Speech = SV.Tutorial.Progression
+		SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, chara, args)
 	elseif result == 2 then
 		UI:WaitShowDialogue("Wahtah![pause=0] Very well![pause=0] Allow me to reset this floor!")
 		GAME:WaitFrames(20)
