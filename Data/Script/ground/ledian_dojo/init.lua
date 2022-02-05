@@ -75,7 +75,46 @@ end
 
 
 
-
+--modified version of common's ShowDestinationMenu. Has no capability for grounds, and sets risk to None if the dungeon chosen is a tutorial level
+function ledian_dojo.ShowMazeMenu(dungeon_entrances)
+  --check for unlock of dungeons
+  local open_dests = {}
+  for ii = 1,#dungeon_entrances,1 do
+    if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
+	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dungeon_entrances[ii]]
+	  local zone_name = zone_summary:GetColoredName()
+      table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
+	end
+  end
+  
+  local dest = RogueEssence.Dungeon.ZoneLoc.Invalid
+  if #open_dests == 1 then
+      --single dungeon entry
+      UI:ResetSpeaker()
+      SOUND:PlaySE("Menu/Skip")
+	  UI:DungeonChoice(open_dests[1].Name, open_dests[1].Dest)
+      UI:WaitForChoice()
+      if UI:ChoiceResult() then
+	    dest = open_dests[1].Dest
+	  end
+  elseif #open_dests > 1 then
+    
+    UI:ResetSpeaker()
+    SOUND:PlaySE("Menu/Skip")
+    UI:DestinationMenu(open_dests)
+	UI:WaitForChoice()
+	dest = UI:ChoiceResult()
+  end
+  
+  if dest:IsValid() then
+	local risk = RogueEssence.Data.GameProgress.DungeonStakes.Risk
+	--set risk to none if chosen level is a tutorial level
+	if dest.ID == 51 then risk = RogueEssence.Data.GameProgress.DungeonStakes.None end
+    SOUND:PlayBGM("", true)
+    GAME:FadeOut(false, 20)
+	GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, risk, true, false)
+  end
+end
 -------------------------------
 -- Map Transition
 -------------------------------
@@ -89,10 +128,9 @@ end
 
 function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:UnlockDungeon(51)--this is to be moved to a cutscene
+  GAME:UnlockDungeon(51)--todo: move to a cutscene
   local dungeon_entrances = { 51 }
-  local ground_entrances = {}
-  COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
+  ledian_dojo.ShowMazeMenu(dungeon_entrances)
 	
 end
 

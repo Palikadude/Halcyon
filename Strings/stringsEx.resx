@@ -3392,10 +3392,419 @@
     <comment></comment>  </data>
 	
 	
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_1_TITLE" xml:space="preserve">
+    <value>Welcome to the Beginner Lesson!</value>
+    <comment>All data values below this and including this string are all Halcyon additions. These particular strings are for the first tutorial dungeon
+			 The formatting for string names is: BEGINNER_LESSON_(lesson i.e. floor)_SIGN_(room number)_(Sign number)_(Title or body)</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_1_BODY" xml:space="preserve">
+    <value>The trials ahead will teach you the basics of dungeon crawling. You'll need to apply what you learn to make it to the end, so pay attention! 
+Be sure to read all the signs ahead! You can skip 'em if you’re already well-learned, but I strongly suggest you read them anyway! 
+If you get stuck, you can use the green target tiles in each room to reset the floor. You can also ask Sensei Lotus to reset the floor.
+                                      - Totor
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
 	
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_2_TITLE" xml:space="preserve">
+    <value>Navigating Mystery Dungeons</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_2_BODY" xml:space="preserve">
+    <value>Mystery dungeons consist of a series of floors. The goal of each floor is to find the stairs that will bring you to the next floor.
+A mystery dungeon's layout changes everytime you enter, so no two adventures are alike!
+The minimap will help you navigate each floor. It fills out as you explore a floor. The flashing dot is you, yellow dots are allies, red dots are enemies, and blue dots are items. Blue squares are the stairs! There are other types of icons too, so keep an eye out!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_3_TITLE" xml:space="preserve">
+    <value>Menus</value>
+    <comment>Sign title in beginner lesson</comment>  </data>	
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_3_BODY" xml:space="preserve">
+    <value>Press {0} to open up the menu. From here, you can view your team’s moves, status, items, and more. 
+You can learn more about your moves, abilities, items, and more by reading the descriptions in the relevant menus. Make sure to familiarize yourself with your team's capabilities!
+The Others menu will allow you to view a log of recent actions, as well as change settings such as battle speed or game resolution... Whatever that means.</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_4_TITLE" xml:space="preserve">
+    <value>Moving Around a Dungeon</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_4_BODY" xml:space="preserve">
+    <value>Enemy Pokémon won’t move until you move, so take all the time you need to decide your next move.
+You can hold {0} to move faster. This will just make the turns you spend moving go faster, you can’t use it to outrun enemy Pokémon.
+You can press {1} + {2} to pass your turn and wait in place. Hold {3} + {4} to keep passing turns.
+You recover HP slowly while moving through a dungeon or by waiting in place.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
 	
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_5_TITLE" xml:space="preserve">
+    <value>To do!</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_5_BODY" xml:space="preserve">
+    <value>Reserved (any ideas on what to put here?) </value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_2_1_TITLE" xml:space="preserve">
+    <value>Moves and their Properties</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_2_1_BODY" xml:space="preserve">
+    <value>Pokémon can have up to 4 moves. Moves have a number of different properties:
+Range - distance a move can hit from. Some moves will also move the user as well.
+Power - Helps determine how much damage a move deals.
+Accuracy - How likely a move is to hit. The Speed stat, as well as temporary Accuracy and Evasion modifiers, are also used to determine if a move hits.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
 	
-  <data name="BEGINNER_LESSON_GENERAL_SIGN_1_1" xml:space="preserve">
-    <value>I'm sharting</value>
-    <comment>All data values below this and including this string are all Halcyon additions. These particular strings are for the first tutorial dungeon</comment>  </data>
+<data name = "BEGINNER_LESSON_GENERAL_SIGN_2_2_TITLE" xml:space="preserve">
+    <value>Moves and their Properties (cont.)</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_2_2_BODY" xml:space="preserve">
+    <value>Type - Determines how effective a move is against an enemy. For example, water moves are strong against fire Pokémon.
+Damage Category - Physical, special, or status. Physical moves use Attack/Defense, special moves use Sp. Attack/Sp. Defense. Status moves don’t directly inflict damage, but have other effects instead such as inflicting status or lowering stats.
+Max PP - Power Points (PP) are the energy required to use a move. A move can't be used if it runs out of PP until its restored.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_2_3_TITLE" xml:space="preserve">
+    <value>Using Different Moves</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_2_3_BODY" xml:space="preserve">
+    <value>Moves have a wide variety of effects; familiarize yourself with your attacks! They may work differently than you're used to…
+All Pokémon can use a basic attack that is independent of their moves. Press {0} to do a basic attack.
+To do a move, press {1} then press a key to use the associated move. Try using some moves on the dummy!
+You can also choose which moves allies are allowed to use in the Moves menu. Allies can only use moves with a checkmark.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_3_1_TITLE" xml:space="preserve">
+    <value>Experience</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_3_1_BODY" xml:space="preserve">
+    <value>Defeating Pokémon will give you experience. Once you’ve gotten enough, you will level up! Leveling up increases your stats and may let you learn a new move.
+The higher your level, the less experience you get from lower leveled enemies, and vice versa.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_3_2_TITLE" xml:space="preserve">
+    <value>Gaining Experience</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_3_2_BODY" xml:space="preserve">
+    <value>You will only get experience for defeating a foe if you used a move or an item on them. Basic attacks alone won't cut it!
+Some Pokémon give more experience than others. Caterpie, for example, gives little while Chansey gives a lot. See for yourself by defeating the volunteers here! Remember that experience and levels gained here won’t be kept once you leave.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_4_1_TITLE" xml:space="preserve">
+    <value>Belly</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_4_1_BODY" xml:space="preserve">
+    <value>Walking around dungeons will slowly deplete your Belly, a measure of how hungry you are. Only the party leader will lose Belly naturally.
+If your Belly reaches 0, then you will lose HP every turn until you eat something. Apples and Gummis are best for filling your stomach. Berries will fill your Belly a little bit too.
+Certain foods will also temporarily increase your max Belly for the rest of an adventure.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_5_1_TITLE" xml:space="preserve">
+    <value>Stats</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_5_1_BODY" xml:space="preserve">
+    <value>Every Pokémon has 6 stats. HP (Hit Points), Attack, Defense, Special Attack, Special Defense, and Speed. Some Pokémon excel in certain stats and are weak in others. 
+HP - When a Pokémon’s HP reaches 0, it faints.
+Attack - The higher a Pokémon’s Attack, the more damage its physical attacks do.
+Defense - The higher a Pokémon’s Defense, the less damage physical attacks will do to it.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+<data name = "BEGINNER_LESSON_GENERAL_SIGN_5_2_TITLE" xml:space="preserve">
+    <value>Stats (cont.)</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_5_2_BODY" xml:space="preserve">
+    <value>Special Attack - The higher a Pokémon’s
+Sp. Attack, the more damage its special attacks will do.
+Special Defense - The higher a Pokémon’s
+Sp. Defense, the less damage special attacks will do to it.
+Speed - The higher a Pokémon’s speed, the better its accuracy and evasion.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_5_3_TITLE" xml:space="preserve">
+    <value>Temporary Stat Changes</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_5_3_BODY" xml:space="preserve">
+    <value>Besides HP, a Pokémon's stats can be temporarily raised or lowered. A stat can be modified by up to 6 stages.
+Stat changes are reset upon entering a new floor or when stepping on a Wonder Tile. There are some Wonder Tiles behind this sign.
+The volunteers in this room will demonstrate moves that modify stats!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_5_4_TITLE" xml:space="preserve">
+    <value>Movement Speed</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_5_4_BODY" xml:space="preserve">
+    <value>Movement Speed is separate from the Speed stat.
+Increased Movement Speed allows you to move more than once per turn, while decreased Movement Speed causes you to skip a turn each time you move.
+Attack speed is unaffected by Movement Speed. Your turn ends if you attack even if sped up, and attacking won't skip turns if you're slowed.
+A Pokémon’s Movement Speed can be modified up to 3 times in either direction.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_5_5_TITLE" xml:space="preserve">
+    <value>Accuracy and Evasion</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_5_5_BODY" xml:space="preserve">
+    <value>In addition to the 6 stats, there are two additional, temporary stat modifiers: Accuracy and Evasion. These work in conjunction with the Speed stat to determine hit/dodge rate.
+By the way, a Pokémon can never miss an attack twice in a row. If you miss, the next attack will always hit!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_6_1_TITLE" xml:space="preserve">
+    <value>Types</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_6_1_BODY" xml:space="preserve">
+    <value>Types are the elemental affiliation of a Pokémon or move. Certain types are strong or weak against other types. For example, Grass moves are ineffective against Fire Pokémon but are strong against Water Pokémon.
+Some types are completely ineffective against other types. For example, Normal moves can’t hit Ghost Pokémon.
+Basic attacks have no type and hit every Pokémon for normal damage.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_6_2_TITLE" xml:space="preserve">
+    <value>Multiple Types and STAB</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_6_2_BODY" xml:space="preserve">
+    <value>A Pokémon can consist of two types. A Pokémon’s second type can cover the weakness of its other type. For example, a Grass/Water Pokémon would take normal damage from a Fire type attack. On the other hand, a Pokémon would take even more damage if a move is super-effective on both of its types!
+By the way, if a Pokémon uses a move that’s the same as one of its types, the move will receive a power boost! This is known as Same Type Attack Bonus. 
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_7_1_TITLE" xml:space="preserve">
+    <value>Abilties</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_7_1_BODY" xml:space="preserve">
+    <value>All Pokémon have a special attribute known as an Ability. Abilities have special effects in battle that are different for each Ability. For example, some Abilities prevent a Pokémon from being afflicted by a major status while and some Abilities increase the power of moves of a certain type when the user is low on HP. 
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_7_2_TITLE" xml:space="preserve">
+    <value>Different Abilities, Same Species</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_7_2_BODY" xml:space="preserve">
+    <value>A specific Pokémon can only have one ability, but some species of Pokémon can have two possible Abilities. The volunteers here are of the same species, but have different abilities.
+The north one has Sturdy which prevents it from being defeated in a single hit, while the south one has Rock Head, which prevents recoil damage from moves like Take Down.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_GENERAL_SIGN_7_3_TITLE" xml:space="preserve">
+    <value>Weak and Strong Abilities</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_GENERAL_SIGN_7_3_BODY" xml:space="preserve">
+    <value>Some Pokémon that are normally weak have abilities that make them strong and vice versa.
+Shedinja is a Pokémon with very little HP and poor stats, but its Wonder Guard ability prevents all non-super effective attacks from landing (basic attacks still work).
+Slaking is a Pokémon with very high overall stats, but its Truant ability prevents it from attacking twice in a row. Very few abilities actually work against the user though.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_1_1_TITLE" xml:space="preserve">
+    <value>Status</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_1_1_BODY" xml:space="preserve">
+    <value>Pokémon can become afflicted with statuses during adventures in many ways, but most commonly through moves. Some moves inflict a status condition outright, but some have a chance to status in addition to their regular effect.
+Status conditions can be broken into two categories, major and minor. A Pokémon can only have one major status condition at a time.
+You can see what statuses a teammate has by checking them in the Team menu.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_1_2_TITLE" xml:space="preserve">
+    <value>Major Statuses</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_1_2_BODY" xml:space="preserve">
+    <value>Poison: Deals damage when the Pokémon attacks, and prevents natural HP regeneration. Goes away when cured or when you go to the next floor. Poison and Steel types are immune to Poison.
+Badly Poisoned: The same as regular Poison, except the damage gets worse the longer you stay poisoned.
+Burn: Deals damage every turn and cuts the Attack stat in half. Will go away on its own after a while, when cured, or by stepping in water. Fire types are immune to Burn.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+  
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_1_3_TITLE" xml:space="preserve">
+    <value>Major Statuses (Cont.)</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_1_3_BODY" xml:space="preserve">
+    <value>Paralysis: Prevents the Pokémon from doing anything every other turn. Will go away on its own after a while or when cured. Electric-type Pokémon are immune to Paralysis.
+Sleep: Sleeping Pokémon cannot do anything. The Pokémon will wake up after a few turns, when cured, or if attacked.
+Freeze: Frozen Pokémon cannot do anything and cannot be affected by attacks. The Pokémon will thaw after a few turns, when cured, or if hit by a Fire-type attack. Ice-type Pokémon are immune to Freeze.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_2_1_TITLE" xml:space="preserve">
+    <value>Minor Statuses</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_2_1_BODY" xml:space="preserve">
+    <value>While a Pokémon can only have one major status at a time, a Pokémon can have any number of minor statuses on them at a time. Most minor statuses will go away on their own after a little while. Note that some last longer than others!</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_2_2_TITLE" xml:space="preserve">
+    <value>Minor Status Examples</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_2_2_BODY" xml:space="preserve">
+    <value>Some examples of minor statuses:
+Confusion: Confused Pokémon will choose a random direction moving or attacking. Watch out for friendly fire!
+Immobilization: Immobilized Pokémon cannot move. 
+Leech Seed: The seeder will drain some of the seeded Pokémon's HP periodically. Grass types can't be seeded.
+Most minor statuses can’t be cured, but some of them can such as Confusion.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_STATUS_SIGN_2_3_TITLE" xml:space="preserve">
+    <value>Minor Statuses as Buffs</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_STATUS_SIGN_2_3_BODY" xml:space="preserve">
+    <value>Some minor statuses are beneficial. These statuses are typically given by a Pokémon using a move for itself or its allies. These typically go away after a while or when you go to the next floor. Some examples:
+Magnet Rise: The Pokémon cannot be hit by Ground-type attacks.
+Protect: The Pokémon cannot be hit at all for a turn.
+Reflect: The Pokémon and its nearby allies take half the normal physical damage.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+
+
+
+  <data name = "BEGINNER_LESSON_ITEMS_SIGN_1_1_TITLE" xml:space="preserve">
+    <value>Items</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_ITEMS_SIGN_1_1_BODY" xml:space="preserve">
+    <value>Items have countless uses; properly utilizing them well is critical to your success as an adventurer.
+Apples and berries can be eaten to fill your Belly and restore HP, PP, or cure status. You can throw items into teammates to have them eat it! 
+Some edibles such as seeds have other effects, such as warping the ingester to a random spot on the floor or causing them to fall asleep. If an effect is negative, be sure to toss at an enemy!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_ITEMS_SIGN_2_1_TITLE" xml:space="preserve">
+    <value>Orbs and Wands</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_ITEMS_SIGN_2_1_BODY" xml:space="preserve">
+    <value>Wands and orbs have many kinds of effects. Wands shoot a projectile that applies their effect to the first Pokémon hit.
+Orbs have a more variable range of effect, but can usually hit multiple targets. Some orbs have utility effects.
+
+To progress, use the Cleanse Orb to clean the Blowback Wand. Then use the wand to blow the Snorlax away.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_ITEMS_SIGN_3_1_TITLE" xml:space="preserve">
+    <value>Held Items</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_ITEMS_SIGN_3_1_BODY" xml:space="preserve">
+    <value>Items such as scarves and bands can be equipped. Equipped items provide bonuses like status immunity or stat boosts.
+Keep in mind that equipped items still take up a space in your Treasure Bag!
+
+To pass this trial, equip the Band of Passage then continue on. Without the band, you won't be worthy to continue! Sensei Lotus doesn't need one as she is always worthy to pass!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_ITEMS_SIGN_4_1_TITLE" xml:space="preserve">
+    <value>Thrown Weapons and Reviver Seeds</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_ITEMS_SIGN_4_1_BODY" xml:space="preserve">
+    <value>Some items, such as Gravelerock and Sticks, can be thrown at enemies to damage them. Gravelerock travel in an arc, while Sticks go straight forward.
+Reviver seeds are somewhat rare, but incredibly useful consumables that can revive a teammate when they are defeated!
+
+To pass this trial, throw a stick at Dragonite to aggravate him. Use the reviver seeds to revive after his counterattack, then continue to the stairs via the path blasted open by Dragonite!
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>	
+
+
+
+
+
+
+
+
+  <data name = "BEGINNER_LESSON_TERRAIN_SIGN_1_1_TITLE" xml:space="preserve">
+    <value>Terrain</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_TERRAIN_SIGN_1_1_BODY" xml:space="preserve">
+    <value>Terrain consists of the different floor tiles that exist in dungeons. Besides regular ground, there are a few other terrain types:
+Walls - Impassable. Ghost-type Pokémon can walk through walls, but this depletes their Belly quickly! Walls can be broken by some moves and items, but some walls cannot be broken or passed through no matter what.
+Water - Water, Dragon, and Flying-type Pokémon can tread water. If a Pokémon is burned when entering water, it will be cured of its burn.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_TERRAIN_SIGN_1_2_TITLE" xml:space="preserve">
+    <value>Terrain (cont.)</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_TERRAIN_SIGN_1_2_BODY" xml:space="preserve">
+    <value>Lava: Fire, Dragon, and Flying-type Pokémon can pass over lava. If a Pokémon isn’t immune to burns, it will be burned when crossing lava. Items dropped in lava will incinerate and be lost forever!
+Abyss - Holes in the ground, only Flying types can pass over the abyss. Items dropped in the abyss will fall and be lost forever!
+Swamp - Water, Dragon, and Flying-type Pokémon can tread swamps. If a Pokémon isn’t immune to poison, it will be poisoned when passing through swamps.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+  <data name = "BEGINNER_LESSON_TERRAIN_SIGN_1_3_TITLE" xml:space="preserve">
+    <value>Precise Movement</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_TERRAIN_SIGN_1_3_BODY" xml:space="preserve">
+    <value>By the way, you can also press {0} followed by a direction to face that direction. 
+You can also hold {1} to only allow diagonal movement. Try using it to navigate this next section.</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+	
+  <data name = "BEGINNER_LESSON_TERRAIN_SIGN_2_1_TITLE" xml:space="preserve">
+    <value>Team Mode</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_TERRAIN_SIGN_2_1_BODY" xml:space="preserve">
+    <value>To control other members of your team, you can press {0} to activate Team Mode.
+In Team Mode, you control each of your party member’s actions for a given turn. This is useful for sticky situations requiring a coordinated effort.
+
+Use Team Mode to control Sensei Lotus to grab the keys!
+
+You can Team Mode off by pressing {1} again.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+
+
+  <data name = "BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_TITLE" xml:space="preserve">
+    <value>Recruiting Pokémon</value>
+    <comment>Sign title in beginner lesson</comment>  </data>
+  <data name="BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_BODY" xml:space="preserve">
+    <value>Enemy Pokémon can be recruited to your team by throwing an Apricorn at them!
+Different colors of Apricorn are better for recruiting certain types of Pokémon, and work better if the Pokémon is low on health.
+You can't recruit Pokémon that are a higher level than you. 
+To leave, recruit the Diglett, then use Team Mode to have him use Rock Smash to break open the path to the stairs!
+As he is a volunteer, he won't be staying with you once you leave.
+</value>
+    <comment>Sign info in beginner lesson</comment>  </data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </root>
