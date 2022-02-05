@@ -74,10 +74,12 @@ end
 --custom Halcyon SINGLE_CHAR_SCRIPT scripts
 
 --Check to make sure the partner or hero is not dead, or anyone else marked as "IsPartner"
+--checks guests as well
 --if one is dead, then cause an instant game over
 function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 	local player_count = GAME:GetPlayerPartyCount()
-	if player_count <= 1 then return end--If there's only one party member then we dont need to do anything
+	local guest_count = GAME:GetPlayerGuestCount()
+	if player_count < 1 then return end--If there's no party members then we dont need to do anything
 	for i = 0, player_count - 1, 1 do 
 		local player = GAME:GetPlayerPartyMember(i)
 		if player.Dead and player.IsPartner then --someone died 
@@ -86,6 +88,42 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 				if not player.Dead then--dont beam out whoever died
 					TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
 					player.Dead = true
+					GAME:WaitFrames(60)
+				end
+			end
+			--beam out guests
+			for i = 0, guest_count - 1, 1 do --beam everyone else out
+				guest = GAME:GetPlayerGuestMember(i)
+				if not guest.Dead then--dont beam out whoever died
+					TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
+					guest.Dead = true
+					GAME:WaitFrames(60)
+				end
+			end
+			--TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))
+			return--cut the script short here if someone died, no need to check guests
+		end
+	end
+	
+	--check guests as well
+	if guest_count < 1 then return end--If there's no guest members then we dont need to do anything
+	for i = 0, guest_count - 1, 1 do 
+		local guest = GAME:GetPlayerGuestMember(i)
+		if guest.Dead and guest.IsPartner then --someone died 
+			--beam player's team out first
+			for i = 0, player_count - 1, 1 do --beam everyone else out
+				player = GAME:GetPlayerPartyMember(i)
+				if not player.Dead then--dont beam out whoever died
+					TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
+					player.Dead = true
+					GAME:WaitFrames(60)
+				end
+			end
+			for i = 0, guest_count - 1, 1 do --beam everyone else out
+				guest = GAME:GetPlayerGuestMember(i)
+				if not guest.Dead then--dont beam out whoever died
+					TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
+					guest.Dead = true
 					GAME:WaitFrames(60)
 				end
 			end
@@ -104,29 +142,56 @@ end
 
 --For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
-  print("i'm sharting??")
-  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map
-	print(args.Speech)
-	if args.Speech == 1 then
-		beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
-	elseif args.Speech == 2 then
-		beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
-	elseif args.Speech == 3 then
-		beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
-	elseif args.Speech == 4 then
-		beginner_lesson.Floor_3_Wand_Speech(owner, ownerChar, character, args)
-	elseif args.Speech == 5 then
-		beginner_lesson.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
-	elseif args.Speech == 6 then
-		beginner_lesson.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
-	elseif args.Speech == 7 then 
-		beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
-	elseif args.Speech == 8 then 
-		beginner_lesson.Floor_4_Key_Speech(owner, ownerChar, character, args)
-	elseif args.Speech == 9 then 
-		beginner_lesson.Floor_5_Intro(owner, ownerChar, character, args)
-	end
+  if character == nil then return end
+  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
+	GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args))
   end
+end
+
+--helper function to go with queueleaderevent call in BeginnerLessonSpeech
+function BeginnerLessonSpeechHelper(owner, ownerChar, characters, args)
+	--slight pause if this isn't being called by asking Ledian for help. Don't pause if ledian wouldn't say anything (restepping on trigger tile)
+	if SV.Tutorial.Progression ~= -1  and args.Speech > SV.Tutorial.Progression then GAME:WaitFrames(20) end 
+	
+	if args.Speech == 1 and SV.Tutorial.Progression < 1 then
+		beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)--prevent mashing causing you to accidentially speak to Ledian or attack the air
+	elseif args.Speech == 2 and SV.Tutorial.Progression < 2 then
+		beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 3 and SV.Tutorial.Progression < 3 then
+		beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 4 and SV.Tutorial.Progression < 4 then
+		beginner_lesson.Floor_3_Wand_Speech(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 5 and SV.Tutorial.Progression < 5 then
+		beginner_lesson.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 6 and SV.Tutorial.Progression < 6 then
+		beginner_lesson.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 7 and SV.Tutorial.Progression < 7 then
+		beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 8 and SV.Tutorial.Progression < 8 then
+		beginner_lesson.Floor_4_Key_Speech(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	elseif args.Speech == 9 and SV.Tutorial.Progression < 9 then
+		beginner_lesson.Floor_5_Intro(owner, ownerChar, character, args)
+		GAME:WaitFrames(20)
+	end
+end
+
+--Make sure target character is holding the Band of Passage or they will be warped away
+function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, character, args)
+	if character ~= GAME:GetPlayerGuestMember(0) and character.EquippedItem.ID ~= 2503 then--band of passage. Ledian is allowed to pass no matter what
+		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem(2503):GetDisplayName()))
+		GAME:WaitFrames(40)
+		TASK:WaitTask(_DUNGEON:PointWarp(character, RogueElements.Loc(18, 18), true)) --warp them to the specified x18, y18 tile with a message saying they warped
+	elseif character ~= GAME:GetPlayerGuestMember(0) then --no messages or checks should be done on Ledian
+		_DUNGEON:LogMsg(STRINGS:Format("{0} has a {1} equipped and is allowed to pass!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem(2503):GetDisplayName()))
+	end
 end
 
 BATTLE_SCRIPT = {}
@@ -321,7 +386,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	local result = UI:ChoiceResult()
 	if result == 1 then 
 		args.Speech = SV.Tutorial.Progression
-		SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, chara, args)
+		SV.Tutorial.Progression = -1 --temporarily clear progression flag so speech can happen. -1 to prevent pausing before script trigger
+		SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, target, args)
 	elseif result == 2 then
 		UI:WaitShowDialogue("Wahtah![pause=0] Very well![pause=0] Allow me to reset this floor!")
 		GAME:WaitFrames(20)
@@ -329,6 +395,7 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		UI:WaitShowDialogue(".........")
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
+		--setup flashes
 		local emitter = RogueEssence.Content.FlashEmitter()
 		emitter.FadeInTime = 2
 		emitter.HoldTime = 4

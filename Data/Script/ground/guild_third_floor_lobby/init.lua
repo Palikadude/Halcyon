@@ -33,6 +33,7 @@ function guild_third_floor_lobby.Init(map)
 
 	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
 		GROUND:Hide('Assembly')
+		GROUND:Hide('Assembly_Owner')
 	end
 
 
@@ -132,7 +133,7 @@ function guild_third_floor_lobby.Test_Action(chara, activator)
 end
 
 function guild_third_floor_lobby.Assembly_Action(obj, activator)
-	AudinoAssembly.Assembly(CH('Assembly'))
+	AudinoAssembly.Assembly(CH('Assembly_Owner'))
 end
 
 ---------------------------

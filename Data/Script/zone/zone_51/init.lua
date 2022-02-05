@@ -8,14 +8,32 @@ local zone_51 = {}
 function zone_51.Init(zone)
     --Set team to just player+partner, then add Ledian. Set current lesson to beginner
 	SV.Tutorial.Lesson = 'beginner_lesson';
+	
     GeneralFunctions.DefaultParty(false, false, true)
+	--move partner to assembly for the tutorial after setting party to default
+	local p = GAME:GetPlayerPartyMember(1)
+	GAME:RemovePlayerTeam(1)
+	GAME:AddPlayerAssembly(p)
+	
+	--setup Ledian's stats/moves. She doesn't get capped to 5 and has her regular stats.
 	local mon_id = RogueEssence.Dungeon.MonsterID(166, 0, 0, Gender.Female)
-	local sensei = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0)
+	local sensei = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, 89, 0)
 	sensei.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
-	sensei.Level = 5
+	sensei.Level = 58
 	sensei.Nickname = 'Lotus'
 	sensei.IsPartner = true-- if they somehow manage to die, end the run
-	_DATA.Save.ActiveTeam.Guests:Add(sensei)
+	sensei.MaxHPBonus = 10
+	sensei.AtkBonus = 12
+	sensei.DefBonus = 3
+	sensei.MDefBonus = 5
+	sensei.SpeedBonus = 8
+	--sensei:ReplaceIntrinsic = 89 --Iron fist
+	sensei:ReplaceSkill(183, 1, true)--mach punch
+	sensei:ReplaceSkill(369, 2, true)--u-turn
+	sensei:ReplaceSkill(14, 3, false)--Swords dance
+	sensei:ReplaceSkill(8, 4, true)--Ice punch
+	GAME:AddPlayerGuest(sensei)
+	sensei:FullRestore()
     local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("SenseiInteract")
     sensei.ActionEvents:Add(talk_evt)
 	sensei:RefreshTraits()
