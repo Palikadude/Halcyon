@@ -144,7 +144,7 @@ end
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
   if character == nil then return end
   if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
-	GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args)
+	GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args))
   end
 end
 
