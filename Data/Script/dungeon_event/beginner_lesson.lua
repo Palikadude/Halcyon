@@ -34,28 +34,54 @@ function beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
 	local chara = beginner_lesson.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] On this floor you will learn about different status effects you will encounter in your journeys!")
+	UI:WaitShowDialogue("Status effects are buffs or debuffs that affect a Pokémon's ability to battle!")
 	UI:WaitShowDialogue("The volunteers ahead will demonstrate moves that apply status moves![pause=0] Attack them and they'll use their move!")
 	SV.Tutorial.Progression = 2
 end
 
 
 function beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
-	--todo: add animation of Ledian hitting you or something that causes this to happen
-	if SV.Tutorial.Progression < 4 then --set hunger and belly to 0 even if 3rd floor speech given so player can't cheese trial
-		--set player/partner hp to half, belly to 0
-		local hero = GAME:GetPlayerPartyMember(0)
-		--local partner = GAME:GetPlayerPartyMember(1)
+	local hero = GAME:GetPlayerPartyMember(0)
+	if SV.Tutorial.Progression == 3 then --set hunger and belly to 0 if ledian already cut hunger but you haven't passed the trial yet
+		--set player hp to half, belly to 0
 		hero.HP = hero.MaxHP / 2
 		hero.Fullness = 0
-		--partner.HP = partner.MaxHP / 2
-		--partner.Fullness = 0
 	end
 	
 	local chara = beginner_lesson.FindLedian()
+	if SV.Tutorial.Progression == 2 then 
+		chara.CharDir = Direction.Up
+	end
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This floor will teach you about wise and proper item use!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Your first trial begins here!")
-	UI:WaitShowDialogue("Your health has been cut to half and your belly is completely empty!")
+	GAME:WaitFrames(10)
+	--ledian assaults you, but only on entering the floor
+	if SV.Tutorial.Progression == 2 then
+		--todo: tidy up when Audino adds calls for dungeon animations
+		local ledianAction = RogueEssence.Dungeon.CharAnimAction()
+		ledianAction.BaseFrameType = 8 --chop
+		ledianAction.AnimLoc = chara.CharLoc
+		ledianAction.CharDir = chara.CharDir
+		TASK:WaitTask(chara:StartAnim(ledianAction))
+		SOUND:PlayBattleSE('DUN_Attack')
+		GAME:WaitFrames(10)
+		local heroAction = RogueEssence.Dungeon.CharAnimAction()
+		heroAction.BaseFrameType = 4 --hurt
+		heroAction.AnimLoc = hero.CharLoc
+		heroAction.CharDir = hero.CharDir
+		TASK:WaitTask(hero:StartAnim(heroAction))
+		SOUND:PlayBattleSE('DUN_Hit_Neutral')
+		hero.HP = hero.MaxHP / 2
+		hero.Fullness = 0
+		GAME:WaitFrames(10)
+		TASK:WaitTask(hero:StartAnim(heroAction))
+		GAME:WaitFrames(10)
+		TASK:WaitTask(hero:StartAnim(heroAction))
+		GAME:WaitFrames(20)
+	end
+	
+	UI:WaitShowDialogue("I've cut your health to half and your belly is completely empty!")
 	UI:WaitShowDialogue("Use the food and berries in this room to regain your strength so you may continue on!")
 	SV.Tutorial.Progression = 3
 end

@@ -88,8 +88,8 @@ function DebugTools:OnNewGame()
   
 
   
-  for ii = 1, _DATA.Save.DungeonUnlocks.Length, 1 do
-    _DATA.Save.DungeonUnlocks[ii-1] = RogueEssence.Data.GameProgress.UnlockState.Discovered
+  for ii = 1, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Count, 1 do
+    GAME:UnlockDungeon(ii-1)
   end
   
   SV.base_camp.ExpositionComplete = true

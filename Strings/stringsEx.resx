@@ -3472,7 +3472,7 @@ Max PP - Power Points (PP) are the energy required to use a move. A move can't b
   <data name="BEGINNER_LESSON_GENERAL_SIGN_2_3_BODY" xml:space="preserve">
     <value>Moves have a wide variety of effects; familiarize yourself with your attacks! They may work differently than you're used to…
 All Pokémon can use a basic attack that is independent of their moves. Press {0} to do a basic attack.
-To do a move, press {1} then press a key to use the associated move. Try using some moves on the dummy!
+To do a move, hold {1} then press a key to use the associated move. Try using some moves on the dummy!
 You can also choose which moves allies are allowed to use in the Moves menu. Allies can only use moves with a checkmark.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
@@ -3515,7 +3515,7 @@ Certain foods will also temporarily increase your max Belly for the rest of an a
     <comment>Sign title in beginner lesson</comment>  </data>
   <data name="BEGINNER_LESSON_GENERAL_SIGN_5_1_BODY" xml:space="preserve">
     <value>Every Pokémon has 6 stats. HP (Hit Points), Attack, Defense, Special Attack, Special Defense, and Speed. Some Pokémon excel in certain stats and are weak in others. 
-HP - When a Pokémon’s HP reaches 0, it faints.
+HP - A Pokémon's health. If its HP reaches 0, it faints and can no longer battle.
 Attack - The higher a Pokémon’s Attack, the more damage its physical attacks do.
 Defense - The higher a Pokémon’s Defense, the less damage physical attacks will do to it.
 </value>

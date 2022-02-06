@@ -143,8 +143,10 @@ end
 --For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
   if character == nil then return end
-  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
-	GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args))
+  if character.Nickname == 'Lotus' and character.Level > 50 then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
+	--TODO: change character check to player and use the below call to call speeches. location of triggers will need to shift on actual maps
+	--GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args))--
+	BeginnerLessonSpeechHelper(owner, ownerChar, characters, args)
   end
 end
 
@@ -396,6 +398,7 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
 		--setup flashes
+		--todo: fix when audino adds dungeon VFX
 		local emitter = RogueEssence.Content.FlashEmitter()
 		emitter.FadeInTime = 2
 		emitter.HoldTime = 4
@@ -403,6 +406,14 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		emitter.StartColor = Color(0, 0, 0, 0)
 		emitter.Layer = DrawLayer.Top
 		emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
+		--setup hop animation
+		--TODO: use a better/simpler call to do this when audino creates one
+		local action = RogueEssence.Dungeon.CharAnimAction()
+		action.BaseFrameType = 43 --hop
+		action.AnimLoc = target.CharLoc
+		action.CharDir = target.CharDir
+		TASK:WaitTask(target:StartAnim(action))
+		
 		GROUND:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
 	    SOUND:PlayBattleSE("EVT_Battle_Flash")
 	    GAME:WaitFrames(15)
