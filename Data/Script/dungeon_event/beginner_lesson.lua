@@ -55,10 +55,10 @@ function beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This floor will teach you about wise and proper item use!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Your first trial begins here!")
-	GAME:WaitFrames(10)
 	--ledian assaults you, but only on entering the floor
 	if SV.Tutorial.Progression == 2 then
 		--todo: tidy up when Audino adds calls for dungeon animations
+		GAME:WaitFrames(10)
 		local ledianAction = RogueEssence.Dungeon.CharAnimAction()
 		ledianAction.BaseFrameType = 8 --chop
 		ledianAction.AnimLoc = chara.CharLoc
@@ -137,6 +137,8 @@ function beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
 	local chara = beginner_lesson.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This floor will teach you about terrain types you will encounter in dungeons!")
+	UI:WaitShowDialogue("Terrain includes obstacles such as water, lava, and walls!")
+	UI:WaitShowDialogue("Hoiyah![pause=0] You must learn how to terrain affects dungeon navigation to be successful adventurers!")
 	SV.Tutorial.Progression = 7
 end
 

@@ -143,15 +143,14 @@ end
 --For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
   if character == nil then return end
-  if character.Nickname == 'Lotus' and character.Level > 50 then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
+  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
 	--TODO: change character check to player and use the below call to call speeches. location of triggers will need to shift on actual maps
-	--GAME:QueueLeaderEvent(BeginnerLessonSpeech(owner, ownerChar, characters, args))--
-	BeginnerLessonSpeechHelper(owner, ownerChar, characters, args)
+	GAME:QueueLeaderEvent(function() BeginnerLessonSpeechHelper(owner, ownerChar, character, args) end)--
   end
 end
 
 --helper function to go with queueleaderevent call in BeginnerLessonSpeech
-function BeginnerLessonSpeechHelper(owner, ownerChar, characters, args)
+function BeginnerLessonSpeechHelper(owner, ownerChar, character, args)
 	--slight pause if this isn't being called by asking Ledian for help. Don't pause if ledian wouldn't say anything (restepping on trigger tile)
 	if SV.Tutorial.Progression ~= -1  and args.Speech > SV.Tutorial.Progression then GAME:WaitFrames(20) end 
 	
@@ -389,7 +388,7 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	if result == 1 then 
 		args.Speech = SV.Tutorial.Progression
 		SV.Tutorial.Progression = -1 --temporarily clear progression flag so speech can happen. -1 to prevent pausing before script trigger
-		SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, target, args)
+		BeginnerLessonSpeechHelper(owner, ownerChar, target, args)
 	elseif result == 2 then
 		UI:WaitShowDialogue("Wahtah![pause=0] Very well![pause=0] Allow me to reset this floor!")
 		GAME:WaitFrames(20)

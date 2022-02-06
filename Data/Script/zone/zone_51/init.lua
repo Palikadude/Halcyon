@@ -27,11 +27,11 @@ function zone_51.Init(zone)
 	sensei.DefBonus = 3
 	sensei.MDefBonus = 5
 	sensei.SpeedBonus = 8
-	--sensei:ReplaceIntrinsic = 89 --Iron fist
-	sensei:ReplaceSkill(183, 1, true)--mach punch
-	sensei:ReplaceSkill(369, 2, true)--u-turn
-	sensei:ReplaceSkill(14, 3, false)--Swords dance
-	sensei:ReplaceSkill(8, 4, true)--Ice punch
+	--all of lotus's moves are toggled off, she's only allowed to basic attack
+	sensei:ReplaceSkill(183, 0, false)--mach punch
+	sensei:ReplaceSkill(369, 1, false)--u-turn
+	sensei:ReplaceSkill(14, 2, false)--Swords dance
+	sensei:ReplaceSkill(8, 3, false)--Ice punch
 	GAME:AddPlayerGuest(sensei)
 	sensei:FullRestore()
     local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("SenseiInteract")

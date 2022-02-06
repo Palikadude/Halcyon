@@ -3472,7 +3472,7 @@ Max PP - Power Points (PP) are the energy required to use a move. A move can't b
   <data name="BEGINNER_LESSON_GENERAL_SIGN_2_3_BODY" xml:space="preserve">
     <value>Moves have a wide variety of effects; familiarize yourself with your attacks! They may work differently than you're used to…
 All Pokémon can use a basic attack that is independent of their moves. Press {0} to do a basic attack.
-To do a move, hold {1} then press a key to use the associated move. Try using some moves on the dummy!
+To do a move, hold {1} then press a key to use the associated move. Try using some moves on the volunteer!
 You can also choose which moves allies are allowed to use in the Moves menu. Allies can only use moves with a checkmark.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
@@ -3720,7 +3720,7 @@ To pass this trial, equip the Band of Passage then continue on. Without the band
     <value>Some items, such as Gravelerock and Sticks, can be thrown at enemies to damage them. Gravelerock travel in an arc, while Sticks go straight forward.
 Reviver seeds are somewhat rare, but incredibly useful consumables that can revive a teammate when they are defeated!
 
-To pass this trial, throw a stick at Dragonite to aggravate him. Use the reviver seeds to revive after his counterattack, then continue to the stairs via the path blasted open by Dragonite!
+To pass this trial, throw a stick at Dragonite to aggravate him. Use the reviver seeds to revive after his counterattack, then continue to the stairs via the blasted path!
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>	
 
