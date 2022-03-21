@@ -191,6 +191,49 @@ function relic_forest_ch_1.Intro_Cutscene()
 	hTbl.Importance = 'Hero'
 	pTbl.Importance = 'Partner'
 	
+	--for beta testing only: skip to another chapter?
+	UI:ChoiceMenuYesNo("Would you like to skip to Chapter 2?", true)
+	UI:WaitForChoice()
+	yesnoResult = UI:ChoiceResult()
+	if yesnoResult then 
+		yesnoResult = false
+		while not yesnoResult do
+			UI:NameMenu("What will your team's name be?", "You don't need to put 'Team' in the name itself.", 60)
+			UI:WaitForChoice()
+			result = UI:ChoiceResult()
+			GAME:SetTeamName(result)
+			UI:ChoiceMenuYesNo("Is Team " .. GAME:GetTeamName() .. " correct?", true)
+			UI:WaitForChoice()
+			yesnoResult = UI:ChoiceResult()
+		end
+		--set chapter 1 flags to true, note that you can skip talking to guild NPCs but this will mark them as met already
+		SV.Chapter1 = 
+			{
+				PlayedIntroCutscene = true,
+				PartnerEnteredForest = true,--Did partner go into the forest yet?
+				PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+				PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+				TeamCompletedForest = true, --completed backtrack to town?
+				TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+				--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+				MetSnubbull = true,--talked to snubbull?
+				MetZigzagoon = true,
+				MetCranidosMareep = true,
+				MetBreloomGirafarig = true,
+				MetAudino = true,
+				
+				--partner dialogue flag on second floor
+				PartnerSecondFloorDialogue = 0
+			}
+		SV.ChapterProgression.Chapter = 2
+		GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
+		_DATA.Save.ActiveTeam:SetRank(1)
+		GAME:CutsceneMode(false)
+		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+	end
+	
+	
 	GROUND:Hide('Teammate1')--hide partner
 	
 	

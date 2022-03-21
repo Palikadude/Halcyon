@@ -8,6 +8,8 @@ require 'common'
 require 'PartnerEssentials'
 require 'AudinoAssembly'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
+
 
 -- Package name
 local guild_third_floor_lobby = {}

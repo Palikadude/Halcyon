@@ -58,6 +58,8 @@ function DebugTools:OnNewGame()
   _DATA.Save.ActiveTeam.Name = "Valiant"
   _DATA.Save.ActiveTeam.Money = 1000
   _DATA.Save.ActiveTeam.Bank = 999999
+  _DATA.Save.NoSwitching = true--switching is not allowed
+
   
   local mon_id = RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Male)
   local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0)

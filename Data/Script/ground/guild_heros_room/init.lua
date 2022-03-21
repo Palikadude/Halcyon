@@ -7,6 +7,8 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.guild_heros_room.guild_heros_room_ch_1'
+require 'ground.guild_heros_room.guild_heros_room_ch_2'
+
 
 -- Package name
 local guild_heros_room = {}
@@ -148,8 +150,14 @@ end
 function guild_heros_room.Bedroom_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("guild_bedroom_hallway", "Guild_Bedroom_Hallway_Right_Marker")
-  SV.partner.Spawn = 'Guild_Bedroom_Hallway_Right_Marker_Partner'
+  if SV.guild.JustWokeUp then --skip the hallway if we just woke up
+	GAME:EnterGroundMap("guild_third_floor_lobby", "Guild_Third_Floor_Lobby_Right_Marker")
+	SV.partner.Spawn = 'Guild_Third_Floor_Lobby_Right_Marker_Partner'
+	SV.guild.JustWokeUp = false
+  else
+	GAME:EnterGroundMap("guild_bedroom_hallway", "Guild_Bedroom_Hallway_Right_Marker")
+	SV.partner.Spawn = 'Guild_Bedroom_Hallway_Right_Marker_Partner'
+  end
 end
 
 return guild_heros_room
