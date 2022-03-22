@@ -1,1 +1,1 @@
-﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Master","LocalTexts":{"fr-ca":"Maître","de":"Meister","es":"Experto","pt":"Mestre","ko":"마스터"}},"Comment":"","BagSize":48,"FameToNext":100000},"Version":"0.5.0.0"}
+﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Master","LocalTexts":{"fr-ca":"Maître","de":"Meister","es":"Experto","pt":"Mestre","ko":"마스터"}},"Comment":"","BagSize":48,"FameToNext":100000},"Version":"0.5.9.0"}

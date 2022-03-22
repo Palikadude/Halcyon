@@ -1,1 +1,1 @@
-﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Guildmaster","LocalTexts":{"fr-ca":"Grand Maître","de":"Gildenmeister","es":"Maestro","pt":"Grão-Mestre","ko":"그레이트 마스터"}},"Comment":"","BagSize":56,"FameToNext":0},"Version":"0.5.0.0"}
+﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Guildmaster","LocalTexts":{"fr-ca":"Grand Maître","de":"Gildenmeister","es":"Maestro","pt":"Grão-Mestre","ko":"그레이트 마스터"}},"Comment":"","BagSize":56,"FameToNext":0},"Version":"0.5.9.0"}

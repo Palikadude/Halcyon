@@ -1,1 +1,1 @@
-﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Unranked","LocalTexts":{}},"Comment":"Your rank before joining the guild.","BagSize":4,"FameToNext":1},"Version":"0.5.0.0"}
+﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Unranked","LocalTexts":{}},"Comment":"Your rank before joining the guild.","BagSize":4,"FameToNext":1},"Version":"0.5.9.0"}

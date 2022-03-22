@@ -1,1 +1,1 @@
-﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Hyper","LocalTexts":{"fr-ca":"Extraordinaire","de":"Hyper","es":"Avanzado","pt":"Hiper","ko":"하이퍼"}},"Comment":"","BagSize":48,"FameToNext":50000},"Version":"0.5.0.0"}
+﻿{"Object":{"$type":"RogueEssence.Data.RankData, RogueEssence","Name":{"DefaultText":"Hyper","LocalTexts":{"fr-ca":"Extraordinaire","de":"Hyper","es":"Avanzado","pt":"Hiper","ko":"하이퍼"}},"Comment":"","BagSize":48,"FameToNext":50000},"Version":"0.5.9.0"}
