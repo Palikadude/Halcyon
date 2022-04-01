@@ -341,6 +341,8 @@ function GeneralFunctions.DoAnimation(chara, anim, sound)
 		pause = 20
 	elseif anim == 'Wake' then
 		pause = 40
+	elseif anim == 'Hop' then
+		pause = 24
 	elseif anim == 'DeepBreath' then
 		pause = 80
 	end

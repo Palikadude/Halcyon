@@ -64,7 +64,9 @@ function metano_town.PlotScripting()
 		elseif SV.Chapter1.TeamCompletedForest then
 			metano_town_ch_1.EnterGuild()
 		end
-	else 
+	elseif SV.ChapterProgression.Chapter == 2 then
+		metano_town_ch_2.SetupGround()
+	else
 		GAME:FadeIn(20)
 	end
 end
@@ -1351,7 +1353,25 @@ end
 
 
 
+---------------------------------
+-- Event Trigger
+-- These are temporary objects created by a script used to trigger events that only happen
+-- at certain plot progressions, typically a cutscene of sorts for a particular chapter.
+---------------------------------
+function metano_town.Event_Trigger_1_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_1_Touch(...,...)"), obj, activator))
+end
 
+function metano_town.Event_Trigger_2_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_2_Touch(...,...)"), obj, activator))
+end
+
+function metano_town.Event_Trigger_3_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_3_Touch(...,...)"), obj, activator))
+end
 
 
 --------------------
@@ -1362,7 +1382,7 @@ end
 Generic town NPCs to be handled on a per chapter basis, as what they say and do will change between chapters.
 The list of non-shop NPCs that live in the town are:
 
-Floatzel
+Floatzel (Tweed)
 Quagsire
 Wooper Boy (Dee)
 Wooper Girl (Dun)
@@ -1375,8 +1395,7 @@ Machamp
 Medicham
 Meditite
 
-???
-Magmortar
+Magmortar (Single Mother)
 Magby
 
 ???
@@ -1388,7 +1407,7 @@ Oddish
 ???
 ???
 
-??? (Cave Hermit)
+Sunflora (Cave Hermit)
 
 ??? lives in a tent
 
@@ -1404,173 +1423,9 @@ Lickitung (   , cafe goer)
 
 
 
----
---test npcs
----
-function metano_town.hcox_Action(chara, activator)
-	DEBUG.EnableDbgCoro()
-	print('hcox action')
-	local hcox = chara
-	local olddir = hcox.CharDir
-	GROUND:CharTurnToCharAnimated(hcox, CH('PLAYER'), 5)
-	UI:SetSpeaker(hcox)
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['hcox_test']))
-	GROUND:CharAnimateTurnTo(chara, olddir, 5)
-	
-	--reset all flags
-	SV.metano_town = 
-	{
-	  WooperIntro = false,
-	  LuxioIntro = false,
-	  AggronGuided = false,
-	  KecIntro = false,
-	  RedMerchantItem = -1,
-	  RedMerchantBought = false,
-	  GreenMerchantItem = -1,
-	  GreenMerchantBought = false
-	}
-
-	SV.metano_cafe =
-	{
-		CafeSpecial = -1,
-		BoughtSpecial = false
-	}
-	
-	
-end
-
-
-function metano_town.free_items_Action(chara, activator)
-	DEBUG.EnableDbgCoro()
-	print('free items action')
-	UI:SetSpeaker(chara)
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Test_Free_Items']))
-	GAME:GivePlayerItem(444, GAME:GetPlayerBagLimit() - GAME:GetPlayerBagCount(), false, 2003)--that last value is a hidden value. Probably used for chests that can have multiple items inside. 2003 corresponds to Tropius hat, so these should all give Tropius hat
-end
-
-
-function metano_town.test_emotes_Action(chara, activator)
-	DEBUG.EnableDbgCoro()
-	local test_emotes = chara
-	UI:SetSpeaker(test_emotes)
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_1']))
-	UI:SetSpeakerEmotion('Happy')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Pain')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Angry')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Worried')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Sad')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Crying')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Shouting')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Teary-Eyed')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Determined')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Joyous')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Inspired')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Surprised')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Dizzy')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Sigh')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-	UI:SetSpeakerEmotion('Stunned')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['NPC_Emote_Test_2']))
-end
-
-
-function metano_town.cutscene_test_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Test_Intro_Cutscene']))
-	metano_town.Intro_Cutscene()
-end 
-------------------------------
--- Cutscenes 
-------------------------------
-
---Pans the camera around the town to show off the town
-function metano_town.Intro_Cutscene()
-
-    local player = CH('PLAYER')
-	local partner = CH('Teammate1')
-	--local dummy = CH('PLAYER') --probably a better way to do it that doesn't require a useless dummy var for the activator for the task	
-	GAME:FadeOut(false, 1)
-	GROUND:TeleportTo(player, 704, 904, Direction.Down)
-	GROUND:TeleportTo(partner, 728, 904, Direction.Down)
-	GAME:MoveCamera(288, 288, 1, false)
-	
-	local coro = TASK:BranchCoroutine(GAME:_FadeIn(60))
-	GAME:MoveCamera(288, 588, 180, false)
-    TASK:JoinCoroutines({coro})
-
-	coro = TASK:BranchCoroutine(GAME:_FadeOut(false, 60))
-	GAME:MoveCamera(288, 688, 60, false)
-    TASK:JoinCoroutines({coro})
-
-
-	GAME:MoveCamera(168, 1080, 1, false)
-		
-	coro = TASK:BranchCoroutine(GAME:_FadeIn(60))
-	GAME:MoveCamera(468, 1080, 180, false)
-    TASK:JoinCoroutines({coro})
-
-	
-	coro = TASK:BranchCoroutine(GAME:_FadeOut(false, 60))
-	GAME:MoveCamera(568, 1080, 60, false)
-    TASK:JoinCoroutines({coro})
-	
-	
-	GAME:MoveCamera(984, 1256, 1, false)
-	
-	coro = TASK:BranchCoroutine(GAME:_FadeIn(60))
-	GAME:MoveCamera(984, 556, 420, false)
-    TASK:JoinCoroutines({coro})
-	
-	coro = TASK:BranchCoroutine(GAME:_FadeOut(false, 60))
-	GAME:MoveCamera(984, 456, 60, false)
-    TASK:JoinCoroutines({coro})
-
-
-	
-	GAME:MoveCamera(704, 604, 1, false)
-	
-	coro = TASK:BranchCoroutine(GAME:_FadeIn(60))
-	GAME:MoveCamera(0, 0, 180, true)
-    TASK:JoinCoroutines({coro})
-	
-	coro = TASK:BranchCoroutine(GROUND:_CharTurnToCharAnimated(player, partner, 5))
-	GROUND:CharTurnToCharAnimated(partner, player, 5)
-    TASK:JoinCoroutines({coro})
-	
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion('Normal')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_1']))
-	
-	UI:SetSpeakerEmotion('Worried')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_2']))
-	
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_3']))
-
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_4']))
-	
-	UI:SetSpeakerEmotion('Normal')
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_5']))
-
-
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_6']))
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_7']))
-
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cutscene_Intro_Partner_8']))
-
-
+function metano_town.Growlithe_Desk_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Desk_Action(...,...)"), obj, activator))
 end
 
 

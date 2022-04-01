@@ -79,6 +79,12 @@ function guild_third_floor_lobby.PlotScripting()
 		else
 			guild_third_floor_lobby_ch_1.SetupGround()
 		end
+	elseif SV.ChapterProgression.Chapter == 2 then
+		if not SV.Chapter2.FirstMorningMeetingDone then
+			guild_third_floor_lobby_ch_2.FirstMorningMeeting()
+		else
+			guild_third_floor_lobby_ch_2.SetupGround()
+		end
 	else
 		GAME:FadeIn(20)
 	end
@@ -110,6 +116,11 @@ end
 function guild_third_floor_lobby.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+end
+
+function guild_third_floor_lobby.Noctowl_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_third_floor_lobby_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Noctowl_Action(...,...)"), chara, activator))
 end
 
 function guild_third_floor_lobby.Test_Action(chara, activator)

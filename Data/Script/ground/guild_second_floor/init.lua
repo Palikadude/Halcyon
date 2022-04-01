@@ -7,6 +7,8 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
+require 'ground.guild_second_floor.guild_second_floor_ch_2'
+
 
 -- Package name
 local guild_second_floor = {}
@@ -63,6 +65,8 @@ function guild_second_floor.PlotScripting()
 		else
 			guild_second_floor_ch_1.SetupGround()
 		end
+	elseif SV.ChapterProgression.Chapter == 2 then
+		guild_second_floor_ch_2.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

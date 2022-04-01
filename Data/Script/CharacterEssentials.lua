@@ -98,6 +98,25 @@ local characters = {
 		},
 		
 		
+	--Dojo characters
+		Ledian = {
+			species = 166,
+			nickname = 'Lotus',
+			instance = 'Ledian',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Gible = {
+			species = 443,
+			nickname = 'Totor',
+			instance = 'Gible',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
 		
 	--Team Style
 		Luxio = {
@@ -166,6 +185,26 @@ local characters = {
 			species = 306,
 			nickname = 'Rubble',
 			instance = 'Aggron',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		
+	--Team ???
+		Zangoose = {
+			species = 335,
+			nickname = '???',
+			instance = 'Zangoose',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},	
+		
+		Seviper = {
+			species = 336,
+			nickname = '???',
+			instance = 'Seviper',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0

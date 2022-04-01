@@ -71,7 +71,13 @@ function guild_heros_room.PlotScripting()
 		else
 			GAME:FadeIn(20)
 		end		
-	else	
+	elseif SV.ChapterProgression.Chapter == 2 then
+		if not SV.Chapter2.FirstMorningMeetingDone then 
+			guild_heros_room_ch_2.FirstMorning()
+		else
+			GAME:FadeIn(20)
+		end
+	else 
 		GAME:FadeIn(20)
 	end
 end
