@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.ledian_dojo.ledian_dojo_ch_2'
 
 
 -- Package name

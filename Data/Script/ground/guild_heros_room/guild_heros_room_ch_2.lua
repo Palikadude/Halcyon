@@ -127,6 +127,7 @@ function guild_heros_room_ch_2.FirstMorning()
 	
 	GROUND:MoveToPosition(audino, 0, 204, false, 2)
 	GAME:GetCurrentGround():RemoveTempChar(audino)
+	GAME:WaitFrames(20)
 	
 	--good morning, hero!
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)

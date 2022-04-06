@@ -196,6 +196,17 @@ function relic_forest_ch_1.Intro_Cutscene()
 	UI:WaitForChoice()
 	yesnoResult = UI:ChoiceResult()
 	if yesnoResult then 
+		 yesnoResult = false
+		while not yesnoResult do
+			UI:NameMenu("What will your name be?", "", 60)
+			UI:WaitForChoice()
+			result = UI:ChoiceResult()
+			GAME:SetCharacterNickname(GAME:GetPlayerPartyMember(0), result)
+			UI:ChoiceMenuYesNo("Is " .. hero:GetDisplayName() .. " correct?")
+			UI:WaitForChoice()
+			yesnoResult = UI:ChoiceResult()
+		end
+		
 		yesnoResult = false
 		while not yesnoResult do
 			UI:NameMenu("What will your team's name be?", "You don't need to put 'Team' in the name itself.", 60)
@@ -231,6 +242,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 		_DATA.Save.ActiveTeam:SetRank(1)
 		GAME:CutsceneMode(false)
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+		return
 	end
 	
 	

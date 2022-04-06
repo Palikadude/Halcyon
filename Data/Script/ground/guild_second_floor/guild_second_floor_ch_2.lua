@@ -22,6 +22,8 @@ function guild_second_floor_ch_2.SetupGround()
 
 	AI:SetCharacterAI(zangoose, "ai.ground_talking", false, 240, 60, 210, false, 'Angry', {seviper})
 	AI:SetCharacterAI(seviper, "ai.ground_talking", false, 240, 180, 110, false, 'Angry', {zangoose})
+	
+	GAME:FadeIn(20)
 end
 
 
@@ -35,6 +37,9 @@ end
 function guild_second_floor_ch_2.Seviper_Action(chara, activator)
 	local zangoose = CH('Zangoose')
 	local seviper = CH('Seviper')
+	--Set zangoose and seviper to interacting to pause their talking AI
+	zangoose.IsInteracting = true
+	seviper.IsInteracting = true
 	UI:SetSpeaker(seviper)
 	UI:WaitShowDialogue("What about thissss one?")
 	
@@ -69,6 +74,8 @@ function guild_second_floor_ch_2.Seviper_Action(chara, activator)
 	UI:WaitShowDialogue("Yeah yeah yeah.[pause=0] Now sssstop being sssso picky.")
 	UI:WaitShowDialogue("You're gonna get Team [color=#FFA5FF]tbd[color] a bad rep if you keep ussss here dawdling when we sssshould be out in the field catching outlawssss.")
 	GROUND:CharAnimateTurnTo(seviper, Direction.Up, 4)
+	zangoose.IsInteracting = false
+	seviper.IsInteracting = false
 end
 
 function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
@@ -80,7 +87,7 @@ function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
 	UI:SetSpeaker(zigzagoon)
 	UI:WaitShowDialogue("Hey Team " .. GAME:GetTeamName() .. ",[pause=10] how's your first day going?")
 	UI:WaitShowDialogue(".........")
-	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName(noctowl) .. " is sending you over to " .. CharacterEssentials.GetCharacterName(ledian) .. " for training,[pause=10] huh?")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " is sending you over to Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " for training,[pause=10] huh?")
 	UI:WaitShowDialogue("She's definitely...[pause=0] Um...[pause=0] a character alright...")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("She's a great teacher though.[pause=0] Make sure you do your best to learn from her!")

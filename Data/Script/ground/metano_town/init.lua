@@ -1,6 +1,8 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_town.metano_town_ch_1'
+require 'ground.metano_town.metano_town_ch_2'
+
 
 local MapStrings = {}
 
