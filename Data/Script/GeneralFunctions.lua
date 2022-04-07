@@ -757,3 +757,16 @@ function GeneralFunctions.PromptSave()
 		UI:WaitShowDialogue("Game saved!")
 	end
 end
+
+
+--sends all bagged items to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
+function GeneralFunctions.SendBagToStorage()
+	local itemCount = GAME:GetPlayerBagCount()
+	for i = 1, itemCount, 1 do
+		local item = GAME:GetPlayerBagItem(i)
+		GAME:TakePlayerBagItem(i)
+		GAME:GivePlayerStorageItem(item)
+	end
+end
+
+end

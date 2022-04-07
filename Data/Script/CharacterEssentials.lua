@@ -208,6 +208,17 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
+		},
+		
+		
+	--Vendor/Shop NPCs
+		Kangaskhan = {
+			species = 115,
+			nickname = '???',
+			instance = 'Kangaskhan',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
 		}
 	}
 

@@ -270,8 +270,9 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		UI:WaitShowDialogue("Any sort of physical progress that happens within dojo lessons is self-contained!")
 		UI:WaitShowDialogue("Hoiyah![pause=0] That is to say,[pause=10] items,[pause=10] experience,[pause=10] moves,[pause=10] party members...")
 		UI:WaitShowDialogue("These are not kept when going in or when leaving a dojo lesson!")
-		UI:WaitShowDialogue("Your level will also be set to 5 when you enter the beginner lesson and your items taken away!")
-		UI:WaitShowDialogue("Your proper level and items will be restored once you leave the lesson.")
+		UI:WaitShowDialogue("Your level will also be set to 5 when you enter the beginner lesson and your items sent to storage!")
+		UI:WaitShowDialogue("Your proper level will be restored once you leave the lesson.")
+		UI:WaitShowDialogue("Be sure to visit " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. " in town after to get your items back.")
 		UI:WaitShowDialogue("Wahtah![pause=0] This is all necessary so you can properly train your mind!")
 		UI:WaitShowDialogue("Dojo lessons are for learning,[pause=10] not training![pause=0] And learn much you will!")
 		UI:WaitShowDialogue("Hwacha![pause=0] Let us not delay any further![pause=0] Let us begin with the lesson!")
@@ -303,10 +304,47 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 
 		SV.Chapter2.StartedTraining = true
+		GeneralFunctions.SendBagToStorage()--clear inventory
 		GAME:CutsceneMode(false)
 		GAME:UnlockDungeon(51)
 		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, true)
 	end 
+	
+	if result == 2 then 
+		UI:WaitShowDialogue("I will show you to one of our training mazes then![pause=0] Hwacha!")
+		UI:WaitShowDialogue("The maze acts similarly to a mystery dungeon,[pause=10] but there is no penalty for failure!")
+		UI:WaitShowDialogue("Any items on you when you enter will be sent to storage though,[pause=10] and there are no items within the training maze.")
+		UI:WaitShowDialogue("Be sure to visit " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. " in town after to get your items back!")
+		UI:WaitShowDialogue("Hoiyah![pause=0] Enough talk![pause=0] Now,[pause=10] let us begin your training!")
+
+		GAME:WaitFrames(40)
+		
+		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Left, 4)
+												GROUND:AnimateInDirection(hero, "Walk", Direction.Left, Direction.Right, 8, 1, 1) 
+												GAME:WaitFrames(10)
+												GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Down) 
+												GAME:WaitFrames(10)
+												GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
+		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+												GROUND:AnimateInDirection(partner, "Walk", Direction.Right, Direction.Left, 8, 1, 1) 
+												GAME:WaitFrames(10)
+												GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Down) 
+												GAME:WaitFrames(10)
+												GROUND:MoveInDirection(partner, Direction.Down, 120, false, 1) end)										
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+												GROUND:MoveInDirection(ledian, Direction.Down, 180, false, 1) end)
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(120) GAME:FadeOut(false, 20) end)
+	
+	
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+
+		SV.Chapter2.StartedTraining = true
+		SV.Chapter2.SkippedTutorial = true
+		GeneralFunctions.SendBagToStorage()--clear inventory
+		GAME:CutsceneMode(false)
+		GAME:UnlockDungeon(52)
+		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	end
 end
 
 --used for Ledian's HWACHA! - similar to Yoomtah!
@@ -328,3 +366,14 @@ function ledian_dojo_ch_2.Hwacha(chara)
 	GAME:WaitFrames(10)
 	GROUND:CharSetAnim(chara, "Idle", true)
 end 
+
+
+--cutscene that plays after finishing training maze or tutorial for first time.
+function ledian_dojo_ch_2.PostTrainingCutscene()
+	if SV.Chapter2.SkippedTutorial then
+	
+	else 
+	
+	end 
+
+end
