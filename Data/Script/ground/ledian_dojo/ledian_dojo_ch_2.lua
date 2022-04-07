@@ -165,7 +165,8 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
-	
+	UI:SetSpeakerEmotion("Shouting")
+
 	coro1 = TASK:BranchCoroutine(function()	ledian_dojo_ch_2.Hwacha(ledian) end)
 	coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
@@ -184,6 +185,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
 	
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Yes,[pause=10] you will make fine students in my dojo!")
 	UI:WaitShowDialogue("Wahtah![pause=0] I am Sensei " .. ledian:GetDisplayName() .. "![pause=0] You are here for the basic lesson,[pause=10] yes?")
 	
@@ -312,7 +314,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	
 	if result == 2 then 
 		UI:WaitShowDialogue("I will show you to one of our training mazes then![pause=0] Hwacha!")
-		UI:WaitShowDialogue("The maze acts similarly to a mystery dungeon,[pause=10] but there is no penalty for failure!")
+		UI:WaitShowDialogue("Training mazes act similarly to mystery dungeons,[pause=10] but there is no penalty for failure!")
 		UI:WaitShowDialogue("Any items on you when you enter will be sent to storage though,[pause=10] and there are no items within the training maze.")
 		UI:WaitShowDialogue("Be sure to visit " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. " in town after to get your items back!")
 		UI:WaitShowDialogue("Hoiyah![pause=0] Enough talk![pause=0] Now,[pause=10] let us begin your training!")
@@ -370,10 +372,76 @@ end
 
 --cutscene that plays after finishing training maze or tutorial for first time.
 function ledian_dojo_ch_2.PostTrainingCutscene()
+	
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local gible = CH('Gible')
+	local ledian = CH('Ledian')
+	GROUND:Hide('Dungeon_Entrance')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GROUND:CharSetAnim(ledian, "Idle", true)	
+	
 	if SV.Chapter2.SkippedTutorial then
 	
 	else 
-	
+		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
+		GROUND:TeleportTo(hero, 196, 208, Direction.Up)	
+		GROUND:TeleportTo(partner, 184, 320, Direction.Up)
+		GROUND:TeleportTo(gible, 208, 320, Direction.Up)
+		GeneralFunctions.CenterCamera({ledian, hero})
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[51]
+		GAME:FadeIn(20)
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Hoiyah![pause=0] You did it![pause=0] You successfully completed the " .. zone:GetColoredName() .."!")
+		UI:SetSpeakerEmotion("Shouting")
+		local coro1 = TASK:BranchCoroutine(function()	ledian_dojo_ch_2.Hwacha(ledian) end)
+		local coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
+		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+										GROUND:CharSetEmote(hero, 3, 1) end)	
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.EmoteAndPause(ledian, "Exclaim", true)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Hoiyah![pause=0] It appears that you are not the only one to have finished the " .. zone:GetColoredName() .. "!")
+		
+		
+		coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) 
+							GROUND:MoveToPosition(partner, 184, 280, false, 1)
+							GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
+							GROUND:MoveToPosition(partner, 184, 232, false, 1)
+							GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
+		coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(gible, 208, 232, false, 1) end)
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+							GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+							GROUND:CharSetEmote(hero, 3, 1) end)
+		
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] You completed the " .. zone:GetColoredName() .. " too?")
+		UI:SetSpeakerEmotion("Joyous")
+		UI:WaitShowDialogue("That's amazing![pause=0] We did it!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Wahtah![pause=0] Congratulations to the both of you for finishing the " .. zone:GetColoredName() .. "!")
+		
+		GROUND:CharTurnToCharAnimated(partner, ledian, 4)
+		GROUND:CharTurnToCharAnimated(hero, ledian, 4)
+		
+		UI:WaitShowDialogue("But this is only the beginning of your journey!")
+		UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
+		UI:WaitShowDialogue("There will be more training mazes and lessons for you to take as you grow as an adventurer!")
+		UI:WaitShowDialogue("So please come back anytime you wish to train or learn![pause=0] Hoiyah!")
+		
 	end 
 
 end
