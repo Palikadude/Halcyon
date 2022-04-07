@@ -439,9 +439,30 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		
 		UI:WaitShowDialogue("But this is only the beginning of your journey!")
 		UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
+		--Training mazes and more advanced lessons will unlock with certain rank thresholds. Some may be unlocked as you progress in the game anyway. Still figuring this out.
 		UI:WaitShowDialogue("There will be more training mazes and lessons for you to take as you grow as an adventurer!")
 		UI:WaitShowDialogue("So please come back anytime you wish to train or learn![pause=0] Hoiyah!")
 		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("We will![pause=0] Thank you Sensei " .. ledian:GetDisplayName() .. "!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmtoion("Normal")
+		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
+		
+		GeneralFunctions.PanCamera(200, 200)
+		
+		GAME:UnlockDungeon(52)--unlock the first training maze 
+		GROUND:Unhide("Dungeon_Entrance")
+		SV.Chapter2.FinishedTraining = true
+		AI:EnableCharacterAI(partner)
+		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+		GAME:CutsceneMode(false)
+
+
 	end 
 
 end
