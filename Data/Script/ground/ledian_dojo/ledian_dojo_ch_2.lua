@@ -383,7 +383,67 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 	GROUND:CharSetAnim(ledian, "Idle", true)	
 	
 	if SV.Chapter2.SkippedTutorial then
-	
+		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
+		GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
+		GROUND:TeleportTo(partner, 184, 208, Direction.Up)
+		GROUND:TeleportTo(gible, 256, 224, Direction.UpLeft)
+		GeneralFunctions.CenterCamera({ledian, hero})
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
+		GAME:FadeIn(20)
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Hoiyah![pause=0] You did it![pause=0] You successfully completed the " .. zone:GetColoredName() .."!")
+		UI:SetSpeakerEmotion("Shouting")
+		local coro1 = TASK:BranchCoroutine(function()	ledian_dojo_ch_2.Hwacha(ledian) end)
+		local coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
+		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+										GROUND:CharSetEmote(hero, 3, 1) end)	
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+										GeneralFunctions.Recoil(partner) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+		
+		GAME:WaitFrames(20)
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Joyous")
+		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Wahtah![pause=0] Congratulations to the both of you for finishing the " .. zone:GetColoredName() .. "!")
+		
+		GROUND:CharTurnToCharAnimated(partner, ledian, 4)
+		GROUND:CharTurnToCharAnimated(hero, ledian, 4)
+		
+		UI:WaitShowDialogue("But this is only the beginning of your journey!")
+		UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
+		--Training mazes and more advanced lessons will unlock with certain rank thresholds. Some may be unlocked as you progress in the game anyway. Still figuring this out.
+		UI:WaitShowDialogue("There will be more training mazes and lessons for you to take as you grow as an adventurer!")
+		UI:WaitShowDialogue("So please come back anytime you wish to train or learn![pause=0] Hoiyah!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("We will![pause=0] Thank you Sensei " .. ledian:GetDisplayName() .. "!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmtoion("Normal")
+		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
+		
+		GeneralFunctions.PanCamera(200, 200)
+		
+		GAME:UnlockDungeon(51)--unlock the basic lesson 
+		GROUND:Unhide("Dungeon_Entrance")
+		SV.Chapter2.FinishedTraining = true
+		AI:EnableCharacterAI(partner)
+		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+		GAME:CutsceneMode(false)
 	else 
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 196, 208, Direction.Up)	
