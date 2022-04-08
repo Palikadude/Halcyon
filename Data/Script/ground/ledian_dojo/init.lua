@@ -70,7 +70,11 @@ function ledian_dojo.GameLoad(map)
 end
 
 function ledian_dojo.PlotScripting()
-	if SV.ChapterProgression.Chapter == 2 then
+	--if a generic ending has been flagged, prioritize that
+	if SV.Dojo.LessonCompletedGeneric or SV.Dojo.TrainingCompletedGeneric or SV.Dojo.TrialCompletedGeneric or SV.Dojo.LessonFailedGeneric or SV.Dojo.TrainingFailedGeneric or SV.Dojo.TrialFailedGeneric then
+		
+
+	elseif SV.ChapterProgression.Chapter == 2 then
 		if not SV.Chapter2.StartedTraining then--Cutscene for entering the dojo for the first time
 			ledian_dojo_ch_2.PreTrainingCutscene()
 		elseif not SV.Chapter2.FinishedTraining then--Cutscene for dying in first lesson/maze. cutscene function has logic for appropriate scene
