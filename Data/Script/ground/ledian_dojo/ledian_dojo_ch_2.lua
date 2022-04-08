@@ -5,6 +5,12 @@ require 'CharacterEssentials'
 
 ledian_dojo_ch_2 = {}
 
+--NOTE: Gible and Ledian appear on the map without needing to be spawned in.
+function ledian_dojo_ch_2.SetupGround()
+	
+end
+
+
 function ledian_dojo_ch_2.PreTrainingCutscene()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
@@ -369,6 +375,9 @@ function ledian_dojo_ch_2.Hwacha(chara)
 	GROUND:CharSetAnim(chara, "Idle", true)
 end 
 
+function ledian_dojo_ch_2.FailedTrainingCutscene()
+	
+end 
 
 --cutscene that plays after finishing training maze or tutorial for first time.
 function ledian_dojo_ch_2.PostTrainingCutscene()
