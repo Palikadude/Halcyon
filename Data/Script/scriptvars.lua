@@ -100,6 +100,13 @@ SV.guild =
 	JustWokeUp = false--Did the duo JUST wake up on a new day?
 }
 
+SV.Dojo = 
+{
+	LessonCompletedGeneric = false,--Player just completed a lesson, should we play a generic cutscene after?
+	TrainingCompletedGeneric = false,--Player just completed a training, should we play a generic cutscene after?
+	TrialCompletedGeneric = false--Player just completed a trial, should we play a generic cutscene after?
+}
+
 
 -----------------------------------------------------------------------------
 -- Chapter / Cutscenes flags. Flags that control the state of the story are stored here
