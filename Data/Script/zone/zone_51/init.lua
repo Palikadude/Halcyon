@@ -75,7 +75,7 @@ function zone_51.ExitSegment(zone, result, rescue, segmentID, mapID)
 	--failed or gave up on the tutorial
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
 		if SV.ChapterProgression.Chapter == 2 then
-			--We have started the tutorial but haven't finished it yet. Don't change any flags if we die in first tutorial run, chapter 2 scripts will handle this as a failure and put you back in after
+			--If we've completed the training already, then flag a generic ending to the lesson. Otherwise, flag nothing.
 			if SV.Chapter2.StartedTraining and SV.Chapter2.FinishedTraining then--generic ending
 				SV.Dojo.LessonFailedGeneric = true
 			end 
