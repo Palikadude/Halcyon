@@ -108,7 +108,9 @@ SV.Dojo =
 	
 	LessonFailedGeneric = false,--Player just failed a lesson, should we play a generic cutscene after?
 	TrainingFailedGeneric = false,--Player just failed a training, should we play a generic cutscene after?
-	TrialFailedGeneric = false--Player just failed a trial, should we play a generic cutscene after?
+	TrialFailedGeneric = false,--Player just failed a trial, should we play a generic cutscene after?
+	
+	LastZone = 0--Which dojo dungeon did the player just come out of?
 }
 
 
