@@ -303,7 +303,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 												GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Down) 
 												GAME:WaitFrames(10)
 												GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
-		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+		coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 												GROUND:AnimateInDirection(partner, "Walk", Direction.Right, Direction.Left, 8, 1, 1) 
 												GAME:WaitFrames(10)
 												GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Down) 
@@ -343,7 +343,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 												GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Down) 
 												GAME:WaitFrames(10)
 												GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
-		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+		coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 												GROUND:AnimateInDirection(partner, "Walk", Direction.Right, Direction.Left, 8, 1, 1) 
 												GAME:WaitFrames(10)
 												GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Down) 
@@ -385,9 +385,92 @@ function ledian_dojo_ch_2.Hwacha(chara)
 	GROUND:CharSetAnim(chara, "Idle", true)
 end 
 
+--cutscene that plays if you fail the training maze or tutorial before finishing it for the first time
 function ledian_dojo_ch_2.FailedTrainingCutscene()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local gible = CH('Gible')
+	local ledian = CH('Sensei')
+	GROUND:Hide('Dungeon_Entrance')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GROUND:CharSetAnim(ledian, "Idle", true)	
+	if SV.Chapter2.SkippedTutorial then
+		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
+		GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
+		GROUND:TeleportTo(partner, 184, 208, Direction.Up)
+		--GeneralFunctions.CenterCamera({ledian, hero})
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
+		GAME:FadeIn(20)
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.EmoteAndPause(partner, 'Sweating', true)
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("Urgh...[pause=0] This training is harder than I was expecting...")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Hoiyah![pause=0] The journey to a stronger self is not an easy one.")
+		UI:WaitShowDialogue("This is simply one of the hardships you will encounter on the path to success.")
+		UI:WaitShowDialogue("Wahtah![pause=0] If you continue to seek victory,[pause=10] it cannot continue to hide!")
+		UI:WaitShowDialogue("Go and give it your all again!")
+		
+		GAME:WaitFrames(20)
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		
+		GAME:WaitFrames(20)
+		local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, 'Nod') end)
+		local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, 'Nod') end)
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		GAME:WaitFrames(20)
+		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+							GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
+		coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+							GROUND:MoveInDirection(partner, Direction.Down, 120, false, 1) end)
+		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GAME:FadeOut(false, 20) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		GAME:CutsceneMode(false)
+		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	else
+		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
+		GROUND:TeleportTo(hero, 196, 208, Direction.Up)	
+		GeneralFunctions.CenterCamera({ledian, hero})
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[51]
+		GAME:FadeIn(20)
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.EmoteAndPause(hero, 'Sweating', true)
+		GAME:WaitFrames(20)
+		GeneralFunctions.HeroDialogue(hero, "(Urf...[pause=0] This is tough...)", "Pain")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(ledian)
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Not all lessons are easy to learn![pause=0] Don't let this roadblock deter you!")
+		UI:WaitShowDialogue("Hwacha![pause=0] Keep pursuing success,[pause=10] and all obstacles will be conquered!")
+		UI:WaitShowDialogue("Come on![pause=0] Give it another try!")
 	
+		
+		GAME:WaitFrames(20)
+		local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+							GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
+		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+							GROUND:MoveInDirection(ledian, Direction.Down, 120, false, 1) end)
+		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GAME:FadeOut(false, 20) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		GAME:CutsceneMode(false)
+		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)	
+	end
 end 
+
+
 
 --cutscene that plays after finishing training maze or tutorial for first time.
 function ledian_dojo_ch_2.PostTrainingCutscene()
@@ -405,7 +488,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
 		GROUND:TeleportTo(partner, 184, 208, Direction.Up)
-		GROUND:TeleportTo(gible, 256, 224, Direction.UpLeft)
+		--GROUND:TeleportTo(gible, 256, 224, Direction.UpLeft)
 		GeneralFunctions.CenterCamera({ledian, hero})
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
 		GAME:FadeIn(20)
@@ -543,5 +626,6 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 
 
 	end 
+	
 
 end
