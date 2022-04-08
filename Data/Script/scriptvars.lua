@@ -142,7 +142,8 @@ SV.Chapter2 =
 	FirstMorningMeetingDone = false,--completed the first morning cutscene with the guild?
 	StartedTraining = false,--started the training at ledian dojo?
 	SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
-	FinishedTraining = false--finished the preliminary training at ledian dojo?
+	FinishedTraining = false,--finished the preliminary training at ledian dojo?
+	FinishedDojoCutscenes = false--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
 }
 
 
