@@ -12,7 +12,7 @@ end
 
 
 
-function ledian_dojo_ch_2.Ledian_Action(chara, activator)
+function ledian_dojo_ch_2.Sensei_Action(chara, activator)
 	
 end 
 
