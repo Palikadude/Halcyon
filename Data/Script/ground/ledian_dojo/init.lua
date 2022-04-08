@@ -185,7 +185,7 @@ end
 		
 		
 		
-function ledian_dojo.GenericTrainingFinish()
+function ledian_dojo.GenericTrainingSuccess()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	local ledian = CH('Sensei')
@@ -226,16 +226,27 @@ function ledian_dojo.GenericTrainingFinish()
 	GAME:CutsceneMode(false)			
 end
 		
-function ledian_dojo.GenericLessonFinish()
+function ledian_dojo.GenericLessonSuccess()
 	--for now, all 3 generic finishes will be the same
 	ledian_dojo.GenericTrainingFinish()
 end
 	
-function ledian_dojo.GenericTrialFinish()
+function ledian_dojo.GenericTrialSuccess()
 	--for now, all 3 generic finishes will be the same	
-	ledian_dojo.GenericTrainingFinish()
+	ledian_dojo.GenericTrainingSuccess()
 end
+		
+function ledian_dojo.GenericTrainingFailure()
 	
+end
+		
+function ledian_dojo.GenericLessonFailure()
+			
+end
+		
+function ledian_dojo.GenericTrialFailure()
+			
+end
 -------------------------------
 -- Map Transition
 -------------------------------
