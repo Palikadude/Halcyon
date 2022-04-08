@@ -90,7 +90,57 @@ function ledian_dojo.PlotScripting()
 end
 
 
+function ledian_dojo.Ledian_Action(chara, activator)
+	DEBUG.EnableDbgCoro()
+	local state = 0
+	local repeated = false
+	local ledian = CH('Sensei')
 
+
+	UI:SetSpeaker(ledian)
+	local olddir = ledian.Direction
+	GROUND:CharTurnToChar(ledian, CH('PLAYER'))
+			
+	while state > -1 do
+		local msg = STRINGS:Format(MapStrings['Dojo_Intro'])
+		if repeated == true then
+			msg = STRINGS:Format(MapStrings['Dojo_Intro_Return'])
+		end
+		local dojo_choices = {STRINGS:Format(MapStrings['Dojo_Menu_Training']),
+		STRINGS:Format(MapStrings['Dojo_Menu_Lesson']),
+		STRINGS:Format(MapStrings['Dojo_Menu_Trials']),
+		STRINGS:FormatKey("MENU_EXIT")}
+		UI:BeginChoiceMenu(msg, dojo_choices, 1, 4)
+		UI:WaitForChoice()
+		local result = UI:ChoiceResult()
+		repeated = true
+		if result == 1 then
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_001']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_002']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_003']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_004']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_005']))
+		elseif result == 2 then
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_001']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_002']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_003']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_004']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_005']))
+
+		elseif result == 3 then
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_001']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_002']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_003']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_004']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_005']))
+		else
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Goodbye']))
+			state = -1
+		end
+	end
+	
+	GROUND:EntTurn(ledian, olddir)
+end 
 
 --modified version of common's ShowDestinationMenu. Has no capability for grounds, and sets risk to None if the dungeon chosen is a tutorial level
 function ledian_dojo.ShowMazeMenu(dungeon_entrances)
