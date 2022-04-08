@@ -175,13 +175,67 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   
   if dest:IsValid() then
 	local risk = RogueEssence.Data.GameProgress.DungeonStakes.Risk
-	--set risk to none if chosen level is a tutorial level
+	--set risk to none if chosen level is a lesson
 	if dest.ID == 51 then risk = RogueEssence.Data.GameProgress.DungeonStakes.None end
     SOUND:PlayBGM("", true)
     GAME:FadeOut(false, 20)
 	GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, risk, true, false)
   end
 end
+		
+		
+		
+function ledian_dojo.GenericTrainingFinish()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local ledian = CH('Sensei')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GROUND:CharSetAnim(ledian, "Idle", true)	
+	
+	--GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
+	--GROUND:TeleportTo(partner, 184, 208, Direction.Up)
+	--GeneralFunctions.CenterCamera({ledian, hero})
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
+	GAME:FadeIn(20)
+		
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
+	UI:SetSpeaker(ledian)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Hoiyah![pause=0] You did it![pause=0] You successfully completed the " .. zone:GetColoredName() .."!")
+	UI:SetSpeakerEmotion("Shouting")
+	local coro1 = TASK:BranchCoroutine(function()	ledian_dojo_ch_2.Hwacha(ledian) end)
+	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+									GROUND:CharSetEmote(hero, 3, 1) end)	
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+									GeneralFunctions.Recoil(partner) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+
+	GAME:WaitFrames(20)
+
+	UI:WaitShowDialogue("But this is only the beginning of your journey!")
+	UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
+	UI:WaitShowDialogue("Wahtah![pause=0] Be sure to keep giving it your all!")
+
+	--GeneralFunctions.PanCamera(200, 200)
+
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GAME:CutsceneMode(false)			
+end
+		
+function ledian_dojo.GenericLessonFinish()
+	--for now, all 3 generic finishes will be the same
+	ledian_dojo.GenericTrainingFinish()
+end
+	
+function ledian_dojo.GenericTrialFinish()
+	--for now, all 3 generic finishes will be the same	
+	ledian_dojo.GenericTrainingFinish()
+end
+	
 -------------------------------
 -- Map Transition
 -------------------------------
@@ -194,11 +248,32 @@ function ledian_dojo.Dojo_Exit_Touch(obj, activator)
 end
 
 function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:UnlockDungeon(51)--todo: move to a cutscene
-  local dungeon_entrances = { 51 }
-  ledian_dojo.ShowMazeMenu(dungeon_entrances)
+	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+
+	UI:BeginChoiceMenu("Which would you like to do?", {"Training", "Lesson", "Trial", "Cancel"}, 1, 4)
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
 	
+	if result == 1 then
+		--training mazes
+		local dungeon_entrances = {52}
+	elseif result == 2 then
+		--lessons
+		local dungeon_entrances = {51}
+	elseif result == 3 then
+		--trials
+		local dungeon_entrances = {}
+		if #dungeon_entrances == 0 then 
+			UI:WaitShowDialogue("There aren't any trials available to you now. Come back later!")
+			return
+		end
+	else
+		--cancel
+		return
+	end
+	--set the dungeons we can choose from based on whether we are choosing to do a lesson, a training maze, or a trial
+	ledian_dojo.ShowMazeMenu(dungeon_entrances)
+
 end
 
 -------------------------------
