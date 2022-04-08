@@ -104,7 +104,11 @@ SV.Dojo =
 {
 	LessonCompletedGeneric = false,--Player just completed a lesson, should we play a generic cutscene after?
 	TrainingCompletedGeneric = false,--Player just completed a training, should we play a generic cutscene after?
-	TrialCompletedGeneric = false--Player just completed a trial, should we play a generic cutscene after?
+	TrialCompletedGeneric = false,--Player just completed a trial, should we play a generic cutscene after?
+	
+	LessonFailedGeneric = false,--Player just failed a lesson, should we play a generic cutscene after?
+	TrainingFailedGeneric = false,--Player just failed a training, should we play a generic cutscene after?
+	TrialFailedGeneric = false--Player just failed a trial, should we play a generic cutscene after?
 }
 
 
