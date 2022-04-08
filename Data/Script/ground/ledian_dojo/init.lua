@@ -70,7 +70,19 @@ function ledian_dojo.GameLoad(map)
 end
 
 function ledian_dojo.PlotScripting()
-	GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 2 then
+		if not SV.Chapter2.StartedTraining then--Cutscene for entering the dojo for the first time
+			ledian_dojo_ch_2.PreTrainingCutscene()
+		elseif not SV.Chapter2.FinishedTraining then--Cutscene for dying in first lesson/maze. cutscene function has logic for appropriate scene
+			ledian_dojo_ch_2.FailedTrainingCutscene()
+		elseif not SV.Chapter2.FinishedDojoCutscenes then--Cutscene for finishing first lesson/maze. cutscene function has logic for appropriate scene
+			ledian_dojo_ch_2.PostTrainingCutscene()
+		else 
+			ledian_dojo_ch_2.SetupGround()
+		end
+	else
+		GAME:FadeIn(20)	
+	end 
 end
 
 
