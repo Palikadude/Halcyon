@@ -107,6 +107,16 @@ local characters = {
 			form = 0,
 			skin = 0
 		},
+	
+		--can refer to Lotus as either Ledian or Sensei to grab her
+		Ledian = {
+			species = 166,
+			nickname = 'Lotus',
+			instance = 'Sensei',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
 		
 		Gible = {
 			species = 443,
