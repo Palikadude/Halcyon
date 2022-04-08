@@ -72,6 +72,10 @@ function zone_51.ExitSegment(zone, result, rescue, segmentID, mapID)
 	SV.Tutorial.LastSpeech = 'null'
 	SV.Tutorial.Progression = 0
 	
+	--flag zone 51 as last dojo zone
+	SV.Dojo.LastZone = 51
+
+	
 	--failed or gave up on the tutorial
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
 		if SV.ChapterProgression.Chapter == 2 then
