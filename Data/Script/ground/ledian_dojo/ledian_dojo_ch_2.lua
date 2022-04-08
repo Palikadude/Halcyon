@@ -440,7 +440,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		
 		GAME:UnlockDungeon(51)--unlock the basic lesson 
 		GROUND:Unhide("Dungeon_Entrance")
-		SV.Chapter2.FinishedTraining = true
+		SV.Chapter2.FinishedDojoCutscenes = true
 		AI:EnableCharacterAI(partner)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		GAME:CutsceneMode(false)
@@ -517,7 +517,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		
 		GAME:UnlockDungeon(52)--unlock the first training maze 
 		GROUND:Unhide("Dungeon_Entrance")
-		SV.Chapter2.FinishedTraining = true
+		SV.Chapter2.FinishedDojoCutscenes = true
 		AI:EnableCharacterAI(partner)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		GAME:CutsceneMode(false)
