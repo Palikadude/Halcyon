@@ -11,6 +11,16 @@ function ledian_dojo_ch_2.SetupGround()
 end
 
 
+
+function ledian_dojo_ch_2.Ledian_Action(chara, activator)
+	
+end 
+
+function ledian_dojo_ch_2.Gible_Action(chara, activator)
+	
+end
+
+
 function ledian_dojo_ch_2.PreTrainingCutscene()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
