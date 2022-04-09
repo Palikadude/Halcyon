@@ -435,8 +435,8 @@ function GeneralFunctions.PanCamera(startX, startY, toPlayer, speed, endX, endY)
 	endX = endX or CH('PLAYER').Position.X + 8
 	endY = endY or CH('PLAYER').Position.Y + 8
 	speed = speed or 1
-	startX = startX or 0 --todo:get current cam coords
-	startY = startY or 0 
+	startX = startX or GAME:GetCameraCenter().X
+	startY = startY or GAME:GetCameraCenter().Y
 	toPlayer = toPlayer or true
 	local difference = 0
 	local duration = 0

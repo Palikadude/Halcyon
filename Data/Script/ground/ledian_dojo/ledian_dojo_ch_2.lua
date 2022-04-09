@@ -33,6 +33,8 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	GROUND:TeleportTo(ledian, 196, 256, Direction.Down)
 	GROUND:TeleportTo(gible, 264, 184, Direction.DownLeft)	
 	GROUND:CharSetAnim(ledian, "Idle", true)
+	local lesson = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[51]
+	local maze = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
 	GAME:FadeIn(20)
 
 	GAME:WaitFrames(20)
@@ -326,7 +328,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		GeneralFunctions.SendInvToStorage()--clear inventory
 		GAME:CutsceneMode(false)
 		GAME:UnlockDungeon(51)
-		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, true)
+		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
 	end 
 	
 	if result == 2 then 
@@ -340,13 +342,13 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		
 		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Left, 4)
 												GROUND:AnimateInDirection(hero, "Walk", Direction.Left, Direction.Right, 8, 1, 1) 
-												GAME:WaitFrames(10)
+												GAME:WaitFrames(20)
 												GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Down) 
 												GAME:WaitFrames(10)
 												GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
 		coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
 												GROUND:AnimateInDirection(partner, "Walk", Direction.Right, Direction.Left, 8, 1, 1) 
-												GAME:WaitFrames(10)
+												GAME:WaitFrames(20)
 												GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Down) 
 												GAME:WaitFrames(10)
 												GROUND:MoveInDirection(partner, Direction.Down, 120, false, 1) end)										
@@ -362,7 +364,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		GeneralFunctions.SendInvToStorage()--clear inventory
 		GAME:CutsceneMode(false)
 		GAME:UnlockDungeon(52)
-		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+		GAME:EnterDungeon(maze.ID, maze.StructID.Segment, maze.StructID.ID, maze.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	end
 end
 
@@ -397,10 +399,11 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 	AI:DisableCharacterAI(partner)
 	GROUND:CharSetAnim(ledian, "Idle", true)	
 	GAME:MoveCamera(204, 184, 1, false)
+	SOUND:StopBGM()
 	if SV.Chapter2.SkippedTutorial then
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
-		GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
-		GROUND:TeleportTo(partner, 184, 208, Direction.Up)
+		GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
+		GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
 		GAME:FadeIn(20)
 		
@@ -437,10 +440,12 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+		GAME:EnterDungeon(zone.ID, zone.StructID.Segment, zone.StructID.ID, zone.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
-		GROUND:TeleportTo(hero, 196, 208, Direction.Up)	
+		GROUND:TeleportTo(hero, 196, 200, Direction.Up)	
+		GROUND:Hide('Teammate1')
+		GROUND:Hide('Gible')
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[51]
 		GAME:FadeIn(20)
 		
@@ -466,7 +471,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)	
+		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
 	end
 end 
 
@@ -486,8 +491,8 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 	GAME:MoveCamera(204, 184, 1, false)
 	if SV.Chapter2.SkippedTutorial then
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
-		GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
-		GROUND:TeleportTo(partner, 184, 208, Direction.Up)
+		GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
+		GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
 		GAME:FadeIn(20)
 		
@@ -536,7 +541,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		UI:SetSpeakerEmtoion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
 		
-		GeneralFunctions.PanCamera(204, 184)
+		GeneralFunctions.PanCamera()
 		
 		GAME:UnlockDungeon(51)--unlock the basic lesson 
 		GROUND:Unhide("Dungeon_Entrance")
@@ -546,7 +551,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GAME:CutsceneMode(false)
 	else 
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
-		GROUND:TeleportTo(hero, 196, 208, Direction.Up)	
+		GROUND:TeleportTo(hero, 196, 200, Direction.Up)	
 		GROUND:TeleportTo(partner, 184, 320, Direction.Up)
 		GROUND:TeleportTo(gible, 208, 320, Direction.Up)
 		GeneralFunctions.CenterCamera({ledian, hero})
@@ -574,9 +579,9 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) 
 												GROUND:MoveToPosition(partner, 184, 280, false, 1)
 												GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
-												GROUND:MoveToPosition(partner, 184, 232, false, 1)
+												GROUND:MoveToPosition(partner, 184, 224, false, 1)
 												GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
-		coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(gible, 208, 232, false, 1) end)
+		coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(gible, 208, 224, false, 1) end)
 		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
 												GROUND:CharSetEmote(hero, 3, 1) end)
@@ -613,7 +618,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		UI:SetSpeakerEmtoion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
 		
-		GeneralFunctions.PanCamera(204, 184)
+		GeneralFunctions.PanCamera()
 		
 		GAME:UnlockDungeon(52)--unlock the first training maze 
 		GROUND:Unhide("Dungeon_Entrance")
