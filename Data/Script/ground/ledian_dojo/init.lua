@@ -261,6 +261,7 @@ end
 function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 
+	UI:ResetSpeaker()
 	UI:BeginChoiceMenu("Which would you like to do?", {"Training", "Lesson", "Trial", "Cancel"}, 1, 4)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()

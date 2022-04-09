@@ -759,14 +759,21 @@ function GeneralFunctions.PromptSave()
 end
 
 
---sends all bagged items to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
-function GeneralFunctions.SendBagToStorage()
+--sends all bagged items and money to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
+function GeneralFunctions.SendInvToStorage()
 	local itemCount = GAME:GetPlayerBagCount()
+	local money = GAME:GetPlayerMoney()
+	
+	--move player's money to the bank
+	GAME:RemoveFromPlayerMoney(money)
+	GAME:AddToPlayerMoneyBank(money)
+	
+	
+	
 	for i = 1, itemCount, 1 do
-		local item = GAME:GetPlayerBagItem(i)
-		GAME:TakePlayerBagItem(i)
+		local item = GAME:GetPlayerBagItem(0)
+		GAME:TakePlayerBagItem(0)
 		GAME:GivePlayerStorageItem(item)
 	end
 end
 
-end

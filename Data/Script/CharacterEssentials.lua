@@ -229,6 +229,15 @@ local characters = {
 			gender = Gender.Female,
 			form = 0,
 			skin = 0
+		},
+		
+		Murkrow = {
+			species = 198,
+			nickname = '???',
+			instance = 'Murkrow',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
 		}
 	}
 
