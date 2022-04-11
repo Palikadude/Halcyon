@@ -69,7 +69,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	GROUND:MoveToPosition(gible, 196, 160, false, 1)
 	GROUND:CharAnimateTurnTo(gible, Direction.Up, 4)
 	
-	UI:SetSpeaker(gible)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, gible.CurrentForm.Species, gible.CurrentForm.Form, gible.CurrentForm.Skin, gible.CurrentForm.Gender)
 	UI:WaitShowDialogue("Yes?[pause=0] Is there something I can help you with?")
 	GAME:WaitFrames(20)
 	
@@ -78,7 +78,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	UI:WaitShowDialogue("Do you know where she is?")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(gible)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, gible.CurrentForm.Species, gible.CurrentForm.Form, gible.CurrentForm.Skin, gible.CurrentForm.Gender)
 	UI:WaitShowDialogue("Sensei " .. ledian:GetDisplayName() .. "?[pause=0] She's right over here.")
 	GAME:WaitFrames(20)
 
@@ -113,7 +113,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	
 	GAME:WaitFrames(40)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Yes,[pause=10] what is it,[pause=10] my pupil?")
+	UI:WaitShowDialogue("Yes,[pause=10] what is it,[pause=10] " .. gible:GetDisplayName() .. ",[pause=10] my pupil?")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(gible)
@@ -144,8 +144,10 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 											GROUND:AnimateToPosition(ledian, "Walk", Direction.UpRight, 160, 208, 1, 1)
 											GROUND:AnimateToPosition(ledian, "Walk", Direction.Right, 160, 200, 1, 1) 
 											GROUND:CharSetAnim(ledian, "Idle", true) end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Left) end)
-	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Left) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Left) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Left) end)
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 
@@ -216,9 +218,9 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(ledian)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Hoiyah![pause=0] Very well![pause=0] You will do the basic training course then.")
+	UI:WaitShowDialogue("Hoiyah![pause=0] Very well![pause=0] You will do the " .. lesson:GetColoredName() .. " then.")
 	UI:WaitShowDialogue("Hmm...[pause=0] But I sense that perhaps you may somehow already know the basics of adventuring,[pause=10] yes?")
-	UI:WaitShowDialogue("If that is the case,[pause=10] you may train in one of the training mazes instead.")
+	UI:WaitShowDialogue("If that is the case,[pause=10] you may train in the " .. maze:GetColoredName() .. ",[pause=10] one of the training mazes instead.")
 	UI:WaitShowDialogue("Which will you choose?")
 	
 	GAME:WaitFrames(20)
@@ -230,24 +232,31 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:BeginChoiceMenu("Which one do you think we should do,[pause=10] " .. hero:GetDisplayName() .. "?", {"Basic lesson (tutorial)", "Training maze (skip tutorial)"}, 1, 2)
+	UI:BeginChoiceMenu("Which one do you think we should do,[pause=10] " .. hero:GetDisplayName() .. "?", {lesson:GetColoredName() .. " (tutorial)", maze:GetColoredName() .. " (skip tutorial)"}, 1, 2)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()	
 	GAME:WaitFrames(20)
 	
 	if result == 2 then 
-		UI:WaitShowDialogue("We'll do the training maze then!")
+		UI:WaitShowDialogue("We'll do the " .. maze:GetColoredName() .. " then!")
 		GAME:WaitFrames(20)
 		
 		GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 		GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 		UI:SetSpeaker(ledian)
 		UI:WaitShowDialogue("Oohcha![pause=0] Do not be too hasty my students!")
-		UI:BeginChoiceMenu("Are you sure you do not wish to do take the basic lesson?[pause=0] It has much to teach!", {"Basic lesson (tutorial)", "Training maze (skip tutorial)"}, 1, 2)
+		UI:BeginChoiceMenu("Are you sure you do not wish to do take the " ..  lesson:GetColoredName() .. "?[pause=0] It has much to teach!", {lesson:GetColoredName() .. " (tutorial)", maze:GetColoredName() .. " (skip tutorial)"}, 1, 2)
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
+		GAME:WaitFrames(20)
 			
 	end 
+	
+	if result == 1 then 
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("We'll do the " .. lesson:GetColoredName() .. " then!")
+		GAME:WaitFrames(20)
+	end
 	
 
 	UI:SetSpeaker(ledian)
@@ -291,7 +300,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		UI:WaitShowDialogue("Any sort of physical progress that happens within dojo lessons is self-contained!")
 		UI:WaitShowDialogue("Hoiyah![pause=0] That is to say,[pause=10] items,[pause=10] experience,[pause=10] money,[pause=10] moves,[pause=10] party members...")
 		UI:WaitShowDialogue("Any gained in the lesson are not kept when leaving a dojo lesson!")
-		UI:WaitShowDialogue("Your level will also be set to 5 when you enter the beginner lesson and your money and items sent to storage!")
+		UI:WaitShowDialogue("Your level will also be set to 5 when you enter the lesson and your money and items sent to storage!")
 		UI:WaitShowDialogue("Your proper level will be restored once you leave the lesson.")
 		UI:WaitShowDialogue("Be sure to visit " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. " and " .. CharacterEssentials.GetCharacterName('Murkrow') .. " in town after to get your belongings back!")
 		UI:WaitShowDialogue("Wahtah![pause=0] This is all necessary so you can properly train your mind!")
@@ -332,9 +341,9 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	end 
 	
 	if result == 2 then 
-		UI:WaitShowDialogue("I will show you to one of our training mazes then![pause=0] Hwacha!")
-		UI:WaitShowDialogue("Training mazes act similarly to mystery dungeons,[pause=10] but there is no penalty for failure!")
-		UI:WaitShowDialogue("Any items and money on you when you enter will be sent to storage though,[pause=10] and there are no items within the training maze.")
+		UI:WaitShowDialogue("I will show you to the " .. maze:GetColoredName() .. " then![pause=0] Hwacha!")
+		UI:WaitShowDialogue("Training mazes act similarly to mystery dungeons,[pause=10] but are designed for training!")
+		UI:WaitShowDialogue("Any items and money on you when you enter will be sent to storage though.")
 		UI:WaitShowDialogue("Be sure to visit " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. " and " .. CharacterEssentials.GetCharacterName('Murkrow') .. " in town after to get your belongings back!")
 		UI:WaitShowDialogue("Hoiyah![pause=0] Enough talk![pause=0] Now,[pause=10] let us begin your training!")
 
@@ -364,7 +373,7 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		GeneralFunctions.SendInvToStorage()--clear inventory
 		GAME:CutsceneMode(false)
 		GAME:UnlockDungeon(52)
-		GAME:EnterDungeon(maze.ID, maze.StructID.Segment, maze.StructID.ID, maze.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	end
 end
 
@@ -440,7 +449,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterDungeon(zone.ID, zone.StructID.Segment, zone.StructID.ID, zone.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 196, 200, Direction.Up)	
@@ -465,7 +474,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		GAME:WaitFrames(20)
 		local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
 							GROUND:MoveInDirection(hero, Direction.Down, 120, false, 1) end)
-		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 							GROUND:MoveInDirection(ledian, Direction.Down, 120, false, 1) end)
 		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GAME:FadeOut(false, 20) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
@@ -496,11 +505,13 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[52]
 		GAME:FadeIn(20)
 		
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(40)
 		GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
 		UI:SetSpeaker(ledian)
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Hoiyah![pause=0] You did it![pause=0] You successfully completed the " .. zone:GetColoredName() .."!")
+		
+		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
 		local coro1 = TASK:BranchCoroutine(function()	ledian_dojo_ch_2.Hwacha(ledian) end)
 		local coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
@@ -515,6 +526,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:SetSpeaker(partner)
 		UI:SetSpeakerEmotion("Joyous")
+		GROUND:CharSetEmote(partner, 4, 0)
 		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "!")
 		
 		GAME:WaitFrames(20)
@@ -522,8 +534,9 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Congratulations to the both of you for finishing the " .. zone:GetColoredName() .. "!")
 		
-		GROUND:CharTurnToCharAnimated(partner, ledian, 4)
-		GROUND:CharTurnToCharAnimated(hero, ledian, 4)
+		GROUND:CharSetEmote(partner, -1, 0)
+		GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+		GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 		
 		UI:WaitShowDialogue("But this is only the beginning of your journey!")
 		UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
@@ -538,9 +551,10 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(ledian)
-		UI:SetSpeakerEmtoion("Normal")
+		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
 		
+		GAME:WaitFrames(20)
 		GeneralFunctions.PanCamera()
 		
 		GAME:UnlockDungeon(51)--unlock the basic lesson 
@@ -558,11 +572,13 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[51]
 		GAME:FadeIn(20)
 		
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(40)
 		GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
 		UI:SetSpeaker(ledian)
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Hoiyah![pause=0] You did it![pause=0] You successfully completed the " .. zone:GetColoredName() .."!")
+			
+		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
 		local coro1 = TASK:BranchCoroutine(function() ledian_dojo_ch_2.Hwacha(ledian) end)
 		local coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("HWACHA!", 40) end)
@@ -570,8 +586,8 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 										GROUND:CharSetEmote(hero, 3, 1) end)	
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
-		GAME:WaitFrames(20)
-		GeneralFunctions.EmoteAndPause(ledian, "Exclaim", true)
+		GAME:WaitFrames(40)
+		GeneralFunctions.EmoteAndPause(ledian, "Notice", true)
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Hoiyah![pause=0] It appears that you are not the only one to have finished the " .. zone:GetColoredName() .. "!")
 		
@@ -592,6 +608,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		UI:SetSpeakerEmotion("Inspired")
 		UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] You completed the " .. zone:GetColoredName() .. " too?")
 		UI:SetSpeakerEmotion("Joyous")
+		GROUND:CharSetEmote(partner, 4, 0)
 		UI:WaitShowDialogue("That's amazing![pause=0] We did it!")
 		
 		GAME:WaitFrames(20)
@@ -599,6 +616,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Congratulations to the both of you for finishing the " .. zone:GetColoredName() .. "!")
 		
+		GROUND:CharSetEmote(partner, -1, 0)
 		GROUND:CharTurnToCharAnimated(partner, ledian, 4)
 		GROUND:CharTurnToCharAnimated(hero, ledian, 4)
 		
@@ -615,9 +633,10 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(ledian)
-		UI:SetSpeakerEmtoion("Normal")
+		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Wahtah![pause=0] Until we meet again!")
 		
+		GAME:WaitFrames(20)
 		GeneralFunctions.PanCamera()
 		
 		GAME:UnlockDungeon(52)--unlock the first training maze 

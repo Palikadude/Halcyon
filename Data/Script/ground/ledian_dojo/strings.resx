@@ -58,4 +58,73 @@
   <resheader name="writer">
     <value>System.Resources.NetStandard.ResXResourceWriter, System.Resources.NetStandard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </resheader>
+  <data name="Dojo_Intro" xml:space="preserve">
+    <value>Hwacha! Welcome to Ledian Dojo,[pause=10] where budding students blossom!</value>
+  </data>
+  <data name="Dojo_Intro_Return" xml:space="preserve">
+    <value>Is there anything else,[pause=10] my students?</value>
+  </data>
+  <data name="Dojo_Info_Prompt" xml:space="preserve">
+    <value>What do you want to know more about,[pause=10] my students?</value>
+  </data>
+  <data name="Dojo_Info_Prompt_Return" xml:space="preserve">
+    <value>Do you want to know about anything else,[pause=10] my students?</value>
+  </data>
+  <data name="String_4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_8" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_9" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_10" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_11" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_12" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_14" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_15" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_16" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_17" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String_18" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Dojo_Menu_Back" xml:space="preserve">
+    <value>Go Back</value>
+  </data>
+  <data name="Dojo_Menu_Trials" xml:space="preserve">
+    <value>Trials</value>
+  </data>
+  <data name="Dojo_Menu_Lesson" xml:space="preserve">
+    <value>Lessons</value>
+  </data>
+  <data name="Dojo_Menu_Training" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="Dojo_Facilities_Info" xml:space="preserve">
+    <value>Facilities Info</value>
+  </data>
 </root>
