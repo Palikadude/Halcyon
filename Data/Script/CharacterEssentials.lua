@@ -109,7 +109,7 @@ local characters = {
 		},
 	
 		--can refer to Lotus as either Ledian or Sensei to grab her
-		Ledian = {
+		Sensei = {
 			species = 166,
 			nickname = 'Lotus',
 			instance = 'Sensei',
@@ -239,6 +239,37 @@ local characters = {
 			form = 0,
 			skin = 0
 		},
+	
+		Slowpoke = {
+			species = 79,
+			nickname = '???',
+			instance = 'Slowpoke',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Ambipom = {
+			species = 424,
+			nickname = '???',
+			instance = 'Ambipom',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Sneasel = {
+			species = 215,
+			nickname = '???',
+			instance = 'Sneasel',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+	
+		
+		
+		
 	
 	
 	--Town NPCs - Families
@@ -456,6 +487,35 @@ local characters = {
 			species = 32,
 			nickname = '???',
 			instance = 'Nidoran_M',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+	
+	
+	--Town NPCs - Other
+		Sunflora = {
+			species = 192,
+			nickname = '???',
+			instance = 'Sunflora',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Gulpin = {
+			species = 316,
+			nickname = '???',
+			instance = 'Gulpin',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Lickitung = {
+			species = 108,
+			nickname = 'Urgil',
+			instance = 'Lickitung',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
