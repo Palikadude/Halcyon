@@ -183,3 +183,44 @@ function metano_town.Wooper_Siblings_Introduction()
 	SV.Chapter2.WooperIntro = true
 
 end
+
+--dee
+function metano_town_ch_2.Wooper_Girl_Action(chara, activator)
+	local dee = CH('Wooper_Girl')
+	local dun = CH('Wooper_Boy')
+	if SV.Chapter2.WooperIntro then
+		UI:SetSpeaker(dee)
+		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
+	else
+		metano_town_ch_2.Wooper_Siblings_Introduction()
+	end
+end
+
+
+--dun
+function metano_town_ch_2.Wooper_Boy_Action(chara, activator)
+	local dee = CH('Wooper_Girl')
+	local dun = CH('Wooper_Boy')
+	if SV.Chapter2.WooperIntro then
+		UI:SetSpeaker(dun)
+		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
+	else
+		metano_town_ch_2.Wooper_Siblings_Introduction()
+	end
+end
+
+function metano_town_ch_2.Electrike_Action(chara, activator)
+	local hero = CH('PLAYER')
+	local electrike = chara
+	local olddir = electrike.Direction
+	if SV.Chapter2.WooperIntro then
+		GROUND:CharTurnToChar(electrike, hero)
+		UI:SetSpeaker(electrike)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("Help.")
+		GROUND:EntTurn(electrike, olddir)
+	else
+		metano_town_ch_2.Wooper_Siblings_Introduction()
+	end
+end 
+		
