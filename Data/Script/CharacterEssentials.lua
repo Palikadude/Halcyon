@@ -505,7 +505,7 @@ local characters = {
 		
 		Gulpin = {
 			species = 316,
-			nickname = 'Bu',
+			nickname = 'Boosmu',
 			instance = 'Gulpin',
 			gender = Gender.Male,
 			form = 0,
