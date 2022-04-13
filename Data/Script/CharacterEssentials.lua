@@ -238,7 +238,230 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
+		},
+	
+	
+	--Town NPCs - Families
+		Furret = {
+			species = 162,
+			nickname = '???',
+			instance = 'Furret',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Linoone = {
+			species = 264, 
+			nickname = '???',
+			instance = 'Linoone',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+	
+		Sentret = {
+			species = 161, 
+			nickname = '???',
+			instance = 'Sentret',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+	
+		
+		
+		Luxray = {
+			species = 405,
+			nickname = '???',
+			instance = 'Luxray',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+	
+		Manectric = {
+			species = 310,
+			nickname = '???',
+			instance = 'Manectric',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Electrike = {
+			species = 309,
+			nickname = '???',
+			instance = 'Electrike',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		
+		
+		Floatzel = {
+			species = 419,
+			nickname = 'Tweed',
+			instance = 'Floatzel',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Quagsire = {
+			species = 195,
+			nickname = '???',
+			instance = 'Quagsire',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Wooper_Girl = {
+			species = 194,
+			nickname = 'Dee',
+			instance = 'Wooper_Girl',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+	
+		Wooper_Boy = {
+			species = 194,
+			nickname = 'Dun',
+			instance = 'Wooper_Boy',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		
+		
+		Camerupt = {
+			species = 323,
+			nickname = '???',
+			instance = 'Camerupt',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Numel = {
+			species = 322,
+			nickname = '???',
+			instance = 'Numel',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		
+		
+		Machamp = {
+			species = 68,
+			nickname = '???',
+			instance = 'Machamp',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+			
+		Medicham = {
+			species = 308,
+			nickname = '???',
+			instance = 'Medicham',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Meditite = {
+			species = 307,
+			nickname = '???',
+			instance = 'Medicham',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		
+		
+		Vileplume = {
+			species = 45,
+			nickname = '???',
+			instance = 'Vileplume',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Bellossom = {
+			species = 182,
+			nickname = '???',
+			instance = 'Bellossom',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Gloom = {
+			species = 44, 
+			nickname = '???',
+			instance = 'Gloom',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Oddish = {
+			species = 43,
+			nickname = '???',
+			instance = 'Oddish',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		
+		
+		Nidoking = {
+			species = 34,
+			nickname = '???',
+			instance = 'Nidoking',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Nidoqueen = {
+			species = 31,
+			nickname = '???',
+			instance = 'Nidoqueen',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Nidorina = {
+			species = 30,
+			nickname = '???',
+			instance = 'Nidorina',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Nidoran_M = {
+			species = 32,
+			nickname = '???',
+			instance = 'Nidoran_M',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
 		}
+			
+			
 	}
 
 
