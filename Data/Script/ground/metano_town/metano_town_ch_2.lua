@@ -105,3 +105,81 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 	UI:WaitShowDialogue("Just cross the bridge,[pause=10] then head east,[pause=10] ruff!")
 	GROUND:EntTurn(growlithe, Direction.Right)
 end
+
+
+
+
+
+
+
+function metano_town.Wooper_Siblings_Introduction()
+	local dee = CH('Wooper_Girl')
+	local dun = CH('Wooper_Boy')
+	local electrike = CH('Electrike')
+	local hero = CH('PLAYER')
+	
+	UI:SetSpeaker(dee)
+	GROUND:CharTurnToCharAnimated(hero, dee, 4)
+	UI:WaitShowDialogue("What do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dun)
+	GROUND:CharTurnToCharAnimated(hero, dun, 4)
+	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dee)
+	GROUND:CharTurnToCharAnimated(hero, dee, 4)
+	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dun)
+	GROUND:CharTurnToCharAnimated(hero, dun, 4)
+	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	
+	UI:SetSpeaker(dee)
+	GROUND:CharTurnToCharAnimated(hero, dee, 4)
+	UI:WaitShowTimedDialogue("I dunno,[pause=10] what do-", 40)
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(electrike)
+	GeneralFunctions.EmoteAndPause(electrike, "Angry", true)
+	GROUND:CharTurnToCharAnimated(hero, electrike, 4)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("Would you two PLEASE STOP.")
+	UI:WaitShowDialogue("We've been here for hours already trying to figure out what we're doing today!")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Can't you just pick something?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dee)
+	GROUND:CharTurnToCharAnimated(hero, dee, 4)
+	UI:WaitShowDialogue("But I just wanna know what " .. dun:GetDisplayName() .. " wants to do today!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dun)
+	GROUND:CharTurnToCharAnimated(hero, dun, 4)
+	UI:WaitShowDialogue("And I just wanna know what " .. dee:GetDisplayName() .. " wants to do today!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dee)
+	GROUND:CharTurnToCharAnimated(hero, dee, 4)
+	UI:WaitShowDialogue("What do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(dun)
+	GROUND:CharTurnToCharAnimated(hero, dun, 4)
+	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(electrike)
+	UI:SetSpeakerEmotion('Pain')
+	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
+	GROUND:CharTurnToCharAnimated(player, electrike, 4)
+	UI:WaitShowDialogue("Ugh...")
+
+	SV.Chapter2.WooperIntro = true
+
+end
