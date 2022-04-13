@@ -72,7 +72,21 @@ end
 function ledian_dojo.PlotScripting()
 	--if a generic ending has been flagged, prioritize that
 	if SV.Dojo.LessonCompletedGeneric or SV.Dojo.TrainingCompletedGeneric or SV.Dojo.TrialCompletedGeneric or SV.Dojo.LessonFailedGeneric or SV.Dojo.TrainingFailedGeneric or SV.Dojo.TrialFailedGeneric then
-		
+		if SV.Dojo.LessonCompletedGeneric
+			ledian_dojo.GenericLessonSuccess()
+		elseif SV.Dojo.TrainingCompletedGeneric then
+			ledian_dojo.GenericTrainingSuccess()
+		elseif SV.Dojo.TrialCompletedGeneric
+			ledian_dojo.GenericTrialSuccess()
+		elseif SV.Dojo.LessonFailedGeneric
+			ledian_dojo.GenericLessonFailure()
+		elseif SV.Dojo.TrainingFailedGeneric
+			ledian_dojo.GenericTrainingFailure()
+		elseif SV.Dojo.TrialFailedGeneric
+			ledian_dojo.GenericTrialFailure()
+		else --this shouldn't happen
+			GAME:FadeIn(20)
+		end
 
 	elseif SV.ChapterProgression.Chapter == 2 then
 		if not SV.Chapter2.StartedTraining then--Cutscene for entering the dojo for the first time
@@ -212,9 +226,9 @@ function ledian_dojo.GenericTrainingSuccess()
 	AI:DisableCharacterAI(partner)
 	GROUND:CharSetAnim(ledian, "Idle", true)	
 	
-	--GROUND:TeleportTo(hero, 208, 208, Direction.Up)	
-	--GROUND:TeleportTo(partner, 184, 208, Direction.Up)
-	--GeneralFunctions.CenterCamera({ledian, hero})
+	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
+	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
+	GAME:MoveCamera(204, 184, 1, false)
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
 	GAME:FadeIn(20)
 		
@@ -238,7 +252,10 @@ function ledian_dojo.GenericTrainingSuccess()
 	UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Be sure to keep giving it your all!")
 
-	--GeneralFunctions.PanCamera(200, 200)
+	GAME:WaitFrames(20)
+	GeneralFunctions.PanCamera()
+
+	SV.Dojo.TrainingCompletedGeneric = false -- reset the flag
 
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
@@ -248,23 +265,64 @@ end
 function ledian_dojo.GenericLessonSuccess()
 	--for now, all 3 generic finishes will be the same
 	ledian_dojo.GenericTrainingFinish()
+	SV.Dojo.LessonCompletedGeneric = false -- reset the flag
 end
 	
 function ledian_dojo.GenericTrialSuccess()
 	--for now, all 3 generic finishes will be the same	
 	ledian_dojo.GenericTrainingSuccess()
+	SV.Dojo.TrialCompletedGeneric = false -- reset the flag
+
 end
 		
 function ledian_dojo.GenericTrainingFailure()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local ledian = CH('Sensei')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GROUND:CharSetAnim(ledian, "Idle", true)	
+	
+	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
+	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
+	GAME:MoveCamera(204, 184, 1, false)
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
+	GAME:FadeIn(20)
+	
+	GeneralFunctions.EmoteAndPause(ledian, 'Sweating', true)
+	UI:SetSpeaker(ledian)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Oohcha...[pause=0] You failed to make it to the end...")
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.DoubleHop(ledian)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Hoiyah![pause=0] Worry not my students![pause=0] The journey to a stronger self is not an easy one.")
+	UI:WaitShowDialogue("This is simply one of the hardships you will encounter on the path to success.")
+	UI:WaitShowDialogue("Wahtah![pause=0] If you continue to seek victory,[pause=10] it cannot continue to hide!")
+	UI:WaitShowDialogue("Go and give it your all again!")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.PanCamera()
+
+	SV.Dojo.TrainingFailedGeneric = false -- reset the flag
+
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GAME:CutsceneMode(false)	
 	
 end
 		
 function ledian_dojo.GenericLessonFailure()
-			
+	--for now, all 3 generic finishes will be the same
+	ledian_dojo.GenericLessonFailure()
+	SV.Dojo.LessonFailedGeneric = false -- reset the flag
 end
 		
 function ledian_dojo.GenericTrialFailure()
-			
+	--for now, all 3 generic finishes will be the same
+	ledian_dojo.GenericTrialFailure()
+	SV.Dojo.TrialFailedGeneric = false -- reset the flag
 end
 -------------------------------
 -- Map Transition

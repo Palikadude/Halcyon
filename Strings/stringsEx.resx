@@ -3494,6 +3494,7 @@ The higher your level, the less experience you get from lower leveled enemies, a
   <data name="BEGINNER_LESSON_GENERAL_SIGN_3_2_BODY" xml:space="preserve">
     <value>You will only get experience for defeating a foe if you used a move or an item on them. Basic attacks alone won't cut it!
 Some Pokémon give more experience than others. Caterpie, for example, gives little while Chansey gives a lot. See for yourself by defeating the volunteers here! Remember that experience and levels gained here won’t be kept once you leave.
+Be warned that if guests (such as Sensei Lotus) defeat the opponent, you won't get any experience.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
 
