@@ -224,3 +224,24 @@ function metano_town_ch_2.Electrike_Action(chara, activator)
 	end
 end 
 		
+
+function metano_town_ch_2.Furret_Action(chara, activator)
+	local furret = CH('Furret')
+	UI:SetSpeaker(furret)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Aaah...[pause=0] This is my favorite place to snooze~")
+end 
+
+function metano_town_ch_2.Meditite_Action(chara, activator)
+	local meditite = CH('Meditite')
+	UI:SetSpeaker(meditite)
+	UI:WaitShowDialogue("..........")
+	UI:WaitShowDialogue("..........")
+	UI:WaitShowDialogue("...ZZZzzz...")
+	UI:ResetSpeaker()
+	SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
+	GROUND:CharSetEmote(CH('PLAYER'), 9, 1)
+	GROUND:CharSetEmote(CH('Teammate1'), 9, 1)
+	UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
+end 
+	
