@@ -244,4 +244,67 @@ function metano_town_ch_2.Meditite_Action(chara, activator)
 	GROUND:CharSetEmote(CH('Teammate1'), 9, 1)
 	UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
 end 
+
+
+function metano_town_ch_2.Lickitung_Action(chara, activator)
+	local lickitung = chara
+	local olddir = lickitung.Direction
+	GROUND:CharTurnToChar(lickitung, CH('PLAYER'))
+	UI:SetSpeaker(lickitung)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Apparently,[pause=10] the café is closed today...")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("We came all this way from out of town for nothing,[pause=10] then?")
+	GROUND:EntTurn(lickitung, olddir)
+end 
+
+
+function metano_town_ch_2.Gulpin_Action(chara, activator)
+	local gulpin = chara
+	local olddir = gulpin.Direction
+	GROUND:CharTurnToChar(gulpin, CH('PLAYER'))
+	UI:SetSpeaker(gulpin)
+	UI:WaitShowDialogue("Normal")
+	UI:WaitShowDialogue("...Huh?[pause=0] The café is closed...?")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious smoothie today...")
+	GROUND:EntTurn(gulpin, olddir)
+end 
+
+
+function metano_town_ch_2.Machamp_Luxray_Dialogue()
+	local machamp = CH('Machamp')
+	local luxray = CH('Luxray')
+	local hero = CH('PLAYER')
+	
+	UI:SetSpeaker(machamp)
+	UI:WaitShowDialogue("Hoo...[pause=0] I tell ya,[pause=10] that's gotta be real rough for " .. CharacterEssentials.GetCharacterName('Camerupt') .. ".")
+	UI:WaitShowDialogue("After...[pause=0] Well,[pause=10] y'know...")
+	UI:WaitShowDialogue("And now she's havin' trouble with " .. CharacterEssentials.GetCharacterName('Numel') .. "...")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(luxray)
+	UI:WaitShowDialogue("Hmmph...[pause=0] It doesn't matter what's happened.")
+	UI:WaitShowDialogue("If her son acts like that towards her,[pause=10] that's her own fault.")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharSetEmote(machamp, 5, 1)
+	UI:SetSpeaker(machamp)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I don't think it's that simple in this case,[pause=10] mate...")
+
+end
+
+function metano_town_ch_2.Machamp_Action(chara, activator)
+	metano_town_ch_2.Machamp_Luxray_Dialogue()
+end
+
+function metano_town_ch_2.Luxray_Action(chara, activator)
+	metano_town_ch_2.Machamp_Luxray_Dialogue()
+end
+	
+	
+	
+	
+	
 	
