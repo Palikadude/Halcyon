@@ -78,10 +78,9 @@ SV.TemporaryFlags =
 --todo: cleanup a lot of these
 SV.metano_town = 
 {
-  WooperIntro = false,
   LuxioIntro = false,
   AggronGuided = false,
-  KecIntro = false,
+  KecIntro = false
 }
 
 SV.metano_cafe =
@@ -156,7 +155,9 @@ SV.Chapter2 =
 	StartedTraining = false,--started the training at ledian dojo?
 	SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
 	FinishedTraining = false,--finished the preliminary training at ledian dojo?
-	FinishedDojoCutscenes = false--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+	FinishedDojoCutscenes = false,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+
+	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }
 
 
