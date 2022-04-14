@@ -318,10 +318,19 @@ function metano_town_ch_2.Gloom_Action(chara, activator)
 	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
 	UI:WaitShowDialogue("Wow![pause=0] You two are adventurers?[pause=0] That's so...!")
+	GROUND:CharSetEmote(chara, 5, 1)
 	UI:WaitShowDialogue("Oh![pause=0] Erm...[pause=0] I mean...")
 	UI:WaitShowDialogue("Pffft...[pause=0] Adventurers?[pause=0] That's...[pause=0] Uh...[pause=0] Stupid...")
 	GROUND:EntTurn(chara, olddir)
 end 	
 	
-	
-	
+
+function metano_town_ch_2.Oddish_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go...")
+	UI:WaitShowDialogue("I wanted to keep playing with him...")
+	GROUND:EntTurn(chara, olddir)
+end
