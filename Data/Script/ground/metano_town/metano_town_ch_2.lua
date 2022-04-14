@@ -303,8 +303,25 @@ function metano_town_ch_2.Luxray_Action(chara, activator)
 	metano_town_ch_2.Machamp_Luxray_Dialogue()
 end
 	
-	
-	
+
+function metano_town_ch_2.Nidorina_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("........Are you two in an adventuring team?")
+	UI:WaitShowDialogue("........Lame.")
+	GROUND:EntTurn(chara, olddir)
+end
+		
+function metano_town_ch_2.Gloom_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("Wow![pause=0] You two are adventurers?[pause=0] That's so...!")
+	UI:WaitShowDialogue("Oh![pause=0] Erm...[pause=0] I mean...")
+	UI:WaitShowDialogue("Pffft...[pause=0] Adventurers?[pause=0] That's...[pause=0] Uh...[pause=0] Stupid...")
+	GROUND:EntTurn(chara, olddir)
+end 	
 	
 	
 	
