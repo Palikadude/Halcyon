@@ -224,7 +224,7 @@ local characters = {
 	--Vendor/Shop NPCs
 		Kangaskhan = {
 			species = 115,
-			nickname = '???',
+			nickname = 'Auntie Kanga',
 			instance = 'Kangaskhan',
 			gender = Gender.Female,
 			form = 0,
@@ -233,7 +233,7 @@ local characters = {
 		
 		Murkrow = {
 			species = 198,
-			nickname = '???',
+			nickname = 'Varok',
 			instance = 'Murkrow',
 			gender = Gender.Male,
 			form = 0,
@@ -262,12 +262,28 @@ local characters = {
 			species = 215,
 			nickname = '???',
 			instance = 'Sneasel',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Kecleon = {
+			species = 352,
+			nickname = 'Lars',
+			instance = 'Kecleon',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
 		},
-	
 		
+		Kecleon_Purple = {
+			species = 352,
+			nickname = 'Zigs',
+			instance = 'Kecleon_Purple',
+			gender = Gender.Male,
+			form = 1,
+			skin = 0
+		},
 		
 		
 	
@@ -410,7 +426,7 @@ local characters = {
 		Meditite = {
 			species = 307,
 			nickname = '???',
-			instance = 'Medicham',
+			instance = 'Meditite',
 			gender = Gender.Female,
 			form = 0,
 			skin = 0

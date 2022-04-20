@@ -17,16 +17,13 @@ function metano_town.Init(map)
 	PartnerEssentials.InitializePartnerSpawn()
 	GROUND:AddMapStatus(6)
 	
+		
+	--if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
+	--	GROUND:Hide('Aggron')
+	--end
 	
-	--Set up some NPC States
-	GROUND:CharSetAnim(CH('Furret'), 'Sleep', true)
-	
-	if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
-		GROUND:Hide('Aggron')
-	end
-	
-	local chara = CH('Aggron')
-	metano_town.CreateWalkArea(chara, 1264, 560, 32, 32)
+	--local chara = CH('Aggron')
+	--metano_town.CreateWalkArea(chara, 1264, 560, 32, 32)
 	--chara = CH('Delcatty')
 	--metano_town.CreateWalkArea(chara, 1122, 888, 32, 32)
 	
@@ -169,6 +166,13 @@ function metano_town.Electric_Home_Entrance_Touch(obj, activator)
   SV.partner.Spawn = 'Default'
 end
 
+function metano_town.Normal_Home_Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:FadeOut(false, 20)
+  GAME:EnterGroundMap("metano_normal_home", "Main_Entrance_Marker")
+  SV.partner.Spawn = 'Default'
+end
+
 function metano_town.Cave_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
@@ -213,11 +217,7 @@ end
 
 function metano_town.Shop_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  
-  if not SV.metano_town.KecIntro then
-	return
-  end
-  
+    
   local state = 0
   local repeated = false
   local cart = {}
@@ -1421,6 +1421,131 @@ Lickitung (   , cafe goer)
 ???
 
 ]]--
+
+function metano_town.Luxray_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Luxray_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Electrike_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Electrike_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Manectric_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Manectric_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Bellossom_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Bellossom_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Vileplume_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Vileplume_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Gloom_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gloom_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Oddish_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Oddish_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Numel_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Numel_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Camerupt_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Camerupt_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Machamp_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Machamp_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Meditite_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Meditite_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Medicham_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Medicham_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Furret_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Furret_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Linoone_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Linoone_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Sentret_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Sentret_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Wooper_Girl_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Wooper_Girl_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Wooper_Boy_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Wooper_Boy_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Floatzel_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Floatzel_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Nidorina_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Nidorina_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Nidoran_Male_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Nidoran_Male_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Nidoking_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Nidoking_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Nidoqueen_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Nidoqueen_Action(...,...)"), obj, activator))
+end
+
+
+
+
+function metano_town.Gulpin_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gulpin_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Lickitung_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Lickitung_Action(...,...)"), obj, activator))
+end
+
+
 
 
 

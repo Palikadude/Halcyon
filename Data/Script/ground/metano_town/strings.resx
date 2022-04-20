@@ -140,7 +140,7 @@
     <value>Ah...[pause=0] This is my favorite place to snooze \u266A</value>
   </data>
   <data name="NPC_Glameow_1" xml:space="preserve">
-    <value>shit</value>
+    <value>diapers</value>
   </data>
   <data name="NPC_Luxio_1" xml:space="preserve">
     <value>[player],[pause=10] [partner].[pause=0] You guys are leaving on the guild expedition today,[pause=10] right?</value>
@@ -320,13 +320,13 @@
     <value>Uh...[pause=0] Who's remembering a move now...?</value>
   </data>
   <data name="Music_Intro" xml:space="preserve">
-    <value>Hello there \u266A\n[pause=0] Fancy a music change? </value>
+    <value>Hello there \u266A[pause=0]\nFancy a music change? </value>
   </data>
   <data name="Music_End" xml:space="preserve">
     <value>Talk with me anytime you would like a change in music \u266A</value>
   </data>
   <data name="Sign_Guild_Bridge_1" xml:space="preserve">
-    <value>North: Trevion's Exploration Guild\n East: Marketplace</value>
+    <value>North: Penticus's Exploration Guild\n East: Marketplace</value>
   </data>
   <data name="Sign_Crossroads_1" xml:space="preserve">
     <value>Metano Town\n (Town Slogan here lol)</value>

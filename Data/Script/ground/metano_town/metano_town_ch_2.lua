@@ -6,6 +6,9 @@ require 'CharacterEssentials'
 metano_town_ch_2 = {}
 
 function metano_town_ch_2.SetupGround()
+	GROUND:Hide('Red_Merchant')
+	GROUND:Hide('Green_Merchant')
+	GROUND:Hide('Swap_Owner')
 
 	if SV.Chapter2.FirstMorningMeetingDone and not SV.Chapter2.FinishedTraining then
 		--these objects prevent the player from going into the rest of the town too soon, as they must go to the dojo first and complete training
@@ -34,6 +37,31 @@ function metano_town_ch_2.SetupGround()
 		GAME:GetCurrentGround():AddObject(bridgeBlock)
 		GAME:GetCurrentGround():AddObject(marketBlock)
 		
+		GAME:FadeIn(20)
+	elseif SV.Chapter2.FinishedTraining then 
+		local meditite = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Meditite', 552, 352, Direction.Down},
+				{'Luxray', 'Town_Seat_1'},
+				{'Machamp', 'Town_Seat_2'},
+				{'Furret', 356, 764, Direction.Right},
+				{'Wooper_Girl', 328, 1000, Direction.Right},
+				{'Wooper_Boy', 360, 1000, Direction.Left},
+				{'Electrike', 344, 976, Direction.Down},
+				{'Lickitung', 1148, 604, Direction.Up},
+				{'Gulpin', 1124, 628, Direction.UpRight},
+				{'Nidorina', 536, 208, Direction.UpLeft},
+				{'Gloom', 512, 184, Direction.DownRight},
+				{'Numel', 432, 436, Direction.Left},
+				{'Oddish', 404, 436, Direction.Right},
+				{'Bellossom', 472, 608, Direction.UpLeft},
+				{'Floatzel', 714, 232, Direction.Up}
+		})
+		
+		GROUND:CharSetAnim(CH('Furret'), 'Sleep', true)
+	
+		GAME:FadeIn(20)
+	else
 		GAME:FadeIn(20)
 	end
 end
@@ -112,7 +140,7 @@ end
 
 
 
-function metano_town.Wooper_Siblings_Introduction()
+function metano_town_ch_2.Wooper_Siblings_Introduction()
 	local dee = CH('Wooper_Girl')
 	local dun = CH('Wooper_Boy')
 	local electrike = CH('Electrike')
@@ -186,11 +214,10 @@ end
 
 --dee
 function metano_town_ch_2.Wooper_Girl_Action(chara, activator)
-	local dee = CH('Wooper_Girl')
-	local dun = CH('Wooper_Boy')
+	local dee = chara
 	if SV.Chapter2.WooperIntro then
 		UI:SetSpeaker(dee)
-		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
+		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. CharacterEssentials.GetCharacterName("Wooper_Boy") .. "?")
 	else
 		metano_town_ch_2.Wooper_Siblings_Introduction()
 	end
@@ -199,11 +226,10 @@ end
 
 --dun
 function metano_town_ch_2.Wooper_Boy_Action(chara, activator)
-	local dee = CH('Wooper_Girl')
-	local dun = CH('Wooper_Boy')
+	local dun = chara
 	if SV.Chapter2.WooperIntro then
 		UI:SetSpeaker(dun)
-		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
+		UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. CharacterEssentials.GetCharacterName("Wooper_Girl") .. "?")
 	else
 		metano_town_ch_2.Wooper_Siblings_Introduction()
 	end
@@ -226,14 +252,14 @@ end
 		
 
 function metano_town_ch_2.Furret_Action(chara, activator)
-	local furret = CH('Furret')
+	local furret = chara
 	UI:SetSpeaker(furret)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Aaah...[pause=0] This is my favorite place to snooze~")
 end 
 
 function metano_town_ch_2.Meditite_Action(chara, activator)
-	local meditite = CH('Meditite')
+	local meditite = chara
 	UI:SetSpeaker(meditite)
 	UI:WaitShowDialogue("..........")
 	UI:WaitShowDialogue("..........")
@@ -264,7 +290,7 @@ function metano_town_ch_2.Gulpin_Action(chara, activator)
 	local olddir = gulpin.Direction
 	GROUND:CharTurnToChar(gulpin, CH('PLAYER'))
 	UI:SetSpeaker(gulpin)
-	UI:WaitShowDialogue("Normal")
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("...Huh?[pause=0] The café is closed...?")
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious smoothie today...")
@@ -320,7 +346,7 @@ function metano_town_ch_2.Gloom_Action(chara, activator)
 	UI:WaitShowDialogue("Wow![pause=0] You two are adventurers?[pause=0] That's so...!")
 	GROUND:CharSetEmote(chara, 5, 1)
 	UI:WaitShowDialogue("Oh![pause=0] Erm...[pause=0] I mean...")
-	UI:WaitShowDialogue("Pffft...[pause=0] Adventurers?[pause=0] That's...[pause=0] Uh...[pause=0] Stupid...")
+	UI:WaitShowDialogue("Pffft...[pause=0] Adventurers?[pause=0] That's...[pause=0] um...[pause=0] stupid!")
 	GROUND:EntTurn(chara, olddir)
 end 	
 	
@@ -332,5 +358,19 @@ function metano_town_ch_2.Oddish_Action(chara, activator)
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go...")
 	UI:WaitShowDialogue("I wanted to keep playing with him...")
+	GROUND:EntTurn(chara, olddir)
+end
+
+
+function metano_town_ch_2.Floatzel_Action(chara, activator)
+	UI:SetSpeaker(chara)
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("This here is the famous Metano Wishing Well.")
+	UI:WaitShowDialogue("They say that if you throw in a " .. STRINGS:Format("\\uE024") .. " and make a wish,[pause=10] it comes true every time!")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("But I'm starting to think that I was fed a fib...")
+	UI:WaitShowDialogue("I've been here all day throwing " .. STRINGS:Format("\\uE024") .. " in and nothing's happened!")
+	UI:WaitShowDialogue("Where's my big castle with a huge moat?[pause=0] Am I doing something wrong?")
 	GROUND:EntTurn(chara, olddir)
 end

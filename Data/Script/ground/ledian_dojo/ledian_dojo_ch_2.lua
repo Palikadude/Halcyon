@@ -7,17 +7,21 @@ ledian_dojo_ch_2 = {}
 
 --NOTE: Gible and Ledian appear on the map without needing to be spawned in.
 function ledian_dojo_ch_2.SetupGround()
-	
+	GAME:FadeIn(20)
 end
 
 
-
+--nothing to put here
 function ledian_dojo_ch_2.Sensei_Action(chara, activator)
 	
 end 
 
 function ledian_dojo_ch_2.Gible_Action(chara, activator)
-	
+	UI:SetSpeaker(chara)
+	local olddir = chara.Direction
+	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	UI:WaitShowDialogue("Isn't Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " amazing?")
+	GROUND:EntTurn(chara, olddir)
 end
 
 

@@ -72,17 +72,17 @@ end
 function ledian_dojo.PlotScripting()
 	--if a generic ending has been flagged, prioritize that
 	if SV.Dojo.LessonCompletedGeneric or SV.Dojo.TrainingCompletedGeneric or SV.Dojo.TrialCompletedGeneric or SV.Dojo.LessonFailedGeneric or SV.Dojo.TrainingFailedGeneric or SV.Dojo.TrialFailedGeneric then
-		if SV.Dojo.LessonCompletedGeneric
+		if SV.Dojo.LessonCompletedGeneric then
 			ledian_dojo.GenericLessonSuccess()
 		elseif SV.Dojo.TrainingCompletedGeneric then
 			ledian_dojo.GenericTrainingSuccess()
-		elseif SV.Dojo.TrialCompletedGeneric
+		elseif SV.Dojo.TrialCompletedGeneric then
 			ledian_dojo.GenericTrialSuccess()
-		elseif SV.Dojo.LessonFailedGeneric
+		elseif SV.Dojo.LessonFailedGeneric then
 			ledian_dojo.GenericLessonFailure()
-		elseif SV.Dojo.TrainingFailedGeneric
+		elseif SV.Dojo.TrainingFailedGeneric then
 			ledian_dojo.GenericTrainingFailure()
-		elseif SV.Dojo.TrialFailedGeneric
+		elseif SV.Dojo.TrialFailedGeneric then
 			ledian_dojo.GenericTrialFailure()
 		else --this shouldn't happen
 			GAME:FadeIn(20)
@@ -103,6 +103,10 @@ function ledian_dojo.PlotScripting()
 	end 
 end
 
+function ledian_dojo.Gible_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("ledian_dojo_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gible_Action(...,...)"), chara, activator))
+end
 
 function ledian_dojo.Sensei_Action(chara, activator)
 	DEBUG.EnableDbgCoro()
@@ -128,12 +132,17 @@ function ledian_dojo.Sensei_Action(chara, activator)
 		local result = UI:ChoiceResult()
 		repeated = true
 		if result == 1 then 
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Info_001']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Info_002']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Info_003']))
+		
+		elseif result == 2 then 
 			repeated = false
 			while state > -1 do
 				dojo_choices = {STRINGS:Format(MapStrings['Dojo_Menu_Training']),
 									  STRINGS:Format(MapStrings['Dojo_Menu_Lesson']),
 									  STRINGS:Format(MapStrings['Dojo_Menu_Trials']),
-									  STRINGS:FormatKey("Dojo_Menu_Back")}
+									  STRINGS:Format(MapStrings['Dojo_Menu_Back']),}
 				msg = STRINGS:Format(MapStrings['Dojo_Info_Prompt'])
 				if repeated == true then
 					msg = STRINGS:Format(MapStrings['Dojo_Info_Prompt_Return'])
@@ -148,18 +157,27 @@ function ledian_dojo.Sensei_Action(chara, activator)
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_003']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_004']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_005']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Training_Info_006']))
 				elseif result == 2 then
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_001']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_002']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_003']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_004']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_005']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_006']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_007']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_008']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Lesson_Info_009']))
 				elseif result == 3 then
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_001']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_002']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_003']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_004']))
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_005']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_006']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_007']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_008']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_Trial_Info_009']))
 				else 
 					state = -1
 				end
@@ -190,7 +208,7 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   if #open_dests == 1 then
       --single dungeon entry
       UI:ResetSpeaker()
-      SOUND:PlaySE("Menu/Skip")
+      --SOUND:PlaySE("Menu/Skip")
 	  UI:DungeonChoice(open_dests[1].Name, open_dests[1].Dest)
       UI:WaitForChoice()
       if UI:ChoiceResult() then
@@ -199,7 +217,7 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   elseif #open_dests > 1 then
     
     UI:ResetSpeaker()
-    SOUND:PlaySE("Menu/Skip")
+    --SOUND:PlaySE("Menu/Skip")
     UI:DestinationMenu(open_dests)
 	UI:WaitForChoice()
 	dest = UI:ChoiceResult()

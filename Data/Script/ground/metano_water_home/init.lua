@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_water_home.metano_water_home_ch_2'
 
 -- Package name
 local metano_water_home = {}
@@ -27,22 +28,14 @@ function metano_water_home.Init(map, time)
 	print('=>> Init_metano_water_home <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	
-
-	--set partner to follow us, disable his collision
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-	chara.CollisionDisabled = true
-
+	PartnerEssentials.InitializePartnerSpawn()
 end
 
 ---metano_water_home.Enter
 --Engine callback function
 function metano_water_home.Enter(map, time)
-	DEBUG.EnableDbgCoro()
-	print('Enter_metano_water_home')
-	GAME:FadeIn(20)
-	UI:ResetSpeaker()
+
+	metano_water_home.PlotScripting()
 
 end
 
@@ -58,6 +51,24 @@ end
 function metano_water_home.Update(map, time)
 
 
+end
+
+function metano_water_home.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_water_home.PlotScripting()
+end
+
+function metano_water_home.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+function metano_water_home.PlotScripting()
+	if SV.ChapterProgression.Chapter == 2 then 
+		metano_water_home_ch_2.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------
@@ -76,6 +87,27 @@ end
 ------------------
 --NPCS 
 ----------------
+function metano_water_home.Quagsire_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_water_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Quagsire_Action(...,...)"), chara, activator))
+end
+
+function metano_water_home.Floatzel_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_water_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Floatzel_Action(...,...)"), chara, activator))
+end
+
+function metano_water_home.Wooper_Girl_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_water_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Wooper_Girl_Action(...,...)"), chara, activator))
+end
+
+function metano_water_home.Wooper_Boy_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_water_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Wooper_Boy_Action(...,...)"), chara, activator))
+end
+
+
 function metano_water_home.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))end
