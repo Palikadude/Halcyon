@@ -768,12 +768,29 @@ function GeneralFunctions.SendInvToStorage()
 	GAME:RemoveFromPlayerMoney(money)
 	GAME:AddToPlayerMoneyBank(money)
 	
-	
-	
 	for i = 1, itemCount, 1 do
 		local item = GAME:GetPlayerBagItem(0)
 		GAME:TakePlayerBagItem(0)
 		GAME:GivePlayerStorageItem(item)
 	end
 end
+
+--have both player and partner turn towards chara at the same time
+--shortcut function
+function GeneralFunctions.DuoTurnTowardsChar(chara, turnFrames)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	turnFrames = turnFrames or 4
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, chara, 4) end)
+	local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+
+end 
+
+
+
+
 

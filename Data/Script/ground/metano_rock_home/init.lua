@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_rock_home.metano_rock_home_ch_2'
 
 -- Package name
 local metano_rock_home = {}
@@ -27,22 +28,14 @@ function metano_rock_home.Init(map, time)
 	print('=>> Init_metano_rock_home <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	
-
-	--set partner to follow us, disable his collision
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-	chara.CollisionDisabled = true
-
+	PartnerEssentials.InitializePartnerSpawn()
 end
 
 ---metano_rock_home.Enter
 --Engine callback function
 function metano_rock_home.Enter(map, time)
-	DEBUG.EnableDbgCoro()
-	print('Enter_metano_rock_home')
-	GAME:FadeIn(20)
-	UI:ResetSpeaker()
+
+	metano_rock_home.PlotScripting()
 
 end
 
@@ -58,6 +51,24 @@ end
 function metano_rock_home.Update(map, time)
 
 
+end
+
+function metano_rock_home.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_rock_home.PlotScripting()
+end
+
+function metano_rock_home.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+function metano_rock_home.PlotScripting()
+	if SV.ChapterProgression.Chapter == 2 then 
+		metano_rock_home_ch_2.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------
@@ -76,6 +87,24 @@ end
 ------------------
 --NPCS 
 ----------------
+function metano_rock_home.Medicham_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_rock_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Medicham_Action(...,...)"), chara, activator))
+end
+
+function metano_rock_home.Machamp_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_rock_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Machamp_Action(...,...)"), chara, activator))
+end
+
+function metano_rock_home.Meditite_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_rock_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Meditite_Action(...,...)"), chara, activator))
+end
+
+
+
+
 function metano_rock_home.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))end

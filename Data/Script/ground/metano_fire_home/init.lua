@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_fire_home.metano_fire_home_ch_2'
 
 -- Package name
 local metano_fire_home = {}
@@ -27,22 +28,14 @@ function metano_fire_home.Init(map, time)
 	print('=>> Init_metano_fire_home <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	
-
-	--set partner to follow us, disable his collision
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-	chara.CollisionDisabled = true
-
+	PartnerEssentials.InitializePartnerSpawn()
 end
 
 ---metano_fire_home.Enter
 --Engine callback function
 function metano_fire_home.Enter(map, time)
-	DEBUG.EnableDbgCoro()
-	print('Enter_metano_fire_home')
-	GAME:FadeIn(20)
-	UI:ResetSpeaker()
+
+	metano_fire_home.PlotScripting()
 
 end
 
@@ -58,6 +51,24 @@ end
 function metano_fire_home.Update(map, time)
 
 
+end
+
+function metano_fire_home.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_fire_home.PlotScripting()
+end
+
+function metano_fire_home.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+function metano_fire_home.PlotScripting()
+	if SV.ChapterProgression.Chapter == 2 then 
+		metano_fire_home_ch_2.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------
@@ -76,10 +87,22 @@ end
 ------------------
 --NPCS 
 ----------------
+function metano_fire_home.Camerupt_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_fire_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Camerupt_Action(...,...)"), chara, activator))
+end
+
+function metano_fire_home.Numel_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_fire_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Numel_Action(...,...)"), chara, activator))
+end
+
+
+
+
 function metano_fire_home.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
-end
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))end
 
 return metano_fire_home
 

@@ -220,6 +220,33 @@ local characters = {
 			skin = 0
 		},
 		
+	--Team Cadence
+		Spinda = {
+			species = 327,
+			nickname = '???',
+			instance = 'Spinda',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
+		Ludicolo = {
+			species = 272,
+			nickname = 'Miri',
+			instance = 'Ludicolo',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Roselia = {
+			species = 315,
+			nickname = '???',
+			instance = 'Roselia',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
 		
 	--Vendor/Shop NPCs
 		Kangaskhan = {
@@ -285,6 +312,14 @@ local characters = {
 			skin = 0
 		},
 		
+		Chatot = {
+			species = 441,
+			nickname = 'Falo',
+			instance = 'Chatot',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
 		
 	
 	
@@ -501,7 +536,7 @@ local characters = {
 		
 		Nidoran_M = {
 			species = 32,
-			nickname = '???',
+			nickname = 'Junior',
 			instance = 'Nidoran_M',
 			gender = Gender.Male,
 			form = 0,
@@ -512,12 +547,31 @@ local characters = {
 	--Town NPCs - Other
 		Sunflora = {
 			species = 192,
-			nickname = '???',
+			nickname = 'Ciel',
 			instance = 'Sunflora',
 			gender = Gender.Female,
 			form = 0,
 			skin = 0
 		},
+		
+		Azumarill = {
+			species = 184,
+			nickname = 'Loaf',
+			instance = 'Azumarill',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Mawile = {
+			species = 303,
+			nickname = 'Bria',
+			instance = 'Mawile',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+		
 		
 		Gulpin = {
 			species = 316,

@@ -396,11 +396,12 @@ function metano_town.Musician_Action(obj, activator)
   local chara = CH('Musician')
   UI:SetSpeaker(chara)
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_Intro']))
-  UI:ShowMusicMenu()
+  UI:ShowMusicMenu({'MAIN_001'})
   UI:WaitForChoice()
   local result = UI:ChoiceResult()
   if result ~= nil then
 	SV.base_town.Song = result--To do: rename this for specifically metano town map
+	GROUND:CharSetAnim(chara, 'Wiggle', true)
   end
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
 end
@@ -1543,6 +1544,22 @@ end
 function metano_town.Lickitung_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Lickitung_Action(...,...)"), obj, activator))
+end
+
+
+function metano_town.Roselia_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Roselia_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Spinda_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Spinda_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Ludicolo_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Ludicolo_Action(...,...)"), obj, activator))
 end
 
 
