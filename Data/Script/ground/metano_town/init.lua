@@ -212,8 +212,101 @@ end
 -- Shop/Useful NPCs
 -----------------------
 
---TO DO: Randomize the trades that the Kec shop has, as well as the swap shop. Will need to make function that randomizes some values in SV global vars (base_shop, base_trades)
+--TO DO: Randomize the trades that the Kec shop has, as well as the swap shop. Will need to make function that randomizes some values in SV global vars (DailyFlags.GreenKecleonStock, base_trades)
+function metano_town.GenerateGreenKecleonStock()
+	--generate random stock of items for green kec. Items generated are based on story progression (better items will crop up later in the story)
+	--Start with predefined list of weighted items, then generate a stock of several items from those lists
+	--Stocks are separated based on category (food, medicine, hold item, etc).
+	--Kec stock isn't totally random, it pulls a gauranteed number from each stock  (i.e. always 1 hold item a day, but which it is is random)
+	
+	local stock = {}
+	
+	
+	--TODO: Add more types of stock progressions later on 
+	--Basic Stock, early game
+	
+	--total weight = 100
+	local food_stock = {
+		{{Index =  1, Hidden = 0, Price = 50}, 82}, --Apple
+		{{Index = 76, Hidden = 0, Price = 600}, 1}, --Blue Gummi
+		{{Index = 77, Hidden = 0, Price = 600}, 1}, --Black Gummi
+		{{Index = 78, Hidden = 0, Price = 600}, 1}, --Clear Gummi
+		{{Index = 79, Hidden = 0, Price = 600}, 1}, --Grass Gummi
+		{{Index = 80, Hidden = 0, Price = 600}, 1}, --Green Gummi
+		{{Index = 81, Hidden = 0, Price = 600}, 1}, --Brown Gummi
+		{{Index = 82, Hidden = 0, Price = 600}, 1}, --Orange Gummi
+		{{Index = 83, Hidden = 0, Price = 600}, 1}, --Gold Gummi
+		{{Index = 84, Hidden = 0, Price = 600}, 1}, --Pink Gummi
+		{{Index = 85, Hidden = 0, Price = 600}, 1}, --Purple Gummi
+		{{Index = 86, Hidden = 0, Price = 600}, 1}, --Red Gummi
+		{{Index = 87, Hidden = 0, Price = 600}, 1}, --Royal Gummi
+		{{Index = 88, Hidden = 0, Price = 600}, 1}, --Silver Gummi
+		{{Index = 89, Hidden = 0, Price = 600}, 1}, --White Gummi
+		{{Index = 90, Hidden = 0, Price = 600}, 1}, --Yellow Gummi
+		{{Index = 91, Hidden = 0, Price = 600}, 1}, --Sky Gummi
+		{{Index = 92, Hidden = 0, Price = 600}, 1}, --Gray Gummi
+		{{Index = 93, Hidden = 0, Price = 600}, 1}	--Magenta Gummi
+	}
+	
+	--total weight = 120
+	local medicine_stock = {
+		{{Index = 101, Hidden = 0, Price = 800}, 10},--Reviver seed 
+		{{Index = 108, Hidden = 0, Price = 100}, 5}, --Warp Seed 
+		{{Index = 110, Hidden = 0, Price = 100}, 5}, --Sleep seed 
+		{{Index = 111, Hidden = 0, Price = 200}, 2}, --Vile seed 
+		{{Index = 112, Hidden = 0, Price = 50}, 8}, --Blast seed
+		
+		{{Index = 11, Hidden = 0, Price = 50}, 25}, --Leppa berry 
 
+		
+		{{Index = 10, Hidden = 0, Price = 50}, 32}, --Oran berry
+		{{Index = 12, Hidden = 0, Price = 100}, 2}, --Lum berry 
+		{{Index = 13, Hidden = 0, Price = 100}, 6}, -- Cheri berry 
+		{{Index = 14, Hidden = 0, Price = 100}, 4}, -- Chesto berry 
+		{{Index = 15, Hidden = 0, Price = 100}, 8}, -- Pecha berry 
+		{{Index = 16, Hidden = 0, Price = 100}, 3}, -- Aspear berry 
+		{{Index = 17, Hidden = 0, Price = 100}, 4}, -- Rawst berry 
+		{{Index = 18, Hidden = 0, Price = 100}, 6} -- Persim berry 
+	}
+	
+	
+	local ammo_stock = 
+	{
+		{{Index = 200, Hidden = 9, Price = 45}, 50},--stick 
+		{{Index = 203, Hidden = 9, Price = 45}, 50}--iron thorn 
+	}
+	
+	
+	local held_stock = {
+		{{Index = 400, Hidden = 0, Price = 1500}, 10}, -- power band 
+		{{Index = 401, Hidden = 0, Price = 1500}, 10}, --special band 
+		{{Index = 402, Hidden = 0, Price = 1500}, 10}, --defense scarf 
+		{{Index = 403, Hidden = 0, Price = 1500}, 10}, --Zinc band 
+		
+		{{Index = 2504, Hidden = 0, Price = 1500}, 10}, --Pecha Scarf
+		{{Index = 2505, Hidden = 0, Price = 1500}, 10}, --Cheri scarf 
+		{{Index = 2506, Hidden = 0, Price = 1500}, 10}, --Rawst scarf 
+		{{Index = 2507, Hidden = 0, Price = 1500}, 10}, --Aspear Scarf 
+		{{Index = 2508, Hidden = 0, Price = 1500}, 10}, --Insomnia scope
+		{{Index = 2509, Hidden = 0, Price = 1500}, 10}, --Persim Band
+		
+		{{Index = 329, Hidden = 0, Price = 3500}, 2} --Reunion cape 
+		
+	}
+	
+	
+	table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+
+	SV.DailyFlags.GreenKecleonStock = stock
+	
+end
 
 function metano_town.Shop_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
@@ -222,8 +315,14 @@ function metano_town.Shop_Action(obj, activator)
   local repeated = false
   local cart = {}
   local catalog = { }
-  for ii = 1, #SV.base_shop, 1 do
-	local base_data = SV.base_shop[ii]
+  
+  --generate stock if it hasn't been for the day 
+  if not SV.DailyFlags.GreenKecleonStockedRefreshed then 
+	metano_town.GenerateGreenKecleonStock()
+  end
+  
+  for ii = 1, #SV.DailyFlags.GreenKecleonStock, 1 do
+	local base_data = SV.DailyFlags.GreenKecleonStock[ii]
 	local item_data = { Item = RogueEssence.Dungeon.InvItem(base_data.Index,false,base_data.Hidden), Price = base_data.Price }
 	table.insert(catalog, item_data)
   end
@@ -322,7 +421,7 @@ function metano_town.Shop_Action(obj, activator)
 					end
 					for ii = #cart, 1, -1 do
 						table.remove(catalog, cart[ii])
-						table.remove(SV.base_shop, cart[ii])
+						table.remove(SV.DailyFlags.GreenKecleonStock, cart[ii])
 					end
 					
 					cart = {}

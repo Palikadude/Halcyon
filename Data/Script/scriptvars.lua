@@ -60,7 +60,13 @@ SV.DailyFlags =
   RedMerchantItem = -1,
   RedMerchantBought = false,
   GreenMerchantItem = -1,
-  GreenMerchantBought = false
+  GreenMerchantBought = false,
+  
+  GreenKecleonRefreshedStock = false,
+  GreenKecleonStock = {},
+  PurpleKecleonRefreshedStock = false,
+  PurpleKecleonStock = {}
+
 }
 
 --Flags that are reset once you leave the current map 
@@ -221,6 +227,7 @@ SV.base_shop = {
 	{ Index = 9, Hidden = 0, Price = 80},
 	{ Index = 11, Hidden = 0, Price = 80}
 }
+
 SV.base_trades = {
 	{ Item=902, ReqItem={-1,-1}},
 	{ Item=908, ReqItem={-1,-1}},

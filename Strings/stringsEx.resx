@@ -3394,6 +3394,34 @@
 	
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_1_TITLE" xml:space="preserve">
     <value>Welcome to the Beginner Lesson!</value>
     <comment>All data values below this and including this string are all Halcyon additions. These particular strings are for the first tutorial dungeon
@@ -3662,7 +3690,6 @@ Freeze: Frozen Pokémon cannot do anything and cannot be affected by attacks. Th
 Confusion: Confused Pokémon will choose a random direction moving or attacking. Watch out for friendly fire!
 Immobilization: Immobilized Pokémon cannot move. 
 Leech Seed: The seeder will drain some of the seeded Pokémon's HP periodically. Grass types can't be seeded.
-Most minor statuses can’t be cured, but some of them can such as Confusion.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
 	
@@ -3792,8 +3819,29 @@ As he is a volunteer, he won't be staying with you once you leave.
 
 
 
+  <data name="MSG_PECHA_SCARF" xml:space="preserve">
+    <value>{0} is protected from poisoning!</value>
+    <comment></comment>  </data>
+	
+  <data name="MSG_CHERI_SCARF" xml:space="preserve">
+    <value>{0} is protected from paralysis!</value>
+    <comment></comment>  </data>
 
+  <data name="MSG_RAWST_SCARF" xml:space="preserve">
+    <value>{0} is protected from burns!</value>
+    <comment></comment>  </data>
 
+  <data name="MSG_ASPEAR_SCARF" xml:space="preserve">
+    <value>{0} is protected from freezing!</value>
+    <comment></comment>  </data>
+	
+  <data name="MSG_INSOMNIASCOPE" xml:space="preserve">
+    <value>{0} is protected from sleep!</value>
+    <comment></comment>  </data>
+
+  <data name="MSG_PERSIM_BAND" xml:space="preserve">
+    <value>{0} is protected from confusion!</value>
+    <comment></comment>  </data>
 
 
 

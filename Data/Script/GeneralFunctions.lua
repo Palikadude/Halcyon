@@ -792,5 +792,31 @@ end
 
 
 
+--feed it a list of pairs of values and weights, it will return a value randomly with regards to the weights
+ --[[
+	Example:
+	local ammo_stock = 
+	{
+		{{Index = 200, Hidden = 9, Price = 45}, 50},--stick 
+		{{Index = 203, Hidden = 9, Price = 45}, 50}--iron thorn 
+	}
+	
+]]--
+function GeneralFunctions.WeightedRandom (weights)
+    local summ = 0
+    for i, value in pairs (weights) do
+        summ = summ + value[2]
+    end
+    if summ == 0 then return end
+    -- local value = math.random (summ) -- for integer weights only
+    local rand = summ*math.random ()
+    summ = 0
+    for i, value in pairs (weights) do
+        summ = summ + value[2]
+        if rand <= summ then
+            return value[1]--, weight
+        end
+    end
+end
 
 
