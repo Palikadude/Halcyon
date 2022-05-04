@@ -355,7 +355,7 @@ local characters = {
 		
 		Luxray = {
 			species = 405,
-			nickname = '???',
+			nickname = 'Rulux',
 			instance = 'Luxray',
 			gender = Gender.Male,
 			form = 0,
@@ -364,7 +364,7 @@ local characters = {
 	
 		Manectric = {
 			species = 310,
-			nickname = '???',
+			nickname = 'Camentra',
 			instance = 'Manectric',
 			gender = Gender.Female,
 			form = 0,
@@ -373,7 +373,7 @@ local characters = {
 		
 		Electrike = {
 			species = 309,
-			nickname = '???',
+			nickname = 'Cilec',
 			instance = 'Electrike',
 			gender = Gender.Male,
 			form = 0,

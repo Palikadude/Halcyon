@@ -65,6 +65,9 @@ function metano_town.PlotScripting()
 		end
 	elseif SV.ChapterProgression.Chapter == 2 then
 		metano_town_ch_2.SetupGround()
+		if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedMarketIntro then 
+			metano_town_ch_2.MarketIntro()
+		end
 	else
 		GAME:FadeIn(20)
 	end
@@ -212,7 +215,6 @@ end
 -- Shop/Useful NPCs
 -----------------------
 
---TO DO: Randomize the trades that the Kec shop has, as well as the swap shop. Will need to make function that randomizes some values in SV global vars (DailyFlags.GreenKecleonStock, base_trades)
 function metano_town.GenerateGreenKecleonStock()
 	--generate random stock of items for green kec. Items generated are based on story progression (better items will crop up later in the story)
 	--Start with predefined list of weighted items, then generate a stock of several items from those lists
@@ -227,70 +229,71 @@ function metano_town.GenerateGreenKecleonStock()
 	
 	--total weight = 100
 	local food_stock = {
-		{{Index =  1, Hidden = 0, Price = 50}, 82}, --Apple
-		{{Index = 76, Hidden = 0, Price = 600}, 1}, --Blue Gummi
-		{{Index = 77, Hidden = 0, Price = 600}, 1}, --Black Gummi
-		{{Index = 78, Hidden = 0, Price = 600}, 1}, --Clear Gummi
-		{{Index = 79, Hidden = 0, Price = 600}, 1}, --Grass Gummi
-		{{Index = 80, Hidden = 0, Price = 600}, 1}, --Green Gummi
-		{{Index = 81, Hidden = 0, Price = 600}, 1}, --Brown Gummi
-		{{Index = 82, Hidden = 0, Price = 600}, 1}, --Orange Gummi
-		{{Index = 83, Hidden = 0, Price = 600}, 1}, --Gold Gummi
-		{{Index = 84, Hidden = 0, Price = 600}, 1}, --Pink Gummi
-		{{Index = 85, Hidden = 0, Price = 600}, 1}, --Purple Gummi
-		{{Index = 86, Hidden = 0, Price = 600}, 1}, --Red Gummi
-		{{Index = 87, Hidden = 0, Price = 600}, 1}, --Royal Gummi
-		{{Index = 88, Hidden = 0, Price = 600}, 1}, --Silver Gummi
-		{{Index = 89, Hidden = 0, Price = 600}, 1}, --White Gummi
-		{{Index = 90, Hidden = 0, Price = 600}, 1}, --Yellow Gummi
-		{{Index = 91, Hidden = 0, Price = 600}, 1}, --Sky Gummi
-		{{Index = 92, Hidden = 0, Price = 600}, 1}, --Gray Gummi
-		{{Index = 93, Hidden = 0, Price = 600}, 1}	--Magenta Gummi
+		{1, 82}, --Apple
+		{76, 1}, --Blue Gummi
+		{77, 1}, --Black Gummi
+		{78, 1}, --Clear Gummi
+		{79, 1}, --Grass Gummi
+		{80, 1}, --Green Gummi
+		{81, 1}, --Brown Gummi
+		{82, 1}, --Orange Gummi
+		{83, 1}, --Gold Gummi
+		{84, 1}, --Pink Gummi
+		{85, 1}, --Purple Gummi
+		{86, 1}, --Red Gummi
+		{87, 1}, --Royal Gummi
+		{88, 1}, --Silver Gummi
+		{89, 1}, --White Gummi
+		{90, 1}, --Yellow Gummi
+		{91, 1}, --Sky Gummi
+		{92, 1}, --Gray Gummi
+		{93, 1}	--Magenta Gummi
 	}
 	
 	--total weight = 120
 	local medicine_stock = {
-		{{Index = 101, Hidden = 0, Price = 800}, 10},--Reviver seed 
-		{{Index = 108, Hidden = 0, Price = 100}, 5}, --Warp Seed 
-		{{Index = 110, Hidden = 0, Price = 100}, 5}, --Sleep seed 
-		{{Index = 111, Hidden = 0, Price = 200}, 2}, --Vile seed 
-		{{Index = 112, Hidden = 0, Price = 50}, 8}, --Blast seed
+		{101, 10},--Reviver seed 
+		{108, 5}, --Warp Seed 
+		{110, 5}, --Sleep seed 
+		{111, 2}, --Vile seed 
+		{112, 8}, --Blast seed
 		
-		{{Index = 11, Hidden = 0, Price = 50}, 25}, --Leppa berry 
+		{11, 25}, --Leppa berry 
 
 		
-		{{Index = 10, Hidden = 0, Price = 50}, 32}, --Oran berry
-		{{Index = 12, Hidden = 0, Price = 100}, 2}, --Lum berry 
-		{{Index = 13, Hidden = 0, Price = 100}, 6}, -- Cheri berry 
-		{{Index = 14, Hidden = 0, Price = 100}, 4}, -- Chesto berry 
-		{{Index = 15, Hidden = 0, Price = 100}, 8}, -- Pecha berry 
-		{{Index = 16, Hidden = 0, Price = 100}, 3}, -- Aspear berry 
-		{{Index = 17, Hidden = 0, Price = 100}, 4}, -- Rawst berry 
-		{{Index = 18, Hidden = 0, Price = 100}, 6} -- Persim berry 
+		{10, 32}, --Oran berry
+		{12, 2}, --Lum berry 
+		{13, 6}, -- Cheri berry 
+		{14, 4}, -- Chesto berry 
+		{15, 8}, -- Pecha berry 
+		{16, 3}, -- Aspear berry 
+		{17, 4}, -- Rawst berry 
+		{18, 6} -- Persim berry 
 	}
 	
 	
 	local ammo_stock = 
 	{
-		{{Index = 200, Hidden = 9, Price = 45}, 50},--stick 
-		{{Index = 203, Hidden = 9, Price = 45}, 50}--iron thorn 
+		{207, 50}, --Geo pebble 
+		{200, 50},--stick 
+		{203, 50}--iron thorn 
 	}
 	
 	
 	local held_stock = {
-		{{Index = 400, Hidden = 0, Price = 1500}, 10}, -- power band 
-		{{Index = 401, Hidden = 0, Price = 1500}, 10}, --special band 
-		{{Index = 402, Hidden = 0, Price = 1500}, 10}, --defense scarf 
-		{{Index = 403, Hidden = 0, Price = 1500}, 10}, --Zinc band 
+		{400, 10}, -- power band 
+		{401, 10}, --special band 
+		{402, 10}, --defense scarf 
+		{403, 10}, --Zinc band 
 		
-		{{Index = 2504, Hidden = 0, Price = 1500}, 10}, --Pecha Scarf
-		{{Index = 2505, Hidden = 0, Price = 1500}, 10}, --Cheri scarf 
-		{{Index = 2506, Hidden = 0, Price = 1500}, 10}, --Rawst scarf 
-		{{Index = 2507, Hidden = 0, Price = 1500}, 10}, --Aspear Scarf 
-		{{Index = 2508, Hidden = 0, Price = 1500}, 10}, --Insomnia scope
-		{{Index = 2509, Hidden = 0, Price = 1500}, 10}, --Persim Band
+		{2504, 10}, --Pecha Scarf
+		{2505, 10}, --Cheri scarf 
+		{2506, 10}, --Rawst scarf 
+		{2507, 10}, --Aspear Scarf 
+		{2508, 10}, --Insomnia scope
+		{2509, 10}, --Persim Band
 		
-		{{Index = 329, Hidden = 0, Price = 3500}, 2} --Reunion cape 
+		{329, 2} --Reunion cape 
 		
 	}
 	
@@ -304,8 +307,109 @@ function metano_town.GenerateGreenKecleonStock()
 	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
 	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
 
+	--set stock to randomized assortment and flag that the stock was refreshed for the day
+	SV.DailyFlags.GreenKecleonStockedRefreshed = true
 	SV.DailyFlags.GreenKecleonStock = stock
 	
+end
+
+function metano_town.GeneratePurpleKecleonStock()
+	--generate random stock of items for green kec. Items generated are based on story progression (better items will crop up later in the story)
+	--Start with predefined list of weighted items, then generate a stock of several items from those lists
+	--Stocks are separated based on category (food, medicine, hold item, etc).
+	--Kec stock isn't totally random, it pulls a gauranteed number from each stock  (i.e. always 1 hold item a day, but which it is is random)
+	
+	local stock = {}
+	
+	
+	--TODO: Add more types of stock progressions later on 
+	--Basic Stock, early game
+	
+	--total weight = 
+	--mostly meh TMs for early game 
+	local tm_stock = {
+		{587, 10},--secret power 
+		{588, 10},--embargo 
+		{589, 10},--echoed voice
+		{596, 5},--protect 
+		{598, 10},--roar 
+		{600, 10},--swagger 
+		{603, 10}, --facade 
+		{610, 10}, --payback 
+		{617, 2}, --dig 
+		{623, 10},--safeguard 
+		{625, 5}, --venoshock
+		{626, 5},--workup
+		{631, 5}, --thunder wave 
+		{632, 5},--return
+		{633, 5},--pluck 
+		{634, 5},--frustration
+		{638, 10},--thief 
+		{648, 2},--water pulse
+		{651, 2},--shock wave 
+		{670, 2},--incinerate 
+		{679, 4},--rock tomb 
+		{680, 10},--attract
+		{681, 8},--hidden power 
+		{682, 10},--taunt 
+		{689, 4},--grass knot 
+		{690, 2},--brick break 
+		{698, 5},--rest 
+	}
+	
+	--total weight = 
+	local wand_stock = {
+		{220, 10},--path wand 
+		{221, 10},--pounce wand 
+		{222, 10},--whirlwind wand 
+		{223, 10},--switcher wand 
+		{225, 10},--lure wand 
+		{226, 10},--slow wand 
+		{228, 10},--fear wand 
+		{231, 5},--topsy turvy wand 
+		{232, 5},--warp wand 
+		{233, 5},--purge wand 
+		{234, 10} --lob wand 
+	}
+	
+	
+	local orb_stock = 
+	{
+		{250, 50},--escape orb 
+		{263, 10},--cleanse orb 
+		
+		{273, 10},--petrify orb 
+		{271, 10},--slumber orb 
+		{272, 10},--totter orb 
+		{261, 10},--scanner orb
+		{253, 10},--luminous orb
+		{275, 10},--spurn orb 
+		{276, 10},--foe hold orb 
+		{286, 10},--foe seal orb 
+		{288, 15},--rollcall orb 
+		{259, 5}, --trawl orb 
+		{258, 10},--all aim orb
+		{254, 5}, --invert orb 
+		{256, 5} --fill in orb
+	}
+		
+	
+
+		
+	
+	
+	
+	table.insert(stock, GeneralFunctions.WeightedRandom(tm_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(orb_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(orb_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(orb_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(wand_stock))
+	table.insert(stock, GeneralFunctions.WeightedRandom(wand_stock))
+
+
+	--set stock to randomized assortment and flag that the stock was refreshed for the day
+	SV.DailyFlags.PurpleKecleonStockedRefreshed = true
+	SV.DailyFlags.PurpleKecleonStock = stock	
 end
 
 function metano_town.Shop_Action(obj, activator)
@@ -321,12 +425,16 @@ function metano_town.Shop_Action(obj, activator)
 	metano_town.GenerateGreenKecleonStock()
   end
   
+  --populate the catalog of items to buy using the generated stock. Item and hidden (amount of items in the stack typically) are grabbed from the item's predefined values in the item editor
   for ii = 1, #SV.DailyFlags.GreenKecleonStock, 1 do
-	local base_data = SV.DailyFlags.GreenKecleonStock[ii]
-	local item_data = { Item = RogueEssence.Dungeon.InvItem(base_data.Index,false,base_data.Hidden), Price = base_data.Price }
+  	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(SV.DailyFlags.GreenKecleonStock[ii])
+	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.GreenKecleonStock[ii], false, itemEntry.MaxStack)
+
+	--item price is 5 times the sell value. 
+	local item_data = { Item = item, Price = item:GetSellValue() * 5 }
 	table.insert(catalog, item_data)
   end
-  
+
   
   local chara = CH('Shop_Owner')
   UI:SetSpeaker(chara)
@@ -490,6 +598,210 @@ function metano_town.Shop_Action(obj, activator)
 	end
 end
 
+
+
+
+
+function metano_town.TM_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+    
+  local state = 0
+  local repeated = false
+  local cart = {}
+  local catalog = { }
+  
+  --generate stock if it hasn't been for the day 
+  if not SV.DailyFlags.PurpleKecleonStockedRefreshed then 
+	metano_town.GeneratePurpleKecleonStock()
+  end
+  
+  --populate the catalog of items to buy using the generated stock. Item and hidden (amount of items in the stack typically) are grabbed from the item's predefined values in the item editor
+  for ii = 1, #SV.DailyFlags.PurpleKecleonStock, 1 do
+  	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(SV.DailyFlags.PurpleKecleonStock[ii])
+	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.PurpleKecleonStock[ii], false, math.min(4, itemEntry.MaxStack))--only give 4 wands.
+
+	--item price is 5 times the sell value. 
+	local item_data = { Item = item, Price = item:GetSellValue() * 5 }
+	table.insert(catalog, item_data)
+  end
+
+  
+  local chara = CH('TM_Owner')
+  UI:SetSpeaker(chara)
+  
+	while state > -1 do
+		if state == 0 then
+			local msg = STRINGS:Format(MapStrings['Shop_Intro'])
+			if repeated then
+				msg = STRINGS:Format(MapStrings['Shop_Intro_Return'])
+			end
+			local shop_choices = {STRINGS:Format(MapStrings['Shop_Option_Buy']), STRINGS:Format(MapStrings['Shop_Option_Sell']),
+			STRINGS:FormatKey("MENU_INFO"),
+			STRINGS:FormatKey("MENU_EXIT")}
+			UI:BeginChoiceMenu(msg, shop_choices, 1, 4)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			repeated = true
+			if result == 1 then
+				if #catalog > 0 then
+					--TODO: use the enum instead of a hardcoded number
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy'], STRINGS:LocalKeyString(26)))
+					state = 1
+				else
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_Empty']))
+				end
+			elseif result == 2 then
+				local bag_count = GAME:GetPlayerBagCount()
+				if bag_count > 0 then
+					--TODO: use the enum instead of a hardcoded number
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Sell'], STRINGS:LocalKeyString(26)))
+					state = 3
+				else
+					UI:SetSpeakerEmotion("Angry")
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Bag_Empty']))
+					UI:SetSpeakerEmotion("Normal")
+				end
+			elseif result == 3 then
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_001']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_002']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_003']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_004']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_005']))
+			else
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Goodbye']))
+				state = -1
+			end
+		elseif state == 1 then
+			UI:ShopMenu(catalog)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			if #result > 0 then
+				local bag_count = GAME:GetPlayerBagCount()
+				local bag_cap = GAME:GetPlayerBagLimit()
+				if bag_count == bag_cap then
+					UI:SetSpeakerEmotion("Angry")
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Bag_Full']))
+					UI:SetSpeakerEmotion("Normal")
+				else
+					cart = result
+					state = 2
+				end
+			else
+				state = 0
+			end
+		elseif state == 2 then
+			local total = 0
+			for ii = 1, #cart, 1 do
+				total = total + catalog[cart[ii]].Price
+			end
+			local msg
+			if total > GAME:GetPlayerMoney() then
+				UI:SetSpeakerEmotion("Angry")
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_No_Money']))
+				UI:SetSpeakerEmotion("Normal")
+				state = 1
+			else
+				if #cart == 1 then
+					local name = catalog[cart[1]].Item:GetDisplayName()
+					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name)
+				else
+					msg = STRINGS:Format(MapStrings['Shop_Buy_Multi'], total)
+				end
+				UI:ChoiceMenuYesNo(msg, false)
+				UI:WaitForChoice()
+				result = UI:ChoiceResult()
+				
+				if result then
+					GAME:RemoveFromPlayerMoney(total)
+					for ii = 1, #cart, 1 do
+						local item = catalog[cart[ii]].Item
+						GAME:GivePlayerItem(item.ID, 1, false, item.HiddenValue)
+					end
+					for ii = #cart, 1, -1 do
+						table.remove(catalog, cart[ii])
+						table.remove(SV.DailyFlags.PurpleKecleonStock, cart[ii])
+					end
+					
+					cart = {}
+					SOUND:PlayBattleSE("DUN_Money")
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_Complete']))
+					state = 0
+				else
+					state = 1
+				end
+			end
+		elseif state == 3 then
+			UI:SellMenu()
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			
+			if #result > 0 then
+				cart = result
+				state = 4
+			else
+				state = 0
+			end
+		elseif state == 4 then
+			local total = 0
+			for ii = 1, #cart, 1 do
+				local item
+				if cart[ii].IsEquipped then
+					item = GAME:GetPlayerEquippedItem(cart[ii].Slot)
+				else
+					item = GAME:GetPlayerBagItem(cart[ii].Slot)
+				end
+				total = total + item:GetSellValue()
+			end
+			local msg
+			if #cart == 1 then
+				local item
+				if cart[1].IsEquipped then
+					item = GAME:GetPlayerEquippedItem(cart[1].Slot)
+				else
+					item = GAME:GetPlayerBagItem(cart[1].Slot)
+				end
+				msg = STRINGS:Format(MapStrings['Shop_Sell_One'], total, item:GetDisplayName())
+			else
+				msg = STRINGS:Format(MapStrings['Shop_Sell_Multi'], total)
+			end
+			UI:ChoiceMenuYesNo(msg, false)
+			UI:WaitForChoice()
+			result = UI:ChoiceResult()
+			
+			if result then
+				for ii = #cart, 1, -1 do
+					if cart[ii].IsEquipped then
+						GAME:TakePlayerEquippedItem(cart[ii].Slot)
+					else
+						GAME:TakePlayerBagItem(cart[ii].Slot)
+					end
+				end
+				SOUND:PlayBattleSE("DUN_Money")
+				GAME:AddToPlayerMoney(total)
+				cart = {}
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Sell_Complete']))
+				state = 0
+			else
+				state = 3
+			end
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function metano_town.Musician_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   local chara = CH('Musician')
@@ -579,6 +891,17 @@ function metano_town.Storage_Action(obj, activator)
 		end
 	end
 end 
+
+
+
+
+
+
+
+
+
+
+
 
 function metano_town.Bank_Action(obj, activator)
 	DEBUG.EnableDbgCoro()

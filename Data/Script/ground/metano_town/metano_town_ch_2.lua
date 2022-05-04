@@ -64,8 +64,11 @@ function metano_town_ch_2.SetupGround()
 		})
 		
 		GROUND:CharSetAnim(CH('Furret'), 'Sleep', true)
-	
-		GAME:FadeIn(20)
+		
+		--let the cutscene handle the fade in if it hasnt played yet
+		if SV.Chapter2.FinishedMarketIntro then 
+			GAME:FadeIn(20)
+		end 
 	else
 		GAME:FadeIn(20)
 	end
@@ -221,7 +224,7 @@ function metano_town_ch_2.MarketIntro()
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.CenterCamera({kangaskhan}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 2) end)
 
 	TASK:JoinCoroutines({coro1, coro2})
-	UI:WaitShowDialogue("That over there is " .. _DATA:GetMonster(green_kec.CurrentForm.Species).Name:ToLocal() .. " Storage.[pause=0] " .. kangaskhan:GetDisplayName() .. " will watch over any items we leave with her.")
+	UI:WaitShowDialogue("That over there is " .. _DATA:GetMonster(kangaskhan.CurrentForm.Species).Name:ToLocal() .. " Storage.[pause=0] " .. kangaskhan:GetDisplayName() .. " will watch over any items we leave with her.")
 	UI:WaitShowDialogue("If there's any items we don't want to lose,[pause=10] we can store them there.")
 	UI:WaitShowDialogue("This is also where Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " sent the items we had on us when we started training.")
 	UI:WaitShowDialogue("If we want to get those back,[pause=10] we'll need to speak with " .. kangaskhan:GetDisplayName() .. ".")
@@ -268,7 +271,7 @@ function metano_town_ch_2.MarketIntro()
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToChar(partner, hero)
 	GROUND:CharTurnToChar(hero, partner)
-	GeneralFunctions.CenterCamera({hero, partner}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 2)
+	GeneralFunctions.CenterCamera({hero, partner}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 3)
 	UI:WaitShowDialogue("I think there's a few other businesses in town,[pause=10] but these are the main ones anyway.")
 	UI:WaitShowDialogue("We should take a closer look at some of the stores here,[pause=10] then after let's head over to the west side of town.")
 	UI:WaitShowDialogue("That's where all the houses are.[pause=0] Most townfolk live over there.")
