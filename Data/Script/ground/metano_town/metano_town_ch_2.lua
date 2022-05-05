@@ -637,7 +637,7 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 	UI:WaitShowDialogue("Hey,[pause=10] " .. partner:GetDisplayName() .. "![pause=0] How's it going?")
 	GROUND:CharSetEmote(chara, 4, 0)
 	UI:SetSpeakerEmotion("Joyous")
-	UI:WaitShowDialogue("I heard the good news![pause=0] Congratulations on getting into the guild!")
+	UI:WaitShowDialogue("I heard the good news![pause=0] Congratulations on getting into the guild,[pause=10] the both of you!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(chara, -1, 0)
