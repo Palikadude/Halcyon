@@ -10,6 +10,7 @@ function metano_town_ch_2.SetupGround()
 	GROUND:Hide('Green_Merchant')
 	GROUND:Hide('Swap_Owner')
 	GROUND:Hide('Swap')
+	GROUND:Hide('Cafe_Entrance')
 	
 
 	if SV.Chapter2.FirstMorningMeetingDone and not SV.Chapter2.FinishedTraining then
@@ -41,7 +42,8 @@ function metano_town_ch_2.SetupGround()
 		
 		GAME:FadeIn(20)
 	elseif SV.Chapter2.FinishedTraining then 
-		local meditite = 
+		local meditite, luxray, machamp, furret, wooper_girl, wooper_boy, electrike, lickitung, gulpin, nidorina, gloom, numel, 
+			  oddish, bellossom, floatzel, roselia, spinda, ludicolo, mawile, azumarill = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Meditite', 552, 352, Direction.Down},
 				{'Luxray', 'Town_Seat_1'},
@@ -54,16 +56,24 @@ function metano_town_ch_2.SetupGround()
 				{'Gulpin', 1124, 628, Direction.UpRight},
 				{'Nidorina', 536, 208, Direction.UpLeft},
 				{'Gloom', 512, 184, Direction.DownRight},
-				{'Numel', 432, 436, Direction.Left},
-				{'Oddish', 404, 436, Direction.Right},
+				{'Numel', 432, 396, Direction.DownLeft},
+				{'Oddish', 408, 396, Direction.DownLeft},
 				{'Bellossom', 472, 608, Direction.UpLeft},
 				{'Floatzel', 714, 232, Direction.Up},
 				{'Roselia', 1204, 1128, Direction.Down},
 				{'Spinda', 1184, 1160, Direction.UpRight},
-				{'Ludicolo', 1224, 1160, Direction.UpLeft}
+				{'Ludicolo', 1224, 1160, Direction.UpLeft},
+				{'Mawile', 768, 600, Direction.Down},
+				{'Azumarill', 272, 1208, Direction.Left}
 		})
 		
-		GROUND:CharSetAnim(CH('Furret'), 'Sleep', true)
+		GROUND:CharSetAnim(furret, 'Sleep', true)
+		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(752, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(azumarill, "ai.ground_default", RogueElements.Loc(256, 1192), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		
+		--place numel inside oddish for introductory cutscene, so their circles sync up well
+		numel.CollisionDisabled = true
+		GROUND:TeleportTo(numel, oddish.Position.X, oddish.Position.Y, Direction.DownLeft)
 		
 		--let the cutscene handle the fade in if it hasnt played yet
 		if SV.Chapter2.FinishedMarketIntro then 
@@ -301,9 +311,225 @@ end
 
 
 function metano_town_ch_2.NumelCutscene()
+	local numel = CH('Numel')
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local machamp = CH('Machamp')
+	local luxray = CH('Luxray')
+	local oddish = CH('Oddish')
+	local meditite = CH('Meditite')
+	local camerupt = CharacterEssentials.MakeCharactersFromList({
+				{'Camerupt', 0, 0, Direction.Right}
+		})
+	--Hide Camerupt until she is ready to pop into frame 
+	GROUND:Hide('Camerupt')
+	GROUND:TeleportTo(camerupt, 248, 536, Direction.Right)
+	
+
+	GAME:CutsceneMode(true)
+	GROUND:CharSetAnim(machamp, "Idle", true)
+	GROUND:CharSetAnim(luxray, "Idle", true)
+	GROUND:CharSetAnim(meditite, "Idle", true)
+
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] look over there!")
+	SOUND:FadeOutBGM()
+	GAME:WaitFrames(20)
+	
+	--set this to true to stop their running 
+	local stopRunning = false
+	
+	
+	--they play tag until numel's mama calls for him 
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, numel, 4)
+												  GROUND:CharTurnToCharAnimated(hero, numel, 4) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(24)
+												  while not stopRunning do 
+													GeneralFunctions.RunInCircle(numel, 12, 2, false, false) end 
+													GeneralFunctions.EmoteAndPause(numel, "Exclaim", true) end)	
+	local coro3 = TASK:BranchCoroutine(function() while not stopRunning do 
+													GeneralFunctions.RunInCircle(oddish, 12, 2, false, false) end 
+													GROUND:MoveInDirection(oddish, Direction.DownLeft, 12, false, 2) 
+													GeneralFunctions.EmoteAndPause(oddish, "Exclaim", false) end)	
+	local coro4 = TASK:BranchCoroutine(function() GAME:MoveCamera(428, 464, GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 428, 464, 3), false)
+												  GAME:WaitFrames(20)
+												  SOUND:PlayBGM('Heartwarming.ogg', false)
+												  UI:SetSpeaker(oddish)
+												  UI:SetSpeakerEmotion("Happy")
+												  GROUND:CharSetEmote(oddish, 4, 0)
+												  UI:WaitShowTimedDialogue("Haha,[pause=10] you'll never catch me,[pause=10] " .. numel:GetDisplayName() .. "!", 60)
+												  GAME:WaitFrames(20)
+												  GROUND:CharSetEmote(oddish, -1, 0)
+												  GROUND:CharSetEmote(numel, 4, 0)
+												  UI:SetSpeaker(numel)
+												  UI:SetSpeakerEmotion("Happy")
+												  UI:WaitShowTimedDialogue("Yes I will![pause=30] I'm gonna getcha,[pause=10] " .. oddish:GetDisplayName() .. "!", 60)
+												  GAME:WaitFrames(20)
+												  GROUND:CharSetEmote(numel, -1, 0)
+												  UI:SetSpeaker(partner)
+												  UI:SetSpeakerEmotion("Happy")
+												  UI:WaitShowDialogue("Heh,[pause=10] some of the local children are playing tag.[pause=0] They're cute!")
+												  GAME:WaitFrames(20)
+												  GeneralFunctions.HeroDialogue(hero, "(Aww,[pause=10] that is pretty cute.[pause=0] They sure have a lot of energy!)", "Happy")
+												  GAME:WaitFrames(40)
+												  UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+												  UI:WaitShowTimedDialogue(numel:GetDisplayName() .. "!", 60)
+												  GROUND:Unhide("Camerupt")
+												  stopRunning = true end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(camerupt, 288, 536, false, 1)
+											GROUND:MoveToPosition(camerupt, 348, 476, false, 1)
+											GROUND:MoveToPosition(camerupt, 396, 476, false, 1)
+											GeneralFunctions.EightWayMove(camerupt, numel.Position.X, numel.Position.Y + 48, false, 1)
+											end)
+	
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(numel, camerupt, 4, Direction.Down) end)
+	
+	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(oddish, camerupt, 4, Direction.DownRight) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:WaitShowDialogue(numel:GetDisplayName() .. ",[pause=10] it's almost time for dinner,[pause=10] sweetie.")
+	UI:WaitShowDialogue("Did you finish all of your chores like I asked?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(numel)
+	GeneralFunctions.Hop(numel)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("No,[pause=10] I've been playing with " .. oddish:GetDisplayName() .. " all day.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	GeneralFunctions.EmoteAndPause(camerupt, "Notice", true)
+	UI:WaitShowDialogue("You haven't done them yet?")
+	UI:WaitShowDialogue("Well you better march home and take care of them right now,[pause=10] mister!")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(numel, "Exclaim", true)
+	GeneralFunctions.ShakeHead(numel)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Sad")
+	SOUND:FadeOutBGM()
+	UI:WaitShowDialogue("But I don't wanna![pause=0] I hate doing my chores!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue(numel:GetDisplayName() .. ",[pause=10] you know you need to help out around the house now...")
+	UI:WaitShowDialogue("Please don't make this difficult...")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.DoubleHop(numel)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Determined")
+	GROUND:CharSetEmote(numel, 1, 0)
+	UI:WaitShowDialogue("I don't care![pause=0] I hate having to do all these chores all the time!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharEndAnim(machamp)
+	GROUND:CharEndAnim(luxray)
+	
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(machamp, "Notice", false)
+											GROUND:CharTurnToCharAnimated(machamp, numel, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(luxray, "Notice", false)
+											GROUND:CharTurnToCharAnimated(luxray, numel, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(10)
+	GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4)
+	GeneralFunctions.EmoteAndPause(camerupt, "Sweating", true)
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(camerupt, numel, 4)
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue(numel:GetDisplayName() .. ",[pause=10] if you don't go home right now and finish your chores...[br]You won't be having any dinner tonight!")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(numel, "Exclaim", true)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("B-but...![pause=0] B-but...!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("No buts mister![pause=0] Now march!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("Not fair![pause=0] I'm sick of you telling me what to do all the time!")
+	UI:WaitShowDialogue("I wish I was big so I didn't have to listen to you anymore!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("Well,[pause=10] until that day,[pause=10] you have to do as I say!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("Hmmph!")
+	
+	GAME:WaitFrames(10)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(camerupt, "Walk", Direction.Left, Direction.Right, 12, 1, 2) 
+											GeneralFunctions.FaceMovingCharacter(camerupt, numel, 4, Direction.DownLeft) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(oddish, numel, 4, Direction.DownLeft) end)
+	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(machamp, numel, 4, Direction.DownLeft) end)
+	coro4 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(luxray, numel, 4, Direction.DownLeft) end)
+	local coro5 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(numel, 396, 476, true, 3)
+												  GROUND:MoveToPosition(numel, 348, 476, true, 3)
+												  GROUND:MoveToPosition(numel, 288, 536, true, 3)
+												  GROUND:MoveToPosition(numel, 248, 536, true, 3) end)
+												  
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(luxray, camerupt, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(machamp, camerupt, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(oddish, camerupt, 4) end)
+	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(camerupt, "Sweatdrop", true)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Sigh")
+	UI:WaitShowDialogue("Haaah...[pause=0] I don't know what I'm going to do with that boy...")
+	
+	GAME:WaitFrames(20)
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(camerupt, 396, 476, false, 1)
+											GROUND:MoveToPosition(camerupt, 348, 476, false, 1)
+											GROUND:MoveToPosition(camerupt, 288, 536, false, 1)
+											GROUND:MoveToPosition(camerupt, 248, 536, false, 1) end)	
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(oddish, camerupt, 4, Direction.Down) end)
+	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(machamp, camerupt, 4, Direction.DownLeft) end)
+	coro4 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(luxray, camerupt, 4, Direction.DownLeft) end)
 
 
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+
+	GAME:GetCurrentGround():RemoveTempChar(numel)
+	GAME:GetCurrentGround():RemoveTempChar(camerupt)
+	
+	GAME:WaitFrames(20)
+	
+	--player and partner lament on what they just saw, partner mentions they should head to the guild when player is ready to eat dinner
+	GeneralFunctions.PanCamera()
+
+	
 end
+
+
+
 
 
 --Growlithe himself is behind the desk, so there's an obj on the desk that we interact with to actually talk with him
@@ -312,6 +538,7 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 	GROUND:CharTurnToChar(growlithe, CH('PLAYER'))
 	UI:SetSpeaker(growlithe)
 	UI:WaitShowDialogue("What's that,[pause=10] ruff?[pause=0] You're looking for Ledian Dojo?")
+	GAME:WaitFrames(20)
 	GROUND:EntTurn(growlithe, Direction.DownRight)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(CH('Teammate1'), Direction.DownRight, 4) end)
@@ -321,12 +548,14 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	UI:WaitShowDialogue("It's through the ladder by the river over there!")
 	GAME:WaitFrames(20)
-	GROUND:EntTurn(growlithe, Direction.Right)
-	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(CH('Teammate1'), growlithe, 4) end)
-	local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(CH('PLAYER'), growlithe, 4) end)
-	local coro3 = TASK:BranchCoroutine(function() GAME:MoveCamera(0, 0, 180, true) end)
+	GAME:MoveCamera(0, 0, 180, true)
 
-	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GROUND:EntTurn(growlithe, Direction.Right)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(CH('Teammate1'), growlithe, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(CH('PLAYER'), growlithe, 4) end)
+
+	TASK:JoinCoroutines({coro1, coro2})
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Just cross the bridge,[pause=10] then head east,[pause=10] ruff!")
 	GROUND:EntTurn(growlithe, Direction.Right)
@@ -554,8 +783,8 @@ function metano_town_ch_2.Oddish_Action(chara, activator)
 	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go...")
-	UI:WaitShowDialogue("I wanted to keep playing with him...")
+	UI:WaitShowDialogue("I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go do his chores...")
+	UI:WaitShowDialogue("He's had to do a lot of chores lately...[pause=0] We don't get to play as much as we used to...")
 	GROUND:EntTurn(chara, olddir)
 end
 
@@ -575,10 +804,11 @@ end
 
 function metano_town_ch_2.Azumarill_Action(chara, activator)
 	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion("Happy")
 	local olddir = chara.Direction
 	GROUND:CharTurnToChar(chara, CH('PLAYER'))
 	UI:WaitShowDialogue(chara:GetDisplayName() .. " says that it is a beautiful day outside!")
-	UI:WaitShowDialogue(chara:GetDisplayName() .. " may even take a swim in the river later![pause=0] " .. chara:GetDisplayName() .. " enjoys the cool water!")
+	UI:WaitShowDialogue(chara:GetDisplayName() .. " may even take a swim in the river after dinner![pause=0] " .. chara:GetDisplayName() .. " enjoys the cool water!")
 	GROUND:EntTurn(chara, olddir)
 end 
 
@@ -647,6 +877,7 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("I'm excited for you too![pause=0] Apprenticing at the guild is a wonderful opportunity!")
 	UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
 	

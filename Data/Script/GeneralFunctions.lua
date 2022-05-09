@@ -820,3 +820,17 @@ function GeneralFunctions.WeightedRandom (weights)
 end
 
 
+--initially used for playing tag in numel cutscene, may have uses elsewhere
+function GeneralFunctions.RunInCircle(chara, duration, speed, clockwise, run)
+	local originalDir = chara.Direction
+	local numDir = GeneralFunctions.DirToNum(chara.Direction)
+	if clockwise then clockwise = 1 else clockwise = -1 end 
+	
+	for i = 0, 7, 1 do 
+		GROUND:MoveInDirection(chara, GeneralFunctions.NumToDir(numDir + (i * clockwise)), duration, run, speed)
+	end
+	
+	GROUND:EntTurn(chara, originalDir)
+	
+end
+
