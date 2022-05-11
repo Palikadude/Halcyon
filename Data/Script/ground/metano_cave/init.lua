@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_cave.metano_cave_ch_2'
 
 -- Package name
 local metano_cave = {}
@@ -28,6 +29,7 @@ function metano_cave.Init(map, time)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+	GROUND:CharSetAnim(CH('Sunflora'), "None", true) --sunflora is not happy and so does not bounce around with her idle anim 
 
 	GROUND:AddMapStatus(50)--darkness
 
@@ -88,6 +90,11 @@ end
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+
+function metano_cave.Sunflora_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_cave_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Sunflora_Action(...,...)"), chara, activator))
+end
 
 function metano_cave.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine

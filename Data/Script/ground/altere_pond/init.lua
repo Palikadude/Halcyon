@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.altere_pond.altere_pond_ch_1'
+require 'ground.altere_pond.altere_pond_ch_2'
 
 -- Package name
 local altere_pond = {}
@@ -44,7 +45,7 @@ function altere_pond.Enter(map)
 			altere_pond_ch_1.WipedInForest()
 		elseif SV.Chapter1.TeamCompletedForest then 
 			altere_pond_ch_1.PartnerHeroReturn()
-		end 
+		end 		
 	else
 		GAME:FadeIn(20)
 	end
@@ -79,16 +80,38 @@ function altere_pond.North_Exit_Touch(obj, activator)
   SV.partner.Spawn = 'Metano_Altere_Transition_South_Entrance_Marker_Partner'
 end
 
-
-
+--separate entrance to go into relic forest
+function altere_pond.East_Exit_Touch(obj, activator)
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+	if SV.ChapterProgression.Chapter == 2 then 
+		if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then
+			local partner = CH('Teammate1')
+			local hero = CH('PLAYER')
+			UI:SetSpeaker(partner)
+			GROUND:CharTurnToCharAnimated(partner, hero, 4)
+			UI:WaitShowDialogue("I don't think we have time to go into " .. zone:GetColoredName() .. " before dinner.")
+			GROUND:CharTurnToCharAnimated(hero, partner, 4)
+			UI:WaitShowDialogue("Let's some back when we have some free time to explore!")
+		end
+	else 
+		UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
+		UI:WaitForChoice()
+		yesnoResult = UI:ChoiceResult()
+		if yesnoResult then 
+			GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+		end
+	end
+	
+end 
 ------------------
 --NPCS 
 ----------------
 
-function altere_pond.Relicanth_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['test']))
+function altere_pond.Relicanth_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("altere_pond_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Relicanth_Action(...,...)"), obj, activator))
 end
+
 
 
 

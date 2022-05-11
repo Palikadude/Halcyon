@@ -21,6 +21,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	--print(partner:GetDisplayName())
 	GROUND:Hide(CH('PLAYER').EntName)
+	GROUND:Hide('East_Exit')--hide entrance prompt to go into relic forest 
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -193,6 +194,7 @@ function altere_pond_ch_1.WipedInForest()
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
+	GROUND:Hide('East_Exit')--hide entrance prompt to go into relic forest 
 	GAME:MoveCamera(840, 312, 1, false)
 	GROUND:TeleportTo(partner, 840, 336, Direction.Right)
 	GROUND:CharSetAnim(partner, 'EventSleep', true)
@@ -248,6 +250,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	local hero = CH('PLAYER')
 	GROUND:AddMapStatus(51)--dusk
 	GAME:CutsceneMode(true)
+	GROUND:Hide('East_Exit')--hide entrance prompt to go into relic forest 
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
 	GAME:MoveCamera(840, 312, 1, false)

@@ -163,6 +163,8 @@ SV.Chapter2 =
 	FinishedTraining = false,--finished the preliminary training at ledian dojo?
 	FinishedDojoCutscenes = false,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
 	FinishedMarketIntro = false,--partner showed the hero the market?
+	FinishedNumelTantrum = false,--watched numel's tantrum?
+	FinishedFirstDay = false,--finished first day of chapter 2?
 
 	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }
