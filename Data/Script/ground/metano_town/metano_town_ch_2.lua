@@ -91,7 +91,14 @@ function metano_town_ch_2.SetupGround()
 			GAME:GetCurrentGround():AddObject(tantrumBlock)
 			
 			if SV.Chapter2.FinishedTraining then --put a blockade in front of the guild if player has finished training but not numel scene
-			
+				local guildBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+												RogueElements.Rect(696, 896, 48, 8),
+												RogueElements.Loc(0, 0), 
+												true, 
+												"Event_Trigger_5")												
+				guildBlock:ReloadEvents()
+
+				GAME:GetCurrentGround():AddObject(guildBlock)
 			end
 		end 
 
@@ -150,7 +157,18 @@ function metano_town_ch_2.Event_Trigger_4_Touch(obj, activator)
 end
 
 
+function metano_town_ch_2.Event_Trigger_5_Touch(obj, activator)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] don't you want to look around town still?")
+	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+	UI:WaitShowDialogue("You should go meet some of the locals![pause=0] We still have a bit of time before dinner!")
 
+end
 
 
 
@@ -345,6 +363,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	local luxray = CH('Luxray')
 	local oddish = CH('Oddish')
 	local meditite = CH('Meditite')
+	local bellossom = CH('Bellossom')
 	local camerupt = CharacterEssentials.MakeCharactersFromList({
 				{'Camerupt', 0, 0, Direction.Right}
 		})
@@ -359,6 +378,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GROUND:CharSetAnim(machamp, "Idle", true)
 	GROUND:CharSetAnim(luxray, "Idle", true)
 	GROUND:CharSetAnim(meditite, "Idle", true)
+	GROUND:CharSetAnim(bellossom, "Idle", true)
 
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] look over there!")
@@ -458,19 +478,20 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	UI:SetSpeakerEmotion("Determined")
 	GROUND:CharSetEmote(numel, 1, 0)
 	UI:WaitShowDialogue("I don't care![pause=0] I hate having to do all these chores all the time!")
+	UI:WaitShowDialogue("I don't wanna do them anymore![pause=0] I wanna play with " .. oddish:GetDisplayName() .. "!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharEndAnim(machamp)
 	GROUND:CharEndAnim(luxray)
 	
 	
-	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(machamp, "Notice", false)
+	coro1 = TASK:BranchCoroutine(function() --GeneralFunctions.EmoteAndPause(machamp, "Notice", false)
 											GROUND:CharTurnToCharAnimated(machamp, numel, 4) end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(luxray, "Notice", false)
+	coro2 = TASK:BranchCoroutine(function() --GeneralFunctions.EmoteAndPause(luxray, "Notice", false)
 											GROUND:CharTurnToCharAnimated(luxray, numel, 4) end)
 	
 	TASK:JoinCoroutines({coro1, coro2})
-	GAME:WaitFrames(40)
+	GAME:WaitFrames(30)
 	GeneralFunctions.EmoteAndPause(camerupt, "Exclaim", true)
 	GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4)
 	GeneralFunctions.EmoteAndPause(camerupt, "Sweating", true)
@@ -483,7 +504,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GROUND:CharTurnToCharAnimated(camerupt, numel, 4)
 	GAME:WaitFrames(10)
 	UI:SetSpeakerEmotion("Determined")
-	UI:WaitShowDialogue(numel:GetDisplayName() .. ",[pause=10] if you don't go home right now and finish your chores...[br]You won't be having any dinner tonight!")
+	UI:WaitShowDialogue(numel:GetDisplayName() .. ",[pause=10] if you don't go home right now and finish your chores...[br]There'll be no dinner for you tonight mister!")
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(numel, "Exclaim", true)
@@ -599,6 +620,9 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GROUND:CharEndAnim(oddish)
 	GROUND:CharEndAnim(luxray)
 	GROUND:CharEndAnim(machamp)
+	GROUND:CharEndAnim(bellossom)
+	GROUND:CharEndAnim(meditite)
+	GROUND:Hide('Event_Trigger_5')--remove event trigger blocking you from entering the guild
 	SV.Chapter2.FinishedNumelTantrum = true
 	GAME:CutsceneMode(false)
 
@@ -612,10 +636,8 @@ end
 --Growlithe himself is behind the desk, so there's an obj on the desk that we interact with to actually talk with him
 function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 	local growlithe = CH('Growlithe')
-	GROUND:CharTurnToChar(growlithe, CH('PLAYER'))
-	UI:SetSpeaker(growlithe)
 	if not SV.Chapter2.FinishedTraining then 
-		UI:WaitShowDialogue("What's that,[pause=10] ruff?[pause=0] You're looking for Ledian Dojo?")
+		GeneralFunctions.StartConversation(growlithe, "What's that,[pause=10] ruff?[pause=0] You're looking for Ledian Dojo?")
 		GAME:WaitFrames(20)
 		GROUND:EntTurn(growlithe, Direction.DownRight)
 		
@@ -636,13 +658,14 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 		TASK:JoinCoroutines({coro1, coro2})
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Just cross the bridge,[pause=10] then head east,[pause=10] ruff!")
-		GROUND:EntTurn(growlithe, Direction.Right)
-	else 
-		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("Hope your training went well,[pause=10] ruff!")
+	elseif not SV.Chapter2.FinishedNumelTantrum then
+		GeneralFunctions.StartConversation(growlithe, "Hope your training went well,[pause=10] ruff!", "Happy")
+		UI:WaitShowDialogue("We've got a bit of time until dinner![pause=0] I hope " .. CharacterEssentials.GetCharacterName('Snubbull') .. " makes something yummy,[pause=10] ruff!")
+	else
+		GeneralFunctions.StartConversation(growlithe, "Hope your training went well,[pause=10] ruff!", "Happy")
 		UI:WaitShowDialogue("It's almost time for dinner,[pause=10] ruff![pause=0] Don't miss it or you'll go hungry!")
-		GROUND:EntTurn(growlithe, Direction.Right)
 	end
+	GeneralFunctions.EndConversation(growlithe)
 end
 
 
@@ -944,19 +967,10 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 	UI:SetSpeaker("Normal")
 	UI:WaitShowDialogue("This must be your partner then![pause=0]")
 	--]]
-	UI:SetSpeaker(chara)
+
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	local olddir = chara.Direction
-	GROUND:CharSetAnim(partner, 'None', true)
-	GROUND:CharSetAnim(hero, 'None', true)
-	GROUND:CharSetAnim(chara, 'None', true)
-	GROUND:CharTurnToChar(chara, partner)
-	GROUND:CharTurnToChar(partner, chara)
-	GROUND:CharTurnToChar(hero, chara)
-	
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Hey,[pause=10] " .. partner:GetDisplayName() .. "![pause=0] How's it going?")
+	GeneralFunctions.StartConversation(chara, "Hey,[pause=10] " .. partner:GetDisplayName() .. "![pause=0] How's it going?", "Happy")
 	GROUND:CharSetEmote(chara, 4, 0)
 	UI:SetSpeakerEmotion("Joyous")
 	UI:WaitShowDialogue("I heard the good news![pause=0] Congratulations on getting into the guild,[pause=10] the both of you!")
@@ -973,10 +987,7 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 	UI:WaitShowDialogue("I'm excited for you too![pause=0] Apprenticing at the guild is a wonderful opportunity!")
 	UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
 	
-	GROUND:CharEndAnim(chara)
-	GROUND:CharEndAnim(hero)
-	GROUND:CharEndAnim(partner)
-	GROUND:EntTurn(chara, olddir)
+	GeneralFunctions.EndConversation(chara)
 end
 
 

@@ -834,3 +834,44 @@ function GeneralFunctions.RunInCircle(chara, duration, speed, clockwise, run)
 	
 end
 
+--used to start a coroutine to have partner turn towards target NPC while having a conversation start.
+--also stops their animations 
+function GeneralFunctions.StartConversation(target, dialogue, emotion, speaker, animation, turnframes)
+	if emotion == nil then emotion = 'Normal' end
+	if speaker == nil then speaker = target end 
+	if animation == nil then animation = 'None' end 
+	if turnframes == nil then turnframes = 4 end
+	
+	
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	SV.TemporaryFlags.OldDirection = target.Direction
+	UI:SetSpeaker(speaker)
+	UI:SetSpeakerEmotion(emotion)
+	GROUND:CharSetAnim(partner, animation, true)
+	GROUND:CharSetAnim(hero, animation, true)
+	GROUND:CharSetAnim(target, animation, true)
+		
+	GROUND:CharTurnToChar(hero, target)
+	GROUND:CharTurnToChar(target, hero)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, target, turnframes) end)
+	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowDialogue(dialogue) end)
+
+	TASK:JoinCoroutines({coro1, coro2})
+	UI:WaitDialog()
+	
+end 
+
+--call this at the end of an npc conversation, sister function of above StartConversation function 
+function GeneralFunctions.EndConversation(target)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection)
+	SV.TemporaryFlags.OldDirection = Direction.None -- Clear flag 
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(target)
+end
+
+
+

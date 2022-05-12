@@ -69,11 +69,10 @@ SV.DailyFlags =
 
 }
 
---Flags that are reset once you leave the current map 
---maybe replace with LTBL? see example in test_grounds
+--Generic use flags 
 SV.TemporaryFlags = 
 {
-
+	OldDirection = Direction.None--Used for remembering which way an NPC was facing before turning to speak to you
 }
 
 
