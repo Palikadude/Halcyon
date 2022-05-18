@@ -848,6 +848,7 @@ function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, 
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	--AI:DisableCharacterAI(partner)
+	partner.IsInteracting = true
 	SV.TemporaryFlags.OldDirection = target.Direction
 	UI:SetSpeaker(speaker)
 	UI:SetSpeakerEmotion(emotion)
@@ -879,6 +880,7 @@ function GeneralFunctions.EndConversation(target, changeNPCanimation)
 	if changeNPCanimation then GROUND:CharEndAnim(target) end
 	
 	--AI:EnableCharacterAI(partner)
+	partner.IsInteracting = false
 	--AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 
 end
