@@ -28,10 +28,3 @@ function metano_water_home_ch_2.Quagsire_Action(chara, activator)
 	GROUND:EntTurn(chara, olddir)
 end 
 
-function metano_water_home_ch_2.Floatzel_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Placeholder.")
-	GROUND:EntTurn(chara, olddir)
-end

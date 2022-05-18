@@ -161,6 +161,11 @@ function guild_second_floor.Zigzagoon_Action(chara, activator)
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), chara, activator))
 end
 
+function guild_second_floor.Audino_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Audino_Action(...,...)"), chara, activator))
+end
+
 function guild_second_floor.Marill_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Marill_Action(...,...)"), chara, activator))
@@ -194,6 +199,16 @@ end
 function guild_second_floor.Zangoose_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zangoose_Action(...,...)"), chara, activator))
+end
+
+function guild_second_floor.Bagon_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Bagon_Action(...,...)"), chara, activator))
+end
+
+function guild_second_floor.Doduo_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Doduo_Action(...,...)"), chara, activator))
 end
 
 

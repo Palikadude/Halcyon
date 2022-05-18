@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_altere_transition.metano_altere_transition_ch_1'
+require 'ground.metano_altere_transition.metano_altere_transition_ch_2'
 
 -- Package name
 local metano_altere_transition = {}
@@ -66,6 +67,8 @@ function metano_altere_transition.PlotScripting()
   --plot scripting
   if SV.ChapterProgression.Chapter == 1 then
 	metano_altere_transition_ch_1.HeartToHeartCutscene()
+  elseif SV.ChapterProgression.Chapter == 2 then
+	metano_altere_transition_ch_2.SetupGround()
   else
 	GAME:FadeIn(20)
   end

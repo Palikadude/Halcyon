@@ -9,19 +9,39 @@ guild_second_floor_ch_2 = {}
 
 function guild_second_floor_ch_2.SetupGround()
 	
-	local zangoose, seviper = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Zangoose', 'Right_Duo_1'},
-			{'Seviper', 'Right_Duo_2'},
-			{'Zigzagoon', 'Left_Solo'}
-		})
+	if not SV.Chapter2.FinishedTraining then 
+		--day 1: before training 
 		
-	GROUND:CharSetAnim(zangoose, 'Idle', true)
-	GROUND:CharSetAnim(seviper, 'Idle', true)
+		local zangoose, seviper = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Zangoose', 'Right_Duo_1'},
+				{'Seviper', 'Right_Duo_2'},
+				{'Zigzagoon', 'Left_Solo'}
+			})
+			
+		GROUND:CharSetAnim(zangoose, 'Idle', true)
+		GROUND:CharSetAnim(seviper, 'Idle', true)
 
 
-	AI:SetCharacterAI(zangoose, "ai.ground_talking", false, 240, 60, 210, false, 'Angry', {seviper})
-	AI:SetCharacterAI(seviper, "ai.ground_talking", false, 240, 180, 110, false, 'Angry', {zangoose})
+		AI:SetCharacterAI(zangoose, "ai.ground_talking", false, 240, 60, 210, false, 'Angry', {seviper})
+		AI:SetCharacterAI(seviper, "ai.ground_talking", false, 240, 180, 110, false, 'Angry', {zangoose})
+
+	elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then 
+		--day 1: after training
+		local bagon, doduo, audino = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Doduo', 'Left_Duo_1'},
+				{'Bagon', 'Left_Duo_2'},
+				{'Audino', 'Generic_Spawn_6'}
+			})
+
+		AI:SetCharacterAI(bagon, "ai.ground_talking", false, 240, 60, 210, true, 'default', {doduo})
+		AI:SetCharacterAI(doduo, "ai.ground_talking", false, 240, 180, 110, true, 'default', {bagon})
+		
+		AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(432, 288), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+
+
+	end
 	
 	GAME:FadeIn(20)
 end
@@ -95,8 +115,31 @@ function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
 	GROUND:EntTurn(zigzagoon, Direction.Up)
 end
 
+function guild_second_floor_ch_2.Bagon_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "We're Team [color=#FFA5FF]Flight[color]![pause=0] We're an adventuring team that loves the sky!")
+	UI:WaitShowDialogue("I can't fly yet myself,[pause=10] but my partner " .. CharacterEssentials.GetCharacterName('Doduo') .. " is a master of flying!")
+	UI:WaitShowDialogue("I can't wait to soar the skies like him one day!")
+	GeneralFunctions.EndConversation(chara)
+end
 
+function guild_second_floor_ch_2.Doduo_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "We came here to get some jobs,[pause=10] but we got here a bit later than we'd have liked to.")
+	UI:WaitShowDialogue("We would have flown us here in a jiffy,[pause=10] but,[pause=10] erm...")
+	UI:SetSpeakerEmotion("Stunned")
+	GROUND:CharSetEmote(chara, 5, 1)
+	UI:WaitShowDialogue("Our...[pause=0] wings were too tired after flying around all day.[pause=0] So we and " .. CharacterEssentials.GetCharacterName("Bagon") .." had to walk.")
+	GeneralFunctions.EndConversation(chara)
+end
 
+function guild_second_floor_ch_2.Audino_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "H-hey you two![pause=0] Hope your first day w-went well!", "Happy")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("I'm almost finished updating the job boards.")
+	UI:WaitShowDialogue("Just need that l-last team to leave so I can update that board.")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Hopefully they don't take too long...[pause=0] It's almost dinner time,[pause=10] and I'm f-famished!")
+	GeneralFunctions.EndConversation(chara)
 	
+end 	
 
 return guild_second_floor_ch_2

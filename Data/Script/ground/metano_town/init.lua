@@ -1,4 +1,5 @@
 require 'common'
+require 'GeneralFunctions'
 require 'PartnerEssentials'
 require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
@@ -108,9 +109,19 @@ end
 
 function metano_town.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("luminous_spring", "entrance_south")
-  SV.partner.Spawn = 'Default'
+  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+  UI:ResetSpeaker()
+  UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
+  UI:WaitForChoice()
+  local yesnoResult = UI:ChoiceResult()
+  if yesnoResult then 
+	GAME:FadeOut(false, 20)
+	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+  end
+end
+
+function metano_town.East_Exit_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 end
 
 function metano_town.South_Exit_Touch(obj, activator)
@@ -190,6 +201,14 @@ function metano_town.Dojo_Entrance_Touch(obj, activator)
   SV.partner.Spawn = 'Default'
 end
 
+function metano_town.Post_Office_Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:FadeOut(false, 20)
+  GAME:EnterGroundMap("post_office", "Main_Entrance_Marker")
+  SV.partner.Spawn = 'Default'
+end
+
+
 
 
 
@@ -203,12 +222,6 @@ function metano_town.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
-function metano_town.Mawile_Action(chara, activator)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
-  AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-  chara.CollisionDisabled = true
-end
 
 
 -----------------------
@@ -1806,6 +1819,16 @@ end
 function metano_town.Event_Trigger_5_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_5_Touch(...,...)"), obj, activator))
+end
+
+function metano_town.Event_Trigger_6_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_6_Touch(...,...)"), obj, activator))
+end
+
+function metano_town.Event_Trigger_7_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_7_Touch(...,...)"), obj, activator))
 end
 
 --------------------

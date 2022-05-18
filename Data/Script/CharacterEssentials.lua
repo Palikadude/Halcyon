@@ -248,6 +248,26 @@ local characters = {
 			skin = 0
 		},
 		
+	--Team Flight
+		Doduo = {
+			species = 84,
+			nickname = '???',
+			instance = 'Doduo',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		Bagon = {
+			species = 371,
+			nickname = '???',
+			instance = 'Bagon',
+			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+	
+		
 	--Vendor/Shop NPCs
 		Kangaskhan = {
 			species = 115,

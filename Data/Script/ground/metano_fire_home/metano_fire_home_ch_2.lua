@@ -19,9 +19,7 @@ function metano_fire_home_ch_2.SetupGround()
 end
 
 function metano_fire_home_ch_2.Camerupt_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Placeholder.")
-	GROUND:EntTurn(chara, olddir)
+	GeneralFunctions.StartConversation(chara, "That son of mine...[pause=0] I love him to pieces,[pause=10] but...", "Sad")
+	UI:WaitShowDialogue("He's been hard to handle lately...[pause=0] I don't know what to do with him...")
+	GeneralFunctions.EndConversation(chara)
 end 

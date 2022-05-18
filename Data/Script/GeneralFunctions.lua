@@ -836,42 +836,56 @@ end
 
 --used to start a coroutine to have partner turn towards target NPC while having a conversation start.
 --also stops their animations 
-function GeneralFunctions.StartConversation(target, dialogue, emotion, speaker, animation, turnframes)
+function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, changeNPCanimation, speaker, animation, turnframes)
 	if emotion == nil then emotion = 'Normal' end
 	if speaker == nil then speaker = target end 
+	if npcTurn == nil then npcTurn = true end--should NPC turn to face you?
+	if changeNPCanimation == nil then changeNPCanimation = true end--should NPC change their animation? useful for flying npcs too
 	if animation == nil then animation = 'None' end 
 	if turnframes == nil then turnframes = 4 end
 	
 	
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
+	--AI:DisableCharacterAI(partner)
 	SV.TemporaryFlags.OldDirection = target.Direction
 	UI:SetSpeaker(speaker)
 	UI:SetSpeakerEmotion(emotion)
 	GROUND:CharSetAnim(partner, animation, true)
 	GROUND:CharSetAnim(hero, animation, true)
-	GROUND:CharSetAnim(target, animation, true)
+	if changeNPCanimation then GROUND:CharSetAnim(target, animation, true) end
 		
-	GROUND:CharTurnToChar(hero, target)
-	GROUND:CharTurnToChar(target, hero)
-	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, target, turnframes) end)
-	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowDialogue(dialogue) end)
+    GROUND:CharTurnToChar(hero, target)
+    if npcTurn then GROUND:CharTurnToChar(target, hero) end
+    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, target, turnframes) end)
 
-	TASK:JoinCoroutines({coro1, coro2})
+    UI:WaitShowDialogue(dialogue)
+
+    TASK:JoinCoroutines({coro1})
 	UI:WaitDialog()
 	
 end 
 
 --call this at the end of an npc conversation, sister function of above StartConversation function 
-function GeneralFunctions.EndConversation(target)
+function GeneralFunctions.EndConversation(target, changeNPCanimation)
+	if changeNPCanimation == nil then changeNPCanimation = true end--should NPC change their animation? useful for flying npcs too
+
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection)
 	SV.TemporaryFlags.OldDirection = Direction.None -- Clear flag 
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)
-	GROUND:CharEndAnim(target)
+	if changeNPCanimation then GROUND:CharEndAnim(target) end
+	
+	--AI:EnableCharacterAI(partner)
+	--AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+
 end
+
+
+
+
 
 
 

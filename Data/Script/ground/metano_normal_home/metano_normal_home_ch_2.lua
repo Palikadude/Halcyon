@@ -18,11 +18,8 @@ function metano_normal_home_ch_2.SetupGround()
 end
 
 function metano_normal_home_ch_2.Linoone_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Placeholder.")
-	GROUND:EntTurn(chara, olddir)
+	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_normal_home_ch_2.Sentret_Action(chara, activator)

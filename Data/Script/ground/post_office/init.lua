@@ -1,4 +1,6 @@
 require 'common'
+require 'GeneralFunctions'
+require 'PartnerEssentials'
 
 local post_office = {}
 local MapStrings = {}
@@ -9,21 +11,22 @@ function post_office.Init(map)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_post_office")
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  GROUND:RefreshPlayer()
+  COMMON.RespawnAllies()
+  PartnerEssentials.InitializePartnerSpawn()
   
-  if SOUND:GetCurrentSong() ~= SV.base_town.Song then
-    SOUND:PlayBGM(SV.base_town.Song, true)
-  end
+  --if SOUND:GetCurrentSong() ~= SV.base_town.Song then
+  --  SOUND:PlayBGM(SV.base_town.Song, true)
+  --end
   
 end
 
 function post_office.Enter(map)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   
+  post_office.PlotScripting()
+  --[[
   local rescue = SV.General.Rescue
-  
-  GAME:FadeIn(20)
-  
+
   if rescue ~= nil then
     local chara = CH('Rescue_Owner')
 	UI:SetSpeaker(chara)
@@ -69,12 +72,24 @@ function post_office.Enter(map)
 	
     GAME:WaitFrames(1);
   end
-  
+  ]]--
 end
 
 function post_office.Update(map, time)
 end
 
+function post_office.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	post_office.PlotScripting()
+end
+
+function post_office.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+function post_office.PlotScripting()
+	GAME:FadeIn(20)
+end
 --------------------------------------------------
 -- Map Begin Functions
 --------------------------------------------------
@@ -85,9 +100,24 @@ end
 function post_office.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("base_camp_2", "entrance_post_office", true)
+  GAME:EnterGroundMap("metano_town", "Post_Office_Entrance_Marker")
+  SV.partner.Spawn = 'Post_Office_Entrance_Marker_Partner'
 end
 
+
+function post_office.Main_Desk_Action(obj, activator)
+	local chara = CH('Connect_Owner')
+	GeneralFunctions.StartConversation(chara, "We are still getting set up in here.[pause=0] Please come back again later!")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function post_office.Side_Desk_Action(obj, activator)
+	local chara = CH('Rescue_Owner')
+	GeneralFunctions.StartConversation(chara, "We are still getting set up in here.[pause=0] Please come back again later!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+--[[
 function post_office.Main_Desk_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 
@@ -345,6 +375,13 @@ function post_office.Side_Desk_Action(obj, activator)
 		-- begin rescue mission
 		GAME:EnterRescue(sos)
 	end
+end
+]]--
+
+
+function post_office.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
 return post_office

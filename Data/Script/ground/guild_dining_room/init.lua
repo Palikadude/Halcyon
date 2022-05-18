@@ -5,6 +5,8 @@
 ]]--
 -- Commonly included lua functions and data
 require 'common'
+require 'CharacterEssentials'
+require 'GeneralFunctions'
 require 'PartnerEssentials'
 require 'ground.guild_dining_room.guild_dining_room_ch_1'
 
@@ -81,6 +83,155 @@ function guild_dining_room.Snubbull_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("guild_dining_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), chara, activator))
 end
+
+
+
+
+
+----------------------------
+--
+----------------------------
+function guild_dining_room.Dinnertime(generic)
+	if generic == nil then generic = true end
+	
+	GAME:CutsceneMode(false)
+	SOUND:StopBGM()--cut the music if it hasn't been already, music should have been faded out by whatever leads into these scene though
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local tropius, noctowl, mareep, cranidos, girafarig, breloom, audino, snubbull, growlithe, zigzagoon =
+		CharacterEssentials.MakeCharactersFromList({
+			{'Tropius', 'Tropius'},
+			{'Noctowl', 'Noctowl'},
+			{'Mareep', 'Mareep'},
+			{'Cranidos', 'Cranidos'},
+			{'Girafarig', 'Girafarig'}, 
+			{'Breloom', 'Breloom'},
+			{'Audino', 'Audino'},
+			{'Snubbull', 'Snubbull'},
+			{'Growlithe', 'Growlithe'},
+			{'Zigzagoon', 'Zigzagoon'}
+		})
+	
+	AI:DisableCharacterAI(partner)
+
+	local nightWindow1 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
+													RogueElements.Rect(104, 56, 64, 64),
+													RogueElements.Loc(0, 0), 
+													false, 
+													"Window_Dinner_1")	
+	
+	local nightWindow2 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
+													RogueElements.Rect(248, 56, 64, 64),
+													RogueElements.Loc(0, 0), 
+													false, 
+													"Window_Dinner_2")
+													
+	nightWindow1:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(nightWindow1)
+	nightWindow2:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(nightWindow2)
+													
+
+	GROUND:CharSetAnim(hero, "Eat", true)
+	GROUND:CharSetAnim(partner, "Eat", true)
+	GROUND:CharSetAnim(tropius, "SpAttack", true)
+	GROUND:CharSetAnim(noctowl, "SpAttack", true)
+	GROUND:CharSetAnim(cranidos, "Eat", true)
+	GROUND:CharSetAnim(mareep, "Eat", true)
+	GROUND:CharSetAnim(girafarig, "SpAttack", true)
+	GROUND:CharSetAnim(breloom, "SpAttack", true)
+	GROUND:CharSetAnim(audino, "SpAttack", true)
+	GROUND:CharSetAnim(snubbull, "Eat", true)
+	GROUND:CharSetAnim(growlithe, "SpAttack", true)
+	GROUND:CharSetAnim(zigzagoon, "Eat", true)
+	
+	GROUND:CharSetEmote(hero, 10, 0)
+	GROUND:CharSetEmote(partner, 10, 0)
+	GROUND:CharSetEmote(tropius, 10, 0)
+	GROUND:CharSetEmote(noctowl, 10, 0)
+	GROUND:CharSetEmote(cranidos, 10, 0)
+	GROUND:CharSetEmote(mareep, 10, 0)
+	GROUND:CharSetEmote(girafarig, 10, 0)
+	GROUND:CharSetEmote(breloom, 10, 0)
+	GROUND:CharSetEmote(audino, 10, 0)
+	GROUND:CharSetEmote(snubbull, 10, 0)
+	GROUND:CharSetEmote(growlithe, 10, 0)
+	GROUND:CharSetEmote(zigzagoon, 10, 0)
+	
+	
+	GROUND:Unhide('Food_Hero')
+	GROUND:Unhide('Food_Partner')
+	GROUND:Unhide('Food_Tropius')
+	GROUND:Unhide('Food_Mareep')
+	GROUND:Unhide('Food_Noctowl')
+	GROUND:Unhide('Food_Cranidos')
+	GROUND:Unhide('Food_Breloom')
+	GROUND:Unhide('Food_Girafarig')
+	GROUND:Unhide('Food_Snubbull')
+	GROUND:Unhide('Food_Audino')
+	GROUND:Unhide('Food_Growlithe')
+	GROUND:Unhide('Food_Zigzagoon')
+	GROUND:Unhide('Food_Big')
+	
+	--disable collision, then teleport them to their markers as they won't be pushed out anymore
+	hero.CollisionDisabled = true
+	partner.CollisionDisabled = true
+	tropius.CollisionDisabled = true
+	noctowl.CollisionDisabled = true
+	growlithe.CollisionDisabled = true
+	zigzagoon.CollisionDisabled = true
+	mareep.CollisionDisabled = true
+	cranidos.CollisionDisabled = true
+	breloom.CollisionDisabled = true
+	girafarig.CollisionDisabled = true
+	audino.CollisionDisabled = true
+	snubbull.CollisionDisabled = true
+	
+	GROUND:TeleportTo(hero, MRKR('Hero').Position.X, MRKR('Hero').Position.Y, MRKR('Hero').Direction)
+	GROUND:TeleportTo(partner, MRKR('Partner').Position.X, MRKR('Partner').Position.Y, MRKR('Partner').Direction)
+	GROUND:TeleportTo(tropius, MRKR('Tropius').Position.X, MRKR('Tropius').Position.Y, MRKR('Tropius').Direction)
+	GROUND:TeleportTo(noctowl, MRKR('Noctowl').Position.X, MRKR('Noctowl').Position.Y, MRKR('Noctowl').Direction)
+	GROUND:TeleportTo(growlithe, MRKR('Growlithe').Position.X, MRKR('Growlithe').Position.Y, MRKR('Growlithe').Direction)
+	GROUND:TeleportTo(zigzagoon, MRKR('Zigzagoon').Position.X, MRKR('Zigzagoon').Position.Y, MRKR('Zigzagoon').Direction)
+	GROUND:TeleportTo(mareep, MRKR('Mareep').Position.X, MRKR('Mareep').Position.Y, MRKR('Mareep').Direction)
+	GROUND:TeleportTo(cranidos, MRKR('Cranidos').Position.X, MRKR('Cranidos').Position.Y, MRKR('Cranidos').Direction)
+	GROUND:TeleportTo(breloom, MRKR('Breloom').Position.X, MRKR('Breloom').Position.Y, MRKR('Breloom').Direction)
+	GROUND:TeleportTo(girafarig, MRKR('Girafarig').Position.X, MRKR('Girafarig').Position.Y, MRKR('Girafarig').Direction)
+	GROUND:TeleportTo(audino, MRKR('Audino').Position.X, MRKR('Audino').Position.Y, MRKR('Audino').Direction)
+	GROUND:TeleportTo(snubbull, MRKR('Snubbull').Position.X, MRKR('Snubbull').Position.Y, MRKR('Snubbull').Direction)
+
+	GAME:MoveCamera(288, 168, 1, false)
+	
+	if generic then 
+		local stopEating = false 
+		UI:SetSpeaker('', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+		
+		SOUND:PlayBGM('Dinner Eating.ogg', true)
+		local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
+		local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(184, 168, 208, false)
+													  GAME:WaitFrames(120)
+													  stopEating = true end)
+		local coro3 = TASK:BranchCoroutine(function() while not stopEating do 
+														UI:WaitShowTimedDialogue("Crunch-munch! Om-nom! Chomp-chomp!\nCrunch-munch! Om-nom! Chomp-chomp!", 1)
+													  end
+													  SOUND:FadeOutBGM()
+													  GAME:FadeOut(false, 60)  end)
+		
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		GAME:CutsceneMode(false)
+		GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
+		SV.partner.Spawn = 'Default'
+	end 
+ 
+end 
+								
+
+
+
+
+
+
 
 ---------------------------
 -- Map Transitions

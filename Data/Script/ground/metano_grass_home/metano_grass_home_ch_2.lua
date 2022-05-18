@@ -16,9 +16,6 @@ function metano_grass_home_ch_2.SetupGround()
 end
 
 function metano_grass_home_ch_2.Vileplume_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Placeholder.")
-	GROUND:EntTurn(chara, olddir)
+	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.EndConversation(chara)
 end 
