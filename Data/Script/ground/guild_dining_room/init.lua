@@ -63,11 +63,16 @@ function guild_dining_room.GameSave(map)
 end
 
 function guild_dining_room.PlotScripting()
-	--plot scripting
-	if SV.ChapterProgression.Chapter == 1 then
-		guild_dining_room_ch_1.SetupGround()
+	--if dinnertime flag is set, play a generic dinnertime cutscene and override any other plotscripting logic
+	if SV.TemporaryFlags.Dinnertime then
+		guild_dining_room.Dinnertime(true)
 	else
-		GAME:FadeIn(20)
+		--plot scripting
+		if SV.ChapterProgression.Chapter == 1 then
+			guild_dining_room_ch_1.SetupGround()
+		else
+			GAME:FadeIn(20)
+		end
 	end
 end
 
@@ -134,15 +139,15 @@ function guild_dining_room.Dinnertime(generic)
 
 	GROUND:CharSetAnim(hero, "Eat", true)
 	GROUND:CharSetAnim(partner, "Eat", true)
-	GROUND:CharSetAnim(tropius, "SpAttack", true)
-	GROUND:CharSetAnim(noctowl, "SpAttack", true)
+	GROUND:CharSetAnim(tropius, "Eat", true)
+	GROUND:CharSetAnim(noctowl, "Eat", true)
 	GROUND:CharSetAnim(cranidos, "Eat", true)
 	GROUND:CharSetAnim(mareep, "Eat", true)
-	GROUND:CharSetAnim(girafarig, "SpAttack", true)
-	GROUND:CharSetAnim(breloom, "SpAttack", true)
+	GROUND:CharSetAnim(girafarig, "Eat", true)
+	GROUND:CharSetAnim(breloom, "Eat", true)
 	GROUND:CharSetAnim(audino, "SpAttack", true)
 	GROUND:CharSetAnim(snubbull, "Eat", true)
-	GROUND:CharSetAnim(growlithe, "SpAttack", true)
+	GROUND:CharSetAnim(growlithe, "Eat", true)
 	GROUND:CharSetAnim(zigzagoon, "Eat", true)
 	
 	GROUND:CharSetEmote(hero, 10, 0)
@@ -200,7 +205,7 @@ function guild_dining_room.Dinnertime(generic)
 	GROUND:TeleportTo(audino, MRKR('Audino').Position.X, MRKR('Audino').Position.Y, MRKR('Audino').Direction)
 	GROUND:TeleportTo(snubbull, MRKR('Snubbull').Position.X, MRKR('Snubbull').Position.Y, MRKR('Snubbull').Direction)
 
-	GAME:MoveCamera(288, 168, 1, false)
+	GAME:MoveCamera(288, 156, 1, false)
 	
 	if generic then 
 		local stopEating = false 
@@ -208,20 +213,22 @@ function guild_dining_room.Dinnertime(generic)
 		
 		SOUND:PlayBGM('Dinner Eating.ogg', true)
 		local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
-		local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(184, 168, 208, false)
+		local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(208, 156, 184, false)
 													  GAME:WaitFrames(120)
 													  stopEating = true end)
 		local coro3 = TASK:BranchCoroutine(function() while not stopEating do 
-														UI:WaitShowTimedDialogue("Crunch-munch! Om-nom! Chomp-chomp!\nCrunch-munch! Om-nom! Chomp-chomp!", 1)
+														UI:WaitShowTimedDialogue("Crunch-munch! Om-nom-nom! Chomp-chomp!\nCrunch-munch! Om-nom-nom! Chomp-chomp!", 1)
 													  end
 													  SOUND:FadeOutBGM()
-													  GAME:FadeOut(false, 60)  end)
+													  GAME:FadeOut(false, 120)  end)
 		
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
+		SV.TemporaryFlags.Dinnertime = false --clear flag
 		SV.partner.Spawn = 'Default'
+		GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
+	
 	end 
  
 end 

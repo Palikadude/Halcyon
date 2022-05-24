@@ -83,7 +83,7 @@ function guild_heros_room_ch_2.FirstMorning()
 											 GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) 
 											 GAME:WaitFrames(20)
 											 GeneralFunctions.LookAround(hero, 2, 4, false, false, false, Direction.DownLeft) end)
-	coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') 
+	coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') 
 											 GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 											 GAME:WaitFrames(20)
 											 GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.DownLeft) end)
@@ -151,8 +151,66 @@ function guild_heros_room_ch_2.FirstMorning()
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 
 	GAME:CutsceneMode(false)
-	
-	
-	
+		
 
+end
+
+function guild_heros_room_ch_2.FirstNightBedtalk()
+	GAME:FadeOut(false, 1)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GAME:CutsceneMode(true)
+	guild_heros_room.Bedtime(false)
+	UI:ResetSpeaker()
+	GROUND:CharSetAnim(hero, 'Laying', true)
+	GROUND:CharSetAnim(partner, 'Laying', true)
+	
+	--wait a bit after the transition from dinner scene before starting this one
+	GAME:WaitFrames(60)
+	--characters commenting on the dinner they just had while the screen is still faded out
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Tropius'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Great meal as always,[pause=10] " .. CharacterEssentials.GetCharacterName('Snubbull') .. "![pause=0] I can't eat another bite!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Breloom'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Yeah,[pause=10] my stomach's so full of " .. '"art"' .. " you could call it a museum!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Mareep'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Ba-a-a-a...[pause=0] It's getting late...[pause=0] Time to hit the\nha-a-a-ay![pause=0] Goodnight everyone!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Zigzagoon'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Yup![pause=0] See you all in the morning!")
+	GAME:WaitFrames(60)
+	
+	GAME:FadeIn(60)
+	GAME:WaitFrames(40)
+
+	SOUND:PlayBGM("Goodnight.ogg", true)
+	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("..." .. hero:GetDisplayName() .. ",[pause=10] still up?")
+	GAME:WaitFrames(20)
+	
+	UI:WaitShowDialogue("Today wasn't as exciting as I would have liked,[pause=10] but I guess we have to start somewhere.")
+	UI:WaitShowDialogue("We did get to learn a lot from Sensei " .. CharacterEssentials.GetCharacterName('Ledian') .. " though.")
+	UI:WaitShowDialogue("I hope she can teach us more...[br]We're going to need to learn and train as much as we can if we want to become great adventurers some day!")
+	
+	GAME:WaitFrames(40)
+	UI:WaitShowDialogue("Yawn...[pause=0] Well,[pause=10] staying up all night isn't going to help with that.[pause=0] Let's get some rest.")
+	UI:WaitShowDialogue("Here's hoping tomorrow is another great day.")
+	UI:WaitShowDialogue("Good night,[pause=10] " .. hero:GetDisplayName() .. ".")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetAnim(partner, 'EventSleep', true)
+	GAME:WaitFrames(10)
+	GROUND:CharSetAnim(hero, 'EventSleep', true)
+	GAME:WaitFrames(180)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 120)
+	GAME:WaitFrames(60)
+	SV.Chapter2.FinishedFirstDay = true
+	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
+	SV.TemporaryFlags.Morning = true
+	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 end

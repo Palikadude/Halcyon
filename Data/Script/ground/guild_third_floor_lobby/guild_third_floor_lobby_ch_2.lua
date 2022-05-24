@@ -236,14 +236,14 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	GROUND:CharSetEmote(breloom, 1, 0)
 	GROUND:CharSetEmote(audino, 1, 0)	
 	--todo: replace with poses when the animations for them exist
-	GROUND:CharPoseAnim(growlithe, "SpAttack")
-	GROUND:CharPoseAnim(zigzagoon, "SpAttack")
-	GROUND:CharPoseAnim(breloom, "SpAttack")
-	GROUND:CharPoseAnim(girafarig, "SpAttack")
-	GROUND:CharPoseAnim(cranidos, "SpAttack")
-	GROUND:CharPoseAnim(mareep, "SpAttack")
+	GROUND:CharPoseAnim(growlithe, "Pose")
+	GROUND:CharPoseAnim(zigzagoon, "Pose")
+	GROUND:CharPoseAnim(breloom, "Pose")
+	GROUND:CharPoseAnim(girafarig, "Pose")
+	GROUND:CharPoseAnim(cranidos, "Pose")
+	GROUND:CharPoseAnim(mareep, "Pose")
 	GROUND:CharPoseAnim(audino, "SpAttack")
-	GROUND:CharPoseAnim(snubbull, "SpAttack")	
+	GROUND:CharPoseAnim(snubbull, "Pose")	
 	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)	
 	UI:WaitShowDialogue("HURRAH!")
 	GAME:WaitFrames(20)
@@ -394,9 +394,259 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	
 end
 
+
+function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	--[[
+	--create characters
+	local snubbull, girafarig, breloom, tail = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Snubbull', 'Snubbull'},
+			{'Girafarig', 'Girafarig'},
+			{'Breloom', 'Breloom'},
+			{'Tail'})
+
+			
+	GAME:MoveCamera(232, 288, 1, false)
+	GROUND:TeleportTo(partner, 632, 336, Direction.Left)
+	GROUND:TeleportTo(hero, 680, 336, Direction.Left)
+	GAME:FadeIn(20)
+	
+	UI:SetSpeaker(breloom) 
+	UI:WaitShowDialogue("Hey,[pause=10] it's the new guys![pause=0] How was your first day on the job?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("It was good![pause=0] We trained at Ledian Dojo today.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(breloom)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Awesome![pause=0] You'll be exploring ancient ruins and saving Pokémon in danger in no time!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Haha,[pause=10] thanks![pause=0] I sure hope so!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("What are you two up to out here then?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(breloom)
+	UI:WaitShowDialogue(girafarig:GetDisplayName() .. " and I are waiting out here until " .. snubbull:GetDisplayName() .. " finishes cooking dinner.")
+	UI:WaitShowDialogue("We would wait at the dinner table,[pause=10] but " .. snubbull:GetDisplayName() .. " insists that nobody watch her while she cooks.")
+	UI:WaitShowDialogue("She doesn't want anyone disturbing her while she's " .. '"making art".')
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("She talked big about her food yesterday,[pause=10] but I didn't think she would go that far.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(girafarig)
+	UI:WaitShowDialogue("Yup,[pause=10] " .. snubbull:GetDisplayName() .. " takes her cooking very seriously.")
+	UI:WaitShowDialogue("I wish she didn't take so long though to finish dinner.")
+	UI:WaitShowDialogue("We've been waiting for quite a bit now![pause=0] " .. CharacterEssentials.GetCharacterName("Tail") .. " and I are starving!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(tail) 
+	UI:WaitShowDialogue(".........")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(breloom)
+	UI:WaitShowDialogue("It's worth the wait though.[pause=0] I don't know how she does it,[pause=10] but she makes great meals.")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Sometimes I even try to sneak in a midnight snack of some of the leftovers,[pause=10] heheh!")
+	]]--
+	
+	
+	--create characters
+	local snubbull, girafarig, breloom, zigzagoon, audino, tropius, noctowl, growlithe, cranidos, mareep = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Snubbull', 32, 332, Direction.Right},
+			{'Girafarig', 248, 332, Direction.Left},
+			{'Breloom', 212, 332, Direction.Right},
+			{'Zigzagoon', 200, 288, Direction.Down},
+			{'Audino', 420, 332, Direction.Left},
+			{'Tropius', 440, 332, Direction.Left},
+			{'Noctowl', 440, 332, Direction.Left},
+			{'Growlithe', 440, 288, Direction.Left},
+			{'Cranidos', 440, 312, Direction.Left},
+			{'Mareep', 440, 344, Direction.Left}
+			})
+
+			
+	GAME:MoveCamera(232, 288, 1, false)
+	GROUND:TeleportTo(hero, 420, 264, Direction.Left)
+	GROUND:TeleportTo(partner, 420, 296, Direction.Left)
+	GROUND:CharSetAnim(zigzagoon, "Idle", true)
+	GROUND:CharSetAnim(breloom, "Idle", true)
+	GROUND:CharSetAnim(girafarig, "Idle", true)
+	GAME:FadeIn(20)
+	
+	local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												  GROUND:MoveToPosition(hero, 264, 264, false, 1)
+												  GROUND:CharAnimateTurnTo(hero, Direction.DownLeft) end)
+	local coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 264, 296, false, 1) 
+												  GROUND:CharAnimateTurnTo(partner, Direction.DownLeft, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Looks like a few other guild members are waiting around here for dinner.")
+
+	GROUND:MoveToPosition(snubbull, 144, 332, false, 1)
+
+
+	--put a sfx here
+	UI:SetSpeaker(snubbull)
+	UI:WaitShowDialogue("Everyone![pause=0] Your attention please!")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, 3, 1)
+											GROUND:CharTurnToCharAnimated(partner, snubbull, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:CharSetEmote(hero, 2, 1)
+											GROUND:CharTurnToCharAnimated(partner, snubbull, 4) end)
+	local coro3 = TASK:BranchCoroutine(function() GROUND:CharSetEmote(girafarig, 2, 1)
+												  GROUND:CharEndAnim(girafarig)
+												  GROUND:CharTurnToCharAnimated(girafarig, snubbull, 4) end)	
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(30)
+											GROUND:CharSetEmote(breloom, 3, 1)
+											GROUND:CharEndAnim(breloom)
+											GROUND:CharTurnToCharAnimated(breloom, snubbull, 4) end)
+	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GROUND:CharSetEmote(zigzagoon, 3, 1)
+											GROUND:CharEndAnim(zigzagoon)
+											GROUND:CharTurnToCharAnimated(zigzagoon, snubbull, 4) end)
+											
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("My latest work of art is ready for the public.[pause=0] Follow me for the viewing,[pause=10] if you would. " .. STRINGS:Format("\\u266A"))
+	
+	--partner and hero are confused
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoubleHop(breloom) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+											GeneralFunctions.Hop(girafarig) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GeneralFunctions.DoubleHop(zigzagoon) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+
+	GROUND:CharSetAnim(zigzagoon, "Idle", true)
+	GROUND:CharSetAnim(breloom, "Idle", true)
+	GROUND:CharSetAnim(girafarig, "Idle", true)
+	
+	GROUND:CharSetEmote(zigzagoon, 1, 0)
+	GROUND:CharSetEmote(breloom, 1, 0)
+	GROUND:CharSetEmote(girafarig, 4, 0)
+	
+	SOUND:LoopBattleSE('EVT_Applause_Cheer')
+	UI:SetSpeaker(breloom:GetDisplayName() .. ', ' .. girafarig:GetDisplayName() .. ', & ' .. zigzagoon:GetDisplayName(), false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("HOORAY!")
+	SOUND:StopBattleSE('EVT_Applause_Cheer')
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(zigzagoon, -1, 0)
+	GROUND:CharSetEmote(breloom, -1, 0)
+	GROUND:CharSetEmote(girafarig, -1, 0)
+	GROUND:CharEndAnim(breloom)
+	GROUND:CharEndAnim(girafarig)
+	GROUND:CharEndAnim(zigzagoon)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(breloom, 0, 332, false, 2) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.EightWayMove(girafarig, 0, 332, false, 2) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(54)
+											GeneralFunctions.EightWayMove(zigzagoon, 0, 332, false, 2) end)
+	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(snubbull, Direction.Left, 4)
+											GeneralFunctions.EightWayMove(snubbull, 0, 332, false, 2) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.EmoteAndPause(hero, "Question", false) end)
+	local coro6 = TASK:BranchCoroutine(function() SOUND:PlayBattleSE('EVT_Emote_Confused')
+											GROUND:CharSetEmote(partner, 6, 1) 
+											UI:WaitShowTimedDialogue("Huh?[pause=30] Work of art?[pause=30] What's going on?", 60) end)
+	local coro7 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(audino, 232, 332, false, 1) end)
+	
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7})		
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(audino)
+	UI:SetSpeakerEmotion("Happy")
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(audino, partner, 4) 
+											UI:WaitShowDialogue("That's just how " .. snubbull:GetDisplayName() .. " lets everyone know it's dinnertime.")
+											UI:SetSpeakerEmotion("Normal")
+											UI:WaitShowDialogue("She v-very prideful when it comes to her cooking.[pause=0] She considers each meal she makes a work of art!") end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, audino, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Oh.[pause=0] That's a bit odd,[pause=10] but I guess I understand now.[pause=0] Well,[pause=10] in that case...")
+	
+
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:SetSpeakerEmotion("Happy")
+	GROUND:CharSetEmote(partner, 4, 0)
+	UI:WaitShowDialogue("Let's eat!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(partner, -1, 0)
+	GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
+	
+	--they walk off
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
+											GeneralFunctions.EightWayMove(audino, 0, 332, false, 1)
+											SOUND:FadeOutBGM()
+											GAME:FadeOut(false, 60) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(9)
+											GeneralFunctions.EightWayMove(hero, 264, 296, false, 1)
+											GeneralFunctions.EightWayMove(hero, 0, 332, false, 1) end)
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.DownLeft, 4)
+											GeneralFunctions.EightWayMove(partner, 0, 332, false, 1) end)
+	coro4 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(tropius, 130, 332, false, 1) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(32)
+											GeneralFunctions.EightWayMove(noctowl, 162, 332, false, 1) end)
+	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(120)
+											GROUND:MoveInDirection(growlithe, Direction.Left, 200, false, 1) end)
+	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(180)
+											GROUND:MoveInDirection(mareep, Direction.Left, 200, false, 1) end)
+	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(190)
+											GROUND:MoveInDirection(cranidos, Direction.Left, 200, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8})		
+
+	GAME:WaitFrames(20)
+	SV.TemporaryFlags.Dinnertime = true
+	GAME:CutsceneMode(false)
+	SV.partner.Spawn = 'Default'
+	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")
+
+
+end
+
+
+
 --used for having apprentices leave towards the stairs
 function guild_third_floor_lobby_ch_2.ApprenticeLeave(chara)
 	GeneralFunctions.EightWayMove(chara, 528, 280, false, 1)
 	GeneralFunctions.EightWayMove(chara, 608, 200, false, 1)
 	GAME:GetCurrentGround():RemoveTempChar(chara)
+
 end

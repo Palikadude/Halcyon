@@ -82,6 +82,8 @@ function guild_third_floor_lobby.PlotScripting()
 	elseif SV.ChapterProgression.Chapter == 2 then
 		if not SV.Chapter2.FirstMorningMeetingDone then
 			guild_third_floor_lobby_ch_2.FirstMorningMeeting()
+		elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then 
+			guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 		else
 			guild_third_floor_lobby_ch_2.SetupGround()
 		end

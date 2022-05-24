@@ -9,7 +9,7 @@ Audino - for making the engine, adding features that I needed for the game
 
 Edan Momu - guild exterior and partial interior sprite work
 D4yz - guild interior tilesets and original guild decorations pixel art
-
+Jaifain - Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Snubbull, Cranidos, Girafarig, and Zigzagoon
 
 
 Special thanks:

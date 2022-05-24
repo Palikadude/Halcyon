@@ -72,7 +72,9 @@ SV.DailyFlags =
 --Generic use flags 
 SV.TemporaryFlags = 
 {
-	OldDirection = Direction.None--Used for remembering which way an NPC was facing before turning to speak to you
+	OldDirection = Direction.None,--Used for remembering which way an NPC was facing before turning to speak to you
+	Dinnertime = false,--used to indicate whether generic dinner cutscene should be played on entering dining room
+	Morning = false--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
 }
 
 

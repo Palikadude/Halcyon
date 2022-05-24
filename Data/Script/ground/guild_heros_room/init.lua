@@ -64,21 +64,28 @@ function guild_heros_room.GameSave(map)
 end
 
 function guild_heros_room.PlotScripting()
-	--plot scripting
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
-			guild_heros_room_ch_1.RoomIntro()
-		else
-			GAME:FadeIn(20)
-		end		
-	elseif SV.ChapterProgression.Chapter == 2 then
-		if not SV.Chapter2.FirstMorningMeetingDone then 
-			guild_heros_room_ch_2.FirstMorning()
-		else
+	--if generic morning is flagged, prioritize that.
+	if SV.TemporaryFlags.Morning then 
+		guild_heros_room.Morning()
+	else
+		--plot scripting
+		if SV.ChapterProgression.Chapter == 1 then
+			if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then
+				guild_heros_room_ch_1.RoomIntro()
+			else
+				GAME:FadeIn(20)
+			end		
+		elseif SV.ChapterProgression.Chapter == 2 then
+			if not SV.Chapter2.FirstMorningMeetingDone then 
+				guild_heros_room_ch_2.FirstMorning()
+			elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then
+				guild_heros_room_ch_2.FirstNightBedtalk()
+			else 
+				GAME:FadeIn(20)
+			end
+		else 
 			GAME:FadeIn(20)
 		end
-	else 
-		GAME:FadeIn(20)
 	end
 end
 
@@ -121,17 +128,101 @@ function guild_heros_room.Bedtime(generic)
 		groundObj:ReloadEvents()
 		GAME:GetCurrentGround():AddObject(groundObj)
 		GROUND:AddMapStatus(50)
-		
+		SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
+		AI:DisableCharacterAI(CH('Teammate1'))
+
 		local hero_bed = MRKR('Hero_Bed')
 		local partner_bed = MRKR('Partner_Bed')
-		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
-		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
-	 
+		GROUND:Hide("Save_Point")--disable bed saving
+		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Right)
+		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Left)
+		GeneralFunctions.CenterCamera({CH('PLAYER'), CH('Teammate1')})
+
 	end
 	--todo: generic 
 
 end
 
+function guild_heros_room.Morning(generic)
+	if generic == nil then generic = true end
+	
+	if generic then 
+		GAME:FadeOut(false, 1)--fadeout if we aren't already
+		local hero = CH('PLAYER')
+		local partner = CH('Teammate1')
+		GAME:CutsceneMode(true)
+		AI:DisableCharacterAI(partner)
+		UI:ResetSpeaker()
+		SOUND:StopBGM()
+		GROUND:CharSetAnim(hero, 'EventSleep', true)
+		GROUND:CharSetAnim(partner, 'EventSleep', true)
+		GROUND:Hide('Bedroom_Exit')--disable map transition object
+		GROUND:Hide("Save_Point")--disable bed saving
+		local hero_bed = MRKR('Hero_Bed')
+		local partner_bed = MRKR('Partner_Bed')
+		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
+		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
+		GeneralFunctions.CenterCamera({hero, partner})
+		GAME:WaitFrames(60)--wait a bit just in case we didn't wait before starting this scene 
+
+		local audino =
+			CharacterEssentials.MakeCharactersFromList({
+				{"Audino", 120, 204, Direction.UpRight},
+			})
+			
+		UI:SetAutoFinish(true)
+		UI:WaitShowVoiceOver("The next morning...\n\n", -1)
+		UI:SetAutoFinish(false)
+	
+		GAME:WaitFrames(60)
+		UI:SetSpeaker(audino)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Good morning sleepyheads![pause=0] It's a bright new day!")
+		GAME:FadeIn(20)
+		GAME:WaitFrames(20)
+	
+		GROUND:CharAnimateTurnTo(audino, Direction.Down, 4)
+		GAME:WaitFrames(10)
+		SOUND:PlayBattleSE("DUN_Heal_Bell")
+		GROUND:CharPoseAnim(audino, "Pose")
+		GAME:WaitFrames(100)
+		GROUND:CharEndAnim(audino)
+		GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
+		GROUND:MoveToPosition(audino, 0, 204, false, 2)
+		GAME:GetCurrentGround():RemoveTempChar(audino)
+
+		--todo: add shakes 
+		coro1 = TASK:BranchCoroutine(function () GAME:WaitFrames(10)
+												 GeneralFunctions.DoAnimation(hero, 'Wake') 
+												 GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) 
+												 GAME:WaitFrames(20) end)
+		coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') 
+												 GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+												 GAME:WaitFrames(20) end)
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Happy")
+		SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
+		UI:WaitShowDialogue("Good morning,[pause=10] " .. hero:GetDisplayName() .. "!")	
+		GAME:WaitFrames(20)
+		GeneralFunctions.PanCamera()
+		GAME:WaitFrames(20)
+		GROUND:CharEndAnim(hero)
+		GROUND:CharEndAnim(partner)
+		GROUND:Unhide("Bedroom_Exit")
+		GROUND:Unhide("Save_Point")
+		GAME:CutsceneMode(false)
+		AI:EnableCharacterAI(partner)
+		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+		
+		SV.guild.JustWokeUp = true
+		SV.TemporaryFlags.Morning = false
+	end
+	
+end
 
 function guild_heros_room.Save_Point_Touch(obj, activator)
 	if SV.ChapterProgression.Chapter == 1 then
@@ -140,9 +231,9 @@ function guild_heros_room.Save_Point_Touch(obj, activator)
 		GeneralFunctions.PromptSaveAndQuit()
 	end
 end
-
-
 -------------------------------
+
+
 -- Entities Callbacks
 -------------------------------
 function guild_heros_room.Teammate1_Action(chara, activator)
