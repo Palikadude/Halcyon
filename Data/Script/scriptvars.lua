@@ -74,7 +74,8 @@ SV.TemporaryFlags =
 {
 	OldDirection = Direction.None,--Used for remembering which way an NPC was facing before turning to speak to you
 	Dinnertime = false,--used to indicate whether generic dinner cutscene should be played on entering dining room
-	Morning = false--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
+	MorningWakeup = false,--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
+	MorningAddress = false--used to indicate whether to do a generic morning address
 }
 
 
@@ -166,6 +167,7 @@ SV.Chapter2 =
 	FinishedMarketIntro = false,--partner showed the hero the market?
 	FinishedNumelTantrum = false,--watched numel's tantrum?
 	FinishedFirstDay = false,--finished first day of chapter 2?
+	FinishedCameruptRequestScene = false,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
 
 	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }

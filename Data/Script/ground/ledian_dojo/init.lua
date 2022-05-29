@@ -266,6 +266,7 @@ function ledian_dojo.GenericTrainingSuccess()
 
 	GAME:WaitFrames(20)
 
+	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("But this is only the beginning of your journey!")
 	UI:WaitShowDialogue("Hwacha![pause=0] There is still so much training for you ahead!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Be sure to keep giving it your all!")

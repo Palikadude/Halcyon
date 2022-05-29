@@ -65,7 +65,7 @@ end
 
 function guild_heros_room.PlotScripting()
 	--if generic morning is flagged, prioritize that.
-	if SV.TemporaryFlags.Morning then 
+	if SV.TemporaryFlags.MorningWakeup then 
 		guild_heros_room.Morning()
 	else
 		--plot scripting
@@ -187,6 +187,7 @@ function guild_heros_room.Morning(generic)
 		GROUND:CharPoseAnim(audino, "Pose")
 		GAME:WaitFrames(100)
 		GROUND:CharEndAnim(audino)
+		GAME:WaitFrames(10)
 		GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
 		GROUND:MoveToPosition(audino, 0, 204, false, 2)
 		GAME:GetCurrentGround():RemoveTempChar(audino)
@@ -219,7 +220,7 @@ function guild_heros_room.Morning(generic)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		
 		SV.guild.JustWokeUp = true
-		SV.TemporaryFlags.Morning = false
+		SV.TemporaryFlags.MorningWakeup = false
 	end
 	
 end
@@ -247,10 +248,11 @@ end
 function guild_heros_room.Bedroom_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  if SV.guild.JustWokeUp then --skip the hallway if we just woke up
+  if SV.guild.JustWokeUp then --skip the hallway if we just woke up and queue up the morning 
+	SV.guild.JustWokeUp = false
+	--SV.TemporaryFlags.MorningAddress = true
 	GAME:EnterGroundMap("guild_third_floor_lobby", "Guild_Third_Floor_Lobby_Right_Marker")
 	SV.partner.Spawn = 'Guild_Third_Floor_Lobby_Right_Marker_Partner'
-	SV.guild.JustWokeUp = false
   else
 	GAME:EnterGroundMap("guild_bedroom_hallway", "Guild_Bedroom_Hallway_Right_Marker")
 	SV.partner.Spawn = 'Guild_Bedroom_Hallway_Right_Marker_Partner'

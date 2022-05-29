@@ -40,7 +40,7 @@ function zone_52.ExitSegment(zone, result, rescue, segmentID, mapID)
 	SV.Dojo.LastZone = 52
 
 	
-	--failed or gave up on the tutorial
+	--failed or gave up on the initial training
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
 		if SV.ChapterProgression.Chapter == 2 then
 			--cannot use the general functions command to end dungeon runs when risk is set to none or flags are not saved properly
@@ -56,10 +56,10 @@ function zone_52.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.Dojo.TrainingFailedGeneric = true
             GAME:EnterZone(0, -1, 36, 0)
 		end
-	--passed tutorial
+	--passed initial training
 	else
 		if SV.ChapterProgression.Chapter == 2 then
-            --We have started the tutorial but haven't finished it yet
+            --We have started the initial training but haven't finished it yet
             GAME:EndDungeonRun(result, 0, -1, 36, 0, false, false)
             
             if SV.Chapter2.StartedTraining and not SV.Chapter2.FinishedTraining then

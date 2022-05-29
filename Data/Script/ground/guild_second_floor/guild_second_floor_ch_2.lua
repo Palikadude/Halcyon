@@ -35,20 +35,377 @@ function guild_second_floor_ch_2.SetupGround()
 				{'Audino', 'Generic_Spawn_6'}
 			})
 
-		AI:SetCharacterAI(bagon, "ai.ground_talking", false, 240, 60, 210, true, 'default', {doduo})
-		AI:SetCharacterAI(doduo, "ai.ground_talking", false, 240, 180, 110, true, 'default', {bagon})
+		AI:SetCharacterAI(bagon, "ai.ground_talking", false, 240, 60, 210, true, 'Default', {doduo})
+		AI:SetCharacterAI(doduo, "ai.ground_talking", false, 240, 180, 110, true, 'Default', {bagon})
 		
 		AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(432, 288), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
+	elseif SV.Chapter2.FinishedFirstDay then 
+	--day 2 after getting the first job but before wiping in the dungeon
+
+	
+	--(noctowl and camerupt would be moved to upstairs and her house respectively if you wipe)
+		if SV.Chapter2.FinishedCameruptRequestScene then 
+			local noctowl, camerupt = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Noctowl', 80, 224, Direction.Down},
+				{'Camerupt', 112, 224, Direction.Down}
+			})
+		end
+		
 
 	end
 	
 	GAME:FadeIn(20)
 end
 
+function guild_second_floor_ch_2.CameruptRequestCutscene()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+	
+	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
+	GAME:MoveCamera(160, 240, 1, false)
+	
+	local noctowl = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Noctowl', 340, 280, Direction.Left}
+		})
+	
+	GROUND:TeleportTo(partner, 340, 280, Direction.Left)
+	GROUND:TeleportTo(hero, 340, 280, Direction.Left)
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 192, 280, false, 1)
+												  GROUND:MoveToPosition(noctowl, 136, 224, false, 1)
+												  GROUND:MoveToPosition(noctowl, 80, 224, false, 1)
+												  GeneralFunctions.FaceMovingCharacter(noctowl, partner, 4, Direction.Down) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(32)
+												  GROUND:MoveToPosition(partner, 152, 280, false, 1)
+												  GROUND:MoveToPosition(partner, 128, 256, false, 1)
+												  GROUND:MoveToPosition(partner, 88, 256, false, 1)
+												  GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)	
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(64)
+												  GROUND:MoveToPosition(hero, 152, 280, false, 1)
+												  GROUND:MoveToPosition(hero, 128, 256, false, 1)
+												  GROUND:MoveToPosition(hero, 120, 256, false, 1)
+  												  GROUND:CharAnimateTurnTo(hero, Direction.Up, 4) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(236)
+												  GAME:MoveCamera(112, 240, 48, false) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("This here is the Job Bulletin Board.[pause=0] Requests from Pokémon from all over are posted here daily.")
+	UI:WaitShowDialogue("These requests can include tasks such as rescuing,[pause=10] client escort,[pause=10] and item retrieval.")
+	UI:WaitShowDialogue("You should know that almost all Job Bulletin Board tasks take place within mystery dungeons.")
+	UI:WaitShowDialogue("In case you are unaware,[pause=10] mystery dungeons are special places that change each time you enter.")
+	UI:WaitShowDialogue("The layout,[pause=10] items you find,[pause=10] and opponents you face differ each time you explore.")
+	UI:WaitShowDialogue("They truly are wonderous locations to adventure in.[pause=0] But as fantastical as they are,[pause=10] they are also dangerous.")
+	UI:WaitShowDialogue("Should either one of you be defeated in a dungeon,[pause=10] you will both be expelled from the dungeon.")
+	UI:WaitShowDialogue("Furthermore,[pause=10] you will lose all the money you are carrying and any items in your Treasure Bag.")
+	UI:WaitShowDialogue("Be sure to visit the proper facilities in town to safeguard any possessions you can't bear to lose.")
+	GAME:WaitFrames(20)
+	
+	UI:WaitShowDialogue("Since you are just beginners,[pause=10] let's select a simple task from the board.")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharAnimateTurnTo(noctowl, Direction.Up, 4)
+	GROUND:CharSetAnim(noctowl, "Idle", true)
+	UI:WaitShowDialogue("Let's see here...")
+	
+	--camerupt comes in in a panic
+	GAME:WaitFrames(40)
+	SOUND:FadeOutBGM()
+	local camerupt = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Camerupt', 248, 208, Direction.Down}
+		})	
+	
+	GAME:WaitFrames(40)
+	GeneralFunctions.LookAround(camerupt, 3, 4, false, false, true, Direction.DownLeft)
+	GeneralFunctions.EmoteAndPause(camerupt, "Exclaim", true)
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(camerupt, 112, 224, true, 3) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(25) 
+											SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
+											GROUND:CharSetEmote(partner, 3, 1)
+											GeneralFunctions.FaceMovingCharacter(partner, camerupt)	
+											GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(31) 
+											GROUND:CharSetEmote(hero, 3, 1)
+											GeneralFunctions.FaceMovingCharacter(hero, camerupt) end)
 
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Excuse me,[pause=10] you work for the guild,[pause=10] right?[pause=0] You're that " .. noctowl:GetDisplayName() .. " fellow,[pause=10] aren't you?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(noctowl, "Notice", true)
+	GROUND:CharEndAnim(noctowl)
+	UI:SetSpeaker(noctowl)
+	UI:SetSpeakerEmotion("Normal")
+	GROUND:CharTurnToCharAnimated(noctowl, camerupt, 4)
+	UI:WaitShowDialogue("Oh,[pause=10] apologies.[pause=0] I did not notice you there at first.")
+	UI:WaitShowDialogue("Yes,[pause=10] I am " .. noctowl:GetDisplayName() .. ".[pause=0] What business do you have with the guild?") 
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("I need help![pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. ",[pause=10] my precious baby boy...[pause=0] He's gone missing!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(noctowl, 3, 1)
+	GROUND:CharSetEmote(partner, 8, 1)
+	SOUND:PlayBattleSE('EVT_Emote_Shock_2')
+	GAME:WaitFrames(6)
+	GROUND:CharSetEmote(hero, 8, 1)
+	GAME:WaitFrames(20)
+	
+	SOUND:PlayBGM('Growing Anxiety.ogg', false)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Your son has gone missing?[pause=0] Are you sure?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.Hop(camerupt)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Y-yes![pause=0] He was in bed when I went to sleep last night...[br]...But when I woke up this morning he was nowhere to be seen!")
+	UI:WaitShowDialogue("I went all over town and asked anyone if they had seen him...[pause=0] Nobody has spotted him since yesterday!")
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Oh,[pause=10] what if something happened to my baby boy...[pause=0] I don't think I'd be able to forgive myself...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("I am sure nothing of the sort has happened to him.[pause=0] Perhaps he just wandered off.")
+	UI:WaitShowDialogue("If he were to wander off,[pause=10] do you have any idea where he might go?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("No...[pause=0] He's never done something like this before...")
+	UI:WaitShowDialogue("Oh...[pause=0] Where could he be...?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.HeroDialogue(hero, "(This is the mother who was arguing with her son in the town yesterday.[pause=0] He seemed pretty upset afterwards...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(And now he's gone missing...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(.........)", "Worried")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBattleSE('EVT_Emote_Exclaim_Idea')
+	GeneralFunctions.EmoteAndPause(hero, 'Exclaim', false)
+	
+	GeneralFunctions.HeroDialogue(hero, "(Wait![pause=0] That's it!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(Their fight must be the cause of his disappearance!)", "Surprised")
 
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(hero, camerupt, 4)
+	GAME:WaitFrames(10)
+	GeneralFunctions.HeroSpeak(hero, 60)
+	
+	GAME:WaitFrames(20)
+	
+	--SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
+	coro1 = TASK:BranchCoroutine(function() --GROUND:CharSetEmote(camerupt, 3, 1)
+											GROUND:CharTurnToCharAnimated(camerupt, hero, 4) end)	
+	coro2 = TASK:BranchCoroutine(function() --GROUND:CharSetEmote(noctowl, 2, 1)
+											GROUND:CharTurnToCharAnimated(noctowl, hero, 4) end)	
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											--GROUND:CharSetEmote(partner, 3, 1)
+											GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
 
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Huh?[pause=0] Do I think that he may have ran away?")
+	
+	GAME:WaitFrames(40)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue(".........")
+	UI:WaitShowDialogue("...It's possible...[pause=0] We had an...[pause=0] argument last evening,[pause=10] and he was very upset...")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(noctowl, camerupt, 4)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("What was the argument about?")
+	
+	GAME:WaitFrames(20)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(camerupt, noctowl, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("He hadn't done his chores yet,[pause=10] and it was starting to get late...")
+	UI:WaitShowDialogue("...So I told him to stop playing with his friend and to go gather firewood for the fireplace...")
+	UI:WaitShowDialogue("He refused,[pause=10] so I threatened to take away his dinner if he didn't do his chores.")
+	UI:WaitShowDialogue("He told me that he wished he was bigger so he wouldn't have to listen to me...")
+	UI:WaitShowDialogue("...Then he ran home and collected some wood outside of our home.")
+	UI:WaitShowDialogue("I thought that would have been the end of it,[pause=10] but...[pause=0] I guess he ran off after I fell asleep.")
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Oh,[pause=10] " .. CharacterEssentials.GetCharacterName('Numel') .. "...")
+	
+	GAME:WaitFrames(20)
+	SOUND:FadeOutBGM()
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue('Did you say that he wished he was "bigger"?')
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Yes... But I don't see how that's important...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue('If he wanted to be "bigger"...[pause=0] I believe he may have ran off towards Luminous Spring.')
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(camerupt, "Exclaim", true)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("Oh![pause=0] That might be it![pause=0] The Luminous Spring is just to the north of town,[pause=10] he could easily have gone there!")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(partner, 'Question', true)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Luminous Spring?")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(noctowl, partner, 4)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Luminous Spring is the source of the Illuminant River,[pause=10] the river that runs through this very town.")
+	UI:WaitShowDialogue("It is also the place that Pokémon go to evolve.")
+	UI:WaitShowDialogue("If " .. CharacterEssentials.GetCharacterName('Numel') .. " wanted to grow up,[pause=10] evolving would be one way to do so.")
+	UI:WaitShowDialogue("...Though I doubt he actually meets the requirements to evolve.")
+	
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue("The problem now is that...[pause=0] The Luminous Spring is located at the end of " .. zone:GetColoredName() .. "...")
+	UI:WaitShowDialogue("A mystery dungeon.")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(camerupt, 'Shock', true)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion('Surprised')
+	GeneralFunctions.Hop(camerupt)
+	UI:WaitShowDialogue("You're saying my baby is in a place as dangerous as a mystery dungeon!?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	GROUND:CharTurnToCharAnimated(noctowl, camerupt, 4)
+	UI:WaitShowDialogue("Potentially.[pause=0] We will need to organize a team to go and search for him.")
+	UI:WaitShowDialogue("However,[pause=10] I fear that all of our experienced apprentices are already out on their tasks for the day.")
+	UI:WaitShowDialogue("Which means that we have nobody available to go on such a search.")
+	
+	GAME:WaitFrames(40)
+	UI:SetSpeaker(partner)
+	GROUND:CharTurnToCharAnimated(partner, noctowl, 4)
+	GeneralFunctions.DoubleHop(partner)
+	UI:WaitShowDialogue("We'll do it![pause=0] We can rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
+	
+		
+	GAME:WaitFrames(20)
+	
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(camerupt, partner, 4) end)	
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(noctowl, partner, 4) end)	
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+	
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("You two are too inexperienced for such an undertaking.[pause=0] I would prefer we get a more practiced team.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("C'mon![pause=0] We need to find " .. CharacterEssentials.GetCharacterName("Numel") .. " before anything happens to him!")
+	UI:WaitShowDialogue("And you said it yourself,[pause=10] nobody else is available right now for the job!")
+	UI:WaitShowDialogue("Plus,[pause=10] this " .. zone:GetColoredName() .. " is close to town.[pause=0] It can't be that dangerous!")
+	UI:WaitShowDialogue("I know " .. hero:GetDisplayName() .. " and I can do it!")
+	
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:WaitShowDialogue("Right,[pause=10] " .. hero:GetDisplayName() .. "?")
+	
+	GAME:WaitFrames(10)
+	GeneralFunctions.DoAnimation(hero, "Nod")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharTurnToCharAnimated(partner, noctowl, 4)
+	GROUND:CharTurnToCharAnimated(hero, camerupt, 4)
+	
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue("See?[pause=0] We can do this![pause=0] Please,[pause=10] just give us this chance and we will rescue " .. CharacterEssentials.GetCharacterName('Numel') .. "!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(noctowl, camerupt, 8)
+	GAME:WaitFrames(60)
+	GROUND:CharTurnToCharAnimated(noctowl, partner, 8)
+	GAME:WaitFrames(60)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("...Very well.")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBGM("Wigglytuff's Guild.ogg", false)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("Really?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Yes.[pause=0] There are no other options,[pause=10] and on second consideration,[pause=10] this seems like a job that you could handle.")
+	UI:WaitShowDialogue("As such,[pause=10] in lieu of taking a mission from the Job Bulletin Board...")
+	UI:WaitShowDialogue("...I will entrust the task of searching " .. zone:GetColoredName() .. " for " .. CharacterEssentials.GetCharacterName('Numel') .. " to the two of you.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("You two will go looking for my baby?[pause=0] Thank you!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Of course![pause=0] We won't let you down!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("You should get started on your search immediately.")
+	UI:WaitShowDialogue("As I said earlier,[pause=10] " .. zone:GetColoredName() .. " is located to the north of town.")
+	UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+	UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Got it![pause=0] We'll get right to it then!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] Let's get ready to save " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
+		
+
+	GAME:WaitFrames(20)
+	GROUND:CharEndAnim(hero)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GeneralFunctions.PanCamera()
+	SV.Chapter2.FinishedCameruptRequestScene = true
+	GAME:CutsceneMode(false)
+	
+	
+	
+	
+end	
 
 function guild_second_floor_ch_2.Zangoose_Action(chara, activator)
 	guild_second_floor_ch_2.Seviper_Action(chara, activator)
@@ -140,6 +497,19 @@ function guild_second_floor_ch_2.Audino_Action(chara, activator)
 	UI:WaitShowDialogue("Hopefully they don't take too long...[pause=0] It's almost dinner time,[pause=10] and I'm f-famished!")
 	GeneralFunctions.EndConversation(chara)
 	
-end 	
+end 
+
+function guild_second_floor_ch_2.Noctowl_Action(chara, activator)
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+	GeneralFunctions.StartConversation(chara, "As I said earlier,[pause=10] " .. zone:GetColoredName() .. " is located to the north of town.")
+	UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+	UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_2.Camerupt_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, 'Please,[pause=10] find my baby boy![pause=0] He means the world to me!', 'Teary-Eyed')
+	GeneralFunctions.EndConversation(chara)
+end
 
 return guild_second_floor_ch_2

@@ -223,7 +223,7 @@ local characters = {
 	--Team Cadence
 		Spinda = {
 			species = 327,
-			nickname = '???',
+			nickname = 'Ceili',
 			instance = 'Spinda',
 			gender = Gender.Female,
 			form = 0,
@@ -241,7 +241,7 @@ local characters = {
 		
 		Roselia = {
 			species = 315,
-			nickname = '???',
+			nickname = 'Bequa',
 			instance = 'Roselia',
 			gender = Gender.Female,
 			form = 0,
@@ -393,7 +393,7 @@ local characters = {
 		
 		Electrike = {
 			species = 309,
-			nickname = 'Cilec',
+			nickname = 'Trilec',
 			instance = 'Electrike',
 			gender = Gender.Male,
 			form = 0,

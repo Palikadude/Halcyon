@@ -86,10 +86,20 @@ function zone_51.ExitSegment(zone, result, rescue, segmentID, mapID)
 			if SV.Chapter2.StartedTraining and SV.Chapter2.FinishedTraining then--generic ending
 				SV.Dojo.LessonFailedGeneric = true
 			end 
+			
+			--reset tutorial flags
+			SV.Tutorial.Lesson = "null"
+			SV.Tutorial.LastSpeech = "null"
+			SV.Tutorial.Progression = 0 
+			
             GAME:EnterZone(0, -1, 36, 0)
 		else--generic ending
 		    GAME:EndDungeonRun(result, 0, -1, 36, 0, false, false)
 			SV.Dojo.LessonFailedGeneric = true
+			--reset tutorial flags
+			SV.Tutorial.Lesson = "null"
+			SV.Tutorial.LastSpeech = "null"
+			SV.Tutorial.Progression = 0 
             GAME:EnterZone(0, -1, 36, 0)
 		end
 	--passed tutorial
@@ -103,12 +113,22 @@ function zone_51.ExitSegment(zone, result, rescue, segmentID, mapID)
             else--generic ending
                 SV.Dojo.LessonCompletedGeneric = true
             end 
+			
+			--reset tutorial flags
+			SV.Tutorial.Lesson = "null"
+			SV.Tutorial.LastSpeech = "null"
+			SV.Tutorial.Progression = 0 
             
             GAME:EnterZone(0, -1, 36, 0)
 		else--generic ending
 		    GAME:EndDungeonRun(result, 0, -1, 36, 0, false, false)
 
 			SV.Dojo.LessonCompletedGeneric = true
+			
+			--reset tutorial flags
+			SV.Tutorial.Lesson = "null"
+			SV.Tutorial.LastSpeech = "null"
+			SV.Tutorial.Progression = 0 
 			
             GAME:EnterZone(0, -1, 36, 0)
 		end

@@ -128,6 +128,24 @@ function metano_town_ch_2.SetupGround()
 		if SV.Chapter2.FinishedMarketIntro then 
 			GAME:FadeIn(20)
 		end 
+	
+	elseif SV.Chapter2.FinishedTraining then 
+		GROUND:AddMapStatus(51)--dusk
+		local lickitung, gulpin
+			CharacterEssentials.MakeCharactersFromList({
+				{'Lickitung', 1148, 604, Direction.Up},
+				{'Gulpin', 1124, 628, Direction.UpRight}			
+		})
+		
+		local eastBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+										RogueElements.Rect(1496, 592, 8, 144),
+										RogueElements.Loc(0, 0), 
+										true, 
+										"Event_Trigger_8")	
+											
+		eastBlock:ReloadEvents()
+
+		GAME:GetCurrentGround():AddObject(eastBlock)
 	else
 		GAME:FadeIn(20)
 	end
@@ -727,6 +745,7 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
+	partner.IsInteracting = true
 	GROUND:CharSetAnim(partner, 'None', true)
 	GROUND:CharSetAnim(hero, 'None', true)
 	GROUND:CharSetAnim(dee, 'None', true)
@@ -825,6 +844,7 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	GROUND:CharEndAnim(dun)
 	GROUND:CharEndAnim(dee)
 	
+	partner.IsInteracting = false
 	SV.Chapter2.WooperIntro = true
 
 end
@@ -884,18 +904,30 @@ end
 
 
 function metano_town_ch_2.Lickitung_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Apparently,[pause=10] the café is closed today...")
-	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("We came all this way from out of town for nothing,[pause=10] then?")
-	GeneralFunctions.EndConversation(chara)
+	if not SV.Chapter2.FinishedFirstDay then--first day dialogue
+		GeneralFunctions.StartConversation(chara, "Apparently,[pause=10] the café is closed for a few days...")
+		UI:SetSpeakerEmotion("Sad")
+		UI:WaitShowDialogue("We came all this way from out of town for nothing,[pause=10] then?")
+		GeneralFunctions.EndConversation(chara)
+	else --second day dialogue 
+		GeneralFunctions.StartConversation(chara, "Since the café is going to open again soon,[pause=10] we figured we would just camp out here until it opens.")
+		UI:WaitShowDialogue("Hopefully won't be too much longer.")
+		GeneralFunctions.EndConversation(chara)
+	end
 end 
 
 
 function metano_town_ch_2.Gulpin_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "...Huh?[pause=0] The café is closed...?")
-	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious smoothie today...")
-	GeneralFunctions.EndConversation(chara)
+	if not SV.Chapter2.FinishedFirstDay then--first day dialogue
+		GeneralFunctions.StartConversation(chara, "...Huh?[pause=0] The café is closed...?")
+		UI:SetSpeakerEmotion("Sad")
+		UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious smoothie today...")
+		GeneralFunctions.EndConversation(chara)
+	else --second day dialogue 
+		GeneralFunctions.StartConversation(chara, "...Just how long will I need to wait to have my precious smoothie?", "Worried")
+		UI:WaitShowDialogue("...Oh...[pause=0] I'm wasting away over here...")
+		GeneralFunctions.EndConversation(chara)
+	end
 end 
 
 
@@ -905,6 +937,7 @@ function metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
+	partner.IsInteracting = true
 	GROUND:CharSetAnim(luxray, 'None', true)
 	GROUND:CharSetAnim(machamp, 'None', true)
 	GROUND:CharSetAnim(hero, 'None', true)
@@ -933,6 +966,7 @@ function metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
 	GROUND:CharEndAnim(machamp)
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
 
 end
 

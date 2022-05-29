@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'GeneralFunctions'
 require 'AudinoAssembly'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
@@ -72,24 +73,205 @@ function guild_third_floor_lobby.GameSave(map)
 end
 
 function guild_third_floor_lobby.PlotScripting()
-	--plot scripting
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
-			guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
-		else
-			guild_third_floor_lobby_ch_1.SetupGround()
-		end
-	elseif SV.ChapterProgression.Chapter == 2 then
-		if not SV.Chapter2.FirstMorningMeetingDone then
-			guild_third_floor_lobby_ch_2.FirstMorningMeeting()
-		elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then 
-			guild_third_floor_lobby_ch_2.BeforeFirstDinner()
-		else
-			guild_third_floor_lobby_ch_2.SetupGround()
-		end
+	--if generic morning address is flagged, prioritize that.
+	if SV.TemporaryFlags.MorningAddress then 
+		guild_third_floor_lobby.MorningAddress(true)
 	else
-		GAME:FadeIn(20)
+	--plot scripting	
+		if SV.ChapterProgression.Chapter == 1 then
+			if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
+				guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
+			else
+				guild_third_floor_lobby_ch_1.SetupGround()
+			end
+		elseif SV.ChapterProgression.Chapter == 2 then
+			if not SV.Chapter2.FirstMorningMeetingDone then
+				guild_third_floor_lobby_ch_2.FirstMorningMeeting()
+			elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then 
+				guild_third_floor_lobby_ch_2.BeforeFirstDinner()
+			elseif SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then
+				guild_third_floor_lobby_ch_2.SecondMorningAddress()
+			else 
+				guild_third_floor_lobby_ch_2.SetupGround()
+			end
+		else
+			GAME:FadeIn(20)
+		end
 	end
+end
+
+
+
+
+function guild_third_floor_lobby.MorningAddress(generic)
+	
+	if generic == nil then generic = false end 
+
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	--create characters
+	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Tropius', 'Tropius'},
+			{'Noctowl', 'Noctowl'},
+			{'Audino', 'Audino'},
+			{'Snubbull', 'Snubbull'},
+			{'Growlithe', 'Growlithe'},
+			{'Zigzagoon', 'Zigzagoon'},
+			{'Girafarig', 'Girafarig'},
+			{'Breloom', 'Breloom'},
+			{'Mareep', 'Mareep'},
+			{'Cranidos', 'Cranidos'}})
+	
+	GeneralFunctions.CenterCamera({snubbull, tropius})
+	GROUND:TeleportTo(partner, MRKR("Partner").X, MRKR("Partner").Y, MRKR("Partner").Direction)
+	GROUND:TeleportTo(hero, MRKR("Hero").X, MRKR("Hero").Y, MRKR("Hero").Direction)
+	GAME:FadeIn(20)
+	GAME:WaitFrames(20)
+
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Normal")
+	GROUND:CharSetEmote(tropius, 1, 0)
+	UI:WaitShowDialogue("One for all...")
+	GAME:WaitFrames(20)
+	
+
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	GROUND:CharSetEmote(tropius, -1, 0)
+	GROUND:CharSetEmote(growlithe, 1, 0)
+	GROUND:CharSetEmote(zigzagoon, 1, 0)
+	GROUND:CharSetEmote(mareep, 1, 0)
+	GROUND:CharSetEmote(breloom, 1, 0)
+	GROUND:CharSetEmote(audino, 1, 0)
+	GROUND:CharSetEmote(partner, 1, 0)
+	UI:WaitShowDialogue("AND ALL FOR ONE!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(growlithe, -1, 0)
+	GROUND:CharSetEmote(zigzagoon, -1, 0)
+	GROUND:CharSetEmote(mareep, -1, 0)
+	GROUND:CharSetEmote(breloom, -1, 0)
+	GROUND:CharSetEmote(audino, -1, 0)
+	GROUND:CharSetEmote(partner, -1, 0)
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Alright Pokémon,[pause=10] let's get to the day's adventures!")
+	GAME:WaitFrames(20)
+	
+	--HURRAH!
+	GROUND:CharSetEmote(growlithe, 1, 0)
+	GROUND:CharSetEmote(zigzagoon, 1, 0)
+	GROUND:CharSetEmote(mareep, 1, 0)
+	GROUND:CharSetEmote(breloom, 1, 0)
+	GROUND:CharSetEmote(audino, 1, 0)	
+	GROUND:CharSetEmote(partner, 1, 0)
+
+	--turn pokemon on the edges up so pose is appropriate
+	GROUND:EntTurn(growlithe, Direction.Up)
+	GROUND:EntTurn(zigzagoon, Direction.Up)
+	GROUND:EntTurn(hero, Direction.Up)
+	GROUND:EntTurn(partner, Direction.Up)
+	
+	--todo: replace with poses when the animations for them exist
+	GROUND:CharPoseAnim(growlithe, "Pose")
+	GROUND:CharPoseAnim(zigzagoon, "Pose")
+	GROUND:CharPoseAnim(breloom, "Pose")
+	GROUND:CharPoseAnim(girafarig, "Pose")
+	GROUND:CharPoseAnim(cranidos, "Pose")
+	GROUND:CharPoseAnim(mareep, "Pose")
+	GROUND:CharPoseAnim(audino, "SpAttack")
+	GROUND:CharPoseAnim(snubbull, "Pose")	
+	GROUND:CharPoseAnim(partner, "Pose")	
+	GROUND:CharPoseAnim(hero, "Pose")	
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)	
+	UI:WaitShowDialogue("HURRAH!")
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(growlithe, -1, 0)
+	GROUND:CharSetEmote(zigzagoon, -1, 0)
+	GROUND:CharSetEmote(mareep, -1, 0)
+	GROUND:CharSetEmote(breloom, -1, 0)
+	GROUND:CharSetEmote(audino, -1, 0)	
+	GROUND:CharSetEmote(partner, -1, 0)
+
+	GROUND:CharEndAnim(growlithe)
+	GROUND:CharEndAnim(zigzagoon)
+	GROUND:CharEndAnim(breloom)
+	GROUND:CharEndAnim(girafarig)
+	GROUND:CharEndAnim(cranidos)
+	GROUND:CharEndAnim(mareep)
+	GROUND:CharEndAnim(audino)
+	GROUND:CharEndAnim(snubbull)	
+	GROUND:CharEndAnim(partner)	
+	GROUND:CharEndAnim(hero)	
+	
+	--everyone leaves
+	GAME:WaitFrames(40)
+	local coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeave(growlithe) end)
+	local coro2 = TASK:BranchCoroutine(function() --GAME:WaitFrames(6) 
+											guild_third_floor_lobby.ApprenticeLeaveBottom(zigzagoon) end)
+	local coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(10)
+											guild_third_floor_lobby.ApprenticeLeave(mareep) end)
+	local coro4 = TASK:BranchCoroutine(function() --GAME:WaitFrames(18)
+											guild_third_floor_lobby.ApprenticeLeaveBottom(cranidos) end)
+	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby.ApprenticeLeaveFast(snubbull) end)
+	local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby.ApprenticeLeaveBottomFast(audino) end)
+	local coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby.ApprenticeLeaveFast(breloom) end)
+	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby.ApprenticeLeaveBottomFast(girafarig) end)
+	local coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
+											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
+	local coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 
+											 GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) end)
+	local coro11 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+													GeneralFunctions.CenterCamera({hero, partner}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 1) end)
+	local coro12 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
+												   GROUND:CharAnimateTurnTo(tropius, Direction.Up, 4)
+												   GROUND:MoveInDirection(tropius, Direction.Up, 24, false, 1)
+												   GAME:GetCurrentGround():RemoveTempChar(tropius) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10, coro11, coro12})
+
+	if generic then 
+		--todo: generic opener, and clear relevant cutscene flags 
+	end
+	
+	
+end 
+
+
+--used for having apprentices leave towards the stairs
+function guild_third_floor_lobby.ApprenticeLeave(chara)
+	GeneralFunctions.EightWayMove(chara, 544, 280, false, 1)
+	GeneralFunctions.EightWayMove(chara, 628, 200, false, 1)
+	GAME:GetCurrentGround():RemoveTempChar(chara)
+
+end
+
+--used for having apprentices leave towards the stairs
+function guild_third_floor_lobby.ApprenticeLeaveBottom(chara)
+	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
+	GeneralFunctions.EightWayMove(chara, 648, 208, false, 1)
+	GAME:GetCurrentGround():RemoveTempChar(chara)
+
+end
+
+--used for having apprentices leave towards the stairs - shorter to end cutscene faster
+function guild_third_floor_lobby.ApprenticeLeaveFast(chara)
+	GeneralFunctions.EightWayMove(chara, 552, 280, false, 1)
+	GAME:GetCurrentGround():RemoveTempChar(chara)
+
+end
+
+--used for having apprentices leave towards the stairs - shorter to end cutscene faster
+function guild_third_floor_lobby.ApprenticeLeaveBottomFast(chara)
+	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
+	GAME:GetCurrentGround():RemoveTempChar(chara)
+
 end
 
 

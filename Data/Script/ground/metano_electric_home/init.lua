@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.metano_electric_home.metano_electric_home_ch_2'
 
 -- Package name
 local metano_electric_home = {}
@@ -22,27 +23,18 @@ local MapStrings = {}
 ---metano_electric_home.Init
 --Engine callback function
 function metano_electric_home.Init(map, time)
-
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_metano_electric_home <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	
-
-	--set partner to follow us, disable his collision
-	local chara = CH('Teammate1')
-	AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-	chara.CollisionDisabled = true
+	PartnerEssentials.InitializePartnerSpawn()
 
 end
 
 ---metano_electric_home.Enter
 --Engine callback function
 function metano_electric_home.Enter(map, time)
-	DEBUG.EnableDbgCoro()
-	print('Enter_metano_electric_home')
-	GAME:FadeIn(20)
-	UI:ResetSpeaker()
+	metano_electric_home.PlotScripting()
 
 end
 
@@ -60,6 +52,25 @@ function metano_electric_home.Update(map, time)
 
 end
 
+function metano_electric_home.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	metano_electric_home.PlotScripting()
+end
+
+function metano_electric_home.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+function metano_electric_home.PlotScripting()
+	if SV.ChapterProgression.Chapter == 2 then 
+		metano_electric_home_ch_2.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
+end
+
+
 -------------------------------
 -- Map Transitions
 -------------------------------
@@ -76,6 +87,25 @@ end
 ------------------
 --NPCS 
 ----------------
+function metano_electric_home.Electrike_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_electric_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Electrike_Action(...,...)"), chara, activator))
+end
+
+function metano_electric_home.Luxray_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_electric_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Luxray_Action(...,...)"), chara, activator))
+end
+
+function metano_electric_home.Manectric_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_electric_home_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Manectric_Action(...,...)"), chara, activator))
+end
+
+
+
+
+
 function metano_electric_home.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))end

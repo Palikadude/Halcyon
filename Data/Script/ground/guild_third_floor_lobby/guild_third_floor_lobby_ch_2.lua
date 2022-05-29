@@ -113,7 +113,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	
 	--everyone cheers!
 	SOUND:LoopBattleSE('EVT_Applause_Cheer')
-	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(tropius, hero, 4) end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(noctowl, hero, 4) end)
 	local coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(growlithe, Direction.Left, 4)
@@ -209,7 +209,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	GAME:WaitFrames(20)
 	
 
-	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	GROUND:CharSetEmote(tropius, -1, 0)
 	GROUND:CharSetEmote(growlithe, 1, 0)
 	GROUND:CharSetEmote(zigzagoon, 1, 0)
@@ -235,6 +235,10 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	GROUND:CharSetEmote(mareep, 1, 0)
 	GROUND:CharSetEmote(breloom, 1, 0)
 	GROUND:CharSetEmote(audino, 1, 0)	
+	--turn pokemon on the edges up so pose is appropriate
+	GROUND:EntTurn(growlithe, Direction.Up)
+	GROUND:EntTurn(zigzagoon, Direction.Up)
+	
 	--todo: replace with poses when the animations for them exist
 	GROUND:CharPoseAnim(growlithe, "Pose")
 	GROUND:CharPoseAnim(zigzagoon, "Pose")
@@ -244,7 +248,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	GROUND:CharPoseAnim(mareep, "Pose")
 	GROUND:CharPoseAnim(audino, "SpAttack")
 	GROUND:CharPoseAnim(snubbull, "Pose")	
-	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)	
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)	
 	UI:WaitShowDialogue("HURRAH!")
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(growlithe, -1, 0)
@@ -264,23 +268,23 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	--everyone leaves
 	GAME:WaitFrames(40)
 	coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby_ch_2.ApprenticeLeave(growlithe) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(32) 
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(zigzagoon) end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(60)
+	coro2 = TASK:BranchCoroutine(function() --GAME:WaitFrames(6) 
+											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(zigzagoon) end)
+	coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(10)
 											guild_third_floor_lobby_ch_2.ApprenticeLeave(mareep) end)
-	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(92)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(cranidos) end)
-	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(120)
+	coro4 = TASK:BranchCoroutine(function() --GAME:WaitFrames(18)
+											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(cranidos) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											guild_third_floor_lobby_ch_2.ApprenticeLeave(snubbull) end)
-	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(152)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(audino) end)
-	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(180)
+	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(audino) end)
+	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											guild_third_floor_lobby_ch_2.ApprenticeLeave(breloom) end)
-	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(212)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(girafarig) end)
-	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
+	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(girafarig) end)
+	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
 											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
-	coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(30) 
+	coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 
 											 GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) end)
 
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10})
@@ -327,7 +331,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	UI:WaitShowDialogue("Make sure to speak with him before you leave for the day and that you do whatever he asks of you!")
 	UI:WaitShowDialogue("If you have any trouble,[pause=10] you can always ask any of your fellow guild members for help...[pause=0] Including me!")
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Oh,[pause=10] and we have dinner around sunset,[pause=10] so make it back by then if you want to have " .. snubbull:GetDisplayName() .. "'s cooking!")
+	UI:WaitShowDialogue("Oh,[pause=10] and we have dinner just after sunset,[pause=10] so make it back by then if you want to have " .. snubbull:GetDisplayName() .. "'s cooking!")
 	UI:SetSpeakerEmotion("Normal")
 	
 	GAME:WaitFrames(20)
@@ -481,7 +485,7 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 			{'Mareep', 440, 344, Direction.Left}
 			})
 
-			
+	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	GAME:MoveCamera(232, 288, 1, false)
 	GROUND:TeleportTo(hero, 420, 264, Direction.Left)
 	GROUND:TeleportTo(partner, 420, 296, Direction.Left)
@@ -495,7 +499,7 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 												  GROUND:CharAnimateTurnTo(hero, Direction.DownLeft) end)
 	local coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 264, 296, false, 1) 
 												  GROUND:CharAnimateTurnTo(partner, Direction.DownLeft, 4) end)
-	
+
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	GAME:WaitFrames(10)
@@ -573,9 +577,11 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 											GeneralFunctions.EightWayMove(zigzagoon, 0, 332, false, 2) end)
 	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(snubbull, Direction.Left, 4)
 											GeneralFunctions.EightWayMove(snubbull, 0, 332, false, 2) end)
-	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											GeneralFunctions.EmoteAndPause(hero, "Question", false) end)
-	local coro6 = TASK:BranchCoroutine(function() SOUND:PlayBattleSE('EVT_Emote_Confused')
+	local coro6 = TASK:BranchCoroutine(function() 
+											GAME:WaitFrames(10)
+											SOUND:PlayBattleSE('EVT_Emote_Confused')
 											GROUND:CharSetEmote(partner, 6, 1) 
 											UI:WaitShowTimedDialogue("Huh?[pause=30] Work of art?[pause=30] What's going on?", 60) end)
 	local coro7 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(audino, 232, 332, false, 1) end)
@@ -592,7 +598,7 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 											UI:WaitShowDialogue("She v-very prideful when it comes to her cooking.[pause=0] She considers each meal she makes a work of art!") end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, audino, 4) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
+											GROUND:CharAnimateTurnTo(hero, Direction.DownLeft, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
 	GAME:WaitFrames(20)
@@ -624,11 +630,11 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 	coro4 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(tropius, 130, 332, false, 1) end)
 	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(32)
 											GeneralFunctions.EightWayMove(noctowl, 162, 332, false, 1) end)
-	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(120)
-											GROUND:MoveInDirection(growlithe, Direction.Left, 200, false, 1) end)
-	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(180)
+	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(60)
+											GROUND:MoveInDirection(growlithe, Direction.Left, 260, false, 1) end)
+	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(120)
 											GROUND:MoveInDirection(mareep, Direction.Left, 200, false, 1) end)
-	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(190)
+	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(130)
 											GROUND:MoveInDirection(cranidos, Direction.Left, 200, false, 1) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8})		
 
@@ -641,12 +647,60 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 
 end
 
+function guild_third_floor_lobby_ch_2.SecondMorningAddress()
+	guild_third_floor_lobby.MorningAddress(false)
+	local noctowl = CH('Noctowl')
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GROUND:CharTurnToCharAnimated(noctowl, partner, 4)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Ah,[pause=10] Team " .. GAME:GetTeamName() .. ".")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharTurnToCharAnimated(partner, noctowl, 4)
+	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
+	
+	
+	UI:WaitShowDialogue("Please follow me.[pause=0] I will show you to your assignment for today.")
+	GAME:WaitFrames(20)
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4) 
+											GROUND:MoveInDirection(noctowl, Direction.Right, 200, false, 1) end)	
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(30)
+											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) 
+											GROUND:MoveInDirection(partner, Direction.Right, 180, false, 1) end)	
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(40)
+											GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) 
+											GROUND:MoveInDirection(hero, Direction.Right, 180, false, 1)  end) 
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(140)
+												  SOUND:FadeOutBGM()		
+												  GAME:FadeOut(false, 40) end)
+											
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	GAME:CutsceneMode(false)
+	SV.partner.Spawn = 'Default'
+	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")
+
+
+end
+
 
 
 --used for having apprentices leave towards the stairs
 function guild_third_floor_lobby_ch_2.ApprenticeLeave(chara)
-	GeneralFunctions.EightWayMove(chara, 528, 280, false, 1)
-	GeneralFunctions.EightWayMove(chara, 608, 200, false, 1)
+	GeneralFunctions.EightWayMove(chara, 544, 280, false, 1)
+	GeneralFunctions.EightWayMove(chara, 628, 200, false, 1)
 	GAME:GetCurrentGround():RemoveTempChar(chara)
 
 end
+
+--used for having apprentices leave towards the stairs
+function guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(chara)
+	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
+	GeneralFunctions.EightWayMove(chara, 648, 208, false, 1)
+	GAME:GetCurrentGround():RemoveTempChar(chara)
+
+end
+

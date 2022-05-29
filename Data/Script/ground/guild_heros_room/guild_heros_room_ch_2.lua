@@ -98,7 +98,9 @@ function guild_heros_room_ch_2.FirstMorning()
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Good morning![pause=0] Nothing like a Heal Bell to w-wake you up,[pause=10] huh?")
+	local move = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill].Entries[215]--healbell
+
+	UI:WaitShowDialogue("Good morning![pause=0] Nothing like a " .. move:GetColoredName() .. " to w-wake you up,[pause=10] huh?")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
@@ -125,6 +127,7 @@ function guild_heros_room_ch_2.FirstMorning()
 	UI:WaitShowDialogue("Looks like the meeting is about to start![pause=0] D-don't dawdle too long!")
 	GAME:WaitFrames(20)
 	
+	GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
 	GROUND:MoveToPosition(audino, 0, 204, false, 2)
 	GAME:GetCurrentGround():RemoveTempChar(audino)
 	GAME:WaitFrames(20)
@@ -185,9 +188,10 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	GAME:WaitFrames(60)
 	
 	GAME:FadeIn(60)
-	GAME:WaitFrames(40)
-
+	GAME:WaitFrames(20)
 	SOUND:PlayBGM("Goodnight.ogg", true)
+	GAME:WaitFrames(20)
+	
 	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("..." .. hero:GetDisplayName() .. ",[pause=10] still up?")
 	GAME:WaitFrames(20)
@@ -210,7 +214,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	GAME:FadeOut(false, 120)
 	GAME:WaitFrames(60)
 	SV.Chapter2.FinishedFirstDay = true
-	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
-	SV.TemporaryFlags.Morning = true
+	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
+	SV.TemporaryFlags.MorningWakeup = true
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 end

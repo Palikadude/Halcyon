@@ -18,7 +18,12 @@ function GeneralFunctions.ResetDailyFlags()
 	  RedMerchantItem = -1,
 	  RedMerchantBought = false,
 	  GreenMerchantItem = -1,
-	  GreenMerchantBought = false
+	  GreenMerchantBought = false,
+	  
+	  GreenKecleonRefreshedStock = false,
+	  GreenKecleonStock = {},
+	  PurpleKecleonRefreshedStock = false,
+	  PurpleKecleonStock = {}
 	}
 end 
 
@@ -263,7 +268,8 @@ function GeneralFunctions.HeroSpeak(chara, duration, anim)
 	if anim == nil then anim = 'None' end 
 	GROUND:CharSetAnim(chara, "Walk", true)
 	GAME:WaitFrames(duration)
-	GROUND:CharSetAnim(chara, anim, true)
+	--GROUND:CharSetAnim(chara, anim, true)
+	GROUND:CharEndAnim(chara)
 end
 
 
@@ -352,41 +358,41 @@ function GeneralFunctions.DoAnimation(chara, anim, sound)
 	GROUND:CharSetAnim(chara, prevAnim, true)
 end
 
+-- Used to get proper pronoun depending on gender of character (gender check command)
+-- Form should be given as they, them, their, theirs, themself, or they're.
+-- If uppercase is truthy, then the first letter will be capitalized.
 function GeneralFunctions.GetPronoun(chara, form, uppercase)
---used to get proper pronoun depending on gender of character (gender check command)
-	--form should be given as they, them, their, theirs, themself, or they're
-	local gender = chara.CurrentForm.Gender
-	local value = 'shart'
-	
-	if uppercase == nil then uppercase = false end 
-	
-	if gender == Gender.Female then
-		if form == 'they' then value = 'she'
-		elseif form == 'them' then value = 'her'
-		elseif form == 'their' then value = 'her'
-		elseif form == 'theirs' then value = 'hers'
-		elseif form == 'themself' then value = 'herself'
-		elseif form == "they're" then value = "she's"
-		elseif form == "are" then value = "is"
-		end
-	elseif gender == Gender.Male then
-		if form == 'they' then value = 'he'
-		elseif form == 'them' then value = 'him'
-		elseif form == 'their' then value = 'his'
-		elseif form == 'theirs' then value = 'his'
-		elseif form == 'themself' then value = 'himself'
-		elseif form == "they're" then value = "he's"
-		elseif form == "are" then value = "is"
-		end
-	else--if not male or female, it's a they so just return the form 
-		value = form
-	end
-	
-	if uppercase then
-		return value:gsub("^%l", string.upper)
-	else	
-		return value
-	end
+    local gender = chara.CurrentForm.Gender
+    local value = ""
+    
+    if gender == Gender.Female then
+        local female_pronouns = {
+            ["they"] = "she", -- nominative
+            ["them"] = "her", -- objective
+            ["their"] = "her", -- possessive
+            ["theirs"] = "hers", -- possessive, no following noun
+            ["themself"] = "herself", -- reflexive
+            ["they're"] = "she's", -- nominative + "be" contraction
+            ["are"] = "is", -- "be" present indicative
+        }
+        value = female_pronouns[form]
+    elseif gender == Gender.Male then
+        local male_pronouns = {
+            ["they"] = "he", -- nominative
+            ["them"] = "him", -- objective
+            ["their"] = "his", -- possessive
+            ["theirs"] = "his", -- possessive, no following noun
+            ["themself"] = "himself", -- reflexive
+            ["they're"] = "he's", -- nominative + "be" contraction
+            ["are"] = "is", -- "be" present indicative
+        }
+        value = male_pronouns[form]
+    else -- if neither male or female, use they/them, so just return the form 
+        value = form
+    end
+
+    return uppercase and value:gsub("^%l", string.upper) or value
+    
 end
 
 

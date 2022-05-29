@@ -1795,6 +1795,9 @@ end
 -- Event Trigger
 -- These are temporary objects created by a script used to trigger events that only happen
 -- at certain plot progressions, typically a cutscene of sorts for a particular chapter.
+
+-- The same event trigger won't be used for two different purposes within the same chapter.
+-- if Event Trigger 1 is used to block a specific exit, it won't ever be used for another purpose within that same chapter.
 ---------------------------------
 function metano_town.Event_Trigger_1_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
@@ -1829,6 +1832,16 @@ end
 function metano_town.Event_Trigger_7_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_7_Touch(...,...)"), obj, activator))
+end
+
+function metano_town.Event_Trigger_8_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_8_Touch(...,...)"), obj, activator))
+end
+
+function metano_town.Event_Trigger_9_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Trigger_9_Touch(...,...)"), obj, activator))
 end
 
 --------------------
