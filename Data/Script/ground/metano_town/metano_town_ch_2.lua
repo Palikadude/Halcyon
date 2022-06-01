@@ -1041,7 +1041,8 @@ function metano_town_ch_2.Floatzel_Action(chara, activator)
 end
 
 function metano_town_ch_2.Bellossom_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.StartConversation(chara, "Tra-la-la " .. STRINGS:Format("\\u266A"), "Happy")
+	UI:WaitShowDialogue("Pretty flowers make everything better![pause=0] Tending to them is rewarding on its own too!")
 	GeneralFunctions.EndConversation(chara)
 end 
 
