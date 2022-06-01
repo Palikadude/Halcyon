@@ -129,12 +129,21 @@ function metano_town_ch_2.SetupGround()
 			GAME:FadeIn(20)
 		end 
 	
-	elseif SV.Chapter2.FinishedTraining then 
-		GROUND:AddMapStatus(51)--dusk
-		local lickitung, gulpin
+	elseif SV.Chapter2.FinishedFirstDay then 
+		local lickitung, gulpin, mawile, azumarill, quagsire, oddish, bellossom, linoone, medicham = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Lickitung', 1148, 604, Direction.Up},
-				{'Gulpin', 1124, 628, Direction.UpRight}			
+				{'Gulpin', 1124, 628, Direction.UpRight},
+				{'Mawile', 648, 1272, Direction.Down},
+				{'Azumarill', 272, 1208, Direction.Left},
+				{'Quagsire', 714, 232, Direction.Up},
+				{'Oddish', 320, 416, Direction.DownRight},
+				{'Bellossom', 478, 686, Direction.Down},
+				{'Linoone', 'Town_Seat_1'},
+				{'Medicham', 'Town_Seat_2'},
+				{'Machamp', 544, 384, Direction.Right}
+
+
 		})
 		
 		local eastBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
@@ -142,10 +151,18 @@ function metano_town_ch_2.SetupGround()
 										RogueElements.Loc(0, 0), 
 										true, 
 										"Event_Trigger_8")	
+										
+		local northBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+										RogueElements.Rect(232, 8, 40, 8),
+										RogueElements.Loc(0, 0), 
+										true, 
+										"Event_Trigger_9")
 											
 		eastBlock:ReloadEvents()
+		northBlock:ReloadEvents()
 
 		GAME:GetCurrentGround():AddObject(eastBlock)
+		GAME:GetCurrentGround():AddObject(northBlock)
 	else
 		GAME:FadeIn(20)
 	end
@@ -725,9 +742,16 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 	elseif not SV.Chapter2.FinishedNumelTantrum then
 		GeneralFunctions.StartConversation(growlithe, "Hope your training went well,[pause=10] ruff!", "Happy")
 		UI:WaitShowDialogue("We've got a bit of time until dinner![pause=0] I hope " .. CharacterEssentials.GetCharacterName('Snubbull') .. " makes something yummy,[pause=10] ruff!")
-	else
+	elseif not SV.Chapter2.FinishedFirstDay then
 		GeneralFunctions.StartConversation(growlithe, "Hope your training went well,[pause=10] ruff!", "Happy")
 		UI:WaitShowDialogue("It's almost time for dinner,[pause=10] ruff![pause=0] Don't miss it or you'll go hungry!")
+	elseif not SV.Chapter2.EnteredRiver then 
+		GeneralFunctions.StartConversation(growlithe, CharacterEssentials.GetCharacterName("Camerupt") .. " passed by here earlier in a panic,[pause=10] ruff...[pause=0] I couldn't even stop her to ask what was wrong!", "Worried")
+		UI:WaitShowDialogue("It's rare to see townfolk worked up like that...[pause=0] I hope everything is OK,[pause=10] ruff...")
+	else
+		GeneralFunctions.StartConversation(growlithe, "I heard about your mission to find " .. CharacterEssentials.GetCharacterName('Numel') ..".[pause=0] His disappearance explains why " .. CharacterEssentials.GetCharacterName("Camerupt") .. " was so hysterical the other day,[pause=10] ruff."
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Anyways,[pause=10] good luck you two with the job![pause=0] I know you can do it,[pause=10] ruff!")
 	end
 	GeneralFunctions.EndConversation(growlithe)
 end
@@ -1068,26 +1092,34 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 	UI:WaitShowDialogue("This must be your partner then![pause=0]")
 	--]]
 
+
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GeneralFunctions.StartConversation(chara, "Hey,[pause=10] " .. partner:GetDisplayName() .. "![pause=0] How's it going?", "Happy")
-	GROUND:CharSetEmote(chara, 4, 0)
-	UI:SetSpeakerEmotion("Joyous")
-	UI:WaitShowDialogue("I heard the good news![pause=0] Congratulations on getting into the guild,[pause=10] the both of you!")
 	
-	GAME:WaitFrames(20)
-	GROUND:CharSetEmote(chara, -1, 0)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Thanks,[pause=10] " .. chara:GetDisplayName() .. "![pause=0] I'm very excited about it!")
-	
-	GAME:WaitFrames(20)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("I'm excited for you too![pause=0] Apprenticing at the guild is a wonderful opportunity!")
-	UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
-	
+	if not SV.Chapter2.FinishedFirstDay then --first day dialogue 
+		GeneralFunctions.StartConversation(chara, "Hey,[pause=10] " .. partner:GetDisplayName() .. "![pause=0] How's it going?", "Happy")
+		GROUND:CharSetEmote(chara, 4, 0)
+		UI:SetSpeakerEmotion("Joyous")
+		UI:WaitShowDialogue("I heard the good news![pause=0] Congratulations on getting into the guild,[pause=10] the both of you!")
+		
+		GAME:WaitFrames(20)
+		GROUND:CharSetEmote(chara, -1, 0)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Thanks,[pause=10] " .. chara:GetDisplayName() .. "![pause=0] I'm very excited about it!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(chara)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("I'm excited for you too![pause=0] Apprenticing at the guild is a wonderful opportunity!")
+		UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
+		
+	else --second day dialogue 
+		GeneralFunctions.StartConversation(chara, "Hey,[pause=10] aren't there usually a pair of merchants here?", "Worried")
+		UI:WaitShowDialogue("I wanted to see what neat trinkets they had today,[pause=10] but they don't seem to be around right now...")
+	end 
 	GeneralFunctions.EndConversation(chara)
+
 end
 
 
@@ -1105,5 +1137,15 @@ end
 function metano_town_ch_2.Ludicolo_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Yah![pause=0] This is the best spot in town to dance!", "Normal", true, false)
 	UI:WaitShowDialogue("There's lots of open space and " .. CharacterEssentials.GetCharacterName("Chatot") .. " by the tree there plays the best music![pause=0] I can't get enough of his tunes!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+
+--npcs that only appear on day 2
+function metano_town_ch_2.Quagsire_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "My husband has been throwing lots of "  .. STRINGS:Format("\\uE024") .. " into this well thinking it will actually give him wishes...", "Normal", true, false)
+	UI:WaitShowDialogue("I've been coming to the well afterwards to fish the "  .. STRINGS:Format("\\uE024") .. " back out.")
+	UI:WaitShowDialogue("I've tried explaining to him that you don't really get a wish,[pause=10] but he just gets confused.")
 	GeneralFunctions.EndConversation(chara)
 end

@@ -6,24 +6,22 @@ require 'CharacterEssentials'
 altere_pond_ch_2 = {}
 
 function altere_pond_ch_2.SetupGround()
-	--prevent player from going into relic forest on first day
+	--prevent player from going into relic forest during chapter 2
 	if not SV.Chapter2.FinishedFirstDay then 
-		local forestBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-							RogueElements.Rect(904, 256, 8, 88),
-							RogueElements.Loc(0, 0), 
-							true, 
-							"Event_Trigger_1")
-																						
-		forestBlock:ReloadEvents()
-
-		GAME:GetCurrentGround():AddObject(forestBlock)
-		
-		GROUND:AddMapStatus(51)
-		
-		GAME:FadeIn(20)
-	else
-		GAME:FadeIn(20)
+		GROUND:AddMapStatus(51)--set dusk if first day
 	end
+	
+	local forestBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+						RogueElements.Rect(904, 256, 8, 88),
+						RogueElements.Loc(0, 0), 
+						true, 
+						"Event_Trigger_1")
+																					
+	forestBlock:ReloadEvents()
+
+	GAME:GetCurrentGround():AddObject(forestBlock)
+		
+	GAME:FadeIn(20)
 end
 
 function altere_pond_ch_2.Relicanth_Action(chara, activator)
@@ -59,12 +57,15 @@ end
 
 function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+	local zone2 = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
 
+
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	
+	partner.IsInteracting = true
+	
 	if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then
-		local partner = CH('Teammate1')
-		local hero = CH('PLAYER')
-		
-		partner.IsInteracting = true
 		
 		UI:SetSpeaker(partner)
 		GROUND:CharTurnToCharAnimated(partner, hero, 4)
@@ -72,7 +73,15 @@ function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:WaitShowDialogue("Let's some back when we have some free time to explore!")
 		
-		partner.IsInteracting = false
-
+	else 
+		
+		UI:SetSpeaker(partner)
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		UI:WaitShowDialogue("We can't go exploring " .. zone:GetColoredName() .. " now!")
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		UI:WaitShowDialogue("We need to rescue " .. CharacterEssentials.GetCharacterName('Numel') .. "![pause=0] Quickly,[pause=10] to " .. zone2:GetColoredName() .. "!")
 	end
+	
+	partner.IsInteracting = false
+
 end

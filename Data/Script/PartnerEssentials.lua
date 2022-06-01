@@ -135,8 +135,12 @@ end
 function PartnerEssentials.Chapter_1_Dialogue(partner)
 	local ground = GAME:GetCurrentGround().AssetName--get ground's internal name
 	UI:SetSpeaker(partner)
-	GROUND:CharTurnToCharAnimated(partner, CH('PLAYER'), 4)
-	GROUND:CharTurnToCharAnimated(CH('PLAYER'), partner, 4)
+	local hero = CH('PLAYER')
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion('Normal')
 
 	if ground == 'guild_second_floor' then
@@ -152,7 +156,7 @@ function PartnerEssentials.Chapter_1_Dialogue(partner)
 			GAME:WaitFrames(20)
 			UI:SetSpeakerEmotion("Inspired")
 			UI:WaitShowDialogue("But that's OK![pause=0] We're with the guild now and that's all that matters!")
-			UI:WaitShowDialogue("We're going to make a fantastic team " .. CH('PLAYER'):GetDisplayName() .. "![pause=0] I know we're gonna do great!")
+			UI:WaitShowDialogue("We're going to make a fantastic team " .. hero:GetDisplayName() .. "![pause=0] I know we're gonna do great!")
 			SV.Chapter1.PartnerSecondFloorDialogue = 1
 		elseif SV.Chapter1.PartnerSecondFloorDialogue == 1 then
 			UI:WaitShowDialogue("This is where the guild posts jobs and requests for adventurers to take.")
@@ -254,17 +258,36 @@ function PartnerEssentials.Chapter_1_Dialogue(partner)
 		UI:WaitShowDialogue('Could not find Chapter 1 Dialogue for this ground. This is a bug. Tell Palika.')
 		
 	end
+
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
+
 end
 
 
 function PartnerEssentials.Chapter_2_Dialogue(partner)
 	local ground = GAME:GetCurrentGround().AssetName--get ground's internal name
 	UI:SetSpeaker(partner)
-	GROUND:CharTurnToCharAnimated(partner, CH('PLAYER'), 4)
-	GROUND:CharTurnToCharAnimated(CH('PLAYER'), partner, 4)
-	UI:SetSpeakerEmotion("Normal")
+	local hero = CH('PLAYER')
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:SetSpeakerEmotion('Normal')
+	
+	
 	UI:WaitShowDialogue("Chapter 2 Dialogue message.")
+	
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
 end
+
+
+
 function PartnerEssentials.GetPartnerDungeonDialogue()
 end
 

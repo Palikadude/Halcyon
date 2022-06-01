@@ -451,7 +451,7 @@ local characters = {
 		
 		Numel = {
 			species = 322,
-			nickname = '???',
+			nickname = 'Nubbor',
 			instance = 'Numel',
 			gender = Gender.Male,
 			form = 0,

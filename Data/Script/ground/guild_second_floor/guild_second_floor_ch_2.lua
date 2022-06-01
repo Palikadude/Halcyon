@@ -97,6 +97,8 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
+	local scarf_name = RogueEssence.Dungeon.InvItem(2502):GetDisplayName()
+	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("This here is the Job Bulletin Board.[pause=0] Requests from Pokémon from all over are posted here daily.")
@@ -107,6 +109,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:WaitShowDialogue("They truly are wonderous locations to adventure in.[pause=0] But as fantastical as they are,[pause=10] they are also dangerous.")
 	UI:WaitShowDialogue("Should either one of you be defeated in a dungeon,[pause=10] you will both be expelled from the dungeon.")
 	UI:WaitShowDialogue("Furthermore,[pause=10] you will lose all the money you are carrying and any items in your Treasure Bag.")
+	UI:WaitShowDialogue("Note that some items,[pause=10] such as the " .. scarf_name .. " the Guildmaster gave you, are special and cannot be lost however.")
 	UI:WaitShowDialogue("Be sure to visit the proper facilities in town to safeguard any possessions you can't bear to lose.")
 	GAME:WaitFrames(20)
 	
