@@ -232,7 +232,7 @@ local characters = {
 		
 		Ludicolo = {
 			species = 272,
-			nickname = 'Miri',
+			nickname = 'Mirich',
 			instance = 'Ludicolo',
 			gender = Gender.Male,
 			form = 0,
@@ -289,7 +289,7 @@ local characters = {
 	
 		Slowpoke = {
 			species = 79,
-			nickname = '???',
+			nickname = 'Lorezi',
 			instance = 'Slowpoke',
 			gender = Gender.Male,
 			form = 0,
@@ -298,7 +298,7 @@ local characters = {
 		
 		Ambipom = {
 			species = 424,
-			nickname = '???',
+			nickname = 'Swigoi',
 			instance = 'Ambipom',
 			gender = Gender.Male,
 			form = 0,
