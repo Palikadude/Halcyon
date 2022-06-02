@@ -431,11 +431,7 @@ end
 function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] where are you going?")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] where are you going?")
 	GAME:WaitFrames(10)
 	UI:WaitShowDialogue("I know you might want to look around town...")
 	UI:WaitShowDialogue("But since we just joined,[pause=10] I don't think we should leave the tree tonight.")
@@ -445,6 +441,7 @@ function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
 	else 
 		UI:WaitShowDialogue("Let's go look around the guild some more.[pause=0] I think there's more guildmates for us to meet!")
 	end
+	GeneralFunctions.EndConversation(partner)
 --may want to put some sort of buffer so player doesnt accidentally initiate dialogue with partner via mashing if partner is right behind them
 end
 

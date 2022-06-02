@@ -1865,10 +1865,10 @@ Machamp
 Medicham
 Meditite
 
-Magmortar (Single Mother)
-Magby
+Camerupt (Single Mother)
+Numel
 
-???
+Vileplume
 Bellossom
 Gloom
 Oddish
@@ -1879,11 +1879,12 @@ Oddish
 
 Sunflora (Cave Hermit)
 
-??? lives in a tent
+Azumarill (Loaf) lives in a tent
 
-??? lives in a tent
+Mawile (Bria) lives in a tent
 
-Lickitung (   , cafe goer)
+Lickitung ( Urgil  , cafe goer)
+Gulpin ( Boosmu  , cafe goer)
 ???
 ???
 ???
@@ -1980,6 +1981,11 @@ function metano_town.Floatzel_Action(obj, activator)
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Floatzel_Action(...,...)"), obj, activator))
 end
 
+function metano_town.Quagsire_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Quagsire_Action(...,...)"), obj, activator))
+end
+
 function metano_town.Nidorina_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Nidorina_Action(...,...)"), obj, activator))
@@ -2036,6 +2042,21 @@ end
 function metano_town.Ludicolo_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Ludicolo_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Jigglypuff_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Jigglypuff_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Marill_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Marill_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Spheal_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Spheal_Action(...,...)"), obj, activator))
 end
 
 

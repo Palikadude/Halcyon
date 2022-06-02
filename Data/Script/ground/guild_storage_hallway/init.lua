@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'GeneralFunctions'
 require 'ground.guild_storage_hallway.guild_storage_hallway_ch_1'
 
 
@@ -120,13 +121,10 @@ function guild_storage_hallway.Left_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro()
   local partner = CH('Teammate1')
   local hero = CH('PLAYER')
-  UI:SetSpeaker(partner)
-  UI:SetSpeakerEmotion('Surprised')
-  GROUND:CharTurnToCharAnimated(partner, hero,  4)
-  UI:WaitShowDialogue("H-Hey,[pause=10] that's the way to the Guildmaster's room!")
-  GROUND:CharTurnToCharAnimated(hero, partner,  4)
+  GeneralFunctions.StartPartnerConversation("H-Hey,[pause=10] that's the way to the Guildmaster's room!", "Surprised")
   UI:SetSpeakerEmotion("Worried")
   UI:WaitShowDialogue("We aren't allowed in there.[pause=0] Let's turn back before we get into any trouble.")
+  GeneralFunctions.EndConversation(partner)
 end
 
 return guild_storage_hallway

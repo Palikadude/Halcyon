@@ -43,7 +43,7 @@ function metano_town_ch_2.SetupGround()
 		GAME:GetCurrentGround():AddObject(marketBlock)
 		
 		GAME:FadeIn(20)
-	elseif SV.Chapter2.FinishedTraining then 
+	elseif SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then 
 		GROUND:AddMapStatus(51)--dusk
 		local meditite, luxray, machamp, furret, wooper_girl, wooper_boy, electrike, lickitung, gulpin, nidorina, gloom, numel, 
 			  oddish, bellossom, floatzel, roselia, spinda, ludicolo, mawile, azumarill = 
@@ -137,12 +137,20 @@ function metano_town_ch_2.SetupGround()
 				{'Mawile', 648, 1272, Direction.Down},
 				{'Azumarill', 272, 1208, Direction.Left},
 				{'Quagsire', 714, 232, Direction.Up},
-				{'Oddish', 320, 416, Direction.DownRight},
+				{'Oddish', 312, 408, Direction.Down},--i wanted numel to play with us... 
+				{'Sentret', 312, 440, Direction.Up},--its ok he'll be back soon, let's play just the two of us
 				{'Bellossom', 478, 686, Direction.Down},
 				{'Linoone', 'Town_Seat_1'},
 				{'Medicham', 'Town_Seat_2'},
-				{'Machamp', 544, 384, Direction.Right}
-
+				{'Machamp', 1264, 352, Direction.Down},--i'll search around town to find the kid! i'll help however i can!
+				{'Meditite', 556, 216, Direction.Down},--meditating is hard, i dont really get it
+				{'Manectric', 1144, 904, Direction.Down},--i dont know what I would do if my kid went missing!
+				{'Marill', 1184, 1160, Direction.UpRight},
+				{'Jigglypuff', 1224, 1160, Direction.UpLeft},
+				{'Spheal', 1204, 1128, Direction.Down},
+				{'Wooper_Boy', 744, 1144, Direction.Right},
+				{'Wooper_Girl', 776, 1144, Direction.Left},
+				{'Vileplume', 388, 716, Direction.DownRight}
 
 		})
 		
@@ -163,6 +171,8 @@ function metano_town_ch_2.SetupGround()
 
 		GAME:GetCurrentGround():AddObject(eastBlock)
 		GAME:GetCurrentGround():AddObject(northBlock)
+		
+		GAME:FadeIn(20)
 	else
 		GAME:FadeIn(20)
 	end
@@ -171,43 +181,37 @@ end
 function metano_town_ch_2.Event_Trigger_1_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("That's the way to the market.[pause=0] I don't think Ledian Dojo is that way.")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("That's the way to the market.[pause=0] I don't think Ledian Dojo is that way.")
 	UI:WaitShowDialogue("I know I said I'd show you the town today,[pause=10] but we should head to Ledian Dojo first!")
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said that the dojo was down a ladder east of the bridge to the guild.")
 	UI:WaitShowDialogue("I'm sure we'll have time after training to take a look around town!")
+
+	GeneralFunctions.EndConversation(partner)
 
 end
 
 function metano_town_ch_2.Event_Trigger_2_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("That's the way towards the housing area.[pause=0] I don't think Ledian Dojo is that way.")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("That's the way towards the housing area.[pause=0] I don't think Ledian Dojo is that way.")
 	UI:WaitShowDialogue("I know I said I'd show you the town today,[pause=10] but we should head to Ledian Dojo first!")
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said that the dojo was down a ladder east of the bridge to the guild.")
 	UI:WaitShowDialogue("I'm sure we'll have time after training to take a look around town!")
+	GeneralFunctions.EndConversation(partner)
+
 end
 
 function metano_town_ch_2.Event_Trigger_3_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] that must be the ladder to the dojo right over there!")
+	GeneralFunctions.StartPartnerConversation("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] that must be the ladder to the dojo right over there!", "Normal", false)
 	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	UI:WaitShowDialogue("Let's head on in![pause=0] We'll have time after our training to take a look around town!")
 
+	GeneralFunctions.EndConversation(partner)
+	
 end
-
 function metano_town_ch_2.Event_Trigger_4_Touch(obj, activator)
 	metano_town_ch_2.NumelTantrumCutscene()
 end
@@ -216,39 +220,48 @@ end
 function metano_town_ch_2.Event_Trigger_5_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] don't you want to look around town still?")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] don't you want to look around town still?")
 	UI:WaitShowDialogue("You should go meet some of the locals![pause=0] We still have a bit of time before dinner!")
+
+	GeneralFunctions.EndConversation(partner)
 
 end
 
 function metano_town_ch_2.Event_Trigger_6_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
 	UI:WaitShowDialogue("Let's turn around.[pause=0] We should head back to the guild whenever you're ready.")
+	GeneralFunctions.EndConversation(partner)
+
 end
 
 function metano_town_ch_2.Event_Trigger_7_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GeneralFunctions.StartPartnerConversation("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
+
 	if SV.Chapter2.FinishedNumelTantrum then 
 		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head back to the guild whenever you're ready.")
 	else 
 		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head over to the residential area so you can meet some townspeople!")
 	end
+	GeneralFunctions.EndConversation(partner)
+
+end
+
+function metano_town_ch_2.Event_Trigger_8_Touch(obj, activator)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GeneralFunctions.StartPartnerConversation("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
+
+	if SV.Chapter2.FinishedNumelTantrum then 
+		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head back to the guild whenever you're ready.")
+	else 
+		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head over to the residential area so you can meet some townspeople!")
+	end
+	GeneralFunctions.EndConversation(partner)
+
 end
 
 
@@ -749,7 +762,7 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 		GeneralFunctions.StartConversation(growlithe, CharacterEssentials.GetCharacterName("Camerupt") .. " passed by here earlier in a panic,[pause=10] ruff...[pause=0] I couldn't even stop her to ask what was wrong!", "Worried")
 		UI:WaitShowDialogue("It's rare to see townfolk worked up like that...[pause=0] I hope everything is OK,[pause=10] ruff...")
 	else
-		GeneralFunctions.StartConversation(growlithe, "I heard about your mission to find " .. CharacterEssentials.GetCharacterName('Numel') ..".[pause=0] His disappearance explains why " .. CharacterEssentials.GetCharacterName("Camerupt") .. " was so hysterical the other day,[pause=10] ruff."
+		GeneralFunctions.StartConversation(growlithe, "I found out about your mission to find " .. CharacterEssentials.GetCharacterName('Numel') ..".[pause=0] His disappearance explains why " .. CharacterEssentials.GetCharacterName("Camerupt") .. " was so hysterical the other day,[pause=10] ruff.")
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Anyways,[pause=10] good luck you two with the job![pause=0] I know you can do it,[pause=10] ruff!")
 	end
@@ -969,7 +982,7 @@ function metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
 	UI:SetSpeaker(machamp)
     GROUND:CharTurnToChar(hero, chara)
     local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
-	UI:WaitShowDialogue("Hoo...[pause=0] I tell ya,[pause=10] that's gotta be real rough for " .. CharacterEssentials.GetCharacterName('Camerupt') .. ".", "Normal", false)
+	UI:WaitShowDialogue("Hoo...[pause=0] I tell ya,[pause=10] that's gotta be real rough fer " .. CharacterEssentials.GetCharacterName('Camerupt') .. ".", "Normal", false)
     TASK:JoinCoroutines({coro1})
 
 	UI:WaitShowDialogue("After...[pause=0] Well,[pause=10] y'know...")
@@ -995,7 +1008,13 @@ function metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
 end
 
 function metano_town_ch_2.Machamp_Action(chara, activator)
-	metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
+	if not SV.Chapter2.FinishedFirstDay then --first day
+		metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
+	else --second day
+		GeneralFunctions.StartConversation(chara, "Wee " .. CharacterEssentials.GetCharacterName("Numel") .. " wandered off and nobody knows where 'e might be.[pause=0] His poor mum is worried ta pieces.")
+		UI:WaitShowDialogue("That poor Pokémon has been through so much as a' late...[pause=0] We as a town gotta do all that we can to find 'im!")
+		GeneralFunctions.EndConversation(chara)
+	end
 end
 
 function metano_town_ch_2.Luxray_Action(chara, activator)
@@ -1019,9 +1038,15 @@ end
 	
 
 function metano_town_ch_2.Oddish_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go do his chores...", "Sad")
-	UI:WaitShowDialogue("He's had to do a lot of chores lately...[pause=0] We don't get to play as much as we used to...")
+	if not SV.Chapter2.FinishedFirstDay then-- first day dialogue 
+		GeneralFunctions.StartConversation(chara, "I wish " .. CharacterEssentials.GetCharacterName('Numel') .. " didn't have to go do his chores...", "Sad")
+		UI:WaitShowDialogue("He's had to do a lot of chores lately...[pause=0] We don't get to play as much as we used to...")
+	else 
+		GeneralFunctions.StartConversation(chara, "Where is " .. CharacterEssentials.GetCharacterName('Numel') .. " this morning?[pause=0] I thought he was going to play with us today!", "Sad", false)
+	end
+	
 	GeneralFunctions.EndConversation(chara)
+
 end
 
 function metano_town_ch_2.Numel_Action(chara, activator)
@@ -1041,14 +1066,30 @@ function metano_town_ch_2.Floatzel_Action(chara, activator)
 end
 
 function metano_town_ch_2.Bellossom_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Tra-la-la " .. STRINGS:Format("\\u266A"), "Happy")
-	UI:WaitShowDialogue("Pretty flowers make everything better![pause=0] Tending to them is rewarding on its own too!")
+	if not SV.Chapter2.FinishedFirstDay then 
+		GeneralFunctions.StartConversation(chara, "Tra-la-la " .. STRINGS:Format("\\u266A"), "Happy")
+		UI:WaitShowDialogue("Pretty flowers make everything better![pause=0] Tending to them is rewarding on its own too!")
+	elseif not SV.Chapter2.EnteredRiver then 
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " asked me if I've seen " .. CharacterEssentials.GetCharacterName("Numel") .. " this morning.[pause=0] Apparently,[pause=10] he's gone missing...", "Worried")
+		UI:WaitShowDialogue("She seemed sad.[pause=0] I hope " .. CharacterEssentials.GetCharacterName("Numel") .. " is found soon!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I'm going to take some flowers over to " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s house later to cheer her up.[pause=0] Flowers always cheer me up!")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " appreciated the flowers I brought her,[pause=10] but she still seemed down.")
+		UI:WaitShowDialogue("Hopefully " .. CharacterEssentials.GetCharacterName("Numel") .. " comes home soon so everyone can be happy again!")
+	end
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_town_ch_2.Azumarill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " says that it is a beautiful day outside!", "Happy")
-	UI:WaitShowDialogue(chara:GetDisplayName() .. " may even take a swim in the river after dinner![pause=0] " .. chara:GetDisplayName() .. " enjoys the cool water!")
+	if not SV.Chapter2.FinishedFirstDay then 
+		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " says that it is beautiful day outside!", "Happy")
+		UI:WaitShowDialogue(chara:GetDisplayName() .. " may take swim in river after dinner![pause=0] " .. chara:GetDisplayName() .. " enjoys cool water!")
+	else 
+		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " heard that child went missing.[pause=0] " .. chara:GetDisplayName() .. ' asks,[pause=10] "where could child be?"')
+		UI:SetSpeakerEmotion("Sad")
+		UI:WaitShowDialogue(chara:GetDisplayName() .. " not know answer...[pause=0] But " .. chara:GetDisplayName() .. " hopes answer is known soon!")
+	end
 	GeneralFunctions.EndConversation(chara)
 end 
 
@@ -1145,8 +1186,55 @@ end
 
 --npcs that only appear on day 2
 function metano_town_ch_2.Quagsire_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "My husband has been throwing lots of "  .. STRINGS:Format("\\uE024") .. " into this well thinking it will actually give him wishes...", "Normal", true, false)
+	GeneralFunctions.StartConversation(chara, "My husband has been throwing lots of "  .. STRINGS:Format("\\uE024") .. " into this well thinking it would actually grant him wishes...")
 	UI:WaitShowDialogue("I've been coming to the well afterwards to fish the "  .. STRINGS:Format("\\uE024") .. " back out.")
-	UI:WaitShowDialogue("I've tried explaining to him that you don't really get a wish,[pause=10] but he just gets confused.")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I've tried explaining to him that you don't really get a wish,[pause=10] but I don't think he understands.")
 	GeneralFunctions.EndConversation(chara)
 end
+
+function metano_town_ch_2.Sentret_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "I'm not sure where " .. CharacterEssentials.GetCharacterName("Numel") .. " is...[pause=0] Guess we'll have to play without him today.", "Worried", false)
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+
+function metano_town_ch_2.Medicham_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Placeholder.", "Normal", false)
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_2.Linoone_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Placeholder.", "Normal", false)
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_2.Manectric_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Little " .. CharacterEssentials.GetCharacterName("Numel") .. " has gone missing...[pause=0] I can't imagine what his mother is going through.", "Worried")
+	UI:WaitShowDialogue("If something happened to my precious " .. CharacterEssentials.GetCharacterName("Electrike") .. "...[pause=0] I don't know what I would do!")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+
+function metano_town_ch_2.Vileplume_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Numel") .. " has disappeared...[pause=0] Poor child...", "Sad")
+	UI:WaitShowDialogue("The world really is becoming a more dangerous place...[pause=0] What can we even do about that?")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_2.Marill_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_2.Spheal_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_2.Jigglypuff_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.EndConversation(chara)
+end 
+

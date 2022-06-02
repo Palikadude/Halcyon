@@ -878,15 +878,46 @@ function GeneralFunctions.EndConversation(target, changeNPCanimation)
 
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection)
-	SV.TemporaryFlags.OldDirection = Direction.None -- Clear flag 
+	
+	if target ~= partner then--if partner conversation was started don't turn them back around after
+		GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection)
+		SV.TemporaryFlags.OldDirection = Direction.None -- Clear flag 
+	end
+	
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)
-	if changeNPCanimation then GROUND:CharEndAnim(target) end
+	if changeNPCanimation and target ~= partner then GROUND:CharEndAnim(target) end
 	
 	partner.IsInteracting = false
 
 end
+
+
+
+
+
+--used to start a conversation between the player and the partner when it's the partner trying to start a conversation w/ the player
+function GeneralFunctions.StartPartnerConversation(dialogue, emotion, heroTurn)
+	if heroTurn == nil then heroTurn = true end
+	if emotion == nil then emotion = 'Normal' end	
+	
+	
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	partner.IsInteracting = true
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion(emotion)
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+		
+    GROUND:CharTurnToCharAnimated(partner, hero, 4)
+
+    UI:WaitShowDialogue(dialogue)
+	
+	--hero turns towards partner after 1st line of dialogue
+	if heroTurn then GROUND:CharTurnToCharAnimated(hero, partner, 4) end
+	
+end 
 
 
 
