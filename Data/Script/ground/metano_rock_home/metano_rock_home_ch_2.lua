@@ -6,14 +6,15 @@ require 'CharacterEssentials'
 metano_rock_home_ch_2 = {}
 
 function metano_rock_home_ch_2.SetupGround()
-	local medicham  = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Medicham', 152, 152, Direction.Left},
+	if not SV.Chapter2.FinishedFirstDay then 
+		local medicham  = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Medicham', 152, 152, Direction.Left},
 
-		})
-	
-	AI:SetCharacterAI(medicham, "ai.ground_default", RogueElements.Loc(120, 120), RogueElements.Loc(64, 64), 1, 16, 64, 40, 180)
-
+			})
+		
+		AI:SetCharacterAI(medicham, "ai.ground_default", RogueElements.Loc(120, 120), RogueElements.Loc(64, 64), 1, 16, 64, 40, 180)
+	end
 	GAME:FadeIn(20)
 end
 

@@ -42,10 +42,15 @@ function guild_second_floor_ch_2.SetupGround()
 
 	elseif SV.Chapter2.FinishedFirstDay then 
 	--day 2 after getting the first job but before wiping in the dungeon
-
+	
+		local cleffa, aggron = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Cleffa', 'Right_Duo_1'},
+				{'Aggron', 'Right_Duo_2'}
+			})
 	
 	--(noctowl and camerupt would be moved to upstairs and her house respectively if you wipe)
-		if SV.Chapter2.FinishedCameruptRequestScene then 
+		if SV.Chapter2.FinishedCameruptRequestScene and not SV.Chapter2.EnteredRiver then 
 			local noctowl, camerupt = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Noctowl', 80, 224, Direction.Down},

@@ -150,7 +150,8 @@ function metano_town_ch_2.SetupGround()
 				{'Spheal', 1204, 1128, Direction.Down},
 				{'Wooper_Boy', 744, 1144, Direction.Right},
 				{'Wooper_Girl', 776, 1144, Direction.Left},
-				{'Vileplume', 388, 716, Direction.DownRight}
+				{'Vileplume', 388, 716, Direction.DownRight},
+				{'Luxray', 304, 1024, Direction.Down}
 
 		})
 		
@@ -212,10 +213,13 @@ function metano_town_ch_2.Event_Trigger_3_Touch(obj, activator)
 	GeneralFunctions.EndConversation(partner)
 	
 end
+
+
+
+
 function metano_town_ch_2.Event_Trigger_4_Touch(obj, activator)
 	metano_town_ch_2.NumelTantrumCutscene()
 end
-
 
 function metano_town_ch_2.Event_Trigger_5_Touch(obj, activator)
 	local hero = CH('PLAYER')
@@ -253,15 +257,15 @@ end
 function metano_town_ch_2.Event_Trigger_8_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	GeneralFunctions.StartPartnerConversation("This path leads out of town.[pause=0] There's no time to leave town before dinner!")
-
-	if SV.Chapter2.FinishedNumelTantrum then 
-		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head back to the guild whenever you're ready.")
-	else 
-		UI:WaitShowDialogue("Let's turn around.[pause=0] We should head over to the residential area so you can meet some townspeople!")
-	end
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+	GeneralFunctions.StartPartnerConversation("This isn't the way to " .. zone:GetColoredName() .. ".")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said it was to the north of town.[pause=0] We'll need to leave town through the north exit!")
 	GeneralFunctions.EndConversation(partner)
 
+end
+
+function metano_town_ch_2.Event_Trigger_9_Touch(obj, activator)
+	--todo
 end
 
 
@@ -928,14 +932,18 @@ end
 
 function metano_town_ch_2.Meditite_Action(chara, activator)
 	local meditite = chara
-	GeneralFunctions.StartConversation(meditite, "..........", "Normal", false, false)
-	UI:WaitShowDialogue("..........")
-	UI:WaitShowDialogue("...ZZZzzz...")
-	UI:ResetSpeaker()
-	SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
-	GROUND:CharSetEmote(CH('PLAYER'), 9, 1)
-	GROUND:CharSetEmote(CH('Teammate1'), 9, 1)
-	UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
+	if not SV.Chapter2.FinishedFirstDay then--first day dialogue
+		GeneralFunctions.StartConversation(meditite, "..........", "Normal", false, false)
+		UI:WaitShowDialogue("..........")
+		UI:WaitShowDialogue("...ZZZzzz...")
+		UI:ResetSpeaker()
+		SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
+		GROUND:CharSetEmote(CH('PLAYER'), 9, 1)
+		GROUND:CharSetEmote(CH('Teammate1'), 9, 1)
+		UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
+	else --second day dialogue 
+		GeneralFunctions.StartConversation(meditite, "Placeholder.")
+	end
 	GeneralFunctions.EndConversation(meditite)
 end 
 
@@ -1186,10 +1194,10 @@ end
 
 --npcs that only appear on day 2
 function metano_town_ch_2.Quagsire_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "My husband has been throwing lots of "  .. STRINGS:Format("\\uE024") .. " into this well thinking it would actually grant him wishes...")
+	GeneralFunctions.StartConversation(chara, "My husband has been throwing lots of "  .. STRINGS:Format("\\uE024") .. " into this well thinking it would actually grant him wishes.")
 	UI:WaitShowDialogue("I've been coming to the well afterwards to fish the "  .. STRINGS:Format("\\uE024") .. " back out.")
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("I've tried explaining to him that you don't really get a wish,[pause=10] but I don't think he understands.")
+	UI:WaitShowDialogue("I've tried explaining to him wishing wells aren't actually magic,[pause=10] but I don't think he understands.")
 	GeneralFunctions.EndConversation(chara)
 end
 
