@@ -128,9 +128,9 @@ function StateFollow:Run(entity)
   --Suspend while interacting with the entity
   if ent.IsInteracting then 
     self.parentAI:SetState("Idle")
-  end
+	 
   
-  if not ent:CurrentTask() then 
+  elseif not ent:CurrentTask() then 
     --threshold for switching back is slightly lower to prevent stuttering walk
 	if self.parentAI.TravelLength > self.parentAI.ComfortZone - 2 then
 	  self:SetTask(entity)
