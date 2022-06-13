@@ -119,7 +119,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 		mon_id = RogueEssence.Dungeon.MonsterID(255, 0, 0, gender)
 		egg_move = 67--low kick
 	else
-		mon_id = RogueEssence.Dungeon.MonsterID(397, 0, 0, gender)
+		mon_id = RogueEssence.Dungeon.MonsterID(403, 0, 0, gender)
 		egg_move = 423--ice fang
 	end
   	
