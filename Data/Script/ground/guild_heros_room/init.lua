@@ -65,10 +65,10 @@ end
 
 function guild_heros_room.PlotScripting()
 	--if generic morning is flagged, prioritize that.
-	if SV.TemporaryFlags.MorningWakeup then 
-		guild_heros_room.Bedtime(true)
-		GAME:WaitFrames(120)
-		guild_heros_room.Morning()
+	if SV.TemporaryFlags.MorningWakeup or SV.TemporaryFlags.Bedtime then 
+		if SV.TemporaryFlags.Bedtime then guild_heros_room.Bedtime(true) end
+		GAME:WaitFrames(90)
+		if SV.TemporaryFlags.MorningWakeup then guild_heros_room.Morning(true) end
 	else
 		--plot scripting
 		if SV.ChapterProgression.Chapter == 1 then
@@ -153,6 +153,7 @@ function guild_heros_room.Bedtime(generic)
 		UI:WaitShowDialogue("OK,[pause=10] good night,[pause=10] " .. hero:GetDisplayName() .. ".")
 		SOUND:FadeOutBGM()
 		GAME:FadeOut(false, 60)
+		SV.TemporaryFlags.Bedtime = false 
 		GROUND:RemoveMapStatus(50)
 		GAME:CutsceneMode(false)
 		GAME:GetCurrentGround():RemoveObject(groundObj)

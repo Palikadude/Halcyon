@@ -45,9 +45,10 @@ function zone_53.ExitSegment(zone, result, rescue, segmentID, mapID)
 		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 
+		SV.TemporaryFlags.Bedtime = true
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
-		
+			
 		GAME:WaitFrames(60)
 		
 		--go to dinner room 
@@ -55,11 +56,15 @@ function zone_53.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 	
 	else 
-		--set generic flags for generic end of day / start of next day.
-		SV.TemporaryFlags.Dinnertime = true 
-		SV.TemporaryFlags.MorningWakeup = true 
-		SV.TemporaryFlags.MorningAddress = true 
-					
+		--dont set generic end flags if it's chapter 2 (i.e. you're rescuing numel)
+		if SV.ChapterProgression.Chapter ~= 2 then 
+			--set generic flags for generic end of day / start of next day.
+			SV.TemporaryFlags.Dinnertime = true 
+			SV.TemporaryFlags.Bedtime = true
+			SV.TemporaryFlags.MorningWakeup = true 
+			SV.TemporaryFlags.MorningAddress = true 
+		end
+						
 		--Go to Luminous Spring 
 		GeneralFunctions.EndDungeonRun(result, 0, -1, 20, 0, false, false)
 	end

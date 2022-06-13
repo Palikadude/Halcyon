@@ -43,8 +43,8 @@ function relic_forest_ch_1.Intro_Cutscene()
 	--Hero data
 	--This will be replaced by a personality quiz when I get around to it.
 	local msg = "Select a hero (personality quiz to be done later)"
-	local hero_choices = {'Treecko', 'Cyndaquil', 'Turtwig', 'Squirtle'}
-	UI:BeginChoiceMenu(msg, hero_choices, 1, 4)
+	local hero_choices = {'Treecko', 'Cyndaquil', 'Turtwig', 'Squirtle', 'Zorua'}
+	UI:BeginChoiceMenu(msg, hero_choices, 1, 5)
 	UI:WaitForChoice()	
 	local result = UI:ChoiceResult()
 
@@ -72,9 +72,12 @@ function relic_forest_ch_1.Intro_Cutscene()
 	elseif result == 3 then
 		mon_id = RogueEssence.Dungeon.MonsterID(387, 0, 0, gender)
 		egg_move = 328--sand tomb
-	else
+	elseif result == 4 then
 		mon_id = RogueEssence.Dungeon.MonsterID(7, 0, 0, gender)
 		egg_move = 196--icy wind
+	else 
+		mon_id = RogueEssence.Dungeon.MonsterID(570, 0, 0, gender)
+		egg_move = 326--extrasensory
 	end
 	
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
@@ -84,8 +87,8 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 
 	--Partner data
-	local partner_choices = {'Chikorita', 'Piplup', 'Riolu', 'Torchic'}
-	UI:BeginChoiceMenu("Select a partner.", partner_choices, 1, 4)
+	local partner_choices = {'Chikorita', 'Piplup', 'Riolu', 'Torchic', 'Shinx'}
+	UI:BeginChoiceMenu("Select a partner.", partner_choices, 1, 5)
 	UI:WaitForChoice()
 	result = UI:ChoiceResult()
 	
@@ -112,9 +115,12 @@ function relic_forest_ch_1.Intro_Cutscene()
 	elseif result == 3 then
 		mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, gender)
 		egg_move = 418--Bullet punch
-	else
+	elseif result == 4 then
 		mon_id = RogueEssence.Dungeon.MonsterID(255, 0, 0, gender)
 		egg_move = 67--low kick
+	else
+		mon_id = RogueEssence.Dungeon.MonsterID(397, 0, 0, gender)
+		egg_move = 423--ice fang
 	end
   	
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
