@@ -68,7 +68,6 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Surprised")
 	UI:WaitShowDialogue("Look![pause=0] There he is![pause=0] It's " .. numel:GetDisplayName() .. "!")
-	GAME:WaitFrames(20)
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 308, 280, false, 2) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
@@ -92,7 +91,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	
 	GeneralFunctions.Recoil(numel)
 	UI:SetSpeakerEmotion("Surprised")
-	UI:WaitShowDialogue("Wh-who are y-you g-guys?[pause=0] P-please d-don't hurt m-me!")
+	UI:WaitShowDialogue("Wh-who are y-you g-guys?[pause=0] P-please d-don't h-hurt me!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, 5, 1)
@@ -127,14 +126,14 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("So " .. numel:GetDisplayName() .. "...[pause=0] How did you wind up out here anyway?")
+	UI:WaitShowDialogue("Before we leave,[pause=10] " .. numel:GetDisplayName() .. "...[pause=0] Can you tell us how you wound up out here?")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(numel, -1, 0)
 	UI:SetSpeaker(numel)
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("Well...[pause=0] My mom is always trying to boss me around...")
-	UI:WaitShowDialogue("She always has me doing all sorts of boring chores...")
+	UI:WaitShowDialogue("She always has me doing all sorts of boring and tiring chores...")
 	UI:WaitShowDialogue("I thought that if I was bigger she couldn't tell me what to do anymore.")
 	UI:WaitShowDialogue("So I snuck out of the house while she was sleeping and came here so I could evolve...[pause=0] But...")
 	GROUND:CharAnimateTurnTo(numel, Direction.Up, 4) 
@@ -167,33 +166,42 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	UI:WaitShowDialogue("Let me give it a try.[pause=0] Maybe it'll work for me?")
 	GAME:WaitFrames(20)
 	
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(numel, 324, 248, false, 1)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I guess you may as well give it a shot...")
+	
+	GAME:WaitFrames(20)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(numel, Direction.Right, 4) 
+											GROUND:MoveToPosition(numel, 324, 248, false, 1)
 											GeneralFunctions.FaceMovingCharacter(numel, partner, 4, Direction.Up) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											GeneralFunctions.EightWayMove(partner, 292, 248, false, 1)
 											GeneralFunctions.MoveCharAndCamera(partner, 292, 192, false, 1)
 											GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
-	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 												  GeneralFunctions.FaceMovingCharacter(hero, partner, 4, Direction.Up) end)
 											
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
 	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Like this right?")
 	
 	GAME:WaitFrames(20)
 	UI:ResetSpeaker(false)
 	UI:SetCenter(true)
 	UI:WaitShowDialogue("...........................")
-	GAME:WaitFrames(20)
-	UI:WaitShowDialogue("...........................")
+	--GAME:WaitFrames(20)
+	--UI:WaitShowDialogue("...........................")
 	UI:SetCenter(false)
-	GAME:WaitFrames(40)
+	GAME:WaitFrames(80)
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("...Nothing's happening.[pause=0] I don't hear a voice either.")
+	UI:WaitShowDialogue("Guess it doesn't work for me.")
 	
 	GAME:WaitFrames(10)
 	UI:SetSpeakerEmotion("Normal")
@@ -223,16 +231,20 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	UI:SetCenter(false)
 	GeneralFunctions.EmoteAndPause(hero, "Notice", true)
 	GeneralFunctions.HeroDialogue(hero, "(I'm feeling something...[pause=0] strange.)", "Worried")
-	GeneralFunctions.HeroDialogue(hero, "(I've felt this way before...[pause=0] But where?", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(Could it be however this evolution thing is supposed to feel?)", "Worried")
+	GAME:WaitFrames(40)
+	
+	GeneralFunctions.HeroDialogue(hero, "(...No.[pause=0] It can't be.[pause=0] I've felt this way before...[pause=0] But where?)", "Worried")
 	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	GAME:WaitFrames(40)
-	GeneralFunctions.EmoteAndPause(hero, "Exclaim", true)
+	SOUND:PlayBattleSE('EVT_Emote_Exclaim_Idea')
+	GeneralFunctions.EmoteAndPause(hero, 'Exclaim', false)	
 	GeneralFunctions.HeroDialogue(hero, "(Oh,[pause=10] that's right!)", "Surprised")
 	GeneralFunctions.HeroDialogue(hero, "(I felt this way back in " .. zone:GetColoredName() .. "![pause=0] When I touched that stone tablet!)", "Surprised")
 	
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(Something feels different this time though.[pause=0] It's making me feel nauseous.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(Something feels different this time though.[pause=0] I'm feeling a bit nauseous,[pause=10] actually.)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(...Is there something wrong with the spring?)", "Worried")
 	
 	GAME:WaitFrames(20)
@@ -244,7 +256,11 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("It's a bit concerning that the spring doesn't seem to be working...")
 	UI:WaitShowDialogue("We should probably let " .. CharacterEssentials.GetCharacterName("Noctowl") .. " know about this when we get back.")
+	
+	GAME:WaitFrames(20)
+	
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, numel, 4) end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
 	
@@ -259,18 +275,22 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	GeneralFunctions.EmoteAndPause(numel, "Exclaim", true)
 	UI:SetSpeaker(numel)
 	UI:SetSpeakerEmotion("Teary-Eyed")
-	UI:WaitShowDialogue("Oh...[pause=0] Momma...")
+	UI:WaitShowDialogue("Oh...[pause=0] My poor momma...[pause=0] I probably made her so worried about me...")
 	GAME:WaitFrames(20)
-	GeneralFunctions.ShakeHead(numel, 4, true)
+	--GeneralFunctions.ShakeHead(numel, 4, true)
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.Hop(numel)
 	UI:WaitShowDialogue("Yes![pause=0] Please take me home![pause=0] I want to see my momma again!")
 	
+
 	GAME:WaitFrames(20)
-	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("")
-	
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 60)	
+	GAME:WaitFrames(60)
+	SV.Chapter2.FinishedRiver = true 
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")
 
 	
 end
