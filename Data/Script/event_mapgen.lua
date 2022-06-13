@@ -98,79 +98,9 @@ end
 
 FLOOR_GEN_SCRIPT = {}
 
---used for making the river in the Illuminant Riverbed
-function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
-	local mapCenter = math.ceil(map.Width / 2)
-	local randomOffset = math.rand(-2,2) --a random small offset added to all tiles to help randomize where the river falls a bit 
-	local leftBound = math.floor(mapCenter / 2) + randomOffset --base left bound 
-	local rightBound = math.ceil(mapCenter * 3 / 2) + randomOffset -- base right bound
-	local leftOffset = math.rand(-1, 1)
-	local rightOffset = math.rand(-1, 1)
-	local leftShore = 0
-	local rightShore = 0
-	
-	local leftOffsetRemaining = math.rand(1, 4)--how many times this specific offset can be used before being regenerated 
-	local rightOffsetRemaining = math.rand(1, 4)
-	
-	
-	
-	--go row by row. Replace ground tiles towards the center of the map with water tiles to create a river flowing through the dungeon.
-	--Ground tiles will remain untouched. River will ebb a bit side to side within a limit.
-	
-	for y = 0, map.Height, 1 do 
-		
-		--determine starting and ending positions for row of river
-		--an offset will last for a few rows before trying to roll again for a new offset
-		
-		--roll new offsets and set new offset timer 
-		--todo: make this more clever
-		if leftOffsetRemaining == 0 then
-			if leftOffset < 0 then
-				leftOffset = math.rand(-1, 0)
-			elseif leftOffset > 0 then 
-				leftOffset = math.rand(0, 1)
-			else 
-				leftOffset = math.rand(-1, 1)
-			end
-			leftOffsetRemaining = rand(1, 4)
-		end
-		
-		if rightOffsetRemaining == 0 then
-			if rightOffset < 0 then
-				rightOffset = math.rand(-1, 0)
-			elseif rightOffset > 0 then 
-				rightOffset = math.rand(0, 1)
-			else 
-				rightOffset = math.rand(-1, 1)
-			end
-			rightOffsetRemaining = rand(1, 4)
-		end
-		
-		leftShore = leftBound + leftOffset
-		rightShore = rightBound + rightOffset
-		
-		--set all non ground tiles to water tiles between our left and right bounds 
-		for x = leftShore, rightShore, 1 do 
-			local loc = RogueElements.Loc(xx, yy)
-			if not map:GetTile(loc):TileEquivalent(map.RoomTerrain) then
-				map:TrySetTile(loc, RogueEssence.Dungeon.Tile(3))
-			end
-	
-	
-		end 
-		
-		rightOffsetRemaining = rightOffsetRemaining - 1
-		rightOffsetRemaining = rightOffsetRemaining - 1
-		
-	end 
-	
-	
-end
-
-
 
 function FLOOR_GEN_SCRIPT.Test(map, args)
-  PrintInfo("Test GenStep Shart")
+  PrintInfo("Test GenStep")
   
   --A demo of various tile operations possible with scripting
   
@@ -259,7 +189,78 @@ end
 
 
 --Halcyon custom map gen steps
- 
+ --used for making the river in the Illuminant Riverbed
+function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
+	local mapCenter = math.ceil(map.Width / 2)
+	local randomOffset = map.Rand:Next(-2,3) --a random small offset added to all tiles to help randomize where the river falls a bit 
+	local leftBound = math.floor(mapCenter / 2) + randomOffset --base left bound 
+	local rightBound = math.ceil(mapCenter * 3 / 2) + randomOffset -- base right bound
+	local leftOffset = map.Rand:Next(-1, 2)
+	local rightOffset = map.Rand:Next(-1, 2)
+	local leftShore = 0
+	local rightShore = 0
+	
+	local leftOffsetRemaining = map.Rand:Next(1, 5)--how many times this specific offset can be used before being regenerated 
+	local rightOffsetRemaining = map.Rand:Next(1, 5)
+	
+	
+	
+	--go row by row. Replace ground tiles towards the center of the map with water tiles to create a river flowing through the dungeon.
+	--Ground tiles will remain untouched. River will ebb a bit side to side within a limit.
+	
+	for y = 0, map.Height-1, 1 do 
+		
+		--determine starting and ending positions for row of river
+		--an offset will last for a few rows before trying to roll again for a new offset
+		
+		--roll new offsets and set new offset timer 
+		--NOTE: map.Rand:Next(lower, upper) is inclusive on lower, and exclusive on upper 
+		--todo: make this more clever
+		if leftOffsetRemaining <= 0 then
+			if leftOffset < 0 then
+				leftOffset = map.Rand:Next(-1, 1)
+			elseif leftOffset > 0 then 
+				leftOffset = map.Rand:Next(0, 2)
+			else 
+				leftOffset = map.Rand:Next(-1, 2)
+			end
+			leftOffsetRemaining = map.Rand:Next(1, 5)
+		end
+		
+		if rightOffsetRemaining <= 0 then
+			if rightOffset < 0 then
+				rightOffset = map.Rand:Next(-1, 1)
+			elseif rightOffset > 0 then 
+				rightOffset = map.Rand:Next(0, 2)
+			else 
+				rightOffset = map.Rand:Next(-1, 2)
+			end
+			rightOffsetRemaining = map.Rand:Next(1, 5)
+		end
+		
+		leftShore = leftBound + leftOffset
+		rightShore = rightBound + rightOffset
+		print("Left, right shore :" .. leftShore .. " " ..rightShore)
+		print("Left, right offset:" .. leftOffset .. " " .. rightOffset)
+		print("left, right offset remaining: " .. leftOffsetRemaining .. " " .. rightOffsetRemaining)
+		
+		--set all non ground tiles to water tiles between our left and right bounds 
+		for x = leftShore, rightShore, 1 do 
+			local loc = RogueElements.Loc(x, y)
+			if not map:GetTile(loc):TileEquivalent(map.RoomTerrain) then
+				map:TrySetTile(loc, RogueEssence.Dungeon.Tile(3))
+			end
+	
+	
+		end 
+		
+		leftOffsetRemaining = leftOffsetRemaining - 1
+		rightOffsetRemaining = rightOffsetRemaining - 1
+		
+	end 
+	
+	
+end
  
 
 

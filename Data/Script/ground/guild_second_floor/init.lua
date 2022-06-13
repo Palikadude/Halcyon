@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'GeneralFunctions'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
 
@@ -66,7 +67,11 @@ function guild_second_floor.PlotScripting()
 			guild_second_floor_ch_1.SetupGround()
 		end
 	elseif SV.ChapterProgression.Chapter == 2 then
-		guild_second_floor_ch_2.SetupGround()
+		if SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then 
+			guild_second_floor_ch_2.CameruptRequestCutscene()
+		else
+			guild_second_floor_ch_2.SetupGround()
+		end
 	else
 		GAME:FadeIn(20)
 	end
@@ -122,6 +127,7 @@ end
 
 function guild_second_floor.Mission_Board_Action(chara, activator)
 	if SV.ChapterProgression.Chapter < 3 then 
+		local partner = CH('Teammate1')
 		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...", "Worried")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")
@@ -131,6 +137,7 @@ end
 
 function guild_second_floor.Outlaw_Board_Action(chara, activator)
 	if SV.ChapterProgression.Chapter < 3 then 
+		local partner = CH('Teammate1')
 		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...", "Worried")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")

@@ -6,6 +6,7 @@ require 'CharacterEssentials'
 guild_third_floor_lobby_ch_2 = {}
 
 function guild_third_floor_lobby_ch_2.SetupGround()
+
 	local board = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
 													RogueElements.Rect(264, 216, 48, 8),
 													RogueElements.Loc(0, 0), 
@@ -15,10 +16,14 @@ function guild_third_floor_lobby_ch_2.SetupGround()
 	board:ReloadEvents()
 	GAME:GetCurrentGround():AddObject(board)
 	
-	local noctowl = CharacterEssentials.MakeCharactersFromList({
-		{'Noctowl', 'Noctowl'}
-	})
-	GROUND:CharSetAnim(noctowl, 'Idle', true)
+	--noctowl should not appear if this is the 2nd day, as he would be down on the 2nd floor 
+	if SV.Chapter2.EnteredRiver or not SV.Chapter2.FinishedFirstDay then 
+		local noctowl = CharacterEssentials.MakeCharactersFromList({
+			{'Noctowl', 'Noctowl'}
+		})
+		GROUND:CharSetAnim(noctowl, 'Idle', true)
+	end
+	
 	GAME:FadeIn(20)	
 end
 
@@ -35,15 +40,19 @@ end
 --NPC Scripts
 ----------------
 function guild_third_floor_lobby_ch_2.Noctowl_Action(chara, activator)
-	local dir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Go to Ledian Dojo and take the basic lesson with Sensei " .. CharacterEssentials.GetCharacterName('Ledian') .. ".")
-	UI:WaitShowDialogue("She will teach you the basics of adventuring and dungeoneering.")
-	UI:WaitShowDialogue("Once you leave the guild,[pause=10] go over the bridge and head east.")
-	UI:WaitShowDialogue("There is a ladder that will lead down into a cave,[pause=10] where the dojo is located.")
-	GROUND:EntTurn(chara, dir)
+	if not SV.Chapter2.EnteredRiver then 
+		GeneralFunctions.StartConversation(chara, "Go to Ledian Dojo and take the basic lesson with Sensei " .. CharacterEssentials.GetCharacterName('Ledian') .. ".")
+		UI:WaitShowDialogue("She will teach you the basics of adventuring and dungeoneering.")
+		UI:WaitShowDialogue("Once you leave the guild,[pause=10] go over the bridge and head east.")
+		UI:WaitShowDialogue("There is a ladder that will lead down into a cave,[pause=10] where the dojo is located.")
+		GeneralFunctions.EndConversation(chara)
+	else 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+		GeneralFunctions.StartConversation(chara, zone:GetColoredName() .. " is located to the north of town.")
+		UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+		UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")
+		GeneralFunctions.EndConversation(chara)
+	end
 end
 	
 

@@ -77,11 +77,15 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	local noctowl = 
 		CharacterEssentials.MakeCharactersFromList({
-			{'Noctowl', 340, 280, Direction.Left}
+			{'Noctowl', 340, 280, Direction.Left},
+			{'Cleffa', 'Right_Duo_1'},
+			{'Aggron', 'Right_Duo_2'}
 		})
 	
 	GROUND:TeleportTo(partner, 340, 280, Direction.Left)
 	GROUND:TeleportTo(hero, 340, 280, Direction.Left)
+	
+	GAME:FadeIn(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 192, 280, false, 1)
 												  GROUND:MoveToPosition(noctowl, 136, 224, false, 1)
@@ -114,10 +118,22 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:WaitShowDialogue("They truly are wonderous locations to adventure in.[pause=0] But as fantastical as they are,[pause=10] they are also dangerous.")
 	UI:WaitShowDialogue("Should either one of you be defeated in a dungeon,[pause=10] you will both be expelled from the dungeon.")
 	UI:WaitShowDialogue("Furthermore,[pause=10] you will lose all the money you are carrying and any items in your Treasure Bag.")
-	UI:WaitShowDialogue("Note that some items,[pause=10] such as the " .. scarf_name .. " the Guildmaster gave you, are special and cannot be lost however.")
+	UI:WaitShowDialogue("Note that some items,[pause=10] such as the " .. scarf_name .. " the Guildmaster gave you, are special and cannot be lost.")
 	UI:WaitShowDialogue("Be sure to visit the proper facilities in town to safeguard any possessions you can't bear to lose.")
+	UI:WaitShowDialogue("Is that all clear to you?")
 	GAME:WaitFrames(20)
 	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	GROUND:CharSetEmote(partner, 5, 1)
+	UI:WaitShowDialogue("Well,[pause=10] that is a lot to take in...")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("But I'm sure we'll manage to remember all of that!")
+	
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Very good.[pause=0] Now,[pause=10] for your task today,[pause=10] I shall choose a job from the board for you to undertake.")
 	UI:WaitShowDialogue("Since you are just beginners,[pause=10] let's select a simple task from the board.")
 	GAME:WaitFrames(20)
 	
@@ -139,7 +155,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(camerupt, 112, 224, true, 3) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(25) 
-											SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
+											--SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
 											GROUND:CharSetEmote(partner, 3, 1)
 											GeneralFunctions.FaceMovingCharacter(partner, camerupt)	
 											GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)

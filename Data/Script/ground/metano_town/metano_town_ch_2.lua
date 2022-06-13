@@ -265,7 +265,62 @@ function metano_town_ch_2.Event_Trigger_8_Touch(obj, activator)
 end
 
 function metano_town_ch_2.Event_Trigger_9_Touch(obj, activator)
-	--todo
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+	
+	GeneralFunctions.StartPartnerConversation("This is the way towards " .. zone:GetColoredName() .. ".")
+	UI:ChoiceMenuYesNo("Are you ready to head out?", true)
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	if result then 
+		GAME:CutsceneMode(true)
+		GROUND:Hide('Event_Trigger_9')
+		GROUND:Hide('North_Exit')
+	
+		local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 232, 8, false, 1)
+													  GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)	
+		local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 256, 8, false, 1)
+													  GROUND:CharAnimateTurnTo(hero, Direction.Left, 4) end) 		
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		UI:WaitShowDialogue("Alright,[pause=10] let's get a move on!")
+		
+		if SV.Chapter2.EnteredRiver then 
+			UI:WaitShowDialogue("Come on![pause=0] Let's do this, " .. hero:GetDisplayName() .. "!")
+		else 
+			UI:WaitShowDialogue("This is our first mission![pause=0] We can do this,[pause=10] " .. hero:GetDisplayName() .. "!")
+		end 
+		
+		GAME:WaitFrames(20)
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, "Nod") end)
+		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, "Nod") end)
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		GAME:WaitFrames(20)
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 244, -4, false, 1)
+												GROUND:MoveToPosition(partner, 244, -24, false, 1) end)	
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(24)
+												GeneralFunctions.EightWayMove(hero, 244, -4, false, 1)
+												GROUND:MoveToPosition(hero, 244, -24, false, 1) end)
+
+		TASK:JoinCoroutines({coro1, coro2})	
+		SOUND:FadeOutBGM()
+		GAME:FadeOut(false, 60)
+		
+		GAME:WaitFrames(120)
+		
+		GAME:CutsceneMode(false)
+		GeneralFunctions.EndConversation(partner)
+		SV.partner.Spawn = "Default"
+        GAME:EnterGroundMap("illuminant_riverbed_entrance", 'Main_Entrance_Marker')
+
+		
+	else
+		UI:WaitShowDialogue("OK.[pause=0] Let's head back into town to prepare,[pause=10] and once we're ready we should head on out.")
+		GeneralFunctions.EndConversation(partner)
+	end
+
 end
 
 
@@ -766,7 +821,7 @@ function metano_town_ch_2.Growlithe_Desk_Action(chara, activator)
 		GeneralFunctions.StartConversation(growlithe, CharacterEssentials.GetCharacterName("Camerupt") .. " passed by here earlier in a panic,[pause=10] ruff...[pause=0] I couldn't even stop her to ask what was wrong!", "Worried")
 		UI:WaitShowDialogue("It's rare to see townfolk worked up like that...[pause=0] I hope everything is OK,[pause=10] ruff...")
 	else
-		GeneralFunctions.StartConversation(growlithe, "I found out about your mission to find " .. CharacterEssentials.GetCharacterName('Numel') ..".[pause=0] His disappearance explains why " .. CharacterEssentials.GetCharacterName("Camerupt") .. " was so hysterical the other day,[pause=10] ruff.")
+		GeneralFunctions.StartConversation(growlithe, "I found out about your mission to find " .. CharacterEssentials.GetCharacterName('Numel') ..".[br]His disappearance explains why " .. CharacterEssentials.GetCharacterName("Camerupt") .. " was so hysterical the other day,[pause=10] ruff.")
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Anyways,[pause=10] good luck you two with the job![pause=0] I know you can do it,[pause=10] ruff!")
 	end

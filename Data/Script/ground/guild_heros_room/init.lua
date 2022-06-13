@@ -66,6 +66,8 @@ end
 function guild_heros_room.PlotScripting()
 	--if generic morning is flagged, prioritize that.
 	if SV.TemporaryFlags.MorningWakeup then 
+		guild_heros_room.Bedtime(true)
+		GAME:WaitFrames(120)
 		guild_heros_room.Morning()
 	else
 		--plot scripting
@@ -119,28 +121,42 @@ function guild_heros_room.Bedtime(generic)
 --if generic is false, just make the room look like it's night and put the duo in bed.
 	if generic == nil then generic = false end
 	
-	if not generic then 
-		local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
-														RogueElements.Rect(176, 56, 64, 64),
-														RogueElements.Loc(0, 0), 
-														false, 
-														"Window_Cutscene")
-		groundObj:ReloadEvents()
-		GAME:GetCurrentGround():AddObject(groundObj)
-		GROUND:AddMapStatus(50)
-		SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
-		AI:DisableCharacterAI(CH('Teammate1'))
+	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
+													RogueElements.Rect(176, 56, 64, 64),
+													RogueElements.Loc(0, 0), 
+													false, 
+													"Window_Cutscene")
+	groundObj:ReloadEvents()
+	GAME:GetCurrentGround():AddObject(groundObj)
+	GROUND:AddMapStatus(50)
+	SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
+	AI:DisableCharacterAI(CH('Teammate1'))
 
-		local hero_bed = MRKR('Hero_Bed')
-		local partner_bed = MRKR('Partner_Bed')
-		GROUND:Hide("Save_Point")--disable bed saving
-		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Right)
-		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Left)
-		GeneralFunctions.CenterCamera({CH('PLAYER'), CH('Teammate1')})
+	local hero_bed = MRKR('Hero_Bed')
+	local partner_bed = MRKR('Partner_Bed')
+	GROUND:Hide("Save_Point")--disable bed saving
+	GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Right)
+	GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Left)
+	GeneralFunctions.CenterCamera({CH('PLAYER'), CH('Teammate1')})
 
-	end
+	
 	--todo: generic 
-
+	if generic then 
+		local partner = CH('Teammate1')
+		local hero = CH('PLAYER')
+		GAME:CutsceneMode(true)
+		GAME:FadeIn(20)
+		SOUND:PlayBGM('Goodnight.ogg', true)
+		GAME:WaitFrames(40)
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("Today was tiring.[pause=0] We should get some rest so we can give it our all tomorrow!")
+		UI:WaitShowDialogue("OK,[pause=10] good night,[pause=10] " .. hero:GetDisplayName() .. ".")
+		SOUND:FadeOutBGM()
+		GAME:FadeOut(false, 60)
+		GROUND:RemoveMapStatus(50)
+		GAME:CutsceneMode(false)
+		GAME:GetCurrentGround():RemoveObject(groundObj)
+	end
 end
 
 function guild_heros_room.Morning(generic)

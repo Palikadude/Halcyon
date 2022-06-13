@@ -919,8 +919,16 @@ function GeneralFunctions.StartPartnerConversation(dialogue, emotion, heroTurn)
 	
 end 
 
-
-
+--character hops twice and makes angry noise 
+function GeneralFunctions.Complain(chara, emote)
+	if emote == nil then emote = false end 
+	
+	SOUND:PlayBattleSE('EVT_Emote_Complain_2')
+	GeneralFunctions.Hop(chara)
+	GeneralFunctions.Hop(chara)
+	if emote then GROUND:CharSetEmote(chara, 7, 0) end 
+	
+end
 
 
 

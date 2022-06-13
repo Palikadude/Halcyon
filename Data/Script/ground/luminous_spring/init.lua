@@ -1,34 +1,86 @@
 require 'common'
+require 'PartnerEssentials'
+require 'ground.luminous_spring.luminous_spring_ch_2'
 
+-- Package name
 local luminous_spring = {}
+
+-- Local, localized strings table
+-- Use this to display the named strings you added in the strings files for the map!
+-- Ex:
+--      local localizedstring = MapStrings['SomeStringName']
 local MapStrings = {}
---------------------------------------------------
+
+-------------------------------
 -- Map Callbacks
---------------------------------------------------
-function luminous_spring.Init(map)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  PrintInfo("=>> Init_luminous_spring")
-  MapStrings = COMMON.AutoLoadLocalizedStrings()
-  COMMON.RespawnAllies()
+-------------------------------
+---luminous_spring.Init
+--Engine callback function
+function luminous_spring.Init(map, time)
+
+	DEBUG.EnableDbgCoro()
+	print('=>> Init_luminous_spring <<=')
+	MapStrings = COMMON.AutoLoadLocalizedStrings()
+	COMMON.RespawnAllies()
+	PartnerEssentials.InitializePartnerSpawn()
 end
 
-function luminous_spring.Enter(map)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+---luminous_spring.Enter
+--Engine callback function
+function luminous_spring.Enter(map, time)
 
-  GAME:FadeIn(20)
+	luminous_spring.PlotScripting()
+
 end
 
+---luminous_spring.Exit
+--Engine callback function
+function luminous_spring.Exit(map, time)
+
+
+end
+
+---luminous_spring.Update
+--Engine callback function
 function luminous_spring.Update(map, time)
+
+
 end
 
---------------------------------------------------
--- Map Begin Functions
---------------------------------------------------
+function luminous_spring.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	luminous_spring.PlotScripting()
+end
+
+function luminous_spring.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
+end
+
+
+function luminous_spring.PlotScripting()
+	if SV.ChapterProgression.Chapter == 2 then 
+		luminous_spring_ch_2.FindNumelCutscene()
+	else
+		--todo: generic ending 
+		GAME:FadeIn(20)
+	end
+end
+
+
+
+
+
+function luminous_spring.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+ end
 
 --------------------------------------------------
 -- Objects Callbacks
 --------------------------------------------------
 
+--[[
+Base Game functionality, commented out 
 function luminous_spring.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
@@ -212,5 +264,6 @@ function luminous_spring.Teammate3_Action(chara, activator)
   COMMON.GroundInteract(activator, chara, true)
 end
 
+]]--
 
 return luminous_spring

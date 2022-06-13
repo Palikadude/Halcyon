@@ -91,7 +91,7 @@ function guild_third_floor_lobby.PlotScripting()
 				guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 			elseif SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then
 				guild_third_floor_lobby_ch_2.SecondMorningAddress()
-			else 
+			else
 				guild_third_floor_lobby_ch_2.SetupGround()
 			end
 		else
@@ -236,10 +236,15 @@ function guild_third_floor_lobby.MorningAddress(generic)
 												   GAME:GetCurrentGround():RemoveTempChar(tropius) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10, coro11, coro12})
 
+
 	if generic then 
-		--todo: generic opener, and clear relevant cutscene flags 
+		GeneralFunctions.PanCamera()
+		SV.TemporaryFlags.MorningAddress = false
+		GAME:CutsceneMode(false)
+		AI:EnableCharacterAI(partner)
+		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)	
 	end
-	
+
 	
 end 
 

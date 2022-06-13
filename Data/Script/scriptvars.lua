@@ -170,6 +170,7 @@ SV.Chapter2 =
 	FinishedCameruptRequestScene = false,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
 	
 	EnteredRiver = false,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+	FinishedRiver = false,--player and partner have finished the dungeon and made it to Numel?
 	
 	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }
