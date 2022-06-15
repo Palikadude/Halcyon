@@ -14,7 +14,7 @@ function guild_third_floor_lobby_ch_2.SetupGround()
 													"Event_Object_1")
 	
 	board:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(board)
+	GAME:GetCurrentGround():AddTempObject(board)
 	
 	--noctowl should not appear if this is the 2nd day, as he would be down on the 2nd floor 
 	if SV.Chapter2.EnteredRiver or not SV.Chapter2.FinishedFirstDay then 

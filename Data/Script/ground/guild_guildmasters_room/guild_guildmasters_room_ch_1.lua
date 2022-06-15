@@ -22,7 +22,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 												 true, 
 												 "Yellow_Box")--object entity name
 	box:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(box)
+	GAME:GetCurrentGround():AddTempObject(box)
 	GROUND:ObjectSetDefaultAnim(box, 'Yellow_Box', 0, 0, 0,Direction.Down)
 	GROUND:Hide(box.EntName)
 	local noctowl = 

@@ -383,7 +383,7 @@ function guild_second_floor_ch_1.SetupGround()
 													true, 
 													"Event_Trigger_1")
 	groundObj:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(groundObj)
+	GAME:GetCurrentGround():AddTempObject(groundObj)
 	
 	local spheal, jigglypuff, marill, mareep, cranidos, cleffa, aggron, zigzagoon = 
 		CharacterEssentials.MakeCharactersFromList({

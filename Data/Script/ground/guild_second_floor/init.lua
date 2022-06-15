@@ -69,6 +69,8 @@ function guild_second_floor.PlotScripting()
 	elseif SV.ChapterProgression.Chapter == 2 then
 		if SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then 
 			guild_second_floor_ch_2.CameruptRequestCutscene()
+		elseif SV.Chapter2.FinishedRiver then
+			guild_second_floor_ch_2.RescuedNumelCutscene()
 		else
 			guild_second_floor_ch_2.SetupGround()
 		end

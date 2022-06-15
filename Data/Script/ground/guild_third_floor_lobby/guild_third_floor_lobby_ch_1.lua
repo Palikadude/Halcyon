@@ -12,7 +12,7 @@ function guild_third_floor_lobby_ch_1.SetupGround()
 													false, 
 													"Event_Object_1")
 	door:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(door)
+	GAME:GetCurrentGround():AddTempObject(door)
 	
 	local board = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
 													RogueElements.Rect(264, 216, 48, 8),
@@ -21,7 +21,7 @@ function guild_third_floor_lobby_ch_1.SetupGround()
 													"Event_Object_2")
 	
 	board:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(board)
+	GAME:GetCurrentGround():AddTempObject(board)
 	GROUND:Hide('Door_Exit')
 	GAME:FadeIn(20)	
 end
@@ -58,7 +58,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 													false, 
 													"Closed_Door")
 	door:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(door)
+	GAME:GetCurrentGround():AddTempObject(door)
 		
 	local noctowl = 
 		CharacterEssentials.MakeCharactersFromList({

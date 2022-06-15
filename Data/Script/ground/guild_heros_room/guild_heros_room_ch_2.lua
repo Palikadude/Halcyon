@@ -32,7 +32,7 @@ function guild_heros_room_ch_2.FirstMorning()
 			{"Audino", 120, 204, Direction.UpRight},
 		})
 
-	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 2\n\nTo be determined\n", 20)
+	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 2\n\nResponsibility\n", 20)
 												  GAME:WaitFrames(180)
 												  UI:WaitHideTitle(20) end)
 	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Chapter_1", 180, 20)
@@ -158,6 +158,121 @@ function guild_heros_room_ch_2.FirstMorning()
 
 end
 
+function guild_heros_room_ch_2.PostRiverBedtalk() 
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GAME:CutsceneMode(true)
+	guild_heros_room.Bedtime(false)
+	UI:ResetSpeaker()
+	GAME:FadeIn(20)
+	
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+
+	SOUND:PlayBGM('Goodnight.ogg', true)
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue(hero:GetDisplayName() .. ",[pause=10] wasn't today great?[pause=0] I'm so happy with how the day turned out!")
+	UI:WaitShowDialogue("Our first job as an adventuring team was a total success!")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " looked so relieved to have her son returned to her.")
+	UI:WaitShowDialogue("The reward she gave us was nice...[pause=0] But I'm just happy we were able to help them out.")
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.HeroDialogue(hero, "(I'm glad we were able to help them too.[pause=0] I felt like I was some kind of hero!)", "Happy")
+	GeneralFunctions.HeroDialogue(hero, "(Helping Pokémon in need is really fulfilling.[pause=0] I hope " .. partner:GetDisplayName() .. " and I can keep doing it.)", "Happy")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("What happened at the spring was pretty weird,[pause=10] though.[pause=0] I wonder why it wasn't working?")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said not to worry about it though,[pause=10] so I guess it's not a big deal.")
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.HeroDialogue(hero, "(He did say not to worry,[pause=10] but I can't stop thinking about that strange feeling I had at the spring.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(It was a bit nauseating,[pause=10] but so similar to how I felt in " .. zone:GetColoredName() .. "...[pause=0] Could those two places be connected?)", "Worried")
+	GAME:WaitFrames(40)
+	
+	GeneralFunctions.HeroSpeak(hero, 60)
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Huh?[pause=0] Do I know if Luminous Spring is related at all to " .. zone:GetColoredName() .. "?")
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue("Um...[pause=0] I wouldn't know,[pause=10] why do you ask?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.HeroSpeak(hero, 60)
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.Recoil(partner)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("The light of the spring made you feel like you did when you touched the tablet in " .. zone:GetColoredName() .. "?")
+	UI:WaitShowDialogue("But this time you also felt sick?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(partner, "Sweating", true)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("That does seem pretty noteworthy...[pause=0] Maybe the two places are connected somehow.")
+	UI:WaitShowDialogue("But a vague feeling isn't a lot to go off of right now though.")
+	UI:WaitShowDialogue("We aren't even sure what that feeling meant back in " .. zone:GetColoredName() .. "!")
+
+	--note: there is signficance in the feelings, as both the tablet and the spring are connected to the tree of life, to which the hero has significance as they were "summoned" here to save it 
+	GAME:WaitFrames(20)
+	GeneralFunctions.HeroDialogue(hero, "(That is true...[pause=0] I could be looking for meaning where there is none.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(It's hard to tell,[pause=10] given my whole situation...)", "Worried")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("I think we need something more concrete before we jump to any conclusions.")
+	UI:WaitShowDialogue("For now,[pause=10] I think we shouldn't worry about it.[pause=0] I'm sure " .. CharacterEssentials.GetCharacterName("Noctowl") .. " knows what he's talking about!")
+	UI:WaitShowDialogue("Let's stick to our guild training so we can keep helping Pokémon out like we did today.")
+	
+	--player is more interested in living pokemon life than figuring shit out? potentially? just an idea
+	GAME:WaitFrames(20)
+	GeneralFunctions.DoAnimation(hero, 'Nod')
+	
+	GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+	GeneralFunctions.DoAnimation(partner, "DeepBreath")
+	GAME:WaitFrames(10)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Yawn...[pause=0] I'm feeling sleepy.")
+	UI:WaitShowDialogue("Let's get some rest so we can make tomorrow just as great as today.")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetAnim(partner, "Laying", true)
+	
+	
+	GAME:WaitFrames(60)
+	
+	GROUND:CharSetAnim(hero, "Laying", true)
+	
+	GAME:WaitFrames(40)
+	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:WaitShowDialogue("Good night,[pause=10] " .. hero:GetDisplayName() .. ".")
+	GAME:WaitFrames(40)
+	GROUND:CharSetAnim(partner, "EventSleep", true)
+	GAME:WaitFrames(40)
+	GROUND:CharSetAnim(hero, "EventSleep", true)
+	
+	GAME:WaitFrames(180)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 120)
+	GAME:CutsceneMode(false)
+	GAME:WaitFrames(60)
+	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
+	SV.TemporaryFlags.MorningWakeup = true
+	GAME:EnterGroundMap("guild_guildmasters_room", "Main_Entrance_Marker")
+	
+
+	
+	
+	
+	
+	
+end 
+
 function guild_heros_room_ch_2.FirstNightBedtalk()
 	GAME:FadeOut(false, 1)
 	local hero = CH('PLAYER')
@@ -190,7 +305,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	GAME:FadeIn(60)
 	GAME:WaitFrames(20)
 	SOUND:PlayBGM("Goodnight.ogg", true)
-	GAME:WaitFrames(20)
+	--GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("..." .. hero:GetDisplayName() .. ",[pause=10] still up?")
@@ -213,6 +328,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	SOUND:FadeOutBGM()
 	GAME:FadeOut(false, 120)
 	GAME:WaitFrames(60)
+	GAME:CutsceneMode(false)
 	SV.Chapter2.FinishedFirstDay = true
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	SV.TemporaryFlags.MorningWakeup = true

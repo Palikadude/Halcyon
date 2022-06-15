@@ -82,7 +82,9 @@ function guild_heros_room.PlotScripting()
 				guild_heros_room_ch_2.FirstMorning()
 			elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then
 				guild_heros_room_ch_2.FirstNightBedtalk()
-			else 
+			elseif SV.Chapter2.FinishedRiver then
+				guild_heros_room_ch_2.PostRiverBedtalk()
+			else
 				GAME:FadeIn(20)
 			end
 		else 
@@ -127,7 +129,7 @@ function guild_heros_room.Bedtime(generic)
 													false, 
 													"Window_Cutscene")
 	groundObj:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(groundObj)
+	GAME:GetCurrentGround():AddTempObject(groundObj)
 	GROUND:AddMapStatus(50)
 	SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
 	AI:DisableCharacterAI(CH('Teammate1'))
@@ -156,7 +158,7 @@ function guild_heros_room.Bedtime(generic)
 		SV.TemporaryFlags.Bedtime = false 
 		GROUND:RemoveMapStatus(50)
 		GAME:CutsceneMode(false)
-		GAME:GetCurrentGround():RemoveObject(groundObj)
+		GAME:GetCurrentGround():RemoveTempObject(groundObj)
 	end
 end
 

@@ -14,7 +14,7 @@ guild_storage_hallway_ch_1 = {}
 														true, 
 														"Event_Trigger")
 	  groundObj:ReloadEvents()
-	  GAME:GetCurrentGround():AddObject(groundObj)
+	  GAME:GetCurrentGround():AddTempObject(groundObj)
 	  
 	  GAME:FadeIn(20)
 end]]--

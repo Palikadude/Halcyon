@@ -132,9 +132,9 @@ function guild_dining_room.Dinnertime(generic)
 													"Window_Dinner_2")
 													
 	nightWindow1:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(nightWindow1)
+	GAME:GetCurrentGround():AddTempObject(nightWindow1)
 	nightWindow2:ReloadEvents()
-	GAME:GetCurrentGround():AddObject(nightWindow2)
+	GAME:GetCurrentGround():AddTempObject(nightWindow2)
 													
 
 	GROUND:CharSetAnim(hero, "Eat", true)

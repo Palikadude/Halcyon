@@ -781,6 +781,77 @@ function GeneralFunctions.SendInvToStorage()
 	end
 end
 
+--used to reward items to the player, sends the item to storage if inv is full
+function GeneralFunctions.RewardItem(itemID, money, hiddenValue)
+	--if money is true, the itemID is instead the amount of money to award
+	if money == nil then money = false end 
+	
+	UI:ResetSpeaker(false)--disable text noise
+	UI:SetCenter(true)
+	
+	
+	SOUND:PlayFanfare("Fanfare/Item")
+	
+	if money then 
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. "[color=#00FFFF]" .. itemID .. "[color=#00FFFF]" .. STRINGS:Format("\\uE024") .. ".") 
+		GAME:AddToPlayerMoney(itemID)
+	else	
+		local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(itemID)
+		
+		if hiddenValue == nil then hiddenValue = itemEntry.MaxStack end 
+
+		local item = RogueEssence.Dungeon.InvItem(itemID, false, hiddenValue)
+
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".") 
+		
+		--bag is full
+		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+			UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
+			GAME:GivePlayerStorageItem(item.ID, 1, false, hiddenValue)
+		else
+			GAME:GivePlayerItem(item.ID, 1, false, hiddenValue)
+		end
+	
+	end
+	UI:SetCenter(false)
+	UI:ResetSpeaker()
+			
+		
+end
+
+--gets the ID of the gummi that matches one of the types of the given pokemon. Chooses the type randomly if they have multiple.
+function GeneralFunctions.GetFavoriteGummi(chara)
+	local mon = _DATA:GetMonster(chara.CurrentForm.Species)
+	local forme = mon.Forms[chara.CurrentForm.Form]
+	local typing = forme.Element1
+	if forme.Element2 ~= 0 then
+		local rand = GeneralFunctions.RandBool()
+		if rand then typing = forme.Element2 end
+	end
+	
+	local gummis = {80, --bug
+					77, --dark 
+					87, --dragon 
+					90, --electric 
+					93, --fairy 
+					82, --fighting 
+					86, --fire 
+					91, --flying 
+					85, --ghost
+					79, --grass 
+					81, --ground 
+					78, --ice 
+					89, --normal 
+					84, --poison
+					83, --psychic
+					92, --rock 
+					88,--steel 
+					76} --water 
+	
+	return gummis[typing]
+					
+end
+
 --have both player and partner turn towards chara at the same time
 --shortcut function
 function GeneralFunctions.DuoTurnTowardsChar(chara, turnFrames)

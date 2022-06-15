@@ -10,7 +10,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	local numel = CharacterEssentials.MakeCharactersFromList({{"Numel", 292, 248, Direction.Up}})
-
+	GAME:WaitFrames(60)
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	

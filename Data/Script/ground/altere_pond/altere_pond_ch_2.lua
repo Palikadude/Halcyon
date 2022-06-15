@@ -19,7 +19,7 @@ function altere_pond_ch_2.SetupGround()
 																					
 	forestBlock:ReloadEvents()
 
-	GAME:GetCurrentGround():AddObject(forestBlock)
+	GAME:GetCurrentGround():AddTempObject(forestBlock)
 		
 	GAME:FadeIn(20)
 end

@@ -38,9 +38,9 @@ function metano_town_ch_2.SetupGround()
 		bridgeBlock:ReloadEvents()
 		marketBlock:ReloadEvents()
 
-		GAME:GetCurrentGround():AddObject(stoneBlock)
-		GAME:GetCurrentGround():AddObject(bridgeBlock)
-		GAME:GetCurrentGround():AddObject(marketBlock)
+		GAME:GetCurrentGround():AddTempObject(stoneBlock)
+		GAME:GetCurrentGround():AddTempObject(bridgeBlock)
+		GAME:GetCurrentGround():AddTempObject(marketBlock)
 		
 		GAME:FadeIn(20)
 	elseif SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then 
@@ -87,7 +87,7 @@ function metano_town_ch_2.SetupGround()
 												
 			tantrumBlock:ReloadEvents()
 
-			GAME:GetCurrentGround():AddObject(tantrumBlock)
+			GAME:GetCurrentGround():AddTempObject(tantrumBlock)
 			
 			--place numel inside oddish for introductory cutscene, so their circles sync up well
 			numel.CollisionDisabled = true
@@ -101,7 +101,7 @@ function metano_town_ch_2.SetupGround()
 												"Event_Trigger_5")												
 				guildBlock:ReloadEvents()
 
-				GAME:GetCurrentGround():AddObject(guildBlock)
+				GAME:GetCurrentGround():AddTempObject(guildBlock)
 			end
 		end 
 	
@@ -121,8 +121,8 @@ function metano_town_ch_2.SetupGround()
 		northBlock:ReloadEvents()
 		eastBlock:ReloadEvents()
 
-		GAME:GetCurrentGround():AddObject(northBlock)
-		GAME:GetCurrentGround():AddObject(eastBlock)
+		GAME:GetCurrentGround():AddTempObject(northBlock)
+		GAME:GetCurrentGround():AddTempObject(eastBlock)
 
 		--let the cutscene handle the fade in if it hasnt played yet
 		if SV.Chapter2.FinishedMarketIntro then 
@@ -170,8 +170,8 @@ function metano_town_ch_2.SetupGround()
 		eastBlock:ReloadEvents()
 		northBlock:ReloadEvents()
 
-		GAME:GetCurrentGround():AddObject(eastBlock)
-		GAME:GetCurrentGround():AddObject(northBlock)
+		GAME:GetCurrentGround():AddTempObject(eastBlock)
+		GAME:GetCurrentGround():AddTempObject(northBlock)
 		
 		GAME:FadeIn(20)
 	else
@@ -601,7 +601,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	UI:SetSpeaker(numel)
 	GeneralFunctions.Hop(numel)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("No,[pause=10] I've been playing with " .. oddish:GetDisplayName() .. " all day.")
+	UI:WaitShowDialogue("No momma,[pause=10] I've been playing with " .. oddish:GetDisplayName() .. " all day.")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(camerupt)

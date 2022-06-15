@@ -72,7 +72,6 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:ResetSpeaker()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
 	
-	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	GAME:MoveCamera(160, 240, 1, false)
 	
 	local noctowl = 
@@ -86,6 +85,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	GROUND:TeleportTo(hero, 340, 280, Direction.Left)
 	
 	GAME:FadeIn(20)
+	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 192, 280, false, 1)
 												  GROUND:MoveToPosition(noctowl, 136, 224, false, 1)
@@ -430,6 +430,286 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	
 end	
+
+
+
+function guild_second_floor_ch_2.RescuedNumelCutscene()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	SOUND:StopBGM()
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+	
+	GAME:MoveCamera(112, 240, 1, false)
+	
+	local noctowl, numel, camerupt = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Noctowl', 152, 248, Direction.UpLeft},
+			{'Numel', 88, 224, Direction.Right},
+			{'Camerupt', 120, 224, Direction.Left}
+		})
+	
+	GROUND:TeleportTo(partner, 88, 256, Direction.Up)
+	GROUND:TeleportTo(hero, 120, 256, Direction.Up)
+	GAME:FadeIn(20)
+	SOUND:PlayBGM("Job Clear!.ogg", true)
+	
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue(numel:GetDisplayName() .. "![pause=0] My baby!")
+	UI:WaitShowDialogue("You're back,[pause=10] safe and sound![pause=0] I was so scared I was going to lose you!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Oh momma...[pause=0] I was afraid I was gonna be stuck there forever...")
+	UI:WaitShowDialogue("I never should have ran away...[pause=0] I'm sorry...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("I'm sorry too,[pause=10] sweetie.[pause=0] I know it's been hard now that I need you to have more responsibility around the house...")
+	--UI:WaitShowDialogue("That's a lot of stress to put on you.[pause=0] But I only do it because I have to.")
+	UI:WaitShowDialogue("But all that matters now though is that you're safe.[pause=0] Just promise me you'll never do something like this again.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("I promise...")
+	
+	GAME:WaitFrames(60)
+	GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4)
+	GROUND:CharAnimateTurnTo(numel, Direction.Down, 4)
+	GROUND:CharTurnToChar(partner, camerupt)
+	UI:SetSpeaker(camerupt)
+	UI:WaitShowDialogue("I don't think I can ever thank you two enough for returning my baby boy to me.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	GROUND:CharSetEmote(partner, 5, 1)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("D-Don't worry about it![pause=0] That's what we're here for!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(camerupt)
+	UI:WaitShowDialogue("Don't be so modest![pause=0] Please,[pause=10] take this as thanks for bringing him back home!")
+	
+	GAME:WaitFrames(20)
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(camerupt, 120, 240, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, camerupt, 4, Direction.UpRight) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(10)
+	
+
+	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(hero))
+	GAME:WaitFrames(20)
+	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(partner))
+	GAME:WaitFrames(20)
+	GeneralFunctions.RewardItem(350, true)
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("Woah![pause=0] You're giving us all this?[pause=0] Are you sure?")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(camerupt, partner, 4)
+	UI:SetSpeaker(camerupt)
+	UI:WaitShowDialogue("As sure as sure can be![pause=0] You saved my baby boy after all![pause=0] He's worth everything to me!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Inspired")
+	GeneralFunctions.DoubleHop(partner)
+	UI:WaitShowDialogue("Wow![pause=0] Thank you very much!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(camerupt)
+	UI:WaitShowDialogue("Of course![pause=0] And again...[pause=0] Thank you,[pause=10] thank you so much!")
+	GAME:WaitFrames(20)
+	--GROUND:CharAnimateTurnTo(camerupt, Direction.Down)
+	GROUND:AnimateToPosition(camerupt, "Walk", Direction.Down, 120, 224, 1, 1)
+	GAME:WaitFrames(10)
+	GROUND:CharTurnToCharAnimated(camerupt, numel, 4)
+	GROUND:CharTurnToCharAnimated(numel, camerupt, 4)
+	
+	UI:WaitShowDialogue("Come on sweetie,[pause=10] let's go home and have dinner.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(numel)
+	UI:SetSpeakerEmotion("Happy")
+	GROUND:CharSetEmote(numel, 1, 0)
+	UI:WaitShowDialogue("Hooray,[pause=10] dinner![pause=0] I'm starving!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(numel, -1, 0)
+	
+
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(camerupt, Direction.Right, 4)
+											GROUND:MoveToPosition(camerupt, 232, 224, false, 1)
+											GROUND:MoveToPosition(camerupt, 280, 172, false, 1)
+											GAME:GetCurrentGround():RemoveTempChar(camerupt) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GROUND:MoveToPosition(numel, 232, 224, false, 1)
+											GROUND:MoveToPosition(numel, 280, 172, false, 1)
+											GAME:GetCurrentGround():RemoveTempChar(numel) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+												  GeneralFunctions.FaceMovingCharacter(hero, camerupt, 4, Direction.UpRight) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+												  GeneralFunctions.FaceMovingCharacter(partner, camerupt, 4, Direction.UpRight) end)
+	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+												  GeneralFunctions.FaceMovingCharacter(noctowl, camerupt, 4, Direction.UpRight) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Joyous")
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4)
+											GeneralFunctions.DoubleHop(partner)
+											GROUND:CharSetEmote(partner, 4, 0)
+											UI:WaitShowTimedDialogue("Haha,[pause=10] we really did it,[pause=10] " .. hero:GetDisplayName() .. "!", 60) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:CharTurnToCharAnimated(hero, partner, 4)
+											GROUND:CharSetEmote(hero, 4, 0) end)
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(noctowl, Direction.UpLeft, 4)
+											GeneralFunctions.EightWayMove(noctowl, 104, 224, false, 1)
+											GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4) end)
+											
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Indeed,[pause=10] you did it.[pause=0] Well done,[pause=10] Team " .. GAME:GetTeamName() .. ".")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(partner, -1, 0)
+	GROUND:CharSetEmote(hero, -1, 0)
+	
+	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+	
+	UI:WaitShowDialogue("You did an excellent job bringing " .. numel:GetDisplayName() .. " back to his mother.")
+	UI:WaitShowDialogue("To think that he was naïve enough to think he was ready for evolution.") 
+	
+	GAME:WaitFrames(20)
+	SOUND:FadeOutBGM()
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("That reminds me...[pause=0] " .. noctowl:GetDisplayName() .. "...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Yes?[pause=0] What is it?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("The spring...[pause=0] Does it still do anything even if you're not ready for evolution?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Indeed it does.[pause=0] It would let you know that you do not meet the requirements for evolution.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("That's strange,[pause=10] because the spring wasn't doing anything at all for any of us.")
+	
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(noctowl)
+	GeneralFunctions.EmoteAndPause(noctowl, "Question", true)
+	UI:WaitShowDialogue("What do you mean it did not do anything?")
+	
+	GAME:WaitFrames(10)
+	--coro1 = TASK:BranchCoroutine(function() GeneralFunctions.Recoil(partner) end)
+	--coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Shock", false) end)	
+	--coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(partner, "Sweating", true) end)
+	--coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Shock", false) end)
+	
+	--TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	GROUND:CharSetEmote(partner, 5, 1)
+	UI:WaitShowDialogue("Well,[pause=10] " .. numel:GetDisplayName() .. ",[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] and I all tried standing in the light of the spring.")
+	UI:WaitShowDialogue("But no matter who tried,[pause=10] nothing happened.[pause=0] We didn't hear a voice or anything.")
+	UI:WaitShowDialogue("Is something wrong with the spring?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("...No.[pause=0] It is nothing to be concerned about.[pause=0] The spring has...[pause=30] been known to do this before.")
+	
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("OK.[pause=0] That's good to hear.[pause=0] I was worried for a bit there.")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.HeroDialogue(hero, "(I still can't shake this feeling that something was terribly off back at the spring.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(But " .. noctowl:GetDisplayName() .. " is telling us not to worry about it,[pause=10] so maybe it's not a big deal...)", "Worried")
+
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("You two should head upstairs.[pause=0] Dinner should be ready any moment.[pause=0] I will be up shortly.")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBattleSE('DUN_Belly')
+	GAME:WaitFrames(40)
+	
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.EmoteAndPause(partner, "Exclaim", false) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Exclaim", false) end)
+
+	TASK:JoinCoroutines({coro1, coro2})
+
+	GAME:WaitFrames(20)
+	
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToChar(noctowl, hero)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Joyous")
+	GROUND:CharSetEmote(partner, 4, 0)
+	SOUND:PlayBGM('Heartwarming.ogg', true)
+	UI:WaitShowDialogue("Sounds like " .. hero:GetDisplayName() .. " can't wait!")
+	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] Let's go get some dinner before your stomach barks at us again!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(partner, -1, 0)
+	
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Right, 4)
+											GROUND:MoveToPosition(hero, 300, 256, false, 1)
+											SOUND:FadeOutBGM() end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GROUND:MoveToPosition(partner, 300, 256, false, 1) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GeneralFunctions.FaceMovingCharacter(noctowl, hero, 4, Direction.Right) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue(".........")
+	GAME:WaitFrames(20)
+	
+
+	GAME:FadeOut(false, 60)
+	SV.TemporaryFlags.Dinnertime = true
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")
+end
 
 function guild_second_floor_ch_2.Zangoose_Action(chara, activator)
 	guild_second_floor_ch_2.Seviper_Action(chara, activator)
