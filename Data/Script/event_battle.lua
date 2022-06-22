@@ -2,6 +2,8 @@ require 'common'
 
 BATTLE_SCRIPT = {}
 
+RedirectionType = luanet.import_type('PMDC.Dungeon.Redirected')
+
 function BATTLE_SCRIPT.Test(owner, ownerChar, context, args)
   PrintInfo("Test")
 end
@@ -412,10 +414,104 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 end
 
 
+--[[todo 
 
---vibrant scarf passive should only activate if a nearby ally is also wearing a vibrant scarf
-function BATTLE_SCRIPT.VibrantScarfPassive(owner, ownerChar, context, args)
-
+function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)
+	local chara = context.User 
+	if ownerChar.EquippedItem.ID == 2502 and _DUNGEON:GetMatchup(ownerChar, context.Attacker) == RogueEssence.Dungeon.Alignment.Friend  then 
+		print("Atk " .. chara.Nickname)
+		--give multiplycategory status events to boost stats by 10%
+		--context:AddContextStateMult(false, PMDC.Dungeon.DmgMult(99, 1))		
+	end 
 end
+
+
+function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
+	local chara = context.User 
+	if chara.EquippedItem.ID == 2502 then 
+		print("Def " .. chara.Nickname)
+		--give multiplycategory status events to boost stats by 10%
+		--context:AddContextStateMult(false, PMDC.Dungeon.DmgMult(1, 99))		
+	end
+end
+]]--
+--for information on how this script was made, and things like getting and converting from c# to lua and back, look at these messages between Palika and Audino
+--https://discord.com/channels/534207185333256223/575891034949812225/987567409856675950
+--note on when to use colon vs period for these types of things :
+--Function call (if it uses parentheses) = colon
+--Anything else = period
+--there are a few exceptions though
+
+function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
+	local redirection = luanet.ctype(RedirectionType)
+	--A “context” stores all the information regarding this battle turn of a particular pokemon, like the fact that an attack critted
+	--a turn can be things such as using a move, item, triggering a trap, but not passing a turn or moving. it's a BATTLE context
+	--critical health, get a pass scarf event.
+	--only pass to an ally who also has a scarf
+	
+	if ownerChar.HP <= ownerChar.MaxHP / 4 then
+		
+		--Do not redirect attacks that were already redirected
+		if (context.ContextStates:Contains(redirection)) then
+			return
+		end 
+		
+		if (context.ActionType == RogueEssence.Dungeon.BattleActionType.Trap or context.ActionType == RogueEssence.Dungeon.BattleActionType.Item) then
+			return
+		end
+		
+		--needs to be an attacking move
+		if (context.Data.Category ~= RogueEssence.Data.BattleData.SkillCategory.Physical and context.Data.Category ~= RogueEssence.Data.BattleData.SkillCategory.Magical) then
+			return
+		end 
+		
+		if (_ZONE.CurrentMap:GetCharAtLoc(context.ExplosionTile) ~= ownerChar) then
+			return
+		end 
+		
+		--make sure incoming "attack" is from a foe 
+		if _DUNGEON:GetMatchup(ownerChar, context.User) ~= RogueEssence.Dungeon.Alignment.Foe then 
+			return
+		end
+
+		
+		
+		print("Pass " .. ownerChar.Nickname)
+
+		local teamcount = GAME:GetPlayerPartyCount()
+		for i = 0, teamcount - 1, 1 do 
+			local partymember = GAME:GetPlayerPartyMember(i)
+			--bodyguard must be next to you, holding a scarf, alive, and not yourself
+			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == 2502 then 
+				print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
+				_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
+				
+				local olddir = partymember.CharDir 
+				
+				DUNGEON:CharTurnToChar(partymember, ownerChar)
+				local anim = RogueEssence.Dungeon.CharAnimAction()
+
+				anim.BaseFrameType = 40--Swing
+				anim.AnimLoc = partymember.CharLoc
+				anim.CharDir = partymember.CharDir
+				TASK:WaitTask(partymember:StartAnim(anim))
+				GAME:WaitFrames(8)
+				--partymember.CharDir = olddir
+				
+				--_DUNGEON:LogMsg(STRINGS:Format(RogueEssence.StringKey("MSG_PASS_ATTACK"):ToLocal(), ownerChar:GetDisplayName(false), partymember:GetDisplayName(false)))
+				_DUNGEON:LogMsg(STRINGS:Format("{0} intercepted the attack headed for {1}!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
+				context.ExplosionTile = partymember.CharLoc
+				context.ContextStates:Set(PMDC.Dungeon.Redirected())
+				return
+			end
+		end
+	end
+end
+
+
+
+
+
+
 
 

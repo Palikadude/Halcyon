@@ -159,6 +159,8 @@ function guild_heros_room.Bedtime(generic)
 		GROUND:RemoveMapStatus(50)
 		GAME:CutsceneMode(false)
 		GAME:GetCurrentGround():RemoveTempObject(groundObj)
+		GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
+
 	end
 end
 

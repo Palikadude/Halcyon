@@ -2062,6 +2062,15 @@ end
 
 
 
+function metano_town.Mareep_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Mareep_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Cranidos_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cranidos_Action(...,...)"), obj, activator))
+end
 
 
 function metano_town.Growlithe_Desk_Action(obj, activator)
@@ -2082,42 +2091,65 @@ end
 function metano_town.Guild_Bridge_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Guild_Bridge_1']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
 
 
 function metano_town.Crossroads_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_1']))
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_2']))
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_3']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
 
 function metano_town.Dojo_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Dojo_1']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
 
 function metano_town.To_Dungeons_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Dungeons_1']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
 
 function metano_town.Wishing_Well_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Wishing_Well_1']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
 
 function metano_town.To_Spring_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Spring_1']))
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
 end
-
 
 --Change this to a little cutscene like how chimecho comes out to see you? Whoever ends up running the assmebly should come out to see you
 function metano_town.Assembly_Action(obj, activator)

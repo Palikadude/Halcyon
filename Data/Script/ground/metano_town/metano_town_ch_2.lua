@@ -67,7 +67,9 @@ function metano_town_ch_2.SetupGround()
 				{'Spinda', 1184, 1160, Direction.UpRight},
 				{'Ludicolo', 1224, 1160, Direction.UpLeft},
 				{'Mawile', 768, 600, Direction.Down},
-				{'Azumarill', 272, 1208, Direction.Left}
+				{'Azumarill', 272, 1208, Direction.Left},
+				{'Mareep', 'Cafe_Seat_5'},
+				{'Cranidos', 'Cafe_Seat_6'}
 		})
 		
 		GROUND:CharSetAnim(furret, 'Sleep', true)
@@ -1244,6 +1246,22 @@ function metano_town_ch_2.Ludicolo_Action(chara, activator)
 	UI:WaitShowDialogue("There's lots of open space and " .. CharacterEssentials.GetCharacterName("Chatot") .. " by the tree there plays the best music![pause=0] I can't get enough of his tunes!")
 	GeneralFunctions.EndConversation(chara)
 end
+
+
+function metano_town_ch_2.Mareep_Action(chara, activator) 
+	GeneralFunctions.StartConversation(chara, "Hey you two![pause=0] Hope your first day was grea-a-a-t!", "Happy")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are relaxing here after catching the day's ba-a-a-addies!")
+	UI:WaitShowDialogue("We're gonna head to the guild in a little bit though.[pause=0] See you at dinner!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_2.Cranidos_Action(chara, activator) 
+	GeneralFunctions.StartConversation(chara, "What do you two greenhorns want now?[pause=0] Can't a Pokémon unwind after a long day's work?", "Determined")
+	UI:WaitShowDialogue("Not that you would know anything about a long day's work!")
+	GeneralFunctions.EndConversation(chara)
+end
+
 
 
 

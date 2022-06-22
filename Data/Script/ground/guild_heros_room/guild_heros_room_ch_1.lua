@@ -129,7 +129,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	GAME:WaitFrames(180)
 	GAME:FadeOut(false, 120)
 	SV.ChapterProgression.Chapter = 2
-	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
+	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	
 	GAME:WaitFrames(120)
 	UI:ResetSpeaker()

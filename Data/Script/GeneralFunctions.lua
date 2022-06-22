@@ -793,7 +793,7 @@ function GeneralFunctions.RewardItem(itemID, money, hiddenValue)
 	SOUND:PlayFanfare("Fanfare/Item")
 	
 	if money then 
-		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. "[color=#00FFFF]" .. itemID .. "[color=#00FFFF]" .. STRINGS:Format("\\uE024") .. ".") 
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. "[color=#00FFFF]" .. itemID .. "[color=#00FFFF]" .. STRINGS:Format("\\uE024") .. ".[pause=40]") 
 		GAME:AddToPlayerMoney(itemID)
 	else	
 		local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(itemID)
@@ -802,7 +802,7 @@ function GeneralFunctions.RewardItem(itemID, money, hiddenValue)
 
 		local item = RogueEssence.Dungeon.InvItem(itemID, false, hiddenValue)
 
-		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".") 
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".[pause=40]") 
 		
 		--bag is full
 		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then

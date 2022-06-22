@@ -328,3 +328,86 @@ function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, charac
 	end
 end
 
+
+--Halcyon script
+--Popups with information on how to play the game in Relic Forest's first two pass throughs
+function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, character, args)
+  if character == nil then
+    --note: each floor has 2 messages as the 2nd set of messages plays on the playthrough back with the partner
+    UI:ResetSpeaker()
+    if args.Floor == 1 then
+	  if SV.Chapter1.TutorialProgression < 1 then
+	    SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("Head for the stairs![pause=0] You can attack enemies by pressing " .. STRINGS:LocalKeyString(2) .. ".[pause=0] Enemies don't move or attack until you do.")
+		UI:WaitShowDialogue("Press " .. STRINGS:LocalKeyString(0) .. " to confirm selections or press " .. STRINGS:LocalKeyString(1) .. " to cancel.")
+		SV.Chapter1.TutorialProgression = 1
+		GAME:WaitFrames(20)		
+	  elseif SV.Chapter1.PartnerMetHero and SV.Chapter1.TutorialProgression < 6 then
+	 	SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("Watch the HP stats of you and your partner at the top of the screen.[pause=0] If a Pokémon's HP reaches 0,[pause=10] it will faint!")
+		UI:WaitShowDialogue("If either you or your partner faint,[pause=10] you will both be ejected from the dungeon![pause=0] So work together to get through danger!")
+		SV.Chapter1.TutorialProgression = 6 
+		GAME:WaitFrames(20)
+	end
+    elseif args.Floor == 2 then
+	  if SV.Chapter1.TutorialProgression < 2 then
+	    SOUND:PlayFanfare("Fanfare/Note")
+	   	UI:WaitShowDialogue("To earn Exp. Points,[pause=10] a Pokémon must use at least one move against a foe,[pause=10] rather than just its basic " .. STRINGS:LocalKeyString(2) .. " attack.")
+	   	UI:WaitShowDialogue("To use moves,[pause=10] hold " .. STRINGS:LocalKeyString(4) .. ",[pause=10] then press " .. STRINGS:LocalKeyString(21) .. ",[pause=10] " .. STRINGS:LocalKeyString(22) .. ",[pause=10] " .. STRINGS:LocalKeyString(23) .. ",[pause=10] or " .. STRINGS:LocalKeyString(24) .. " to use the corresponding move.")
+		UI:WaitShowDialogue("Alternatively,[pause=10] press " .. STRINGS:LocalKeyString(9) .. " and choose the Moves option or press " .. STRINGS:LocalKeyString(11) .. " to access the Moves menu.")
+		SV.Chapter1.TutorialProgression = 2
+		GAME:WaitFrames(20)
+      elseif SV.Chapter1.PartnerMetHero and SV.Chapter1.TutorialProgression < 7 then
+	 	SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("Team members will receive Exp. Points when enemies are defeated.[pause=0] When a teammate gets enough,[pause=10] they will level up!")
+		UI:WaitShowDialogue("A Pokémon will get more HP,[pause=10] higher stats,[pause=10] and possibly a new move each time it levels up.")
+		UI:WaitShowDialogue("Make sure to fight enemies if you want to toughen up!")
+		SV.Chapter1.TutorialProgression = 7 
+		GAME:WaitFrames(20)
+	  end
+    elseif args.Floor == 3 then
+	  if SV.Chapter1.TutorialProgression < 3 then
+	    SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("You can carry a number of items.[pause=0] Items have a number of various effects and uses.")
+	   	UI:WaitShowDialogue("To see what items you are carrying,[pause=10] press " .. STRINGS:LocalKeyString(9) .. " and choose the Items option.")
+		UI:WaitShowDialogue("Alternatively,[pause=10] press " .. STRINGS:LocalKeyString(12) .. " to access your items more quickly.") 
+		SV.Chapter1.TutorialProgression = 3
+		GAME:WaitFrames(20)
+	  elseif SV.Chapter1.PartnerMetHero and SV.Chapter1.TutorialProgression < 8 then
+	 	SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("You can hold " .. STRINGS:LocalKeyString(3) .. " to run![pause=0] This doesn't let you travel more distance in a single turn,[pause=10] but helps you navigate faster.")
+		UI:WaitShowDialogue("Hold " .. STRINGS:LocalKeyString(5) .. " and press a direction to look that way without moving or using up your turn.")
+		UI:WaitShowDialogue("You can also hold " .. STRINGS:LocalKeyString(6) .. " to only allow for diagonal movement.")
+		SV.Chapter1.TutorialProgression = 8 
+		GAME:WaitFrames(20)
+	  end 
+    elseif args.Floor == 4 then
+	  if SV.Chapter1.TutorialProgression < 4 then
+	  	local apple  = RogueEssence.Dungeon.InvItem(1):GetDisplayName()
+	    SOUND:PlayFanfare("Fanfare/Note")
+	    UI:WaitShowDialogue("If you get hungry,[pause=10] eat an " .. apple .. ".[pause=0] If your Belly runs empty,[pause=10] you will slowly lose health until you faint or eat something!")
+		SV.Chapter1.TutorialProgression = 4
+		GAME:WaitFrames(20)
+	  elseif SV.Chapter1.PartnerMetHero and SV.Chapter1.TutorialProgression < 9 then
+	 	SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("To view a history of recent actions,[pause=10] press " .. STRINGS:LocalKeyString(10) .. ".")
+		UI:WaitShowDialogue("You can also toggle minimap modes using " .. STRINGS:LocalKeyString(8) .. ",[pause=10] and view the status of your team using " .. STRINGS:LocalKeyString(14) .. ".")
+		SV.Chapter1.TutorialProgression = 9 
+		GAME:WaitFrames(20)
+	  end 
+    elseif args.Floor == 5 then
+	  if SV.Chapter1.TutorialProgression < 5 then
+	    SOUND:PlayFanfare("Fanfare/Note")
+	    UI:WaitShowDialogue("In your travels you may see a black tile with a green arrow.[pause=0] This is known as a Wonder Tile.")
+	    UI:WaitShowDialogue("Step on one to reset the stat changes of yourself and anyone nearby.")
+		SV.Chapter1.TutorialProgression = 5
+		GAME:WaitFrames(20)
+	  elseif SV.Chapter1.PartnerMetHero and SV.Chapter1.TutorialProgression < 10 then
+	 	SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("Want to change settings such as controls, battle speed, or window size?[pause=0] Press " .. STRINGS:LocalKeyString(9) .. " and check the Others menu.")
+		SV.Chapter1.TutorialProgression = 10
+		GAME:WaitFrames(20)
+	  end 
+    end
+  end
+end

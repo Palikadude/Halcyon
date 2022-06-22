@@ -155,7 +155,8 @@ SV.Chapter1 =
 	MetAudino = false,
 	
 	--partner dialogue flag on second floor
-	PartnerSecondFloorDialogue = 0
+	PartnerSecondFloorDialogue = 0,
+	TutorialProgression = 0
 }
 
 SV.Chapter2 = 
@@ -173,6 +174,7 @@ SV.Chapter2 =
 	EnteredRiver = false,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
 	FinishedRiver = false,--player and partner have finished the dungeon and made it to Numel?
 	
+	TropiusGaveReviver = false,--did tropius give the free one off reviver seed?
 	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }
 

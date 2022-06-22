@@ -289,7 +289,7 @@ local characters = {
 	
 		Slowpoke = {
 			species = 79,
-			nickname = 'Lorezi',
+			nickname = 'Ezalor',
 			instance = 'Slowpoke',
 			gender = Gender.Male,
 			form = 0,
@@ -442,7 +442,7 @@ local characters = {
 		
 		Camerupt = {
 			species = 323,
-			nickname = '???',
+			nickname = 'Dotra',
 			instance = 'Camerupt',
 			gender = Gender.Female,
 			form = 0,
@@ -471,7 +471,7 @@ local characters = {
 			
 		Medicham = {
 			species = 308,
-			nickname = '???',
+			nickname = 'Nama',
 			instance = 'Medicham',
 			gender = Gender.Female,
 			form = 0,
@@ -480,7 +480,7 @@ local characters = {
 		
 		Meditite = {
 			species = 307,
-			nickname = '???',
+			nickname = 'Stei',
 			instance = 'Meditite',
 			gender = Gender.Female,
 			form = 0,
@@ -488,37 +488,40 @@ local characters = {
 		},
 		
 		
-		
+		--begonia flower 
 		Vileplume = {
 			species = 45,
-			nickname = '???',
+			nickname = 'Bogen',
 			instance = 'Vileplume',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
 		},
 		
+		--Chrysanthemum
 		Bellossom = {
 			species = 182,
-			nickname = '???',
+			nickname = 'Chrysi',
 			instance = 'Bellossom',
 			gender = Gender.Female,
 			form = 0,
 			skin = 0
 		},
 		
+		--Lavender
 		Gloom = {
 			species = 44, 
-			nickname = '???',
+			nickname = 'Lavena',
 			instance = 'Gloom',
 			gender = Gender.Female,
 			form = 0,
 			skin = 0
 		},
 		
+		--White Lilac
 		Oddish = {
 			species = 43,
-			nickname = '???',
+			nickname = 'Calil',
 			instance = 'Oddish',
 			gender = Gender.Female,
 			form = 0,

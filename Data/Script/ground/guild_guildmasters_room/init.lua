@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_1'
+require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_2'
 
 -- Package name
 local guild_guildmasters_room = {}
@@ -67,14 +68,23 @@ function guild_guildmasters_room.PlotScripting()
 		else
 			GAME:FadeIn(20)
 		end
-	else
-		GAME:FadeIn(20)
+	elseif SV.ChapterProgression.Chapter == 2 then 
+		if SV.Chapter2.FinishedRiver then 
+			guild_guildmasters_room_ch_2.NoctowlTropiusScene()
+		else
+			GAME:FadeIn(20)
+		end
 	end
 end
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+function guild_guildmasters_room.Tropius_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_guildmasters_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Tropius_Action(...,...)"), obj, activator))
+end
+
 function guild_guildmasters_room.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))

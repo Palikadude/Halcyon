@@ -506,11 +506,8 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(hero))
-	GAME:WaitFrames(20)
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(partner))
-	GAME:WaitFrames(20)
 	GeneralFunctions.RewardItem(350, true)
-	GAME:WaitFrames(20)
 	
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	UI:SetSpeaker(partner)

@@ -326,25 +326,25 @@
     <value>Talk with me anytime you would like a change in music \u266A</value>
   </data>
   <data name="Sign_Guild_Bridge_1" xml:space="preserve">
-    <value>North: Penticus's Exploration Guild\n East: Marketplace</value>
+    <value>North: Penticus's Adventuring Guild\nEast: Marketplace</value>
   </data>
   <data name="Sign_Crossroads_1" xml:space="preserve">
-    <value>Metano Town\n (Town Slogan here lol)</value>
+    <value>Metano Town\nThe ever-evolving village</value>
   </data>
   <data name="Sign_Crossroads_2" xml:space="preserve">
-    <value>North: Housing\n East: Explorer's Guild, Marketplace</value>
+    <value>North: Housing\nEast: Adventurer's Guild, Marketplace</value>
   </data>
   <data name="Sign_Crossroads_3" xml:space="preserve">
     <value>South: Altere Pond</value>
   </data>
   <data name="Sign_Dojo_1" xml:space="preserve">
-    <value>Train your body and mind! Ledian Dojo</value>
+    <value>Train your body, mind, and soul! Ledian Dojo</value>
   </data>
   <data name="Sign_To_Dungeons_1" xml:space="preserve">
     <value>East: Exploration</value>
   </data>
   <data name="Sign_Wishing_Well_1" xml:space="preserve">
-    <value>Metano Town Wishing Well\n Toss in a \uE024 and make a wish! </value>
+    <value>Metano Town Wishing Well\nToss in a \uE024 and make a wish! </value>
   </data>
   <data name="Sign_To_Spring_1" xml:space="preserve">
     <value>North: Luminous Spring</value>

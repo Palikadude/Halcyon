@@ -261,8 +261,6 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GAME:FadeOut(false, 120)
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(60)
-	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
-	SV.TemporaryFlags.MorningWakeup = true
 	GAME:EnterGroundMap("guild_guildmasters_room", "Main_Entrance_Marker")
 	
 
