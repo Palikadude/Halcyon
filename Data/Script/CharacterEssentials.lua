@@ -156,7 +156,7 @@ local characters = {
 		
 		
 		
-	--Team Round
+	--Team Round (names are one letter off words that mean fat or round)
 		Spheal = { 
 			species = 363,
 			nickname = 'Chumby',
@@ -220,7 +220,7 @@ local characters = {
 			skin = 0
 		},
 		
-	--Team Cadence
+	--Team Cadence (their names are corruptions of types of dances)
 		Spinda = {
 			species = 327,
 			nickname = 'Ceili',
@@ -346,7 +346,7 @@ local characters = {
 	--Town NPCs - Families
 		Furret = {
 			species = 162,
-			nickname = '???',
+			nickname = 'Jayk',
 			instance = 'Furret',
 			gender = Gender.Male,
 			form = 0,
@@ -532,7 +532,7 @@ local characters = {
 		
 		Nidoking = {
 			species = 34,
-			nickname = '???',
+			nickname = 'Pawpa',
 			instance = 'Nidoking',
 			gender = Gender.Male,
 			form = 0,
@@ -541,7 +541,7 @@ local characters = {
 		
 		Nidoqueen = {
 			species = 31,
-			nickname = '???',
+			nickname = 'Monna',
 			instance = 'Nidoqueen',
 			gender = Gender.Female,
 			form = 0,
@@ -550,7 +550,7 @@ local characters = {
 		
 		Nidorina = {
 			species = 30,
-			nickname = '???',
+			nickname = 'Dottir',
 			instance = 'Nidorina',
 			gender = Gender.Female,
 			form = 0,

@@ -3,6 +3,7 @@ require 'common'
 BATTLE_SCRIPT = {}
 
 RedirectionType = luanet.import_type('PMDC.Dungeon.Redirected')
+DmgMultType = luanet.import_type('PMDC.Dungeon.DmgMult')
 
 function BATTLE_SCRIPT.Test(owner, ownerChar, context, args)
   PrintInfo("Test")
@@ -414,27 +415,27 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 end
 
 
---[[todo 
 
-function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)
-	local chara = context.User 
-	if ownerChar.EquippedItem.ID == 2502 and _DUNGEON:GetMatchup(ownerChar, context.Attacker) == RogueEssence.Dungeon.Alignment.Friend  then 
-		print("Atk " .. chara.Nickname)
+
+function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
+	local dmgmult = luanet.ctype(DmgMultType)
+	if ownerChar.EquippedItem.ID == 2502 then 
+		print("Def " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
-		--context:AddContextStateMult(false, PMDC.Dungeon.DmgMult(99, 1))		
-	end 
+		context:AddContextStateMult(dmgMult, false, 99, 1)
+	end
 end
 
 
 function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
-	local chara = context.User 
-	if chara.EquippedItem.ID == 2502 then 
-		print("Def " .. chara.Nickname)
+	local dmgmult = luanet.ctype(DmgMultType)
+	if ownerChar.EquippedItem.ID == 2502 then 
+		print("Def " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
-		--context:AddContextStateMult(false, PMDC.Dungeon.DmgMult(1, 99))		
+		context:AddContextStateMult(dmgMult, false, 1, 99)
 	end
 end
-]]--
+
 --for information on how this script was made, and things like getting and converting from c# to lua and back, look at these messages between Palika and Audino
 --https://discord.com/channels/534207185333256223/575891034949812225/987567409856675950
 --note on when to use colon vs period for these types of things :

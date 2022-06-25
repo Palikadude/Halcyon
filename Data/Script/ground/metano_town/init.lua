@@ -208,7 +208,12 @@ function metano_town.Post_Office_Entrance_Touch(obj, activator)
   SV.partner.Spawn = 'Default'
 end
 
-
+function metano_town.Inn_Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GAME:FadeOut(false, 20)
+  GAME:EnterGroundMap("metano_inn", "Main_Entrance_Marker")
+  SV.partner.Spawn = 'Default'
+end
 
 
 
