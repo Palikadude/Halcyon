@@ -417,22 +417,22 @@ end
 
 
 
-function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
+function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if ownerChar.EquippedItem.ID == 2502 then 
-		print("Def " .. ownerChar.Nickname)
+	if context.User.EquippedItem.ID == 2502 then 
+		--print("Atk " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
-		context:AddContextStateMult(dmgMult, false, 99, 1)
+		context:AddContextStateMult(dmgmult, false, 11, 10)
 	end
 end
 
 
 function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if ownerChar.EquippedItem.ID == 2502 then 
-		print("Def " .. ownerChar.Nickname)
+	if context.Target.EquippedItem.ID == 2502 then 
+		--print("Def " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
-		context:AddContextStateMult(dmgMult, false, 1, 99)
+		context:AddContextStateMult(dmgmult, false, 9, 10)
 	end
 end
 
@@ -477,14 +477,14 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 
 		
 		
-		print("Pass " .. ownerChar.Nickname)
+		--print("Pass " .. ownerChar.Nickname)
 
 		local teamcount = GAME:GetPlayerPartyCount()
 		for i = 0, teamcount - 1, 1 do 
 			local partymember = GAME:GetPlayerPartyMember(i)
 			--bodyguard must be next to you, holding a scarf, alive, and not yourself
 			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == 2502 then 
-				print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
+				--print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
 				_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
 				
 				local olddir = partymember.CharDir 
@@ -496,7 +496,7 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 				anim.AnimLoc = partymember.CharLoc
 				anim.CharDir = partymember.CharDir
 				TASK:WaitTask(partymember:StartAnim(anim))
-				GAME:WaitFrames(8)
+				GAME:WaitFrames(16)
 				--partymember.CharDir = olddir
 				
 				--_DUNGEON:LogMsg(STRINGS:Format(RogueEssence.StringKey("MSG_PASS_ATTACK"):ToLocal(), ownerChar:GetDisplayName(false), partymember:GetDisplayName(false)))

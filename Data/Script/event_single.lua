@@ -266,7 +266,22 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 			
 end
 
+--sets critical health status if teammate's health is low. This just adds a cosmetic Exclamation point over their head.
+function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, character, args)
+	local player_count = GAME:GetPlayerPartyCount()
+	local critical = RogueEssence.Dungeon.StatusEffect(151)
 
+	for i = 0, player_count - 1, 1 do 
+		local player = GAME:GetPlayerPartyMember(i)
+		if player.HP <= player.MaxHP / 4 and player:GetStatusEffect(151) == nil then 
+			TASK:WaitTask(player:AddStatusEffect(nil, critical, nil))
+			--print("Set crit health!")
+		elseif player.HP > player.MaxHP / 4 and player:GetStatusEffect(151) ~= nil then
+			TASK:WaitTask(player:RemoveStatusEffect(151))
+			--print("Remove crit health!")
+		end
+	end
+end
 
 
 

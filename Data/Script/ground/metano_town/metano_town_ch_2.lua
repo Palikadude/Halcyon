@@ -132,7 +132,8 @@ function metano_town_ch_2.SetupGround()
 		end 
 	
 	elseif SV.Chapter2.FinishedFirstDay then 
-		local lickitung, gulpin, mawile, azumarill, quagsire, oddish, bellossom, linoone, medicham = 
+		local lickitung, gulpin, mawile, azumarill, quagsire, oddish, sentret, bellossom, linoone, medicham, machamp,
+		meditite, manetric, marill, jigglypuff, spheal, wooper_boy, wooper_girl, vileplume, luxray = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Lickitung', 1148, 604, Direction.Up},
 				{'Gulpin', 1124, 628, Direction.UpRight},
@@ -154,9 +155,14 @@ function metano_town_ch_2.SetupGround()
 				{'Wooper_Girl', 776, 1144, Direction.Left},
 				{'Vileplume', 388, 716, Direction.DownRight},
 				{'Luxray', 304, 1024, Direction.Down}
-
 		})
 		
+		AI:SetCharacterAI(machamp, "ai.ground_default", RogueElements.Loc(1248, 336), RogueElements.Loc(48, 48), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(624, 1248), RogueElements.Loc(48, 48), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(manetric, "ai.ground_default", RogueElements.Loc(1104, 888), RogueElements.Loc(80, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(azumarill, "ai.ground_default", RogueElements.Loc(256, 1192), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(luxray, "ai.ground_default", RogueElements.Loc(272, 1008), RogueElements.Loc(80, 32), 1, 16, 32, 40, 180)
+
 		local eastBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
 										RogueElements.Rect(1496, 592, 8, 144),
 										RogueElements.Loc(0, 0), 
@@ -836,7 +842,7 @@ end
 
 
 
-function metano_town_ch_2.Wooper_Siblings_Introduction()
+function metano_town_ch_2.Wooper_Siblings_Introduction(chara)
 	local dee = CH('Wooper_Girl')
 	local dun = CH('Wooper_Boy')
 	local electrike = CH('Electrike')
@@ -850,9 +856,12 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	GROUND:CharSetAnim(electrike, 'None', true)
 	GROUND:CharSetAnim(dun, 'None', true)
 	
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+	
 	UI:SetSpeaker(dee)
-    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
-    local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
+    --local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
+    --local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
 
     UI:WaitShowDialogue("What do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
 
@@ -861,38 +870,38 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dun)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
+   -- coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
+   -- coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
 	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
 	TASK:JoinCoroutines({coro1, coro2})
 
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dee)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
+   -- coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
+    --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
 	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
 	TASK:JoinCoroutines({coro1, coro2})	
 	
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dun)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
+    --coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
+   --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
 	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	
 	UI:SetSpeaker(dee)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
+  --  coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
+   -- coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
 	UI:WaitShowTimedDialogue("I dunno,[pause=10] what do-", 40)
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	UI:SetSpeaker(electrike)
 	GeneralFunctions.EmoteAndPause(electrike, "Angry", true)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, electrike, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, electrike, 4) end)
+   -- coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, electrike, 4) end)
+   -- coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, electrike, 4) end)
 	UI:SetSpeakerEmotion("Angry")
 	UI:WaitShowDialogue("Would you two STOP.")
 	TASK:JoinCoroutines({coro1, coro2})
@@ -902,29 +911,29 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dee)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)	
+   -- coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
+   -- coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)	
 	UI:WaitShowDialogue("But I just wanna know what " .. dun:GetDisplayName() .. " wants to do today!")
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dun)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
+    --coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
+   -- coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
 	UI:WaitShowDialogue("And I just wanna know what " .. dee:GetDisplayName() .. " wants to do today!")
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dee)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
+    --coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
+    --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dee, 4) end)
 	UI:WaitShowDialogue("What do you wanna do today,[pause=10] " .. dun:GetDisplayName() .. "?")
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dun)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
+    --coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dun, 4) end)
+    --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
 	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
@@ -932,8 +941,8 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 	UI:SetSpeaker(electrike)
 	UI:SetSpeakerEmotion('Pain')
 	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
-    coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, electrike, 4) end)
-    coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, electrike, 4) end)
+    --coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, electrike, 4) end)
+    --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, electrike, 4) end)
 	UI:WaitShowDialogue("Ugh...")
 	TASK:JoinCoroutines({coro1, coro2})
 	GROUND:CharEndAnim(partner)
@@ -947,14 +956,56 @@ function metano_town_ch_2.Wooper_Siblings_Introduction()
 
 end
 
+function metano_town_ch_2.Wooper_Day_2_Conversation(chara)
+	local dee = CH('Wooper_Girl')
+	local dun = CH('Wooper_Boy')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(dee, 'None', true)
+	GROUND:CharSetAnim(dun, 'None', true)
+	
+	--turn towards whoever we chose to interact with 
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+	
+	
+	UI:SetSpeaker(dee)
+	UI:WaitShowDialogue("Hey " .. dun:GetDisplayName() .. ",[pause=10] have you seen " .. CharacterEssentials.GetCharacterName('Electrike') .. " anywhere today?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dun)
+	UI:WaitShowDialogue("No " .. dee:GetDisplayName() .. "...[pause=0] I haven't seen him at all today!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dee)
+	UI:WaitShowDialogue("I wonder where he could be?[pause=0] We need him so we can figure out what we're doing today!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dun)
+	UI:WaitShowDialogue("I dunno...[pause=0] I hope he turns up soon though so we can start thinking about it though!")
+	
+	GROUND:CharEndAnim(dee)
+	GROUND:CharEndAnim(dun)
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
+
+end
+
 --dee
 function metano_town_ch_2.Wooper_Girl_Action(chara, activator)
 	local dee = chara
-	if SV.Chapter2.WooperIntro then
+	if SV.Chapter2.FinishedFirstDay then 
+		metano_town_ch_2.Wooper_Day_2_Conversation(dee)
+	elseif SV.Chapter2.WooperIntro then
 		GeneralFunctions.StartConversation(dee, "I dunno,[pause=10] what do you wanna do today,[pause=10] " .. CharacterEssentials.GetCharacterName("Wooper_Boy") .. "?", "Normal", false)
 		GeneralFunctions.EndConversation(dee)
 	else
-		metano_town_ch_2.Wooper_Siblings_Introduction()
+		metano_town_ch_2.Wooper_Siblings_Introduction(chara)
 	end
 end
 
@@ -962,11 +1013,13 @@ end
 --dun
 function metano_town_ch_2.Wooper_Boy_Action(chara, activator)
 	local dun = chara
-	if SV.Chapter2.WooperIntro then
+	if SV.Chapter2.FinishedFirstDay then 
+		metano_town_ch_2.Wooper_Day_2_Conversation(dun)
+	elseif SV.Chapter2.WooperIntro then
 		GeneralFunctions.StartConversation(dun, "I dunno,[pause=10] what do you wanna do today,[pause=10] " .. CharacterEssentials.GetCharacterName("Wooper_Girl") .. "?", "Normal", false)
 		GeneralFunctions.EndConversation(dun)
 	else
-		metano_town_ch_2.Wooper_Siblings_Introduction()
+		metano_town_ch_2.Wooper_Siblings_Introduction(chara)
 	end
 end
 
@@ -977,7 +1030,7 @@ function metano_town_ch_2.Electrike_Action(chara, activator)
 		GeneralFunctions.StartConversation(electrike, "Help.[pause=0] ME.", "Pain")
 		GeneralFunctions.EndConversation(electrike)
 	else
-		metano_town_ch_2.Wooper_Siblings_Introduction()
+		metano_town_ch_2.Wooper_Siblings_Introduction(chara)
 	end
 end 
 		
