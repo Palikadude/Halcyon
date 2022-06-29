@@ -89,9 +89,10 @@ SV.TemporaryFlags =
 --todo: cleanup a lot of these
 SV.metano_town = 
 {
-  LuxioIntro = false,
-  AggronGuided = false,
-  KecIntro = false
+  Locale = 'Default'--Where are we on the metano town map? Used for partner dialogue.
+  --LuxioIntro = false,
+  --AggronGuided = false,
+  --KecIntro = false
 }
 
 SV.metano_cafe =
