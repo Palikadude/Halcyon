@@ -340,7 +340,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		end
 	elseif ground == 'guild_guildmasters_room' then
 		if not SV.Chapter2.FinishedFirstDay then
-			UI:SetSpeakerEmotion("Inspired"
+			UI:SetSpeakerEmotion("Inspired")
 			UI:WaitShowDialogue("The Guildmaster was an amazing adventurer who traveled all over the world before he established the guild.")'
 			UI:WaitShowDialogue("His exploits are part of the reason I wanted to become an adventurer so bad!")
 			UI:SetSpeakerEmotion("Worried")
@@ -367,17 +367,83 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("We don't want to take too long though.[pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. " needs us!")
 		end
 	elseif ground == 'metano_fire_home' then
+		if not SV.Chapter2.FinishedFirstDay then 
+			UI:WaitShowDialogue("This house belongs to the ")
+		else 
+		
+		end 
 	elseif ground == 'metano_electric_home' then
+		UI:WaitShowDialogue("This house belongs to a family of Electric-types.")
+		UI:WaitShowDialogue("They're nice enough,[pause=10] but the father is pretty standoffish.") 
 	elseif ground == 'metano_water_home' then
+		UI:WaitShowDialogue("A family of Water-types live here.")
+		UI:WaitShowDialogue("It must be nice having your house right next to a river if you're a Water-type!")
 	elseif ground == 'metano_normal_home' then
+		
 	elseif ground == 'metano_rock_home' then
 	elseif ground == 'metano_grass_home' then
 	elseif ground == 'metano_inn' then
+	elseif ground == 'metano_cave' then
+		UI:WaitShowDialogue("A hermit has been living in this cave for as long as I can remember.[pause=0] I don't know anything else about her though.")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I don't believe I've ever seen her outside of here...[pause=0] It's especially strange since [color=#00FF00]Sunflora[color] usually enjoy the sun.")
 	elseif ground == 'metano_altere_transition' then
 	elseif ground == 'altere_pond' then
 	elseif ground == 'post_office' then
 	elseif ground == 'metano_town' then
-
+		--metano town uses a series of touch objects to mark where the player/partner is on the map so the partner can comment on specific surroundings.
+		if not SV.Chapter2.FinishedFirstDay then 
+			local location = SV.metano_town.Locale
+			if location == 'North Houses' or location == 'South Houses' then 
+				UI:WaitShowDialogue("This is where most of the townfolk live.[pause=0] Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
+			elseif location == 'Guild' then 
+				if not SV.Chapter2.FinishedNumelTantrum then
+					UI:WaitShowDialogue("We still have some time before we need to head back inside the guild.")
+					UI:WaitShowDialogue("Let's go explore town some more!")
+				else
+					UI:WaitShowDialogue("It's starting to get late.[pause=0] Let's head back inside the guild for dinner whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")	
+				end
+			elseif location == 'Cafe' then 
+				UI:SetSpeakerEmotion("Surprised")
+				UI:WaitShowDialogue("Oh![pause=0] I almost forgot about the café!")
+				UI:SetSpeakerEmotion("Happy")
+				UI:WaitShowDialogue("The café is the most popular spot in town![pause=0] The owner " .. CharacterEssentials.GetCharacterName("Shuckle") .. " makes all sorts of delicious smoothies and snacks![pause=0] They're really good!")
+				UI:SetSpeakerEmotion("Worried")
+				UI:WaitShowDialogue("It looks like it isn't open right now though...[pause=0] That's a shame...")
+				UI:SetSpeakerEmotion("Inspired")
+				UI:WaitShowDialogue("We have to come back once it's open though![pause=0] I'm telling you,[pause=10] it's tasty stuff!")
+			elseif location == 'Post' then
+				UI:WaitShowDialogue("That oddly shaped building over there is the Pelipper Post Office.[pause=0] We can send and receive mail there!")
+			elseif location == 'Well' then 
+				UI:WaitShowDialogue("The cliff is a common hangout spot.[pause=0] You can see all of Metano Town from up here!")
+				UI:WaitShowDialogue("The parents don't like their children playing up here though.[pause=0] They don't want them falling down the cliffside after all!")
+			elseif location == 'Merchants' then 
+				UI:SetSpeakerEmotion("Worried")
+				UI:WaitShowDialogue("Usually there's a pair of rival merchants here,[pause=10] selling items while they bicker with each other.")
+				UI:WaitShowDialogue("But I haven't seen them there for a few days.[pause=0] I wonder where they could be?")
+			elseif location == 'Dojo' then 
+				if not SV.Chapter2.FinishedTraining then
+					UI:WaitShowDialogue("Hey,[pause=10] there's a ladder over there,[pause=10] " .. hero:GetDisplayName() "!")
+					UI:WaitShowDialogue("That must be the entrance to the dojo.[pause=0] Let's head on down!")
+				else 
+					UI:SetSpeakerEmotion("Worried")
+					UI:WaitShowDialogue("Still can't believe that I never noticed that ladder to the dojo over there before...")
+					UI:SetSpeakerEmotion("Joyous")
+					GROUND:CharSetEmote(partner, 4, 0)
+					UI:WaitShowDialogue("I've passed by this spot a million times and it just never stood out to me![pause=0] Haha!")
+					GROUND:CharSetEmote(partner, -1, 0)
+				end
+			elseif location == 'Market' then 
+				UI:WaitShowDialogue("The market has all sorts of cool shops and vendors![pause=0] It's the most exciting part of town![pause=0] Except the guild,[pause=10] of course.")
+				UI:WaitShowDialogue("If we make any money from adventuring,[pause=10] this is probably where we're going to spend it.")
+			else
+				UI:WaitShowDialogue("No dialogue assigned for this section of town. Let Palika know where you got this message.")
+			end
+						
+			
+		else
+	
+		end
 	
 	
 	else	
