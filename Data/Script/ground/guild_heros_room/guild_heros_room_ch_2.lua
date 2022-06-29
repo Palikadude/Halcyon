@@ -32,10 +32,10 @@ function guild_heros_room_ch_2.FirstMorning()
 			{"Audino", 120, 204, Direction.UpRight},
 		})
 
-	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 2\n\nResponsibility\n", 20)
+	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 2\n\nThe First Job\n", 20)
 												  GAME:WaitFrames(180)
 												  UI:WaitHideTitle(20) end)
-	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Chapter_1", 180, 20)
+	local coro2 = TASK:BranchCoroutine(function() UI:WaitShowBG("Chapter_2", 180, 20)
 												  GAME:WaitFrames(180)
 												  UI:WaitHideBG(20) end)
 	TASK:JoinCoroutines({coro1, coro2})
