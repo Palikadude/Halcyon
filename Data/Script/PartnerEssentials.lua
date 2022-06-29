@@ -379,8 +379,13 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		UI:WaitShowDialogue("This house belongs to a family of Electric-types.")
 		UI:WaitShowDialogue("They're nice enough,[pause=10] but the father is pretty standoffish.") 
 	elseif ground == 'metano_water_home' then
-		UI:WaitShowDialogue("A family of Water-types live here.")
-		UI:WaitShowDialogue("It must be nice having your house right next to a river if you're a Water-type!")
+		if not SV.Chapter2.FinishedFirstDay then
+			UI:WaitShowDialogue("A family of Water-types live here.")
+			UI:WaitShowDialogue("It must be nice having your house right next to a river if you're a Water-type!")
+		else
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("Heh,[pause=10] looks like someone is having pleasant dreams.")
+		end
 	elseif ground == 'metano_normal_home' then
 		UI:WaitShowDialogue("A Normal-type family owns this house.")
 		UI:WaitShowDialogue("You can usually find the dad napping in the sun in town and the mom's nose in a book.")
@@ -392,14 +397,37 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("They have a beautiful garden outside their house,[pause=10] don't you think?")
 	elseif ground == 'metano_inn' then
-		UI:WaitShowDialogue("This is an inn ran by a lovely couple.[pause=0] They're really kind!")
-		UI:WaitShowDialogue("All sorts of Pokémon passing through town stay here.[pause=0] It's a good place to meet new people!")
+		UI:WaitShowDialogue("This is an inn ran by a lovely couple.[pause=0] They're both really kind!")
+		UI:WaitShowDialogue("All sorts of Pokémon passing through town stay here.[pause=0] It's a good place to meet new Pokémon!")
 	elseif ground == 'metano_cave' then
 		UI:WaitShowDialogue("A hermit has been living in this cave for as long as I can remember.[pause=0] I don't know anything else about her though.")
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("I don't believe I've ever seen her outside of here...[pause=0] It's especially strange since [color=#00FF00]Sunflora[color] usually enjoy the sun.")
 	elseif ground == 'metano_altere_transition' then
+		if not SV.Chapter2.FinishedFirstDay then
+			UI:WaitShowDialogue("This is the town outskirts.[pause=0] Altere Pond is just south of here.")
+			UI:WaitShowDialogue("It's a nice place to relax,[pause=10] away from the hustle of the town.")
+		else 
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("What are we doing here,[pause=10] " .. hero:GetDisplayName() .. "?")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("We need to get over to " .. zone:GetColoredName() .. " and find " .. CharacterEssentials.GetCharacterName("Numel") .. ".[pause=0] We have to head north,[pause=10] not south!")
+		end
 	elseif ground == 'altere_pond' then
+		if not SV.Chapter2.FinishedFirstDay then 
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("Whatever you do...[pause=0] Don't tell " .. CharacterEssentials.GetCharacterName("Relicanth") .. " we were in " .. zone:GetColoredName() .. ".")
+			UI:SetSpeakerEmotion("Pain")
+			UI:WaitShowDialogue("He will chew us out for hours if he knew.[pause=0] Believe me,[pause=10] I know from experience.")
+		else 
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("What are we doing here,[pause=10] " .. hero:GetDisplayName() .. "?")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("We need to get over to " .. zone:GetColoredName() .. " and find " .. CharacterEssentials.GetCharacterName("Numel") .. ".[pause=0] We have to head north,[pause=10] not south!")
+		end
 	elseif ground == 'post_office' then
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("Looks like the post office isn't working right now...")
