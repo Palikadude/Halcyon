@@ -346,7 +346,7 @@ local characters = {
 	--Town NPCs - Families
 		Furret = {
 			species = 162,
-			nickname = 'Jayk',
+			nickname = 'Jak',
 			instance = 'Furret',
 			gender = Gender.Male,
 			form = 0,

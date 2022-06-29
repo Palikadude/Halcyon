@@ -25,7 +25,7 @@ function guild_heros_room_ch_2.FirstMorning()
 	GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
 	GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
 	GeneralFunctions.CenterCamera({hero, partner})
-	SV.guild.JustWokeUp = true
+	SV.TemporaryFlags.JustWokeUp = true
 
 	local audino =
 		CharacterEssentials.MakeCharactersFromList({

@@ -240,7 +240,7 @@ function guild_heros_room.Morning(generic)
 		AI:EnableCharacterAI(partner)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		
-		SV.guild.JustWokeUp = true
+		SV.TemporaryFlags.JustWokeUp = true
 		SV.TemporaryFlags.MorningWakeup = false
 	end
 	
@@ -269,8 +269,8 @@ end
 function guild_heros_room.Bedroom_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  if SV.guild.JustWokeUp then --skip the hallway if we just woke up and queue up the morning 
-	SV.guild.JustWokeUp = false
+  if SV.TemporaryFlags.JustWokeUp then --skip the hallway if we just woke up and queue up the morning 
+	SV.TemporaryFlags.JustWokeUp = false
 	--SV.TemporaryFlags.MorningAddress = true
 	GAME:EnterGroundMap("guild_third_floor_lobby", "Guild_Third_Floor_Lobby_Right_Marker")
 	SV.partner.Spawn = 'Guild_Third_Floor_Lobby_Right_Marker_Partner'

@@ -1136,7 +1136,15 @@ function metano_town_ch_2.Machamp_Action(chara, activator)
 end
 
 function metano_town_ch_2.Luxray_Action(chara, activator)
-	metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
+	if not SV.Chapter2.FinishedFirstDay then 
+		local numel_species = _DATA:GetMonster(numel.CurrentForm.Species):GetColoredName()
+		GeneralFunctions.StartConversation(chara, "I've caught word that the " .. numel_species .. " child has gone missing.[pause=0] This does not surprise me.")
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " was too soft.[pause=0] So of course her child doesn't want to obey her and ends up running off.")
+		UI:WaitShowDialogue("If your child don't respect you,[pause=10] they'll do whatever they want.") 
+		GeneralFunctions.EndConversation(chara)
+	else
+		metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
+	end
 end
 	
 

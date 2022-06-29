@@ -30,10 +30,12 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		GROUND:CharTurnToCharAnimated(snubbull, hero, 4)
 		GROUND:CharTurnToChar(partner, snubbull)	
 		
-		UI:SetSpeakerEmotion("Angry")
+
 		GeneralFunctions.Hop(snubbull)
 		GROUND:CharSetEmote(snubbull, 7, 1)
 		SOUND:PlayBattleSE('EVT_Emote_Complain_2')
+		GeneralFunctions.StartConversation(snubbull, "Ugh![pause=0] How many times do I have tell you!?[pause=0] Stop sneaking in here for snacks after dinner!", "Angry", true, true, false)
+
 		UI:WaitShowDialogue("Ugh![pause=0] How many times do I have tell you!?[pause=0] Stop sneaking in here for snacks after dinner!")
 		GAME:WaitFrames(20)
 		
@@ -147,6 +149,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		GAME:WaitFrames(20)
 		
 		GeneralFunctions.Hop(snubbull)
+		GROUND:CharSetAnim(snubbull, "None", true)--not in cutscene mode so this needs to be set back
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Of course,[pause=10] I can still make excellent meals even with the basics.")
 		UI:WaitShowDialogue("I can make all sorts of things with Orans,[pause=10] Leppas,[pause=10] and Apples.[pause=0] I'm just that talented. " .. STRINGS:Format("\\u266A"))
@@ -181,13 +184,12 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		end
 	else
 		GROUND:CharTurnToChar(snubbull, hero)
-		UI:SetSpeaker(snubbull)
-		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("Tomorrow's meal won't be my best work because of the ingredients...")
+		GeneralFunctions.StartConversation(snubbull, "Tomorrow's meal won't be my best work because of the ingredients...", "Happy")
 		UI:WaitShowDialogue("But I'm sure with my skill and talent you'll enjoy it nonetheless. " .. STRINGS:Format("\\u266A"))
 		UI:WaitShowDialogue("I'm looking forward to the day you get to enjoy a truly exquisite meal using the finest ingredients. " .. STRINGS:Format("\\u266A"))
 	end
 	
+	GeneralFunctions.EndConversation(snubbull)
 
 end
 

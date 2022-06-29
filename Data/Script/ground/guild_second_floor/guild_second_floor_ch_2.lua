@@ -715,11 +715,23 @@ end
 function guild_second_floor_ch_2.Seviper_Action(chara, activator)
 	local zangoose = CH('Zangoose')
 	local seviper = CH('Seviper')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
 	--Set zangoose and seviper to interacting to pause their talking AI
 	zangoose.IsInteracting = true
 	seviper.IsInteracting = true
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(seviper, 'None', true)
+	GROUND:CharSetAnim(zangoose, 'None', true)
 	UI:SetSpeaker(seviper)
+	GROUND:CharTurnToChar(hero, chara)
+    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+
 	UI:WaitShowDialogue("What about thissss one?")
+	TASK:JoinCoroutines({coro1})
+	UI:WaitDialog()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(zangoose)
@@ -752,8 +764,13 @@ function guild_second_floor_ch_2.Seviper_Action(chara, activator)
 	UI:WaitShowDialogue("Yeah yeah yeah.[pause=0] Now sssstop being sssso picky.")
 	UI:WaitShowDialogue("You're gonna get Team [color=#FFA5FF]tbd[color] a bad rep if you keep ussss here dawdling when we sssshould be out in the field catching outlawssss.")
 	GROUND:CharAnimateTurnTo(seviper, Direction.Up, 4)
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(seviper)
+	GROUND:CharEndAnim(zangoose)
 	zangoose.IsInteracting = false
 	seviper.IsInteracting = false
+	partner.IsInteracting = false
 end
 
 function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
@@ -761,16 +778,14 @@ function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
 	local partner = CH('Teammate1')
 	local zigzagoon = CH('Zigzagoon')
 	
-	GROUND:CharTurnToChar(zigzagoon, CH('PLAYER'))
-	UI:SetSpeaker(zigzagoon)
-	UI:WaitShowDialogue("Hey Team " .. GAME:GetTeamName() .. ",[pause=10] how's your first day going?")
+	GeneralFunctions.StartConversation(zigzagoon, "Hey Team " .. GAME:GetTeamName() .. ",[pause=10] how's your first day going?")
 	UI:WaitShowDialogue(".........")
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " is sending you over to Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " for training,[pause=10] huh?")
 	UI:WaitShowDialogue("She's definitely...[pause=0] Um...[pause=0] a character alright...")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("She's a great teacher though.[pause=0] Make sure you do your best to learn from her!")
 	--UI:WaitShowDialogue("I know that I learned a lot of stuff from her!")
-	GROUND:EntTurn(zigzagoon, Direction.Up)
+	GeneralFunctions.EndConversation(chara)
 end
 
 function guild_second_floor_ch_2.Bagon_Action(chara, activator)

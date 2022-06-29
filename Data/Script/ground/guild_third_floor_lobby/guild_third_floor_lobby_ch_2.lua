@@ -695,7 +695,23 @@ function guild_third_floor_lobby_ch_2.SecondMorningAddress()
 
 end
 
+function guild_third_floor_lobby_ch_2.FailedRiver()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. "![pause=0] We need to get back to " .. zone:GetColoredName() .. " to find " .. CharacterEssentials.GetCharacterName("Numel") .. "!") 
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 
+end
 
 --used for having apprentices leave towards the stairs
 function guild_third_floor_lobby_ch_2.ApprenticeLeave(chara)

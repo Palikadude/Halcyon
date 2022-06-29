@@ -384,7 +384,6 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
 		--setup flashes
-		--todo: fix when audino adds dungeon VFX
 		local emitter = RogueEssence.Content.FlashEmitter()
 		emitter.FadeInTime = 2
 		emitter.HoldTime = 4
@@ -393,17 +392,16 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		emitter.Layer = DrawLayer.Top
 		emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
 		--setup hop animation
-		--TODO: use a better/simpler call to do this when audino creates one
 		local action = RogueEssence.Dungeon.CharAnimAction()
 		action.BaseFrameType = 43 --hop
 		action.AnimLoc = target.CharLoc
 		action.CharDir = target.CharDir
 		TASK:WaitTask(target:StartAnim(action))
 		
-		GROUND:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
+		DUNGEON:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
 	    SOUND:PlayBattleSE("EVT_Battle_Flash")
 	    GAME:WaitFrames(15)
-	    GROUND:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
+	    DUNGEON:PlayVFX(emitter, target.MapLoc.X, target.MapLoc.Y)
 	    SOUND:PlayBattleSE("EVT_Battle_Flash")
 		UI:WaitShowTimedDialogue("HWACHA!", 40)		
 		--Reset floor

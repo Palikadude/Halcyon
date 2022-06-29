@@ -23,12 +23,8 @@ function guild_bottom_left_bedroom_ch_1.Girafarig_Action(chara, activator)
 	else 
 		local girafarig = CH('Girafarig')
 		local tail = CH('Tail')
-		local olddir = girafarig.Direction
 		local hero = CH('PLAYER')
-		GROUND:CharTurnToChar(girafarig, hero)		
-		UI:SetSpeaker(girafarig)
-		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("We're the most senior appetizers here,[pause=10] so come to us if you need advice or help!")
+		GeneralFunctions.StartConversation(chara, "We're the most senior appetizers here,[pause=10] so come to us if you need advice or help!", "Happy")
 		UI:WaitShowDialogue(tail:GetDisplayName() .. " and I would be glad to tutor you anytime!")
 		GAME:WaitFrames(20)
 		
@@ -36,8 +32,8 @@ function guild_bottom_left_bedroom_ch_1.Girafarig_Action(chara, activator)
 		UI:SetSpeakerEmotion('Special0')
 		UI:WaitShowDialogue('.........')
 		
+		GeneralFunctions.EndConversation(chara)
 		
-		GROUND:EntTurn(girafarig, olddir)
 	end
 end
 
@@ -348,13 +344,9 @@ function guild_bottom_left_bedroom_ch_1.Breloom_Action(chara, activator)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		GAME:CutsceneMode(false)
 	else 
-		local olddir = breloom.Direction
-		GROUND:CharTurnToChar(breloom, hero)		
-		UI:SetSpeaker(breloom)
-		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("By the way,[pause=10] if you gatecrashers ever need help with anything,[pause=10] especially exploring,[pause=10] come see me or " .. girafarig:GetDisplayName() .. "!")
+		GeneralFunctions.StartConversation(chara, "By the way,[pause=10] if you gatecrashers ever need help with anything,[pause=10] especially exploring,[pause=10] come see me or " .. girafarig:GetDisplayName() .. "!", "Happy")
 		UI:WaitShowDialogue("We're the best explorers at this guild![pause=0] After the Guildmaster,[pause=10] of course.")
-		GROUND:EntTurn(breloom, olddir)
+		GeneralFunctions.EndConversation(chara)
 	end
 end
 

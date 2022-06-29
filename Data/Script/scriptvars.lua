@@ -76,7 +76,9 @@ SV.TemporaryFlags =
 	Dinnertime = false,--used to indicate whether generic dinner cutscene should be played on entering dining room
 	Bedtime = false,--used to indicate whether to do a generic bedtime cutscene or not 
 	MorningWakeup = false,--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
-	MorningAddress = false--used to indicate whether to do a generic morning address
+	MorningAddress = false,--used to indicate whether to do a generic morning address
+	JustWokeUp = false--Did the duo JUST wake up on a new day?
+
 }
 
 
@@ -102,11 +104,6 @@ SV.metano_cafe =
   GaveFreeExpeditionItem = false
 }
 
-
-SV.guild = 
-{
-	JustWokeUp = false--Did the duo JUST wake up on a new day?
-}
 
 SV.Dojo = 
 {

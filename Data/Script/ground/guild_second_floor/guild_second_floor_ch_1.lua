@@ -441,51 +441,39 @@ function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
 	else 
 		UI:WaitShowDialogue("Let's go look around the guild some more.[pause=0] I think there's more guildmates for us to meet!")
 	end
+	GAME:WaitFrames(20)
 	GeneralFunctions.EndConversation(partner)
---may want to put some sort of buffer so player doesnt accidentally initiate dialogue with partner via mashing if partner is right behind them
 end
 
 
 
 function guild_second_floor_ch_1.Cleffa_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion('Angry')
-	UI:WaitShowDialogue("You dolt![pause=0] We couldn't reach the end because you aren't doing your part!")
+	GeneralFunctions.StartConversation(chara, "You dolt![pause=0] We couldn't reach the end because you aren't doing your part!", "Angry", false)
 	UI:WaitShowDialogue("How is Team [color=#FFA5FF]Starlight[color] ever going to make a name for itself if you don't pick up the slack!")
+	GeneralFunctions.EndConversation(chara)
 end
 
 function guild_second_floor_ch_1.Aggron_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion('Sad')
-	print(GAME:GetTeamName())
-	UI:WaitShowDialogue("Sorry boss...[pause=0] I'll try to do better next time...")
+	GeneralFunctions.StartConversation(chara, "Sorry boss...[pause=0] I'll try to do better next time...", "Sad", false)
+	GeneralFunctions.EndConversation(chara)
 end
 
 
 function guild_second_floor_ch_1.Marill_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion('Normal')
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because our signature attack is the move Round!")
-	GROUND:EntTurn(chara, Direction.UpLeft)
+	GeneralFunctions.StartConversation(chara, "We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because our signature attack is the move Round!")
+	GeneralFunctions.EndConversation(chara)
 end
 
 function guild_second_floor_ch_1.Jigglypuff_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion('Normal')
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Not all adventuring teams work for the guild.")
+	GeneralFunctions.StartConversation(chara, "Not all adventuring teams work for the guild.")
 	UI:WaitShowDialogue("Some teams,[pause=10] like ours,[pause=10] come here to find jobs posted on the boards.")
-	GROUND:EntTurn(chara, Direction.Up)
+	GeneralFunctions.EndConversation(chara)
 end
 
 function guild_second_floor_ch_1.Spheal_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion('Normal')
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Let's hurry up and find tomorrow's job,[pause=10] guys...")
+	GeneralFunctions.StartConversation(chara, "Let's hurry up and find tomorrow's job,[pause=10] guys...")
 	UI:WaitShowDialogue("It's getting late and I wanna eeeeeaaatttt![pause=0] I'm starving!")
-	GROUND:EntTurn(chara, Direction.UpRight)
+	GeneralFunctions.EndConversation(chara)
 end
 
 
@@ -494,16 +482,12 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
-	UI:SetSpeaker(zigzagoon)
-	UI:SetSpeakerEmotion("Normal")
-	
 
 	if not SV.Chapter1.MetZigzagoon then
-		GROUND:CharTurnToCharAnimated(hero, zigzagoon, 4)
-		GROUND:CharTurnToCharAnimated(zigzagoon, hero, 4)
-		GROUND:CharTurnToChar(partner, zigzagoon)
+	
+
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
-		UI:WaitShowDialogue("Um...[pause=0] I don't think I've seen you around before.[pause=0] Are you guys a new adventuring team?")
+		GeneralFunctions.StartConversation(zigzagoon, "Um...[pause=0] I don't think I've seen you around before.[pause=0] Are you guys a new adventuring team?", "Normal", true, true, false)
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Happy")
@@ -528,7 +512,8 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
-		GeneralFunctions.DoubleHop(zigzagoon, "Idle", 6, 6)
+		GeneralFunctions.DoubleHop(zigzagoon, "None", 6, 6)
+		GROUND:CharSetAnim(zigzagoon, "None", true)--we're not in cutscene mode so this needs to be set again after hopping
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Then that means we're guildmates![pause=0] I'm " .. zigzagoon:GetDisplayName() .. "![pause=0] I was the newest member at the guild before you two came along.")
 		GAME:WaitFrames(20)
@@ -592,7 +577,9 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		SV.Chapter1.MetZigzagoon = true
 	
 		GROUND:CharTurnToChar(zigzagoon, hero)
+		GAME:WaitFrames(10)
 		GeneralFunctions.Hop(zigzagoon)
+		GROUND:CharSetAnim(zigzagoon, "None", true)--we're not in cutscene mode so this needs to be set again after hopping
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("I'm looking forward to learning and training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
 		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers![pause=0] I just know it!")
@@ -610,11 +597,12 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
 			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
 		end
+		
+		GeneralFunctions.EndConversation(zigzagoon)
 	else
-		GROUND:CharTurnToChar(zigzagoon, hero)
-		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("I'm looking forward to training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!")
+		GeneralFunctions.StartConversation(chara, "I'm looking forward to training at the guild here with you,[pause=10] Team " .. GAME:GetTeamName() .. "!", "Happy")
 		UI:WaitShowDialogue("We're all gonna learn how to be great adventurers![pause=0] I just know it!")
+		GeneralFunctions.EndConversation(chara)
 	end
 	
 	
@@ -628,7 +616,6 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
-	
 	if not SV.Chapter1.MetCranidosMareep then 
 		GAME:FadeOut(false, 20)
 		AI:DisableCharacterAI(partner)
@@ -639,8 +626,11 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GAME:CutsceneMode(true)
 		GROUND:EntTurn(mareep, Direction.Up)
 		GROUND:CharSetEmote(mareep, -1, 0)
-		GROUND:CharSetAnim(cranidos, 'None', true)--cutscene mode wasn't changing their anims for some reason automatically
-		GROUND:CharSetAnim(mareep, 'None', true)
+		GROUND:CharSetAnim(cranidos, 'None', true)
+		GROUND:CharSetAnim(mareep, 'None', true)--cutscene mode wasn't changing their anims for some reason automatically
+		GROUND:CharSetAnim(CH('Zigzagoon'), "Idle", true)
+
+		partner.IsInteracting = true
 		GAME:FadeIn(20)
 		
 		
@@ -924,6 +914,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GROUND:CharEndAnim(cranidos)
 		GROUND:CharEndAnim(mareep)
 		GROUND:CharEndAnim(CH('Zigzagoon'))
+		partner.IsInteracting = false
 		AI:EnableCharacterAI(partner)
 		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 		
@@ -931,12 +922,12 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GAME:CutsceneMode(false)
 
 	else
-		UI:SetSpeaker(cranidos)
-		UI:SetSpeakerEmotion("Determined")
-		UI:WaitShowDialogue(".........")
+
+		GeneralFunctions.StartConversation(chara, ".........", "Determined", false)
 		GAME:WaitFrames(20)
 	
 		GeneralFunctions.Monologue("(" .. cranidos:GetDisplayName() .. " is ignoring you.)")
+		GeneralFunctions.EndConversation(chara)
 	end
 end
 
@@ -945,22 +936,21 @@ function guild_second_floor_ch_1.Mareep_Action(chara, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	if not SV.Chapter1.MetCranidosMareep then
-		UI:SetSpeaker(mareep)
-		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Ooh,[pause=10] what about this job?[pause=0] This outla-a-a-aw seems like a real jerk![pause=0] Let's bring 'em in!")
+		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, mareep.CurrentForm.Species, mareep.CurrentForm.Form, mareep.CurrentForm.Skin, mareep.CurrentForm.Gender)
+		mareep.IsInteracting = true 
+		GeneralFunctions.StartConversation(chara, "Ooh,[pause=10] what about this job?[pause=0] This outla-a-a-aw seems like a real jerk![pause=0] Let's bring 'em in!", "Normal", false, false, false)
 		GAME:WaitFrames(20)
 		UI:ResetSpeaker(false)
 		UI:SetCenter(true)
 		UI:WaitShowDialogue("(She's too invested in the job board to notice you.)")
 		UI:SetCenter(false)
+		GeneralFunctions.EndConversation(chara, false)
+		mareep.IsInteracting = false
 	else 
-		UI:SetSpeaker(mareep)
-		UI:SetSpeakerEmotion("Happy")
-		GROUND:CharTurnToChar(mareep, hero)
-		UI:WaitShowDialogue("You're gonna have a lot of fun working with the guild!")
+		GeneralFunctions.StartConversation(chara, "You're gonna have a lot of fun working with the guild!", "Happy")
 		UI:WaitShowDialogue("We're gonna do all sorts of fun stuff together now that you've joined!")
 		UI:WaitShowDialogue("Me and " .. CH('Cranidos'):GetDisplayName() .. " can even show you some ways to take down bad guys sometime![pause=0] We'll have a bla-a-a-ast!")
-		GROUND:EntTurn(mareep, Direction.Up)
+		GeneralFunctions.EndConversation(chara)
 	end
 end
 	

@@ -277,9 +277,112 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion('Normal')
 	
+	--yes i know this is yandere dev shit i dont know how better to structure this. a lua table doesn't really make sense here without having to do a bunch of extra bullshit that i feel makes it less categorized/ordered.
+	--can redo this with a better approach if a good one can be figured out.
+	if ground == 'guild_heros_room' then 
+		if SV.TemporaryFlags.JustWokeUp then 
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("Good morning,[pause=10] " .. hero:GetDisplayName() .. "!")
+			if not SV.Chapter2.FirstMorningMeetingDone then 
+				UI:SetSpeakerEmotion("Normal")
+				UI:WaitShowDialogue("We'd better get over to the morning meeting before we miss something![pause=0] Let's go!")
+			end
+		elseif not SV.Chapter2.FinishedFirstDay then 
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("It would have been nice if we could have slept in a bit longer...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Ah well.[pause=0] We have more important things to do than sleep,[pause=10] anyway.")
+			UI:WaitShowDialogue("Let's head over to the dojo for training whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
+		else
+			UI:SetSpeakerEmotion("Determined")
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			UI:WaitShowDialogue("Now's not the time for rest,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:WaitShowDialogue("We've got to get over to " .. zone:GetDisplayName() .. " to find " .. CharacterEssentials.GetCharacterName("Numel") .. "![pause=0] Let's go!")	
+		end
 	
-	UI:WaitShowDialogue("Chapter 2 Dialogue message.")
+	elseif ground == 'guild_bottom_left_bedroom' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I'm still not one-hundred percent sure who has which bedroom...")
+		UI:WaitShowDialogue("But given we saw them in here the other day,[pause=10] I think this is " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. "'s room.")		
+		UI:WaitShowDialogue("...As nice as they are,[pause=10] I'm still a bit creeped out by " .. CharacterEssentials.GetCharacterName("Tail") .. ",[pause=10] if I'm being honest.")
+	elseif ground == 'guild_bottom_right_bedroom' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Hmm...[pause=0] Given all the books and paper strewn about,[pause=10] I would guess this is " .. CharacterEssentials.GetCharacterName('Zigzagoon') .. "'s room.")
+		UI:WaitShowDialogue("I think " .. CharacterEssentials.GetCharacterName("Growlithe") .. " mentioned to me once that " .. CharacterEssentials.GetCharacterName('Zigzagoon') .. " was his partner,[pause=10] so this must be his room too.")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("While we're here,[pause=10] why don't we take a quick peek at that almanac " .. CharacterEssentials.GetCharacterName("Zigzagoon") .. " has been working on?[pause=0] I bet there's some useful knowledge in there!")
+	elseif ground == 'guild_top_left_bedroom' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Given who the other bedrooms belong to,[pause=10] this must be " .. CharacterEssentials.GetCharacterName("Mareep") .. CharacterEssentials.GetCharacterName("Cranidos") .. "'s room.")
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("We'd better leave.[pause=0] I don't want to get into an argument with " ..CharacterEssentials.GetCharacterName("Cranidos") .. " if he catches us in here...")
+	elseif ground == 'guild_top_right_bedroom' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I think I saw " .. CharacterEssentials.GetCharacterName("Snubbull") .. " going into this room last night...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I think that " .. CharacterEssentials.GetCharacterName("Audino") .. " is her partner,[pause=10] so this must be their room.")
+		UI:WaitShowDialogue("Those two sure do a lot of the work around the guild itself,[pause=10] don't they?[pause=0] I guess that makes them a good pair.")
+	elseif in_array(ground, {'guild_bedroom_hallway',
+							 'guild_third_floor_lobby',
+							 'guild_second_floor',
+							 'guild_first_floor',
+							 'guild_storage_hallway'}) then 
+							 
+	elseif ground == 'guild_dining_room' then
+		if not SV.Chapter2.FinishedFirstDay then
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("I sure hope " .. CharacterEssentials.GetCharacterName("Snubbull") .. " makes something tasty tonight.")
+			UI:WaitShowDialogue("I don't know what kind of things she makes,[pause=10] but I hope at least there are some Candied Orans for desert.[pause=0] Those are my favorite!")
+		else 
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("Dinner last night was great![pause=0] " ..  CharacterEssentials.GetCharacterName('Snubbull') .. " is a great chef after all!")
+			UI:WaitShowDialogue("Can't wait to see what she has for us all tonight!")
+		end
+	elseif ground == 'guild_guildmasters_room' then
+		if not SV.Chapter2.FinishedFirstDay then
+			UI:SetSpeakerEmotion("Inspired"
+			UI:WaitShowDialogue("The Guildmaster was an amazing adventurer who traveled all over the world before he established the guild.")'
+			UI:WaitShowDialogue("His exploits are part of the reason I wanted to become an adventurer so bad!")
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("I'm not sure why he settled down to create the guild though.[pause=0] If I was in his position,[pause=10] I'd want to explore and adventure my entire life!")  
+		elseif not SV.Chapter2.TropiusGaveReviver then 
+			
+		else
+		
+		end
+	elseif ground == 'guild_storage_room' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I know we shouldn't touch anything in here,[pause=10] but...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I can't help but wonder what kind of stuff is stored here besides food.[pause=0] You think there's anything cool in here?")
+	elseif ground == 'ledian_dojo' then
+		if not SV.Chapter2.FinishedFirstDay then 
+			UI:SetSpeakerEmotion("Inspired")
+			UI:WaitShowDialogue("This dojo is great![pause=0] I'm glad there's a place like this for us to train!")
+			UI:WaitShowDialogue("I still got some energy if you want to train some more,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:WaitShowDialogue("We need to do all the training we can if we want to become great adventurers!")
+		else
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			UI:WaitShowDialogue("It might be a good idea to warmup with some training here before we head out to " .. zone:GetColoredName() .. ".")
+			UI:WaitShowDialogue("We don't want to take too long though.[pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. " needs us!")
+		end
+	elseif ground == 'metano_fire_home' then
+	elseif ground == 'metano_electric_home' then
+	elseif ground == 'metano_water_home' then
+	elseif ground == 'metano_normal_home' then
+	elseif ground == 'metano_rock_home' then
+	elseif ground == 'metano_grass_home' then
+	elseif ground == 'metano_inn' then
+	elseif ground == 'metano_altere_transition' then
+	elseif ground == 'altere_pond' then
+	elseif ground == 'post_office' then
+	elseif ground == 'metano_town' then
+
 	
+	
+	else	
+		UI:WaitShowDialogue("Chapter 2 dialogue not found for this ground/scenario. Please notify Palika.")
+	end
 	
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)

@@ -8,16 +8,22 @@ guild_guildmasters_room_ch_2 = {}
 
 function guild_guildmasters_room_ch_2.Tropius_Action(chara, activator)
 	if not SV.Chapter2.FinishedTraining then 
-		GeneralFunctions.StartConversation(chara, "Howdy Team " .. GAME:GetTeamName() .. "![pause=0] Good luck with your training with Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " today!")
+		GeneralFunctions.StartConversation(chara, "Howdy Team " .. GAME:GetTeamName() .. "![pause=0] Good luck training with Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " today!")
 	else 
 		--He gives you a reviver seed as a one-off to help you with your mission
 		if not SV.Chapter2.TropiusGaveReviver then 
 			GeneralFunctions.StartConversation(chara, "Howdy Team " .. GAME:GetTeamName() .. "![pause=0] I heard that you got your first mission already!")
 			UI:WaitShowDialogue("I want you to take this.[pause=0] It'll help you if you encounter trouble!")
 			GeneralFunctions.RewardItem(101)
+			UI:SetSpeaker(CH('Teammate1'))
+			UI:SetSpeakerEmotion("Inspired")
+			GROUND:CharSetEmote(CH('Teammate1'), 1, 0)
+			UI:WaitShowDialogue("Wow![pause=0] Thank you Guildmaster!")
+			GAME:WaitFrames(20)
+			GROUND:CharSetEmote(CH('Teammate1'), -1, 0)
 			UI:SetSpeaker(chara)
 			UI:SetSpeakerEmotion("Happy")
-			UI:WaitShowDialogue("Good luck with the job![pause=0] I know you can do it!")
+			UI:WaitShowDialogue("Of course![pause=0] Good luck with the job![pause=0] I know you can do it!")
 			SV.Chapter2.TropiusGaveReviver = true
 		elseif not SV.Chapter2.EnteredRiver then 
 			GeneralFunctions.StartConversation(chara, "Good luck with the job![pause=0] I know you can do it!", "Happy")

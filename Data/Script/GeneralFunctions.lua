@@ -913,9 +913,9 @@ end
 
 --used to start a coroutine to have partner turn towards target NPC while having a conversation start.
 --also stops their animations 
-function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, changeNPCanimation, speaker, animation, turnframes)
+function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, changeNPCanimation, changeSpeaker, animation, turnframes)
 	if emotion == nil then emotion = 'Normal' end
-	if speaker == nil then speaker = target end 
+	if changeSpeaker == nil then changeSpeaker = true end 
 	if npcTurn == nil then npcTurn = true end--should NPC turn to face you?
 	if changeNPCanimation == nil then changeNPCanimation = true end--should NPC change their animation? useful for flying npcs too
 	if animation == nil then animation = 'None' end 
@@ -926,7 +926,7 @@ function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, 
 	local partner = CH('Teammate1')
 	partner.IsInteracting = true
 	SV.TemporaryFlags.OldDirection = target.Direction
-	UI:SetSpeaker(speaker)
+	if changeSpeaker then UI:SetSpeaker(target) end
 	UI:SetSpeakerEmotion(emotion)
 	GROUND:CharSetAnim(partner, animation, true)
 	GROUND:CharSetAnim(hero, animation, true)
@@ -951,7 +951,7 @@ function GeneralFunctions.EndConversation(target, changeNPCanimation)
 	local partner = CH('Teammate1')
 	
 	if target ~= partner then--if partner conversation was started don't turn them back around after
-		GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection)
+		if SV.TemporaryFlags.OldDirection ~= Direction.None then GROUND:EntTurn(target, SV.TemporaryFlags.OldDirection) end 
 		SV.TemporaryFlags.OldDirection = Direction.None -- Clear flag 
 	end
 	

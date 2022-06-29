@@ -100,7 +100,15 @@ function guild_third_floor_lobby.PlotScripting()
 	end
 end
 
-
+--potentially calls relevant scripts after a generic morning address was given. This would be stuff like
+--noctowl giving the day's mission or a comment from the partner.
+function guild_third_floor_lobby.PostAddressScripting()
+	if SV.ChapterProgression.Chapter == 2 then
+		if SV.Chapter2.EnteredRiver then 
+			guild_third_floor_lobby_ch_2.FailedRiver()--partner mentions that you need to go return to Illuminant Riverbed to rescue numel
+		end
+	end
+end
 
 
 function guild_third_floor_lobby.MorningAddress(generic)
@@ -238,11 +246,14 @@ function guild_third_floor_lobby.MorningAddress(generic)
 
 
 	if generic then 
-		GeneralFunctions.PanCamera()
+		--call post address scripting to see if anything additional is needed if address is generic 
 		SV.TemporaryFlags.MorningAddress = false
+		guild_third_floor_lobby.PostAddressScripting()
+		--[[the commented out functionality below was moved to the scripts that post address scripting calls		
+		GeneralFunctions.PanCamera()
 		GAME:CutsceneMode(false)
 		AI:EnableCharacterAI(partner)
-		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)	
+		AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)	]]--
 	end
 
 	
