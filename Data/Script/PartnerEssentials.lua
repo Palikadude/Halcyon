@@ -368,9 +368,12 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		end
 	elseif ground == 'metano_fire_home' then
 		if not SV.Chapter2.FinishedFirstDay then 
-			UI:WaitShowDialogue("This house belongs to the ")
+			UI:WaitShowDialogue("This house belongs to the family that was just arguing outside.")
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("I hope they can make up with each other soon...")
 		else 
-		
+			UI:SetSpeakerEmotion("Determined")
+			UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. ".[pause=0] Let's go bring " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s baby boy home.")
 		end 
 	elseif ground == 'metano_electric_home' then
 		UI:WaitShowDialogue("This house belongs to a family of Electric-types.")
@@ -379,10 +382,18 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		UI:WaitShowDialogue("A family of Water-types live here.")
 		UI:WaitShowDialogue("It must be nice having your house right next to a river if you're a Water-type!")
 	elseif ground == 'metano_normal_home' then
-		
+		UI:WaitShowDialogue("A Normal-type family owns this house.")
+		UI:WaitShowDialogue("You can usually find the dad napping in the sun in town and the mom's nose in a book.")
 	elseif ground == 'metano_rock_home' then
+		UI:WaitShowDialogue("A family of Fighting-types own this house.")
+		UI:WaitShowDialogue("You can usually see them meditating or training somewhere in town.")
 	elseif ground == 'metano_grass_home' then
+		UI:WaitShowDialogue("This house belongs to a family of Grass-types.")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("They have a beautiful garden outside their house,[pause=10] don't you think?")
 	elseif ground == 'metano_inn' then
+		UI:WaitShowDialogue("This is an inn ran by a lovely couple.[pause=0] They're really kind!")
+		UI:WaitShowDialogue("All sorts of Pokémon passing through town stay here.[pause=0] It's a good place to meet new people!")
 	elseif ground == 'metano_cave' then
 		UI:WaitShowDialogue("A hermit has been living in this cave for as long as I can remember.[pause=0] I don't know anything else about her though.")
 		UI:SetSpeakerEmotion("Worried")
@@ -390,6 +401,10 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 	elseif ground == 'metano_altere_transition' then
 	elseif ground == 'altere_pond' then
 	elseif ground == 'post_office' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Looks like the post office isn't working right now...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Guess we'll have to come back another time.")
 	elseif ground == 'metano_town' then
 		--metano town uses a series of touch objects to mark where the player/partner is on the map so the partner can comment on specific surroundings.
 		if not SV.Chapter2.FinishedFirstDay then 
