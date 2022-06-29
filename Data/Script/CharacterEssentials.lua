@@ -340,6 +340,15 @@ local characters = {
 			form = 0,
 			skin = 0
 		},
+	
+		Shuckle = {
+			species = 213,
+			nickname = 'Dion',
+			instance = 'Shuckle',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
 		
 	
 	
@@ -591,6 +600,15 @@ local characters = {
 			nickname = 'Bria',
 			instance = 'Mawile',
 			gender = Gender.Female,
+			form = 0,
+			skin = 0
+		},
+	
+		Relicanth = {
+			species = 369,
+			nickname = 'Erleuchtet',
+			instance = 'Relicanth',
+			gender = Gender.Male,
 			form = 0,
 			skin = 0
 		},
