@@ -8,11 +8,11 @@ guild_guildmasters_room_ch_2 = {}
 
 function guild_guildmasters_room_ch_2.Tropius_Action(chara, activator)
 	if not SV.Chapter2.FinishedTraining then 
-		GeneralFunctions.StartConversation(chara, "Howdy Team " .. GAME:GetTeamName() .. "![pause=0] Good luck training with Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " today!")
+		GeneralFunctions.StartConversation(chara, "Howdy,[pause=10] Team " .. GAME:GetTeamName() .. "![pause=0] Good luck training with Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " today!")
 	else 
 		--He gives you a reviver seed as a one-off to help you with your mission
 		if not SV.Chapter2.TropiusGaveReviver then 
-			GeneralFunctions.StartConversation(chara, "Howdy Team " .. GAME:GetTeamName() .. "![pause=0] I heard that you got your first mission already!")
+			GeneralFunctions.StartConversation(chara, "Howdy,[pause=10] Team " .. GAME:GetTeamName() .. "![pause=0] I heard that you got your first mission already!")
 			UI:WaitShowDialogue("I want you to take this.[pause=0] It'll help you if you encounter trouble!")
 			GeneralFunctions.RewardItem(101)
 			UI:SetSpeaker(CH('Teammate1'))

@@ -227,6 +227,72 @@ function metano_town.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
+--locales mark the zone of the town we're in for partner dialogue
+function metano_town.Cafe_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Cafe'
+end
+
+function metano_town.Exploration_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Exploration'
+end
+
+function metano_town.Cave_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Cave'
+end
+
+function metano_town.South_Houses_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'South Houses'
+end
+
+function metano_town.North_Houses_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'North Houses'
+end
+
+function metano_town.Merchants_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Merchants'
+end
+
+function metano_town.Guild_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Guild'
+end
+
+function metano_town.Market_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Market'
+end
+
+function metano_town.Well_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Well'
+end
+
+function metano_town.Post_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Post'
+end
+
+function metano_town.Dojo_Locale_Touch(chara, activator)
+	DEBUG.EnableDbgCoro()
+	print("Shart")
+	SV.metano_town.Locale = 'Dojo'
+end
 
 
 -----------------------
@@ -454,8 +520,19 @@ function metano_town.Shop_Action(obj, activator)
   end
 
   
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
   local chara = CH('Shop_Owner')
+  chara.IsInteracting = true
+  partner.IsInteracting = true
   UI:SetSpeaker(chara)
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)
+  GROUND:CharSetAnim(chara, 'None', true)
+		
+  GROUND:CharTurnToChar(hero, chara)
+  local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+
   
 	while state > -1 do
 		if state == 0 then
@@ -614,6 +691,13 @@ function metano_town.Shop_Action(obj, activator)
 			end
 		end
 	end
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end
 
 
@@ -644,8 +728,19 @@ function metano_town.TM_Action(obj, activator)
   end
 
   
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
   local chara = CH('TM_Owner')
+  chara.IsInteracting = true
+  partner.IsInteracting = true
   UI:SetSpeaker(chara)
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)
+  GROUND:CharSetAnim(chara, 'None', true)
+		
+  GROUND:CharTurnToChar(hero, chara)
+  local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+
   
 	while state > -1 do
 		if state == 0 then
@@ -804,6 +899,15 @@ function metano_town.TM_Action(obj, activator)
 			end
 		end
 	end
+	
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end
 
 
@@ -846,7 +950,18 @@ end
 function metano_town.Storage_Action(obj, activator)
 	DEBUG.EnableDbgCoro()
 	
-	UI:SetSpeaker(CH('Storage_Owner'))
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local chara = CH('Storage_Owner')
+	chara.IsInteracting = true
+	partner.IsInteracting = true
+	UI:SetSpeaker(chara)
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(chara, 'None', true)
+			
+	GROUND:CharTurnToChar(hero, chara)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
 	UI:SetSpeakerEmotion('Happy')
 	
 	local state = 0
@@ -908,6 +1023,14 @@ function metano_town.Storage_Action(obj, activator)
 			state = -1
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end 
 
 
@@ -924,7 +1047,18 @@ end
 function metano_town.Bank_Action(obj, activator)
 	DEBUG.EnableDbgCoro()
 	
-	UI:SetSpeaker(CH('Bank_Owner'))
+    local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+    local chara = CH('Bank_Owner')
+    chara.IsInteracting = true
+    partner.IsInteracting = true
+    UI:SetSpeaker(chara)
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+    GROUND:CharSetAnim(chara, 'None', true)
+		
+    GROUND:CharTurnToChar(hero, chara)
+    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
 	
 	local state = 0
 	local repeated = false
@@ -970,6 +1104,14 @@ function metano_town.Bank_Action(obj, activator)
 			state = -1
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end 
 
 
@@ -1371,8 +1513,17 @@ function metano_town.Swap_Action(obj, activator)
   
   local Prices = { 1000, 5000, 20000, 50000, 100000 }
   local player = CH('PLAYER')
+  local partner = CH('Teammate1')
   local chara = CH('Swap_Owner')
+  chara.IsInteracting = true
+  partner.IsInteracting = true
   UI:SetSpeaker(chara)
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(player, 'None', true)
+  GROUND:CharSetAnim(chara, 'None', true)
+		
+  GROUND:CharTurnToChar(player, chara)
+  local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
   
 	while state > -1 do
 		if state == 0 then
@@ -1502,6 +1653,14 @@ function metano_town.Swap_Action(obj, activator)
 			end
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(player)
+	GROUND:CharEndAnim(chara)
 end
 
 function metano_town.Tutor_Sequence(member, moveEntry)
@@ -1532,7 +1691,18 @@ function metano_town.Tutor_Action(obj, activator)
   local repeated = false
   local member = nil
   local move = -1
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
   local chara = CH('Tutor_Owner')
+  chara.IsInteracting = true
+  partner.IsInteracting = true
+  UI:SetSpeaker(chara)
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)
+  GROUND:CharSetAnim(chara, 'None', true)
+		
+  GROUND:CharTurnToChar(hero, chara)
+  local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
   UI:SetSpeaker(chara)
   
 	while state > -1 do
@@ -1654,6 +1824,14 @@ function metano_town.Tutor_Action(obj, activator)
 			end
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end
 
 
@@ -1665,7 +1843,18 @@ function metano_town.Appraisal_Action(obj, activator)
   local repeated = false
   local cart = {}
   local price = 150
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
   local chara = CH('Appraisal')
+  chara.IsInteracting = true
+  partner.IsInteracting = true
+  UI:SetSpeaker(chara)
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)
+  GROUND:CharSetAnim(chara, 'None', true)
+		
+  GROUND:CharTurnToChar(hero, chara)
+  local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
   UI:SetSpeaker(chara)
 	while state > -1 do
 		if state == 0 then
@@ -1790,6 +1979,14 @@ function metano_town.Appraisal_Action(obj, activator)
 			end
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 end
 
 

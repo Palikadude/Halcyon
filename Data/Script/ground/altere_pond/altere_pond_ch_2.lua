@@ -63,25 +63,18 @@ function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	
-	partner.IsInteracting = true
 	
 	if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then
 		
-		UI:SetSpeaker(partner)
-		GROUND:CharTurnToCharAnimated(partner, hero, 4)
-		UI:WaitShowDialogue("I don't think we have time to go into " .. zone:GetColoredName() .. " before dinner.")
-		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		GeneralFunctions.StartPartnerConversation("I don't think we have time to go into " .. zone:GetColoredName() .. " before dinner.")
 		UI:WaitShowDialogue("Let's some back when we have some free time to explore!")
-		
+
 	else 
 		
-		UI:SetSpeaker(partner)
-		GROUND:CharTurnToCharAnimated(partner, hero, 4)
-		UI:WaitShowDialogue("We can't go exploring " .. zone:GetColoredName() .. " now!")
-		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		GeneralFunctions.StartPartnerConversation("We can't go exploring " .. zone:GetColoredName() .. " now!")
 		UI:WaitShowDialogue("We need to rescue " .. CharacterEssentials.GetCharacterName('Numel') .. "![pause=0] Quickly,[pause=10] to " .. zone2:GetColoredName() .. "!")
 	end
 	
-	partner.IsInteracting = false
+	GeneralFunctions.EndConversation(partner)
 
 end

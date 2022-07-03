@@ -67,7 +67,6 @@ function guild_heros_room.PlotScripting()
 	--if generic morning is flagged, prioritize that.
 	if SV.TemporaryFlags.MorningWakeup or SV.TemporaryFlags.Bedtime then 
 		if SV.TemporaryFlags.Bedtime then guild_heros_room.Bedtime(true) end
-		GAME:WaitFrames(90)
 		if SV.TemporaryFlags.MorningWakeup then guild_heros_room.Morning(true) end
 	else
 		--plot scripting
@@ -181,10 +180,10 @@ function guild_heros_room.Morning(generic)
 		GROUND:Hide("Save_Point")--disable bed saving
 		local hero_bed = MRKR('Hero_Bed')
 		local partner_bed = MRKR('Partner_Bed')
-		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
-		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
+		GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Right)
+		GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Left)
 		GeneralFunctions.CenterCamera({hero, partner})
-		GAME:WaitFrames(60)--wait a bit just in case we didn't wait before starting this scene 
+		GAME:WaitFrames(90)--wait a bit just in case we didn't wait before starting this scene 
 
 		local audino =
 			CharacterEssentials.MakeCharactersFromList({
@@ -216,10 +215,10 @@ function guild_heros_room.Morning(generic)
 		--todo: add shakes 
 		coro1 = TASK:BranchCoroutine(function () GAME:WaitFrames(10)
 												 GeneralFunctions.DoAnimation(hero, 'Wake') 
-												 GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) 
+												 --GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) 
 												 GAME:WaitFrames(20) end)
 		coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') 
-												 GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+												 --GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 												 GAME:WaitFrames(20) end)
 		TASK:JoinCoroutines({coro1, coro2})
 		

@@ -68,8 +68,8 @@ function metano_town_ch_2.SetupGround()
 				{'Ludicolo', 1224, 1160, Direction.UpLeft},
 				{'Mawile', 768, 600, Direction.Down},
 				{'Azumarill', 272, 1208, Direction.Left},
-				{'Mareep', 'Cafe_Seat_5'},
-				{'Cranidos', 'Cafe_Seat_6'}
+				{'Mareep', 'Cafe_Seat_3'},
+				{'Cranidos', 'Cafe_Seat_4'}
 		})
 		
 		GROUND:CharSetAnim(furret, 'Sleep', true)
@@ -371,7 +371,7 @@ function metano_town_ch_2.MarketIntro()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("You know,[pause=10] it hasn't gotten too late in the day yet.[pause=0] We still have time before we have to go back to the guild!")
+	UI:WaitShowDialogue("You know,[pause=10] it hasn't gotten too late in the day yet.[pause=0] There's time before we have to go back to the guild!")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Now's the perfect opportunity to show you around Metano Town!")
 	GAME:WaitFrames(20)
@@ -404,7 +404,7 @@ function metano_town_ch_2.MarketIntro()
 												  GeneralFunctions.EightWayMove(hero, 1096, 944, false, 1)
 												  GeneralFunctions.EightWayMove(hero, 1120, 904, false, 1)
 												  GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) end)
-	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
+	local coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(4)
 												  GAME:MoveCamera(992, 1216, 56, false)
 												  GAME:MoveCamera(1040, 1216, 48, false)
 												  GAME:MoveCamera(1048, 1208, 8, false)
@@ -445,7 +445,7 @@ function metano_town_ch_2.MarketIntro()
 	GAME:WaitFrames(20)
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, sneasel, 4)
-											GROUND:CharTurnToCharAnimated(hero, sneasel, 4) end)
+											GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.CenterCamera({sneasel}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 2) end)
 
 	TASK:JoinCoroutines({coro1, coro2})
@@ -486,10 +486,10 @@ function metano_town_ch_2.MarketIntro()
 	GROUND:CharTurnToChar(hero, partner)
 	GeneralFunctions.CenterCamera({hero, partner}, GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 3)
 	UI:WaitShowDialogue("I think there's a few other businesses in town,[pause=10] but these are the main ones anyway.")
-	UI:WaitShowDialogue("We should take a closer look at some of the stores here,[pause=10] then after let's head over to the west side of town.")
+	UI:WaitShowDialogue("We should take a closer look at some of the stores here,[pause=10] then head over to the west side of town.")
 	UI:WaitShowDialogue("That's where all the houses are.[pause=0] Most townfolk live over there.")
 	UI:WaitShowDialogue("We should have time to do this before we head back to the guild for dinner.")
-	UI:WaitShowDialogue("Alright,[pause=10] let's shop around,[pause=10] then meet some of the townfolk who live here in Metano Town!")
+	UI:WaitShowDialogue("Alright,[pause=10] let's take a look around!")
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.PanCamera()
@@ -653,6 +653,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GAME:WaitFrames(30)
 	GeneralFunctions.EmoteAndPause(camerupt, "Exclaim", true)
 	GROUND:CharAnimateTurnTo(camerupt, Direction.Down, 4)
+	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(camerupt, "Sweating", true)
 	UI:SetSpeaker(camerupt)
 	UI:SetSpeakerEmotion("Pain")
@@ -769,10 +770,10 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Well,[pause=10] it can't be helped.[pause=0] I hope they're able to get along again soon though.")
 	UI:WaitShowDialogue("Anyways,[pause=10] this is part of town is where most of the residents live.")
-	UI:WaitShowDialogue("Pokémon here are pretty friendly and welcoming,[pause=10] I've never seen a scene like that in town before.")
+	UI:WaitShowDialogue("Pokémon here are pretty friendly and welcoming,[pause=10] scenes like that don't happen usually.")
 	GAME:WaitFrames(20)
 	
-	UI:WaitShowDialogue("Oh,[pause=10] and whenever you're done exploring town,[pause=10] we can head back to the guild.")
+	UI:WaitShowDialogue("Oh,[pause=10] whenever you're done exploring town,[pause=10] we can head back to the guild.")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("I'm sure it'll be time for dinner soon!")
 	UI:WaitShowDialogue("I worked up at appetite at the dojo today,[pause=10] and I'm sure you did too!")
@@ -785,6 +786,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GROUND:CharEndAnim(numel)
 	GROUND:Hide('Event_Trigger_5')--remove event trigger blocking you from entering the guild
 	SV.Chapter2.FinishedNumelTantrum = true
+	numel.CollisionDisabled = false
 	GAME:CutsceneMode(false)
 
 	
@@ -1137,7 +1139,7 @@ end
 
 function metano_town_ch_2.Luxray_Action(chara, activator)
 	if not SV.Chapter2.FinishedFirstDay then 
-		local numel_species = _DATA:GetMonster(numel.CurrentForm.Species):GetColoredName()
+		local numel_species = _DATA:GetMonster(322):GetColoredName()
 		GeneralFunctions.StartConversation(chara, "I've caught word that the " .. numel_species .. " child has gone missing.[pause=0] This does not surprise me.")
 		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " was too soft.[pause=0] So of course her child doesn't want to obey her and ends up running off.")
 		UI:WaitShowDialogue("If your child don't respect you,[pause=10] they'll do whatever they want.") 

@@ -204,7 +204,7 @@ local characters = {
 	--Team ???
 		Zangoose = {
 			species = 335,
-			nickname = '???',
+			nickname = 'Devian',
 			instance = 'Zangoose',
 			gender = Gender.Male,
 			form = 0,
@@ -213,7 +213,7 @@ local characters = {
 		
 		Seviper = {
 			species = 336,
-			nickname = '???',
+			nickname = 'Zular',
 			instance = 'Seviper',
 			gender = Gender.Male,
 			form = 0,
@@ -280,7 +280,7 @@ local characters = {
 		
 		Murkrow = {
 			species = 198,
-			nickname = 'Varok',
+			nickname = 'Varko',
 			instance = 'Murkrow',
 			gender = Gender.Male,
 			form = 0,
@@ -471,7 +471,7 @@ local characters = {
 		
 		Machamp = {
 			species = 68,
-			nickname = '???',
+			nickname = 'Savran',
 			instance = 'Machamp',
 			gender = Gender.Male,
 			form = 0,

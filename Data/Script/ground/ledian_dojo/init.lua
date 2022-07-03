@@ -283,7 +283,7 @@ end
 		
 function ledian_dojo.GenericLessonSuccess()
 	--for now, all 3 generic finishes will be the same
-	ledian_dojo.GenericTrainingFinish()
+	ledian_dojo.GenericTrainingSuccess()
 	SV.Dojo.LessonCompletedGeneric = false -- reset the flag
 end
 	
@@ -308,6 +308,7 @@ function ledian_dojo.GenericTrainingFailure()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
 	GAME:FadeIn(20)
 	
+	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(ledian, 'Sweating', true)
 	UI:SetSpeaker(ledian)
 	UI:SetSpeakerEmotion("Worried")
@@ -315,6 +316,7 @@ function ledian_dojo.GenericTrainingFailure()
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.DoubleHop(ledian)
+	GROUND:CharSetAnim(ledian, "Idle", true)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Hoiyah![pause=0] Worry not my students![pause=0] The journey to a stronger self is not an easy one.")
 	UI:WaitShowDialogue("This is simply one of the hardships you will encounter on the path to success.")
@@ -329,18 +331,19 @@ function ledian_dojo.GenericTrainingFailure()
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 	GAME:CutsceneMode(false)	
+	GROUND:CharEndAnim(ledian)
 	
 end
 		
 function ledian_dojo.GenericLessonFailure()
 	--for now, all 3 generic finishes will be the same
-	ledian_dojo.GenericLessonFailure()
+	ledian_dojo.GenericTrainingFailure()
 	SV.Dojo.LessonFailedGeneric = false -- reset the flag
 end
 		
 function ledian_dojo.GenericTrialFailure()
 	--for now, all 3 generic finishes will be the same
-	ledian_dojo.GenericTrialFailure()
+	ledian_dojo.GenericTrainingFailure()
 	SV.Dojo.TrialFailedGeneric = false -- reset the flag
 end
 -------------------------------

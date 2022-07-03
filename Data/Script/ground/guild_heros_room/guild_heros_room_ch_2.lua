@@ -22,8 +22,8 @@ function guild_heros_room_ch_2.FirstMorning()
 	GROUND:Hide("Save_Point")--disable bed saving
 	local hero_bed = MRKR('Hero_Bed')
 	local partner_bed = MRKR('Partner_Bed')
-	GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Down)
-	GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Down)
+	GROUND:TeleportTo(CH('PLAYER'), hero_bed.Position.X, hero_bed.Position.Y, Direction.Left)
+	GROUND:TeleportTo(CH('Teammate1'), partner_bed.Position.X, partner_bed.Position.Y, Direction.Right)
 	GeneralFunctions.CenterCamera({hero, partner})
 	SV.TemporaryFlags.JustWokeUp = true
 
@@ -311,7 +311,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	
 	UI:WaitShowDialogue("Today wasn't as exciting as I would have liked,[pause=10] but I guess we have to start somewhere.")
 	UI:WaitShowDialogue("We did get to learn a lot from Sensei " .. CharacterEssentials.GetCharacterName('Ledian') .. " though.")
-	UI:WaitShowDialogue("I hope she can teach us more...[br]We're going to need to learn and train as much as we can if we want to become great adventurers some day!")
+	UI:WaitShowDialogue("I hope she can teach us more...[br]We need to learn and train as much as we can if we want to become great adventurers some day!")
 	
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("Yawn...[pause=0] Well,[pause=10] staying up all night isn't going to help with that.[pause=0] Let's get some rest.")

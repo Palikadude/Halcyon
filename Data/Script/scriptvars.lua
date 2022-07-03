@@ -89,7 +89,8 @@ SV.TemporaryFlags =
 --todo: cleanup a lot of these
 SV.metano_town = 
 {
-  Locale = 'Default'--Where are we on the metano town map? Used for partner dialogue.
+  Locale = 'Guild',--Where are we on the metano town map? Used for partner dialogue. Defaults to guild
+  LastMarker = ''--which locale marker was touched last? we need to unhide it when another is touched.
   --LuxioIntro = false,
   --AggronGuided = false,
   --KecIntro = false

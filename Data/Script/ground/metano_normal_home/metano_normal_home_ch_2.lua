@@ -72,7 +72,7 @@ function metano_normal_home_ch_2.Furret_Action(chara, activator)
 		GeneralFunctions.StartConversation(chara, "Still no sign of " .. CharacterEssentials.GetCharacterName("Numel") .. "...[pause=0] I sure hope he's found soon...","Worried")
 		UI:WaitShowDialogue("I won't be able to sleep peacefully until I know he's back home with his mom,[pause=10] safe and sound.")
 	else
-		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " came here earlier asking if I had seen " .. CharacterEssentials.GetCharacterName("Numel") .. " this morning."), "Worried")
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " came here earlier asking if I had seen " .. CharacterEssentials.GetCharacterName("Numel") .. " this morning.", "Worried")
 		UI:WaitShowDialogue("I haven't see him though in a while though.[pause=0] Maybe if I wasn't snoozing so much in town,[pause=10] I'd have spotted him...")
 	end 
 	GeneralFunctions.EndConversation(chara)
