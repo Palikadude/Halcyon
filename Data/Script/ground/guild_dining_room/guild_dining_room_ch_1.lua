@@ -35,8 +35,6 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		GROUND:CharSetEmote(snubbull, 7, 1)
 		SOUND:PlayBattleSE('EVT_Emote_Complain_2')
 		GeneralFunctions.StartConversation(snubbull, "Ugh![pause=0] How many times do I have tell you!?[pause=0] Stop sneaking in here for snacks after dinner!", "Angry", true, true, false)
-
-		UI:WaitShowDialogue("Ugh![pause=0] How many times do I have tell you!?[pause=0] Stop sneaking in here for snacks after dinner!")
 		GAME:WaitFrames(20)
 		
 		UI:SetSpeakerEmotion("Worried")

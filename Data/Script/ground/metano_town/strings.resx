@@ -200,19 +200,19 @@
     <value>Ugh...</value>
   </data>
   <data name="Shop_Bag_Empty" xml:space="preserve">
-    <value>Oh?[pause=0]You have no items to sell!</value>
+    <value>Oh?[pause=0] You have no items to sell!</value>
   </data>
   <data name="Shop_Bag_Full" xml:space="preserve">
     <value>Oh![pause=0] You have no space for my wares!</value>
   </data>
   <data name="Shop_Buy" xml:space="preserve">
-    <value>Very well![pause=0] Feel free to examine my merchandise~ (You can use {0} to choose multiple items.)</value>
+    <value>Very well![pause=0] Feel free to examine my merchandise! (You can use {0} to choose multiple items.)</value>
   </data>
   <data name="Shop_Buy_Complete" xml:space="preserve">
-    <value>Thank you~ All yours~</value>
+    <value>Thank you! It's all yours! \u266a</value>
   </data>
   <data name="Shop_Buy_Empty" xml:space="preserve">
-    <value>I'm all sold out![pause=0] Please forgive me.[pause=0] Come see me tomorrow~</value>
+    <value>I'm all sold out![pause=0] Please forgive me.[pause=0] Come see me tomorrow! \u266a</value>
   </data>
   <data name="Shop_Buy_Multi" xml:space="preserve">
     <value>Altogether, that comes to {0} \uE024. Is that OK?</value>
@@ -221,25 +221,25 @@
     <value>What?[pause=0] You don't seem to have the funds.</value>
   </data>
   <data name="Shop_Goodbye" xml:space="preserve">
-    <value>Thanks! \u266A Please come again \u266A</value>
+    <value>Thanks! Please come again! \u266A</value>
   </data>
   <data name="Shop_Info_001" xml:space="preserve">
-    <value>This is the Kecleon Shop,[pause=10] ran by my brother and I~ \u266A</value>
+    <value>This is the Kecleon Shop,[pause=10] ran by my brother and I.</value>
   </data>
   <data name="Shop_Info_002" xml:space="preserve">
-    <value>The items I sell are useful for dungeon expeditions![pause=0] You should always be prepared when exploring~ \u266a</value>
+    <value>The items I sell are useful for dungeon expeditions![pause=0] You should always be prepared when exploring! \u266a</value>
   </data>
   <data name="Shop_Info_003" xml:space="preserve">
     <value>We restock our wares daily,[pause=10] so come check our wares each and every day!</value>
   </data>
   <data name="Shop_Info_004" xml:space="preserve">
-    <value>My brother here sells Technical Machines and orbs,[pause=10] by the way.</value>
+    <value>We even have markets inside of some mystery dungeons,[pause=10] so you can visit us anywhere! \u266a</value>
   </data>
   <data name="Shop_Info_005" xml:space="preserve">
-    <value>We also have markets inside of some Mystery Dungeons,[pause=10] so you can visit us anywhere~ \u266a</value>
+    <value>After all,[pause=10] it is the job of us salesmen to bring the goods you need no matter where you are! \u266a</value>
   </data>
   <data name="Shop_Intro" xml:space="preserve">
-    <value>Hello~ \u266A \n Welcome to the Kecleon Shop~ \u266A</value>
+    <value>Hello! \u266A \n Welcome to the Kecleon Shop! \u266A</value>
   </data>
   <data name="Shop_Intro_Return" xml:space="preserve">
     <value>May I help you with anything else?</value>
@@ -572,7 +572,7 @@
     <value>A {1}? That will be {0} \uE024.</value>
   </data>
   <data name="Shop_Sell_Complete" xml:space="preserve">
-    <value>A done deal~ \u266A\n Thank you~ \u266A</value>
+    <value>A done deal! \u266A\n Thank you \u266A</value>
   </data>
   <data name="Green_Merchant_Intro" xml:space="preserve">
     <value>This is Mido's Curios... How can I help you?</value>
@@ -771,5 +771,71 @@
   </data>
   <data name="Cafe_Goodbye" xml:space="preserve">
     <value />
+  </data>
+  <data name="TM_Shop_Bag_Empty" xml:space="preserve">
+    <value>Oh?[pause=0] You have nothing to sell me!</value>
+  </data>
+  <data name="TM_Shop_Bag_Full" xml:space="preserve">
+    <value>Oh?[pause=0] You have no room for my wares!</value>
+  </data>
+  <data name="TM_Shop_Buy" xml:space="preserve">
+    <value>Very well![pause=0] Feel free to examine my merchandise! (You can use {0} to choose multiple items.)</value>
+  </data>
+  <data name="TM_Shop_Buy_Complete" xml:space="preserve">
+    <value>Thank you! It's all yours, my friends! \u266a</value>
+  </data>
+  <data name="TM_Shop_Buy_Empty" xml:space="preserve">
+    <value>I'm all sold out![pause=0] Forgive me my friends.[pause=0] Come back tomorrow! \u266a</value>
+  </data>
+  <data name="TM_Shop_Buy_Multi" xml:space="preserve">
+    <value>Altogether, that will cost you {0} \uE024. Is that acceptable?</value>
+  </data>
+  <data name="TM_Shop_Buy_No_Money" xml:space="preserve">
+    <value>What?[pause=0] You don't have enough money.</value>
+  </data>
+  <data name="TM_Shop_Goodbye" xml:space="preserve">
+    <value>Thank you friends! Please come again \u266a</value>
+  </data>
+  <data name="TM_Shop_Info_001" xml:space="preserve">
+    <value>Pokémon moves...[pause=0] They are beautiful![pause=0] Powerful![pause=0] Elegant![pause=0] Each so amazing in their own way!</value>
+  </data>
+  <data name="TM_Shop_Info_002" xml:space="preserve">
+    <value>I sell Technical Machines,[pause=10] or TMs for short,[pause=10] that will teach you new moves!</value>
+  </data>
+  <data name="TM_Shop_Info_003" xml:space="preserve">
+    <value>Punch![pause=0] Breathe fire![pause=0] Quake the earth itself![pause=0] Moves allow you to do so much!</value>
+  </data>
+  <data name="TM_Shop_Info_004" xml:space="preserve">
+    <value>I also sell Wands and Orbs that allow you to manipulate your foes and yourselves in many clever ways!</value>
+  </data>
+  <data name="TM_Shop_Info_005" xml:space="preserve">
+    <value>So friends, please![pause=0] Shop with us![pause=0] My brother and I are waiting here for you! \u266a</value>
+  </data>
+  <data name="TM_Shop_Intro" xml:space="preserve">
+    <value>Hello friends, and welcome to Kecleon Wares, where you can find Orbs, Wands, and TMs!</value>
+  </data>
+  <data name="TM_Shop_Intro_Return" xml:space="preserve">
+    <value>Is there anything else I can assist you with?</value>
+  </data>
+  <data name="TM_Shop_Option_Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="TM_Shop_Option_Sell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="TM_Shop_Sell" xml:space="preserve">
+    <value>Very well! What will you sell? (You can use {0} to choose multiple items.)</value>
+  </data>
+  <data name="TM_Shop_Sell_Multi" xml:space="preserve">
+    <value>I can pay {0} for all of that.[pause=0] Is that acceptable?</value>
+  </data>
+  <data name="TM_Shop_Sell_One" xml:space="preserve">
+    <value>I can pay {0} for that {1}. Is that acceptable?</value>
+  </data>
+  <data name="TM_Shop_Buy_One" xml:space="preserve">
+    <value>A {1} will cost you {0} \uE024.</value>
+  </data>
+  <data name="TM_Shop_Sell_Complete" xml:space="preserve">
+    <value>Another closed sale! \u266a Thank you my friends \u266a</value>
   </data>
 </root>

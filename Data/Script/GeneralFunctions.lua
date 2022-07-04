@@ -374,6 +374,8 @@ function GeneralFunctions.GetPronoun(chara, form, uppercase)
             ["themself"] = "herself", -- reflexive
             ["they're"] = "she's", -- nominative + "be" contraction
             ["are"] = "is", -- "be" present indicative
+			["were"] = "was",
+			["don't"] = "doesn't"
         }
         value = female_pronouns[form]
     elseif gender == Gender.Male then
@@ -385,6 +387,8 @@ function GeneralFunctions.GetPronoun(chara, form, uppercase)
             ["themself"] = "himself", -- reflexive
             ["they're"] = "he's", -- nominative + "be" contraction
             ["are"] = "is", -- "be" present indicative
+			["were"] = "was",
+			["don't"] = "doesn't"
         }
         value = male_pronouns[form]
     else -- if neither male or female, use they/them, so just return the form 

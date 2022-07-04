@@ -373,7 +373,7 @@ local characters = {
 	
 		Sentret = {
 			species = 161, 
-			nickname = '???',
+			nickname = 'Timmi',
 			instance = 'Sentret',
 			gender = Gender.Male,
 			form = 0,

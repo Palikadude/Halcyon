@@ -21,8 +21,16 @@ function metano_inn_ch_2.SetupGround()
 		AI:SetCharacterAI(nidoran_m, "ai.ground_default", RogueElements.Loc(248, 136), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)
 
 	else
-	
-	
+		local nidoking, nidoqueen, nidoran_m, nidorina = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Nidoking', 'Innkeeper_Left'},
+			{'Nidoqueen', 'Innkeeper_Right'},
+			{'Nidoran_M', 316, 164, Direction.Left},
+			{'Nidorina', 264, 152, Direction.Down}
+		})
+		
+		AI:SetCharacterAI(nidorina, "ai.ground_default", RogueElements.Loc(248, 136), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)
+		GROUND:CharSetAnim(nidoran_m, "Sleep", true)
 	end
 	
 	GAME:FadeIn(20)
@@ -31,29 +39,53 @@ end
 
 function metano_inn_ch_2.Innkeeper_Desk_Left_Action(chara, activator)
 	local nidoking = CH('Nidoking')
-	GeneralFunctions.StartConversation(nidoking, "Howdy y'all![pause=0] Welcome to the Metano Inn![pause=0] Can I get y'all a couple of beds for the evenin'?")
-	UI:WaitShowDialogue("...What's that?[pause=0] Y'all live in the guild?")
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Well,[pause=10] y'all still welcome here anytime ya like![pause=0] Don't be a stranger!")
+	if not SV.Chapter2.FinishedFirstDay then
+		GeneralFunctions.StartConversation(nidoking, "Howdy y'all![pause=0] Welcome to the Metano Inn![pause=0] Can I get y'all a couple of beds for the evenin'?")
+		UI:WaitShowDialogue("...What's that?[pause=0] Y'all live in the guild?")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Well,[pause=10] y'all still welcome here anytime ya like![pause=0] Don't be a stranger!")
+	else 
+		GeneralFunctions.StartConversation(nidoking, "Poor " .. CharacterEssentials.GetCharacterName('Camerupt') .. "'s young'un has gone missin'.")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Always a shame to hear somethin' like this happenin' to townsfolk.")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Me and the missus need to pay her a visit later to see how she's holdin' up.")
+	end
 	GeneralFunctions.EndConversation(nidoking)
 end
 
 function metano_inn_ch_2.Nidoran_M_Action(chara, activator)
 	if not SV.Chapter2.FinishedFirstDay then 
 		GeneralFunctions.StartConversation(chara, "Goo...[pause=20] gaa!")
+		GeneralFunctions.EndConversation(chara)
 	else 
-	
+		UI:SetSpeaker(chara:GetDisplayName(),true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+		GeneralFunctions.StartConversation(chara, "ZZZzzz...", "Normal", false, false, false)
+		GeneralFunctions.EndConversation(chara, false)
 	end
-	GeneralFunctions.EndConversation(chara)
 end
 
 
-
+--she isn't behind the desk on day 1
 function metano_inn_ch_2.Nidoqueen_Action(chara, activator)
-	if not SV.Chapter2.FinishedFirstDay then 
-		GeneralFunctions.StartConversation(chara, "Placeholder.")
-	else 
-	
-	end 
-	GeneralFunctions.EndConversation(Chara)
+	GeneralFunctions.StartConversation(chara, "That's my hubby mannin' the front desk over yonder.")
+	GROUND:CharSetEmote(chara, 1, 0)
+	UI:SetSpeakerEmotion("Special0")
+	UI:WaitShowDialogue("He's a real catch,[pause=10] isn't he![pause=0] I'm real proud of him and our two kids!")
+	GROUND:CharSetEmote(chara, -1, 0)
+	GeneralFunctions.EndConversation(chara)
+end
+
+--only active on day 2 
+function metano_inn_ch_2.Innkeeper_Desk_Right_Action(chara, activator)
+	local nidoqueen = CH('Nidoqueen')
+	GeneralFunctions.StartConversation(nidoqueen, "We heard that one of the youngsters in town went missin' and now not a soul knows where he is.", "Worried")
+	UI:WaitShowDialogue("We're keepin' a close eye on our young'uns until he's returned safely,[pause=10] just in case somethin' dangerous's afoot.")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_inn_ch_2.Nidorina_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Can't believe I'm not allowed out until that stupid kid is found.", "Angry")
+	UI:WaitShowDialogue("Just cause some dumb brat runs off doesn't mean I'm going to![pause=0] But of course my parents don't get that.")
+	GeneralFunctions.EndConversation(chara)
 end

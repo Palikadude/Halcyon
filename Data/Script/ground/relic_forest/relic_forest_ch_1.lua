@@ -7,7 +7,6 @@ relic_forest_ch_1 = {}
 -------------------------------
 --Cutscene functions
 -------------------------------
-
 function relic_forest_ch_1.Intro_Cutscene()
 	--First cutscene
 	GAME:CutsceneMode(true)
@@ -33,99 +32,164 @@ function relic_forest_ch_1.Intro_Cutscene()
 	end 
 	
 	
+	GAME:WaitFrames(60)
   	UI:WaitShowVoiceOver("Welcome to the world of Pokémon!", -1)  
   	UI:WaitShowVoiceOver("Ahead of you lies a world full of exciting adventures\n and mysteries to discover!", -1)  
 	UI:WaitShowVoiceOver("Before you go, you need to answer some questions.", -1)  
 	UI:WaitShowVoiceOver("Please be honest when answering!", -1)  
 	UI:WaitShowVoiceOver("Let the questions begin!", -1) 
 	GAME:WaitFrames(40)
+	
+	SOUND:PlayBGM("Welcome to the World of Pokémon!.ogg", true)
 
 	--Hero data
-	--This will be replaced by a personality quiz when I get around to it.
-	local msg = "Select a hero (personality quiz to be done later)"
-	local hero_choices = {'Treecko', 'Cyndaquil', 'Turtwig', 'Squirtle', 'Zorua'}
-	UI:BeginChoiceMenu(msg, hero_choices, 1, 5)
+	--todo: improve this. Perhaps move somewhere else.
+	local msg = "Select the Pokémon you would like to be."
+	local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Meowth', 'Machop', 
+					 'Cubone', 'Chikorita', 'Cyndaquil', 'Totodile', 'Houndour', 'Phanpy', 'Magby',
+					 'Larvitar', 'Treecko', 'Torchic', 'Mudkip', 'Poochyena', 'Ralts', 'Skitty',
+					 'Turtwig', 'Chimchar', 'Piplup', 'Shinx', 'Buizel', 'Munchlax', 'Riolu',
+					 'Snivy', 'Oshawatt', 'Lilliup', 'Zorua', 'Minccino', 'Vanillite', 'Mienfoo',
+					 'Chespin', 'Fennekin', 'Froakie', 'Skiddo', 'Espurr', 'Amaura', 'Noibat',
+					 'Rowlet', 'Litten', 'Rockruff', 'Fomantis', 'Scorbunny', 'Wooloo', 'Yamper'}
+						
+	local dex_numbers = {1, 4, 7, 25, 37, 52, 66, 104, 152, 155, 158, 228, 231, 240, 246, 252, 255, 258, 261,
+						 280, 300, 387, 390, 393, 403, 418, 446, 447, 495, 501, 506, 570, 572, 582, 619, 650,
+						 653, 656, 672, 677, 698, 714, 722, 725, 744, 753, 813, 831, 835}
+						 
+	local egg_move_list = 
+		{282, --knockoff bulbasaur
+		 232, --metal claw, charmander 
+		 196, --icy wind, squirtle		
+		 574, --disarming voice, pikachu
+		 326, --extrasensory, vulpix
+		 492, --foul play, meowth
+		 418, --bullet punch, machop
+		 24, --double kick, cubone 
+		 246, --ancient power, chikorita
+		 24, --double kick, cyndaquil 
+		 453, --aqua jet, totodile
+		 422, --thunder fang, houndour
+		 420, --ice shard, phanpy
+		 9, --thunder punch, magby
+		 442, --ironhead, larvitar
+		 225,--dragon breath, treecko
+		 67,--low kick, torchic
+		 419, --avalanche, mudkip
+		 583, --play rough, poochyena
+		 425, --shadow sneak, ralts
+		 428, --zen headbutt, skitty 
+		 328, --sand tomb, turtwig
+		 9, --thunder punch, chimchar
+		 196, --icy wind, piplup
+		 423, --icy fang, shinx 
+		 210, --fury cutter, buizel 
+		 428, --zen headbutt, munchlax
+		 418, --bullet punch, riolu
+		 239, --twister, snivy 
+		 372, --assurance, oshawatt
+		 424, --fire fang, lillipup
+		 326, --extrasensory, zorua 
+		 401, --aqua tail, minccino
+		 352, --water pulse, vanillite 
+		 282, --knock off, mienfoo
+		 612, --power up punch, chespin
+		 273, --wish, fennekin
+		 612, --power up punch, froakie (this thing has shit egg moves)
+		 428, --zen headbutt, gogoat
+		 274, --assist, espurr (also bad egg moves)
+		 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
+		 366, --tailwind, noibat
+		 466, --ominous wind, rowlet
+		 279, --revenge, litten 
+		 422, --thunder fang, rockruff
+		 311, --weather ball, fomantis
+		 389, --sucker punch, scorbunny
+		 68, --counter, wooloo
+		 488} --flame charge, yamper
+		 
+	
+	UI:BeginChoiceMenu(msg, choices, 1, 1)
 	UI:WaitForChoice()	
 	local result = UI:ChoiceResult()
+	local hero_choice = result
 
 	
 	local gender = 0
-	local gender_choices = {'Boy', 'Girl'}
-	UI:BeginChoiceMenu("Are you a boy or a girl?", gender_choices, 1, 2)
+	local gender_choices = {'Boy', 'Girl', "Non-Binary"}
+	UI:BeginChoiceMenu("Are you a boy, girl, or non-binary?", gender_choices, 1, 1)
 	UI:WaitForChoice()
 	gender = UI:ChoiceResult()
 	
 	if gender == 1 then
 		gender = Gender.Male
-	else 
+	elseif gender == 2 then
 		gender = Gender.Female
-	end
-		
-	local mon_ID = 0
-	local egg_move = 0
-	if result == 1 then 
-		mon_id = RogueEssence.Dungeon.MonsterID(252, 0, 0, gender)
-		egg_move = 225--dragonbreath
-	elseif result == 2 then
-		mon_id = RogueEssence.Dungeon.MonsterID(155, 0, 0, gender)
-		egg_move = 24--double kick
-	elseif result == 3 then
-		mon_id = RogueEssence.Dungeon.MonsterID(387, 0, 0, gender)
-		egg_move = 328--sand tomb
-	elseif result == 4 then
-		mon_id = RogueEssence.Dungeon.MonsterID(7, 0, 0, gender)
-		egg_move = 196--icy wind
-	else 
-		mon_id = RogueEssence.Dungeon.MonsterID(570, 0, 0, gender)
-		egg_move = 326--extrasensory
+	else --dunno if this will cause issues with sprites to use
+		gender = Gender.Genderless
 	end
 	
+	--change this from a hardcoded 0 if other forms are allowed for a starter
+	local monster = _DATA:GetMonster(dex_numbers[hero_choice]).Forms[0]
+	local ability = monster.Intrinsic1
+	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
+		UI:BeginChoiceMenu("Which ability would you like to have?", {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName(), _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()}, 1, 1)
+		UI:WaitForChoice()
+		local result = UI:ChoiceResult()
+		if result == 2 then ability = monster.Intrinsic2 end
+	end
+	
+
+	
+	
+	--create hero with a species specific egg move and specific ability
+	local mon_id = RogueEssence.Dungeon.MonsterID(dex_numbers[hero_choice], 0, 0, gender)
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
-	
-	GAME:LearnSkill(GAME:GetPlayerPartyMember(0), egg_move)
+	GAME:GetPlayerPartyMember(0):LearnIntrinsic(ability, 0)
+	GAME:LearnSkill(GAME:GetPlayerPartyMember(0), egg_move_list[hero_choice])
 	GAME:SetTeamLeaderIndex(0)
 	
 
 	--Partner data
-	local partner_choices = {'Chikorita', 'Piplup', 'Riolu', 'Torchic', 'Shinx'}
-	UI:BeginChoiceMenu("Select a partner.", partner_choices, 1, 5)
-	UI:WaitForChoice()
-	result = UI:ChoiceResult()
+	result = hero_choice
+	local partner_choice = 0
+	while result == hero_choice do --do not allow same species for partner and player
+		UI:BeginChoiceMenu("Select a partner.", choices, 1, 1)
+		UI:WaitForChoice()
+		result = UI:ChoiceResult()
+		partner_choice = result
+		if result == hero_choice then
+			UI:WaitShowDialogue("Player and partner may not be the same species.[pause=0] Please choose again.")
+		end
+	end 
 	
-	gender = 0
-	UI:BeginChoiceMenu("Your partner, are they a boy or a girl?", gender_choices, 1, 2)
+	UI:BeginChoiceMenu("Your partner, are they a boy, girl, or non-binary??", gender_choices, 1, 1)
 	UI:WaitForChoice()
 	gender = UI:ChoiceResult()
 	
 	if gender == 1 then
 		gender = Gender.Male
-	else 
+	elseif gender == 2 then
 		gender = Gender.Female
+	else --dunno if this will cause issues with sprites to use
+		gender = Gender.Genderless
 	end
-		
 
-	mon_ID = 0
-	egg_move = 0
-	if result == 1 then 
-		mon_id = RogueEssence.Dungeon.MonsterID(152, 0, 0, gender)
-		egg_move = 246--ancient power
-	elseif result == 2 then
-		mon_id = RogueEssence.Dungeon.MonsterID(393, 0, 0, gender)
-		egg_move = 196--icy wind
-	elseif result == 3 then
-		mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, gender)
-		egg_move = 418--Bullet punch
-	elseif result == 4 then
-		mon_id = RogueEssence.Dungeon.MonsterID(255, 0, 0, gender)
-		egg_move = 67--low kick
-	else
-		mon_id = RogueEssence.Dungeon.MonsterID(403, 0, 0, gender)
-		egg_move = 423--ice fang
+	--change this from a hardcoded 0 if other forms are allowed for a starter
+	local monster = _DATA:GetMonster(dex_numbers[partner_choice]).Forms[0]
+	local ability = monster.Intrinsic1
+	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
+		UI:BeginChoiceMenu("Which ability would you like your partner to have?", {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName(), _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()}, 1, 1)
+		UI:WaitForChoice()
+		result = UI:ChoiceResult()
+		if result == 2 then ability = monster.Intrinsic2 end
 	end
-  	
-	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
 	
-	GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move)
+	mon_id = RogueEssence.Dungeon.MonsterID(dex_numbers[partner_choice], 0, 0, gender)
+	
+	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
+	GAME:GetPlayerPartyMember(1):LearnIntrinsic(ability, 0)
+	GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move_list[partner_choice])
 
 	--set player and partner to founders so they cannot be released
 	--set them as partner so they cannot be taken off the active team
@@ -184,7 +248,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	GAME:SetTeamName(result) --set team name to partner's name temporarily
 	COMMON.RespawnAllies()
 	
-	GAME:WaitFrames(180)
+	GAME:WaitFrames(60)
   
     local hero = CH('PLAYER')
 	local marker = MRKR("WakeupLocation")
@@ -247,10 +311,14 @@ function relic_forest_ch_1.Intro_Cutscene()
 		GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
 		_DATA.Save.ActiveTeam:SetRank(1)
 		GAME:CutsceneMode(false)
+		SOUND:FadeOutBGM()
+		GAME:WaitFrames(80)
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 		return
 	end
 	
+	SOUND:FadeOutBGM()
+	GAME:WaitFrames(120)
 	
 	GROUND:Hide('Teammate1')--hide partner
 	
@@ -527,7 +595,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("(Hmm...[pause=0] " .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " looks stunned,[pause=10] actually...[pause=0] Maybe " .. GeneralFunctions.GetPronoun(hero, "they're", false) .. " telling the truth after all?)")
-	UI:WaitShowDialogue("(" .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " even pinched " .. GeneralFunctions.GetPronoun(hero, 'themself') .. " like " .. GeneralFunctions.GetPronoun(hero, 'they') .. " was trying to wake up or something...)")
+	UI:WaitShowDialogue("(" .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " even pinched " .. GeneralFunctions.GetPronoun(hero, 'themself') .. " like " .. GeneralFunctions.GetPronoun(hero, 'they') .. " " .. GeneralFunctions.GetPronoun(hero, "were") .. " trying to wake up or something...)")
 	UI:WaitShowDialogue("(...There's no reason for someone to lie about this sort of thing,[pause=10] right?)")
 	GAME:WaitFrames(40)
 	

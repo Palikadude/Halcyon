@@ -744,44 +744,44 @@ function metano_town.TM_Action(obj, activator)
   
 	while state > -1 do
 		if state == 0 then
-			local msg = STRINGS:Format(MapStrings['Shop_Intro'])
+			local msg = STRINGS:Format(MapStrings['TM_Shop_Intro'])
 			if repeated then
-				msg = STRINGS:Format(MapStrings['Shop_Intro_Return'])
+				msg = STRINGS:Format(MapStrings['TM_Shop_Intro_Return'])
 			end
-			local shop_choices = {STRINGS:Format(MapStrings['Shop_Option_Buy']), STRINGS:Format(MapStrings['Shop_Option_Sell']),
+			local TM_Shop_choices = {STRINGS:Format(MapStrings['TM_Shop_Option_Buy']), STRINGS:Format(MapStrings['TM_Shop_Option_Sell']),
 			STRINGS:FormatKey("MENU_INFO"),
 			STRINGS:FormatKey("MENU_EXIT")}
-			UI:BeginChoiceMenu(msg, shop_choices, 1, 4)
+			UI:BeginChoiceMenu(msg, TM_Shop_choices, 1, 4)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			repeated = true
 			if result == 1 then
 				if #catalog > 0 then
 					--TODO: use the enum instead of a hardcoded number
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy'], STRINGS:LocalKeyString(26)))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Buy'], STRINGS:LocalKeyString(26)))
 					state = 1
 				else
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_Empty']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Buy_Empty']))
 				end
 			elseif result == 2 then
 				local bag_count = GAME:GetPlayerBagCount()
 				if bag_count > 0 then
 					--TODO: use the enum instead of a hardcoded number
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Sell'], STRINGS:LocalKeyString(26)))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Sell'], STRINGS:LocalKeyString(26)))
 					state = 3
 				else
 					UI:SetSpeakerEmotion("Angry")
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Bag_Empty']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Bag_Empty']))
 					UI:SetSpeakerEmotion("Normal")
 				end
 			elseif result == 3 then
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_001']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_002']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_003']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_004']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Info_005']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Info_001']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Info_002']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Info_003']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Info_004']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Info_005']))
 			else
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Goodbye']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Goodbye']))
 				state = -1
 			end
 		elseif state == 1 then
@@ -793,7 +793,7 @@ function metano_town.TM_Action(obj, activator)
 				local bag_cap = GAME:GetPlayerBagLimit()
 				if bag_count == bag_cap then
 					UI:SetSpeakerEmotion("Angry")
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Bag_Full']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Bag_Full']))
 					UI:SetSpeakerEmotion("Normal")
 				else
 					cart = result
@@ -810,15 +810,15 @@ function metano_town.TM_Action(obj, activator)
 			local msg
 			if total > GAME:GetPlayerMoney() then
 				UI:SetSpeakerEmotion("Angry")
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_No_Money']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Buy_No_Money']))
 				UI:SetSpeakerEmotion("Normal")
 				state = 1
 			else
 				if #cart == 1 then
 					local name = catalog[cart[1]].Item:GetDisplayName()
-					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name)
+					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_One'], total, name)
 				else
-					msg = STRINGS:Format(MapStrings['Shop_Buy_Multi'], total)
+					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_Multi'], total)
 				end
 				UI:ChoiceMenuYesNo(msg, false)
 				UI:WaitForChoice()
@@ -837,7 +837,7 @@ function metano_town.TM_Action(obj, activator)
 					
 					cart = {}
 					SOUND:PlayBattleSE("DUN_Money")
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Buy_Complete']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Buy_Complete']))
 					state = 0
 				else
 					state = 1
@@ -873,9 +873,9 @@ function metano_town.TM_Action(obj, activator)
 				else
 					item = GAME:GetPlayerBagItem(cart[1].Slot)
 				end
-				msg = STRINGS:Format(MapStrings['Shop_Sell_One'], total, item:GetDisplayName())
+				msg = STRINGS:Format(MapStrings['TM_Shop_Sell_One'], total, item:GetDisplayName())
 			else
-				msg = STRINGS:Format(MapStrings['Shop_Sell_Multi'], total)
+				msg = STRINGS:Format(MapStrings['TM_Shop_Sell_Multi'], total)
 			end
 			UI:ChoiceMenuYesNo(msg, false)
 			UI:WaitForChoice()
@@ -892,7 +892,7 @@ function metano_town.TM_Action(obj, activator)
 				SOUND:PlayBattleSE("DUN_Money")
 				GAME:AddToPlayerMoney(total)
 				cart = {}
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Shop_Sell_Complete']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['TM_Shop_Sell_Complete']))
 				state = 0
 			else
 				state = 3

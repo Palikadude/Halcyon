@@ -48,6 +48,9 @@ function guild_second_floor_ch_2.SetupGround()
 				{'Cleffa', 'Right_Duo_1'},
 				{'Aggron', 'Right_Duo_2'}
 			})
+		
+		AI:SetCharacterAI(cleffa, "ai.ground_talking", true, 240, 60, 210, false, 'Angry', {aggron})
+		AI:SetCharacterAI(aggron, "ai.ground_talking", false, 240, 120, 110, false, 'Scared', {cleffa})
 	
 	--(noctowl and camerupt would be moved to upstairs and her house respectively if you wipe)
 		if SV.Chapter2.FinishedCameruptRequestScene and not SV.Chapter2.EnteredRiver then 
@@ -74,13 +77,17 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	GAME:MoveCamera(160, 240, 1, false)
 	
-	local noctowl = 
+	local noctowl, cleffa, aggron = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Noctowl', 340, 280, Direction.Left},
 			{'Cleffa', 'Right_Duo_1'},
 			{'Aggron', 'Right_Duo_2'}
 		})
 	
+	--set up cleffa and aggron like we do in setup ground so that they act properly after the cutscene and without leaving and coming back to refresh the
+	AI:SetCharacterAI(cleffa, "ai.ground_talking", true, 240, 60, 210, false, 'Angry', {aggron})
+	AI:SetCharacterAI(aggron, "ai.ground_talking", false, 240, 120, 110, false, 'Scared', {cleffa})
+		
 	GROUND:TeleportTo(partner, 340, 280, Direction.Left)
 	GROUND:TeleportTo(hero, 340, 280, Direction.Left)
 	SOUND:StopBGM()
@@ -203,7 +210,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:WaitShowDialogue("Y-yes![pause=0] He was in bed when I went to sleep last night...[br]...But when I woke up this morning he was nowhere to be seen!")
 	UI:WaitShowDialogue("I went all over town and asked anyone if they had seen him...[pause=0] Nobody has spotted him since yesterday!")
 	UI:SetSpeakerEmotion("Teary-Eyed")
-	UI:WaitShowDialogue("Oh,[pause=10] what if something happened to my baby boy...[pause=0] I don't think I'd be able to forgive myself...")
+	UI:WaitShowDialogue("Oh,[pause=10] what if something happened to my baby boy...[pause=0]\nI don't think I'd be able to forgive myself...")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
@@ -269,9 +276,9 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:SetSpeaker(camerupt)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("He hadn't done his chores yet,[pause=10] and it was starting to get late...")
-	UI:WaitShowDialogue("...So I told him to stop playing with his friend and to go gather firewood for the fireplace...")
+	UI:WaitShowDialogue("...So I told him to stop playing with his friend and to go gather firewood for the fireplace.")
 	UI:WaitShowDialogue("He refused,[pause=10] so I threatened to take away his dinner if he didn't do his chores.")
-	UI:WaitShowDialogue("He told me that he wished he was bigger so he wouldn't have to listen to me...")
+	UI:WaitShowDialogue("He told me that he wished he was grown up so he wouldn't have to listen to me...")
 	UI:WaitShowDialogue("...Then he ran home and collected some wood outside of our home.")
 	UI:WaitShowDialogue("I thought that would have been the end of it,[pause=10] but...[pause=0] I guess he ran off after I fell asleep.")
 	UI:SetSpeakerEmotion("Teary-Eyed")
@@ -280,7 +287,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	GAME:WaitFrames(20)
 	SOUND:FadeOutBGM()
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue('Did you say that he wished he was "bigger"?')
+	UI:WaitShowDialogue('Did you say that he wished he wanted to be "grown up"?')
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(camerupt)
@@ -289,7 +296,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue('If he wanted to be "bigger"...[pause=0] I believe he may have ran off towards Luminous Spring.')
+	UI:WaitShowDialogue('If he wanted to grow up...[pause=0] I believe he may have ran off towards Luminous Spring.')
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(camerupt, "Exclaim", true)
@@ -308,7 +315,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("Luminous Spring is the source of the Illuminant River,[pause=10] the river that runs through this very town.")
 	UI:WaitShowDialogue("It is also the place that Pokémon go to evolve.")
-	UI:WaitShowDialogue("If " .. CharacterEssentials.GetCharacterName('Numel') .. " wanted to grow up,[pause=10] evolving would be one way to do so.")
+	UI:WaitShowDialogue("If " .. CharacterEssentials.GetCharacterName('Numel') .. " wanted to grow up,[pause=10] evolving is,[pause=10] in a way,[pause=10] one way to do so.")
 	UI:WaitShowDialogue("...Though I doubt he actually meets the requirements to evolve.")
 	
 	GAME:WaitFrames(20)
@@ -828,5 +835,53 @@ function guild_second_floor_ch_2.Camerupt_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, 'Please,[pause=10] find my baby boy![pause=0] He means the world to me!', 'Teary-Eyed')
 	GeneralFunctions.EndConversation(chara)
 end
+
+function guild_second_floor_ch_2.Cleffa_Aggron_Conversation(chara)
+	local cleffa = CH('Cleffa')
+	local aggron = CH('Aggron')
+	
+	UI:SetSpeaker(cleffa)
+	GROUND:CharSetAnim(cleffa, 'None', true)
+	GROUND:CharSetAnim(aggron, 'None', true)
+	cleffa.IsInteracting = true
+	aggron.IsInteracting = true
+	GeneralFunctions.StartConversation(chara, "We need a high bounty outlaw here to make up for your blunder the other day.[pause=0] See anything decent?", "Determined", false, true, false)
+	SV.TemporaryFlags.OldDirection = Direction.None--hack to prevent target chara from turning back at the end of the conversation.
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(aggron)
+	UI:SetSpeakerEmotion("Worried")
+	GROUND:CharTurnToCharAnimated(aggron, cleffa, 4)
+	UI:WaitShowDialogue("But boss...[pause=0] Aren't higher bountied criminals more dangerous?[pause=0] Are you sure we can handle it?")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(cleffa, aggron, 4)
+	UI:SetSpeaker(cleffa)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("I can handle anything![pause=0] If you pull your own weight for once,[pause=10] it'll be a cinch!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(aggron, 5, 1)
+	UI:SetSpeaker(aggron)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("Y-yes boss...")
+	GROUND:CharAnimateTurnTo(cleffa, Direction.Up, 4)
+	GROUND:CharAnimateTurnTo(aggron, Direction.Up, 4)
+	GeneralFunctions.EndConversation(chara)
+	GROUND:CharEndAnim(aggron)
+	GROUND:CharEndAnim(cleffa)
+	cleffa.IsInteracting = false 
+	aggron.IsInteracting = false 
+end
+	
+function guild_second_floor_ch_2.Cleffa_Action(chara, activator)
+	guild_second_floor_ch_2.Cleffa_Aggron_Conversation(chara)
+end
+
+function guild_second_floor_ch_2.Aggron_Action(chara, activator)
+	guild_second_floor_ch_2.Cleffa_Aggron_Conversation(chara)
+end
+
+
 
 return guild_second_floor_ch_2

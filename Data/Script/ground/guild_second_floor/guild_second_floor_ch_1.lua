@@ -208,7 +208,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GeneralFunctions.EmoteAndPause(hero, "Notice", true)
 	
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
-	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. " seems tensed up.[pause=0] Is " .. GeneralFunctions.GetPronoun(partner, "they", false) .. " too nervous to speak?)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. " seems tensed up.[pause=0] " ..GeneralFunctions.GetPronoun(partner, "are", true) .. " " .. GeneralFunctions.GetPronoun(partner, "they", false) .. " too nervous to speak?)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(I'd better say something...)", "Normal")
 	
 	
@@ -512,7 +512,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, zigzagoon.CurrentForm.Species, zigzagoon.CurrentForm.Form, zigzagoon.CurrentForm.Skin, zigzagoon.CurrentForm.Gender)
-		GeneralFunctions.DoubleHop(zigzagoon, "None", 6, 6)
+		GeneralFunctions.DoubleHop(zigzagoon)
 		GROUND:CharSetAnim(zigzagoon, "None", true)--we're not in cutscene mode so this needs to be set again after hopping
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Then that means we're guildmates![pause=0] I'm " .. zigzagoon:GetDisplayName() .. "![pause=0] I was the newest member at the guild before you two came along.")

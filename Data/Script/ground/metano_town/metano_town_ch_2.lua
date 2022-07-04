@@ -681,7 +681,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	UI:SetSpeaker(numel)
 	UI:SetSpeakerEmotion("Angry")
 	UI:WaitShowDialogue("Not fair![pause=0] I'm sick of you telling me what to do all the time!")
-	UI:WaitShowDialogue("I wish I was big so I didn't have to listen to you anymore!")
+	UI:WaitShowDialogue("I wish I was grown up so I didn't have to listen to you anymore!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(camerupt)
@@ -1138,11 +1138,11 @@ function metano_town_ch_2.Machamp_Action(chara, activator)
 end
 
 function metano_town_ch_2.Luxray_Action(chara, activator)
-	if not SV.Chapter2.FinishedFirstDay then 
+	if SV.Chapter2.FinishedFirstDay then 
 		local numel_species = _DATA:GetMonster(322):GetColoredName()
 		GeneralFunctions.StartConversation(chara, "I've caught word that the " .. numel_species .. " child has gone missing.[pause=0] This does not surprise me.")
-		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " was too soft.[pause=0] So of course her child doesn't want to obey her and ends up running off.")
-		UI:WaitShowDialogue("If your child don't respect you,[pause=10] they'll do whatever they want.") 
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " was too soft.[pause=0] So of course her child doesn't obey her and ends up running off.")
+		UI:WaitShowDialogue("If your child doesn't respect you,[pause=10] they'll do whatever they want.") 
 		GeneralFunctions.EndConversation(chara)
 	else
 		metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
@@ -1179,7 +1179,7 @@ end
 
 function metano_town_ch_2.Numel_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Stupid chores...[pause=0] I hate collecting firewood,[pause=10] this stinks...", "Determined", false)
-	UI:WaitShowDialogue("If I was big I wouldn't have to do these stupid chores anymore...")
+	UI:WaitShowDialogue("If I was big and grown up I wouldn't have to do these stupid chores anymore...")
 	GeneralFunctions.EndConversation(chara)
 end
 
@@ -1285,8 +1285,8 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 		UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
 		
 	else --second day dialogue 
-		GeneralFunctions.StartConversation(chara, "Hey,[pause=10] aren't there usually a pair of merchants here?", "Worried")
-		UI:WaitShowDialogue("I wanted to see what neat trinkets they had today,[pause=10] but they don't seem to be around right now...")
+		GeneralFunctions.StartConversation(chara, "Apparently,[pause=10] there's been a shortage of Apricorns recently...[pause=0] I don't know why that's the case though.", "Worried")
+		UI:WaitShowDialogue("That must be difficult for adventuring teams like yourself,[pause=10] huh?")
 	end 
 	GeneralFunctions.EndConversation(chara)
 
@@ -1314,7 +1314,7 @@ end
 function metano_town_ch_2.Mareep_Action(chara, activator) 
 	GeneralFunctions.StartConversation(chara, "Hey you two![pause=0] Hope your first day was grea-a-a-t!", "Happy")
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are relaxing here after catching the day's ba-a-a-addies!")
+	UI:WaitShowDialogue("Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are resting here after catching the day's ba-a-a-addies!")
 	UI:WaitShowDialogue("We're gonna head to the guild in a little bit though.[pause=0] See you at dinner!")
 	GeneralFunctions.EndConversation(chara)
 end
