@@ -29,7 +29,9 @@ function metano_electric_home_ch_2.SetupGround()
 end
 
 function metano_electric_home_ch_2.Manectric_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.StartConversation(chara, "My sweet boy's out playing with his friends right now.")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Their little group makes a wonderful bunch,[pause=10] don't you think?[pause=0] I'm glad he's able to get along with them.")
 	GeneralFunctions.EndConversation(chara)
 end 
 

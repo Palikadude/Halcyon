@@ -766,7 +766,6 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
 	
-	--todo: better segue
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Well,[pause=10] it can't be helped.[pause=0] I hope they're able to get along again soon though.")
 	UI:WaitShowDialogue("Anyways,[pause=10] this is part of town is where most of the residents live.")
@@ -1054,7 +1053,8 @@ function metano_town_ch_2.Meditite_Action(chara, activator)
 		GROUND:CharSetEmote(CH('Teammate1'), 9, 1)
 		UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
 	else --second day dialogue 
-		GeneralFunctions.StartConversation(meditite, "Placeholder.")
+		GeneralFunctions.StartConversation(meditite, "My mum's been tryin' to teach me" .. ' about "inner peace" and "meditation" and all that...')
+		UI:WaitShowDialogue("But think I don't that it's really fa' me...[pause=0] Just click it doesn't really...")
 	end
 	GeneralFunctions.EndConversation(meditite)
 end 
@@ -1131,8 +1131,8 @@ function metano_town_ch_2.Machamp_Action(chara, activator)
 	if not SV.Chapter2.FinishedFirstDay then --first day
 		metano_town_ch_2.Machamp_Luxray_Dialogue(chara)
 	else --second day
-		GeneralFunctions.StartConversation(chara, "Wee " .. CharacterEssentials.GetCharacterName("Numel") .. " wandered off and nobody knows where 'e might be.[pause=0] His poor mum is worried ta pieces.")
-		UI:WaitShowDialogue("That poor Pokémon has been through so much as a' late...[pause=0] We as a town gotta do all that we can to find 'im!")
+		GeneralFunctions.StartConversation(chara, "Wee " .. CharacterEssentials.GetCharacterName("Numel") .. " wandered off and nobody knows where 'e might be.[pause=0] His poor mum is worried ta' pieces.")
+		UI:WaitShowDialogue("That poor Pokémon has been through so much as a' late...[pause=0] We as a town gotta do all that we can ta' find 'im!")
 		GeneralFunctions.EndConversation(chara)
 	end
 end
@@ -1285,8 +1285,8 @@ function metano_town_ch_2.Mawile_Action(chara, activator)
 		UI:WaitShowDialogue("Good luck with your future adventures![pause=0] Be sure to tell me all about them!")
 		
 	else --second day dialogue 
-		GeneralFunctions.StartConversation(chara, "Apparently,[pause=10] there's been a shortage of Apricorns recently...[pause=0] I don't know why that's the case though.", "Worried")
-		UI:WaitShowDialogue("That must be difficult for adventuring teams like yourself,[pause=10] huh?")
+		GeneralFunctions.StartConversation(chara, "I heard about the missing child.[pause=0] Everyone's been talking about it.", "Worried")
+		UI:WaitShowDialogue("In a town this small and close-knit,[pause=10] news like that spreads like wildfire.")
 	end 
 	GeneralFunctions.EndConversation(chara)
 
@@ -1344,15 +1344,42 @@ end
 
 
 
-function metano_town_ch_2.Medicham_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.", "Normal", false)
+function metano_town_ch_2.Medicham_Linoone_Conversation(chara, activator)
+	local linoone = CH('Linoone')
+	local medicham = CH('Medicham')
+	
+	UI:SetSpeaker(medicham)
+	GROUND:CharSetAnim(medicham, 'None', true)
+	GROUND:CharSetAnim(linoone, 'None', true)
+	--How's the book I suggested to you?
+	GeneralFunctions.StartConversation(chara, "Book I suggested to you how is?", "Normal", false, true, false)
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(linoone)
+	UI:WaitShowDialogue("Oh,[pause=10] it's great.[pause=0] I've been able to apply some methods it talks about to achieve a more peaceful state of mind.")
+	GROUND:CharSetEmote(linoone, 5, 1)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("Though it's been more difficult to keep a level head as of late...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(medicham)
+	UI:SetSpeakerEmotion("Worried")
+	--It's been harder for me too lately. It'll be even harder now with Nubbor's disappearance weighing on my being...
+	UI:WaitShowDialogue("Me too harder it lately is.[pause=0] Now especially weighing on my mind disappearance of " .. CharacterEssentials.GetCharacterName("Numel") .. "...")
 	GeneralFunctions.EndConversation(chara)
+	
+	GROUND:CharEndAnim(linoone)
+	GROUND:CharEndAnim(medicham)
+	
 end 
 
+function metano_town_ch_2.Medicham_Action(chara, activator)
+	metano_town_ch_2.Medicham_Linoone_Conversation(chara, activator)
+end
+
 function metano_town_ch_2.Linoone_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.", "Normal", false)
-	GeneralFunctions.EndConversation(chara)
-end 
+	metano_town_ch_2.Medicham_Linoone_Conversation(chara, activator)
+end
 
 function metano_town_ch_2.Manectric_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Little " .. CharacterEssentials.GetCharacterName("Numel") .. " has gone missing...[pause=0] I can't imagine what his mother is going through.", "Worried")
@@ -1368,17 +1395,22 @@ function metano_town_ch_2.Vileplume_Action(chara, activator)
 end 
 
 function metano_town_ch_2.Marill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.StartConversation(chara, "We would help find the missing child...[pause=0] But unfortunately we're swamped with other jobs as it is.", "Worried")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("I hope that kid is brought back home soon,[pause=10] though!")
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_town_ch_2.Spheal_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.StartConversation(chara, "I hope that missing kid had a big meal before he disappeared...", "Worried")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("I know all too well the woes of an empty stomach.")
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_town_ch_2.Jigglypuff_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Placeholder.")
+	GeneralFunctions.StartConversation(chara, "Another missing Pokémon...[pause=0] There's been a lot more of those kinds of jobs lately.", "Sad")
+	UI:WaitShowDialogue("It seems like there's never enough adventurers to do all the work in the world,[pause=10] does it?")
 	GeneralFunctions.EndConversation(chara)
 end 
 

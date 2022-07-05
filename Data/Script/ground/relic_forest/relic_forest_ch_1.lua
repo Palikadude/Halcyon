@@ -35,84 +35,140 @@ function relic_forest_ch_1.Intro_Cutscene()
 	GAME:WaitFrames(60)
   	UI:WaitShowVoiceOver("Welcome to the world of Pokémon!", -1)  
   	UI:WaitShowVoiceOver("Ahead of you lies a world full of exciting adventures\n and mysteries to discover!", -1)  
-	UI:WaitShowVoiceOver("Before you go, you need to answer some questions.", -1)  
-	UI:WaitShowVoiceOver("Please be honest when answering!", -1)  
-	UI:WaitShowVoiceOver("Let the questions begin!", -1) 
+	UI:WaitShowVoiceOver("Before you go, you need to make some important decisions.", -1)  
+	UI:WaitShowVoiceOver("Please think carefully before choosing!", -1)  
+	UI:WaitShowVoiceOver("Now, make your choices!", -1) 
 	GAME:WaitFrames(40)
 	
 	SOUND:PlayBGM("Welcome to the World of Pokémon!.ogg", true)
 
 	--Hero data
 	--todo: improve this. Perhaps move somewhere else.
-	local msg = "Select the Pokémon you would like to be."
-	local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Meowth', 'Machop', 
+	local msg = "Your hero."
+	--[[local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Meowth', 'Machop', 
 					 'Cubone', 'Chikorita', 'Cyndaquil', 'Totodile', 'Houndour', 'Phanpy', 'Magby',
 					 'Larvitar', 'Treecko', 'Torchic', 'Mudkip', 'Poochyena', 'Ralts', 'Skitty',
 					 'Turtwig', 'Chimchar', 'Piplup', 'Shinx', 'Buizel', 'Munchlax', 'Riolu',
 					 'Snivy', 'Oshawatt', 'Lilliup', 'Zorua', 'Minccino', 'Vanillite', 'Mienfoo',
 					 'Chespin', 'Fennekin', 'Froakie', 'Skiddo', 'Espurr', 'Amaura', 'Noibat',
 					 'Rowlet', 'Litten', 'Rockruff', 'Fomantis', 'Scorbunny', 'Wooloo', 'Yamper'}
-						
-	local dex_numbers = {1, 4, 7, 25, 37, 52, 66, 104, 152, 155, 158, 228, 231, 240, 246, 252, 255, 258, 261,
-						 280, 300, 387, 390, 393, 403, 418, 446, 447, 495, 501, 506, 570, 572, 582, 619, 650,
-						 653, 656, 672, 677, 698, 714, 722, 725, 744, 753, 813, 831, 835}
-						 
+		]]--			
+	local choices = {RogueEssence.Dungeon.MonsterID(1, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(4, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(7, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(25, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(37, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(52, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(66, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(104, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(152, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(155, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(158, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(228, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(231, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(240, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(246, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(255, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(258, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(261, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(280, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(300, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(387, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(390, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(393, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(403, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(418, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(446, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(495, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(501, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(506, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(570, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(572, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(582, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(619, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(650, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(653, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(656, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(672, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(677, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(698, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(714, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(722, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(725, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(744, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(753, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(813, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(831, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(835, 0, 0, Gender.Genderless)}
+					
 	local egg_move_list = 
-		{282, --knockoff bulbasaur
-		 232, --metal claw, charmander 
-		 196, --icy wind, squirtle		
-		 574, --disarming voice, pikachu
-		 326, --extrasensory, vulpix
-		 492, --foul play, meowth
-		 418, --bullet punch, machop
-		 24, --double kick, cubone 
-		 246, --ancient power, chikorita
-		 24, --double kick, cyndaquil 
-		 453, --aqua jet, totodile
-		 422, --thunder fang, houndour
-		 420, --ice shard, phanpy
-		 9, --thunder punch, magby
-		 442, --ironhead, larvitar
-		 225,--dragon breath, treecko
-		 67,--low kick, torchic
-		 419, --avalanche, mudkip
-		 583, --play rough, poochyena
-		 425, --shadow sneak, ralts
-		 428, --zen headbutt, skitty 
-		 328, --sand tomb, turtwig
-		 9, --thunder punch, chimchar
-		 196, --icy wind, piplup
-		 423, --icy fang, shinx 
-		 210, --fury cutter, buizel 
-		 428, --zen headbutt, munchlax
-		 418, --bullet punch, riolu
-		 239, --twister, snivy 
-		 372, --assurance, oshawatt
-		 424, --fire fang, lillipup
-		 326, --extrasensory, zorua 
-		 401, --aqua tail, minccino
-		 352, --water pulse, vanillite 
-		 282, --knock off, mienfoo
-		 612, --power up punch, chespin
-		 273, --wish, fennekin
-		 612, --power up punch, froakie (this thing has shit egg moves)
-		 428, --zen headbutt, gogoat
-		 274, --assist, espurr (also bad egg moves)
-		 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
-		 366, --tailwind, noibat
-		 466, --ominous wind, rowlet
-		 279, --revenge, litten 
-		 422, --thunder fang, rockruff
-		 311, --weather ball, fomantis
-		 389, --sucker punch, scorbunny
-		 68, --counter, wooloo
-		 488} --flame charge, yamper
+		{[1] = 282, --knockoff bulbasaur
+		 [4] = 232, --metal claw, charmander 
+		 [7] = 196, --icy wind, squirtle		
+		 [25] = 574, --disarming voice, pikachu
+		 [37] = 326, --extrasensory, vulpix
+		 [52] = 492, --foul play, meowth
+		 [66] = 418, --bullet punch, machop
+		 [104] = 24, --double kick, cubone 
+		 [152] = 246, --ancient power, chikorita
+		 [155] = 24, --double kick, cyndaquil 
+		 [158] = 453, --aqua jet, totodile
+		 [228] = 422, --thunder fang, houndour
+		 [231] = 420, --ice shard, phanpy
+		 [240] = 9, --thunder punch, magby
+		 [246] = 442, --ironhead, larvitar
+		 [252] = 225,--dragon breath, treecko
+		 [255] = 67,--low kick, torchic
+		 [258] = 419, --avalanche, mudkip
+		 [261] = 583, --play rough, poochyena
+		 [280] = 425, --shadow sneak, ralts
+		 [300] = 428, --zen headbutt, skitty 
+		 [387] = 328, --sand tomb, turtwig
+		 [390] = 9, --thunder punch, chimchar
+		 [393] = 196, --icy wind, piplup
+		 [403] = 423, --icy fang, shinx 
+		 [418] = 210, --fury cutter, buizel 
+		 [446] = 428, --zen headbutt, munchlax
+		 [447] = 418, --bullet punch, riolu
+		 [495] = 239, --twister, snivy 
+		 [501] = 372, --assurance, oshawatt
+		 [506] = 424, --fire fang, lillipup
+		 [570] = 326, --extrasensory, zorua 
+		 [572] = 401, --aqua tail, minccino
+		 [582] = 352, --water pulse, vanillite 
+		 [619] = 282, --knock off, mienfoo
+		 [650] = 612, --power up punch, chespin
+		 [653] = 273, --wish, fennekin
+		 [656] = 612, --power up punch, froakie (this thing has shit egg moves)
+		 [672] = 428, --zen headbutt, Skiddo
+		 [677] = 274, --assist, espurr (also bad egg moves)
+		 [698] = 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
+		 --[714] = 366, --tailwind, noibat
+		 [722] = 466, --ominous wind, rowlet
+		 [725] = 279, --revenge, litten 
+		 [744] = 422, --thunder fang, rockruff
+		 [753] = 311, --weather ball, fomantis
+		 [813] = 389, --sucker punch, scorbunny
+		 [831] = 68, --counter, wooloo
+		 [835] = 488} --flame charge, yamper
 		 
 	
-	UI:BeginChoiceMenu(msg, choices, 1, 1)
-	UI:WaitForChoice()	
-	local result = UI:ChoiceResult()
-	local hero_choice = result
+	local continue = false 
+	local species_name = "null"
+	local hero_choice = -1
+	
+	while not continue do
+		UI:ChooseMonsterMenu(msg, choices)
+		UI:WaitForChoice()	
+		local result = UI:ChoiceResult()
+		hero_choice = result
+		UI:ChoiceMenuYesNo("Is " .. _DATA:GetMonster(hero_choice.Species):GetColoredName() .. " correct?")
+		UI:WaitForChoice()
+		continue = UI:ChoiceResult()
+	end
+		
 
 	
 	local gender = 0
@@ -130,7 +186,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	end
 	
 	--change this from a hardcoded 0 if other forms are allowed for a starter
-	local monster = _DATA:GetMonster(dex_numbers[hero_choice]).Forms[0]
+	local monster = _DATA:GetMonster(hero_choice.Species).Forms[hero_choice.Form]
 	local ability = monster.Intrinsic1
 	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
 		UI:BeginChoiceMenu("Which ability would you like to have?", {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName(), _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()}, 1, 1)
@@ -143,24 +199,43 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	
 	--create hero with a species specific egg move and specific ability
-	local mon_id = RogueEssence.Dungeon.MonsterID(dex_numbers[hero_choice], 0, 0, gender)
+	local mon_id = hero_choice
+	mon_id.Gender = gender
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
 	GAME:GetPlayerPartyMember(0):LearnIntrinsic(ability, 0)
-	GAME:LearnSkill(GAME:GetPlayerPartyMember(0), egg_move_list[hero_choice])
+	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(0), 3) ~= -1 then 
+		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(0), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
+	else 
+		GAME:LearnSkill(GAME:GetPlayerPartyMember(0), egg_move_list[mon_id.Species])
+	end
 	GAME:SetTeamLeaderIndex(0)
 	
+		while not continue do
+		UI:ChooseMonsterMenu(msg, choices)
+		UI:WaitForChoice()	
+		local result = UI:ChoiceResult()
+		local hero_choice = result
+		UI:ChoiceMenuYesNo("Is " .. _Data.GetMonster(hero_choice.Species):GetColoredName() .. " correct?")
+		UI:WaitForChoice()
+		continue = UI:ChoiceResult()
+	end
 
 	--Partner data
 	result = hero_choice
+	continue = false
 	local partner_choice = 0
-	while result == hero_choice do --do not allow same species for partner and player
-		UI:BeginChoiceMenu("Select a partner.", choices, 1, 1)
+	while result.Species == hero_choice.Species or not continue do --do not allow same species for partner and player
+		UI:ChooseMonsterMenu("Your partner.", choices)
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
 		partner_choice = result
-		if result == hero_choice then
+		if result.Species == hero_choice.Species then
 			UI:WaitShowDialogue("Player and partner may not be the same species.[pause=0] Please choose again.")
-		end
+		else
+			UI:ChoiceMenuYesNo("Is " .. _DATA:GetMonster(partner_choice.Species):GetColoredName() .. " correct?")
+			UI:WaitForChoice()
+			continue = UI:ChoiceResult()
+		end	
 	end 
 	
 	UI:BeginChoiceMenu("Your partner, are they a boy, girl, or non-binary??", gender_choices, 1, 1)
@@ -176,7 +251,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	end
 
 	--change this from a hardcoded 0 if other forms are allowed for a starter
-	local monster = _DATA:GetMonster(dex_numbers[partner_choice]).Forms[0]
+	local monster = _DATA:GetMonster(partner_choice.Species).Forms[partner_choice.Form]
 	local ability = monster.Intrinsic1
 	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
 		UI:BeginChoiceMenu("Which ability would you like your partner to have?", {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName(), _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()}, 1, 1)
@@ -185,12 +260,15 @@ function relic_forest_ch_1.Intro_Cutscene()
 		if result == 2 then ability = monster.Intrinsic2 end
 	end
 	
-	mon_id = RogueEssence.Dungeon.MonsterID(dex_numbers[partner_choice], 0, 0, gender)
-	
+	mon_id = partner_choice
+	mon_id.Gender = gender
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
 	GAME:GetPlayerPartyMember(1):LearnIntrinsic(ability, 0)
-	GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move_list[partner_choice])
-
+	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(1), 3) ~= -1 then 
+		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(1), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
+	else 
+		GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move_list[mon_id.Species])
+	end
 	--set player and partner to founders so they cannot be released
 	--set them as partner so they cannot be taken off the active team
     _DATA.Save:UpdateTeamProfile(true)
@@ -312,7 +390,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 		_DATA.Save.ActiveTeam:SetRank(1)
 		GAME:CutsceneMode(false)
 		SOUND:FadeOutBGM()
-		GAME:WaitFrames(80)
+		GAME:WaitFrames(120)
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 		return
 	end

@@ -201,7 +201,7 @@ local characters = {
 		},
 		
 		
-	--Team ???
+	--Team Rivals
 		Zangoose = {
 			species = 335,
 			nickname = 'Devian',
@@ -251,16 +251,16 @@ local characters = {
 	--Team Flight
 		Doduo = {
 			species = 84,
-			nickname = '???',
+			nickname = 'Rok',
 			instance = 'Doduo',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
 		},
-		
+	
 		Bagon = {
 			species = 371,
-			nickname = '???',
+			nickname = 'Tyra',
 			instance = 'Bagon',
 			gender = Gender.Female,
 			form = 0,
@@ -307,7 +307,7 @@ local characters = {
 		
 		Sneasel = {
 			species = 215,
-			nickname = '???',
+			nickname = 'Katrine',
 			instance = 'Sneasel',
 			gender = Gender.Female,
 			form = 0,
@@ -364,7 +364,7 @@ local characters = {
 		
 		Linoone = {
 			species = 264, 
-			nickname = '???',
+			nickname = 'Lebiure',
 			instance = 'Linoone',
 			gender = Gender.Female,
 			form = 0,
@@ -422,7 +422,7 @@ local characters = {
 		
 		Quagsire = {
 			species = 195,
-			nickname = '???',
+			nickname = 'Maris',
 			instance = 'Quagsire',
 			gender = Gender.Female,
 			form = 0,
@@ -630,8 +630,17 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = 0
+		},
+		
+		--Inn Passersby
+		Snorlax = {
+			species = 143,
+			nickname = 'Passerby',
+			instance = 'Passerby_1',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
 		}
-			
 			
 	}
 

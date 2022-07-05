@@ -483,25 +483,30 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 			--bodyguard must be next to you, holding a scarf, alive, and not yourself
 			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == 2502 then 
 				--print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
-				_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
 				
-				local olddir = partymember.CharDir 
+				--cannot bodyguard if sleeping, paralyzed, or frozen
+				if partymember:GetStatusEffect(1) == nil and partymember:GetStatusEffect(4) == nil and partymember:GetStatusEffect(3) == nil then
 				
-				DUNGEON:CharTurnToChar(partymember, ownerChar)
-				local anim = RogueEssence.Dungeon.CharAnimAction()
+					_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
+					
+					local olddir = partymember.CharDir 
+					
+					DUNGEON:CharTurnToChar(partymember, ownerChar)
+					local anim = RogueEssence.Dungeon.CharAnimAction()
 
-				anim.BaseFrameType = 40--Swing
-				anim.AnimLoc = partymember.CharLoc
-				anim.CharDir = partymember.CharDir
-				TASK:WaitTask(partymember:StartAnim(anim))
-				GAME:WaitFrames(16)
-				--partymember.CharDir = olddir
-				
-				--_DUNGEON:LogMsg(STRINGS:Format(RogueEssence.StringKey("MSG_PASS_ATTACK"):ToLocal(), ownerChar:GetDisplayName(false), partymember:GetDisplayName(false)))
-				_DUNGEON:LogMsg(STRINGS:Format("{0} intercepted the attack headed for {1}!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
-				context.ExplosionTile = partymember.CharLoc
-				context.ContextStates:Set(PMDC.Dungeon.Redirected())
-				return
+					anim.BaseFrameType = 40--Swing
+					anim.AnimLoc = partymember.CharLoc
+					anim.CharDir = partymember.CharDir
+					TASK:WaitTask(partymember:StartAnim(anim))
+					GAME:WaitFrames(16)
+					--partymember.CharDir = olddir
+					
+					--_DUNGEON:LogMsg(STRINGS:Format(RogueEssence.StringKey("MSG_PASS_ATTACK"):ToLocal(), ownerChar:GetDisplayName(false), partymember:GetDisplayName(false)))
+					_DUNGEON:LogMsg(STRINGS:Format("{0} intercepted the attack headed for {1}!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
+					context.ExplosionTile = partymember.CharLoc
+					context.ContextStates:Set(PMDC.Dungeon.Redirected())
+					return
+				end
 			end
 		end
 	end

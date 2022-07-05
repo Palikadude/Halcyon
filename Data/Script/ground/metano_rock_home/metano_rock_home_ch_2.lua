@@ -19,9 +19,9 @@ function metano_rock_home_ch_2.SetupGround()
 end
 
 function metano_rock_home_ch_2.Medicham_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Placeholder.")
-	GROUND:EntTurn(chara, olddir)
+	--meditation and self reflection allow one to achieve inner peace.
+	GeneralFunctions.StartConversation(chara, "Allow one inner peace,[pause=10] will meditation and self-reflection achieve.")
+	--I have been trying to teach this to my daughter, but I think she's struggling with it.
+	UI:WaitShowDialogue("This lesson to my daughter I teach,[pause=10] but with it she has struggle.")
+	GeneralFunctions.EndConversation(chara)
 end 

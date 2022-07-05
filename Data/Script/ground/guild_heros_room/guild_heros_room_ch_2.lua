@@ -164,12 +164,12 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GAME:CutsceneMode(true)
 	guild_heros_room.Bedtime(false)
 	UI:ResetSpeaker()
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 
 	SOUND:PlayBGM('Goodnight.ogg', true)
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(40)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue(hero:GetDisplayName() .. ",[pause=10] wasn't today great?[pause=0] I'm so happy with how the day turned out!")
@@ -178,7 +178,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	UI:WaitShowDialogue("The reward she gave us was nice...[pause=0] But I'm just happy we were able to help them out.")
 	GAME:WaitFrames(20)
 	
-	GeneralFunctions.HeroDialogue(hero, "(I'm glad we were able to help them too.[pause=0] I felt like I was some kind of hero!)", "Happy")
+	GeneralFunctions.HeroDialogue(hero, "(I'm glad we were able to help them too.[pause=0] I feel like some kind of hero!)", "Happy")
 	GeneralFunctions.HeroDialogue(hero, "(Helping Pokémon in need is really fulfilling.[pause=0] I hope " .. partner:GetDisplayName() .. " and I can keep doing it.)", "Happy")
 	GAME:WaitFrames(20)
 	
@@ -188,7 +188,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.HeroDialogue(hero, "(He did say not to worry,[pause=10] but I can't stop thinking about that strange feeling I had at the spring.)", "Worried")
-	GeneralFunctions.HeroDialogue(hero, "(It was a bit nauseating,[pause=10] but so similar to how I felt in " .. zone:GetColoredName() .. "...[pause=0] Could those two places be connected?)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(It was sickening,[pause=10] but so similar to how I felt in " .. zone:GetColoredName() .. "...[pause=0] Could those two places be connected?)", "Worried")
 	GAME:WaitFrames(40)
 	
 	GeneralFunctions.HeroSpeak(hero, 60)
@@ -212,7 +212,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(partner, "Sweating", true)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("That does seem pretty noteworthy...[pause=0] Maybe the two places are connected somehow.")
+	UI:WaitShowDialogue("That does seem like something signficant...[pause=0] Maybe the two places are connected somehow.")
 	UI:WaitShowDialogue("But a vague feeling isn't a lot to go off of right now though.")
 	UI:WaitShowDialogue("We aren't even sure what that feeling meant back in " .. zone:GetColoredName() .. "!")
 

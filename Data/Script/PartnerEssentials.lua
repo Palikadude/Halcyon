@@ -397,7 +397,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		else
 			local itemname = RogueEssence.Dungeon.InvItem(101):GetDisplayName()
 			UI:SetSpeakerEmotion("Happy")
-			UI:WaitShowDialogue("Tt was kind of the Guildmaster to give us that " .. itemname .. ".")
+			UI:WaitShowDialogue("It was kind of the Guildmaster to give us that " .. itemname .. ".")
 			UI:WaitShowDialogue("It'll come in handy if one of us gets into a bad situation.")
 		end
 	elseif ground == 'guild_storage_room' then

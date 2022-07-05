@@ -478,7 +478,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(camerupt)
 	UI:SetSpeakerEmotion("Teary-Eyed")
-	UI:WaitShowDialogue("I'm sorry too,[pause=10] sweetie.[pause=0] I know it's been hard now that I need you to have more responsibility around the house...")
+	UI:WaitShowDialogue("I'm sorry too,[pause=10] sweetie.[pause=0] I know it's been hard now that I need you to do more around the house...")
 	--UI:WaitShowDialogue("That's a lot of stress to put on you.[pause=0] But I only do it because I have to.")
 	UI:WaitShowDialogue("But all that matters now though is that you're safe.[pause=0] Just promise me you'll never do something like this again.")
 	
@@ -652,7 +652,8 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("...No.[pause=0] It is nothing to be concerned about.[pause=0] The spring has...[pause=30] been known to do this before.")
+	UI:WaitShowDialogue(".........")
+	UI:WaitShowDialogue("...[pause=0]No.[pause=0] It is nothing to be concerned about.[pause=0] The spring has...[pause=30] been known to do this before.")
 	
 	
 	GAME:WaitFrames(20)
@@ -675,7 +676,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											GeneralFunctions.EmoteAndPause(partner, "Exclaim", false) end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Exclaim", false) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Exclaim", true) end)
 
 	TASK:JoinCoroutines({coro1, coro2})
 
@@ -707,10 +708,11 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue(".........")
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(60)
 	
 
 	GAME:FadeOut(false, 60)
+	GAME:WaitFrames(60)
 	SV.TemporaryFlags.Dinnertime = true
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")

@@ -84,7 +84,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("Guildmaster.")
 	
-	GAME:WaitFrames(10)
+	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(tropius, "Notice", true)
 	GAME:WaitFrames(10)
 	
@@ -128,7 +128,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:SetSpeakerEmotion("Surprised")
 	SOUND:PlayBattleSE('EVT_Emote_Shock_2')
 	GeneralFunctions.EmoteAndPause(tropius, "Shock", false)
-	SOUND:PlayBGM('Growing Anxiety.ogg', true)
+	--SOUND:PlayBGM('Growing Anxiety.ogg', true)
 	UI:WaitShowDialogue("What?![pause=0] Are you serious?!")
 	
 	GAME:WaitFrames(20)
@@ -142,7 +142,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("...I hope not.[pause=0] But it's possible.[pause=0] There's no way to tell for sure right now.")
+	UI:WaitShowDialogue("...I hope not.[pause=0] But it's possible.[pause=0] There's no way to tell for sure.")
 	
 	
 	
@@ -150,7 +150,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("What should we do,[pause=10] Guildmaster?")
 	
-	SOUND:FadeOutBGM()
+	--SOUND:FadeOutBGM()
 	GAME:WaitFrames(20)
 	GROUND:CharAnimateTurnTo(tropius, Direction.Up, 8)
 	GAME:WaitFrames(60)
@@ -158,17 +158,28 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:SetSpeaker(tropius)
 	UI:WaitShowDialogue("For right now,[pause=10] I don't think there's anything we can do.")
 	UI:WaitShowDialogue("This spring issue may be an isolated incident for all we know.") 
-	UI:WaitShowDialogue("We should keep an eye out for other ill omens,[pause=10] and from there see what sort of options we have.")
+	UI:WaitShowDialogue("We should keep an eye out for other bad omens,[pause=10] and from there see what sort of options we have.")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("...Let's just hope this isn't a sign of worse to come.")
+	UI:WaitShowDialogue("...Let's just hope this spring issue isn't a sign of worse to come.")
 	
 	GAME:WaitFrames(20)
 	GAME:FadeOut(false, 60)	
 	GAME:WaitFrames(120)
 	GAME:CutsceneMode(false)
 	SV.ChapterProgression.Chapter = 3
+	
+	--demo only, let player know end of demo
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Thus ends Chapter 2, and thus ends the demo! Thank you for playing!")
+	UI:WaitShowDialogue("I hope you enjoyed it as much as I enjoyed making it.")
+	UI:WaitShowDialogue("Let me know if you found any bugs, what you enjoyed, what you didn't like.")
+	UI:WaitShowDialogue("Your feedback is invaluable to improving Halcyon!")
+	UI:WaitShowDialogue("I'll be setting plot flags to Chapter 3 now (none of which is scripted out).")
+	UI:WaitShowDialogue("Things may be unstable in this state as nothing is really properly programmed out for chapter 3.")
+	UI:WaitShowDialogue("But it's better than being stuck in a black screen, right?")
+	UI:WaitShowDialogue("Alright. Returning control... now!")
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")	
 	

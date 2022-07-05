@@ -230,31 +230,26 @@ end
 --locales mark the zone of the town we're in for partner dialogue
 function metano_town.Cafe_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Cafe'
 end
 
 function metano_town.Exploration_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Exploration'
 end
 
 function metano_town.Cave_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Cave'
 end
 
 function metano_town.South_Houses_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'South Houses'
 end
 
 function metano_town.North_Houses_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'North Houses'
 end
 
@@ -266,31 +261,26 @@ end
 
 function metano_town.Guild_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Guild'
 end
 
 function metano_town.Market_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Market'
 end
 
 function metano_town.Well_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Well'
 end
 
 function metano_town.Post_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Post'
 end
 
 function metano_town.Dojo_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Dojo'
 end
 
@@ -2353,6 +2343,15 @@ function metano_town.To_Spring_Sign_Action(obj, activator)
   UI:SetCenter(false)
 end
 
+function metano_town.Postboard_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker()
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
+  UI:WaitShowDialogue("There's nothing here right now.\nCome back again another time!")
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
+end
 --Change this to a little cutscene like how chimecho comes out to see you? Whoever ends up running the assmebly should come out to see you
 function metano_town.Assembly_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
