@@ -1,0 +1,18 @@
+First Chapter 2 demo patch, v0.1.1:
+
+-Removed 14 starters due to balancing concerns.
+-Moved Coco's location in Chapter 1 so she can't block the hallway by accident.
+-Fixed a bug where Ezalor would play his idle animation instead of no animation after helping learn or delete a move.
+-Removed fee for relearning moves.
+-Changed reference to "paying a fee" to "For no cost at all" in Ezalor's info dialogue.
+-Adjusted moves of some mons in Illuminant Riverbed so you don't get spammed as much from a distance. Should make it easier/more managable. Some mons still retain bubble or water gun however.
+-Changed some partner interact dialogue to better reflect that they knew the ladder was there but just never went down as opposed to just never actually seeing the ladder to the dojo.
+-Added day 1 chapter 2 partner speak interaction when in the housing area so that they make note of the numel cutscene if you've seen it happen.
+-Adjusted some camera work when meeting Lotus to keep the characters more centered in the camera.
+-Changed plural references to Synergy Scarf from Synergy Scarf to Synergy Scarves.
+-Penticus now lets you know the scarves cannot be lost by fainting when he gives them to you.
+-Added a warning when picking a hero and partner of the same primary type.
+-Added Alolan Vulpix as a starter.
+-Changed Vulpix's starting egg move from Extrasensory to Tail Slap as it gets extrasensory on lvlup.
+-Removed Illusion from Zorua. Gave it Keen Eye as a replacement ability. Illusion was too strong. I am open to other, slightly better abilities as a replacement too.
+-Removed an duplicated question mark from character selection.

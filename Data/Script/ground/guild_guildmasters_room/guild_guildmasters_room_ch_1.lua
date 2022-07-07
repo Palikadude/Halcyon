@@ -420,7 +420,9 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	SOUND:PlayBattleSE('EVT_CH02_Box_Open')
 	GeneralFunctions.Monologue(hero:GetDisplayName() .. " opened the box.")
 	
-	local scarf_name = RogueEssence.Dungeon.InvItem(2502):GetDisplayName()
+	--local scarf_name = RogueEssence.Dungeon.InvItem(2502):GetDisplayName()
+	--have to hardcode this so I can have it say scarves instead of scarf
+	local scarf_name = STRINGS:Format('\\uE0AE')..'[color=#FFCEFF]Synergy Scarves[color]'
 	
 	--pipe dream todo: have scarves for the sprites from now on
 	GAME:WaitFrames(20)
@@ -457,7 +459,8 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	UI:WaitShowDialogue("The Treasure Bag is self-explanatory.")
 	UI:WaitShowDialogue("If you do enough good adventuring work,[pause=10] it'll be upgraded to carry more items!")
 	UI:WaitShowDialogue("Lastly,[pause=10] a pair of " .. scarf_name .. ".")
-	UI:WaitShowDialogue("By themselves,[pause=10] they won't do anything.")
+	UI:WaitShowDialogue("These scarves are very special,[pause=10] so special in fact that they cannot be lost even if you faint in a dungeon!")
+	UI:WaitShowDialogue("By themselves,[pause=10] the scarves won't do anything.")
 	UI:WaitShowDialogue("But if the both of you wear the scarves and are close to each other...")
 	UI:WaitShowDialogue("...Then the scarves will give you a number of useful boons!")
 	UI:SetSpeakerEmotion("Happy")--change to a wink? how do you wink when only one eye shows

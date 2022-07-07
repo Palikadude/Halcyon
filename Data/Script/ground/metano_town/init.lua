@@ -1669,14 +1669,14 @@ function metano_town.Tutor_Sequence(member, moveEntry)
 	GROUND:PlayVFX(emitter, chara.MapLoc.X, chara.MapLoc.Y)
 	SOUND:PlayBattleSE("EVT_Battle_Flash")
 	GAME:WaitFrames(10)
-	GROUND:CharSetAnim(chara, "Idle", true)
+	GROUND:CharSetAnim(chara, "None", true)
 	GAME:WaitFrames(30)
 end
 
 function metano_town.Tutor_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   
-  local price = 500
+  local price = 0
   local state = 0
   local repeated = false
   local member = nil
@@ -1756,7 +1756,7 @@ function metano_town.Tutor_Action(obj, activator)
 		elseif state == 3 then
 			local moveEntry = RogueEssence.Data.DataManager.Instance:GetSkill(move)
 			if GAME:CanLearn(member) then
-				SOUND:PlayBattleSE("DUN_Money")
+				--SOUND:PlayBattleSE("DUN_Money") price was removed so no money sound
 				GAME:RemoveFromPlayerMoney(price)
 				GAME:LearnSkill(member, move)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Begin']))
@@ -1769,7 +1769,7 @@ function metano_town.Tutor_Action(obj, activator)
 				UI:WaitForChoice()
 				local result = UI:ChoiceResult()
 				if result > -1 and result < 4 then
-					SOUND:PlayBattleSE("DUN_Money")
+					--SOUND:PlayBattleSE("DUN_Money") price was removed so no money sound
 					GAME:RemoveFromPlayerMoney(price)
 					GAME:SetCharacterSkill(member, move, result)
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Begin']))

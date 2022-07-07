@@ -45,7 +45,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	--Hero data
 	--todo: improve this. Perhaps move somewhere else.
 	local msg = "Your hero."
-	--[[local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Meowth', 'Machop', 
+	--[[local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Vulpix-A', 'Meowth', 'Machop', 
 					 'Cubone', 'Chikorita', 'Cyndaquil', 'Totodile', 'Houndour', 'Phanpy', 'Magby',
 					 'Larvitar', 'Treecko', 'Torchic', 'Mudkip', 'Poochyena', 'Ralts', 'Skitty',
 					 'Turtwig', 'Chimchar', 'Piplup', 'Shinx', 'Buizel', 'Munchlax', 'Riolu',
@@ -58,49 +58,50 @@ function relic_forest_ch_1.Intro_Cutscene()
 					RogueEssence.Dungeon.MonsterID(7, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(25, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(37, 0, 0, Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID(37, 1, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(52, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(66, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(104, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(152, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(155, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(158, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(228, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(228, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(231, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(240, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(246, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(240, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(246, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(255, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(258, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(261, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(280, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(261, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(280, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(300, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(387, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(390, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(393, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(403, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(418, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(418, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(446, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(495, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(501, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(506, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(506, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(570, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(572, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(582, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(619, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(572, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(582, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(619, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(650, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(653, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(656, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(672, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(677, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(698, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(677, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(698, 0, 0, Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID(714, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(722, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(725, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(744, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(753, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(753, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(813, 0, 0, Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID(831, 0, 0, Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID(831, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(835, 0, 0, Gender.Genderless)}
 					
 	local egg_move_list = 
@@ -108,50 +109,50 @@ function relic_forest_ch_1.Intro_Cutscene()
 		 [4] = 232, --metal claw, charmander 
 		 [7] = 196, --icy wind, squirtle		
 		 [25] = 574, --disarming voice, pikachu
-		 [37] = 326, --extrasensory, vulpix
+		 [37] = 541, --tail slap, vulpix and vulpix-a
 		 [52] = 492, --foul play, meowth
 		 [66] = 418, --bullet punch, machop
 		 [104] = 24, --double kick, cubone 
 		 [152] = 246, --ancient power, chikorita
 		 [155] = 24, --double kick, cyndaquil 
 		 [158] = 453, --aqua jet, totodile
-		 [228] = 422, --thunder fang, houndour
+		-- [228] = 422, --thunder fang, houndour
 		 [231] = 420, --ice shard, phanpy
-		 [240] = 9, --thunder punch, magby
-		 [246] = 442, --ironhead, larvitar
+		-- [240] = 9, --thunder punch, magby
+		 --[246] = 442, --ironhead, larvitar
 		 [252] = 225,--dragon breath, treecko
 		 [255] = 67,--low kick, torchic
 		 [258] = 419, --avalanche, mudkip
-		 [261] = 583, --play rough, poochyena
-		 [280] = 425, --shadow sneak, ralts
+		 --[261] = 583, --play rough, poochyena
+		 --[280] = 425, --shadow sneak, ralts
 		 [300] = 428, --zen headbutt, skitty 
 		 [387] = 328, --sand tomb, turtwig
 		 [390] = 9, --thunder punch, chimchar
 		 [393] = 196, --icy wind, piplup
 		 [403] = 423, --icy fang, shinx 
-		 [418] = 210, --fury cutter, buizel 
+		 --[418] = 210, --fury cutter, buizel 
 		 [446] = 428, --zen headbutt, munchlax
 		 [447] = 418, --bullet punch, riolu
 		 [495] = 239, --twister, snivy 
 		 [501] = 372, --assurance, oshawatt
-		 [506] = 424, --fire fang, lillipup
+		 --[506] = 424, --fire fang, lillipup
 		 [570] = 326, --extrasensory, zorua 
-		 [572] = 401, --aqua tail, minccino
-		 [582] = 352, --water pulse, vanillite 
-		 [619] = 282, --knock off, mienfoo
+		 --[572] = 401, --aqua tail, minccino
+		 --[582] = 352, --water pulse, vanillite 
+		 --[619] = 282, --knock off, mienfoo
 		 [650] = 612, --power up punch, chespin
 		 [653] = 273, --wish, fennekin
 		 [656] = 612, --power up punch, froakie (this thing has shit egg moves)
 		 [672] = 428, --zen headbutt, Skiddo
-		 [677] = 274, --assist, espurr (also bad egg moves)
-		 [698] = 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
+		 --[677] = 274, --assist, espurr (also bad egg moves)
+		 --[698] = 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
 		 --[714] = 366, --tailwind, noibat
 		 [722] = 466, --ominous wind, rowlet
 		 [725] = 279, --revenge, litten 
 		 [744] = 422, --thunder fang, rockruff
-		 [753] = 311, --weather ball, fomantis
+		 --[753] = 311, --weather ball, fomantis
 		 [813] = 389, --sucker punch, scorbunny
-		 [831] = 68, --counter, wooloo
+		 --[831] = 68, --counter, wooloo
 		 [835] = 488} --flame charge, yamper
 		 
 	
@@ -223,7 +224,11 @@ function relic_forest_ch_1.Intro_Cutscene()
 	--Partner data
 	result = hero_choice
 	continue = false
+	local type_warning = true
 	local partner_choice = 0
+	local hero_type = nil
+	local partner_type = nil
+	
 	while result.Species == hero_choice.Species or not continue do --do not allow same species for partner and player
 		UI:ChooseMonsterMenu("Your partner.", choices)
 		UI:WaitForChoice()
@@ -232,13 +237,24 @@ function relic_forest_ch_1.Intro_Cutscene()
 		if result.Species == hero_choice.Species then
 			UI:WaitShowDialogue("Player and partner may not be the same species.[pause=0] Please choose again.")
 		else
-			UI:ChoiceMenuYesNo("Is " .. _DATA:GetMonster(partner_choice.Species):GetColoredName() .. " correct?")
-			UI:WaitForChoice()
-			continue = UI:ChoiceResult()
+			hero_type = _DATA:GetMonster(hero_choice.Species).Forms[hero_choice.Form].Element1
+			partner_type = _DATA:GetMonster(partner_choice.Species).Forms[partner_choice.Form].Element1
+			if hero_type == partner_type then --warn player if types match
+				UI:WaitShowDialogue("Warning![pause=0] Your hero and partner choices share the same primary type.")
+				UI:WaitShowDialogue("This may make your adventure more difficult than normal.")
+				UI:ChoiceMenuYesNo("Are you sure you wish to continue with these choices?")
+				UI:WaitForChoice()
+				type_warning = UI:ChoiceResult()
+			end
+			if type_warning then--if they agreed to continue after the warning, or never got the warning, then make sure their choice is correct
+				UI:ChoiceMenuYesNo("Is " .. _DATA:GetMonster(partner_choice.Species):GetColoredName() .. " correct?")
+				UI:WaitForChoice()
+				continue = UI:ChoiceResult()
+			end
 		end	
 	end 
 	
-	UI:BeginChoiceMenu("Your partner, are they a boy, girl, or non-binary??", gender_choices, 1, 1)
+	UI:BeginChoiceMenu("Your partner, are they a boy, girl, or non-binary?", gender_choices, 1, 1)
 	UI:WaitForChoice()
 	gender = UI:ChoiceResult()
 	

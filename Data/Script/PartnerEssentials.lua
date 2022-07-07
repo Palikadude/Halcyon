@@ -539,7 +539,14 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		elseif not SV.Chapter2.FinishedFirstDay then  --day 1
 			if location == 'North Houses' or location == 'South Houses' then 
 				UI:WaitShowDialogue("This is where most of the townfolk live.")
-				UI:WaitShowDialogue("Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
+				if SV.Chapter2.FinishedNumelTantrum then 
+					UI:SetSpeakerEmotion("Worried")
+					UI:WaitShowDialogue("That scene earlier was a bit alarming...[pause=0] That sort of stuff rarely happens in Metano Town.")
+					UI:SetSpeakerEmotion("Normal")
+					UI:WaitShowDialogue("Regardless,[pause=10] Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
+				else 
+					UI:WaitShowDialogue("Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
+				end
 			elseif location == 'Guild' then 
 				if not SV.Chapter2.FinishedNumelTantrum then
 					UI:WaitShowDialogue("We still have some time before we need to head back inside the guild.")
@@ -577,10 +584,10 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 					UI:WaitShowDialogue("That must be the entrance to the dojo.[pause=0] Let's head on down!")
 				else 
 					UI:SetSpeakerEmotion("Worried")
-					UI:WaitShowDialogue("Still can't believe that I never noticed that ladder to the dojo over there before...")
+					UI:WaitShowDialogue("Still can't believe that there's an entire cavern and dojo down that ladder...")
 					UI:SetSpeakerEmotion("Joyous")
 					GROUND:CharSetEmote(partner, 4, 0)
-					UI:WaitShowDialogue("I've passed by this spot a million times and it just never stood out to me![pause=0] Haha!")
+					UI:WaitShowDialogue("I've passed by it so many times,[pause=10] but I've never gone down there before today![pause=0] Haha!")
 					GROUND:CharSetEmote(partner, -1, 0)
 				end
 			elseif location == 'Market' then 

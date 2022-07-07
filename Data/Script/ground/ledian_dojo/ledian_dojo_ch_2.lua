@@ -188,8 +188,9 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(hero, ledian, 4, Direction.Up) end)
 	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, ledian, 4, Direction.Up) 
 											GROUND:EntTurn(partner, Direction.Up) end)
+	coro4 = TASK:BranchCoroutine(function() GAME:MoveCamera(204, 168, 24, false) end)
 	
-	TASK:JoinCoroutines({coro1, coro2, coro3})
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 
 	GAME:WaitFrames(40)
 	
