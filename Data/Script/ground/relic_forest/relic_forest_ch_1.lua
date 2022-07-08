@@ -231,6 +231,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	while result.Species == hero_choice.Species or not continue do --do not allow same species for partner and player
 		UI:ChooseMonsterMenu("Your partner.", choices)
+		type_warning = true
 		UI:WaitForChoice()
 		result = UI:ChoiceResult()
 		partner_choice = result

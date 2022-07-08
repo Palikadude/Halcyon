@@ -16,3 +16,7 @@ First Chapter 2 demo patch, v0.1.1:
 -Changed Vulpix's starting egg move from Extrasensory to Tail Slap as it gets extrasensory on lvlup.
 -Removed Illusion from Zorua. Gave it Keen Eye as a replacement ability. Illusion was too strong. I am open to other, slightly better abilities as a replacement too.
 -Removed an duplicated question mark from character selection.
+
+
+v0.1.2
+-fixed a issue where getting a warning for picking same type hero/partner, then going back and choosing a different one of a different type would cause an infinite loop.
