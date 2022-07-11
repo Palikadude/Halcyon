@@ -89,7 +89,7 @@
     <value>I'll open any box you bring me and give ya the contents,[pause=10] just 150 \uE024 each for my troubles.</value>
   </data>
   <data name="Appraisal_Intro" xml:space="preserve">
-    <value>Got any boxes need opening? Just 150 \uE024 each.</value>
+    <value>Got any boxes you need opened? Just 150 \uE024 each.</value>
   </data>
   <data name="Appraisal_No_Money" xml:space="preserve">
     <value>This ain't a charity service.[pause=0] Either get some \uE024 or don't come back!</value>
@@ -707,7 +707,7 @@
     <value>No transaction then?[pause=0] Very well.</value>
   </data>
   <data name="Bank_Info_1" xml:space="preserve">
-    <value>When you fall in dungeons,[pause=10] half of your money will be lost forever...</value>
+    <value>When you fall in dungeons,[pause=10] all of your money will be lost forever...</value>
   </data>
   <data name="Bank_Info_2" xml:space="preserve">
     <value>You can avoid that tragedy by leaving it with me instead.</value>

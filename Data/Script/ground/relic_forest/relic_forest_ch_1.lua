@@ -104,8 +104,9 @@ function relic_forest_ch_1.Intro_Cutscene()
 					--RogueEssence.Dungeon.MonsterID(831, 0, 0, Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID(835, 0, 0, Gender.Genderless)}
 					
+	--not all moves listed are egg moves. Sometimes, egg move choices are too over or under powered and so something else had to be chosen				
 	local egg_move_list = 
-		{[1] = 282, --knockoff bulbasaur
+		{[1] = 124, --Sludge bulbasaur
 		 [4] = 232, --metal claw, charmander 
 		 [7] = 196, --icy wind, squirtle		
 		 [25] = 574, --disarming voice, pikachu
@@ -113,7 +114,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 		 [52] = 492, --foul play, meowth
 		 [66] = 418, --bullet punch, machop
 		 [104] = 24, --double kick, cubone 
-		 [152] = 246, --ancient power, chikorita
+		 [152] = 287, --refresh, chikorita
 		 [155] = 24, --double kick, cyndaquil 
 		 [158] = 453, --aqua jet, totodile
 		-- [228] = 422, --thunder fang, houndour
@@ -136,22 +137,22 @@ function relic_forest_ch_1.Intro_Cutscene()
 		 [495] = 239, --twister, snivy 
 		 [501] = 372, --assurance, oshawatt
 		 --[506] = 424, --fire fang, lillipup
-		 [570] = 326, --extrasensory, zorua 
+		 [570] = 383, --copycat, zorua 
 		 --[572] = 401, --aqua tail, minccino
 		 --[582] = 352, --water pulse, vanillite 
 		 --[619] = 282, --knock off, mienfoo
 		 [650] = 612, --power up punch, chespin
 		 [653] = 273, --wish, fennekin
-		 [656] = 612, --power up punch, froakie (this thing has shit egg moves)
+		 [656] = 300, --mud sport froakie 
 		 [672] = 428, --zen headbutt, Skiddo
 		 --[677] = 274, --assist, espurr (also bad egg moves)
 		 --[698] = 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
 		 --[714] = 366, --tailwind, noibat
-		 [722] = 466, --ominous wind, rowlet
+		 [722] = 109, --Confuse Ray, rowlet
 		 [725] = 279, --revenge, litten 
 		 [744] = 422, --thunder fang, rockruff
 		 --[753] = 311, --weather ball, fomantis
-		 [813] = 389, --sucker punch, scorbunny
+		 [813] = 372, --assurance, scorbunny
 		 --[831] = 68, --counter, wooloo
 		 [835] = 488} --flame charge, yamper
 		 
@@ -186,7 +187,6 @@ function relic_forest_ch_1.Intro_Cutscene()
 		gender = Gender.Genderless
 	end
 	
-	--change this from a hardcoded 0 if other forms are allowed for a starter
 	local monster = _DATA:GetMonster(hero_choice.Species).Forms[hero_choice.Form]
 	local ability = monster.Intrinsic1
 	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
@@ -267,7 +267,6 @@ function relic_forest_ch_1.Intro_Cutscene()
 		gender = Gender.Genderless
 	end
 
-	--change this from a hardcoded 0 if other forms are allowed for a starter
 	local monster = _DATA:GetMonster(partner_choice.Species).Forms[partner_choice.Form]
 	local ability = monster.Intrinsic1
 	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
@@ -689,7 +688,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("(Hmm...[pause=0] " .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " looks stunned,[pause=10] actually...[pause=0] Maybe " .. GeneralFunctions.GetPronoun(hero, "they're", false) .. " telling the truth after all?)")
+	UI:WaitShowDialogue("(Hmm...[pause=0] " .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " " .. GeneralFunctions.Conjugate(hero, 'look') .. " stunned,[pause=10] actually...[pause=0] Maybe " .. GeneralFunctions.GetPronoun(hero, "they're", false) .. " telling the truth after all?)")
 	UI:WaitShowDialogue("(" .. GeneralFunctions.GetPronoun(hero, 'they', true) .. " even pinched " .. GeneralFunctions.GetPronoun(hero, 'themself') .. " like " .. GeneralFunctions.GetPronoun(hero, 'they') .. " " .. GeneralFunctions.GetPronoun(hero, "were") .. " trying to wake up or something...)")
 	UI:WaitShowDialogue("(...There's no reason for someone to lie about this sort of thing,[pause=10] right?)")
 	GAME:WaitFrames(40)
@@ -982,7 +981,7 @@ function relic_forest_ch_1.WipedInForest()
 	UI:WaitShowDialogue('Ouch...[pause=0] That was tougher than I expected...')
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Normal')
-	UI:WaitShowDialogue('Are you okay ' .. hero:GetDisplayName() .. '?')
+	UI:WaitShowDialogue('Are you okay,[pause=10] ' .. hero:GetDisplayName() .. '?')
 	
 	GAME:WaitFrames(10)
 	GeneralFunctions.DoAnimation(hero, 'Nod')
@@ -995,7 +994,7 @@ function relic_forest_ch_1.WipedInForest()
 	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
 	GAME:WaitFrames(40)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:WaitShowDialogue("Well we can't dawdle here.[pause=0] We got to make it back to town before it gets any later.")
+	UI:WaitShowDialogue("Well,[pause=10] we can't dawdle here.[pause=0] We got to make it back to town before it gets any later.")
 	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "!")
 	--todo: do a little hop at the end of the dialogue
 	GAME:WaitFrames(20)

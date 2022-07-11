@@ -26,14 +26,14 @@ function beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
 	UI:WaitShowDialogue("Volunteers ahead will either demonstrate learning topics,[pause=10] or pose as obstacles to conquer!")
 	UI:WaitShowDialogue("Be sure to read the signs left by my star pupil![pause=0] They contain vital knowledge essential to dungeon crawling!")
 	UI:WaitShowDialogue("You can speak to me at any time to reset the floor if you find yourself stuck![pause=0] Don't be shy,[pause=10] my student!")
-	UI:WaitShowDialogue("Onwards,[pause=10] there is much learning to do,[pause=10] kya!")
+	UI:WaitShowDialogue("Onwards![pause=0] There is much learning to do,[pause=10] kya!")
 	SV.Tutorial.Progression = 1
 end
 
 function beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
 	local chara = beginner_lesson.FindLedian()
 	UI:SetSpeaker(chara)
-	UI:WaitShowDialogue("Hwacha![pause=0] On this floor you will learn about different status effects you will encounter in your journeys!")
+	UI:WaitShowDialogue("Hwacha![pause=0] On this floor you will learn about different status effects you will encounter on your journeys!")
 	UI:WaitShowDialogue("Status effects are buffs or debuffs that affect a Pokémon's ability to battle!")
 	UI:WaitShowDialogue("The volunteers ahead will demonstrate moves that apply status moves![pause=0] Attack them and they'll use their move!")
 	SV.Tutorial.Progression = 2
@@ -138,7 +138,7 @@ function beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This floor will teach you about terrain types you will encounter in dungeons!")
 	UI:WaitShowDialogue("Terrain includes obstacles such as water, lava, and walls!")
-	UI:WaitShowDialogue("Hoiyah![pause=0] You must learn how to terrain affects dungeon navigation to be successful adventurers!")
+	UI:WaitShowDialogue("Hoiyah![pause=0] You must learn how terrain affects dungeon navigation to be successful adventurers!")
 	SV.Tutorial.Progression = 7
 end
 

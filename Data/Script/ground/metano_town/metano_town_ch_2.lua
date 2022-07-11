@@ -1178,7 +1178,7 @@ function metano_town_ch_2.Oddish_Action(chara, activator)
 end
 
 function metano_town_ch_2.Numel_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Stupid chores...[pause=0] I hate collecting firewood,[pause=10] this stinks...", "Determined", false)
+	GeneralFunctions.StartConversation(chara, "Stupid chores...[pause=0] I hate collecting firewood.[pause=0] This stinks.", "Determined", false)
 	UI:WaitShowDialogue("If I was big and grown up I wouldn't have to do these stupid chores anymore...")
 	GeneralFunctions.EndConversation(chara)
 end

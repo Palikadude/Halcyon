@@ -212,7 +212,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(partner, "Sweating", true)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("That does seem like something signficant...[pause=0] Maybe the two places are connected somehow.")
+	UI:WaitShowDialogue("That does seem like something significant...[pause=0] Maybe the two places are connected somehow.")
 	UI:WaitShowDialogue("But a vague feeling isn't a lot to go off of right now though.")
 	UI:WaitShowDialogue("We aren't even sure what that feeling meant back in " .. zone:GetColoredName() .. "!")
 

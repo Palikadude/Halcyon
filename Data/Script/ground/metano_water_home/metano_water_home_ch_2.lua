@@ -31,7 +31,7 @@ end
 
 function metano_water_home_ch_2.Quagsire_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Wooper_Girl") .. ' and ' .. CharacterEssentials.GetCharacterName('Wooper_Boy') .. " are still out there trying to figure out their plans for the day.", "Worried")
-	UI:WaitShowDialogue("Those kids of mine...[pause=0] They're sweet,[pause=10] but they're not the brighest.")
+	UI:WaitShowDialogue("Those kids of mine...[pause=0] They're sweet,[pause=10] but they're not the brightest.")
 	UI:WaitShowDialogue("I wonder where they get it from?")
 	GeneralFunctions.EndConversation(chara)
 end 

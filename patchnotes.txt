@@ -20,3 +20,25 @@ First Chapter 2 demo patch, v0.1.1:
 
 v0.1.2
 -fixed a issue where getting a warning for picking same type hero/partner, then going back and choosing a different one of a different type would cause an infinite loop.
+
+
+
+v0.1.3
+-Adjusted Rowlet's egg move from Ominous Wind to Confuse Ray.
+-Gave Rowlett Vine Whip at level 1 as a replacement for leafage which is not implemented. Leafage is removed from the learnset as a result.
+-Added some missing commas in Relic Forest Part 2's defeat cutscene.
+-Fixed a grammar issue when playing as a nonbinary hero in relic forest's meeting cutscene.
+-Zorua's egg move changed from extrasensory to Copycat.
+-Scorbunny's egg move changed from sucker punch to assurance 
+-Bulbasaur's egg move changed from knock off to sludge 
+-chikorita's egg move changed from ancient power to refresh 
+-froakie's egg move changed from power up punch to mud sport 
+-Vulpix-A lvl 1 powder snow changed to ice shard. Ice shard at level 10 removed. It no longer learns powder snow.
+-Some of Penticus's lines have been tweaked to make him sound more casual.
+-Reduced the volunteer Dugtrio's attack stat significantly in the dojo lesson to prevent him from KOing the player if the player gets handsy with him. It's a lesson on recruitment after all, he shouldn't be busting heads.
+-adjusted some dialogue in Katrine's shop to read better.
+-fixed a typo with one of Nama's dialogues.
+--fixed banker dialogue so that he would say you'd lose all your money instead of only half.
+-Fixed overflow of text in Phileas's dialogue regarding Synergy scarves.
+-Fixed a number of minor typos and punctuation mistakes in dialogue in chapter 2.
+--turned down the volume of "File Select" song that plays in Altere Pond. I'm not an audacity wiz, so please keep an ear out and let me know if it's still too loud, too soft, sounds weird, etc.

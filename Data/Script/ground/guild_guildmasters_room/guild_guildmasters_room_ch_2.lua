@@ -90,8 +90,8 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	
 	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
 	UI:SetSpeaker(tropius)
-	UI:WaitShowDialogue("Oh,[pause=10] howdy " .. noctowl:GetDisplayName() .. ",[pause=10] I didn't notice you come in.")
-	UI:WaitShowDialogue("What's up?[pause=0] I was about to get ready for bed,[pause=10] I was just finishing up in here.")
+	UI:WaitShowDialogue("Oh,[pause=10] howdy " .. noctowl:GetDisplayName() .. ".[pause=0] I didn't notice you come in.")
+	UI:WaitShowDialogue("What's up?[pause=0] I was about to get ready for bed.[pause=0] I was just finishing up in here.")
 
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)

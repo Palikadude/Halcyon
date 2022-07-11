@@ -399,6 +399,24 @@ function GeneralFunctions.GetPronoun(chara, form, uppercase)
     
 end
 
+--used to conjugate certain verbs appropriately, to be used with the above function typically
+--this will need to be updated to be more sophisticated as the use cases arrive. For now, KISS.
+function GeneralFunctions.Conjugate(chara, verb)
+    local gender = chara.CurrentForm.Gender
+    local value = verb
+    
+    if gender ~= Gender.Genderless then 
+		if string.sub(verb, -1) == 's' then 
+			value = value .. 'es'
+		else
+			value = value .. 's'
+		end
+    end
+
+	return value
+    
+end
+
 
 function GeneralFunctions.NameStutter(chara)
 	--used to get a stutter on a character's name with proper coloring

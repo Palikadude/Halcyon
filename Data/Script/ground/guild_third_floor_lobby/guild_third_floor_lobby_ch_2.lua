@@ -346,11 +346,11 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
 	GROUND:CharTurnToCharAnimated(noctowl, tropius, 4)
-	UI:WaitShowDialogue("Now,[pause=10] " .. noctowl:GetDisplayName() .. ",[pause=10] if you would?[pause=0] I got to get some work done in my office.")
+	UI:WaitShowDialogue("Now,[pause=10] " .. noctowl:GetDisplayName() .. ",[pause=10] if you would?[pause=0] I've got to get some work done in my office.")
 
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue("Of course Guildmaster.")
+	UI:WaitShowDialogue("Of course,[pause=10] Guildmaster.")
 	
 	--tropius takes his leave
 	GAME:WaitFrames(20)
