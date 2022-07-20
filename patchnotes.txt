@@ -49,9 +49,10 @@ v0.1.4
 -Updated Audino sprites to new version on repo. Baroness Faron was also kind enough to specifically create eating and posing animations while facing upwards so Rin will now no longer use placeholder animations in relevant cutscenes!
 -Removed most sprites from mod folder and all portraits. Audino updated the base game to be up to date on these, so including them in the mod is redundant. Some mons remain modified (namely guild mons, and kec for purp kec) for their custom guild animations.
 -Removed some scripting that set Ledian's animation to idle in several places as base game behavior now sets flying mons to idle rather than none in cutscenes. Leaving those idle animation settings in would have been redundant
+-fixed a layering issue in relic forest (objects under and objects were swapped)
 -fixed some flowers in metano town that were not animated 
 -removed an inappropriate debug print that I had missed when originally removing some debug prints.
--added a save and quit prompt between chapter 1's end and chapter 2's start. The quitting does not work so well right now, but I think audino needs to fix that, not me. 
+-added a save prompt between chapter 1's end and chapter 2's start. will add a save+quit option once that decides to cooperate.
 -also adjusted some of the pauses in the chapter 1 end / chapter 2 start cutscenes to help accomodate the newly added save and quit prompt.
 -Removed some superfluous items from the beginner lesson.
 -added tackle to cubone at level 1 so it starts with an actual attack besides its egg move.
@@ -61,6 +62,11 @@ v0.1.4
 -Adjusted some pauses here and there to make transitions better, particularly with generic dinner times.
 -adjusted when results screen would show up after leaving a dungeon. Right now, it'll show up if you faint in non dojo dungeons, or if you beat non dojo dungeons outside of the storyline (there is no special cutscene to play next that would mean)
 -added BGM fade outs to a number of scene transitions where it seemed appropriate so music transitions are less abrupt. Keep an ear out and let me know if you think anything sounds awkward or should be adjusted?
+-Added BGM fade outs to map transitions that result in a music change. 
+-adjusted all fadeouts and fade ins that were 20 frames to 40 frames. Most generic fadeouts were 20 frames before. This is to better accomodate sound fade outs. Overworld map transitions will remain at 20 frames. This is hard to track properly since i had to go back and change a lot of stuff, so let me know if anything seems wrong or too long when fading in and out. I anticipate missing some things and needing to adjust in the future. Note:Standard is 40 frames out 40 frames in for scripted exits to scripted entrances, and 20 frames in/out if the scripted entrance comes from a generic exit. Keep an eye out if you see a fade in taking longer/shorter than the corresponding fade out.
+-adjusted some movement and pauses in some chapter 1 cutscenes. 
 -removed chapter 1's mention of "deja vu" in final cutscene as I think it's too strong of a tip off and totally thematically appropriate. (strange feelings are the better way to go)
--fixed a layering issue in relic forest (objects under and objects were swapped)
--todo: fix torches on fire house
+-fixed partner/player animations when touching bed in chapter 1.
+-added short delay after saving through a prompt to prevent mashing causing you to talk to partner.
+-Please keep an ear and eye out for sound and fade in/outs on map/scene transitions! let me know if you've found an inconsistency! It's hard to do it all myself perfectly.
+-Adjusted partner/player so they will idle in some cutscenes in chapter 2 if they are excited to be more consistent with how they are in chapter 1.

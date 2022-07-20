@@ -142,7 +142,7 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	GeneralFunctions.CenterCamera({snubbull, tropius})
 	GROUND:TeleportTo(partner, MRKR("Partner").X, MRKR("Partner").Y, MRKR("Partner").Direction)
 	GROUND:TeleportTo(hero, MRKR("Hero").X, MRKR("Hero").Y, MRKR("Hero").Direction)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	GAME:WaitFrames(20)
 
 	UI:SetSpeaker(tropius)

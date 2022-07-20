@@ -69,7 +69,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	GROUND:AddMapStatus(50)
 	
 	GAME:WaitFrames(100)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	GROUND:MoveToPosition(noctowl, 184, 272, false, 1)
 	

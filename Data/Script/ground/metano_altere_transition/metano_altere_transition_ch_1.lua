@@ -20,7 +20,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	GROUND:TeleportTo(partner, 260, 340, Direction.Right)
 	GROUND:TeleportTo(hero, 264, 372, Direction.Right)
 	GAME:MoveCamera(236, 184, 1, false)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	--Move to about mid screen, and have the conversation there.
 	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 240, 176, false, 1) end)
@@ -60,7 +60,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	--they consider making something up and pause, but just decide to be honest
 	GeneralFunctions.EmoteAndPause(partner, "Sweatdrop", true)
 	UI:SetSpeakerEmotion('Sad')
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:WaitShowDialogue('Bah...[pause=0] I may as well be honest with you.')
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion('Normal')
@@ -333,7 +333,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	TASK:JoinCoroutines({coro1})
 
 	SOUND:FadeOutBGM()
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	--
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap("metano_town", "Main_Entrance_Marker")

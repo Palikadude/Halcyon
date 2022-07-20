@@ -33,7 +33,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GROUND:TeleportTo(hero, 168, 344, Direction.Up)
 	GROUND:TeleportTo(partner, 200, 344, Direction.Up)
 	
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(60)
 	UI:SetSpeaker('[color=#00FFFF]Guildmaster[color]', true, tropius.CurrentForm.Species, tropius.CurrentForm.Form, tropius.CurrentForm.Skin, tropius.CurrentForm.Gender)
@@ -514,7 +514,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GAME:WaitFrames(120)
 	
 	--rank up to normal rank upon joining guild
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
 	_DATA.Save.ActiveTeam:SetRank(1)

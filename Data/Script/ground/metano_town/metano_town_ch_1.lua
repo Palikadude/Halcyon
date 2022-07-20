@@ -28,7 +28,7 @@ function metano_town_ch_1.PartnerLongingCutscene()
 			{'Cacnea', 416, 1224, Direction.Right}
 		})
 	]]--
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 
 	
 
@@ -222,7 +222,7 @@ function metano_town_ch_1.EnterGuild()
 	GAME:MoveCamera(640, 1208, 1, false)
 	GROUND:TeleportTo(partner, 444, 1200, Direction.Right)
 	GROUND:TeleportTo(hero, 380, 1200, Direction.Right)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	--the partner runs in due to excitement, hero struggling to keep up
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 616, 1200, false, 2) end)
@@ -291,13 +291,13 @@ function metano_town_ch_1.EnterGuild()
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, 'Nod') end)
 	TASK:JoinCoroutines({coro1, coro2})	
 	GAME:WaitFrames(20)
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	
 	--show the guild
 	local frameDur = GeneralFunctions.CalculateCameraFrames(744, 796, 684, 928, 2)
 	GAME:MoveCamera(744, 796, 1, false)
 	GAME:WaitFrames(40)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	GAME:WaitFrames(120)
 	GROUND:TeleportTo(partner, 648, 1064, Direction.Up)
 	GROUND:TeleportTo(hero, 648, 1096, Direction.Up)
@@ -474,7 +474,8 @@ function metano_town_ch_1.EnterGuild()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})	
 
 	GAME:WaitFrames(20)
-	GAME:FadeOut(false, 20)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 40)
 	GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker")
 	
 

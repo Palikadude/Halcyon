@@ -19,7 +19,7 @@ function guildmaster_summit.Enter(map)
     GROUND:Hide("Xatu")
     GROUND:Hide("Lucario")
     GROUND:Hide("Wigglytuff")
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   else
     if not SV.guildmaster_summit.BattleComplete then
       SV.base_camp.ExpositionComplete = true
@@ -63,7 +63,7 @@ function guildmaster_summit.PreBattle()
   end
   
   
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   local xatu = CH('Xatu')
   local lucario = CH('Lucario')
   local wigglytuff = CH('Wigglytuff')

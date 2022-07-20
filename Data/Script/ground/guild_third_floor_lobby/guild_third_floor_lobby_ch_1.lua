@@ -66,7 +66,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 		})
 	
 	
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
@@ -297,7 +297,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 440, 216, false, 1) GROUND:Hide(partner.EntName) end)
 	
 	TASK:JoinCoroutines({coro1, coro2})
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap("guild_guildmasters_room", "Main_Entrance_Marker")
 

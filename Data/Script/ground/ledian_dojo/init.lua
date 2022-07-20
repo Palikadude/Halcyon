@@ -227,8 +227,8 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
 	local risk = RogueEssence.Data.GameProgress.DungeonStakes.Risk
 	--set risk to none if chosen level is a lesson
 	if dest.ID == 51 then risk = RogueEssence.Data.GameProgress.DungeonStakes.None end
-    SOUND:PlayBGM("", true)
-    GAME:FadeOut(false, 20)
+    SOUND:FadeOutBGM(60)
+    GAME:FadeOut(false, 60)
 	GeneralFunctions.SendInvToStorage()--send money and items to the bank
 	GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, risk, true, false)
   end
@@ -247,7 +247,7 @@ function ledian_dojo.GenericTrainingSuccess()
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 	GAME:MoveCamera(204, 184, 1, false)
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 		
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(ledian, 'Exclaim', true)
@@ -304,7 +304,7 @@ function ledian_dojo.GenericTrainingFailure()
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 	GAME:MoveCamera(204, 184, 1, false)
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.EmoteAndPause(ledian, 'Sweating', true)
@@ -318,7 +318,7 @@ function ledian_dojo.GenericTrainingFailure()
 	UI:WaitShowDialogue("Hoiyah![pause=0] Worry not my students![pause=0] The journey to a stronger self is not an easy one.")
 	UI:WaitShowDialogue("This is simply one of the hardships you will encounter on the path to success.")
 	UI:WaitShowDialogue("Wahtah![pause=0] If you continue to seek victory,[pause=10] it cannot continue to hide!")
-	UI:WaitShowDialogue("Go and give it your all again!")
+	UI:WaitShowDialogue("Gather your strength,[pause=10] and go give it your all again!")
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.PanCamera()
@@ -348,6 +348,7 @@ end
 
 function ledian_dojo.Dojo_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("metano_town", "Dojo_Entrance_Marker")
   SV.partner.Spawn = 'Dojo_Entrance_Marker_Partner'

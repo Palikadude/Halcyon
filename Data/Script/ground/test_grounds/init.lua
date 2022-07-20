@@ -172,7 +172,7 @@ function test_grounds.SouthExit_Touch(obj, activator)
   UI:WaitForChoice()
   local chres = UI:ChoiceResult() 
   if chres then
-    GAME:FadeOut(false, 20)
+    GAME:FadeOut(false, 40)
     GAME:EnterGroundMap("base_camp", "entrance_north")
   else
     GROUND:MoveInDirection(activator, Direction.Up, 20)

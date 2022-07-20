@@ -46,13 +46,13 @@ function guild_bottom_left_bedroom_ch_1.Breloom_Action(chara, activator)
 	local partner = CH('Teammate1')
 	
 	if not SV.Chapter1.MetBreloomGirafarig then 
-		GAME:FadeOut(false, 20)
+		GAME:FadeOut(false, 40)
 		GROUND:TeleportTo(partner, 188, 178, Direction.Down)
 		GROUND:TeleportTo(hero, 156, 178, Direction.Down)
 		AI:DisableCharacterAI(partner)
 		GAME:CutsceneMode(true)
 		GAME:MoveCamera(180, 188, 1, false)
-		GAME:FadeIn(20)
+		GAME:FadeIn(40)
 
 
 		GROUND:CharTurnToChar(partner, breloom)

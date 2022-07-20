@@ -405,13 +405,13 @@ function relic_forest_ch_1.Intro_Cutscene()
 		GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
 		_DATA.Save.ActiveTeam:SetRank(1)
 		GAME:CutsceneMode(false)
-		SOUND:FadeOutBGM()
+		SOUND:FadeOutBGM(120)
 		GAME:WaitFrames(120)
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 		return
 	end
 	
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	GAME:WaitFrames(120)
 	
 	GROUND:Hide('Teammate1')--hide partner
@@ -499,7 +499,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
 	GAME:WaitFrames(60)
 	UI:WaitHideTitle(20)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
 
 	
@@ -542,7 +542,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	SOUND:PlayBattleSE('EVT_Emote_Exclaim')
 	GROUND:CharSetEmote(partner, 2, 1)
 	GAME:WaitFrames(20)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Huh?[pause=0] What's that over there?")
 	GeneralFunctions.MoveCharAndCamera(partner, 292, 360, false, 1)
@@ -931,7 +931,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 317, 298, false, 1) end)
 	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 293, 298, false, 1, 20) end)
 	GAME:WaitFrames(40)
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	TASK:JoinCoroutines({coro1, coro2})	
 
 	SV.Chapter1.PartnerMetHero = true
@@ -959,7 +959,7 @@ function relic_forest_ch_1.WipedInForest()
 	GROUND:CharSetAnim(partner, 'EventSleep', true)
 	GROUND:CharSetAnim(hero, 'EventSleep', true)
 
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(120)
 	local coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake') end)
@@ -1005,7 +1005,7 @@ function relic_forest_ch_1.WipedInForest()
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 276, 612, false, 1, 20) end)
 	GAME:WaitFrames(60)
 	SOUND:FadeOutBGM()
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	TASK:JoinCoroutines({coro1, coro2})	
 	
 	GAME:CutsceneMode(false)

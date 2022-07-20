@@ -14,7 +14,7 @@ end
 function guild_hut.Enter(map)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
 end
 
 function guild_hut.Update(map, time)
@@ -29,7 +29,7 @@ end
 --------------------------------------------------
 function guild_hut.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("guild_path", "entrance_hut")
 end
 

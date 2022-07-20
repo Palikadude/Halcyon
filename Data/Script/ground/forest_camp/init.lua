@@ -31,7 +31,7 @@ function forest_camp.Enter(map)
     forest_camp.BeginExposition()
     SV.forest_camp.ExpositionComplete = true
   else
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   end
   
   -- TODO: move this back to BeginExposition
@@ -50,7 +50,7 @@ function forest_camp.BeginExposition()
   UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20);
   GAME:WaitFrames(30);
   UI:WaitHideTitle(20);
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   
   
 end

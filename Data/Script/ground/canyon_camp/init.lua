@@ -26,7 +26,7 @@ function canyon_camp.Enter(map)
     canyon_camp.BeginExposition()
     SV.canyon_camp.ExpositionComplete = true
   else
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   end
 end
 
@@ -41,7 +41,7 @@ function canyon_camp.BeginExposition()
   UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20);
   GAME:WaitFrames(30);
   UI:WaitHideTitle(20);
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   
   GAME:UnlockDungeon(16)
 end

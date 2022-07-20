@@ -26,7 +26,7 @@ function rest_stop.Enter(map)
     rest_stop.BeginExposition()
     SV.rest_stop.ExpositionComplete = true
   else
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   end
 end
 
@@ -41,7 +41,7 @@ function rest_stop.BeginExposition()
   UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20);
   GAME:WaitFrames(30);
   UI:WaitHideTitle(20);
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   
   GAME:UnlockDungeon(6)
 end
