@@ -16,7 +16,7 @@ function illuminant_riverbed_entrance_ch_2.FirstAttemptCutscene()
 	GROUND:TeleportTo(hero, 148, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 116, 256, Direction.Up)
 	
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	GAME:WaitFrames(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 116, 152, false, 1) end)
@@ -52,7 +52,7 @@ function illuminant_riverbed_entrance_ch_2.FirstAttemptCutscene()
 											GROUND:MoveToPosition(hero, 128, -24, false, 1) end)
 
 	TASK:JoinCoroutines({coro1, coro2})
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
 	SV.Chapter2.EnteredRiver = true 
 	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
@@ -70,7 +70,7 @@ function illuminant_riverbed_entrance_ch_2.SubsequentAttemptCutscene()
 	GROUND:TeleportTo(hero, 148, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 116, 256, Direction.Up)
 	
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	GAME:WaitFrames(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 116, 152, false, 1) end)
@@ -106,7 +106,7 @@ function illuminant_riverbed_entrance_ch_2.SubsequentAttemptCutscene()
 											GROUND:MoveToPosition(hero, 128, -24, false, 1) end)
 
 	TASK:JoinCoroutines({coro1, coro2})
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
 	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 

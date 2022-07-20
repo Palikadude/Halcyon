@@ -70,6 +70,7 @@ end
 
 function metano_cafe.Cafe_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("metano_town", "Cafe_Entrance_Marker")
   SV.partner.Spawn = 'Cafe_Entrance_Marker_Partner'

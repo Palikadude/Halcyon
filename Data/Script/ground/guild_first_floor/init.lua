@@ -65,6 +65,7 @@ end
 
 function guild_first_floor.Main_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("metano_town", "Guild_Entrance_Marker")
   SV.partner.Spawn = 'Default'

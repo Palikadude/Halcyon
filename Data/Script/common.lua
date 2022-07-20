@@ -425,9 +425,9 @@ function COMMON.ShowTeamAssemblyMenu(init_fun)
   if result then
     GAME:WaitFrames(10)
 	SOUND:PlayBattleSE("EVT_Assembly_Bell")
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	init_fun()
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   end
 end
 function COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
@@ -485,7 +485,7 @@ function COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   
   if dest:IsValid() then
     SOUND:PlayBGM("", true)
-    GAME:FadeOut(false, 20)
+    GAME:FadeOut(false, 40)
 	if dest.StructID.Segment > -1 then
 	  GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else
@@ -823,7 +823,7 @@ function COMMON.Rescued(zone, mail)
 
   SOUND:PlayBattleSE("EVT_Title_Intro")
   GAME:FadeOut(true, 0)
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
                 --yield return CoroutineManager.Instance.StartCoroutine(GameManager.Instance.FadeIn());
 
   SOUND:PlayBGM("C05. Rescue.ogg", true)

@@ -152,7 +152,7 @@ function guild_heros_room.Bedtime(generic)
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("Today was tiring.[pause=0] We should get some rest so we can give it our all tomorrow!")
 		UI:WaitShowDialogue("OK,[pause=10] good night,[pause=10] " .. hero:GetDisplayName() .. ".")
-		SOUND:FadeOutBGM()
+		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
 		SV.TemporaryFlags.Bedtime = false 
 		GROUND:RemoveMapStatus(50)
@@ -198,7 +198,7 @@ function guild_heros_room.Morning(generic)
 		UI:SetSpeaker(audino)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Good morning sleepyheads![pause=0] It's a bright new day!")
-		GAME:FadeIn(20)
+		GAME:FadeIn(40)
 		GAME:WaitFrames(20)
 	
 		GROUND:CharAnimateTurnTo(audino, Direction.Down, 4)
@@ -267,13 +267,14 @@ end
 ---------------------------
 function guild_heros_room.Bedroom_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
   if SV.TemporaryFlags.JustWokeUp then --skip the hallway if we just woke up and queue up the morning 
+	GAME:FadeOut(false, 40)--longer fade out because we're about to go into a cutscene
 	SV.TemporaryFlags.JustWokeUp = false
 	--SV.TemporaryFlags.MorningAddress = true
 	GAME:EnterGroundMap("guild_third_floor_lobby", "Guild_Third_Floor_Lobby_Right_Marker")
 	SV.partner.Spawn = 'Guild_Third_Floor_Lobby_Right_Marker_Partner'
   else
+	GAME:FadeOut(false, 20)--shorter fade out for generic exit
 	GAME:EnterGroundMap("guild_bedroom_hallway", "Guild_Bedroom_Hallway_Right_Marker")
 	SV.partner.Spawn = 'Guild_Bedroom_Hallway_Right_Marker_Partner'
   end

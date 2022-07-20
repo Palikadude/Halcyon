@@ -115,7 +115,7 @@ function metano_town.North_Exit_Touch(obj, activator)
   UI:WaitForChoice()
   local yesnoResult = UI:ChoiceResult()
   if yesnoResult then 
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
@@ -134,6 +134,7 @@ end
 
 function metano_town.Guild_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker")
   SV.partner.Spawn = 'Default'
@@ -141,6 +142,7 @@ end
 
 function metano_town.Cafe_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("metano_cafe", "Main_Entrance_Marker")
   SV.partner.Spawn = 'Default'
@@ -197,6 +199,7 @@ end
 
 function metano_town.Dojo_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker")
   SV.partner.Spawn = 'Default'

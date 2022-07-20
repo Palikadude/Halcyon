@@ -27,11 +27,11 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	UI:ResetSpeaker()
 	GAME:MoveCamera(272, 8, 1, false)
 	GROUND:TeleportTo(partner, 264, -32, Direction.Down)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 
 	
-	local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(20) end)
+	local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
 	GeneralFunctions.MoveCharAndCamera(partner, 264, 112, false, 1)
 	TASK:JoinCoroutines({coro1})
 	
@@ -123,7 +123,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 224, 400, false, 1) end)
 	GAME:WaitFrames(40)
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	TASK:JoinCoroutines({coro1})	
 	
 	GAME:WaitFrames(60)
@@ -164,9 +164,9 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 ]]--
 
 	GROUND:MoveToPosition(partner, 880, 336, false, 1)
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 920, 296, false, 1) end)
-	GAME:FadeOut(false, 20)
-	TASK:JoinCoroutines({coro1})	
+	GROUND:MoveToPosition(partner, 936, 280, false, 1)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 40)
 	
 	SV.Chapter1.PartnerEnteredForest = true
 
@@ -176,8 +176,6 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	GAME:AddPlayerAssembly(p)
 	
 	--enter dungeon
-	SOUND:FadeOutBGM()
-	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
 	GAME:UnlockDungeon(50)
 	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
@@ -199,7 +197,7 @@ function altere_pond_ch_1.WipedInForest()
 	GAME:MoveCamera(840, 312, 1, false)
 	GROUND:TeleportTo(partner, 840, 336, Direction.Right)
 	GROUND:CharSetAnim(partner, 'EventSleep', true)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	--wake up and look around
 	GAME:WaitFrames(120)
@@ -258,7 +256,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	GAME:MoveCamera(840, 312, 1, false)
 	GROUND:TeleportTo(partner, 936, 280, Direction.Right)
 	GROUND:TeleportTo(hero, 968, 248, Direction.Right)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	--print(DUNGEON:DungeonDisplayName())
 	--move into frame then look around 
@@ -305,14 +303,14 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(30) 
 									   GeneralFunctions.EightWayMove(hero, 840, 392, false, 1) end)
 	GAME:WaitFrames(40)
-	GAME:FadeOut(false, 20)
+	GAME:FadeOut(false, 40)
 	GAME:MoveCamera(272, 8, 1, false)
 	TASK:JoinCoroutines({coro1, coro2})	
 
 	--Show them walking towards the transitionary map
 	GROUND:TeleportTo(partner, 312, 256, Direction.Up)
 	GROUND:TeleportTo(hero, 312, 288, Direction.Up)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	coro1 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(hero) end)
 	coro2 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(partner) end)
 	TASK:JoinCoroutines({coro1, coro2})	
@@ -338,7 +336,7 @@ function altere_pond_ch_1.test()
 	GAME:MoveCamera(272, 8, 1, false)
 	GROUND:TeleportTo(partner, 312, 256, Direction.Up)
 	GROUND:TeleportTo(hero, 312, 288, Direction.Up)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	coro1 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(hero) end)
 	coro2 = TASK:BranchCoroutine(function() altere_pond_ch_1.LeaveNorthWalkSequence(partner) end)
 	TASK:JoinCoroutines({coro1, coro2})	

@@ -313,7 +313,7 @@ function metano_town_ch_2.Event_Trigger_9_Touch(obj, activator)
 												GROUND:MoveToPosition(hero, 244, -24, false, 1) end)
 
 		TASK:JoinCoroutines({coro1, coro2})	
-		SOUND:FadeOutBGM()
+		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
 		
 		GAME:WaitFrames(120)
@@ -541,7 +541,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] look over there!")
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	GAME:WaitFrames(20)
 	
 	--set this to true to stop their running 
@@ -622,7 +622,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GeneralFunctions.ShakeHead(numel)
 	UI:SetSpeaker(numel)
 	UI:SetSpeakerEmotion("Sad")
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:WaitShowDialogue("But I don't wanna![pause=0] I hate doing my chores!")
 	
 	GAME:WaitFrames(20)
@@ -740,7 +740,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	GAME:WaitFrames(20)
 	
 	--player and partner lament on what they just saw, partner mentions they should head to the guild when player is ready to eat dinner
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	GROUND:CharSetAnim(oddish, "Idle", true)
 	GROUND:CharSetAnim(numel, "Idle", true)
 	

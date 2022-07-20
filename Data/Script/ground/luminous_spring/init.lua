@@ -96,7 +96,7 @@ function luminous_spring.GenericEnding()
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
 	GAME:WaitFrames(60)
 	UI:WaitHideTitle(20)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
 	
@@ -117,7 +117,7 @@ function luminous_spring.GenericEnding()
 	UI:WaitShowDialogue("There doesn't appear to be anything of interest here.")
 	UI:WaitShowDialogue("It's impossible to go any further.[pause=0]\nIt's time to go back.")
 	UI:SetCenter(false)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(20)
@@ -133,7 +133,7 @@ end
 Base Game functionality, commented out 
 function luminous_spring.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("base_camp_2", "entrance_north")
 end
 
@@ -268,7 +268,7 @@ function luminous_spring.Spring_Touch(obj, activator)
 			GAME:WaitFrames(30)
 			
 			SOUND:PlayBattleSE("EVT_Title_Intro")
-			GAME:FadeIn(20)
+			GAME:FadeIn(40)
 			SOUND:PlayFanfare("Fanfare/Promotion")
 			
 			

@@ -88,7 +88,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GROUND:CharSetAnim(zigzagoon, 'Idle', true)
 
 
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	AI:SetCharacterAI(jigglypuff, "ai.ground_talking", true, 240, 60, 130, false, 'Default', {marill, spheal})
 	AI:SetCharacterAI(marill, "ai.ground_talking", true, 240, 60, 0, false, 'Default', {jigglypuff})
@@ -350,7 +350,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(58) 
 								GROUND:MoveInDirection(partner, Direction.UpRight, 32, false, 1)
 								GROUND:MoveToPosition(partner, 500, 272, false, 1) end)
-	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(160) GAME:FadeOut(false, 20) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(160) GAME:FadeOut(false, 40) end)
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
@@ -420,8 +420,6 @@ function guild_second_floor_ch_1.SetupGround()
 	
 	AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(320, 320), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
-	
-	
 	GAME:FadeIn(20)
 end
 
@@ -617,7 +615,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 	local partner = CH('Teammate1')
 	
 	if not SV.Chapter1.MetCranidosMareep then 
-		GAME:FadeOut(false, 20)
+		GAME:FadeOut(false, 40)
 		AI:DisableCharacterAI(partner)
 		AI:DisableCharacterAI(mareep)
 		GROUND:TeleportTo(hero, 408, 280, Direction.Up)
@@ -631,7 +629,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GROUND:CharSetAnim(CH('Zigzagoon'), "Idle", true)
 
 		partner.IsInteracting = true
-		GAME:FadeIn(20)
+		GAME:FadeIn(40)
 		
 		
 		UI:SetSpeaker(cranidos)
@@ -650,7 +648,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, cranidos.CurrentForm.Species, cranidos.CurrentForm.Form, cranidos.CurrentForm.Skin, cranidos.CurrentForm.Gender)
 		GROUND:CharTurnToCharAnimated(cranidos, partner, 4)
-		SOUND:FadeOutBGM()
+		SOUND:FadeOutBGM(120)
 		UI:WaitShowDialogue("Wait,[pause=10] YOU guys were allowed into the guild?[pause=0] What a laugh!")
 		UI:WaitShowDialogue("The Guildmaster's just letting anyone in,[pause=10] isn't he?")
 		GAME:WaitFrames(20)

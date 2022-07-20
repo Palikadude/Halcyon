@@ -59,7 +59,7 @@ function base_camp_2.Enter(map)
   GROUND:Hide("Mission_Board")
   GROUND:Hide("Locator")
   GROUND:Hide("Locator_Owner")
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
 end
 
 function base_camp_2.Update(map, time)
@@ -91,19 +91,19 @@ end
 --------------------------------------------------
 function base_camp_2.West_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("base_camp", "entrance_east")
 end
 
 function base_camp_2.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("luminous_spring", "entrance_south")
 end
 
 function base_camp_2.Post_Office_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("post_office", "entrance_south", true)
 end
 

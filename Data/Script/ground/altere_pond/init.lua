@@ -77,6 +77,7 @@ end
 
 function altere_pond.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
   GAME:EnterGroundMap("metano_altere_transition", "Metano_Altere_Transition_South_Entrance_Marker")
   SV.partner.Spawn = 'Metano_Altere_Transition_South_Entrance_Marker_Partner'
@@ -90,7 +91,7 @@ function altere_pond.East_Exit_Touch(obj, activator)
 	UI:WaitForChoice()
 	local yesnoResult = UI:ChoiceResult()
 	if yesnoResult then 
-		SOUND:FadeOutBGM()
+		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
 		GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 	end

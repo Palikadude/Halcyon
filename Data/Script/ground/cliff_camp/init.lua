@@ -27,7 +27,7 @@ function cliff_camp.Enter(map)
     cliff_camp.BeginExposition()
     SV.cliff_camp.ExpositionComplete = true
   else
-    GAME:FadeIn(20)
+    GAME:FadeIn(40)
   end
 
 end
@@ -42,7 +42,7 @@ function cliff_camp.BeginExposition()
   UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20);
   GAME:WaitFrames(30);
   UI:WaitHideTitle(20);
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   GAME:UnlockDungeon(4)
 end
 --------------------------------------------------

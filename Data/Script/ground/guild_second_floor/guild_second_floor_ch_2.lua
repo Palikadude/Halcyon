@@ -65,6 +65,7 @@ function guild_second_floor_ch_2.SetupGround()
 	end
 	
 	GAME:FadeIn(20)
+	
 end
 
 function guild_second_floor_ch_2.CameruptRequestCutscene()
@@ -92,7 +93,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	GROUND:TeleportTo(hero, 340, 280, Direction.Left)
 	SOUND:StopBGM()
 	
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 192, 280, false, 1)
@@ -153,7 +154,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	--camerupt comes in in a panic
 	GAME:WaitFrames(40)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	local camerupt = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Camerupt', 248, 208, Direction.Down}
@@ -287,7 +288,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:WaitShowDialogue("Oh,[pause=10] " .. CharacterEssentials.GetCharacterName('Numel') .. "...")
 	
 	GAME:WaitFrames(20)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue('Did you say that he wished he wanted to be "grown up"?')
 	
@@ -463,7 +464,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 	GROUND:TeleportTo(partner, 88, 256, Direction.Up)
 	GROUND:TeleportTo(hero, 120, 256, Direction.Up)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	SOUND:PlayBGM("Job Clear!.ogg", true)
 	
 	UI:SetSpeaker(camerupt)
@@ -581,9 +582,11 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4)
 											GeneralFunctions.DoubleHop(partner)
 											GROUND:CharSetEmote(partner, 4, 0)
+											GROUND:CharSetAnim(partner, "Idle", true)
 											UI:WaitShowTimedDialogue("Haha,[pause=10] we really did it,[pause=10] " .. hero:GetDisplayName() .. "!", 60) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
 											GROUND:CharTurnToCharAnimated(hero, partner, 4)
+											GROUND:CharSetAnim(hero, "Idle", true)
 											GROUND:CharSetEmote(hero, 4, 0) end)
 	coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(noctowl, Direction.UpLeft, 4)
 											GeneralFunctions.EightWayMove(noctowl, 104, 224, false, 1)
@@ -600,6 +603,8 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	GROUND:CharSetEmote(partner, -1, 0)
 	GROUND:CharSetEmote(hero, -1, 0)
 	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
 	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
 	
@@ -607,7 +612,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	UI:WaitShowDialogue("To think that he was naïve enough to think he was ready for evolution.") 
 	
 	GAME:WaitFrames(20)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("That reminds me...[pause=0] " .. noctowl:GetDisplayName() .. "...")
@@ -700,7 +705,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(hero, Direction.Right, 4)
 											GROUND:MoveToPosition(hero, 300, 256, false, 1)
-											SOUND:FadeOutBGM() end)
+											SOUND:FadeOutBGM(120) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											GROUND:MoveToPosition(partner, 300, 256, false, 1) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)

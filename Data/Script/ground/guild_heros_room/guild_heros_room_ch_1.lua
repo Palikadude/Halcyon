@@ -18,7 +18,7 @@ function guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
 	if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
-		UI:WaitShowDialogue("It's getting late...[pause=0] And I think we've looked around the guild enough...")
+		GeneralFunctions.StartPartnerConversation("It's getting late...[pause=0] And I think we've looked around the guild enough...")
 		UI:ChoiceMenuYesNo("Do you wanna hit the hay for tonight?")
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
@@ -26,20 +26,23 @@ function guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)
 			UI:WaitShowDialogue("Alright,[pause=10] let's call it a day then.")
 			UI:WaitShowDialogue("Tomorrow's going to be a big day,[pause=10] so we need to get plenty of rest.")
 			UI:WaitShowDialogue("Good night,[pause=10] " .. hero:GetDisplayName() .. ".")
-			SOUND:FadeOutBGM()
+			SOUND:FadeOutBGM(120)
 			GAME:FadeOut(false, 60)
 			GAME:WaitFrames(120)
+		GeneralFunctions.EndConversation(partner)
 			guild_heros_room_ch_1.Bedtalk()
 		else
 			UI:WaitShowDialogue("OK,[pause=10] we can look around a little more.")
 			UI:WaitShowDialogue("But we shouldn't stay up much longer![pause=0] We want to be energized for tomorrow!")
 			GAME:WaitFrames(20)
 			GeneralFunctions.PromptSaveAndQuit()
+			GeneralFunctions.EndConversation(partner)
 	end
 	else
-		UI:WaitShowDialogue("It's not that late yet...[pause=0] Let's look around the guild and try to meet all of the other guild members!")
+		GeneralFunctions.StartPartnerConversation("It's not that late yet...[pause=0] Let's look around the guild and try to meet all of the other guild members!")
 		GAME:WaitFrames(20)
 		GeneralFunctions.PromptSaveAndQuit()
+		GeneralFunctions.EndConversation(partner)
 	end
 end
 
@@ -58,7 +61,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	GeneralFunctions.CenterCamera({hero, partner})
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:CharSetAnim(partner, 'Laying', true)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	SOUND:PlayBGM("Goodnight.ogg", true)
 	GAME:WaitFrames(60)
@@ -93,7 +96,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	GAME:WaitFrames(20)
 	
 	GROUND:CharSetAnim(partner, "EventSleep", true)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(60)
 	GAME:WaitFrames(60)
 	
 	UI:SetSpeaker('', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
@@ -147,14 +150,17 @@ function guild_heros_room_ch_1.Bedtalk()
 	--UI:WaitShowDialogue("Alright.[pause=0] I'm enabling free roam now...[pause=0] Thanks again for playing!")
 	
 	--GAME:CutsceneMode(false)
-	GeneralFunctions.PromptSaveAndQuit()
+	GROUND:RemoveMapStatus(50)--Remove map status before saving the game, as saving with a map status saves it for the next load.
+	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker")
+--	GAME:WaitFrames(20)
+	--GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 	--[[GAME:CutsceneMode(false)
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)
 	GROUND:RemoveMapStatus(50)
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", false)
 	GROUND:
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)]]--
 		
@@ -182,7 +188,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	GROUND:TeleportTo(partner, -32, 192, Direction.Right)
 	GROUND:TeleportTo(hero, -32, 216, Direction.Right)
 
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 
 	local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
 												  GROUND:MoveToPosition(partner, 172, 192, false, 1)

@@ -75,7 +75,7 @@ function base_camp.Enter(map)
     local noctowl = CH('Noctowl')
     GROUND:TeleportTo(noctowl, 244, 286, Direction.Up)
   end
-  GAME:FadeIn(20)
+  GAME:FadeIn(40)
   
   --When the player gets back after fainting for the first time, play this cutscene
   if SV.base_camp.IntroComplete and not SV.base_camp.ExpositionComplete then
@@ -209,20 +209,20 @@ function base_camp.First_North_Exit_Touch(obj, activator)
   UI:WaitForChoice()
   ch = UI:ChoiceResult()
   if ch then
-    GAME:FadeOut(false, 20)
+    GAME:FadeOut(false, 40)
     GAME:EnterDungeon(19, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
 end
 
 function base_camp.West_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("guild_path", "entrance_east")
 end
 
 function base_camp.East_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  GAME:FadeOut(false, 20)
+  GAME:FadeOut(false, 40)
   GAME:EnterGroundMap("base_camp_2", "entrance_west")
 end
 
@@ -264,7 +264,7 @@ function base_camp.Noctowl_Action(chara, activator)
     UI:WaitForChoice()
     result = UI:ChoiceResult()
     if result == 1 then
-      GAME:FadeOut(false, 20)
+      GAME:FadeOut(false, 40)
       GAME:EnterDungeon(35, 0, 9, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, false, true)
       break
     elseif result == 3 then

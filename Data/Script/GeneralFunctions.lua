@@ -765,13 +765,14 @@ function GeneralFunctions.PromptSaveAndQuit()
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved!")
+		GAME:WaitFrames(20)
 	elseif result == 2 then 
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
-		GAME:FadeOut(false, 20)
+		GAME:WaitFrames(20)
+		GAME:FadeOut(false, 40)
 		GAME:RestartToTitle()
-		return
 	end
 end
 
@@ -781,17 +782,18 @@ function GeneralFunctions.PromptSave()
 	UI:ChoiceMenuYesNo("Would you like to save your game?")
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
-	if result == 1 then 
+	if result then 
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved!")
+		GAME:WaitFrames(20)
 	end
 end
 
 --used for chapter end save and quit prompts. Needs to be its own function as we can't call a map transition after if we choose save and quit.
 --this should really only ever be called if the ground you want to enter next is the one you're already on.
 --also this is kind of a workaround method due to how map transitions and reset to title works.
---[[
+
 function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker)
 	UI:ResetSpeaker()
 	UI:BeginChoiceMenu("What would you like to do?", {"Save and continue.", "Save and quit.", "Cancel"}, 1, 3)
@@ -806,11 +808,10 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker)
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
-		GAME:FadeOut(false, 20)
+		GAME:FadeOut(false, 40)
 		GAME:RestartToTitle()
 	end
 end
-]]--
 
 --sends all bagged items and money to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
 function GeneralFunctions.SendInvToStorage()

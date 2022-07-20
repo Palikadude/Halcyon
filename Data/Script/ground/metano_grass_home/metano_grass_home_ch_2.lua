@@ -21,7 +21,6 @@ function metano_grass_home_ch_2.SetupGround()
 	
 	end
 	
-	
 	GAME:FadeIn(20)
 end
 

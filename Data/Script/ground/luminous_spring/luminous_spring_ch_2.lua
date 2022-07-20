@@ -23,7 +23,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
 	GAME:WaitFrames(60)
 	UI:WaitHideTitle(20)
-	GAME:FadeIn(20)
+	GAME:FadeIn(40)
 	
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
 	
@@ -48,7 +48,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	GeneralFunctions.LookAround(partner, 4, 4, true, false, false, Direction.Up)
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	UI:SetSpeakerEmotion("Surprised")
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(120)
 	UI:WaitShowDialogue("Oh![pause=0] " .. hero:GetDisplayName() .. "![pause=0] Look over there!")
 	GAME:WaitFrames(20)
 	
@@ -285,7 +285,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	
 
 	GAME:WaitFrames(30)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)	
 	GAME:WaitFrames(90)
 	SV.Chapter2.FinishedRiver = true 
