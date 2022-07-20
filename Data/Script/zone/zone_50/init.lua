@@ -61,13 +61,16 @@ function zone_50.ExitSegment(zone, result, rescue, segmentID, mapID)
 				print("error in resulting relic forest completion")
 			end
 		end
-	else--todo: generic case (no special cutscenes to be played)
-		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then
-				SV.DungeonFlags.GenericEnding = true
-		elseif result == RogueEssence.Data.GameProgress.ResultType.Escaped then
-				--???
-		else
-		
+	else--generic case (no special cutscenes to be played)
+		--set generic flags for generic end of day / start of next day.
+		SV.TemporaryFlags.Dinnertime = true 
+		SV.TemporaryFlags.Bedtime = true
+		SV.TemporaryFlags.MorningWakeup = true 
+		SV.TemporaryFlags.MorningAddress = true 
+		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then--go to relic forest, end the dungeon run in that ground
+			GAME:EnterZone(0, -1, 0, 0)
+		else--go to dinner 
+			GeneralFunctions.EndDungeonRun(result, 0, -1, 6, 0, true, true)
 		end
 	end
 end

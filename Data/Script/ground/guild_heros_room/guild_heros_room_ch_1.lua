@@ -112,9 +112,10 @@ function guild_heros_room_ch_1.Bedtalk()
 	UI:WaitShowDialogue("(So shouldn't I be feeling more uneasy?)")
 	GAME:WaitFrames(60)
 	
-	UI:WaitShowDialogue("(Even more troubling...)")
-	UI:WaitShowDialogue("(Why do I have this weird feeling of déjà vu?)")
-	GAME:WaitFrames(60)
+	--not thematically appropriate on second thought. Hero hasn't necessarily played explorers. Strange feelings felt elsewhere that tip off to "playing explorers" can instead be interpreted as the hero is progressing along the path he wants to / should progress on and is progressing the plot as he should.
+	--UI:WaitShowDialogue("(Even more troubling...)")
+	--UI:WaitShowDialogue("(Why do I have this weird feeling of déjà vu?)")
+	--GAME:WaitFrames(60)
 	
 	UI:WaitShowDialogue("(.........)")
 	UI:WaitShowDialogue("(I guess there isn't any point in trying to get myself psyched out about my situation.)")
@@ -146,7 +147,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	--UI:WaitShowDialogue("Alright.[pause=0] I'm enabling free roam now...[pause=0] Thanks again for playing!")
 	
 	--GAME:CutsceneMode(false)
-    GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
+	GeneralFunctions.PromptSaveAndQuit()
 	--[[GAME:CutsceneMode(false)
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)

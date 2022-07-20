@@ -76,9 +76,94 @@ function relic_forest.PlotScripting()
 	  relic_forest_ch_1.WipedInForest()
 	end
   else 
-	GAME:FadeIn(20)
+	relic_forest.GenericEnding()
   end
 end
+
+--No cutscene to play, play a generic ending saying there's nothing here.
+--todo: add in teammate 2 and teammate 3 if they exist. not needed for now.
+--todo: have results screen pop up after this instead of before this
+function relic_forest.GenericEnding()
+local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	AI:DisableCharacterAI(partner)
+	SOUND:StopBGM()
+	GAME:WaitFrames(20)
+
+	
+	GROUND:TeleportTo(hero, 277, 400, Direction.Up)
+	GROUND:TeleportTo(partner, 309, 400, Direction.Up)
+	GAME:MoveCamera(301, 224, 1, false)
+		
+	GAME:CutsceneMode(true)
+	UI:ResetSpeaker()
+	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
+	GAME:WaitFrames(60)
+	UI:WaitHideTitle(20)
+	GAME:FadeIn(20)
+	
+	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
+	
+	--numbers a bit wonk for camera and movement (not multiples of 2) to help match up with the slightly offcenter tablet and the other relic forest scripts
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 309, 240, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												  GROUND:MoveToPosition(hero, 277, 240, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(10)	
+	
+	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												  GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
+	TASK:JoinCoroutines({coro1, coro2})
+
+	--temporary flags are set by the zone script rather than here.
+	GAME:WaitFrames(20)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("There doesn't appear to be anything of interest here.")
+	UI:WaitShowDialogue("It's impossible to go any further.[pause=0]\nIt's time to go back.")
+	GAME:WaitFrames(40)
+	
+	--touch the rock, for luck 
+	UI:WaitShowDialogue("...But first...")
+	GAME:WaitFrames(20)
+	GeneralFunctions.EightWayMove(partner, 293, 210, false, 1)
+	GAME:WaitFrames(20)
+	GROUND:CharPoseAnim(partner, 'Pose')
+	GAME:WaitFrames(60)
+	GROUND:CharEndAnim(partner)
+	GAME:WaitFrames(20)
+	GROUND:AnimateToPosition(partner, "Walk", Direction.Up, 293, 218, 1, 1)
+	GAME:WaitFrames(30)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Left, 4)
+											GROUND:AnimateToPosition(partner, "Walk", Direction.Left, 325, 218, 1, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(32) 
+											GeneralFunctions.EightWayMove(hero, 293, 210, false, 1)	end)
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(20)
+	GROUND:CharPoseAnim(hero, 'Pose')
+	GAME:WaitFrames(60)	
+	GROUND:CharEndAnim(hero)
+	GAME:WaitFrames(20)
+	GROUND:AnimateToPosition(hero, "Walk", Direction.Up, 293, 218, 1, 1)
+	GAME:WaitFrames(20)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	GAME:WaitFrames(20)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, "Nod") end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, "Nod") end)
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue("...For luck.")
+	GAME:WaitFrames(30)
+	UI:SetCenter(false)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 60)
+	GAME:CutsceneMode(false)
+	GAME:WaitFrames(20)
+	GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, 0, -1, 6, 0, true, true)
+
+end
+
 
 function relic_forest.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine

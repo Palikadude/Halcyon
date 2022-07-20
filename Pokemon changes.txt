@@ -3,3 +3,4 @@ All mons use ORAS learnsets, unless they were introduced later, in which case th
 Vulpix-A: Ice shard moved from level 10 to level 1. Powder snow removed.
 Zorua: Ability 1 Illusion changed to Keen eye.
 Rowlet: Leafage at level 1 changed to Vine Whip as leafage is non-functional.
+Cubone: Gets tackle at level 1. By level 5, its level moveset originally was only growl and tail whip, which is pretty awkward.

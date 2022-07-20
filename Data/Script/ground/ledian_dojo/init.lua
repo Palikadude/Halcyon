@@ -242,7 +242,6 @@ function ledian_dojo.GenericTrainingSuccess()
 	local ledian = CH('Sensei')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
-	GROUND:CharSetAnim(ledian, "Idle", true)	
 	
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
@@ -300,7 +299,6 @@ function ledian_dojo.GenericTrainingFailure()
 	local ledian = CH('Sensei')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
-	GROUND:CharSetAnim(ledian, "Idle", true)	
 	
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
@@ -316,7 +314,6 @@ function ledian_dojo.GenericTrainingFailure()
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.DoubleHop(ledian)
-	GROUND:CharSetAnim(ledian, "Idle", true)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Hoiyah![pause=0] Worry not my students![pause=0] The journey to a stronger self is not an easy one.")
 	UI:WaitShowDialogue("This is simply one of the hardships you will encounter on the path to success.")
@@ -331,7 +328,6 @@ function ledian_dojo.GenericTrainingFailure()
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 	GAME:CutsceneMode(false)	
-	GROUND:CharEndAnim(ledian)
 	
 end
 		

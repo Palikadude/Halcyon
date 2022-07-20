@@ -714,7 +714,6 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	
 
 	GAME:FadeOut(false, 60)
-	GAME:WaitFrames(60)
 	SV.TemporaryFlags.Dinnertime = true
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")

@@ -115,7 +115,8 @@ function metano_town.North_Exit_Touch(obj, activator)
   UI:WaitForChoice()
   local yesnoResult = UI:ChoiceResult()
   if yesnoResult then 
-	GAME:FadeOut(false, 20)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 60)
 	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
 end
@@ -255,7 +256,6 @@ end
 
 function metano_town.Merchants_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
-	print("Shart")
 	SV.metano_town.Locale = 'Merchants'
 end
 
@@ -2359,4 +2359,24 @@ function metano_town.Assembly_Action(obj, activator)
   COMMON.ShowTeamAssemblyMenu(COMMON.RespawnAllies)
 end
 
+function metano_town.Well_Action(obj, activator)
+  DEBUG.EnableDbgCoro()
+  UI:ResetSpeaker()
+  UI:SetCenter(true)
+  UI:ChoiceMenuYesNo("Would you like to throw a " .. STRINGS:Format("\\uE024") .. " in?")
+  UI:WaitForChoice()
+  local result = UI:ChoiceResult()
+  if result then 
+	  local money = GAME:GetPlayerMoney()
+	  if money < 1 then 
+		UI:WaitShowDialogue("You don't have any money!")
+	  else 
+		GAME:RemoveFromPlayerMoney(1)
+		SOUND:PlayBattleSE("_UNK_DUN_Water_Drop")
+		UI:WaitShowDialogue("You threw a " .. STRINGS:Format("\\uE024") .. " into the well!\nMay good luck come your way!")
+	  end
+   end 
+   UI:SetCenter(false)
+end   
+   
 return metano_town

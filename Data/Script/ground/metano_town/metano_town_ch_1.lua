@@ -134,8 +134,9 @@ function metano_town_ch_1.PartnerLongingCutscene()
 
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 444, 1208, false, 1) end)
-	GAME:WaitFrames(166)
-	GAME:FadeOut(false, 20)
+	GAME:WaitFrames(186)
+	SOUND:FadeOutBGM()
+	GAME:FadeOut(false, 40)
 	TASK:JoinCoroutines({coro1})	
 	
 		

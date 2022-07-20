@@ -74,6 +74,8 @@ function guild_guildmasters_room.PlotScripting()
 		else
 			GAME:FadeIn(20)
 		end
+	else
+		GAME:FadeIn(20)
 	end
 end
 

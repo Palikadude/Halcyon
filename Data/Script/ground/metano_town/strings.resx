@@ -836,6 +836,6 @@
     <value>A {1} will cost you {0} \uE024.</value>
   </data>
   <data name="TM_Shop_Sell_Complete" xml:space="preserve">
-    <value>Another closed sale! \u266a Thank you my friends \u266a</value>
+    <value>Another closed sale! \u266a Thank you my friends! \u266a</value>
   </data>
 </root>

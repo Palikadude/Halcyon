@@ -490,7 +490,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:TeleportTo(hero, marker.Position.X, marker.Position.Y, Direction.Right)
 
-
+	SOUND:StopBGM()
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
@@ -500,6 +500,8 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(60)
 	UI:WaitHideTitle(20)
 	GAME:FadeIn(20)
+	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
+
 	
 	--walk into frame from the bottom 
 	GeneralFunctions.MoveCharAndCamera(partner, 292, 528, false, 1)
@@ -1002,6 +1004,7 @@ function relic_forest_ch_1.WipedInForest()
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 308, 612, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 276, 612, false, 1, 20) end)
 	GAME:WaitFrames(60)
+	SOUND:FadeOutBGM()
 	GAME:FadeOut(false, 20)
 	TASK:JoinCoroutines({coro1, coro2})	
 	

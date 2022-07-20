@@ -107,6 +107,11 @@ function guild_third_floor_lobby.PostAddressScripting()
 		if SV.Chapter2.EnteredRiver then 
 			guild_third_floor_lobby_ch_2.FailedRiver()--partner mentions that you need to go return to Illuminant Riverbed to rescue numel
 		end
+	else --if there's nothing special to do, just give back control.
+		GeneralFunctions.PanCamera()
+		GAME:CutsceneMode(false)
+		AI:EnableCharacterAI(CH('Teammate1'))
+		AI:SetCharacterAI(CH('Teammate1'), "ai.ground_partner", CH('PLAYER'), CH('Teammate1').Position)
 	end
 end
 
@@ -183,14 +188,13 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	GROUND:EntTurn(hero, Direction.Up)
 	GROUND:EntTurn(partner, Direction.Up)
 	
-	--todo: replace with poses when the animations for them exist
 	GROUND:CharPoseAnim(growlithe, "Pose")
 	GROUND:CharPoseAnim(zigzagoon, "Pose")
 	GROUND:CharPoseAnim(breloom, "Pose")
 	GROUND:CharPoseAnim(girafarig, "Pose")
 	GROUND:CharPoseAnim(cranidos, "Pose")
 	GROUND:CharPoseAnim(mareep, "Pose")
-	GROUND:CharPoseAnim(audino, "SpAttack")
+	GROUND:CharPoseAnim(audino, "Pose")
 	GROUND:CharPoseAnim(snubbull, "Pose")	
 	GROUND:CharPoseAnim(partner, "Pose")	
 	GROUND:CharPoseAnim(hero, "Pose")	

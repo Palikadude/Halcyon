@@ -32,6 +32,7 @@ function guild_heros_room_ch_2.FirstMorning()
 			{"Audino", 120, 204, Direction.UpRight},
 		})
 
+	GAME:WaitFrames(80)
 	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTitle("Chapter 2\n\nThe First Mission\n", 20)
 												  GAME:WaitFrames(180)
 												  UI:WaitHideTitle(20) end)

@@ -90,7 +90,8 @@ function altere_pond.East_Exit_Touch(obj, activator)
 	UI:WaitForChoice()
 	local yesnoResult = UI:ChoiceResult()
 	if yesnoResult then 
-		GAME:FadeOut(false, 20)
+		SOUND:FadeOutBGM()
+		GAME:FadeOut(false, 60)
 		GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 	end
 end 
