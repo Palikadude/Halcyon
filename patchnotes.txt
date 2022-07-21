@@ -70,3 +70,4 @@ v0.1.4
 -added short delay after saving through a prompt to prevent mashing causing you to talk to partner.
 -Please keep an ear and eye out for sound and fade in/outs on map/scene transitions! let me know if you've found an inconsistency! It's hard to do it all myself perfectly.
 -Adjusted partner/player so they will idle in some cutscenes in chapter 2 if they are excited to be more consistent with how they are in chapter 1.
+-Fixed purple kecleon's missing portraits.
