@@ -3,6 +3,7 @@ require 'GeneralFunctions'
 require 'PartnerEssentials'
 require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
+require 'ground.metano_town.metano_town_ch_3'
 
 
 local MapStrings = {}
@@ -123,6 +124,11 @@ end
 
 function metano_town.East_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  GeneralFunctions.StartPartnerConversation("Where should we go,[pause=10] " .. CH('PLAYER'):GetDisplayName() .. "?", "Normal", false)
+  GAME:WaitFrames(20)
+  local dungeons = {50, 53, 57}--this needs to be updated when more dungeons come out.
+  local grounds = {}
+  COMMON.ShowDestinationMenu(dungeons, grounds)
 end
 
 function metano_town.South_Exit_Touch(obj, activator)

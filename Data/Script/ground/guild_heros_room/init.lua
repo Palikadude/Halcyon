@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.guild_heros_room.guild_heros_room_ch_1'
 require 'ground.guild_heros_room.guild_heros_room_ch_2'
+require 'ground.guild_heros_room.guild_heros_room_ch_3'
 
 
 -- Package name
@@ -86,7 +87,13 @@ function guild_heros_room.PlotScripting()
 			else
 				GAME:FadeIn(20)
 			end
-		else 
+		elseif SV.ChapterProgression.Chapter == 3 then 
+			if not SV.Chapter3.ShowedTitleCard then 
+				guild_heros_room_ch_3.FirstMorning()
+			else
+				GAME:FadeIn(20)
+			end
+		else
 			GAME:FadeIn(20)
 		end
 	end

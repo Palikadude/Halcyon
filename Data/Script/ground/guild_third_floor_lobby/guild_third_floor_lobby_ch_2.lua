@@ -7,15 +7,6 @@ guild_third_floor_lobby_ch_2 = {}
 
 function guild_third_floor_lobby_ch_2.SetupGround()
 
-	local board = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-													RogueElements.Rect(264, 216, 48, 8),
-													RogueElements.Loc(0, 0), 
-													false, 
-													"Event_Object_1")
-	
-	board:ReloadEvents()
-	GAME:GetCurrentGround():AddTempObject(board)
-	
 	--noctowl should not appear if this is the 2nd day, as he would be down on the 2nd floor 
 	if SV.Chapter2.EnteredRiver or not SV.Chapter2.FinishedFirstDay then 
 		local noctowl = CharacterEssentials.MakeCharactersFromList({
@@ -28,13 +19,6 @@ function guild_third_floor_lobby_ch_2.SetupGround()
 end
 
 
-function guild_third_floor_lobby_ch_2.Event_Object_1_Action(obj, activator)
-	UI:ResetSpeaker(false)
-	UI:SetCenter(true)
-	UI:WaitShowDialogue("(There are a number of internal guild postings here...)")
-	UI:WaitShowDialogue("(...But you're not really sure what to make of them yet.)")
-	UI:SetCenter(false)
-end
 
 ----------------
 --NPC Scripts
@@ -275,21 +259,21 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	
 	--everyone leaves
 	GAME:WaitFrames(40)
-	coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby_ch_2.ApprenticeLeave(growlithe) end)
+	coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeave(growlithe) end)
 	coro2 = TASK:BranchCoroutine(function() --GAME:WaitFrames(6) 
-											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(zigzagoon) end)
+											guild_third_floor_lobby.ApprenticeLeaveBottom(zigzagoon) end)
 	coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(10)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(mareep) end)
+											guild_third_floor_lobby.ApprenticeLeave(mareep) end)
 	coro4 = TASK:BranchCoroutine(function() --GAME:WaitFrames(18)
-											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(cranidos) end)
+											guild_third_floor_lobby.ApprenticeLeaveBottom(cranidos) end)
 	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(snubbull) end)
+											guild_third_floor_lobby.ApprenticeLeave(snubbull) end)
 	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(audino) end)
+											guild_third_floor_lobby.ApprenticeLeaveBottom(audino) end)
 	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby_ch_2.ApprenticeLeave(breloom) end)
+											guild_third_floor_lobby.ApprenticeLeave(breloom) end)
 	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(girafarig) end)
+											guild_third_floor_lobby.ApprenticeLeaveBottom(girafarig) end)
 	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
 											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
 	coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 
@@ -461,7 +445,7 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 	UI:WaitShowDialogue("She talked big about her food yesterday,[pause=10] but I didn't think she would go that far.")
 	
 	GAME:WaitFrames(20)
-	UI:SetSpeaker(girafarig)
+	UI:SetSpeaker(girafarig)2
 	UI:WaitShowDialogue("Yup,[pause=10] " .. snubbull:GetDisplayName() .. " takes her cooking very seriously.")
 	UI:WaitShowDialogue("I wish she didn't take so long though to finish dinner.")
 	UI:WaitShowDialogue("We've been waiting for quite a bit now![pause=0] " .. CharacterEssentials.GetCharacterName("Tail") .. " and I are starving!")
@@ -655,8 +639,7 @@ function guild_third_floor_lobby_ch_2.BeforeFirstDinner()
 
 end
 
-function guild_third_floor_lobby_ch_2.SecondMorningAddress()
-	guild_third_floor_lobby.MorningAddress(false)
+function guild_third_floor_lobby_ch_2.PostSecondMorningAddress()
 	local noctowl = CH('Noctowl')
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
@@ -712,19 +695,4 @@ function guild_third_floor_lobby_ch_2.FailedRiver()
 
 end
 
---used for having apprentices leave towards the stairs
-function guild_third_floor_lobby_ch_2.ApprenticeLeave(chara)
-	GeneralFunctions.EightWayMove(chara, 544, 280, false, 1)
-	GeneralFunctions.EightWayMove(chara, 628, 200, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-
-end
-
---used for having apprentices leave towards the stairs
-function guild_third_floor_lobby_ch_2.ApprenticeLeaveBottom(chara)
-	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
-	GeneralFunctions.EightWayMove(chara, 648, 208, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-
-end
 

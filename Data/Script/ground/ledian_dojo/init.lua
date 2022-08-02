@@ -363,9 +363,10 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	
+	--these need to be updated as more dojo dungeons are created.
 	if result == 1 then
 		--training mazes
-		dungeon_entrances = {52}
+		dungeon_entrances = {52, 54, 55, 56}
 	elseif result == 2 then
 		--lessons
 		dungeon_entrances = {51}

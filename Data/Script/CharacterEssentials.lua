@@ -131,7 +131,7 @@ local characters = {
 	--Team Style
 		Luxio = {
 			species = 404,
-			nickname = '???',
+			nickname = 'Suilux',
 			instance = 'Luxio',
 			gender = Gender.Male,
 			form = 0,
@@ -613,6 +613,15 @@ local characters = {
 			skin = 0
 		},
 		
+		Bisharp = {
+			species = 625,
+			nickname = 'Zhayn',
+			instance = 'Bisharp',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
 		
 		Gulpin = {
 			species = 316,
@@ -627,6 +636,17 @@ local characters = {
 			species = 108,
 			nickname = 'Urgil',
 			instance = 'Lickitung',
+			gender = Gender.Male,
+			form = 0,
+			skin = 0
+		},
+		
+		--Other Plot Relevant NPCs
+		--
+		Sandile = {
+			species = 551,
+			nickname = 'Thwait',
+			instance = 'Sandile',
 			gender = Gender.Male,
 			form = 0,
 			skin = 0

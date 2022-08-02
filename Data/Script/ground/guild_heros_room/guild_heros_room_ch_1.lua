@@ -151,7 +151,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	
 	--GAME:CutsceneMode(false)
 	GROUND:RemoveMapStatus(50)--Remove map status before saving the game, as saving with a map status saves it for the next load.
-	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker")
+	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 --	GAME:WaitFrames(20)
 	--GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 	--[[GAME:CutsceneMode(false)

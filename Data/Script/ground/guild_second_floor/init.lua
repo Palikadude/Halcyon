@@ -9,6 +9,7 @@ require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
+require 'ground.guild_second_floor.guild_second_floor_ch_3'
 
 
 -- Package name
@@ -73,6 +74,12 @@ function guild_second_floor.PlotScripting()
 			guild_second_floor_ch_2.RescuedNumelCutscene()
 		else
 			guild_second_floor_ch_2.SetupGround()
+		end
+	elseif SV.ChapterProgression.Chapter == 3 then
+		if not SV.Chapter3.FinishedOutlawIntro then
+			guild_second_floor_ch_3.OutlawTutorialScene()
+		else
+			guild_second_floor_ch_3.SetupGround()
 		end
 	else
 		GAME:FadeIn(20)

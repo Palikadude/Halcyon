@@ -165,22 +165,28 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:WaitShowDialogue("...Let's just hope this spring issue isn't a sign of worse to come.")
 	
 	GAME:WaitFrames(20)
-	GAME:FadeOut(false, 60)	
+	GAME:FadeOut(false, 120)	
 	GAME:WaitFrames(120)
 	GAME:CutsceneMode(false)
-	SV.ChapterProgression.Chapter = 3
 	
 	--demo only, let player know end of demo
-	UI:ResetSpeaker()
-	UI:WaitShowDialogue("Thus ends Chapter 2, and thus ends the demo! Thank you for playing!")
-	UI:WaitShowDialogue("I hope you enjoyed it as much as I enjoyed making it.")
-	UI:WaitShowDialogue("Let me know if you found any bugs, what you enjoyed, what you didn't like.")
-	UI:WaitShowDialogue("Your feedback is invaluable to improving Halcyon!")
-	UI:WaitShowDialogue("I'll be setting plot flags to Chapter 3 now (none of which is scripted out).")
-	UI:WaitShowDialogue("Things may be unstable in this state as nothing is really properly programmed out for chapter 3.")
-	UI:WaitShowDialogue("But it's better than being stuck in a black screen, right?")
-	UI:WaitShowDialogue("Alright. Returning control... now!")
+	--UI:ResetSpeaker()
+	--UI:WaitShowDialogue("Thus ends Chapter 2, and thus ends the demo! Thank you for playing!")
+	--UI:WaitShowDialogue("I hope you enjoyed it as much as I enjoyed making it.")
+	--UI:WaitShowDialogue("Let me know if you found any bugs, what you enjoyed, what you didn't like.")
+	--UI:WaitShowDialogue("Your feedback is invaluable to improving Halcyon!")
+	--UI:WaitShowDialogue("I'll be setting plot flags to Chapter 3 now (none of which is scripted out).")
+	--UI:WaitShowDialogue("Things may be unstable in this state as nothing is really properly programmed out for chapter 3.")
+	--UI:WaitShowDialogue("But it's better than being stuck in a black screen, right?")
+	--UI:WaitShowDialogue("Alright. Returning control... now!")
+	
+	--no temporary flags need to be set here.
+	SV.ChapterProgression.Chapter = 3
+	GAME:UnlockDungeon(54)--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon(55)--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon(56)--unlock new mazes at ledian dojo
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
+	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")	
 	
 end

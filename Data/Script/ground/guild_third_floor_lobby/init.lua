@@ -10,6 +10,7 @@ require 'GeneralFunctions'
 require 'AudinoAssembly'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_3'
 
 
 -- Package name
@@ -89,10 +90,14 @@ function guild_third_floor_lobby.PlotScripting()
 				guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 			elseif SV.Chapter2.FinishedNumelTantrum and not SV.Chapter2.FinishedFirstDay then 
 				guild_third_floor_lobby_ch_2.BeforeFirstDinner()
-			elseif SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then
-				guild_third_floor_lobby_ch_2.SecondMorningAddress()
 			else
 				guild_third_floor_lobby_ch_2.SetupGround()
+			end
+		elseif SV.ChapterProgression.Chapter == 3 then
+			if not SV.Chapter3.FinishedOutlawIntro then
+				guild_third_floor_lobby_ch_3.FirstMorningAddress()
+			else 
+				guild_third_floor_lobby_ch_3.SetupGround()
 			end
 		else
 			GAME:FadeIn(20)
@@ -101,10 +106,13 @@ function guild_third_floor_lobby.PlotScripting()
 end
 
 --potentially calls relevant scripts after a generic morning address was given. This would be stuff like
+--Anything that happens after a completely generic opening should be called from here. If it wasn't completely generic, it won't be called from here.
 --noctowl giving the day's mission or a comment from the partner.
 function guild_third_floor_lobby.PostAddressScripting()
 	if SV.ChapterProgression.Chapter == 2 then
-		if SV.Chapter2.EnteredRiver then 
+		if SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then
+			guild_third_floor_lobby_ch_2.PostSecondMorningAddress()--Noctowl will show you to the board for your first job.
+		elseif SV.Chapter2.EnteredRiver then 
 			guild_third_floor_lobby_ch_2.FailedRiver()--partner mentions that you need to go return to Illuminant Riverbed to rescue numel
 		end
 	else --if there's nothing special to do, just give back control.
@@ -120,30 +128,8 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	
 	if generic == nil then generic = false end 
 
-	local partner = CH('Teammate1')
-	local hero = CH('PLAYER')
-	GAME:CutsceneMode(true)
-	AI:DisableCharacterAI(partner)
-	UI:ResetSpeaker()
-	--create characters
-	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Tropius', 'Tropius'},
-			{'Noctowl', 'Noctowl'},
-			{'Audino', 'Audino'},
-			{'Snubbull', 'Snubbull'},
-			{'Growlithe', 'Growlithe'},
-			{'Zigzagoon', 'Zigzagoon'},
-			{'Girafarig', 'Girafarig'},
-			{'Breloom', 'Breloom'},
-			{'Mareep', 'Mareep'},
-			{'Cranidos', 'Cranidos'}})
-	
-	GeneralFunctions.CenterCamera({snubbull, tropius})
-	GROUND:TeleportTo(partner, MRKR("Partner").X, MRKR("Partner").Y, MRKR("Partner").Direction)
-	GROUND:TeleportTo(hero, MRKR("Hero").X, MRKR("Hero").Y, MRKR("Hero").Direction)
-	GAME:FadeIn(40)
-	GAME:WaitFrames(20)
+	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, 
+		  breloom, mareep, cranidos = guild_third_floor_lobby.SetupMorningAddress()
 
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Normal")
@@ -263,6 +249,34 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	
 end 
 
+function guild_third_floor_lobby.SetupMorningAddress()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	--create characters
+	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Tropius', 'Tropius'},
+			{'Noctowl', 'Noctowl'},
+			{'Audino', 'Audino'},
+			{'Snubbull', 'Snubbull'},
+			{'Growlithe', 'Growlithe'},
+			{'Zigzagoon', 'Zigzagoon'},
+			{'Girafarig', 'Girafarig'},
+			{'Breloom', 'Breloom'},
+			{'Mareep', 'Mareep'},
+			{'Cranidos', 'Cranidos'}})
+	
+	GeneralFunctions.CenterCamera({snubbull, tropius})
+	GROUND:TeleportTo(partner, MRKR("Partner").X, MRKR("Partner").Y, MRKR("Partner").Direction)
+	GROUND:TeleportTo(hero, MRKR("Hero").X, MRKR("Hero").Y, MRKR("Hero").Direction)
+	GAME:FadeIn(40)
+	GAME:WaitFrames(20)
+	
+	return tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos
+end
 
 --used for having apprentices leave towards the stairs
 function guild_third_floor_lobby.ApprenticeLeave(chara)
@@ -277,7 +291,6 @@ function guild_third_floor_lobby.ApprenticeLeaveBottom(chara)
 	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
 	GeneralFunctions.EightWayMove(chara, 648, 208, false, 1)
 	GAME:GetCurrentGround():RemoveTempChar(chara)
-
 end
 
 --used for having apprentices leave towards the stairs - shorter to end cutscene faster
@@ -306,9 +319,18 @@ function guild_third_floor_lobby.Event_Object_1_Action(obj, activator)
  assert(pcall(load("guild_third_floor_lobby_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Object_1_Action(...,...)"), obj, activator))
 end
 
-function guild_third_floor_lobby.Event_Object_2_Action(obj, activator)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
- assert(pcall(load("guild_third_floor_lobby_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Object_2_Action(...,...)"), obj, activator))
+
+
+
+---------------------------
+-- Map Objects 
+---------------------------
+function guild_third_floor_lobby.Board_Action(chara, activator)
+	UI:ResetSpeaker(false)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("(There are a number of internal guild postings here...)")
+	UI:WaitShowDialogue("(...But you're not really sure what to make of them yet.)")
+	UI:SetCenter(false)
 end
 
 

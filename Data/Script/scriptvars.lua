@@ -177,6 +177,12 @@ SV.Chapter2 =
 	WooperIntro = false--talked to the wooper siblings? if not play their little cutscene
 }
 
+SV.Chapter3 = 
+{
+	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
+	FinishedOutlawIntro = false,--did shuca and ganlon teach you about outlaws?
+	MetTeamStyle = false--did you meet team style?
+}
 
 
 

@@ -14,14 +14,6 @@ function guild_third_floor_lobby_ch_1.SetupGround()
 	door:ReloadEvents()
 	GAME:GetCurrentGround():AddTempObject(door)
 	
-	local board = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-													RogueElements.Rect(264, 216, 48, 8),
-													RogueElements.Loc(0, 0), 
-													false, 
-													"Event_Object_2")
-	
-	board:ReloadEvents()
-	GAME:GetCurrentGround():AddTempObject(board)
 	GROUND:Hide('Door_Exit')
 	GAME:FadeIn(20)	
 end
@@ -33,13 +25,6 @@ function guild_third_floor_lobby_ch_1.Event_Object_1_Action(obj, activator)
 	UI:SetCenter(false)
 end
 
-function guild_third_floor_lobby_ch_1.Event_Object_2_Action(obj, activator)
-	UI:ResetSpeaker(false)
-	UI:SetCenter(true)
-	UI:WaitShowDialogue("(There are a number of internal guild postings here...)")
-	UI:WaitShowDialogue("(...But you're not really sure what to make of them yet.)")
-	UI:SetCenter(false)
-end
 
 --TASK:BranchCoroutine(guild_third_floor_lobby_ch_1.GoToGuildmasterRoom)
 --follow noctowl to guildmaster's room

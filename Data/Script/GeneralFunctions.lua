@@ -340,9 +340,9 @@ end
 --has some special instances... 
 function GeneralFunctions.DoAnimation(chara, anim, sound)
 	if sound == nil then sound = false end
-	local pause = 0
-	--todo: return character to their animation from before. For now just set them back to None
-	local prevAnim = 'None'
+	--[[local pause = 0
+	--todo: return character to their animation from before. For now just end the anim...
+	--local prevAnim = 'None'
 	
 	if anim == 'Nod' then 
 		pause = 20
@@ -353,10 +353,10 @@ function GeneralFunctions.DoAnimation(chara, anim, sound)
 	elseif anim == 'DeepBreath' then
 		pause = 80
 	end
-
+	]]--
 	GROUND:CharWaitAnim(chara, anim)
-	--GAME:WaitFrames(pause)
-	GROUND:CharSetAnim(chara, prevAnim, true)
+	GROUND:CharEndAnim(chara)
+
 end
 
 -- Used to get proper pronoun depending on gender of character (gender check command)
@@ -794,7 +794,7 @@ end
 --this should really only ever be called if the ground you want to enter next is the one you're already on.
 --also this is kind of a workaround method due to how map transitions and reset to title works.
 
-function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker)
+function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 	UI:ResetSpeaker()
 	UI:BeginChoiceMenu("What would you like to do?", {"Save and continue.", "Save and quit.", "Cancel"}, 1, 3)
 	UI:WaitForChoice()
@@ -809,6 +809,7 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
 		GAME:FadeOut(false, 40)
+		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc(0, -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue
 		GAME:RestartToTitle()
 	end
 end
@@ -902,13 +903,14 @@ end
 
 --have both player and partner turn towards chara at the same time
 --shortcut function
-function GeneralFunctions.DuoTurnTowardsChar(chara, turnFrames)
+function GeneralFunctions.DuoTurnTowardsChar(chara, heroDelay, turnFrames)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
 	turnFrames = turnFrames or 4
+	heroDelay = heroDelay or 4
 	
-	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, chara, 4) end)
+	local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(heroDelay) GROUND:CharTurnToCharAnimated(hero, chara, 4) end)
 	local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
 	
 	TASK:JoinCoroutines({coro1, coro2})

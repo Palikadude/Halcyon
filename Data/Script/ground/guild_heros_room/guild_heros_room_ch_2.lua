@@ -331,5 +331,6 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	SV.Chapter2.FinishedFirstDay = true
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	SV.TemporaryFlags.MorningWakeup = true
+	SV.TemporaryFlags.MorningAddress = true
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 end

@@ -76,7 +76,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:ResetSpeaker()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
 	
-	GAME:MoveCamera(160, 240, 1, false)
+	GAME:MoveCamera(160, 224, 1, false)
 	
 	local noctowl, cleffa, aggron = 
 		CharacterEssentials.MakeCharactersFromList({
@@ -111,7 +111,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 												  GROUND:MoveToPosition(hero, 120, 256, false, 1)
   												  GROUND:CharAnimateTurnTo(hero, Direction.Up, 4) end)
 	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(236)
-												  GAME:MoveCamera(112, 240, 48, false) end)
+												  GAME:MoveCamera(112, 224, 48, false) end)
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
@@ -130,7 +130,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	UI:WaitShowDialogue("Should either one of you be defeated in a dungeon,[pause=10] you will both be expelled from the dungeon.")
 	UI:WaitShowDialogue("Furthermore,[pause=10] you will lose all the money you are carrying and any items in your Treasure Bag.")
 	UI:WaitShowDialogue("Some items,[pause=10] such as the " .. scarf_name .. " the Guildmaster gave you, are special and cannot be lost.")
-	UI:WaitShowDialogue("Be sure to visit the proper facilities in town to safeguard any possessions you can't bear to lose.")
+	UI:WaitShowDialogue("Be sure to visit the proper facilities in town to safeguard any possessions you cannot bear to lose.")
 	UI:WaitShowDialogue("Is that all clear to you?")
 	GAME:WaitFrames(20)
 	
@@ -453,7 +453,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	UI:ResetSpeaker()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
 	
-	GAME:MoveCamera(112, 240, 1, false)
+	GAME:MoveCamera(112, 224, 1, false)
 	
 	local noctowl, numel, camerupt = 
 		CharacterEssentials.MakeCharactersFromList({

@@ -158,7 +158,6 @@ function relic_forest_ch_1.Intro_Cutscene()
 		 
 	
 	local continue = false 
-	local species_name = "null"
 	local hero_choice = -1
 	
 	while not continue do
