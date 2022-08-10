@@ -9,7 +9,9 @@ function zone_53.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_zone_53")
   
-
+  --Mark this as the last dungeon entered.
+  SV.TemporaryFlags.LastDungeonEntered = 53
+  
 end
 
 function zone_53.Rescued(zone, mail)

@@ -12,7 +12,7 @@ AddBack: Marks the character to be added back when the party is reset,value is t
 If it's nil then don't add them back. Set it to nil after adding them back
 ]]--
 
-function GeneralFunctions.ResetDailyFlags()
+function GeneralFunctions.UpdateDailyFlags()
 	SV.DailyFlags = 
 	{
 	  RedMerchantItem = -1,
@@ -25,12 +25,17 @@ function GeneralFunctions.ResetDailyFlags()
 	  PurpleKecleonRefreshedStock = false,
 	  PurpleKecleonStock = {}
 	}
+	
+	--finish fermenting any pending items if there are any
+	if SV.metano_cafe.FermentedItem ~= 1 then 
+		SV.metano_cafe.ItemFinishedFermenting = true
+	end
 end 
 
 --to be called at the end of the day. A generic function for generic days (i.e. no cutscene) 
 function GeneralFunctions.EndOfDay()
 	SV.ChapterProgression.DaysPassed = SV.ChapterProgression.DaysPassed + 1
-	GeneralFunctions.ResetDailyFlags()
+	GeneralFunctions.UpdateDailyFlags()
 
 end
 

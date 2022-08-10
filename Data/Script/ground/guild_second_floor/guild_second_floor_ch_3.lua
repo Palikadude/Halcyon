@@ -22,17 +22,17 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	UI:ResetSpeaker()
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[57]
 	
-	GAME:MoveCamera(400, 224, 1, false)
+	GAME:MoveCamera(400, 176, 1, false)
 	
 	local cranidos, mareep = 
 		CharacterEssentials.MakeCharactersFromList({
-			{'Cranidos', 488, 184, Direction.Down},
-			{'Mareep', 488, 184, Direction.Down}
+			{'Cranidos', 576, 100, Direction.Down},
+			{'Mareep', 576, 100, Direction.Down}
 	})
 	GROUND:Hide('Upwards_Stairs_Exit')
 	
-	GROUND:TeleportTo(partner, 488, 184, Direction.Down)
-	GROUND:TeleportTo(hero, 488, 184, Direction.Down)
+	GROUND:TeleportTo(partner, 576, 100, Direction.Down)
+	GROUND:TeleportTo(hero, 576, 100, Direction.Down)
 	SOUND:StopBGM()
 	GROUND:Hide(hero.EntName)
 	GROUND:Hide("Teammate1")
@@ -43,29 +43,39 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
 	
 	GAME:WaitFrames(20)
-	
+
 	local coro1 = TASK:BranchCoroutine(function() GROUND:Unhide("Mareep")
 												  GAME:WaitFrames(20)
+												  GROUND:MoveToPosition(mareep, 524, 100, false, 1)
+												  GeneralFunctions.EightWayMove(mareep, 492, 184, false, 1)
 												  GeneralFunctions.EightWayMove(mareep, 360, 224, false, 1)
 												  GeneralFunctions.FaceMovingCharacter(mareep, partner, 4, Direction.Down)
 												  GROUND:CharAnimateTurnTo(mareep, Direction.DownRight, 4) end)
     local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(52)
 												  GROUND:Unhide("Teammate1")
 												  GAME:WaitFrames(20)
+												  GROUND:MoveToPosition(partner, 524, 100, false, 1)
+												  GeneralFunctions.EightWayMove(partner, 492, 184, false, 1)
 												  GeneralFunctions.EightWayMove(partner, 376, 256, false, 1)
 												  GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
     local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(104)
 												  GROUND:Unhide(hero.EntName)
 												  GAME:WaitFrames(20)
+												  GROUND:MoveToPosition(hero, 524, 100, false, 1)
+												  GeneralFunctions.EightWayMove(hero, 492, 184, false, 1)
 												  GeneralFunctions.EightWayMove(hero, 408, 256, false, 1)
 												  GROUND:CharAnimateTurnTo(hero, Direction.Up, 4) end)   
     local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(156)
 												  GROUND:Unhide("Cranidos")
 												  GAME:WaitFrames(20)
+												  GROUND:MoveToPosition(cranidos, 524, 100, false, 1)
+												  GeneralFunctions.EightWayMove(cranidos, 492, 184, false, 1)
 												  GeneralFunctions.EightWayMove(cranidos, 424, 224, false, 1)
 												  GROUND:CharAnimateTurnTo(cranidos, Direction.DownLeft, 4) end)
+	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(260)
+												  GAME:MoveCamera(400, 224, 48, false) end)
 												  
-	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(mareep)

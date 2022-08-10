@@ -115,6 +115,14 @@ function guild_third_floor_lobby.PostAddressScripting()
 		elseif SV.Chapter2.EnteredRiver then 
 			guild_third_floor_lobby_ch_2.FailedRiver()--partner mentions that you need to go return to Illuminant Riverbed to rescue numel
 		end
+	elseif SV.ChapterProgression.Chapter == 3 then 
+		if SV.Chapter3.EncounteredBoss then 
+			guild_third_floor_lobby_ch_3.FailedCavernAfterBoss()--You made it to Team Style but haven't beaten them yet. Partner is mad about them. 
+		elseif SV.TemporaryFlags.LastDungeonEntered ~= 57 then 
+			guild_third_floor_lobby_ch_3.NotEnteredCavern() --Latest dungeon attempt was not the cavern and you haven't seen Team Style yet.
+		else
+			guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()--Your last dungeon was the cavern but you've not made it to Team Style yet.
+		end	
 	else --if there's nothing special to do, just give back control.
 		GeneralFunctions.PanCamera()
 		GAME:CutsceneMode(false)

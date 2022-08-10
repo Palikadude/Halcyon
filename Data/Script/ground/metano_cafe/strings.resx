@@ -62,7 +62,7 @@
     <value>test</value>
   </data>
   <data name="Cafe_Intro" xml:space="preserve">
-    <value>Welcome to Dion's Café! How can I help you today?</value>
+    <value>Welcome to the Metano Café! How can I help you today?</value>
   </data>
   <data name="Cafe_Intro_Return" xml:space="preserve">
     <value>Will there be anything else today?</value>
@@ -86,25 +86,25 @@
     <value>Looks like you haven't got enough money.</value>
   </data>
   <data name="Cafe_Bag_Full" xml:space="preserve">
-    <value>Looks like your bag is full.[pause=0] Go visit (kanga) and then visit again!</value>
+    <value>Looks like your bag is full.[pause=0] Go visit {0} and then visit again!</value>
   </data>
   <data name="Cafe_Special_Complete" xml:space="preserve">
     <value>Here's your {0}![pause=0] Enjoy!</value>
   </data>
   <data name="Cafe_Info_1" xml:space="preserve">
-    <value>Welcome to my Café![pause=0] I can ferment tasty and useful drinks for you!</value>
+    <value>Welcome to my café![pause=0] I can ferment tasty and useful drinks for you!</value>
   </data>
   <data name="Cafe_Info_2" xml:space="preserve">
-    <value>Just give me the ingredients,[pause=10] and I'll ferment the drink for you overnight.</value>
+    <value>Give me the required ingredients,[pause=10] and I'll ferment the drink for you overnight.</value>
   </data>
   <data name="Cafe_Info_3" xml:space="preserve">
-    <value>You can check the drinks' recipes and their effects on that sign there.</value>
+    <value>Just make sure you haven't equipped any items you want to give me!</value>
   </data>
   <data name="Cafe_Info_4" xml:space="preserve">
-    <value>I also sell a daily special on the side.[pause=0] The special can be quite a treat sometimes!</value>
+    <value>You can check the drinks' recipes and their effects on that sign there.</value>
   </data>
   <data name="Cafe_Info_5" xml:space="preserve">
-    <value>I change my special everyday,[pause=10] so be sure to stop in often!</value>
+    <value>I also sell a daily special on the side.[pause=0] The special can be quite a treat sometimes!</value>
   </data>
   <data name="Cafe_Goodbye" xml:space="preserve">
     <value>Don't be a stranger![pause=0] Come back soon!</value>
@@ -113,7 +113,7 @@
     <value>Hey,[pause=10] welcome back![pause=0] I finished fermenting that {0} for you!</value>
   </data>
   <data name="Cafe_Fermented_Item_Received" xml:space="preserve">
-    <value>You received a {0} from Dion!</value>
+    <value>You received a {0} from {1}![pause=40]</value>
   </data>
   <data name="Cafe_Expedition_Item_Intro_1" xml:space="preserve">
     <value>You two are leaving on that expedition tomorrow right?</value>
@@ -143,15 +143,45 @@
     <value>Which would you like to know more about?</value>
   </data>
   <data name="Cafe_Sign_Domi_1" xml:space="preserve">
-    <value>Fully restores the party's HP/PP and cures status. Lowers Atk/Sp. Atk and raises Def and Sp. Def as well. </value>
+    <value>Fully restores the party's HP. Lowers the party's Atk/Sp. Atk but raises Def and Sp. Def in return. </value>
   </data>
   <data name="Cafe_Sign_Domi_2" xml:space="preserve">
-    <value>Requires 3 Oran berries, 3 Lum berries, 3 Leppa berries, and 5 Sticks. </value>
+    <value>Requires 3 {0} and {1}.</value>
   </data>
   <data name="Cafe_Sign_Cider_1" xml:space="preserve">
     <value>Initially comes with 4 servings. Restores HP by half and fills belly somewhat.</value>
   </data>
   <data name="Cafe_Sign_Cider_2" xml:space="preserve">
-    <value>Requires 3 Apples and 1 Oran berry.</value>
+    <value>Requires 3 {0} and 1 {1}.</value>
+  </data>
+  <data name="Cafe_Option_Bomb" xml:space="preserve">
+    <value>Cheri Bomb</value>
+  </data>
+  <data name="Cafe_Begin_Fermenting_3" xml:space="preserve">
+    <value>OK![pause=0] I've started fermenting that {0} for you![pause=0] Come see me tomorrow when it's ready!</value>
+  </data>
+  <data name="Cafe_Missing_Ingredients" xml:space="preserve">
+    <value>It seems as though you don't have all the ingredients needed for that {0}!</value>
+  </data>
+  <data name="Cafe_Already_Fermenting" xml:space="preserve">
+    <value>I'm already fermenting that {0} for you![pause=0] Come back tomorrow when it's ready!</value>
+  </data>
+  <data name="Cafe_Sign_Bomb_1" xml:space="preserve">
+    <value>A brew that is dangerously explosive! Throw it to cause an explosion where it lands.</value>
+  </data>
+  <data name="Cafe_Sign_Bomb_2" xml:space="preserve">
+    <value>Requires 1 {0} and 1 {1}.</value>
+  </data>
+  <data name="Cafe_Info_6" xml:space="preserve">
+    <value>I change my special everyday,[pause=10] so be sure to stop in often!</value>
+  </data>
+  <data name="Cafe_Begin_Fermenting_1" xml:space="preserve">
+    <value>Got it![pause=0] Let me just get everything where it needs to be...</value>
+  </data>
+  <data name="Cafe_Begin_Fermenting_2" xml:space="preserve">
+    <value>Haah!</value>
+  </data>
+  <data name="Cafe_Confirm_Ferment_Choice" xml:space="preserve">
+    <value>You want me to brew a {0} for you then?</value>
   </data>
 </root>

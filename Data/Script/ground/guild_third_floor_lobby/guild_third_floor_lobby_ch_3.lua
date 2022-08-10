@@ -23,6 +23,65 @@ function guild_third_floor_lobby_ch_3.Noctowl_Action(chara, activator)
 end
 	
 
+------------------------
+--Post Address Scripts
+------------------------
+
+--Player's last dungeon wasn't the cavern and they haven't met the boss of chapter 3.
+function guild_third_floor_lobby_ch_3.NotEnteredCavern()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[57]
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw catch!")
+	UI:WaitShowDialogue("Quickly![pause=0] To " .. zone:GetColoredName() .. "!")
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end
+
+--player died before making it to boss fight
+function guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[57]
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw catch!")
+	UI:WaitShowDialogue("Quickly![pause=0] To " .. zone:GetColoredName() .. "![pause=0] We can do it this time!")
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end 
+
+--player died after making it to boss fight
+function guild_third_floor_lobby_ch_3.FailedCavernAfterBoss()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[57]
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to get back to " .. CharacterEssentials.GetCharacterName("Sandile") .. "!")
+	UI:WaitShowDialogue("Quickly![pause=0] To " .. zone:GetColoredName() .. "![pause=0] We can't let Team [color=#FFA5FF]Style[color] get away with this!")
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end
 
 ------------------------
 --Cutscene Scripts

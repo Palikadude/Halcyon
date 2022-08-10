@@ -62,7 +62,7 @@ function DebugTools:OnNewGame()
 
   
   local mon_id = RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Male)
-  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0)
+  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, -1, 0)
   local tbl = LTBL(p)
   tbl.Importance = 'Hero'
   p.IsFounder = true
@@ -71,7 +71,7 @@ function DebugTools:OnNewGame()
   _DATA.Save.ActiveTeam.Players:Add(p)
   
   mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Male)
-  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0)
+  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, -1, 0)
   tbl = LTBL(p)
   tbl.Importance = 'Partner'
   p.IsFounder = true
@@ -82,6 +82,21 @@ function DebugTools:OnNewGame()
   mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
   _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
   
+  
+  	_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
+	_DATA.Save.ActiveTeam.Players[0].AtkBonus = 1
+	_DATA.Save.ActiveTeam.Players[0].DefBonus = 1
+	_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 1
+	_DATA.Save.ActiveTeam.Players[0].MDefBonus = 1
+	_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 1
+
+	_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 3
+	_DATA.Save.ActiveTeam.Players[1].AtkBonus = 1
+	_DATA.Save.ActiveTeam.Players[1].DefBonus = 1
+	_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
+	_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
+	_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
+	
   --audino 
    -- mon_id = RogueEssence.Dungeon.MonsterID(531, 0, 0, Gender.Female)
   --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))

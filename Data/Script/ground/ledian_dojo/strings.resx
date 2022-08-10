@@ -184,4 +184,10 @@
   <data name="Dojo_Goodbye" xml:space="preserve">
     <value>Hwacha![pause=0] Until we meet again!</value>
   </data>
+  <data name="Dojo_New_Maze_1" xml:space="preserve">
+    <value>Wahtah![pause=0] My students![pause=0] New mazes are available for training!</value>
+  </data>
+  <data name="Dojo_New_Maze_2" xml:space="preserve">
+    <value>Go train and improve yourselves like you never could before!</value>
+  </data>
 </root>

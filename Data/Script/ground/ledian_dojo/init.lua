@@ -114,11 +114,27 @@ function ledian_dojo.Sensei_Action(chara, activator)
 	local repeated = false
 	local ledian = CH('Sensei')
 
-
-	UI:SetSpeaker(ledian)
+	local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
 	local olddir = ledian.Direction
-	GROUND:CharTurnToChar(ledian, CH('PLAYER'))
-			
+    ledian.IsInteracting = true
+    partner.IsInteracting = true
+    UI:SetSpeaker(ledian)
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+
+	GROUND:CharTurnToChar(ledian, CH('PLAYER'))		
+    GROUND:CharTurnToChar(hero, ledian)
+    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, ledian, 4) end)
+	
+	--ledian mentions if new mazes are unlocked.
+	if SV.Dojo.NewMazeUnlocked then
+		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_New_Maze_1']))
+		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Dojo_New_Maze_2']))
+		SV.Dojo.NewMazeUnlocked = false
+		GAME:WaitFrames(20)
+	end
+	
 	while state > -1 do
 		local msg = STRINGS:Format(MapStrings['Dojo_Intro'])
 		if repeated == true then
@@ -189,7 +205,14 @@ function ledian_dojo.Sensei_Action(chara, activator)
 			state = -1
 		end
 	end
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
 	GROUND:EntTurn(ledian, olddir)
+	partner.IsInteracting = false
+	ledian.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
 end 
 
 --modified version of common's ShowDestinationMenu. Has no capability for grounds, and sets risk to None if the dungeon chosen is a tutorial level

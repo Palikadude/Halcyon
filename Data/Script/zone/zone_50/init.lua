@@ -8,7 +8,9 @@ local zone_50 = {}
 function zone_50.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_zone_50")
-  
+   
+  --Mark this as the last dungeon entered.
+  SV.TemporaryFlags.LastDungeonEntered = 50
 
 end
 

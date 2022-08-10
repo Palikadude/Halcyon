@@ -17,7 +17,7 @@ end
 
 function zone_52.ExitSegment(zone, result, rescue, segmentID, mapID)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  PrintInfo("=>> ExitSegment_zone_52 (Beginner Lesson) result "..tostring(result).." segment "..tostring(segmentID))
+  PrintInfo("=>> ExitSegment_zone_52 (Normal Maze) result "..tostring(result).." segment "..tostring(segmentID))
 
 	GAME:SetRescueAllowed(false)
 	

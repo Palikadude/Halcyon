@@ -77,7 +77,8 @@ SV.TemporaryFlags =
 	Bedtime = false,--used to indicate whether to do a generic bedtime cutscene or not 
 	MorningWakeup = false,--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
 	MorningAddress = false,--used to indicate whether to do a generic morning address
-	JustWokeUp = false--Did the duo JUST wake up on a new day?
+	JustWokeUp = false,--Did the duo JUST wake up on a new day?
+	LastDungeonEntered = -1--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
 
 }
 
@@ -100,10 +101,8 @@ SV.metano_cafe =
 {
   CafeSpecial = -1,
   BoughtSpecial = false,
-  FermentedItem = 2500, 
-  ItemFinishedFermenting = true,
-  ExpeditionPreparation = true,
-  GaveFreeExpeditionItem = false
+  FermentedItem = -1, 
+  ItemFinishedFermenting = false
 }
 
 
@@ -116,6 +115,10 @@ SV.Dojo =
 	LessonFailedGeneric = false,--Player just failed a lesson, should we play a generic cutscene after?
 	TrainingFailedGeneric = false,--Player just failed a training, should we play a generic cutscene after?
 	TrialFailedGeneric = false,--Player just failed a trial, should we play a generic cutscene after?
+	
+	NewMazeUnlocked = false,--Was a new maze unlocked since the player last spoke to Ledian? If so have her mention that there are new mazes.
+	NewLessonUnlocked = false,--Was a new lesson unlocked since the player last spoke to Ledian? If so have her mention that there are new lessons.
+	NewTrialUnlocked = false,--Was a new trial unlocked since the player last spoke to Ledian? If so have her mention that there are new trials.
 	
 	LastZone = 0--Which dojo dungeon did the player just come out of?
 }
@@ -132,6 +135,7 @@ SV.ChapterProgression =
 	DaysPassed = 0,--total number of in game days played in the game
 	DaysToReach = -1, --Used to figure out what day needs to be reached to continue the story
 	Chapter = 1,
+	CurrentStoryDungeon = -1,--Used by the Destination Menu when leaving town to the right to know if it needs to set you somewhere else first before going to the dungeon (i.e. for a cutscene outside the dungeon). If the selected dungeon matches this value, then it will try to put you on the relevant ground that is that dungeon's entrance. Note: Relic Forest 1 and Illuminant Riverbed are handled by other objects, and thus aren't ever set to the current story dungeon.
 	
 	UnlockedAssembly = false--this is set to true when player is allowed to recruit team members, unhides assembly objects
 }
@@ -181,7 +185,13 @@ SV.Chapter3 =
 {
 	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
 	FinishedOutlawIntro = false,--did shuca and ganlon teach you about outlaws?
-	MetTeamStyle = false--did you meet team style?
+	MetTeamStyle = false,--did you meet team style?
+	FinishedCafeCutscene = false,--did partner point out the cafe's open?
+	EnteredCavern = false,--did duo enter the dungeon?
+	FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
+	EncounteredBoss = false,--did duo find team style in the dungeon yet?
+	DefeatedBoss = false --did duo defeat team style?
+
 }
 
 

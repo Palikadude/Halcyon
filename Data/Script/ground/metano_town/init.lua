@@ -70,6 +70,11 @@ function metano_town.PlotScripting()
 		if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedMarketIntro then 
 			metano_town_ch_2.MarketIntro()
 		end
+	elseif SV.ChapterProgression.Chapter == 3 then 
+		metano_town_ch_3.SetupGround()
+		if SV.Chapter3.FinishedOutlawIntro then 
+			metano_town_ch_3.MeetTeamStyle()
+		end	
 	else
 		GAME:FadeIn(20)
 	end
@@ -128,7 +133,7 @@ function metano_town.East_Exit_Touch(obj, activator)
   GAME:WaitFrames(20)
   local dungeons = {50, 53, 57}--this needs to be updated when more dungeons come out.
   local grounds = {}
-  COMMON.ShowDestinationMenu(dungeons, grounds)
+  metano_town.ShowDestinationMenu(dungeons, grounds)
 end
 
 function metano_town.South_Exit_Touch(obj, activator)
@@ -291,6 +296,95 @@ end
 function metano_town.Dojo_Locale_Touch(chara, activator)
 	DEBUG.EnableDbgCoro()
 	SV.metano_town.Locale = 'Dojo'
+end
+
+
+-----------------------
+-- Helper Functions
+-----------------------
+--Reimplemented, modified version of common's showdestination menu. 
+function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
+  
+  --Story dungeons and their corresponding "entrance ground" used for story cutscenes during the relevant chapter.
+  --Illuminant Riverbed and Relic Forest 1 are story dungeons not accessed via this menu and thus the flag doesn't track them.
+  local dungeon_entrance_mapping = {}
+  dungeon_entrance_mapping[53] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
+  dungeon_entrance_mapping[57] = 41--Crooked Cavern
+  
+  --check for unlock of dungeons
+  local open_dests = {}
+  for ii = 1,#dungeon_entrances,1 do
+    if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
+	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dungeon_entrances[ii]]
+	  local zone_name = zone_summary:GetColoredName()
+      table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
+	end
+  end
+  
+  --check for unlock of grounds
+  for ii = 1,#ground_entrances,1 do
+    if ground_entrances[ii].Flag then
+	  local ground_id = ground_entrances[ii].Zone
+	  local zone = _DATA:GetZone(ground_id)
+	  local ground = _DATA:GetGround(zone.GroundMaps[ground_entrances[ii].ID])
+	  local ground_name = ground:GetColoredName()
+      table.insert(open_dests, { Name=ground_name, Dest=RogueEssence.Dungeon.ZoneLoc(ground_id, -1, ground_entrances[ii].ID, ground_entrances[ii].Entry) })
+	end
+  end
+  
+  local dest = RogueEssence.Dungeon.ZoneLoc.Invalid
+  if #open_dests == 1 then
+    if open_dests[1].Dest.StructID.Segment < 0 then
+	  --single ground entry
+      UI:ResetSpeaker()
+      
+	  UI:ChoiceMenuYesNo(STRINGS:FormatKey("DLG_ASK_ENTER_GROUND", open_dests[1].Name))
+      UI:WaitForChoice()
+      if UI:ChoiceResult() then
+	    dest = open_dests[1].Dest
+	  end
+	else
+	  --single dungeon entry
+      UI:ResetSpeaker()
+      SOUND:PlaySE("Menu/Skip")
+	  UI:DungeonChoice(open_dests[1].Name, open_dests[1].Dest)
+      UI:WaitForChoice()
+      if UI:ChoiceResult() then
+	    dest = open_dests[1].Dest
+	  end
+	end
+  elseif #open_dests > 1 then
+    
+    UI:ResetSpeaker()
+    SOUND:PlaySE("Menu/Skip")
+    UI:DestinationMenu(open_dests)
+	UI:WaitForChoice()
+	dest = UI:ChoiceResult()
+  end
+  
+  if dest:IsValid() then
+	--confirm the choice
+	UI:ResetSpeaker()
+	UI:SetCenter(true)
+	UI:ChoiceMenuYesNo(dest:GetColoredName() .. " is the destination.\nIs that correct?")
+	UI:WaitForChoice()
+	local confirm = UI:ChoiceResult()
+	UI:SetCenter(false)
+	if confirm then
+		SOUND:FadeOutBGM(60)
+		GAME:FadeOut(false, 60)
+		if dest.StructID.Segment > -1 then
+		  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
+			GAME:WaitFrames(120)--wait a bit before going to the ground
+			GAME:EnterZone(0, -1, dungeon_entrance_mapping[dest.ID], 0)
+		  else
+			GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+		  end
+		else
+		  GAME:EnterZone(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint)
+		end
+	end
+  end
 end
 
 
@@ -1958,6 +2052,8 @@ function metano_town.Appraisal_Action(obj, activator)
 						GAME:WaitFrames(30)
 					end
 						
+					GROUND:CharSetAnim(chara, "None", true)
+					GAME:WaitFrames(20)
 					GROUND:CharAnimateTurnTo(chara, Direction.Down, 5)
 					GAME:WaitFrames(10)
 					
