@@ -1,0 +1,12 @@
+0	unranked
+1	normal
+2	bronze
+3	silver
+4	gold
+5	platinum
+6	diamond
+7	super
+8	ultra
+9	hyper
+10	master
+11	guildmaster

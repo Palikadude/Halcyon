@@ -1,0 +1,6 @@
+37	vulpix
+104	cubone
+352	kecleon
+531	audino
+570	zorua
+722	rowlet

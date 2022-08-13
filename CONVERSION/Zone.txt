@@ -1,0 +1,11 @@
+0	master_zone
+1	backup_master_zone
+50	relic_forest
+51	beginner_lesson
+52	normal_maze
+53	illuminant_riverbed
+54	grass_maze
+55	fire_maze
+56	water_maze
+57	crooked_cavern
+58	crooked_den

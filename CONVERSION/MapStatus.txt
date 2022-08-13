@@ -1,0 +1,2 @@
+50	darkness
+51	dusk
