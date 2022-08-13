@@ -1,0 +1,11614 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "PMDC.Data.MonsterFeatureData, PMDC",
+"FeatureData": {
+"abomasnow": {
+"0": {
+"Family": "snover",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "snover",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"abra": {
+"0": {
+"Family": "abra",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"absol": {
+"0": {
+"Family": "absol",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "absol",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"accelgor": {
+"0": {
+"Family": "shelmet",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aegislash": {
+"0": {
+"Family": "honedge",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "honedge",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aerodactyl": {
+"0": {
+"Family": "aerodactyl",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "aerodactyl",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aggron": {
+"0": {
+"Family": "aron",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "aron",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aipom": {
+"0": {
+"Family": "aipom",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"alakazam": {
+"0": {
+"Family": "abra",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "abra",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"alcremie": {
+"0": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"alomomola": {
+"0": {
+"Family": "alomomola",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"altaria": {
+"0": {
+"Family": "swablu",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "swablu",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"amaura": {
+"0": {
+"Family": "amaura",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ambipom": {
+"0": {
+"Family": "aipom",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"amoonguss": {
+"0": {
+"Family": "foongus",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ampharos": {
+"0": {
+"Family": "mareep",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mareep",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"anorith": {
+"0": {
+"Family": "anorith",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"appletun": {
+"0": {
+"Family": "applin",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "applin",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"applin": {
+"0": {
+"Family": "applin",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"araquanid": {
+"0": {
+"Family": "dewpider",
+"Stage": 4,
+"Element1": "water",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arbok": {
+"0": {
+"Family": "ekans",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arcanine": {
+"0": {
+"Family": "growlithe",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arceus": {
+"0": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"14": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"15": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"16": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"17": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"18": {
+"Family": "arceus",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"archen": {
+"0": {
+"Family": "archen",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"archeops": {
+"0": {
+"Family": "archen",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arctovish": {
+"0": {
+"Family": "arctovish",
+"Stage": 1,
+"Element1": "water",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arctozolt": {
+"0": {
+"Family": "arctozolt",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ariados": {
+"0": {
+"Family": "spinarak",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"armaldo": {
+"0": {
+"Family": "anorith",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aromatisse": {
+"0": {
+"Family": "spritzee",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aron": {
+"0": {
+"Family": "aron",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"arrokuda": {
+"0": {
+"Family": "arrokuda",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"articuno": {
+"0": {
+"Family": "articuno",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "articuno",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"audino": {
+"0": {
+"Family": "audino",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "audino",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"aurorus": {
+"0": {
+"Family": "amaura",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"avalugg": {
+"0": {
+"Family": "bergmite",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"axew": {
+"0": {
+"Family": "axew",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"azelf": {
+"0": {
+"Family": "azelf",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"azumarill": {
+"0": {
+"Family": "azurill",
+"Stage": 4,
+"Element1": "water",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"azurill": {
+"0": {
+"Family": "azurill",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bagon": {
+"0": {
+"Family": "bagon",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"baltoy": {
+"0": {
+"Family": "baltoy",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"banette": {
+"0": {
+"Family": "shuppet",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "shuppet",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"barbaracle": {
+"0": {
+"Family": "binacle",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"barboach": {
+"0": {
+"Family": "barboach",
+"Stage": 2,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"barraskewda": {
+"0": {
+"Family": "arrokuda",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"basculin": {
+"0": {
+"Family": "basculin",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "basculin",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bastiodon": {
+"0": {
+"Family": "shieldon",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bayleef": {
+"0": {
+"Family": "chikorita",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"beartic": {
+"0": {
+"Family": "cubchoo",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"beautifly": {
+"0": {
+"Family": "wurmple",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"beedrill": {
+"0": {
+"Family": "weedle",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "weedle",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"beheeyem": {
+"0": {
+"Family": "elgyem",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"beldum": {
+"0": {
+"Family": "beldum",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bellossom": {
+"0": {
+"Family": "oddish",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bellsprout": {
+"0": {
+"Family": "bellsprout",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bergmite": {
+"0": {
+"Family": "bergmite",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bewear": {
+"0": {
+"Family": "stufful",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bibarel": {
+"0": {
+"Family": "bidoof",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bidoof": {
+"0": {
+"Family": "bidoof",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"binacle": {
+"0": {
+"Family": "binacle",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bisharp": {
+"0": {
+"Family": "pawniard",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blacephalon": {
+"0": {
+"Family": "blacephalon",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blastoise": {
+"0": {
+"Family": "squirtle",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "squirtle",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "squirtle",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blaziken": {
+"0": {
+"Family": "torchic",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "torchic",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blipbug": {
+"0": {
+"Family": "blipbug",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blissey": {
+"0": {
+"Family": "happiny",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"blitzle": {
+"0": {
+"Family": "blitzle",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"boldore": {
+"0": {
+"Family": "roggenrola",
+"Stage": 8,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"boltund": {
+"0": {
+"Family": "yamper",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bonsly": {
+"0": {
+"Family": "bonsly",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bouffalant": {
+"0": {
+"Family": "bouffalant",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bounsweet": {
+"0": {
+"Family": "bounsweet",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"braixen": {
+"0": {
+"Family": "fennekin",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"braviary": {
+"0": {
+"Family": "rufflet",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"breloom": {
+"0": {
+"Family": "shroomish",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"brionne": {
+"0": {
+"Family": "popplio",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bronzong": {
+"0": {
+"Family": "bronzor",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bronzor": {
+"0": {
+"Family": "bronzor",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bruxish": {
+"0": {
+"Family": "bruxish",
+"Stage": 1,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"budew": {
+"0": {
+"Family": "budew",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"buizel": {
+"0": {
+"Family": "buizel",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bulbasaur": {
+"0": {
+"Family": "bulbasaur",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"buneary": {
+"0": {
+"Family": "buneary",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"bunnelby": {
+"0": {
+"Family": "bunnelby",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"burmy": {
+"0": {
+"Family": "burmy",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "burmy",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "burmy",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"butterfree": {
+"0": {
+"Family": "caterpie",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "caterpie",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"buzzwole": {
+"0": {
+"Family": "buzzwole",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cacnea": {
+"0": {
+"Family": "cacnea",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cacturne": {
+"0": {
+"Family": "cacnea",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"calyrex": {
+"0": {
+"Family": "calyrex",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "calyrex",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "calyrex",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"camerupt": {
+"0": {
+"Family": "numel",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "numel",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"carbink": {
+"0": {
+"Family": "carbink",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"carkol": {
+"0": {
+"Family": "rolycoly",
+"Stage": 8,
+"Element1": "rock",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"carnivine": {
+"0": {
+"Family": "carnivine",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"carracosta": {
+"0": {
+"Family": "tirtouga",
+"Stage": 4,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"carvanha": {
+"0": {
+"Family": "carvanha",
+"Stage": 2,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cascoon": {
+"0": {
+"Family": "wurmple",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"castform": {
+"0": {
+"Family": "castform",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "castform",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "castform",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "castform",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"caterpie": {
+"0": {
+"Family": "caterpie",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"celebi": {
+"0": {
+"Family": "celebi",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"celesteela": {
+"0": {
+"Family": "celesteela",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"centiskorch": {
+"0": {
+"Family": "sizzlipede",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sizzlipede",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chandelure": {
+"0": {
+"Family": "litwick",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chansey": {
+"0": {
+"Family": "happiny",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"charizard": {
+"0": {
+"Family": "charmander",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "charmander",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "charmander",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "charmander",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"charjabug": {
+"0": {
+"Family": "grubbin",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"charmander": {
+"0": {
+"Family": "charmander",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"charmeleon": {
+"0": {
+"Family": "charmander",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chatot": {
+"0": {
+"Family": "chatot",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cherrim": {
+"0": {
+"Family": "cherubi",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "cherubi",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cherubi": {
+"0": {
+"Family": "cherubi",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chesnaught": {
+"0": {
+"Family": "chespin",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chespin": {
+"0": {
+"Family": "chespin",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chewtle": {
+"0": {
+"Family": "chewtle",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chikorita": {
+"0": {
+"Family": "chikorita",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chimchar": {
+"0": {
+"Family": "chimchar",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chimecho": {
+"0": {
+"Family": "chingling",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chinchou": {
+"0": {
+"Family": "chinchou",
+"Stage": 2,
+"Element1": "water",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"chingling": {
+"0": {
+"Family": "chingling",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cinccino": {
+"0": {
+"Family": "minccino",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cinderace": {
+"0": {
+"Family": "scorbunny",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "scorbunny",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clamperl": {
+"0": {
+"Family": "clamperl",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clauncher": {
+"0": {
+"Family": "clauncher",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clawitzer": {
+"0": {
+"Family": "clauncher",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"claydol": {
+"0": {
+"Family": "baltoy",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clefable": {
+"0": {
+"Family": "cleffa",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clefairy": {
+"0": {
+"Family": "cleffa",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cleffa": {
+"0": {
+"Family": "cleffa",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"clobbopus": {
+"0": {
+"Family": "clobbopus",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cloyster": {
+"0": {
+"Family": "shellder",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"coalossal": {
+"0": {
+"Family": "rolycoly",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rolycoly",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cobalion": {
+"0": {
+"Family": "cobalion",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cofagrigus": {
+"0": {
+"Family": "yamask",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"combee": {
+"0": {
+"Family": "combee",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"combusken": {
+"0": {
+"Family": "torchic",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"comfey": {
+"0": {
+"Family": "comfey",
+"Stage": 1,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"conkeldurr": {
+"0": {
+"Family": "timburr",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"copperajah": {
+"0": {
+"Family": "cufant",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "cufant",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"corphish": {
+"0": {
+"Family": "corphish",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"corsola": {
+"0": {
+"Family": "corsola",
+"Stage": 2,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "corsola",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"corviknight": {
+"0": {
+"Family": "rookidee",
+"Stage": 4,
+"Element1": "flying",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rookidee",
+"Stage": 4,
+"Element1": "flying",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"corvisquire": {
+"0": {
+"Family": "rookidee",
+"Stage": 8,
+"Element1": "flying",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cosmoem": {
+"0": {
+"Family": "cosmog",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cosmog": {
+"0": {
+"Family": "cosmog",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cottonee": {
+"0": {
+"Family": "cottonee",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"crabominable": {
+"0": {
+"Family": "crabrawler",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"crabrawler": {
+"0": {
+"Family": "crabrawler",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cradily": {
+"0": {
+"Family": "lileep",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cramorant": {
+"0": {
+"Family": "cramorant",
+"Stage": 1,
+"Element1": "flying",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "cramorant",
+"Stage": 1,
+"Element1": "flying",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "cramorant",
+"Stage": 1,
+"Element1": "flying",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cranidos": {
+"0": {
+"Family": "cranidos",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"crawdaunt": {
+"0": {
+"Family": "corphish",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cresselia": {
+"0": {
+"Family": "cresselia",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"croagunk": {
+"0": {
+"Family": "croagunk",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"crobat": {
+"0": {
+"Family": "zubat",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"croconaw": {
+"0": {
+"Family": "totodile",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"crustle": {
+"0": {
+"Family": "dwebble",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cryogonal": {
+"0": {
+"Family": "cryogonal",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cubchoo": {
+"0": {
+"Family": "cubchoo",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cubone": {
+"0": {
+"Family": "cubone",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cufant": {
+"0": {
+"Family": "cufant",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cursola": {
+"0": {
+"Family": "corsola",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cutiefly": {
+"0": {
+"Family": "cutiefly",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"cyndaquil": {
+"0": {
+"Family": "cyndaquil",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"darkrai": {
+"0": {
+"Family": "darkrai",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"darmanitan": {
+"0": {
+"Family": "darumaka",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "darumaka",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "darumaka",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "darumaka",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dartrix": {
+"0": {
+"Family": "rowlet",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"darumaka": {
+"0": {
+"Family": "darumaka",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "darumaka",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"decidueye": {
+"0": {
+"Family": "rowlet",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dedenne": {
+"0": {
+"Family": "dedenne",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"deerling": {
+"0": {
+"Family": "deerling",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "deerling",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "deerling",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "deerling",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"deino": {
+"0": {
+"Family": "deino",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"delcatty": {
+"0": {
+"Family": "skitty",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"delibird": {
+"0": {
+"Family": "delibird",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"delphox": {
+"0": {
+"Family": "fennekin",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"deoxys": {
+"0": {
+"Family": "deoxys",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "deoxys",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "deoxys",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "deoxys",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dewgong": {
+"0": {
+"Family": "seel",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dewott": {
+"0": {
+"Family": "oshawott",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dewpider": {
+"0": {
+"Family": "dewpider",
+"Stage": 2,
+"Element1": "water",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dhelmise": {
+"0": {
+"Family": "dhelmise",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dialga": {
+"0": {
+"Family": "dialga",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"diancie": {
+"0": {
+"Family": "diancie",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "diancie",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"diggersby": {
+"0": {
+"Family": "bunnelby",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"diglett": {
+"0": {
+"Family": "diglett",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "diglett",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ditto": {
+"0": {
+"Family": "ditto",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dodrio": {
+"0": {
+"Family": "doduo",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"doduo": {
+"0": {
+"Family": "doduo",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"donphan": {
+"0": {
+"Family": "phanpy",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dottler": {
+"0": {
+"Family": "blipbug",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"doublade": {
+"0": {
+"Family": "honedge",
+"Stage": 8,
+"Element1": "steel",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dracovish": {
+"0": {
+"Family": "dracovish",
+"Stage": 1,
+"Element1": "water",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dracozolt": {
+"0": {
+"Family": "dracozolt",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dragalge": {
+"0": {
+"Family": "skrelp",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dragapult": {
+"0": {
+"Family": "dreepy",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dragonair": {
+"0": {
+"Family": "dratini",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dragonite": {
+"0": {
+"Family": "dratini",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drakloak": {
+"0": {
+"Family": "dreepy",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drampa": {
+"0": {
+"Family": "drampa",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drapion": {
+"0": {
+"Family": "skorupi",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dratini": {
+"0": {
+"Family": "dratini",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drednaw": {
+"0": {
+"Family": "chewtle",
+"Stage": 4,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "chewtle",
+"Stage": 4,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dreepy": {
+"0": {
+"Family": "dreepy",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drifblim": {
+"0": {
+"Family": "drifloon",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drifloon": {
+"0": {
+"Family": "drifloon",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drilbur": {
+"0": {
+"Family": "drilbur",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drizzile": {
+"0": {
+"Family": "sobble",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"drowzee": {
+"0": {
+"Family": "drowzee",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"druddigon": {
+"0": {
+"Family": "druddigon",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dubwool": {
+"0": {
+"Family": "wooloo",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ducklett": {
+"0": {
+"Family": "ducklett",
+"Stage": 2,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dugtrio": {
+"0": {
+"Family": "diglett",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "diglett",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dunsparce": {
+"0": {
+"Family": "dunsparce",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"duosion": {
+"0": {
+"Family": "solosis",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"duraludon": {
+"0": {
+"Family": "duraludon",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "duraludon",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"durant": {
+"0": {
+"Family": "durant",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dusclops": {
+"0": {
+"Family": "duskull",
+"Stage": 8,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dusknoir": {
+"0": {
+"Family": "duskull",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"duskull": {
+"0": {
+"Family": "duskull",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dustox": {
+"0": {
+"Family": "wurmple",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"dwebble": {
+"0": {
+"Family": "dwebble",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eelektrik": {
+"0": {
+"Family": "tynamo",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eelektross": {
+"0": {
+"Family": "tynamo",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eevee": {
+"0": {
+"Family": "eevee",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "eevee",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "eevee",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eiscue": {
+"0": {
+"Family": "eiscue",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "eiscue",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ekans": {
+"0": {
+"Family": "ekans",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eldegoss": {
+"0": {
+"Family": "gossifleur",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"electabuzz": {
+"0": {
+"Family": "elekid",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"electivire": {
+"0": {
+"Family": "elekid",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"electrike": {
+"0": {
+"Family": "electrike",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"electrode": {
+"0": {
+"Family": "voltorb",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"elekid": {
+"0": {
+"Family": "elekid",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"elgyem": {
+"0": {
+"Family": "elgyem",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"emboar": {
+"0": {
+"Family": "tepig",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"emolga": {
+"0": {
+"Family": "emolga",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"empoleon": {
+"0": {
+"Family": "piplup",
+"Stage": 4,
+"Element1": "water",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"entei": {
+"0": {
+"Family": "entei",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"escavalier": {
+"0": {
+"Family": "karrablast",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"espeon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"espurr": {
+"0": {
+"Family": "espurr",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"eternatus": {
+"0": {
+"Family": "eternatus",
+"Stage": 1,
+"Element1": "poison",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "eternatus",
+"Stage": 1,
+"Element1": "poison",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"excadrill": {
+"0": {
+"Family": "drilbur",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"exeggcute": {
+"0": {
+"Family": "exeggcute",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"exeggutor": {
+"0": {
+"Family": "exeggcute",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "exeggcute",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"exploud": {
+"0": {
+"Family": "whismur",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"falinks": {
+"0": {
+"Family": "falinks",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"farfetchd": {
+"0": {
+"Family": "farfetchd",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "farfetchd",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fearow": {
+"0": {
+"Family": "spearow",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"feebas": {
+"0": {
+"Family": "feebas",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fennekin": {
+"0": {
+"Family": "fennekin",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"feraligatr": {
+"0": {
+"Family": "totodile",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ferroseed": {
+"0": {
+"Family": "ferroseed",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ferrothorn": {
+"0": {
+"Family": "ferroseed",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"finneon": {
+"0": {
+"Family": "finneon",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"flaaffy": {
+"0": {
+"Family": "mareep",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"flabebe": {
+"0": {
+"Family": "flabebe",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "flabebe",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "flabebe",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "flabebe",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "flabebe",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"flapple": {
+"0": {
+"Family": "applin",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "applin",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"flareon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fletchinder": {
+"0": {
+"Family": "fletchling",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fletchling": {
+"0": {
+"Family": "fletchling",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"floatzel": {
+"0": {
+"Family": "buizel",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"floette": {
+"0": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "flabebe",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"florges": {
+"0": {
+"Family": "flabebe",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "flabebe",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "flabebe",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "flabebe",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "flabebe",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"flygon": {
+"0": {
+"Family": "trapinch",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fomantis": {
+"0": {
+"Family": "fomantis",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"foongus": {
+"0": {
+"Family": "foongus",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"forretress": {
+"0": {
+"Family": "pineco",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"fraxure": {
+"0": {
+"Family": "axew",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"frillish": {
+"0": {
+"Family": "frillish",
+"Stage": 2,
+"Element1": "water",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"froakie": {
+"0": {
+"Family": "froakie",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"frogadier": {
+"0": {
+"Family": "froakie",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"froslass": {
+"0": {
+"Family": "snorunt",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"frosmoth": {
+"0": {
+"Family": "snom",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"furfrou": {
+"0": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "furfrou",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"furret": {
+"0": {
+"Family": "sentret",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gabite": {
+"0": {
+"Family": "gible",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gallade": {
+"0": {
+"Family": "ralts",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "ralts",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"galvantula": {
+"0": {
+"Family": "joltik",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"garbodor": {
+"0": {
+"Family": "trubbish",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "trubbish",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"garchomp": {
+"0": {
+"Family": "gible",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "gible",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gardevoir": {
+"0": {
+"Family": "ralts",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "ralts",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gastly": {
+"0": {
+"Family": "gastly",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gastrodon": {
+"0": {
+"Family": "shellos",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "shellos",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"genesect": {
+"0": {
+"Family": "genesect",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "genesect",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "genesect",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "genesect",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "genesect",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gengar": {
+"0": {
+"Family": "gastly",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "gastly",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "gastly",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"geodude": {
+"0": {
+"Family": "geodude",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "geodude",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gible": {
+"0": {
+"Family": "gible",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gigalith": {
+"0": {
+"Family": "roggenrola",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"girafarig": {
+"0": {
+"Family": "girafarig",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"giratina": {
+"0": {
+"Family": "giratina",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "giratina",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"glaceon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"glalie": {
+"0": {
+"Family": "snorunt",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "snorunt",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"glameow": {
+"0": {
+"Family": "glameow",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"glastrier": {
+"0": {
+"Family": "glastrier",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gligar": {
+"0": {
+"Family": "gligar",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gliscor": {
+"0": {
+"Family": "gligar",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gloom": {
+"0": {
+"Family": "oddish",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gogoat": {
+"0": {
+"Family": "skiddo",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golbat": {
+"0": {
+"Family": "zubat",
+"Stage": 8,
+"Element1": "poison",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"goldeen": {
+"0": {
+"Family": "goldeen",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golduck": {
+"0": {
+"Family": "psyduck",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golem": {
+"0": {
+"Family": "geodude",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "geodude",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golett": {
+"0": {
+"Family": "golett",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golisopod": {
+"0": {
+"Family": "wimpod",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"golurk": {
+"0": {
+"Family": "golett",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"goodra": {
+"0": {
+"Family": "goomy",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"goomy": {
+"0": {
+"Family": "goomy",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gorebyss": {
+"0": {
+"Family": "clamperl",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gossifleur": {
+"0": {
+"Family": "gossifleur",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gothita": {
+"0": {
+"Family": "gothita",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gothitelle": {
+"0": {
+"Family": "gothita",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gothorita": {
+"0": {
+"Family": "gothita",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gourgeist": {
+"0": {
+"Family": "pumpkaboo",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pumpkaboo",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "pumpkaboo",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "pumpkaboo",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"granbull": {
+"0": {
+"Family": "snubbull",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grapploct": {
+"0": {
+"Family": "clobbopus",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"graveler": {
+"0": {
+"Family": "geodude",
+"Stage": 8,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "geodude",
+"Stage": 8,
+"Element1": "rock",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"greedent": {
+"0": {
+"Family": "skwovet",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"greninja": {
+"0": {
+"Family": "froakie",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grimer": {
+"0": {
+"Family": "grimer",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "grimer",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grimmsnarl": {
+"0": {
+"Family": "impidimp",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "impidimp",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grookey": {
+"0": {
+"Family": "grookey",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grotle": {
+"0": {
+"Family": "turtwig",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"groudon": {
+"0": {
+"Family": "groudon",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "groudon",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grovyle": {
+"0": {
+"Family": "treecko",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"growlithe": {
+"0": {
+"Family": "growlithe",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grubbin": {
+"0": {
+"Family": "grubbin",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"grumpig": {
+"0": {
+"Family": "spoink",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gulpin": {
+"0": {
+"Family": "gulpin",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gumshoos": {
+"0": {
+"Family": "yungoos",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gurdurr": {
+"0": {
+"Family": "timburr",
+"Stage": 8,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"guzzlord": {
+"0": {
+"Family": "guzzlord",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"gyarados": {
+"0": {
+"Family": "magikarp",
+"Stage": 4,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "magikarp",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hakamo_o": {
+"0": {
+"Family": "jangmo_o",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"happiny": {
+"0": {
+"Family": "happiny",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hariyama": {
+"0": {
+"Family": "makuhita",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hatenna": {
+"0": {
+"Family": "hatenna",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hatterene": {
+"0": {
+"Family": "hatenna",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "hatenna",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hattrem": {
+"0": {
+"Family": "hatenna",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"haunter": {
+"0": {
+"Family": "gastly",
+"Stage": 8,
+"Element1": "ghost",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hawlucha": {
+"0": {
+"Family": "hawlucha",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"haxorus": {
+"0": {
+"Family": "axew",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"heatmor": {
+"0": {
+"Family": "heatmor",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"heatran": {
+"0": {
+"Family": "heatran",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"heliolisk": {
+"0": {
+"Family": "helioptile",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"helioptile": {
+"0": {
+"Family": "helioptile",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"heracross": {
+"0": {
+"Family": "heracross",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "heracross",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"herdier": {
+"0": {
+"Family": "lillipup",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hippopotas": {
+"0": {
+"Family": "hippopotas",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hippowdon": {
+"0": {
+"Family": "hippopotas",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hitmonchan": {
+"0": {
+"Family": "tyrogue",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hitmonlee": {
+"0": {
+"Family": "tyrogue",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hitmontop": {
+"0": {
+"Family": "tyrogue",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ho_oh": {
+"0": {
+"Family": "ho_oh",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"honchkrow": {
+"0": {
+"Family": "murkrow",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"honedge": {
+"0": {
+"Family": "honedge",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hoopa": {
+"0": {
+"Family": "hoopa",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "hoopa",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hoothoot": {
+"0": {
+"Family": "hoothoot",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hoppip": {
+"0": {
+"Family": "hoppip",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"horsea": {
+"0": {
+"Family": "horsea",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"houndoom": {
+"0": {
+"Family": "houndour",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "houndour",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"houndour": {
+"0": {
+"Family": "houndour",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"huntail": {
+"0": {
+"Family": "clamperl",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hydreigon": {
+"0": {
+"Family": "deino",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"hypno": {
+"0": {
+"Family": "drowzee",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"igglybuff": {
+"0": {
+"Family": "igglybuff",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"illumise": {
+"0": {
+"Family": "illumise",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"impidimp": {
+"0": {
+"Family": "impidimp",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"incineroar": {
+"0": {
+"Family": "litten",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"indeedee": {
+"0": {
+"Family": "indeedee",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "indeedee",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"infernape": {
+"0": {
+"Family": "chimchar",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"inkay": {
+"0": {
+"Family": "inkay",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"inteleon": {
+"0": {
+"Family": "sobble",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sobble",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ivysaur": {
+"0": {
+"Family": "bulbasaur",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jangmo_o": {
+"0": {
+"Family": "jangmo_o",
+"Stage": 2,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jellicent": {
+"0": {
+"Family": "frillish",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jigglypuff": {
+"0": {
+"Family": "igglybuff",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jirachi": {
+"0": {
+"Family": "jirachi",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jolteon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"joltik": {
+"0": {
+"Family": "joltik",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jumpluff": {
+"0": {
+"Family": "hoppip",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"jynx": {
+"0": {
+"Family": "smoochum",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kabuto": {
+"0": {
+"Family": "kabuto",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kabutops": {
+"0": {
+"Family": "kabuto",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kadabra": {
+"0": {
+"Family": "abra",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kakuna": {
+"0": {
+"Family": "weedle",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kangaskhan": {
+"0": {
+"Family": "kangaskhan",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "kangaskhan",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"karrablast": {
+"0": {
+"Family": "karrablast",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kartana": {
+"0": {
+"Family": "kartana",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kecleon": {
+"0": {
+"Family": "kecleon",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "kecleon",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"keldeo": {
+"0": {
+"Family": "keldeo",
+"Stage": 1,
+"Element1": "water",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "keldeo",
+"Stage": 1,
+"Element1": "water",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kingdra": {
+"0": {
+"Family": "horsea",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kingler": {
+"0": {
+"Family": "krabby",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "krabby",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kirlia": {
+"0": {
+"Family": "ralts",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"klang": {
+"0": {
+"Family": "klink",
+"Stage": 8,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"klefki": {
+"0": {
+"Family": "klefki",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"klink": {
+"0": {
+"Family": "klink",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"klinklang": {
+"0": {
+"Family": "klink",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"koffing": {
+"0": {
+"Family": "koffing",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"komala": {
+"0": {
+"Family": "komala",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kommo_o": {
+"0": {
+"Family": "jangmo_o",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"krabby": {
+"0": {
+"Family": "krabby",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kricketot": {
+"0": {
+"Family": "kricketot",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kricketune": {
+"0": {
+"Family": "kricketot",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"krokorok": {
+"0": {
+"Family": "sandile",
+"Stage": 8,
+"Element1": "ground",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"krookodile": {
+"0": {
+"Family": "sandile",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kubfu": {
+"0": {
+"Family": "kubfu",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kyogre": {
+"0": {
+"Family": "kyogre",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "kyogre",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"kyurem": {
+"0": {
+"Family": "kyurem",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "kyurem",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "kyurem",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lairon": {
+"0": {
+"Family": "aron",
+"Stage": 8,
+"Element1": "steel",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lampent": {
+"0": {
+"Family": "litwick",
+"Stage": 8,
+"Element1": "ghost",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"landorus": {
+"0": {
+"Family": "landorus",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "landorus",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lanturn": {
+"0": {
+"Family": "chinchou",
+"Stage": 4,
+"Element1": "water",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lapras": {
+"0": {
+"Family": "lapras",
+"Stage": 1,
+"Element1": "water",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "lapras",
+"Stage": 1,
+"Element1": "water",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"larvesta": {
+"0": {
+"Family": "larvesta",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"larvitar": {
+"0": {
+"Family": "larvitar",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"latias": {
+"0": {
+"Family": "latias",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "latias",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"latios": {
+"0": {
+"Family": "latios",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "latios",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"leafeon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"leavanny": {
+"0": {
+"Family": "sewaddle",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ledian": {
+"0": {
+"Family": "ledyba",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ledyba": {
+"0": {
+"Family": "ledyba",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lickilicky": {
+"0": {
+"Family": "lickitung",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lickitung": {
+"0": {
+"Family": "lickitung",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"liepard": {
+"0": {
+"Family": "purrloin",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lileep": {
+"0": {
+"Family": "lileep",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lilligant": {
+"0": {
+"Family": "petilil",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lillipup": {
+"0": {
+"Family": "lillipup",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"linoone": {
+"0": {
+"Family": "zigzagoon",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zigzagoon",
+"Stage": 8,
+"Element1": "dark",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"litleo": {
+"0": {
+"Family": "litleo",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"litten": {
+"0": {
+"Family": "litten",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"litwick": {
+"0": {
+"Family": "litwick",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lombre": {
+"0": {
+"Family": "lotad",
+"Stage": 8,
+"Element1": "water",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lopunny": {
+"0": {
+"Family": "buneary",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "buneary",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lotad": {
+"0": {
+"Family": "lotad",
+"Stage": 2,
+"Element1": "water",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"loudred": {
+"0": {
+"Family": "whismur",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lucario": {
+"0": {
+"Family": "riolu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "riolu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ludicolo": {
+"0": {
+"Family": "lotad",
+"Stage": 4,
+"Element1": "water",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lugia": {
+"0": {
+"Family": "lugia",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lumineon": {
+"0": {
+"Family": "finneon",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lunala": {
+"0": {
+"Family": "cosmog",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lunatone": {
+"0": {
+"Family": "lunatone",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lurantis": {
+"0": {
+"Family": "fomantis",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"luvdisc": {
+"0": {
+"Family": "luvdisc",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"luxio": {
+"0": {
+"Family": "shinx",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"luxray": {
+"0": {
+"Family": "shinx",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"lycanroc": {
+"0": {
+"Family": "rockruff",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rockruff",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "rockruff",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"machamp": {
+"0": {
+"Family": "machop",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "machop",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"machoke": {
+"0": {
+"Family": "machop",
+"Stage": 8,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"machop": {
+"0": {
+"Family": "machop",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magby": {
+"0": {
+"Family": "magby",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magcargo": {
+"0": {
+"Family": "slugma",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magearna": {
+"0": {
+"Family": "magearna",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "magearna",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magikarp": {
+"0": {
+"Family": "magikarp",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magmar": {
+"0": {
+"Family": "magby",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magmortar": {
+"0": {
+"Family": "magby",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magnemite": {
+"0": {
+"Family": "magnemite",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magneton": {
+"0": {
+"Family": "magnemite",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"magnezone": {
+"0": {
+"Family": "magnemite",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"makuhita": {
+"0": {
+"Family": "makuhita",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"malamar": {
+"0": {
+"Family": "inkay",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mamoswine": {
+"0": {
+"Family": "swinub",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"manaphy": {
+"0": {
+"Family": "manaphy",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mandibuzz": {
+"0": {
+"Family": "vullaby",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"manectric": {
+"0": {
+"Family": "electrike",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "electrike",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mankey": {
+"0": {
+"Family": "mankey",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mantine": {
+"0": {
+"Family": "mantyke",
+"Stage": 4,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mantyke": {
+"0": {
+"Family": "mantyke",
+"Stage": 2,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"maractus": {
+"0": {
+"Family": "maractus",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mareanie": {
+"0": {
+"Family": "mareanie",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mareep": {
+"0": {
+"Family": "mareep",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"marill": {
+"0": {
+"Family": "azurill",
+"Stage": 8,
+"Element1": "water",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"marowak": {
+"0": {
+"Family": "cubone",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "cubone",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"marshadow": {
+"0": {
+"Family": "marshadow",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"marshtomp": {
+"0": {
+"Family": "mudkip",
+"Stage": 8,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"masquerain": {
+"0": {
+"Family": "surskit",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mawile": {
+"0": {
+"Family": "mawile",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mawile",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"medicham": {
+"0": {
+"Family": "meditite",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "meditite",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meditite": {
+"0": {
+"Family": "meditite",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meganium": {
+"0": {
+"Family": "chikorita",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"melmetal": {
+"0": {
+"Family": "melmetal",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "melmetal",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meloetta": {
+"0": {
+"Family": "meloetta",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "meloetta",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meltan": {
+"0": {
+"Family": "meltan",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meowstic": {
+"0": {
+"Family": "espurr",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "espurr",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"meowth": {
+"0": {
+"Family": "meowth",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "meowth",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "meowth",
+"Stage": 2,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "meowth",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mesprit": {
+"0": {
+"Family": "mesprit",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"metagross": {
+"0": {
+"Family": "beldum",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "beldum",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"metang": {
+"0": {
+"Family": "beldum",
+"Stage": 8,
+"Element1": "steel",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"metapod": {
+"0": {
+"Family": "caterpie",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mew": {
+"0": {
+"Family": "mew",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mewtwo": {
+"0": {
+"Family": "mewtwo",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mewtwo",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "mewtwo",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mienfoo": {
+"0": {
+"Family": "mienfoo",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mienshao": {
+"0": {
+"Family": "mienfoo",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mightyena": {
+"0": {
+"Family": "poochyena",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"milcery": {
+"0": {
+"Family": "milcery",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"milotic": {
+"0": {
+"Family": "feebas",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"miltank": {
+"0": {
+"Family": "miltank",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mime_jr": {
+"0": {
+"Family": "mime_jr",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mimikyu": {
+"0": {
+"Family": "mimikyu",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mimikyu",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"minccino": {
+"0": {
+"Family": "minccino",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"minior": {
+"0": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "minior",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"minun": {
+"0": {
+"Family": "minun",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"misdreavus": {
+"0": {
+"Family": "misdreavus",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mismagius": {
+"0": {
+"Family": "misdreavus",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"missingno": {
+"0": {
+"Family": "missingno",
+"Stage": 1,
+"Element1": "none",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "missingno",
+"Stage": 1,
+"Element1": "",
+"Element2": "",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"moltres": {
+"0": {
+"Family": "moltres",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "moltres",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"monferno": {
+"0": {
+"Family": "chimchar",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"morelull": {
+"0": {
+"Family": "morelull",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"morgrem": {
+"0": {
+"Family": "impidimp",
+"Stage": 8,
+"Element1": "dark",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"morpeko": {
+"0": {
+"Family": "morpeko",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "morpeko",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mothim": {
+"0": {
+"Family": "burmy",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mr_mime": {
+"0": {
+"Family": "mime_jr",
+"Stage": 8,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mime_jr",
+"Stage": 8,
+"Element1": "ice",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mr_rime": {
+"0": {
+"Family": "mime_jr",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mudbray": {
+"0": {
+"Family": "mudbray",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mudkip": {
+"0": {
+"Family": "mudkip",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"mudsdale": {
+"0": {
+"Family": "mudbray",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"muk": {
+"0": {
+"Family": "grimer",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "grimer",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"munchlax": {
+"0": {
+"Family": "munchlax",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"munna": {
+"0": {
+"Family": "munna",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"murkrow": {
+"0": {
+"Family": "murkrow",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"musharna": {
+"0": {
+"Family": "munna",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"naganadel": {
+"0": {
+"Family": "poipole",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"natu": {
+"0": {
+"Family": "natu",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"necrozma": {
+"0": {
+"Family": "necrozma",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "necrozma",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "necrozma",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "necrozma",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nickit": {
+"0": {
+"Family": "nickit",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidoking": {
+"0": {
+"Family": "nidoran_m",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidoqueen": {
+"0": {
+"Family": "nidoran_f",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidoran_f": {
+"0": {
+"Family": "nidoran_f",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidoran_m": {
+"0": {
+"Family": "nidoran_m",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidorina": {
+"0": {
+"Family": "nidoran_f",
+"Stage": 8,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nidorino": {
+"0": {
+"Family": "nidoran_m",
+"Stage": 8,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nihilego": {
+"0": {
+"Family": "nihilego",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nincada": {
+"0": {
+"Family": "nincada",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ninetales": {
+"0": {
+"Family": "vulpix",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "vulpix",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ninjask": {
+"0": {
+"Family": "nincada",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"noctowl": {
+"0": {
+"Family": "hoothoot",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"noibat": {
+"0": {
+"Family": "noibat",
+"Stage": 2,
+"Element1": "flying",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"noivern": {
+"0": {
+"Family": "noibat",
+"Stage": 4,
+"Element1": "flying",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nosepass": {
+"0": {
+"Family": "nosepass",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"numel": {
+"0": {
+"Family": "numel",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"nuzleaf": {
+"0": {
+"Family": "seedot",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"obstagoon": {
+"0": {
+"Family": "zigzagoon",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"octillery": {
+"0": {
+"Family": "remoraid",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"oddish": {
+"0": {
+"Family": "oddish",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"omanyte": {
+"0": {
+"Family": "omanyte",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"omastar": {
+"0": {
+"Family": "omanyte",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"onix": {
+"0": {
+"Family": "onix",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"oranguru": {
+"0": {
+"Family": "oranguru",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"orbeetle": {
+"0": {
+"Family": "blipbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "blipbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"oricorio": {
+"0": {
+"Family": "oricorio",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "oricorio",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "oricorio",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "oricorio",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"oshawott": {
+"0": {
+"Family": "oshawott",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pachirisu": {
+"0": {
+"Family": "pachirisu",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"palkia": {
+"0": {
+"Family": "palkia",
+"Stage": 1,
+"Element1": "water",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"palossand": {
+"0": {
+"Family": "sandygast",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"palpitoad": {
+"0": {
+"Family": "tympole",
+"Stage": 8,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pancham": {
+"0": {
+"Family": "pancham",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pangoro": {
+"0": {
+"Family": "pancham",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"panpour": {
+"0": {
+"Family": "panpour",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pansage": {
+"0": {
+"Family": "pansage",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pansear": {
+"0": {
+"Family": "pansear",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"paras": {
+"0": {
+"Family": "paras",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"parasect": {
+"0": {
+"Family": "paras",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"passimian": {
+"0": {
+"Family": "passimian",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"patrat": {
+"0": {
+"Family": "patrat",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pawniard": {
+"0": {
+"Family": "pawniard",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pelipper": {
+"0": {
+"Family": "wingull",
+"Stage": 4,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"perrserker": {
+"0": {
+"Family": "meowth",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"persian": {
+"0": {
+"Family": "meowth",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "meowth",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"petilil": {
+"0": {
+"Family": "petilil",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"phanpy": {
+"0": {
+"Family": "phanpy",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"phantump": {
+"0": {
+"Family": "phantump",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pheromosa": {
+"0": {
+"Family": "pheromosa",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"phione": {
+"0": {
+"Family": "phione",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pichu": {
+"0": {
+"Family": "pichu",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pidgeot": {
+"0": {
+"Family": "pidgey",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pidgey",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pidgeotto": {
+"0": {
+"Family": "pidgey",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pidgey": {
+"0": {
+"Family": "pidgey",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pidove": {
+"0": {
+"Family": "pidove",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pignite": {
+"0": {
+"Family": "tepig",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pikachu": {
+"0": {
+"Family": "pichu",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pichu",
+"Stage": 8,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pikipek": {
+"0": {
+"Family": "pikipek",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"piloswine": {
+"0": {
+"Family": "swinub",
+"Stage": 8,
+"Element1": "ice",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pincurchin": {
+"0": {
+"Family": "pincurchin",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pineco": {
+"0": {
+"Family": "pineco",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pinsir": {
+"0": {
+"Family": "pinsir",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pinsir",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"piplup": {
+"0": {
+"Family": "piplup",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"plusle": {
+"0": {
+"Family": "plusle",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"poipole": {
+"0": {
+"Family": "poipole",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"politoed": {
+"0": {
+"Family": "poliwag",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"poliwag": {
+"0": {
+"Family": "poliwag",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"poliwhirl": {
+"0": {
+"Family": "poliwag",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"poliwrath": {
+"0": {
+"Family": "poliwag",
+"Stage": 4,
+"Element1": "water",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"polteageist": {
+"0": {
+"Family": "sinistea",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sinistea",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ponyta": {
+"0": {
+"Family": "ponyta",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "ponyta",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"poochyena": {
+"0": {
+"Family": "poochyena",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"popplio": {
+"0": {
+"Family": "popplio",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"porygon_z": {
+"0": {
+"Family": "porygon",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"porygon": {
+"0": {
+"Family": "porygon",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"porygon2": {
+"0": {
+"Family": "porygon",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"primarina": {
+"0": {
+"Family": "popplio",
+"Stage": 4,
+"Element1": "water",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"primeape": {
+"0": {
+"Family": "mankey",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"prinplup": {
+"0": {
+"Family": "piplup",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"probopass": {
+"0": {
+"Family": "nosepass",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"psyduck": {
+"0": {
+"Family": "psyduck",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pumpkaboo": {
+"0": {
+"Family": "pumpkaboo",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pumpkaboo",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "pumpkaboo",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "pumpkaboo",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pupitar": {
+"0": {
+"Family": "larvitar",
+"Stage": 8,
+"Element1": "rock",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"purrloin": {
+"0": {
+"Family": "purrloin",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"purugly": {
+"0": {
+"Family": "glameow",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pyroar": {
+"0": {
+"Family": "litleo",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"pyukumuku": {
+"0": {
+"Family": "pyukumuku",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"quagsire": {
+"0": {
+"Family": "wooper",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"quilava": {
+"0": {
+"Family": "cyndaquil",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"quilladin": {
+"0": {
+"Family": "chespin",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"qwilfish": {
+"0": {
+"Family": "qwilfish",
+"Stage": 1,
+"Element1": "water",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"raboot": {
+"0": {
+"Family": "scorbunny",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"raichu": {
+"0": {
+"Family": "pichu",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "pichu",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"raikou": {
+"0": {
+"Family": "raikou",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ralts": {
+"0": {
+"Family": "ralts",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rampardos": {
+"0": {
+"Family": "cranidos",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rapidash": {
+"0": {
+"Family": "ponyta",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "ponyta",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"raticate": {
+"0": {
+"Family": "rattata",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rattata",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rattata": {
+"0": {
+"Family": "rattata",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rattata",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rayquaza": {
+"0": {
+"Family": "rayquaza",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rayquaza",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"regice": {
+"0": {
+"Family": "regice",
+"Stage": 1,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"regidrago": {
+"0": {
+"Family": "regidrago",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"regieleki": {
+"0": {
+"Family": "regieleki",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"regigigas": {
+"0": {
+"Family": "regigigas",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"regirock": {
+"0": {
+"Family": "regirock",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"registeel": {
+"0": {
+"Family": "registeel",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"relicanth": {
+"0": {
+"Family": "relicanth",
+"Stage": 1,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"remoraid": {
+"0": {
+"Family": "remoraid",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"reshiram": {
+"0": {
+"Family": "reshiram",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"reuniclus": {
+"0": {
+"Family": "solosis",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rhydon": {
+"0": {
+"Family": "rhyhorn",
+"Stage": 8,
+"Element1": "ground",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rhyhorn": {
+"0": {
+"Family": "rhyhorn",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rhyperior": {
+"0": {
+"Family": "rhyhorn",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ribombee": {
+"0": {
+"Family": "cutiefly",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rillaboom": {
+"0": {
+"Family": "grookey",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "grookey",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"riolu": {
+"0": {
+"Family": "riolu",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rockruff": {
+"0": {
+"Family": "rockruff",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"roggenrola": {
+"0": {
+"Family": "roggenrola",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rolycoly": {
+"0": {
+"Family": "rolycoly",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rookidee": {
+"0": {
+"Family": "rookidee",
+"Stage": 2,
+"Element1": "flying",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"roselia": {
+"0": {
+"Family": "budew",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"roserade": {
+"0": {
+"Family": "budew",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rotom": {
+"0": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "rotom",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rowlet": {
+"0": {
+"Family": "rowlet",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"rufflet": {
+"0": {
+"Family": "rufflet",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"runerigus": {
+"0": {
+"Family": "yamask",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sableye": {
+"0": {
+"Family": "sableye",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sableye",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"salamence": {
+"0": {
+"Family": "bagon",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "bagon",
+"Stage": 4,
+"Element1": "dragon",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"salandit": {
+"0": {
+"Family": "salandit",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"salazzle": {
+"0": {
+"Family": "salandit",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"samurott": {
+"0": {
+"Family": "oshawott",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sandaconda": {
+"0": {
+"Family": "silicobra",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "silicobra",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sandile": {
+"0": {
+"Family": "sandile",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sandshrew": {
+"0": {
+"Family": "sandshrew",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sandshrew",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sandslash": {
+"0": {
+"Family": "sandshrew",
+"Stage": 4,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sandshrew",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sandygast": {
+"0": {
+"Family": "sandygast",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sawk": {
+"0": {
+"Family": "sawk",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sawsbuck": {
+"0": {
+"Family": "deerling",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "deerling",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "deerling",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "deerling",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scatterbug": {
+"0": {
+"Family": "scatterbug",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sceptile": {
+"0": {
+"Family": "treecko",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "treecko",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scizor": {
+"0": {
+"Family": "scyther",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "scyther",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scolipede": {
+"0": {
+"Family": "venipede",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scorbunny": {
+"0": {
+"Family": "scorbunny",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scrafty": {
+"0": {
+"Family": "scraggy",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scraggy": {
+"0": {
+"Family": "scraggy",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"scyther": {
+"0": {
+"Family": "scyther",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seadra": {
+"0": {
+"Family": "horsea",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seaking": {
+"0": {
+"Family": "goldeen",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sealeo": {
+"0": {
+"Family": "spheal",
+"Stage": 8,
+"Element1": "ice",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seedot": {
+"0": {
+"Family": "seedot",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seel": {
+"0": {
+"Family": "seel",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seismitoad": {
+"0": {
+"Family": "tympole",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sentret": {
+"0": {
+"Family": "sentret",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"serperior": {
+"0": {
+"Family": "snivy",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"servine": {
+"0": {
+"Family": "snivy",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"seviper": {
+"0": {
+"Family": "seviper",
+"Stage": 1,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sewaddle": {
+"0": {
+"Family": "sewaddle",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sharpedo": {
+"0": {
+"Family": "carvanha",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "carvanha",
+"Stage": 4,
+"Element1": "water",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shaymin": {
+"0": {
+"Family": "shaymin",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "shaymin",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shedinja": {
+"0": {
+"Family": "nincada",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shelgon": {
+"0": {
+"Family": "bagon",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shellder": {
+"0": {
+"Family": "shellder",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shellos": {
+"0": {
+"Family": "shellos",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "shellos",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shelmet": {
+"0": {
+"Family": "shelmet",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shieldon": {
+"0": {
+"Family": "shieldon",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shiftry": {
+"0": {
+"Family": "seedot",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shiinotic": {
+"0": {
+"Family": "morelull",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shinx": {
+"0": {
+"Family": "shinx",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shroomish": {
+"0": {
+"Family": "shroomish",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shuckle": {
+"0": {
+"Family": "shuckle",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"shuppet": {
+"0": {
+"Family": "shuppet",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sigilyph": {
+"0": {
+"Family": "sigilyph",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"silcoon": {
+"0": {
+"Family": "wurmple",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"silicobra": {
+"0": {
+"Family": "silicobra",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"silvally": {
+"0": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"14": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"15": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"16": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"17": {
+"Family": "type_null",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"simipour": {
+"0": {
+"Family": "panpour",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"simisage": {
+"0": {
+"Family": "pansage",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"simisear": {
+"0": {
+"Family": "pansear",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sinistea": {
+"0": {
+"Family": "sinistea",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "sinistea",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sirfetchd": {
+"0": {
+"Family": "farfetchd",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sizzlipede": {
+"0": {
+"Family": "sizzlipede",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skarmory": {
+"0": {
+"Family": "skarmory",
+"Stage": 1,
+"Element1": "steel",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skiddo": {
+"0": {
+"Family": "skiddo",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skiploom": {
+"0": {
+"Family": "hoppip",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skitty": {
+"0": {
+"Family": "skitty",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skorupi": {
+"0": {
+"Family": "skorupi",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skrelp": {
+"0": {
+"Family": "skrelp",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skuntank": {
+"0": {
+"Family": "stunky",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"skwovet": {
+"0": {
+"Family": "skwovet",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slaking": {
+"0": {
+"Family": "slakoth",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slakoth": {
+"0": {
+"Family": "slakoth",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sliggoo": {
+"0": {
+"Family": "goomy",
+"Stage": 8,
+"Element1": "dragon",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slowbro": {
+"0": {
+"Family": "slowpoke",
+"Stage": 4,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "slowpoke",
+"Stage": 4,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "slowpoke",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slowking": {
+"0": {
+"Family": "slowpoke",
+"Stage": 4,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "slowpoke",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slowpoke": {
+"0": {
+"Family": "slowpoke",
+"Stage": 2,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "slowpoke",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slugma": {
+"0": {
+"Family": "slugma",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"slurpuff": {
+"0": {
+"Family": "swirlix",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"smeargle": {
+"0": {
+"Family": "smeargle",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"smoochum": {
+"0": {
+"Family": "smoochum",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sneasel": {
+"0": {
+"Family": "sneasel",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snivy": {
+"0": {
+"Family": "snivy",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snom": {
+"0": {
+"Family": "snom",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "bug",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snorlax": {
+"0": {
+"Family": "munchlax",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "munchlax",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snorunt": {
+"0": {
+"Family": "snorunt",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snover": {
+"0": {
+"Family": "snover",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"snubbull": {
+"0": {
+"Family": "snubbull",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sobble": {
+"0": {
+"Family": "sobble",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"solgaleo": {
+"0": {
+"Family": "cosmog",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"solosis": {
+"0": {
+"Family": "solosis",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"solrock": {
+"0": {
+"Family": "solrock",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spearow": {
+"0": {
+"Family": "spearow",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spectrier": {
+"0": {
+"Family": "spectrier",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spewpa": {
+"0": {
+"Family": "scatterbug",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spheal": {
+"0": {
+"Family": "spheal",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spinarak": {
+"0": {
+"Family": "spinarak",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spinda": {
+"0": {
+"Family": "spinda",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spiritomb": {
+"0": {
+"Family": "spiritomb",
+"Stage": 1,
+"Element1": "ghost",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spoink": {
+"0": {
+"Family": "spoink",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"spritzee": {
+"0": {
+"Family": "spritzee",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"squirtle": {
+"0": {
+"Family": "squirtle",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stakataka": {
+"0": {
+"Family": "stakataka",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stantler": {
+"0": {
+"Family": "stantler",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"staraptor": {
+"0": {
+"Family": "starly",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"staravia": {
+"0": {
+"Family": "starly",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"starly": {
+"0": {
+"Family": "starly",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"starmie": {
+"0": {
+"Family": "staryu",
+"Stage": 4,
+"Element1": "water",
+"Element2": "psychic",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"staryu": {
+"0": {
+"Family": "staryu",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"steelix": {
+"0": {
+"Family": "onix",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "onix",
+"Stage": 4,
+"Element1": "steel",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"steenee": {
+"0": {
+"Family": "bounsweet",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stonjourner": {
+"0": {
+"Family": "stonjourner",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stoutland": {
+"0": {
+"Family": "lillipup",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stufful": {
+"0": {
+"Family": "stufful",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stunfisk": {
+"0": {
+"Family": "stunfisk",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "stunfisk",
+"Stage": 1,
+"Element1": "ground",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"stunky": {
+"0": {
+"Family": "stunky",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sudowoodo": {
+"0": {
+"Family": "bonsly",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"suicune": {
+"0": {
+"Family": "suicune",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sunflora": {
+"0": {
+"Family": "sunkern",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sunkern": {
+"0": {
+"Family": "sunkern",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"surskit": {
+"0": {
+"Family": "surskit",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swablu": {
+"0": {
+"Family": "swablu",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swadloon": {
+"0": {
+"Family": "sewaddle",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swalot": {
+"0": {
+"Family": "gulpin",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swampert": {
+"0": {
+"Family": "mudkip",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "mudkip",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swanna": {
+"0": {
+"Family": "ducklett",
+"Stage": 4,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swellow": {
+"0": {
+"Family": "taillow",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swinub": {
+"0": {
+"Family": "swinub",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swirlix": {
+"0": {
+"Family": "swirlix",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"swoobat": {
+"0": {
+"Family": "woobat",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sylveon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"taillow": {
+"0": {
+"Family": "taillow",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"talonflame": {
+"0": {
+"Family": "fletchling",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tangela": {
+"0": {
+"Family": "tangela",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tangrowth": {
+"0": {
+"Family": "tangela",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tapu_bulu": {
+"0": {
+"Family": "tapu_bulu",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tapu_fini": {
+"0": {
+"Family": "tapu_fini",
+"Stage": 1,
+"Element1": "water",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tapu_koko": {
+"0": {
+"Family": "tapu_koko",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tapu_lele": {
+"0": {
+"Family": "tapu_lele",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tauros": {
+"0": {
+"Family": "tauros",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"teddiursa": {
+"0": {
+"Family": "teddiursa",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tentacool": {
+"0": {
+"Family": "tentacool",
+"Stage": 2,
+"Element1": "water",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tentacruel": {
+"0": {
+"Family": "tentacool",
+"Stage": 4,
+"Element1": "water",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tepig": {
+"0": {
+"Family": "tepig",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"terrakion": {
+"0": {
+"Family": "terrakion",
+"Stage": 1,
+"Element1": "rock",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"thievul": {
+"0": {
+"Family": "nickit",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"throh": {
+"0": {
+"Family": "throh",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"thundurus": {
+"0": {
+"Family": "thundurus",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "thundurus",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"thwackey": {
+"0": {
+"Family": "grookey",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"timburr": {
+"0": {
+"Family": "timburr",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tirtouga": {
+"0": {
+"Family": "tirtouga",
+"Stage": 2,
+"Element1": "water",
+"Element2": "rock",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"togedemaru": {
+"0": {
+"Family": "togedemaru",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"togekiss": {
+"0": {
+"Family": "togepi",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"togepi": {
+"0": {
+"Family": "togepi",
+"Stage": 2,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"togetic": {
+"0": {
+"Family": "togepi",
+"Stage": 8,
+"Element1": "fairy",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"torchic": {
+"0": {
+"Family": "torchic",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"torkoal": {
+"0": {
+"Family": "torkoal",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tornadus": {
+"0": {
+"Family": "tornadus",
+"Stage": 1,
+"Element1": "flying",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "tornadus",
+"Stage": 1,
+"Element1": "flying",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"torracat": {
+"0": {
+"Family": "litten",
+"Stage": 8,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"torterra": {
+"0": {
+"Family": "turtwig",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"totodile": {
+"0": {
+"Family": "totodile",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"toucannon": {
+"0": {
+"Family": "pikipek",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"toxapex": {
+"0": {
+"Family": "mareanie",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"toxel": {
+"0": {
+"Family": "toxel",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"toxicroak": {
+"0": {
+"Family": "croagunk",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"toxtricity": {
+"0": {
+"Family": "toxel",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "toxel",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "toxel",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "toxel",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tranquill": {
+"0": {
+"Family": "pidove",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"trapinch": {
+"0": {
+"Family": "trapinch",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"treecko": {
+"0": {
+"Family": "treecko",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"trevenant": {
+"0": {
+"Family": "phantump",
+"Stage": 4,
+"Element1": "ghost",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tropius": {
+"0": {
+"Family": "tropius",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"trubbish": {
+"0": {
+"Family": "trubbish",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"trumbeak": {
+"0": {
+"Family": "pikipek",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tsareena": {
+"0": {
+"Family": "bounsweet",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"turtonator": {
+"0": {
+"Family": "turtonator",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"turtwig": {
+"0": {
+"Family": "turtwig",
+"Stage": 2,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tympole": {
+"0": {
+"Family": "tympole",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tynamo": {
+"0": {
+"Family": "tynamo",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"type_null": {
+"0": {
+"Family": "type_null",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"typhlosion": {
+"0": {
+"Family": "cyndaquil",
+"Stage": 4,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tyranitar": {
+"0": {
+"Family": "larvitar",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "larvitar",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tyrantrum": {
+"0": {
+"Family": "tyrunt",
+"Stage": 4,
+"Element1": "rock",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tyrogue": {
+"0": {
+"Family": "tyrogue",
+"Stage": 2,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"tyrunt": {
+"0": {
+"Family": "tyrunt",
+"Stage": 2,
+"Element1": "rock",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"umbreon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"unfezant": {
+"0": {
+"Family": "pidove",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"unown": {
+"0": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"14": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"15": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"16": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"17": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"18": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"19": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"20": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"21": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"22": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"23": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"24": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"25": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"26": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"27": {
+"Family": "unown",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"ursaring": {
+"0": {
+"Family": "teddiursa",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"urshifu": {
+"0": {
+"Family": "kubfu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "kubfu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "kubfu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "kubfu",
+"Stage": 4,
+"Element1": "fighting",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"uxie": {
+"0": {
+"Family": "uxie",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vanillish": {
+"0": {
+"Family": "vanillite",
+"Stage": 8,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vanillite": {
+"0": {
+"Family": "vanillite",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vanilluxe": {
+"0": {
+"Family": "vanillite",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vaporeon": {
+"0": {
+"Family": "eevee",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"venipede": {
+"0": {
+"Family": "venipede",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"venomoth": {
+"0": {
+"Family": "venonat",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"venonat": {
+"0": {
+"Family": "venonat",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"venusaur": {
+"0": {
+"Family": "bulbasaur",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "bulbasaur",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "bulbasaur",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vespiquen": {
+"0": {
+"Family": "combee",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vibrava": {
+"0": {
+"Family": "trapinch",
+"Stage": 8,
+"Element1": "ground",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"victini": {
+"0": {
+"Family": "victini",
+"Stage": 1,
+"Element1": "psychic",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"victreebel": {
+"0": {
+"Family": "bellsprout",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vigoroth": {
+"0": {
+"Family": "slakoth",
+"Stage": 8,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vikavolt": {
+"0": {
+"Family": "grubbin",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vileplume": {
+"0": {
+"Family": "oddish",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"virizion": {
+"0": {
+"Family": "virizion",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "fighting",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vivillon": {
+"0": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"5": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"6": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"7": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"8": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"9": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"14": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"15": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"16": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"17": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"18": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"19": {
+"Family": "scatterbug",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"volbeat": {
+"0": {
+"Family": "volbeat",
+"Stage": 1,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"volcanion": {
+"0": {
+"Family": "volcanion",
+"Stage": 1,
+"Element1": "fire",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"volcarona": {
+"0": {
+"Family": "larvesta",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "fire",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"voltorb": {
+"0": {
+"Family": "voltorb",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vullaby": {
+"0": {
+"Family": "vullaby",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"vulpix": {
+"0": {
+"Family": "vulpix",
+"Stage": 2,
+"Element1": "fire",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "vulpix",
+"Stage": 2,
+"Element1": "ice",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wailmer": {
+"0": {
+"Family": "wailmer",
+"Stage": 2,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wailord": {
+"0": {
+"Family": "wailmer",
+"Stage": 4,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"walrein": {
+"0": {
+"Family": "spheal",
+"Stage": 4,
+"Element1": "ice",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wartortle": {
+"0": {
+"Family": "squirtle",
+"Stage": 8,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"watchog": {
+"0": {
+"Family": "patrat",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"weavile": {
+"0": {
+"Family": "sneasel",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "ice",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"weedle": {
+"0": {
+"Family": "weedle",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"weepinbell": {
+"0": {
+"Family": "bellsprout",
+"Stage": 8,
+"Element1": "grass",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"weezing": {
+"0": {
+"Family": "koffing",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "koffing",
+"Stage": 4,
+"Element1": "poison",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"whimsicott": {
+"0": {
+"Family": "cottonee",
+"Stage": 4,
+"Element1": "grass",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"whirlipede": {
+"0": {
+"Family": "venipede",
+"Stage": 8,
+"Element1": "bug",
+"Element2": "poison",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"whiscash": {
+"0": {
+"Family": "barboach",
+"Stage": 4,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"whismur": {
+"0": {
+"Family": "whismur",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wigglytuff": {
+"0": {
+"Family": "igglybuff",
+"Stage": 4,
+"Element1": "normal",
+"Element2": "fairy",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wimpod": {
+"0": {
+"Family": "wimpod",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "water",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wingull": {
+"0": {
+"Family": "wingull",
+"Stage": 2,
+"Element1": "water",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wishiwashi": {
+"0": {
+"Family": "wishiwashi",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "wishiwashi",
+"Stage": 1,
+"Element1": "water",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wobbuffet": {
+"0": {
+"Family": "wynaut",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"woobat": {
+"0": {
+"Family": "woobat",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wooloo": {
+"0": {
+"Family": "wooloo",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wooper": {
+"0": {
+"Family": "wooper",
+"Stage": 2,
+"Element1": "water",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wormadam": {
+"0": {
+"Family": "burmy",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "burmy",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "burmy",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wurmple": {
+"0": {
+"Family": "wurmple",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"wynaut": {
+"0": {
+"Family": "wynaut",
+"Stage": 2,
+"Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"xatu": {
+"0": {
+"Family": "natu",
+"Stage": 4,
+"Element1": "psychic",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"xerneas": {
+"0": {
+"Family": "xerneas",
+"Stage": 1,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "xerneas",
+"Stage": 1,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"xurkitree": {
+"0": {
+"Family": "xurkitree",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yamask": {
+"0": {
+"Family": "yamask",
+"Stage": 2,
+"Element1": "ghost",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "yamask",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "ghost",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yamper": {
+"0": {
+"Family": "yamper",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yanma": {
+"0": {
+"Family": "yanma",
+"Stage": 2,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yanmega": {
+"0": {
+"Family": "yanma",
+"Stage": 4,
+"Element1": "bug",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yungoos": {
+"0": {
+"Family": "yungoos",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"yveltal": {
+"0": {
+"Family": "yveltal",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zacian": {
+"0": {
+"Family": "zacian",
+"Stage": 1,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zacian",
+"Stage": 1,
+"Element1": "fairy",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zamazenta": {
+"0": {
+"Family": "zamazenta",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zamazenta",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "steel",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zangoose": {
+"0": {
+"Family": "zangoose",
+"Stage": 1,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zapdos": {
+"0": {
+"Family": "zapdos",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zapdos",
+"Stage": 1,
+"Element1": "fighting",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zarude": {
+"0": {
+"Family": "zarude",
+"Stage": 1,
+"Element1": "dark",
+"Element2": "grass",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zebstrika": {
+"0": {
+"Family": "blitzle",
+"Stage": 4,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zekrom": {
+"0": {
+"Family": "zekrom",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "electric",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zeraora": {
+"0": {
+"Family": "zeraora",
+"Stage": 1,
+"Element1": "electric",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zigzagoon": {
+"0": {
+"Family": "zigzagoon",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zigzagoon",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "normal",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zoroark": {
+"0": {
+"Family": "zorua",
+"Stage": 4,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zorua": {
+"0": {
+"Family": "zorua",
+"Stage": 2,
+"Element1": "dark",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zubat": {
+"0": {
+"Family": "zubat",
+"Stage": 2,
+"Element1": "poison",
+"Element2": "flying",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zweilous": {
+"0": {
+"Family": "deino",
+"Stage": 8,
+"Element1": "dark",
+"Element2": "dragon",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"zygarde": {
+"0": {
+"Family": "zygarde",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zygarde",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"2": {
+"Family": "zygarde",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"3": {
+"Family": "zygarde",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+},
+"4": {
+"Family": "zygarde",
+"Stage": 1,
+"Element1": "dragon",
+"Element2": "ground",
+"BestStat": -1,
+"WorstStat": -1
+}
+}
+}
+}
+}

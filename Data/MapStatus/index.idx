@@ -1,1 +1,26 @@
-﻿{"Object":{"$type":"RogueEssence.Data.EntryDataIndex, RogueEssence","Entries":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"Name":{"DefaultText":"Darkness","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Dusk","LocalTexts":{}},"Released":true,"Comment":""}]},"Version":"0.5.9.0"}
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.EntryDataIndex, RogueEssence",
+"Entries": {
+"darkness": {
+"Name": {
+"DefaultText": "Darkness",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"dusk": {
+"Name": {
+"DefaultText": "Dusk",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+}
+}
+}
+}

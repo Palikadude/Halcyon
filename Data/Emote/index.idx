@@ -1,1 +1,17 @@
-﻿{"Version":"0.5.12.1","Object":{"$type":"RogueEssence.Data.EntryDataIndex, RogueEssence","Entries":[{"Name":{"DefaultText":"","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Happy","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Notice","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Exclaim","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Glowing","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Sweating","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Question","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Angry","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Shock","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Sweatdrop","LocalTexts":{}},"Released":true,"Comment":""},{"Name":{"DefaultText":"Eating","LocalTexts":{}},"Released":true,"Comment":""}]}}
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.EntryDataIndex, RogueEssence",
+"Entries": {
+"eating": {
+"Name": {
+"DefaultText": "Eating",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+}
+}
+}
+}

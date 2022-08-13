@@ -1,1 +1,7476 @@
-﻿{"Version":"0.5.18.0","Object":{"$type":"RogueEssence.Dungeon.Map, RogueEssence","Name":{"DefaultText":"Ledian Dojo","LocalTexts":{}},"Released":false,"Comment":"","AssetName":"beginner_lesson_recruit","Begun":false,"ID":0,"MapTeams":[{"$type":"RogueEssence.Dungeon.MonsterTeam, RogueEssence","Players":[{"Element1":11,"Element2":0,"movementSpeed":0,"serializationLoc":{"X":10,"Y":3},"serializationDir":0,"ProxyName":"","ProxySprite":{"Species":-1,"Form":-1,"Skin":-1,"Gender":-1},"CurrentForm":{"Species":50,"Form":0,"Skin":0,"Gender":1},"ProxyAtk":-1,"ProxyDef":-1,"ProxyMAtk":-1,"ProxyMDef":-1,"ProxySpeed":-1,"Skills":[{"Element":{"SkillNum":249,"Charges":25,"Enabled":false,"Sealed":false},"BackRef":0},{"Element":{"SkillNum":249,"Charges":25,"Enabled":false,"Sealed":false},"BackRef":1},{"Element":{"SkillNum":249,"Charges":25,"Enabled":false,"Sealed":false},"BackRef":2},{"Element":{"SkillNum":249,"Charges":25,"Enabled":false,"Sealed":false},"BackRef":3}],"Intrinsics":[{"Element":{"ID":8},"BackRef":0}],"EquippedItem":{"ID":-1,"Cursed":false,"HiddenValue":0,"Price":0},"ChargeBoost":0,"HP":17,"HPRemainder":0,"Fullness":100,"FullnessRemainder":0,"MaxFullness":100,"Dead":false,"StatusEffects":{},"MustHitNext":false,"TurnWait":0,"TiersUsed":0,"TurnUsed":false,"EXPMarked":false,"Tactic":{"Name":{"DefaultText":"Tit for Tat","LocalTexts":{}},"Released":false,"Comment":"","ID":18,"Assignable":false,"Plans":[{"$type":"PMDC.Dungeon.WaitUntilAttackedPlan, PMDC","StatusIndex":31,"IQ":224},{"$type":"PMDC.Dungeon.AttackFoesPlan, PMDC","AttackPattern":2,"PositionPattern":1,"IQ":96},{"$type":"PMDC.Dungeon.WaitPlan, PMDC","IQ":224}]},"Mobility":0,"CantWalk":false,"ItemDisabled":false,"IntrinsicDisabled":false,"CanRemoveStuck":false,"StopItemAtHit":false,"MovesScrambled":false,"ChargeSaver":false,"WaitToAttack":false,"CantInteract":false,"EnemyOfFriend":false,"AttackFriend":false,"TileSight":-1,"CharSight":-1,"Unidentifiable":false,"Unlocatable":false,"SeeAllChars":false,"SeeItems":false,"SeeWallItems":false,"SeeTraps":false,"CharStates":[{"$type":"PMDC.Dungeon.SandState, PMDC"}],"WarpHistory":[],"Proximity":-1,"BackRef":{"Assembly":false,"Index":-1},"Nickname":"Volunteer","OriginalUUID":"","OriginalTeam":"","BaseForm":{"Species":50,"Form":0,"Skin":0,"Gender":1},"Level":3,"EXP":0,"MaxHPBonus":10,"AtkBonus":0,"DefBonus":2,"MAtkBonus":0,"MDefBonus":2,"SpeedBonus":0,"BaseSkills":[{"SkillNum":249,"Charges":25},{"SkillNum":249,"Charges":25},{"SkillNum":249,"Charges":25},{"SkillNum":249,"Charges":25}],"BaseIntrinsics":[8],"Relearnables":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],"Discriminator":0,"MetAt":"","MetLoc":{"ID":-1,"StructID":{"Segment":-1,"ID":-1},"EntryPoint":-1},"DefeatAt":"","DefeatLoc":{"ID":-1,"StructID":{"Segment":-1,"ID":-1},"EntryPoint":-1},"IsFounder":false,"IsPartner":false,"IsFavorite":false,"ActionEvents":[],"ScriptVars":null}],"Guests":[],"inventory":[],"Unrecruitable":false,"LeaderIndex":0,"FoeConflict":false},{"$type":"RogueEssence.Dungeon.MonsterTeam, RogueEssence","Players":[{"Element1":11,"Element2":0,"movementSpeed":0,"serializationLoc":{"X":8,"Y":3},"serializationDir":0,"ProxyName":"","ProxySprite":{"Species":-1,"Form":-1,"Skin":-1,"Gender":-1},"CurrentForm":{"Species":51,"Form":0,"Skin":0,"Gender":1},"ProxyAtk":-1,"ProxyDef":-1,"ProxyMAtk":-1,"ProxyMDef":-1,"ProxySpeed":-1,"Skills":[{"Element":{"SkillNum":91,"Charges":14,"Enabled":false,"Sealed":false},"BackRef":0},{"Element":{"SkillNum":-1,"Charges":0,"Enabled":true,"Sealed":false},"BackRef":1},{"Element":{"SkillNum":-1,"Charges":0,"Enabled":true,"Sealed":false},"BackRef":2},{"Element":{"SkillNum":-1,"Charges":0,"Enabled":true,"Sealed":false},"BackRef":3}],"Intrinsics":[{"Element":{"ID":8},"BackRef":0}],"EquippedItem":{"ID":-1,"Cursed":false,"HiddenValue":0,"Price":0},"ChargeBoost":0,"HP":130,"HPRemainder":0,"Fullness":100,"FullnessRemainder":0,"MaxFullness":100,"Dead":false,"StatusEffects":{},"MustHitNext":false,"TurnWait":0,"TiersUsed":0,"TurnUsed":false,"EXPMarked":false,"Tactic":{"Name":{"DefaultText":"Tit for Tat","LocalTexts":{}},"Released":false,"Comment":"","ID":18,"Assignable":false,"Plans":[{"$type":"PMDC.Dungeon.WaitUntilAttackedPlan, PMDC","StatusIndex":31,"IQ":224},{"$type":"PMDC.Dungeon.AttackFoesPlan, PMDC","AttackPattern":2,"PositionPattern":1,"IQ":96},{"$type":"PMDC.Dungeon.WaitPlan, PMDC","IQ":224}]},"Mobility":0,"CantWalk":false,"ItemDisabled":false,"IntrinsicDisabled":false,"CanRemoveStuck":false,"StopItemAtHit":false,"MovesScrambled":false,"ChargeSaver":false,"WaitToAttack":false,"CantInteract":false,"EnemyOfFriend":false,"AttackFriend":false,"TileSight":-1,"CharSight":-1,"Unidentifiable":false,"Unlocatable":false,"SeeAllChars":false,"SeeItems":false,"SeeWallItems":false,"SeeTraps":false,"CharStates":[{"$type":"PMDC.Dungeon.SandState, PMDC"}],"WarpHistory":[],"Proximity":-1,"BackRef":{"Assembly":false,"Index":-1},"Nickname":"Volunteer","OriginalUUID":"","OriginalTeam":"","BaseForm":{"Species":51,"Form":0,"Skin":0,"Gender":1},"Level":30,"EXP":0,"MaxHPBonus":100,"AtkBonus":-100,"DefBonus":0,"MAtkBonus":0,"MDefBonus":0,"SpeedBonus":0,"BaseSkills":[{"SkillNum":91,"Charges":14},{"SkillNum":-1,"Charges":0},{"SkillNum":-1,"Charges":0},{"SkillNum":-1,"Charges":0}],"BaseIntrinsics":[8],"Relearnables":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true],"Discriminator":0,"MetAt":"","MetLoc":{"ID":-1,"StructID":{"Segment":-1,"ID":-1},"EntryPoint":-1},"DefeatAt":"","DefeatLoc":{"ID":-1,"StructID":{"Segment":-1,"ID":-1},"EntryPoint":-1},"IsFounder":false,"IsPartner":false,"IsFavorite":false,"ActionEvents":[],"ScriptVars":null}],"Guests":[],"inventory":[],"Unrecruitable":false,"LeaderIndex":0,"FoeConflict":false}],"AllyTeams":[],"rand":{"$type":"RogueElements.ReRandom, RogueElements","FirstSeed":0,"s":[16294208416658607535,7960286522194355700,487617019471545679,17909611376780542444]},"ScriptEvents":{},"Music":"Marowak Dojo.ogg","TileSight":0,"CharSight":0,"Status":{},"MapEffect":{"UniversalStates":[],"BeforeTryActions":[],"BeforeActions":[],"OnActions":[],"BeforeExplosions":[],"BeforeHits":[],"OnHits":[],"OnHitTiles":[],"AfterActions":[],"ElementEffects":[],"OnEquips":[],"OnPickups":[],"BeforeStatusAdds":[],"OnStatusAdds":[],"OnStatusRemoves":[],"OnMapStatusAdds":[],"OnMapStatusRemoves":[],"OnMapStarts":[],"OnTurnStarts":[],"OnTurnEnds":[],"OnMapTurnEnds":[],"OnWalks":[],"OnDeaths":[],"OnRefresh":[],"OnMapRefresh":[],"ModifyHPs":[],"RestoreHPs":[],"InitActionData":[]},"MaxFoes":0,"RespawnTime":0,"TeamSpawns":[],"MoneyAmount":{"Min":0,"Max":0},"ItemSpawns":{"Spawns":{"spawns":{},"spawnTotal":0}},"BlankBG":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":-1},"TextureMap":{"0":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":-1}},"Element":6,"Background":{"$type":"RogueEssence.Dungeon.MapBG, RogueEssence","MapLoc":{"X":0,"Y":0},"BGAnim":{"AnimIndex":"","FrameTime":1,"StartFrame":-1,"EndFrame":-1,"AnimDir":-1,"Alpha":255,"AnimFlip":0},"BGMovement":{"X":0,"Y":0},"Parallax":"0, 0","RepeatX":false,"RepeatY":false},"ViewCenter":null,"ViewOffset":{"X":0,"Y":0},"NoRescue":false,"NoSwitching":false,"MapTurns":0,"CurrentTurnMap":{"CurrentOrder":{"TurnTier":0,"Faction":0,"TurnIndex":0,"SkipAll":false},"TurnToChar":[]},"DiscoveryArray":[[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0]],"DropTitle":false,"Layers":[{"Name":"New Layer","Layer":0,"Visible":true,"Tiles":[[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}],[{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1},{"AutoTileset":-1,"Associates":[],"Layers":[],"NeighborCode":-1}]]}],"Tiles":[[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":0,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":1,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":127},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":311},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":311},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":191},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":2,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":622},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":137},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":205},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":205},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":205},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":76},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":7},"ID":42,"Revealed":true,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":3,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":366},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":3},"ID":43,"Revealed":true,"Danger":false,"Owner":0,"TileStates":[{"$type":"PMDC.Dungeon.NoticeState, PMDC","Title":{"$type":"RogueEssence.LocalFormatSimple, RogueEssence","Args":[],"Key":{"Key":"BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_TITLE"}},"Content":{"$type":"RogueEssence.LocalFormatSimple, RogueEssence","Args":[],"Key":{"Key":"BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_BODY"}}}]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":4,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":5},"ID":48,"Revealed":true,"Danger":false,"Owner":0,"TileStates":[{"$type":"PMDC.Dungeon.TileScriptState, PMDC","Script":"TutorialTest","ArgTable":"{}"}]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":5,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":622},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":411},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":6,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":622},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":7,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":8,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":9,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":411},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":10,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":19},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":55},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":38},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":411},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":11,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":239},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":461},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":77},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":2,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":261},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":141},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":461},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":479},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":12,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":8},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":13,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":110},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":10},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":14,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":622},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":0,"TileTex":{"AutoTileset":7,"Associates":[],"Layers":[],"NeighborCode":2},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":5},"ID":1,"Revealed":true,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":155},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":15,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":239},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":205},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":223},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":16,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":17,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":511},"StableTex":false},"Effect":{"TileLoc":{"X":18,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}],[{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":0},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":1},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":2},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":3},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":4},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":5},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":6},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":7},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":255},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":8},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":9},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}},{"Data":{"ID":1,"TileTex":{"AutoTileset":6,"Associates":[],"Layers":[],"NeighborCode":767},"StableTex":false},"Effect":{"TileLoc":{"X":19,"Y":10},"ID":-1,"Revealed":false,"Danger":false,"Owner":0,"TileStates":[]}}]],"EdgeView":0,"EntryPoints":[{"Loc":{"X":5,"Y":5},"Dir":0}],"Items":[{"IsMoney":false,"Cursed":false,"Value":213,"HiddenValue":0,"Price":0,"TileLoc":{"X":9,"Y":6}},{"IsMoney":false,"Cursed":false,"Value":213,"HiddenValue":0,"Price":0,"TileLoc":{"X":7,"Y":7}},{"IsMoney":false,"Cursed":false,"Value":213,"HiddenValue":0,"Price":0,"TileLoc":{"X":10,"Y":7}},{"IsMoney":false,"Cursed":false,"Value":210,"HiddenValue":0,"Price":0,"TileLoc":{"X":7,"Y":6}},{"IsMoney":false,"Cursed":false,"Value":212,"HiddenValue":0,"Price":0,"TileLoc":{"X":10,"Y":6}},{"IsMoney":false,"Cursed":false,"Value":214,"HiddenValue":0,"Price":0,"TileLoc":{"X":9,"Y":7}},{"IsMoney":false,"Cursed":false,"Value":218,"HiddenValue":0,"Price":0,"TileLoc":{"X":11,"Y":6}},{"IsMoney":false,"Cursed":false,"Value":211,"HiddenValue":0,"Price":0,"TileLoc":{"X":8,"Y":7}},{"IsMoney":false,"Cursed":false,"Value":217,"HiddenValue":0,"Price":0,"TileLoc":{"X":8,"Y":6}},{"IsMoney":false,"Cursed":false,"Value":213,"HiddenValue":0,"Price":0,"TileLoc":{"X":11,"Y":7}}]}}
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Dungeon.Map, RogueEssence",
+"Name": {
+"DefaultText": "Ledian Dojo",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"AssetName": "beginner_lesson_recruit",
+"Begun": false,
+"ID": 0,
+"MapTeams": [
+{
+"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
+"Players": [
+{
+"Element1": "ground",
+"Element2": "none",
+"movementSpeed": 0,
+"serializationLoc": {
+"X": 10,
+"Y": 3
+},
+"serializationDir": 0,
+"ProxyName": "",
+"ProxySprite": {
+"Species": "",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"CurrentForm": {
+"Species": "diglett",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"ProxyAtk": -1,
+"ProxyDef": -1,
+"ProxyMAtk": -1,
+"ProxyMDef": -1,
+"ProxySpeed": -1,
+"Skills": [
+{
+"Element": {
+"SkillNum": "rock_smash",
+"Charges": 25,
+"Enabled": false,
+"Sealed": false
+},
+"BackRef": 0
+},
+{
+"Element": {
+"SkillNum": "rock_smash",
+"Charges": 25,
+"Enabled": false,
+"Sealed": false
+},
+"BackRef": 1
+},
+{
+"Element": {
+"SkillNum": "rock_smash",
+"Charges": 25,
+"Enabled": false,
+"Sealed": false
+},
+"BackRef": 2
+},
+{
+"Element": {
+"SkillNum": "rock_smash",
+"Charges": 25,
+"Enabled": false,
+"Sealed": false
+},
+"BackRef": 3
+}
+],
+"Intrinsics": [
+{
+"Element": {
+"ID": "sand_veil"
+},
+"BackRef": 0
+}
+],
+"EquippedItem": {
+"ID": "",
+"Cursed": false,
+"HiddenValue": "0",
+"Amount": 0,
+"Price": 0
+},
+"ChargeBoost": 0,
+"HP": 17,
+"HPRemainder": 0,
+"Fullness": 100,
+"FullnessRemainder": 0,
+"MaxFullness": 100,
+"Dead": false,
+"StatusEffects": {},
+"MustHitNext": false,
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
+"EXPMarked": false,
+"Tactic": {
+"Name": {
+"DefaultText": "Tit for Tat",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"ID": "tit_for_tat",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
+"StatusIndex": "was_hurt_last_turn",
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 224
+}
+]
+},
+"Mobility": 0,
+"CantWalk": false,
+"ItemDisabled": false,
+"IntrinsicDisabled": false,
+"CanRemoveStuck": false,
+"StopItemAtHit": false,
+"MovesScrambled": false,
+"ChargeSaver": false,
+"WaitToAttack": false,
+"CantInteract": false,
+"EnemyOfFriend": false,
+"AttackFriend": false,
+"TileSight": -1,
+"CharSight": -1,
+"Unidentifiable": false,
+"Unlocatable": false,
+"SeeAllChars": false,
+"SeeItems": false,
+"SeeWallItems": false,
+"SeeTraps": false,
+"CharStates": [
+{
+"$type": "PMDC.Dungeon.SandState, PMDC"
+}
+],
+"WarpHistory": [],
+"Proximity": -1,
+"BackRef": {
+"Assembly": false,
+"Index": -1
+},
+"Nickname": "Volunteer",
+"OriginalUUID": "",
+"OriginalTeam": "",
+"BaseForm": {
+"Species": "diglett",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"Level": 3,
+"EXP": 0,
+"MaxHPBonus": 10,
+"AtkBonus": 0,
+"DefBonus": 2,
+"MAtkBonus": 0,
+"MDefBonus": 2,
+"SpeedBonus": 0,
+"BaseSkills": [
+{
+"SkillNum": "rock_smash",
+"Charges": 25
+},
+{
+"SkillNum": "rock_smash",
+"Charges": 25
+},
+{
+"SkillNum": "rock_smash",
+"Charges": 25
+},
+{
+"SkillNum": "rock_smash",
+"Charges": 25
+}
+],
+"BaseIntrinsics": [
+"sand_veil"
+],
+"Relearnables": {
+"dig": true,
+"rock_smash": true
+},
+"Discriminator": 0,
+"MetAt": "",
+"MetLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"DefeatAt": "",
+"DefeatLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"IsFounder": false,
+"IsPartner": false,
+"IsFavorite": false,
+"ActionEvents": [],
+"ScriptVars": null
+}
+],
+"Guests": [],
+"inventory": [],
+"Unrecruitable": false,
+"LeaderIndex": 0,
+"FoeConflict": false
+},
+{
+"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
+"Players": [
+{
+"Element1": "ground",
+"Element2": "none",
+"movementSpeed": 0,
+"serializationLoc": {
+"X": 8,
+"Y": 3
+},
+"serializationDir": 0,
+"ProxyName": "",
+"ProxySprite": {
+"Species": "",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"CurrentForm": {
+"Species": "dugtrio",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"ProxyAtk": -1,
+"ProxyDef": -1,
+"ProxyMAtk": -1,
+"ProxyMDef": -1,
+"ProxySpeed": -1,
+"Skills": [
+{
+"Element": {
+"SkillNum": "dig",
+"Charges": 14,
+"Enabled": false,
+"Sealed": false
+},
+"BackRef": 0
+},
+{
+"Element": {
+"SkillNum": "",
+"Charges": 0,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 1
+},
+{
+"Element": {
+"SkillNum": "",
+"Charges": 0,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 2
+},
+{
+"Element": {
+"SkillNum": "",
+"Charges": 0,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 3
+}
+],
+"Intrinsics": [
+{
+"Element": {
+"ID": "sand_veil"
+},
+"BackRef": 0
+}
+],
+"EquippedItem": {
+"ID": "",
+"Cursed": false,
+"HiddenValue": "0",
+"Amount": 0,
+"Price": 0
+},
+"ChargeBoost": 0,
+"HP": 130,
+"HPRemainder": 0,
+"Fullness": 100,
+"FullnessRemainder": 0,
+"MaxFullness": 100,
+"Dead": false,
+"StatusEffects": {},
+"MustHitNext": false,
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
+"EXPMarked": false,
+"Tactic": {
+"Name": {
+"DefaultText": "Tit for Tat",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"ID": "tit_for_tat",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
+"StatusIndex": "was_hurt_last_turn",
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 224
+}
+]
+},
+"Mobility": 0,
+"CantWalk": false,
+"ItemDisabled": false,
+"IntrinsicDisabled": false,
+"CanRemoveStuck": false,
+"StopItemAtHit": false,
+"MovesScrambled": false,
+"ChargeSaver": false,
+"WaitToAttack": false,
+"CantInteract": false,
+"EnemyOfFriend": false,
+"AttackFriend": false,
+"TileSight": -1,
+"CharSight": -1,
+"Unidentifiable": false,
+"Unlocatable": false,
+"SeeAllChars": false,
+"SeeItems": false,
+"SeeWallItems": false,
+"SeeTraps": false,
+"CharStates": [
+{
+"$type": "PMDC.Dungeon.SandState, PMDC"
+}
+],
+"WarpHistory": [],
+"Proximity": -1,
+"BackRef": {
+"Assembly": false,
+"Index": -1
+},
+"Nickname": "Volunteer",
+"OriginalUUID": "",
+"OriginalTeam": "",
+"BaseForm": {
+"Species": "dugtrio",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"Level": 30,
+"EXP": 0,
+"MaxHPBonus": 100,
+"AtkBonus": -100,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
+"BaseSkills": [
+{
+"SkillNum": "dig",
+"Charges": 14
+},
+{
+"SkillNum": "",
+"Charges": 0
+},
+{
+"SkillNum": "",
+"Charges": 0
+},
+{
+"SkillNum": "",
+"Charges": 0
+}
+],
+"BaseIntrinsics": [
+"sand_veil"
+],
+"Relearnables": {
+"rock_smash": true
+},
+"Discriminator": 0,
+"MetAt": "",
+"MetLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"DefeatAt": "",
+"DefeatLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"IsFounder": false,
+"IsPartner": false,
+"IsFavorite": false,
+"ActionEvents": [],
+"ScriptVars": null
+}
+],
+"Guests": [],
+"inventory": [],
+"Unrecruitable": false,
+"LeaderIndex": 0,
+"FoeConflict": false
+}
+],
+"AllyTeams": [],
+"rand": {
+"$type": "RogueElements.ReRandom, RogueElements",
+"FirstSeed": 0,
+"s": [
+16294208416658607535,
+7960286522194355700,
+487617019471545679,
+17909611376780542444
+]
+},
+"ScriptEvents": {},
+"Music": "Marowak Dojo.ogg",
+"TileSight": 0,
+"CharSight": 0,
+"Status": {},
+"MapEffect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+},
+"MaxFoes": 0,
+"RespawnTime": 0,
+"TeamSpawns": [],
+"MoneyAmount": {
+"Min": 0,
+"Max": 0
+},
+"ItemSpawns": {
+"Spawns": {
+"spawns": {},
+"spawnTotal": 0
+}
+},
+"BlankBG": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"TextureMap": {
+"floor": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+},
+"Element": "fighting",
+"Background": {
+"$type": "RogueEssence.Dungeon.MapBG, RogueEssence",
+"MapLoc": {
+"X": 0,
+"Y": 0
+},
+"BGAnim": {
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"BGMovement": {
+"X": 0,
+"Y": 0
+},
+"Parallax": "0, 0",
+"RepeatX": false,
+"RepeatY": false
+},
+"ViewCenter": null,
+"ViewOffset": {
+"X": 0,
+"Y": 0
+},
+"NoRescue": false,
+"NoSwitching": false,
+"MapTurns": 0,
+"CurrentTurnMap": {
+"CurrentOrder": {
+"TurnTier": 0,
+"Faction": 0,
+"TurnIndex": 0,
+"SkipAll": false
+},
+"TurnToChar": []
+},
+"DiscoveryArray": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+]
+],
+"DropTitle": false,
+"Layers": [
+{
+"Name": "New Layer",
+"Layer": 0,
+"Visible": true,
+"Tiles": [
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+]
+]
+}
+],
+"Tiles": [
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 1,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 127
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 311
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 311
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 191
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 2,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 622
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 137
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 205
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 205
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 205
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 76
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 7
+},
+"ID": "tile_reset",
+"Revealed": true,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 3,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 366
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 3
+},
+"ID": "sign",
+"Revealed": true,
+"Danger": false,
+"Owner": 0,
+"TileStates": [
+{
+"$type": "PMDC.Dungeon.NoticeState, PMDC",
+"Title": {
+"$type": "RogueEssence.LocalFormatSimple, RogueEssence",
+"Args": [],
+"Key": {
+"Key": "BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_TITLE"
+}
+},
+"Content": {
+"$type": "RogueEssence.LocalFormatSimple, RogueEssence",
+"Args": [],
+"Key": {
+"Key": "BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_BODY"
+}
+}
+}
+]
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 4,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 5
+},
+"ID": "area_script",
+"Revealed": true,
+"Danger": false,
+"Owner": 0,
+"TileStates": [
+{
+"$type": "PMDC.Dungeon.TileScriptState, PMDC",
+"Script": "TutorialTest",
+"ArgTable": "{}"
+}
+]
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 5,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 622
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 411
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 6,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 622
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 7,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 8,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 9,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 411
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 10,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 19
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 55
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 38
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 411
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 11,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 239
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 461
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 77
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "wall",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 261
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 141
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 461
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 479
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 12,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 8
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 13,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 110
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 10
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 14,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 622
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "floor",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_floor",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 2
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 5
+},
+"ID": "stairs_go_up",
+"Revealed": true,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 155
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 15,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 239
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 205
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 223
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 16,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 17,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 511
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 18,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+],
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 2
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 3
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 4
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 5
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 6
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 7
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 255
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 8
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 9
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "thunderwave_cave_wall",
+"Associates": [],
+"Layers": [],
+"NeighborCode": 767
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 19,
+"Y": 10
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+]
+],
+"EdgeView": 0,
+"EntryPoints": [
+{
+"Loc": {
+"X": 5,
+"Y": 5
+},
+"Dir": 0
+}
+],
+"Items": [
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_brown",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 9,
+"Y": 6
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_brown",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 7,
+"Y": 7
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_brown",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 10,
+"Y": 7
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_plain",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 7,
+"Y": 6
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_green",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 10,
+"Y": 6
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_purple",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 9,
+"Y": 7
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_black",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 11,
+"Y": 6
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_blue",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 8,
+"Y": 7
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_yellow",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 8,
+"Y": 6
+}
+},
+{
+"IsMoney": false,
+"Cursed": false,
+"Value": "apricorn_brown",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0,
+"TileLoc": {
+"X": 11,
+"Y": 7
+}
+}
+]
+}
+}

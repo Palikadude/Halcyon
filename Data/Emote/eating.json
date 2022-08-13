@@ -1,0 +1,21 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.EmoteData, RogueEssence",
+"Name": {
+"DefaultText": "Eating",
+"LocalTexts": {}
+},
+"Comment": "",
+"LocHeight": 10,
+"Anim": {
+"AnimIndex": "Emote_Eating",
+"FrameTime": 3,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 0
+}
+}
+}

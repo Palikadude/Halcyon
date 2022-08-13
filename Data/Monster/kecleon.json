@@ -1,0 +1,1029 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Kecleon",
+"LocalTexts": {
+"ja": "カクレオン",
+"ko": "켈리몬",
+"zh-hant": "變隱龍",
+"fr": "Kecleon",
+"de": "Kecleon",
+"es": "Kecleon",
+"it": "Kecleon",
+"ja-jp": "カクレオン",
+"zh-hans": "变隐龙"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Color Swap Pokémon",
+"LocalTexts": {
+"ja": "いろへんげポケモン",
+"ko": "색변화포켓몬",
+"zh-hant": "變色寶可夢",
+"fr": "Pokémon Multicolor",
+"de": "Farbenspiel",
+"es": "Pokémon Camaleónico",
+"it": "Pokémon Mutacolore",
+"ja-jp": "いろへんげポケモン",
+"zh-hans": "变色宝可梦"
+}
+},
+"IndexNum": 352,
+"EXPTable": "medium_slow",
+"SkillGroup1": "field",
+"SkillGroup2": "undiscovered",
+"JoinRate": 45,
+"PromoteFrom": "",
+"Promotions": [],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 60,
+"BaseAtk": 90,
+"BaseDef": 70,
+"BaseMAtk": 60,
+"BaseMDef": 120,
+"BaseSpeed": 40,
+"ExpYield": 154,
+"Height": 1.0,
+"Weight": 22.0,
+"Personalities": [
+0,
+1,
+2,
+3,
+4,
+7,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "brick_break"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "aerial_ace"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "water_pulse"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "trick_room"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "work_up"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "power_up_punch"
+}
+],
+"SharedSkills": [
+{
+"Skill": "disable"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "dizzy_punch"
+},
+{
+"Skill": "fake_out"
+},
+{
+"Skill": "nasty_plot"
+},
+{
+"Skill": "recover"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "camouflage"
+}
+],
+"SecretSkills": [
+{
+"Skill": "mega_punch"
+},
+{
+"Skill": "fire_punch"
+},
+{
+"Skill": "ice_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "mega_kick"
+},
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "seismic_toss"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "defense_curl"
+},
+{
+"Skill": "metronome"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "rollout"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "fury_cutter"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dynamic_punch"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "last_resort"
+},
+{
+"Skill": "sucker_punch"
+},
+{
+"Skill": "aqua_tail"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "bind"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "wonder_room"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "after_you"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "water_pulse"
+}
+],
+"FormName": {
+"DefaultText": "Kecleon",
+"LocalTexts": {
+"ja": "カクレオン",
+"ko": "켈리몬",
+"zh-hant": "變隱龍",
+"fr": "Kecleon",
+"de": "Kecleon",
+"es": "Kecleon",
+"it": "Kecleon",
+"ja-jp": "カクレオン",
+"zh-hans": "变隐龙"
+}
+},
+"Temporary": false,
+"Element1": "normal",
+"Element2": "none",
+"Intrinsic1": "color_change",
+"Intrinsic2": "none",
+"Intrinsic3": "protean",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "thief"
+},
+{
+"Level": 1,
+"Skill": "tail_whip"
+},
+{
+"Level": 1,
+"Skill": "astonish"
+},
+{
+"Level": 1,
+"Skill": "lick"
+},
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 4,
+"Skill": "bind"
+},
+{
+"Level": 7,
+"Skill": "shadow_sneak"
+},
+{
+"Level": 10,
+"Skill": "feint"
+},
+{
+"Level": 13,
+"Skill": "fury_swipes"
+},
+{
+"Level": 16,
+"Skill": "feint_attack"
+},
+{
+"Level": 18,
+"Skill": "psybeam"
+},
+{
+"Level": 21,
+"Skill": "ancient_power"
+},
+{
+"Level": 25,
+"Skill": "slash"
+},
+{
+"Level": 30,
+"Skill": "camouflage"
+},
+{
+"Level": 33,
+"Skill": "shadow_claw"
+},
+{
+"Level": 38,
+"Skill": "screech"
+},
+{
+"Level": 42,
+"Skill": "substitute"
+},
+{
+"Level": 46,
+"Skill": "sucker_punch"
+},
+{
+"Level": 50,
+"Skill": "synchronoise"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 60,
+"BaseAtk": 90,
+"BaseDef": 70,
+"BaseMAtk": 60,
+"BaseMDef": 120,
+"BaseSpeed": 40,
+"ExpYield": 154,
+"Height": 1.0,
+"Weight": 22.0,
+"Personalities": [
+0,
+1,
+2,
+3,
+4,
+7,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "brick_break"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "aerial_ace"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "water_pulse"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "trick_room"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "work_up"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "power_up_punch"
+}
+],
+"SharedSkills": [
+{
+"Skill": "disable"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "dizzy_punch"
+},
+{
+"Skill": "fake_out"
+},
+{
+"Skill": "nasty_plot"
+},
+{
+"Skill": "recover"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "camouflage"
+}
+],
+"SecretSkills": [
+{
+"Skill": "mega_punch"
+},
+{
+"Skill": "fire_punch"
+},
+{
+"Skill": "ice_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "mega_kick"
+},
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "seismic_toss"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "defense_curl"
+},
+{
+"Skill": "metronome"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "rollout"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "fury_cutter"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dynamic_punch"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "last_resort"
+},
+{
+"Skill": "sucker_punch"
+},
+{
+"Skill": "aqua_tail"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "bind"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "wonder_room"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "after_you"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "water_pulse"
+}
+],
+"FormName": {
+"DefaultText": "Purple Kecleon",
+"LocalTexts": {}
+},
+"Temporary": false,
+"Element1": "normal",
+"Element2": "none",
+"Intrinsic1": "color_change",
+"Intrinsic2": "none",
+"Intrinsic3": "protean",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "thief"
+},
+{
+"Level": 1,
+"Skill": "tail_whip"
+},
+{
+"Level": 1,
+"Skill": "astonish"
+},
+{
+"Level": 1,
+"Skill": "lick"
+},
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 4,
+"Skill": "bind"
+},
+{
+"Level": 7,
+"Skill": "shadow_sneak"
+},
+{
+"Level": 10,
+"Skill": "feint"
+},
+{
+"Level": 13,
+"Skill": "fury_swipes"
+},
+{
+"Level": 16,
+"Skill": "feint_attack"
+},
+{
+"Level": 18,
+"Skill": "psybeam"
+},
+{
+"Level": 21,
+"Skill": "ancient_power"
+},
+{
+"Level": 25,
+"Skill": "slash"
+},
+{
+"Level": 30,
+"Skill": "camouflage"
+},
+{
+"Level": 33,
+"Skill": "shadow_claw"
+},
+{
+"Level": 38,
+"Skill": "screech"
+},
+{
+"Level": 42,
+"Skill": "substitute"
+},
+{
+"Level": 46,
+"Skill": "sucker_punch"
+},
+{
+"Level": 50,
+"Skill": "synchronoise"
+}
+]
+}
+]
+}
+}

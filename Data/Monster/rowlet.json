@@ -1,0 +1,269 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Rowlet",
+"LocalTexts": {
+"ja": "モクロー",
+"ko": "나몰빼미",
+"zh-hant": "木木梟",
+"fr": "Brindibou",
+"de": "Bauz",
+"es": "Rowlet",
+"it": "Rowlet",
+"ja-jp": "モクロー",
+"zh-hans": "木木枭"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Grass Quill Pokémon",
+"LocalTexts": {
+"ja": "くさばねポケモン",
+"ko": "풀깃포켓몬",
+"zh-hant": "草羽寶可夢",
+"fr": "Pokémon Plumefeuille",
+"de": "Laubflügel-Pokémon",
+"es": "Pokémon Pluma Hoja",
+"it": "Pokémon Aliderba",
+"ja-jp": "くさばねポケモン",
+"zh-hans": "草羽宝可梦"
+}
+},
+"IndexNum": 722,
+"EXPTable": "medium_slow",
+"SkillGroup1": "flying",
+"SkillGroup2": "undiscovered",
+"JoinRate": -10,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "dartrix",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 17
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 7,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 68,
+"BaseAtk": 55,
+"BaseDef": 55,
+"BaseMAtk": 50,
+"BaseMDef": 50,
+"BaseSpeed": 42,
+"ExpYield": 64,
+"Height": 0.3,
+"Weight": 1.5,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "false_swipe"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "steel_wing"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "nature_power"
+},
+{
+"Skill": "roost"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "work_up"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "confuse_ray"
+},
+{
+"Skill": "haze"
+},
+{
+"Skill": "curse"
+},
+{
+"Skill": "baton_pass"
+},
+{
+"Skill": "defog"
+},
+{
+"Skill": "ominous_wind"
+}
+],
+"SecretSkills": [
+{
+"Skill": "grass_pledge"
+}
+],
+"FormName": {
+"DefaultText": "Rowlet",
+"LocalTexts": {
+"ja": "モクロー",
+"ko": "나몰빼미",
+"zh-hant": "木木梟",
+"fr": "Brindibou",
+"de": "Bauz",
+"es": "Rowlet",
+"it": "Rowlet",
+"ja-jp": "モクロー",
+"zh-hans": "木木枭"
+}
+},
+"Temporary": false,
+"Element1": "grass",
+"Element2": "flying",
+"Intrinsic1": "overgrow",
+"Intrinsic2": "none",
+"Intrinsic3": "long_reach",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "vine_whip"
+},
+{
+"Level": 4,
+"Skill": "growl"
+},
+{
+"Level": 8,
+"Skill": "peck"
+},
+{
+"Level": 11,
+"Skill": "astonish"
+},
+{
+"Level": 15,
+"Skill": "razor_leaf"
+},
+{
+"Level": 18,
+"Skill": "foresight"
+},
+{
+"Level": 22,
+"Skill": "pluck"
+},
+{
+"Level": 25,
+"Skill": "synthesis"
+},
+{
+"Level": 29,
+"Skill": "fury_attack"
+},
+{
+"Level": 32,
+"Skill": "sucker_punch"
+},
+{
+"Level": 36,
+"Skill": "leaf_blade"
+},
+{
+"Level": 39,
+"Skill": "feather_dance"
+},
+{
+"Level": 43,
+"Skill": "brave_bird"
+},
+{
+"Level": 46,
+"Skill": "nasty_plot"
+}
+]
+}
+]
+}
+}

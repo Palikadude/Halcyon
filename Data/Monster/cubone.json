@@ -1,0 +1,459 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Cubone",
+"LocalTexts": {
+"ja": "カラカラ",
+"ko": "탕구리",
+"zh-hant": "卡拉卡拉",
+"fr": "Osselait",
+"de": "Tragosso",
+"es": "Cubone",
+"it": "Cubone",
+"ja-jp": "カラカラ",
+"zh-hans": "卡拉卡拉"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Lonely Pokémon",
+"LocalTexts": {
+"ja": "こどくポケモン",
+"ko": "고독포켓몬",
+"zh-hant": "孤獨寶可夢",
+"fr": "Pokémon Solitaire",
+"de": "Einsam-Pokémon",
+"es": "Pokémon Solitario",
+"it": "Pokémon Solitario",
+"ja-jp": "こどくポケモン",
+"zh-hans": "孤独宝可梦"
+}
+},
+"IndexNum": 104,
+"EXPTable": "medium_fast",
+"SkillGroup1": "monster",
+"SkillGroup2": "undiscovered",
+"JoinRate": 48,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "marowak",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 28
+},
+{
+"$type": "PMDC.Data.EvoSetForm, PMDC",
+"Conditions": [
+{
+"$type": "PMDC.Data.EvoLocation, PMDC",
+"TileElement": "water"
+}
+],
+"Form": 1
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 50,
+"BaseAtk": 50,
+"BaseDef": 95,
+"BaseMAtk": 40,
+"BaseMDef": 50,
+"BaseSpeed": 35,
+"ExpYield": 64,
+"Height": 0.4,
+"Weight": 6.5,
+"Personalities": [
+0,
+1,
+2,
+3,
+7,
+8,
+9,
+11,
+13,
+15,
+16,
+24,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sandstorm"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "brick_break"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "aerial_ace"
+},
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "false_swipe"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "rock_climb"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "smack_down"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "power_up_punch"
+}
+],
+"SharedSkills": [
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "screech"
+},
+{
+"Skill": "skull_bash"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "belly_drum"
+},
+{
+"Skill": "perish_song"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "double_kick"
+},
+{
+"Skill": "iron_head"
+},
+{
+"Skill": "detect"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "chip_away"
+}
+],
+"SecretSkills": [
+{
+"Skill": "mega_punch"
+},
+{
+"Skill": "fire_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "mega_kick"
+},
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "seismic_toss"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dynamic_punch"
+},
+{
+"Skill": "fury_cutter"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "endeavor"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "earth_power"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "iron_head"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "focus_punch"
+}
+],
+"FormName": {
+"DefaultText": "Cubone",
+"LocalTexts": {
+"ja": "カラカラ",
+"ko": "탕구리",
+"zh-hant": "卡拉卡拉",
+"fr": "Osselait",
+"de": "Tragosso",
+"es": "Cubone",
+"it": "Cubone",
+"ja-jp": "カラカラ",
+"zh-hans": "卡拉卡拉"
+}
+},
+"Temporary": false,
+"Element1": "ground",
+"Element2": "none",
+"Intrinsic1": "rock_head",
+"Intrinsic2": "lightning_rod",
+"Intrinsic3": "battle_armor",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "growl"
+},
+{
+"Level": 3,
+"Skill": "tail_whip"
+},
+{
+"Level": 7,
+"Skill": "bone_club"
+},
+{
+"Level": 11,
+"Skill": "headbutt"
+},
+{
+"Level": 13,
+"Skill": "leer"
+},
+{
+"Level": 17,
+"Skill": "focus_energy"
+},
+{
+"Level": 21,
+"Skill": "bonemerang"
+},
+{
+"Level": 23,
+"Skill": "rage"
+},
+{
+"Level": 27,
+"Skill": "false_swipe"
+},
+{
+"Level": 31,
+"Skill": "thrash"
+},
+{
+"Level": 33,
+"Skill": "fling"
+},
+{
+"Level": 37,
+"Skill": "bone_rush"
+},
+{
+"Level": 41,
+"Skill": "endeavor"
+},
+{
+"Level": 43,
+"Skill": "double_edge"
+},
+{
+"Level": 47,
+"Skill": "retaliate"
+}
+]
+}
+]
+}
+}

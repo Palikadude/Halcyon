@@ -1,0 +1,776 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.ActiveEffect, RogueEssence",
+"UniversalStates": [
+{
+"$type": "PMDC.Dungeon.HitRateLevelTableState, PMDC",
+"AccuracyLevels": [
+105,
+120,
+140,
+168,
+210,
+280,
+420,
+630,
+840,
+1050,
+1260,
+1470,
+1680
+],
+"EvasionLevels": [
+1680,
+1470,
+1260,
+1050,
+840,
+630,
+420,
+280,
+210,
+168,
+140,
+120,
+105
+],
+"MinAccuracy": -6,
+"MaxAccuracy": 6,
+"MinEvasion": -6,
+"MaxEvasion": 6
+},
+{
+"$type": "PMDC.Dungeon.CritRateLevelTableState, PMDC",
+"CritLevels": [
+0,
+3,
+4,
+6,
+12
+]
+},
+{
+"$type": "PMDC.Dungeon.AtkDefLevelTableState, PMDC",
+"MinAtk": -6,
+"MaxAtk": 6,
+"MinDef": -6,
+"MaxDef": 6,
+"AtkBase": 4,
+"DefBase": 4
+},
+{
+"$type": "PMDC.Dungeon.ElementTableState, PMDC",
+"TypeMatchup": [
+[
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4
+],
+[
+4,
+4,
+5,
+4,
+4,
+3,
+3,
+3,
+3,
+3,
+5,
+4,
+4,
+4,
+3,
+5,
+4,
+3,
+4
+],
+[
+4,
+4,
+3,
+4,
+4,
+3,
+3,
+4,
+4,
+5,
+4,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+4
+],
+[
+4,
+4,
+4,
+5,
+4,
+0,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+3,
+4
+],
+[
+4,
+4,
+4,
+3,
+3,
+4,
+4,
+4,
+5,
+4,
+3,
+0,
+4,
+4,
+4,
+4,
+4,
+4,
+5
+],
+[
+4,
+4,
+5,
+5,
+4,
+4,
+5,
+3,
+4,
+4,
+4,
+4,
+4,
+4,
+3,
+4,
+4,
+3,
+4
+],
+[
+4,
+3,
+5,
+4,
+4,
+3,
+4,
+4,
+3,
+0,
+4,
+4,
+5,
+5,
+3,
+3,
+5,
+5,
+4
+],
+[
+4,
+5,
+4,
+3,
+4,
+4,
+4,
+3,
+4,
+4,
+5,
+4,
+5,
+4,
+4,
+4,
+3,
+5,
+3
+],
+[
+4,
+5,
+4,
+4,
+3,
+4,
+5,
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+4,
+4,
+3,
+3,
+4
+],
+[
+4,
+4,
+3,
+4,
+4,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+0,
+4,
+5,
+4,
+4,
+4
+],
+[
+4,
+3,
+4,
+3,
+4,
+4,
+4,
+3,
+3,
+4,
+3,
+5,
+4,
+4,
+3,
+4,
+5,
+3,
+5
+],
+[
+4,
+3,
+4,
+4,
+5,
+4,
+4,
+5,
+0,
+4,
+3,
+4,
+4,
+4,
+5,
+4,
+5,
+5,
+4
+],
+[
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+3,
+5,
+4,
+5,
+5,
+3,
+4,
+4,
+4,
+4,
+3,
+3
+],
+[
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+0,
+4,
+4,
+4,
+4,
+4,
+4,
+3,
+3,
+4
+],
+[
+4,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+3,
+5,
+3,
+4,
+4,
+3,
+4,
+3,
+0,
+4
+],
+[
+4,
+4,
+0,
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+5,
+3,
+4,
+3,
+4
+],
+[
+4,
+5,
+4,
+4,
+4,
+4,
+3,
+5,
+5,
+4,
+4,
+3,
+5,
+4,
+4,
+4,
+4,
+3,
+4
+],
+[
+4,
+4,
+4,
+4,
+3,
+5,
+4,
+3,
+4,
+4,
+4,
+4,
+5,
+4,
+4,
+4,
+5,
+3,
+3
+],
+[
+4,
+4,
+4,
+3,
+4,
+4,
+4,
+5,
+4,
+4,
+3,
+5,
+4,
+4,
+4,
+4,
+5,
+4,
+3
+]
+],
+"Effectiveness": [
+0,
+0,
+0,
+0,
+0,
+0,
+1,
+2,
+4,
+6,
+8
+],
+"TypeMap": {
+"none": 0,
+"bug": 1,
+"dark": 2,
+"dragon": 3,
+"electric": 4,
+"fairy": 5,
+"fighting": 6,
+"fire": 7,
+"flying": 8,
+"ghost": 9,
+"grass": 10,
+"ground": 11,
+"ice": 12,
+"normal": 13,
+"poison": 14,
+"psychic": 15,
+"rock": 16,
+"steel": 17,
+"water": 18
+}
+},
+{
+"$type": "PMDC.Dungeon.SkinTableState, PMDC",
+"AltColorOdds": 1024,
+"AltColor": "shiny",
+"Challenge": "shiny_square"
+}
+],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreActionEvent, PMDC"
+}
+}
+],
+"BeforeExplosions": [],
+"BeforeHits": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreHitEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.AttemptHitEvent, PMDC"
+}
+}
+],
+"OnHits": [
+{
+"Key": {
+"str": [
+5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.HitPostEvent, PMDC",
+"RecentHitStatusID": "was_hurt_last_turn",
+"OtherHitStatusID": "last_move_hit_by_other",
+"TargetStatusID": "last_targeted_by",
+"CritStatusID": "crits_landed"
+}
+}
+],
+"OnHitTiles": [
+{
+"Key": {
+"str": [
+5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.TilePostEvent, PMDC"
+}
+}
+],
+"AfterActions": [
+{
+"Key": {
+"str": [
+5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.UsePostEvent, PMDC",
+"LastSlotStatusID": "last_used_move_slot",
+"LastMoveStatusID": "last_used_move",
+"RepeatStatusID": "times_move_used",
+"AllyStatusID": "last_ally_move",
+"MissedAllID": "missed_all_last_turn"
+}
+}
+],
+"ElementEffects": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreTypeEvent, PMDC"
+}
+}
+],
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FadeInEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.SpecialIntroEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.ReactivateItemsEvent, PMDC"
+}
+}
+],
+"OnTurnStarts": [],
+"OnTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "HeroPartnerCheck",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "SetCriticalHealthStatus",
+"ArgTable": "{}"
+}
+}
+],
+"OnMapTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "HeroPartnerCheck",
+"ArgTable": "{}"
+}
+}
+],
+"OnWalks": [],
+"OnDeaths": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreDeathEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.SetDeathEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.ImpostorReviveEvent, PMDC",
+"AbilityID": "imposter"
+}
+},
+{
+"Key": {
+"str": [
+10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.HandoutRelativeExpEvent, PMDC",
+"Numerator": 1,
+"Denominator": 30,
+"LevelBuffer": 0
+}
+}
+],
+"OnRefresh": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.RefreshPreEvent, PMDC"
+}
+}
+],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": [
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreSkillEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreItemEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+-10
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.PreThrowEvent, PMDC"
+}
+}
+]
+}
+}

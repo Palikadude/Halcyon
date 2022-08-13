@@ -1,0 +1,673 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Vulpix",
+"LocalTexts": {
+"ja": "ロコン",
+"ko": "식스테일",
+"zh-hant": "六尾",
+"fr": "Goupix",
+"de": "Vulpix",
+"es": "Vulpix",
+"it": "Vulpix",
+"ja-jp": "ロコン",
+"zh-hans": "六尾"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Fox Pokémon",
+"LocalTexts": {
+"ja": "きつねポケモン",
+"ko": "여우포켓몬",
+"zh-hant": "狐狸寶可夢",
+"fr": "Pokémon Renard",
+"de": "Fuchs-Pokémon",
+"es": "Pokémon Zorro",
+"it": "Pokémon Volpe",
+"ja-jp": "きつねポケモン",
+"zh-hans": "狐狸宝可梦"
+}
+},
+"IndexNum": 37,
+"EXPTable": "medium_fast",
+"SkillGroup1": "field",
+"SkillGroup2": "undiscovered",
+"JoinRate": 48,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "ninetales",
+"Details": [
+{
+"$type": "PMDC.Data.EvoForm, PMDC",
+"ReqForm": 0
+},
+{
+"$type": "PMDC.Data.EvoItem, PMDC",
+"ItemNum": "evo_fire_stone"
+}
+]
+},
+{
+"Result": "ninetales",
+"Details": [
+{
+"$type": "PMDC.Data.EvoForm, PMDC",
+"ReqForm": 1
+},
+{
+"$type": "PMDC.Data.EvoItem, PMDC",
+"ItemNum": "evo_ice_stone"
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 2,
+"FemaleWeight": 6,
+"BaseHP": 38,
+"BaseAtk": 41,
+"BaseDef": 40,
+"BaseMAtk": 50,
+"BaseMDef": 65,
+"BaseSpeed": 65,
+"ExpYield": 60,
+"Height": 0.6,
+"Weight": 9.9,
+"Personalities": [
+0,
+1,
+2,
+3,
+8,
+9,
+11,
+13,
+15,
+16,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "overheat"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "will_o_wisp"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "flame_charge"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "disable"
+},
+{
+"Skill": "hypnosis"
+},
+{
+"Skill": "flail"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "feint_attack"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "heat_wave"
+},
+{
+"Skill": "howl"
+},
+{
+"Skill": "extrasensory"
+},
+{
+"Skill": "flare_blitz"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "power_swap"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "hex"
+},
+{
+"Skill": "tail_slap"
+},
+{
+"Skill": "captivate"
+}
+],
+"SecretSkills": [
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "heat_wave"
+},
+{
+"Skill": "zen_headbutt"
+},
+{
+"Skill": "ominous_wind"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "pain_split"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "covet"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "foul_play"
+}
+],
+"FormName": {
+"DefaultText": "Vulpix",
+"LocalTexts": {
+"ja": "ロコン",
+"ko": "식스테일",
+"zh-hant": "六尾",
+"fr": "Goupix",
+"de": "Vulpix",
+"es": "Vulpix",
+"it": "Vulpix",
+"ja-jp": "ロコン",
+"zh-hans": "六尾"
+}
+},
+"Temporary": false,
+"Element1": "fire",
+"Element2": "none",
+"Intrinsic1": "flash_fire",
+"Intrinsic2": "none",
+"Intrinsic3": "drought",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "ember"
+},
+{
+"Level": 4,
+"Skill": "tail_whip"
+},
+{
+"Level": 7,
+"Skill": "roar"
+},
+{
+"Level": 9,
+"Skill": "baby_doll_eyes"
+},
+{
+"Level": 10,
+"Skill": "quick_attack"
+},
+{
+"Level": 12,
+"Skill": "confuse_ray"
+},
+{
+"Level": 15,
+"Skill": "fire_spin"
+},
+{
+"Level": 18,
+"Skill": "payback"
+},
+{
+"Level": 20,
+"Skill": "will_o_wisp"
+},
+{
+"Level": 23,
+"Skill": "feint_attack"
+},
+{
+"Level": 26,
+"Skill": "hex"
+},
+{
+"Level": 28,
+"Skill": "flame_burst"
+},
+{
+"Level": 31,
+"Skill": "extrasensory"
+},
+{
+"Level": 34,
+"Skill": "safeguard"
+},
+{
+"Level": 36,
+"Skill": "flamethrower"
+},
+{
+"Level": 39,
+"Skill": "imprison"
+},
+{
+"Level": 42,
+"Skill": "fire_blast"
+},
+{
+"Level": 44,
+"Skill": "grudge"
+},
+{
+"Level": 47,
+"Skill": "captivate"
+},
+{
+"Level": 50,
+"Skill": "inferno"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 7,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 2,
+"FemaleWeight": 6,
+"BaseHP": 38,
+"BaseAtk": 41,
+"BaseDef": 40,
+"BaseMAtk": 50,
+"BaseMDef": 65,
+"BaseSpeed": 65,
+"ExpYield": 60,
+"Height": 0.6,
+"Weight": 9.9,
+"Personalities": [
+0,
+1,
+2,
+3,
+8,
+9,
+11,
+13,
+15,
+16,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "hail"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "frost_breath"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "aurora_veil"
+}
+],
+"SharedSkills": [
+{
+"Skill": "disable"
+},
+{
+"Skill": "hypnosis"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "flail"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "charm"
+},
+{
+"Skill": "encore"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "extrasensory"
+},
+{
+"Skill": "howl"
+},
+{
+"Skill": "power_swap"
+},
+{
+"Skill": "tail_slap"
+},
+{
+"Skill": "freeze_dry"
+},
+{
+"Skill": "moonblast"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Alolan Vulpix",
+"LocalTexts": {
+"ja": "",
+"ko": "",
+"zh-hant": "",
+"fr": "",
+"de": "",
+"es": "",
+"it": "",
+"ja-jp": "",
+"zh-hans": ""
+}
+},
+"Temporary": false,
+"Element1": "ice",
+"Element2": "none",
+"Intrinsic1": "snow_cloak",
+"Intrinsic2": "none",
+"Intrinsic3": "snow_warning",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "ice_shard"
+},
+{
+"Level": 4,
+"Skill": "tail_whip"
+},
+{
+"Level": 7,
+"Skill": "roar"
+},
+{
+"Level": 9,
+"Skill": "baby_doll_eyes"
+},
+{
+"Level": 12,
+"Skill": "confuse_ray"
+},
+{
+"Level": 15,
+"Skill": "icy_wind"
+},
+{
+"Level": 18,
+"Skill": "payback"
+},
+{
+"Level": 20,
+"Skill": "mist"
+},
+{
+"Level": 23,
+"Skill": "feint_attack"
+},
+{
+"Level": 26,
+"Skill": "hex"
+},
+{
+"Level": 28,
+"Skill": "aurora_beam"
+},
+{
+"Level": 31,
+"Skill": "extrasensory"
+},
+{
+"Level": 34,
+"Skill": "safeguard"
+},
+{
+"Level": 36,
+"Skill": "ice_beam"
+},
+{
+"Level": 39,
+"Skill": "imprison"
+},
+{
+"Level": 42,
+"Skill": "blizzard"
+},
+{
+"Level": 44,
+"Skill": "grudge"
+},
+{
+"Level": 47,
+"Skill": "captivate"
+},
+{
+"Level": 50,
+"Skill": "sheer_cold"
+}
+]
+}
+]
+}
+}

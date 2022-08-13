@@ -1,0 +1,14 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.RankData, RogueEssence",
+"Name": {
+"DefaultText": "Unranked",
+"LocalTexts": {}
+},
+"Comment": "Your rank before joining the guild.",
+"BagSize": 4,
+"FameToNext": 1,
+"Next": null
+}
+}

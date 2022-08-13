@@ -1,0 +1,776 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Audino",
+"LocalTexts": {
+"ja": "タブンネ",
+"ko": "다부니",
+"zh-hant": "差不多娃娃",
+"fr": "Nanméouïe",
+"de": "Ohrdoch",
+"es": "Audino",
+"it": "Audino",
+"ja-jp": "タブンネ",
+"zh-hans": "差不多娃娃"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Hearing Pokémon",
+"LocalTexts": {
+"ja": "ヒヤリングポケモン",
+"ko": "히어링포켓몬",
+"zh-hant": "聽力寶可夢",
+"fr": "Pokémon Audition",
+"de": "Gehör",
+"es": "Pokémon Escucha",
+"it": "Pokémon Ascolto",
+"ja-jp": "ヒヤリングポケモン",
+"zh-hans": "听力宝可梦"
+}
+},
+"IndexNum": 531,
+"EXPTable": "fast",
+"SkillGroup1": "fairy",
+"SkillGroup2": "undiscovered",
+"JoinRate": 65,
+"PromoteFrom": "",
+"Promotions": [],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": false,
+"Generation": 6,
+"Ratio": 4,
+"GenderlessWeight": 0,
+"MaleWeight": 0,
+"FemaleWeight": 0,
+"BaseHP": 103,
+"BaseAtk": 60,
+"BaseDef": 86,
+"BaseMAtk": 60,
+"BaseMDef": 86,
+"BaseSpeed": 50,
+"ExpYield": 390,
+"Height": 1.1,
+"Weight": 31.0,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "surf"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "psychic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "reflect"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "trick_room"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "psyshock"
+},
+{
+"Skill": "telekinesis"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "work_up"
+},
+{
+"Skill": "wild_charge"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "dazzling_gleam"
+},
+{
+"Skill": "power_up_punch"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "amnesia"
+},
+{
+"Skill": "sweet_kiss"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "heal_bell"
+},
+{
+"Skill": "encore"
+},
+{
+"Skill": "wish"
+},
+{
+"Skill": "yawn"
+},
+{
+"Skill": "healing_wish"
+},
+{
+"Skill": "lucky_chant"
+},
+{
+"Skill": "bestow"
+},
+{
+"Skill": "draining_kiss"
+}
+],
+"SecretSkills": [
+{
+"Skill": "fire_punch"
+},
+{
+"Skill": "ice_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "heal_bell"
+},
+{
+"Skill": "pain_split"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "hyper_voice"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "covet"
+},
+{
+"Skill": "gravity"
+},
+{
+"Skill": "last_resort"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "zen_headbutt"
+},
+{
+"Skill": "after_you"
+},
+{
+"Skill": "focus_punch"
+}
+],
+"FormName": {
+"DefaultText": "Audino",
+"LocalTexts": {
+"ja": "タブンネ",
+"ko": "다부니",
+"zh-hant": "差不多娃娃",
+"fr": "Nanméouïe",
+"de": "Ohrdoch",
+"es": "Audino",
+"it": "Audino",
+"ja-jp": "タブンネ",
+"zh-hans": "差不多娃娃"
+}
+},
+"Temporary": false,
+"Element1": "normal",
+"Element2": "none",
+"Intrinsic1": "healer",
+"Intrinsic2": "regenerator",
+"Intrinsic3": "klutz",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "last_resort"
+},
+{
+"Level": 1,
+"Skill": "misty_terrain"
+},
+{
+"Level": 1,
+"Skill": "play_nice"
+},
+{
+"Level": 1,
+"Skill": "pound"
+},
+{
+"Level": 1,
+"Skill": "growl"
+},
+{
+"Level": 1,
+"Skill": "helping_hand"
+},
+{
+"Level": 5,
+"Skill": "baby_doll_eyes"
+},
+{
+"Level": 9,
+"Skill": "refresh"
+},
+{
+"Level": 13,
+"Skill": "disarming_voice"
+},
+{
+"Level": 17,
+"Skill": "double_slap"
+},
+{
+"Level": 21,
+"Skill": "attract"
+},
+{
+"Level": 25,
+"Skill": "secret_power"
+},
+{
+"Level": 29,
+"Skill": "entrainment"
+},
+{
+"Level": 33,
+"Skill": "take_down"
+},
+{
+"Level": 37,
+"Skill": "heal_pulse"
+},
+{
+"Level": 41,
+"Skill": "after_you"
+},
+{
+"Level": 45,
+"Skill": "simple_beam"
+},
+{
+"Level": 49,
+"Skill": "double_edge"
+},
+{
+"Level": 53,
+"Skill": "last_resort"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": false,
+"Generation": 6,
+"Ratio": 4,
+"GenderlessWeight": 0,
+"MaleWeight": 0,
+"FemaleWeight": 0,
+"BaseHP": 103,
+"BaseAtk": 60,
+"BaseDef": 126,
+"BaseMAtk": 80,
+"BaseMDef": 126,
+"BaseSpeed": 50,
+"ExpYield": 425,
+"Height": 1.5,
+"Weight": 32.0,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "surf"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "psychic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "reflect"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "trick_room"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "psyshock"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "wild_charge"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "dazzling_gleam"
+},
+{
+"Skill": "power_up_punch"
+}
+],
+"SharedSkills": [],
+"SecretSkills": [
+{
+"Skill": "fire_punch"
+},
+{
+"Skill": "ice_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "heal_bell"
+},
+{
+"Skill": "pain_split"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "skill_swap"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "hyper_voice"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "covet"
+},
+{
+"Skill": "gravity"
+},
+{
+"Skill": "last_resort"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "zen_headbutt"
+},
+{
+"Skill": "after_you"
+}
+],
+"FormName": {
+"DefaultText": "Mega Audino",
+"LocalTexts": {
+"ja": "",
+"ko": "",
+"zh-hant": "",
+"fr": "Méga-Nanméouïe",
+"de": "",
+"es": "",
+"it": "",
+"ja-jp": "",
+"zh-hans": ""
+}
+},
+"Temporary": true,
+"Element1": "normal",
+"Element2": "fairy",
+"Intrinsic1": "healer",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "last_resort"
+},
+{
+"Level": 1,
+"Skill": "misty_terrain"
+},
+{
+"Level": 1,
+"Skill": "play_nice"
+},
+{
+"Level": 1,
+"Skill": "pound"
+},
+{
+"Level": 1,
+"Skill": "growl"
+},
+{
+"Level": 1,
+"Skill": "helping_hand"
+},
+{
+"Level": 5,
+"Skill": "baby_doll_eyes"
+},
+{
+"Level": 9,
+"Skill": "refresh"
+},
+{
+"Level": 13,
+"Skill": "disarming_voice"
+},
+{
+"Level": 17,
+"Skill": "double_slap"
+},
+{
+"Level": 21,
+"Skill": "attract"
+},
+{
+"Level": 25,
+"Skill": "secret_power"
+},
+{
+"Level": 29,
+"Skill": "entrainment"
+},
+{
+"Level": 33,
+"Skill": "take_down"
+},
+{
+"Level": 37,
+"Skill": "heal_pulse"
+},
+{
+"Level": 41,
+"Skill": "after_you"
+},
+{
+"Level": 45,
+"Skill": "simple_beam"
+},
+{
+"Level": 49,
+"Skill": "double_edge"
+},
+{
+"Level": 53,
+"Skill": "last_resort"
+}
+]
+}
+]
+}
+}

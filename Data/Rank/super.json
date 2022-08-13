@@ -1,0 +1,20 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.RankData, RogueEssence",
+"Name": {
+"DefaultText": "Super",
+"LocalTexts": {
+"fr-ca": "Formidable",
+"de": "Super",
+"es": "Alto",
+"pt": "Super",
+"ko": "슈퍼"
+}
+},
+"Comment": "",
+"BagSize": 40,
+"FameToNext": 12000,
+"Next": null
+}
+}

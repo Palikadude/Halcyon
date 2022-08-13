@@ -1,0 +1,20 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.RankData, RogueEssence",
+"Name": {
+"DefaultText": "Ultra",
+"LocalTexts": {
+"fr-ca": "Supérieur",
+"de": "Ultra",
+"es": "Superior",
+"pt": "Ultra",
+"ko": "울트라"
+}
+},
+"Comment": "",
+"BagSize": 40,
+"FameToNext": 20000,
+"Next": null
+}
+}

@@ -1,0 +1,346 @@
+﻿{
+"Version": "0.6.0.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Zorua",
+"LocalTexts": {
+"ja": "ゾロア",
+"ko": "조로아",
+"zh-hant": "索羅亞",
+"fr": "Zorua",
+"de": "Zorua",
+"es": "Zorua",
+"it": "Zorua",
+"ja-jp": "ゾロア",
+"zh-hans": "索罗亚"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Tricky Fox Pokémon",
+"LocalTexts": {
+"ja": "わるぎつねポケモン",
+"ko": "나쁜여우포켓몬",
+"zh-hant": "惡狐寶可夢",
+"fr": "Pokémon Sombrenard",
+"de": "Lausefuchs-Pokémon",
+"es": "Pokémon Zorro Pillo",
+"it": "Pokémon Malavolpe",
+"ja-jp": "わるぎつねポケモン",
+"zh-hans": "恶狐宝可梦"
+}
+},
+"IndexNum": 570,
+"EXPTable": "medium_slow",
+"SkillGroup1": "field",
+"SkillGroup2": "undiscovered",
+"JoinRate": 25,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "zoroark",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 30
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 40,
+"BaseAtk": 65,
+"BaseDef": 40,
+"BaseMAtk": 80,
+"BaseMDef": 40,
+"BaseSpeed": 65,
+"ExpYield": 66,
+"Height": 0.7,
+"Weight": 12.5,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "cut"
+},
+{
+"Skill": "roar"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "aerial_ace"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "u_turn"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "embargo"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "counter"
+},
+{
+"Skill": "detect"
+},
+{
+"Skill": "memento"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "extrasensory"
+},
+{
+"Skill": "sucker_punch"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "copycat"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "hyper_voice"
+},
+{
+"Skill": "bounce"
+},
+{
+"Skill": "covet"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "foul_play"
+}
+],
+"FormName": {
+"DefaultText": "Zorua",
+"LocalTexts": {
+"ja": "ゾロア",
+"ko": "조로아",
+"zh-hant": "索羅亞",
+"fr": "Zorua",
+"de": "Zorua",
+"es": "Zorua",
+"it": "Zorua",
+"ja-jp": "ゾロア",
+"zh-hans": "索罗亚"
+}
+},
+"Temporary": false,
+"Element1": "dark",
+"Element2": "none",
+"Intrinsic1": "keen_eye",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 5,
+"Skill": "pursuit"
+},
+{
+"Level": 9,
+"Skill": "fake_tears"
+},
+{
+"Level": 13,
+"Skill": "fury_swipes"
+},
+{
+"Level": 17,
+"Skill": "feint_attack"
+},
+{
+"Level": 21,
+"Skill": "scary_face"
+},
+{
+"Level": 25,
+"Skill": "taunt"
+},
+{
+"Level": 29,
+"Skill": "foul_play"
+},
+{
+"Level": 33,
+"Skill": "torment"
+},
+{
+"Level": 37,
+"Skill": "agility"
+},
+{
+"Level": 41,
+"Skill": "embargo"
+},
+{
+"Level": 45,
+"Skill": "punishment"
+},
+{
+"Level": 49,
+"Skill": "nasty_plot"
+},
+{
+"Level": 53,
+"Skill": "imprison"
+},
+{
+"Level": 57,
+"Skill": "night_daze"
+}
+]
+}
+]
+}
+}
