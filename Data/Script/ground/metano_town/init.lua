@@ -72,7 +72,7 @@ function metano_town.PlotScripting()
 		end
 	elseif SV.ChapterProgression.Chapter == 3 then 
 		metano_town_ch_3.SetupGround()
-		if SV.Chapter3.FinishedOutlawIntro then 
+		if SV.Chapter3.FinishedOutlawIntro and not SV.Chapter3.MetTeamStyle then 
 			metano_town_ch_3.MeetTeamStyle()
 		end	
 	else
@@ -134,6 +134,7 @@ function metano_town.East_Exit_Touch(obj, activator)
   local dungeons = {50, 53, 57}--this needs to be updated when more dungeons come out.
   local grounds = {}
   metano_town.ShowDestinationMenu(dungeons, grounds)
+  GeneralFunctions.EndConversation(CH('Teammate1'))
 end
 
 function metano_town.South_Exit_Touch(obj, activator)
@@ -366,7 +367,8 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	--confirm the choice
 	UI:ResetSpeaker()
 	UI:SetCenter(true)
-	UI:ChoiceMenuYesNo(dest:GetColoredName() .. " is the destination.\nIs that correct?")
+	local dest_name = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dest.ID]:GetColoredName()
+	UI:ChoiceMenuYesNo(dest_name .. " is the destination.\nIs that correct?")
 	UI:WaitForChoice()
 	local confirm = UI:ChoiceResult()
 	UI:SetCenter(false)

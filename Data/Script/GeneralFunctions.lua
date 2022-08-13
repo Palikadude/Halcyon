@@ -1058,4 +1058,25 @@ end
 
 
 
+function GeneralFunctions.BossTransition(chara)
 
+	SOUND:FadeOutBGM(20)
+	local emitter = RogueEssence.Content.FlashEmitter()
+	emitter.FadeInTime = 2
+	emitter.HoldTime = 2
+	emitter.FadeOutTime = 2
+	emitter.StartColor = Color(0, 0, 0, 0)
+	emitter.Layer = DrawLayer.Top
+	emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
+	GROUND:PlayVFX(emitter, chara.Position.X, chara.Position.Y)
+	SOUND:PlayBattleSE("EVT_Battle_Flash")
+	GAME:WaitFrames(16)
+	GROUND:PlayVFX(emitter, chara.Position.X, chara.Position.Y)
+	SOUND:PlayBattleSE("EVT_Battle_Flash")
+	GAME:WaitFrames(46)
+	
+	SOUND:PlayBattleSE('EVT_Battle_Transition')
+	GAME:WaitFrames(60)
+	GAME:FadeOut(true, 30)
+	GAME:WaitFrames(80)
+end

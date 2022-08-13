@@ -190,6 +190,8 @@ SV.Chapter3 =
 	EnteredCavern = false,--did duo enter the dungeon?
 	FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
 	EncounteredBoss = false,--did duo find team style in the dungeon yet?
+	LostToBoss = false,--did duo die to boss?
+	EscapedBoss = false,--due team use an escape orb to escape boss?
 	DefeatedBoss = false --did duo defeat team style?
 
 }

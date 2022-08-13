@@ -43,12 +43,12 @@ function zone_54.ExitSegment(zone, result, rescue, segmentID, mapID)
 	--Failed to clear
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
 		SV.Dojo.TrainingFailedGeneric = true
-		GeneralFunctions.EndDungeonRun(result, 0, -1, 36, 0, false, false)
 	else--Cleared
 		SV.Dojo.TrainingCompletedGeneric = true
-		GeneralFunctions.EndDungeonRun(result, 0, -1, 36, 0, false, false)
 	end
 	
+	GeneralFunctions.EndDungeonRun(result, 0, -1, 36, 0, false, false)
+
 	
 end
 	

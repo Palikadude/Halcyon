@@ -66,12 +66,14 @@ end
 
 function crooked_den.PlotScripting()
 	if SV.ChapterProgression.Chapter == 3 then 
-		if not SV.Chapter3.EnteredCavern then
-			crooked_den_ch_3.FirstAttemptCutscene()
-		elseif not SV.Chapter3.EncounteredBoss then
-			crooked_den_ch_3.LostBeforeStyle()
-		else 
-			crooked_den_ch_3.LostToStyle()
+		if SV.Chapter3.LostToBoss then--player just died
+			crooked_den_ch_3.DiedToBoss()
+		elseif SV.Chapter3.DefeatedBoss then--player won
+			crooked_den_ch_3.DefeatedBoss()
+		elseif SV.Chapter3.EncounteredBoss then--player came back after dying 
+			crooked_den_ch_3.SecondPreBossScene()
+		else--first encounter
+			crooked_den_ch_3.FirstPreBossScene()
 		end
 	else
 		GAME:FadeIn(20)

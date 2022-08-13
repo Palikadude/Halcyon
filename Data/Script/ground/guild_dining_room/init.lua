@@ -210,7 +210,7 @@ function guild_dining_room.Dinnertime(generic)
 	if generic then 
 		local stopEating = false 
 		UI:SetSpeaker('', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
-		GAME:WaitFrames(40)--don't load in too fast. give it a second to transition properly.
+		GAME:WaitFrames(60)--don't load in too fast. give it a second to transition properly.
 		SOUND:PlayBGM('Dinner Eating.ogg', true)
 		local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
 		local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(208, 156, 184, false)

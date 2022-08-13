@@ -245,6 +245,7 @@ function guild_third_floor_lobby.MorningAddress(generic)
 
 	if generic then 
 		--call post address scripting to see if anything additional is needed if address is generic 
+		print("generic address.")
 		SV.TemporaryFlags.MorningAddress = false
 		guild_third_floor_lobby.PostAddressScripting()
 		--[[the commented out functionality below was moved to the scripts that post address scripting calls		

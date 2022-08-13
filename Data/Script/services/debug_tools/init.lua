@@ -79,8 +79,8 @@ function DebugTools:OnNewGame()
   p.Nickname = 'Genshi'
   _DATA.Save.ActiveTeam.Players:Add(p)
   
-  mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
-  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
+  --mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
+  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
   
   
   	_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3

@@ -30,11 +30,12 @@ function crooked_den_ch_3.FirstPreBossScene()
 	
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(30)
 	UI:SetSpeaker(sandile)
 	UI:SetSpeakerEmotion("Pain")
 	GeneralFunctions.EmoteAndPause(sandile, "Sweating", true)
 	UI:WaitShowDialogue("Not good,[pause=10] not good,[pause=10] not good...")
+	GAME:WaitFrames(20)
 	GROUND:MoveInDirection(sandile, Direction.Left, 24, false, 1)
 	GROUND:CharAnimateTurnTo(sandile, Direction.Right, 4)	
 	GROUND:MoveInDirection(sandile, Direction.Right, 48, false, 1)
@@ -263,17 +264,19 @@ function crooked_den_ch_3.FirstPreBossScene()
 											GAME:WaitFrames(10)
 											GROUND:CharAnimateTurnTo(sandile, Direction.Down, 2) end)
 	coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(glameow, Direction.UpLeft, 4) 
+											GeneralFunctions.EightWayMove(glameow, 160, 120, false, 1)
 											GeneralFunctions.EightWayMove(glameow, 144, 88, false, 1)
 											GROUND:CharAnimateTurnTo(glameow, Direction.UpRight, 4) end)
 	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(cacnea, Direction.UpRight, 4) 
+											GeneralFunctions.EightWayMove(cacnea, 184, 120, false, 1)
 											GeneralFunctions.EightWayMove(cacnea, 200, 88, false, 1)
 											GROUND:CharAnimateTurnTo(cacnea, Direction.UpLeft, 4) end)
-	coro5 = TASK:BranchCoroutine(function() GROUND:MoveCamera(180, 120, 32, false) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:MoveCamera(180, 120, 32, false) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 	
 	GAME:WaitFrames(10)
 	UI:SetSpeaker(luxio)
-	UI:WaitShowDialogue("So you're the outlaw this sad sack of an adventuring team was after...")
+	UI:WaitShowDialogue("So you're the outlaw this sorry excuse of an adventuring team was after...")
 	UI:WaitShowDialogue("Well,[pause=10] you're ours now!")
 	
 	GeneralFunctions.EmoteAndPause(sandile, "Sweating", true)
@@ -281,14 +284,15 @@ function crooked_den_ch_3.FirstPreBossScene()
 	UI:SetSpeakerEmotion("Pain")
 	UI:WaitShowDialogue("Eeep!")
 	
+	--todo: they shake before waking up
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Pain")
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											GROUND:CharWaitAnim(hero, "Wake")
-											GROUND:CharSetAnim(hero, "None", true)
+											GROUND:CharSetAnim(hero, "None", true) end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:CharWaitAnim(partner, "Wake")
-											GROUND:CharSetAnim(partner, "None", true)
+											GROUND:CharSetAnim(partner, "None", true) end)
 	coro3 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Urgh...", 40) end)
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
@@ -344,7 +348,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(glameow)
 	UI:WaitShowDialogue("That's right darlings.[pause=0] Once " .. luxio:GetDisplayName() .. " came up with the idea,[pause=10] he told us the plan.")
-	UI:WaitShowDialogue("We started to act like we had suddenly developed respect for you,[pause=10] then off we went like we had something to do.")
+	UI:WaitShowDialogue("We started to act like we had suddenly developed respect for you,[pause=10] then off we went.")
 	UI:WaitShowDialogue("But really,[pause=10] we just started trailing you.[pause=0] You had no idea you were being followed,[pause=10] did you?")
 	
 	GAME:WaitFrames(20)
@@ -356,10 +360,11 @@ function crooked_den_ch_3.FirstPreBossScene()
 		UI:WaitShowDialogue("Especially with how many times you failed to even make it to the end of this place!")
 	end
 	
-	UI:WaitShowDialogue("But now,[pause=10] we'll be claiming the bounty on this outlaw's head.[pause=0] Not you.")
+	UI:WaitShowDialogue("And now,[pause=10] we'll be claiming the bounty on this outlaw's head.[pause=0] Not you.")
+	UI:WaitShowDialogue("I wonder how that's gonna reflect on you when you get back to your precious guild.")
 	
-	GAME:WaitFrames(20)
-	GeneralFunctions.Complain(partner, true)
+	GAME:WaitFrames(10)
+	GeneralFunctions.Complain(partner)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("I can't believe you jerks![pause=0] Don't you have anything better to do?")
@@ -367,8 +372,397 @@ function crooked_den_ch_3.FirstPreBossScene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(luxio)
 	UI:SetSpeakerEmotion("Angry")
+	GeneralFunctions.Complain(luxio, true)
+	UI:WaitShowDialogue("Don't you have anything better to do than to play pretend!?")
+	UI:WaitShowDialogue("Don't you get you're making us real adventuring teams look bad?")
+	UI:WaitShowDialogue("Team [color=#FFA5FF]Style[color] can't become the glamorous team it's destined to be with jokers like you running around!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("Playing pretend!?[pause=0] Are you kidding me!?")
+	UI:WaitShowDialogue("We're the real adventuring team![pause=0] You're the fakers who couldn't get into the guild!")
+	
+	SOUND:PlayBattleSE('EVT_Emote_Shock_2')
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(luxio, "Shock", false) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(glameow, "Exclaim", false) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(cacnea, "Shock", false) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("That is IT![pause=0] You wanna do this the hard way,[pause=10] that works for us!")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(luxio, glameow, 4) 
+	UI:WaitShowDialogue(glameow:GetDisplayName() .. "!")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(luxio, cacnea, 4) 
+	UI:WaitShowDialogue(cacnea:GetDisplayName() .. "!")
+	
+	GAME:WaitFrames(8)
+	GROUND:CharAnimateTurnTo(luxio, Direction.Down, 4)
+	UI:WaitShowDialogue("New plan![pause=0] We're no longer interested in bagging this outlaw!")
+	UI:WaitShowDialogue("We're just gonna trounce these posers to stop THEM from doing it!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(sandile, 5, 1)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Um,[pause=10] don't I get a say in this?")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(luxio, sandile, 2)
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Angry")
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("No!", 60) end)
+	--todo: replace this with regular recoil if sandile ever gets a pain sprite
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.Recoil(sandile, "None") end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(8)
+	GROUND:CharAnimateTurnTo(luxio, Direction.Down, 4)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("Now then...")
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(luxio, Direction.Down, 16, false, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+											GROUND:MoveInDirection(glameow, Direction.Down, 16, false, 1) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+											GROUND:MoveInDirection(cacnea, Direction.Down, 16, false, 1) end)
+	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:AnimateInDirection(hero, "Walk", Direction.Up, Direction.Down, 16, 1, 1) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:AnimateInDirection(partner, "Walk", Direction.Up, Direction.Down, 16, 1, 1) end)
+	coro6 = TASK:BranchCoroutine(function() GAME:MoveCamera(180, 152, 32, false) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6})
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(glameow)
+	UI:SetSpeakerEmotion("Special1")
+	UI:WaitShowDialogue("You're really in for it now,[pause=10] darlings.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(cacnea)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("The boss says you have to go!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("Get ready for your beatdown,[pause=10] you no-talent chumps!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("Get ready,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] Here they come!")
 
+	GeneralFunctions.BossTransition(hero)
+	GAME:CutsceneMode(false)
+	SV.Chapter3.EncounteredBoss = true
+	--enter fight
+	GAME:EnterDungeon(58, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	
+end
 
+--player used escape orb. Note: Mysterious force prevents orbs, so this shouldn't actually get used.
+function crooked_den_ch_3.EscapedBoss()
+
+end 
+
+--player was defeated.
+function crooked_den_ch_3.DiedToBoss()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local sandile, luxio, glameow, cacnea = CharacterEssentials.MakeCharactersFromList({{"Sandile", 172, 72, Direction.Down},
+																						{"Luxio", 172, 120, Direction.Down},
+																						{"Glameow", 144, 104, Direction.Down},
+																						{"Cacnea", 200, 104, Direction.Down}})
+	
+	GROUND:Hide(partner.EntName)
+	GROUND:Hide(hero.EntName)
+	
+	
+	GAME:WaitFrames(60)
+	AI:DisableCharacterAI(partner)
+	SOUND:StopBGM()
+	
+	GAME:MoveCamera(180, 120, 1, false)
+		
+	GAME:CutsceneMode(true)
+	GAME:FadeIn(40)
+	
+	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(luxio, "Exclaim", true) end)
+	local coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(glameow, "Exclaim", false) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.EmoteAndPause(cacnea, "Question", false) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GAME:WaitFrames(20)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(luxio, 3, 4, true, false, false, Direction.Up) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(glameow, 3, 4, true, false, false, Direction.DownRight) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) 
+											GeneralFunctions.LookAround(cacnea, 3, 4, true, false, false, Direction.DownLeft) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	
+	UI:SetSpeaker(cacnea)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Duh...[pause=0] Boss?[pause=0] Where did they go?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("They must have retreated.[pause=0] Those cowards...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(glameow)
+	UI:SetSpeakerEmotion("Happy")
+	GROUND:CharSetAnim(glameow, "Idle", true)
+	GROUND:CharSetEmote(glameow, 4, 0)
+	UI:WaitShowDialogue("We really showed them who's boss,[pause=10] didn't we?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(cacnea)
+	UI:SetSpeakerEmotion("Joyous")
+	GROUND:CharSetAnim(cacnea, "Idle", true)
+	GROUND:CharSetEmote(cacnea, 4, 0)
+	UI:WaitShowDialogue("Huhuh,[pause=10] yeah,[pause=10] we sure did,[pause=10] huhuh!")	
+	
+	GAME:WaitFrames(40)
+	GROUND:CharSetEmote(cacnea, -1, 0)
+	GROUND:CharSetEmote(glameow, -1, 0)
+	GROUND:CharEndAnim(cacnea)
+	GROUND:CharEndAnim(glameow)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("What should we do now,[pause=10] boss?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(luxio)
+	UI:WaitShowDialogue("Those losers are gonna have to come back if they want to complete their mission.")
+	UI:WaitShowDialogue("We're gonna wait here until they come back and embarrass them again with another beatdown!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(glameow)
+	GROUND:CharSetEmote(glameow, 1, 0)
+	UI:SetSpeakerEmotion("Special1")
+	UI:WaitShowDialogue("Oh,[pause=10] that's absolutely devilish,[pause=10] " .. luxio:GetDisplayName() .. "![pause=0] I love that plan!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(glameow, -1, 0)
+	GROUND:CharSetEmote(cacnea, 4, 0)
+	UI:SetSpeaker(cacnea)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Huhuh,[pause=10] yup![pause=0] That's a great idea![pause=0] That's why you're boss!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(cacnea, -1, 0)
+	UI:SetSpeaker(luxio)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(luxio, Direction.Up, 4)
+											UI:WaitShowDialogue("And as for you...[pause=0] You'll be staying put here too![pause=0] Don't even think of running away!") end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(glameow, Direction.Up, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GROUND:CharAnimateTurnTo(cacnea, Direction.Up, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GeneralFunctions.EmoteAndPause(sandile, "Sweating", true)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("Eeep!")
+	
+	GAME:WaitFrames(30)
+	GAME:FadeOut(false, 60)	
+	GAME:WaitFrames(90)
+	SV.Chapter3.LostToBoss = false--reset this flag
+	--set generic flags
+	SV.TemporaryFlags.Dinnertime = true
+	SV.TemporaryFlags.Bedtime = true
+	SV.TemporaryFlags.MorningWakeup = true
+	SV.TemporaryFlags.MorningAddress = true
+	
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")
+end 
+
+--Player Defeated boss
+function crooked_den_ch_3.DefeatedBoss()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local sandile, luxio, glameow, cacnea = CharacterEssentials.MakeCharactersFromList({{"Sandile", 172, 72, Direction.Down},
+																						{"Luxio", 172, 128, Direction.Down},
+																						{"Glameow", 120, 112, Direction.Down},
+																						{"Cacnea", 224, 112, Direction.Down}})
+	
+	--todo: change luxio and cacnea animations when they're made 
+	GROUND:CharPoseAnim(glameow, "Faint")
+	GROUND:CharPoseAnim(cacnea, "Sleep")
+	GROUND:CharSetAnim(luxio, "Charge", true)
+	GROUND:TeleportTo(hero, 188, 160, Direction.Up)
+	GROUND:TeleportTo(partner, 156, 160, Direction.Up)
+	GAME:MoveCamera(180, 120, 1, false)
+	AI:DisableCharacterAI(partner)
+	SOUND:StopBGM()
+	
+	GAME:WaitFrames(60)
+	GAME:CutsceneMode(true)
+	GAME:FadeIn(40)
+	
+	GAME:WaitFrames(30)
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("Th-this...[pause=0] isn't o-over...")
+	UI:WaitShowDialogue("Y-you haven't s-seen the last of...[pause=0] T-Team [color=#FFA5FF]Style[color]...[pause=0] Losers...")
+
+	GAME:WaitFrames(20)
+	SOUND:PlayBattleSE('EVT_CH03_Boss_Collapse')
+	GROUND:CharPoseAnim(luxio, 'Sleep')
+	GAME:WaitFrames(70)
+	
+	UI:SetSpeaker(partner)
+	GeneralFunctions.Hop(partner)
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("We did it![pause=0] We put those bullies in their place,[pause=10] " .. hero:GetDisplayName() .. "!")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Now we can get back to our mission!")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBGM("In the Depths of the Pit.ogg", false)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 142, 138, false, 1) 
+												  GROUND:MoveToPosition(partner, 142, 122, false, 1)
+												  GeneralFunctions.EightWayMove(partner, 156, 104, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+												  GROUND:MoveToPosition(hero, 204, 138, false, 1) 
+												  GROUND:MoveToPosition(hero, 204, 122, false, 1)
+												  GeneralFunctions.EightWayMove(hero, 188, 104, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(10)
+	UI:WaitShowDialogue(sandile:GetDisplayName() .. ",[pause=10] are you okay?[pause=0] Did those jerks hurt you at all?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I'm fine,[pause=10] but...")
+	UI:WaitShowDialogue("You're wondering how I'm doing?[pause=0] Aren't I an outlaw here?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Just because you're an outlaw doesn't mean I want to see you hurt!")
+	UI:WaitShowDialogue("Besides,[pause=10] you're nicer than most of the Pokémon we've had to deal with recently.")
+	
+	GeneralFunctions.EmoteAndPause(sandile, "Sweating", true)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Teary-Eyed")
+	UI:WaitShowDialogue("Sniff...[pause=0] I can't believe how nice you're being towards a criminal like me...")
+	UI:WaitShowDialogue("Sniff...[pause=0] That means a lot to me...[pause=0] Thank you...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Of course![pause=0] I'm just glad to hear you're unharmed!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("But...[pause=0] We still do need to bring you in now.[pause=0] I'm sorry...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("It's OK.[pause=0] I understand...")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Alright,[pause=10] " .. hero:GetDisplayName() .. ".[pause=0] Let's get a move on back to the guild.")
+	
+	GAME:WaitFrames(30)
+	SOUND:FadeOutBGM(60)
+	GAME:FadeOut(false, 60)	
+	GAME:WaitFrames(90)
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")
+	
+	--idea: Zhayn will go easy on Thwait because he knows that criminals can be reformed as he was himself a criminal once.
+	--partner should also suggest they go easy on him he doesnt seem so bad
+	--shuca will tell partner that finesse is needed sometimes, and they did the right thing.
+end 
+
+--player died to boss, came back: play a different scene to reflect this and get back into the fight faster.
+function crooked_den_ch_3.SecondPreBossScene()
+local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local sandile, luxio, glameow, cacnea = CharacterEssentials.MakeCharactersFromList({{"Sandile", 172, 72, Direction.Down},
+																						{"Luxio", 172, 120, Direction.Up},
+																						{"Glameow", 144, 104, Direction.UpRight},
+																						{"Cacnea", 200, 104, Direction.UpLeft}})
+	
+	GAME:CutsceneMode(true)
+	GROUND:TeleportTo(hero, 188, 256, Direction.Up)
+	GROUND:TeleportTo(partner, 156, 256, Direction.Up)
+	GAME:MoveCamera(180, 120, 1, false)
+	AI:DisableCharacterAI(partner)
+	SOUND:StopBGM()
+	
+	GAME:WaitFrames(60)
+	GAME:FadeIn(40)
+	
+	SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
+	
+	GAME:WaitFrames(20)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 156, 152, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:MoveToPosition(hero, 188, 152, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Determined")
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("Team [color=#FFA5FF]Style[color]!") end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
+											SOUND:PlayBattleSE('EVT_Emote_Exclaim_2')
+											GROUND:CharSetEmote(luxio, 3, 1)
+											GROUND:CharAnimateTurnTo(luxio, Direction.Down, 4) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
+												  GROUND:CharSetEmote(glameow, 3, 1)
+												  GROUND:CharAnimateTurnTo(glameow, Direction.Down, 4) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(24) 
+												  GROUND:CharSetEmote(cacnea, 3, 1)
+												  GROUND:CharAnimateTurnTo(cacnea, Direction.Down, 4) end)											
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(cacnea)
+	UI:SetSpeakerEmotion("Stunned")
+	UI:WaitShowDialogue("Wow,[pause=10] boss![pause=0] They really did come back,[pause=10] just like you said they would!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(luxio)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("Of course I was right you idiot![pause=0] When am I ever wrong?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(glameow)
+	UI:SetSpeakerEmotion("Joyous")
+	UI:WaitShowDialogue("If they came back,[pause=10] they must really enjoy being humiliated.[pause=0] What a bunch of weirdos!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("We're here for " .. sandile:GetDisplayName() .. "![pause=0] We still have our mission to complete!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(glameow)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("That's strange,[pause=10] darlings,[pause=10] because the only thing you're going to find here...")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(luxio) 
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("...Is another beatdown![pause=0] Delivered by yours truly!")
+	UI:WaitShowDialogue("Get ready![pause=0] We're going to remind you why you're not fit to be adventurers!")
+	
+	GeneralFunctions.BossTransition(hero)
+	GAME:CutsceneMode(false)
+	--enter fight
+	GAME:EnterDungeon(58, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	
 end
 	
 

@@ -39,8 +39,7 @@ function zone_53.ExitSegment(zone, result, rescue, segmentID, mapID)
         }
 		]]--
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
-		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
-		GAME:EndDungeonRun(result, 0, -1, 6, 0, true, true)
+
 
 		GAME:WaitFrames(20)
 		
@@ -56,6 +55,10 @@ function zone_53.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
 					
+		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
+		--this saves the game, so it must be called 2nd to last.
+		GAME:EndDungeonRun(result, 0, -1, 6, 0, true, true)
+		
 		--go to dinner room 
 		GAME:EnterZone(0, -1, 6, 0)
 
