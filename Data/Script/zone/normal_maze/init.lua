@@ -66,8 +66,8 @@ function normal_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	
 	--after setting flags, save the dungeon run and then go to the dojo.
-	GAME:EndDungeonRun(result, 0, -1, 36, 0, false, false)			
-	GAME:EnterZone(0, -1, 36, 0)
+	GAME:EndDungeonRun(result, "master_zone", -1, 36, 0, false, false)			
+	GAME:EnterZone("master_zone", -1, 36, 0)
 end
 	
 

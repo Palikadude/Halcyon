@@ -177,8 +177,8 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	
 	--enter dungeon
 	GAME:CutsceneMode(false)
-	GAME:UnlockDungeon(50)
-	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:UnlockDungeon("relic_forest")
+	GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 	--GAME:EnterGroundMap("relic_forest", "Main_Entrance_Marker")
 	
 	
@@ -235,7 +235,7 @@ function altere_pond_ch_1.WipedInForest()
 	
 	GAME:CutsceneMode(false)
 	--relic forest
-	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 
 end 
 	

@@ -123,7 +123,7 @@ function metano_town.North_Exit_Touch(obj, activator)
   if yesnoResult then 
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
-	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
 end
 
@@ -131,7 +131,7 @@ function metano_town.East_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GeneralFunctions.StartPartnerConversation("Where should we go,[pause=10] " .. CH('PLAYER'):GetDisplayName() .. "?", "Normal", false)
   GAME:WaitFrames(20)
-  local dungeons = {50, 53, 57}--this needs to be updated when more dungeons come out.
+  local dungeons = {"relic_forest", "illuminant_riverbed", "crooked_cavern"}--this needs to be updated when more dungeons come out.
   local grounds = {}
   metano_town.ShowDestinationMenu(dungeons, grounds)
   GeneralFunctions.EndConversation(CH('Teammate1'))
@@ -378,7 +378,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 		if dest.StructID.Segment > -1 then
 		  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
 			GAME:WaitFrames(120)--wait a bit before going to the ground
-			GAME:EnterZone(0, -1, dungeon_entrance_mapping[dest.ID], 0)
+			GAME:EnterZone("master_zone", -1, dungeon_entrance_mapping[dest.ID], 0)
 		  else
 			GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 		  end

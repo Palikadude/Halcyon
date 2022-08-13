@@ -389,10 +389,10 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 	--these need to be updated as more dojo dungeons are created.
 	if result == 1 then
 		--training mazes
-		dungeon_entrances = {52, 54, 55, 56}
+		dungeon_entrances = {"normal_maze", "grass_maze", "fire_maze", "water_maze"}
 	elseif result == 2 then
 		--lessons
-		dungeon_entrances = {51}
+		dungeon_entrances = {"beginner_lesson"}
 	elseif result == 3 then
 		--trials
 		dungeon_entrances = {}

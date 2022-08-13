@@ -93,7 +93,7 @@ function altere_pond.East_Exit_Touch(obj, activator)
 	if yesnoResult then 
 		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
-		GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+		GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 	end
 end 
 

@@ -184,9 +184,9 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	SV.ChapterProgression.Chapter = 3
 	SV.ChapterProgression.CurrentStoryDungeon = 57 -- Crooked Cavern
 	SV.Dojo.NewMazeUnlocked = true
-	GAME:UnlockDungeon(54)--unlock new mazes at ledian dojo
-	GAME:UnlockDungeon(55)--unlock new mazes at ledian dojo
-	GAME:UnlockDungeon(56)--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("grass_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("fire_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("water_maze")--unlock new mazes at ledian dojo
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")	

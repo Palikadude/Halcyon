@@ -44,7 +44,7 @@ function crooked_den.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.Chapter3.DefeatedBoss = true
 	end
 	
-	GeneralFunctions.EndDungeonRun(result, 0, -1, 42, 0, false, false) --Go to Crooked Den ground map
+	GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 42, 0, false, false) --Go to Crooked Den ground map
 
 
 end

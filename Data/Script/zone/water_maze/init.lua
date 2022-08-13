@@ -47,7 +47,7 @@ function water_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.Dojo.TrainingCompletedGeneric = true
 	end
 	
-	GeneralFunctions.EndDungeonRun(result, 0, -1, 36, 0, false, false)
+	GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 36, 0, false, false)
 
 end
 	

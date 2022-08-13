@@ -55,7 +55,7 @@ function illuminant_riverbed_entrance_ch_2.FirstAttemptCutscene()
 	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
 	SV.Chapter2.EnteredRiver = true 
-	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 end 
 
@@ -108,7 +108,7 @@ function illuminant_riverbed_entrance_ch_2.SubsequentAttemptCutscene()
 	TASK:JoinCoroutines({coro1, coro2})
 	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
-	GAME:EnterDungeon(53, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 end 
 

@@ -853,7 +853,7 @@ end
 
 function COMMON.EndRescue(zone, result, rescue, segmentID)
   COMMON.EndDayCycle()
-  local zoneId = 1
+  local zoneId = "backup_master_zone"
   local structureId = -1
   local mapId = 12
   local entryId = 1

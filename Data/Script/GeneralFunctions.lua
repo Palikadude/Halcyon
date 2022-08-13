@@ -814,7 +814,7 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
 		GAME:FadeOut(false, 40)
-		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc(0, -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue
+		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc("master_zone", -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue
 		GAME:RestartToTitle()
 	end
 end

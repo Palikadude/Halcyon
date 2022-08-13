@@ -59,7 +59,7 @@ function crooked_cavern_entrance_ch_3.FirstAttemptCutscene()
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	GAME:CutsceneMode(false)
 	SV.Chapter3.EnteredCavern = true 
-	GAME:EnterDungeon(57, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("crooked_cavern", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 end 
 
@@ -118,7 +118,7 @@ function crooked_cavern_entrance_ch_3.LostBeforeStyle()
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	GAME:CutsceneMode(false)
-	GAME:EnterDungeon(57, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("crooked_cavern", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 end 
 
@@ -175,7 +175,7 @@ function crooked_cavern_entrance_ch_3.LostToStyle()
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	GAME:CutsceneMode(false)
-	GAME:EnterDungeon(57, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("crooked_cavern", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 end 
 

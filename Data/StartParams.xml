@@ -151,10 +151,23 @@
 <StartLevel>5</StartLevel>
 <MaxLevel>100</MaxLevel>
 <StartPersonality>5</StartPersonality>
+<DefaultZone>master_zone</DefaultZone>
+<DefaultRank>unranked</DefaultRank>
+<DefaultSkin>normal</DefaultSkin>
+<DefaultAI>stick_together</DefaultAI>
+<DefaultTile>none</DefaultTile>
+<DefaultElement>none</DefaultElement>
+<DefaultMapStatus>clear</DefaultMapStatus>
+<DefaultIntrinsic>none</DefaultIntrinsic>
+<DefaultSkill>attack</DefaultSkill>
+<DefaultMonster>missingno</DefaultMonster>
 <StartMap>
-  <Zone>1</Zone>
+  <Zone>backup_master_zone</Zone>
   <Segment>-1</Segment>
-  <ID>0</ID>
+  <ID>1</ID>
   <Entry>0</Entry>
 </StartMap>
+<GenFloor>floor</GenFloor>
+<GenWall>wall</GenWall>
+<GenUnbreakable>unbreakable</GenUnbreakable>
 </root>

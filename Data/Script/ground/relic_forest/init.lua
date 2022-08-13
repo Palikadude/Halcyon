@@ -160,7 +160,7 @@ local hero = CH('PLAYER')
 	GAME:FadeOut(false, 60)
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(20)
-	GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, 0, -1, 6, 0, true, true)
+	GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 6, 0, true, true)
 
 end
 

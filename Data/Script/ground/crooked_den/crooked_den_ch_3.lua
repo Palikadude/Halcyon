@@ -461,7 +461,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	GAME:CutsceneMode(false)
 	SV.Chapter3.EncounteredBoss = true
 	--enter fight
-	GAME:EnterDungeon(58, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("crooked_den", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	
 end
 
@@ -761,7 +761,7 @@ local hero = CH('PLAYER')
 	GeneralFunctions.BossTransition(hero)
 	GAME:CutsceneMode(false)
 	--enter fight
-	GAME:EnterDungeon(58, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:EnterDungeon("crooked_den", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	
 end
 	

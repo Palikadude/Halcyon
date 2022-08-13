@@ -346,8 +346,8 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		SV.Chapter2.StartedTraining = true
 		GeneralFunctions.SendInvToStorage()--clear inventory
 		GAME:CutsceneMode(false)
-		GAME:UnlockDungeon(51)
-		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
+		GAME:UnlockDungeon("beginner_lesson")
+		GAME:EnterDungeon("beginner_lesson", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
 	end 
 	
 	if result == 2 then 
@@ -382,8 +382,8 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 		SV.Chapter2.SkippedTutorial = true
 		GeneralFunctions.SendInvToStorage()--clear inventory
 		GAME:CutsceneMode(false)
-		GAME:UnlockDungeon(52)
-		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+		GAME:UnlockDungeon("normal_maze")
+		GAME:EnterDungeon("normal_maze", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	end
 end
 
@@ -458,7 +458,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterDungeon(52, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+		GAME:EnterDungeon("normal_maze", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 196, 200, Direction.Up)	
@@ -489,7 +489,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		GAME:CutsceneMode(false)
-		GAME:EnterDungeon(51, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
+		GAME:EnterDungeon("beginner_lesson", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.None, true, false)
 	end
 end 
 
@@ -569,7 +569,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GAME:WaitFrames(20)
 		GeneralFunctions.PanCamera()
 		
-		GAME:UnlockDungeon(51)--unlock the basic lesson 
+		GAME:UnlockDungeon("beginner_lesson")--unlock the basic lesson 
 		GROUND:Unhide("Dungeon_Entrance")
 		SV.Chapter2.FinishedDojoCutscenes = true
 		AI:EnableCharacterAI(partner)
@@ -656,7 +656,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GAME:WaitFrames(20)
 		GeneralFunctions.PanCamera()
 		
-		GAME:UnlockDungeon(52)--unlock the first training maze 
+		GAME:UnlockDungeon("normal_maze")--unlock the first training maze 
 		GROUND:Unhide("Dungeon_Entrance")
 		SV.Chapter2.FinishedDojoCutscenes = true
 		AI:EnableCharacterAI(partner)

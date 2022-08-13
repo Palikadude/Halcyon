@@ -57,10 +57,10 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 					
 		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
 		--this saves the game, so it must be called 2nd to last.
-		GAME:EndDungeonRun(result, 0, -1, 6, 0, true, true)
+		GAME:EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
 		
 		--go to dinner room 
-		GAME:EnterZone(0, -1, 6, 0)
+		GAME:EnterZone("master_zone", -1, 6, 0)
 
 	
 	else 
@@ -71,10 +71,10 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.TemporaryFlags.Bedtime = true
 			SV.TemporaryFlags.MorningWakeup = true 
 			SV.TemporaryFlags.MorningAddress = true 
-			GAME:EnterZone( 0, -1, 20, 0) --Go to Luminous Spring, end dungeon run in the ground rather than here 
+			GAME:EnterZone("master_zone", -1, 20, 0) --Go to Luminous Spring, end dungeon run in the ground rather than here 
 
 		else--for chapter 2, dont show results and dont set generic end flags
-			GeneralFunctions.EndDungeonRun(result, 0, -1, 20, 0, false, false) --Go to Luminous Spring 
+			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 20, 0, false, false) --Go to Luminous Spring 
 		end
 	end
 end

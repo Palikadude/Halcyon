@@ -69,7 +69,7 @@ function beginner_lesson.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	--cannot use the general functions command to end dungeon runs when risk is set to none or flags are not saved properly
 	--as a result we need to end dungeon run, then set flags, then enter the ledian zone
-	GAME:EndDungeonRun(result, 0, -1, 36, 0, false, false)
+	GAME:EndDungeonRun(result, "master_zone", -1, 36, 0, false, false)
 
 	
 	--failed or gave up on the tutorial
@@ -107,7 +107,7 @@ function beginner_lesson.ExitSegment(zone, result, rescue, segmentID, mapID)
 	--Since this is risk none, we need to first "save" the game with end dungeon run, then save the game a second time after setting variables to preserve those variable changes in the save.
 	GAME:GroundSave()		
 	
-	GAME:EnterZone(0, -1, 36, 0)
+	GAME:EnterZone("master_zone", -1, 36, 0)
 	
 end
 	

@@ -939,7 +939,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:CutsceneMode(false)
 
 	--relic forest dungeon round 2
-	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 
 end
 
@@ -1010,5 +1010,5 @@ function relic_forest_ch_1.WipedInForest()
 	GAME:CutsceneMode(false)
 
 	--relic forest dungeon round 2
-	GAME:EnterDungeon(50, 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 end

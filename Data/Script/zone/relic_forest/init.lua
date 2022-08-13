@@ -42,10 +42,10 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 			--todo: make zone numbering consistent and perhaps better ordered
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner died solo before clearing
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 9, 0, false, false)
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo wiped before making it back to town
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 0, 0, false, false)
 			
 			else --failsafe
 				print("error in resulting relic forest completion")
@@ -54,11 +54,11 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner made it through solo
 				SV.Chapter1.PartnerCompletedForest = true	
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 0, 0, false, false)				
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 0, 0, false, false)				
 				
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo made it back to town
 				SV.Chapter1.TeamCompletedForest = true
-				GeneralFunctions.EndDungeonRun(result, 0, -1, 9, 0, false, false)
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 9, 0, false, false)
 			else--failsafe 
 				print("error in resulting relic forest completion")
 			end
@@ -70,9 +70,9 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
 		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then--go to relic forest, end the dungeon run in that ground
-			GAME:EnterZone(0, -1, 0, 0)
+			GAME:EnterZone("master_zone", -1, 0, 0)
 		else--go to dinner 
-			GeneralFunctions.EndDungeonRun(result, 0, -1, 6, 0, true, true)
+			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
 		end
 	end
 end
