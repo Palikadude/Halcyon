@@ -236,7 +236,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	
 	GeneralFunctions.HeroDialogue(hero, "(...No.[pause=0] It can't be.[pause=0] I've felt this way before...[pause=0] But where?)", "Worried")
 	
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
 	GAME:WaitFrames(40)
 	SOUND:PlayBattleSE('EVT_Emote_Exclaim_Idea')
 	GeneralFunctions.EmoteAndPause(hero, 'Exclaim', false)	

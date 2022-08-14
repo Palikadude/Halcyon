@@ -295,7 +295,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("Let's head over to the dojo for training,[pause=10] " .. hero:GetDisplayName() .. ".")
 		else
 			UI:SetSpeakerEmotion("Determined")
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue("Now's not the time for rest,[pause=10] " .. hero:GetDisplayName() .. "!")
 			UI:SetSpeakerEmotion("Normal")
 			UI:WaitShowDialogue("We've got to get over to " .. zone:GetColoredName() .. " to find " .. CharacterEssentials.GetCharacterName("Numel") .. "![pause=0] Let's go!")	
@@ -308,7 +308,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("But given we saw them in here the other day,[pause=10] I think this is " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. "'s room.")		
 			UI:WaitShowDialogue("...As nice as they are,[pause=10] I'm still a bit creeped out by " .. CharacterEssentials.GetCharacterName("Tail") .. ",[pause=10] if I'm being honest.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Determined")
 			UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. "![pause=0] We have better things to do than poke around in " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. "'s room!")
 			UI:SetSpeakerEmotion("Normal")
@@ -333,7 +333,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:SetSpeakerEmotion("Pain")
 			UI:WaitShowDialogue("We'd better leave.[pause=0] I don't want to get into an argument with " ..CharacterEssentials.GetCharacterName("Cranidos") .. " if he catches us in here...")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Determined")
 			UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. "![pause=0] We have better things to do than poke around in " .. CharacterEssentials.GetCharacterName("Mareep") .. " and " .. CharacterEssentials.GetCharacterName("Cranidos") .. "'s room!")
 			UI:SetSpeakerEmotion("Normal")
@@ -348,7 +348,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("Those two sure do a lot of the work around the guild itself,[pause=10] don't they?")
 			UI:WaitShowDialogue("Maybe that's why they're a pair.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Determined")
 			UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. "![pause=0] We have better things to do than poke around in " .. CharacterEssentials.GetCharacterName("Audino") .. " and " .. CharacterEssentials.GetCharacterName("Snubbull") .. "'s room!")
 			UI:SetSpeakerEmotion("Normal")
@@ -365,7 +365,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		elseif not SV.Chapter2.FinishedFirstDay then
 			UI:WaitShowDialogue("Let's head on upstairs towards the dining room and get some dinner,[pause=10] " .. hero:GetDisplayName()  .. "![pause=0] I'm starving!")
 		else
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -408,7 +408,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("I can't help but wonder what kind of stuff is stored here besides food.")
 			UI:WaitShowDialogue("Do you think there's anything cool in here?")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Determined")
 			UI:WaitShowDialogue("Come on " .. hero:GetDisplayName() .. "![pause=0] We have more important things to do than knock around in storage!")
 			UI:SetSpeakerEmotion("Normal")
@@ -421,7 +421,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("I still got some energy if you want to train some more,[pause=10] " .. hero:GetDisplayName() .. "!")
 			UI:WaitShowDialogue("We need to do all the training we can if we want to become great adventurers!")
 		else
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue("It might be a good idea to warmup with some training here before we head out to " .. zone:GetColoredName() .. ".")
 			UI:WaitShowDialogue("We don't want to take too long though.[pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. " needs us!")
 		end
@@ -440,7 +440,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("They're nice enough,[pause=10] but the father is pretty standoffish.") 
 		else
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -458,7 +458,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("A Normal-type family owns this house.")
 			UI:WaitShowDialogue("You can usually find the dad napping in the sun in town and the mom's nose in a book.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -467,7 +467,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("A family of Fighting-types own this house.")
 			UI:WaitShowDialogue("You can usually see them meditating or training somewhere in town.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -477,7 +477,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:SetSpeakerEmotion("Happy")
 			UI:WaitShowDialogue("They have a beautiful garden outside their house,[pause=10] don't you think?")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -486,7 +486,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("This is an inn ran by a lovely couple.[pause=0] They're both really kind!")
 			UI:WaitShowDialogue("All sorts of Pokémon passing through town stay here.[pause=0] It's a good place to meet new Pokémon!")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 			UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 		end
@@ -505,7 +505,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:WaitShowDialogue("This is the town outskirts.[pause=0] Altere Pond is just south of here.")
 			UI:WaitShowDialogue("It's a nice place to relax,[pause=10] away from the hustle of the town.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("What are we doing here,[pause=10] " .. hero:GetDisplayName() .. "?")
 			UI:SetSpeakerEmotion("Normal")
@@ -513,13 +513,13 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 		end
 	elseif ground == 'altere_pond' then
 		if not SV.Chapter2.FinishedFirstDay then 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("Whatever you do...[pause=0] Don't tell " .. CharacterEssentials.GetCharacterName("Relicanth") .. " we were in " .. zone:GetColoredName() .. ".")
 			UI:SetSpeakerEmotion("Pain")
 			UI:WaitShowDialogue("He will chew us out for hours if he knew.[pause=0] Believe me,[pause=10] I know from experience.")
 		else 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("What are we doing here,[pause=10] " .. hero:GetDisplayName() .. "?")
 			UI:SetSpeakerEmotion("Normal")
@@ -600,7 +600,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 						
 		else--day 2
 			if in_array(location, {'Guild', 'North Houses', 'South Houses', 'Post', 'Merchants', 'Well', 'Exploration', 'Cave'}) then 
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
 				UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 				UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
 			elseif location == 'Cafe' then 
@@ -609,10 +609,10 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 				UI:SetSpeakerEmotion("Normal")
 				UI:WaitShowDialogue("I hope it's open again soon.[pause=0] I really want you to try some of their treats!")
 			elseif location == 'Dojo' then
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]			
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]			
 				UI:WaitShowDialogue("Perhaps we should head into the dojo for a warmup before we head out to " .. zone:GetColoredName() .. "?")
 			elseif location == 'Market' then 
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53]			
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]			
 				UI:WaitShowDialogue("The market is probably the best place for us to make our preparations.")
 				UI:WaitShowDialogue("When we're done here,[pause=10] let's make a beeline for " .. zone:GetColoredName() .. "![pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. " needs us!")
 			else

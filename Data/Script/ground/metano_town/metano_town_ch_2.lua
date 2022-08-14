@@ -265,7 +265,7 @@ end
 function metano_town_ch_2.Event_Trigger_8_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"] 
 	GeneralFunctions.StartPartnerConversation("This isn't the way to " .. zone:GetColoredName() .. ".")
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said it was to the north of town.[pause=0] We'll need to leave town through the north exit!")
 	GeneralFunctions.EndConversation(partner)
@@ -275,7 +275,7 @@ end
 function metano_town_ch_2.Event_Trigger_9_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"] 
 	
 	GeneralFunctions.StartPartnerConversation("This is the way towards " .. zone:GetColoredName() .. ".")
 	UI:ChoiceMenuYesNo("Are you ready to head out?", true)

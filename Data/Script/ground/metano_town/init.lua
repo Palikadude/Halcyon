@@ -115,7 +115,7 @@ end
 
 function metano_town.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[53] 
+  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"] 
   UI:ResetSpeaker()
   UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
   UI:WaitForChoice()
