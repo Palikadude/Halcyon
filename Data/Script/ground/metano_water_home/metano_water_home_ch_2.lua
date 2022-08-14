@@ -42,7 +42,7 @@ function metano_water_home_ch_2.Floatzel_Action(chara, activator)
 	local partner = CH('Teammate1')
 	partner.IsInteracting = true
 	
-	UI:SetSpeaker(chara:GetDisplayName(),true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(chara:GetDisplayName(),true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	GROUND:CharSetAnim(partner, 'None', true)
 	GROUND:CharSetAnim(hero, 'None', true)
 

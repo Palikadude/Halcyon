@@ -65,7 +65,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	
 	SOUND:PlayBGM("Goodnight.ogg", true)
 	GAME:WaitFrames(60)
-	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue(".........")
 	UI:WaitShowDialogue("Hey,[pause=10] are you awake,[pause=10] " .. hero:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
@@ -99,7 +99,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	SOUND:FadeOutBGM(60)
 	GAME:WaitFrames(60)
 	
-	UI:SetSpeaker('', false, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker('', false, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	--man im excited but why do i feel so at ease and maybe a bit of deja vu? why am i a picklemanster?
 	UI:WaitShowDialogue("(.........)")
 	UI:WaitShowDialogue("(First I turned into a Pokémon,[pause=10] now I'm an apprentice at this guild...)")

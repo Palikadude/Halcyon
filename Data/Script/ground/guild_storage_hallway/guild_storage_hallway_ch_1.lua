@@ -38,7 +38,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	GAME:FadeIn(20)
 	--GROUND:Hide("Event_Trigger")
 	
-	--UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	--UI:SetSpeaker(STRINGS:Format("\\uE040"), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	--UI:WaitShowDialogue("C-coming through!")
 
 --[[	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Question", true)

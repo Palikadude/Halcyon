@@ -47,7 +47,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	UI:WaitShowDialogue("Oh,[pause=10] what am I going to do?[pause=0] I should never have stolen all that stuff...")
 	
 	GAME:WaitFrames(20)
-	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	SOUND:FadeOutBGM(120)
 	local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Hey you![pause=30] H-hold it right there!", 40) end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GeneralFunctions.EmoteAndPause(sandile, "Exclaim", true) end)
@@ -190,7 +190,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 									{"Luxio", 172, 264, Direction.Up},
 									{"Glameow", 156, 280, Direction.Up},
 									{"Cacnea", 188, 280, Direction.Up}})
-	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Well well well![pause=30] What do we have here?", 40) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GeneralFunctions.EmoteAndPause(partner, "Exclaim", true) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) GeneralFunctions.EmoteAndPause(sandile, "Exclaim", false) end)

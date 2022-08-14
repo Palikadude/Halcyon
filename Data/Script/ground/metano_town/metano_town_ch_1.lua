@@ -46,7 +46,7 @@ function metano_town_ch_1.PartnerLongingCutscene()
 	GAME:WaitFrames(60)
 
 --[[		
-	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Hey,[pause=10] you there!")
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	

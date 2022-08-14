@@ -873,7 +873,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
 	  if mission.Type == 1 then -- escort
 		
 		-- add escort to team
-		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, 0, Gender.Male)
+		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, "normal", Gender.Male)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
 		

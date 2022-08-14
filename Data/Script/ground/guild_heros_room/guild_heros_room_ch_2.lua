@@ -50,13 +50,13 @@ function guild_heros_room_ch_2.FirstMorning()
 	GAME:WaitFrames(60)
 	SOUND:PlayBattleSE("DUN_Heal_Bell")
 	GAME:WaitFrames(90)
-	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Good morning![pause=0] It's time to get up!")
 	GAME:FadeIn(40)
 	
 	--sleepyheads
 	GAME:WaitFrames(20)
-	UI:SetSpeaker('', true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker('', true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue(".........")
 	GAME:WaitFrames(40)
 	
@@ -75,7 +75,7 @@ function guild_heros_room_ch_2.FirstMorning()
 	
 	--todo: add shakes
 	GAME:WaitFrames(20)
-	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Snorfle...[pause=0] Huh?")
 	GAME:WaitFrames(20)
 	
@@ -250,7 +250,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	GROUND:CharSetAnim(hero, "Laying", true)
 	
 	GAME:WaitFrames(40)
-	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Good night,[pause=10] " .. hero:GetDisplayName() .. ".")
 	GAME:WaitFrames(40)
 	GROUND:CharSetAnim(partner, "EventSleep", true)
@@ -285,19 +285,19 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	--wait a bit after the transition from dinner scene before starting this one
 	GAME:WaitFrames(60)
 	--characters commenting on the dinner they just had while the screen is still faded out
-	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Tropius'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Tropius'), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Great meal as always,[pause=10] " .. CharacterEssentials.GetCharacterName('Snubbull') .. "![pause=0] I can't eat another bite!")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Breloom'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Breloom'), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Yeah,[pause=10] my stomach's so full of " .. '"art"' .. " you could call it a museum!")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Mareep'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Mareep'), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Ba-a-a-a...[pause=0] It's getting late...[pause=0] Time to hit the\nha-a-a-ay![pause=0] Goodnight everyone!")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Zigzagoon'), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(CharacterEssentials.GetCharacterName('Zigzagoon'), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("Yup![pause=0] See you all in the morning!")
 	GAME:WaitFrames(60)
 	
@@ -306,7 +306,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	SOUND:PlayBGM("Goodnight.ogg", true)
 	--GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(partner:GetDisplayName(), true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 	UI:WaitShowDialogue("..." .. hero:GetDisplayName() .. ",[pause=10] still up?")
 	GAME:WaitFrames(20)
 	

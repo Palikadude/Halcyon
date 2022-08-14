@@ -63,7 +63,7 @@ function metano_inn_ch_2.Nidoran_M_Action(chara, activator)
 		GeneralFunctions.StartConversation(chara, "Goo...[pause=20] gaa!")
 		GeneralFunctions.EndConversation(chara)
 	else 
-		UI:SetSpeaker(chara:GetDisplayName(),true, -1, -1, -1, RogueEssence.Data.Gender.Unknown)
+		UI:SetSpeaker(chara:GetDisplayName(),true, "", -1, "", RogueEssence.Data.Gender.Unknown)
 		GeneralFunctions.StartConversation(chara, "ZZZzzz...", "Normal", false, false, false)
 		GeneralFunctions.EndConversation(chara, false)
 	end

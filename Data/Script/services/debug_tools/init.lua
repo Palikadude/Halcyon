@@ -61,7 +61,7 @@ function DebugTools:OnNewGame()
   _DATA.Save.NoSwitching = true--switching is not allowed
 
   
-  local mon_id = RogueEssence.Dungeon.MonsterID(252, 0, 0, Gender.Male)
+  local mon_id = RogueEssence.Dungeon.MonsterID("treecko", 0, "normal", Gender.Male)
   local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
   local tbl = LTBL(p)
   tbl.Importance = 'Hero'
@@ -70,7 +70,7 @@ function DebugTools:OnNewGame()
   p.Nickname = 'Palika'
   _DATA.Save.ActiveTeam.Players:Add(p)
   
-  mon_id = RogueEssence.Dungeon.MonsterID(447, 0, 0, Gender.Male)
+  mon_id = RogueEssence.Dungeon.MonsterID("riolu", 0, "normal", Gender.Male)
   p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
   tbl = LTBL(p)
   tbl.Importance = 'Partner'
@@ -79,7 +79,7 @@ function DebugTools:OnNewGame()
   p.Nickname = 'Genshi'
   _DATA.Save.ActiveTeam.Players:Add(p)
   
-  --mon_id = RogueEssence.Dungeon.MonsterID(357, 0, 0, Gender.Male)
+  --mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
   --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
   
   
@@ -98,7 +98,7 @@ function DebugTools:OnNewGame()
 	_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 	
   --audino 
-   -- mon_id = RogueEssence.Dungeon.MonsterID(531, 0, 0, Gender.Female)
+   -- mon_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
   --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
  _DATA.Save.ActiveTeam:SetRank("normal")
   _DATA.Save:UpdateTeamProfile(true)

@@ -26,8 +26,12 @@ function test_grounds.Init(map)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_test_grounds <<=")
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  COMMON.RespawnAllies()
+  COMMON.RespawnStarterPartner()
   
+  local partner = CH('Partner')
+  AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+  partner.CollisionDisabled = true
+	
   --Set Poochy AI
   local poochy = CH("Poochy")
   --Set the area to wander in
@@ -45,28 +49,6 @@ function test_grounds.Init(map)
     
 
 
-  local coord_table = {}
-  coord_table[1] = { 200, 192, Direction.Down }
-  coord_table[2] = { 200, 224, Direction.Down }
-  coord_table[3] = { 200, 256, Direction.Down }
-  
-  --get assembly ready
-  local assemblyCount = GAME:GetPlayerAssemblyCount()
-  
-  --Place player teammates
-  for i = 1,5,1 do
-    GROUND:RemoveCharacter("Assembly" .. tostring(i))
-  end
-  total = assemblyCount
-  if total > 5 then
-    total = 5
-  end
-  for i = 1,total,1 do
-    p = GAME:GetPlayerAssemblyMember(i-1)
-    GROUND:SpawnerSetSpawn("ASSEMBLY_" .. tostring(i),p)
-    local chara = GROUND:SpawnerDoSpawn("ASSEMBLY_" .. tostring(i))
-    --GROUND:GiveCharIdleChatter(chara)
-  end
   
   --Spawn our spawner npcs
   GROUND:SpawnerDoSpawn('MerchantSpawner')
@@ -74,12 +56,14 @@ function test_grounds.Init(map)
   GROUND:SpawnerDoSpawn('MerchantSpawner2')
 end
 
+function test_grounds.GameLoad(map)
+  PrintInfo('GameLoad_test_grounds')
 
-function test_grounds.Prepare(map)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  
-  --place random recruits
-  
+end
+
+function test_grounds.GameSave(map)
+  PrintInfo('GameSave_test_grounds')
+
 end
 
 --Called when the screen fades in as the player enters the map
@@ -88,16 +72,43 @@ function test_grounds.Enter(map)
   PrintInfo('Enter_test_grounds')
   SV.base_camp.ExpositionComplete = true
   SV.base_camp.FirstTalkComplete = true
-  GAME:SetTeamName(STRINGS:FormatKey("TEAM_NAME", "Guildmaster"))
+  
+  local caterQuest = SV.test_grounds.Missions["CaterQuest"]
+  if caterQuest == nil or caterQuest.Complete == COMMON.MISSION_INCOMPLETE then
+	GROUND:Hide("Caterpie")
+  end
+  local volmiseQuest = SV.test_grounds.Missions["VolmiseQuest"]
+  if volmiseQuest == nil or volmiseQuest.Complete == COMMON.MISSION_INCOMPLETE then
+	GROUND:Hide("Illumise")
+  end
+  
   GAME:FadeIn(60)
-  GAME:MoveCamera(0, 0, 60, true)
   UI:ResetSpeaker()
-  --UI:WaitShowDialogue(STRINGS:Format("Congratulations on completing the toughest dungeon in the demo![pause=0] Enjoy the debug room!"))
+  
+  if not SV.test_grounds.DemoComplete then
+    GAME:SetTeamName(STRINGS:FormatKey("TEAM_NAME", "Guildmaster"))
+    UI:WaitShowDialogue(STRINGS:Format("Congratulations on completing the toughest dungeon in the demo![pause=0] Enjoy the debug room!"))
+	GAME:UnlockDungeon('debug')
+	GAME:UnlockDungeon('tropical_path')
+  end
+  SV.test_grounds.DemoComplete = true
 end
 
 --Called constantly while the map is running
 function test_grounds.Update(map, time)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+end
+
+function test_grounds.Test_Action()
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Test_Action')
+
+  UI:SetSpeaker(CH('PLAYER'))
+  UI:WaitShowDialogue("So cool!")
+  GROUND:Unhide("Illumise")
+  GROUND:Unhide("Caterpie")
+  local groundObject = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Sign", 1), RogueElements.Rect(244, 180, 24, 24), RogueElements.Loc(8, 0), false, "Sign2")
+  _ZONE.CurrentGround:AddTempObject(groundObject)
 end
 
 --------------------------------------------------
@@ -107,21 +118,45 @@ function test_grounds.Sign1_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo('Sign1_Action')
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(MapStrings['Sign1_Action_Line0'])
+  UI:SetCenter(true)
+  UI:WaitShowDialogue(MapStrings['Sign1_Action_Line0'])
+  UI:WaitShowVoiceOver("This room features many[pause=0]\nmechanics useful for scripting.[br]Some of which\n\nmay never be used\nin the final game.[scroll]To enable developer mode,[scroll]run dev.bat in the game folder.", -1)
+  GAME:WaitFrames(30)
+  UI:SetAutoFinish(true)
+  UI:WaitShowVoiceOver("Fork us at[pause=0]\nhttps://github.com/audinowho/PMDODump![br]Now...\nLet's move you around![scroll]Ready in\n3 2 1", -1)
   
   TASK:WaitStartEntityTask(activator, function()
     SOUND:PlayBattleSE("EVT_Emote_Confused")
     GROUND:CharSetEmote(activator, "question", 1)
     GAME:WaitFrames(60)
-    GROUND:MoveInDirection(activator, Direction.Down, 30)
-    GROUND:MoveInDirection(activator, Direction.DownLeft, 30)
-    GROUND:MoveInDirection(activator, Direction.DownRight, 30)
-    GROUND:MoveInDirection(activator, Direction.UpRight, 30)
-    GROUND:MoveInDirection(activator, Direction.UpLeft, 30)
+    GROUND:MoveInDirection(activator, Direction.Down, 30, false, 2)
+    GROUND:MoveInDirection(activator, Direction.DownLeft, 30, false, 2)
+    GROUND:MoveInDirection(activator, Direction.DownRight, 30, false, 2)
+    GROUND:MoveInDirection(activator, Direction.UpRight, 30, false, 2)
+    GROUND:MoveInDirection(activator, Direction.UpLeft, 30, false, 2)
   end)
 
+  UI:SetAutoFinish(false)
   TASK:WaitEntityTask(activator)
-  UI:WaitShowMonologue("Ye")
+  UI:WaitShowDialogue("Ye,[pause=0] you just moved around by yourself.")
+  
+  SOUND:PlayBattleSE("DUN_Explosion")
+  local emitter = RogueEssence.Content.SingleEmitter(RogueEssence.Content.AnimData("Flamethrower", 3))
+  emitter.LocHeight = 14
+  GROUND:PlayVFX(emitter, activator.MapLoc.X, activator.MapLoc.Y)
+  
+  GAME:WaitFrames(60)
+  UI:WaitShowDialogue("BOOM.")
+  
+  SOUND:PlayBattleSE("DUN_Explosion")
+  emitter = RogueEssence.Content.FiniteAreaEmitter(RogueEssence.Content.AnimData("Explosion", 3))
+  emitter.Range = 72
+  emitter.Speed = 72
+  emitter.TotalParticles = 12
+  GROUND:PlayVFX(emitter, activator.MapLoc.X, activator.MapLoc.Y)
+  
+  GAME:WaitFrames(60)
+  UI:WaitShowDialogue("BOOM BOOM BOOM.")
 end
 
 
@@ -149,12 +184,13 @@ function test_grounds.Concurrent_Sequence(turnTime)
   GROUND:CharSetAnim(chara, "None", false)
 end
 
-function test_grounds.Sign2_Action(obj, activator)
+function test_grounds.Sign3_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   local chara = CH('PLAYER')
   PrintInfo('Sign2_Action')
   UI:ResetSpeaker()
-  UI:WaitShowMonologue(MapStrings['Sign2_Action_Line0'])
+  UI:SetAutoFinish(true)
+  UI:WaitShowDialogue(MapStrings['Sign2_Action_Line0'])
   GAME:FadeOut(false, 30)
   GAME:MoveCamera(0, 120, 1, true)
   --perform this fade without waiting for its completion
@@ -163,21 +199,86 @@ function test_grounds.Sign2_Action(obj, activator)
   GAME:MoveCamera(0, 0, 60, true)
   --TODO: wait to join coroutines before giving control back to the player
   TASK:JoinCoroutines({coro1, coro2})
+  
+  
+  coro1 = TASK:BranchCoroutine(test_grounds.Concurrent_BG)
+  coro2 = TASK:BranchCoroutine(test_grounds.Concurrent_Title)
+  TASK:JoinCoroutines({coro1, coro2})
+end
+
+
+function test_grounds.Concurrent_Title()
+
+  UI:WaitShowTitle("Like\nComment\nSubscribe", 60)
+  GAME:WaitFrames(120)
+  UI:WaitHideTitle(60)
+end
+
+function test_grounds.Concurrent_BG()
+
+  UI:WaitShowBG("Cosmic_Power", 1, 60)
+  GAME:WaitFrames(120)
+  UI:WaitHideBG(60)
+end
+
+ListType = luanet.import_type('System.Collections.Generic.List`1')
+MenuTextChoiceType = luanet.import_type('RogueEssence.Menu.MenuTextChoice')
+
+function test_grounds.Sign2_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  local chara = CH('PLAYER')
+  GROUND:Unhide('Activation')
+  UI:WaitShowDialogue("The Debug Dungeon is accessible from here.")
+  UI:WaitShowDialogue("We do not take responsibility for broken things you encounter there.")
+  UI:WaitShowDialogue("If you get stuck inside, try deleting SAVE/QUICKSAVE.rsqs")
+  UI:WaitShowDialogue("Maybe back up your main save too. (SAVE/SAVE.rssv)")
+end
+
+function test_grounds.Entrance_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Entrance_Action')
+end
+
+function test_grounds.Activation_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Activation_Action')
+end
+
+function test_grounds.Assembly_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker()
+  SOUND:PlaySE("Menu/Skip")
+  UI:AssemblyMenu()
+  UI:WaitForChoice()
+  result = UI:ChoiceResult()
+  UI:WaitShowDialogue("Unlike the assembly objects in other maps, this one doesn't reload the map on team change.")
 end
 
 function test_grounds.SouthExit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  UI:ResetSpeaker()
-  UI:ChoiceMenuYesNo(MapStrings['SouthExit_Touch_Line0'])
-  UI:WaitForChoice()
-  local chres = UI:ChoiceResult() 
-  if chres then
-    GAME:FadeOut(false, 40)
-    GAME:EnterGroundMap("base_camp", "entrance_north")
-  else
-    GROUND:MoveInDirection(activator, Direction.Up, 20)
-  end
   
+  local open_dests = {
+    { Name="Replay Test Zone", Dest=RogueEssence.Dungeon.ZoneLoc('debug', 4, 0, 0) },
+    { Name="Base Camp", Dest=RogueEssence.Dungeon.ZoneLoc('guildmaster_island', -1, 1, 0) }
+  }
+  local open_dungeons = { 0 }
+  local ground_entrances = { 1 }
+  
+  UI:ResetSpeaker()
+  SOUND:PlaySE("Menu/Skip")
+  UI:DestinationMenu(open_dests)
+  UI:WaitForChoice()
+  dest = UI:ChoiceResult()
+
+  if dest:IsValid() then
+    SOUND:PlayBGM("", true)
+    GAME:FadeOut(false, 20)
+	if dest.StructID.Segment > -1 then
+	  GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	else
+	  GAME:EnterZone(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint)
+	end
+  end
 end
 --------------------------------------------------
 -- Characters Callbacks
@@ -185,34 +286,193 @@ end
 function test_grounds.Mew_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   local mew = CH('Mew')
+  local player = CH('PLAYER')
   local state = {olddir = mew.CharDir}
 
-  GROUND:CharTurnToChar(mew,CH('PLAYER'))
-  GROUND:CharSetEmote(mew, "sweating", 1)
-  SOUND:PlayBattleSE("EVT_Emote_Sweating")
+  GROUND:CharTurnToChar(mew,player)
+  GROUND:CharSetEmote(mew, "", 0)
 
   UI:SetSpeaker(mew)
-  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Mew_Action_Line0']))
+  UI:WaitShowTimedDialogue("Walk with me!", 120)
+  GROUND:CharSetEmote(mew, "happy", 0)
+
+  local coro1 = TASK:BranchCoroutine(function() test_grounds.Walk_Sequence(mew) end)
+  local coro2 = TASK:BranchCoroutine(function() test_grounds.Walk_Sequence(player) end)
+  
+  TASK:JoinCoroutines({coro1, coro2})
 
   CH('Mew').CharDir = state.olddir
+  
+  GROUND:CharHopAnim(CH('PLAYER'), "Hurt", 10, 10)
 end
+
+function test_grounds.Walk_Sequence(chara)
+  
+  GROUND:MoveInDirection(chara, Direction.Up, 20, false, 2)
+  GAME:WaitFrames(60)
+  GROUND:AnimateInDirection(chara, "Hurt", Direction.Down, Direction.Up, 20, 1, 5)
+  GAME:WaitFrames(60)
+  GROUND:MoveInDirection(chara, Direction.Down, 20, true, 7)
+end
+
+
+function test_grounds.Caterpie_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Caterpie_Action')
+  local olddir = chara.CharDir
+  GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+  
+  UI:SetSpeaker(chara)
+  UI:WaitShowDialogue("So cool!")
+  
+end
+
+
+function test_grounds.Magnezone_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Magnezone_Action')
+  GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+  
+  UI:SetSpeaker(chara)
+  -- check for quest presence
+  local quest = SV.test_grounds.Missions["OutlawQuest"]
+  if quest == nil then
+    -- no outlaw quest? ask to start one
+    UI:ChoiceMenuYesNo("No Outlaw mission detected. Do you want to start one?")
+    UI:WaitForChoice()
+    local chres = UI:ChoiceResult() 
+    if chres then
+	  -- Type 0 = Rescue
+	  SV.test_grounds.Missions["OutlawQuest"] = { Complete = COMMON.MISSION_INCOMPLETE, Type = COMMON.MISSION_TYPE_OUTLAW, DestZone = "debug", DestSegment = 4, DestFloor = 9, TargetSpecies = "riolu" }
+      UI:WaitShowDialogue("You can find the perpetrator at Replay Test Zone 10F.  Good luck!")
+    end
+  else
+    if quest.Complete == 2 then
+	  -- there is an outlaw quest, and it has been completed- thank you note
+	  UI:WaitShowDialogue("Outlaw mission state: Rewarded.  Thank you for apprehending Riolu!")
+	elseif quest.Complete == 1 then
+	  UI:WaitShowDialogue("Outlaw mission state: Complete.  Give a reward and mark mission as rewarded.")
+	  quest.Complete = 2
+	else
+	  -- there is an outlaw quest, but it hasn't been completed?  ask to abandon
+      UI:ChoiceMenuYesNo("Outlaw mission state: Incomplete.  Do you want to abandon the mission?")
+      UI:WaitForChoice()
+      local chres = UI:ChoiceResult() 
+      if chres then
+	    SV.test_grounds.Missions["OutlawQuest"] = nil
+        UI:WaitShowDialogue("Outlaw mission removed.")
+      end
+	end
+  end
+end
+
+
+function test_grounds.Butterfree_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Butterfree_Action')
+  GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+  
+  UI:SetSpeaker(chara)
+  -- check for quest presence
+  local quest = SV.test_grounds.Missions["CaterQuest"]
+  if quest == nil then
+    -- no caterpie quest? ask to start one
+    UI:ChoiceMenuYesNo("No Caterpie mission detected. Do you want to start one?")
+    UI:WaitForChoice()
+    local chres = UI:ChoiceResult() 
+    if chres then
+	  -- Type 0 = Rescue
+	  SV.test_grounds.Missions["CaterQuest"] = { Complete = COMMON.MISSION_INCOMPLETE, Type = COMMON.MISSION_TYPE_RESCUE, DestZone = "debug", DestSegment = 4, DestFloor = 4, TargetSpecies = "caterpie" }
+      UI:WaitShowDialogue("You can find Caterpie at Replay Test Zone 5F.  Good luck!")
+    end
+  else
+    if quest.Complete == 2 then
+	  -- there is a caterpie quest, and it has been completed- thank you note
+	  UI:WaitShowDialogue("Caterpie mission state: Rewarded.  Thank you for rescuing Caterpie!")
+	elseif quest.Complete == 1 then
+	  UI:WaitShowDialogue("Caterpie mission state: Complete.  Give a reward and mark mission as rewarded.")
+	  quest.Complete = 2
+	else
+	  -- there is a caterpie quest, but it hasn't been completed?  ask to abandon
+      UI:ChoiceMenuYesNo("Caterpie mission state: Incomplete.  Do you want to abandon the mission?")
+      UI:WaitForChoice()
+      local chres = UI:ChoiceResult() 
+      if chres then
+	    SV.test_grounds.Missions["CaterQuest"] = nil
+        UI:WaitShowDialogue("Caterpie mission removed.")
+      end
+	end
+  end
+end
+
+
+function test_grounds.Illumise_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Illumise_Action')
+  local olddir = chara.CharDir
+  GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+  
+  UI:SetSpeaker(chara)
+  UI:WaitShowDialogue("Thank you for rescuing me!")
+  
+end
+
+function test_grounds.Volbeat_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo('Volbeat_Action')
+  GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+  
+  UI:SetSpeaker(chara)
+  -- check for quest presence
+  local quest = SV.test_grounds.Missions["VolmiseQuest"]
+  if quest == nil then
+    -- no caterpie quest? ask to start one
+    UI:ChoiceMenuYesNo("No Volmise mission detected. Do you want to start one?")
+    UI:WaitForChoice()
+    local chres = UI:ChoiceResult() 
+    if chres then
+	  -- Type 1 = Escort
+	  SV.test_grounds.Missions["VolmiseQuest"] = { Complete = COMMON.MISSION_INCOMPLETE, Type = COMMON.MISSION_TYPE_ESCORT, DestZone = "debug", DestSegment = 4, DestFloor = 3, TargetSpecies = "illumise", EscortSpecies = "volbeat" }
+      UI:WaitShowDialogue("You can find Illumise at Replay Test Zone 4F.  I'll join you when you enter!")
+    end
+  else
+    if quest.Complete == 2 then
+	  -- there is a caterpie quest, and it has been completed- thank you note
+	  UI:WaitShowDialogue("Volmise mission state: Rewarded.  Thank you for rescuing Illumise!")
+	elseif quest.Complete == 1 then
+	  UI:WaitShowDialogue("Volmise mission state: Complete.  Give a reward and mark mission as rewarded.")
+	  quest.Complete = 2
+	else
+	  -- there is a caterpie quest, but it hasn't been completed?  ask to abandon
+      UI:ChoiceMenuYesNo("Volmise mission state: Incomplete.  Do you want to abandon the mission?")
+      UI:WaitForChoice()
+      local chres = UI:ChoiceResult() 
+      if chres then
+	    SV.test_grounds.Missions["VolmiseQuest"] = nil
+        UI:WaitShowDialogue("Volmise mission removed.")
+      end
+	end
+  end
+end
+
 
 function test_grounds.Hungrybox_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo('Hungrybox_Action')
+  local player = CH('PLAYER')
   local hbox = chara
   local olddir = hbox.CharDir
-  GROUND:CharTurnToCharAnimated(hbox, CH('PLAYER'), 4)
+  GROUND:Hide("PLAYER")
+  GROUND:CharTurnToCharAnimated(hbox, player, 4)
   UI:SetSpeaker(hbox)
-  UI:TextDialogue(STRINGS:Format(MapStrings['Hungrybox_Action_Line0']))
+  UI:TextDialogue(STRINGS:Format(MapStrings['Hungrybox_Action_Line0']), 120)
   UI:WaitDialog()
   GROUND:CharAnimateTurnTo(hbox, olddir, 4)
   chara.CollisionDisabled = true
+  GROUND:Unhide("PLAYER")
 end
 
---------------------------------------------------
--- Characters Callbacks
---------------------------------------------------
+
 function test_grounds.Poochy_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintSVAndStrings()
@@ -283,7 +543,9 @@ function test_grounds.Merchant_Action(chara, activator)
   GROUND:CharTurnToCharAnimated(chara, activator, 4)
   UI:SetSpeaker(chara)
   
-  UI:TextDialogue(STRINGS:Format(MapStrings['Merchant_Greet']))
+  
+  UI:WaitShowDialogue("Your sprite will always be Pikachu and Eevee, only on this map.")
+  UI:WaitShowDialogue("Handy for mods that want to imitate Explorers-style hub!")
   UI:WaitDialog()
   GROUND:CharAnimateTurnTo(chara, olddir, 4)
 end
@@ -313,7 +575,7 @@ end
 
 function test_grounds.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  UI:SetSpeaker(chara)
+  UI:SetSpeaker("", false, chara.CurrentForm.Species, chara.CurrentForm.Form, chara.CurrentForm.Skin, chara.CurrentForm.Gender)
   
   local tbl = LTBL(chara)
   

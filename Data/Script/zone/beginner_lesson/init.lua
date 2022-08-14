@@ -16,7 +16,7 @@ function beginner_lesson.Init(zone)
 	GAME:AddPlayerAssembly(p)
 	
 	--setup Ledian's stats/moves. She doesn't get capped to 5 and has her regular stats.
-	local mon_id = RogueEssence.Dungeon.MonsterID(166, 0, 0, Gender.Female)
+	local mon_id = RogueEssence.Dungeon.MonsterID("ledian", 0, "normal", Gender.Female)
 	local sensei = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, "iron_fist", 0)
 	sensei.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
 	sensei.Level = 58

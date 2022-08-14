@@ -4,7 +4,7 @@ CharacterEssentials = {}
 local characters = {
 		--the guild
 		Tropius = {
-			species = 357,
+			species = "tropius",
 			nickname = 'Penticus',
 			instance = 'Tropius',
 			gender = Gender.Male,
@@ -12,7 +12,7 @@ local characters = {
 			skin = 0
 		},
 		Noctowl = {
-			species = 164, 
+			species = "noctowl", 
 			nickname = 'Phileas',
 			instance = 'Noctowl',
 			gender = Gender.Male,
@@ -20,7 +20,7 @@ local characters = {
 			skin = 0
 		},
 		Zigzagoon = {
-			species = 263, 
+			species = "zigzagoon", 
 			nickname = 'Almotz',
 			instance = 'Zigzagoon',
 			gender = Gender.Male,
@@ -28,7 +28,7 @@ local characters = {
 			skin = 0
 		},
 		Growlithe = {
-			species = 58,
+			species = "growlithe",
 			nickname = 'Hyko',
 			instance = 'Growlithe',
 			gender = Gender.Male,
@@ -36,7 +36,7 @@ local characters = {
 			skin = 0
 		},
 		Mareep = {
-			species = 179,
+			species = "mareep",
 			nickname = 'Shuca',
 			instance = 'Mareep',
 			gender = Gender.Female,
@@ -45,7 +45,7 @@ local characters = {
 		},
 		
 		Cranidos = {
-			species = 408,
+			species = "cranidos",
 			nickname = 'Ganlon',
 			instance = 'Cranidos',
 			gender = Gender.Male,
@@ -54,7 +54,7 @@ local characters = {
 		},
 		
 		Snubbull = {
-			species = 209,
+			species = "snubbull",
 			nickname = 'Coco',
 			instance = 'Snubbull',
 			gender = Gender.Female,
@@ -62,7 +62,7 @@ local characters = {
 			skin = 0
 		},
 		Audino = {
-			species = 531,
+			species = "audino",
 			nickname = 'Rin',
 			instance = 'Audino',
 			gender = Gender.Female,
@@ -71,7 +71,7 @@ local characters = {
 		},
 		
 		Breloom = {
-			species = 286,
+			species = "breloom",
 			nickname = 'Kino',
 			instance = 'Breloom',
 			gender = Gender.Male,
@@ -80,7 +80,7 @@ local characters = {
 		},
 		
 		Girafarig = {
-			species = 203,
+			species = "girafarig",
 			nickname = 'Reinier',
 			instance = 'Girafarig',
 			gender = Gender.Male,
@@ -89,7 +89,7 @@ local characters = {
 		},
 		
 		Tail = {--girafarig's tail
-			species = 203,
+			species = "girafarig",
 			nickname = 'Crum',
 			instance = 'Tail',
 			gender = Gender.Male,
@@ -100,7 +100,7 @@ local characters = {
 		
 	--Dojo characters
 		Ledian = {
-			species = 166,
+			species = "ledian",
 			nickname = 'Lotus',
 			instance = 'Ledian',
 			gender = Gender.Female,
@@ -110,7 +110,7 @@ local characters = {
 	
 		--can refer to Lotus as either Ledian or Sensei to grab her
 		Sensei = {
-			species = 166,
+			species = "ledian",
 			nickname = 'Lotus',
 			instance = 'Sensei',
 			gender = Gender.Female,
@@ -119,7 +119,7 @@ local characters = {
 		},
 		
 		Gible = {
-			species = 443,
+			species = "gible",
 			nickname = 'Totor',
 			instance = 'Gible',
 			gender = Gender.Male,
@@ -130,7 +130,7 @@ local characters = {
 		
 	--Team Style
 		Luxio = {
-			species = 404,
+			species = "luxio",
 			nickname = 'Suilux',
 			instance = 'Luxio',
 			gender = Gender.Male,
@@ -138,7 +138,7 @@ local characters = {
 			skin = 0
 			},
 		Glameow = {
-			species = 431,
+			species = "glameow",
 			nickname = 'Priscilla',
 			instance = 'Glameow',
 			gender = Gender.Female,
@@ -146,7 +146,7 @@ local characters = {
 			skin = 0
 		},
 		Cacnea = {
-			species = 331,
+			species = "cacnea",
 			nickname = 'Lummsy',
 			instance = 'Cacnea',
 			gender = Gender.Male,
@@ -158,7 +158,7 @@ local characters = {
 		
 	--Team Round (names are one letter off words that mean fat or round)
 		Spheal = { 
-			species = 363,
+			species = "spheal",
 			nickname = 'Chumby',
 			instance = 'Spheal',
 			gender = Gender.Male,
@@ -166,7 +166,7 @@ local characters = {
 			skin = 0
 			},
 		Marill = { 
-			species = 183,
+			species = "marill",
 			nickname = 'Rolund',
 			instance = 'Marill',
 			gender = Gender.Male,
@@ -174,7 +174,7 @@ local characters = {
 			skin = 0	
 		},
 		Jigglypuff = { 
-			species = 39,
+			species = "jigglypuff",
 			nickname = 'Plum',
 			instance = 'Jigglypuff',
 			gender = Gender.Female,
@@ -184,7 +184,7 @@ local characters = {
 		
 	--Team Starlight
 		Cleffa = {
-			species = 173,
+			species = "cleffa",
 			nickname = 'Primonna',
 			instance = 'Cleffa',
 			gender = Gender.Female,
@@ -192,7 +192,7 @@ local characters = {
 			skin = 0
 		},		
 		Aggron = {
-			species = 306,
+			species = "aggron",
 			nickname = 'Rubble',
 			instance = 'Aggron',
 			gender = Gender.Male,
@@ -203,7 +203,7 @@ local characters = {
 		
 	--Team Rivals
 		Zangoose = {
-			species = 335,
+			species = "zangoose",
 			nickname = 'Devian',
 			instance = 'Zangoose',
 			gender = Gender.Male,
@@ -212,7 +212,7 @@ local characters = {
 		},	
 		
 		Seviper = {
-			species = 336,
+			species = "seviper",
 			nickname = 'Zular',
 			instance = 'Seviper',
 			gender = Gender.Male,
@@ -222,7 +222,7 @@ local characters = {
 		
 	--Team Cadence (their names are corruptions of types of dances)
 		Spinda = {
-			species = 327,
+			species = "spinda",
 			nickname = 'Ceili',
 			instance = 'Spinda',
 			gender = Gender.Female,
@@ -231,7 +231,7 @@ local characters = {
 		},
 		
 		Ludicolo = {
-			species = 272,
+			species = "ludicolo",
 			nickname = 'Mirich',
 			instance = 'Ludicolo',
 			gender = Gender.Male,
@@ -240,7 +240,7 @@ local characters = {
 		},
 		
 		Roselia = {
-			species = 315,
+			species = "roselia",
 			nickname = 'Bequa',
 			instance = 'Roselia',
 			gender = Gender.Female,
@@ -250,7 +250,7 @@ local characters = {
 		
 	--Team Flight
 		Doduo = {
-			species = 84,
+			species = "doduo",
 			nickname = 'Rok',
 			instance = 'Doduo',
 			gender = Gender.Male,
@@ -259,7 +259,7 @@ local characters = {
 		},
 	
 		Bagon = {
-			species = 371,
+			species = "bagon",
 			nickname = 'Tyra',
 			instance = 'Bagon',
 			gender = Gender.Female,
@@ -270,7 +270,7 @@ local characters = {
 		
 	--Vendor/Shop NPCs
 		Kangaskhan = {
-			species = 115,
+			species = "kangaskhan",
 			nickname = 'Auntie Kanga',
 			instance = 'Kangaskhan',
 			gender = Gender.Female,
@@ -279,7 +279,7 @@ local characters = {
 		},
 		
 		Murkrow = {
-			species = 198,
+			species = "murkrow",
 			nickname = 'Varko',
 			instance = 'Murkrow',
 			gender = Gender.Male,
@@ -288,7 +288,7 @@ local characters = {
 		},
 	
 		Slowpoke = {
-			species = 79,
+			species = "slowpoke",
 			nickname = 'Ezalor',
 			instance = 'Slowpoke',
 			gender = Gender.Male,
@@ -297,7 +297,7 @@ local characters = {
 		},
 		
 		Ambipom = {
-			species = 424,
+			species = "ambipom",
 			nickname = 'Swigoi',
 			instance = 'Ambipom',
 			gender = Gender.Male,
@@ -306,7 +306,7 @@ local characters = {
 		},
 		
 		Sneasel = {
-			species = 215,
+			species = "sneasel",
 			nickname = 'Katrine',
 			instance = 'Sneasel',
 			gender = Gender.Female,
@@ -315,7 +315,7 @@ local characters = {
 		},
 		
 		Kecleon = {
-			species = 352,
+			species = "kecleon",
 			nickname = 'Lars',
 			instance = 'Kecleon',
 			gender = Gender.Male,
@@ -324,7 +324,7 @@ local characters = {
 		},
 		
 		Kecleon_Purple = {
-			species = 352,
+			species = "kecleon",
 			nickname = 'Zigs',
 			instance = 'Kecleon_Purple',
 			gender = Gender.Male,
@@ -333,7 +333,7 @@ local characters = {
 		},
 		
 		Chatot = {
-			species = 441,
+			species = "chatot",
 			nickname = 'Falo',
 			instance = 'Chatot',
 			gender = Gender.Male,
@@ -342,7 +342,7 @@ local characters = {
 		},
 	
 		Shuckle = {
-			species = 213,
+			species = "shuckle",
 			nickname = 'Dion',
 			instance = 'Shuckle',
 			gender = Gender.Male,
@@ -354,7 +354,7 @@ local characters = {
 	
 	--Town NPCs - Families
 		Furret = {
-			species = 162,
+			species = "furret",
 			nickname = 'Jak',
 			instance = 'Furret',
 			gender = Gender.Male,
@@ -363,7 +363,7 @@ local characters = {
 		},
 		
 		Linoone = {
-			species = 264, 
+			species = "linoone", 
 			nickname = 'Lebiure',
 			instance = 'Linoone',
 			gender = Gender.Female,
@@ -372,7 +372,7 @@ local characters = {
 		},
 	
 		Sentret = {
-			species = 161, 
+			species = "sentret", 
 			nickname = 'Timmi',
 			instance = 'Sentret',
 			gender = Gender.Male,
@@ -383,7 +383,7 @@ local characters = {
 		
 		
 		Luxray = {
-			species = 405,
+			species = "luxray",
 			nickname = 'Rulux',
 			instance = 'Luxray',
 			gender = Gender.Male,
@@ -392,7 +392,7 @@ local characters = {
 		},
 	
 		Manectric = {
-			species = 310,
+			species = "manectric",
 			nickname = 'Camentra',
 			instance = 'Manectric',
 			gender = Gender.Female,
@@ -401,7 +401,7 @@ local characters = {
 		},
 		
 		Electrike = {
-			species = 309,
+			species = "electrike",
 			nickname = 'Trilec',
 			instance = 'Electrike',
 			gender = Gender.Male,
@@ -412,7 +412,7 @@ local characters = {
 		
 		
 		Floatzel = {
-			species = 419,
+			species = "floatzel",
 			nickname = 'Tweed',
 			instance = 'Floatzel',
 			gender = Gender.Male,
@@ -421,7 +421,7 @@ local characters = {
 		},
 		
 		Quagsire = {
-			species = 195,
+			species = "quagsire",
 			nickname = 'Maris',
 			instance = 'Quagsire',
 			gender = Gender.Female,
@@ -430,7 +430,7 @@ local characters = {
 		},
 		
 		Wooper_Girl = {
-			species = 194,
+			species = "wooper",
 			nickname = 'Dee',
 			instance = 'Wooper_Girl',
 			gender = Gender.Female,
@@ -439,7 +439,7 @@ local characters = {
 		},
 	
 		Wooper_Boy = {
-			species = 194,
+			species = "wooper",
 			nickname = 'Dun',
 			instance = 'Wooper_Boy',
 			gender = Gender.Male,
@@ -450,7 +450,7 @@ local characters = {
 		
 		
 		Camerupt = {
-			species = 323,
+			species = "camerupt",
 			nickname = 'Dotra',
 			instance = 'Camerupt',
 			gender = Gender.Female,
@@ -459,7 +459,7 @@ local characters = {
 		},
 		
 		Numel = {
-			species = 322,
+			species = "numel",
 			nickname = 'Nubbor',
 			instance = 'Numel',
 			gender = Gender.Male,
@@ -470,7 +470,7 @@ local characters = {
 		
 		
 		Machamp = {
-			species = 68,
+			species = "machamp",
 			nickname = 'Savran',
 			instance = 'Machamp',
 			gender = Gender.Male,
@@ -479,7 +479,7 @@ local characters = {
 		},
 			
 		Medicham = {
-			species = 308,
+			species = "medicham",
 			nickname = 'Nama',
 			instance = 'Medicham',
 			gender = Gender.Female,
@@ -488,7 +488,7 @@ local characters = {
 		},
 		
 		Meditite = {
-			species = 307,
+			species = "meditite",
 			nickname = 'Stei',
 			instance = 'Meditite',
 			gender = Gender.Female,
@@ -499,7 +499,7 @@ local characters = {
 		
 		--begonia flower 
 		Vileplume = {
-			species = 45,
+			species = "vileplume",
 			nickname = 'Bogen',
 			instance = 'Vileplume',
 			gender = Gender.Male,
@@ -509,7 +509,7 @@ local characters = {
 		
 		--Chrysanthemum
 		Bellossom = {
-			species = 182,
+			species = "bellossom",
 			nickname = 'Chrysi',
 			instance = 'Bellossom',
 			gender = Gender.Female,
@@ -519,7 +519,7 @@ local characters = {
 		
 		--Lavender
 		Gloom = {
-			species = 44, 
+			species = "gloom", 
 			nickname = 'Lavena',
 			instance = 'Gloom',
 			gender = Gender.Female,
@@ -529,7 +529,7 @@ local characters = {
 		
 		--White Lilac
 		Oddish = {
-			species = 43,
+			species = "oddish",
 			nickname = 'Calil',
 			instance = 'Oddish',
 			gender = Gender.Female,
@@ -540,7 +540,7 @@ local characters = {
 		
 		
 		Nidoking = {
-			species = 34,
+			species = "nidoking",
 			nickname = 'Pawpa',
 			instance = 'Nidoking',
 			gender = Gender.Male,
@@ -549,7 +549,7 @@ local characters = {
 		},
 		
 		Nidoqueen = {
-			species = 31,
+			species = "nidoqueen",
 			nickname = 'Monna',
 			instance = 'Nidoqueen',
 			gender = Gender.Female,
@@ -558,7 +558,7 @@ local characters = {
 		},
 		
 		Nidorina = {
-			species = 30,
+			species = "nidorina",
 			nickname = 'Dottir',
 			instance = 'Nidorina',
 			gender = Gender.Female,
@@ -567,7 +567,7 @@ local characters = {
 		},
 		
 		Nidoran_M = {
-			species = 32,
+			species = "nidoran_m",
 			nickname = 'Junior',
 			instance = 'Nidoran_M',
 			gender = Gender.Male,
@@ -578,7 +578,7 @@ local characters = {
 	
 	--Town NPCs - Other
 		Sunflora = {
-			species = 192,
+			species = "sunflora",
 			nickname = 'Ciel',
 			instance = 'Sunflora',
 			gender = Gender.Female,
@@ -587,7 +587,7 @@ local characters = {
 		},
 		
 		Azumarill = {
-			species = 184,
+			species = "azumarill",
 			nickname = 'Loaf',
 			instance = 'Azumarill',
 			gender = Gender.Male,
@@ -596,7 +596,7 @@ local characters = {
 		},
 		
 		Mawile = {
-			species = 303,
+			species = "mawile",
 			nickname = 'Bria',
 			instance = 'Mawile',
 			gender = Gender.Female,
@@ -605,7 +605,7 @@ local characters = {
 		},
 	
 		Relicanth = {
-			species = 369,
+			species = "relicanth",
 			nickname = 'Erleuchtet',
 			instance = 'Relicanth',
 			gender = Gender.Male,
@@ -614,7 +614,7 @@ local characters = {
 		},
 		
 		Bisharp = {
-			species = 625,
+			species = "bisharp",
 			nickname = 'Zhayn',
 			instance = 'Bisharp',
 			gender = Gender.Male,
@@ -624,7 +624,7 @@ local characters = {
 		
 		
 		Gulpin = {
-			species = 316,
+			species = "gulpin",
 			nickname = 'Boosmu',
 			instance = 'Gulpin',
 			gender = Gender.Male,
@@ -633,7 +633,7 @@ local characters = {
 		},
 		
 		Lickitung = {
-			species = 108,
+			species = "lickitung",
 			nickname = 'Urgil',
 			instance = 'Lickitung',
 			gender = Gender.Male,
@@ -644,7 +644,7 @@ local characters = {
 		--Other Plot Relevant NPCs
 		--
 		Sandile = {
-			species = 551,
+			species = "sandile",
 			nickname = 'Thwait',
 			instance = 'Sandile',
 			gender = Gender.Male,
@@ -654,7 +654,7 @@ local characters = {
 		
 		--Inn Passersby
 		Snorlax = {
-			species = 143,
+			species = "snorlax",
 			nickname = 'Passerby',
 			instance = 'Passerby_1',
 			gender = Gender.Male,
@@ -743,7 +743,7 @@ function CharacterEssentials.GetCharacter(name, x, y, direction)
 	if y == nil then y = 0 end
 	--if dir == nil then dir = Direction.Down end--down is a good default direction
 	
-	local species = 0
+	local species = "missingno"
 	local nickname = "default"
 	local instance = "default"
 	local gender = Gender.Genderless
