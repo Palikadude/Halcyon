@@ -48,9 +48,9 @@
 "Comment": "",
 "SortOrder": 0
 },
-"guildmaster": {
+"grandmaster": {
 "Name": {
-"DefaultText": "Guildmaster",
+"DefaultText": "Grandmaster",
 "LocalTexts": {
 "fr-ca": "Grand Maître",
 "de": "Gildenmeister",
@@ -87,6 +87,22 @@
 "es": "Experto",
 "pt": "Mestre",
 "ko": "마스터"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"none": {
+"Name": {
+"DefaultText": "None",
+"LocalTexts": {
+"fr": "Aucun",
+"de": "Keine",
+"es": "Ninguno",
+"pt": "Nenhum",
+"ko": "분류없음",
+"zh-hans": "无"
 }
 },
 "Released": true,
@@ -162,6 +178,21 @@
 "es": "Superior",
 "pt": "Ultra",
 "ko": "울트라"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"guildmaster": {
+"Name": {
+"DefaultText": "Guildmaster",
+"LocalTexts": {
+"fr-ca": "Grand Maître",
+"de": "Gildenmeister",
+"es": "Maestro",
+"pt": "Grão-Mestre",
+"ko": "그레이트 마스터"
 }
 },
 "Released": true,

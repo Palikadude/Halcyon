@@ -109,7 +109,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	UI:SetSpeaker('', false, hero.CurrentForm.Species, hero.CurrentForm.Form, hero.CurrentForm.Skin, hero.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Surprised")
 	local coro1 = TASK:BranchCoroutine(function()  GROUND:MoveToPosition(partner, 232, 304, false, 1) end)
-	UI:WaitShowTimedDialogue("(Woah![pause=20] This place is huge!)", 80)
+	UI:WaitShowTimedDialogue("(Woah![pause=30] This place is huge!)", 70)
 	TASK:JoinCoroutines({coro1})
 	
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 264, 304, false, 1, 20) end)
