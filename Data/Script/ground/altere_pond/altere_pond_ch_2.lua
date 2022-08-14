@@ -33,7 +33,7 @@ function altere_pond_ch_2.Relicanth_Action(chara, activator)
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	GROUND:CharSetEmote(partner, 5, 1)
+	GROUND:CharSetEmote(partner, "sweating", 1)
 	UI:WaitShowDialogue("Yes " .. chara:GetDisplayName() .. ",[pause=10] it's me.[pause=0] And naturally I'm keeping out of trouble!")
 	GAME:WaitFrames(20)
 	

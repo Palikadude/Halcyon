@@ -73,10 +73,10 @@ end
 --she isn't behind the desk on day 1
 function metano_inn_ch_2.Nidoqueen_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "That's my hubby mannin' the front desk over yonder.")
-	GROUND:CharSetEmote(chara, 1, 0)
+	GROUND:CharSetEmote(chara, "happy", 0)
 	UI:SetSpeakerEmotion("Special0")
 	UI:WaitShowDialogue("He's a real catch,[pause=10] isn't he![pause=0] I'm real proud of him and our two kids!")
-	GROUND:CharSetEmote(chara, -1, 0)
+	GROUND:CharSetEmote(chara, "", 0)
 	GeneralFunctions.EndConversation(chara)
 end
 

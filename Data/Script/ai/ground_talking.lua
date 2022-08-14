@@ -166,7 +166,7 @@ function StateStopEmote:SetTask(entity)
   self.parentAI.Emoting = false
   TASK:StartEntityTask(entity, 
     function()
-      GROUND:CharSetEmote(entity, -1, 0)
+      GROUND:CharSetEmote(entity, "", 0)
 	  if self.parentAI.Turn and not LUA_ENGINE:CastToGroundChar(entity).IsInteracting then
 		GROUND:CharAnimateTurnTo(entity, self.parentAI.OldDir, 4)
       end
@@ -207,13 +207,13 @@ function StateSetEmote:Begin(prevstate, entity)
 	
 	--numbers correspond to emotes. the more times the number appears, the more likely it is to be chosen
 	if self.parentAI.Personality == 'Default' then
-		 EmoteSet = {1, 1, 1, 1, 1, 4, 4, 3, 3, 6}
+		 EmoteSet = {"happy", "happy", "happy", "happy", "happy", "glowing", "glowing", "exclaim", "exclaim", "question"}
 	elseif self.parentAI.Personality == 'Angry' then 
-		 EmoteSet = {1, 1, 1, 1, 7, 7, 7, 3, 3, 6}
+		 EmoteSet = {"happy", "happy", "happy", "happy", "angry", "angry", "angry", "exclaim", "exclaim", "question"}
 	elseif self.parentAI.Personality == 'Scared' then 
-		 EmoteSet = {1, 1, 1, 5, 5, 5, 5, 8, 8, 9}
+		 EmoteSet = {"happy", "happy", "happy", "sweating", "sweating", "sweating", "sweating", "shock", "shock", "sweatdrop"}
 	else 
-		EmoteSet = {2, 2, 2, 2, 2, 2, 2, 2, 2, 2}
+		EmoteSet = {"notice", "notice", "notice", "notice", "notice", "notice", "notice", "notice", "notice", "notice"}
 	end
 	
 	self.parentAI.Emote = EmoteSet[rand]
@@ -221,9 +221,9 @@ function StateSetEmote:Begin(prevstate, entity)
 	
 	--todo: make this cleaner
 	self.parentAI.Repetitions = 1
-	if self.parentAI.Emote == 1 or self.parentAI.Emote == 4 then
+	if self.parentAI.Emote == "happy" or self.parentAI.Emote == "glowing" then
 		self.parentAI.Repetitions = 0
-	elseif self.parentAI.Emote == 7 then
+	elseif self.parentAI.Emote == "angry" then
 		self.parentAI.Repetitions = 2
 	end
 	
@@ -346,7 +346,7 @@ function ground_talking:initialize(turn, IdleTime, EmoteIdleTime, InitialDelay, 
   --dont turn if you have no friends
   if self.NumOfFriends == 0 then self.Turn = false end
   
-  self.Emote = 0
+  self.Emote = ""
   self.Repetitions = 0
   self.Emoting = false
   self.OldDir = Direction.None

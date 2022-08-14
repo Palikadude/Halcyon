@@ -55,7 +55,7 @@ function metano_normal_home_ch_2.Sentret_Action(chara, activator)
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	GROUND:CharSetEmote(partner, 5, 1)
+	GROUND:CharSetEmote(partner, "sweating", 1)
 	UI:WaitShowDialogue("O-oh.[pause=0] Sorry ma'am!")
 	GROUND:CharAnimateTurnTo(linoone, olddir, 4)
 	

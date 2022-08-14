@@ -295,39 +295,39 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	if repetitions == nil then repetitions = 1 end
 	
 	if emote == 'Happy' then
-		emt = 1
+		emt = "happy"
 		sfx = "EVT_Emote_Startled_2"
 		pause = 20--test this one 
 	elseif emote == 'Notice' then --this one is the 3 lines
-		emt = 2
+		emt = "notice"
 		sfx = 'EVT_Emote_Exclaim'
 		pause = 30
 	elseif emote == 'Exclaim' then --this one is the !
-		emt = 3
+		emt = "exclaim"
 		sfx = 'EVT_Emote_Exclaim_2'
 		pause = 20
 	elseif emote == 'Glowing' then 
-		emt = 4
+		emt = "glowing"
 		sfx = 'EVT_Emote_Startled_2'
 		pause = 20--test this one
 	elseif emote == 'Sweating' then
-		emt = 5
+		emt = "sweating"
 		sfx = 'EVT_Emote_Sweating'
 		pause = 40 
 	elseif emote == 'Question' then
-		emt = 6
+		emt = "question"
 		sfx = 'EVT_Emote_Confused'
 		pause = 40
 	elseif emote == 'Angry' then
-		emt = 7
+		emt = "angry"
 		sfx = 'EVT_Emote_Complain_2'
 		pause = 40 --test this one
 	elseif emote == 'Shock' then
-		emt = 8
+		emt = "shock"
 		sfx = 'EVT_Emote_Shock'
 		pause = 40
 	else--sweatdrop
-		emt = 9
+		emt = "sweatdrop"
 		sfx = 'EVT_Emote_Sweatdrop'
 		pause = 40
 	end
@@ -591,7 +591,7 @@ function GeneralFunctions.Converse(charaList, turnWhenEmoting)
 		if repetitions == 1 then rand = math.random(0, 40) else rand = math.random(120, 160) end
 		GAME:WaitFrames(rand)
 		--print('emote wait rand' .. tostring(rand))
-		GROUND:CharSetEmote(chara, -1, 0)
+		GROUND:CharSetEmote(chara, "", 0)
 		
 		if turnWhenEmoting then
 			GROUND:CharAnimateTurnTo(chara, olddir, 4)
@@ -751,11 +751,11 @@ function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
 	duration = duration or 10
 	if sound == nil then sound = true end
 	
-	GROUND:CharSetEmote(chara, 8, 1)
+	GROUND:CharSetEmote(chara, "shock", 1)
 	SOUND:PlayBattleSE('EVT_Emote_Startled')
 	GROUND:CharHopAnim(chara, anim, height, duration)
 	GAME:WaitFrames(duration)
-	GROUND:CharSetEmote(chara, -1, 0)
+	GROUND:CharSetEmote(chara, "", 0)
 	
 end
 
@@ -1052,7 +1052,7 @@ function GeneralFunctions.Complain(chara, emote)
 	SOUND:PlayBattleSE('EVT_Emote_Complain_2')
 	GeneralFunctions.Hop(chara)
 	GeneralFunctions.Hop(chara)
-	if emote then GROUND:CharSetEmote(chara, 7, 0) end 
+	if emote then GROUND:CharSetEmote(chara, "angry", 0) end 
 	
 end
 

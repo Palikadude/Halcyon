@@ -111,7 +111,7 @@ function test_grounds.Sign1_Action(obj, activator)
   
   TASK:WaitStartEntityTask(activator, function()
     SOUND:PlayBattleSE("EVT_Emote_Confused")
-    GROUND:CharSetEmote(activator, 6, 1)
+    GROUND:CharSetEmote(activator, "question", 1)
     GAME:WaitFrames(60)
     GROUND:MoveInDirection(activator, Direction.Down, 30)
     GROUND:MoveInDirection(activator, Direction.DownLeft, 30)
@@ -144,7 +144,7 @@ function test_grounds.Concurrent_Sequence(turnTime)
   GROUND:CharAnimateTurnTo(chara, Direction.Up, turnTime)
   GAME:WaitFrames(20)
   SOUND:PlayBattleSE("EVT_Emote_Confused")
-  GROUND:CharSetEmote(chara, 6, 1)
+  GROUND:CharSetEmote(chara, "question", 1)
   GAME:WaitFrames(20)
   GROUND:CharSetAnim(chara, "None", false)
 end
@@ -188,7 +188,7 @@ function test_grounds.Mew_Action(chara, activator)
   local state = {olddir = mew.CharDir}
 
   GROUND:CharTurnToChar(mew,CH('PLAYER'))
-  GROUND:CharSetEmote(mew, 5, 1)
+  GROUND:CharSetEmote(mew, "sweating", 1)
   SOUND:PlayBattleSE("EVT_Emote_Sweating")
 
   UI:SetSpeaker(mew)
