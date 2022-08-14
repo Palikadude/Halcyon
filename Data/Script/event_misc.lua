@@ -44,7 +44,7 @@ function MAP_STATUS_SCRIPT.SetShopkeeperHostile(owner, ownerChar, character, sta
 	found_shopkeep.Tactic = RogueEssence.Data.AITactic(tactic)
 	found_shopkeep.Tactic:Initialize(found_shopkeep)
 	
-	local berserk_idx = 128
+	local berserk_idx = "shopkeeper"
 	local berserk = RogueEssence.Dungeon.StatusEffect(berserk_idx)
 	TASK:WaitTask(found_shopkeep:AddStatusEffect(nil, berserk, nil))
   end

@@ -511,7 +511,7 @@ end
 function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
-  if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
+  if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
     
     local ratio = target.HP * 100 // target.MaxHP
     

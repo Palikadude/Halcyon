@@ -203,7 +203,7 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 
 	  action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
-  if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
+  if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
     
     local ratio = target.HP * 100 // target.MaxHP
     
@@ -324,7 +324,7 @@ function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
 
 	 action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
-  if target:GetStatusEffect(1) == nil and target:GetStatusEffect(3) == nil then
+  if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
     
     local ratio = target.HP * 100 // target.MaxHP 
 
@@ -485,7 +485,7 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 				--print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
 				
 				--cannot bodyguard if sleeping, paralyzed, or frozen
-				if partymember:GetStatusEffect(1) == nil and partymember:GetStatusEffect(4) == nil and partymember:GetStatusEffect(3) == nil then
+				if partymember:GetStatusEffect("sleep") == nil and partymember:GetStatusEffect("paralyze") == nil and partymember:GetStatusEffect("freeze") == nil then
 				
 					_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
 					
