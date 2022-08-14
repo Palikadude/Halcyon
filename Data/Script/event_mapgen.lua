@@ -27,7 +27,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
         local post_mob = RogueEssence.LevelGen.MobSpawn()
         post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.TargetSpecies, 0, 0, Gender.Unknown)
-        post_mob.Tactic = 20
+        post_mob.Tactic = "boss"
         post_mob.Level = RogueElements.RandRange(50)
 		post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
 	    specificTeam.Spawns:Add(post_mob)
@@ -46,7 +46,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
         local post_mob = RogueEssence.LevelGen.MobSpawn()
         post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.TargetSpecies, 0, 0, Gender.Unknown)
-        post_mob.Tactic = 21
+        post_mob.Tactic = "slow_wander"
         post_mob.Level = RogueElements.RandRange(50)
 	    if mission.Type == COMMON.MISSION_TYPE_RESCUE then -- rescue
 	      local dialogue = RogueEssence.Dungeon.BattleScriptEvent("RescueReached")
@@ -161,7 +161,7 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
   mob_data.BaseSkills[3] = RogueEssence.Dungeon.SlotSkill(4)
   mob_data.BaseIntrinsics[0] = 2
   local new_mob = RogueEssence.Dungeon.Character(mob_data)
-  local tactic = _DATA:GetAITactic(7)
+  local tactic = _DATA:GetAITactic("wander_normal")
   new_mob.Tactic = RogueEssence.Data.AITactic(tactic)
   new_mob.CharLoc = RogueElements.Loc(4, 4)
   new_mob.CharDir = Dir8.Down
@@ -173,7 +173,7 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
   mob_data.BaseSkills[0] = RogueEssence.Dungeon.SlotSkill(5)
   mob_data.BaseIntrinsics[0] = 3
   new_mob = RogueEssence.Dungeon.Character(mob_data)
-  tactic = _DATA:GetAITactic(7)
+  tactic = _DATA:GetAITactic("wander_normal")
   new_mob.Tactic = RogueEssence.Data.AITactic(tactic)
   new_mob.CharLoc = RogueElements.Loc(5, 4)
   new_mob.CharDir = Dir8.Up

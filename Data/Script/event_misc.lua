@@ -40,7 +40,7 @@ function MAP_STATUS_SCRIPT.SetShopkeeperHostile(owner, ownerChar, character, sta
     local teamIndex = _ZONE.CurrentMap.AllyTeams:IndexOf(found_shopkeep.MemberTeam)
 	_DUNGEON:RemoveTeam(RogueEssence.Dungeon.Faction.Friend, teamIndex)
 	_DUNGEON:AddTeam(RogueEssence.Dungeon.Faction.Foe, found_shopkeep.MemberTeam)
-	local tactic = _DATA:GetAITactic(23) -- shopkeeper attack tactic
+	local tactic = _DATA:GetAITactic("shopkeeper") -- shopkeeper attack tactic
 	found_shopkeep.Tactic = RogueEssence.Data.AITactic(tactic)
 	found_shopkeep.Tactic:Initialize(found_shopkeep)
 	

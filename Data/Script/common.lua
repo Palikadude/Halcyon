@@ -813,7 +813,7 @@ function COMMON.Rescued(zone, mail)
                 --    team.Players.Add(new_mob);
                 --    new_mob.CharLoc = destLoc.Value;
                 --    new_mob.CharDir = DirExt.ApproximateDir8(ActiveTeam.Leader.CharLoc - destLoc.Value);
-                --    AITactic tactic = DataManager.Instance.GetAITactic(0);
+                --    AITactic tactic = DataManager.Instance.GetAITactic("stick_together");
                 --    new_mob.Tactic = new AITactic(tactic);
                 --}
                 --ZoneManager.Instance.CurrentMap.MapTeams.Add(team);
