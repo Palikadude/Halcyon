@@ -517,7 +517,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
-	_DATA.Save.ActiveTeam:SetRank(1)
+	_DATA.Save.ActiveTeam:SetRank("normal")
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(60)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")

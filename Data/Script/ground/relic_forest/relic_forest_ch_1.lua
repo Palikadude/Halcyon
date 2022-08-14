@@ -15,7 +15,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	
 	--initialize some save data
-	_DATA.Save.ActiveTeam:SetRank(0)
+	_DATA.Save.ActiveTeam:SetRank("none")
 	_DATA.Save.ActiveTeam.Money = 0
 	_DATA.Save.ActiveTeam.Bank = 0
 	_DATA.Save.NoSwitching = true--switching is not allowed
@@ -402,7 +402,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 			}
 		SV.ChapterProgression.Chapter = 2
 		GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
-		_DATA.Save.ActiveTeam:SetRank(1)
+		_DATA.Save.ActiveTeam:SetRank("normal")
 		GAME:CutsceneMode(false)
 		SOUND:FadeOutBGM(120)
 		GAME:WaitFrames(120)

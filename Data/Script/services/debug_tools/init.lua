@@ -54,7 +54,7 @@ end
 function DebugTools:OnNewGame()
   assert(self, 'DebugTools:OnNewGame() : self is null!')
   PrintInfo("\n<!> ExampleSvc: Preparing debug save file")
-  _DATA.Save.ActiveTeam:SetRank(0)
+  _DATA.Save.ActiveTeam:SetRank("none")
   _DATA.Save.ActiveTeam.Name = "Valiant"
   _DATA.Save.ActiveTeam.Money = 1000
   _DATA.Save.ActiveTeam.Bank = 999999
@@ -100,7 +100,7 @@ function DebugTools:OnNewGame()
   --audino 
    -- mon_id = RogueEssence.Dungeon.MonsterID(531, 0, 0, Gender.Female)
   --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, 0))
- _DATA.Save.ActiveTeam:SetRank(1)
+ _DATA.Save.ActiveTeam:SetRank("normal")
   _DATA.Save:UpdateTeamProfile(true)
   
 
