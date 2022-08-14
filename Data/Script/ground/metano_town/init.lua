@@ -309,8 +309,8 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   --Story dungeons and their corresponding "entrance ground" used for story cutscenes during the relevant chapter.
   --Illuminant Riverbed and Relic Forest 1 are story dungeons not accessed via this menu and thus the flag doesn't track them.
   local dungeon_entrance_mapping = {}
-  dungeon_entrance_mapping[53] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
-  dungeon_entrance_mapping[57] = 41--Crooked Cavern
+  dungeon_entrance_mapping["illuminant_riverbed"] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
+  dungeon_entrance_mapping["crooked_cavern"] = 41--Crooked Cavern
   
   --check for unlock of dungeons
   local open_dests = {}
