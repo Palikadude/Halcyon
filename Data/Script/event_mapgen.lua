@@ -99,10 +99,49 @@ end
 FLOOR_GEN_SCRIPT = {}
 
 
+function FLOOR_GEN_SCRIPT.TestGrid(map, args)
+  PrintInfo("Test Grid")
+  
+  -- this step operates on the grid floor of the map, assuming it has one
+  -- free-form floors do not have a grid
+  local floorPlan = map.GridPlan
+  -- these changes will only affect the map if they are done after the grid is created (after priority -5)
+  -- these changes will only affect the map if they are done before the grid is drawn to the floor plan (before priority -3)
+  
+  
+  -- set the brush for all vertical hallways on the right half to be blocked rooms 
+  for xx = floorPlan.GridWidth / 2, floorPlan.GridWidth - 1, 1 do
+    for yy = 0, floorPlan.GridHeight - 2, 1 do
+	  local hall = floorPlan:GetHall(RogueElements.LocRay4(RogueElements.Loc(xx, yy), Dir4.Down))
+	  -- only modify existing halls
+	  if hall ~= nil then
+	    local hallGen = LUA_ENGINE:MakeGenericType(RoomGenBlockedType, { map:GetType() }, {  })
+	    -- no need to change width and height since they will be ordered by the floors
+	    hallGen.BlockWidth = RogueElements.RandRange(2)
+	    hallGen.BlockHeight = RogueElements.RandRange(10)
+		hallGen.BlockTerrain = RogueEssence.Dungeon.Tile("water")
+		floorPlan:SetHall(RogueElements.LocRay4(RogueElements.Loc(xx, yy), Dir4.Down), hallGen, hall.Components)
+	  end
+	end
+  end
+  
+  -- turns all rooms on the left side into evo rooms
+  for yy = 0, floorPlan.GridHeight - 1, 1 do
+	local room = floorPlan:GetRoomPlan(RogueElements.Loc(0, yy))
+	if room ~= nil then
+	  local roomGen = LUA_ENGINE:MakeGenericType(RoomGenEvoType, { map:GetType() }, {  })
+	  room.RoomGen = roomGen
+	end
+  end
+  
+end
+
+  
 function FLOOR_GEN_SCRIPT.Test(map, args)
-  PrintInfo("Test GenStep")
+  PrintInfo("Test Tile")
   
   --A demo of various tile operations possible with scripting
+  --This step should be added after everything else. (prefer 7)
   
   --Set the top-left corner to room tile. Note that unbreakable blocks are left untouched.
   for xx = 0, map.Width / 2, 1 do
@@ -131,6 +170,15 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
     end  
   end
   
+  --Set the center of the corner to Block tile of a custom tileset.
+  for xx = map.Width * 3 / 4 - 1, map.Width * 3 / 4 + 1, 1 do
+    for yy = map.Height * 3 / 4 - 1, map.Height * 3 / 4 + 1, 1 do
+	  local customTerrain = RogueEssence.Dungeon.Tile("wall", true) -- set StableTex to true, which prevents the map's autotexturing
+	  customTerrain.Data.TileTex = RogueEssence.Dungeon.AutoTile("tiny_woods_wall")
+      map:TrySetTile(RogueElements.Loc(xx, yy), customTerrain)
+    end
+  end
+  
   --Place a trap on 2,2.  Slumber trap, revealed.
   --map:PlaceItem(RogueElements.Loc(2, 2), RogueEssence.Dungeon.EffectTile("trap_slumber", true))
   local trap_tile = map:GetTile(RogueElements.Loc(2, 2))
@@ -143,9 +191,9 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
   new_item.TileLoc = RogueElements.Loc(3, 2)
   map.Items:Add(new_item)
   
-  --Place item on 3,3.  100g
+  --Place item on 3,3.  Random amount of G between 50 and 100
   --map:PlaceItem(RogueElements.Loc(3, 3), RogueEssence.Dungeon.MapItem(true, 100))
-  new_item = RogueEssence.Dungeon.MapItem(true, 100)
+  new_item = RogueEssence.Dungeon.MapItem.CreateMoney(map.Rand:Next(50, 101)) -- you must use the map.Rand, or else seeds wont be consistent
   new_item.TileLoc = RogueElements.Loc(3, 3)
   map.Items:Add(new_item)
   
@@ -153,13 +201,13 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
   local new_team = RogueEssence.Dungeon.MonsterTeam()
   
   local mob_data = RogueEssence.Dungeon.CharData()
-  mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(150, 0, 0, Gender.Male)
+  mob_data.BaseForm = RogueEssence.Dungeon.MonsterID("mewtwo", 0, "normal", Gender.Male)
   mob_data.Level = 20;
-  mob_data.BaseSkills[0] = RogueEssence.Dungeon.SlotSkill(1)
-  mob_data.BaseSkills[1] = RogueEssence.Dungeon.SlotSkill(2)
-  mob_data.BaseSkills[2] = RogueEssence.Dungeon.SlotSkill(3)
-  mob_data.BaseSkills[3] = RogueEssence.Dungeon.SlotSkill(4)
-  mob_data.BaseIntrinsics[0] = 2
+  mob_data.BaseSkills[0] = RogueEssence.Dungeon.SlotSkill("pound")
+  mob_data.BaseSkills[1] = RogueEssence.Dungeon.SlotSkill("fire_punch")
+  mob_data.BaseSkills[2] = RogueEssence.Dungeon.SlotSkill("ice_punch")
+  mob_data.BaseSkills[3] = RogueEssence.Dungeon.SlotSkill("thunder_punch")
+  mob_data.BaseIntrinsics[0] = "drizzle"
   local new_mob = RogueEssence.Dungeon.Character(mob_data)
   local tactic = _DATA:GetAITactic("wander_normal")
   new_mob.Tactic = RogueEssence.Data.AITactic(tactic)
@@ -168,10 +216,10 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
   new_team.Players:Add(new_mob)
   
   mob_data = RogueEssence.Dungeon.CharData()
-  mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(151, 0, 0, Gender.Female)
+  mob_data.BaseForm = RogueEssence.Dungeon.MonsterID("mew", 0, "normal", Gender.Female)
   mob_data.Level = 25
-  mob_data.BaseSkills[0] = RogueEssence.Dungeon.SlotSkill(5)
-  mob_data.BaseIntrinsics[0] = 3
+  mob_data.BaseSkills[0] = RogueEssence.Dungeon.SlotSkill("pound")
+  mob_data.BaseIntrinsics[0] = "speed_boost"
   new_mob = RogueEssence.Dungeon.Character(mob_data)
   tactic = _DATA:GetAITactic("wander_normal")
   new_mob.Tactic = RogueEssence.Data.AITactic(tactic)

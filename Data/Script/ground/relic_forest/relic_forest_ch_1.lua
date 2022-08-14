@@ -188,7 +188,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	local monster = _DATA:GetMonster(hero_choice.Species).Forms[hero_choice.Form]
 	local ability = monster.Intrinsic1
-	if monster.Intrinsic2 ~= 0 then--if pokemon has 2 abilities, let player choose which to get
+	if monster.Intrinsic2 ~= "none" then--if pokemon has 2 abilities, let player choose which to get
 		UI:BeginChoiceMenu("Which ability would you like to have?", {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName(), _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()}, 1, 1)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
@@ -201,8 +201,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	--create hero with a species specific egg move and specific ability
 	local mon_id = hero_choice
 	mon_id.Gender = gender
-	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
-	GAME:GetPlayerPartyMember(0):LearnIntrinsic(ability, 0)
+	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, ability, 0))
 	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(0), 3) ~= -1 then 
 		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(0), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
 	else 
@@ -277,8 +276,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	mon_id = partner_choice
 	mon_id.Gender = gender
-	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, -1, 0))--dunno what the -1 and 0 are exactly...
-	GAME:GetPlayerPartyMember(1):LearnIntrinsic(ability, 0)
+	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, ability, 0))--dunno what the -1 and 0 are exactly...
 	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(1), 3) ~= -1 then 
 		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(1), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
 	else 

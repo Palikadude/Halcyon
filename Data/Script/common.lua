@@ -874,7 +874,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
 		
 		-- add escort to team
 		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, 0, Gender.Male)
-        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, -1, -1)
+        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
 		
 		-- place in a legal position on map
