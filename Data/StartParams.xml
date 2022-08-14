@@ -164,7 +164,7 @@
 <StartMap>
   <Zone>backup_master_zone</Zone>
   <Segment>-1</Segment>
-  <ID>1</ID>
+  <ID>0</ID>
   <Entry>0</Entry>
 </StartMap>
 <GenFloor>floor</GenFloor>
