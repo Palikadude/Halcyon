@@ -126,15 +126,15 @@ function FLOOR_GEN_SCRIPT.Test(map, args)
     for yy = map.Height / 2, map.Height - 1, 1 do
 	  local loc = RogueElements.Loc(xx, yy)
 	  if not map:GetTile(loc):TileEquivalent(map.RoomTerrain) then
-        map:TrySetTile(loc, RogueEssence.Dungeon.Tile(3))
+        map:TrySetTile(loc, RogueEssence.Dungeon.Tile("water"))
 	  end
     end  
   end
   
   --Place a trap on 2,2.  Slumber trap, revealed.
-  --map:PlaceItem(RogueElements.Loc(2, 2), RogueEssence.Dungeon.EffectTile(4, true))
+  --map:PlaceItem(RogueElements.Loc(2, 2), RogueEssence.Dungeon.EffectTile("trap_slumber", true))
   local trap_tile = map:GetTile(RogueElements.Loc(2, 2))
-  trap_tile.Effect = RogueEssence.Dungeon.EffectTile(4, true)
+  trap_tile.Effect = RogueEssence.Dungeon.EffectTile("trap_slumber", true)
   
   --Place item on 3,2.  Banana, sticky
   --map:PlaceItem(RogueElements.Loc(3, 2), RogueEssence.Dungeon.MapItem(6))
@@ -248,7 +248,7 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 		for x = leftShore, rightShore, 1 do 
 			local loc = RogueElements.Loc(x, y)
 			if not map:GetTile(loc):TileEquivalent(map.RoomTerrain) then
-				map:TrySetTile(loc, RogueEssence.Dungeon.Tile(3))
+				map:TrySetTile(loc, RogueEssence.Dungeon.Tile("water"))
 			end
 	
 	

@@ -37,7 +37,7 @@ function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
   end
 
   
-  if tile.Effect.ID ~= 45 then
+  if tile.Effect.ID ~= "area_shop" then
 	if security_price.Cart > 0 then
 	  _GAME:BGM("", false)
       COMMON.ClearAllPrices()
@@ -72,7 +72,7 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, character, args)
   local baseLoc = _DUNGEON.ActiveTeam.Leader.CharLoc
   local tile = _ZONE.CurrentMap.Tiles[baseLoc.X][baseLoc.Y]
 
-  if tile.Effect.ID ~= 45 then
+  if tile.Effect.ID ~= "area_shop" then
 	local found_shopkeep = COMMON.FindNpcWithTable(false, "Role", "Shopkeeper")
     if found_shopkeep and COMMON.CanTalk(found_shopkeep) then
 	  local security_state = COMMON.GetShopPriceState()
