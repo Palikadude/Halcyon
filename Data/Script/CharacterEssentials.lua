@@ -9,7 +9,7 @@ local characters = {
 			instance = 'Tropius',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		Noctowl = {
 			species = "noctowl", 
@@ -17,7 +17,7 @@ local characters = {
 			instance = 'Noctowl',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		Zigzagoon = {
 			species = "zigzagoon", 
@@ -25,7 +25,7 @@ local characters = {
 			instance = 'Zigzagoon',
 			gender = Gender.Male,
 			form = 0, 
-			skin = 0
+			skin = "normal"
 		},
 		Growlithe = {
 			species = "growlithe",
@@ -33,7 +33,7 @@ local characters = {
 			instance = 'Growlithe',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		Mareep = {
 			species = "mareep",
@@ -41,7 +41,7 @@ local characters = {
 			instance = 'Mareep',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Cranidos = {
@@ -50,7 +50,7 @@ local characters = {
 			instance = 'Cranidos',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0	
+			skin = "normal"	
 		},
 		
 		Snubbull = {
@@ -59,7 +59,7 @@ local characters = {
 			instance = 'Snubbull',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		Audino = {
 			species = "audino",
@@ -67,7 +67,7 @@ local characters = {
 			instance = 'Audino',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Breloom = {
@@ -76,7 +76,7 @@ local characters = {
 			instance = 'Breloom',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Girafarig = {
@@ -85,7 +85,7 @@ local characters = {
 			instance = 'Girafarig',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Tail = {--girafarig's tail
@@ -94,7 +94,7 @@ local characters = {
 			instance = 'Tail',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -105,7 +105,7 @@ local characters = {
 			instance = 'Ledian',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		--can refer to Lotus as either Ledian or Sensei to grab her
@@ -115,7 +115,7 @@ local characters = {
 			instance = 'Sensei',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Gible = {
@@ -124,7 +124,7 @@ local characters = {
 			instance = 'Gible',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -135,7 +135,7 @@ local characters = {
 			instance = 'Luxio',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 			},
 		Glameow = {
 			species = "glameow",
@@ -143,7 +143,7 @@ local characters = {
 			instance = 'Glameow',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		Cacnea = {
 			species = "cacnea",
@@ -151,7 +151,7 @@ local characters = {
 			instance = 'Cacnea',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -163,7 +163,7 @@ local characters = {
 			instance = 'Spheal',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 			},
 		Marill = { 
 			species = "marill",
@@ -171,7 +171,7 @@ local characters = {
 			instance = 'Marill',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0	
+			skin = "normal"	
 		},
 		Jigglypuff = { 
 			species = "jigglypuff",
@@ -179,7 +179,7 @@ local characters = {
 			instance = 'Jigglypuff',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 	--Team Starlight
@@ -189,7 +189,7 @@ local characters = {
 			instance = 'Cleffa',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},		
 		Aggron = {
 			species = "aggron",
@@ -197,7 +197,7 @@ local characters = {
 			instance = 'Aggron',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -208,7 +208,7 @@ local characters = {
 			instance = 'Zangoose',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},	
 		
 		Seviper = {
@@ -217,7 +217,7 @@ local characters = {
 			instance = 'Seviper',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 	--Team Cadence (their names are corruptions of types of dances)
@@ -227,7 +227,7 @@ local characters = {
 			instance = 'Spinda',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Ludicolo = {
@@ -236,7 +236,7 @@ local characters = {
 			instance = 'Ludicolo',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Roselia = {
@@ -245,7 +245,7 @@ local characters = {
 			instance = 'Roselia',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 	--Team Flight
@@ -255,7 +255,7 @@ local characters = {
 			instance = 'Doduo',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Bagon = {
@@ -264,7 +264,7 @@ local characters = {
 			instance = 'Bagon',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		
@@ -275,7 +275,7 @@ local characters = {
 			instance = 'Kangaskhan',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Murkrow = {
@@ -284,7 +284,7 @@ local characters = {
 			instance = 'Murkrow',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Slowpoke = {
@@ -293,7 +293,7 @@ local characters = {
 			instance = 'Slowpoke',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Ambipom = {
@@ -302,7 +302,7 @@ local characters = {
 			instance = 'Ambipom',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Sneasel = {
@@ -311,7 +311,7 @@ local characters = {
 			instance = 'Sneasel',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Kecleon = {
@@ -320,7 +320,7 @@ local characters = {
 			instance = 'Kecleon',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Kecleon_Purple = {
@@ -329,7 +329,7 @@ local characters = {
 			instance = 'Kecleon_Purple',
 			gender = Gender.Male,
 			form = 1,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Chatot = {
@@ -338,7 +338,7 @@ local characters = {
 			instance = 'Chatot',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Shuckle = {
@@ -347,7 +347,7 @@ local characters = {
 			instance = 'Shuckle',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 	
@@ -359,7 +359,7 @@ local characters = {
 			instance = 'Furret',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Linoone = {
@@ -368,7 +368,7 @@ local characters = {
 			instance = 'Linoone',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Sentret = {
@@ -377,7 +377,7 @@ local characters = {
 			instance = 'Sentret',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		
@@ -388,7 +388,7 @@ local characters = {
 			instance = 'Luxray',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Manectric = {
@@ -397,7 +397,7 @@ local characters = {
 			instance = 'Manectric',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Electrike = {
@@ -406,7 +406,7 @@ local characters = {
 			instance = 'Electrike',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -417,7 +417,7 @@ local characters = {
 			instance = 'Floatzel',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Quagsire = {
@@ -426,7 +426,7 @@ local characters = {
 			instance = 'Quagsire',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Wooper_Girl = {
@@ -435,7 +435,7 @@ local characters = {
 			instance = 'Wooper_Girl',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Wooper_Boy = {
@@ -444,7 +444,7 @@ local characters = {
 			instance = 'Wooper_Boy',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -455,7 +455,7 @@ local characters = {
 			instance = 'Camerupt',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Numel = {
@@ -464,7 +464,7 @@ local characters = {
 			instance = 'Numel',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -475,7 +475,7 @@ local characters = {
 			instance = 'Machamp',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 			
 		Medicham = {
@@ -484,7 +484,7 @@ local characters = {
 			instance = 'Medicham',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Meditite = {
@@ -493,7 +493,7 @@ local characters = {
 			instance = 'Meditite',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -504,7 +504,7 @@ local characters = {
 			instance = 'Vileplume',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		--Chrysanthemum
@@ -514,7 +514,7 @@ local characters = {
 			instance = 'Bellossom',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		--Lavender
@@ -524,7 +524,7 @@ local characters = {
 			instance = 'Gloom',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		--White Lilac
@@ -534,7 +534,7 @@ local characters = {
 			instance = 'Oddish',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -545,7 +545,7 @@ local characters = {
 			instance = 'Nidoking',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Nidoqueen = {
@@ -554,7 +554,7 @@ local characters = {
 			instance = 'Nidoqueen',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Nidorina = {
@@ -563,7 +563,7 @@ local characters = {
 			instance = 'Nidorina',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Nidoran_M = {
@@ -572,7 +572,7 @@ local characters = {
 			instance = 'Nidoran_M',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 	
@@ -583,7 +583,7 @@ local characters = {
 			instance = 'Sunflora',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Azumarill = {
@@ -592,7 +592,7 @@ local characters = {
 			instance = 'Azumarill',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Mawile = {
@@ -601,7 +601,7 @@ local characters = {
 			instance = 'Mawile',
 			gender = Gender.Female,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 	
 		Relicanth = {
@@ -610,7 +610,7 @@ local characters = {
 			instance = 'Relicanth',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Bisharp = {
@@ -619,7 +619,7 @@ local characters = {
 			instance = 'Bisharp',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		
@@ -629,7 +629,7 @@ local characters = {
 			instance = 'Gulpin',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		Lickitung = {
@@ -638,7 +638,7 @@ local characters = {
 			instance = 'Lickitung',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		--Other Plot Relevant NPCs
@@ -649,7 +649,7 @@ local characters = {
 			instance = 'Sandile',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		},
 		
 		--Inn Passersby
@@ -659,7 +659,7 @@ local characters = {
 			instance = 'Passerby_1',
 			gender = Gender.Male,
 			form = 0,
-			skin = 0
+			skin = "normal"
 		}
 			
 	}
@@ -748,7 +748,7 @@ function CharacterEssentials.GetCharacter(name, x, y, direction)
 	local instance = "default"
 	local gender = Gender.Genderless
 	local form = 0--formes 
-	local skin = 0--shiny?
+	local skin = "normal"--shiny?
 	
 	
 	
