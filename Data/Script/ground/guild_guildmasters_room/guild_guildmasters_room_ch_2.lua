@@ -182,7 +182,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	
 	--no temporary flags need to be set here.
 	SV.ChapterProgression.Chapter = 3
-	SV.ChapterProgression.CurrentStoryDungeon = 57 -- Crooked Cavern
+	SV.ChapterProgression.CurrentStoryDungeon = "crooked_cavern" -- Crooked Cavern
 	SV.Dojo.NewMazeUnlocked = true
 	GAME:UnlockDungeon("grass_maze")--unlock new mazes at ledian dojo
 	GAME:UnlockDungeon("fire_maze")--unlock new mazes at ledian dojo

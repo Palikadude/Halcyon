@@ -34,7 +34,7 @@ SV.General =
 
 SV.checkpoint = 
 {
-  Zone    = 0, Structure  = -1,
+  Zone    = "debug", Structure  = -1,
   Map  = 1, Entry  = 0,
 }
 
@@ -57,9 +57,9 @@ SV.partner =
 --These flags are to be reset to their initial values at the end of the day.
 SV.DailyFlags = 
 {
-  RedMerchantItem = -1,
+  RedMerchantItem = "",
   RedMerchantBought = false,
-  GreenMerchantItem = -1,
+  GreenMerchantItem = "",
   GreenMerchantBought = false,
   
   GreenKecleonRefreshedStock = false,
@@ -99,7 +99,7 @@ SV.metano_town =
 
 SV.metano_cafe =
 {
-  CafeSpecial = "",
+  CafeSpecial = -1,
   BoughtSpecial = false,
   FermentedItem = "", 
   ItemFinishedFermenting = false
@@ -120,7 +120,7 @@ SV.Dojo =
 	NewLessonUnlocked = false,--Was a new lesson unlocked since the player last spoke to Ledian? If so have her mention that there are new lessons.
 	NewTrialUnlocked = false,--Was a new trial unlocked since the player last spoke to Ledian? If so have her mention that there are new trials.
 	
-	LastZone = 0--Which dojo dungeon did the player just come out of?
+	LastZone = "master_zone"--Which dojo dungeon did the player just come out of?
 }
 
 
@@ -135,7 +135,7 @@ SV.ChapterProgression =
 	DaysPassed = 0,--total number of in game days played in the game
 	DaysToReach = -1, --Used to figure out what day needs to be reached to continue the story
 	Chapter = 1,
-	CurrentStoryDungeon = -1,--Used by the Destination Menu when leaving town to the right to know if it needs to set you somewhere else first before going to the dungeon (i.e. for a cutscene outside the dungeon). If the selected dungeon matches this value, then it will try to put you on the relevant ground that is that dungeon's entrance. Note: Relic Forest 1 and Illuminant Riverbed are handled by other objects, and thus aren't ever set to the current story dungeon.
+	CurrentStoryDungeon = "",--Used by the Destination Menu when leaving town to the right to know if it needs to set you somewhere else first before going to the dungeon (i.e. for a cutscene outside the dungeon). If the selected dungeon matches this value, then it will try to put you on the relevant ground that is that dungeon's entrance. Note: Relic Forest 1 and Illuminant Riverbed are handled by other objects, and thus aren't ever set to the current story dungeon.
 	
 	UnlockedAssembly = false--this is set to true when player is allowed to recruit team members, unhides assembly objects
 }

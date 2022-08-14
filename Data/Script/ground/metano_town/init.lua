@@ -709,7 +709,7 @@ function metano_town.Shop_Action(obj, activator)
 					GAME:RemoveFromPlayerMoney(total)
 					for ii = 1, #cart, 1 do
 						local item = catalog[cart[ii]].Item
-						GAME:GivePlayerItem(item.ID, 1, false, item.HiddenValue)
+						GAME:GivePlayerItem(item.ID, item.Amount)
 					end
 					for ii = #cart, 1, -1 do
 						table.remove(catalog, cart[ii])
@@ -917,7 +917,7 @@ function metano_town.TM_Action(obj, activator)
 					GAME:RemoveFromPlayerMoney(total)
 					for ii = 1, #cart, 1 do
 						local item = catalog[cart[ii]].Item
-						GAME:GivePlayerItem(item.ID, 1, false, item.HiddenValue)
+						GAME:GivePlayerItem(item.ID, item.Amount)
 					end
 					for ii = #cart, 1, -1 do
 						table.remove(catalog, cart[ii])
@@ -1215,41 +1215,41 @@ function metano_town.Red_Merchant_Action(obj, activator)
 	--items the merchants can potentially sell. should be about 2/3 chance for common junk, 1/3 to get something more interesting.
 	local merchant_catalog = 
 	{
-		450, 450, 450, --link box 
-		--451, 451, 451, --assembly box (disabled in demo)
-		452, 452, 452, --storage box
-		200, 200, 200, 200, 200, 200, 200, 200, 200, 200, --stick
-		201, 201, 201, 201, 201, --cacnea spike
-		202, 202, 202, 202, 202, --corsola twig
-		203, 203, 203, 203, 203, --iron thorn
-		204, 204, 204, 204, 204,  --silver spike 
-		205, 205, 205,   --golden thorn 
-		206,  --rare fossil
-		207, 207, 207, 207, 207, --geo pebble
-		208, 208, 208, 208, 208,   --gravelerock
-		219, --perfect apricorn
-		220, 220, 220, 220, 220,--path wand 
-		221, 221, 221, 221, 221,--pounce wand 
-		222, 222, 222, 222, 222, --whirlwind wand
-		223, 223, 223, 223, 223, --switcher wand
-		224, 224, 224, 224, 224, --surround wand
-		225, 225, 225, 225, 225,--lure wand 
-		226, 226, 226, 226, 226, --slow wand 
-		227, 227, 227, 227, 227, --stayaway wand 
-		228, 228, 228, 228, 228, --fear wand 
-		229, 229, 229, 229, 229,--totter wand
-		230, 230, 230, 230, 230,--infatuation wand 
-		231, 231, 231, 231, 231, --topsy turvy wand 
-		232, 232, 232, 232, 232, --warp wand 
-		233, 233, 233, 233, 233, --purge wand
-		234, 234, 234, 234, 234, --lob wand
+		"machine_recall_box", "machine_recall_box", "machine_recall_box", --link box 
+		--"machine_assembly_box", "machine_assembly_box", "machine_assembly_box", --assembly box (disabled in demo)
+		"machine_storage_box", "machine_storage_box", "machine_storage_box", --storage box
+		"ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", --stick
+		"ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", --cacnea spike
+		"ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", --corsola twig
+		"ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", --iron thorn
+		"ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike",  --silver spike 
+		"ammo_golden_thorn", "ammo_golden_thorn", "ammo_golden_thorn",   --golden thorn 
+		"ammo_rare_fossil",  --rare fossil
+		"ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", --geo pebble
+		"ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock",   --gravelerock
+		"apricorn_perfect", --perfect apricorn
+		"wand_path", "wand_path", "wand_path", "wand_path", "wand_path",--path wand 
+		"wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce",--pounce wand 
+		"wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", --whirlwind wand
+		"wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", --switcher wand
+		"wand_surround", "wand_surround", "wand_surround", "wand_surround", "wand_surround", --surround wand
+		"wand_lure", "wand_lure", "wand_lure", "wand_lure", "wand_lure",--lure wand 
+		"wand_slow", "wand_slow", "wand_slow", "wand_slow", "wand_slow", --slow wand 
+		"wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", --stayaway wand 
+		"wand_fear", "wand_fear", "wand_fear", "wand_fear", "wand_fear", --fear wand 
+		"wand_totter", "wand_totter", "wand_totter", "wand_totter", "wand_totter",--totter wand
+		"wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation",--infatuation wand 
+		"wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", --topsy turvy wand 
+		"wand_warp", "wand_warp", "wand_warp", "wand_warp", "wand_warp", --warp wand 
+		"wand_purge", "wand_purge", "wand_purge", "wand_purge", "wand_purge", --purge wand
+		"wand_lob", "wand_lob", "wand_lob", "wand_lob", "wand_lob", --lob wand
 		--rest of items are non "junk", put one of each since they should be rare to get a specific item, but there's so many different ones it isn't rare to find non junk
-		331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, --type boosting items
-		349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378,--evolution items, maybe disable if game is not complete?
-		453 --ability capsule
+		"held_silver_powder", "held_black_glasses", "held_dragon_scale", "held_magnet", "held_pink_bow", "held_black_belt", "held_charcoal", "held_sharp_beak", "held_spell_tag", "held_miracle_seed", "held_soft_sand", "held_never_melt_ice", "held_silk_scarf", "held_poison_barb", "held_twisted_spoon", "held_hard_stone", "held_metal_coat", "held_mystic_water", --type boosting items
+		"evo_harmony_scarf", "evo_everstone", "evo_fire_stone", "evo_thunder_stone", "evo_water_stone", "evo_leaf_stone", "evo_moon_stone", "evo_sun_stone", "evo_magmarizer", "evo_electirizer", "evo_reaper_cloth", "evo_cracked_pot", "evo_chipped_pot", "evo_shiny_stone", "evo_dusk_stone", "evo_dawn_stone", "evo_link_cable", "evo_up_grade", "evo_dubious_disc", "evo_razor_fang", "evo_razor_claw", "370", "evo_protector", "evo_oval_stone", "evo_prism_scale", "evo_kings_rock", "evo_deep_sea_tooth", "evo_deep_sea_scale", "evo_sun_ribbon", "evo_lunar_ribbon",--evolution items, maybe disable if game is not complete?
+		"machine_ability_capsule" --ability capsule
 	}
 	
-	if SV.DailyFlags.RedMerchantItem == -1 then 
+	if SV.DailyFlags.RedMerchantItem == "" then 
 		SV.DailyFlags.RedMerchantItem = math.random(1, #merchant_catalog)
 	end
 	
@@ -1257,7 +1257,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 	
 	local item = RogueEssence.Dungeon.InvItem(merchant_catalog[SV.DailyFlags.RedMerchantItem])
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
-	item.HiddenValue = itemEntry.MaxStack
+	item.Amount = itemEntry.MaxStack
 	local itemName = item:GetDisplayName()
 	local itemPrice = item:GetSellValue()
 
@@ -1319,7 +1319,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 					else
 						SV.DailyFlags.RedMerchantBought = true
 						GAME:RemoveFromPlayerMoney(itemPrice)
-						GAME:GivePlayerItem(item.ID, 1, false, itemEntry.MaxStack)
+						GAME:GivePlayerItem(item.ID, itemEntry.MaxStack)
 						SOUND:PlayBattleSE("DUN_Money")
 						UI:SetSpeakerEmotion("Joyous")
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Purchase_Made'], itemName))
@@ -1382,42 +1382,42 @@ function metano_town.Green_Merchant_Action(obj, activator)
 	--items the merchants can potentially sell. should be about 2/3 chance for common junk, 1/3 to get something more interesting.
 	local merchant_catalog = 
 	{
-		450, 450, 450, --link box 
-		--451, 451, 451, --assembly box (disable in demo)
-		452, 452, 452, --storage box
-		200, 200, 200, 200, 200, 200, 200, 200, 200, 200, --stick
-		201, 201, 201, 201, 201, --cacnea spike
-		202, 202, 202, 202, 202, --corsola twig
-		203, 203, 203, 203, 203, --iron thorn
-		204, 204, 204, 204, 204,  --silver spike 
-		205, 205, 205,   --golden thorn 
-		206,  --rare fossil
-		207, 207, 207, 207, 207, --geo pebble
-		208, 208, 208, 208, 208,   --gravelerock
-		219, --perfect apricorn
-		220, 220, 220, 220, 220,--path wand 
-		221, 221, 221, 221, 221,--pounce wand 
-		222, 222, 222, 222, 222, --whirlwind wand
-		223, 223, 223, 223, 223, --switcher wand
-		224, 224, 224, 224, 224, --surround wand
-		225, 225, 225, 225, 225,--lure wand 
-		226, 226, 226, 226, 226, --slow wand 
-		227, 227, 227, 227, 227, --stayaway wand 
-		228, 228, 228, 228, 228, --fear wand 
-		229, 229, 229, 229, 229,--totter wand
-		230, 230, 230, 230, 230,--infatuation wand 
-		231, 231, 231, 231, 231, --topsy turvy wand 
-		232, 232, 232, 232, 232, --warp wand 
-		233, 233, 233, 233, 233, --purge wand
-		234, 234, 234, 234, 234, --lob wand
+		"machine_recall_box", "machine_recall_box", "machine_recall_box", --link box 
+		--"machine_assembly_box", "machine_assembly_box", "machine_assembly_box", --assembly box (disable in demo)
+		"machine_storage_box", "machine_storage_box", "machine_storage_box", --storage box
+		"ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", --stick
+		"ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", --cacnea spike
+		"ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", --corsola twig
+		"ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", --iron thorn
+		"ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike",  --silver spike 
+		"ammo_golden_thorn", "ammo_golden_thorn", "ammo_golden_thorn",   --golden thorn 
+		"ammo_rare_fossil",  --rare fossil
+		"ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", --geo pebble
+		"ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock",   --gravelerock
+		"apricorn_perfect", --perfect apricorn
+		"wand_path", "wand_path", "wand_path", "wand_path", "wand_path",--path wand 
+		"wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce",--pounce wand 
+		"wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", --whirlwind wand
+		"wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", --switcher wand
+		"wand_surround", "wand_surround", "wand_surround", "wand_surround", "wand_surround", --surround wand
+		"wand_lure", "wand_lure", "wand_lure", "wand_lure", "wand_lure",--lure wand 
+		"wand_slow", "wand_slow", "wand_slow", "wand_slow", "wand_slow", --slow wand 
+		"wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", --stayaway wand 
+		"wand_fear", "wand_fear", "wand_fear", "wand_fear", "wand_fear", --fear wand 
+		"wand_totter", "wand_totter", "wand_totter", "wand_totter", "wand_totter",--totter wand
+		"wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation",--infatuation wand 
+		"wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", --topsy turvy wand 
+		"wand_warp", "wand_warp", "wand_warp", "wand_warp", "wand_warp", --warp wand 
+		"wand_purge", "wand_purge", "wand_purge", "wand_purge", "wand_purge", --purge wand
+		"wand_lob", "wand_lob", "wand_lob", "wand_lob", "wand_lob", --lob wand
 		--rest of items are non "junk", put one of each since they should be rare to get a specific item, but there's so many different ones it isn't rare to find non junk
-		400, 400, 400, 401, 401, 401, 402, 402, 402, 403, 403, 403, --power band, def scarf, etc
-		300, 301, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, --some assorted bands and scarfs
-		317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 404, 405, --assorted hold items
-		453 --ability capsule
+		"power_band", "power_band", "power_band", "special_band", "special_band", "special_band", "defense_scarf", "defense_scarf", "defense_scarf", "zinc_band", "zinc_band", "zinc_band", --power band, def scarf, etc
+		"held_friend_bow", "held_pierce_band", "held_mobile_scarf", "held_pass_scarf", "held_warp_scarf", "held_trap_scarf", "held_grip_claw", "held_binding_band", "held_twist_band", "held_metronome", "held_shed_shell", "held_shell_bell", "held_scope_lens", "held_wide_lens", "held_heal_ribbon", --some assorted bands and scarfs
+		"held_sticky_barb", "held_choice_band", "held_choice_specs", "held_choice_scarf", "held_assault_vest", "held_life_orb", "held_toxic_orb", "held_flame_orb", "held_iron_ball", "held_ring_target", "held_black_sludge", "held_x_ray_specs", "reunion_cape", "held_cover_band", "held_big_root", "held_expert_belt", --assorted hold items
+		"machine_ability_capsule" --ability capsule
 	}
 	
-	if SV.DailyFlags.GreenMerchantItem == -1 then 
+	if SV.DailyFlags.GreenMerchantItem == "" then 
 		SV.DailyFlags.GreenMerchantItem = math.random(1, #merchant_catalog)
 	end
 	
@@ -1425,7 +1425,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 	
 	local item = RogueEssence.Dungeon.InvItem(merchant_catalog[SV.DailyFlags.GreenMerchantItem])
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
-	item.HiddenValue = itemEntry.MaxStack
+	item.Amount = itemEntry.MaxStack
 	local itemName = item:GetDisplayName()
 	local itemPrice = item:GetSellValue()
 	local merchant_choices = {STRINGS:Format(MapStrings['Merchant_Option_Deal']), STRINGS:FormatKey('MENU_INFO'), STRINGS:FormatKey('MENU_EXIT')}
@@ -1486,7 +1486,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 					else
 						SV.DailyFlags.GreenMerchantBought = true
 						GAME:RemoveFromPlayerMoney(itemPrice)
-						GAME:GivePlayerItem(item.ID, 1, false, itemEntry.MaxStack)
+						GAME:GivePlayerItem(item.ID, itemEntry.MaxStack)
 						SOUND:PlayBattleSE("DUN_Money")
 						UI:SetSpeakerEmotion("Happy")
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Purchase_Made'], itemName))
@@ -1727,10 +1727,10 @@ function metano_town.Swap_Action(obj, activator)
 				--local bag_count = GAME:GetPlayerBagCount()
 				--local bag_cap = GAME:GetPlayerBagLimit()
 				--if bag_count < bag_cap then
-				--	GAME:GivePlayerItem(trade.Item, 1, false, 0)
+				--	GAME:GivePlayerItem(trade.Item, 1)
 				--else--TODO: load universal strings alongside local strings
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Item_Give_Storage'], receive_item:GetDisplayName()))
-				GAME:GivePlayerStorageItem(trade.Item, 1, false, 0)
+				GAME:GivePlayerStorageItem(trade.Item, 1)
 				--end
 				
 				UI:SetSpeaker(chara)
@@ -1947,7 +1947,7 @@ function metano_town.Appraisal_Action(obj, activator)
   UI:SetSpeaker(chara)
 	while state > -1 do
 		if state == 0 then
-			local msg = STRINGS:Format(MapStrings['Appraisal_Intro'])
+			local msg = STRINGS:Format(MapStrings['Appraisal_Intro'], STRINGS:FormatKey("MONEY_AMOUNT", price))
 			if repeated == true then
 				msg = STRINGS:Format(MapStrings['Appraisal_Return'])
 			end
@@ -1959,7 +1959,7 @@ function metano_town.Appraisal_Action(obj, activator)
 			local result = UI:ChoiceResult()
 			repeated = true
 			if result == 1 then
-				local bag_count = GAME:GetPlayerBagCount()
+				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				if bag_count > 0 then
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Choose'], "A"))
 					state = 1
@@ -1970,7 +1970,7 @@ function metano_town.Appraisal_Action(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Info_001']))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Info_002']))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Info_003']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Info_004']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Info_004'], STRINGS:FormatKey("MONEY_AMOUNT", price)))
 			else
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Goodbye']))
 				state = -1
@@ -1990,9 +1990,7 @@ function metano_town.Appraisal_Action(obj, activator)
 			local total = #cart * price
 			
 			if total > GAME:GetPlayerMoney() then
-				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_No_Money']))
-				UI:SetSpeakerEmotion('Normal')
 				state = 1
 			else
 				local msg
@@ -2003,9 +2001,9 @@ function metano_town.Appraisal_Action(obj, activator)
 					else
 						item = GAME:GetPlayerBagItem(cart[1].Slot)
 					end
-					msg = STRINGS:Format(MapStrings['Appraisal_Choose_One'], total, item:GetDisplayName())
+					msg = STRINGS:Format(MapStrings['Appraisal_Choose_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), item:GetDisplayName())
 				else
-					msg = STRINGS:Format(MapStrings['Appraisal_Choose_Multi'], total)
+					msg = STRINGS:Format(MapStrings['Appraisal_Choose_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
 				end
 				UI:ChoiceMenuYesNo(msg, false)
 				UI:WaitForChoice()
@@ -2024,34 +2022,29 @@ function metano_town.Appraisal_Action(obj, activator)
 							GAME:TakePlayerBagItem(cart[ii].Slot)
 						end
 						
-						local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(box.HiddenValue)
+						local itemEntry = _DATA:GetItem(box.HiddenValue)
 						local treasure_choice = { Box = box, Item = RogueEssence.Dungeon.InvItem(box.HiddenValue,false,itemEntry.MaxStack)}
 						table.insert(treasure, treasure_choice)
+						
+						-- note high rarity items
+						if itemEntry.Rarity > 0 then
+							SV.unlocked_trades[box.HiddenValue] = true
+						end
 					end
 					SOUND:PlayBattleSE("DUN_Money")
 					GAME:RemoveFromPlayerMoney(total)
 					cart = {}
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Start']))
 					
-					--Sneasel should ready himself, then scratch once for each box he has to open
-				
-					
-					GROUND:CharAnimateTurnTo(chara, Direction.Up, 5)
-					GROUND:CharSetAnim(chara, 'Charge', true)
-					GAME:WaitFrames(60)
-					
-					--Do a fury swipes for each box we gotta open
-					for i=1,(total / price),1
-					do
-						GROUND:CharSetAnim(chara, 'MultiScratch', false)
-						SOUND:PlayBattleSE('DUN_Fury_Swipes')
-						GAME:WaitFrames(30)
-					end
-						
-					GROUND:CharSetAnim(chara, "None", true)
-					GAME:WaitFrames(20)
-					GROUND:CharAnimateTurnTo(chara, Direction.Down, 5)
+					GROUND:MoveInDirection(chara, Direction.Up, 18, false, 2)
+					GROUND:Hide("Appraisal_Owner")
 					GAME:WaitFrames(10)
+					local shake = RogueEssence.Content.ScreenMover(0, 8, 30)
+					GROUND:MoveScreen(shake)
+					SOUND:PlayBattleSE("DUN_Explosion")
+					GAME:WaitFrames(60)
+					GROUND:Unhide("Appraisal_Owner")
+					GROUND:MoveInDirection(chara, Direction.Down, 18, false, 2)
 					
 					SOUND:PlayFanfare("Fanfare/Treasure")
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_End']))
@@ -2060,7 +2053,8 @@ function metano_town.Appraisal_Action(obj, activator)
 					
 					for ii = 1, #treasure, 1 do
 						local item = treasure[ii].Item
-						GAME:GivePlayerItem(item.ID, 1, false, item.HiddenValue)
+						
+						GAME:GivePlayerItem(item.ID, item.Amount, false, item.HiddenValue)
 					end
 					
 					state = 0

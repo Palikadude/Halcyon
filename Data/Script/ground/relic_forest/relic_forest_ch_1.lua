@@ -399,7 +399,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 				PartnerSecondFloorDialogue = 0
 			}
 		SV.ChapterProgression.Chapter = 2
-		GAME:GivePlayerItem(2502, 2, false, 0)--give 2 vibrant scarves
+		GAME:GivePlayerItem("synergy_scarf", 2)--give 2 vibrant scarves
 		_DATA.Save.ActiveTeam:SetRank("normal")
 		GAME:CutsceneMode(false)
 		SOUND:FadeOutBGM(120)

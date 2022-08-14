@@ -37,7 +37,7 @@ function water_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	
 	--flag zone 56 as last dojo zone
-	SV.Dojo.LastZone = 56
+	SV.Dojo.LastZone = "water_maze"
 
 	
 	--Failed to clear

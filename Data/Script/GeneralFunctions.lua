@@ -15,9 +15,9 @@ If it's nil then don't add them back. Set it to nil after adding them back
 function GeneralFunctions.UpdateDailyFlags()
 	SV.DailyFlags = 
 	{
-	  RedMerchantItem = -1,
+	  RedMerchantItem = "",
 	  RedMerchantBought = false,
-	  GreenMerchantItem = -1,
+	  GreenMerchantItem = "",
 	  GreenMerchantBought = false,
 	  
 	  GreenKecleonRefreshedStock = false,
@@ -836,7 +836,7 @@ function GeneralFunctions.SendInvToStorage()
 end
 
 --used to reward items to the player, sends the item to storage if inv is full
-function GeneralFunctions.RewardItem(itemID, money, hiddenValue)
+function GeneralFunctions.RewardItem(itemID, money, amount)
 	--if money is true, the itemID is instead the amount of money to award
 	if money == nil then money = false end 
 	
@@ -852,18 +852,18 @@ function GeneralFunctions.RewardItem(itemID, money, hiddenValue)
 	else	
 		local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(itemID)
 		
-		if hiddenValue == nil then hiddenValue = itemEntry.MaxStack end 
+		if amount == nil then amount = itemEntry.MaxStack end 
 
-		local item = RogueEssence.Dungeon.InvItem(itemID, false, hiddenValue)
+		local item = RogueEssence.Dungeon.InvItem(itemID, false, amount)
 
 		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".[pause=40]") 
 		
 		--bag is full
 		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
 			UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
-			GAME:GivePlayerStorageItem(item.ID, 1, false, hiddenValue)
+			GAME:GivePlayerStorageItem(item.ID, amount)
 		else
-			GAME:GivePlayerItem(item.ID, 1, false, hiddenValue)
+			GAME:GivePlayerItem(item.ID, amount)
 		end
 	
 	end

@@ -100,7 +100,7 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 		if result == 1 then
 			item1 = RogueEssence.Dungeon.InvItem("oran_berry")--oran berry 
 			item2 = RogueEssence.Dungeon.InvItem("ammo_stick")--stick
-			item2.HiddenValue = 5
+			item2.Amount = 5
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		elseif result == 2 then
@@ -169,7 +169,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 	
 	-- special is -1 if nothing has been selected as the daily special. It should be set back to -1 when a new day happens
 	--but more ideally it should just be reinitialized when a new day happens. I just need to figure out how to do that properly
-	if SV.metano_cafe.CafeSpecial == "" then 
+	if SV.metano_cafe.CafeSpecial == -1 then 
 		SV.metano_cafe.CafeSpecial = GAME.Rand:Next(1, #specials_catalog)
 	end
 	
@@ -202,7 +202,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bag_Full'], CharacterEssentials.GetCharacterName('Kangaskhan')))
 			state = -1 --don't go to normal dialogue if he cant give you the fermented item.
 		else
-			GAME:GivePlayerItem(juice.ID, 1, false, juiceEntry.MaxStack)
+			GAME:GivePlayerItem(juice.ID, juiceEntry.MaxStack)
 			SV.metano_cafe.FermentedItem = ""
 			SV.metano_cafe.ItemFinishedFermenting = false
 			SOUND:PlayBattleSE("DUN_Drink")
@@ -238,7 +238,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 				local ferment_item = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
 				local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(SV.metano_cafe.FermentedItem)
 				
-				if ferment_item_entry.MaxStack > 1 then ferment_item.HiddenValue = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
+				if ferment_item_entry.MaxStack > 1 then ferment_item.Amount = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
 				
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Already_Fermenting'], ferment_item:GetDisplayName()))
 				ferment_state = -1
@@ -274,7 +274,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 					local ferment_item = RogueEssence.Dungeon.InvItem(item_to_ferment)
 					local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(item_to_ferment)--need item entry to get maxstack.
 			
-					if ferment_item_entry.MaxStack > 1 then ferment_item.HiddenValue = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
+					if ferment_item_entry.MaxStack > 1 then ferment_item.Amount = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
 				
 					--if we have the ingredients, set the fermented item to the one requested and let the player know.
 					if metano_cafe.CheckForItems(recipe_list) then 
@@ -335,7 +335,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 					else
 						SV.metano_cafe.BoughtSpecial = true
 						GAME:RemoveFromPlayerMoney(specialPrice)
-						GAME:GivePlayerItem(special.ID, 1, false, 0)
+						GAME:GivePlayerItem(special.ID, 1)
 						SOUND:PlayBattleSE("DUN_Money")
 						UI:SetSpeakerEmotion("Happy")
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Special_Complete'], specialName))
@@ -402,7 +402,7 @@ function metano_cafe.CheckForItems(itemList)
 		for j=0, bag_count-1, 1 do
 			item = GAME:GetPlayerBagItem(j)
 			item_entry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
-			if item_entry.MaxStack > 1 then stack_count = item.HiddenValue else stack_count = 1 end
+			if item_entry.MaxStack > 1 then stack_count = item.Amount else stack_count = 1 end
 			if item.ID == recipe_item then
 				togo = togo - stack_count --subtract from the needed items by the stack count. This can go negative, which is fine.
 			end
@@ -438,16 +438,16 @@ function metano_cafe.RemoveItems(itemList)
 		for j=bag_count-1 , 0, -1 do
 			item = GAME:GetPlayerBagItem(j)
 			item_entry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
-			if item_entry.MaxStack > 1 then stack_count = item.HiddenValue else stack_count = 1 end
+			if item_entry.MaxStack > 1 then stack_count = item.Amount else stack_count = 1 end
 			if item.ID == recipe_item then
 				if item_entry.MaxStack <= 1 then 
 					GAME:TakePlayerBagItem(j)
 				else
-					if item.HiddenValue > togo then--check if the stackable item needs to be deleted, or just subtracted from.
+					if item.Amount > togo then--check if the stackable item needs to be deleted, or just subtracted from.
 						--remove from the player's bag item stack but not fully.
-						item.HiddenValue = stack_count - togo
+						item.Amount = stack_count - togo
 					else
-						print(item.HiddenValue)
+						print(item.Amount)
 						print(j)
 						GAME:TakePlayerBagItem(j)
 					end

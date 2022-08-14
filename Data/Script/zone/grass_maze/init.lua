@@ -37,7 +37,7 @@ function grass_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	
 	--flag zone 54 as last dojo zone
-	SV.Dojo.LastZone = 54
+	SV.Dojo.LastZone = "grass_maze"
 
 	
 	--Failed to clear

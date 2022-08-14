@@ -37,7 +37,7 @@ function normal_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	
 	--flag zone 52 as last dojo zone
-	SV.Dojo.LastZone = 52
+	SV.Dojo.LastZone = "normal_maze"
 
 	
 	--failed or gave up on the initial training

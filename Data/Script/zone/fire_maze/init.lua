@@ -37,7 +37,7 @@ function fire_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
 	
 	
 	--flag zone 55 as last dojo zone
-	SV.Dojo.LastZone = 55
+	SV.Dojo.LastZone = "fire_maze"
 
 	
 	--Failed to clear
