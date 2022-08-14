@@ -44,7 +44,7 @@ function metano_town_ch_2.SetupGround()
 		
 		GAME:FadeIn(20)
 	elseif SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then 
-		GROUND:AddMapStatus(51)--dusk
+		GROUND:AddMapStatus("dusk")--dusk
 		local meditite, luxray, machamp, furret, wooper_girl, wooper_boy, electrike, lickitung, gulpin, nidorina, gloom, numel, 
 			  oddish, bellossom, floatzel, roselia, spinda, ludicolo, mawile, azumarill = 
 			CharacterEssentials.MakeCharactersFromList({

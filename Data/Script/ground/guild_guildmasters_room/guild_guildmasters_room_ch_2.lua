@@ -66,7 +66,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 													   "Window_Cutscene")
 	groundObj:ReloadEvents()
 	GAME:GetCurrentGround():AddTempObject(groundObj)
-	GROUND:AddMapStatus(50)
+	GROUND:AddMapStatus("darkness")
 	
 	GAME:WaitFrames(100)
 	GAME:FadeIn(40)

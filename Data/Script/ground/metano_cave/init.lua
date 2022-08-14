@@ -31,7 +31,7 @@ function metano_cave.Init(map, time)
 	PartnerEssentials.InitializePartnerSpawn()
 	GROUND:CharSetAnim(CH('Sunflora'), "None", true) --sunflora is not happy and so does not bounce around with her idle anim 
 
-	GROUND:AddMapStatus(50)--darkness
+	GROUND:AddMapStatus("darkness")--darkness
 
 end
 

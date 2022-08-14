@@ -136,7 +136,7 @@ function guild_heros_room.Bedtime(generic)
 													"Window_Cutscene")
 	groundObj:ReloadEvents()
 	GAME:GetCurrentGround():AddTempObject(groundObj)
-	GROUND:AddMapStatus(50)
+	GROUND:AddMapStatus("darkness")
 	SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
 	AI:DisableCharacterAI(CH('Teammate1'))
 
@@ -162,7 +162,7 @@ function guild_heros_room.Bedtime(generic)
 		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
 		SV.TemporaryFlags.Bedtime = false 
-		GROUND:RemoveMapStatus(50)
+		GROUND:RemoveMapStatus("darkness")
 		GAME:CutsceneMode(false)
 		GAME:GetCurrentGround():RemoveTempObject(groundObj)
 		GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1

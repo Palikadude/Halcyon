@@ -29,7 +29,7 @@ function metano_altere_transition.Init(map)
   MapStrings = COMMON.AutoLoadLocalizedStrings()
   COMMON.RespawnAllies()
   PartnerEssentials.InitializePartnerSpawn()
-  GROUND:AddMapStatus(6)
+  GROUND:AddMapStatus("cloudy")
 
 end
 

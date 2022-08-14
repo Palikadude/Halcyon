@@ -248,7 +248,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	--todo: create map effect for evening shading
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	GROUND:AddMapStatus(51)--dusk
+	GROUND:AddMapStatus("dusk")--dusk
 	GAME:CutsceneMode(true)
 	GROUND:Hide('East_Exit')--hide entrance prompt to go into relic forest 
 	AI:DisableCharacterAI(partner)

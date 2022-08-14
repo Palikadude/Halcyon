@@ -150,14 +150,14 @@ function guild_heros_room_ch_1.Bedtalk()
 	--UI:WaitShowDialogue("Alright.[pause=0] I'm enabling free roam now...[pause=0] Thanks again for playing!")
 	
 	--GAME:CutsceneMode(false)
-	GROUND:RemoveMapStatus(50)--Remove map status before saving the game, as saving with a map status saves it for the next load.
+	GROUND:RemoveMapStatus("darkness")--Remove map status before saving the game, as saving with a map status saves it for the next load.
 	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 --	GAME:WaitFrames(20)
 	--GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 	--[[GAME:CutsceneMode(false)
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)
-	GROUND:RemoveMapStatus(50)
+	GROUND:RemoveMapStatus("darkness")
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", false)
 	GROUND:
 	GAME:FadeIn(40)

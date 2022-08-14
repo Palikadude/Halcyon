@@ -30,7 +30,7 @@ function ledian_dojo.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 
-	GROUND:AddMapStatus(50)--darkness
+	GROUND:AddMapStatus("darkness")--darkness
 
 end
 

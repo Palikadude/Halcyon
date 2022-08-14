@@ -15,7 +15,7 @@ function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
   local baseLoc = _DUNGEON.ActiveTeam.Leader.CharLoc
   local tile = _ZONE.CurrentMap.Tiles[baseLoc.X][baseLoc.Y]
   
-  local thief_idx = 31
+  local thief_idx = "thief"
   
   local price = COMMON.GetDungeonCartPrice()
   local security_price = COMMON.GetShopPriceState()
@@ -58,7 +58,7 @@ function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
 	  GAME:WaitFrames(60)
 	end
   else
-    local shop_idx = 37
+    local shop_idx = "shopping"
 	if not _ZONE.CurrentMap.Status:ContainsKey(thief_idx) and not _ZONE.CurrentMap.Status:ContainsKey(shop_idx) then
 	  
 	  local shop_status = RogueEssence.Dungeon.MapStatus(shop_idx)
@@ -166,7 +166,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, character, args)
   UI:WaitShowDialogue("Wanted outlaw spotted!")
   
   -- add a map status for outlaw clear check
-  local checkClearStatus = 35 -- outlaw clear check
+  local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
   local status = RogueEssence.Dungeon.MapStatus(checkClearStatus)
   status:LoadFromData()
   TASK:WaitTask(_DUNGEON:AddMapStatus(status))
@@ -193,7 +193,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, character, args)
   if not remaining_outlaw then
     -- if no outlaws are found in the map, return music to normal and remove this status from the map
     SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
-    local checkClearStatus = 35 -- outlaw clear check
+    local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
 	TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
   end
 end

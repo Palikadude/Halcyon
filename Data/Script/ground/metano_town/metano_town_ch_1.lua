@@ -212,7 +212,7 @@ function metano_town_ch_1.EnterGuild()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	local growlithe = CH('Growlithe')
-	GROUND:AddMapStatus(51)--dusk
+	GROUND:AddMapStatus("dusk")--dusk
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	GROUND:Hide("Green_Merchant")--hide merchants 

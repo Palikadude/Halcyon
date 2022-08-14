@@ -8,7 +8,7 @@ altere_pond_ch_2 = {}
 function altere_pond_ch_2.SetupGround()
 	--prevent player from going into relic forest during chapter 2
 	if not SV.Chapter2.FinishedFirstDay then 
-		GROUND:AddMapStatus(51)--set dusk if first day
+		GROUND:AddMapStatus("dusk")--set dusk if first day
 	end
 	
 	local forestBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 

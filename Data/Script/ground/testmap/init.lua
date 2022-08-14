@@ -31,7 +31,7 @@ function testmap.Init(map, time)
 	--AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
    -- chara.CollisionDisabled = true
 	
-	--GROUND:AddMapStatus(50)
+	--GROUND:AddMapStatus("darkness")
 
 end
 

@@ -11,7 +11,7 @@ metano_altere_transition_ch_1 = {}
 function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	GROUND:AddMapStatus(51)--dusk
+	GROUND:AddMapStatus("dusk")--dusk
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[50]
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)

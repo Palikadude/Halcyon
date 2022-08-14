@@ -17,7 +17,7 @@ function metano_town.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-	GROUND:AddMapStatus(6)
+	GROUND:AddMapStatus("cloudy")
 	
 		
 	--if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
