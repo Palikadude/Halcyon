@@ -417,7 +417,7 @@ end
 
 function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if context.User.EquippedItem.ID == 2502 then 
+	if context.User.EquippedItem.ID == "synergy_scarf" then 
 		--print("Atk " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
 		context:AddContextStateMult(dmgmult, false, 11, 10)
@@ -427,7 +427,7 @@ end
 
 function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if context.Target.EquippedItem.ID == 2502 then 
+	if context.Target.EquippedItem.ID == "synergy_scarf" then 
 		--print("Def " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
 		context:AddContextStateMult(dmgmult, false, 9, 10)

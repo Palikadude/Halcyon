@@ -1,9 +1,9 @@
 require 'common'
 
-beginner_lesson = {}
+beginner_lesson_evt = {}
 
 --ledian is the 3rd party member
-function beginner_lesson.FindLedian()
+function beginner_lesson_evt.FindLedian()
 --this check is needed as Ledian joins the team for floor 4 to allow team mode to work
 	if GAME:GetPlayerGuestCount() == 0 then 
 		return GAME:GetPlayerPartyMember(1)
@@ -17,9 +17,9 @@ end
 --ownerChar is the character that has the particular status/item/ability/whatever. Whoever has the lefties.
 --character is the character with the item/ability/status. Whoever has the lefties, they are the target of the effect
 --args is a list of arguments passed to the script (see the arg table in the SingleCharScriptEvent effect)
-function beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
+function beginner_lesson_evt.Floor_1_Intro(owner, ownerChar, character, args)
 	--progression flag is the number of speeches given by ledian. the functions in this document follow the order they're given in the dungeon
-	local chara = beginner_lesson.FindLedian()
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Welcome to the dojo's learning area![pause=0] It is time for your first lesson!")
 	UI:WaitShowDialogue("Hoiyah![pause=0] On this floor you will learn much about the basics of dungeon crawling!")
@@ -30,8 +30,8 @@ function beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
 	SV.Tutorial.Progression = 1
 end
 
-function beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
-	local chara = beginner_lesson.FindLedian()
+function beginner_lesson_evt.Floor_2_Intro(owner, ownerChar, character, args)
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] On this floor you will learn about different status effects you will encounter on your journeys!")
 	UI:WaitShowDialogue("Status effects are buffs or debuffs that affect a Pokémon's ability to battle!")
@@ -40,7 +40,7 @@ function beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
 end
 
 
-function beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
+function beginner_lesson_evt.Floor_3_Intro(owner, ownerChar, character, args)
 	local hero = GAME:GetPlayerPartyMember(0)
 	if SV.Tutorial.Progression == 3 then --set hunger and belly to 0 if ledian already cut hunger but you haven't passed the trial yet
 		--set player hp to half, belly to 0
@@ -48,7 +48,7 @@ function beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
 		hero.Fullness = 0
 	end
 	
-	local chara = beginner_lesson.FindLedian()
+	local chara = beginner_lesson_evt.FindLedian()
 	if SV.Tutorial.Progression == 2 then 
 		chara.CharDir = Direction.Up
 	end
@@ -86,8 +86,8 @@ function beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
 	SV.Tutorial.Progression = 3
 end
 
-function beginner_lesson.Floor_3_Wand_Speech(owner, ownerChar, character, args)
-	local chara = beginner_lesson.FindLedian()
+function beginner_lesson_evt.Floor_3_Wand_Speech(owner, ownerChar, character, args)
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Now it is time to learn about wands and orbs!")
 	UI:WaitShowDialogue("They are versatile items that can manipulate enemies or serve utility![pause=0] Useful against foes you wish not to fight.")
@@ -98,8 +98,8 @@ function beginner_lesson.Floor_3_Wand_Speech(owner, ownerChar, character, args)
 	SV.Tutorial.Progression = 4
 end
 
-function beginner_lesson.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
-	local chara = beginner_lesson.FindLedian()
+function beginner_lesson_evt.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Great work so far my student![pause=0] It is now time to learn about held items!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Items such as bands and scarves may be given to a Pokémon to gain useful effects!")
@@ -109,8 +109,8 @@ function beginner_lesson.Floor_3_HeldItem_Speech(owner, ownerChar, character, ar
 	SV.Tutorial.Progression = 5
 end 
 
-function beginner_lesson.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
-	local chara = beginner_lesson.FindLedian()
+function beginner_lesson_evt.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Some items such as Sticks and Gravelerock are to be thrown at opponents to deal damage!")
 	UI:WaitShowDialogue("They are useful for damaging enemies that are far away from you![pause=0] Be sure not to throw them at teammates!")
@@ -123,7 +123,7 @@ function beginner_lesson.Floor_3_ThrownReviver_Speech(owner, ownerChar, characte
 	SV.Tutorial.Progression = 6
 end 
 
-function beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
+function beginner_lesson_evt.Floor_4_Intro(owner, ownerChar, character, args)
 	--move ledian into the actual team for the team mode section 
 	if SV.Tutorial.Progression < 7 then
 		p = GAME:GetPlayerGuestMember(0)
@@ -134,7 +134,7 @@ function beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
 		_DUNGEON:RegenerateTurnMap()
 	end
 	
-	local chara = beginner_lesson.FindLedian()
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This floor will teach you about terrain types you will encounter in dungeons!")
 	UI:WaitShowDialogue("Terrain includes obstacles such as water, lava, and walls!")
@@ -142,8 +142,8 @@ function beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
 	SV.Tutorial.Progression = 7
 end
 
-function beginner_lesson.Floor_4_Key_Speech(owner, ownerChar, character, args)
-	local chara = beginner_lesson.FindLedian()
+function beginner_lesson_evt.Floor_4_Key_Speech(owner, ownerChar, character, args)
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Time for this floor's trial![pause=0] I have joined your party for this one!")
 	UI:WaitShowDialogue("There are keys across different types of terrains in this next room!")
@@ -152,7 +152,7 @@ function beginner_lesson.Floor_4_Key_Speech(owner, ownerChar, character, args)
 	SV.Tutorial.Progression = 8
 end 
 
-function beginner_lesson.Floor_5_Intro(owner, ownerChar, character, args)
+function beginner_lesson_evt.Floor_5_Intro(owner, ownerChar, character, args)
 	--move Ledian back to the guest table
 	if SV.Tutorial.Progression < 9 then
 		p = GAME:GetPlayerPartyMember(1)
@@ -163,7 +163,7 @@ function beginner_lesson.Floor_5_Intro(owner, ownerChar, character, args)
 		_DUNGEON:RegenerateTurnMap()
 	end
 	
-	local chara = beginner_lesson.FindLedian()
+	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This is the last floor![pause=0] Your final trial lies ahead!")
 	UI:WaitShowDialogue("Use the apricorns to recruit the correct volunteer,[pause=10] and have him bust open the path to the stairs!")

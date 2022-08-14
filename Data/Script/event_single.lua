@@ -303,38 +303,38 @@ function BeginnerLessonSpeechHelper(owner, ownerChar, character, args)
 	if SV.Tutorial.Progression ~= -1  and args.Speech > SV.Tutorial.Progression then GAME:WaitFrames(20) end 
 	
 	if args.Speech == 1 and SV.Tutorial.Progression < 1 then
-		beginner_lesson.Floor_1_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_1_Intro(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)--prevent mashing causing you to accidentially speak to Ledian or attack the air
 	elseif args.Speech == 2 and SV.Tutorial.Progression < 2 then
-		beginner_lesson.Floor_2_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_2_Intro(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 3 and SV.Tutorial.Progression < 3 then
-		beginner_lesson.Floor_3_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_Intro(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 4 and SV.Tutorial.Progression < 4 then
-		beginner_lesson.Floor_3_Wand_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_Wand_Speech(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 5 and SV.Tutorial.Progression < 5 then
-		beginner_lesson.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 6 and SV.Tutorial.Progression < 6 then
-		beginner_lesson.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 7 and SV.Tutorial.Progression < 7 then
-		beginner_lesson.Floor_4_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_4_Intro(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 8 and SV.Tutorial.Progression < 8 then
-		beginner_lesson.Floor_4_Key_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_4_Key_Speech(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 9 and SV.Tutorial.Progression < 9 then
-		beginner_lesson.Floor_5_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_5_Intro(owner, ownerChar, character, args)
 		GAME:WaitFrames(20)
 	end
 end
 
 --Make sure target character is holding the Band of Passage or they will be warped away
 function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, character, args)
-	if character ~= GAME:GetPlayerGuestMember(0) and character.EquippedItem.ID ~= 2503 then--band of passage. Ledian is allowed to pass no matter what
+	if character ~= GAME:GetPlayerGuestMember(0) and character.EquippedItem.ID ~= "band_of_passage" then--band of passage. Ledian is allowed to pass no matter what
 		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem("band_of_passage"):GetDisplayName()))
 		GAME:WaitFrames(40)
 		TASK:WaitTask(_DUNGEON:PointWarp(character, RogueElements.Loc(18, 18), true)) --warp them to the specified x18, y18 tile with a message saying they warped

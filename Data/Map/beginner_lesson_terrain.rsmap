@@ -9973,7 +9973,7 @@
 },
 {
 "Data": {
-"ID": "poison_water",
+"ID": "water_poison",
 "TileTex": {
 "AutoTileset": "poison_maze_secondary",
 "Associates": [],
@@ -17421,7 +17421,7 @@
 },
 {
 "Data": {
-"ID": "poison_water",
+"ID": "water_poison",
 "TileTex": {
 "AutoTileset": "poison_maze_secondary",
 "Associates": [],
@@ -17444,7 +17444,7 @@
 },
 {
 "Data": {
-"ID": "poison_water",
+"ID": "water_poison",
 "TileTex": {
 "AutoTileset": "poison_maze_secondary",
 "Associates": [],
