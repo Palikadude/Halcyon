@@ -162,7 +162,7 @@
 <DefaultSkill>attack</DefaultSkill>
 <DefaultMonster>missingno</DefaultMonster>
 <StartMap>
-  <Zone>backup_master_zone</Zone>
+  <Zone>master_zone</Zone>
   <Segment>-1</Segment>
   <ID>0</ID>
   <Entry>0</Entry>

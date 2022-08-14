@@ -15,7 +15,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	
 	
 	--initialize some save data
-	_DATA.Save.ActiveTeam:SetRank("none")
+	_DATA.Save.ActiveTeam:SetRank("unranked")
 	_DATA.Save.ActiveTeam.Money = 0
 	_DATA.Save.ActiveTeam.Bank = 0
 	_DATA.Save.NoSwitching = true--switching is not allowed
