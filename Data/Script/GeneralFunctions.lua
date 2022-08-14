@@ -878,7 +878,7 @@ function GeneralFunctions.GetFavoriteGummi(chara)
 	local mon = _DATA:GetMonster(chara.CurrentForm.Species)
 	local forme = mon.Forms[chara.CurrentForm.Form]
 	local typing = forme.Element1
-	if forme.Element2 ~= 0 then
+	if forme.Element2 ~= "none" then
 		local rand = GeneralFunctions.RandBool()
 		if rand then typing = forme.Element2 end
 	end
