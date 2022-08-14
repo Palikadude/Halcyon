@@ -106,55 +106,55 @@ function relic_forest_ch_1.Intro_Cutscene()
 					
 	--not all moves listed are egg moves. Sometimes, egg move choices are too over or under powered and so something else had to be chosen				
 	local egg_move_list = 
-		{[1] = 124, --Sludge bulbasaur
-		 [4] = 232, --metal claw, charmander 
-		 [7] = 196, --icy wind, squirtle		
-		 [25] = 574, --disarming voice, pikachu
-		 [37] = 541, --tail slap, vulpix and vulpix-a
-		 [52] = 492, --foul play, meowth
-		 [66] = 418, --bullet punch, machop
-		 [104] = 24, --double kick, cubone 
-		 [152] = 287, --refresh, chikorita
-		 [155] = 24, --double kick, cyndaquil 
-		 [158] = 453, --aqua jet, totodile
-		-- [228] = 422, --thunder fang, houndour
-		 [231] = 420, --ice shard, phanpy
-		-- [240] = 9, --thunder punch, magby
-		 --[246] = 442, --ironhead, larvitar
-		 [252] = 225,--dragon breath, treecko
-		 [255] = 67,--low kick, torchic
-		 [258] = 419, --avalanche, mudkip
-		 --[261] = 583, --play rough, poochyena
-		 --[280] = 425, --shadow sneak, ralts
-		 [300] = 428, --zen headbutt, skitty 
-		 [387] = 328, --sand tomb, turtwig
-		 [390] = 9, --thunder punch, chimchar
-		 [393] = 196, --icy wind, piplup
-		 [403] = 423, --icy fang, shinx 
-		 --[418] = 210, --fury cutter, buizel 
-		 [446] = 428, --zen headbutt, munchlax
-		 [447] = 418, --bullet punch, riolu
-		 [495] = 239, --twister, snivy 
-		 [501] = 372, --assurance, oshawatt
-		 --[506] = 424, --fire fang, lillipup
-		 [570] = 383, --copycat, zorua 
-		 --[572] = 401, --aqua tail, minccino
-		 --[582] = 352, --water pulse, vanillite 
-		 --[619] = 282, --knock off, mienfoo
-		 [650] = 612, --power up punch, chespin
-		 [653] = 273, --wish, fennekin
-		 [656] = 300, --mud sport froakie 
-		 [672] = 428, --zen headbutt, Skiddo
-		 --[677] = 274, --assist, espurr (also bad egg moves)
-		 --[698] = 429, --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
-		 --[714] = 366, --tailwind, noibat
-		 [722] = 109, --Confuse Ray, rowlet
-		 [725] = 279, --revenge, litten 
-		 [744] = 422, --thunder fang, rockruff
-		 --[753] = 311, --weather ball, fomantis
-		 [813] = 372, --assurance, scorbunny
-		 --[831] = 68, --counter, wooloo
-		 [835] = 488} --flame charge, yamper
+		{[1] = "sludge", --Sludge bulbasaur
+		 [4] = "metal_claw", --metal claw, charmander 
+		 [7] = "icy_wind", --icy wind, squirtle		
+		 [25] = "disarming_voice", --disarming voice, pikachu
+		 [37] = "tail_slap", --tail slap, vulpix and vulpix-a
+		 [52] = "foul_play", --foul play, meowth
+		 [66] = "bullet_punch", --bullet punch, machop
+		 [104] = "double_kick", --double kick, cubone 
+		 [152] = "refresh", --refresh, chikorita
+		 [155] = "double_kick", --double kick, cyndaquil 
+		 [158] = "aqua_jet", --aqua jet, totodile
+		-- [228] = "thunder_fang", --thunder fang, houndour
+		 [231] = "ice_shard", --ice shard, phanpy
+		-- [240] = "thunder_punch", --thunder punch, magby
+		 --[246] = "iron_head", --ironhead, larvitar
+		 [252] = "dragon_breath",--dragon breath, treecko
+		 [255] = "low_kick",--low kick, torchic
+		 [258] = "avalanche", --avalanche, mudkip
+		 --[261] = "play_rough", --play rough, poochyena
+		 --[280] = "shadow_sneak", --shadow sneak, ralts
+		 [300] = "zen_headbutt", --zen headbutt, skitty 
+		 [387] = "sand_tomb", --sand tomb, turtwig
+		 [390] = "thunder_punch", --thunder punch, chimchar
+		 [393] = "icy_wind", --icy wind, piplup
+		 [403] = "ice_fang", --icy fang, shinx 
+		 --[418] = "fury_cutter", --fury cutter, buizel 
+		 [446] = "zen_headbutt", --zen headbutt, munchlax
+		 [447] = "bullet_punch", --bullet punch, riolu
+		 [495] = "twister", --twister, snivy 
+		 [501] = "assurance", --assurance, oshawatt
+		 --[506] = "fire_fang", --fire fang, lillipup
+		 [570] = "copycat", --copycat, zorua 
+		 --[572] = "aqua_tail", --aqua tail, minccino
+		 --[582] = "water_pulse", --water pulse, vanillite 
+		 --[619] = "knock_off", --knock off, mienfoo
+		 [650] = "power_up_punch", --power up punch, chespin
+		 [653] = "wish", --wish, fennekin
+		 [656] = "mud_sport", --mud sport froakie 
+		 [672] = "zen_headbutt", --zen headbutt, Skiddo
+		 --[677] = "assist", --assist, espurr (also bad egg moves)
+		 --[698] = "mirror_shot", --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
+		 --[714] = "tailwind", --tailwind, noibat
+		 [722] = "confuse_ray", --Confuse Ray, rowlet
+		 [725] = "revenge", --revenge, litten 
+		 [744] = "thunder_fang", --thunder fang, rockruff
+		 --[753] = "weather_ball", --weather ball, fomantis
+		 [813] = "assurance", --assurance, scorbunny
+		 --[831] = "counter", --counter, wooloo
+		 [835] = "flame_charge"} --flame charge, yamper
 		 
 	
 	local continue = false 
@@ -202,7 +202,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	local mon_id = hero_choice
 	mon_id.Gender = gender
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, ability, 0))
-	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(0), 3) ~= -1 then 
+	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(0), 3) ~= "" then 
 		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(0), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
 	else 
 		GAME:LearnSkill(GAME:GetPlayerPartyMember(0), egg_move_list[mon_id.Species])
@@ -277,7 +277,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	mon_id = partner_choice
 	mon_id.Gender = gender
 	_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, ability, 0))--dunno what the -1 and 0 are exactly...
-	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(1), 3) ~= -1 then 
+	if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(1), 3) ~= "" then 
 		GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(1), egg_move_list[mon_id.Species], 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
 	else 
 		GAME:LearnSkill(GAME:GetPlayerPartyMember(1), egg_move_list[mon_id.Species])

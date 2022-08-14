@@ -1785,7 +1785,7 @@ function metano_town.Tutor_Action(obj, activator)
   local state = 0
   local repeated = false
   local member = nil
-  local move = -1
+  local move = ""
   local hero = CH('PLAYER')
   local partner = CH('Teammate1')
   local chara = CH('Tutor_Owner')
