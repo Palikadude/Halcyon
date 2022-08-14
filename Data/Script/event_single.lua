@@ -335,11 +335,11 @@ end
 --Make sure target character is holding the Band of Passage or they will be warped away
 function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, character, args)
 	if character ~= GAME:GetPlayerGuestMember(0) and character.EquippedItem.ID ~= 2503 then--band of passage. Ledian is allowed to pass no matter what
-		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem(2503):GetDisplayName()))
+		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem("band_of_passage"):GetDisplayName()))
 		GAME:WaitFrames(40)
 		TASK:WaitTask(_DUNGEON:PointWarp(character, RogueElements.Loc(18, 18), true)) --warp them to the specified x18, y18 tile with a message saying they warped
 	elseif character ~= GAME:GetPlayerGuestMember(0) then --no messages or checks should be done on Ledian
-		_DUNGEON:LogMsg(STRINGS:Format("{0} has a {1} equipped and is allowed to pass!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem(2503):GetDisplayName()))
+		_DUNGEON:LogMsg(STRINGS:Format("{0} has a {1} equipped and is allowed to pass!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem("band_of_passage"):GetDisplayName()))
 	end
 end
 
@@ -398,7 +398,7 @@ function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, character, arg
 	  end 
     elseif args.Floor == 4 then
 	  if SV.Chapter1.TutorialProgression < 4 then
-	  	local apple  = RogueEssence.Dungeon.InvItem(1):GetDisplayName()
+	  	local apple  = RogueEssence.Dungeon.InvItem("apple"):GetDisplayName()
 	    SOUND:PlayFanfare("Fanfare/Note")
 	    UI:WaitShowDialogue("If you get hungry,[pause=10] eat an " .. apple .. ".[pause=0] If your Belly runs empty,[pause=10] you will slowly lose health until you faint or eat something!")
 		SV.Chapter1.TutorialProgression = 4

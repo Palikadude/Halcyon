@@ -115,7 +115,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
-	--local scarf_name = RogueEssence.Dungeon.InvItem(2502):GetDisplayName()
+	--local scarf_name = RogueEssence.Dungeon.InvItem("synergy_scarf"):GetDisplayName()
 	--have to hardcode this so I can have it say scarves instead of scarf
 	local scarf_name = STRINGS:Format('\\uE0AE')..'[color=#FFCEFF]Synergy Scarves[color]'
 	
@@ -518,7 +518,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(hero))
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(partner))
-	GeneralFunctions.RewardItem(350, true)
+	GeneralFunctions.RewardItem("evo_everstone", true)
 	
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	UI:SetSpeaker(partner)

@@ -27,7 +27,7 @@ function GeneralFunctions.UpdateDailyFlags()
 	}
 	
 	--finish fermenting any pending items if there are any
-	if SV.metano_cafe.FermentedItem ~= 1 then 
+	if SV.metano_cafe.FermentedItem ~= "" then 
 		SV.metano_cafe.ItemFinishedFermenting = true
 	end
 end 
@@ -883,24 +883,24 @@ function GeneralFunctions.GetFavoriteGummi(chara)
 		if rand then typing = forme.Element2 end
 	end
 	
-	local gummis = {80, --bug
-					77, --dark 
-					87, --dragon 
-					90, --electric 
-					93, --fairy 
-					82, --fighting 
-					86, --fire 
-					91, --flying 
-					85, --ghost
-					79, --grass 
-					81, --ground 
-					78, --ice 
-					89, --normal 
-					84, --poison
-					83, --psychic
-					92, --rock 
-					88,--steel 
-					76} --water 
+	local gummis = {bug = "green_gummi",
+					dark = "black_gummi", 
+					dragon = "royal_gummi", 
+					electric = "yellow_gummi", 
+					fairy = "magenta_gummi", 
+					fighting = "orange_gummi", 
+					fire = "red_gummi", 
+					flying = "sky_gummi", 
+					ghost = "purple_gummi",
+					grass = "grass_gummi", 
+					ground = "brown_gummi", 
+					ice = "clear_gummi", 
+					normal = "white_gummi", 
+					poison = "pink_gummi",
+					psychic = "gold_gummi",
+					rock = "gray_gummi", 
+					steel = "silver_gummi", 
+					water = "blue_gummi" }
 	
 	return gummis[typing]
 					

@@ -99,9 +99,9 @@ SV.metano_town =
 
 SV.metano_cafe =
 {
-  CafeSpecial = -1,
+  CafeSpecial = "",
   BoughtSpecial = false,
-  FermentedItem = -1, 
+  FermentedItem = "", 
   ItemFinishedFermenting = false
 }
 
@@ -249,17 +249,17 @@ SV.base_camp =
 }
 
 SV.base_shop = {
-	{ Index = 1, Hidden = 0, Price = 50},
-	{ Index = 2, Hidden = 0, Price = 150},
-	{ Index = 6, Hidden = 0, Price = 500},
-	{ Index = 9, Hidden = 0, Price = 80},
-	{ Index = 11, Hidden = 0, Price = 80}
+	{ Index = "food_apple", Amount = 0, Price = 50},
+	{ Index = "food_apple_big", Amount = 0, Price = 150},
+	{ Index = "food_banana", Amount = 0, Price = 500},
+	{ Index = "food_chestnut", Amount = 0, Price = 80},
+	{ Index = "berry_leppa", Amount = 0, Price = 80}
 }
 
 SV.base_trades = {
-	{ Item=902, ReqItem={-1,-1}},
-	{ Item=908, ReqItem={-1,-1}},
-	{ Item=914, ReqItem={-1,-1}}
+	{ Item="xcl_family_bulbasaur_02", ReqItem={"",""}},
+	{ Item="xcl_family_charmander_02", ReqItem={"",""}},
+	{ Item="xcl_family_squirtle_02", ReqItem={"",""}}
 }
 
 SV.base_town = 

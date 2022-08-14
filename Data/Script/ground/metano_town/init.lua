@@ -408,74 +408,73 @@ function metano_town.GenerateGreenKecleonStock()
 	
 	--total weight = 100
 	local food_stock = {
-		{1, 82}, --Apple
-		{76, 1}, --Blue Gummi
-		{77, 1}, --Black Gummi
-		{78, 1}, --Clear Gummi
-		{79, 1}, --Grass Gummi
-		{80, 1}, --Green Gummi
-		{81, 1}, --Brown Gummi
-		{82, 1}, --Orange Gummi
-		{83, 1}, --Gold Gummi
-		{84, 1}, --Pink Gummi
-		{85, 1}, --Purple Gummi
-		{86, 1}, --Red Gummi
-		{87, 1}, --Royal Gummi
-		{88, 1}, --Silver Gummi
-		{89, 1}, --White Gummi
-		{90, 1}, --Yellow Gummi
-		{91, 1}, --Sky Gummi
-		{92, 1}, --Gray Gummi
-		{93, 1}	--Magenta Gummi
+		{"apple", 82}, --Apple
+		{"blue_gummi", 1}, --Blue Gummi
+		{"black_gummi", 1}, --Black Gummi
+		{"clear_gummi", 1}, --Clear Gummi
+		{"grass_gummi", 1}, --Grass Gummi
+		{"green_gummi", 1}, --Green Gummi
+		{"brown_gummi", 1}, --Brown Gummi
+		{"orange_gummi", 1}, --Orange Gummi
+		{"gold_gummi", 1}, --Gold Gummi
+		{"pink_gummi", 1}, --Pink Gummi
+		{"purple_gummi", 1}, --Purple Gummi
+		{"red_gummi", 1}, --Red Gummi
+		{"royal_gummi", 1}, --Royal Gummi
+		{"silver_gummi", 1}, --Silver Gummi
+		{"white_gummi", 1}, --White Gummi
+		{"yellow_gummi", 1}, --Yellow Gummi
+		{"sky_gummi", 1}, --Sky Gummi
+		{"gray_gummi", 1}, --Gray Gummi
+		{"magenta_gummi", 1}	--Magenta Gummi
 	}
 	
 	--total weight = 120
 	local medicine_stock = {
-		{101, 10},--Reviver seed 
-		{108, 5}, --Warp Seed 
-		{110, 5}, --Sleep seed 
-		{111, 2}, --Vile seed 
-		{112, 8}, --Blast seed
+		{"reviver_seed", 10},--Reviver seed 
+		{"warp_seed", 5}, --Warp Seed 
+		{"sleep_seed", 5}, --Sleep seed 
+		{"vile_seed", 2}, --Vile seed 
+		{"blast_seed", 8}, --Blast seed
 		
-		{11, 25}, --Leppa berry 
+		{"leppa_berry", 25}, --Leppa berry 
 
 		
-		{10, 32}, --Oran berry
-		{12, 2}, --Lum berry 
-		{13, 6}, -- Cheri berry 
-		{14, 4}, -- Chesto berry 
-		{15, 8}, -- Pecha berry 
-		{16, 3}, -- Aspear berry 
-		{17, 4}, -- Rawst berry 
-		{18, 6} -- Persim berry 
+		{"oran_berry", 32}, --Oran berry
+		{"lum_berry", 2}, --Lum berry 
+		{"cheri_berry", 6}, -- Cheri berry 
+		{"chesto_berry", 4}, -- Chesto berry 
+		{"pecha_berry", 8}, -- Pecha berry 
+		{"aspear_berry", 3}, -- Aspear berry 
+		{"rawst_berry", 4}, -- Rawst berry 
+		{"persim_berry", 6} -- Persim berry 
 	}
 	
 	
 	local ammo_stock = 
 	{
-		{207, 50}, --Geo pebble 
-		{200, 50},--stick 
-		{203, 50}--iron thorn 
+		{"ammo_geo_pebble", 50}, --Geo pebble 
+		{"ammo_stick", 50},--stick 
+		{"ammo_iron_thorn", 50}--iron thorn 
 	}
 	
 	
 	local held_stock = {
-		{400, 10}, -- power band 
-		{401, 10}, --special band 
-		{402, 10}, --defense scarf 
-		{403, 10}, --Zinc band 
+		{"power_band", 10}, -- power band 
+		{"special_band", 10}, --special band 
+		{"defense_scarf", 10}, --defense scarf 
+		{"zinc_band", 10}, --Zinc band 
 		
-		{2504, 10}, --Pecha Scarf
-		{2505, 10}, --Cheri scarf 
-		{2506, 10}, --Rawst scarf 
-		{2507, 10}, --Aspear Scarf 
-		{2508, 10}, --Insomnia scope
-		{2509, 10}, --Persim Band
+		{"pecha_scarf", 10}, --Pecha Scarf
+		{"cheri_scarf", 10}, --Cheri scarf 
+		{"rawst_scarf", 10}, --Rawst scarf 
+		{"aspear_scarf", 10}, --Aspear Scarf 
+		{"insomniascope", 10}, --Insomnia scope
+		{"persim_band", 10}, --Persim Band
 		
-		{329, 2} --Reunion cape 
+		{"reunion_cape", 2} --Reunion cape 
 		
 	}
-	
 	
 	table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
 	table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
@@ -507,75 +506,70 @@ function metano_town.GeneratePurpleKecleonStock()
 	--total weight = 
 	--mostly meh TMs for early game 
 	local tm_stock = {
-		{587, 10},--secret power 
-		{588, 10},--embargo 
-		{589, 10},--echoed voice
-		{596, 5},--protect 
-		{598, 10},--roar 
-		{600, 10},--swagger 
-		{603, 10}, --facade 
-		{610, 10}, --payback 
-		{617, 2}, --dig 
-		{623, 10},--safeguard 
-		{625, 5}, --venoshock
-		{626, 5},--workup
-		{631, 5}, --thunder wave 
-		{632, 5},--return
-		{633, 5},--pluck 
-		{634, 5},--frustration
-		{638, 10},--thief 
-		{648, 2},--water pulse
-		{651, 2},--shock wave 
-		{670, 2},--incinerate 
-		{679, 4},--rock tomb 
-		{680, 10},--attract
-		{681, 8},--hidden power 
-		{682, 10},--taunt 
-		{689, 4},--grass knot 
-		{690, 2},--brick break 
-		{698, 5},--rest 
+		{"tm_secret_power", 10},--secret power 
+		{"tm_embargo", 10},--embargo 
+		{"tm_echoed_voice", 10},--echoed voice
+		{"tm_protect", 5},--protect 
+		{"tm_roar", 10},--roar 
+		{"tm_swagger", 10},--swagger 
+		{"tm_facade", 10}, --facade 
+		{"tm_payback", 10}, --payback 
+		{"tm_dig", 2}, --dig 
+		{"tm_safeguard", 10},--safeguard 
+		{"tm_venoshock", 5}, --venoshock
+		{"tm_work_up", 5},--workup
+		{"tm_thunder_wave", 5}, --thunder wave 
+		{"tm_return", 5},--return
+		{"tm_pluck", 5},--pluck 
+		{"tm_frustration", 5},--frustration
+		{"tm_thief", 10},--thief 
+		{"tm_water_pulse", 2},--water pulse
+		{"tm_shock_wave", 2},--shock wave 
+		{"tm_incinerate", 2},--incinerate 
+		{"tm_rock_tomb", 4},--rock tomb 
+		{"tm_attract", 10},--attract
+		{"tm_hidden_power", 8},--hidden power 
+		{"tm_taunt", 10},--taunt 
+		{"tm_grass_knot", 4},--grass knot 
+		{"tm_brick_break", 2},--brick break 
+		{"tm_rest", 5},--rest 
 	}
 	
 	--total weight = 
 	local wand_stock = {
-		{220, 10},--path wand 
-		{221, 10},--pounce wand 
-		{222, 10},--whirlwind wand 
-		{223, 10},--switcher wand 
-		{225, 10},--lure wand 
-		{226, 10},--slow wand 
-		{228, 10},--fear wand 
-		{231, 5},--topsy turvy wand 
-		{232, 5},--warp wand 
-		{233, 5},--purge wand 
-		{234, 10} --lob wand 
+		{"wand_path", 10},--path wand 
+		{"wand_pounce", 10},--pounce wand 
+		{"wand_whirlwind", 10},--whirlwind wand 
+		{"wand_switcher", 10},--switcher wand 
+		{"wand_lure", 10},--lure wand 
+		{"wand_slow", 10},--slow wand 
+		{"wand_fear", 10},--fear wand 
+		{"wand_topsy_turvy", 5},--topsy turvy wand 
+		{"wand_warp", 5},--warp wand 
+		{"wand_purge", 5},--purge wand 
+		{"wand_lob", 10} --lob wand 
 	}
 	
 	
 	local orb_stock = 
 	{
-		{250, 50},--escape orb 
-		{263, 10},--cleanse orb 
+		{"escape_orb", 50},--escape orb 
+		{"cleanse_orb", 10},--cleanse orb 
 		
-		{273, 10},--petrify orb 
-		{271, 10},--slumber orb 
-		{272, 10},--totter orb 
-		{261, 10},--scanner orb
-		{253, 10},--luminous orb
-		{275, 10},--spurn orb 
-		{276, 10},--foe hold orb 
-		{286, 10},--foe seal orb 
-		{288, 15},--rollcall orb 
-		{259, 5}, --trawl orb 
-		{258, 10},--all aim orb
-		{254, 5}, --invert orb 
-		{256, 5} --fill in orb
+		{"petrify_orb", 10},--petrify orb 
+		{"slumber_orb", 10},--slumber orb 
+		{"totter_orb", 10},--totter orb 
+		{"scanner_orb", 10},--scanner orb
+		{"luminous_orb", 10},--luminous orb
+		{"spurn_orb", 10},--spurn orb 
+		{"foe_hold_orb", 10},--foe hold orb 
+		{"foe_seal_orb", 10},--foe seal orb 
+		{"rollcall_orb", 15},--rollcall orb 
+		{"trawl_orb", 5}, --trawl orb 
+		{"all_aim_orb", 10},--all aim orb
+		{"invert_orb", 5}, --invert orb 
+		{"fill_in_orb", 5} --fill in orb
 	}
-		
-	
-
-		
-	
 	
 	
 	table.insert(stock, GeneralFunctions.WeightedRandom(tm_stock))
@@ -1551,42 +1545,42 @@ function metano_town.Swap_Action(obj, activator)
   
   --silk/dust/gem/globes
   local catalog = { 
-	{ Item=702, ReqItem={700,701}},
-	{ Item=703, ReqItem={700, 701, 702}},
-	{ Item=706, ReqItem={704,705}},
-	{ Item=707, ReqItem={704, 705, 706}},
-	{ Item=710, ReqItem={708,709}},
-	{ Item=711, ReqItem={708, 709, 710}},
-	{ Item=714, ReqItem={712,713}},
-	{ Item=715, ReqItem={712, 713, 714}},
-	{ Item=718, ReqItem={716,717}},
-	{ Item=719, ReqItem={716, 717, 718}},
-	{ Item=722, ReqItem={720,721}},
-	{ Item=723, ReqItem={720, 721, 722}},
-	{ Item=726, ReqItem={724,725}},
-	{ Item=727, ReqItem={724, 725, 726}},
-	{ Item=730, ReqItem={728,729}},
-	{ Item=731, ReqItem={728, 729, 730}},
-	{ Item=734, ReqItem={732,733}},
-	{ Item=735, ReqItem={732, 733, 734}},
-	{ Item=738, ReqItem={736,737}},
-	{ Item=739, ReqItem={736, 737, 738}},
-	{ Item=742, ReqItem={740,741}},
-	{ Item=743, ReqItem={740, 741, 742}},
-	{ Item=746, ReqItem={744,745}},
-	{ Item=747, ReqItem={744, 745, 746}},
-	{ Item=750, ReqItem={748,749}},
-	{ Item=751, ReqItem={748, 749, 750}},
-	{ Item=754, ReqItem={752,753}},
-	{ Item=755, ReqItem={752, 753, 754}},
-	{ Item=758, ReqItem={756,757}},
-	{ Item=759, ReqItem={756, 757, 758}},
-	{ Item=762, ReqItem={760,761}},
-	{ Item=763, ReqItem={760, 761, 762}},
-	{ Item=766, ReqItem={764,765}},
-	{ Item=767, ReqItem={764, 765, 766}},
-	{ Item=770, ReqItem={768,769}},
-	{ Item=771, ReqItem={768, 769, 770}}
+	{ Item="xcl_element_bug_gem", ReqItem={"xcl_element_bug_silk","xcl_element_bug_dust"}},
+	{ Item="xcl_element_bug_globe", ReqItem={"xcl_element_bug_silk", "xcl_element_bug_dust", "xcl_element_bug_gem"}},
+	{ Item="xcl_element_dark_gem", ReqItem={"xcl_element_dark_silk","xcl_element_dark_dust"}},
+	{ Item="xcl_element_dark_globe", ReqItem={"xcl_element_dark_silk", "xcl_element_dark_dust", "xcl_element_dark_gem"}},
+	{ Item="xcl_element_dragon_gem", ReqItem={"xcl_element_dragon_silk","xcl_element_dragon_dust"}},
+	{ Item="xcl_element_dragon_globe", ReqItem={"xcl_element_dragon_silk", "xcl_element_dragon_dust", "xcl_element_dragon_gem"}},
+	{ Item="xcl_element_electric_gem", ReqItem={"xcl_element_electric_silk","xcl_element_electric_dust"}},
+	{ Item="xcl_element_electric_globe", ReqItem={"xcl_element_electric_silk", "xcl_element_electric_dust", "xcl_element_electric_gem"}},
+	{ Item="xcl_element_fairy_gem", ReqItem={"xcl_element_fairy_silk","xcl_element_fairy_dust"}},
+	{ Item="xcl_element_fairy_globe", ReqItem={"xcl_element_fairy_silk", "xcl_element_fairy_dust", "xcl_element_fairy_gem"}},
+	{ Item="xcl_element_fighting_gem", ReqItem={"xcl_element_fighting_silk","xcl_element_fighting_dust"}},
+	{ Item="xcl_element_fighting_globe", ReqItem={"xcl_element_fighting_silk", "xcl_element_fighting_dust", "xcl_element_fighting_gem"}},
+	{ Item="xcl_element_fire_gem", ReqItem={"xcl_element_fire_silk","xcl_element_fire_dust"}},
+	{ Item="xcl_element_fire_globe", ReqItem={"xcl_element_fire_silk", "xcl_element_fire_dust", "xcl_element_fire_gem"}},
+	{ Item="xcl_element_flying_gem", ReqItem={"xcl_element_flying_silk","xcl_element_flying_dust"}},
+	{ Item="xcl_element_flying_globe", ReqItem={"xcl_element_flying_silk", "xcl_element_flying_dust", "xcl_element_flying_gem"}},
+	{ Item="xcl_element_ghost_gem", ReqItem={"xcl_element_ghost_silk","xcl_element_ghost_dust"}},
+	{ Item="xcl_element_ghost_globe", ReqItem={"xcl_element_ghost_silk", "xcl_element_ghost_dust", "xcl_element_ghost_gem"}},
+	{ Item="xcl_element_grass_gem", ReqItem={"xcl_element_grass_silk","xcl_element_grass_dust"}},
+	{ Item="xcl_element_grass_globe", ReqItem={"xcl_element_grass_silk", "xcl_element_grass_dust", "xcl_element_grass_gem"}},
+	{ Item="xcl_element_ground_gem", ReqItem={"xcl_element_ground_silk","xcl_element_ground_dust"}},
+	{ Item="xcl_element_ground_globe", ReqItem={"xcl_element_ground_silk", "xcl_element_ground_dust", "xcl_element_ground_gem"}},
+	{ Item="xcl_element_ice_gem", ReqItem={"xcl_element_ice_silk","xcl_element_ice_dust"}},
+	{ Item="xcl_element_ice_globe", ReqItem={"xcl_element_ice_silk", "xcl_element_ice_dust", "xcl_element_ice_gem"}},
+	{ Item="xcl_element_normal_gem", ReqItem={"xcl_element_normal_silk","xcl_element_normal_dust"}},
+	{ Item="xcl_element_normal_globe", ReqItem={"xcl_element_normal_silk", "xcl_element_normal_dust", "xcl_element_normal_gem"}},
+	{ Item="xcl_element_poison_gem", ReqItem={"xcl_element_poison_silk","xcl_element_poison_dust"}},
+	{ Item="xcl_element_poison_globe", ReqItem={"xcl_element_poison_silk", "xcl_element_poison_dust", "xcl_element_poison_gem"}},
+	{ Item="xcl_element_psychic_gem", ReqItem={"xcl_element_psychic_silk","xcl_element_psychic_dust"}},
+	{ Item="xcl_element_psychic_globe", ReqItem={"xcl_element_psychic_silk", "xcl_element_psychic_dust", "xcl_element_psychic_gem"}},
+	{ Item="xcl_element_rock_gem", ReqItem={"xcl_element_rock_silk","xcl_element_rock_dust"}},
+	{ Item="xcl_element_rock_globe", ReqItem={"xcl_element_rock_silk", "xcl_element_rock_dust", "xcl_element_rock_gem"}},
+	{ Item="xcl_element_steel_gem", ReqItem={"xcl_element_steel_silk","xcl_element_steel_dust"}},
+	{ Item="xcl_element_steel_globe", ReqItem={"xcl_element_steel_silk", "xcl_element_steel_dust", "xcl_element_steel_gem"}},
+	{ Item="xcl_element_water_gem", ReqItem={"xcl_element_water_silk","xcl_element_water_dust"}},
+	{ Item="xcl_element_water_globe", ReqItem={"xcl_element_water_silk", "xcl_element_water_dust", "xcl_element_water_gem"}}
 }
   
   local state = 0
@@ -1662,7 +1656,7 @@ function metano_town.Swap_Action(obj, activator)
 			local free_slots = 0
 			tribute = {}
 			for ii = 1, #trade.ReqItem, 1 do
-				if trade.ReqItem[ii] == -1 then
+				if trade.ReqItem[ii] == "" then
 					free_slots = free_slots + 1
 				else
 					table.insert(tribute, trade.ReqItem[ii])

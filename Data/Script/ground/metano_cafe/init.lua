@@ -98,19 +98,19 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
 		if result == 1 then
-			item1 = RogueEssence.Dungeon.InvItem(10)--oran berry 
-			item2 = RogueEssence.Dungeon.InvItem(200)--stick
+			item1 = RogueEssence.Dungeon.InvItem("oran_berry")--oran berry 
+			item2 = RogueEssence.Dungeon.InvItem("ammo_stick")--stick
 			item2.HiddenValue = 5
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		elseif result == 2 then
-			item1 = RogueEssence.Dungeon.InvItem(1)--Apple 
-			item2 = RogueEssence.Dungeon.InvItem(10)--oran berry
+			item1 = RogueEssence.Dungeon.InvItem("apple")--Apple 
+			item2 = RogueEssence.Dungeon.InvItem("oran_berry")--oran berry
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Cider_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Cider_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		elseif result == 3 then 
-			item1 = RogueEssence.Dungeon.InvItem(13)--cheri berry
-			item2 = RogueEssence.Dungeon.InvItem(112)--blast seed 
+			item1 = RogueEssence.Dungeon.InvItem("cheri_berry")--cheri berry
+			item2 = RogueEssence.Dungeon.InvItem("blast_seed")--blast seed 
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		else
@@ -147,29 +147,29 @@ function metano_cafe.Cafe_Action(obj, activator)
 	--list of ~100 items, a random one is taken for new day to be sold as the cafe's special. entries show up multiple times if they're more common
 	local specials_catalog  = 
 	{
-		2, 2, 2, 2, 2,  --big apples
-		3, 3, 3, 3, 3,  --huge apples
-		4, 				--gold apples
-		5, 5, 5,        --perfect apples
-		6, 6 ,6, 6, 6,  --bananas
-		7, 7, 7,		--big bananas
-		8, 				--golden banana
-		12, 12, 12,		--lum berry
-		19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, --type berries
-		37, 38, 43, 44, 45, 46, 47, 48, 49, 51,  --other rare berries (enigma, starf, etc)
-		72, 72, 72,     --sitrus berry
-		75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, --gummis
-		100, 100, 100, 100, 100, --plain seeds
-		101, 101, 101, 101,  --rev seed 
-		102,            --joy seed
-		104, 104, 104,  --doom seed 
-		150, 151, 152, 153, 154, 155, 156, --nectar + vitamins
-		183, 184, 185  --mental, power, white herb
+		"food_apple_big", "food_apple_big", "food_apple_big", "food_apple_big", "food_apple_big",  --big apples
+		"food_apple_huge", "food_apple_huge", "food_apple_huge", "food_apple_huge", "food_apple_huge",  --huge apples
+		"food_apple_golden", 				--gold apples
+		"food_apple_perfect", "food_apple_perfect", "food_apple_perfect",        --perfect apples
+		"food_banana", "food_banana" ,"food_banana", "food_banana", "food_banana",  --bananas
+		"food_banana_big", "food_banana_big", "food_banana_big",		--big bananas
+		"food_banana_golden", 				--golden banana
+		"lum_berry", "lum_berry", "lum_berry",		--lum berry
+		"berry_tanga", "berry_colbur", "berry_haban", "berry_wacan", "berry_chople", "berry_occa", "berry_coba", "berry_kasib", "berry_rindo", "berry_shuca", "berry_yache", "berry_chilan", "berry_kebia", "berry_payapa", "berry_charti", "berry_babiri", "berry_passho", "berry_roseli", --type berries
+		"berry_jaboca", "berry_rowap", "berry_apicot", "berry_liechi", "berry_ganlon", "berry_salac", "berry_petaya", "berry_starf", "berry_micle", "berry_enigma",  --other rare berries (enigma, starf, etc)
+		"berry_sitrus", "berry_sitrus", "berry_sitrus",     --sitrus berry
+		"wonder_gummi", "blue_gummi", "black_gummi", "clear_gummi", "grass_gummi", "green_gummi", "brown_gummi", "orange_gummi", "gold_gummi", "pink_gummi", "purple_gummi", "red_gummi", "royal_gummi", "silver_gummi", "white_gummi", "yellow_gummi", "sky_gummi", "gray_gummi", "magenta_gummi", --gummis
+		"plain_seed", "plain_seed", "plain_seed", "plain_seed", "plain_seed", --plain seeds
+		"reviver_seed", "reviver_seed", "reviver_seed", "reviver_seed",  --rev seed 
+		"seed_joy",            --joy seed
+		"seed_doom", "seed_doom", "seed_doom",  --doom seed 
+		"boost_nectar", "boost_protein", "boost_iron", "boost_calcium", "boost_zinc", "boost_carbos", "boost_hp_up", --nectar + vitamins
+		"herb_mental", "herb_power", "herb_white"  --mental, power, white herb
 	}
 	
 	-- special is -1 if nothing has been selected as the daily special. It should be set back to -1 when a new day happens
 	--but more ideally it should just be reinitialized when a new day happens. I just need to figure out how to do that properly
-	if SV.metano_cafe.CafeSpecial == -1 then 
+	if SV.metano_cafe.CafeSpecial == "" then 
 		SV.metano_cafe.CafeSpecial = GAME.Rand:Next(1, #specials_catalog)
 	end
 	
@@ -192,7 +192,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 
 	
 	--he has a fermented item to give you
-	if SV.metano_cafe.FermentedItem ~= -1 and SV.metano_cafe.ItemFinishedFermenting then
+	if SV.metano_cafe.FermentedItem ~= "" and SV.metano_cafe.ItemFinishedFermenting then
 		local juice = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
 		local juiceEntry = RogueEssence.Data.DataManager.Instance:GetItem(juice.ID)
 		UI:SetSpeakerEmotion('Normal')
@@ -203,7 +203,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 			state = -1 --don't go to normal dialogue if he cant give you the fermented item.
 		else
 			GAME:GivePlayerItem(juice.ID, 1, false, juiceEntry.MaxStack)
-			SV.metano_cafe.FermentedItem = -1
+			SV.metano_cafe.FermentedItem = ""
 			SV.metano_cafe.ItemFinishedFermenting = false
 			SOUND:PlayBattleSE("DUN_Drink")
 			UI:ResetSpeaker()
@@ -230,11 +230,11 @@ function metano_cafe.Cafe_Action(obj, activator)
 		repeated = true
 		if result == 1 then --drinks
 			local ferment_state = 0
-			local item_to_ferment = -1
+			local item_to_ferment = ""
 			local recipe_list = {}
 			
 			--he's already brewing something
-			if SV.metano_cafe.FermentedItem ~= -1 then
+			if SV.metano_cafe.FermentedItem ~= "" then
 				local ferment_item = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
 				local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(SV.metano_cafe.FermentedItem)
 				
@@ -260,14 +260,14 @@ function metano_cafe.Cafe_Action(obj, activator)
 					ferment_state = -1
 				else
 					if result == 1 then --Domi Blend - 3 Orans, 5 Sticks
-						item_to_ferment = 2500
-						recipe_list = {{10, 3}, {200, 5}}
+						item_to_ferment = "domi_blend"
+						recipe_list = {{"oran_berry", 3}, {"ammo_stick", 5}}
 					elseif result == 2 then --Apple Cider - 1 Oran, 3 Apples
-						item_to_ferment = 2501
-						recipe_list = {{10, 1}, {1, 3}}
+						item_to_ferment = "apple_cider"
+						recipe_list = {{"oran_berry", 1}, {"apple", 3}}
 					elseif result == 3 then--Cheri Bomb - 1 Cheri Berry, 1 Blast Seed
-						item_to_ferment = 2510
-						recipe_list = {{13, 1}, {112, 1}}
+						item_to_ferment = "cheri_bomb"
+						recipe_list = {{"cheri_berry", 1}, {"blast_seed", 1}}
 					end
 					
 					

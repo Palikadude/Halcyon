@@ -14,7 +14,7 @@ function guild_guildmasters_room_ch_2.Tropius_Action(chara, activator)
 		if not SV.Chapter2.TropiusGaveReviver then 
 			GeneralFunctions.StartConversation(chara, "Howdy,[pause=10] Team " .. GAME:GetTeamName() .. "![pause=0] I heard that you got your first mission already!")
 			UI:WaitShowDialogue("I want you to take this.[pause=0] It'll help you if you encounter trouble!")
-			GeneralFunctions.RewardItem(101)
+			GeneralFunctions.RewardItem("reviver_seed")
 			UI:SetSpeaker(CH('Teammate1'))
 			UI:SetSpeakerEmotion("Inspired")
 			GROUND:CharSetEmote(CH('Teammate1'), "happy", 0)

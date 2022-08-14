@@ -420,7 +420,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	SOUND:PlayBattleSE('EVT_CH02_Box_Open')
 	GeneralFunctions.Monologue(hero:GetDisplayName() .. " opened the box.")
 	
-	--local scarf_name = RogueEssence.Dungeon.InvItem(2502):GetDisplayName()
+	--local scarf_name = RogueEssence.Dungeon.InvItem("synergy_scarf"):GetDisplayName()
 	--have to hardcode this so I can have it say scarves instead of scarf
 	local scarf_name = STRINGS:Format('\\uE0AE')..'[color=#FFCEFF]Synergy Scarves[color]'
 	
