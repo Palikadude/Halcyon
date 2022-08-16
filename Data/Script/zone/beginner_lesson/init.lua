@@ -105,7 +105,7 @@ function beginner_lesson.ExitSegment(zone, result, rescue, segmentID, mapID)
 	SV.Dojo.LastZone = "beginner_lesson"
 	
 	--Since this is risk none, we need to first "save" the game with end dungeon run, then save the game a second time after setting variables to preserve those variable changes in the save.
-	GAME:GroundSave()		
+	--GAME:EndDungeonRun(result, "master_zone", -1, 36, 0, false, false)
 	
 	GAME:EnterZone("master_zone", -1, 36, 0)
 	

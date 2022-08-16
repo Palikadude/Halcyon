@@ -249,7 +249,7 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   if dest:IsValid() then
 	local risk = RogueEssence.Data.GameProgress.DungeonStakes.Risk
 	--set risk to none if chosen level is a lesson
-	if dest.ID == 51 then risk = RogueEssence.Data.GameProgress.DungeonStakes.None end
+	if dest.ID == 'beginner_lesson' then risk = RogueEssence.Data.GameProgress.DungeonStakes.None end
     SOUND:FadeOutBGM(60)
     GAME:FadeOut(false, 60)
 	GeneralFunctions.SendInvToStorage()--send money and items to the bank

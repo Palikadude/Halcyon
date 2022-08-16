@@ -243,7 +243,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
 	GAME:WaitFrames(20)
-	UI:WaitShowDialogue("According to the wanted poster,[pause=10] this " .. _DATA:GetMonster(551):GetColoredName() .. " goes by " .. CharacterEssentials.GetCharacterName("Sandile") .. ".")
+	UI:WaitShowDialogue("According to the wanted poster,[pause=10] this " .. _DATA:GetMonster("sandile"):GetColoredName() .. " goes by " .. CharacterEssentials.GetCharacterName("Sandile") .. ".")
 	UI:WaitShowDialogue("He's wanted for theft and is hiding out in " .. zone:GetColoredName() .. ".")
 	
 	GAME:WaitFrames(20)
@@ -400,6 +400,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	GAME:WaitFrames(20)
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	partner.CollisionDisabled = true--redisable partner's collision. Something is causing this to be set to false earlier in the script...
 	GeneralFunctions.PanCamera()
 	GROUND:Unhide('Upwards_Stairs_Exit')
 	SV.Chapter3.FinishedOutlawIntro = true

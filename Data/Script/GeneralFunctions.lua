@@ -810,12 +810,14 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 		UI:WaitShowDialogue("Game saved!")
 		GAME:EnterGroundMap(ground, marker)
 	elseif result == 2 then 
-		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
 		GAME:FadeOut(false, 40)
 		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc("master_zone", -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue
+		GAME:GroundSave()
 		GAME:RestartToTitle()
+	else
+		GAME:EnterGroundMap(ground, marker)
 	end
 end
 
@@ -823,15 +825,25 @@ end
 function GeneralFunctions.SendInvToStorage()
 	local itemCount = GAME:GetPlayerBagCount()
 	local money = GAME:GetPlayerMoney()
+	local item
 	
 	--move player's money to the bank
 	GAME:RemoveFromPlayerMoney(money)
 	GAME:AddToPlayerMoneyBank(money)
 	
 	for i = 1, itemCount, 1 do
-		local item = GAME:GetPlayerBagItem(0)
+		item = GAME:GetPlayerBagItem(0)
 		GAME:TakePlayerBagItem(0)
 		GAME:GivePlayerStorageItem(item)
+	end
+	
+	--send equipped items to storage
+	for i = 1, GAME:GetPlayerPartyCount(), 1 do
+		item = GAME:GetPlayerEquippedItem(i-1)
+		if item.ID ~= "" then 
+			GAME:TakePlayerEquippedItem(i-1)
+			GAME:GivePlayerStorageItem(item)
+		end
 	end
 end
 

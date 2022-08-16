@@ -135,6 +135,9 @@ end
 function guild_third_floor_lobby.MorningAddress(generic)
 	
 	if generic == nil then generic = false end 
+	
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
 
 	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, 
 		  breloom, mareep, cranidos = guild_third_floor_lobby.SetupMorningAddress()

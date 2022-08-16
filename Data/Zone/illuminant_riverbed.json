@@ -210,8 +210,8 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"MaxFoes": 6,
-"RespawnTime": 50
+"MaxFoes": 5,
+"RespawnTime": 55
 }
 },
 {
@@ -357,8 +357,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 3,
-"Max": 6
+"Min": 2,
+"Max": 4
 }
 },
 "Ally": false
@@ -578,8 +578,8 @@
 "Max": 31
 },
 "AddAmount": {
-"Min": 10,
-"Max": 21
+"Min": 1,
+"Max": 11
 },
 "ModStates": []
 },
@@ -630,7 +630,7 @@
 "Amount": 0,
 "Price": 0
 },
-"Rate": 10,
+"Rate": 20,
 "Range": {
 "Min": 0,
 "Max": 8

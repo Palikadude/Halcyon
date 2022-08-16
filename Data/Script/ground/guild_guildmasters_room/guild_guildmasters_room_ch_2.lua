@@ -187,9 +187,10 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	GAME:UnlockDungeon("grass_maze")--unlock new mazes at ledian dojo
 	GAME:UnlockDungeon("fire_maze")--unlock new mazes at ledian dojo
 	GAME:UnlockDungeon("water_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("crooked_cavern")--unlock chapter 3 dungeons
+	GAME:UnlockDungeon("crooked_den")
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
-	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")	
 	
 end
 

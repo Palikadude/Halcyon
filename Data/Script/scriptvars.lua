@@ -34,7 +34,7 @@ SV.General =
 
 SV.checkpoint = 
 {
-  Zone    = "debug", Structure  = -1,
+  Zone    = "debug_zone", Structure  = -1,
   Map  = 1, Entry  = 0,
 }
 
@@ -91,7 +91,8 @@ SV.TemporaryFlags =
 SV.metano_town = 
 {
   Locale = 'Guild',--Where are we on the metano town map? Used for partner dialogue. Defaults to guild
-  LastMarker = ''--which locale marker was touched last? we need to unhide it when another is touched.
+  LastMarker = '',--which locale marker was touched last? we need to unhide it when another is touched.
+  Song = 'Treasure Town.ogg'--song being played by the musician
   --LuxioIntro = false,
   --AggronGuided = false,
   --KecIntro = false

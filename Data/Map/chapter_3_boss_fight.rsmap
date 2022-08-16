@@ -174,9 +174,9 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 10,
+"Level": 12,
 "EXP": 0,
-"MaxHPBonus": 31,
+"MaxHPBonus": 29,
 "AtkBonus": 1,
 "DefBonus": 1,
 "MAtkBonus": 1,
@@ -320,7 +320,7 @@
 "Price": 0
 },
 "ChargeBoost": 0,
-"HP": 30,
+"HP": 36,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -390,14 +390,14 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 9,
+"Level": 10,
 "EXP": 0,
-"MaxHPBonus": 3,
+"MaxHPBonus": 6,
 "AtkBonus": 0,
 "DefBonus": 0,
 "MAtkBonus": 0,
 "MDefBonus": 0,
-"SpeedBonus": 2,
+"SpeedBonus": 3,
 "BaseSkills": [
 {
 "SkillNum": "fake_out",
@@ -536,7 +536,7 @@
 "Price": 0
 },
 "ChargeBoost": 0,
-"HP": 45,
+"HP": 44,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -618,13 +618,13 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 9,
+"Level": 10,
 "EXP": 0,
-"MaxHPBonus": 14,
+"MaxHPBonus": 12,
 "AtkBonus": 2,
-"DefBonus": 0,
+"DefBonus": -1,
 "MAtkBonus": 2,
-"MDefBonus": 0,
+"MDefBonus": -1,
 "SpeedBonus": -2,
 "BaseSkills": [
 {

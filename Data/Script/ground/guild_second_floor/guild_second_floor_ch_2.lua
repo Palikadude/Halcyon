@@ -518,7 +518,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(hero))
 	GeneralFunctions.RewardItem(GeneralFunctions.GetFavoriteGummi(partner))
-	GeneralFunctions.RewardItem("evo_everstone", true)
+	GeneralFunctions.RewardItem(350, true)
 	
 	GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	UI:SetSpeaker(partner)

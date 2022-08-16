@@ -516,8 +516,8 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	--rank up to normal rank upon joining guild
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
-	GAME:GivePlayerItem("synergy_scarf", 2)--give 2 vibrant scarves
 	_DATA.Save.ActiveTeam:SetRank("normal")
+	GAME:GivePlayerItem("synergy_scarf", 2)--give 2 vibrant scarves
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(60)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")

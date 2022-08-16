@@ -311,7 +311,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   local dungeon_entrance_mapping = {}
   dungeon_entrance_mapping["illuminant_riverbed"] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
   dungeon_entrance_mapping["crooked_cavern"] = 41--Crooked Cavern
-  
+    
   --check for unlock of dungeons
   local open_dests = {}
   for ii = 1,#dungeon_entrances,1 do
@@ -1022,7 +1022,7 @@ function metano_town.Musician_Action(obj, activator)
   UI:WaitForChoice()
   local result = UI:ChoiceResult()
   if result ~= nil then
-	SV.base_town.Song = result--To do: rename this for specifically metano town map
+	SV.metano_town.Song = result--To do: rename this for specifically metano town map
 	GROUND:CharSetAnim(chara, 'Wiggle', true)
   end
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
@@ -1845,7 +1845,7 @@ function metano_town.Tutor_Action(obj, activator)
 				UI:RelearnMenu(member)
 				UI:WaitForChoice()
 				local result = UI:ChoiceResult()
-				if result > -1 then
+				if result ~= '' then--no move was chosen if result is empty string
 					move = result
 					state = 3
 				else
