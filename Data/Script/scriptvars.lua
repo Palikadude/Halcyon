@@ -34,7 +34,7 @@ SV.General =
 
 SV.checkpoint = 
 {
-  Zone    = "debug", Structure  = -1,
+  Zone    = "debug_zone", Structure  = -1,
   Map  = 1, Entry  = 0,
 }
 
