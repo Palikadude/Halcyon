@@ -42,13 +42,6 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 		GAME:WaitFrames(20)
 		
-		if not SV.Chapter3.DefeatedBoss and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then --team died before making it to the end for the first time. 
-			UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
-			UI:SetSpeakerEmotion("Pain")
-			UI:WaitShowDialogue("Urf...[pause=0] This is harder than I expected...")
-			UI:WaitShowDialogue("We can't continue on like this...[pause=0] Let's call it a day.")
-			SV.Chapter3.FailedCavern = true--mark that they died before the end so Team Style can taunt them for this.
-		end
 		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 
@@ -58,13 +51,22 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 					
 		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
 		GAME:EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)			
-					
+				
+		if not SV.Chapter3.DefeatedBoss and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then --team died before making it to the end for the first time. 
+			UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
+			UI:SetSpeakerEmotion("Pain")
+			UI:WaitShowDialogue("Urf...[pause=0] This is harder than I expected...")
+			UI:WaitShowDialogue("We can't continue on like this...[pause=0] Let's call it a day.")
+			SV.Chapter3.FailedCavern = true--mark that they died before the end so Team Style can taunt them for this.
+			GAME:WaitFrames(20)
+		end
+		
 		--go to dinner room 
 		GAME:EnterZone("master_zone", -1, 6, 0)
 
 	
 	else 
-		--dont set generic end flags if it's chapter 2 (i.e. you're rescuing numel)
+		--dont set generic end flags if it's chapter 3 (i.e. you're arresting sandile)
 		if SV.ChapterProgression.Chapter ~= 3 then 
 			--set generic flags for generic end of day / start of next day.
 			SV.TemporaryFlags.Dinnertime = true 
@@ -74,7 +76,7 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 			GAME:EnterZone("master_zone", -1, 42, 0) --Go to Crooked Den ground map, end dungeon run in the ground rather than here 
 
 		else--for chapter 3, dont show results and dont set generic end flags
-			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 42, 0, false, false) --Go to Crooked Den ground map
+			GAME:EnterZone("master_zone", -1, 42, 0) --Go to Crooked Den ground map, end dungeon run in the boss fight zone rather than here so the replays concatenate.
 		end
 	end
 end

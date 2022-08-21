@@ -2,6 +2,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.guild_heros_room.guild_heros_room_helper'
 
 guild_heros_room_ch_3 = {}
 
@@ -25,6 +26,6 @@ function guild_heros_room_ch_3.FirstMorning()
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	GAME:WaitFrames(120)
-	guild_heros_room.Morning(true)
+	guild_heros_room_helper.Morning(true)
 
 end

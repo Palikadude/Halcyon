@@ -211,19 +211,21 @@ function guild_dining_room.Dinnertime(generic)
 		local stopEating = false 
 		UI:SetSpeaker('', false, "", -1, "", RogueEssence.Data.Gender.Unknown)
 		GAME:WaitFrames(60)--don't load in too fast. give it a second to transition properly.
-		SOUND:PlayBGM('Dinner Eating.ogg', true)
+		SOUND:LoopSE('Dinner Eating')
 		local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
 		local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(208, 156, 184, false)
 													  GAME:WaitFrames(120)
 													  stopEating = true end)
 		local coro3 = TASK:BranchCoroutine(function() while not stopEating do 
-														UI:WaitShowTimedDialogue("Crunch-munch! Om-nom-nom! Chomp-chomp!\nCrunch-munch! Om-nom-nom! Chomp-chomp!", 1)
+														UI:WaitShowTimedDialogue("Crunch-munch! Om-nom-nom! Chomp-chomp!\nCrunch-munch! Om-nom-nom! Chomp-chomp!", 6)
 													  end
-													  SOUND:FadeOutBGM(120)
+													  SOUND:FadeOutSE('Dinner Eating', 120)
 													  GAME:FadeOut(false, 120)  end)
 		
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
+		--wait a bit before going to bedtime scene
+		GAME:WaitFrames(40)
 		GAME:CutsceneMode(false)
 		SV.TemporaryFlags.Dinnertime = false --clear flag
 		SV.partner.Spawn = 'Default'

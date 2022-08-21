@@ -42,11 +42,26 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 			--todo: make zone numbering consistent and perhaps better ordered
 			if SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerCompletedForest then--partner died solo before clearing
-				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 9, 0, false, false)
+				GAME:EndDungeonRun(result, "master_zone", -1, 9, 0, false, false)
 				
+				UI:SetSpeaker(GAME:GetPlayerPartyMember(0))--set partner as speaker 
+				UI:SetSpeakerEmotion("Pain")
+				UI:WaitShowDialogue("Urf...[pause=0] This is tough...")			
+	
+				GAME:WaitFrames(20)
+				
+				GAME:EnterZone("master_zone", -1, 9, 0)
+
 			elseif SV.Chapter1.PartnerCompletedForest then--the duo wiped before making it back to town
-				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 0, 0, false, false)
-			
+				GAME:EndDungeonRun(result, "master_zone", -1, 0, 0, false, false)
+				
+				UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
+				UI:SetSpeakerEmotion("Pain")
+				UI:WaitShowDialogue("Urf...[pause=0] This is tough...")			
+				
+				GAME:WaitFrames(20)
+
+				GAME:EnterZone("master_zone", -1, 0, 0)			
 			else --failsafe
 				print("error in resulting relic forest completion")
 			end

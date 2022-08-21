@@ -2,6 +2,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.guild_heros_room.guild_heros_room_helper'
 
 guild_heros_room_ch_1 = {}
 
@@ -52,7 +53,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	--Set nighttime, put duo in beds asleep
 
 	GROUND:Hide("Save_Point")
-	guild_heros_room.Bedtime()--set nighttime scene, put duo in their beds
+	guild_heros_room_helper.Bedtime()--set nighttime scene, put duo in their beds
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 

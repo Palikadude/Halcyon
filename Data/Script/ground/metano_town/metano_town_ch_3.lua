@@ -135,7 +135,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	UI:SetSpeakerEmotion("Inspired")
 	GROUND:CharSetEmote(partner, "happy", 0)
 	GROUND:CharSetAnim(partner, "Idle", true)
-	UI:WaitShowDialogue("But...[pause=0] With you,[pause=10] I don't feel so afraid![pause=0] I feel confident actually!")
+	UI:WaitShowDialogue("It'll be scary,[pause=10] but together I know we can do it!")
 	UI:WaitShowDialogue("We're gonna catch this outlaw![pause=0] And we're gonna prove that bully " .. CharacterEssentials.GetCharacterName("Cranidos") .. " wrong!")
 	GAME:WaitFrames(20)
 	

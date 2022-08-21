@@ -43,12 +43,6 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 		GAME:WaitFrames(20)
 		
-		if not SV.Chapter2.FinishedRiver and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then --team died before making it to the end for the first time. 
-			UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
-			UI:SetSpeakerEmotion("Pain")
-			UI:WaitShowDialogue("Urgh...[pause=0] That didn't go well...")
-		end
-		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 
 		SV.TemporaryFlags.Bedtime = true
@@ -58,7 +52,14 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
 		--this saves the game, so it must be called 2nd to last.
 		GAME:EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
-		
+	
+		if not SV.Chapter2.FinishedRiver and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then --team died before making it to the end for the first time. 
+			UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
+			UI:SetSpeakerEmotion("Pain")
+			UI:WaitShowDialogue("Urgh...[pause=0] That didn't go well...")
+			GAME:WaitFrames(20)
+		end
+				
 		--go to dinner room 
 		GAME:EnterZone("master_zone", -1, 6, 0)
 

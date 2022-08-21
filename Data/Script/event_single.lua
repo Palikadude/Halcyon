@@ -219,18 +219,20 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 			for i = 0, player_count - 1, 1 do --beam everyone else out
 				player = GAME:GetPlayerPartyMember(i)
 				if not player.Dead then--dont beam out whoever died
+					--delay between beam outs
+					GAME:WaitFrames(60)
 					TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
 					player.Dead = true
-					GAME:WaitFrames(60)
 				end
 			end
 			--beam out guests
 			for i = 0, guest_count - 1, 1 do --beam everyone else out
 				guest = GAME:GetPlayerGuestMember(i)
 				if not guest.Dead then--dont beam out whoever died
+					--delay between beam outs
+					GAME:WaitFrames(60)
 					TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
 					guest.Dead = true
-					GAME:WaitFrames(60)
 				end
 			end
 			--TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))

@@ -1004,34 +1004,47 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
+--todo: Tidy this up at some point?
 function metano_town.Musician_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   local chara = CH('Musician')
+  local old_song = SOUND:GetCurrentSong()
+  local default_song = 'Treasure Town.ogg'--default song
   UI:SetSpeaker(chara)
-  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_Intro']))
+  
+  
+  --keep playing the metronome animation if it's playing (song is not treasure town)
+  if SOUND:GetCurrentSong() == default_song or SOUND:GetCurrentSong() == '' then 
+	GeneralFunctions.StartConversation(chara, STRINGS:Format(MapStrings['Music_Intro']), 'Normal', false)
+  else
+	GeneralFunctions.StartConversation(chara, STRINGS:Format(MapStrings['Music_Intro']), 'Normal', false, false)
+  end
+
   UI:ShowMusicMenu({'MAIN_001'})
   UI:WaitForChoice()
   local result = UI:ChoiceResult()
   if result ~= nil then
-	SV.metano_town.Song = result--To do: rename this for specifically metano town map
-	GROUND:CharSetAnim(chara, 'Wiggle', true)
+	SV.metano_town.Song = result
   end
-  UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
+  
+  
+  --Set a metronome animation if we're playing a song that isn't the default or no music. Otherise turn it off.  
+  if (SOUND:GetCurrentSong() == default_song or SOUND:GetCurrentSong() == '') and (old_song == default_song or old_song == '') then 
+  	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
+	GeneralFunctions.EndConversation(chara)
+  elseif (SOUND:GetCurrentSong() == default_song or SOUND:GetCurrentSong() == '') and (old_song ~= default_song and old_song ~= '') then  
+	GROUND:CharSetAnim(chara, "None", true)
+	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
+	GeneralFunctions.EndConversation(chara)
+  elseif (SOUND:GetCurrentSong() ~= default_song and SOUND:GetCurrentSong() ~= '') and (old_song == default_song or old_song == '') then 
+  	GROUND:CharSetAnim(chara, "Wiggle", true)
+  	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
+	GeneralFunctions.EndConversation(chara, false)
+  else
+	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Music_End']))
+	GeneralFunctions.EndConversation(chara, false)	
+  end
 end
-
-
-
-
-
 
 
 

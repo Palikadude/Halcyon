@@ -494,6 +494,84 @@ function COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   end
 end
 
+
+function COMMON.MakeWhoosh(center, y, tier, reversed)
+    local whoosh1 = RogueEssence.Content.FiniteOverlayEmitter()
+    whoosh1.FadeIn = 30
+    whoosh1.TotalTime = 90
+    whoosh1.RepeatX = true
+	if reversed then
+		whoosh1.Movement = RogueElements.Loc(-360, 0)
+	else
+		whoosh1.Movement = RogueElements.Loc(360, 0)
+	end
+    whoosh1.Layer = DrawLayer.Top
+    whoosh1.Anim = RogueEssence.Content.BGAnimData("Pre_Battle", 1, tier, tier)
+	GROUND:PlayVFX(whoosh1, center.X, center.Y + y)
+end
+
+--Slightly tweaked Halcyon version.
+function COMMON.BossTransition()
+    local center = GAME:GetCameraCenter()
+    SOUND:FadeOutBGM(20)
+    local emitter = RogueEssence.Content.FlashEmitter()
+    emitter.FadeInTime = 2
+    emitter.HoldTime = 2
+    emitter.FadeOutTime = 2
+    emitter.StartColor = Color(0, 0, 0, 0)
+    emitter.Layer = DrawLayer.Top
+    emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
+    GROUND:PlayVFX(emitter, center.X, center.Y)
+    SOUND:PlayBattleSE("EVT_Battle_Flash")
+    GAME:WaitFrames(16)
+    GROUND:PlayVFX(emitter, center.X, center.Y)
+    SOUND:PlayBattleSE("EVT_Battle_Flash")
+    GAME:WaitFrames(46)
+    
+    SOUND:PlayBattleSE('EVT_Battle_Transition')
+	COMMON.MakeWhoosh(center, -32, 0, false)
+    GAME:WaitFrames(5)
+	COMMON.MakeWhoosh(center, -64, 0, true)
+	COMMON.MakeWhoosh(center, 0, 0, true)
+    GAME:WaitFrames(5)
+	COMMON.MakeWhoosh(center, -112, 1, false)
+	COMMON.MakeWhoosh(center, 48, 1, false)
+    GAME:WaitFrames(5)
+	COMMON.MakeWhoosh(center, -144, 2, true)
+	COMMON.MakeWhoosh(center, 80, 2, true)
+    GAME:WaitFrames(5)
+	COMMON.MakeWhoosh(center, -176, 3, false)
+	COMMON.MakeWhoosh(center, 112, 3, false)
+    GAME:WaitFrames(40)
+    GAME:FadeOut(true, 30)
+    GAME:WaitFrames(60)
+	
+	
+end
+
+function COMMON.GiftItem(player, receive_item)
+  COMMON.GiftItemFull(player, receive_item, true, false)
+end
+
+function COMMON.GiftItemFull(player, receive_item, fanfare, force_storage)
+  if fanfare then
+    SOUND:PlayFanfare("Fanfare/Item")
+  end
+  UI:ResetSpeaker(false)
+  UI:SetCenter(true)
+  if not force_storage and GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() < GAME:GetPlayerBagLimit() then
+    --give to inventory
+	UI:WaitShowDialogue(STRINGS:Format(RogueEssence.StringKey("DLG_RECEIVE_ITEM"):ToLocal(), player:GetDisplayName(), receive_item:GetDisplayName()))
+	GAME:GivePlayerItem(receive_item)
+  else
+    --give to storage
+	UI:WaitShowDialogue(STRINGS:Format(RogueEssence.StringKey("DLG_RECEIVE_ITEM_STORAGE"):ToLocal(), player:GetDisplayName(), receive_item:GetDisplayName()))
+	GAME:GivePlayerStorageItem(receive_item)
+  end
+  UI:SetCenter(false)
+  UI:ResetSpeaker()
+end
+
 function COMMON.UnlockWithFanfare(dungeon_id)
   if not GAME:DungeonUnlocked(dungeon_id) then
     UI:WaitShowDialogue(STRINGS:FormatKey("DLG_NEW_AREA_TO"))

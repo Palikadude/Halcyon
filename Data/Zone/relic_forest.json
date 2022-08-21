@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -2388,8 +2388,8 @@
 "Max": 21
 },
 "AddAmount": {
-"Min": 10,
-"Max": 10
+"Min": 3,
+"Max": 7
 },
 "ModStates": []
 },

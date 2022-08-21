@@ -33,7 +33,7 @@ function metano_grass_home_ch_2.Vileplume_Action(chara, activator)
 end 
 
 function metano_grass_home_ch_2.Gloom_Action(chara, activator)
-	local numel_species = _DATA:GetMonster(322):GetColoredName()
+	local numel_species = _DATA:GetMonster('numel'):GetColoredName()
 	GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Nidorina") .. " isn't allowed out right now because of the missing " .. numel_species .. " child.[pause=0] Her parents worry,[pause=10] I guess.")
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("It really is a shame " .. CharacterEssentials.GetCharacterName("Numel") .. " is missing...[pause=0] But I wish it wouldn't stop " .. CharacterEssentials.GetCharacterName("Nidorina") .. " from hanging out...")

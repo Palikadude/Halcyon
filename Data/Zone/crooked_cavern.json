@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -1835,8 +1835,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 11
+"Min": 9,
+"Max": 10
 },
 "SpecifiedSkills": [
 "curse",
@@ -1845,6 +1845,46 @@
 ],
 "Intrinsic": "",
 "Tactic": "stick_together",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 2,
+"Range": {
+"Min": 5,
+"Max": 10
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "nosepass",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 9,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thunder_wave",
+"rock_throw",
+"block"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
@@ -2026,6 +2066,10 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 3,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },
@@ -2059,6 +2103,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },
@@ -2096,6 +2144,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },
@@ -2373,6 +2425,10 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 3,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },
@@ -2406,6 +2462,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },
@@ -2443,6 +2503,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
 }
 ]
 },

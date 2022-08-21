@@ -2,6 +2,8 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_helper'
+
 
 guild_third_floor_lobby_ch_3 = {}
 
@@ -93,7 +95,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, 
-		  breloom, mareep, cranidos = guild_third_floor_lobby.SetupMorningAddress()
+		  breloom, mareep, cranidos = guild_third_floor_lobby_helper.SetupMorningAddress()
 
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Normal")
@@ -173,8 +175,8 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	
 	--a modified leaving script as phileas interrupts shuca and ganlon's departure
 	GAME:WaitFrames(40)
-	local coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeave(growlithe) end)
-	local coro2 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeaveBottom(zigzagoon) end)
+	local coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby_helper.ApprenticeLeave(growlithe) end)
+	local coro2 = TASK:BranchCoroutine(function() guild_third_floor_lobby_helper.ApprenticeLeaveBottom(zigzagoon) end)
 											
 											
 	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)

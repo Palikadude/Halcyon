@@ -457,7 +457,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("Get ready,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] Here they come!")
 
-	GeneralFunctions.BossTransition(hero)
+	COMMON.BossTransition(hero)
 	GAME:CutsceneMode(false)
 	SV.Chapter3.EncounteredBoss = true
 	--enter fight
@@ -758,7 +758,7 @@ local hero = CH('PLAYER')
 	UI:WaitShowDialogue("...Is another beatdown![pause=0] Delivered by yours truly!")
 	UI:WaitShowDialogue("Get ready![pause=0] We're going to remind you why you're not fit to be adventurers!")
 	
-	GeneralFunctions.BossTransition(hero)
+	COMMON.BossTransition()
 	GAME:CutsceneMode(false)
 	--enter fight
 	GAME:EnterDungeon("crooked_den", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)

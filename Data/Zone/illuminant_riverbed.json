@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -412,8 +412,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 7,
-"Max": 8
+"Min": 6,
+"Max": 7
 },
 "SpecifiedSkills": [
 "horn_attack",
@@ -442,8 +442,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 7,
-"Max": 8
+"Min": 6,
+"Max": 7
 },
 "SpecifiedSkills": [
 "mud_slap",
@@ -578,8 +578,8 @@
 "Max": 31
 },
 "AddAmount": {
-"Min": 1,
-"Max": 11
+"Min": 4,
+"Max": 9
 },
 "ModStates": []
 },
@@ -942,8 +942,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 5,
+"Max": 7
 },
 "SpecifiedSkills": [
 "hypnosis"
@@ -994,8 +994,41 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 0,
+"Min": 4,
 "Max": 8
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "lotad",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 4,
+"Max": 6
+},
+"SpecifiedSkills": [
+"absorb"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
 }
 },
 {
@@ -1027,7 +1060,7 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 0,
+"Min": 4,
 "Max": 8
 }
 },
@@ -1035,17 +1068,17 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "poliwag",
+"Species": "surskit",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 5,
-"Max": 7
+"Min": 4,
+"Max": 6
 },
 "SpecifiedSkills": [
-"hypnosis"
+"sweet_scent"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -1061,7 +1094,80 @@
 "Rate": 10,
 "Range": {
 "Min": 0,
-"Max": 5
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "poliwag",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 4,
+"Max": 6
+},
+"SpecifiedSkills": [
+"hypnosis",
+"water_gun"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "buizel",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 5,
+"Max": 7
+},
+"SpecifiedSkills": [
+"quick_attack",
+"growl"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 2,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 4,
+"Max": 8
 }
 },
 {
@@ -1074,8 +1180,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 8,
-"Max": 9
+"Min": 7,
+"Max": 8
 },
 "SpecifiedSkills": [
 "confusion",
@@ -1114,8 +1220,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 5,
-"Max": 7
+"Min": 4,
+"Max": 6
 },
 "SpecifiedSkills": [
 "quick_attack",
@@ -1140,7 +1246,7 @@
 "Rate": 10,
 "Range": {
 "Min": 0,
-"Max": 8
+"Max": 4
 }
 }
 ],
@@ -1179,7 +1285,8 @@
 }
 ],
 "GroundMaps": [
-"luminous_spring"
+"luminous_spring",
+"illuminant_riverbed_entrance"
 ]
 }
 }

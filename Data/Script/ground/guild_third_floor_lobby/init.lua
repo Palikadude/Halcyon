@@ -11,6 +11,7 @@ require 'AudinoAssembly'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_3'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_helper'
 
 
 -- Package name
@@ -140,7 +141,7 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	local partner = CH('Teammate1')
 
 	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, 
-		  breloom, mareep, cranidos = guild_third_floor_lobby.SetupMorningAddress()
+		  breloom, mareep, cranidos = guild_third_floor_lobby_helper.SetupMorningAddress()
 
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Normal")
@@ -218,21 +219,21 @@ function guild_third_floor_lobby.MorningAddress(generic)
 	
 	--everyone leaves
 	GAME:WaitFrames(40)
-	local coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeave(growlithe) end)
+	local coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby_helper.ApprenticeLeave(growlithe) end)
 	local coro2 = TASK:BranchCoroutine(function() --GAME:WaitFrames(6) 
-											guild_third_floor_lobby.ApprenticeLeaveBottom(zigzagoon) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(zigzagoon) end)
 	local coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeave(mareep) end)
+											guild_third_floor_lobby_helper.ApprenticeLeave(mareep) end)
 	local coro4 = TASK:BranchCoroutine(function() --GAME:WaitFrames(18)
-											guild_third_floor_lobby.ApprenticeLeaveBottom(cranidos) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(cranidos) end)
 	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveFast(snubbull) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveFast(snubbull) end)
 	local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveBottomFast(audino) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottomFast(audino) end)
 	local coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveFast(breloom) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveFast(breloom) end)
 	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveBottomFast(girafarig) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottomFast(girafarig) end)
 	local coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
 											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
 	local coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 
@@ -260,64 +261,6 @@ function guild_third_floor_lobby.MorningAddress(generic)
 
 	
 end 
-
-function guild_third_floor_lobby.SetupMorningAddress()
-	local partner = CH('Teammate1')
-	local hero = CH('PLAYER')
-	GAME:CutsceneMode(true)
-	AI:DisableCharacterAI(partner)
-	UI:ResetSpeaker()
-	--create characters
-	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Tropius', 'Tropius'},
-			{'Noctowl', 'Noctowl'},
-			{'Audino', 'Audino'},
-			{'Snubbull', 'Snubbull'},
-			{'Growlithe', 'Growlithe'},
-			{'Zigzagoon', 'Zigzagoon'},
-			{'Girafarig', 'Girafarig'},
-			{'Breloom', 'Breloom'},
-			{'Mareep', 'Mareep'},
-			{'Cranidos', 'Cranidos'}})
-	
-	GeneralFunctions.CenterCamera({snubbull, tropius})
-	GROUND:TeleportTo(partner, MRKR("Partner").X, MRKR("Partner").Y, MRKR("Partner").Direction)
-	GROUND:TeleportTo(hero, MRKR("Hero").X, MRKR("Hero").Y, MRKR("Hero").Direction)
-	GAME:FadeIn(40)
-	GAME:WaitFrames(20)
-	
-	return tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, breloom, mareep, cranidos
-end
-
---used for having apprentices leave towards the stairs
-function guild_third_floor_lobby.ApprenticeLeave(chara)
-	GeneralFunctions.EightWayMove(chara, 544, 280, false, 1)
-	GeneralFunctions.EightWayMove(chara, 628, 200, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-
-end
-
---used for having apprentices leave towards the stairs
-function guild_third_floor_lobby.ApprenticeLeaveBottom(chara)
-	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
-	GeneralFunctions.EightWayMove(chara, 648, 208, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-end
-
---used for having apprentices leave towards the stairs - shorter to end cutscene faster
-function guild_third_floor_lobby.ApprenticeLeaveFast(chara)
-	GeneralFunctions.EightWayMove(chara, 552, 280, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-
-end
-
---used for having apprentices leave towards the stairs - shorter to end cutscene faster
-function guild_third_floor_lobby.ApprenticeLeaveBottomFast(chara)
-	GeneralFunctions.EightWayMove(chara, 552, 312, false, 1)
-	GAME:GetCurrentGround():RemoveTempChar(chara)
-
-end
 
 
 

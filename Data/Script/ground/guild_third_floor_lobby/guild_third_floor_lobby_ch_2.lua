@@ -2,6 +2,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_helper'
 
 guild_third_floor_lobby_ch_2 = {}
 
@@ -259,21 +260,21 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	
 	--everyone leaves
 	GAME:WaitFrames(40)
-	coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby.ApprenticeLeave(growlithe) end)
+	coro1 = TASK:BranchCoroutine(function() guild_third_floor_lobby_helper.ApprenticeLeave(growlithe) end)
 	coro2 = TASK:BranchCoroutine(function() --GAME:WaitFrames(6) 
-											guild_third_floor_lobby.ApprenticeLeaveBottom(zigzagoon) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(zigzagoon) end)
 	coro3 = TASK:BranchCoroutine(function() --GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeave(mareep) end)
+											guild_third_floor_lobby_helper.ApprenticeLeave(mareep) end)
 	coro4 = TASK:BranchCoroutine(function() --GAME:WaitFrames(18)
-											guild_third_floor_lobby.ApprenticeLeaveBottom(cranidos) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(cranidos) end)
 	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeave(snubbull) end)
+											guild_third_floor_lobby_helper.ApprenticeLeave(snubbull) end)
 	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveBottom(audino) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(audino) end)
 	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeave(breloom) end)
+											guild_third_floor_lobby_helper.ApprenticeLeave(breloom) end)
 	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											guild_third_floor_lobby.ApprenticeLeaveBottom(girafarig) end)
+											guild_third_floor_lobby_helper.ApprenticeLeaveBottom(girafarig) end)
 	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
 											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
 	coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 

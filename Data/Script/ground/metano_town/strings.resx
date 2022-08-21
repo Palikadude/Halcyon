@@ -320,10 +320,10 @@
     <value>Uh...[pause=0] Who's remembering a move now...?</value>
   </data>
   <data name="Music_Intro" xml:space="preserve">
-    <value>Hello there \u266A[pause=0]\nFancy a music change? </value>
+    <value>Hello there! \u266A\nFancy a music change? </value>
   </data>
   <data name="Music_End" xml:space="preserve">
-    <value>Talk with me anytime you would like a change in music \u266A</value>
+    <value>Speak with me anytime you'd like a change in music! \u266A</value>
   </data>
   <data name="Sign_Guild_Bridge_1" xml:space="preserve">
     <value>North: Penticus's Adventuring Guild\nEast: Marketplace</value>

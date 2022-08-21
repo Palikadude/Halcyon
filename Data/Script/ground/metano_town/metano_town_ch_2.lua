@@ -1139,7 +1139,7 @@ end
 
 function metano_town_ch_2.Luxray_Action(chara, activator)
 	if SV.Chapter2.FinishedFirstDay then 
-		local numel_species = _DATA:GetMonster(322):GetColoredName()
+		local numel_species = _DATA:GetMonster('numel'):GetColoredName()
 		GeneralFunctions.StartConversation(chara, "I've caught word that the " .. numel_species .. " child has gone missing.[pause=0] This does not surprise me.")
 		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Camerupt") .. " was too soft.[pause=0] So of course her child doesn't obey her and ends up running off.")
 		UI:WaitShowDialogue("If your child doesn't respect you,[pause=10] they'll do whatever they want.") 
@@ -1395,7 +1395,7 @@ function metano_town_ch_2.Vileplume_Action(chara, activator)
 end 
 
 function metano_town_ch_2.Marill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "We would help find the missing child...[pause=0] But unfortunately we're swamped with other jobs as it is.", "Worried")
+	GeneralFunctions.StartConversation(chara, "We would help find the missing child...[pause=0] But unfortunately we have other jobs we need to do.", "Worried")
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I hope that kid is brought back home soon,[pause=10] though!")
 	GeneralFunctions.EndConversation(chara)
@@ -1409,7 +1409,7 @@ function metano_town_ch_2.Spheal_Action(chara, activator)
 end 
 
 function metano_town_ch_2.Jigglypuff_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Another missing Pokémon...[pause=0] There's been a lot more of those kinds of jobs lately.", "Sad")
+	GeneralFunctions.StartConversation(chara, "Another missing Pokémon...[pause=0] There's been more of those kinds of jobs lately.", "Sad")
 	UI:WaitShowDialogue("It seems like there's never enough adventurers to do all the work in the world,[pause=10] does it?")
 	GeneralFunctions.EndConversation(chara)
 end 

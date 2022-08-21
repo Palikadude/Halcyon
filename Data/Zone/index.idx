@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
 "$type": "RogueEssence.Data.EntryDataIndex, RogueEssence",
 "Entries": {
@@ -120,7 +120,7 @@
 "Comment": "",
 "SortOrder": 0
 },
-"debug": {
+"debug_zone": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
 "NoEXP": false,
 "Level": -1,
@@ -134,11 +134,8 @@
 "CountedFloors": 0,
 "Rogue": 0,
 "Name": {
-"DefaultText": "Debug",
-"LocalTexts": {
-"de": "Debug",
-"es": "Debug"
-}
+"DefaultText": "Debug Zone",
+"LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
@@ -710,6 +707,30 @@
 }
 },
 "Released": false,
+"Comment": "",
+"SortOrder": 0
+},
+"debug": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Name": {
+"DefaultText": "Debug",
+"LocalTexts": {
+"de": "Debug",
+"es": "Debug"
+}
+},
+"Released": true,
 "Comment": "",
 "SortOrder": 0
 },

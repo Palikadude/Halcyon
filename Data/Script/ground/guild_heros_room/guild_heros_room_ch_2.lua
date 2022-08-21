@@ -2,6 +2,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.guild_heros_room.guild_heros_room_helper'
 
 guild_heros_room_ch_2 = {}
 
@@ -163,7 +164,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
-	guild_heros_room.Bedtime(false)
+	guild_heros_room_helper.Bedtime(false)
 	UI:ResetSpeaker()
 	GAME:FadeIn(40)
 	
@@ -277,7 +278,7 @@ function guild_heros_room_ch_2.FirstNightBedtalk()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
-	guild_heros_room.Bedtime(false)
+	guild_heros_room_helper.Bedtime(false)
 	UI:ResetSpeaker()
 	GROUND:CharSetAnim(hero, 'Laying', true)
 	GROUND:CharSetAnim(partner, 'Laying', true)

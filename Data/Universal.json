@@ -647,37 +647,12 @@
 },
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
-"Script": "HeroPartnerCheck",
-"ArgTable": "{}"
-}
-},
-{
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
 "Script": "SetCriticalHealthStatus",
 "ArgTable": "{}"
 }
 }
 ],
-"OnMapTurnEnds": [
-{
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
-"Script": "HeroPartnerCheck",
-"ArgTable": "{}"
-}
-}
-],
+"OnMapTurnEnds": [],
 "OnWalks": [],
 "OnDeaths": [
 {
@@ -709,6 +684,18 @@
 "Value": {
 "$type": "PMDC.Dungeon.ImpostorReviveEvent, PMDC",
 "AbilityID": "imposter"
+}
+},
+{
+"Key": {
+"str": [
+10
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "HeroPartnerCheck",
+"ArgTable": "{}"
 }
 },
 {

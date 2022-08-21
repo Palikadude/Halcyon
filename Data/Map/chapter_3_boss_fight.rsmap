@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -24,6 +24,15 @@
 "Y": 5
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Suilux",
+"MaxHPBonus": 30,
+"AtkBonus": 1,
+"DefBonus": 1,
+"MAtkBonus": 1,
+"MDefBonus": 1,
+"SpeedBonus": 1,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -165,7 +174,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Suilux",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -174,14 +182,8 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 12,
+"Level": 11,
 "EXP": 0,
-"MaxHPBonus": 29,
-"AtkBonus": 1,
-"DefBonus": 1,
-"MAtkBonus": 1,
-"MDefBonus": 1,
-"SpeedBonus": 1,
 "BaseSkills": [
 {
 "SkillNum": "howl",
@@ -223,8 +225,6 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
@@ -248,6 +248,15 @@
 "Y": 4
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Priscilla",
+"MaxHPBonus": 6,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 3,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -320,7 +329,7 @@
 "Price": 0
 },
 "ChargeBoost": 0,
-"HP": 36,
+"HP": 35,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -381,7 +390,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Priscilla",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -390,14 +398,8 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 10,
+"Level": 9,
 "EXP": 0,
-"MaxHPBonus": 6,
-"AtkBonus": 0,
-"DefBonus": 0,
-"MAtkBonus": 0,
-"MDefBonus": 0,
-"SpeedBonus": 3,
 "BaseSkills": [
 {
 "SkillNum": "fake_out",
@@ -439,8 +441,6 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
@@ -464,6 +464,15 @@
 "Y": 4
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Lummsy",
+"MaxHPBonus": 12,
+"AtkBonus": 2,
+"DefBonus": -1,
+"MAtkBonus": 2,
+"MDefBonus": -1,
+"SpeedBonus": -2,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -536,7 +545,7 @@
 "Price": 0
 },
 "ChargeBoost": 0,
-"HP": 44,
+"HP": 42,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -609,7 +618,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Lummsy",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -618,14 +626,8 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 10,
+"Level": 9,
 "EXP": 0,
-"MaxHPBonus": 12,
-"AtkBonus": 2,
-"DefBonus": -1,
-"MAtkBonus": 2,
-"MDefBonus": -1,
-"SpeedBonus": -2,
 "BaseSkills": [
 {
 "SkillNum": "absorb",
@@ -667,8 +669,6 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
