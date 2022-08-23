@@ -481,7 +481,7 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 		for i = 0, teamcount - 1, 1 do 
 			local partymember = GAME:GetPlayerPartyMember(i)
 			--bodyguard must be next to you, holding a scarf, alive, and not yourself
-			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == 2502 then 
+			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == "synergy_scarf" then 
 				--print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
 				
 				--cannot bodyguard if sleeping, paralyzed, or frozen

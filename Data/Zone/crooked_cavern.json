@@ -2704,6 +2704,51 @@
 }
 ],
 "IsRelevant": false
+},
+{
+"$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
+"Floors": [
+{
+"$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
+"GenSteps": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MappedRoomStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
+"MapID": "chapter_3_boss_fight"
+}
+}
+]
+}
+],
+"ZoneSteps": [
+{
+"$type": "PMDC.LevelGen.SaveVarsZoneStep, PMDC",
+"Priority": {
+"str": [
+1,
+1
+]
+}
+},
+{
+"$type": "RogueEssence.LevelGen.FloorNameIDZoneStep, RogueEssence",
+"Name": {
+"DefaultText": "Crooked Den",
+"LocalTexts": {}
+},
+"Priority": {
+"str": [
+-6
+]
+}
+}
+],
+"IsRelevant": false
 }
 ],
 "GroundMaps": [

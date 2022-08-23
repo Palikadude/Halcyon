@@ -240,7 +240,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	UI:WaitShowDialogue("As you and " .. cranidos:GetDisplayName() .. " are the most experienced outlaw hunters in the guild...")
 	UI:WaitShowDialogue("I would like the two of you to assist them in choosing their first job from the Outlaw Notice Board.")
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(10)
 	GeneralFunctions.EmoteAndPause(cranidos, "Exclaim", true)
 	UI:SetSpeaker(cranidos)
 	UI:SetSpeakerEmotion("Determined")

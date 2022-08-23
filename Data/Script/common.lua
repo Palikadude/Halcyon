@@ -544,7 +544,7 @@ function COMMON.BossTransition()
 	COMMON.MakeWhoosh(center, 112, 3, false)
     GAME:WaitFrames(40)
     GAME:FadeOut(true, 30)
-    GAME:WaitFrames(60)
+    GAME:WaitFrames(80)
 	
 	
 end

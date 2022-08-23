@@ -801,27 +801,6 @@
 "Comment": "3rd Dungeon of the game.",
 "SortOrder": 0
 },
-"crooked_den": {
-"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
-"Level": -1,
-"LevelCap": false,
-"TeamRestrict": false,
-"TeamSize": -1,
-"MoneyRestrict": false,
-"BagRestrict": -1,
-"BagSize": -1,
-"Rescues": 0,
-"CountedFloors": 0,
-"Rogue": 0,
-"Name": {
-"DefaultText": "Crooked Den",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Boss fight for Crooked Cavern.",
-"SortOrder": 0
-},
 "fire_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
 "NoEXP": false,

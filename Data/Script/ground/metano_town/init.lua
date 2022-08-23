@@ -378,6 +378,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 		if dest.StructID.Segment > -1 then
 		  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
 			GAME:WaitFrames(120)--wait a bit before going to the ground
+			SV.partner.Spawn = "Default"--set partner spawn area as the default for the map.
 			GAME:EnterZone("master_zone", -1, dungeon_entrance_mapping[dest.ID], 0)
 		  else
 			GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)

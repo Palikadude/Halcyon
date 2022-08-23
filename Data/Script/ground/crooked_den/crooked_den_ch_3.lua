@@ -461,7 +461,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	GAME:CutsceneMode(false)
 	SV.Chapter3.EncounteredBoss = true
 	--enter fight
-	GAME:EnterDungeon("crooked_den", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:ContinueDungeon("crooked_cavern", 1, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	
 end
 
@@ -695,6 +695,7 @@ local hero = CH('PLAYER')
 																						{"Glameow", 144, 104, Direction.UpRight},
 																						{"Cacnea", 200, 104, Direction.UpLeft}})
 	
+	GAME:WaitFrames(60)
 	GAME:CutsceneMode(true)
 	GROUND:TeleportTo(hero, 188, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 156, 256, Direction.Up)
@@ -702,9 +703,10 @@ local hero = CH('PLAYER')
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	
+	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
 	GAME:WaitFrames(60)
-	GAME:FadeIn(40)
-	
+	UI:WaitHideTitle(20)
+	GAME:FadeIn(40)	
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
 	
 	GAME:WaitFrames(20)
@@ -761,7 +763,7 @@ local hero = CH('PLAYER')
 	COMMON.BossTransition()
 	GAME:CutsceneMode(false)
 	--enter fight
-	GAME:EnterDungeon("crooked_den", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	GAME:ContinueDungeon("crooked_cavern", 1, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	
 end
 	
