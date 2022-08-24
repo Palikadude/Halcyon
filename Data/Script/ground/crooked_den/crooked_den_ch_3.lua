@@ -697,10 +697,10 @@ local hero = CH('PLAYER')
 	
 	GAME:WaitFrames(60)
 	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
 	GROUND:TeleportTo(hero, 188, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 156, 256, Direction.Up)
 	GAME:MoveCamera(180, 120, 1, false)
-	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)

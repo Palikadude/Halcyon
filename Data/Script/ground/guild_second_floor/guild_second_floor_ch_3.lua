@@ -9,10 +9,162 @@ guild_second_floor_ch_3 = {}
 
 function guild_second_floor_ch_3.SetupGround()
 	
-	
 	GAME:FadeIn(20)
 	
 end
+
+
+function guild_second_floor_ch_3.OutlawRewardScene() 
+local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	
+	GAME:MoveCamera(400, 240, 1, false) 
+	
+	local sandile, pawniard_boy, pawniard_girl, bisharp, cranidos, mareep, noctowl = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Sandile', 392, 224, Direction.Down},
+			{'Pawniard_Boy', 368, 224, Direction.Down},
+			{'Pawniard_Girl', 416, 224, Direction.Down},
+			{'Bisharp', 392, 248, Direction.Down}, 
+			{'Cranidos', 576, 100, Direction.Down},
+			{'Mareep', 576, 100, Direction.Down},
+			{'Noctowl', 576, 100, Direction.Down}
+		})
+	
+	GROUND:Hide('Downwards_Stairs_Exit')
+	
+	GROUND:TeleportTo(partner, 376, 272, Direction.Up)
+	GROUND:TeleportTo(hero, 408, 272, Direction.Up)
+	SOUND:StopBGM()
+
+	
+	GAME:FadeIn(40)
+	SOUND:PlayBGM("Job Clear!.ogg", true)
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(bisharp)
+	UI:WaitShowDialogue("'Ello there.[pause=0] Name's " .. bisharp:GetDisplayName() .. ",[pause=10] and I'm head officer around these parts.")
+	UI:WaitShowDialogue("Thanks to your help,[pause=10] we managed to bag us here a wanted criminal.")
+	UI:WaitShowDialogue("For that,[pause=10] my deputies and I thank the two of ya.")
+	
+	--pose!
+	SOUND:PlayBattleSE('DUN_Fury_Cutter')
+	GROUND:CharSetEmote(pawniard_boy, "happy", 0)
+	GROUND:CharSetEmote(pawniard_girl, "happy", 0)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharPoseAnim(bisharp, "Pose") end)
+	local coro2 = TASK:BranchCoroutine(function() GROUND:CharPoseAnim(pawniard_boy, "Pose") end)
+	local coro3 = TASK:BranchCoroutine(function() GROUND:CharPoseAnim(pawniard_girl, "Pose") end)
+
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue(".........")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharEndAnim(bisharp)
+	GROUND:CharEndAnim(pawniard_boy)
+	GROUND:CharEndAnim(pawniard_girl)
+	GROUND:CharSetEmote(pawniard_boy, "", 0)
+	GROUND:CharSetEmote(pawniard_girl, "", 0)
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(bisharp)
+	UI:WaitShowDialogue("I've already given the bounty on this here criminal's head to your superior over there.[pause=0] Make sure to pick it up from him.")
+	UI:WaitShowDialogue("Thank ya again for lending a hand.")
+	
+	GAME:WaitFrames(4)
+	GROUND:CharTurnToCharAnimated(bisharp, sandile, 4)
+	UI:WaitShowDialogue("As for you...[pause=0] It's time to go.[pause=0] Come this us.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(sandile)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("Oh...[pause=0] Alright...")
+	
+	GAME:WaitFrames(10)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Surprised")
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(bisharp, Direction.Left, 4) 
+											GROUND:MoveInDirection(bisharp, Direction.Left, 64, false, 1) 
+											GeneralFunctions.EmoteAndPause(bisharp, "Exclaim", true) end)
+	
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(pawniard_boy, Direction.Left, 4) 
+											GROUND:MoveInDirection(pawniard_boy, Direction.Left, 64, false, 1) 
+											GeneralFunctions.EmoteAndPause(pawniard_boy, "Exclaim", false) end)
+											
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(pawniard_girl, Direction.Left, 4) 
+											GROUND:MoveInDirection(pawniard_girl, Direction.Left, 8, false, 1)
+											GAME:WaitFrames(10)
+											GROUND:MoveInDirection(pawniard_girl, Direction.Left, 40, false, 1)
+											GeneralFunctions.EmoteAndPause(pawniard_girl, "Exclaim", false) end)
+											
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+												  GROUND:CharSetEmote(sandile, "shock", 1)
+												  GAME:WaitFrames(4)
+												  GROUND:CharAnimateTurnTo(sandile, Direction.Left, 2) 
+												  GROUND:MoveInDirection(sandile, Direction.Left, 48, false, 1) 
+												  GeneralFunctions.EmoteAndPause(sandile, "Shock", false) end)
+												  
+	local coro5 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, bisharp, 4, Direction.UpLeft)
+											      GAME:WaitFrames(30)
+												  UI:WaitShowTimedDialogue("Wait!", 60) end)
+											
+	local coro6 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, bisharp, 4, Direction.UpLeft)
+												  GAME:WaitFrames(46) 
+												  GeneralFunctions.EmoteAndPause(hero, "Exclaim", false) end)
+	local coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(56) GeneralFunctions.EmoteAndPause(noctowl, "Notice", false) end)
+	local coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GeneralFunctions.EmoteAndPause(mareep, "Exclaim", false) end)
+	local coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(66) GeneralFunctions.EmoteAndPause(cranidos, "Exclaim", false) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9})
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(bisharp, partner, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(pawniard_boy, partner, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(pawniard_girl, partner, 4) end)
+	coro4 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	UI:SetSpeaker(bisharp)
+	UI:WaitShowDialogue("Hmm?[pause=0] What's up?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("Um...[pause=0] I just wanted to say that I don't think " .. sandile:GetDisplayName() .. " is a bad Pokémon...")
+	UI:WaitShowDialogue("I know he's an outlaw and he needs to be arrested and all...")
+	UI:WaitShowDialogue("But I really think he's just someone who made a poor decision.[pause=0] He really isn't wicked or anything...")
+	UI:WaitShowDialogue("So,[pause=10] um...[pause=0] Would it be possible for you to go easy on him?[pause=0] I really think he deserves that at least.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(bisharp)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue(".........")
+	UI:WaitShowDialogue("...Sorry mate...[pause=0] Rules 'er rules.")
+	UI:WaitShowDialogue("Even if he deserves some leniency,[pause=10] and from what you say perhaps he does,[pause=10] I have to be consistent or the law won't be fair.")
+	UI:WaitShowDialogue("That's just the way it's gotta be.[pause=0] I'm sorry.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("...OK.[pause=0] I understand...")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharAnimateTurnTo(bisharp, Direction.Left, 4) 
+	UI:SetSpeaker(bisharp)
+	UI:WaitShowDialogue("Alright.[pause=0] Let's get a move on.")
+	
+	GAME:WaitFrames(10)
+	
+	--im surprised to see you stick up for an outlaw... that's unusual. But it does seem to me as though he was an unusual outlaw.
+	
+end
+
 
 function guild_second_floor_ch_3.OutlawTutorialScene()
 	local partner = CH('Teammate1')

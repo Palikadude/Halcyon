@@ -62,6 +62,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 					RogueEssence.Dungeon.MonsterID("meowth", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("machop", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("cubone", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("eevee", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("chikorita", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("cyndaquil", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("totodile", 0, "normal", Gender.Genderless),
@@ -114,6 +115,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 		 ["meowth"] = "foul_play", --foul play, meowth
 		 ["machop"] = "bullet_punch", --bullet punch, machop
 		 ["cubone"] = "double_kick", --double kick, cubone 
+		 ["eevee"] = "double_kick", --double kick, eevee 
 		 ["chikorita"] = "refresh", --refresh, chikorita
 		 ["cyndaquil"] = "double_kick", --double kick, cyndaquil 
 		 ["totodile"] = "aqua_jet", --aqua jet, totodile

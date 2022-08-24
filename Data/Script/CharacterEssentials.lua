@@ -613,6 +613,7 @@ local characters = {
 			skin = "normal"
 		},
 		
+		--Head of Police
 		Bisharp = {
 			species = "bisharp",
 			nickname = 'Zhayn',
@@ -622,6 +623,24 @@ local characters = {
 			skin = "normal"
 		},
 		
+		--The cops, their actual names shouldn't show up. They're just used for some cutscenes.
+		Pawniard_Boy = {
+			species = "pawniard",
+			nickname = 'Copper',
+			instance = 'Pawniard_Boy',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
+		},
+		
+		Pawniard_Girl = {
+			species = "pawniard",
+			nickname = 'Patty',
+			instance = 'Pawniard_Girl',
+			gender = Gender.Female,
+			form = 0,
+			skin = "normal"
+		},
 		
 		Gulpin = {
 			species = "gulpin",
