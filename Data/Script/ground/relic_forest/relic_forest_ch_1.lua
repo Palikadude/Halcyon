@@ -665,7 +665,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:WaitFrames(20)
 	GeneralFunctions.ShakeHead(hero, 4, true)
 	
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("You're adamant that you're a human,[pause=10] huh?")
 	UI:WaitShowDialogue("I'm having a hard time believing that a human could turn into a Pokémon...")

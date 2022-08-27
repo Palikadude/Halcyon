@@ -100,7 +100,7 @@ function guild_heros_room_ch_2.FirstMorning()
 	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Happy")
-	local move = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill].Entries["heal_bell"]--healbell
+	local move = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("heal_bell")--healbell
 
 	UI:WaitShowDialogue("Good morning![pause=0] Nothing like a " .. move:GetColoredName() .. " to w-wake you up,[pause=10] huh?")
 	
@@ -168,7 +168,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	UI:ResetSpeaker()
 	GAME:FadeIn(40)
 	
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 
 	SOUND:PlayBGM('Goodnight.ogg', true)
 	GAME:WaitFrames(40)

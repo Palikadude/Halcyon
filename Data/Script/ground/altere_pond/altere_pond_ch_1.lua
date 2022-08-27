@@ -18,7 +18,7 @@ function altere_pond_ch_1.PrologueGoToRelicForest()
 	--COMMON.RespawnAllies()
 	
 	local partner = CH('Teammate1')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 	--print(partner:GetDisplayName())
 	GROUND:Hide(CH('PLAYER').EntName)
 	GROUND:Hide('East_Exit')--hide entrance prompt to go into relic forest 
@@ -189,7 +189,7 @@ end
 --play this cutscene if you wiped in the forest as just the partner
 function altere_pond_ch_1.WipedInForest()
 	local partner = CH('PLAYER')	
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()

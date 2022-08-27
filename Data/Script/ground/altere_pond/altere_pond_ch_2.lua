@@ -27,7 +27,7 @@ end
 function altere_pond_ch_2.Relicanth_Action(chara, activator)
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 
 	GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. ",[pause=10] is that you?[pause=0] You are keeping out of trouble,[pause=10] I trust?")
 	
@@ -56,8 +56,8 @@ function altere_pond_ch_2.Relicanth_Action(chara, activator)
 end 
 
 function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
-	local zone2 = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
+	local zone2 = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 
 
 	local partner = CH('Teammate1')

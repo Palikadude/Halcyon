@@ -98,7 +98,7 @@ end
 function metano_town_ch_3.MeetTeamStyle()	
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"] 
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern") 
 	local luxio, glameow, cacnea = CharacterEssentials.MakeCharactersFromList({
 		{"Luxio", 464, 1208, Direction.Right},
 		{"Glameow", 432, 1224, Direction.Right},

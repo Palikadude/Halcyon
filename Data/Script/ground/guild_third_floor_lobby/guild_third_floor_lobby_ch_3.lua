@@ -33,7 +33,7 @@ end
 function guild_third_floor_lobby_ch_3.NotEnteredCavern()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
@@ -51,7 +51,7 @@ end
 function guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
@@ -69,7 +69,7 @@ end
 function guild_third_floor_lobby_ch_3.FailedCavernAfterBoss()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	

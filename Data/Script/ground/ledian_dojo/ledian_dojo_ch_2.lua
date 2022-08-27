@@ -36,8 +36,8 @@ function ledian_dojo_ch_2.PreTrainingCutscene()
 	GAME:MoveCamera(204, 120, 1, false)
 	GROUND:TeleportTo(ledian, 196, 324, Direction.Down)
 	GROUND:TeleportTo(gible, 264, 172, Direction.DownLeft)	
-	local lesson = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["beginner_lesson"]
-	local maze = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["normal_maze"]
+	local lesson = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("beginner_lesson")
+	local maze = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("normal_maze")
 	GAME:FadeIn(20)
 
 	GAME:WaitFrames(20)
@@ -422,7 +422,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 		GROUND:TeleportTo(partner, 184, 200, Direction.Up)
-		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["normal_maze"]
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("normal_maze")
 		GAME:FadeIn(40)
 		
 		GAME:WaitFrames(20)
@@ -464,7 +464,7 @@ function ledian_dojo_ch_2.FailedTrainingCutscene()
 		GROUND:TeleportTo(hero, 196, 200, Direction.Up)	
 		GROUND:Hide('Teammate1')
 		GROUND:Hide('Gible')
-		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["beginner_lesson"]
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("beginner_lesson")
 		GAME:FadeIn(40)
 		
 		GAME:WaitFrames(20)
@@ -510,7 +510,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 		GROUND:TeleportTo(partner, 184, 200, Direction.Up)
-		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["normal_maze"]
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("normal_maze")
 		GAME:FadeIn(40)
 		
 		GAME:WaitFrames(40)
@@ -581,7 +581,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GROUND:TeleportTo(partner, 184, 320, Direction.Up)
 		GROUND:TeleportTo(gible, 208, 320, Direction.Up)
 		GeneralFunctions.CenterCamera({ledian, hero})
-		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["beginner_lesson"]
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("beginner_lesson")
 		GAME:FadeIn(40)
 		
 		GAME:WaitFrames(40)

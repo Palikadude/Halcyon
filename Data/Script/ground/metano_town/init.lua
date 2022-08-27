@@ -115,7 +115,7 @@ end
 
 function metano_town.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"] 
+  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed") 
   UI:ResetSpeaker()
   UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
   UI:WaitForChoice()
@@ -316,7 +316,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   local open_dests = {}
   for ii = 1,#dungeon_entrances,1 do
     if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
-	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dungeon_entrances[ii]]
+	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon_entrances[ii])
 	  local zone_name = zone_summary:GetColoredName()
       table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
 	end
@@ -367,7 +367,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	--confirm the choice
 	UI:ResetSpeaker()
 	UI:SetCenter(true)
-	local dest_name = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dest.ID]:GetColoredName()
+	local dest_name = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dest.ID):GetColoredName()
 	UI:ChoiceMenuYesNo(dest_name .. " is the destination.\nIs that correct?")
 	UI:WaitForChoice()
 	local confirm = UI:ChoiceResult()

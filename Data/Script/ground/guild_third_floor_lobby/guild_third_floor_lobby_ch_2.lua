@@ -32,7 +32,7 @@ function guild_third_floor_lobby_ch_2.Noctowl_Action(chara, activator)
 		UI:WaitShowDialogue("There is a ladder that will lead down into a cave,[pause=10] where the dojo is located.")
 		GeneralFunctions.EndConversation(chara)
 	else 
-		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 		GeneralFunctions.StartConversation(chara, zone:GetColoredName() .. " is located to the north of town.")
 		UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
 		UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")
@@ -681,7 +681,7 @@ end
 function guild_third_floor_lobby_ch_2.FailedRiver()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	

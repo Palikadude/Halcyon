@@ -74,7 +74,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 	
 	GAME:MoveCamera(160, 224, 1, false)
 	
@@ -451,7 +451,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	SOUND:StopBGM()
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 	
 	GAME:MoveCamera(112, 224, 1, false)
 	
@@ -832,7 +832,7 @@ function guild_second_floor_ch_2.Audino_Action(chara, activator)
 end 
 
 function guild_second_floor_ch_2.Noctowl_Action(chara, activator)
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["illuminant_riverbed"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
 	GeneralFunctions.StartConversation(chara, "As I said earlier,[pause=10] " .. zone:GetColoredName() .. " is located to the north of town.")
 	UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
 	UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")

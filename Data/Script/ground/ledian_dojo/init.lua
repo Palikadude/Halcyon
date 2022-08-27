@@ -221,7 +221,7 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   local open_dests = {}
   for ii = 1,#dungeon_entrances,1 do
     if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
-	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[dungeon_entrances[ii]]
+	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon_entrances[ii])
 	  local zone_name = zone_summary:GetColoredName()
       table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
 	end
@@ -269,7 +269,7 @@ function ledian_dojo.GenericTrainingSuccess()
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 	GAME:MoveCamera(204, 184, 1, false)
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(SV.Dojo.LastZone)
 	GAME:FadeIn(40)
 		
 	GAME:WaitFrames(20)
@@ -326,7 +326,7 @@ function ledian_dojo.GenericTrainingFailure()
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
 	GAME:MoveCamera(204, 184, 1, false)
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries[SV.Dojo.LastZone]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(SV.Dojo.LastZone)
 	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(20)

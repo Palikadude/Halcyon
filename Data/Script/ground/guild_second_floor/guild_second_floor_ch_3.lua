@@ -20,7 +20,7 @@ local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	
 	GAME:MoveCamera(400, 240, 1, false) 
 	
@@ -172,7 +172,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	
 	GAME:MoveCamera(400, 176, 1, false)
 	
@@ -393,7 +393,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	UI:WaitHideBG(20)
 	GAME:FadeIn(20)
 	
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["crooked_cavern"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("According to the wanted poster,[pause=10] this " .. _DATA:GetMonster("sandile"):GetColoredName() .. " goes by " .. CharacterEssentials.GetCharacterName("Sandile") .. ".")
 	UI:WaitShowDialogue("He's wanted for theft and is hiding out in " .. zone:GetColoredName() .. ".")

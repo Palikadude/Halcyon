@@ -105,9 +105,9 @@ function DebugTools:OnNewGame()
   
 
   
-	local dungeon_dict = LUA_ENGINE:MakeTable(_DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries)
-	for k, v in pairs(dungeon_dict) do
-		GAME:UnlockDungeon(k)
+	local dungeon_keys = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:GetOrderedKeys(false)
+	for ii = 0, dungeon_keys.Count-1 ,1 do
+		GAME:UnlockDungeon(dungeon_keys[ii])
 	end
   
   SV.base_camp.ExpositionComplete = true

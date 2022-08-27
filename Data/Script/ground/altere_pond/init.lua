@@ -85,7 +85,7 @@ end
 
 --separate entrance to go into relic forest
 function altere_pond.East_Exit_Touch(obj, activator)
-	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone].Entries["relic_forest"]
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 	UI:ResetSpeaker()
 	UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
 	UI:WaitForChoice()
