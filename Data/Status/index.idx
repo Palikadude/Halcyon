@@ -1,8 +1,7 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
-"$type": "RogueEssence.Data.EntryDataIndex, RogueEssence",
-"Entries": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "critical_health": {
 "Name": {
 "DefaultText": "Critical Health",
@@ -20,7 +19,6 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
-}
 }
 }
 }

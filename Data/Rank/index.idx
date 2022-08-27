@@ -1,8 +1,7 @@
 ﻿{
-"Version": "0.6.0.0",
+"Version": "0.6.1.0",
 "Object": {
-"$type": "RogueEssence.Data.EntryDataIndex, RogueEssence",
-"Entries": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "bronze": {
 "Name": {
 "DefaultText": "Bronze",
@@ -48,9 +47,9 @@
 "Comment": "",
 "SortOrder": 0
 },
-"grandmaster": {
+"guildmaster": {
 "Name": {
-"DefaultText": "Grandmaster",
+"DefaultText": "Guildmaster",
 "LocalTexts": {
 "fr-ca": "Grand Maître",
 "de": "Gildenmeister",
@@ -184,21 +183,6 @@
 "Comment": "",
 "SortOrder": 0
 },
-"guildmaster": {
-"Name": {
-"DefaultText": "Guildmaster",
-"LocalTexts": {
-"fr-ca": "Grand Maître",
-"de": "Gildenmeister",
-"es": "Maestro",
-"pt": "Grão-Mestre",
-"ko": "그레이트 마스터"
-}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "unranked": {
 "Name": {
 "DefaultText": "Unranked",
@@ -207,7 +191,6 @@
 "Released": true,
 "Comment": "Your rank before joining the guild.",
 "SortOrder": 0
-}
 }
 }
 }

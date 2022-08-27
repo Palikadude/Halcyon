@@ -24,15 +24,6 @@
 "Y": 5
 },
 "serializationDir": 0,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Suilux",
-"MaxHPBonus": 30,
-"AtkBonus": 1,
-"DefBonus": 1,
-"MAtkBonus": 1,
-"MDefBonus": 1,
-"SpeedBonus": 1,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -174,6 +165,7 @@
 "Assembly": false,
 "Index": -1
 },
+"Nickname": "Suilux",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -184,6 +176,12 @@
 },
 "Level": 11,
 "EXP": 0,
+"MaxHPBonus": 30,
+"AtkBonus": 1,
+"DefBonus": 1,
+"MAtkBonus": 1,
+"MDefBonus": 1,
+"SpeedBonus": 1,
 "BaseSkills": [
 {
 "SkillNum": "howl",
@@ -225,6 +223,8 @@
 },
 "EntryPoint": -1
 },
+"IsFounder": false,
+"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
@@ -248,15 +248,6 @@
 "Y": 4
 },
 "serializationDir": 0,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Priscilla",
-"MaxHPBonus": 6,
-"AtkBonus": 0,
-"DefBonus": 0,
-"MAtkBonus": 0,
-"MDefBonus": 0,
-"SpeedBonus": 3,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -390,6 +381,7 @@
 "Assembly": false,
 "Index": -1
 },
+"Nickname": "Priscilla",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -400,6 +392,12 @@
 },
 "Level": 9,
 "EXP": 0,
+"MaxHPBonus": 6,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 3,
 "BaseSkills": [
 {
 "SkillNum": "fake_out",
@@ -441,6 +439,8 @@
 },
 "EntryPoint": -1
 },
+"IsFounder": false,
+"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
@@ -464,15 +464,6 @@
 "Y": 4
 },
 "serializationDir": 0,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Lummsy",
-"MaxHPBonus": 12,
-"AtkBonus": 2,
-"DefBonus": -1,
-"MAtkBonus": 2,
-"MDefBonus": -1,
-"SpeedBonus": -2,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -618,6 +609,7 @@
 "Assembly": false,
 "Index": -1
 },
+"Nickname": "Lummsy",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -628,6 +620,12 @@
 },
 "Level": 9,
 "EXP": 0,
+"MaxHPBonus": 12,
+"AtkBonus": 2,
+"DefBonus": -1,
+"MAtkBonus": 2,
+"MDefBonus": -1,
+"SpeedBonus": -2,
 "BaseSkills": [
 {
 "SkillNum": "absorb",
@@ -669,6 +667,8 @@
 },
 "EntryPoint": -1
 },
+"IsFounder": false,
+"IsPartner": false,
 "IsFavorite": false,
 "ActionEvents": [],
 "ScriptVars": null
