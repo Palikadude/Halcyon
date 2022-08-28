@@ -303,7 +303,11 @@ function test_grounds.Mew_Action(chara, activator)
 
   CH('Mew').CharDir = state.olddir
   
-  GROUND:CharHopAnim(CH('PLAYER'), "Hurt", 10, 10)
+  local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("Swing")
+  GROUND:CharSetAction(CH('PLAYER'), RogueEssence.Ground.FrameGroundAction(CH('PLAYER').Position, CH('PLAYER').Direction, animId, 5))
+  
+  GAME:WaitFrames(60)
+  GROUND:CharEndAnim(CH('PLAYER'))
 end
 
 function test_grounds.Walk_Sequence(chara)

@@ -291,7 +291,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 							UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_1']))
 							--puts the items in his shell
 							SOUND:PlayBattleSE('DUN_Equip')
-							GROUND:CharPoseAnim(owner, "Withdraw")
+							GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Withdraw")))
 							GAME:WaitFrames(60)
 							SOUND:PlayBattleSE('DUN_Drink')
 							GAME:WaitFrames(60)

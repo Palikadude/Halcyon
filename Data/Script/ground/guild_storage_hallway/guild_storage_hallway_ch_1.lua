@@ -66,7 +66,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	--you two dopes run into each other
 	SOUND:PlayBattleSE('EVT_Tackle')
 	coro1 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(hero, "Pain", Direction.Left, Direction.Right, 4, 1, 4) 
-											GROUND:CharPoseAnim(hero, "Pain") end)
+											GROUND:CharSetAction(hero, RogueEssence.Ground.PoseGroundAction(hero.Position, hero.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pain"))) end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(audino, "Hurt", Direction.Right, Direction.Left, 4, 1, 2) 
 											GROUND:CharSetAnim(audino, "Hurt", true) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)

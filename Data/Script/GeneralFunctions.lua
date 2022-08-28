@@ -708,8 +708,8 @@ function GeneralFunctions.Hop(chara, anim, height, duration, pause, sound)
 	if pause == nil then pause = true end
 	if sound == nil then sound = false end
 
-	
-	GROUND:CharHopAnim(chara, anim, height, duration)
+	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex(anim)
+	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 	
 	if sound then
 		SOUND:PlayBattleSE("EVT_Emote_Startled")
@@ -732,9 +732,10 @@ function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
 		SOUND:PlayBattleSE("EVT_Emote_Startled_2")
 	end
 	
-	GROUND:CharHopAnim(chara, anim, height, duration)
+	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex(anim)
+	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 	GAME:WaitFrames(duration)--need to pause no matter what here because only one hop will show otherwise
-	GROUND:CharHopAnim(chara, anim, height, duration)
+	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 
 	if pause then --only pause on 2nd hop if pause needed
 		GAME:WaitFrames(duration)
@@ -753,7 +754,8 @@ function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
 	
 	GROUND:CharSetEmote(chara, "shock", 1)
 	SOUND:PlayBattleSE('EVT_Emote_Startled')
-	GROUND:CharHopAnim(chara, anim, height, duration)
+	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex(anim)
+	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 	GAME:WaitFrames(duration)
 	GROUND:CharSetEmote(chara, "", 0)
 	

@@ -508,8 +508,8 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
 	GAME:WaitFrames(20)
 	
-	coro1 = TASK:BranchCoroutine(function() GROUND:CharPoseAnim(partner, "Pose") end)
-	coro2 = TASK:BranchCoroutine(function() GROUND:CharPoseAnim(hero, "Pose") end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose"))) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharSetAction(hero, RogueEssence.Ground.PoseGroundAction(hero.Position, hero.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose"))) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(40) GROUND:CharSetEmote(tropius, "glowing", 0) end)
 	GAME:WaitFrames(120)
 	
