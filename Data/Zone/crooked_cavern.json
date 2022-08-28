@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -1022,7 +1022,7 @@
 "Spawns": [
 {
 "Spawn": {
-"ID": "chesto_berry",
+"ID": "berry_chesto",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1036,7 +1036,7 @@
 },
 {
 "Spawn": {
-"ID": "leppa_berry",
+"ID": "berry_leppa",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1050,7 +1050,7 @@
 },
 {
 "Spawn": {
-"ID": "oran_berry",
+"ID": "berry_oran",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1064,7 +1064,7 @@
 },
 {
 "Spawn": {
-"ID": "apple",
+"ID": "food_apple",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1078,7 +1078,7 @@
 },
 {
 "Spawn": {
-"ID": "persim_berry",
+"ID": "berry_persim",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1092,7 +1092,7 @@
 },
 {
 "Spawn": {
-"ID": "gray_gummi",
+"ID": "gummi_gray",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1135,7 +1135,7 @@
 },
 {
 "Spawn": {
-"ID": "sleep_seed",
+"ID": "seed_sleep",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1149,7 +1149,7 @@
 },
 {
 "Spawn": {
-"ID": "warp_seed",
+"ID": "seed_warp",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1163,7 +1163,7 @@
 },
 {
 "Spawn": {
-"ID": "blast_seed",
+"ID": "seed_blast",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1191,7 +1191,7 @@
 },
 {
 "Spawn": {
-"ID": "vile_seed",
+"ID": "seed_vile",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1205,7 +1205,7 @@
 },
 {
 "Spawn": {
-"ID": "reviver_seed",
+"ID": "seed_reviver",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1404,7 +1404,7 @@
 "Spawns": [
 {
 "Spawn": {
-"ID": "escape_orb",
+"ID": "orb_escape",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1418,7 +1418,7 @@
 },
 {
 "Spawn": {
-"ID": "foe_hold_orb",
+"ID": "orb_foe_hold",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1432,7 +1432,7 @@
 },
 {
 "Spawn": {
-"ID": "totter_orb",
+"ID": "orb_totter",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1460,7 +1460,7 @@
 },
 {
 "Spawn": {
-"ID": "rollcall_orb",
+"ID": "orb_rollcall",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1474,7 +1474,7 @@
 },
 {
 "Spawn": {
-"ID": "slumber_orb",
+"ID": "orb_slumber",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -1488,7 +1488,7 @@
 },
 {
 "Spawn": {
-"ID": "petrify_orb",
+"ID": "orb_petrify",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,

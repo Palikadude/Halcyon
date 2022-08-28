@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -89,7 +89,7 @@
 }
 ],
 "EquippedItem": {
-"ID": "power_band",
+"ID": "held_power_band",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -313,7 +313,7 @@
 }
 ],
 "EquippedItem": {
-"ID": "oran_berry",
+"ID": "berry_oran",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,

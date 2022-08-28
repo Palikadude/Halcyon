@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -20051,7 +20051,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -20063,7 +20063,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -20075,7 +20075,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -20087,7 +20087,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -20099,7 +20099,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -20111,7 +20111,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "lum_berry",
+"Value": "berry_lum",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,

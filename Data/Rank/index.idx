@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "bronze": {

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -35292,7 +35292,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "apple",
+"Value": "food_apple",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35304,7 +35304,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "apple",
+"Value": "food_apple",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35316,7 +35316,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "apple",
+"Value": "food_apple",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35328,7 +35328,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "apple",
+"Value": "food_apple",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35340,7 +35340,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "leppa_berry",
+"Value": "berry_leppa",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35352,7 +35352,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "leppa_berry",
+"Value": "berry_leppa",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35364,7 +35364,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "oran_berry",
+"Value": "berry_oran",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35376,7 +35376,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "oran_berry",
+"Value": "berry_oran",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35436,7 +35436,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "cleanse_orb",
+"Value": "orb_cleanse",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35448,7 +35448,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "cleanse_orb",
+"Value": "orb_cleanse",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35460,7 +35460,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "band_of_passage",
+"Value": "held_band_of_passage",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35472,7 +35472,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "band_of_passage",
+"Value": "held_band_of_passage",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35484,7 +35484,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "band_of_passage",
+"Value": "held_band_of_passage",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35496,7 +35496,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35508,7 +35508,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35520,7 +35520,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35532,7 +35532,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35544,7 +35544,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,
@@ -35556,7 +35556,7 @@
 {
 "IsMoney": false,
 "Cursed": false,
-"Value": "reviver_seed",
+"Value": "seed_reviver",
 "HiddenValue": "",
 "Amount": 0,
 "Price": 0,

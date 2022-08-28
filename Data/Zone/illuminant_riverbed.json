@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.1.0",
+"Version": "0.6.2.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -596,7 +596,7 @@
 "Spawns": [
 {
 "Spawn": {
-"ID": "leppa_berry",
+"ID": "berry_leppa",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -610,7 +610,7 @@
 },
 {
 "Spawn": {
-"ID": "oran_berry",
+"ID": "berry_oran",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -624,7 +624,7 @@
 },
 {
 "Spawn": {
-"ID": "apple",
+"ID": "food_apple",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -638,7 +638,7 @@
 },
 {
 "Spawn": {
-"ID": "chesto_berry",
+"ID": "berry_chesto",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -652,7 +652,7 @@
 },
 {
 "Spawn": {
-"ID": "blue_gummi",
+"ID": "gummi_blue",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -681,7 +681,7 @@
 "Spawns": [
 {
 "Spawn": {
-"ID": "sleep_seed",
+"ID": "seed_sleep",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -695,7 +695,7 @@
 },
 {
 "Spawn": {
-"ID": "warp_seed",
+"ID": "seed_warp",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -709,7 +709,7 @@
 },
 {
 "Spawn": {
-"ID": "blast_seed",
+"ID": "seed_blast",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -723,7 +723,7 @@
 },
 {
 "Spawn": {
-"ID": "vile_seed",
+"ID": "seed_vile",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
