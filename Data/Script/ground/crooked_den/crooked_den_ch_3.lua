@@ -613,7 +613,7 @@ function crooked_den_ch_3.DefeatedBoss()
 
 	GAME:WaitFrames(20)
 	SOUND:PlayBattleSE('EVT_CH03_Boss_Collapse')
-	GROUND:CharPoseAnim(luxio, 'Sleep')
+	GROUND:CharSetAction(luxio, RogueEssence.Ground.PoseGroundAction(luxio.Position, luxio.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Sleep")))
 	GAME:WaitFrames(70)
 	
 	UI:SetSpeaker(partner)
