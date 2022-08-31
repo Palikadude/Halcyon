@@ -898,23 +898,23 @@ function GeneralFunctions.GetFavoriteGummi(chara)
 	end
 	
 	local gummis = {bug = "green_gummi",
-					dark = "black_gummi", 
-					dragon = "royal_gummi", 
-					electric = "yellow_gummi", 
-					fairy = "magenta_gummi", 
-					fighting = "orange_gummi", 
-					fire = "red_gummi", 
-					flying = "sky_gummi", 
-					ghost = "purple_gummi",
-					grass = "grass_gummi", 
-					ground = "brown_gummi", 
-					ice = "clear_gummi", 
-					normal = "white_gummi", 
-					poison = "pink_gummi",
-					psychic = "gold_gummi",
-					rock = "gray_gummi", 
-					steel = "silver_gummi", 
-					water = "blue_gummi" }
+					dark = "gummi_black", 
+					dragon = "gummi_royal", 
+					electric = "gummi_yellow", 
+					fairy = "gummi_magenta", 
+					fighting = "gummi_orange", 
+					fire = "gummi_red", 
+					flying = "gummi_sky", 
+					ghost = "gummi_purple",
+					grass = "gummi_grass", 
+					ground = "gummi_brown", 
+					ice = "gummi_clear", 
+					normal = "gummi_white", 
+					poison = "gummi_pink",
+					psychic = "gummi_gold",
+					rock = "gummi_gray", 
+					steel = "gummi_silver", 
+					water = "gummi_blue" }
 	
 	return gummis[typing]
 					

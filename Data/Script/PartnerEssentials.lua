@@ -395,7 +395,7 @@ function PartnerEssentials.Chapter_2_Dialogue(partner)
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("I wonder if the Guildmaster can help us at all with our mission?[pause=0] Maybe he has some advice or something.")
 		else
-			local itemname = RogueEssence.Dungeon.InvItem("reviver_seed"):GetDisplayName()
+			local itemname = RogueEssence.Dungeon.InvItem("seed_reviver"):GetDisplayName()
 			UI:SetSpeakerEmotion("Happy")
 			UI:WaitShowDialogue("It was kind of the Guildmaster to give us that " .. itemname .. ".")
 			UI:WaitShowDialogue("It'll come in handy if one of us gets into a bad situation.")

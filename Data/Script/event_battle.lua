@@ -417,7 +417,7 @@ end
 
 function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if context.User.EquippedItem.ID == "synergy_scarf" then 
+	if context.User.EquippedItem.ID == "held_synergy_scarf" then 
 		--print("Atk " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
 		context:AddContextStateMult(dmgmult, false, 11, 10)
@@ -427,7 +427,7 @@ end
 
 function BATTLE_SCRIPT.SynergyScarfDefense(owner, ownerChar, context, args)
 	local dmgmult = luanet.ctype(DmgMultType)
-	if context.Target.EquippedItem.ID == "synergy_scarf" then 
+	if context.Target.EquippedItem.ID == "held_synergy_scarf" then 
 		--print("Def " .. ownerChar.Nickname)
 		--give multiplycategory status events to boost stats by 10%
 		context:AddContextStateMult(dmgmult, false, 9, 10)
@@ -481,7 +481,7 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 		for i = 0, teamcount - 1, 1 do 
 			local partymember = GAME:GetPlayerPartyMember(i)
 			--bodyguard must be next to you, holding a scarf, alive, and not yourself
-			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == "synergy_scarf" then 
+			if partymember ~= ownerChar and not partymember.Dead and (partymember.CharLoc - ownerChar.CharLoc):Dist8() <= 1 and partymember.EquippedItem.ID == "held_synergy_scarf" then 
 				--print(partymember.MemberTeam:GetCharIndex(partymember).Char) -- print slot of teammate (also this is how you get the slot of a party member)
 				
 				--cannot bodyguard if sleeping, paralyzed, or frozen

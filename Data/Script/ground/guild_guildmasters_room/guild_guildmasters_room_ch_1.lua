@@ -420,7 +420,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	SOUND:PlayBattleSE('EVT_CH02_Box_Open')
 	GeneralFunctions.Monologue(hero:GetDisplayName() .. " opened the box.")
 	
-	--local scarf_name = RogueEssence.Dungeon.InvItem("synergy_scarf"):GetDisplayName()
+	--local scarf_name = RogueEssence.Dungeon.InvItem("held_synergy_scarf"):GetDisplayName()
 	--have to hardcode this so I can have it say scarves instead of scarf
 	local scarf_name = STRINGS:Format('\\uE0AE')..'[color=#FFCEFF]Synergy Scarves[color]'
 	
@@ -517,7 +517,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	_DATA.Save.ActiveTeam:SetRank("normal")
-	GAME:GivePlayerItem("synergy_scarf", 2)--give 2 vibrant scarves
+	GAME:GivePlayerItem("held_synergy_scarf", 2)--give 2 vibrant scarves
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(60)
 	GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")

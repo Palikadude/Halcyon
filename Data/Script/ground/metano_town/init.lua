@@ -409,46 +409,46 @@ function metano_town.GenerateGreenKecleonStock()
 	
 	--total weight = 100
 	local food_stock = {
-		{"apple", 82}, --Apple
-		{"blue_gummi", 1}, --Blue Gummi
-		{"black_gummi", 1}, --Black Gummi
-		{"clear_gummi", 1}, --Clear Gummi
-		{"grass_gummi", 1}, --Grass Gummi
+		{"food_apple", 82}, --Apple
+		{"gummi_blue", 1}, --Blue Gummi
+		{"gummi_black", 1}, --Black Gummi
+		{"gummi_clear", 1}, --Clear Gummi
+		{"gummi_grass", 1}, --Grass Gummi
 		{"green_gummi", 1}, --Green Gummi
-		{"brown_gummi", 1}, --Brown Gummi
-		{"orange_gummi", 1}, --Orange Gummi
-		{"gold_gummi", 1}, --Gold Gummi
-		{"pink_gummi", 1}, --Pink Gummi
-		{"purple_gummi", 1}, --Purple Gummi
-		{"red_gummi", 1}, --Red Gummi
-		{"royal_gummi", 1}, --Royal Gummi
-		{"silver_gummi", 1}, --Silver Gummi
-		{"white_gummi", 1}, --White Gummi
-		{"yellow_gummi", 1}, --Yellow Gummi
-		{"sky_gummi", 1}, --Sky Gummi
-		{"gray_gummi", 1}, --Gray Gummi
-		{"magenta_gummi", 1}	--Magenta Gummi
+		{"gummi_brown", 1}, --Brown Gummi
+		{"gummi_orange", 1}, --Orange Gummi
+		{"gummi_gold", 1}, --Gold Gummi
+		{"gummi_pink", 1}, --Pink Gummi
+		{"gummi_purple", 1}, --Purple Gummi
+		{"gummi_red", 1}, --Red Gummi
+		{"gummi_royal", 1}, --Royal Gummi
+		{"gummi_silver", 1}, --Silver Gummi
+		{"gummi_white", 1}, --White Gummi
+		{"gummi_yellow", 1}, --Yellow Gummi
+		{"gummi_sky", 1}, --Sky Gummi
+		{"gummi_gray", 1}, --Gray Gummi
+		{"gummi_magenta", 1}	--Magenta Gummi
 	}
 	
 	--total weight = 120
 	local medicine_stock = {
-		{"reviver_seed", 10},--Reviver seed 
-		{"warp_seed", 5}, --Warp Seed 
-		{"sleep_seed", 5}, --Sleep seed 
-		{"vile_seed", 2}, --Vile seed 
-		{"blast_seed", 8}, --Blast seed
+		{"seed_reviver", 10},--Reviver seed 
+		{"seed_warp", 5}, --Warp Seed 
+		{"seed_sleep", 5}, --Sleep seed 
+		{"seed_vile", 2}, --Vile seed 
+		{"seed_blast", 8}, --Blast seed
 		
-		{"leppa_berry", 25}, --Leppa berry 
+		{"berry_leppa", 25}, --Leppa berry 
 
 		
-		{"oran_berry", 32}, --Oran berry
-		{"lum_berry", 2}, --Lum berry 
-		{"cheri_berry", 6}, -- Cheri berry 
-		{"chesto_berry", 4}, -- Chesto berry 
-		{"pecha_berry", 8}, -- Pecha berry 
-		{"aspear_berry", 3}, -- Aspear berry 
-		{"rawst_berry", 4}, -- Rawst berry 
-		{"persim_berry", 6} -- Persim berry 
+		{"berry_oran", 32}, --Oran berry
+		{"berry_lum", 2}, --Lum berry 
+		{"berry_cheri", 6}, -- Cheri berry 
+		{"berry_chesto", 4}, -- Chesto berry 
+		{"berry_pecha", 8}, -- Pecha berry 
+		{"berry_aspear", 3}, -- Aspear berry 
+		{"berry_rawst", 4}, -- Rawst berry 
+		{"berry_persim", 6} -- Persim berry 
 	}
 	
 	
@@ -461,19 +461,19 @@ function metano_town.GenerateGreenKecleonStock()
 	
 	
 	local held_stock = {
-		{"power_band", 10}, -- power band 
-		{"special_band", 10}, --special band 
-		{"defense_scarf", 10}, --defense scarf 
-		{"zinc_band", 10}, --Zinc band 
+		{"held_power_band", 10}, -- power band 
+		{"held_special_band", 10}, --special band 
+		{"held_defense_scarf", 10}, --defense scarf 
+		{"held_zinc_band", 10}, --Zinc band 
 		
-		{"pecha_scarf", 10}, --Pecha Scarf
-		{"cheri_scarf", 10}, --Cheri scarf 
-		{"rawst_scarf", 10}, --Rawst scarf 
-		{"aspear_scarf", 10}, --Aspear Scarf 
-		{"insomniascope", 10}, --Insomnia scope
-		{"persim_band", 10}, --Persim Band
+		{"held_pecha_scarf", 10}, --Pecha Scarf
+		{"held_cheri_scarf", 10}, --Cheri scarf 
+		{"held_rawst_scarf", 10}, --Rawst scarf 
+		{"held_aspear_scarf", 10}, --Aspear Scarf 
+		{"held_insomniascope", 10}, --Insomnia scope
+		{"held_persim_band", 10}, --Persim Band
 		
-		{"reunion_cape", 2} --Reunion cape 
+		{"held_reunion_cape", 2} --Reunion cape 
 		
 	}
 	
@@ -554,22 +554,22 @@ function metano_town.GeneratePurpleKecleonStock()
 	
 	local orb_stock = 
 	{
-		{"escape_orb", 50},--escape orb 
-		{"cleanse_orb", 10},--cleanse orb 
+		{"orb_escape", 50},--escape orb 
+		{"orb_cleanse", 10},--cleanse orb 
 		
-		{"petrify_orb", 10},--petrify orb 
-		{"slumber_orb", 10},--slumber orb 
-		{"totter_orb", 10},--totter orb 
-		{"scanner_orb", 10},--scanner orb
-		{"luminous_orb", 10},--luminous orb
-		{"spurn_orb", 10},--spurn orb 
-		{"foe_hold_orb", 10},--foe hold orb 
-		{"foe_seal_orb", 10},--foe seal orb 
-		{"rollcall_orb", 15},--rollcall orb 
-		{"trawl_orb", 5}, --trawl orb 
-		{"all_aim_orb", 10},--all aim orb
-		{"invert_orb", 5}, --invert orb 
-		{"fill_in_orb", 5} --fill in orb
+		{"orb_petrify", 10},--petrify orb 
+		{"orb_slumber", 10},--slumber orb 
+		{"orb_totter", 10},--totter orb 
+		{"orb_scanner", 10},--scanner orb
+		{"orb_luminous", 10},--luminous orb
+		{"orb_spurn", 10},--spurn orb 
+		{"orb_foe_hold", 10},--foe hold orb 
+		{"orb_foe_seal", 10},--foe seal orb 
+		{"orb_rollcall", 15},--rollcall orb 
+		{"orb_trawl", 5}, --trawl orb 
+		{"orb_all_aim", 10},--all aim orb
+		{"orb_invert", 5}, --invert orb 
+		{"orb_fill_in", 5} --fill in orb
 	}
 	
 	
@@ -1425,9 +1425,9 @@ function metano_town.Green_Merchant_Action(obj, activator)
 		"wand_purge", "wand_purge", "wand_purge", "wand_purge", "wand_purge", --purge wand
 		"wand_lob", "wand_lob", "wand_lob", "wand_lob", "wand_lob", --lob wand
 		--rest of items are non "junk", put one of each since they should be rare to get a specific item, but there's so many different ones it isn't rare to find non junk
-		"power_band", "power_band", "power_band", "special_band", "special_band", "special_band", "defense_scarf", "defense_scarf", "defense_scarf", "zinc_band", "zinc_band", "zinc_band", --power band, def scarf, etc
+		"held_power_band", "held_power_band", "held_power_band", "held_special_band", "held_special_band", "held_special_band", "held_defense_scarf", "held_defense_scarf", "held_defense_scarf", "held_zinc_band", "held_zinc_band", "held_zinc_band", --power band, def scarf, etc
 		"held_friend_bow", "held_pierce_band", "held_mobile_scarf", "held_pass_scarf", "held_warp_scarf", "held_trap_scarf", "held_grip_claw", "held_binding_band", "held_twist_band", "held_metronome", "held_shed_shell", "held_shell_bell", "held_scope_lens", "held_wide_lens", "held_heal_ribbon", --some assorted bands and scarfs
-		"held_sticky_barb", "held_choice_band", "held_choice_specs", "held_choice_scarf", "held_assault_vest", "held_life_orb", "held_toxic_orb", "held_flame_orb", "held_iron_ball", "held_ring_target", "held_black_sludge", "held_x_ray_specs", "reunion_cape", "held_cover_band", "held_big_root", "held_expert_belt", --assorted hold items
+		"held_sticky_barb", "held_choice_band", "held_choice_specs", "held_choice_scarf", "held_assault_vest", "held_life_orb", "held_toxic_orb", "held_flame_orb", "held_iron_ball", "held_ring_target", "held_black_sludge", "held_x_ray_specs", "held_reunion_cape", "held_cover_band", "held_big_root", "held_expert_belt", --assorted hold items
 		"machine_ability_capsule" --ability capsule
 	}
 	

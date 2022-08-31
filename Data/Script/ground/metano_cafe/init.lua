@@ -98,19 +98,19 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
 		if result == 1 then
-			item1 = RogueEssence.Dungeon.InvItem("oran_berry")--oran berry 
+			item1 = RogueEssence.Dungeon.InvItem("berry_oran")--oran berry 
 			item2 = RogueEssence.Dungeon.InvItem("ammo_stick")--stick
 			item2.Amount = 5
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Domi_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		elseif result == 2 then
-			item1 = RogueEssence.Dungeon.InvItem("apple")--Apple 
-			item2 = RogueEssence.Dungeon.InvItem("oran_berry")--oran berry
+			item1 = RogueEssence.Dungeon.InvItem("food_apple")--Apple 
+			item2 = RogueEssence.Dungeon.InvItem("berry_oran")--oran berry
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Cider_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Cider_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		elseif result == 3 then 
-			item1 = RogueEssence.Dungeon.InvItem("cheri_berry")--cheri berry
-			item2 = RogueEssence.Dungeon.InvItem("blast_seed")--blast seed 
+			item1 = RogueEssence.Dungeon.InvItem("berry_cheri")--cheri berry
+			item2 = RogueEssence.Dungeon.InvItem("seed_blast")--blast seed 
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		else
@@ -154,13 +154,13 @@ function metano_cafe.Cafe_Action(obj, activator)
 		"food_banana", "food_banana" ,"food_banana", "food_banana", "food_banana",  --bananas
 		"food_banana_big", "food_banana_big", "food_banana_big",		--big bananas
 		"food_banana_golden", 				--golden banana
-		"lum_berry", "lum_berry", "lum_berry",		--lum berry
+		"berry_lum", "berry_lum", "berry_lum",		--lum berry
 		"berry_tanga", "berry_colbur", "berry_haban", "berry_wacan", "berry_chople", "berry_occa", "berry_coba", "berry_kasib", "berry_rindo", "berry_shuca", "berry_yache", "berry_chilan", "berry_kebia", "berry_payapa", "berry_charti", "berry_babiri", "berry_passho", "berry_roseli", --type berries
 		"berry_jaboca", "berry_rowap", "berry_apicot", "berry_liechi", "berry_ganlon", "berry_salac", "berry_petaya", "berry_starf", "berry_micle", "berry_enigma",  --other rare berries (enigma, starf, etc)
 		"berry_sitrus", "berry_sitrus", "berry_sitrus",     --sitrus berry
-		"wonder_gummi", "blue_gummi", "black_gummi", "clear_gummi", "grass_gummi", "green_gummi", "brown_gummi", "orange_gummi", "gold_gummi", "pink_gummi", "purple_gummi", "red_gummi", "royal_gummi", "silver_gummi", "white_gummi", "yellow_gummi", "sky_gummi", "gray_gummi", "magenta_gummi", --gummis
-		"plain_seed", "plain_seed", "plain_seed", "plain_seed", "plain_seed", --plain seeds
-		"reviver_seed", "reviver_seed", "reviver_seed", "reviver_seed",  --rev seed 
+		"gummi_wonder", "gummi_blue", "gummi_black", "gummi_clear", "gummi_grass", "green_gummi", "gummi_brown", "gummi_orange", "gummi_gold", "gummi_pink", "gummi_purple", "gummi_red", "gummi_royal", "gummi_silver", "gummi_white", "gummi_yellow", "gummi_sky", "gummi_gray", "gummi_magenta", --gummis
+		"seed_plain", "seed_plain", "seed_plain", "seed_plain", "seed_plain", --plain seeds
+		"seed_reviver", "seed_reviver", "seed_reviver", "seed_reviver",  --rev seed 
 		"seed_joy",            --joy seed
 		"seed_doom", "seed_doom", "seed_doom",  --doom seed 
 		"boost_nectar", "boost_protein", "boost_iron", "boost_calcium", "boost_zinc", "boost_carbos", "boost_hp_up", --nectar + vitamins
@@ -260,14 +260,14 @@ function metano_cafe.Cafe_Action(obj, activator)
 					ferment_state = -1
 				else
 					if result == 1 then --Domi Blend - 3 Orans, 5 Sticks
-						item_to_ferment = "domi_blend"
-						recipe_list = {{"oran_berry", 3}, {"ammo_stick", 5}}
+						item_to_ferment = "cafe_domi_blend"
+						recipe_list = {{"berry_oran", 3}, {"ammo_stick", 5}}
 					elseif result == 2 then --Apple Cider - 1 Oran, 3 Apples
-						item_to_ferment = "apple_cider"
-						recipe_list = {{"oran_berry", 1}, {"apple", 3}}
+						item_to_ferment = "cafe_apple_cider"
+						recipe_list = {{"berry_oran", 1}, {"food_apple", 3}}
 					elseif result == 3 then--Cheri Bomb - 1 Cheri Berry, 1 Blast Seed
-						item_to_ferment = "cheri_bomb"
-						recipe_list = {{"cheri_berry", 1}, {"blast_seed", 1}}
+						item_to_ferment = "cafe_cheri_bomb"
+						recipe_list = {{"berry_cheri", 1}, {"seed_blast", 1}}
 					end
 					
 					
