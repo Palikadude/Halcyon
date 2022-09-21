@@ -132,6 +132,7 @@ function guild_heros_room_ch_1.Bedtalk()
 	GAME:WaitFrames(40)
 	GROUND:CharSetAnim(hero, "EventSleep", true)
 	GAME:WaitFrames(180)
+	GAME:UnlockDungeon("illuminant_riverbed")--unlock riverbed for when it's ready in chapter 2.
 	GAME:FadeOut(false, 120)
 	SV.ChapterProgression.Chapter = 2
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1

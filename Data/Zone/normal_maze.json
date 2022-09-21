@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.3.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -2117,8 +2117,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 4,
-"Max": 6
+"Min": 3,
+"Max": 5
 },
 "SpecifiedSkills": [
 "tackle",
@@ -2151,8 +2151,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 5,
-"Max": 6
+"Min": 4,
+"Max": 5
 },
 "SpecifiedSkills": [
 "pound",
@@ -2185,8 +2185,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 4,
-"Max": 6
+"Min": 3,
+"Max": 5
 },
 "SpecifiedSkills": [
 "quick_attack",
@@ -2219,8 +2219,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 7
+"Min": 5,
+"Max": 6
 },
 "SpecifiedSkills": [
 "soft_boiled"
@@ -2248,8 +2248,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 4,
-"Max": 6
+"Min": 3,
+"Max": 4
 },
 "SpecifiedSkills": [
 "scratch",
@@ -2280,7 +2280,7 @@
 "Rate": 4,
 "Range": {
 "Min": 0,
-"Max": 7
+"Max": 5
 }
 },
 {
@@ -2288,7 +2288,7 @@
 "Rate": 12,
 "Range": {
 "Min": 0,
-"Max": 7
+"Max": 5
 }
 }
 ],

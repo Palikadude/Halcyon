@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.3.0",
 "Object": {
 "$type": "PMDC.Data.MonsterFeatureData, PMDC",
 "FeatureData": {
@@ -8287,6 +8287,14 @@
 },
 "sandile": {
 "0": {
+"Family": "sandile",
+"Stage": 2,
+"Element1": "ground",
+"Element2": "dark",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
 "Family": "sandile",
 "Stage": 2,
 "Element1": "ground",

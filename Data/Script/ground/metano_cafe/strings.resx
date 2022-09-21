@@ -109,7 +109,7 @@
   <data name="Cafe_Goodbye" xml:space="preserve">
     <value>Don't be a stranger![pause=0] Come back soon!</value>
   </data>
-  <data name="Cafe_Fermented_Give_Item" xml:space="preserve">
+  <data name="Cafe_Fermented_Give_Item_1" xml:space="preserve">
     <value>Hey,[pause=10] welcome back![pause=0] I finished fermenting that {0} for you!</value>
   </data>
   <data name="Cafe_Fermented_Item_Received" xml:space="preserve">
@@ -183,5 +183,8 @@
   </data>
   <data name="Cafe_Confirm_Ferment_Choice" xml:space="preserve">
     <value>You want me to brew a {0} for you then?</value>
+  </data>
+  <data name="Cafe_Fermented_Give_Item_2" xml:space="preserve">
+    <value>And here it is![pause=0] One {0},[pause=10] freshly fermented!</value>
   </data>
 </root>

@@ -53,65 +53,77 @@ end
 ---------------------------------------------------------------]]
 function DebugTools:OnNewGame()
   assert(self, 'DebugTools:OnNewGame() : self is null!')
-  PrintInfo("\n<!> ExampleSvc: Preparing debug save file")
-  _DATA.Save.ActiveTeam:SetRank("none")
-  _DATA.Save.ActiveTeam.Name = "Valiant"
-  _DATA.Save.ActiveTeam.Money = 1000
-  _DATA.Save.ActiveTeam.Bank = 999999
-  _DATA.Save.NoSwitching = true--switching is not allowed
-
   
-  local mon_id = RogueEssence.Dungeon.MonsterID("treecko", 0, "normal", Gender.Male)
-  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
-  local tbl = LTBL(p)
-  tbl.Importance = 'Hero'
-  p.IsFounder = true
-  p.IsPartner = true
-  p.Nickname = 'Palika'
-  _DATA.Save.ActiveTeam.Players:Add(p)
-  
-  mon_id = RogueEssence.Dungeon.MonsterID("riolu", 0, "normal", Gender.Male)
-  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
-  tbl = LTBL(p)
-  tbl.Importance = 'Partner'
-  p.IsFounder = true
-  p.IsPartner = true
-  p.Nickname = 'Genshi'
-  _DATA.Save.ActiveTeam.Players:Add(p)
-  
-  --mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
-  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
-  
-  
-  	--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
-	--_DATA.Save.ActiveTeam.Players[0].AtkBonus = 1
-	--_DATA.Save.ActiveTeam.Players[0].DefBonus = 1
-	--_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 1
-	--_DATA.Save.ActiveTeam.Players[0].MDefBonus = 1
---	_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 1
-
-	--_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 3
-	--_DATA.Save.ActiveTeam.Players[1].AtkBonus = 1
-	--_DATA.Save.ActiveTeam.Players[1].DefBonus = 1
-	--_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
-	--_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
-	--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
+  if _DATA.Save.ActiveTeam.Players.Count > 0 then
+     local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("HeroInteract")
+    _DATA.Save.ActiveTeam.Players[0].ActionEvents:Add(talk_evt)
+	_DATA.Save:RegisterMonster(_DATA.Save.ActiveTeam.Players[0].BaseForm.Species)
 	
-  --audino 
-   -- mon_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
-  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
- _DATA.Save.ActiveTeam:SetRank("normal")
-  _DATA.Save:UpdateTeamProfile(true)
-  
-
-  
-	local dungeon_keys = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:GetOrderedKeys(false)
-	for ii = 0, dungeon_keys.Count-1 ,1 do
-		GAME:UnlockDungeon(dungeon_keys[ii])
+	_DATA.Save.ActiveTeam:SetRank("normal")
+	if not GAME:InRogueMode() then
+      _DATA.Save.ActiveTeam.Bank = 1000
 	end
-  
-  SV.base_camp.ExpositionComplete = true
-  SV.base_camp.IntroComplete = true
+  else	
+		PrintInfo("\n<!> ExampleSvc: Preparing debug save file")
+	  _DATA.Save.ActiveTeam:SetRank("none")
+	  _DATA.Save.ActiveTeam.Name = "Valiant"
+	  _DATA.Save.ActiveTeam.Money = 1000
+	  _DATA.Save.ActiveTeam.Bank = 999999
+	  _DATA.Save.NoSwitching = true--switching is not allowed
+
+	  
+	  local mon_id = RogueEssence.Dungeon.MonsterID("treecko", 0, "normal", Gender.Male)
+	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
+	  local tbl = LTBL(p)
+	  tbl.Importance = 'Hero'
+	  p.IsFounder = true
+	  p.IsPartner = true
+	  p.Nickname = 'Palika'
+	  _DATA.Save.ActiveTeam.Players:Add(p)
+	  
+	  mon_id = RogueEssence.Dungeon.MonsterID("riolu", 0, "normal", Gender.Male)
+	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 8, "", 0)
+	  tbl = LTBL(p)
+	  tbl.Importance = 'Partner'
+	  p.IsFounder = true
+	  p.IsPartner = true
+	  p.Nickname = 'Genshi'
+	  _DATA.Save.ActiveTeam.Players:Add(p)
+	  
+	  --mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
+	  
+	  
+		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
+		--_DATA.Save.ActiveTeam.Players[0].AtkBonus = 1
+		--_DATA.Save.ActiveTeam.Players[0].DefBonus = 1
+		--_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 1
+		--_DATA.Save.ActiveTeam.Players[0].MDefBonus = 1
+	--	_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 1
+
+		--_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 3
+		--_DATA.Save.ActiveTeam.Players[1].AtkBonus = 1
+		--_DATA.Save.ActiveTeam.Players[1].DefBonus = 1
+		--_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
+		--_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
+		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
+		
+	  --audino 
+	   -- mon_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
+	 _DATA.Save.ActiveTeam:SetRank("normal")
+	  _DATA.Save:UpdateTeamProfile(true)
+	  
+
+	  
+		local dungeon_keys = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:GetOrderedKeys(false)
+		for ii = 0, dungeon_keys.Count-1 ,1 do
+			GAME:UnlockDungeon(dungeon_keys[ii])
+		end
+	  
+	  SV.base_camp.ExpositionComplete = true
+	  SV.base_camp.IntroComplete = true
+	end 
 end
 
 ---Summary

@@ -667,7 +667,7 @@ local characters = {
 			nickname = 'Thwait',
 			instance = 'Sandile',
 			gender = Gender.Male,
-			form = 0,
+			form = 1,--he is scarfed
 			skin = "normal"
 		},
 		

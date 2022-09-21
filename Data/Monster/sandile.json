@@ -1,0 +1,633 @@
+﻿{
+"Version": "0.6.3.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Released": false,
+"Comment": "",
+"Title": {
+"DefaultText": "Desert Croc Pokémon",
+"LocalTexts": {
+"ja": "さばくワニポケモン",
+"ko": "사막악어포켓몬",
+"zh-hant": "沙漠鱷魚寶可夢",
+"fr": "Pokémon Croco Sable",
+"de": "Wüstenkroko-Pokémon",
+"es": "Pokémon Desierdrilo",
+"it": "Pokémon Sabbiadrillo",
+"ja-jp": "さばくワニポケモン",
+"zh-hans": "沙漠鳄鱼宝可梦"
+}
+},
+"IndexNum": 551,
+"EXPTable": "medium_slow",
+"SkillGroup1": "field",
+"SkillGroup2": "amorphous",
+"JoinRate": 46,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "krokorok",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 29
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": false,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 50,
+"BaseAtk": 72,
+"BaseDef": 35,
+"BaseMAtk": 35,
+"BaseMDef": 35,
+"BaseSpeed": 65,
+"ExpYield": 58,
+"Height": 0.7,
+"Weight": 15.2,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "roar"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sludge_bomb"
+},
+{
+"Skill": "sandstorm"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "embargo"
+},
+{
+"Skill": "stone_edge"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "focus_energy"
+},
+{
+"Skill": "mean_look"
+},
+{
+"Skill": "pursuit"
+},
+{
+"Skill": "beat_up"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "thunder_fang"
+},
+{
+"Skill": "fire_fang"
+},
+{
+"Skill": "rock_climb"
+},
+{
+"Skill": "me_first"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "aqua_tail"
+},
+{
+"Skill": "earth_power"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "foul_play"
+}
+],
+"FormName": {
+"DefaultText": "Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Temporary": false,
+"Element1": "ground",
+"Element2": "dark",
+"Intrinsic1": "intimidate",
+"Intrinsic2": "moxie",
+"Intrinsic3": "anger_point",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 1,
+"Skill": "rage"
+},
+{
+"Level": 4,
+"Skill": "bite"
+},
+{
+"Level": 7,
+"Skill": "sand_attack"
+},
+{
+"Level": 10,
+"Skill": "torment"
+},
+{
+"Level": 13,
+"Skill": "sand_tomb"
+},
+{
+"Level": 16,
+"Skill": "assurance"
+},
+{
+"Level": 19,
+"Skill": "mud_slap"
+},
+{
+"Level": 22,
+"Skill": "embargo"
+},
+{
+"Level": 25,
+"Skill": "swagger"
+},
+{
+"Level": 28,
+"Skill": "crunch"
+},
+{
+"Level": 31,
+"Skill": "dig"
+},
+{
+"Level": 34,
+"Skill": "scary_face"
+},
+{
+"Level": 37,
+"Skill": "foul_play"
+},
+{
+"Level": 40,
+"Skill": "sandstorm"
+},
+{
+"Level": 43,
+"Skill": "earthquake"
+},
+{
+"Level": 46,
+"Skill": "thrash"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": false,
+"Generation": 6,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 50,
+"BaseAtk": 72,
+"BaseDef": 35,
+"BaseMAtk": 35,
+"BaseMDef": 35,
+"BaseSpeed": 65,
+"ExpYield": 58,
+"Height": 0.7,
+"Weight": 15.2,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "roar"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sludge_bomb"
+},
+{
+"Skill": "sandstorm"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "embargo"
+},
+{
+"Skill": "stone_edge"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "focus_energy"
+},
+{
+"Skill": "mean_look"
+},
+{
+"Skill": "pursuit"
+},
+{
+"Skill": "beat_up"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "thunder_fang"
+},
+{
+"Skill": "fire_fang"
+},
+{
+"Skill": "rock_climb"
+},
+{
+"Skill": "me_first"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "uproar"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "aqua_tail"
+},
+{
+"Skill": "earth_power"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "foul_play"
+}
+],
+"FormName": {
+"DefaultText": "Scarfed Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Temporary": false,
+"Element1": "ground",
+"Element2": "dark",
+"Intrinsic1": "intimidate",
+"Intrinsic2": "moxie",
+"Intrinsic3": "anger_point",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 1,
+"Skill": "rage"
+},
+{
+"Level": 4,
+"Skill": "bite"
+},
+{
+"Level": 7,
+"Skill": "sand_attack"
+},
+{
+"Level": 10,
+"Skill": "torment"
+},
+{
+"Level": 13,
+"Skill": "sand_tomb"
+},
+{
+"Level": 16,
+"Skill": "assurance"
+},
+{
+"Level": 19,
+"Skill": "mud_slap"
+},
+{
+"Level": 22,
+"Skill": "embargo"
+},
+{
+"Level": 25,
+"Skill": "swagger"
+},
+{
+"Level": 28,
+"Skill": "crunch"
+},
+{
+"Level": 31,
+"Skill": "dig"
+},
+{
+"Level": 34,
+"Skill": "scary_face"
+},
+{
+"Level": 37,
+"Skill": "foul_play"
+},
+{
+"Level": 40,
+"Skill": "sandstorm"
+},
+{
+"Level": 43,
+"Skill": "earthquake"
+},
+{
+"Level": 46,
+"Skill": "thrash"
+}
+]
+}
+]
+}
+}

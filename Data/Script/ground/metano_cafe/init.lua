@@ -196,12 +196,24 @@ function metano_cafe.Cafe_Action(obj, activator)
 		local juice = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
 		local juiceEntry = RogueEssence.Data.DataManager.Instance:GetItem(juice.ID)
 		UI:SetSpeakerEmotion('Normal')
-		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Fermented_Give_Item'], juice:GetDisplayName()))
+		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Fermented_Give_Item_1'], juice:GetDisplayName()))
 		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
 			UI:SetSpeakerEmotion('Worried')
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bag_Full'], CharacterEssentials.GetCharacterName('Kangaskhan')))
 			state = -1 --don't go to normal dialogue if he cant give you the fermented item.
 		else
+			--he retreats into his shell and pulls it out.
+			GAME:WaitFrames(20)
+			SOUND:PlayBattleSE('DUN_Equip')
+			GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Special0")))
+			GAME:WaitFrames(60)
+			SOUND:PlayBattleSE('DUN_Worry_Seed')
+			GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Special2")))
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Fermented_Give_Item_2'], juice:GetDisplayName()))
+			GROUND:CharSetAnim(owner, "None", true)
+		
+			--gives it to the player.
 			GAME:GivePlayerItem(juice.ID, juiceEntry.MaxStack)
 			SV.metano_cafe.FermentedItem = ""
 			SV.metano_cafe.ItemFinishedFermenting = false
@@ -291,16 +303,19 @@ function metano_cafe.Cafe_Action(obj, activator)
 							UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_1']))
 							--puts the items in his shell
 							SOUND:PlayBattleSE('DUN_Equip')
-							GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Withdraw")))
+							GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Special0")))
 							GAME:WaitFrames(60)
+							GROUND:CharSetDrawEffect(owner, DrawEffect.Trembling)
 							SOUND:PlayBattleSE('DUN_Drink')
 							GAME:WaitFrames(60)
 							SOUND:PlayBattleSE('DUN_Fake_Tears')
 							GAME:WaitFrames(60)
 							SOUND:PlayBattleSE('DUN_Food')
 							GAME:WaitFrames(60)
-							GROUND:CharSetAnim(owner, "None", true)
 							SOUND:PlayBattleSE('DUN_Worry_Seed')
+							GROUND:CharEndDrawEffect(owner, DrawEffect.Trembling)
+							GROUND:CharWaitAnim(owner, "Special1")
+							GROUND:CharSetAnim(owner, "None", true)
 							UI:SetSpeakerEmotion("Inspired")
 							UI:WaitShowTimedDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_2']), 60)
 							GAME:WaitFrames(20)

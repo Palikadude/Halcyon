@@ -548,7 +548,7 @@ function crooked_den_ch_3.DiedToBoss()
 	GROUND:CharEndAnim(cacnea)
 	GROUND:CharEndAnim(glameow)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("What should we do now,[pause=10] boss?")
+	UI:WaitShowDialogue("But,[pause=10] duh...[pause=0] What do we do now,[pause=10] boss?")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(luxio)
@@ -605,7 +605,6 @@ function crooked_den_ch_3.DefeatedBoss()
 																						{"Glameow", 120, 112, Direction.Down},
 																						{"Cacnea", 224, 112, Direction.Down}})
 	
-	--todo: change luxio and cacnea animations when they're made 
 	GROUND:CharSetAction(glameow, RogueEssence.Ground.PoseGroundAction(glameow.Position, glameow.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Faint")))
 	GROUND:CharSetAction(cacnea, RogueEssence.Ground.PoseGroundAction(cacnea.Position, cacnea.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Sleep")))
 	GROUND:CharSetAnim(luxio, "Charge", true)
@@ -627,8 +626,9 @@ function crooked_den_ch_3.DefeatedBoss()
 
 	GAME:WaitFrames(20)
 	SOUND:PlayBattleSE('EVT_CH03_Boss_Collapse')
-	GROUND:CharSetAction(luxio, RogueEssence.Ground.PoseGroundAction(luxio.Position, luxio.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Sleep")))
-	GAME:WaitFrames(70)
+	GROUND:CharSetEmote(luxio, "shock", 1)
+	GROUND:CharSetAction(luxio, RogueEssence.Ground.PoseGroundAction(luxio.Position, luxio.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Faint")))
+	GAME:WaitFrames(80)
 	
 	UI:SetSpeaker(partner)
 	GeneralFunctions.Hop(partner)

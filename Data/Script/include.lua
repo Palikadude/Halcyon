@@ -28,6 +28,7 @@ PMDC.LevelGen = luanet.namespace('PMDC.LevelGen')
 
 FrameType   = luanet.import_type('RogueEssence.Content.FrameType')
 DrawLayer   = luanet.import_type('RogueEssence.Content.DrawLayer')
+DrawEffect   = luanet.import_type('RogueEssence.Dungeon.DrawEffect')
 MonsterID       = luanet.import_type('RogueEssence.Dungeon.MonsterID')
 Gender      = luanet.import_type('RogueEssence.Data.Gender')
 Direction   = luanet.import_type('RogueElements.Dir8')

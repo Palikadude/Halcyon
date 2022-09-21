@@ -402,6 +402,9 @@ function relic_forest_ch_1.Intro_Cutscene()
 		SV.ChapterProgression.Chapter = 2
 		GAME:GivePlayerItem("held_synergy_scarf", 2)--give 2 vibrant scarves
 		_DATA.Save.ActiveTeam:SetRank("normal")
+		GAME:UnlockDungeon("relic_forest")
+		GAME:UnlockDungeon("illuminant_riverbed")
+
 		GAME:CutsceneMode(false)
 		SOUND:FadeOutBGM(120)
 		GAME:WaitFrames(120)

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.3.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "audino": {
@@ -187,6 +187,64 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 722
+},
+"sandile": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Released": false,
+"Temporary": false
+},
+{
+"Name": {
+"DefaultText": "Scarfed Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Released": false,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Sandile",
+"LocalTexts": {
+"ja": "メグロコ",
+"ko": "깜눈크",
+"zh-hant": "黑眼鱷",
+"fr": "Mascaïman",
+"de": "Ganovil",
+"es": "Sandile",
+"it": "Sandile",
+"ja-jp": "メグロコ",
+"zh-hans": "黑眼鳄"
+}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 551
 },
 "vulpix": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",

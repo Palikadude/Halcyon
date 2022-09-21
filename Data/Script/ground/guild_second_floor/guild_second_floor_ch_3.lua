@@ -35,6 +35,9 @@ local partner = CH('Teammate1')
 			{'Noctowl', 448, 264, Direction.UpLeft}
 		})
 	
+	--change his form from scarved to regular
+	sandile.Data.BaseForm = RogueEssence.Dungeon.MonsterID("sandile", 0, "normal", Gender.Male)
+	
 	GROUND:Hide('Downwards_Stairs_Exit')
 	
 	GROUND:TeleportTo(partner, 376, 272, Direction.Up)
@@ -143,7 +146,7 @@ local partner = CH('Teammate1')
 	UI:WaitShowDialogue("Um...[pause=0] I just wanted to say that I don't think " .. sandile:GetDisplayName() .. " is a bad Pokémon...")
 	UI:WaitShowDialogue("I know he's an outlaw and he needs to be arrested and all...")
 	UI:WaitShowDialogue("But I really think he's just someone who made a poor decision.[pause=0] He really isn't wicked or anything...")
-	UI:WaitShowDialogue("So,[pause=10] um...[pause=0] Would it be possible for you to go easy on him somehow?")
+	UI:WaitShowDialogue("So,[pause=10] um...[pause=0] Would it be possible for you to go easy on him,[pause=10] please?")
 	
 	GAME:WaitFrames(40)
 	GROUND:EntTurn(hero, Direction.UpLeft)
@@ -206,8 +209,49 @@ local partner = CH('Teammate1')
 	
 
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Sad")
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4)
+											UI:WaitShowTimedDialogue("Oh...[pause=30] Poor " .. CharacterEssentials.GetCharacterName("Sandile") .. "...", 60) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(noctowl, 392, 240, false, 1)
+											GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4) end)
+											
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+
 	--im surprised to see you stick up for an outlaw... that's unusual. But it does seem to me as though he was an unusual outlaw.
-	--remove mareep and cranidos from this scene. they will appear in "post" chapter 3 and will congratulate you on a job well done (not cranidos ofc)
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, noctowl, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:CharTurnToCharAnimated(hero, noctowl, 4) end)
+	coro3 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("It is most unusual to see one sticking up for an outlaw they have just apprehended...") 
+											UI:WaitShowDialogue("...But it seems to me as though he was a most unusual outlaw.")
+											UI:WaitShowDialogue("Regardless,[pause=10] you've captured the outlaw sucessfully.[pause=0] Congratulations.")
+											UI:WaitShowDialogue("Here is the bounty that " .. CharacterEssentials.GetCharacterName("Bisharp") .. " gave to me.[pause=0] You have earned it.") end)
+											
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+
+	GAME:WaitFrames(10)
+	GeneralFunctions.RewardItem(500, true)
+	
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue("Now then,[pause=10] I believe " .. CharacterEssentials.GetCharacterName("Snubbull") .. " should have dinner ready right about now.[pause=0] Will you accompany me upstairs?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("...OK.")
+	
+	GAME:WaitFrames(60)
+	GAME:FadeOut(false, 60)
+	SV.TemporaryFlags.Dinnertime = true
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("guild_dining_room", "Main_Entrance_Marker")
+
 end
 
 
