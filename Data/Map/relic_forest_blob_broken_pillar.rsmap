@@ -1,0 +1,230 @@
+﻿{
+"Version": "0.6.4.0",
+"Object": {
+"$type": "RogueEssence.Dungeon.Map, RogueEssence",
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"AssetName": "Relic_Forest_Blob_Broken_Pillar",
+"Begun": false,
+"ID": 0,
+"MapTeams": [],
+"AllyTeams": [],
+"rand": {
+"$type": "RogueElements.ReRandom, RogueElements",
+"FirstSeed": 0,
+"s": [
+16294208416658607535,
+7960286522194355700,
+487617019471545679,
+17909611376780542444
+]
+},
+"ScriptEvents": {},
+"Music": "",
+"TileSight": 0,
+"CharSight": 0,
+"Status": {},
+"MapEffect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+},
+"TeamSpawns": [],
+"MoneyAmount": {
+"Min": 0,
+"Max": 0
+},
+"ItemSpawns": {
+"Spawns": {
+"spawns": {},
+"spawnTotal": 0
+}
+},
+"BlankBG": {
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"TextureMap": {},
+"Element": "none",
+"Background": {
+"$type": "RogueEssence.Dungeon.MapBG, RogueEssence",
+"MapLoc": {
+"X": 0,
+"Y": 0
+},
+"BGAnim": {
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"BGMovement": {
+"X": 0,
+"Y": 0
+},
+"Parallax": "0, 0",
+"RepeatX": false,
+"RepeatY": false
+},
+"ViewCenter": null,
+"ViewOffset": {
+"X": 0,
+"Y": 0
+},
+"NoRescue": false,
+"NoSwitching": false,
+"MapTurns": 0,
+"CurrentTurnMap": {
+"CurrentOrder": {
+"TurnTier": 0,
+"Faction": 0,
+"TurnIndex": 0,
+"SkipAll": false
+},
+"TurnToChar": []
+},
+"DiscoveryArray": [
+[
+0,
+0
+]
+],
+"DropTitle": false,
+"Layers": [
+{
+"Name": "New Layer",
+"Layer": 0,
+"Visible": true,
+"Tiles": [
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Relic_Forest_Blob_Broken_Pillar",
+"TexLoc": {
+"X": 0,
+"Y": 0
+}
+}
+],
+"FrameLength": 60
+}
+],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Relic_Forest_Blob_Broken_Pillar",
+"TexLoc": {
+"X": 0,
+"Y": 1
+}
+}
+],
+"FrameLength": 60
+}
+],
+"NeighborCode": -1
+}
+]
+]
+}
+],
+"Tiles": [
+[
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+},
+{
+"Data": {
+"ID": "unbreakable",
+"TileTex": {
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 1
+},
+"ID": "",
+"Revealed": false,
+"Danger": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+]
+],
+"EdgeView": 0,
+"EntryPoints": [],
+"Items": []
+}
+}
