@@ -223,12 +223,12 @@
 "Data": {
 "ID": "unbreakable",
 "TileTex": {
-"AutoTileset": "",
+"AutoTileset": "treeshroud_forest_1_floor",
 "Associates": [],
 "Layers": [],
-"NeighborCode": -1
+"NeighborCode": 511
 },
-"StableTex": false
+"StableTex": true
 },
 "Effect": {
 "TileLoc": {
@@ -246,12 +246,12 @@
 "Data": {
 "ID": "unbreakable",
 "TileTex": {
-"AutoTileset": "",
+"AutoTileset": "treeshroud_forest_1_floor",
 "Associates": [],
 "Layers": [],
-"NeighborCode": -1
+"NeighborCode": 767
 },
-"StableTex": false
+"StableTex": true
 },
 "Effect": {
 "TileLoc": {
@@ -271,12 +271,12 @@
 "Data": {
 "ID": "unbreakable",
 "TileTex": {
-"AutoTileset": "",
+"AutoTileset": "treeshroud_forest_1_floor",
 "Associates": [],
 "Layers": [],
-"NeighborCode": -1
+"NeighborCode": 511
 },
-"StableTex": false
+"StableTex": true
 },
 "Effect": {
 "TileLoc": {
@@ -294,12 +294,12 @@
 "Data": {
 "ID": "unbreakable",
 "TileTex": {
-"AutoTileset": "",
+"AutoTileset": "treeshroud_forest_1_floor",
 "Associates": [],
 "Layers": [],
-"NeighborCode": -1
+"NeighborCode": 255
 },
-"StableTex": false
+"StableTex": true
 },
 "Effect": {
 "TileLoc": {
