@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.4.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -7,7 +7,7 @@
 "LocalTexts": {}
 },
 "Desc": {
-"DefaultText": "A dangerous snack cooked up by Dion. Can be lobbed in an arc to cause an explosion when it impacts a target or the ground.",
+"DefaultText": "A dangerous drink fermented by Dion. Can be lobbed in an arc to cause an explosion when it impacts a target or the ground.",
 "LocalTexts": {}
 },
 "Released": true,
@@ -121,107 +121,6 @@
 {
 "Key": {
 "str": [
-0
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.InvokeCustomBattleEvent, PMDC",
-"HitboxAction": {
-"$type": "RogueEssence.Dungeon.AttackAction, RogueEssence",
-"HitTiles": true,
-"BurstTiles": 2,
-"Emitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"WideAngle": 1,
-"CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 7
-},
-"TargetAlignments": 7,
-"TileEmitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"PreActions": [],
-"ActionFX": {
-"Delay": 0,
-"Sound": "",
-"Emitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"ScreenMovement": {
-"MinShake": 0,
-"MaxShake": 0,
-"MaxShakeTime": 0
-}
-},
-"LagBehindTime": 0
-},
-"Explosion": {
-"TargetAlignments": 7,
-"HitTiles": true,
-"Range": 2,
-"Speed": 10,
-"TileEmitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"Emitter": {
-"$type": "RogueEssence.Content.CircleSquareAreaEmitter, RogueEssence",
-"LocHeight": 0,
-"Anims": [
-{
-"$type": "RogueEssence.Content.StaticAnim, RogueEssence",
-"Anim": {
-"AnimIndex": "Blast_Seed",
-"FrameTime": 3,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"TotalTime": 0,
-"Cycles": 1,
-"FrameOffset": 0
-}
-],
-"ParticlesPerTile": 0.8,
-"RangeDiff": 0,
-"Layer": 2
-},
-"IntroFX": [],
-"ExplodeFX": {
-"Delay": 0,
-"Sound": "DUN_Self-Destruct",
-"Emitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"ScreenMovement": {
-"MinShake": 0,
-"MaxShake": 0,
-"MaxShakeTime": 0
-}
-}
-},
-"NewData": {
-"Element": "none",
-"Category": 0,
-"HitRate": -1,
-"SkillStates": [],
-"BeforeTryActions": [],
-"BeforeActions": [],
-"OnActions": [],
-"BeforeExplosions": [],
-"BeforeHits": [],
-"OnHits": [
-{
-"Key": {
-"str": [
 -1
 ]
 },
@@ -313,36 +212,9 @@
 "Process": 0
 }
 },
-"Msg": {
-"Key": null
-}
-}
-}
-],
-"OnHitTiles": [],
-"AfterActions": [],
-"ElementEffects": [],
-"IntroFX": [],
-"HitFX": {
-"Delay": 0,
-"Sound": "",
-"Emitter": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-},
-"ScreenMovement": {
-"MinShake": 0,
-"MaxShake": 0,
-"MaxShakeTime": 0
-}
-},
-"HitCharAction": {
-"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
-"Process": 0
-}
-},
 "UsageType": 3,
 "ArcThrow": true,
+"BreakOnThrow": true,
 "ThrowAnim": {
 "AnimIndex": "",
 "FrameTime": 1,

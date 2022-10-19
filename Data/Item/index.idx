@@ -1,24 +1,7 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.4.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
-"held_aspear_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Aspear Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "berry_aspear": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,
@@ -307,67 +290,6 @@
 "Comment": "",
 "SortOrder": 0
 },
-"cafe_apple_cider": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 5,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.DrinkState"
-},
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.EdibleState"
-}
-],
-"Name": {
-"DefaultText": "Apple Cider",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Cafe food item.",
-"SortOrder": 0
-},
-"cafe_cheri_bomb": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 3,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.AmmoState"
-}
-],
-"Name": {
-"DefaultText": "Cheri Bomb",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Cafe ammo item.",
-"SortOrder": 0
-},
-"cafe_domi_blend": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 5,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.EdibleState"
-},
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.DrinkState"
-}
-],
-"Name": {
-"DefaultText": "Domi Blend",
-"LocalTexts": {
-"": ""
-}
-},
-"Released": true,
-"Comment": "Cafe food item.",
-"SortOrder": 0
-},
 "food_apple": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,
@@ -390,31 +312,6 @@
 "pt": "Maçã",
 "it": "Mela",
 "ko": "사과"
-}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"green_gummi": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 4,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.EdibleState"
-},
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.GummiState"
-}
-],
-"Name": {
-"DefaultText": "Green Gummi",
-"LocalTexts": {
-"fr": "Gelée Verte",
-"de": "Grüngummi",
-"ko": "초록구미"
 }
 },
 "Released": true,
@@ -871,40 +768,6 @@
 "Comment": "",
 "SortOrder": 0
 },
-"held_band_of_passage": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Band of Passage",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "For use within the beginner lesson tutorial.",
-"SortOrder": 0
-},
-"held_cheri_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Cheri Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "held_defense_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
@@ -925,57 +788,6 @@
 "Comment": "",
 "SortOrder": 0
 },
-"held_insomniascope": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Insomniascope",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"held_pecha_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Pecha Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"held_persim_band": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Persim Band",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "held_power_band": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
@@ -991,23 +803,6 @@
 "fr": "Ruban Force+",
 "de": "Machtband"
 }
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"held_rawst_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Rawst Scarf",
-"LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
@@ -1052,23 +847,6 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
-},
-"held_synergy_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Synergy Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
 "SortOrder": 0
 },
 "held_zinc_band": {
@@ -1552,6 +1330,228 @@
 },
 "Released": true,
 "Comment": "",
+"SortOrder": 0
+},
+"held_aspear_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Aspear Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"cafe_apple_cider": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+},
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+}
+],
+"Name": {
+"DefaultText": "Apple Cider",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Cafe food item.",
+"SortOrder": 0
+},
+"cafe_cheri_bomb": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.4.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Cheri Bomb",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Cafe ammo item.",
+"SortOrder": 0
+},
+"cafe_domi_blend": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Domi Blend",
+"LocalTexts": {
+"": ""
+}
+},
+"Released": true,
+"Comment": "Cafe food item.",
+"SortOrder": 0
+},
+"green_gummi": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.GummiState"
+}
+],
+"Name": {
+"DefaultText": "Green Gummi",
+"LocalTexts": {
+"fr": "Gelée Verte",
+"de": "Grüngummi",
+"ko": "초록구미"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_band_of_passage": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Band of Passage",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "For use within the beginner lesson tutorial.",
+"SortOrder": 0
+},
+"held_cheri_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Cheri Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_insomniascope": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Insomniascope",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_pecha_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Pecha Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_persim_band": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Persim Band",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_rawst_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Rawst Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"held_synergy_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Synergy Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
 "SortOrder": 0
 }
 }

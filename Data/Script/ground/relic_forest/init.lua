@@ -28,10 +28,8 @@ function relic_forest.Init(map)
   DEBUG.EnableDbgCoro()
   print('=>> Init_relic_forest <<=')
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  if SV.Chapter1.PlayedIntroCutscene or SV.ChapterProgression.Chapter ~= 1 then --Don't spawn when the game first initializes, causes errors. If it's not chapter 1, then spawn anyway (other chapters might mean im just testing stuff without all the right flags set.)
-	  COMMON.RespawnAllies()
-	  PartnerEssentials.InitializePartnerSpawn()
-  end
+  COMMON.RespawnAllies()
+  PartnerEssentials.InitializePartnerSpawn()
   
 end
 

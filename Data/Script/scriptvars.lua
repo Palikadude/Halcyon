@@ -193,8 +193,9 @@ SV.Chapter3 =
 	EncounteredBoss = false,--did duo find team style in the dungeon yet?
 	LostToBoss = false,--did duo die to boss?
 	EscapedBoss = false,--due team use an escape orb to escape boss?
-	DefeatedBoss = false --did duo defeat team style?
+	DefeatedBoss = false, --did duo defeat team style?
 
+	BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?
 }
 
 
@@ -238,7 +239,16 @@ SV.Tutorial =
 SV.test_grounds =
 {
   SpokeToPooch = false,
-  AcceptedPooch = false
+  AcceptedPooch = false,
+  Starter = { Species="pikachu", Form=0, Skin="normal", Gender=2 },
+  Partner = { Species="eevee", Form=0, Skin="normal", Gender=1 },
+  DemoComplete = false,
+}
+
+SV.missions =
+{
+  Missions = { },
+  FinishedMissions = { },
 }
 
 

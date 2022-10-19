@@ -4,7 +4,7 @@ Please keep it under wraps until I go public with it. This will happen when enou
 The first one will be after the 3rd chapter (first outlaw job).
 
 Credits:
-Palika - scripting, writing, balancing, etc. (all non-engine work)
+Palika - mod author. scripting, writing, balancing, etc. (all non-engine work)
 Audino - for making the engine, adding features that I needed for the game
 
 Playtesters:

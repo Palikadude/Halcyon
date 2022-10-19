@@ -73,13 +73,47 @@ function guild_bottom_right_bedroom.Teammate1_Action(chara, activator)
 end
 
 
+--function guild_bottom_right_bedroom.Almanac_Action(chara, activator)
+	--UI:ResetSpeaker(false)
+	--UI:WaitShowDialogue("This is Almotz's almanac (along with the books/papers on the floor)")
+	--UI:WaitShowDialogue("But there's a lot of work that needs to go into this almanac...")
+	--UI:WaitShowDialogue("Which will be done at a later date.[pause=0] It'll have some lore,[pause=10] gameplay tips,[pause=10] etc.")
+	--UI:WaitShowDialogue("So look forward to it!")
+--end
+
 function guild_bottom_right_bedroom.Almanac_Action(chara, activator)
 	UI:ResetSpeaker(false)
-	UI:WaitShowDialogue("This is Almotz's almanac (along with the books/papers on the floor)")
-	UI:WaitShowDialogue("But there's a lot of work that needs to go into this almanac...")
-	UI:WaitShowDialogue("Which will be done at a later date.[pause=0] It'll have some lore,[pause=10] gameplay tips,[pause=10] etc.")
-	UI:WaitShowDialogue("So look forward to it!")
+	UI:SetCenter(true)
+	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Adventuring Teams". Read it?')
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	if result then 
+		guild_bottom_right_bedroom.Almanac_Menu({'Round', 'Cadence', 'Starlight', 'Rivals', GAME:GetTeamName(), 'Flight', 'Style'})
+	end
+	UI:SetCenter(false)
 end
+
+
+function guild_bottom_right_bedroom.Almanac_Menu(items)
+  local menu = RogueEssence.Menu.ScriptableMenu(24, 24, 196, 128, guild_bottom_right_bedroom.Almanac_Menu_Update)
+  local cursor = RogueEssence.Menu.MenuCursor(menu)
+  cursor.Loc = RogueElements.Loc(48, 48)
+  menu.MenuElements:Add(cursor)
+  for i = 1, #items, 1 do 
+	menu.MenuElements:Add(RogueEssence.Menu.MenuText(items[i], RogueElements.Loc(48, 64)))
+  end
+  UI:SetCustomMenu(menu)
+  UI:WaitForChoice()
+  
+end
+
+function guild_bottom_right_bedroom.Almanac_Menu_Update(input)
+	if input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then 
+		_MENU:RemoveMenu()
+	else
+	
+	end
+end 
 ---------------------------
 -- Map Transitions
 ---------------------------

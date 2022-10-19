@@ -27,8 +27,19 @@ function metano_town_ch_3.SetupGround()
 	
 	
 	
-	
-	
+	local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Sentret', 400, 424, Direction.DownRight},
+			{'Oddish', 440, 424, Direction.DownLeft},
+			{'Numel', 420, 456, Direction.Up},
+			{'Camerupt', 'Town_Seat_1'},
+			{'Manectric', 'Town_Seat_2'},
+			{'Gloom', 536, 208, Direction.UpLeft},
+			{'Nidorina', 512, 184, Direction.DownRight},
+			{'Mawile', 1204, 1156, Direction.Down},
+			{'Furret', 356, 764, Direction.Right},
+			{'Azumarill', 888, 704, Direction.Down}
+		})
 	
 	
 	
@@ -506,4 +517,129 @@ function metano_town_ch_3.MeetTeamStyle()
 	GAME:CutsceneMode(false)
 
 	
-end 	
+end 
+
+
+function metano_town_ch_3.Wooper_Conversation(chara)
+	local dee = CH('Wooper_Girl')
+	local dun = CH('Wooper_Boy')
+	local electrike = CH('Electrike')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(dee, 'None', true)
+	GROUND:CharSetAnim(electrike, 'None', true)
+	GROUND:CharSetAnim(dun, 'None', true)
+	
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+
+	UI:SetSpeaker(electrike)
+	UI:WaitShowDialogue("Did you two hear that " .. CharacterEssentials.GetCharacterName("Numel") .. " ran off to a spring and had to get rescued by some adventurers?")
+	
+	GAME:WaitFrames(20)
+	GeneralFunctions.EmoteAndPause(dee, "Question")
+	UI:SetSpeaker(dee)
+	UI:WaitShowDialogue("Huh?[pause=0] How do you run off to spring?[pause=0] I thought that's the time of year after winter?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dun)
+	UI:WaitShowDialogue("Nuh uh![pause=0] A spring is something you bounce off of!")
+	UI:WaitShowDialogue("I bet he ran off to some place with a ton of bouncy things!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(electrike)
+	UI:WaitShowDialogue("No,[pause=10] he ran off to a water spring.[pause=0] You know,[pause=10] a place where water comes up from the ground?")
+	UI:WaitShowDialogue("I think my mom said the spring is where the water in the river in town comes from.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dee)
+	UI:WaitShowDialogue("That can't be right![pause=0] Why would that be called a spring?[pause=0] It has nothing to do with the time after winter!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(dun)
+	UI:WaitShowDialogue("Yeah![pause=0] And it's got nothing to do with bouncy things either!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(electrike)
+	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
+	UI:WaitShowDialogue("Groan...")
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
+	GROUND:CharEndAnim(electrike)
+	GROUND:CharEndAnim(dun)
+	GROUND:CharEndAnim(dee)
+	
+	partner.IsInteracting = false
+end
+
+function metano_town_ch_3.Electrike_Action(chara, activator)
+	metano_town_ch_3.Wooper_Conversation(chara)
+end
+
+function metano_town_ch_3.Wooper_Boy_Action(chara, activator)
+	metano_town_ch_3.Wooper_Conversation(chara)
+end
+
+function metano_town_ch_3.Wooper_Girl_Action(chara, activator)
+	metano_town_ch_3.Wooper_Conversation(chara)
+end
+
+
+function metano_town_ch_3.Sentret_Action(chara, activator) 
+	GeneralFunctions.StartConversation(chara, "I'm glad you're back " .. CharacterEssentials.GetCharacterName("Numel") .. "![pause=0] Now we can all play together again!", "Happy", false)
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_3.Oddish_Action(chara, activator) 
+	GeneralFunctions.StartConversation(chara, "Let's all play tag![pause=0] It'll be more fun now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is here!", "Happy", false)
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_3.Numel_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Thank you again for rescuing me![pause=0] I'm never going to run off like that again!", "Happy")
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+function metano_town_ch_3.Mawile_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Word around the town is that you two managed to save the missing kid![pause=0] That's wonderful!", "Happy")
+	UI:WaitShowDialogue("I just knew you two were gonna do great in the guild!")
+	GeneralFunctions.EndConversation(chara)
+end 
+function metano_town_ch_3.Nidorina_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Can you believe my parents kept me inside while that brat was missing?", "Determined")
+	UI:WaitShowDialogue("Obviously the dumb kid had just ran off![pause=0] This town is so boring,[pause=10] there's nothing dangerous anywhere close to here!")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_3.Gloom_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Maybe your parents were just worried...[pause=0] My dad worries a lot.", "Worried")
+	UI:WaitShowDialogue("He says the world's been is becoming more dangerous,[pause=10] and that more mystery dungeons have been appearing lately.")
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+function metano_town_ch_3.Azumarill_Action(chara, activator)
+
+end
+
+function metano_town_ch_3.Nidoking_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "It's wonderful that " .. CharacterEssentials.GetCharacterName('Camerupt') .. "'s young'un was rescued safe an' sound.")
+	UI:WaitShowDialogue("You adventurers at that there guild sure do some right proper work!")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+
+
+
+
+
+
+
+
+

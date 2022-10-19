@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
+require 'ground.metano_cafe.metano_cafe_ch_3'
 
 -- Package name
 local metano_cafe = {}
@@ -55,7 +56,11 @@ function metano_cafe.GameSave(map)
 end
 
 function metano_cafe.PlotScripting()
-	GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 3 then
+		metano_cafe_ch_3.SetupGround()
+	else 
+		GAME:FadeIn(20)
+	end 
 end
 
 -------------------------------
@@ -477,6 +482,34 @@ function metano_cafe.RemoveItems(itemList)
 	end
 
 end
+
+
+
+
+function metano_cafe.Breloom_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Breloom_Action(...,...)"), chara, activator))
+end
+
+function metano_cafe.Girafarig_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), chara, activator))
+end
+
+function metano_cafe.Gulpin_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gulpin_Action(...,...)"), chara, activator))
+end
+
+function metano_cafe.Lickitung_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Lickitung_Action(...,...)"), chara, activator))
+end
+
+
+
+
+
 
 function metano_cafe.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
