@@ -36,7 +36,8 @@ function metano_cafe_ch_3.Initial_Girafarig_Breloom_Conversation(chara, activato
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("Me and " .. hero:GetDisplayName() .. " wanted to check out the café now that it's open for business again.[pause=0] What are you doing here?")
+	UI:WaitShowDialogue("Me and " .. hero:GetDisplayName() .. " wanted to check out the café now that it's open for business again.")
+	UI:WaitShowDialogue("What are you doing here?")
 	
 	
 	GAME:WaitFrames(20)
@@ -112,4 +113,16 @@ function metano_cafe_ch_3.Breloom_Action(chara, activator)
 	else 
 		metano_cafe_ch_3.Initial_Girafarig_Breloom_Conversation(chara, activator)
 	end
+end 
+
+
+function metano_cafe_ch_3.Lickitung_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "With the café open again,[pause=10] me and " .. CharacterEssentials.GetCharacterName("Gulpin") .. " can get our daily drinks again.")
+	UI:WaitShowDialogue("I'm a big fan of the drinks here,[pause=10] but " .. CharacterEssentials.GetCharacterName("Gulpin") .. " is a total fanatic compared to me.")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_cafe_ch_3.Gulpin_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Precious drink,[pause=10] you are mine again to savior...!", "Happy")
+	GeneralFunctions.EndConversation(chara)
 end 

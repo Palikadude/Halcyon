@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.guild_bottom_right_bedroom.guild_bottom_right_bedroom_ch_3'
 
 -- Package name
 local guild_bottom_right_bedroom = {}
@@ -60,7 +61,11 @@ function guild_bottom_right_bedroom.GameSave(map)
 end
 
 function guild_bottom_right_bedroom.PlotScripting()
-	GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 3 then 
+		guild_bottom_right_bedroom_ch_3.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
 end
 
 
@@ -72,6 +77,15 @@ function guild_bottom_right_bedroom.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
+function guild_bottom_right_bedroom.Zigzagoon_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_bottom_right_bedroom_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), chara, activator))
+end
+
+function guild_bottom_right_bedroom.Growlithe_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_bottom_right_bedroom_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Action(...,...)"), chara, activator))
+end
 
 --function guild_bottom_right_bedroom.Almanac_Action(chara, activator)
 	--UI:ResetSpeaker(false)

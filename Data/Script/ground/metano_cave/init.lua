@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_cave.metano_cave_ch_2'
+require 'ground.metano_cave.metano_cave_ch_3'
 
 -- Package name
 local metano_cave = {}

@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_water_home.metano_water_home_ch_2'
+require 'ground.metano_water_home.metano_water_home_ch_3'
 
 -- Package name
 local metano_water_home = {}
@@ -66,6 +67,8 @@ end
 function metano_water_home.PlotScripting()
 	if SV.ChapterProgression.Chapter == 2 then 
 		metano_water_home_ch_2.SetupGround()
+	elseif SV.ChapterProgression.Chapter == 3 then 
+		metano_water_home_ch_3.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

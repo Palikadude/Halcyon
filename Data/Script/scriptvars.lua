@@ -195,6 +195,7 @@ SV.Chapter3 =
 	EscapedBoss = false,--due team use an escape orb to escape boss?
 	DefeatedBoss = false, --did duo defeat team style?
 
+	TropiusGaveWand = false,--did tropius give some wands to help the duo?
 	BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?
 }
 

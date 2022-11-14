@@ -1078,10 +1078,10 @@ function metano_town_ch_2.Gulpin_Action(chara, activator)
 	if not SV.Chapter2.FinishedFirstDay then--first day dialogue
 		GeneralFunctions.StartConversation(chara, "...Huh?[pause=0] The café is closed...?")
 		UI:SetSpeakerEmotion("Sad")
-		UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious smoothie today...")
+		UI:WaitShowDialogue("...Oh...[pause=0] I won't have my precious drink today...")
 		GeneralFunctions.EndConversation(chara)
 	else --second day dialogue 
-		GeneralFunctions.StartConversation(chara, "...Just how long will I need to wait to have my precious smoothie?", "Worried")
+		GeneralFunctions.StartConversation(chara, "...Just how long will I need to wait to have my precious drink?", "Worried")
 		UI:WaitShowDialogue("...Oh...[pause=0] I'm wasting away over here...")
 		GeneralFunctions.EndConversation(chara)
 	end

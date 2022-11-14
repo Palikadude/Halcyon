@@ -17,11 +17,8 @@ function ledian_dojo_ch_2.Sensei_Action(chara, activator)
 end 
 
 function ledian_dojo_ch_2.Gible_Action(chara, activator)
-	UI:SetSpeaker(chara)
-	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
-	UI:WaitShowDialogue("Isn't Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " amazing?")
-	GROUND:EntTurn(chara, olddir)
+	GeneralFunctions.StartConversation(chara, "Isn't Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " amazing?")
+	GeneralFunctions.EndConversation(chara)
 end
 
 

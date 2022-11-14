@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.altere_pond.altere_pond_ch_1'
 require 'ground.altere_pond.altere_pond_ch_2'
+require 'ground.altere_pond.altere_pond_ch_3'
 
 -- Package name
 local altere_pond = {}

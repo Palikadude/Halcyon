@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.ledian_dojo.ledian_dojo_ch_2'
+require 'ground.ledian_dojo.ledian_dojo_ch_3'
 
 
 -- Package name
@@ -98,6 +99,8 @@ function ledian_dojo.PlotScripting()
 		else 
 			ledian_dojo_ch_2.SetupGround()
 		end
+	elseif SV.ChapterProgression.Chapter == 3 then 
+				ledian_dojo_ch_3.SetupGround()
 	else
 		GAME:FadeIn(20)	
 	end 
