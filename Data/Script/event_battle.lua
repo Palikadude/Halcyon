@@ -199,18 +199,39 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	local target = context.Target
 	local action_cancel = context.CancelState
 	local turn_cancel = context.TurnCancel
+	
+	action_cancel.Cancel = true
 
-
-	  action_cancel.Cancel = true
-  -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
-  if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
+  if COMMON.CanTalk(target) then
     
+    UI:SetSpeaker(target)
+
     local ratio = target.HP * 100 // target.MaxHP
     
-    local mon = RogueEssence.Data.DataManager.Instance:GetMonster(target.BaseForm.Species)
+    local mon = _DATA:GetMonster(target.BaseForm.Species)
     local form = mon.Forms[target.BaseForm.Form]
     
-    local personality = form:GetPersonalityType(target.Discriminator)
+	--Partner has a different personality for each pool of quotes, with pools having different quotes to have additional comments on specific plotstate.
+	--If no special quotes are needed because you're not doing the current story dungeon or whatever, use the default partner personality of 51.
+	
+    local personality = 51
+	
+	local dungeon = GAME:GetCurrentDungeon().Name:ToLocal()
+	local segment = _ZONE.CurrentMapID.Segment
+	
+	if SV.ChapterProgression.Chapter == 1 and dungeon == 'Relic Forest' then
+		personality = 52
+	elseif SV.ChapterProgression.Chapter == 2 and dungeon == 'Illuminant Riverbed' then
+		personality = 53
+	elseif SV.ChapterProgression.Chapter == 3 and dungeon == 'Crooked Cavern' then
+		if not SV.Chapter3.EncounteredBoss and segment == 0 then --dungeon, havent fought boss yet
+			personality = 54
+		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and segment == 0 then --dungeon, lost to boss already
+			personality = 55
+		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and segment == 1 then
+			personality = 56
+		end
+	end
     
     local personality_group = COMMON.PERSONALITY[personality]
     local pool = {}
@@ -244,12 +265,12 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
       if string.find(chosen_quote, "%[move%]") then
         local moves = {}
   	    for move_idx = 0, 3 do
-  	      if target.BaseSkills[move_idx].SkillNum > 0 then
+  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
   	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
   	      end
   	    end
   	    if #moves > 0 then
-  	      local chosen_move = RogueEssence.Data.DataManager.Instance:GetSkill(moves[math.random(1, #moves)])
+  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
   	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
   	    else
   	      valid_quote = false
@@ -262,7 +283,7 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
   	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
   	      if chosen_list.Count > 0 then
   	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
-  	        local mon = RogueEssence.Data.DataManager.Instance:GetMonster(chosen_mob.BaseForm.Species)
+  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
             chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
   	      else
   	        valid_quote = false
@@ -292,7 +313,6 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	local oldDir = target.CharDir
     DUNGEON:CharTurnToChar(target, chara)
   
-    UI:SetSpeaker(target)
   
     UI:WaitShowDialogue(chosen_quote)
   
@@ -321,8 +341,9 @@ function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
 	local action_cancel = context.CancelState
 	local turn_cancel = context.TurnCancel
 	 
+    UI:SetSpeaker(target)
 
-	 action_cancel.Cancel = true
+	action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
   if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
     
@@ -343,7 +364,6 @@ function BATTLE_SCRIPT.HeroInteract(owner, ownerChar, context, args)
 	local oldDir = target.CharDir
     DUNGEON:CharTurnToChar(target, chara)
   
-    UI:SetSpeaker(target)
 	chosen_quote = '(.........)'
   
     UI:WaitShowDialogue(chosen_quote)

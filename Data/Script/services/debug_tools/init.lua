@@ -90,6 +90,12 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Genshi'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
+	  
+	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("HeroInteract")
+	  _DATA.Save.ActiveTeam.Players[0].ActionEvents:Add(talk_evt)
+	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
+	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
+	  
 	  --mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
 	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
 	  

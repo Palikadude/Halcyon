@@ -272,10 +272,62 @@ COMMON.PERSONALITY[50] = { --Hero
 
 }
 
-COMMON.PERSONALITY[51] = { --The partner
+--Partner personalities are below
+--default
+COMMON.PERSONALITY[51] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010},
+	HALF = {1000, 1001, 1002, 1003, 1004},
+	PINCH = {1000, 1001, 1002, 1003, 1004},
+	WAIT = {1000}
+	
+}
 
+--These have 1 or more default ones removed typically, and a few custom ones added in specific to that place.
+--Relic Forest - Ch 1
+COMMON.PERSONALITY[52] = { 
+	FULL = {1001, 1002, 1003, 1004, 1006, 1008, 1009, 1050, 1051, 1052, 1053},
+	HALF = {1000, 1001, 1002, 1050, 1051},
+	PINCH = {1001, 1002, 1004, 1050, 1051},
+	WAIT = {1000}
+	
+}
+
+--Illuminant Riverbed - Ch 2
+COMMON.PERSONALITY[53] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1060, 1061, 1062, 1063},
+	HALF = {1000, 1001, 1002, 1003, 1004, 1060, 1061},
+	PINCH = {1000, 1001, 1002, 1003, 1004, 1060, 1061},
+	WAIT = {1000}
+	
+}
+
+--Crooked Cavern - Ch 3
+COMMON.PERSONALITY[54] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1070, 1071, 1072, 1073},
+	HALF = {1000, 1001, 1002, 1003, 1004, 1070, 1071},
+	PINCH = {1000, 1001, 1002, 1003, 1004, 1070, 1071},
+	WAIT = {1000}
+	
+}
+
+--Crooked Cavern - Ch 3 - After dying to the boss at least once
+COMMON.PERSONALITY[55] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1080, 1081, 1082, 1083},
+	HALF = {1000, 1001, 1002, 1003, 1004, 1080, 1081},
+	PINCH = {1000, 1001, 1002, 1003, 1004, 1080, 1081},
+	WAIT = {1000}
 
 }
+
+--Crooked Den - Ch 3 - Boss Fight
+COMMON.PERSONALITY[56] = { 
+	FULL = {1090, 1091, 1092, 1093, 1094},
+	HALF = {1090, 1091, 1092},
+	PINCH = {1090, 1091, 1092},
+	WAIT = {1000}
+	
+}
+
 
 COMMON.ESSENTIALS = {
   { Index = 1, Hidden = 0, Price = 50},
@@ -1024,6 +1076,18 @@ function COMMON.EndSession(result, zoneId, structureId, mapId, entryId)
   GAME:EnterZone(zoneId, structureId, mapId, entryId)
 end
 
+function COMMON.CanTalk(chara)
+  if chara:GetStatusEffect("sleep") ~= nil then
+    return false
+  end
+  if chara:GetStatusEffect("freeze") ~= nil then
+    return false
+  end
+  if chara:GetStatusEffect("confuse") ~= nil then
+    return false
+  end
+  return true
+end
 
 function COMMON.EndDayCycle()
   --reshuffle items

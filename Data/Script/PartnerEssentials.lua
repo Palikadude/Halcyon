@@ -664,15 +664,17 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 	
 		elseif not SV.Chapter3.EncounteredBoss then 
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
-			UI:WaitShowDialogue("Come on,[pause=10]" .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
-			UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Let's go!")
+			UI:WaitShowDialogue("Come on,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
+			UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."!")
+			UI:WaitShowDialogue("We should head into town to prepare and then we can leave to the east when we're ready.[pause=0] Let's go!")
 		else
 			UI:SetSpeakerEmotion("Determined")
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 			UI:WaitShowDialogue("That Team [color=#FFA5FF]Style[color]...[pause=0] Who do they think they are?")
-			UI:WaitShowDialogue("We need to go back to " .. zone:GetColoredName() .. " and defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
+			UI:WaitShowDialogue("We have to go back to " .. zone:GetColoredName() .. " to defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
 		end
 	elseif in_array(ground, {'guild_bedroom_hallway',
+						     'guild_storage_room',
 							 'guild_bottom_left_bedroom',
 							 'guild_top_left_bedroom',
 							 'guild_top_right_bedroom',
@@ -682,13 +684,14 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 							 'guild_storage_hallway'}) then 
 		if not SV.Chapter3.EncounteredBoss then 
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
-			UI:WaitShowDialogue("Come on,[pause=10]" .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
-			UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Let's go!")
+			UI:WaitShowDialogue("Come on,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
+			UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."!")
+			UI:WaitShowDialogue("We should head into town to prepare and then we can leave to the east when we're ready.[pause=0] Let's go!")
 		else
 			UI:SetSpeakerEmotion("Determined")
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 			UI:WaitShowDialogue("That Team [color=#FFA5FF]Style[color]...[pause=0] Who do they think they are?")
-			UI:WaitShowDialogue("We need to go back to " .. zone:GetColoredName() .. " and defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
+			UI:WaitShowDialogue("We have to go back to " .. zone:GetColoredName() .. " to defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
 		end
 	
 	elseif ground == 'guild_bottom_right_bedroom' then
@@ -702,12 +705,12 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 	elseif ground == 'guild_second_floor' then
 		if not SV.Chapter3.EncounteredBoss then
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
-			UI:WaitShowDialogue("Well,[pause=10] we have our mission for the day.[pause=0] We need to go to " .. zone:GetColoredName() .. " and catch this " .. CharacterEssentials.GetCharacterName("Sandile") .. ".")
+			UI:WaitShowDialogue("Well,[pause=10] we have our mission for the day.[pause=0] We need to go to " .. zone:GetColoredName() .. " and catch the outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. ".")
 			UI:SetSpeakerEmotion("Worried")
 			UI:WaitShowDialogue("I think " .. CharacterEssentials.GetCharacterName("Cranidos") .. " picked out a difficult job to make us look bad...")
 			UI:SetSpeakerEmotion("Normal")
-			UI:WaitShowDialogue("Still,[pause=10] we should give it our best![pause=0] I know we can do it,[pause=10] " .. hero:GetDisplayName() .. "!")
-			UI:WaitShowDialogue("I bet " .. CharacterEssentials.GetCharacterName("Mareep") .. " can help us if we have any questions,[pause=10] too.")		
+			UI:WaitShowDialogue("We should give it our best and prove him wrong![pause=0] I know we can do it,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:WaitShowDialogue("If we have any trouble,[pause=10] I bet " .. CharacterEssentials.GetCharacterName("Mareep") .. " can help us if we have any questions,[pause=10] too.")		
 		else
 			UI:SetSpeakerEmotion("Determined")
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
@@ -754,14 +757,15 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 							 'metano_altere_transition'
 								}) then 
 	    if not SV.Chapter3.EncounteredBoss then 
-			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
-			UI:WaitShowDialogue("We've got to capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. "!")
-			UI:WaitShowDialogue("Whenever we're ready,[pause=10] we should leave town to the east towards " .. zone:GetColoredName() .. "!")
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+				UI:WaitShowDialogue("Come on,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
+				UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."!")
+				UI:WaitShowDialogue("We should prepare here in town and then leave to the east when we're ready.[pause=0] Let's go!")
 		else
 			UI:SetSpeakerEmotion("Determined")
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 			UI:WaitShowDialogue("I still can't believe Team [color=#FFA5FF]Style[color]![pause=0] To think they'd go as far as they did...")
-			UI:WaitShowDialogue("We need to get ready in town and then head out to " .. zone:GetColoredName() .. " so we can beat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Let's go!")
+			UI:WaitShowDialogue("We need to get ready here in town and then head out to " .. zone:GetColoredName() .. " so we can beat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Let's go!")
 		end
 	elseif ground == 'metano_fire_home' then
 		UI:SetSpeakerEmotion("Happy")
@@ -771,7 +775,7 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		
 	elseif ground == 'altere_pond' then
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
-		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] being so old,[pause=10] knows a lot of stories and myths.")
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] being so old,[pause=10] knows a lot of stories and myths of the world.")
 		UI:WaitShowDialogue("Sometimes he'll tell me one if he hasn't caught me sneaking into " .. zone:GetColoredName() .. " lately.")
 		UI:SetSpeakerEmotion("Inspired")
 		UI:WaitShowDialogue("I love hearing about all the different legends he knows![pause=0] They're so fascinating!")
@@ -781,93 +785,67 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		UI:WaitShowDialogue("Looks like the post office isn't working right now...")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Guess we'll have to come back another time.")
+	elseif ground == 'metano_cafe' then
+	
 		
 		
 	elseif ground == 'metano_town' then
 		--metano town uses a series of touch objects to mark where the player/partner is on the map so the partner can comment on specific surroundings.
 		local location = SV.metano_town.Locale
-		if not SV.Chapter2.FinishedTraining then 
-			UI:WaitShowDialogue("Let's head over to Ledian Dojo for our training,[pause=10] " .. hero:GetDisplayName() .. "!")
-			UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " said it was across the bridge to the guild,[pause=10] then down a ladder to the east.")
-		elseif not SV.Chapter2.FinishedFirstDay then  --day 1
+		--North Houses
+		--South Houses
+		--Guild
+		--Cafe
+		--Well
+		--Post
+		--Cave
+		--Market
+		--Dojo
+		--Exploration
+		--Merchants 
+		
+		if not SV.Chapter3.EncounteredBoss then
 			if location == 'North Houses' or location == 'South Houses' then 
-				UI:WaitShowDialogue("This is where most of the townfolk live.")
-				if SV.Chapter2.FinishedNumelTantrum then 
-					UI:SetSpeakerEmotion("Worried")
-					UI:WaitShowDialogue("That scene earlier was a bit alarming...[pause=0] That sort of stuff rarely happens in Metano Town.")
-					UI:SetSpeakerEmotion("Normal")
-					UI:WaitShowDialogue("Regardless,[pause=10] Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
-				else 
-					UI:WaitShowDialogue("Pokémon here are very welcoming,[pause=10] so don't be shy about going into their homes.")
-				end
-			elseif location == 'Guild' then 
-				if not SV.Chapter2.FinishedNumelTantrum then
-					UI:WaitShowDialogue("We still have some time before we need to head back inside the guild.")
-					UI:WaitShowDialogue("Let's go explore town some more!")
-				else
-					UI:WaitShowDialogue("It's starting to get late.[pause=0] Let's head back inside the guild for dinner whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")	
-				end
-			elseif location == 'Cafe' then 
-				UI:SetSpeakerEmotion("Surprised")
-				UI:WaitShowDialogue("Oh![pause=0] I almost forgot about the café!")
+				UI:WaitShowDialogue("Looks like most of the townsfolk are relieved now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back home safe.")
 				UI:SetSpeakerEmotion("Happy")
-				UI:WaitShowDialogue("The café is the most popular spot in town!")
-				UI:WaitShowDialogue("The owner " .. CharacterEssentials.GetCharacterName("Shuckle") .. " makes all sorts of delicious drinks and snacks![pause=0] They're really good!")
-				UI:SetSpeakerEmotion("Worried")
-				UI:WaitShowDialogue("It looks like it isn't open right now though...[pause=0] That's a shame...")
+				UI:WaitShowDialogue("It's great we were able to rescue him![pause=0] Helping others was one of the reasons I wanted to become an adventurer after all!")
+			elseif in_array(location, {'Guild', 'Cave', 'Well', 'Post', 'Dojo'}) then 
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+				UI:WaitShowDialogue("Come on,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")
+				UI:WaitShowDialogue("We need to go to " .. zone:GetColoredName() .. " and capture that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .."!")
+				UI:WaitShowDialogue("We should prepare here in town and then leave to the east when we're ready.[pause=0] Let's go!")
+			elseif location == 'Cafe' then 
 				UI:SetSpeakerEmotion("Inspired")
-				UI:WaitShowDialogue("We have to come back once it's open though![pause=0] I'm telling you,[pause=10] it's tasty stuff!")
-			elseif location == 'Cave' then 
-				UI:WaitShowDialogue("A hermit lives in that musty cave in the cliffside there.[pause=0] She's not very fond of visitors though.")
+				UI:WaitShowDialogue("We should take a stop inside the café before we head out on our mission!")
+				UI:WaitShowDialogue("Now that it's open again,[pause=10] we should visit and get a treat before the day's work!")
 			elseif location == 'Exploration' then
-				UI:WaitShowDialogue("This is the main exit out of town.[pause=0] For most of our future adventures,[pause=10] we would leave town this way.")
-			elseif location == 'Post' then
-				UI:WaitShowDialogue("That oddly shaped building over there is the Pelipper Post Office.[pause=0] We can send and receive mail there!")
-			elseif location == 'Well' then 
-				UI:WaitShowDialogue("The cliff is a common hangout spot.[pause=0] You can see all of Metano Town from up here!")
-				UI:WaitShowDialogue("The parents don't like their children playing up here though.")
-				UI:WaitShowDialogue("They don't want them falling down the cliffside after all!")
+				UI:WaitShowDialogue("If you think we're ready,[pause=10] we can leave town towards " .. zone:GetColoredName() .. " down this path to the east.")
 			elseif location == 'Merchants' then 
 				UI:SetSpeakerEmotion("Worried")
-				UI:WaitShowDialogue("Usually there's a pair of rival merchants here,[pause=10] selling items while they bicker with each other.")
-				UI:WaitShowDialogue("But I haven't seen them there for a few days.[pause=0] I wonder where they could be?")
-			elseif location == 'Dojo' then 
-				if not SV.Chapter2.FinishedTraining then
-					UI:WaitShowDialogue("Hey,[pause=10] there's a ladder over there,[pause=10] " .. hero:GetDisplayName() "!")
-					UI:WaitShowDialogue("That must be the entrance to the dojo.[pause=0] Let's head on down!")
-				else 
-					UI:SetSpeakerEmotion("Worried")
-					UI:WaitShowDialogue("Still can't believe that there's an entire cavern and dojo down that ladder...")
-					UI:SetSpeakerEmotion("Joyous")
-					GROUND:CharSetEmote(partner, "glowing", 0)
-					UI:WaitShowDialogue("I've passed by it so many times,[pause=10] but I've never gone down there before today![pause=0] Haha!")
-					GROUND:CharSetEmote(partner, "", 0)
-				end
+				UI:WaitShowDialogue("That Team [color=#FFA5FF]Style[color] still has me a bit confused...")
+				UI:WaitShowDialogue("I wonder what caused them to act the way they did towards us?")
 			elseif location == 'Market' then 
-				UI:WaitShowDialogue("The market has all sorts of cool shops and vendors!")
-				UI:WaitShowDialogue("It's the most exciting part of town![pause=0] Besides the guild,[pause=10] of course.")
-				UI:WaitShowDialogue("If we make any money from adventuring,[pause=10] this is probably where we're going to spend it.")
+				UI:WaitShowDialogue("We should stock up on items that'll help us capture " .. CharacterEssentials.GetCharacterName("Sandile") .. " here in the market.")
+				UI:WaitShowDialogue("We can use some of our reward money from " .. CharacterEssentials.GetCharacterName("Camerupt") .. " to buy them from " .. CharacterEssentials.GetCharacterName("Kecleon") .. " and " .. CharacterEssentials.GetCharacterName("Kecleon_Purple") .. "!")
 			else
 				UI:WaitShowDialogue("No dialogue assigned for this section of town. Let Palika know where you got this message.")
 			end
 						
 		else--day 2
-			if in_array(location, {'Guild', 'North Houses', 'South Houses', 'Post', 'Merchants', 'Well', 'Exploration', 'Cave'}) then 
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
-				UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We have to rescue " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
-				UI:WaitShowDialogue("We should prepare ourselves in town,[pause=10] then head north out of town to " .. zone:GetColoredName() .. " to find him!")
-			elseif location == 'Cafe' then 
-				UI:SetSpeakerEmotion("Worried")
-				UI:WaitShowDialogue("The café is still closed,[pause=10] huh?")
-				UI:SetSpeakerEmotion("Normal")
-				UI:WaitShowDialogue("I hope it's open again soon.[pause=0] I really want you to try some of their treats!")
-			elseif location == 'Dojo' then
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")			
-				UI:WaitShowDialogue("Perhaps we should head into the dojo for a warmup before we head out to " .. zone:GetColoredName() .. "?")
+			if in_array(location, {'Guild', 'Cave', 'Well', 'Post', 'Dojo', 'North Houses', 'South Houses', 'Exploration', 'Cafe'}) then 
+				UI:SetSpeakerEmotion("Determined")
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+				UI:WaitShowDialogue("I still can't believe Team [color=#FFA5FF]Style[color]![pause=0] To think they'd go as far as they did...")
+				UI:WaitShowDialogue("We need to get ready here in town and then head out to " .. zone:GetColoredName() .. " so we can beat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Let's go!")
+			elseif location == 'Merchants' then 
+				UI:SetSpeakerEmotion("Determined")
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+				UI:WaitShowDialogue("Putting on an act like that...[pause=0] Now we know why Team [color=#FFA5FF]Style[color] had that change of heart here earlier!")
+				UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] Let's get back to " .. zone:GetColoredName() .. " and beat Team [color=#FFA5FF]Style[color] so we can help " .. CharacterEssentials.GetCharacterName("Sandile") .. "!")
 			elseif location == 'Market' then 
-				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")			
-				UI:WaitShowDialogue("The market is probably the best place for us to make our preparations.")
-				UI:WaitShowDialogue("When we're done here,[pause=10] let's make a beeline for " .. zone:GetColoredName() .. "![pause=0] " .. CharacterEssentials.GetCharacterName("Numel") .. " needs us!")
+				UI:WaitShowDialogue("We should buy some items in the market to help us deal with Team [color=#FFA5FF]Style[color].")
+				UI:SetSpeakerEmotion("Worried")
+				UI:WaitShowDialogue("Though I'm not sure which items might be best for that...")
 			else
 				UI:WaitShowDialogue("No dialogue assigned for this section of town. Let Palika know where you got this message.")
 			end

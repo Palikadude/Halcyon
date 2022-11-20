@@ -348,7 +348,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Sad")
+	UI:SetSpeakerEmotion("Surprised")
 	GROUND:CharSetEmote(partner, "sweating", 1)
 	UI:WaitShowDialogue("These outlaws are dangerous,[pause=10] lawless Pokémon,[pause=10] aren't they?[pause=0] Are we really ready to take one on?")
 
@@ -564,7 +564,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	GeneralFunctions.DuoTurnTowardsChar(cranidos)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Heheheh![pause=0] Is that so!")
+	UI:WaitShowDialogue("Heheheh![pause=0] Is that so?")
 	
 	
 	GAME:WaitFrames(10)
@@ -617,7 +617,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("OK![pause=0] We'll get ready then head out east!")
+	UI:WaitShowDialogue("OK![pause=0] We'll get ready,[pause=10] then head out east!")
 	UI:WaitShowDialogue("Thank you,[pause=10] " .. mareep:GetDisplayName() .. ",[pause=10] for the help!")
 	
 	GAME:WaitFrames(20)
