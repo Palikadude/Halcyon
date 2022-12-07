@@ -232,7 +232,15 @@ function guild_second_floor.Camerupt_Action(chara, activator)
 end
 
 
+function guild_second_floor.Metapod_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Metapod_Action(...,...)"), chara, activator))
+end
 
+function guild_second_floor.Silcoon_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Silcoon_Action(...,...)"), chara, activator))
+end
 
 
 

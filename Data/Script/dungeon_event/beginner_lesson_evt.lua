@@ -173,7 +173,6 @@ end
 
 
 
---todo: for item tutorial, a custom script event tile that prevents passage if you're not holding a specific item
 
 
 --be sure to check function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)

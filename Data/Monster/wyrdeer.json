@@ -1,0 +1,24 @@
+﻿{
+"Version": "0.6.6.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"Title": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"IndexNum": 899,
+"EXPTable": "erratic",
+"SkillGroup1": "amorphous",
+"SkillGroup2": "amorphous",
+"JoinRate": 0,
+"PromoteFrom": "",
+"Promotions": [],
+"Forms": []
+}
+}

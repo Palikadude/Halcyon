@@ -8,11 +8,74 @@ guild_second_floor_ch_3 = {}
 
 
 function guild_second_floor_ch_3.SetupGround()
+
+	local mareep, cranidos, silcoon, metapod = 
+		CharacterEssentials.MakeCharactersFromList({
+			{'Mareep', 360, 224, Direction.UpRight},
+			{'Cranidos', 424, 224, Direction.UpLeft},
+			{'Silcoon', 'Left_Duo_2'},
+			{'Metapod', 'Left_Duo_1'}
+		})
+			
 	
 	GAME:FadeIn(20)
 	
 end
 
+
+
+function guild_second_floor_ch_3.Silcoon_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Metapod") .. " and I make up Team [color=#FFA5FF]Flutter[color]!")
+	UI:WaitShowDialogue("I know that name may seem a bit odd,[pause=10] but when we evolve again that name will make perfect sense!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Metapod_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Me and " .. CharacterEssentials.GetCharacterName("Silcoon") .. " evolved recently.")
+	UI:WaitShowDialogue("We're hoping to evolve again as soon as we can.[pause=0] Our current forms are...[pause=0] pretty inconvenient,[pause=10] to say the least.")
+	UI:WaitShowDialogue("It took us a lot longer than I'd like to admit to make it up the ramp to get here...")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Mareep_Action(chara, activator)
+	if SV.Chapter3.EnteredCavern then
+		GeneralFunctions.StartConversation(chara, "Hey you two![pause=0] Having trouble catching the\nba-a-a-addie?")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("That's OK![pause=0] It can be rea-a-a-ally tough sometimes!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I find that whenever I'm struggling to catch an outlaw,[pause=10] using items helps a lot!")
+		UI:WaitShowDialogue("The right item can really make all the difference!")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("I hope that helps![pause=0] Good luck,[pause=10] I know you two\nca-a-a-an do it!")
+	else 
+		GeneralFunctions.StartConversation(chara, "Good luck you two![pause=0] Come back and speak to us if you ha-a-a-ave any trouble!")	
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Cranidos_Action(chara, activator)
+	local hero = CH("PLAYER")
+	local partner = CH('Teammate1')
+	if SV.Chapter3.EnteredCavern then
+		GeneralFunctions.StartConversation(chara, "You two still haven't caught that outlaw yet?")
+		UI:SetSpeakerEmotion("Joyous")
+		GROUND:CharSetEmote(chara, "glowing", 0)
+		UI:WaitShowDialogue("Hahaha![pause=0] I knew you two couldn't do it![pause=0] Hahaha!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Determined")
+		UI:WaitShowDialogue("Grr...")
+		
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		UI:WaitShowDialogue("Talking to " .. chara:GetDisplayName() .. " is pointless.[pause=0] If we need advice,[pause=10] we should try asking " .. CharacterEssentials.GetCharacterName("Mareep") .. ".")	
+		GROUND:CharSetEmote(chara, "", 0)
+	else 
+		GeneralFunctions.StartConversation(chara, "Don't you two have an outlaw to catch?[pause=0] What are you doing here talking to me?", "Determined")
+	end
+	GeneralFunctions.EndConversation(chara)
+end
 
 function guild_second_floor_ch_3.OutlawRewardScene() 
 local partner = CH('Teammate1')
@@ -268,7 +331,9 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	local cranidos, mareep = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Cranidos', 576, 100, Direction.Down},
-			{'Mareep', 576, 100, Direction.Down}
+			{'Mareep', 576, 100, Direction.Down},
+			{'Silcoon', 'Left_Duo_2'},
+			{'Metapod', 'Left_Duo_1'}
 	})
 	GROUND:Hide('Upwards_Stairs_Exit')
 	

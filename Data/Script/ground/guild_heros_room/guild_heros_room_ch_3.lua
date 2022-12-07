@@ -57,8 +57,8 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	UI:WaitShowDialogue("I know it was our job,[pause=10] and I know he stole that scarf he was wearing...")
 	UI:WaitShowDialogue("But I can't help but feel awful about arresting him.[pause=0] Doing our job was probably the right thing to do,[pause=10] but...")
 	
-	--todo: shake here
 	GAME:WaitFrames(20)
+	GeneralFunctions.StartTremble(partner)
 	UI:SetSpeakerEmotion("Teary-Eyed")
 	UI:WaitShowDialogue("Seeing him taken away by " .. CharacterEssentials.GetCharacterName("Bisharp") .. ",[pause=10] with that defeated look in his eyes,[pause=10] just made me feel terrible...")
 	UI:WaitShowDialogue("It should have been those bullies Team [color=#FFA5FF]Style[color] being led away by " .. CharacterEssentials.GetCharacterName("Bisharp") .. ",[pause=10] not " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
@@ -67,6 +67,7 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	GeneralFunctions.HeroDialogue(hero, "(" .. partner:GetDisplayName() .. "...)", "Sad")
 
 	GAME:WaitFrames(20)
+	GeneralFunctions.StopTremble(partner)
 	GeneralFunctions.ShakeHead(partner, 4)
 	GAME:WaitFrames(10)
 	UI:SetSpeaker(partner)

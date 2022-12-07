@@ -177,8 +177,9 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GROUND:AnimateInDirection(partner, "Walk", Direction.Left, Direction.Right, 4, 1, 2)
 	
 	--wakeup
-	--todo: shake before getting up
-	GAME:WaitFrames(60)
+	GAME:WaitFrames(20)
+	GeneralFunctions.Shake(hero)
+	GAME:WaitFrames(30)
 	UI:SetSpeaker(hero)
 	GeneralFunctions.HeroDialogue(hero, "(...)", "Pain")
 	GROUND:CharSetAnim(hero, 'Wake', false)
@@ -256,9 +257,9 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Surprised")
 	GAME:WaitFrames(40)
+	--maybe add a hop at the end of the dialogue
 	UI:WaitShowDialogue("Huh?[pause=0] You say you're actually a human?")
 	GAME:WaitFrames(20)
-	--todo: a little hop
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Are you trying to pull a fast one on me?[pause=0] I thought humans were just some myth...")
 	UI:WaitShowDialogue("Besides,[pause=10] you look like a " ..  hero_species .. " to me...")

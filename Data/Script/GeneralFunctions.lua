@@ -1077,15 +1077,24 @@ function GeneralFunctions.BossTransition()
 end
 
 --do a quick shake in place.
-function GeneralFunctions.Shake()
-  GROUND:CharSetAction(CH('PLAYER'), RogueEssence.Ground.FrameGroundAction(CH('PLAYER').Position, CH('PLAYER').Direction, animId, 5))
-
+function GeneralFunctions.Shake(chara)
+  --GROUND:CharSetAction(CH('PLAYER'), RogueEssence.Ground.FrameGroundAction(CH('PLAYER').Position, CH('PLAYER').Direction, animId, 5))
+  GROUND:CharSetDrawEffect(chara, DrawEffect.Trembling)
+  GAME:WaitFrames(8)
+  GROUND:CharEndDrawEffect(chara, DrawEffect.Trembling)
 end
 
 --shake in place until told to stop. Change animation to the first frame of walking while doing so.
 --if you don't want that first frame of walk, use GROUND:CharSetDrawEffect and GROUND:CharEndDrawEffect
-function GeneralFunctions.StartTremble()
+function GeneralFunctions.StartTremble(chara)
+  GROUND:CharSetAction(chara, RogueEssence.Ground.FrameGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Walk")))
+  GROUND:CharSetDrawEffect(chara, DrawEffect.Trembling)
 
 end 
 
+function GeneralFunctions.StopTremble(chara)
+  GROUND:CharEndAnim(chara)
+  GROUND:CharEndDrawEffect(chara, DrawEffect.Trembling)
+
+end 
 

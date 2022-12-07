@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.3.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "PMDC.Data.MonsterFeatureData, PMDC",
 "FeatureData": {
@@ -11616,7 +11616,24 @@
 "BestStat": -1,
 "WorstStat": -1
 }
+},
+"sprigatito": {
+"0": {
+"Family": "sprigatito",
+"Stage": 1,
+"Element1": "grass",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
 }
+},
+"wyrdeer": {},
+"kleavor": {},
+"ursaluna": {},
+"basculegion": {},
+"sneasler": {},
+"overqwil": {},
+"enamorus": {}
 }
 }
 }

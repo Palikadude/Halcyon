@@ -99,12 +99,13 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	UI:WaitShowDialogue("It was an a-accident...[pause=0] I'm sorry...")
 	GAME:WaitFrames(20)
 	
-	--todo: shake before getting up
 	--GROUND:CharTurnToChar(partner, hero)
 	GeneralFunctions.HeroDialogue(hero, "(Urgh...[pause=0] That bonk was enough to give me a second case of amnesia...)", "Dizzy")
 	GAME:WaitFrames(20)
 	
 	--if you got hurt... I'd...
+	GeneralFunctions.Shake(hero)
+	GAME:WaitFrames(20)
 	GROUND:CharWaitAnim(hero, "Wake")
 	GROUND:CharSetAnim(hero, "None", true)
 	GAME:WaitFrames(20)
@@ -126,12 +127,13 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I hate even the idea of hurting others....")
 	UI:SetSpeakerEmotion("Teary-Eyed")
-	--todo:shake loop
+	GeneralFunctions.StartTremble(audino)
 	UI:WaitShowDialogue("If I had h-hurt you...[pause=0] I'd...[pause=0] I'd...")
 	GAME:WaitFrames(20)
 	
 	GROUND:CharSetEmote(audino, "glowing", 0)
 	UI:SetSpeakerEmotion("Joyous")
+	GeneralFunctions.StopTremble(audino)
 	UI:WaitShowDialogue("But you're okay![pause=10] Hooray!")
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(audino, "", 0)

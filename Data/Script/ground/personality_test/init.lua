@@ -119,7 +119,6 @@ function personality_test.CharacterSelect()
 	GAME:WaitFrames(20)
 
 	--Hero data
-	--todo: improve this. Perhaps move somewhere else.
 	local msg = "Your hero."
 	--[[local choices = {'Bulbasaur', 'Charmander', 'Squirtle', 'Pikachu', 'Vulpix', 'Vulpix-A', 'Meowth', 'Machop', 
 					 'Cubone', 'Chikorita', 'Cyndaquil', 'Totodile', 'Houndour', 'Phanpy', 'Magby',
@@ -175,11 +174,13 @@ function personality_test.CharacterSelect()
 					--RogueEssence.Dungeon.MonsterID("noibat", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rowlet", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("litten", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("popplio", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rockruff", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("fomantis", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("scorbunny", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("wooloo", 0, "normal", Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID("yamper", 0, "normal", Gender.Genderless)}
+					RogueEssence.Dungeon.MonsterID("yamper", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("sprigatito", 0, "normal", Gender.Genderless)}
 					
 	--not all moves listed are egg moves. Sometimes, egg move choices are too over or under powered and so something else had to be chosen				
 	local egg_move_list = 
@@ -228,12 +229,13 @@ function personality_test.CharacterSelect()
 		 --["noibat"] = "tailwind", --tailwind, noibat
 		 ["rowlet"] = "confuse_ray", --Confuse Ray, rowlet
 		 ["litten"] = "revenge", --revenge, litten 
+		 ["popplio"] = "charm", --popplio, charm
 		 ["rockruff"] = "thunder_fang", --thunder fang, rockruff
 		 --["fomantis"] = "weather_ball", --weather ball, fomantis
 		 ["scorbunny"] = "assurance", --assurance, scorbunny
 		 --["wooloo"] = "counter", --counter, wooloo
-		 ["yamper"] = "flame_charge"} --flame charge, yamper
-		 
+		 ["yamper"] = "flame_charge", --flame charge, yamper
+		 ["sprigatito"] = "copycat"} --sprigatito, copycat
 	
 	local continue = false 
 	local hero_choice = -1
@@ -380,7 +382,6 @@ function personality_test.CharacterSelect()
 	
 	
 	--assign dungeon AIs
-	--TODO: make the partner one more unique/original/detailed, basically just copying audino's for now
 	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("HeroInteract")
 	_DATA.Save.ActiveTeam.Players[0].ActionEvents:Add(talk_evt)
 	

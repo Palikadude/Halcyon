@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -86465,39 +86465,13 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects",
-"TexLoc": {
-"X": 11,
-"Y": 34
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects",
-"TexLoc": {
-"X": 11,
-"Y": 35
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
@@ -86874,39 +86848,13 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects",
-"TexLoc": {
-"X": 12,
-"Y": 34
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects",
-"TexLoc": {
-"X": 12,
-"Y": 35
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
@@ -100812,39 +100760,13 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 10,
-"Y": 28
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 10,
-"Y": 29
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
@@ -101104,39 +101026,13 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 11,
-"Y": 28
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 11,
-"Y": 29
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
@@ -101396,39 +101292,13 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 12,
-"Y": 28
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [
-{
-"Frames": [
-{
-"Sheet": "Guild_Bottom_Right_Bedroom_Objects_Over",
-"TexLoc": {
-"X": 12,
-"Y": 29
-}
-}
-],
-"FrameLength": 60
-}
-],
+"Layers": [],
 "NeighborCode": -1
 },
 {
@@ -137661,16 +137531,16 @@
 }
 },
 {
-"EntName": "Almanac",
-"Direction": 0,
+"EntName": "Team_Almanac",
+"Direction": 6,
 "EntEnabled": true,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
-"AnimIndex": "",
-"FrameTime": 1,
-"StartFrame": -1,
-"EndFrame": -1,
+"AnimIndex": "Diary_Red_Opening",
+"FrameTime": 6,
+"StartFrame": 0,
+"EndFrame": 0,
 "AnimDir": -1,
 "Alpha": 255,
 "AnimFlip": 0
@@ -137692,11 +137562,93 @@
 "Cycles": 0,
 "DrawOffset": {
 "X": 0,
-"Y": 0
+"Y": 7
 },
 "Collider": {
 "X": 80,
 "Y": 224,
+"Width": 24,
+"Height": 24
+}
+},
+{
+"EntName": "Tips_Almanac",
+"Direction": 6,
+"EntEnabled": true,
+"triggerType": 1,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Diary_Blue_Opening",
+"FrameTime": 6,
+"StartFrame": 0,
+"EndFrame": 0,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": false,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": 0,
+"Y": 7
+},
+"Collider": {
+"X": 88,
+"Y": 272,
+"Width": 24,
+"Height": 24
+}
+},
+{
+"EntName": "Data_Almanac",
+"Direction": 2,
+"EntEnabled": true,
+"triggerType": 1,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Diary_Blue_Opening",
+"FrameTime": 6,
+"StartFrame": 0,
+"EndFrame": 0,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": false,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": 0,
+"Y": 7
+},
+"Collider": {
+"X": 208,
+"Y": 264,
 "Width": 24,
 "Height": 24
 }

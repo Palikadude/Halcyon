@@ -46,7 +46,8 @@ function metano_town_ch_3.SetupGround()
 			{'Electrike', 272, 1056, Direction.Right},
 			{'Wooper_Girl', 306, 1036, Direction.DownLeft},
 			{'Wooper_Boy', 306, 1076, Direction.UpLeft},
-			{'Audino', 1264, 592, Direction.DownRight}
+			{'Audino', 1264, 592, Direction.DownRight},
+			{'Snubbull', 1040, 864, Direction.UpRight}
 			
 		})
 	
@@ -115,6 +116,7 @@ function metano_town_ch_3.CafeCutscene()
 	UI:WaitShowDialogue("If you'd rather get on with the mission now,[pause=10] that's OK too![pause=0] But we should drop in there sometime soon!")
 	
 	SV.Chapter3.FinishedCafeCutscene = true
+	GAME:GetCurrentGround():RemoveTempChar(dummy)
 	GeneralFunctions.EndConversation(partner)
 end
 
@@ -699,5 +701,11 @@ function metano_town_ch_3.Audino_Action(chara, activator)
 	GeneralFunctions.EndConversation(chara)
 end
 
-
+function metano_town_ch_3.Snubbull_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+	UI:WaitShowDialogue("Apparently there's been a shortage of Apricorns lately.")
+	UI:WaitShowDialogue("Without Apricorns,[pause=10] recruiting new team members is impossible!")
+	UI:WaitShowDialogue("But more importantly,[pause=10] I can't make this special dish I've been working on without any Apricorns![pause=0] Now what am I going to cook?")
+	GeneralFunctions.EndConversation(chara)
+end
 

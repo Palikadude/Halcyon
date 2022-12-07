@@ -1,0 +1,233 @@
+﻿{
+"Version": "0.6.6.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Sprigatito",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Halcyon custom add. Uses SV learnset but removes anything exclusive to later games..\r\nDoesn't evolve yet.",
+"Title": {
+"DefaultText": "Grass Cat Pokémon",
+"LocalTexts": {}
+},
+"IndexNum": 906,
+"EXPTable": "medium_slow",
+"SkillGroup1": "field",
+"SkillGroup2": "grass",
+"JoinRate": 19,
+"PromoteFrom": "",
+"Promotions": [],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 9,
+"Ratio": 0,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 40,
+"BaseAtk": 61,
+"BaseDef": 54,
+"BaseMAtk": 45,
+"BaseMDef": 45,
+"BaseSpeed": 65,
+"ExpYield": 62,
+"Height": 0.4,
+"Weight": 4.1,
+"Personalities": [
+0,
+1,
+2,
+3,
+8,
+9,
+10,
+11,
+13,
+16,
+24,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "take_down"
+},
+{
+"Skill": "charm"
+},
+{
+"Skill": "fake_tears"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "acrobatics"
+},
+{
+"Skill": "disarming_voice"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "magical_leaf"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "bullet_seed"
+},
+{
+"Skill": "u_turn"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "giga_drain"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "play_rough"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "grassy_terrain"
+},
+{
+"Skill": "nasty_plot"
+},
+{
+"Skill": "grass_pledge"
+},
+{
+"Skill": "leaf_storm"
+},
+{
+"Skill": "solar_beam"
+}
+],
+"SharedSkills": [
+{
+"Skill": "ally_switch"
+},
+{
+"Skill": "copycat"
+},
+{
+"Skill": "leech_seed"
+},
+{
+"Skill": "petal_blizzard"
+},
+{
+"Skill": "sucker_punch"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Sprigatito",
+"LocalTexts": {}
+},
+"Temporary": false,
+"Element1": "grass",
+"Element2": "none",
+"Intrinsic1": "overgrow",
+"Intrinsic2": "none",
+"Intrinsic3": "protean",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 1,
+"Skill": "tail_whip"
+},
+{
+"Level": 1,
+"Skill": "vine_whip"
+},
+{
+"Level": 7,
+"Skill": "bite"
+},
+{
+"Level": 10,
+"Skill": "hone_claws"
+},
+{
+"Level": 13,
+"Skill": "magical_leaf"
+},
+{
+"Level": 15,
+"Skill": "quick_attack"
+},
+{
+"Level": 17,
+"Skill": "seed_bomb"
+},
+{
+"Level": 21,
+"Skill": "u_turn"
+},
+{
+"Level": 25,
+"Skill": "worry_seed"
+},
+{
+"Level": 28,
+"Skill": "slash"
+},
+{
+"Level": 32,
+"Skill": "energy_ball"
+},
+{
+"Level": 36,
+"Skill": "play_rough"
+}
+]
+}
+]
+}
+}

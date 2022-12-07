@@ -245,7 +245,6 @@ end
 
 function altere_pond_ch_1.PartnerHeroReturn()
 	--they made it back through the forest. it's evening now 
-	--todo: create map effect for evening shading
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	GROUND:AddMapStatus("dusk")--dusk

@@ -191,7 +191,9 @@ end
 function metano_town_ch_1.PartnerPushedBack()
 	local chara = CH('Teammate1')
 	GROUND:CharSetEmote(chara, "shock", 1)
-	GROUND:MoveToPosition(chara, 696, 900, false, 4)--todo: proper animation
+	GROUND:AnimateToPosition(chara, 'Hurt', Direction.Down, 696, 900, 1, 3)
+	GROUND:CharEndAnim(chara)
+	GAME:WaitFrames(6)
 	--GROUND:EntTurn(chara, Direction.Down)
 	--GAME:WaitFrames(12)
 	--GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)

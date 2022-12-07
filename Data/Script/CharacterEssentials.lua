@@ -266,7 +266,25 @@ local characters = {
 			form = 0,
 			skin = "normal"
 		},
-	
+		
+	--Team Flutter
+		Silcoon = {
+			species = 'silcoon',
+			nickname = '???',
+			instance = 'Silcoon',
+			gender = Gender.Female,
+			form = 0,
+			skin = 'normal'
+		},
+		
+		Metapod = {
+			species = 'metapod',
+			nickname = '???',
+			instance = 'Metapod',
+			gender = Gender.Male,
+			form = 0,
+			skin = 'normal'
+		},
 		
 	--Vendor/Shop NPCs
 		Kangaskhan = {
