@@ -23,12 +23,14 @@ function metano_town_ch_3.SetupGround()
 		
 		cafeBlock:ReloadEvents()
 		GAME:GetCurrentGround():AddTempObject(cafeBlock)
+		--disable its collision so it doesn't displace other NPCs
+		cafeBlock.Passable = true
 	end
 	
 	
 	
 	local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill, nidoking, luxray,
-		  linoone, electrike, wooper_girl, wooper_boy, audino		  = 
+		  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull		  = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Sentret', 400, 424, Direction.DownRight},
 			{'Oddish', 440, 424, Direction.DownLeft},
@@ -47,7 +49,8 @@ function metano_town_ch_3.SetupGround()
 			{'Wooper_Girl', 306, 1036, Direction.DownLeft},
 			{'Wooper_Boy', 306, 1076, Direction.UpLeft},
 			{'Audino', 1264, 592, Direction.DownRight},
-			{'Snubbull', 1040, 864, Direction.UpRight}
+			{'Snubbull', 1040, 864, Direction.UpRight},
+			{'Medicham', 864, 224, Direction.UpRight}			
 			
 		})
 	
@@ -56,6 +59,7 @@ function metano_town_ch_3.SetupGround()
 	AI:SetCharacterAI(luxray, "ai.ground_default", RogueElements.Loc(608, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 	AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(1188, 1140), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 	AI:SetCharacterAI(nidoking, "ai.ground_default", RogueElements.Loc(1144, 896), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+	AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(1248, 576), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
 	
 	
@@ -642,7 +646,7 @@ end
 
 
 function metano_town_ch_3.Azumarill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " knows where child is now![pause=0] That makes " .. chara:GetDisplayName() .. " happy!")
+	GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " knows where child is now![pause=0] That makes " .. chara:GetDisplayName() .. " happy!", "Happy")
 	UI:WaitShowDialogue("The water looks happy too![pause=0] It must know child is home now,[pause=10] just like " .. chara:GetDisplayName() .. "!")
 	GeneralFunctions.EndConversation(chara)
 end
@@ -683,8 +687,19 @@ function metano_town_ch_3.Nidoking_Action(chara, activator)
 	GeneralFunctions.EndConversation(chara)
 end 
 
+function metano_town_ch_3.Medicham_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Clear my mind is and again meditate can I with thanks to rescue of " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+	GeneralFunctions.EndConversation(chara)
 
+end
 
+function metano_town_ch_3.Meditite_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Wish play coul' I wit' the other kids...")
+	UI:WaitShowDialogue("It's hard fa' me friends to make...[pause=0] The other kids trouble have talkin' wit' me...")
+	UI:WaitShowDialogue("I don' get it...[pause=0] What am I sayin' hard that's ta' understan'?")
+	GeneralFunctions.EndConversation(chara)
+
+end
 
 
 function metano_town_ch_3.Growlithe_Desk_Action(chara, activator)
@@ -705,7 +720,8 @@ function metano_town_ch_3.Snubbull_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
 	UI:WaitShowDialogue("Apparently there's been a shortage of Apricorns lately.")
 	UI:WaitShowDialogue("Without Apricorns,[pause=10] recruiting new team members is impossible!")
-	UI:WaitShowDialogue("But more importantly,[pause=10] I can't make this special dish I've been working on without any Apricorns![pause=0] Now what am I going to cook?")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("More importantly,[pause=10] I can't make this special dish I've been working on without Apricorns![pause=0] Now what will I cook?")
 	GeneralFunctions.EndConversation(chara)
 end
 

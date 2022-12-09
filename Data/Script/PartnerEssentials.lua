@@ -808,7 +808,8 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			if location == 'North Houses' or location == 'South Houses' then 
 				UI:WaitShowDialogue("Looks like most of the townsfolk are relieved now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back home safe.")
 				UI:SetSpeakerEmotion("Happy")
-				UI:WaitShowDialogue("It's great we were able to rescue him![pause=0] Helping others was one of the reasons I wanted to become an adventurer after all!")
+				UI:WaitShowDialogue("It's so great we were able to rescue him!")
+				UI:WaitShowDialogue("Helping others was one of the reasons I wanted to become an adventurer after all!")
 			elseif in_array(location, {'Guild', 'Cave', 'Well', 'Post', 'Dojo'}) then 
 				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 				UI:WaitShowDialogue("Come on,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] We have a mission to do!")

@@ -1053,7 +1053,7 @@ function metano_town_ch_2.Meditite_Action(chara, activator)
 		GROUND:CharSetEmote(CH('Teammate1'), "sweatdrop", 1)
 		UI:WaitShowDialogue("She appears to have fallen asleep while meditating.")
 	else --second day dialogue 
-		GeneralFunctions.StartConversation(meditite, "My mum's been tryin' to teach me" .. ' about "inner peace" and "meditation" and all that...')
+		GeneralFunctions.StartConversation(meditite, "My mum's tryin' been to teach me" .. ' about "inner peace" and "meditation" and all that...')
 		UI:WaitShowDialogue("But think I don't that it's really fa' me...[pause=0] Just click it doesn't really...")
 	end
 	GeneralFunctions.EndConversation(meditite)
