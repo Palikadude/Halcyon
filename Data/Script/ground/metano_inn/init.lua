@@ -122,6 +122,17 @@ function metano_inn.Innkeeper_Desk_Right_Action(chara, activator)
   assert(pcall(load("metano_inn_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Innkeeper_Desk_Right_Action(...,...)"), chara, activator))
 end
 
+
+function metano_inn.Zangoose_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_inn_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zangoose_Action(...,...)"), chara, activator))
+end
+
+function metano_inn.Seviper_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_inn_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Seviper_Action(...,...)"), chara, activator))
+end
+
 --passersby are NPCs who are one-off NPCs who are people passing through town that are staying at the inn. These could be adventuring teams or it could be random NPCs
 function metano_inn.Passerby_1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine

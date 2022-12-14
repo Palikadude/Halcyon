@@ -10,12 +10,13 @@ function guild_guildmasters_room_ch_3.Tropius_Action(chara, activator)
 	--He gives you a few wands as a one-off to help you with your mission
 	if not SV.Chapter3.TropiusGaveWand then 
 		GeneralFunctions.StartConversation(chara, "Howdy,[pause=10] Team " .. GAME:GetTeamName() .. "![pause=0] Congratulations on your first successful mission!", "Happy")
-		UI:WaitShowDialogue("I'm sure " .. CharacterEssentials.GetCharacterName("Camerupt") .. ", " .. CharacterEssentials.GetCharacterName("Numel") .. ",[pause=10] and the rest of the town are thankful for what you've done!")
+		UI:WaitShowDialogue("I'm sure " .. CharacterEssentials.GetCharacterName("Camerupt") .. ",[pause=10] " .. CharacterEssentials.GetCharacterName("Numel") .. ",[pause=10] and the rest of the town are thankful for what you've done!")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("Anyways,[pause=10] you have a new mission now,[pause=10] right?[pause=0] You're on the hunt for an outlaw if I'm not mistaken!")
 		UI:WaitShowDialogue("Capturing outlaws can be tricky.[pause=0] They're tougher than most Pokémon you encounter in mystery dungeons!")
 		UI:WaitShowDialogue("So,[pause=10] I want you to take these to help you with your mission.")
 		GeneralFunctions.RewardItem("wand_totter", false, 4)
+		GAME:WaitFrames(20)
 		UI:SetSpeaker(chara)
 		UI:WaitShowDialogue("A good way to deal with strong opponents is to disable or weaken them.")
 		UI:WaitShowDialogue("These wands will confuse any opponent you wave them at,[pause=10] which is perfect for a tough enemy like an outlaw!")
@@ -30,7 +31,7 @@ function guild_guildmasters_room_ch_3.Tropius_Action(chara, activator)
 		GROUND:CharSetEmote(CH('Teammate1'), "", 0)
 		UI:SetSpeaker(chara)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("Of course![pause=0] Good luck with capturing this outlaw![pause=0] I know you can do it!")
+		UI:WaitShowDialogue("Of course![pause=0] Good luck with capturing this outlaw![pause=0]\nI know you can do it!")
 		SV.Chapter3.TropiusGaveWand = true
 	elseif not SV.Chapter3.EnteredCavern then 
 		GeneralFunctions.StartConversation(chara, "Good luck capturing that outlaw![pause=0] I know you two can do it!", "Happy")

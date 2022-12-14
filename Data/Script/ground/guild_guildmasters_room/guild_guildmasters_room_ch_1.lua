@@ -202,8 +202,8 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	GAME:WaitFrames(20)
 	
 	--hero question 1 response
-	GeneralFunctions.HeroDialogue(hero, "(Uh...[pause=0] That's a good question actually.[pause=0] I haven't put that much thought into it...)", "Worried")
-	GeneralFunctions.HeroDialogue(hero, "(It sounded fun,[pause=10] sure,[pause=10] but I didn't really have any other options given my circumstances...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(Uh...[pause=0] That's a good question actually.[pause=0] I haven't put that much thought into it.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(It sounded fun,[pause=10] sure,[pause=10] but I didn't really have any other options given my circumstances.)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(I'm not really sure what my answer is then...)", "Worried")
 	UI:BeginChoiceMenu("(...Why do I want to be an adventurer?)", {"It's a lot of fun", "Solve mysteries", partner:GetDisplayName() .. " is my friend"}, 3, 3)
 	UI:WaitForChoice()
@@ -464,7 +464,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	UI:WaitShowDialogue("But if the both of you wear the scarves and are close to each other...")
 	UI:WaitShowDialogue("...Then the scarves will give you a number of useful boons!")
 	UI:SetSpeakerEmotion("Happy")--change to a wink? how do you wink when only one eye shows
-	UI:WaitShowDialogue("...They also make a great fashion statement!")
+	UI:WaitShowDialogue("They also make a great fashion statement!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")

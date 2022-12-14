@@ -78,7 +78,7 @@ function metano_cafe_ch_3.Initial_Girafarig_Breloom_Conversation(chara, activato
 	GROUND:CharTurnToChar(partner, girafarig)
 	GROUND:CharTurnToChar(hero, girafarig)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("You'll get there some day![pause=0] You've got us and the rest of the guild behind you rooting for you!")
+	UI:WaitShowDialogue("You'll get there some day![pause=0] You've got us and the rest of the guild behind you rearing for you!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToChar(partner, breloom)
@@ -99,7 +99,7 @@ end
 
 function metano_cafe_ch_3.Girafarig_Action(chara, activator)
 	if SV.Chapter3.BreloomGirafarigConvo then 
-		GeneralFunctions.StartConversation(chara, "You'll get to our level some day![pause=0] You've got us and the rest of the guild behind you rooting for you!", "Happy")
+		GeneralFunctions.StartConversation(chara, "You'll get to our level some day![pause=0] You've got us and the rest of the guild behind you rearing for you!", "Happy")
 		GeneralFunctions.EndConversation(chara)
 	else 
 		metano_cafe_ch_3.Initial_Girafarig_Breloom_Conversation(chara, activator)

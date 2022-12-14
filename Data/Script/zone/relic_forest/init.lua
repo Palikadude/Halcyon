@@ -85,7 +85,7 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
 		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then--go to relic forest, end the dungeon run in that ground
-			GAME:EnterZone("master_zone", -1, 0, 0)
+			GAME:EnterGroundMap('relic_forest', 'Main_Entrance_Marker')
 		else--go to dinner 
 			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
 		end

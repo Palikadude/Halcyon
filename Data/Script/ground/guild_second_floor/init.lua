@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'CharacterEssentials'
 require 'GeneralFunctions'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
@@ -135,25 +136,56 @@ function guild_second_floor.Teammate1_Action(chara, activator)
 end
 
 function guild_second_floor.Mission_Board_Action(chara, activator)
-	if SV.ChapterProgression.Chapter < 3 then 
-		local partner = CH('Teammate1')
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	if SV.ChapterProgression.Chapter < 3 and not SV.Chapter2.FinishedFirstDay then 
 		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...", "Worried")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter < 3 and SV.Chapter2.FinishedFirstDay then 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and find " .. CharacterEssentials.GetCharacterName("Numel") .. ".[pause=0] Let's go!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 3 and not SV.Chapter3.EncounteredBoss then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and capture the outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. ".[pause=0] Let's go!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
 		GeneralFunctions.EndConversation(partner)
 	end
 end
 
 function guild_second_floor.Outlaw_Board_Action(chara, activator)
-	if SV.ChapterProgression.Chapter < 3 then 
-		local partner = CH('Teammate1')
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	if SV.ChapterProgression.Chapter < 3 and not SV.Chapter2.FinishedFirstDay then 
 		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should being taking jobs from the board right now...", "Worried")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("We only just joined after all.[pause=0] Let's come back another time!")
 		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter < 3 and SV.Chapter2.FinishedFirstDay then 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and find " .. CharacterEssentials.GetCharacterName("Numel") .. ".[pause=0] Let's go!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 3 and not SV.Chapter3.EncounteredBoss then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and capture the outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. ".[pause=0] Let's go!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
+		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
+		GeneralFunctions.EndConversation(partner)
 	end
 end
-
 
 
 function guild_second_floor.Cleffa_Action(chara, activator)

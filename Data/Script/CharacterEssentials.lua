@@ -270,7 +270,7 @@ local characters = {
 	--Team Flutter
 		Silcoon = {
 			species = 'silcoon',
-			nickname = '???',
+			nickname = 'Chressa',
 			instance = 'Silcoon',
 			gender = Gender.Female,
 			form = 0,
@@ -279,7 +279,7 @@ local characters = {
 		
 		Metapod = {
 			species = 'metapod',
-			nickname = '???',
+			nickname = 'Solis',
 			instance = 'Metapod',
 			gender = Gender.Male,
 			form = 0,

@@ -49,7 +49,7 @@ function guild_third_floor_lobby_ch_3.NotEnteredCavern()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw catch!")
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw to catch!")
 	UI:WaitShowDialogue("Quickly![pause=0] To " .. zone:GetColoredName() .. "!")
 	
 	GeneralFunctions.PanCamera()
@@ -67,7 +67,7 @@ function guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw catch!")
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "![pause=0] We still have an outlaw to catch!")
 	UI:WaitShowDialogue("Quickly![pause=0] To " .. zone:GetColoredName() .. "![pause=0] We can do it this time!")
 	
 	GeneralFunctions.PanCamera()
@@ -249,7 +249,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("With Team " .. GAME:GetTeamName() .. "'s successful mission yesterday,[pause=10] I believe they are ready for an outlaw job.")
 	UI:WaitShowDialogue("As you and " .. cranidos:GetDisplayName() .. " are the most experienced outlaw hunters in the guild...")
-	UI:WaitShowDialogue("I would like the two of you to assist them in choosing their first job from the Outlaw Notice Board.")
+	UI:WaitShowDialogue("...I would like the two of you to assist them in choosing their first job from the Outlaw Notice Board.")
 	
 	GAME:WaitFrames(10)
 	GeneralFunctions.EmoteAndPause(cranidos, "Exclaim", true)

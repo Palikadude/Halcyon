@@ -117,14 +117,25 @@ function metano_town.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed") 
   UI:ResetSpeaker()
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)		
   UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
   UI:WaitForChoice()
   local yesnoResult = UI:ChoiceResult()
   if yesnoResult then 
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
+	partner.IsInteracting = false
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
 	GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)	
 end
 
 function metano_town.East_Exit_Touch(obj, activator)
@@ -134,7 +145,6 @@ function metano_town.East_Exit_Touch(obj, activator)
   local dungeons = {"relic_forest", "illuminant_riverbed", "crooked_cavern"}--this needs to be updated when more dungeons come out.
   local grounds = {}
   metano_town.ShowDestinationMenu(dungeons, grounds)
-  GeneralFunctions.EndConversation(CH('Teammate1'))
 end
 
 function metano_town.South_Exit_Touch(obj, activator)
@@ -375,6 +385,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	if confirm then
 		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
+		GeneralFunctions.EndConversation(CH('Teammate1'))--end the conversation that was started with the partner before we enter the dungeon.
 		if dest.StructID.Segment > -1 then
 		  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
 			GAME:WaitFrames(120)--wait a bit before going to the ground
@@ -386,8 +397,16 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 		else
 		  GAME:EnterZone(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint)
 		end
+	else
+	  --end the conversation that was started before the menu was opened. Need to do it like this with the else statements or it causes a backend error as it would try to run this function AFTER entering the dungeon (for some reason).
+	  GeneralFunctions.EndConversation(CH('Teammate1'))
 	end
+  else 
+	  --end the conversation that was started before the menu was opened. Need to do it like this with the else statements or it causes a backend error as it would try to run this function AFTER entering the dungeon (for some reason).
+  GeneralFunctions.EndConversation(CH('Teammate1'))
   end
+
+
 end
 
 
@@ -671,7 +690,7 @@ function metano_town.Shop_Action(obj, activator)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			if #result > 0 then
-				local bag_count = GAME:GetPlayerBagCount()
+				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				local bag_cap = GAME:GetPlayerBagLimit()
 				if bag_count == bag_cap then
 					UI:SetSpeakerEmotion("Angry")
@@ -879,7 +898,7 @@ function metano_town.TM_Action(obj, activator)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			if #result > 0 then
-				local bag_count = GAME:GetPlayerBagCount()
+				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				local bag_cap = GAME:GetPlayerBagLimit()
 				if bag_count == bag_cap then
 					UI:SetSpeakerEmotion("Angry")
@@ -1327,7 +1346,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 					if itemPrice > GAME:GetPlayerMoney() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Money']))
-					elseif GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Bag_Full']))
 					else
@@ -1494,7 +1513,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 					if itemPrice > GAME:GetPlayerMoney() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Money']))
-					elseif GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Bag_Full']))
 					else
@@ -2402,10 +2421,18 @@ function metano_town.Guild_Bridge_Sign_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
-  UI:SetCenter(true)
+  UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Guild_Bridge_1']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 
@@ -2414,11 +2441,19 @@ function metano_town.Crossroads_Sign_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_1']))
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_2']))
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Crossroads_3']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 function metano_town.Dojo_Sign_Action(obj, activator)
@@ -2426,9 +2461,17 @@ function metano_town.Dojo_Sign_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Dojo_1']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 function metano_town.To_Dungeons_Sign_Action(obj, activator)
@@ -2436,9 +2479,17 @@ function metano_town.To_Dungeons_Sign_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Dungeons_1']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 function metano_town.Wishing_Well_Sign_Action(obj, activator)
@@ -2446,9 +2497,17 @@ function metano_town.Wishing_Well_Sign_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_Wishing_Well_1']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 function metano_town.To_Spring_Sign_Action(obj, activator)
@@ -2456,9 +2515,17 @@ function metano_town.To_Spring_Sign_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue(STRINGS:Format(MapStrings['Sign_To_Spring_1']))
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)
 end
 
 function metano_town.Postboard_Action(obj, activator)
@@ -2466,9 +2533,17 @@ function metano_town.Postboard_Action(obj, activator)
   UI:ResetSpeaker()
   UI:SetAutoFinish(true)
   UI:SetCenter(true)  
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)	
   UI:WaitShowDialogue("There's nothing here right now.\nCome back again another time!")
   UI:SetAutoFinish(false)
   UI:SetCenter(false)
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)	
 end
 --Change this to a little cutscene like how chimecho comes out to see you? Whoever ends up running the assmebly should come out to see you
 function metano_town.Assembly_Action(obj, activator)
@@ -2481,6 +2556,14 @@ function metano_town.Well_Action(obj, activator)
   DEBUG.EnableDbgCoro()
   UI:ResetSpeaker()
   UI:SetCenter(true)
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)		
+  GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+  GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	
   UI:ChoiceMenuYesNo("Would you like to throw a " .. STRINGS:Format("\\uE024") .. " in?")
   UI:WaitForChoice()
   local result = UI:ChoiceResult()
@@ -2495,6 +2578,9 @@ function metano_town.Well_Action(obj, activator)
 	  end
    end 
    UI:SetCenter(false)
+   partner.IsInteracting = false
+   GROUND:CharEndAnim(partner)
+   GROUND:CharEndAnim(hero)	
 end   
    
 return metano_town

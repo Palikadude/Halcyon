@@ -385,6 +385,12 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 
 	local dungeon_entrances = { }
 	UI:ResetSpeaker()
+	local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+    partner.IsInteracting = true
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)	
+	
 	UI:BeginChoiceMenu("Which would you like to do?", {"Training", "Lesson", "Trial", "Cancel"}, 1, 4)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
@@ -405,11 +411,17 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 		end
 	else
 		--cancel
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)	
 		return
 	end
 	--set the dungeons we can choose from based on whether we are choosing to do a lesson, a training maze, or a trial
 	ledian_dojo.ShowMazeMenu(dungeon_entrances)
-
+	
+	partner.IsInteracting = false
+    GROUND:CharEndAnim(partner)
+    GROUND:CharEndAnim(hero)	
 end
 
 -------------------------------

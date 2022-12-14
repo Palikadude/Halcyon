@@ -311,6 +311,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:WaitShowDialogue("Very good,[pause=10] I will leave you to it then.[br]I am off to assist the Guildmaster in updating our records.")
 	GAME:WaitFrames(20)
 	
+	GROUND:CharAnimateTurnTo(noctowl, Direction.Left, 4)
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(noctowl, 0, 204, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(hero, noctowl, 4, Direction.DownLeft) end)
 	coro3 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(partner, noctowl, 4, Direction.DownLeft) end)

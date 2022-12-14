@@ -87,15 +87,26 @@ end
 --separate entrance to go into relic forest
 function altere_pond.East_Exit_Touch(obj, activator)
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
-	UI:ResetSpeaker()
+    UI:ResetSpeaker()
+    local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+    partner.IsInteracting = true
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)		
 	UI:ChoiceMenuYesNo("Would you like to enter " .. zone:GetColoredName() .. "?", true)
 	UI:WaitForChoice()
 	local yesnoResult = UI:ChoiceResult()
 	if yesnoResult then 
 		SOUND:FadeOutBGM(60)
 		GAME:FadeOut(false, 60)
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)	
 		GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 	end
+	partner.IsInteracting = false
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
 end 
 
 ---------------------------------

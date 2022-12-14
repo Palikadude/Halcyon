@@ -874,7 +874,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		--fade back in normal guild music
 		SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("A-a-a-anyway...[pause=0] You're gonna have a lot of fun working with the guild!")
+		UI:WaitShowDialogue("Anywa-a-a-ay...[pause=0] You're gonna have a lot of fun working with the guild!")
 		UI:WaitShowDialogue("We're gonna do all sorts of fun stuff together now that you've joined!")
 		UI:WaitShowDialogue("Me and " .. cranidos:GetDisplayName() .. " can even show you some ways to take down bad guys sometime![pause=0] We'll have a bla-a-a-ast!")
 		GAME:WaitFrames(20)

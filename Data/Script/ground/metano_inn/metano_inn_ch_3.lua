@@ -9,10 +9,13 @@ function metano_inn_ch_3.SetupGround()
 
 	GROUND:Hide('Innkeeper_Desk_Left')
 	
-	local nidoking, nidoqueen, nidoran_m, snorlax = 
+	local nidoqueen, nidoran_m = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Nidoqueen', 'Innkeeper_Right'},
-			{'Nidoran_M', 168, 192, Direction.Down}
+			{'Nidoran_M', 168, 192, Direction.Down},
+			{'Seviper', 317, 273, Direction.Up},
+			{'Zangoose', 317, 210, Direction.Down}
+
 		})
 	
 	AI:SetCharacterAI(nidoran_m, "ai.ground_default", RogueElements.Loc(152, 176), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)
@@ -37,3 +40,19 @@ function metano_inn_ch_3.Innkeeper_Desk_Right_Action(chara, activator)
 	GeneralFunctions.EndConversation(nidoqueen)
 end
 
+
+
+function metano_inn_ch_3.Zangoose_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "This inn is one of the best places we've stayed at in our travels.[pause=0] Guess it's earned its reputation.")
+	UI:WaitShowDialogue("As nice as it is,[pause=10] I'd prefer if we were out getting work done instead of lollygagging like " .. CharacterEssentials.GetCharacterName("Seviper") .. " there wants to.")
+	UI:WaitShowDialogue("Suppose that's what a professional like me gets for parterning up with a layabout like him.")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_inn_ch_3.Seviper_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "There'ssss been a lot of outlaw activity in this region lately.")
+	UI:WaitShowDialogue("Sssso " .. CharacterEssentials.GetCharacterName("Zangoose") .. " and I are sssstaying in this inn while we hunt bountiessss around here.")
+	UI:WaitShowDialogue("Though he issss too keen to sssstay here at the inn,[pause=10] rather than go out and do our jobssss.")
+	UI:WaitShowDialogue("He issss jusssst not a hard-worker like I am.")
+	GeneralFunctions.EndConversation(chara)
+end

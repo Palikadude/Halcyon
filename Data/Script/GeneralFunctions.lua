@@ -26,6 +26,10 @@ function GeneralFunctions.UpdateDailyFlags()
 	  PurpleKecleonStock = {}
 	}
 	
+	--reset cafe special
+    SV.metano_cafe.CafeSpecial = -1
+	SV.metano_cafe.BoughtSpecial = false
+	
 	--finish fermenting any pending items if there are any
 	if SV.metano_cafe.FermentedItem ~= "" then 
 		SV.metano_cafe.ItemFinishedFermenting = true
@@ -872,8 +876,8 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 
 		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".[pause=40]") 
 		
-		--bag is full
-		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+		--bag is full - equipped count is separate from bag and most be included in the calc
+		if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 			UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
 			GAME:GivePlayerStorageItem(item.ID, amount)
 		else
@@ -1087,7 +1091,7 @@ end
 --shake in place until told to stop. Change animation to the first frame of walking while doing so.
 --if you don't want that first frame of walk, use GROUND:CharSetDrawEffect and GROUND:CharEndDrawEffect
 function GeneralFunctions.StartTremble(chara)
-  GROUND:CharSetAction(chara, RogueEssence.Ground.FrameGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Walk")))
+  GROUND:CharSetAction(chara, RogueEssence.Ground.FrameGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Walk"), 0))
   GROUND:CharSetDrawEffect(chara, DrawEffect.Trembling)
 
 end 
@@ -1098,3 +1102,42 @@ function GeneralFunctions.StopTremble(chara)
 
 end 
 
+--used to turn towards a specified position which is needed if chara's position is dynamic
+function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turnduration)
+
+	local x = chara.Position.X
+	local y = chara.Position.Y
+	turnduration = turnduration or 4
+
+
+	--In a normal setting, +y is up, but in pmdo +y is down. So I need to flip the sign on the difference in y between char1 and char2
+	local y = -1 * (targetY - y)
+	local x = targetX - x
+	
+	local angle = math.atan(y, x)--this is in radians
+	local ratio = math.pi / 8 --for readability
+
+	if angle <= (ratio) and angle >= (-1 * ratio) then 
+		GROUND:CharAnimateTurnTo(chara, Direction.Right, turnduration)
+	elseif angle > (ratio) and angle < (3 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.UpRight, turnduration)
+	elseif angle >= (3 * ratio) and angle <= (5 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.Up, turnduration)
+	elseif angle > (5 * ratio) and angle < (7 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.UpLeft, turnduration)
+	elseif angle >= (7 * ratio) or angle <= (-7 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.Left, turnduration)
+	elseif angle > (-7 * ratio) and angle < (-5 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.DownLeft, turnduration)
+	elseif angle >= (-5 * ratio) and angle <= (-3 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.Down, turnduration)
+	elseif angle > (-3 * ratio) and angle < (-1 * ratio) then
+		GROUND:CharAnimateTurnTo(chara, Direction.DownRight, turnduration)
+	else
+		--i screwed up with the logic somewhere if one of the above cases isn't selected
+		--Spin around like a moron if this statement is reached
+		--this should be changed to some sort of error, but i dont know how to log errors properly in PMDO
+		GROUND:CharSetAnim(chara, 'Spin', true)
+	end
+end
+--924 1128

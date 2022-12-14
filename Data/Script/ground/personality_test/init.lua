@@ -174,7 +174,7 @@ function personality_test.CharacterSelect()
 					--RogueEssence.Dungeon.MonsterID("noibat", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rowlet", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("litten", 0, "normal", Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID("popplio", 0, "normal", Gender.Genderless),
+					--RogueEssence.Dungeon.MonsterID("popplio", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rockruff", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("fomantis", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("scorbunny", 0, "normal", Gender.Genderless),
@@ -229,7 +229,7 @@ function personality_test.CharacterSelect()
 		 --["noibat"] = "tailwind", --tailwind, noibat
 		 ["rowlet"] = "confuse_ray", --Confuse Ray, rowlet
 		 ["litten"] = "revenge", --revenge, litten 
-		 ["popplio"] = "charm", --popplio, charm
+		 --["popplio"] = "charm", --popplio, charm
 		 ["rockruff"] = "thunder_fang", --thunder fang, rockruff
 		 --["fomantis"] = "weather_ball", --weather ball, fomantis
 		 ["scorbunny"] = "assurance", --assurance, scorbunny
@@ -420,6 +420,7 @@ function personality_test.CharacterSelect()
 	pTbl.Importance = 'Partner'
 	
 	--for beta testing only: skip to another chapter?
+	
 	UI:ChoiceMenuYesNo("Would you like to skip to Chapter 2?", true)
 	UI:WaitForChoice()
 	yesnoResult = UI:ChoiceResult()
@@ -430,7 +431,7 @@ function personality_test.CharacterSelect()
 			UI:WaitForChoice()
 			result = UI:ChoiceResult()
 			GAME:SetCharacterNickname(GAME:GetPlayerPartyMember(0), result)
-			UI:ChoiceMenuYesNo("Is " .. hero:GetDisplayName() .. " correct?")
+			UI:ChoiceMenuYesNo("Is [color=#FFFF00]" .. result .. "[color] correct?")
 			UI:WaitForChoice()
 			yesnoResult = UI:ChoiceResult()
 		end
@@ -477,6 +478,7 @@ function personality_test.CharacterSelect()
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 		return
 	end
+	 
 	
 	SOUND:FadeOutBGM(120)
 	GAME:FadeOut(false, 120)

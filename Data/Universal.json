@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Data.ActiveEffect, RogueEssence",
 "UniversalStates": [
@@ -720,7 +720,14 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.RefreshPreEvent, PMDC"
+"$type": "PMDC.Dungeon.ElementMobilityEvent, PMDC",
+"ElementPair": {
+"water": 1,
+"fire": 2,
+"dragon": 3,
+"flying": 7,
+"ghost": 8
+}
 }
 }
 ],

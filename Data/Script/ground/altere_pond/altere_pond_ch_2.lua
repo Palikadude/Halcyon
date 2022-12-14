@@ -67,7 +67,7 @@ function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)
 	if SV.Chapter2.FinishedTraining and not SV.Chapter2.FinishedFirstDay then
 		
 		GeneralFunctions.StartPartnerConversation("I don't think we have time to go into " .. zone:GetColoredName() .. " before dinner.")
-		UI:WaitShowDialogue("Let's some back when we have some free time to explore!")
+		UI:WaitShowDialogue("Let's come back when we have some free time to explore!")
 
 	else 
 		

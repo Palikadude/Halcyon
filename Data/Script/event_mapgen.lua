@@ -288,9 +288,9 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 		
 		leftShore = leftBound + leftOffset
 		rightShore = rightBound + rightOffset
-		print("Left, right shore :" .. leftShore .. " " ..rightShore)
-		print("Left, right offset:" .. leftOffset .. " " .. rightOffset)
-		print("left, right offset remaining: " .. leftOffsetRemaining .. " " .. rightOffsetRemaining)
+		--print("Left, right shore :" .. leftShore .. " " ..rightShore)
+		--print("Left, right offset:" .. leftOffset .. " " .. rightOffset)
+		--print("left, right offset remaining: " .. leftOffsetRemaining .. " " .. rightOffsetRemaining)
 		
 		--set all non ground tiles to water tiles between our left and right bounds 
 		for x = leftShore, rightShore, 1 do 

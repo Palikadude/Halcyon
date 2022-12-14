@@ -72,7 +72,7 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.TemporaryFlags.Bedtime = true
 			SV.TemporaryFlags.MorningWakeup = true 
 			SV.TemporaryFlags.MorningAddress = true 
-			GAME:EnterZone("master_zone", -1, 20, 0) --Go to Luminous Spring, end dungeon run in the ground rather than here 
+			GAME:EnterGroundMap('luminous_spring', 'Main_Entrance_Marker') --Go to Luminous Spring, end dungeon run in the ground rather than here 
 
 		else--for chapter 2, dont show results and dont set generic end flags
 			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 20, 0, false, false) --Go to Luminous Spring 

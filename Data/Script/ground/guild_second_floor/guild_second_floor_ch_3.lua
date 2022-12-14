@@ -32,7 +32,7 @@ end
 
 function guild_second_floor_ch_3.Metapod_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Me and " .. CharacterEssentials.GetCharacterName("Silcoon") .. " evolved recently.")
-	UI:WaitShowDialogue("We're hoping to evolve again as soon as we can.[pause=0] Our current forms are...[pause=0] pretty inconvenient,[pause=10] to say the least.")
+	UI:WaitShowDialogue("We're hoping to evolve again as soon as we can.[pause=0] Our current forms are...[pause=30] pretty inconvenient,[pause=10] to say the least.")
 	UI:WaitShowDialogue("It took us a lot longer than I'd like to admit to make it up the ramp to get here...")
 	GeneralFunctions.EndConversation(chara)
 end
@@ -71,6 +71,7 @@ function guild_second_floor_ch_3.Cranidos_Action(chara, activator)
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:WaitShowDialogue("Talking to " .. chara:GetDisplayName() .. " is pointless.[pause=0] If we need advice,[pause=10] we should try asking " .. CharacterEssentials.GetCharacterName("Mareep") .. ".")	
 		GROUND:CharSetEmote(chara, "", 0)
+		GROUND:CharAnimateTurnTo(chara, Direction.UpLeft, 4)
 	else 
 		GeneralFunctions.StartConversation(chara, "Don't you two have an outlaw to catch?[pause=0] What are you doing here talking to me?", "Determined")
 	end
@@ -577,7 +578,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	GROUND:CharEndAnim(mareep)
 	UI:WaitShowDialogue("It's a mystery dungeon that ba-a-a-andits turned into a hideout.")
 	UI:WaitShowDialogue("The bandits that hide there are relatively weak,[pause=10] so they group together to get a numbers advantage.")
-	UI:WaitShowDialogue("Anyone who goes there should be prepared to get ambushed by whole group of them!")
+	UI:WaitShowDialogue("Anyone who goes there should be prepared to get ambushed by a whole group of them!")
 	
 	GAME:WaitFrames(10)
 	
@@ -667,14 +668,16 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	UI:SetSpeaker(mareep)
 	GROUND:CharSetEmote(mareep, "happy", 0)
 	UI:SetSpeakerEmotion("Joyous")
+	GROUND:CharSetAnim(mareep, "Idle", true)
 	UI:WaitShowDialogue("Yeah![pause=0] You guys got this!")
 	
 	GAME:WaitFrames(20)
+	GROUND:CharEndAnim(mareep)
 	GeneralFunctions.DuoTurnTowardsChar(mareep)
 	GROUND:CharSetEmote(mareep, "", 0)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("You should head into town now to prepa-a-a-are.")
-	UI:WaitShowDialogue("Even if the outlaws are weak,[pause=10] you shouldn't underestimate them!")
+	UI:WaitShowDialogue("Even if the bandits are weak,[pause=10] you shouldn't underestimate them!")
 	UI:WaitShowDialogue("Once you're ready,[pause=10] you should head east out of town towards the dungeon.")
 	UI:WaitShowDialogue("The eastern path is the main wa-a-a-ay out of town.")
 	UI:WaitShowDialogue("Anytime you want to adventure into a dungeon in the future,[pause=10] be sure to leave town to the east!")

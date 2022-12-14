@@ -105,9 +105,9 @@ function guild_first_floor_ch_1.EnterGuild()
 
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 128, 64, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:FadeOut(false, 40) end)
-	GROUND:MoveToPosition(hero, 88, 104, false, 1)
-	GROUND:MoveToPosition(hero, 92, 100, false, 1)
-	TASK:JoinCoroutines({coro1, coro2})	
+	local coro3 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 88, 104, false, 1)
+												  GROUND:MoveToPosition(hero, 92, 100, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})	
 
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")

@@ -198,11 +198,11 @@ function metano_cafe.Cafe_Action(obj, activator)
 	
 	--he has a fermented item to give you
 	if SV.metano_cafe.FermentedItem ~= "" and SV.metano_cafe.ItemFinishedFermenting then
-		local juice = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
-		local juiceEntry = RogueEssence.Data.DataManager.Instance:GetItem(juice.ID)
+		local juiceEntry = RogueEssence.Data.DataManager.Instance:GetItem(SV.metano_cafe.FermentedItem)
+		local juice = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem, false, juiceEntry.MaxStack)
 		UI:SetSpeakerEmotion('Normal')
 		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Fermented_Give_Item_1'], juice:GetDisplayName()))
-		if GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+		if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 			UI:SetSpeakerEmotion('Worried')
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bag_Full'], CharacterEssentials.GetCharacterName('Kangaskhan')))
 			state = -1 --don't go to normal dialogue if he cant give you the fermented item.
@@ -348,7 +348,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_No_Money']))
 						UI:SetSpeakerEmotion('Normal')
-					elseif GAME:GetPlayerBagCount() == GAME:GetPlayerBagLimit() then
+					elseif GGAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bag_Full'], CharacterEssentials.GetCharacterName('Kangaskhan')))
 						UI:SetSpeakerEmotion('Normal')

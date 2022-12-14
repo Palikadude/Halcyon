@@ -76,6 +76,10 @@ function metano_town_ch_2.SetupGround()
 		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(752, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 		AI:SetCharacterAI(azumarill, "ai.ground_default", RogueElements.Loc(256, 1192), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 		
+		AI:SetCharacterAI(roselia, "ai.ground_talking", false, 240, 60, 0, false, 'Default', {ludicolo, spinda})
+		AI:SetCharacterAI(ludicolo, "ai.ground_talking", false, 240, 60, 60, false, 'Default', {roselia, spinda})
+		AI:SetCharacterAI(spinda, "ai.ground_talking", false, 240, 60, 120, false, 'Default', {ludicolo, roselia})
+
 		
 		--place event trigger for numel's tantrum if he hasn't thrown it yet
 		if not SV.Chapter2.FinishedNumelTantrum then
@@ -214,8 +218,8 @@ function metano_town_ch_2.Event_Trigger_3_Touch(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GeneralFunctions.StartPartnerConversation("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] that must be the ladder to the dojo right over there!", "Normal", false)
-	GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
-	GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+	GeneralFunctions.TurnTowardsLocation(partner, 924, 1128)
+	GeneralFunctions.TurnTowardsLocation(hero, 924, 1128)
 	UI:WaitShowDialogue("Let's head on in![pause=0] We'll have time after our training to take a look around town!")
 
 	GeneralFunctions.EndConversation(partner)
@@ -891,7 +895,7 @@ function metano_town_ch_2.Wooper_Siblings_Introduction(chara)
    --coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, dun, 4) end)
 	UI:WaitShowDialogue("I dunno,[pause=10] what do you wanna do today,[pause=10] " .. dee:GetDisplayName() .. "?")
 	--TASK:JoinCoroutines({coro1, coro2})
-	
+	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(dee)
   --  coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, dee, 4) end)
@@ -1383,7 +1387,7 @@ end
 
 function metano_town_ch_2.Manectric_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Little " .. CharacterEssentials.GetCharacterName("Numel") .. " has gone missing...[pause=0] I can't imagine what his mother is going through.", "Worried")
-	UI:WaitShowDialogue("If something happened to my precious " .. CharacterEssentials.GetCharacterName("Electrike") .. "...[pause=0] I don't know what I would do!")
+	UI:WaitShowDialogue("If something happened to my precious " .. CharacterEssentials.GetCharacterName("Electrike") .. "...[pause=0]\nI don't know what I would do!")
 	GeneralFunctions.EndConversation(chara)
 end 
 

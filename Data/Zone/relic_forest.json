@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.5.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -37,7 +37,8 @@
 "Music": "Mystifying Forest.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -581,7 +582,8 @@
 "Music": "Mystifying Forest.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -1092,7 +1094,7 @@
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
 "Script": "RelicForestTutorial",
-"ArgTable": "{ Floor = 1 }"
+"ArgTable": "{ Floor = 2 }"
 }
 }
 ],
@@ -1125,7 +1127,8 @@
 "Music": "Mystifying Forest.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -1636,7 +1639,7 @@
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
 "Script": "RelicForestTutorial",
-"ArgTable": "{ Floor = 1 }"
+"ArgTable": "{ Floor = 3 }"
 }
 }
 ],
@@ -1669,7 +1672,8 @@
 "Music": "Mystifying Forest.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -2180,7 +2184,7 @@
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
 "Script": "RelicForestTutorial",
-"ArgTable": "{ Floor = 1 }"
+"ArgTable": "{ Floor = 4 }"
 }
 }
 ],
@@ -2213,7 +2217,8 @@
 "Music": "Mystifying Forest.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -2724,7 +2729,7 @@
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
 "Script": "RelicForestTutorial",
-"ArgTable": "{ Floor = 1 }"
+"ArgTable": "{ Floor = 5 }"
 }
 }
 ],

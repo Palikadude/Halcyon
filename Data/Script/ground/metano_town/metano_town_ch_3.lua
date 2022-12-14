@@ -30,15 +30,15 @@ function metano_town_ch_3.SetupGround()
 	
 	
 	local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill, nidoking, luxray,
-		  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull		  = 
+		  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull, meditite = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Sentret', 400, 424, Direction.DownRight},
 			{'Oddish', 440, 424, Direction.DownLeft},
 			{'Numel', 420, 456, Direction.Up},
 			{'Camerupt', 'Town_Seat_1'},
 			{'Manectric', 'Town_Seat_2'},
-			{'Gloom', 536, 208, Direction.UpLeft},
-			{'Nidorina', 512, 184, Direction.DownRight},
+			{'Nidorina', 536, 208, Direction.UpLeft},
+			{'Gloom', 512, 184, Direction.DownRight},
 			{'Mawile', 1204, 1156, Direction.Down},
 			{'Furret', 356, 764, Direction.Right},
 			{'Azumarill', 888, 704, Direction.Down},
@@ -50,7 +50,8 @@ function metano_town_ch_3.SetupGround()
 			{'Wooper_Boy', 306, 1076, Direction.UpLeft},
 			{'Audino', 1264, 592, Direction.DownRight},
 			{'Snubbull', 1040, 864, Direction.UpRight},
-			{'Medicham', 864, 224, Direction.UpRight}			
+			{'Medicham', 888, 240, Direction.UpRight},			
+			{'Meditite', 520, 384, Direction.DownLeft}			
 			
 		})
 	
@@ -316,7 +317,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(glameow)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Yuck.[pause=0] You sound like that wash-up " .. CharacterEssentials.GetCharacterName("Tropius") .. ".[pause=0] He's so self-righteous it disgusts me!")
+	UI:WaitShowDialogue("Yuck.[pause=0] You sound like that wash-up " .. CharacterEssentials.GetCharacterName("Tropius") .. ".[pause=0]\nHe's so self-righteous it disgusts me!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(luxio)
@@ -357,7 +358,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Shouting")
-	coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("I don't know!![pause=30] OK!?[pause=30] I don't know!", 60) end)
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("I don't know!!![pause=30] OK!?[pause=30] I don't know!", 60) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GeneralFunctions.EmoteAndPause(luxio, "Exclaim", true) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GROUND:CharSetEmote(hero, "exclaim", 1) GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
 	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(25) GeneralFunctions.EmoteAndPause(glameow, "Notice", false) end)
@@ -522,7 +523,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	SOUND:PlayBGM('Treasure Town.ogg', true)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("There isn't much point in dwelling on them though.[pause=0] Let's just hope that change in attitude sticks for them.")
+	UI:WaitShowDialogue("There isn't much point in dwelling on them though.[pause=0] Let's just hope their change in attitude sticks.")
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("For now,[pause=10] let's forget about them.[pause=0] We have a mission to get to after all!")
 	UI:WaitShowDialogue("Let's head into town to get ready.")
@@ -617,7 +618,7 @@ function metano_town_ch_3.Sentret_Action(chara, activator)
 end
 
 function metano_town_ch_3.Oddish_Action(chara, activator) 
-	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Playing will be more fun now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is here!", "Happy", false)
+	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Playing will be more fun now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back!", "Happy", false)
 	GeneralFunctions.EndConversation(chara)
 end
 
@@ -696,7 +697,7 @@ end
 function metano_town_ch_3.Meditite_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Wish play coul' I wit' the other kids...")
 	UI:WaitShowDialogue("It's hard fa' me friends to make...[pause=0] The other kids trouble have talkin' wit' me...")
-	UI:WaitShowDialogue("I don' get it...[pause=0] What am I sayin' hard that's ta' understan'?")
+	UI:WaitShowDialogue("I don' get it...[pause=0] What am I sayin' hard that's ta' understand?")
 	GeneralFunctions.EndConversation(chara)
 
 end
