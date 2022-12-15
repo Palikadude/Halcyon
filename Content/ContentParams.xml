@@ -13,7 +13,7 @@
   <Leader>Battle/DUN_Leader_Change</Leader>
   <Revive>Battle/EVT_Title_Intro</Revive>
 </Sounds>
-<TitleBG>Dusknoir</TitleBG>
+<TitleBG>Title_Screen_Background</TitleBG>
 <TitleBGM>Top Menu Theme.ogg</TitleBGM>
 <MonsterBGM>Monster House!.ogg</MonsterBGM>
 </root>

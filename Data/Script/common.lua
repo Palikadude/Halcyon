@@ -564,6 +564,13 @@ end
 
 --Slightly tweaked Halcyon version.
 function COMMON.BossTransition()
+	--Heal everyone in the party before the boss fight.
+	local chara
+	for i = 0, GAME:GetPlayerPartyCount() - 1, 1 do
+		chara = GAME:GetPlayerPartyMember(i)
+		chara:FullRestore()
+	end
+
     local center = GAME:GetCameraCenter()
     SOUND:FadeOutBGM(20)
     local emitter = RogueEssence.Content.FlashEmitter()

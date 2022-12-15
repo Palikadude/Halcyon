@@ -397,6 +397,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 	GAME:WaitFrames(40)
 	GAME:CutsceneMode(false)
+	SV.partner.Spawn = 'Default'--prevents the backend debug console from crying
 	GAME:EnterGroundMap("guild_second_floor", "Main_Entrance_Marker")
 	
 	

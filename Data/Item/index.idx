@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.4.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "berry_aspear": {
@@ -1331,6 +1331,27 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"wand_totter": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.6.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.WandState"
+}
+],
+"Name": {
+"DefaultText": "Totter Wand",
+"LocalTexts": {
+"fr": "Branche Confusion",
+"de": "Konfusionszweig",
+"ko": "혼란지팡이"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
 },
 "held_aspear_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",

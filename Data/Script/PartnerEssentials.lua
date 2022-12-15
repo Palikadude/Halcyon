@@ -781,14 +781,14 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		
 	elseif ground == 'altere_pond' then
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
-		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] being so old,[pause=10] knows a lot of stories and myths of the world.")
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] being as old as he is,[pause=10] knows a lot of stories and myths of the world.")
 		UI:WaitShowDialogue("Sometimes he'll tell me one if he hasn't caught me sneaking into " .. zone:GetColoredName() .. " lately.")
 		UI:SetSpeakerEmotion("Inspired")
 		UI:WaitShowDialogue("I love hearing about all the different legends he knows![pause=0] They're so fascinating!")
 		UI:WaitShowDialogue("We'll have to come see if he'll tell us both a story when we're not busy!")
 		if SV.Chapter3.EncounteredBoss then
 			UI:SetSpeakerEmotion("Sad")
-			UI:WaitShowDialogue("...A story will help cheer me up too.[pause=0] This trouble with Team [color=#FFA5FF]Style[color] is weighing on me a bit...")
+			UI:WaitShowDialogue("...A story will help cheer me up too.[pause=0] Our trouble with Team [color=#FFA5FF]Style[color] has me upset,[pause=10] truth be told...")
 		end
 	elseif ground == 'post_office' then
 		UI:SetSpeakerEmotion("Worried")

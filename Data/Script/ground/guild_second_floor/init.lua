@@ -79,6 +79,8 @@ function guild_second_floor.PlotScripting()
 	elseif SV.ChapterProgression.Chapter == 3 then
 		if not SV.Chapter3.FinishedOutlawIntro then
 			guild_second_floor_ch_3.OutlawTutorialScene()
+		elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene then
+			guild_second_floor_ch_3.OutlawRewardScene()
 		else
 			guild_second_floor_ch_3.SetupGround()
 		end

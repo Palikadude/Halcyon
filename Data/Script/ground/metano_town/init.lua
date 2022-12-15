@@ -567,7 +567,8 @@ function metano_town.GeneratePurpleKecleonStock()
 		{"wand_topsy_turvy", 5},--topsy turvy wand 
 		{"wand_warp", 5},--warp wand 
 		{"wand_purge", 5},--purge wand 
-		{"wand_lob", 10} --lob wand 
+		{"wand_lob", 10}, --lob wand 
+		{"wand_totter", 10} --totter wand 
 	}
 	
 	

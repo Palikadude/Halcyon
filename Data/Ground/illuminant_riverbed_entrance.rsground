@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -65456,14 +65456,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 15,
-"Y": 14
+"X": 1,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 6,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 11,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 16,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 21,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 26,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 31,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 36,
+"Y": 173
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65475,14 +65524,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 15,
-"Y": 15
+"X": 1,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 6,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 11,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 16,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 21,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 26,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 31,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 36,
+"Y": 174
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65494,14 +65592,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 15,
-"Y": 16
+"X": 1,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 6,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 11,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 16,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 21,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 26,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 31,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 36,
+"Y": 175
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65791,14 +65938,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 16,
-"Y": 13
+"X": 2,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 7,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 12,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 17,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 22,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 27,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 32,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 37,
+"Y": 172
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65810,14 +66006,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 16,
-"Y": 14
+"X": 2,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 7,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 12,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 17,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 22,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 27,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 32,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 37,
+"Y": 173
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65829,14 +66074,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 16,
-"Y": 15
+"X": 2,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 7,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 12,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 17,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 22,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 27,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 32,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 37,
+"Y": 174
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -65848,14 +66142,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 16,
-"Y": 16
+"X": 2,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 7,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 12,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 17,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 22,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 27,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 32,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 37,
+"Y": 175
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66077,14 +66420,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 17,
-"Y": 13
+"X": 3,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 8,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 13,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 18,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 23,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 28,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 33,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 38,
+"Y": 172
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66096,14 +66488,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 17,
-"Y": 14
+"X": 3,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 8,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 13,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 18,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 23,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 28,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 33,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 38,
+"Y": 173
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66115,14 +66556,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 17,
-"Y": 15
+"X": 3,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 8,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 13,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 18,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 23,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 28,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 33,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 38,
+"Y": 174
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66134,14 +66624,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 17,
-"Y": 16
+"X": 3,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 8,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 13,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 18,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 23,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 28,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 33,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 38,
+"Y": 175
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66350,14 +66889,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 18,
-"Y": 13
+"X": 4,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 9,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 14,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 19,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 24,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 29,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 34,
+"Y": 172
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 39,
+"Y": 172
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66369,14 +66957,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 18,
-"Y": 14
+"X": 4,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 9,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 14,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 19,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 24,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 29,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 34,
+"Y": 173
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 39,
+"Y": 173
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66388,14 +67025,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 18,
-"Y": 15
+"X": 4,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 9,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 14,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 19,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 24,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 29,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 34,
+"Y": 174
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 39,
+"Y": 174
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1
@@ -66407,14 +67093,63 @@
 {
 "Frames": [
 {
-"Sheet": "Illuminant_Riverbed_Objects",
+"Sheet": "Metano_Town_Animation_Tileset",
 "TexLoc": {
-"X": 18,
-"Y": 16
+"X": 4,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 9,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 14,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 19,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 24,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 29,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 34,
+"Y": 175
+}
+},
+{
+"Sheet": "Metano_Town_Animation_Tileset",
+"TexLoc": {
+"X": 39,
+"Y": 175
 }
 }
 ],
-"FrameLength": 60
+"FrameLength": 10
 }
 ],
 "NeighborCode": -1

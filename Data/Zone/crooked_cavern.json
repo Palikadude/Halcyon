@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -39,7 +39,8 @@
 "Music": "Mt. Horn.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -271,7 +272,17 @@
 ]
 },
 "Value": {
-"$type": "RogueEssence.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Priority": {
+"str": [
+15
+]
+},
+"Respawn": {
+"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
+"MaxFoes": 6,
+"RespawnTime": 60
+},
 "MaxFoes": 6,
 "RespawnTime": 60
 }
@@ -511,7 +522,8 @@
 "Music": "Mt. Horn.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -743,7 +755,17 @@
 ]
 },
 "Value": {
-"$type": "RogueEssence.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Priority": {
+"str": [
+15
+]
+},
+"Respawn": {
+"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
+"MaxFoes": 6,
+"RespawnTime": 60
+},
 "MaxFoes": 6,
 "RespawnTime": 60
 }
@@ -2703,7 +2725,7 @@
 "ModStates": []
 }
 ],
-"IsRelevant": false
+"IsRelevant": true
 },
 {
 "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",

@@ -59,7 +59,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 10,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Crooked Cavern",

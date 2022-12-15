@@ -179,8 +179,7 @@ local partner = CH('Teammate1')
 												  
 	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 												  GeneralFunctions.FaceMovingCharacter(partner, bisharp, 4, Direction.UpLeft)
-											      GAME:WaitFrames(20)
-												  SOUND:FadeOutBGM(120)
+											      SOUND:FadeOutBGM(120)
 												  UI:WaitShowTimedDialogue("Wait!", 60) end)
 											
 	local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
@@ -220,7 +219,7 @@ local partner = CH('Teammate1')
 	UI:WaitShowDialogue(".........")
 	UI:WaitShowDialogue("...Sorry mate...[pause=0] Rules 'er rules.")
 	UI:WaitShowDialogue("Even if he deserves some leniency,[pause=10] and from what you're sayin',[pause=10] maybe he does...")
-	UI:WaitShowDialogue("...But I have to be consistent or the law wouldn't be fair.")
+	UI:WaitShowDialogue("I have to be consistent or the law wouldn't be fair.")
 	UI:WaitShowDialogue("That's just the way it's gotta be.[pause=0] I'm sorry.")
 	
 	GAME:WaitFrames(20)
@@ -303,6 +302,7 @@ local partner = CH('Teammate1')
 	GeneralFunctions.RewardItem(500, true)
 	
 	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
 	UI:WaitShowDialogue("Now then,[pause=10] I believe " .. CharacterEssentials.GetCharacterName("Snubbull") .. " should have dinner ready right about now.[pause=0] Will you accompany me upstairs?")
 	
 	GAME:WaitFrames(20)

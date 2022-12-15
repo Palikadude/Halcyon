@@ -226,9 +226,9 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	elseif SV.ChapterProgression.Chapter == 3 and dungeon == 'Crooked Cavern' then
 		if not SV.Chapter3.EncounteredBoss and segment == 0 then --dungeon, havent fought boss yet
 			personality = 54
-		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and segment == 0 then --dungeon, lost to boss already
+		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 0 then --dungeon, lost to boss already
 			personality = 55
-		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and segment == 1 then
+		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 1 then
 			personality = 56
 		end
 	end
