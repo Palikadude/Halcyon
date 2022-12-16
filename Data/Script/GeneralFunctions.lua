@@ -811,16 +811,17 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	if result == 1 then 
-		GAME:GroundSave()
 		UI:ResetSpeaker()
+		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc("master_zone", -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue. Just in case player quits out after selecting this option.
+		GAME:GroundSave()
 		UI:WaitShowDialogue("Game saved!")
 		GAME:EnterGroundMap(ground, marker)
 	elseif result == 2 then 
 		UI:ResetSpeaker()
-		UI:WaitShowDialogue("Game saved! Returning to title.")
 		GAME:FadeOut(false, 40)
 		_DATA.Save.NextDest = RogueEssence.Dungeon.ZoneLoc("master_zone", -1, ground_id, 0)--set next destination to whatever map we were going to go to on a continue
 		GAME:GroundSave()
+		UI:WaitShowDialogue("Game saved! Returning to title.")
 		GAME:RestartToTitle()
 	else
 		GAME:EnterGroundMap(ground, marker)
@@ -1140,4 +1141,54 @@ function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turndurat
 		GROUND:CharSetAnim(chara, 'Spin', true)
 	end
 end
---924 1128
+
+--debug function used to print plot variables
+function GeneralFunctions.PrintPlotVariables()
+	print("Chapter = " .. tostring(SV.ChapterProgression.Chapter))
+	print("Chapter 1")
+	print("PlayedIntroCutscene = " .. tostring(SV.Chapter1.PlayedIntroCutscene))
+	print("PartnerEnteredForest = " .. tostring(SV.Chapter1.PartnerEnteredForest))
+	print('PartnerCompletedForest = ' .. tostring(SV.Chapter1.ParnterCompletedForest))
+	print('PartnerMetHero = ' .. tostring(SV.Chapter1.PartnerMetHero))
+	print('TeamCompletedForest = ' .. tostring(SV.Chapter1.TeamCompletedForest))
+	print('TeamJoinedGuild = ' .. tostring(SV.Chapter1.TeamJoinedGuild))
+	print('MetSnubbull = ' .. tostring(SV.Chapter1.MetSnubbull))
+	print('MetZigzagoon = ' .. tostring(SV.Chapter1.MetZigzagoon))
+	print('MetCranidosMareep = ' .. tostring(SV.Chapter1.MetCranidosMareep))
+	print('MetBreloomGirafarig = ' .. tostring(SV.Chapter1.MetBreloomGirafarig))
+	print('MetAudino = ' .. tostring(SV.Chapter1.MetAudino))
+	print('PartnerSecondFloorDialogue = ' .. tostring(SV.Chapter1.PartnerSecondFloorDialogue))
+	print('TutorialProgression = ' .. tostring(SV.Chapter1.TutorialProgression))
+	
+	print("Chapter 2")
+	print("FirstMorningMeetingDone = " .. tostring(SV.Chapter2.FirstMorningMeetingDone))
+	print("StartedTraining = " .. tostring(SV.Chapter2.StartedTraining))
+	print("SkippedTutorial = " .. tostring(SV.Chapter2.SkippedTutorial))
+	print("FinishedTraining = " .. tostring(SV.Chapter2.FinishedTraining))
+	print("FinishedDojoCutscenes = " .. tostring(SV.Chapter2.FinishedDojoCutscenes))
+	print("FinishedMarketIntro = " .. tostring(SV.Chapter2.FinishedMarketIntro))
+	print("FinishedNumelTantrum = " .. tostring(SV.Chapter2.FinishedNumelTantrum))
+	print("FinishedFirstDay = " .. tostring(SV.Chapter2.FinishedFirstDay))
+	print("FinishedCameruptRequestScene = " .. tostring(SV.Chapter2.FinishedCameruptRequestScene))
+	print("EnteredRiver = " .. tostring(SV.Chapter2.EnteredRiver))
+	print("FinishedRiver = " .. tostring(SV.Chapter2.FinishedRiver))
+	print("TropiusGaveReviver = " .. tostring(SV.Chapter2.TropiusGaveReviver))
+	print("WooperIntro = " .. tostring(SV.Chapter2.WooperIntro))
+
+	print("Chapter 3")
+	print("ShowedTitleCard = " .. tostring(SV.Chapter3.ShowedTitleCard))
+	print("FinishedOutlawIntro = " .. tostring(SV.Chapter3.FinishedOutlawIntro))
+	print("MetTeamStyle = " .. tostring(SV.Chapter3.MetTeamStyle))
+	print("FinishedCafeCutscene = " .. tostring(SV.Chapter3.FinishedCafeCutscene))
+	print("EnteredCavern = " .. tostring(SV.Chapter3.EnteredCavern))
+	print("FailedCavern = " .. tostring(SV.Chapter3.FailedCavern))
+	print("EncounteredBoss = " .. tostring(SV.Chapter3.EncounteredBoss))
+	print("LostToBoss = " .. tostring(SV.Chapter3.LostToBoss))
+	print("EscapedBoss = " .. tostring(SV.Chapter3.EscapedBoss))
+	print("DefeatedBoss = " .. tostring(SV.Chapter3.ShowedTitleCard))
+	print("ShowedTitleCard = " .. tostring(SV.Chapter3.DefeatedBoss))
+	print("FinishedRootScene = " .. tostring(SV.Chapter3.FinishedRootScene))
+	print("TropiusGaveWand = " .. tostring(SV.Chapter3.TropiusGaveWand))
+	print("BreloomGirafarigConvo = " .. tostring(SV.Chapter3.BreloomGirafarigConvo))
+
+end 
