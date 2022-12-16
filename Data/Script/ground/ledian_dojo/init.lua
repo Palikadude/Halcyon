@@ -407,7 +407,6 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 		dungeon_entrances = {}
 		if #dungeon_entrances == 0 then 
 			UI:WaitShowDialogue("There aren't any trials available to you now. Come back later!")
-			return
 		end
 	else
 		--cancel
@@ -419,6 +418,7 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 	--set the dungeons we can choose from based on whether we are choosing to do a lesson, a training maze, or a trial
 	ledian_dojo.ShowMazeMenu(dungeon_entrances)
 	
+	GAME:WaitFrames(10)
 	partner.IsInteracting = false
     GROUND:CharEndAnim(partner)
     GROUND:CharEndAnim(hero)	
