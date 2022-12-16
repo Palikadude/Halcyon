@@ -114,7 +114,7 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	UI:WaitShowDialogue("...Or they could be in a place as regular as a forest.")
 	
 	GAME:WaitFrames(20)
-	UI:WaitShowDialogue("Whereever they are in the world,[pause=10] they each serve a very important purpose.")
+	UI:WaitShowDialogue("Wherever they are in the world,[pause=10] they each serve a very important purpose.")
 	UI:WaitShowDialogue("According to " .. CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] Anima Roots are what allow a region of the world to sustain life.")
 	UI:WaitShowDialogue("If something was to destroy a region's Anima Root...")
 	UI:WaitShowDialogue("Well,[pause=10] " ..  CharacterEssentials.GetCharacterName("Relicanth") .. " didn't seem too sure what would happen.")

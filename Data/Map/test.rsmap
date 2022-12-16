@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -19,11 +19,16 @@
 "Element1": "fighting",
 "Element2": "none",
 "movementSpeed": 0,
+"dead": false,
 "serializationLoc": {
 "X": 4,
 "Y": 3
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Test Dummy",
+"ActionEvents": [],
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -45,8 +50,8 @@
 "Skills": [
 {
 "Element": {
-"SkillNum": "false_swipe",
-"Charges": 24,
+"SkillNum": "knock_off",
+"Charges": 20,
 "Enabled": true,
 "Sealed": false
 },
@@ -54,8 +59,8 @@
 },
 {
 "Element": {
-"SkillNum": "",
-"Charges": 0,
+"SkillNum": "trick",
+"Charges": 18,
 "Enabled": true,
 "Sealed": false
 },
@@ -63,8 +68,8 @@
 },
 {
 "Element": {
-"SkillNum": "",
-"Charges": 0,
+"SkillNum": "covet",
+"Charges": 20,
 "Enabled": true,
 "Sealed": false
 },
@@ -72,8 +77,8 @@
 },
 {
 "Element": {
-"SkillNum": "",
-"Charges": 0,
+"SkillNum": "switcheroo",
+"Charges": 20,
 "Enabled": true,
 "Sealed": false
 },
@@ -91,7 +96,7 @@
 "EquippedItem": {
 "ID": "",
 "Cursed": false,
-"HiddenValue": "0",
+"HiddenValue": "",
 "Amount": 0,
 "Price": 0
 },
@@ -101,7 +106,6 @@
 "Fullness": 100,
 "FullnessRemainder": 0,
 "MaxFullness": 100,
-"Dead": false,
 "StatusEffects": {},
 "MustHitNext": false,
 "TurnWait": 0,
@@ -155,14 +159,12 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
+"Unrecruitable": false,
 "CharStates": [],
-"WarpHistory": [],
-"Proximity": -1,
 "BackRef": {
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Test Dummy",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -174,27 +176,27 @@
 "Level": 6,
 "EXP": 0,
 "MaxHPBonus": 100,
-"AtkBonus": 100,
+"AtkBonus": -10,
 "DefBonus": -2,
 "MAtkBonus": 0,
 "MDefBonus": 0,
 "SpeedBonus": 0,
 "BaseSkills": [
 {
-"SkillNum": "false_swipe",
-"Charges": 24
+"SkillNum": "knock_off",
+"Charges": 20
 },
 {
-"SkillNum": "",
-"Charges": 0
+"SkillNum": "trick",
+"Charges": 18
 },
 {
-"SkillNum": "",
-"Charges": 0
+"SkillNum": "covet",
+"Charges": 20
 },
 {
-"SkillNum": "",
-"Charges": 0
+"SkillNum": "switcheroo",
+"Charges": 20
 }
 ],
 "BaseIntrinsics": [
@@ -220,16 +222,12 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "IsFavorite": false,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
 "Guests": [],
 "inventory": [],
-"Unrecruitable": false,
 "LeaderIndex": 0,
 "FoeConflict": false
 }
@@ -280,8 +278,6 @@
 "RestoreHPs": [],
 "InitActionData": []
 },
-"MaxFoes": 0,
-"RespawnTime": 0,
 "TeamSpawns": [],
 "MoneyAmount": {
 "Min": 0,
