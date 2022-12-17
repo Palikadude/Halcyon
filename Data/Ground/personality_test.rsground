@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.4.0",
+"Version": "0.6.6.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -10913,7 +10913,7 @@
 "Y": 0
 },
 "BGAnim": {
-"AnimIndex": "Dream_Rainbow_Ex_Back",
+"AnimIndex": "Dream_Back",
 "FrameTime": 8,
 "StartFrame": -1,
 "EndFrame": -1,
@@ -10937,7 +10937,7 @@
 "Y": 0
 },
 "BGAnim": {
-"AnimIndex": "Dream_Rainbow_Ex_Front",
+"AnimIndex": "Dream_Front",
 "FrameTime": 8,
 "StartFrame": -1,
 "EndFrame": -1,
