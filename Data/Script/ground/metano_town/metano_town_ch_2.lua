@@ -551,6 +551,8 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	--set this to true to stop their running 
 	local stopRunning = false
 	
+	--This flag is used to make numel do an extra lap if oddish hasn't stopped when numel tries to stop running. This is to prevent an issue where oddish would clip through numel if numel stopped before oddish did.
+	local oddishStopped = false 
 	
 	--they play tag until numel's mama calls for him 
 	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, numel, 4)
@@ -558,9 +560,11 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(24)
 												  while not stopRunning do 
 													GeneralFunctions.RunInCircle(numel, 12, 2, false, false) end 
+													if not oddishStopped then GeneralFunctions.RunInCircle(numel, 12, 2, false, false) end --do an extra lap to prevent clipping
 													GeneralFunctions.EmoteAndPause(numel, "Exclaim", true) end)	
 	local coro3 = TASK:BranchCoroutine(function() while not stopRunning do 
 													GeneralFunctions.RunInCircle(oddish, 12, 2, false, false) end 
+													oddishStopped = true
 													GROUND:MoveInDirection(oddish, Direction.DownLeft, 12, false, 2) 
 													GeneralFunctions.EmoteAndPause(oddish, "Exclaim", false) end)	
 	local coro4 = TASK:BranchCoroutine(function() GAME:MoveCamera(428, 464, GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 428, 464, 3), false)

@@ -3865,9 +3865,9 @@ You can see what statuses a teammate has by checking them in the Team menu.
     <value>Major Statuses</value>
     <comment>Sign title in beginner lesson</comment>  </data>
   <data name="BEGINNER_LESSON_STATUS_SIGN_1_2_BODY" xml:space="preserve">
-    <value>Poison: Deals damage when the Pokémon attacks, and prevents natural HP regeneration. Goes away when cured or when you go to the next floor. Poison and Steel types are immune to Poison.
-Badly Poisoned: The same as regular Poison, except the damage gets worse the longer you stay poisoned.
-Burn: Deals damage every turn and cuts the Attack stat in half. Will go away on its own after a while, when cured, or by stepping in water. Fire types are immune to Burn.
+    <value>Poison: Deals damage every turn and prevents natural HP regeneration. Goes away after a little while, when cured, or when you go to the next floor. Poison and Steel-types are immune to Poison.
+Badly Poisoned: Same as Poison, but the damage increases each time you attack.
+Burn: Deals damage when the Pokémon attacks and cuts their Attack by one-third. Goes away when cured, when going to the next floor, or by stepping in water. Fire-types are immune to Burn.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
   
