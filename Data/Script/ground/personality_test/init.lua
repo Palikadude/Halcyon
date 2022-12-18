@@ -420,7 +420,7 @@ function personality_test.CharacterSelect()
 	pTbl.Importance = 'Partner'
 	
 	--for beta testing only: skip to another chapter?
-	
+	--[[
 	UI:ChoiceMenuYesNo("Would you like to skip to Chapter 2?", true)
 	UI:WaitForChoice()
 	yesnoResult = UI:ChoiceResult()
@@ -478,7 +478,7 @@ function personality_test.CharacterSelect()
 		GAME:EnterGroundMap("guild_heros_room", "Main_Entrance_Marker")
 		return
 	end
-	 
+	 ]]--
 	
 	SOUND:FadeOutBGM(120)
 	GAME:FadeOut(false, 120)
