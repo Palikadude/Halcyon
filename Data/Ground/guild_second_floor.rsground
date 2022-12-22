@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.7.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -119044,7 +119044,20 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Guild_Second_Floor_Walls",
+"TexLoc": {
+"X": 32,
+"Y": 16
+}
+}
+],
+"FrameLength": 60
+}
+],
 "NeighborCode": -1
 },
 {
@@ -119538,7 +119551,20 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Guild_Second_Floor_Walls",
+"TexLoc": {
+"X": 33,
+"Y": 16
+}
+}
+],
+"FrameLength": 60
+}
+],
 "NeighborCode": -1
 },
 {
@@ -120032,7 +120058,20 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Guild_Second_Floor_Walls",
+"TexLoc": {
+"X": 34,
+"Y": 16
+}
+}
+],
+"FrameLength": 60
+}
+],
 "NeighborCode": -1
 },
 {
@@ -120526,7 +120565,20 @@
 {
 "AutoTileset": "",
 "Associates": [],
-"Layers": [],
+"Layers": [
+{
+"Frames": [
+{
+"Sheet": "Guild_Second_Floor_Walls",
+"TexLoc": {
+"X": 35,
+"Y": 16
+}
+}
+],
+"FrameLength": 60
+}
+],
 "NeighborCode": -1
 },
 {

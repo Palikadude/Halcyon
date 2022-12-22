@@ -1556,6 +1556,37 @@
 "Gender": -1
 },
 "Level": {
+"Min": 6,
+"Max": 8
+},
+"SpecifiedSkills": [],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "roggenrola",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
 "Min": 7,
 "Max": 9
 },
@@ -1577,6 +1608,37 @@
 "Range": {
 "Min": 5,
 "Max": 10
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "aron",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 6,
+"Max": 8
+},
+"SpecifiedSkills": [],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
 }
 },
 {
@@ -1616,7 +1678,7 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "roggenrola",
+"Species": "diglett",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -1625,44 +1687,22 @@
 "Min": 6,
 "Max": 8
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"scratch",
+"mud_slap",
+"sand_attack"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 5
-}
 },
 {
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "aron",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 6,
-"Max": 8
-},
-"SpecifiedSkills": [],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },
@@ -1712,46 +1752,6 @@
 "Range": {
 "Min": 5,
 "Max": 10
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "diglett",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 6,
-"Max": 8
-},
-"SpecifiedSkills": [
-"scratch",
-"mud_slap",
-"sand_attack"
-],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 5
 }
 },
 {
@@ -1789,13 +1789,13 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "whismur",
+"Species": "zubat",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 7,
+"Min": 8,
 "Max": 9
 },
 "SpecifiedSkills": [],
@@ -1851,77 +1851,28 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "onix",
+"Species": "whismur",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 9,
-"Max": 10
+"Min": 7,
+"Max": 9
 },
-"SpecifiedSkills": [
-"harden",
-"bind",
-"rock_tomb"
-],
-"Intrinsic": "",
-"Tactic": "stick_together",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-}
-]
-},
-"Role": 0
-},
-"Rate": 2,
-"Range": {
-"Min": 5,
-"Max": 10
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "nosepass",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 9,
-"Max": 10
-},
-"SpecifiedSkills": [
-"thunder_wave",
-"rock_throw",
-"block"
-],
+"SpecifiedSkills": [],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
 }
 ]
 },
 "Role": 0
 },
-"Rate": 2,
+"Rate": 10,
 "Range": {
 "Min": 5,
 "Max": 10
@@ -1965,6 +1916,86 @@
 "Range": {
 "Min": 0,
 "Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "onix",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 9,
+"Max": 10
+},
+"SpecifiedSkills": [
+"harden",
+"bind",
+"rock_tomb"
+],
+"Intrinsic": "",
+"Tactic": "stick_together",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 1,
+"Range": {
+"Min": 5,
+"Max": 10
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "nosepass",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 9,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thunder_wave",
+"rock_throw",
+"block"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 3,
+"Range": {
+"Min": 5,
+"Max": 10
 }
 }
 ],

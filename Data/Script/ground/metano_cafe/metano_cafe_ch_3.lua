@@ -123,6 +123,6 @@ function metano_cafe_ch_3.Lickitung_Action(chara, activator)
 end 
 
 function metano_cafe_ch_3.Gulpin_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Precious drink,[pause=10] you are mine again to savior...!", "Happy")
+	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Precious drink,[pause=10] you are mine again to savor...!", "Happy")
 	GeneralFunctions.EndConversation(chara)
 end 

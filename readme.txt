@@ -1,15 +1,17 @@
-Halcyon is a mod for PMDO created by Palika that is essentially its own brand new PMD game. 
-
-Please keep it under wraps until I go public with it. This will happen when enough work has been done to release a demo. 
-The first one will be after the 3rd chapter (first outlaw job).
+Halcyon is a mod for PMDO created by Palika that aims to recapture the vibes and energy of Explorers. It currently consists of 3 chapters.
 
 Credits:
-Palika - mod author. scripting, writing, balancing, etc. (all non-engine work)
-Audino - for making the engine, adding features that I needed for the game
+Palika - mod author. scripting, writing, balancing, etc. (all non-engine work, except where other credit is given)
+Audino - for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist
 
 Playtesters:
 Sunkern
 Audino
+Xindage
+Minemaker0430
+NanaelJustice
+Trio-
+
 
 Spriting credits:
 Edan Momu - guild exterior and partial interior sprite work
@@ -18,7 +20,11 @@ Jaifain - Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Sn
 Baroness Faron - Audino upwards eating + posing sprites
 Happysmily - Shuckle's cafe animations, sandile scarf sprites
 Cait_Sith - Luxio fainting animation
+NanaelJustice - Cleaning up staircases inside guild and adding some detail to them
 
+Other custom sprites and animations come from the master PMD Sprite Repository and were not custom made for this mod.
+If you helped in some way and aren't listed here (probably because I forgot, sorry!) please let me know.
 
 Special thanks:
 borzoiteeth - for inspiring the game in the first place
+Sky Temple - For helping me figure out base Explorer's behavior for some cutscenes and functions
