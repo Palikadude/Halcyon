@@ -1,0 +1,3 @@
+--Halcyon Custom work:
+--Code in this folder is used to generate, display, and handle randomized missions
+--and all that goes with that (rewards, rankups, etc)

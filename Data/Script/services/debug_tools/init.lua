@@ -132,12 +132,95 @@ function DebugTools:OnNewGame()
 	end 
 end
 
+
+
+
+--Reset most variables to their default if they don't exist
+--This needs to be upkept whenever I add new variables to the game.
+--Yanderedev ftw
+function DebugTools:OnUpgrade()
+  assert(self, 'DebugTools:OnUpgrade() : self is null!')
+  
+  PrintInfo("=>> Loading version")
+
+--daily flags
+ if SV.DailyFlags.RedMerchantItem == nil then SV.DailyFlags.RedMerchantItem = "" end
+ if SV.DailyFlags.RedMerchantBought == nil then SV.DailyFlags.RedMerchantBought = false end
+ if SV.DailyFlags.GreenMerchantItem == nil then SV.DailyFlags.GreenMerchantItem = "" end
+ if SV.DailyFlags.GreenMerchantBought == nil then SV.DailyFlags.GreenMerchantBought = false end
+ if SV.DailyFlags.GreenKecleonRefreshedStock == nil then SV.DailyFlags.GreenKecleonRefreshedStock = false end
+ if SV.DailyFlags.GreenKecleonStock == nil then SV.DailyFlags.GreenKecleonStock = {} end
+ if SV.DailyFlags.PurpleKecleonRefreshedStock == nil then SV.DailyFlags.PurpleKecleonRefreshedStock = false end
+ if SV.DailyFlags.PurpleKecleonStock == nil then SV.DailyFlags.PurpleKecleonStock = {} end
+
+--temporary flags
+ if SV.TemporaryFlags.OldDirection == nil then SV.TemporaryFlags.OldDirection = Direction.None end
+ if SV.TemporaryFlags.Dinnertime == nil then SV.TemporaryFlags.Dinnertime = false end 
+ if SV.TemporaryFlags.Bedtime == nil then SV.TemporaryFlags.Bedtime = false end
+ if SV.TemporaryFlags.MorningWakeup == nil then SV.TemporaryFlags.MorningWakeup = false end
+ if SV.TemporaryFlags.MorningAddress == nil then SV.TemporaryFlags.MorningAddress = false end 
+ if SV.TemporaryFlags.JustWokeUp == nil then SV.TemporaryFlags.JustWokeUp = false end 
+ if SV.TemporaryFlags.LastDungeonEntered == nil then SV.TemporaryFlags.LastDungeonEntered = false end
+  
+
+ if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = -1 end
+ if SV.metano_cafe.BoughtSpecial == nil then SV.metano_cafe.BoughtSpecial = false end
+ if SV.metano_cafe.FermentedItem == nil then SV.metano_cafe.FermentedItem = "" end
+ if SV.metano_cafe.ItemFinishedFermenting == nil then SV.metano_cafe.ItemFinishedFermenting = false end
+  
+  
+ if SV.Dojo.LessonCompletedGeneric == nil then SV.Dojo.LessonCompletedGeneric = false end
+ if SV.Dojo.TrainingCompletedGeneric == nil then SV.Dojo.TrainingCompletedGeneric = false end
+ if SV.Dojo.TrialCompletedGeneric == nil then SV.Dojo.TrialCompletedGeneric = false end
+ if SV.Dojo.LessonFailedGeneric == nil then SV.Dojo.LessonFailedGeneric = false end
+ if SV.Dojo.TrainingFailedGeneric == nil then SV.Dojo.TrainingFailedGeneric = false end
+ if SV.Dojo.TrialFailedGeneric == nil then SV.Dojo.TrialFailedGeneric = false end
+ if SV.Dojo.NewMazeUnlocked == nil then SV.Dojo.NewMazeUnlocked = false end
+ if SV.Dojo.NewLessonUnlocked == nil then SV.Dojo.NewLessonUnlocked = false end
+ if SV.Dojo.NewTrialUnlocked == nil then SV.Dojo.NewTrialUnlocked = false end
+ if SV.Dojo.LastZone == nil then SV.Dojo.LastZone = "master_zone" end
+  
+  
+ if SV.ChapterProgression.DaysPassed == nil then SV.ChapterProgression.DaysPassed = 0 end 
+ if SV.ChapterProgression.DaysToReach == nil then SV.ChapterProgression.DaysToReach = -1 end 
+ if SV.ChapterProgression.Chapter == nil then SV.ChapterProgression.Chapter = 1 end 
+ if SV.ChapterProgression.CurrentStoryDungeon == nil then SV.ChapterProgression.CurrentStoryDungeon = "" end 
+ if SV.ChapterProgression.UnlockedAssembly == nil then SV.ChapterProgression.UnlockedAssembly = false end 
+ 
+ --if this is a pre-chapter 3 save, need to initialize chapter 3 in the first place.
+ if SV.Chapter3 == nil then SV.Chapter3 = {} end
+ 
+ if SV.Chapter3.ShowedTitleCard == nil then SV.Chapter3.ShowedTitleCard = false end
+ if SV.Chapter3.FinishedOutlawIntro == nil then SV.Chapter3.FinishedOutlawIntro = false end
+ if SV.Chapter3.MetTeamStyle == nil then SV.Chapter3.MetTeamStyle = false end
+ if SV.Chapter3.FinishedCafeCutscene == nil then SV.Chapter3.FinishedCafeCutscene = false end
+ if SV.Chapter3.EnteredCavern == nil then SV.Chapter3.EnteredCavern = false end
+ if SV.Chapter3.FailedCavern == nil then SV.Chapter3.FailedCavern = false end
+ if SV.Chapter3.EncounteredBoss == nil then SV.Chapter3.EncounteredBoss = false end
+ if SV.Chapter3.LostToBoss == nil then SV.Chapter3.LostToBoss = false end
+ if SV.Chapter3.EscapedBoss == nil then SV.Chapter3.EscapedBoss = false end
+ if SV.Chapter3.DefeatedBoss == nil then SV.Chapter3.DefeatedBoss = false end
+ if SV.Chapter3.FinishedRootScene == nil then SV.Chapter3.FinishedRootScene = false end
+ if SV.Chapter3.TropiusGaveWand == nil then SV.Chapter3.TropiusGaveWand = false end
+ if SV.Chapter3.BreloomGirafarigConvo == nil then SV.Chapter3.BreloomGirafarigConvo = false end
+ 
+ 
+ 
+ if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
+ 
+  PrintInfo("=>> Loaded version")
+end
+
+
+
+
 ---Summary
 -- Subscribe to all channels this service wants callbacks from
 function DebugTools:Subscribe(med)
   med:Subscribe("DebugTools", EngineServiceEvents.Init,                function() self.OnInit(self) end )
   med:Subscribe("DebugTools", EngineServiceEvents.Deinit,              function() self.OnDeinit(self) end )
   med:Subscribe("DebugTools", EngineServiceEvents.NewGame,        function() self.OnNewGame(self) end )
+  med:Subscribe("DebugTools", EngineServiceEvents.UpgradeSave,        function() self.OnUpgrade(self) end )
 --  med:Subscribe("DebugTools", EngineServiceEvents.GraphicsUnload,      function() self.OnGraphicsUnload(self) end )
 --  med:Subscribe("DebugTools", EngineServiceEvents.Restart,             function() self.OnRestart(self) end )
 end
