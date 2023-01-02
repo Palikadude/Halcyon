@@ -48,6 +48,362 @@ SV.partner =
 
 }
 
+--empty string or a -1 indicates that there's nothing there currently.
+--board of jobs you've actually taken.
+SV.TakenBoard =
+{
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	}
+
+}
+
+--jobs on the mission board.
+SV.MissionBoard =
+{
+		{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	}
+
+}
+
+--Jobs on the outlaw board.
+SV.OutlawBoard =
+{
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	},	
+	{
+		Client = "",
+		Target = "",
+		Flavor = "",
+		Title = "",
+		Zone = "",
+		Segment = -1,
+		Floor = -1,
+		Reward = "",
+		Type = "",
+		Completion = -1,
+		Taken = false,
+		Difficulty = ""
+	}
+}
+		
+	
+
 
 
 -------------------------------------------------

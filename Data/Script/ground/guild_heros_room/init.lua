@@ -91,7 +91,7 @@ function guild_heros_room.PlotScripting()
 		elseif SV.ChapterProgression.Chapter == 3 then 
 			if not SV.Chapter3.ShowedTitleCard then 
 				guild_heros_room_ch_3.FirstMorning()
-			elseif SV.Chapter3.DefeatedBoss then
+			elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene then
 				guild_heros_room_ch_3.PostOutlawBedtalk()
 			else
 				GAME:FadeIn(20)

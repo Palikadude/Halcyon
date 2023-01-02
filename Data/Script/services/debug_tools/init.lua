@@ -208,6 +208,362 @@ function DebugTools:OnUpgrade()
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
  
+ if SV.TakenBoard == nil then
+	SV.TakenBoard =
+	{
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		}
+
+	}
+	end 
+	
+	if SV.MissionBoard == nil then
+		SV.MissionBoard =
+		{
+			{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		}
+
+	}
+	end
+	
+	if SV.OutlawBoard == nil then
+		SV.OutlawBoard =
+		{
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		},	
+		{
+			Client = "",
+			Target = "",
+			Flavor = "",
+			Title = "",
+			Zone = "",
+			Segment = -1,
+			Floor = -1,
+			Reward = "",
+			Type = "",
+			Completion = -1,
+			Taken = false,
+			Difficulty = ""
+		}
+	}
+	end
+ 
   PrintInfo("=>> Loaded version")
 end
 
