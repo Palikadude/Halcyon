@@ -547,7 +547,7 @@ JobMenu = Class('JobMenu')
 --jobs is a job board 
 --job type should be taken, mission, or outlaw
 --job number should be 1-8
-function JobMenu:initialize(job_type, job_number)
+function JobMenu:initialize(job_type, job_number, parent_board_menu)
   assert(self, "JobMenu:initialize(): Error, self is nil!")
   self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 272, 192, function(input) self:Update(input) end)
   --self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(jobs[i], RogueElements.Loc(16, 8 + 14 * (i-1))))
@@ -557,6 +557,8 @@ function JobMenu:initialize(job_type, job_number)
   self.job_number = job_number
   
   self.job_type = job_type
+  
+  self.parent_board_menu = parent_board_menu
   
   --get relevant board
   local job
@@ -571,7 +573,6 @@ function JobMenu:initialize(job_type, job_number)
   self.taken = job.Taken
   
   self.flavor = job.Flavor
-  print(self.Client)
   --Zhayn is the only non-species name that'll show up here. So he is hardcoded in as an exception here.
   --TODO: Unhardcode this by adding in a check if string is not empty and if its not a species name, then add the color coding around it for  proper names.
   self.client = ""
@@ -580,7 +581,8 @@ function JobMenu:initialize(job_type, job_number)
   elseif job.Client ~= "" then 
 	self.client = _DATA:GetMonster(job.Client):GetColoredName() 
   end
-  
+  print(self.client)
+
   self.target = ""
   if job.Target ~= '' then self.target = _DATA:GetMonster(job.Target):GetColoredName() end
   
@@ -667,6 +669,12 @@ function JobMenu:DeleteJob()
 									}
 	
 	MISSION_GEN.SortTaken()
+	if self.parent_board_menu ~= nil then 
+		--redraw board with potentially changed information from job board
+		self.parent_board_menu.menu.MenuElements:Clear()
+		self.parent_board_menu:RefreshSelf()
+		self.parent_board_menu:DrawBoard()
+	end
 	_MENU:RemoveMenu()
 	_MENU:RemoveMenu()
 end
@@ -681,6 +689,12 @@ function JobMenu:FlipTakenStatus()
 		SV.OutlawBoard[self.job_number].Taken = self.taken
 	else 
 		SV.MissionBoard[self.job_number].Taken = self.taken
+	end
+	if self.parent_board_menu ~= nil then 
+		--redraw board with potentially changed information from job board
+		self.parent_board_menu.menu.MenuElements:Clear()
+		self.parent_board_menu:RefreshSelf()
+		self.parent_board_menu:DrawBoard()
 	end
 end 
 
@@ -801,6 +815,10 @@ function BoardMenu:RefreshSelf()
   if self:GetSelectedJobIndex() > self.total_items then 
 	print("On refresh self, needed to adjust current item!")
 	self.current_item = (self.total_items % 4) - 1
+	
+	--move cursor to reflect new current item location
+	self.cursor:ResetTimeOffset()
+    self.cursor.Loc = RogueElements.Loc(8, 22 + 26 * self.current_item)
   end
   
   self.total_pages = math.ceil(self.total_items / 4)
@@ -808,6 +826,11 @@ function BoardMenu:RefreshSelf()
   --go to page 1 if we now only have 1 page
   if self.page == 2 and self.total_pages == 1 then
 	self.page = 1
+  end
+  
+  --if there are no more missions and we're on the taken screen, close the menu.  
+  if SV.TakenBoard[1].Client == "" and self.board_type == 'taken' then 
+	  _MENU:RemoveMenu()
   end
 end 
 
@@ -879,12 +902,8 @@ function BoardMenu:Update(input)
   if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then
 	--open the selected job menu
 	_GAME:SE("Menu/Confirm")
-	local job_menu = JobMenu:new(self.board_type, self:GetSelectedJobIndex())
+	local job_menu = JobMenu:new(self.board_type, self:GetSelectedJobIndex(), self)
 	_MENU:AddMenu(job_menu.menu, false)
-	--redraw board with potentially changed information from job board
-	self.menu.MenuElements:Clear()
-	self:RefreshSelf()
-	self:DrawBoard()
   elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
