@@ -713,15 +713,10 @@ function JobMenu:AddJobToTaken()
 	_MENU:RemoveMenu()
 end
 
-
-function JobMenu:Update(input)
-    assert(self, "BaseState:Begin(): Error, self is nil!")
-  if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then  
+function JobMenu:OpenSubMenu()
 	if self.job_type ~= 'taken' and self.taken then 
-		--This is a job from the board that was already taken! Play a cancel noise.
-		_GAME:SE("Menu/Cancel")
+		--This is a job from the board that was already taken!
 	else 
-	    _GAME:SE("Menu/Confirm")
 		--create prompt menu
 		local choices = {}
 		print(self.job_type .. " taken: " .. tostring(self.taken))
@@ -730,21 +725,32 @@ function JobMenu:Update(input)
 			if self.taken then
 				choice_str = 'Suspend'
 			end
-			choices = {	{choice_str, true, function() self:FlipTakenStatus() _MENU:RemoveMenu() end},
-						{"Delete", true, function() self:DeleteJob() end},
-						{"Cancel", true, function() _MENU:RemoveMenu() end} }
+			choices = {	{choice_str, true, function() self:FlipTakenStatus() _MENU:RemoveMenu() _MENU:RemoveMenu() end},
+						{"Delete", true, function() self:DeleteJob() _MENU:RemoveMenu() end},
+						{"Cancel", true, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end} }
 			
 		else --outlaw/mission boards
 			--we already made a check above to see if this is a job board and not taken 
 			--only selectable if there's room on the taken board for the job and we haven't already taken this mission
 			choices = {{"Take Job", SV.TakenBoard[8].Client == "" and not self.taken, function() self:FlipTakenStatus() 
-																								 self:AddJobToTaken() end },
-					   {"Cancel", true, function() _MENU:RemoveMenu() end} }
+																								 self:AddJobToTaken() _MENU:RemoveMenu() end },
+					   {"Cancel", true, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end} }
 		end 
 	
-		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(220, 24, 24, choices, 1) 
+		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(220, 24, 24, choices, 1, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end) 
 		_MENU:AddMenu(submenu, true)
 		
+	end
+end
+
+function JobMenu:Update(input)
+    assert(self, "BaseState:Begin(): Error, self is nil!")
+  if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then  
+	if self.job_type ~= 'taken' and self.taken then 
+		--This is a job from the board that was already taken! Play a cancel noise.
+		_GAME:SE("Menu/Cancel")
+	else 
+		--This job has not yet been taken.  This block will never be hit because the submenu will automatically open.
 	end
   elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
     _GAME:SE("Menu/Cancel")
@@ -904,6 +910,7 @@ function BoardMenu:Update(input)
 	_GAME:SE("Menu/Confirm")
 	local job_menu = JobMenu:new(self.board_type, self:GetSelectedJobIndex(), self)
 	_MENU:AddMenu(job_menu.menu, false)
+	job_menu:OpenSubMenu()
   elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
