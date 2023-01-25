@@ -45,6 +45,7 @@ function guild_second_floor_ch_3.Mareep_Action(chara, activator)
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("I find that whenever I'm struggling to catch an outlaw,[pause=10] using items helps a lot!")
 		UI:WaitShowDialogue("The right item can really make all the difference!")
+		UI:WaitShowDialogue("Just know that orbs don't work at the end of dungeons,[pause=10] where ba-a-a-addies usually hide!")
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("I hope that helps![pause=0] Good luck,[pause=10] I know you two\nca-a-a-an do it!")
 	else 
