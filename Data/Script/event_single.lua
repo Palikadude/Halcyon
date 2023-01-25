@@ -2,7 +2,7 @@ require 'common'
 
 SINGLE_CHAR_SCRIPT = {}
 
-function SINGLE_CHAR_SCRIPT.Test(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.Test(owner, ownerChar, context, args)
   PrintInfo("Test")
 end
 
@@ -11,7 +11,7 @@ ShopSecurityType = luanet.import_type('PMDC.Dungeon.ShopSecurityState')
 MapIndexType = luanet.import_type('RogueEssence.Dungeon.MapIndexState')
 
 
-function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, context, args)
   local baseLoc = _DUNGEON.ActiveTeam.Leader.CharLoc
   local tile = _ZONE.CurrentMap.Tiles[baseLoc.X][baseLoc.Y]
   
@@ -26,7 +26,7 @@ function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
     --merchandise was returned.  doesn't matter who did it.
     security_price.Cart = price
   elseif price > security_price.Cart then
-    local char_index = _ZONE.CurrentMap:GetCharIndex(character)
+    local char_index = _ZONE.CurrentMap:GetCharIndex(context.User)
     if char_index.Faction ~= RogueEssence.Dungeon.Faction.Player then
       --non-player was responsible for taking/destroying merchandise, just readjust the security price and clear the current price
       security_price.Amount = security_price.Amount - price + security_price.Cart
@@ -68,7 +68,7 @@ function SINGLE_CHAR_SCRIPT.ThiefCheck(owner, ownerChar, character, args)
   end
 end
 
-function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, context, args)
   local baseLoc = _DUNGEON.ActiveTeam.Leader.CharLoc
   local tile = _ZONE.CurrentMap.Tiles[baseLoc.X][baseLoc.Y]
 
@@ -153,14 +153,14 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, character, args)
   end
 end
 
-function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
   SOUND:PlayFanfare("Fanfare/Note")
   UI:ResetSpeaker()
   UI:WaitShowDialogue("You've reached a destination floor!")
 end
 
 
-function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
   SOUND:PlayBGM("C07. Outlaw.ogg", false)
   UI:ResetSpeaker()
   UI:WaitShowDialogue("Wanted outlaw spotted!")
@@ -172,7 +172,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, character, args)
   TASK:WaitTask(_DUNGEON:AddMapStatus(status))
 end
 
-function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
   remaining_outlaw = false
   for name, mission in pairs(SV.test_grounds.Missions) do
@@ -209,7 +209,7 @@ end
 --Check to make sure the partner or hero is not dead, or anyone else marked as "IsPartner"
 --checks guests as well
 --if one is dead, then cause an instant game over
-function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, context, args)
 	local player_count = GAME:GetPlayerPartyCount()
 	local guest_count = GAME:GetPlayerGuestCount()
 	if player_count < 1 then return end--If there's no party members then we dont need to do anything
@@ -269,7 +269,7 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, character, args)
 end
 
 --sets critical health status if teammate's health is low. This just adds a cosmetic Exclamation point over their head.
-function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, character, args)
+function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, context, args)
 	local player_count = GAME:GetPlayerPartyCount()
 	local critical = RogueEssence.Dungeon.StatusEffect("critical_health")
 
@@ -291,65 +291,65 @@ end
 --Halcyon dungeon scripts
 
 --For Ledian's speeches within the beginner lesson
-function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, character, args)
-  if character == nil then return end
-  if character == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
+function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, context, args)
+  if context.User == nil then return end
+  if context.User == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
 	--TODO: change character check to player and use the below call to call speeches. location of triggers will need to shift on actual maps
-	GAME:QueueLeaderEvent(function() BeginnerLessonSpeechHelper(owner, ownerChar, character, args) end)--
+	GAME:QueueLeaderEvent(function() BeginnerLessonSpeechHelper(owner, ownerChar, context.User, args) end)--
   end
 end
 
 --helper function to go with queueleaderevent call in BeginnerLessonSpeech
-function BeginnerLessonSpeechHelper(owner, ownerChar, character, args)
+function BeginnerLessonSpeechHelper(owner, ownerChar, context, args)
 	--slight pause if this isn't being called by asking Ledian for help. Don't pause if ledian wouldn't say anything (restepping on trigger tile)
 	if SV.Tutorial.Progression ~= -1  and args.Speech > SV.Tutorial.Progression then GAME:WaitFrames(20) end 
 	
 	if args.Speech == 1 and SV.Tutorial.Progression < 1 then
-		beginner_lesson_evt.Floor_1_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_1_Intro(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)--prevent mashing causing you to accidentially speak to Ledian or attack the air
 	elseif args.Speech == 2 and SV.Tutorial.Progression < 2 then
-		beginner_lesson_evt.Floor_2_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_2_Intro(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 3 and SV.Tutorial.Progression < 3 then
-		beginner_lesson_evt.Floor_3_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_Intro(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 4 and SV.Tutorial.Progression < 4 then
-		beginner_lesson_evt.Floor_3_Wand_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_Wand_Speech(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 5 and SV.Tutorial.Progression < 5 then
-		beginner_lesson_evt.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_HeldItem_Speech(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 6 and SV.Tutorial.Progression < 6 then
-		beginner_lesson_evt.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_3_ThrownReviver_Speech(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 7 and SV.Tutorial.Progression < 7 then
-		beginner_lesson_evt.Floor_4_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_4_Intro(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 8 and SV.Tutorial.Progression < 8 then
-		beginner_lesson_evt.Floor_4_Key_Speech(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_4_Key_Speech(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	elseif args.Speech == 9 and SV.Tutorial.Progression < 9 then
-		beginner_lesson_evt.Floor_5_Intro(owner, ownerChar, character, args)
+		beginner_lesson_evt.Floor_5_Intro(owner, ownerChar, context.User, args)
 		GAME:WaitFrames(20)
 	end
 end
 
 --Make sure target character is holding the Band of Passage or they will be warped away
-function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, character, args)
-	if character ~= GAME:GetPlayerGuestMember(0) and character.EquippedItem.ID ~= "held_band_of_passage" then--band of passage. Ledian is allowed to pass no matter what
-		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem("held_band_of_passage"):GetDisplayName()))
+function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, context, args)
+	if context.User ~= GAME:GetPlayerGuestMember(0) and context.User.EquippedItem.ID ~= "held_band_of_passage" then--band of passage. Ledian is allowed to pass no matter what
+		_DUNGEON:LogMsg(STRINGS:Format("{0} doesn't have a {1} equipped!", context.User:GetDisplayName(false), RogueEssence.Dungeon.InvItem("held_band_of_passage"):GetDisplayName()))
 		GAME:WaitFrames(40)
-		TASK:WaitTask(_DUNGEON:PointWarp(character, RogueElements.Loc(18, 18), true)) --warp them to the specified x18, y18 tile with a message saying they warped
-	elseif character ~= GAME:GetPlayerGuestMember(0) then --no messages or checks should be done on Ledian
-		_DUNGEON:LogMsg(STRINGS:Format("{0} has a {1} equipped and is allowed to pass!", character:GetDisplayName(false), RogueEssence.Dungeon.InvItem("held_band_of_passage"):GetDisplayName()))
+		TASK:WaitTask(_DUNGEON:PointWarp(context.User, RogueElements.Loc(18, 18), true)) --warp them to the specified x18, y18 tile with a message saying they warped
+	elseif context.User ~= GAME:GetPlayerGuestMember(0) then --no messages or checks should be done on Ledian
+		_DUNGEON:LogMsg(STRINGS:Format("{0} has a {1} equipped and is allowed to pass!", context.User:GetDisplayName(false), RogueEssence.Dungeon.InvItem("held_band_of_passage"):GetDisplayName()))
 	end
 end
 
 
 --Halcyon script
 --Popups with information on how to play the game in Relic Forest's first two pass throughs
-function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, character, args)
-  if character == nil then
+function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, context, args)
+  if context.User == nil then
     --note: each floor has 2 messages as the 2nd set of messages plays on the playthrough back with the partner
     UI:ResetSpeaker()
     if args.Floor == 1 then
