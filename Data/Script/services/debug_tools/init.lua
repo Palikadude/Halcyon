@@ -205,8 +205,26 @@ function DebugTools:OnUpgrade()
  if SV.Chapter3.BreloomGirafarigConvo == nil then SV.Chapter3.BreloomGirafarigConvo = false end
  
  
+ --Fix old chapter 2 and before saves that have bad cafe variables
+ --Curse you sunkern
+ if type(SV.metano_cafe.CafeSpecial) == "number" then SV.metano_cafe.CafeSpecial = -1 SV.metano_cafe.BoughtSpecial = false end
+ if type(SV.metano_cafe.FermentedItem) == "number" then SV.metano_cafe.FermentedItem = "" SV.metano_cafe.ItemFinishedFermenting = false end
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
+ 
+ --dungeon unlocks that didnt exist for old versions
+ if SV.ChapterProgression.Chapter >= 3 and not GAME:DungeonUnlocked("crooked_cavern") then
+	GAME:UnlockDungeon("grass_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("fire_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("water_maze")--unlock new mazes at ledian dojo
+	GAME:UnlockDungeon("crooked_cavern")--unlock chapter 3 dungeon
+	SV.Dojo.NewMazeUnlocked = true
+end	
+ 
+ --set current story dungeon in case current one is not accurate
+ if SV.ChapterProgression.Chapter == 3 then
+ 	SV.ChapterProgression.CurrentStoryDungeon = "crooked_cavern" -- Crooked Cavern
+ end 
  
  if SV.TakenBoard == nil then
 	SV.TakenBoard =

@@ -157,9 +157,9 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	GAME:WaitFrames(60)
 	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
 	UI:SetSpeaker(tropius)
-	UI:WaitShowDialogue("For right now,[pause=10] I don't think there's anything we can do.")
-	UI:WaitShowDialogue("This spring issue may be an isolated incident for all we know.") 
-	UI:WaitShowDialogue("We should keep an eye out for other bad omens,[pause=10] and from there see what sort of options we have.")
+	UI:WaitShowDialogue("For right now,[pause=10] there isn't a whole lot we can do.")
+	UI:WaitShowDialogue("This spring issue could be an isolated incident for all we know,[pause=10] and we don't want to cause a panic if that's the case.") 
+	UI:WaitShowDialogue("If it isn't though,[pause=10] we need to be prepared.[pause=0] We should do what we can in the meantime,[pause=10] just in case.")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Sad")
@@ -188,8 +188,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	GAME:UnlockDungeon("grass_maze")--unlock new mazes at ledian dojo
 	GAME:UnlockDungeon("fire_maze")--unlock new mazes at ledian dojo
 	GAME:UnlockDungeon("water_maze")--unlock new mazes at ledian dojo
-	GAME:UnlockDungeon("crooked_cavern")--unlock chapter 3 dungeons
-	GAME:UnlockDungeon("crooked_den")
+	GAME:UnlockDungeon("crooked_cavern")--unlock chapter 3 dungeon
 	GeneralFunctions.EndOfDay()--reset daily flags and increment day counter by 1
 	GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 	

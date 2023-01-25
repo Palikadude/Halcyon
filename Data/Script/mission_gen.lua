@@ -75,14 +75,403 @@ MISSION_GEN.COMPLETE = 1
 MISSION_GEN.INCOMPLETE = 0
 
 --pokemon to choose from for missions
+--This is a list of all Released Pokemon, minus ones who are in the same evolutionary family as a named character in the game,
+--starters, legendaries, and a few other "special" mons (unown for example)
 MISSION_GEN.POKEMON = 
-	{"caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill"}
+{"abra","absol","aerodactyl","aipom","alakazam","alcremie","altaria","amaura","anorith","appletun","applin","arbok","archen","ariados","armaldo","aron","arrokuda","aurorus","axew",
+"baltoy","banette","barboach","bastiodon","beedrill","beldum","bellsprout","bibarel","bidoof","blissey","bonsly","bronzong","bronzor","buneary","burmy",
+"carnivine","carvanha","cascoon","castform","chandelure","chansey","chatot","cherrim","cherubi","chimecho","chinchou","chingling","clamperl","claydol","clobbopus","cloyster","combee","corphish","corsola","corviknight","cradily","cramorant","crawdaunt","croagunk","crobat","cubchoo","cursola","cutiefly",
+"deerling","deino","delibird","dewgong","diglett","ditto","donphan","dragonair","dragonite","drampa","drapion","dratini","drifblim","drifloon","drowzee","dugtrio","dunsparce","duosion","dusclops","dusknoir","duskull","dustox",
+"ekans","electabuzz","electivire","electrike","electrode","elekid","emolga","espurr","exeggcute","exeggutor","exploud",
+"farfetchd","fearow","feebas","finneon","flabebe","floette","florges","flygon","fomantis","forretress","froslass",
+"gallade","galvantula","gardevoir","gastly","gastrodon","gengar","geodude","glalie","gligar","gliscor","golbat","goldeen","golduck","golem","golisopod","golurk","goomy","gorebyss","gothorita","gourgeist","graveler","grimer","grumpig","gyarados",
+"happiny","hariyama","hatenna","hatterene","hattrem","haunter","helioptile","heracross","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honchkrow","honedge","hoppip","horsea","houndoom","houndour","huntail","hypno",
+"illumise","indeedee",
+"jangmo_o","joltik","jumpluff","jynx",
+"kabuto","kabutops","kadabra","kakuna","kingdra","kingler","kirlia","koffing","krabby","kricketot","kricketune",
+"lanturn","lapras","larvitar","leavanny","lileep","lillipup","litwick","lopunny","loudred","lumineon","lunatone","luvdisc",
+"magby","magcargo","magikarp","magmar","magmortar","magnemite","magneton","magnezone","makuhita","mamoswine","mandibuzz","mankey","mantine","mantyke","maractus","mareanie","masquerain","meowstic","metagross","metang","mienfoo","mightyena","milotic","miltank","mime_jr","minccino","minior","minun","misdreavus","mismagius","morgrem","mothim","mr_mime","muk","murkrow",
+"natu","nincada","ninjask","noibat","noivern","nosepass","nuzleaf",
+"octillery","omanyte","omastar","onix",
+"pachirisu","paras","parasect","phantump","pidgeot","pidgeotto","pidgey","pidove","piloswine","pineco","pinsir","plusle","politoed","poliwag","poliwhirl","poliwrath","ponyta","poochyena","porygon","porygon_z","porygon2","primeape","probopass","psyduck","pumpkaboo","pupitar","purrloin","purugly",
+"qwilfish",
+"ralts","rapidash","raticate","rattata","remoraid","rhydon","rhyhorn","rhyperior","ribombee","roggenrola",
+"sableye","salandit","salazzle","sandshrew","sandslash","sandygast","sawsbuck","scizor","scrafty","scyther","seadra","seaking","seedot","seel","sewaddle","sharpedo","shedinja","shellder","shellos","shieldon","shiftry","shuppet","sinistea","skarmory","skiploom","skorupi","skuntank","slaking","slakoth","slugma","smeargle","smoochum","snorunt","snover","solrock","spearow","spinarak","spiritomb","spoink","stantler","staraptor","staravia","starly","starmie","staryu","steelix","steenee","stoutland","stunky","sudowoodo","surskit","swablu","swellow","swinub","swirlix","swoobat",
+"taillow","tangela","tangrowth","tauros","teddiursa","tentacool","tentacruel","thievul","togedemaru","togekiss","togepi","togetic","torkoal","toxicroak","trapinch","trubbish","tsareena","tympole","tyranitar","tyrogue",
+"ursaring",
+"vanillish","vanillite","venomoth","venonat","vespiquen","vibrava","victreebel","vigoroth","volbeat","voltorb",
+"wailmer","wailord","weedle","weepinbell","weezing","whimsicott","whiscash","whismur","wobbuffet","woobat","wooloo","wormadam","wynaut",
+"xatu",
+"yanma","yanmega",
+"zubat"}
 
+--weighting of each loot table based on difficulty of mission
+
+MISSION_GEN.DIFF_REWARDS = {
+	E = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 0},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 0},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	D = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 2},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 0},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	C = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 3},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 2},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	B = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 4},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 3},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	A = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 2},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 0},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	S = {
+		{"AMMO_LOW", 5},
+		{"AMMO_HIGH", 0},
+		{"FOOD_LOW", 5},
+		{"FOOD_HIGH", 0},
+		{"SEED_LOW", 5},
+		{"SEED_HIGH", 0},
+		{"HELD_LOW", 2},
+		{"HELD_HIGH", 0},
+		{"TM_LOW", 0},
+		{"TM_MID", 0},
+		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		}
+}
 
 --Weighted list of rewards to choose from for missions
+--todo: balance the weightings
 MISSION_GEN.REWARDS = {
-	{"money", 50},
-	{"food_apple", 50}
+	--Reward tables of high and low tier loot separated by category (TM, ammo, held items, etc)
+	--different mission difficulties have different chances to roll each table
+	AMMO_LOW = {
+		{"ammo_geo_pebble", 5},
+		{"ammo_gravelerock", 5},
+		{"ammo_iron_thorn", 5},
+		{"ammo_stick", 5},
+		{"ammo_silver_spike", 5}
+	},
+	
+	AMMO_HIGH = {
+		{"ammo_rare_fossil", 5},
+		{"ammo_corsola_twig", 5},
+		{"ammo_cacnea_spike", 5},
+		{"ammo_golden_spike", 5}
+	},
+	--Rare chance for gummis
+	FOOD_LOW = {
+		{"food_apple", 15},
+		{"food_apple_big", 9},
+		{"food_banana", 9},
+		{"food_chestnut", 6},
+		{"gummi_blue", 1},
+		{"gummi_black", 1},
+		{"gummi_clear", 1}, 
+		{"gummi_grass", 1},
+		{"green_gummi", 1},
+		{"gummi_brown", 1},
+		{"gummi_orange", 1},
+		{"gummi_gold", 1},
+		{"gummi_pink", 1},
+		{"gummi_purple", 1},
+		{"gummi_red", 1},
+		{"gummi_royal", 1},
+		{"gummi_silver", 1},
+		{"gummi_white", 1},
+		{"gummi_yellow", 1},
+		{"gummi_sky", 1},
+		{"gummi_gray", 1},
+		{"gummi_magenta", 1}
+	},
+	--Better chance for gummis over low tier, small chance for vitamins
+	FOOD_HIGH = {
+		{"food_apple_big", 15},
+		{"food_apple_huge", 9},
+		{"food_apple_perfect", 6},
+		{"food_banana_big", 9},
+		{"gummi_blue", 1},
+		{"gummi_black", 1},
+		{"gummi_clear", 1}, 
+		{"gummi_grass", 1},
+		{"green_gummi", 1},
+		{"gummi_brown", 1},
+		{"gummi_orange", 1},
+		{"gummi_gold", 1},
+		{"gummi_pink", 1},
+		{"gummi_purple", 1},
+		{"gummi_red", 1},
+		{"gummi_royal", 1},
+		{"gummi_silver", 1},
+		{"gummi_white", 1},
+		{"gummi_yellow", 1},
+		{"gummi_sky", 1},
+		{"gummi_gray", 1},
+		{"gummi_magenta", 1},
+		{"boost_calcium", 1},
+		{"boost_protein", 1},
+		{"boost_hp_up", 1},
+		{"boost_zinc", 1},
+		{"boost_carbos", 1},
+		{"boost_iron", 1},
+		{"boost_nectar", 1}
+		
+	},
+	--includes seeds and berries
+	SEED_LOW = {
+		{'seed_blast', 5},
+		{'seed_reviver', 5},
+		{'seed_sleep', 5},
+		{'seed_warp', 5},
+		{'berry_oran', 5},
+		{'berry_leppa', 5},
+		{'berry_sitrus', 5},
+		{'berry_pecha', 5},
+		{'berry_cheri', 5},
+		{'berry_rawst', 5},
+		{'berry_aspear', 5},
+		{'berry_chesto', 5},
+		{'berry_persim', 5},
+		{'berry_lum', 5}
+	},
+	
+	--includes seeds and berries
+	SEED_HIGH = {
+		{'seed_reviver', 5},
+		{'seed_pure', 5},
+		{'seed_joy', 5},
+		{'berry_sitrus', 5},
+		{'berry_lum', 5}
+	}, 
+	
+	HELD_LOW = {
+		{'held_power_band', 5},
+		{'held_special_band', 5},
+		{'held_defense_scarf', 5},
+		{'held_zinc_band', 5},
+		
+		{'held_pecha_scarf', 5},
+		{'held_cheri_scarf', 5},
+		{'held_rawst_scarf', 5},
+		{'held_aspear_scarf', 5},
+		{'held_insomniascope', 5},
+		{'held_persim_band', 5},
+		
+		{'held_warp_scarf', 5}
+	},
+	
+	HELD_HIGH = {
+		{'held_friend_bow', 5},
+		{'held_mobile_scarf', 5},
+		{'held_cover_band', 5},
+		{'held_scope_lens', 5},
+		{'held_trap_scarf', 5},
+		{'held_reunion_cape', 5},
+		{'held_pierce_band', 5},
+		{'held_heal_ribbon', 5},
+		{'held_goggle_specs', 5},
+		{'held_x_ray_specs', 5},
+		{'held_twist_band', 5}
+	},
+	
+	TM_LOW = {
+		{'tm_snatch', 5},
+		{'tm_sunny_day', 5},
+		{'tm_rain_dance', 5},
+		{'tm_sandstorm', 5},
+		{'tm_hail', 5},
+		{'tm_taunt', 5},
+		
+		{'tm_safeguard', 5},
+		{'tm_light_screen', 5},
+		{'tm_dream_eater', 5},
+		{'tm_nature_power', 5},
+		{'tm_swagger', 5},
+		{'tm_captivate', 5},
+		{'tm_fling', 5},
+		{'tm_payback', 5},
+		{'tm_reflect', 5},
+		{'tm_rock_polish', 5},
+		{'tm_pluck', 5},
+		{'tm_psych_up', 5},
+		{'tm_secret_power', 5},
+		{'tm_natural_gift', 5},
+
+		{'tm_return', 5},
+		{'tm_frustration', 5},
+		{'tm_torment', 5},
+		{'tm_endure', 5},
+		{'tm_echoed_voice', 5},
+		{'tm_gyro_ball', 5},
+		{'tm_recycle', 5},
+		{'tm_false_swipe', 5},
+		{'tm_defog', 5},
+		{'tm_telekinesis', 5},
+		{'tm_double_team', 5},
+		{'tm_thunder_wave', 5},
+		{'tm_attract', 5},
+		{'tm_smack_down', 5},
+		{'tm_snarl', 5},
+		{'tm_flame_charge', 5},
+
+		{'tm_protect', 5},
+		{'tm_round', 5},
+		{'tm_rest', 5},
+		{'tm_thief', 5},
+		{'tm_cut', 5},
+		{'tm_whirlpool', 5},
+		{'tm_infestation', 5},
+		{'tm_roar', 5},
+		{'tm_flash', 5},
+		{'tm_embargo', 5},
+		{'tm_struggle_bug', 5},
+		{'tm_quash', 5}},
+		
+	TM_MID = {
+
+		{'tm_explosion', 5},
+		{'tm_will_o_wisp', 5},
+		{'tm_facade', 5},
+		{'tm_water_pulse', 5},
+		{'tm_shock_wave', 5},
+		{'tm_brick_break', 5},
+		{'tm_calm_mind', 5},
+		{'tm_charge_beam', 5},
+		{'tm_retaliate', 5},
+		{'tm_roost', 5},
+		{'tm_acrobatics', 5},
+		{'tm_bulk_up', 5},
+
+
+		{'tm_shadow_claw', 5},
+
+		{'tm_steel_wing', 5},
+		{'tm_snarl', 5},
+		{'tm_bulldoze', 5},
+		{'tm_substitute', 5},
+		{'tm_brine', 5},
+		{'tm_venoshock', 5},
+		{'tm_u_turn', 5},
+		{'tm_aerial_ace', 5},
+		{'tm_hone_claws', 5},
+		{'tm_rock_smash', 5},
+
+		{'tm_hidden_power', 5},
+		{'tm_rock_tomb', 5},
+		{'tm_strength', 5},
+		{'tm_grass_knot', 5},
+		{'tm_power_up_punch', 5},
+		{'tm_work_up', 5},
+		{'tm_incinerate', 5},
+		{'tm_bullet_seed', 5},
+		{'tm_low_sweep', 5},
+		{'tm_volt_switch', 5},
+		{'tm_avalanche', 5},
+		{'tm_dragon_tail', 5},
+		{'tm_silver_wind', 5},
+		{'tm_frost_breath', 5},
+		{'tm_sky_drop', 5}},
+	TM_HIGH = {
+		{'tm_earthquake', 5},
+		{'tm_hyper_beam', 5},
+		{'tm_overheat', 5},
+		{'tm_blizzard', 5},
+		{'tm_swords_dance', 5},
+		{'tm_surf', 5},
+		{'tm_dark_pulse', 5},
+		{'tm_psychic', 5},
+		{'tm_thunder', 5},
+		{'tm_shadow_ball', 5},
+		{'tm_ice_beam', 5},
+		{'tm_giga_impact', 5},
+		{'tm_fire_blast', 5},
+		{'tm_dazzling_gleam', 5},
+		{'tm_flash_cannon', 5},
+		{'tm_stone_edge', 5},
+		{'tm_sludge_bomb', 5},
+		{'tm_focus_blast', 5},
+
+		{'tm_x_scissor', 5},
+		{'tm_wild_charge', 5},
+		{'tm_focus_punch', 5},
+		{'tm_psyshock', 5},
+		{'tm_rock_slide', 5},
+		{'tm_thunderbolt', 5},
+		{'tm_flamethrower', 5},
+		{'tm_energy_ball', 5},
+		{'tm_scald', 5},
+		{'tm_waterfall', 5},
+		{'tm_rock_climb', 5},
+
+		{'tm_giga_drain', 5},
+		{'tm_dive', 5},
+		{'tm_poison_jab', 5},
+	
+		{'tm_iron_tail', 5},
+	
+		{'tm_dig', 5},
+		{'tm_fly', 5},
+		{'tm_dragon_claw', 5},
+		{'tm_dragon_pulse', 5},
+		{'tm_sludge_wave', 5},
+		{'tm_drain_punch', 5}},
+	--additional, special, unique rewards. todo
+	SPECIAL = {}
+	
 }
 
 
@@ -447,9 +836,16 @@ function MISSION_GEN.GenerateBoard(board_type)
 		
 		--should pretty much always be in segment 0 for missions
 		local segment = 0
+		print(MISSION_GEN.DIFF_REWARDS[difficulty])
+		print(MISSION_GEN.REWARDS["AMMO_LOW"])
 		
 		--generate reward with hardcoded list of weighted rewards
-		local reward = MISSION_GEN.WeightedRandom(MISSION_GEN.REWARDS)
+		local reward = "money"
+		--1/4 chance you get money instead of an item
+		
+		if math.random(1, 4) > 1 then 
+			reward = MISSION_GEN.WeightedRandom(MISSION_GEN.REWARDS[MISSION_GEN.WeightedRandom(MISSION_GEN.DIFF_REWARDS[difficulty])])
+		end
 		
 		--get the zone, and max floors (counted floors of relevant segments)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon)
@@ -616,7 +1012,7 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
 	if job.Reward == "money" then
 		self.reward = '[color=#00FFFF]' .. MISSION_GEN.DIFF_TO_MONEY[job.Difficulty] .. '[color]' .. STRINGS:Format("\\uE024")
 	else 
-		self.reward = RogueEssence.Dungeon.InvItem(job.Reward):GetDisplayName()
+		self.reward = RogueEssence.Dungeon.InvItem(job.Reward, false, RogueEssence.Data.DataManager.Instance:GetItem(job.Reward).MaxStack):GetDisplayName()
     end
   end
   

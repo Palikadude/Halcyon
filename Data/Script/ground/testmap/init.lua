@@ -137,5 +137,91 @@ end
 
 
 
+function testmap.Get_Released_Mons_Action()
+	--mons is a list of all species index strings
+	--local mons = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:GetOrderedKeys(false)
+	--for i = 1, 906, 1 do
+	--	if _DATA:GetMonster(mons[i]).Released then
+	--		print(mons[i]) 
+	--	 end
+	--end
+	
+	--mons is a list of all species index strings
+	local mons = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Item]:GetOrderedKeys(false)
+	for i = 1, 2000, 1 do
+		if _DATA:GetItem(mons[i]).ItemData.UsageType == _DATA:GetItem("tm_acrobatics").ItemData.UsageType then
+			print(mons[i]) 
+		 end
+	end
+end
+
+--[[
+potential sfx:
+EVT_EP_Aegis_Cave_Marker_Glow
+EVT_EP_Palkia_Transport
+_UNK_EVT_106
+_UNK_EVT_079 (TIME GEAR TAKE DOWN)
+
+]]--
+function testmap.Test_Core_Deactivation_Action(chara, activator)
+	GAME:CutsceneMode(true)
+	SOUND:StopBGM()
+	
+	GAME:MoveCamera(688, 936, 1, false)
+	
+	local root = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Anima_Root", 1), --anim data. Don't set that number to 0 for valid anims
+								 				 RogueElements.Rect(600, 864, 16, 16),--xy coords, then size
+								  				 RogueElements.Loc(0, 0), --offset
+												 true, 
+												 "Anima_Root")--object entity name	
+												 
+	root:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(root)
+	
+	local core = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Anima_Core", 1), --anim data. Don't set that number to 0 for valid anims
+								 				 RogueElements.Rect(600, 865, 16, 16),--xy coords, then size
+								  				 RogueElements.Loc(0, -1), --offset
+												 true, 
+												 "Anima_Core")--object entity name	
+				
+	core:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(core)
+	
+	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root', 10, 0, 15, Direction.Down)
+	GROUND:ObjectSetDefaultAnim(core, 'Anima_Core', 10, 0, 31, Direction.Down)
+
+	SOUND:LoopBattleSE('_UNK_EVT_106')
+	GAME:WaitFrames(180)
+	SOUND:FadeOutBattleSE('_UNK_EVT_106', 60)
+	GAME:WaitFrames(60)
+	
+	SOUND:PlayBattleSE('EVT_EP_Nightmare_Break')
+	GROUND:ObjectSetDefaultAnim(core, 'Core_Deactivation', 0, 0, 0, Direction.Down)
+
+	GROUND:ObjectSetAnim(core, 10, 0, 11, Direction.Down, 1)
+	GROUND:ObjectSetDefaultAnim(core, 'Core_Deactivation', 0, 11, 11, Direction.Down)
+	
+	GAME:WaitFrames(210)
+	
+	SOUND:PlayBattleSE("_UNK_EVT_079")
+	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root_Turnoff', 0, 0, 0, Direction.Down)
+
+	GROUND:ObjectSetAnim(root, 40, 0, 7, Direction.Down, 1)
+	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root_Turnoff', 0, 7, 7, Direction.Down)
+	
+	GAME:WaitFrames(360)
+	GAME:GetCurrentGround():RemoveTempObject(root)
+	GAME:GetCurrentGround():RemoveTempObject(core)
+	GAME:MoveCamera(0, 0, 1, true)
+	GAME:CutsceneMode(false)
+	SOUND:PlayBGM('Deep Dark Crater.ogg', true)
+	GAME:GetCurrentGround():RemoveTempObject(groundObj)
+end
+	
+	
+	
+												 
+												 
+
 return testmap
 

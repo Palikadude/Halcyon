@@ -16,7 +16,9 @@ Trio-
 Spriting credits:
 Edan Momu - guild exterior and partial interior sprite work
 D4yz - guild interior tilesets and original guild decorations pixel art
-Jaifain - Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Snubbull, Cranidos, Girafarig, and Zigzagoon. River animations for Illuminant Riverbed's Entrance, Metano Town, Metano Outskirts, and Altere Pond.
+Jaifain - Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Snubbull, Cranidos, Girafarig, and Zigzagoon.
+	  River animations for Illuminant Riverbed's Entrance, Metano Town, Metano Outskirts, and Altere Pond. 
+	  Anima core and anima root animations. Scarfed Sandile Portraits.
 Baroness Faron - Audino upwards eating + posing sprites
 Happysmily - Shuckle's cafe animations, sandile scarf sprites
 Cait_Sith - Luxio fainting animation
