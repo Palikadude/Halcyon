@@ -1,5 +1,9 @@
 require 'common'
 
+GAME:UnlockDungeon("crooked_cavern")
+GAME:UnlockDungeon("illuminant_riverbed")
+SV.ChapterProgression.Chapter = 3
+
 --Halcyon Custom work:
 --Code in this folder is used to generate, display, and handle randomized missions
 --and all that goes with that (rewards, rankups, etc)
