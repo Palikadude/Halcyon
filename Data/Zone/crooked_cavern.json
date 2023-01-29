@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.7.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -317,7 +317,6 @@
 },
 "ID": "stairs_go_down",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -483,7 +482,6 @@
 },
 "ID": "tile_wonder",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 },
@@ -800,7 +798,6 @@
 },
 "ID": "stairs_go_down",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -966,7 +963,6 @@
 },
 "ID": "tile_wonder",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 },
@@ -2026,6 +2022,11 @@
 }
 ],
 "SpecificSpawns": []
+},
+{
+"$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
+"Script": "SpawnMissionNpcFromSV",
+"ArgTable": "{}"
 },
 {
 "$type": "RogueEssence.LevelGen.TileSpawnZoneStep, RogueEssence",

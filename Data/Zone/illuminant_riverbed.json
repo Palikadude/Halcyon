@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -36,7 +36,8 @@
 "Music": "Craggy Coast.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -209,7 +210,17 @@
 ]
 },
 "Value": {
-"$type": "RogueEssence.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Priority": {
+"str": [
+15
+]
+},
+"Respawn": {
+"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
+"MaxFoes": 5,
+"RespawnTime": 55
+},
 "MaxFoes": 5,
 "RespawnTime": 55
 }
@@ -244,7 +255,6 @@
 },
 "ID": "stairs_go_up",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -392,7 +402,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -500,7 +509,6 @@
 },
 "ID": "tile_wonder",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 },
@@ -1269,6 +1277,11 @@
 }
 ],
 "SpecificSpawns": []
+},
+{
+"$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
+"Script": "SpawnMissionNpcFromSV",
+"ArgTable": "{}"
 },
 {
 "$type": "RogueEssence.LevelGen.TileSpawnZoneStep, RogueEssence",

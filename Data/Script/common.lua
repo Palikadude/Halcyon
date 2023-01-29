@@ -1004,13 +1004,14 @@ function COMMON.BeginDungeon(zoneId, segmentID, mapId)
 end
 
 function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
-  for name, mission in pairs(SV.test_grounds.Missions) do
-    PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
+  for name, mission in pairs(SV.TakenBoard) do
+    
+  PrintInfo("Checking Mission: "..tostring(name))
+	if mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
 	  if mission.Type == 1 then -- escort
 		
 		-- add escort to team
-		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, "normal", Gender.Male)
+		local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
 		
@@ -1037,9 +1038,9 @@ end
 
 
 function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
-  for name, mission in pairs(SV.test_grounds.Missions) do
+  for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
+	if mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
 	  if mission.Type == 1 then -- escort
 	    -- remove the escort from the party
 		local escort = COMMON.FindMissionEscort(name)

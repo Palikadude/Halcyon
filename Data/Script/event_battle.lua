@@ -92,8 +92,10 @@ end
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 
   local tbl = LTBL(context.Target)
-  local mission = SV.test_grounds.Missions[tbl.Mission]
-  mission.Complete = 1
+	PrintInfo(tostring(context.Target))
+	-- TODO - Figure out why tbl.Mission returns nil when mapgen has the line post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+  local mission = SV.TakenBoard[1]
+  mission.Completion = 1
   
   local oldDir = context.Target.CharDir
   DUNGEON:CharTurnToChar(context.Target, context.User)
@@ -117,8 +119,8 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
   
   if escort then
     
-    local mission = SV.test_grounds.Missions[tbl.Mission]
-    mission.Complete = 1
+    local mission = SV.TakenBoard[tbl.Mission]
+    mission.Completion = 1
   
     local oldDir = context.Target.CharDir
     DUNGEON:CharTurnToChar(context.Target, context.User)

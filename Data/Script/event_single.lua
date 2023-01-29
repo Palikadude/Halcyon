@@ -175,16 +175,16 @@ end
 function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
   remaining_outlaw = false
-  for name, mission in pairs(SV.test_grounds.Missions) do
+  for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-    if mission.Complete == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.DestZone
-	  and _ZONE.CurrentMapID.Segment == mission.DestSegment and _ZONE.CurrentMapID.ID == mission.DestFloor then
+    if mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
+	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID == mission.Floor then
 	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", name)
       if found_outlaw then
 	    remaining_outlaw = true
 	  else
 	    -- if no outlaws of the mission list, mark quest as complete
-		mission.Complete = 1
+		mission.Completion = 1
 		UI:ResetSpeaker()
         UI:WaitShowDialogue("Mission status set to complete. Return to quest giver for reward.")
 	  end

@@ -18,15 +18,15 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
   -- choose a the floor to spawn it on
   local destinationFloor = false
   local outlawFloor = false
-  for name, mission in pairs(SV.test_grounds.Missions) do
-    PrintInfo("Checking Mission: "..tostring(name))
-    if mission.Complete == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.DestZone
-	  and zoneContext.CurrentSegment == mission.DestSegment and zoneContext.CurrentID == mission.DestFloor then
+  for name, mission in pairs(SV.TakenBoard) do
+
+    if mission.Completion == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.Zone
+	  and zoneContext.CurrentSegment == mission.Segment and zoneContext.CurrentID == mission.Floor then
       PrintInfo("Spawning Mission Goal")
 	  if mission.Type == COMMON.MISSION_TYPE_OUTLAW then -- outlaw
         local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
         local post_mob = RogueEssence.LevelGen.MobSpawn()
-        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.TargetSpecies, 0, "normal", Gender.Unknown)
+        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
         post_mob.Tactic = "boss"
         post_mob.Level = RogueElements.RandRange(50)
 		post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
@@ -45,7 +45,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
 	  else
         local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
         local post_mob = RogueEssence.LevelGen.MobSpawn()
-        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.TargetSpecies, 0, "normal", Gender.Unknown)
+        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
         post_mob.Tactic = "slow_wander"
         post_mob.Level = RogueElements.RandRange(50)
 	    if mission.Type == COMMON.MISSION_TYPE_RESCUE then -- rescue

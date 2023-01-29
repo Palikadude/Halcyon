@@ -14,6 +14,12 @@ function illuminant_riverbed.Init(zone)
   
 end
 
+function illuminant_riverbed.EnterSegment(zone, rescuing, segmentID, mapID)
+	if rescuing ~= true then
+		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
+	end
+end
+
 function illuminant_riverbed.Rescued(zone, mail)
   COMMON.Rescued(zone, mail)
 end
@@ -38,6 +44,7 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
             Rescue
         }
 		]]--
+	COMMON.ExitDungeonMissionCheck(zone.ID, segmentID)
 	if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 
 
