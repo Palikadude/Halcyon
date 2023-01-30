@@ -322,12 +322,24 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   dungeon_entrance_mapping["illuminant_riverbed"] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
   dungeon_entrance_mapping["crooked_cavern"] = 41--Crooked Cavern
     
-  --check for unlock of dungeons
+
+	local mission_dests = {}
+	for ii = 1, 8 do
+		local zone = SV.TakenBoard[ii].Zone;
+		if zone ~= "" and SV.TakenBoard[ii].Taken then
+			mission_dests[zone] = true
+		end
+	end
+
+	--check for unlock of dungeons
   local open_dests = {}
   for ii = 1,#dungeon_entrances,1 do
     if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
 	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon_entrances[ii])
 	  local zone_name = zone_summary:GetColoredName()
+		if mission_dests[dungeon_entrances[ii]] then 
+			zone_name = STRINGS:Format("\\uE10F ") .. zone_name --open letter
+		end
       table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
 	end
   end
