@@ -642,8 +642,25 @@ function COMMON.UnlockWithFanfare(dungeon_id)
 
 end
 
-
-
+function COMMON.FindNpcWithTable(foes, key, value)
+  local team_list = _ZONE.CurrentMap.AllyTeams
+  if foes then
+    team_list = _ZONE.CurrentMap.MapTeams
+  end
+  local team_count = team_list.Count
+  for team_idx = 0, team_count-1, 1 do
+	-- search for a wild mon with the table value
+	local player_count = team_list[team_idx].Players.Count
+	for player_idx = 0, player_count-1, 1 do
+	  player = team_list[team_idx].Players[player_idx]
+	  local player_tbl = LTBL(player)
+	  if player_tbl[key] == value then
+		return player
+	  end
+	end
+  end
+  return nil
+end
 
 function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   action_cancel.Cancel = true
@@ -1012,7 +1029,8 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
 		
 		-- add escort to team
 		local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
-        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", -1)
+    local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.85)
+        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
 		
 		-- place in a legal position on map

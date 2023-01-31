@@ -179,7 +179,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
 	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID == mission.Floor then
-	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", name)
+	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(name))
       if found_outlaw then
 	    remaining_outlaw = true
 	  else

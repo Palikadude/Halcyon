@@ -1,7 +1,5 @@
 require 'common'
 
-GAME:UnlockDungeon("crooked_cavern")
-GAME:UnlockDungeon("illuminant_riverbed")
 SV.ChapterProgression.Chapter = 3
 
 --Halcyon Custom work:
@@ -77,6 +75,10 @@ MISSION_GEN.DIFF_TO_MONEY["S"] = 350
 
 MISSION_GEN.COMPLETE = 1
 MISSION_GEN.INCOMPLETE = 0
+
+MISSION_GEN.EXPECTED_LEVEL = {}
+MISSION_GEN.EXPECTED_LEVEL["illuminant_riverbed"] = 8
+MISSION_GEN.EXPECTED_LEVEL["crooked_cavern"] = 10
 
 --pokemon to choose from for missions
 --This is a list of all Released Pokemon, minus ones who are in the same evolutionary family as a named character in the game,
@@ -772,6 +774,18 @@ function MISSION_GEN.GenerateBoard(board_type)
 	local jobs_to_make = math.random(5, 8)--Todo: jobs generated is based on your rank or how many dungeons you've done.
 	local assigned_combos = {}--floor/dungeon combinations that already have had missions genned for it. Need to consider already genned missions and missions on taken board.
 	
+	local seen_pokemon = {}
+
+	for entry in luanet.each(_DATA.Save.Dex) do
+		if entry.Value == RogueEssence.Data.GameProgress.UnlockState.Discovered then
+			table.insert(seen_pokemon, entry.Key)
+		end
+	end
+
+	--print( seen_pokemon[ math.random( #seen_pokemon ) ] )
+	
+
+
 	--default to mission.
 	local mission_type = "Mission"
 	if board_type == "Outlaw" then mission_type = "Outlaw" end
@@ -819,7 +833,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 		--Always give a target if objective is escort.
 		local target = client
 		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT then 
-			target = MISSION_GEN.POKEMON[math.random(1, #MISSION_GEN.POKEMON)]
+			target = seen_pokemon[ math.random( #seen_pokemon ) ]
 		end
 		
 		--if its an outlaw mission, 50% chance client is Zhayn. Otherwise, someone different than the target.

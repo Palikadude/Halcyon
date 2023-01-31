@@ -92,9 +92,9 @@ end
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 
   local tbl = LTBL(context.Target)
-	PrintInfo(tostring(context.Target))
+	PrintInfo(tostring(context.Target).."=================================================HERE")
 	-- TODO - Figure out why tbl.Mission returns nil when mapgen has the line post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
-  local mission = SV.TakenBoard[1]
+  local mission = SV.TakenBoard[tonumber(tbl.Mission)]
   mission.Completion = 1
   
   local oldDir = context.Target.CharDir
