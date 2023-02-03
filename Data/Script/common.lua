@@ -1024,7 +1024,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
   for name, mission in pairs(SV.TakenBoard) do
     
   PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
+	if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
 	  if mission.Type == 1 then -- escort
 		
 		-- add escort to team
@@ -1058,7 +1058,7 @@ end
 function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
   for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
+	if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
 	  if mission.Type == 1 then -- escort
 	    -- remove the escort from the party
 		local escort = COMMON.FindMissionEscort(name)

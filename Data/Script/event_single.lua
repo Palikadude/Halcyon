@@ -154,22 +154,31 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, context, args)
 end
 
 function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
-  SOUND:PlayFanfare("Fanfare/Note")
-  UI:ResetSpeaker()
-  UI:WaitShowDialogue("You've reached a destination floor!")
+	local tbl = LTBL(context.User)
+	PrintInfo(tostring(tbl))
+	if tbl ~= nil and tbl.Mission ~= nil then
+		--local mission = SV.TakenBoard[tonumber(tbl.Mission)]
+		SOUND:PlayFanfare("Fanfare/Note")
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("You've reached a destination floor!")
+	end
 end
 
 
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
-  SOUND:PlayBGM("C07. Outlaw.ogg", false)
-  UI:ResetSpeaker()
-  UI:WaitShowDialogue("Wanted outlaw spotted!")
+  local tbl = LTBL(context.User)
+  local mission = SV.TakenBoard[tonumber(tbl.Mission)]
+	if mission ~= nil then
+		SOUND:PlayBGM("C07. Outlaw.ogg", false)
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Wanted outlaw spotted!")
   
-  -- add a map status for outlaw clear check
-  local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
-  local status = RogueEssence.Dungeon.MapStatus(checkClearStatus)
-  status:LoadFromData()
-  TASK:WaitTask(_DUNGEON:AddMapStatus(status))
+		-- add a map status for outlaw clear check
+		local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
+		local status = RogueEssence.Dungeon.MapStatus(checkClearStatus)
+		status:LoadFromData()
+		TASK:WaitTask(_DUNGEON:AddMapStatus(status))
+	end
 end
 
 function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
@@ -177,7 +186,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   remaining_outlaw = false
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-    if mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
+    if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
 	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID == mission.Floor then
 	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(name))
       if found_outlaw then

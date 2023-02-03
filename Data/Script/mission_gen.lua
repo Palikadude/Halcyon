@@ -1,6 +1,5 @@
 require 'common'
 
-SV.ChapterProgression.Chapter = 3
 
 --Halcyon Custom work:
 --Code in this folder is used to generate, display, and handle randomized missions
