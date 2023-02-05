@@ -108,82 +108,52 @@ function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 		UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
+		GAME:WaitFrames(20)
 		-- warp out
 		TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
 		_DUNGEON:RemoveChar(context.Target)
-
-		local state = 0
-
-		while state > -1 do
-			if state == 0 then
-				UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", false)
-				UI:WaitForChoice()
-				local leave_dungeon = UI:ChoiceResult()
-				if leave_dungeon then 
-					UI:ChoiceMenuYesNo("Do you really want to leave?", true)
-					UI:WaitForChoice()
-					local leave_confirm = UI:ChoiceResult()
-					if leave_confirm then 
-						state = -1
-						local player_count = GAME:GetPlayerPartyCount()
-						local guest_count = GAME:GetPlayerGuestCount()
-						for i = 0, player_count - 1, 1 do 
-							local player = GAME:GetPlayerPartyMember(i)
-							GAME:WaitFrames(60)
-							TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
-						end
-
-						for i = 0, guest_count - 1, 1 do 
-							local guest = GAME:GetPlayerGuestMember(i)
-							GAME:WaitFrames(60)
-							TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
-							--_DUNGEON:RemoveChar(guest)
-
-						end
-						
-						_DUNGEON.PendingLeaderAction = _GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Cleared)
-						
-					end
-				else
-					UI:ChoiceMenuYesNo("You want to continue exploring?", true)
-					UI:WaitForChoice()
-					local continue_exploring = UI:ChoiceResult()
-					if continue_exploring then 
-						state = -1
-					end
-				end
-			end
-		end
+		GAME:WaitFrames(50)
+		GeneralFunctions.AskMissionWarpOut()
 	end
-
 end
 
 
 function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
-  
+
+  --Mark this as the last dungeon entered.
   local tbl = LTBL(context.Target)
-  local escort = COMMON.FindMissionEscort(tbl.Mission)
-  
-  if escort then
-    
-    local mission = SV.TakenBoard[tbl.Mission]
-    mission.Completion = 1
-  
-    local oldDir = context.Target.CharDir
-    DUNGEON:CharTurnToChar(context.Target, context.User)
-  
-    UI:SetSpeaker(context.Target)
-    UI:WaitShowDialogue("Yay, you brought the escort to me!")
-  
-    -- warp out
-    TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
-    _DUNGEON:RemoveChar(escort)
-	
-    TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
-    _DUNGEON:RemoveChar(context.Target)
-  
-    UI:ResetSpeaker()
-    UI:WaitShowDialogue("Mission status set to complete. Return to quest giver for reward.")
+	if tbl ~= nil and tbl.Mission ~= nil then
+		local mission = SV.TakenBoard[tonumber(tbl.Mission)]
+		local escort = COMMON.FindMissionEscort(tonumber(tbl.Mission))
+		local escortName = _DATA:GetMonster(mission.Client):GetColoredName()
+		if escort then
+			local oldDir = context.Target.CharDir
+			DUNGEON:CharTurnToChar(context.Target, context.User)
+			UI:ResetSpeaker()
+			if math.abs(escort.CharLoc:Dist8() - context.Target.CharLoc:Dist8()) <= 4 then
+				--mission.Completion = 1
+				UI:WaitShowDialogue("Yes! You completed " .. escortName .. "'s escort mission.\n" .. escortName .. " is delighted!")
+				
+				
+				UI:SetSpeaker(escort)
+				UI:WaitShowDialogue("Thank you for escorting me to " .. _DATA:GetMonster(context.Target.CurrentForm.Species):GetColoredName() .. "!")
+				UI:ResetSpeaker()
+				UI:WaitShowDialogue(escortName .. "'s twosome left the dungeon!")
+				
+				
+				-- warp out
+				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
+				_DUNGEON:RemoveChar(escort)
+				GAME:WaitFrames(10)
+				TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
+				_DUNGEON:RemoveChar(context.Target)
+				
+				GAME:WaitFrames(50)
+				GeneralFunctions.AskMissionWarpOut()
+			else
+				UI:WaitShowDialogue(escortName .. " doesn't seem to be around...")
+			end
+		end
   end
 end
 

@@ -8,7 +8,13 @@ local crooked_cavern = {}
 function crooked_cavern.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_crooked_cavern")
-  
+
+	--GAME:RemovePlayerGuest(0)
+	--GAME:RemovePlayerGuest(0)
+	--local guestCount = GAME:GetPlayerGuestCount()
+	--for i = 1, guestCount, 1 do 
+	--	local g = GAME:RemovePlayerGuest(i-1)
+	--end
   --Mark this as the last dungeon entered.
   SV.TemporaryFlags.LastDungeonEntered = 57
 

@@ -1023,34 +1023,34 @@ end
 function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
   for name, mission in pairs(SV.TakenBoard) do
     
-  PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
-	  if mission.Type == 1 then -- escort
-		
-		-- add escort to team
-		local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
-    local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.85)
+    PrintInfo("Checking Mission: "..tostring(name))
+    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
+      if mission.Type == 1 then -- escort
+        -- add escort to team
+        local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
+        local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.85)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
-		
-		-- place in a legal position on map
-		local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
+        -- place in a legal position on map
+        local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
         local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
-		if dest.HasValue then
-		  endLoc = dest
-		end
+
+        PrintInfo(tostring(dest) .. "DEST VALUE")
+        --if dest.HasValue then
+          endLoc = dest
+        --end
+
         new_mob.CharLoc = endLoc
-		
-		local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
-        new_mob.ActionEvents:Add(talk_evt)
-		
-		local tbl = LTBL(new_mob)
-		tbl.Escort = name
-	    
+        
+        local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
+            new_mob.ActionEvents:Add(talk_evt)
+        
+        local tbl = LTBL(new_mob)
+        tbl.Escort = name         
         UI:ResetSpeaker()
         UI:WaitShowDialogue("Added ".. new_mob.Name .." to the party as a guest.")
-	  end
-	end
+      end
+    end
   end
 end
 
@@ -1058,15 +1058,15 @@ end
 function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
   for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
-	  if mission.Type == 1 then -- escort
-	    -- remove the escort from the party
-		local escort = COMMON.FindMissionEscort(name)
-		if escort then
-		  _DUNGEON:RemoveChar(escort)
-		end
-	  end
-	end
+    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
+      if mission.Type == 1 then -- escort
+          -- remove the escort from the party
+        local escort = COMMON.FindMissionEscort(name)
+        if escort then
+          _DUNGEON:RemoveChar(escort)
+        end
+      end
+    end
   end
 end
 
@@ -1078,12 +1078,12 @@ function COMMON.FindMissionEscort(missionId)
   local party = GAME:GetPlayerGuestTable()
   for i, p in ipairs(party) do
     local e_tbl = LTBL(p)
-	PrintInfo("Escort: "..e_tbl.Escort)
-	if e_tbl.Escort == missionId then
-	  escort = p
-	  break
-	end
+    if e_tbl.Escort == missionId then
+      escort = p
+      break
+    end
   end
+  PrintInfo("Escort Name; " .. tostring(escort))
   return escort
 end
 

@@ -155,7 +155,6 @@ end
 
 function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 	local tbl = LTBL(context.User)
-	PrintInfo(tostring(tbl))
 	if tbl ~= nil and tbl.Mission ~= nil then
 		--local mission = SV.TakenBoard[tonumber(tbl.Mission)]
 		SOUND:PlayFanfare("Fanfare/Note")
@@ -167,8 +166,7 @@ end
 
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
   local tbl = LTBL(context.User)
-  local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-	if mission ~= nil then
+	if tbl ~= nil and tbl.Mission then
 		SOUND:PlayBGM("C07. Outlaw.ogg", false)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Wanted outlaw spotted!")
@@ -183,34 +181,49 @@ end
 
 function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
-  remaining_outlaw = false
+  local remaining_outlaw = false
+	local outlawName = ""
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
-	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID == mission.Floor then
+	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID + 1 == mission.Floor then
 	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(name))
       if found_outlaw then
-	    remaining_outlaw = true
-	  else
-	    -- if no outlaws of the mission list, mark quest as complete
-		mission.Completion = 1
-		UI:ResetSpeaker()
-        UI:WaitShowDialogue("Mission status set to complete. Return to quest giver for reward.")
-	  end
+	    	remaining_outlaw = true
+	  	else
+				outlawName = _DATA:GetMonster(mission.Target):GetColoredName()
+	   	  -- if no outlaws of the mission list, mark quest as complete
+				--mission.Completion = 1
+
+	  	end
     end
   end
   if not remaining_outlaw then
     -- if no outlaws are found in the map, return music to normal and remove this status from the map
     SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
     local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
-	TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
+		TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
+		GAME:WaitFrames(30)
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlawName .. "!")
+		GeneralFunctions.AskMissionWarpOut()
   end
 end
 
 
 
 
-
+function SINGLE_CHAR_SCRIPT.MissionGuestCheck(owner, ownerChar, context, args)
+	local tbl = LTBL(context.User)
+	if tbl ~= nil and tbl.Escort ~= nil then
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Oh no! " ..  context.User:GetDisplayName(true) .. " fainted!")
+		GAME:WaitFrames(40)
+		GeneralFunctions.WarpOut()
+		GAME:WaitFrames(80)
+		TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))
+	end
+end
 
 
 --custom Halcyon SINGLE_CHAR_SCRIPT scripts

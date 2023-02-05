@@ -43,8 +43,7 @@ end
 ---testmap.Enter
 --Engine callback function
 function testmap.Enter(map, time)
-
-
+	SOUND:PlayBGM('B12. Sickly Hollow.ogg', false)
 end
 
 ---testmap.Update

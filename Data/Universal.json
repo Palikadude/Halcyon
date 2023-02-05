@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.6.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ActiveEffect, RogueEssence",
 "UniversalStates": [
@@ -684,6 +684,18 @@
 "Value": {
 "$type": "PMDC.Dungeon.ImpostorReviveEvent, PMDC",
 "AbilityID": "imposter"
+}
+},
+{
+"Key": {
+"str": [
+9
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "MissionGuestCheck",
+"ArgTable": "{}"
 }
 },
 {

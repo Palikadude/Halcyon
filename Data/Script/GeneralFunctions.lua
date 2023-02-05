@@ -1142,6 +1142,60 @@ function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turndurat
 	end
 end
 
+--called whenever to warp the party out, including guests
+function GeneralFunctions.WarpOut()
+	local player_count = GAME:GetPlayerPartyCount()
+	local guest_count = GAME:GetPlayerGuestCount()
+	for i = 0, player_count - 1, 1 do 
+		local player = GAME:GetPlayerPartyMember(i)
+		if not player.Dead then
+			GAME:WaitFrames(60)
+			TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
+		end
+	end
+
+	for i = 0, guest_count - 1, 1 do
+		local guest = GAME:GetPlayerGuestMember(i)
+		if not guest.Dead then
+			GAME:WaitFrames(60)
+			TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
+			--_DUNGEON:RemoveChar(guest)
+		end
+	end
+end
+
+--called whenever a mission is completed
+function GeneralFunctions.AskMissionWarpOut()
+	local state = 0
+	while state > -1 do
+		if state == 0 then
+			UI:ResetSpeaker()
+			UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", false)
+			UI:WaitForChoice()
+			local leave_dungeon = UI:ChoiceResult()
+			if leave_dungeon then
+				UI:ChoiceMenuYesNo("Do you really want to leave?", true)
+				UI:WaitForChoice()
+				local leave_confirm = UI:ChoiceResult()
+				if leave_confirm then
+					state = -1
+					GAME:WaitFrames(40)
+					GeneralFunctions.WarpOut()
+					GAME:WaitFrames(80)
+					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Cleared))
+				end
+			else
+				UI:ChoiceMenuYesNo("You want to continue exploring?", true)
+				UI:WaitForChoice()
+				local continue_exploring = UI:ChoiceResult()
+				if continue_exploring then
+					state = -1
+				end
+			end
+		end
+	end
+end
+
 --debug function used to print plot variables
 function GeneralFunctions.PrintPlotVariables()
 	print("Chapter = " .. tostring(SV.ChapterProgression.Chapter))

@@ -18,13 +18,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
   -- choose a the floor to spawn it on
   local destinationFloor = false
   local outlawFloor = false
-  PrintInfo("EVENT_MAPGEN.lua==========================")
   for name, mission in pairs(SV.TakenBoard) do
-    PrintInfo("FLOOR: " .. zoneContext.CurrentID .. "|" .. mission.Floor)
-    PrintInfo("A: " .. tostring(mission.Completion == COMMON.MISSION_INCOMPLETE))
-    PrintInfo("B: " .. tostring(zoneContext.CurrentZone == mission.Zone))
-    PrintInfo("C: " .. tostring(zoneContext.CurrentSegment == mission.Segment))
-    PrintInfo("D: " .. tostring(zoneContext.CurrentID == mission.Floor))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.Zone
 	  and zoneContext.CurrentSegment == mission.Segment and zoneContext.CurrentID + 1 == mission.Floor then
       PrintInfo("Spawning Mission Goal")
