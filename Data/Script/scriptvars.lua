@@ -550,6 +550,7 @@ SV.Chapter3 =
 	LostToBoss = false,--did duo die to boss?
 	EscapedBoss = false,--due team use an escape orb to escape boss?
 	DefeatedBoss = false, --did duo defeat team style?
+	RootSceneTransition = false, --Used to remember where in the root scene we are after transitioning away to show the root 
 	FinishedRootScene = false, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
 
 	TropiusGaveWand = false,--did tropius give some wands to help the duo?

@@ -3,10 +3,11 @@ guild_heros_room_helper = {}
 ------------------------------------
 --Special Functions
 ------------------------------------
-function guild_heros_room_helper.Bedtime(generic)
+function guild_heros_room_helper.Bedtime(generic, continueSong)
 --if generic is true, do a generic nighttime cutscene and relevant processing. 
 --if generic is false, just make the room look like it's night and put the duo in bed.
 	if generic == nil then generic = false end
+	if continueSong == nil then continueSong = false end
 	
 	local groundObj = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
 													RogueElements.Rect(176, 56, 64, 64),
@@ -16,7 +17,7 @@ function guild_heros_room_helper.Bedtime(generic)
 	groundObj:ReloadEvents()
 	GAME:GetCurrentGround():AddTempObject(groundObj)
 	GROUND:AddMapStatus("darkness")
-	SOUND:StopBGM()--cut bgm so it doesn't kick in until we want it to
+	if not continueSong then SOUND:StopBGM() end--cut bgm so it doesn't kick in until we want it to, unless we want the previous track to continue on
 	AI:DisableCharacterAI(CH('Teammate1'))
 
 	local hero_bed = MRKR('Hero_Bed')

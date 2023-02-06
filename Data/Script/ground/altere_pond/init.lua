@@ -37,7 +37,7 @@ end
 
 ---altere_pond.Enter
 --Engine callback function
-function altere_pond.Enter(map)
+function altere_pond.PlotScripting()
 
 	if SV.ChapterProgression.Chapter == 1 then 
 		if not SV.Chapter1.PartnerEnteredForest and not SV.Chapter1.PartnerMetHero then
@@ -52,6 +52,19 @@ function altere_pond.Enter(map)
 	else
 		GAME:FadeIn(20)
 	end
+end
+
+function altere_pond.Enter(map)
+	altere_pond.PlotScripting()
+end
+
+function altere_pond.GameLoad(map)
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	altere_pond.PlotScripting()
+end
+
+function altere_pond.GameSave(map)
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 end
 
 ---altere_pond.Exit

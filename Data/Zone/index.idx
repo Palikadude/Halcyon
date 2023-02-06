@@ -38,7 +38,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 5,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Beginner Lesson",
@@ -80,7 +80,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 5,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Fire Maze",
@@ -101,7 +101,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 5,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Grass Maze",
@@ -167,7 +167,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 5,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Normal Maze",
@@ -209,7 +209,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 5,
 "Rogue": 0,
 "Name": {
 "DefaultText": "Water Maze",

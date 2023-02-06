@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -447,7 +447,7 @@
 }
 }
 ],
-"IsRelevant": false
+"IsRelevant": true
 }
 ],
 "GroundMaps": []

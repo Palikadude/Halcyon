@@ -17,7 +17,7 @@ function metano_grass_home_ch_3.SetupGround()
 end
 
 function metano_grass_home_ch_3.Vileplume_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "The world may a dangerous place,[pause=10] but at least there are adventurers out there that help those in trouble.", "Worried")
+	GeneralFunctions.StartConversation(chara, "The world may be a dangerous place,[pause=10] but at least there are adventurers out there that help those in trouble.", "Worried")
 	UI:WaitShowDialogue("...Still,[pause=10] I wonder if they'll be enough to tackle all the problems the future holds...")
 	GeneralFunctions.EndConversation(chara)
 end 

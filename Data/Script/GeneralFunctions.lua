@@ -1142,6 +1142,7 @@ function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turndurat
 	end
 end
 
+
 --called whenever to warp the party out, including guests
 function GeneralFunctions.WarpOut()
 	local player_count = GAME:GetPlayerPartyCount()
@@ -1195,6 +1196,24 @@ function GeneralFunctions.AskMissionWarpOut()
 		end
 	end
 end
+
+--does a double flash like in a boss transition
+function GeneralFunctions.DoubleFlash(sound)
+    local center = GAME:GetCameraCenter()
+    local emitter = RogueEssence.Content.FlashEmitter()
+    emitter.FadeInTime = 2
+    emitter.HoldTime = 2
+    emitter.FadeOutTime = 2
+    emitter.StartColor = Color(0, 0, 0, 0)
+    emitter.Layer = DrawLayer.Top
+    emitter.Anim = RogueEssence.Content.BGAnimData("White", 0)
+    GROUND:PlayVFX(emitter, center.X, center.Y)
+    if sound then SOUND:PlayBattleSE("EVT_Battle_Flash") end
+    GAME:WaitFrames(16)
+    GROUND:PlayVFX(emitter, center.X, center.Y)
+    if sound then SOUND:PlayBattleSE("EVT_Battle_Flash") end
+end
+
 
 --debug function used to print plot variables
 function GeneralFunctions.PrintPlotVariables()

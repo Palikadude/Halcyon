@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -17,7 +17,7 @@
 "Released": true,
 "Comment": "",
 "Sprite": "Band_Gray",
-"Icon": -1,
+"Icon": 14,
 "SortCategory": 0,
 "Price": 600,
 "Rarity": 0,
@@ -126,6 +126,7 @@
 },
 "UsageType": 0,
 "ArcThrow": false,
+"BreakOnThrow": false,
 "ThrowAnim": {
 "AnimIndex": "",
 "FrameTime": 1,

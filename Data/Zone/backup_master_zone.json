@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -947,6 +947,7 @@
 "personality_test",
 "crooked_cavern_entrance",
 "crooked_den",
+"first_core_location",
 "testmap",
 "test_grounds"
 ]
