@@ -8,6 +8,10 @@ require 'common'
 require 'PartnerEssentials'
 require 'mission_gen'
 
+SV.ChapterProgression.Chapter = 3
+GAME:UnlockDungeon("crooked_cavern")
+GAME:UnlockDungeon("illuminant_riverbed")
+
 -- Package name
 local testmap = {}
 
@@ -39,7 +43,6 @@ end
 ---testmap.Enter
 --Engine callback function
 function testmap.Enter(map, time)
-
 
 end
 

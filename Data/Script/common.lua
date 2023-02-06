@@ -3,6 +3,7 @@
     A collection of frequently used functions and values!
 ]]--
 require 'common_gen'
+require 'menu/member_return'
 
 ----------------------------------------
 -- Debugging
@@ -642,8 +643,25 @@ function COMMON.UnlockWithFanfare(dungeon_id)
 
 end
 
-
-
+function COMMON.FindNpcWithTable(foes, key, value)
+  local team_list = _ZONE.CurrentMap.AllyTeams
+  if foes then
+    team_list = _ZONE.CurrentMap.MapTeams
+  end
+  local team_count = team_list.Count
+  for team_idx = 0, team_count-1, 1 do
+	-- search for a wild mon with the table value
+	local player_count = team_list[team_idx].Players.Count
+	for player_idx = 0, player_count-1, 1 do
+	  player = team_list[team_idx].Players[player_idx]
+	  local player_tbl = LTBL(player)
+	  if player_tbl[key] == value then
+		return player
+	  end
+	end
+  end
+  return nil
+end
 
 function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   action_cancel.Cancel = true
@@ -1004,50 +1022,78 @@ function COMMON.BeginDungeon(zoneId, segmentID, mapId)
 end
 
 function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
-  for name, mission in pairs(SV.test_grounds.Missions) do
+  SOUND:StopBGM()
+  for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
-	  if mission.Type == 1 then -- escort
-		
-		-- add escort to team
-		local mon_id = RogueEssence.Dungeon.MonsterID(mission.EscortSpecies, 0, "normal", Gender.Male)
-        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", -1)
+    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
+      if mission.Type == 1 then -- escort
+        -- add escort to team
+        local player_count = GAME:GetPlayerPartyCount()
+        local guest_count = GAME:GetPlayerGuestCount()
+        if player_count + guest_count >= 4 then
+          local state = 0
+          while state > -1 do
+            UI:WaitShowDialogue("Have one of your team members return to the guild to make room for your client, " .. _DATA:GetMonster(mission.Client):GetColoredName() .. ".")
+            local MemberReturnMenu = CreateMemberReturnMenu()
+            local menu = MemberReturnMenu:new()
+            UI:SetCustomMenu(menu.menu)
+            UI:WaitForChoice()
+            local member = menu.members[menu.current_item]
+            UI:ChoiceMenuYesNo("Send " .. member:GetDisplayName(true) .. " back to the guild?", false)
+            UI:WaitForChoice()
+
+            local send_home = UI:ChoiceResult()
+            if send_home then 
+              local slot = menu.slots[menu.current_item]
+              GAME:AddPlayerAssembly(member);
+              GAME:RemovePlayerTeam(slot)
+              state = -1
+            end
+          end
+          --GAME:FadeIn(60)
+        end
+
+        local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
+        -- set the escort level 20% less than the expected level
+        local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.80)
+        local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
-		
-		-- place in a legal position on map
-		local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
+        -- place in a legal position on map
+        local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
         local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
-		if dest.HasValue then
-		  endLoc = dest
-		end
+
+        --if dest.HasValue then
+          endLoc = dest
+        --end
+
         new_mob.CharLoc = endLoc
-		
-		local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
-        new_mob.ActionEvents:Add(talk_evt)
-		
-		local tbl = LTBL(new_mob)
-		tbl.Escort = name
-	    
+        
+        local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
+            new_mob.ActionEvents:Add(talk_evt)
+        
+        local tbl = LTBL(new_mob)
+        tbl.Escort = name         
         UI:ResetSpeaker()
         UI:WaitShowDialogue("Added ".. new_mob.Name .." to the party as a guest.")
-	  end
-	end
+      end
+    end
   end
+  SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 end
 
 
 function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
-  for name, mission in pairs(SV.test_grounds.Missions) do
+  for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-	if mission.Complete == 0 and zoneId == mission.DestZone and segmentID == mission.DestSegment then
-	  if mission.Type == 1 then -- escort
-	    -- remove the escort from the party
-		local escort = COMMON.FindMissionEscort(name)
-		if escort then
-		  _DUNGEON:RemoveChar(escort)
-		end
-	  end
-	end
+    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
+      if mission.Type == 1 then -- escort
+          -- remove the escort from the party
+        local escort = COMMON.FindMissionEscort(name)
+        if escort then
+          _DUNGEON:RemoveChar(escort)
+        end
+      end
+    end
   end
 end
 
@@ -1059,12 +1105,12 @@ function COMMON.FindMissionEscort(missionId)
   local party = GAME:GetPlayerGuestTable()
   for i, p in ipairs(party) do
     local e_tbl = LTBL(p)
-	PrintInfo("Escort: "..e_tbl.Escort)
-	if e_tbl.Escort == missionId then
-	  escort = p
-	  break
-	end
+    if e_tbl.Escort == missionId then
+      escort = p
+      break
+    end
   end
+  PrintInfo("Escort Name; " .. tostring(escort))
   return escort
 end
 

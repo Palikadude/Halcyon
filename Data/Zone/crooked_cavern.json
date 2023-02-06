@@ -2024,6 +2024,11 @@
 "SpecificSpawns": []
 },
 {
+"$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
+"Script": "SpawnMissionNpcFromSV",
+"ArgTable": "{}"
+},
+{
 "$type": "RogueEssence.LevelGen.TileSpawnZoneStep, RogueEssence",
 "Priority": {
 "str": [

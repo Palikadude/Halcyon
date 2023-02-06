@@ -8,10 +8,22 @@ local crooked_cavern = {}
 function crooked_cavern.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_crooked_cavern")
-  
+
+	--GAME:RemovePlayerGuest(0)
+	--GAME:RemovePlayerGuest(0)
+	--local guestCount = GAME:GetPlayerGuestCount()
+	--for i = 1, guestCount, 1 do 
+	--	local g = GAME:RemovePlayerGuest(i-1)
+	--end
   --Mark this as the last dungeon entered.
   SV.TemporaryFlags.LastDungeonEntered = 57
 
+end
+
+function crooked_cavern.EnterSegment(zone, rescuing, segmentID, mapID)
+	if rescuing ~= true then
+		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
+	end
 end
 
 function crooked_cavern.Rescued(zone, mail)
@@ -39,6 +51,7 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 				Rescue
 			}
 			]]--
+		COMMON.ExitDungeonMissionCheck(zone.ID, segmentID)
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 
 			GAME:WaitFrames(20)
