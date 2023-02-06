@@ -187,13 +187,26 @@ function testmap.Test_Core_Deactivation_Action(chara, activator)
 	core:ReloadEvents()
 	GAME:GetCurrentGround():AddTempObject(core)
 	
+	--setup darkness
+	--It'll fade in for 200 frames, last 0 frames, and fade out in 0 frames. It'll transition to the darkness map status though at 200 frames.
+	local overlay = RogueEssence.Content.FiniteOverlayEmitter()
+    overlay.TotalTime = 0;
+	overlay.FadeIn = 200;
+	overlay.FadeOut = 0;
+	overlay.Layer = DrawLayer.Top;
+	overlay.Anim = RogueEssence.Content.BGAnimData("White", 0)
+	overlay.Color = Color(0, 0, 0, 76/255)
+	
 	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root', 10, 0, 15, Direction.Down)
 	GROUND:ObjectSetDefaultAnim(core, 'Anima_Core', 10, 0, 31, Direction.Down)
 
 	SOUND:LoopBattleSE('_UNK_EVT_106')
-	GAME:WaitFrames(180)
+	GROUND:ObjectWaitAnimFrame(core, 0)
+	GROUND:ObjectWaitAnimFrame(core, 25)
+	print("shart")
 	SOUND:FadeOutBattleSE('_UNK_EVT_106', 60)
-	GAME:WaitFrames(60)
+	GROUND:ObjectWaitAnimFrame(core, 0)
+	print("Shart")
 	
 	SOUND:PlayBattleSE('EVT_EP_Nightmare_Break')
 	GROUND:ObjectSetDefaultAnim(core, 'Core_Deactivation', 0, 0, 0, Direction.Down)
@@ -201,20 +214,33 @@ function testmap.Test_Core_Deactivation_Action(chara, activator)
 	GROUND:ObjectSetAnim(core, 10, 0, 11, Direction.Down, 1)
 	GROUND:ObjectSetDefaultAnim(core, 'Core_Deactivation', 0, 11, 11, Direction.Down)
 	
-	GAME:WaitFrames(210)
+	GROUND:ObjectWaitAnimFrame(core, 11)
+	GAME:WaitFrames(40)
 	
+	--move core slowly down after deactivating
+	for i = 1, 10, 1 do
+		GROUND:MoveObjectToPosition(core, core.Position.X, core.Position.Y + 1, 1)
+		GAME:WaitFrames(8)
+	end
+	
+	GROUND:ObjectWaitAnimFrame(root, 0)
+	
+	GROUND:PlayVFX(overlay, CH('PLAYER').Position.X, CH('PLAYER').Position.Y)
 	SOUND:PlayBattleSE("_UNK_EVT_079")
 	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root_Turnoff', 0, 0, 0, Direction.Down)
 
-	GROUND:ObjectSetAnim(root, 40, 0, 7, Direction.Down, 1)
-	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root_Turnoff', 0, 7, 7, Direction.Down)
+	GROUND:ObjectSetAnim(root, 40, 0, 5, Direction.Down, 1)
+	GROUND:ObjectSetDefaultAnim(root, 'Anima_Root_Turnoff', 0, 5, 5, Direction.Down)
 	
-	GAME:WaitFrames(360)
+	GAME:WaitFrames(200)
+	GROUND:AddMapStatus("darkness")
+	GAME:WaitFrames(180)
 	GAME:GetCurrentGround():RemoveTempObject(root)
 	GAME:GetCurrentGround():RemoveTempObject(core)
 	GAME:MoveCamera(0, 0, 1, true)
 	GAME:CutsceneMode(false)
 	SOUND:PlayBGM('Deep Dark Crater.ogg', true)
+	GROUND:RemoveMapStatus("darkness")
 	GAME:GetCurrentGround():RemoveTempObject(groundObj)
 end
 	

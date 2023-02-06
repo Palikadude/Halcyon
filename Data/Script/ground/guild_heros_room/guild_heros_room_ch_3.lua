@@ -30,8 +30,8 @@ function guild_heros_room_ch_3.FirstMorning()
 
 end
 
-
-function guild_heros_room_ch_3.PostOutlawBedtalk()
+--The scene before previewing the root
+function guild_heros_room_ch_3.PostOutlawBedtalkFirstHalf()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
@@ -56,7 +56,8 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	UI:WaitShowDialogue("I was expecting a showdown with a dangerous criminal!")
 	UI:WaitShowDialogue("But it turned out he wasn't such a bad guy...[pause=0] Just someone who made a poor choice.")
 	UI:WaitShowDialogue("I know it was our job,[pause=10] and I know he stole that scarf he was wearing...")
-	UI:WaitShowDialogue("But I can't help but feel awful about arresting him.[pause=0] Doing our job was probably the right thing to do,[pause=10] but...")
+	UI:WaitShowDialogue("But I can't help but feel awful about arresting him.")
+	UI:WaitShowDialogue("Doing our job was probably the right thing to do,[pause=10] but...")
 	
 	GAME:WaitFrames(20)
 	--GeneralFunctions.StartTremble(partner)
@@ -72,7 +73,7 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	GeneralFunctions.ShakeHead(partner, 4)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion("Worried")
+	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("...I don't really wanna think about it anymore tonight.[pause=0] Let's just get some sleep.")
 	
 	GAME:WaitFrames(40)
@@ -99,34 +100,42 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	UI:WaitShowDialogue("Being so old,[pause=10] he knows a lot of the history of the world,[pause=10] as well as plenty of myths and legends.")
 	UI:WaitShowDialogue("If he caught me trying to sneak into " .. zone:GetColoredName() .. ",[pause=10] sometimes he'd tell me one of them.")
 	UI:WaitShowDialogue("...After yelling at me for trying to sneak into the forest,[pause=10] that is...")
-	UI:WaitShowDialogue("Anyways,[pause=10] one time he told me about the legend of the Anima Roots.[pause=0] That story's my favorite!")
+	UI:WaitShowDialogue("Anyways,[pause=10] one time he told me about the legend of the Anima Cores.[pause=0] That story's my favorite!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker('', false, "", -1, "", RogueEssence.Data.Gender.Unknown)
-	UI:WaitShowDialogue("(Huh?[pause=0] Anima Roots?)")
+	UI:WaitShowDialogue("(Huh?[pause=0] Anima Cores?)")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
-	SOUND:PlayBGM('Time Gear Remix.ogg', true)
-	UI:WaitShowDialogue("Anima Roots are mystical,[pause=10] living fragments of something greater that exist in hidden places.")
-	UI:WaitShowDialogue("Nobody really knows where they are,[pause=10] but " .. CharacterEssentials.GetCharacterName("Relicanth") ..  " says they could be in all sorts of places.")
-	UI:WaitShowDialogue("They could be in a dangerous volcano...[pause=0] In a ruined,[pause=10] ancient city lost to time...")
-	UI:WaitShowDialogue("...Or they could be in a place as regular as a forest.")
-	
+	SOUND:PlayBGM('Time Gear Remix.ogg', false)
+	UI:WaitShowDialogue("Anima Cores are mystical,[pause=10] living fragments of something greater that exist in hidden places.")
+	--cut here to a preview of the root
 	GAME:WaitFrames(20)
-	UI:WaitShowDialogue("Wherever they are in the world,[pause=10] they each serve a very important purpose.")
-	UI:WaitShowDialogue("According to " .. CharacterEssentials.GetCharacterName("Relicanth") .. ",[pause=10] Anima Roots are what allow a region of the world to sustain life.")
-	UI:WaitShowDialogue("If something was to destroy a region's Anima Root...")
-	UI:WaitShowDialogue("Well,[pause=10] " ..  CharacterEssentials.GetCharacterName("Relicanth") .. " didn't seem too sure what would happen.")
-	UI:WaitShowDialogue("But if I had to guess,[pause=10] that region would probably lose its ability to sustain life properly.")
-	UI:WaitShowDialogue("It would be an absolute disaster if something ever happened to one of them.")
+	GAME:FadeOut(false, 40)
+	GAME:EnterGroundMap('first_core_location', 'Main_Entrance_Marker', true)
+end 
 
+
+--After previewing root
+function guild_heros_room_ch_3.PostOutlawBedtalkSecondHalf()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GAME:CutsceneMode(true)
+	guild_heros_room_helper.Bedtime(false, true)
+	--SOUND:PlayBGM('Time Gear Remix.ogg', false)
+	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
+	GROUND:CharSetAnim(partner, "Laying", true)
+	GROUND:CharSetAnim(hero, "Laying", true)
+	GAME:FadeIn(40)
+
+	
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("At least,[pause=10] that's how the legend goes.[pause=0] It's hard to tell whether " ..  CharacterEssentials.GetCharacterName("Relicanth") .. "'s stories are fact or fiction...")
 	UI:WaitShowDialogue("But I certainly hope they're true![pause=0] Stories like this are part of the reason I became an adventurer!")
 	UI:WaitShowDialogue("Just thinking about mythical things like this gets me so excited!")
 	UI:WaitShowDialogue("One day I hope we're able to discover if these stories are true!")
-	UI:WaitShowDialogue("If they are,[pause=10] we should do everything we can to protect the Anima Roots so nothing bad happens to them.")
+	UI:WaitShowDialogue("If they are,[pause=10] we should do everything we can to protect the Anima Cores so nothing bad happens to them.")
 	
 	GAME:WaitFrames(20)
 	SOUND:FadeOutBGM(60)
@@ -147,42 +156,9 @@ function guild_heros_room_ch_3.PostOutlawBedtalk()
 	SOUND:FadeOutBGM(120)
 	GAME:FadeOut(false, 120)
 	GAME:CutsceneMode(false)
-	GAME:WaitFrames(60)
-	
-	UI:ResetSpeaker()
-	UI:WaitShowDialogue("That's the end of the demo! Thank you so much for playing.")
-	UI:WaitShowDialogue("I worked so very hard on this project over the last couple of years...")
-	UI:WaitShowDialogue("...So it means a lot that you would play it!")
-	UI:WaitShowDialogue("Please let me know what you think! Writing, gameplay wise, anything!")
-	UI:WaitShowDialogue("Oh, and if you find any bugs, please let me know too.")
-	UI:WaitShowDialogue("Finishing this game is going to take a long time and a lot of work...")
-	UI:WaitShowDialogue("...So any help you can provide, no matter how small, is huge!")
-	UI:WaitShowDialogue("Big thanks as always to Audino for all the help he provides and for making PMDO.")
-	UI:WaitShowDialogue("Be sure to check the readme that came with Halcyon to see the rest of the credits!")
-	UI:WaitShowDialogue("I'm going to reset the chapter 3 flags now.")
-	UI:WaitShowDialogue("This will send you back to the start of chapter 3 plot-wise...")
-	UI:WaitShowDialogue("But you'll keep any items, levels, and that sort of thing that you've gained.")
-	UI:WaitShowDialogue("Alright. Resetting... Now!")
-	GAME:WaitFrames(60)
-	
-	SV.Chapter3 = 
-	{
-		ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
-		FinishedOutlawIntro = false,--did shuca and ganlon teach you about outlaws?
-		MetTeamStyle = false,--did you meet team style?
-		FinishedCafeCutscene = false,--did partner point out the cafe's open?
-		EnteredCavern = false,--did duo enter the dungeon?
-		FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
-		EncounteredBoss = false,--did duo find team style in the dungeon yet?
-		LostToBoss = false,--did duo die to boss?
-		EscapedBoss = false,--due team use an escape orb to escape boss?
-		DefeatedBoss = false, --did duo defeat team style?
-		FinishedRootScene = false, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
+	GAME:WaitFrames(120)
+		
+	GAME:EnterGroundMap('first_core_location', 'Main_Entrance_Marker')
 
-		TropiusGaveWand = false,--did tropius give some wands to help the duo?
-		BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?
-	}
-	
-	GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
 
 end 

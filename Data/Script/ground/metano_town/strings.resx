@@ -698,10 +698,10 @@
     <value>Allow me to open up your account...</value>
   </data>
   <data name="Bank_Stored_Money" xml:space="preserve">
-    <value>Yes,[pause=10] {0} \uE024...[pause=0] Come to me my shinies!</value>
+    <value>Yes,[pause=10] {0} \uE024...[pause=0] Come to me,[pause=10] my shinies!</value>
   </data>
   <data name="Bank_Withdrew_Money" xml:space="preserve">
-    <value>{0} \uE024 for you...[pause=0] Goodbye my precious shinies...</value>
+    <value>{0} \uE024 for you...[pause=0] Goodbye,[pause=10] my precious shinies...</value>
   </data>
   <data name="Bank_Canceled" xml:space="preserve">
     <value>No transaction then?[pause=0] Very well.</value>

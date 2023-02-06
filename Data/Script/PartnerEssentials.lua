@@ -748,7 +748,7 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		if not SV.Chapter3.EncounteredBoss then 
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 			UI:WaitShowDialogue("We should warm up in the dojo before going to " .. zone:GetColoredName() .. ".")
-			UI:WaitShowDialogue("We'll want to be ready for a fight since we're going after an outlaw and all.")
+			UI:WaitShowDialogue("We'll want to be ready for a fight since we're going after an outlaw.")
 		else
 			UI:WaitShowDialogue("Maybe we should train here a bit before we fight Team [color=#FFA5FF]Style[color] again.")
 			UI:WaitShowDialogue("I don't want to lose next time we face them!")

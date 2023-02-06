@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.5.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -2751,21 +2751,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
 "X": 56,
 "Y": 184,
-"Width": 8,
-"Height": 8
-},
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 56,
-"Y": 192,
 "Width": 8,
 "Height": 8
 },
@@ -2774,6 +2765,15 @@
 {
 "Bounds": {
 "X": 56,
+"Y": 192,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 56,
 "Y": 200,
 "Width": 8,
 "Height": 8
@@ -2796,21 +2796,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 56,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 56,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -2819,6 +2810,15 @@
 {
 "Bounds": {
 "X": 56,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 56,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -3158,21 +3158,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 64,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 64,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -3181,6 +3172,15 @@
 {
 "Bounds": {
 "X": 64,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 64,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -3520,21 +3520,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 72,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 72,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -3543,6 +3534,15 @@
 {
 "Bounds": {
 "X": 72,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 72,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -3882,21 +3882,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 80,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 80,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -3905,6 +3896,15 @@
 {
 "Bounds": {
 "X": 80,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 80,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -4244,21 +4244,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 88,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 88,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -4267,6 +4258,15 @@
 {
 "Bounds": {
 "X": 88,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 88,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -4561,21 +4561,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
 "X": 96,
 "Y": 184,
-"Width": 8,
-"Height": 8
-},
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 96,
-"Y": 192,
 "Width": 8,
 "Height": 8
 },
@@ -4584,6 +4575,15 @@
 {
 "Bounds": {
 "X": 96,
+"Y": 192,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 96,
 "Y": 200,
 "Width": 8,
 "Height": 8
@@ -4606,21 +4606,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 96,
-"Y": 224,
-"Width": 8,
-"Height": 8
-},
 "Tags": 0
 },
 {
 "Bounds": {
 "X": 96,
-"Y": 232,
+"Y": 224,
 "Width": 8,
 "Height": 8
 },
@@ -4629,6 +4620,15 @@
 {
 "Bounds": {
 "X": 96,
+"Y": 232,
+"Width": 8,
+"Height": 8
+},
+"Tags": 0
+},
+{
+"Bounds": {
+"X": 96,
 "Y": 240,
 "Width": 8,
 "Height": 8
@@ -6434,21 +6434,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
 "X": 136,
 "Y": 240,
-"Width": 8,
-"Height": 8
-},
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 136,
-"Y": 248,
 "Width": 8,
 "Height": 8
 },
@@ -6457,6 +6448,15 @@
 {
 "Bounds": {
 "X": 136,
+"Y": 248,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 136,
 "Y": 256,
 "Width": 8,
 "Height": 8
@@ -8244,21 +8244,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
 "X": 176,
 "Y": 240,
-"Width": 8,
-"Height": 8
-},
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 176,
-"Y": 248,
 "Width": 8,
 "Height": 8
 },
@@ -8267,6 +8258,15 @@
 {
 "Bounds": {
 "X": 176,
+"Y": 248,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 176,
 "Y": 256,
 "Width": 8,
 "Height": 8
@@ -9982,21 +9982,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
 "X": 216,
 "Y": 176,
-"Width": 8,
-"Height": 8
-},
-"Tags": 1
-},
-{
-"Bounds": {
-"X": 216,
-"Y": 184,
 "Width": 8,
 "Height": 8
 },
@@ -10005,6 +9996,15 @@
 {
 "Bounds": {
 "X": 216,
+"Y": 184,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 216,
 "Y": 192,
 "Width": 8,
 "Height": 8
@@ -11792,7 +11792,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -13276,7 +13276,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -15086,7 +15086,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -15394,7 +15394,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -17204,7 +17204,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {

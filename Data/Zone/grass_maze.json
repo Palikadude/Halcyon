@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -36,7 +36,8 @@
 "Music": "Marowak Dojo.ogg",
 "TimeLimit": 1500,
 "TileSight": 0,
-"CharSight": 0
+"CharSight": 0,
+"ClampCamera": false
 }
 },
 {
@@ -237,7 +238,6 @@
 },
 "ID": "stairs_go_up",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -268,7 +268,17 @@
 ]
 },
 "Value": {
-"$type": "RogueEssence.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Priority": {
+"str": [
+15
+]
+},
+"Respawn": {
+"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
+"MaxFoes": 8,
+"RespawnTime": 25
+},
 "MaxFoes": 8,
 "RespawnTime": 25
 }
@@ -372,7 +382,6 @@
 },
 "ID": "tile_wonder",
 "Revealed": true,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 },
@@ -577,7 +586,14 @@
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+},
+{
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -608,7 +624,14 @@
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+},
+{
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -639,7 +662,14 @@
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+},
+{
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -670,7 +700,14 @@
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+},
+{
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -714,7 +751,7 @@
 "Spawns": []
 }
 ],
-"IsRelevant": false
+"IsRelevant": true
 }
 ],
 "GroundMaps": []

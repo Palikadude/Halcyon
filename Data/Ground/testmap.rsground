@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.8.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -377631,88 +377631,6 @@
 "X": 371,
 "Y": 160,
 "Width": 24,
-"Height": 16
-}
-},
-{
-"EntName": "Active_Core",
-"Direction": 0,
-"EntEnabled": true,
-"triggerType": 0,
-"ObjectAnim": {
-"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
-"AnimIndex": "Anima_Core",
-"FrameTime": 10,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"Passable": false,
-"CurrentAnim": {
-"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
-"AnimIndex": "",
-"FrameTime": 1,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"AnimTime": {
-"Ticks": 0
-},
-"Cycles": 0,
-"DrawOffset": {
-"X": 0,
-"Y": 0
-},
-"Collider": {
-"X": 232,
-"Y": 905,
-"Width": 16,
-"Height": 16
-}
-},
-{
-"EntName": "Anima_Root",
-"Direction": 0,
-"EntEnabled": true,
-"triggerType": 0,
-"ObjectAnim": {
-"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
-"AnimIndex": "Anima_Root",
-"FrameTime": 10,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"Passable": false,
-"CurrentAnim": {
-"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
-"AnimIndex": "",
-"FrameTime": 1,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"AnimTime": {
-"Ticks": 0
-},
-"Cycles": 0,
-"DrawOffset": {
-"X": 0,
-"Y": 0
-},
-"Collider": {
-"X": 232,
-"Y": 904,
-"Width": 16,
 "Height": 16
 }
 },

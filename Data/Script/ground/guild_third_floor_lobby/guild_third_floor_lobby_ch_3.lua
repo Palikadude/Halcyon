@@ -222,7 +222,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	local coro12 = TASK:BranchCoroutine(function() GAME:WaitFrames(40)
 												   GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4)
 												   GROUND:CharSetEmote(noctowl, "happy", 0)
-												   UI:WaitShowTimedDialogue(mareep:GetDisplayName() .. "![pause=20] " .. cranidos:GetDisplayName() .. "![pause=20] Could you both come here a moment?", 40) end)
+												   UI:WaitShowTimedDialogue(mareep:GetDisplayName() .. "![pause=20] " .. cranidos:GetDisplayName() .. "![pause=20] Could you both come here a moment?", 60) end)
 												   
 												
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10, coro11, coro12})
@@ -328,7 +328,7 @@ function guild_third_floor_lobby_ch_3.FirstMorningAddress()
 	GROUND:CharTurnToCharAnimated(mareep, partner, 4)
 	GROUND:CharTurnToChar(partner, mareep)
 	GROUND:CharTurnToChar(hero, mareep)
-	UI:WaitShowDialogue("Come on you guys![pause=0] Let's get over to the Outlaw Notice Board!")
+	UI:WaitShowDialogue("Come on,[pause=10] you guys![pause=0] Let's get over to the Outlaw Notice Board!")
 	
 	GAME:WaitFrames(20)
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)

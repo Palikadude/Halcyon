@@ -115,7 +115,7 @@ local partner = CH('Teammate1')
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(bisharp)
-	UI:WaitShowDialogue("'Ello there.[pause=0] Name's " .. bisharp:GetDisplayName() .. ",[pause=10] and I'm head officer around these parts.")
+	UI:WaitShowDialogue("'Ello there.[pause=0] Name's " .. bisharp:GetDisplayName() .. ",[pause=10] and I'm the head officer 'round these parts.")
 	UI:WaitShowDialogue("Thanks to your help,[pause=10] we managed to bag us here a wanted criminal.")
 	UI:WaitShowDialogue("For that,[pause=10] my deputies and I thank the two of ya.")
 	
@@ -466,7 +466,7 @@ function guild_second_floor_ch_3.OutlawTutorialScene()
 	GeneralFunctions.DuoTurnTowardsChar(mareep)
 	
 	UI:WaitShowDialogue("Most outla-a-a-aws won't go peacefully![pause=0] They'll either try to fight you or make a run for it!")
-	UI:WaitShowDialogue("If they won't go willingly,[pause=10] you'll need knock them out!")
+	UI:WaitShowDialogue("If they won't go willingly,[pause=10] you'll need to knock them out!")
 	--todo: perhaps add shuca going bang! zoom! pow! and acting out the scene of her beating up an outlaw
 	UI:WaitShowDialogue("Once you ma-a-a-anage to bring them back to town,[pause=10] " .. CharacterEssentials.GetCharacterName("Bisharp") .. " will take care of the rest.")
 	
