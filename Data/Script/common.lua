@@ -3,6 +3,7 @@
     A collection of frequently used functions and values!
 ]]--
 require 'common_gen'
+require 'menu/member_return'
 
 ----------------------------------------
 -- Debugging
@@ -1021,21 +1022,46 @@ function COMMON.BeginDungeon(zoneId, segmentID, mapId)
 end
 
 function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
+  SOUND:StopBGM()
   for name, mission in pairs(SV.TakenBoard) do
-    
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
       if mission.Type == 1 then -- escort
         -- add escort to team
+        local player_count = GAME:GetPlayerPartyCount()
+        local guest_count = GAME:GetPlayerGuestCount()
+        if player_count + guest_count >= 4 then
+          local state = 0
+          while state > -1 do
+            UI:WaitShowDialogue("Have one of your team members return to the guild to make room for your client, " .. _DATA:GetMonster(mission.Client):GetColoredName() .. ".")
+            local MemberReturnMenu = CreateMemberReturnMenu()
+            local menu = MemberReturnMenu:new()
+            UI:SetCustomMenu(menu.menu)
+            UI:WaitForChoice()
+            local member = menu.members[menu.current_item]
+            UI:ChoiceMenuYesNo("Send " .. member:GetDisplayName(true) .. " back to the guild?", false)
+            UI:WaitForChoice()
+
+            local send_home = UI:ChoiceResult()
+            if send_home then 
+              local slot = menu.slots[menu.current_item]
+              GAME:AddPlayerAssembly(member);
+              GAME:RemovePlayerTeam(slot)
+              state = -1
+            end
+          end
+          --GAME:FadeIn(60)
+        end
+
         local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
-        local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.85)
+        -- set the escort level 20% less than the expected level
+        local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.80)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
         -- place in a legal position on map
         local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
         local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
 
-        PrintInfo(tostring(dest) .. "DEST VALUE")
         --if dest.HasValue then
           endLoc = dest
         --end
@@ -1052,6 +1078,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
       end
     end
   end
+  SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 end
 
 

@@ -773,6 +773,8 @@ function MISSION_GEN.GenerateBoard(board_type)
 	local jobs_to_make = math.random(5, 8)--Todo: jobs generated is based on your rank or how many dungeons you've done.
 	local assigned_combos = {}--floor/dungeon combinations that already have had missions genned for it. Need to consider already genned missions and missions on taken board.
 	
+
+	-- All seen Pokemon in the pokedex
 	local seen_pokemon = {}
 
 	for entry in luanet.each(_DATA.Save.Dex) do
