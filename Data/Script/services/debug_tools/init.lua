@@ -161,6 +161,7 @@ function DebugTools:OnUpgrade()
  if SV.TemporaryFlags.MorningAddress == nil then SV.TemporaryFlags.MorningAddress = false end 
  if SV.TemporaryFlags.JustWokeUp == nil then SV.TemporaryFlags.JustWokeUp = false end 
  if SV.TemporaryFlags.LastDungeonEntered == nil then SV.TemporaryFlags.LastDungeonEntered = false end
+ if SV.TemporaryFlags.MissionCompleted == nil then SV.TemporaryFlags.MissionCompleted = false end
   
 
  if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = -1 end

@@ -434,8 +434,8 @@ SV.TemporaryFlags =
 	MorningWakeup = false,--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
 	MorningAddress = false,--used to indicate whether to do a generic morning address
 	JustWokeUp = false,--Did the duo JUST wake up on a new day?
-	LastDungeonEntered = -1--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
-
+	LastDungeonEntered = -1,--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
+	MissionCompleted = false--used to mark if there are any pending missions to hand in.
 }
 
 

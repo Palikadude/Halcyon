@@ -112,16 +112,16 @@ function testmap.See_Job_1_Menu_Action(chara, activator)
 end
 
 function testmap.See_Mission_Board_Action(chara, activator)
-  local menu = BoardMenu:new("mission")
-  UI:SetCustomMenu(menu.menu)
-  UI:WaitForChoice()
+	  local menu = BoardSelectionMenu:new("mission")
+	  UI:SetCustomMenu(menu.menu)
+	  UI:WaitForChoice()
 end
 
 
 function testmap.See_Outlaw_Board_Action(chara, activator)
-  local menu = BoardMenu:new("outlaw")
-  UI:SetCustomMenu(menu.menu)
-  UI:WaitForChoice()
+	  local menu = BoardSelectionMenu:new("outlaw")
+	  UI:SetCustomMenu(menu.menu)
+	  UI:WaitForChoice()
 end
 
 

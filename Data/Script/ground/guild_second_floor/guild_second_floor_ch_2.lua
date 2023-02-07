@@ -799,7 +799,7 @@ function guild_second_floor_ch_2.Zigzagoon_Action(chara, activator)
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Noctowl") .. " is sending you over to Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " for training,[pause=10] huh?")
 	UI:WaitShowDialogue("She's definitely...[pause=0] Um...[pause=0] a character alright...")
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("She's a great teacher though.[pause=0] Make sure you do your best to learn from her!")
+	UI:WaitShowDialogue("She's a great teacher,[pause=10] though.[pause=0] Make sure you do your best to learn from her!")
 	--UI:WaitShowDialogue("I know that I learned a lot of stuff from her!")
 	GeneralFunctions.EndConversation(chara)
 end

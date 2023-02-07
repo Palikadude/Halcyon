@@ -253,7 +253,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Ahh,[pause=10] I remember now.[pause=0] You applied here before but you didn't have a partner.")
+	UI:WaitShowDialogue("Ahh,[pause=10] I remember now.[pause=0] You applied here before,[pause=10] but you didn't have a partner.")
 	GAME:WaitFrames(10)
 	
 	GROUND:CharAnimateTurnTo(noctowl, Direction.DownRight, 4)

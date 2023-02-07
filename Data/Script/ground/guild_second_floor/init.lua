@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'CharacterEssentials'
 require 'GeneralFunctions'
+require 'mission_gen'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
 require 'ground.guild_second_floor.guild_second_floor_ch_3'
@@ -62,30 +63,35 @@ end
 
 function guild_second_floor.PlotScripting()
 	--plot scripting
-	if SV.ChapterProgression.Chapter == 1 then
-		if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
-			guild_second_floor_ch_1.MeetNoctowl()
-		else
-			guild_second_floor_ch_1.SetupGround()
-		end
-	elseif SV.ChapterProgression.Chapter == 2 then
-		if SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then 
-			guild_second_floor_ch_2.CameruptRequestCutscene()
-		elseif SV.Chapter2.FinishedRiver then
-			guild_second_floor_ch_2.RescuedNumelCutscene()
-		else
-			guild_second_floor_ch_2.SetupGround()
-		end
-	elseif SV.ChapterProgression.Chapter == 3 then
-		if not SV.Chapter3.FinishedOutlawIntro then
-			guild_second_floor_ch_3.OutlawTutorialScene()
-		elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene then
-			guild_second_floor_ch_3.OutlawRewardScene()
-		else
-			guild_second_floor_ch_3.SetupGround()
-		end
+	--if a mission is to be turned in, prioritize that.
+	if SV.TemporaryFlags.MissionCompleted then 
+	
 	else
-		GAME:FadeIn(20)
+		if SV.ChapterProgression.Chapter == 1 then
+			if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
+				guild_second_floor_ch_1.MeetNoctowl()
+			else
+				guild_second_floor_ch_1.SetupGround()
+			end
+		elseif SV.ChapterProgression.Chapter == 2 then
+			if SV.Chapter2.FinishedFirstDay and not SV.Chapter2.FinishedCameruptRequestScene then 
+				guild_second_floor_ch_2.CameruptRequestCutscene()
+			elseif SV.Chapter2.FinishedRiver then
+				guild_second_floor_ch_2.RescuedNumelCutscene()
+			else
+				guild_second_floor_ch_2.SetupGround()
+			end
+		elseif SV.ChapterProgression.Chapter == 3 then
+			if not SV.Chapter3.FinishedOutlawIntro then
+				guild_second_floor_ch_3.OutlawTutorialScene()
+			elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene then
+				guild_second_floor_ch_3.OutlawRewardScene()
+			else
+				guild_second_floor_ch_3.SetupGround()
+			end
+		else
+			GAME:FadeIn(20)
+		end
 	end
 end
 
@@ -155,11 +161,16 @@ function guild_second_floor.Mission_Board_Action(chara, activator)
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and capture the outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. ".[pause=0] Let's go!")
 		GeneralFunctions.EndConversation(partner)
-	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss then
+	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss then
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
 		GeneralFunctions.EndConversation(partner)
+	else
+	  --Mission Board
+	  local menu = BoardSelectionMenu:new("mission")
+	  UI:SetCustomMenu(menu.menu)
+	  UI:WaitForChoice()
 	end
 end
 
@@ -181,11 +192,16 @@ function guild_second_floor.Outlaw_Board_Action(chara, activator)
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and capture the outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. ".[pause=0] Let's go!")
 		GeneralFunctions.EndConversation(partner)
-	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss then
+	elseif SV.ChapterProgression.Chapter == 3 and SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss then
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
 		GeneralFunctions.EndConversation(partner)
+	else
+	  --Outlaw Board
+	  local menu = BoardSelectionMenu:new("outlaw")
+	  UI:SetCustomMenu(menu.menu)
+	  UI:WaitForChoice()
 	end
 end
 
@@ -275,6 +291,7 @@ function guild_second_floor.Silcoon_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Silcoon_Action(...,...)"), chara, activator))
 end
+
 
 
 

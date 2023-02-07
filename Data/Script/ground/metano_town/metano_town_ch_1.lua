@@ -401,7 +401,7 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:CharSetAnim(growlithe, 'None', true)
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Wait here you guys![pause=0] I need to let them know you're coming before you go in!")
+	UI:WaitShowDialogue("Wait here,[pause=10] you guys![pause=0] I need to let them know you're coming before you go in!")
 	
 	
 	--he hops over his little post, pushing you to the side, and runs inside the guild.

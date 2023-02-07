@@ -100,8 +100,10 @@ function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 	if use_badge then 
 		local tbl = LTBL(context.Target)
 		local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-		-- TODO uncomment this when finish testing
-		--mission.Completion = 1
+		
+		--Mark mission completion flags
+		SV.TemporaryFlags.MissionCompleted = true
+		mission.Completion = 1
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and\n".. targetName .. " is transported away magically!" )
 		UI:SetSpeaker(context.Target)
@@ -131,7 +133,9 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 			DUNGEON:CharTurnToChar(context.Target, context.User)
 			UI:ResetSpeaker()
 			if math.abs(escort.CharLoc:Dist8() - context.Target.CharLoc:Dist8()) <= 4 then
-				--mission.Completion = 1
+				--Mark mission completion flags
+				SV.TemporaryFlags.MissionCompleted = true
+				mission.Completion = 1
 				UI:WaitShowDialogue("Yes! You completed " .. escortName .. "'s escort mission.\n" .. escortName .. " is delighted!")
 				
 				

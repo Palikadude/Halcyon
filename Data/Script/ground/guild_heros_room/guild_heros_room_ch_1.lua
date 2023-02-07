@@ -327,7 +327,7 @@ function guild_heros_room_ch_1.RoomIntro()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Inspired")
 	GROUND:CharSetAnim(partner, "Idle", true)
-	UI:WaitShowDialogue("Can you believe this " .. hero:GetDisplayName() .. "?[pause=0] We're really going to be adventurers!")
+	UI:WaitShowDialogue("Can you believe this,[pause=10] " .. hero:GetDisplayName() .. "?[pause=0] We're really going to be adventurers!")
 	UI:WaitShowDialogue("This feels surreal to me.[pause=0] I never thought this would ever happen![pause=0] It's like a dream!")
 	
 	GAME:WaitFrames(20)

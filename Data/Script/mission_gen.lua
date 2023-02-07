@@ -354,7 +354,6 @@ MISSION_GEN.REWARDS = {
 		{'tm_pluck', 5},
 		{'tm_psych_up', 5},
 		{'tm_secret_power', 5},
-		{'tm_natural_gift', 5},
 
 		{'tm_return', 5},
 		{'tm_frustration', 5},
@@ -1089,8 +1088,13 @@ function JobMenu:DeleteJob()
 		self.parent_board_menu.menu.MenuElements:Clear()
 		self.parent_board_menu:RefreshSelf()
 		self.parent_board_menu:DrawBoard()
+		
+		--redraw selection board with potentially changed information
+		if self.parent_board_menu.parent_selection_menu ~= nil then 
+			self.parent_board_menu.parent_selection_menu.menu.MenuElements:Clear()
+			self.parent_board_menu.parent_selection_menu:DrawMenu()
+		end
 	end
-	_MENU:RemoveMenu()
 	_MENU:RemoveMenu()
 end
 
@@ -1125,6 +1129,16 @@ function JobMenu:AddJobToTaken()
 		end 
 		MISSION_GEN.SortTaken()
 	end
+	
+	if self.parent_board_menu ~= nil then 
+
+		--redraw selection board with potentially changed information
+		if self.parent_board_menu.parent_selection_menu ~= nil then 
+			self.parent_board_menu.parent_selection_menu.menu.MenuElements:Clear()
+			self.parent_board_menu.parent_selection_menu:DrawMenu()
+		end
+	end
+
 	_MENU:RemoveMenu()
 end
 
@@ -1181,13 +1195,16 @@ end
 BoardMenu = Class('BoardMenu')
 
 --board type should be taken, mission, or outlaw 
-function BoardMenu:initialize(board_type)
+function BoardMenu:initialize(board_type, parent_selection_menu)
   assert(self, "BoardMenu:initialize(): Error, self is nil!")
     
   self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 272, 192, function(input) self:Update(input) end)
   self.cursor = RogueEssence.Menu.MenuCursor(self.menu)
   
   self.board_type = board_type
+  
+  --For refreshing the parent selection menu
+  self.parent_selection_menu = parent_selection_menu
   
   if self.board_type == 'taken' then
 	self.jobs = SV.TakenBoard
@@ -1391,3 +1408,113 @@ function BoardMenu:GetSelectedJobIndex()
 	return self.current_item + (4 * (self.page - 1) + 1)
 	
 end
+
+
+
+
+
+
+
+
+------------------------
+-- Board Selection Menu
+------------------------
+BoardSelectionMenu = Class('BoardSelectionMenu')
+
+--Used to choose between viewing the board, your job list, or to cancel
+function BoardSelectionMenu:initialize(board_type)
+  assert(self, "BoardSelectionMenu:initialize(): Error, self is nil!")
+  self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 128, 60, function(input) self:Update(input) end)
+  self.cursor = RogueEssence.Menu.MenuCursor(self.menu)
+  self.board_type = board_type
+  
+  self.current_item = 0
+  self.cursor.Loc = RogueElements.Loc(8, 8)
+  
+  self:DrawMenu()
+
+end
+
+--refreshes information and draws to the menu. This is important in case there's a change to the taken board
+function BoardSelectionMenu:DrawMenu()
+  
+  --color this red if there's no jobs and mark there's no jobs to view.
+  self.board_populated = true
+  local board_name = ""
+  if self.board_type == "outlaw" then
+	if SV.OutlawBoard[1].Client == '' then 
+		board_name = "[color=#FF0000]Outlaw Notice Board[color]"
+		self.board_populated = false
+	else
+		board_name = "Outlaw Notice Board" 
+	end
+  else
+	if SV.MissionBoard[1].Client == '' then 
+		board_name = "[color=#FF0000]Job Bulletin Board[color]"
+		self.board_populated = false
+	else
+		board_name = "Job Bulletin Board" 
+	end	
+  end
+  
+  --color this red if there's no jobs, mark there's no jobs taken
+  self.job_list = "Job List"
+  self.taken_populated = true 
+  if SV.TakenBoard[1].Client == "" then
+	self.job_list = "[color=#FF0000]Job List[color]"
+	self.taken_populated = false 
+  end
+  
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(board_name, RogueElements.Loc(16, 8)))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.job_list, RogueElements.Loc(16, 22)))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Exit", RogueElements.Loc(16, 36)))
+
+  self.menu.MenuElements:Add(self.cursor)
+end 
+
+
+function BoardSelectionMenu:Update(input)
+
+ if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then
+	if self.current_item == 0 then --open relevant job menu 
+		if self.board_populated then 
+			_GAME:SE("Menu/Confirm")
+			local board_menu = BoardMenu:new(self.board_type, self)
+			_MENU:AddMenu(board_menu.menu, false)
+		else
+			_GAME:SE("Menu/Cancel")
+		end
+	elseif self.current_item == 1 then--open taken missions
+		if self.taken_populated then
+			_GAME:SE("Menu/Confirm")
+			local board_menu = BoardMenu:new("taken", self)
+			_MENU:AddMenu(board_menu.menu, false)
+		else
+		    _GAME:SE("Menu/Cancel")
+		end
+	else 
+		_GAME:SE("Menu/Cancel")
+		_MENU:RemoveMenu()
+	end 
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+    _GAME:SE("Menu/Cancel")
+    _MENU:RemoveMenu()
+	--open job menu for that particular job
+  else
+    moved = false
+    if RogueEssence.Menu.InteractableMenu.IsInputting(input, LUA_ENGINE:MakeLuaArray(Dir8, { Dir8.Down, Dir8.DownLeft, Dir8.DownRight })) then
+      moved = true
+      self.current_item = (self.current_item + 1) % 3
+	  
+    elseif RogueEssence.Menu.InteractableMenu.IsInputting(input, LUA_ENGINE:MakeLuaArray(Dir8, { Dir8.Up, Dir8.UpLeft, Dir8.UpRight })) then
+      moved = true
+      self.current_item = (self.current_item - 1) % 3
+	end
+	
+    if moved then
+      _GAME:SE("Menu/Select")
+      self.cursor:ResetTimeOffset()
+      self.cursor.Loc = RogueElements.Loc(8, 8 + 14 * self.current_item)
+    end
+  end
+end 
