@@ -190,7 +190,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
-	UI:WaitShowDialogue("Like this right?")
+	UI:WaitShowDialogue("Like this,[pause=10] right?")
 	
 	GAME:WaitFrames(20)
 	UI:ResetSpeaker(false)
@@ -223,7 +223,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(I just stand here then?[pause=0] This is pretty weird...)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(I just stand here,[pause=10] then?[pause=0] This is pretty weird...)", "Worried")
 	
 	GAME:WaitFrames(20)
 	UI:ResetSpeaker(false)

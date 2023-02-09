@@ -65,7 +65,7 @@ function guild_second_floor.PlotScripting()
 	--plot scripting
 	--if a mission is to be turned in, prioritize that.
 	if SV.TemporaryFlags.MissionCompleted then 
-	
+		guild_second_floor.Hand_In_Missions()
 	else
 		if SV.ChapterProgression.Chapter == 1 then
 			if SV.Chapter1.TeamCompletedForest and not SV.Chapter1.TeamJoinedGuild then 
@@ -204,6 +204,280 @@ function guild_second_floor.Outlaw_Board_Action(chara, activator)
 	  UI:WaitForChoice()
 	end
 end
+
+
+function guild_second_floor.Hand_In_Missions()
+	for i = 1, 8, 1 do
+		if SV.TakenBoard[i].Client ~= "" and SV.TakenBoard[i].Completion == MISSION_GEN.COMPLETE then
+			if SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW then
+				guild_second_floor.Outlaw_Job_Clear(SV.TakenBoard[i])
+			else
+				guild_second_floor.Mission_Job_Clear(SV.TakenBoard[i])
+			end
+			--short pause between fadeins
+			GAME:WaitFrames(20)
+			
+			--clear the job
+			SV.TakenBoard[i] = 	{
+									Client = "",
+									Target = "",
+									Flavor = "",
+									Title = "",
+									Zone = "",
+									Segment = -1,
+									Floor = -1,
+									Reward = "",
+									Type = "",
+									Completion = -1,
+									Taken = false,
+									Difficulty = ""
+								}
+		end
+	end 
+	
+	--reset this flag
+	SV.TemporaryFlags.MissionCompleted = false
+
+	--sort taken jobs now that we're removed completed ones
+	MISSION_GEN.SortTaken()
+	
+	--if dinnertime is set, then go to the dining room. This should happen pretty much all the time unless story dictates some other ground for some reason.
+	--otherwise go to the place dictated by SV.TemporaryFlags.PostJobsGround
+	if SV.TemporaryFlags.Dinnertime then
+		GAME:EnterGroundMap('guild_dining_room', 'Main_Entrance_Marker')
+	else 
+		GAME:EnterGroundMap(SV.TemporaryFlags.PostJobsGround, 'Main_Entrance_Marker')
+	end
+
+end
+--takes a job and plays an outlaw reward scene depending on the job.
+function guild_second_floor.Outlaw_Job_Clear(job)
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	
+	GROUND:TeleportTo(partner, 376, 272, Direction.Up)
+	GROUND:TeleportTo(hero, 408, 272, Direction.Up)
+	GAME:MoveCamera(400, 240, 1, false)
+	
+	SOUND:StopBGM()
+
+	local money = false
+	if job.Reward == 'money' then money = true end
+
+	--client is zhayn, he and the pawniards take the outlaw away
+	if job.Client == 'zhayn' then
+
+		local pawniard_boy, pawniard_girl, bisharp = 
+			CharacterEssentials.MakeCharactersFromList({
+				--{'Sandile', 392, 224, Direction.Down},
+				{'Pawniard_Boy', 368, 224, Direction.Down},
+				{'Pawniard_Girl', 416, 224, Direction.Down},
+				{'Bisharp', 392, 248, Direction.Down}
+			})
+		
+		--pick a random, appropriate gender for the outlaw
+		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", Gender.Genderless)
+		outlaw_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		
+		local outlaw = RogueEssence.Ground.GroundChar(outlaw_monster, RogueElements.Loc(392, 224), Direction.Down, outlaw_monster.Species, 'Outlaw')
+		outlaw:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(outlaw)
+
+		GAME:FadeIn(40)
+		SOUND:PlayBGM("Job Clear!.ogg", true)
+		UI:SetSpeaker(bisharp)
+		
+		UI:WaitShowDialogue("You bagged the outlaw " .. _DATA:GetMonster(outlaw.CurrentForm.Species):GetColoredName() .. "!")
+		
+		GAME:WaitFrames(20)
+		UI:WaitShowDialogue("Please take this here bounty as a reward.")
+		GAME:WaitFrames(20)
+
+		--reward the item 
+		if money then
+			GeneralFunctions.RewardItem(MISSION_GEN.DIFF_TO_MONEY[job.Difficulty], true)
+		else
+			GeneralFunctions.RewardItem(job.Reward)
+		end
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
+		
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(bisharp)
+		UI:WaitShowDialogue("Thank ya as always for lendin' a hand.")
+	
+		GROUND:CharSetEmote(pawniard_boy, "happy", 0)
+		GROUND:CharSetEmote(pawniard_girl, "happy", 0)
+		local coro1 = TASK:BranchCoroutine(function() GROUND:CharSetAction(bisharp, RogueEssence.Ground.PoseGroundAction(bisharp.Position, bisharp.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose"))) end)
+		local coro2 = TASK:BranchCoroutine(function() GROUND:CharSetAction(pawniard_boy, RogueEssence.Ground.PoseGroundAction(pawniard_boy.Position, pawniard_boy.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose"))) end)
+		local coro3 = TASK:BranchCoroutine(function() GROUND:CharSetAction(pawniard_girl, RogueEssence.Ground.PoseGroundAction(pawniard_girl.Position, pawniard_girl.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose"))) end)
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) SOUND:PlayBattleSE('DUN_Fury_Cutter') end)
+
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+		GAME:WaitFrames(60)
+		
+		GROUND:CharEndAnim(bisharp)
+		GROUND:CharEndAnim(pawniard_boy)
+		GROUND:CharEndAnim(pawniard_girl)
+		GROUND:CharSetEmote(pawniard_boy, "", 0)
+		GROUND:CharSetEmote(pawniard_girl, "", 0)
+		GAME:WaitFrames(20)
+		
+		--fade out and clean up any temporary characters
+		SOUND:FadeOutBGM(40)
+		GAME:FadeOut(false, 40)
+		GAME:GetCurrentGround():RemoveTempChar(bisharp)
+		GAME:GetCurrentGround():RemoveTempChar(pawniard_boy)
+		GAME:GetCurrentGround():RemoveTempChar(pawniard_girl)
+		GAME:GetCurrentGround():RemoveTempChar(outlaw)
+
+	
+	else--client is some random mon
+		--pick a random, appropriate gender for the client
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
+		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		
+		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(392, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
+		client:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(client)
+
+		GAME:FadeIn(40)
+		SOUND:PlayBGM("Job Clear!.ogg", true)
+		UI:SetSpeaker(client)
+		
+		UI:WaitShowDialogue("Thank you for taking down that outlaw " .. _DATA:GetMonster(job.Target):GetColoredName() .. " for me!")
+		GAME:WaitFrames(20)
+		UI:WaitShowDialogue("Please take this as my thanks!")
+		GAME:WaitFrames(20)
+
+		--reward the item 
+		if money then
+			GeneralFunctions.RewardItem(MISSION_GEN.DIFF_TO_MONEY[job.Difficulty], true)
+		else
+			GeneralFunctions.RewardItem(job.Reward)
+		end
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
+		GAME:WaitFrames(20)
+		
+		
+		--fade out and clean up any temporary characters
+		SOUND:FadeOutBGM(40)
+		GAME:FadeOut(false, 40)
+		GAME:GetCurrentGround():RemoveTempChar(client)
+	end
+end
+
+--takes a job and plays an regular mission reward scene depending on the job.
+function guild_second_floor.Mission_Job_Clear(job)
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	UI:ResetSpeaker()
+	
+	GROUND:TeleportTo(partner, 88, 272, Direction.Up)
+	GROUND:TeleportTo(hero, 120, 272, Direction.Up)
+	GAME:MoveCamera(112, 240, 1, false)
+	SOUND:StopBGM()
+
+	local money = false
+	if job.Reward == 'money' then money = true end
+
+	--client is target
+	if job.Client == job.Target  then
+		--pick a random, appropriate gender for the client
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
+		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		
+		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(104, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
+		client:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(client)
+
+		GAME:FadeIn(40)
+		SOUND:PlayBGM("Job Clear!.ogg", true)
+		UI:SetSpeaker(client)
+		
+		UI:WaitShowDialogue("Thank you for rescuing me!")
+		GAME:WaitFrames(20)
+		UI:WaitShowDialogue("Please take this as my thanks!")
+		GAME:WaitFrames(20)
+
+		--reward the item 
+		if money then
+			GeneralFunctions.RewardItem(MISSION_GEN.DIFF_TO_MONEY[job.Difficulty], true)
+		else
+			GeneralFunctions.RewardItem(job.Reward)
+		end
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
+		GAME:WaitFrames(20)
+		
+		
+		--fade out and clean up any temporary characters
+		SOUND:FadeOutBGM(40)
+		GAME:FadeOut(false, 40)
+		GAME:GetCurrentGround():RemoveTempChar(client)
+
+	
+	else--client not the target
+			--pick a random, appropriate gender for the client
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
+		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		
+		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(88, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
+		client:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(client)
+				
+		--pick a random, appropriate gender for the target
+		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", Gender.Genderless)
+		target_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		
+		local target = RogueEssence.Ground.GroundChar(target_monster, RogueElements.Loc(120, 240), Direction.Down, job.Target:gsub("^%l", string.upper), target_monster.Species)
+		target:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(target)
+		
+		
+		GAME:FadeIn(40)
+		SOUND:PlayBGM("Job Clear!.ogg", true)
+		UI:SetSpeaker(client)
+		
+		if job.Type == COMMON.MISSION_TYPE_ESCORT then
+			UI:WaitShowDialogue("Thank you for escorting me to my friend!")
+		else 
+			UI:WaitShowDialogue("Thank you for rescuing my friend!")
+		end
+		GAME:WaitFrames(20)
+		UI:WaitShowDialogue("Please take this as my thanks!")
+		GAME:WaitFrames(20)
+
+		--reward the item 
+		if money then
+			GeneralFunctions.RewardItem(MISSION_GEN.DIFF_TO_MONEY[job.Difficulty], true)
+		else
+			GeneralFunctions.RewardItem(job.Reward)
+		end
+		
+		GAME:WaitFrames(20)
+		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
+		GAME:WaitFrames(20)
+		
+		
+		--fade out and clean up any temporary characters
+		SOUND:FadeOutBGM(40)
+		GAME:FadeOut(false, 40)
+		GAME:GetCurrentGround():RemoveTempChar(client)
+		GAME:GetCurrentGround():RemoveTempChar(target)
+	end
+end
+
 
 
 function guild_second_floor.Cleffa_Action(chara, activator)

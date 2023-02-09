@@ -3,18 +3,19 @@
 "Object": {
 "$type": "RogueEssence.Data.RankData, RogueEssence",
 "Name": {
-"DefaultText": "Guildmaster",
+"DefaultText": "Grandmaster",
 "LocalTexts": {
 "fr-ca": "Grand Maître",
 "de": "Gildenmeister",
 "es": "Maestro",
 "pt": "Grão-Mestre",
-"ko": "그레이트 마스터"
+"ko": "그레이트 마스터",
+"zh-hans": "会长等级"
 }
 },
-"Comment": "Rank 11",
-"BagSize": 56,
-"FameToNext": 100000,
+"Comment": "Rank 12",
+"BagSize": 64,
+"FameToNext": -1,
 "Next": "grandmaster"
 }
 }

@@ -3,6 +3,7 @@ Halcyon is a mod for PMDO created by Palika that aims to recapture the vibes and
 Credits:
 Palika - mod author. scripting, writing, balancing, etc. (all non-engine work, except where other credit is given)
 Audino - for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist
+Trio- - Assisted with mission_gen scripting
 
 Playtesters:
 Sunkern
@@ -11,6 +12,7 @@ Xindage
 Minemaker0430
 NanaelJustice
 Trio-
+Dovey
 
 
 Spriting credits:

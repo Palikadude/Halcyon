@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "bronze": {
@@ -14,7 +14,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 2",
 "SortOrder": 0
 },
 "diamond": {
@@ -29,7 +29,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 6",
 "SortOrder": 0
 },
 "gold": {
@@ -44,22 +44,23 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 4",
 "SortOrder": 0
 },
-"guildmaster": {
+"grandmaster": {
 "Name": {
-"DefaultText": "Guildmaster",
+"DefaultText": "Grandmaster",
 "LocalTexts": {
 "fr-ca": "Grand Maître",
 "de": "Gildenmeister",
 "es": "Maestro",
 "pt": "Grão-Mestre",
-"ko": "그레이트 마스터"
+"ko": "그레이트 마스터",
+"zh-hans": "会长等级"
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 12",
 "SortOrder": 0
 },
 "hyper": {
@@ -74,7 +75,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 9",
 "SortOrder": 0
 },
 "master": {
@@ -89,7 +90,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 10",
 "SortOrder": 0
 },
 "none": {
@@ -120,7 +121,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 1",
 "SortOrder": 0
 },
 "platinum": {
@@ -135,7 +136,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 5",
 "SortOrder": 0
 },
 "silver": {
@@ -150,7 +151,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 3",
 "SortOrder": 0
 },
 "super": {
@@ -165,7 +166,7 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 7",
 "SortOrder": 0
 },
 "ultra": {
@@ -180,7 +181,22 @@
 }
 },
 "Released": true,
-"Comment": "",
+"Comment": "Rank 8",
+"SortOrder": 0
+},
+"guildmaster": {
+"Name": {
+"DefaultText": "Guildmaster",
+"LocalTexts": {
+"fr-ca": "Grand Maître",
+"de": "Gildenmeister",
+"es": "Maestro",
+"pt": "Grão-Mestre",
+"ko": "그레이트 마스터"
+}
+},
+"Released": true,
+"Comment": "Rank 11",
 "SortOrder": 0
 },
 "unranked": {

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.RankData, RogueEssence",
 "Name": {
@@ -9,6 +9,6 @@
 "Comment": "Your rank before joining the guild.",
 "BagSize": 4,
 "FameToNext": 1,
-"Next": ""
+"Next": "normal"
 }
 }

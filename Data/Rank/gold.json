@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.RankData, RogueEssence",
 "Name": {
@@ -12,9 +12,9 @@
 "ko": "골드"
 }
 },
-"Comment": "",
+"Comment": "Rank 4",
 "BagSize": 32,
 "FameToNext": 1600,
-"Next": null
+"Next": "platinum"
 }
 }

@@ -162,6 +162,7 @@ function DebugTools:OnUpgrade()
  if SV.TemporaryFlags.JustWokeUp == nil then SV.TemporaryFlags.JustWokeUp = false end 
  if SV.TemporaryFlags.LastDungeonEntered == nil then SV.TemporaryFlags.LastDungeonEntered = false end
  if SV.TemporaryFlags.MissionCompleted == nil then SV.TemporaryFlags.MissionCompleted = false end
+ if SV.TemporaryFlags.PostJobsGround == nil then SV.TemporaryFlags.PostJobsGround = '' end
   
 
  if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = -1 end

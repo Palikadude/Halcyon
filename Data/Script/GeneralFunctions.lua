@@ -866,7 +866,7 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 	SOUND:PlayFanfare("Fanfare/Item")
 	
 	if money then 
-		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. "[color=#00FFFF]" .. itemID .. "[color=#00FFFF]" .. STRINGS:Format("\\uE024") .. ".[pause=40]") 
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. "[color=#00FFFF]" .. itemID .. "[color]" .. STRINGS:Format("\\uE024") .. ".[pause=40]") 
 		GAME:AddToPlayerMoney(itemID)
 	else	
 		local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(itemID)
@@ -891,6 +891,105 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 			
 		
 end
+
+--gives adventurer points
+function GeneralFunctions.RewardPoints(amount, silent)
+	if silent == nil then silent = false end
+	
+	UI:ResetSpeaker(false)--disable text noise. Apparently, sky doesn't actually do this for rewarding points for some reason, but it seems weird to keep it on.
+	UI:SetCenter(true)
+	
+	if not silent then 
+		SOUND:PlayFanfare("Fanfare/Item")
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " earned\n[color=#00FFFF]" .. amount .. "[color] Adventurer Rank Points![pause=40]")
+	end
+	
+	--check if a rank up is needed
+	local current_rank = _DATA.Save.ActiveTeam.Rank
+	local to_go = _DATA:GetRank(current_rank).FameToNext - _DATA.Save.ActiveTeam.Fame 
+
+	--rank up if there's another rank to go. FameToNext will be 0 or -1 if there's no more ranks after.
+	if amount >= to_go and _DATA:GetRank(current_rank).FameToNext > 0 then
+		--rank up!
+		GeneralFunctions.RankUp(amount - to_go)
+	else
+		--add points to fame 
+		_DATA.Save.ActiveTeam.Fame = _DATA.Save.ActiveTeam.Fame + amount
+	end
+	UI:ResetSpeaker(true)
+	UI:SetCenter(false)
+end
+
+
+--Notifies the player they ranked up, what they rewarded for ranking up, 
+function GeneralFunctions.RankUp(leftover_points)
+	local current_rank = _DATA.Save.ActiveTeam.Rank
+	local next_rank = _DATA:GetRank(current_rank).Next
+	
+	print(current_rank)
+	print(next_rank)
+	
+	--reset fame, go to next rank
+	_DATA.Save.ActiveTeam:SetRank(next_rank)
+	_DATA.Save.ActiveTeam.Fame = 0
+	
+	SOUND:PlayFanfare("Fanfare/RankUp")
+	UI:ResetSpeaker()
+	UI:SetCenter(true)
+	
+	UI:WaitShowDialogue("Congratulations!")
+	UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " went up in rank from the\n[color=#FFA5FF]" .. current_rank:gsub("^%l", string.upper) .. " Rank[color] to the [color=#FFA5FF]" .. next_rank:gsub("^%l", string.upper) .. " Rank[color]!") 
+	
+	--notify of bag size increase
+	if  _DATA:GetRank(current_rank).BagSize < _DATA:GetRank(next_rank).BagSize then
+		UI:WaitShowDialogue("The number of items you can store in your Treasure Bag has increased from [color=#00FFFF]" .. tostring(_DATA:GetRank(current_rank).BagSize) .. "[color] to [color=#00FFFF]" .. tostring(_DATA:GetRank(next_rank).BagSize) .. "[color].")
+	end
+
+	--depending on the specific rank up achieved, reward the player with different goodies.
+	--The goodies and actual rewards are up for change, but this should serve fine for now. Should review in future though.
+	local reward_id
+	if next_rank == "bronze" then 
+		reward_id = "boost_hp_up"
+	elseif next_rank == "silver" then 
+		reward_id = "boost_protein"
+	elseif next_rank == "gold" then 
+		reward_id = "boost_iron"
+	elseif next_rank == "platinum" then 
+		reward_id = "boost_calcium"
+	elseif next_rank == "diamond" then 
+		reward_id = "boost_zinc"
+	elseif next_rank == "super" then 
+		reward_id = "boost_carbos"
+	elseif next_rank == "ultra" then 
+		reward_id = "boost_nectar"
+	elseif next_rank == "hyper" then 
+		reward_id = "gummi_wonder"
+	elseif next_rank == "master" then 
+		reward_id = "gummi_wonder"
+	elseif next_rank == "guildmaster" then 
+		reward_id = "seed_joy"
+	elseif next_rank == "grandmaster" then 
+		reward_id = "seed_golden"
+	else--shouldnt ever happen
+		reward_id = "food_grimy"
+	end
+	
+	local item = RogueEssence.Dungeon.InvItem(reward_id, false, 1)
+	SOUND:PlayFanfare("Fanfare/Item")
+	UI:WaitShowDialogue("For advancing in rank,[pause=10] your team was awarded a " .. item:GetDisplayName() ..".[pause=40]") 
+	
+	--bag is full - equipped count is separate from bag and most be included in the calc
+	if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+		UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
+		GAME:GivePlayerStorageItem(item.ID, amount)
+	else
+		GAME:GivePlayerItem(item.ID, amount)
+	end
+	
+	--silently award any leftover points.
+	if leftover_points > 0 then GeneralFunctions.RewardPoints(leftover_points, true) end
+end 
+
 
 --gets the ID of the gummi that matches one of the types of the given pokemon. Chooses the type randomly if they have multiple.
 function GeneralFunctions.GetFavoriteGummi(chara)

@@ -426,7 +426,7 @@ function guild_second_floor_ch_2.CameruptRequestCutscene()
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
-	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] Let's get ready to save " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
+	UI:WaitShowDialogue("C'mon,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] Let's get ready to save " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
 		
 
 	GAME:WaitFrames(20)
@@ -697,7 +697,7 @@ function guild_second_floor_ch_2.RescuedNumelCutscene()
 	GROUND:CharSetEmote(partner, "glowing", 0)
 	SOUND:PlayBGM('Heartwarming.ogg', true)
 	UI:WaitShowDialogue("Sounds like " .. hero:GetDisplayName() .. " can't wait!")
-	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] Let's go get some dinner before your stomach barks at us again!")
+	UI:WaitShowDialogue("C'mon,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] Let's go get some dinner before your stomach barks at us again!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharSetEmote(partner, "", 0)

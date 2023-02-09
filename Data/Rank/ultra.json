@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Data.RankData, RogueEssence",
 "Name": {
@@ -12,9 +12,9 @@
 "ko": "울트라"
 }
 },
-"Comment": "",
+"Comment": "Rank 8",
 "BagSize": 40,
-"FameToNext": 20000,
-"Next": null
+"FameToNext": 10000,
+"Next": "hyper"
 }
 }

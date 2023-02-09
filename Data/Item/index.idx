@@ -318,6 +318,35 @@
 "Comment": "",
 "SortOrder": 0
 },
+"food_chestnut": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.FoodState"
+}
+],
+"Name": {
+"DefaultText": "Chestnut",
+"LocalTexts": {
+"fr": "Châtaigne",
+"de": "Kastanie",
+"es": "Castaña",
+"pt": "Castanha",
+"it": "Castagna",
+"ko": "밤송이",
+"zh-hans": "刺栗"
+}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 1
+},
 "gummi_black": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,

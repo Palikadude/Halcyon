@@ -80,7 +80,7 @@ function guild_second_floor_ch_3.Cranidos_Action(chara, activator)
 end
 
 function guild_second_floor_ch_3.OutlawRewardScene() 
-local partner = CH('Teammate1')
+	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
@@ -144,7 +144,7 @@ local partner = CH('Teammate1')
 	
 	UI:SetSpeaker(bisharp)
 	UI:WaitShowDialogue("I've already given the bounty on this here criminal's head to your superior over there.")
-	UI:WaitShowDialogue("Make sure to pick it up from him.[pause=0] Thank ya again for lending a hand.")
+	UI:WaitShowDialogue("Make sure to pick it up from him.[pause=0] Thank ya again for lendin' a hand.")
 	
 	GAME:WaitFrames(4)
 	GROUND:CharTurnToCharAnimated(bisharp, sandile, 4)
