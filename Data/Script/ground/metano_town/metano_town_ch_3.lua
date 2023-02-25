@@ -6,74 +6,89 @@ require 'CharacterEssentials'
 metano_town_ch_3 = {}
 
 function metano_town_ch_3.SetupGround()
-	--objects/npcs that aren't for use in chapter 3 
-	GROUND:Hide('Red_Merchant')
-	GROUND:Hide('Green_Merchant')
-	GROUND:Hide('Swap_Owner')
-	GROUND:Hide('Swap')
-	GROUND:Hide('Assembly')
-	
-	--trigger for partner pointing out cafe is open. only place if they havent done the cutscene for it yet
-	if not SV.Chapter3.FinishedCafeCutscene then
-		local cafeBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-															RogueElements.Rect(944, 584, 400, 160),
-															RogueElements.Loc(0, 0), 
-															true, 
-															"Event_Trigger_1")
+	if SV.Chapter3.DefeatedBoss then
+		--hide NPCs not in use for chapter 3 part 2	
+		GROUND:Hide('Swap_Owner')
+		GROUND:Hide('Swap')
+		GROUND:Hide('Assembly')
 		
-		cafeBlock:ReloadEvents()
-		GAME:GetCurrentGround():AddTempObject(cafeBlock)
-		--disable its collision so it doesn't displace other NPCs
-		cafeBlock.Passable = true
-	end
+		
+		--let the cutscene handle the fade in if it hasnt played yet		
+		if SV.Chapter3.FinishedMerchantIntro then 
+			GAME:FadeIn(20)
+		end 
+	else 
 	
-	
-	
-	local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill, nidoking, luxray,
-		  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull, meditite = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Sentret', 400, 424, Direction.DownRight},
-			{'Oddish', 440, 424, Direction.DownLeft},
-			{'Numel', 420, 456, Direction.Up},
-			{'Camerupt', 'Town_Seat_1'},
-			{'Manectric', 'Town_Seat_2'},
-			{'Nidorina', 536, 208, Direction.UpLeft},
-			{'Gloom', 512, 184, Direction.DownRight},
-			{'Mawile', 1204, 1156, Direction.Down},
-			{'Furret', 356, 764, Direction.Right},
-			{'Azumarill', 888, 704, Direction.Down},
-			{'Nidoking', 1160, 912, Direction.Left},
-			{'Luxray', 624, 600, Direction.Down},
-			{'Linoone', 'Cafe_Seat_2'},
-			{'Electrike', 272, 1056, Direction.Right},
-			{'Wooper_Girl', 306, 1036, Direction.DownLeft},
-			{'Wooper_Boy', 306, 1076, Direction.UpLeft},
-			{'Audino', 1264, 592, Direction.DownRight},
-			{'Snubbull', 1040, 864, Direction.UpRight},
-			{'Medicham', 888, 240, Direction.UpRight},			
-			{'Meditite', 520, 384, Direction.DownLeft}			
+		--objects/npcs that aren't for use in chapter 3 part 1
+		GROUND:Hide('Red_Merchant')
+		GROUND:Hide('Green_Merchant')
+		GROUND:Hide('Swap_Owner')
+		GROUND:Hide('Swap')
+		GROUND:Hide('Assembly')
+		
+		--trigger for partner pointing out cafe is open. only place if they havent done the cutscene for it yet
+		if not SV.Chapter3.FinishedCafeCutscene then
+			local cafeBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+																RogueElements.Rect(944, 584, 400, 160),
+																RogueElements.Loc(0, 0), 
+																true, 
+																"Event_Trigger_1")
 			
-		})
-	
-	
-	GROUND:CharSetAnim(furret, 'Sleep', true)
-	AI:SetCharacterAI(luxray, "ai.ground_default", RogueElements.Loc(608, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
-	AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(1188, 1140), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
-	AI:SetCharacterAI(nidoking, "ai.ground_default", RogueElements.Loc(1144, 896), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
-	AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(1248, 576), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+			cafeBlock:ReloadEvents()
+			GAME:GetCurrentGround():AddTempObject(cafeBlock)
+			--disable its collision so it doesn't displace other NPCs
+			cafeBlock.Passable = true
+		end
+		
+		
+		
+		local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill, nidoking, luxray,
+			  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull, meditite = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Sentret', 400, 424, Direction.DownRight},
+				{'Oddish', 440, 424, Direction.DownLeft},
+				{'Numel', 420, 456, Direction.Up},
+				{'Camerupt', 'Town_Seat_1'},
+				{'Manectric', 'Town_Seat_2'},
+				{'Nidorina', 536, 208, Direction.UpLeft},
+				{'Gloom', 512, 184, Direction.DownRight},
+				{'Mawile', 1204, 1156, Direction.Down},
+				{'Furret', 356, 764, Direction.Right},
+				{'Azumarill', 888, 704, Direction.Down},
+				{'Nidoking', 1160, 912, Direction.Left},
+				{'Luxray', 624, 600, Direction.Down},
+				{'Linoone', 'Cafe_Seat_2'},
+				{'Electrike', 272, 1056, Direction.Right},
+				{'Wooper_Girl', 306, 1036, Direction.DownLeft},
+				{'Wooper_Boy', 306, 1076, Direction.UpLeft},
+				{'Audino', 1264, 592, Direction.DownRight},
+				{'Snubbull', 1040, 864, Direction.UpRight},
+				{'Medicham', 888, 240, Direction.UpRight},			
+				{'Meditite', 520, 384, Direction.DownLeft}			
+				
+			})
+		
+		
+		GROUND:CharSetAnim(furret, 'Sleep', true)
+		AI:SetCharacterAI(luxray, "ai.ground_default", RogueElements.Loc(608, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(1188, 1140), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(nidoking, "ai.ground_default", RogueElements.Loc(1144, 896), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(1248, 576), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 
-	
-	
-	
-	
-	
-	
-	
-	--let the cutscene handle the fade in if it hasnt played yet		
-	if SV.Chapter3.MetTeamStyle then 
-		GAME:FadeIn(20)
-	end
-	
+		
+		
+		
+		
+		
+		
+		
+		--let the cutscene handle the fade in if it hasnt played yet		
+		if SV.Chapter3.MetTeamStyle then 
+			GAME:FadeIn(20)
+		end
+		
+	end	
+		
 	--for debug purposes. makes it so the ground loads normally as long as i just set chapter to 3.
 	if not SV.Chapter3.FinishedOutlawIntro then
 		GAME:FadeIn(20)
@@ -303,7 +318,7 @@ function metano_town_ch_3.MeetTeamStyle()
 											GROUND:AnimateInDirection(cacnea, "Hurt", Direction.Down, Direction.Down, 4, 1, 2)
 											GROUND:CharSetAction(cacnea, RogueEssence.Ground.PoseGroundAction(cacnea.Position, cacnea.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Hurt")))
 											end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											GROUND:PlayVFX(emitter, luxio.Position.X, luxio.Position.Y)
 											GROUND:CharSetAction(luxio, RogueEssence.Ground.PoseGroundAction(luxio.Position, luxio.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))  end)
 	coro4 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("We're Team [color=#FFA5FF]Style[color]![pause=0] Everything we do,[pause=10] we do with style!") end)
@@ -463,7 +478,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	UI:WaitShowDialogue("What are they talking about?[pause=0] I can't make out what they're saying...")
 	
 	GAME:WaitFrames(30)
-	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(luxio, Direction.Down, 4) GAME:WaitFrames(8) GROUND:MoveInDirection(luxio, Direction.Down, 8, false, 1) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(luxio, Direction.Down, 4) GAME:WaitFrames(20) GROUND:MoveInDirection(luxio, Direction.Down, 8, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(glameow, Direction.Down, 4) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GROUND:CharAnimateTurnTo(cacnea, Direction.Down, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})	
@@ -563,6 +578,260 @@ function metano_town_ch_3.MeetTeamStyle()
 
 	
 end 
+
+
+
+function metano_town_ch_3.MerchantIntro()
+	--Player and partner walk from bridge to guild, merchants notice them
+	--they both start trying to get their attention and to get their business
+	--they start arguing with each other that the other blows
+	--partner asks what's going on here
+	--merchants explain they sell different kinds of items, while dogging the other merchants
+	
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local stunky = CH('Red_Merchant')
+	local farfetchd = CH('Green_Merchant')
+	
+		
+	GAME:MoveCamera(648, 1264, 1, false)
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GROUND:TeleportTo(hero, 624, 1096, Direction.Down)
+	GROUND:TeleportTo(partner, 656, 1096, Direction.Down)
+
+	--they are arguing 
+	GROUND:EntTurn(stunky, Direction.Left)
+	GROUND:EntTurn(farfetchd, Direction.Right)
+	GROUND:CharSetEmote(stunky, "angry", 0)
+	GROUND:CharSetEmote(farfetchd, "angry", 0)
+	GROUND:CharSetAnim(stunky, "Idle", true)
+	GROUND:CharSetAnim(farfetchd, "Idle", true)
+
+	GAME:FadeIn(40)
+
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 656, 1232, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												  GROUND:MoveToPosition(hero, 624, 1232, false, 1) end)	
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(90)
+												  GROUND:CharEndAnim(farfetchd)
+												  GeneralFunctions.EmoteAndPause(farfetchd, "Exclaim", true)
+												  GROUND:CharTurnToCharAnimated(farfetchd, partner, 4) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(110)
+												  GROUND:CharEndAnim(stunky)
+												  GeneralFunctions.EmoteAndPause(stunky, "Notice", false)
+												  GROUND:CharTurnToCharAnimated(stunky, partner, 4) end)
+
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})	
+
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, farfetchd.CurrentForm.Species, farfetchd.CurrentForm.Form, farfetchd.CurrentForm.Skin, farfetchd.CurrentForm.Gender)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "Ah,[pause=10] adventurers![pause=0] Come to peruse my fine selection of merchandise,[pause=10] yes?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, stunky.CurrentForm.Species, stunky.CurrentForm.Form, stunky.CurrentForm.Skin, stunky.CurrentForm.Gender)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "Are you crazy?[pause=0] Nobody wants your fancy,[pause=10] overpriced junk![pause=0] They're here for my great deals.")
+	
+	GROUND:CharTurnToCharAnimated(farfetchd, stunky, 4)
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, farfetchd.CurrentForm.Species, farfetchd.CurrentForm.Form, farfetchd.CurrentForm.Skin, farfetchd.CurrentForm.Gender)
+	UI:SetSpeakerEmotion("Angry")
+	GeneralFunctions.Complain(farfetchd, true)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "There isn't a single denizen of this fine town who would purchase your cheap rubbish!")
+	UI:WaitShowDialogue("Where do you even source that garbage?[pause=0] From the Kecleon Shop's trash pile?")
+	
+	GROUND:CharTurnToCharAnimated(stunky, farfetchd, 4)
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, stunky.CurrentForm.Species, stunky.CurrentForm.Form, stunky.CurrentForm.Skin, stunky.CurrentForm.Gender)
+	UI:SetSpeakerEmotion("Angry")
+	GeneralFunctions.Complain(stunky, true)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "Keep on lying to everyone![pause=0] You and I both know my merch is top-shelf stuff!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Umm...[pause=0] What's going on here,[pause=10] exactly?")
+	GAME:WaitFrames(20)
+	
+	
+	GROUND:CharSetEmote(farfetchd, "", 0)
+	GROUND:CharSetEmote(stunky, "", 0)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(farfetchd, partner, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(stunky, partner, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, farfetchd.CurrentForm.Species, farfetchd.CurrentForm.Form, farfetchd.CurrentForm.Skin, farfetchd.CurrentForm.Gender)
+	UI:SetSpeakerEmotion("Happy")
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "Ah,[pause=10] forgive me,[pause=10] my friends![pause=0] I had forgotten my manners there!")
+	UI:WaitShowDialogue("My name is " .. farfetchd:GetDisplayName() .. ",[pause=10] and I am purveyor of held items,[pause=10] perfect for adventurers such as yourselves!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, stunky.CurrentForm.Species, stunky.CurrentForm.Form, stunky.CurrentForm.Skin, stunky.CurrentForm.Gender)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "I'm " .. stunky:GetDisplayName() .. ",[pause=10] and unlike that snob,[pause=10] I sell items that are actually useful.[pause=0] For cheap,[pause=10] too!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Oh,[pause=10] that's right![pause=0] You're both merchants,[pause=10] correct?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(farfetchd)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "Well observed,[pause=10] my friend![pause=0] I can see you're as sharp as my leek!")
+	UI:WaitShowDialogue("With intuition like that,[pause=10] you must be wise enough to shop with me,[pause=10] rather than with that charlatan " .. stunky:GetDisplayName() .. "!")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharTurnToCharAnimated(stunky, farfetchd, 4)
+	UI:SetSpeaker(stunky)
+	GROUND:CharSetEmote(stunky, "angry", 0)
+	UI:SetSpeakerEmotion("Determined")
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "I think you mean " .. GeneralFunctions.GetPronoun(partner, "they're") .. " smart enough to spend " .. GeneralFunctions.GetPronoun(partner, "their") .. " money wisely with my low prices.")
+	GAME:WaitFrames(20)
+	
+	
+	GROUND:CharTurnToCharAnimated(farfetchd, stunky, 4)
+	UI:SetSpeaker(farfetchd)
+	GROUND:CharSetEmote(farfetchd, "angry", 0)
+	UI:SetSpeakerEmotion("Determined")
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "Whyever would I mean that?[pause=0] I said " .. GeneralFunctions.GetPronoun(partner, "they're") .. " wise,[pause=10] not foolish!")
+	GAME:WaitFrames(40)
+	
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(partner, "Sweatdrop", true) end)
+	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(hero, "Sweatdrop", false) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	GAME:WaitFrames(20)
+
+	local zigzagoon = CharacterEssentials.MakeCharactersFromList({
+									{"Zigzagoon", 640, 1096, Direction.Down}
+									})
+	
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("They're really going at it...", 60) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(zigzagoon, 640, 1208, false, 1) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue(farfetchd:GetDisplayName() .. " and " .. stunky:GetDisplayName() .. " are arguing with each other again,[pause=10] huh?")
+	GAME:WaitFrames(10)
+	
+	GeneralFunctions.DuoTurnTowardsChar(zigzagoon)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Yup.[pause=0] I've seen them there bickering before,[pause=10] but I've never experienced it first-hand like this.")
+		
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Yeah,[pause=10] they do this often.[pause=0] They really dislike each other for some reason.")
+	UI:WaitShowDialogue("They won't even sell stuff to you if you bought something from the other one!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("Wow,[pause=10] really!?[pause=0] They're that spiteful?")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("Yeah.[pause=0] Fortunately,[pause=10] their memory isn't so good,[pause=10] so they'll forget their grudge against you after a day or so.")
+	GROUND:CharSetEmote(zigzagoon, "glowing", 0)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("My memory isn't so good either,[pause=10] that's why I write stuff down in my almanacs!")
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(zigzagoon, "", 0)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("I've got to be on my way now,[pause=10] good luck buying something from those two!")
+	GAME:WaitFrames(10)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(zigzagoon, Direction.Right, 4)
+											GROUND:MoveToPosition(zigzagoon, 820, 1208, false, 1) end) 
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.FaceMovingCharacter(partner, zigzagoon, Direction.UpRight) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.FaceMovingCharacter(hero, zigzagoon)
+											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GAME:WaitFrames(10)
+	GAME:GetCurrentGround():RemoveTempChar(zigzagoon)
+
+	
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Guess we should see if we can get a word in against those two,[pause=10] huh?")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+	GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+	UI:WaitShowDialogue("Erm...[pause=0] So you two sell items that are useful for adventurers,[pause=10] right?")
+	GAME:WaitFrames(20)
+	
+	
+	
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharSetEmote(farfetchd, "", 0)
+											GROUND:CharTurnToCharAnimated(farfetchd, partner, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharSetEmote(stunky, "", 0)
+											GROUND:CharTurnToCharAnimated(stunky, partner, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+
+	
+	UI:SetSpeaker(farfetchd)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(farfetchd, "That's correct.[pause=0] I have a rare held item for purchase each day.")
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("But if you buy from that charlatan over there,[pause=10] you won't get any more business out of me!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(stunky)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "I sell all sorts of different items,[pause=10] and I only have one item per day as well.")
+	UI:WaitShowDialogue("I'll give you a great deal though.[pause=0] Much cheaper than the Kecleon Shop would charge.")
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("But forget about getting any of my bargains if you buy from that snob!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	--UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I see...[pause=0] Well,[pause=10] thanks for the info.")
+	
+	GAME:WaitFrames(10)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Psst,[pause=10] " .. hero:GetDisplayName() .. "...[pause=0] We should check in with these two daily to see what they have for sale.")
+	UI:WaitShowDialogue("We can only buy from one of them each day,[pause=10] so we'll have to choose carefully.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(farfetchd)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, farfetchd, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GROUND:CharTurnToCharAnimated(hero, farfetchd, 4) end)
+	coro3 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("Well,[pause=10] I know you two will make the correct choice![pause=0] As such,[pause=10] I look forward to serving you in the future!") end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(stunky)
+	GeneralFunctions.DuoTurnTowardsCharWithDialogue(stunky, "They'll make the right choice,[pause=10] alright.[pause=0] That's why they'll be buying from me and not you!")
+	
+	GAME:WaitFrames(40)
+	GeneralFunctions.PanCamera()
+	SV.Chapter3.FinishedMerchantIntro = true
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GAME:CutsceneMode(false)
+	
+	
+end
+
+
+
+
 
 
 function metano_town_ch_3.Wooper_Conversation(chara)

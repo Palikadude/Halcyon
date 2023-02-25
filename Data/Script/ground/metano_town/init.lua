@@ -74,6 +74,8 @@ function metano_town.PlotScripting()
 		metano_town_ch_3.SetupGround()
 		if SV.Chapter3.FinishedOutlawIntro and not SV.Chapter3.MetTeamStyle then 
 			metano_town_ch_3.MeetTeamStyle()
+		elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedMerchantIntro then 
+			metano_town_ch_3.MerchantIntro()
 		end	
 	else
 		GAME:FadeIn(20)
@@ -426,7 +428,7 @@ end
 -- Shop/Useful NPCs
 -----------------------
 
-function metano_town.GenerateGreenKecleonStock()
+function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	--generate random stock of items for green kec. Items generated are based on story progression (better items will crop up later in the story)
 	--Start with predefined list of weighted items, then generate a stock of several items from those lists
 	--Stocks are separated based on category (food, medicine, hold item, etc).
@@ -434,6 +436,10 @@ function metano_town.GenerateGreenKecleonStock()
 	
 	local stock = {}
 	
+	--This parameter determines whether to generate a random item or to actually refresh the stock.
+	--The parameter should be true if we want to generate and return a single kec item (useful for red merchant)
+	--This is a bit of a lazy/poor way of doing it, but it should work fine for how often it's used.
+	if generate_random_item == nil then generate_random_item = false end
 	
 	--TODO: Add more types of stock progressions later on 
 	--Basic Stock, early game
@@ -516,20 +522,29 @@ function metano_town.GenerateGreenKecleonStock()
 	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
 	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
 	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
-
-	--set stock to randomized assortment and flag that the stock was refreshed for the day
-	SV.DailyFlags.GreenKecleonStockedRefreshed = true
-	SV.DailyFlags.GreenKecleonStock = stock
+	
+	if not generate_random_item then 
+		--set stock to randomized assortment and flag that the stock was refreshed for the day
+		SV.DailyFlags.GreenKecleonStockedRefreshed = true
+		SV.DailyFlags.GreenKecleonStock = stock
+	else 
+		return stock[math.random(1, #stock)]
+	end
 	
 end
 
-function metano_town.GeneratePurpleKecleonStock()
+function metano_town.GeneratePurpleKecleonStock(generate_random_item)
 	--generate random stock of items for green kec. Items generated are based on story progression (better items will crop up later in the story)
 	--Start with predefined list of weighted items, then generate a stock of several items from those lists
 	--Stocks are separated based on category (food, medicine, hold item, etc).
 	--Kec stock isn't totally random, it pulls a gauranteed number from each stock  (i.e. always 1 hold item a day, but which it is is random)
 	
 	local stock = {}
+	
+	--This parameter determines whether to generate a random item or to actually refresh the stock.
+	--The parameter should be true if we want to generate and return a single kec item (useful for red merchant)
+	--This is a bit of a lazy/poor way of doing it, but it should work fine for how often it's used.
+	if generate_random_item == nil then generate_random_item = false end
 	
 	
 	--TODO: Add more types of stock progressions later on 
@@ -613,9 +628,15 @@ function metano_town.GeneratePurpleKecleonStock()
 	table.insert(stock, GeneralFunctions.WeightedRandom(wand_stock))
 
 
-	--set stock to randomized assortment and flag that the stock was refreshed for the day
-	SV.DailyFlags.PurpleKecleonStockedRefreshed = true
-	SV.DailyFlags.PurpleKecleonStock = stock	
+	
+	if not generate_random_item then 
+		--set stock to randomized assortment and flag that the stock was refreshed for the day
+		SV.DailyFlags.PurpleKecleonStockedRefreshed = true
+		SV.DailyFlags.PurpleKecleonStock = stock	
+	else 
+		return stock[math.random(1, #stock)]
+	end
+	
 end
 
 function metano_town.Shop_Action(obj, activator)
@@ -1249,6 +1270,13 @@ function metano_town.Bank_Action(obj, activator)
 	GROUND:CharEndAnim(chara)
 end 
 
+function metano_town.GenerateRedMerchantItem()
+	if math.random(1,2) == 1 then
+		return metano_town.GenerateGreenKecleonStock(true)
+	else
+		return metano_town.GeneratePurpleKecleonStock(true)
+	end
+end
 
 function metano_town.Red_Merchant_Action(obj, activator)
 	DEBUG.EnableDbgCoro()
@@ -1256,61 +1284,36 @@ function metano_town.Red_Merchant_Action(obj, activator)
 	local repeated = false
 
 	
-	--todo: remove some nice items, add to green merchant... they should have a few exclusive items
 	
-	--items the merchants can potentially sell. should be about 2/3 chance for common junk, 1/3 to get something more interesting.
-	local merchant_catalog = 
-	{
-		"machine_recall_box", "machine_recall_box", "machine_recall_box", --link box 
-		--"machine_assembly_box", "machine_assembly_box", "machine_assembly_box", --assembly box (disabled in demo)
-		"machine_storage_box", "machine_storage_box", "machine_storage_box", --storage box
-		"ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", --stick
-		"ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", --cacnea spike
-		"ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", --corsola twig
-		"ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", --iron thorn
-		"ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike",  --silver spike 
-		"ammo_golden_thorn", "ammo_golden_thorn", "ammo_golden_thorn",   --golden thorn 
-		"ammo_rare_fossil",  --rare fossil
-		"ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", --geo pebble
-		"ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock",   --gravelerock
-		"apricorn_perfect", --perfect apricorn
-		"wand_path", "wand_path", "wand_path", "wand_path", "wand_path",--path wand 
-		"wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce",--pounce wand 
-		"wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", --whirlwind wand
-		"wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", --switcher wand
-		"wand_surround", "wand_surround", "wand_surround", "wand_surround", "wand_surround", --surround wand
-		"wand_lure", "wand_lure", "wand_lure", "wand_lure", "wand_lure",--lure wand 
-		"wand_slow", "wand_slow", "wand_slow", "wand_slow", "wand_slow", --slow wand 
-		"wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", --stayaway wand 
-		"wand_fear", "wand_fear", "wand_fear", "wand_fear", "wand_fear", --fear wand 
-		"wand_totter", "wand_totter", "wand_totter", "wand_totter", "wand_totter",--totter wand
-		"wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation",--infatuation wand 
-		"wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", --topsy turvy wand 
-		"wand_warp", "wand_warp", "wand_warp", "wand_warp", "wand_warp", --warp wand 
-		"wand_purge", "wand_purge", "wand_purge", "wand_purge", "wand_purge", --purge wand
-		"wand_lob", "wand_lob", "wand_lob", "wand_lob", "wand_lob", --lob wand
-		--rest of items are non "junk", put one of each since they should be rare to get a specific item, but there's so many different ones it isn't rare to find non junk
-		"held_silver_powder", "held_black_glasses", "held_dragon_scale", "held_magnet", "held_pink_bow", "held_black_belt", "held_charcoal", "held_sharp_beak", "held_spell_tag", "held_miracle_seed", "held_soft_sand", "held_never_melt_ice", "held_silk_scarf", "held_poison_barb", "held_twisted_spoon", "held_hard_stone", "held_metal_coat", "held_mystic_water", --type boosting items
-		"evo_harmony_scarf", "evo_everstone", "evo_fire_stone", "evo_thunder_stone", "evo_water_stone", "evo_leaf_stone", "evo_moon_stone", "evo_sun_stone", "evo_magmarizer", "evo_electirizer", "evo_reaper_cloth", "evo_cracked_pot", "evo_chipped_pot", "evo_shiny_stone", "evo_dusk_stone", "evo_dawn_stone", "evo_link_cable", "evo_up_grade", "evo_dubious_disc", "evo_razor_fang", "evo_razor_claw", "370", "evo_protector", "evo_oval_stone", "evo_prism_scale", "evo_kings_rock", "evo_deep_sea_tooth", "evo_deep_sea_scale", "evo_sun_ribbon", "evo_lunar_ribbon",--evolution items, maybe disable if game is not complete?
-		"machine_ability_capsule" --ability capsule
-	}
-	
+	--Generate an item for the red merchant
 	if SV.DailyFlags.RedMerchantItem == "" then 
-		SV.DailyFlags.RedMerchantItem = math.random(1, #merchant_catalog)
+		SV.DailyFlags.RedMerchantItem = metano_town.GenerateRedMerchantItem()
 	end
 	
 	local chara = CH('Red_Merchant')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
 	
-	local item = RogueEssence.Dungeon.InvItem(merchant_catalog[SV.DailyFlags.RedMerchantItem])
+	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.RedMerchantItem)
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
 	item.Amount = itemEntry.MaxStack
 	local itemName = item:GetDisplayName()
-	local itemPrice = item:GetSellValue()
+	local itemPrice = item:GetSellValue() --Item is 1/5 the normal price!
 
 	local merchant_choices = {STRINGS:Format(MapStrings['Merchant_Option_Deal']), STRINGS:FormatKey('MENU_INFO'), STRINGS:FormatKey('MENU_EXIT')}
 	UI:SetSpeaker(chara)
 	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+	chara.IsInteracting = true
+    partner.IsInteracting = true
+    UI:SetSpeaker(chara)
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+    GROUND:CharSetAnim(chara, 'None', true)
+		
+    GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(chara, hero)
+    local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+	
 	
 	while state > -1 do
 		--merchant is angry and refuses to sell to you if you bought from the green merchant
@@ -1325,7 +1328,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 		if repeated then
 			if happy then 
 				msg = STRINGS:Format(MapStrings['Red_Merchant_Intro_Return_Happy'])
-				UI:SetSpeakerEmotion('Normal')
+				UI:SetSpeakerEmotion('Happy')
 			elseif angry then 
 				state = -1 --he won't loop back to the menu if he's angry, he's just done with you
 				break
@@ -1394,8 +1397,8 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_3']))
 				UI:SetSpeakerEmotion('Determined')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_4']))
-				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_5']))
+				UI:SetSpeakerEmotion('Normal')
 			end 
 		else
 			if angry then
@@ -1411,11 +1414,66 @@ function metano_town.Red_Merchant_Action(obj, activator)
 		end 
 	end
 
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 	GROUND:EntTurn(chara, olddir)
 	
 	
 end
 
+function metano_town.GenerateGreenMerchantItem()
+
+	--todo: More dynamic item stocking based on game progression
+	local stock = {
+		{"held_black_belt", 10},
+		{"held_black_glasses", 10},
+		{"held_charcoal", 10},
+		{"held_dragon_scale", 10},
+		{"held_hard_stone", 10},
+		{"held_magnet", 10},
+		{"held_metal_coat", 10},
+		{"held_miracle_seed", 10},
+		{"held_mystic_water", 10},
+		{"held_never_melt_ice", 10},
+		{"held_pink_bow", 10},
+		{"held_poison_barb", 10},
+		{"held_sharp_beak", 10},
+		{"held_silk_scarf", 10},
+		{"held_silver_powder", 10},
+		{"held_soft_sand", 10},
+		{"held_spell_tag", 10},
+		{"held_twisted_spoon", 10},
+		
+		--these are renamed as Guards externally
+		{"held_blank_plate", 10},
+		{"held_draco_plate", 10},
+		{"held_dread_plate", 10},
+		{"held_earth_plate", 10},
+		{"held_fist_plate", 10},
+		{"held_flame_plate", 10},
+		{"held_icicle_plate", 10},
+		{"held_insect_plate", 10},
+		{"held_iron_plate", 10},
+		{"held_meadow_plate", 10},
+		{"held_mind_plate", 10},
+		{"held_pixie_plate", 10},
+		{"held_sky_plate", 10},
+		{"held_splash_plate", 10},
+		{"held_spooky_plate", 10},
+		{"held_stone_plate", 10},
+		{"held_toxic_plate", 10},
+		{"held_zap_plate", 10}
+		
+	}
+	
+	return GeneralFunctions.WeightedRandom(stock)
+end
 
 
 function metano_town.Green_Merchant_Action(obj, activator)
@@ -1424,60 +1482,33 @@ function metano_town.Green_Merchant_Action(obj, activator)
 	local repeated = false
 
 	
-	--code and strings say "angry" but this merchant actually gets sad when you buy from the other one. too lazy to update naming to reflect that, as code is copied from other merchant 
-	--items the merchants can potentially sell. should be about 2/3 chance for common junk, 1/3 to get something more interesting.
-	local merchant_catalog = 
-	{
-		"machine_recall_box", "machine_recall_box", "machine_recall_box", --link box 
-		--"machine_assembly_box", "machine_assembly_box", "machine_assembly_box", --assembly box (disable in demo)
-		"machine_storage_box", "machine_storage_box", "machine_storage_box", --storage box
-		"ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", "ammo_stick", --stick
-		"ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", "ammo_cacnea_spike", --cacnea spike
-		"ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", "ammo_corsola_twig", --corsola twig
-		"ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", "ammo_iron_thorn", --iron thorn
-		"ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike", "ammo_silver_spike",  --silver spike 
-		"ammo_golden_thorn", "ammo_golden_thorn", "ammo_golden_thorn",   --golden thorn 
-		"ammo_rare_fossil",  --rare fossil
-		"ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", "ammo_geo_pebble", --geo pebble
-		"ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock", "ammo_gravelerock",   --gravelerock
-		"apricorn_perfect", --perfect apricorn
-		"wand_path", "wand_path", "wand_path", "wand_path", "wand_path",--path wand 
-		"wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce", "wand_pounce",--pounce wand 
-		"wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", "wand_whirlwind", --whirlwind wand
-		"wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", "wand_switcher", --switcher wand
-		"wand_surround", "wand_surround", "wand_surround", "wand_surround", "wand_surround", --surround wand
-		"wand_lure", "wand_lure", "wand_lure", "wand_lure", "wand_lure",--lure wand 
-		"wand_slow", "wand_slow", "wand_slow", "wand_slow", "wand_slow", --slow wand 
-		"wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", "wand_stayaway", --stayaway wand 
-		"wand_fear", "wand_fear", "wand_fear", "wand_fear", "wand_fear", --fear wand 
-		"wand_totter", "wand_totter", "wand_totter", "wand_totter", "wand_totter",--totter wand
-		"wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation", "wand_infatuation",--infatuation wand 
-		"wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", "wand_topsy_turvy", --topsy turvy wand 
-		"wand_warp", "wand_warp", "wand_warp", "wand_warp", "wand_warp", --warp wand 
-		"wand_purge", "wand_purge", "wand_purge", "wand_purge", "wand_purge", --purge wand
-		"wand_lob", "wand_lob", "wand_lob", "wand_lob", "wand_lob", --lob wand
-		--rest of items are non "junk", put one of each since they should be rare to get a specific item, but there's so many different ones it isn't rare to find non junk
-		"held_power_band", "held_power_band", "held_power_band", "held_special_band", "held_special_band", "held_special_band", "held_defense_scarf", "held_defense_scarf", "held_defense_scarf", "held_zinc_band", "held_zinc_band", "held_zinc_band", --power band, def scarf, etc
-		"held_friend_bow", "held_pierce_band", "held_mobile_scarf", "held_pass_scarf", "held_warp_scarf", "held_trap_scarf", "held_grip_claw", "held_binding_band", "held_twist_band", "held_metronome", "held_shed_shell", "held_shell_bell", "held_scope_lens", "held_wide_lens", "held_heal_ribbon", --some assorted bands and scarfs
-		"held_sticky_barb", "held_choice_band", "held_choice_specs", "held_choice_scarf", "held_assault_vest", "held_life_orb", "held_toxic_orb", "held_flame_orb", "held_iron_ball", "held_ring_target", "held_black_sludge", "held_x_ray_specs", "held_reunion_cape", "held_cover_band", "held_big_root", "held_expert_belt", --assorted hold items
-		"machine_ability_capsule" --ability capsule
-	}
 	
 	if SV.DailyFlags.GreenMerchantItem == "" then 
-		SV.DailyFlags.GreenMerchantItem = math.random(1, #merchant_catalog)
+		SV.DailyFlags.GreenMerchantItem = metano_town.GenerateGreenMerchantItem()
 	end
 	
 	local chara = CH('Green_Merchant')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
 	
-	local item = RogueEssence.Dungeon.InvItem(merchant_catalog[SV.DailyFlags.GreenMerchantItem])
+	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.GreenMerchantItem)
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
 	item.Amount = itemEntry.MaxStack
 	local itemName = item:GetDisplayName()
-	local itemPrice = item:GetSellValue()
+	local itemPrice = item:GetSellValue() * 5 --5x the sell price, like the kecs
 	local merchant_choices = {STRINGS:Format(MapStrings['Merchant_Option_Deal']), STRINGS:FormatKey('MENU_INFO'), STRINGS:FormatKey('MENU_EXIT')}
 	UI:SetSpeaker(chara)
+	chara.IsInteracting = true
+    partner.IsInteracting = true
+    UI:SetSpeaker(chara)
 	local olddir = chara.Direction
-	GROUND:CharTurnToChar(chara, CH('PLAYER'))
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+    GROUND:CharSetAnim(chara, 'None', true)
+		
+    GROUND:CharTurnToChar(hero, chara)
+    GROUND:CharTurnToChar(chara, hero)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
 	
 	while state > -1 do
 		--merchant is angry and refuses to sell to you if you bought from the red merchant
@@ -1492,7 +1523,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 		if repeated then
 			if happy then 
 				msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Return_Happy'])
-				--UI:SetSpeakerEmotion('Happy')
+				UI:SetSpeakerEmotion('Happy')
 			elseif angry then 
 				state = -1 --he won't loop back to the menu if he's angry, he's just done with you
 				break
@@ -1503,7 +1534,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 			UI:SetSpeakerEmotion('Happy')
 			msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Happy'])
 		elseif angry then 
-			UI:SetSpeakerEmotion('Teary-Eyed')
+			UI:SetSpeakerEmotion('Determined')
 			msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Angry'])
 		end
 		
@@ -1516,7 +1547,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Worried')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Stock']))
 			elseif angry then 
-				UI:SetSpeakerEmotion('Crying')
+				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Refuse_Service']))
 			else
 				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item'], itemName, itemPrice))
@@ -1541,7 +1572,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 			end				
 		elseif result == 2 then 
 			if angry then 
-				UI:SetSpeakerEmotion('Crying')
+				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_Angry']))
 			elseif happy then 
 				UI:SetSpeakerEmotion('Normal')
@@ -1561,7 +1592,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 			end 
 		else
 			if angry then
-				UI:SetSpeakerEmotion('Teary-Eyed')
+				UI:SetSpeakerEmotion('Determined')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Goodbye_Angry']))
 			elseif happy then
 				UI:SetSpeakerEmotion('Happy')
@@ -1573,11 +1604,15 @@ function metano_town.Green_Merchant_Action(obj, activator)
 		end 
 	end
 
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	chara.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(chara)
 	GROUND:EntTurn(chara, olddir)
-	
-	
-	
-	
 	
 	
 end
@@ -1884,10 +1919,10 @@ function metano_town.Tutor_Action(obj, activator)
 			end
 		elseif state == 2 then
 			if not GAME:CanRelearn(member) then
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Cant_Remember']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Cant_Remember'], member:GetDisplayName(false)))
 				state = 1
 			else
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_What'], member.BaseName))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_What'], member:GetDisplayName(false)))
 				UI:RelearnMenu(member)
 				UI:WaitForChoice()
 				local result = UI:ChoiceResult()
@@ -1907,9 +1942,9 @@ function metano_town.Tutor_Action(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Begin']))
 				metano_town.Tutor_Sequence()	
 				SOUND:PlayBattleSE("DUN_Learn_Move")
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Success'], member.BaseName, moveEntry.Name:ToLocal()))				state = 0
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Success'], member:GetDisplayName(false), moveEntry:GetColoredName()))				state = 0
 			else
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Replace']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Replace'], member:GetDisplayName(false)))
 				local result = UI:LearnMenu(member, move)
 				UI:WaitForChoice()
 				local result = UI:ChoiceResult()
@@ -1920,7 +1955,7 @@ function metano_town.Tutor_Action(obj, activator)
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Begin']))
 					metano_town.Tutor_Sequence()	
 					SOUND:PlayBattleSE("DUN_Learn_Move")
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Success'], member.BaseName, moveEntry.Name:ToLocal()))					state = 0
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Remember_Success'], member:GetDisplayName(false), moveEntry:GetColoredName()))					state = 0
 				else
 					state = 2
 				end
@@ -1933,9 +1968,9 @@ function metano_town.Tutor_Action(obj, activator)
 			if result > -1 then
 				member = GAME:GetPlayerPartyMember(result)
 				if not GAME:CanForget(member) then
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Cant_Forget']))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Cant_Forget'], member:GetDisplayName(false)))
 				else
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Forget_What'], member.BaseName))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Forget_What'], member:GetDisplayName(false)))
 					state = 5
 				end
 			else
@@ -1952,7 +1987,7 @@ function metano_town.Tutor_Action(obj, activator)
 				local moveEntry = RogueEssence.Data.DataManager.Instance:GetSkill(move)
 				GAME:ForgetSkill(member, result)
 				SOUND:PlayBattleSE("DUN_Learn_Move")
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Forget_Success'], member.BaseName, moveEntry.Name:ToLocal()))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Tutor_Forget_Success'], member:GetDisplayName(false), moveEntry:GetColoredName()))
 				state = 0
 			else
 				state = 4

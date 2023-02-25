@@ -1933,7 +1933,7 @@
 "rock_tomb"
 ],
 "Intrinsic": "",
-"Tactic": "stick_together",
+"Tactic": "wander_dumb",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {

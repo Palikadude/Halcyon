@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.6.0",
+"Version": "0.6.9.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -25,10 +25,6 @@
 "Y": 3
 },
 "serializationDir": 0,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Test Dummy",
-"ActionEvents": [],
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -59,8 +55,8 @@
 },
 {
 "Element": {
-"SkillNum": "trick",
-"Charges": 18,
+"SkillNum": "tackle",
+"Charges": 22,
 "Enabled": true,
 "Sealed": false
 },
@@ -68,17 +64,17 @@
 },
 {
 "Element": {
-"SkillNum": "covet",
-"Charges": 20,
-"Enabled": true,
+"SkillNum": "karate_chop",
+"Charges": 22,
+"Enabled": false,
 "Sealed": false
 },
 "BackRef": 2
 },
 {
 "Element": {
-"SkillNum": "switcheroo",
-"Charges": 20,
+"SkillNum": "swift",
+"Charges": 14,
 "Enabled": true,
 "Sealed": false
 },
@@ -165,6 +161,7 @@
 "Assembly": false,
 "Index": -1
 },
+"Nickname": "Test Dummy",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -176,8 +173,8 @@
 "Level": 6,
 "EXP": 0,
 "MaxHPBonus": 100,
-"AtkBonus": -10,
-"DefBonus": -2,
+"AtkBonus": 0,
+"DefBonus": 0,
 "MAtkBonus": 0,
 "MDefBonus": 0,
 "SpeedBonus": 0,
@@ -187,16 +184,16 @@
 "Charges": 20
 },
 {
-"SkillNum": "trick",
-"Charges": 18
+"SkillNum": "tackle",
+"Charges": 22
 },
 {
-"SkillNum": "covet",
-"Charges": 20
+"SkillNum": "karate_chop",
+"Charges": 22
 },
 {
-"SkillNum": "switcheroo",
-"Charges": 20
+"SkillNum": "swift",
+"Charges": 14
 }
 ],
 "BaseIntrinsics": [
@@ -222,7 +219,10 @@
 },
 "EntryPoint": -1
 },
+"IsFounder": false,
+"IsPartner": false,
 "IsFavorite": false,
+"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -1109,7 +1109,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1132,7 +1131,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1155,7 +1153,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1178,7 +1175,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1201,7 +1197,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1224,7 +1219,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1247,7 +1241,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1270,7 +1263,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1293,7 +1285,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1316,7 +1307,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1341,7 +1331,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1364,7 +1353,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1387,7 +1375,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1410,7 +1397,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1433,7 +1419,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1456,7 +1441,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1479,7 +1463,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1502,7 +1485,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1525,7 +1507,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1548,7 +1529,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1573,7 +1553,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1596,7 +1575,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1619,7 +1597,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1642,7 +1619,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1665,7 +1641,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1688,7 +1663,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1711,7 +1685,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1734,7 +1707,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1757,7 +1729,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1780,7 +1751,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1805,7 +1775,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1828,7 +1797,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1851,7 +1819,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1874,7 +1841,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1897,7 +1863,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1920,7 +1885,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1943,7 +1907,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1966,7 +1929,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -1989,7 +1951,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2012,7 +1973,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2037,7 +1997,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2060,7 +2019,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2083,7 +2041,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2106,7 +2063,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2129,7 +2085,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2152,7 +2107,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2175,7 +2129,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2198,7 +2151,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2221,7 +2173,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2244,7 +2195,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2269,7 +2219,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2292,7 +2241,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2315,7 +2263,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2338,7 +2285,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2361,7 +2307,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2384,7 +2329,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2407,7 +2351,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2430,7 +2373,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2453,7 +2395,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2476,7 +2417,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2501,7 +2441,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2524,7 +2463,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2547,7 +2485,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2570,7 +2507,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2593,7 +2529,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2616,7 +2551,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2639,7 +2573,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2662,7 +2595,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2685,7 +2617,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2708,7 +2639,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2733,7 +2663,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2756,7 +2685,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2779,7 +2707,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2802,7 +2729,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2825,7 +2751,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2848,7 +2773,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2871,7 +2795,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2894,7 +2817,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2917,7 +2839,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2940,7 +2861,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2965,7 +2885,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -2988,7 +2907,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3011,7 +2929,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3034,7 +2951,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3057,7 +2973,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3080,7 +2995,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3103,7 +3017,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3126,7 +3039,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3149,7 +3061,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3172,7 +3083,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3197,7 +3107,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3220,7 +3129,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3243,7 +3151,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3266,7 +3173,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3289,7 +3195,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3312,7 +3217,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3335,7 +3239,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3358,7 +3261,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3381,7 +3283,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }
@@ -3404,7 +3305,6 @@
 },
 "ID": "",
 "Revealed": false,
-"Danger": false,
 "Owner": 0,
 "TileStates": []
 }

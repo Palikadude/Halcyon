@@ -797,6 +797,130 @@
 "Comment": "",
 "SortOrder": 0
 },
+"held_black_belt": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Black Belt",
+"LocalTexts": {
+"fr": "Ceinture Noire",
+"de": "Schwarzgurt",
+"es": "Cinturón Negro",
+"it": "Cinturanera",
+"ko": "검은띠",
+"ja": "くろおび",
+"ja-jp": "くろおび",
+"zh-hans": "黑带",
+"zh-hant": "黑帶"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_black_glasses": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Black Glasses",
+"LocalTexts": {
+"fr": "Lunettes Noires",
+"de": "Schattenglas",
+"es": "Gafas de Sol",
+"it": "Occhialineri",
+"ko": "검은안경",
+"ja": "くろいメガネ",
+"ja-jp": "くろいメガネ",
+"zh-hans": "黑色眼镜",
+"zh-hant": "黑色眼鏡"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_blank_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Blank Guard",
+"LocalTexts": {
+"fr": "Plaque Renouveau",
+"de": "Neutraltafel",
+"es": "Tabla Neutra",
+"it": "Lastraripristino",
+"ko": "순백플레이트",
+"ja": "まっさらプレート",
+"ja-jp": "まっさらプレート",
+"zh-hans": "净空石板",
+"zh-hant": "淨空石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_charcoal": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Charcoal",
+"LocalTexts": {
+"fr": "Charbon",
+"de": "Holzkohle",
+"es": "Carbón",
+"it": "Carbonella",
+"ko": "목탄",
+"ja": "もくたん",
+"ja-jp": "もくたん",
+"zh-hans": "木炭",
+"zh-hant": "木炭"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
 "held_defense_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
@@ -816,6 +940,621 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"held_draco_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Draco Guard",
+"LocalTexts": {
+"fr": "Plaque Draco",
+"de": "Dracotafel",
+"es": "Tabla Draco",
+"it": "Lastradrakon",
+"ko": "용의플레이트",
+"ja": "りゅうのプレート",
+"ja-jp": "りゅうのプレート",
+"zh-hans": "龙之石板",
+"zh-hant": "龍之石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_dragon_scale": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Dragon Scale",
+"LocalTexts": {
+"fr": "Écaille Draco",
+"de": "Drachenhaut",
+"es": "Escamadragón",
+"it": "Squama Drago",
+"ko": "용의비늘",
+"ja": "りゅうのウロコ",
+"ja-jp": "りゅうのウロコ",
+"zh-hans": "龙之鳞片",
+"zh-hant": "龍之鱗片"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_dread_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Dread Guard",
+"LocalTexts": {
+"fr": "Plaque Ombre",
+"de": "Furchttafel",
+"es": "Tabla Oscura",
+"it": "Lastratimore",
+"ko": "공포플레이트",
+"ja": "こわもてプレート",
+"ja-jp": "こわもてプレート",
+"zh-hans": "恶颜石板",
+"zh-hant": "惡顏石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_earth_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Earth Guard",
+"LocalTexts": {
+"fr": "Plaque Terre",
+"de": "Erdtafel",
+"es": "Tabla Terrax",
+"it": "Lastrageo",
+"ko": "대지플레이트",
+"ja": "だいちのプレート",
+"ja-jp": "だいちのプレート",
+"zh-hans": "大地石板",
+"zh-hant": "大地石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_fist_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Fist Guard",
+"LocalTexts": {
+"fr": "Plaque Poing",
+"de": "Fausttafel",
+"es": "Tabla Fuerte",
+"it": "Lastrapugno",
+"ko": "주먹플레이트",
+"ja": "こぶしのプレート",
+"ja-jp": "こぶしのプレート",
+"zh-hans": "拳头石板",
+"zh-hant": "拳頭石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_flame_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Flame Guard",
+"LocalTexts": {
+"fr": "Plaque Flamme",
+"de": "Feuertafel",
+"es": "Tabla Llama",
+"it": "Lastrarogo",
+"ko": "불구슬플레이트",
+"ja": "ひのたまプレート",
+"ja-jp": "ひのたまプレート",
+"zh-hans": "火球石板",
+"zh-hant": "火球石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_hard_stone": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Hard Stone",
+"LocalTexts": {
+"fr": "Pierre Dure",
+"de": "Granitstein",
+"es": "Piedra Dura",
+"it": "Pietradura",
+"ko": "딱딱한돌",
+"ja": "かたいいし",
+"ja-jp": "かたいいし",
+"zh-hans": "硬石头",
+"zh-hant": "硬石頭"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_icicle_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Icicle Guard",
+"LocalTexts": {
+"fr": "Plaque Glace",
+"de": "Frosttafel",
+"es": "Tabla Helada",
+"it": "Lastragelo",
+"ko": "고드름플레이트",
+"ja": "つららのプレート",
+"ja-jp": "つららのプレート",
+"zh-hans": "冰柱石板",
+"zh-hant": "冰柱石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_insect_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Insect Guard",
+"LocalTexts": {
+"fr": "Plaque Insecte",
+"de": "Käfertafel",
+"es": "Tabla Bicho",
+"it": "Lastrabaco",
+"ko": "비단벌레플레이트",
+"ja": "たまむしプレート",
+"ja-jp": "たまむしプレート",
+"zh-hans": "玉虫石板",
+"zh-hant": "玉蟲石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_iron_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Iron Guard",
+"LocalTexts": {
+"fr": "Plaque Fer",
+"de": "Eisentafel",
+"es": "Tabla Acero",
+"it": "Lastraferro",
+"ko": "강철플레이트",
+"ja": "こうてつプレート",
+"ja-jp": "こうてつプレート",
+"zh-hans": "钢铁石板",
+"zh-hant": "鋼鐵石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_magnet": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Magnet",
+"LocalTexts": {
+"fr": "Aimant",
+"de": "Magnet",
+"es": "Imán",
+"it": "Calamita",
+"ko": "자석",
+"ja": "じしゃく",
+"ja-jp": "じしゃく",
+"zh-hans": "磁铁",
+"zh-hant": "磁鐵"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_meadow_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Meadow Guard",
+"LocalTexts": {
+"fr": "Plaque Herbe",
+"de": "Wiesentafel",
+"es": "Tabla Pradal",
+"it": "Lastraprato",
+"ko": "초록플레이트",
+"ja": "みどりのプレート",
+"ja-jp": "みどりのプレート",
+"zh-hans": "碧绿石板",
+"zh-hant": "碧綠石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_metal_coat": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Metal Coat",
+"LocalTexts": {
+"fr": "Peau Métal",
+"de": "Metallmantel",
+"es": "Revest. Metálico",
+"it": "Metalcoperta",
+"ko": "금속코트",
+"ja": "メタルコート",
+"ja-jp": "メタルコート",
+"zh-hans": "金属膜",
+"zh-hant": "金屬膜"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_mind_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Mind Guard",
+"LocalTexts": {
+"fr": "Plaque Esprit",
+"de": "Hirntafel",
+"es": "Tabla Mental",
+"it": "Lastramente",
+"ko": "이상한플레이트",
+"ja": "ふしぎのプレート",
+"ja-jp": "ふしぎのプレート",
+"zh-hans": "神奇石板",
+"zh-hant": "神奇石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_miracle_seed": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Miracle Seed",
+"LocalTexts": {
+"fr": "Grain Miracle",
+"de": "Wundersaat",
+"es": "Semilla Milagro",
+"it": "Miracolseme",
+"ko": "기적의씨",
+"ja": "きせきのタネ",
+"ja-jp": "きせきのタネ",
+"zh-hans": "奇迹种子",
+"zh-hant": "奇跡種子"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_mystic_water": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Mystic Water",
+"LocalTexts": {
+"fr": "Eau Mystique",
+"de": "Zauberwasser",
+"es": "Agua Mística",
+"it": "Acqua Magica",
+"ko": "신비의물방울",
+"ja": "しんぴのしずく",
+"ja-jp": "しんぴのしずく",
+"zh-hans": "神秘水滴",
+"zh-hant": "神秘水滴"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_never_melt_ice": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Never-Melt Ice",
+"LocalTexts": {
+"fr": "Glace Éternelle",
+"de": "Ewiges Eis",
+"es": "Antiderretir",
+"it": "Gelomai",
+"ko": "녹지않는얼음",
+"ja": "とけないこおり",
+"ja-jp": "とけないこおり",
+"zh-hans": "不融冰",
+"zh-hant": "不融冰"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_pink_bow": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Pink Bow",
+"LocalTexts": {
+"fr": "Ruban Rose",
+"de": "Rosane Schleife",
+"ko": "분홍리본",
+"zh-hans": "桃色蝴蝶结"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_pixie_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Pixie Guard",
+"LocalTexts": {
+"fr": "Plaque Pixie",
+"de": "Feentafel",
+"es": "Tabla Duende",
+"it": "Lastraspiritello",
+"ko": "정령플레이트",
+"ja": "せいれいプレート",
+"ja-jp": "せいれいプレート",
+"zh-hans": "妖精石板",
+"zh-hant": "妖精石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_poison_barb": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Poison Barb",
+"LocalTexts": {
+"fr": "Pic Venin",
+"de": "Giftstich",
+"es": "Flecha Venenosa",
+"it": "Velenaculeo",
+"ko": "독바늘",
+"ja": "どくバリ",
+"ja-jp": "どくバリ",
+"zh-hans": "毒针",
+"zh-hant": "毒針"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
 },
 "held_power_band": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -858,6 +1597,161 @@
 "Comment": "",
 "SortOrder": 0
 },
+"held_sharp_beak": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Sharp Beak",
+"LocalTexts": {
+"fr": "Bec Pointu",
+"de": "Hackattack",
+"es": "Pico Afilado",
+"it": "Beccaffilato",
+"ko": "예리한부리",
+"ja": "するどいくちばし",
+"ja-jp": "するどいくちばし",
+"zh-hans": "锐利鸟嘴",
+"zh-hant": "銳利鳥嘴"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_silk_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Silk Scarf",
+"LocalTexts": {
+"fr": "Écharpe Soie",
+"de": "Seidenschal",
+"es": "Pañuelo Seda",
+"it": "Sciarpa Seta",
+"ko": "실크스카프",
+"ja": "シルクのスカーフ",
+"ja-jp": "シルクのスカーフ",
+"zh-hans": "丝绸围巾",
+"zh-hant": "絲綢圍巾"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_silver_powder": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Silver Powder",
+"LocalTexts": {
+"fr": "Poudre Argentée",
+"de": "Silberstaub",
+"es": "Polvo Plata",
+"it": "Argenpolvere",
+"ko": "은빛가루",
+"ja": "ぎんのこな",
+"ja-jp": "ぎんのこな",
+"zh-hans": "银粉",
+"zh-hant": "銀粉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_sky_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Sky Guard",
+"LocalTexts": {
+"fr": "Plaque Ciel",
+"de": "Wolkentafel",
+"es": "Tabla Cielo",
+"it": "Lastracielo",
+"ko": "푸른하늘플레이트",
+"ja": "あおぞらプレート",
+"ja-jp": "あおぞらプレート",
+"zh-hans": "蓝天石板",
+"zh-hant": "藍天石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_soft_sand": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Soft Sand",
+"LocalTexts": {
+"fr": "Sable Doux",
+"de": "Pudersand",
+"es": "Arena Fina",
+"it": "Sabbia Soffice",
+"ko": "부드러운모래",
+"ja": "やわらかいすな",
+"ja-jp": "やわらかいすな",
+"zh-hans": "柔软沙子",
+"zh-hant": "柔軟沙子"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
 "held_special_band": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
@@ -877,6 +1771,223 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"held_spell_tag": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Spell Tag",
+"LocalTexts": {
+"fr": "Rune Sort",
+"de": "Bannsticker",
+"es": "Hechizo",
+"it": "Spettrotarga",
+"ko": "저주의부적",
+"ja": "のろいのおふだ",
+"ja-jp": "のろいのおふだ",
+"zh-hans": "诅咒之符",
+"zh-hant": "詛咒之符"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_splash_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Splash Guard",
+"LocalTexts": {
+"fr": "Plaque Hydro",
+"de": "Wassertafel",
+"es": "Tabla Linfa",
+"it": "Lastraidro",
+"ko": "물방울플레이트",
+"ja": "しずくプレート",
+"ja-jp": "しずくプレート",
+"zh-hans": "水滴石板",
+"zh-hant": "水滴石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_spooky_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Spooky Guard",
+"LocalTexts": {
+"fr": "Plaque Fantô",
+"de": "Spuktafel",
+"es": "Tabla Terror",
+"it": "Lastratetra",
+"ko": "원령플레이트",
+"ja": "もののけプレート",
+"ja-jp": "もののけプレート",
+"zh-hans": "妖怪石板",
+"zh-hant": "妖怪石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_stone_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Stone Guard",
+"LocalTexts": {
+"fr": "Plaque Roc",
+"de": "Steintafel",
+"es": "Tabla Pétrea",
+"it": "Lastrapietra",
+"ko": "암석플레이트",
+"ja": "がんせきプレート",
+"ja-jp": "がんせきプレート",
+"zh-hans": "岩石石板",
+"zh-hant": "岩石石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_toxic_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Toxic Guard",
+"LocalTexts": {
+"fr": "Plaque Toxik",
+"de": "Gifttafel",
+"es": "Tabla Tóxica",
+"it": "Lastrafiele",
+"ko": "맹독플레이트",
+"ja": "もうどくプレート",
+"ja-jp": "もうどくプレート",
+"zh-hans": "剧毒石板",
+"zh-hant": "劇毒石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_twisted_spoon": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Twisted Spoon",
+"LocalTexts": {
+"fr": "Cuiller Tordue",
+"de": "Krummlöffel",
+"es": "Cuchara Torcida",
+"it": "Cucchiaio Torto",
+"ko": "휘어진스푼",
+"ja": "まがったスプーン",
+"ja-jp": "まがったスプーン",
+"zh-hans": "弯曲的汤匙",
+"zh-hant": "彎曲的湯匙"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"held_zap_plate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Zap Guard",
+"LocalTexts": {
+"fr": "Plaque Volt",
+"de": "Blitztafel",
+"es": "Tabla Trueno",
+"it": "Lastrasaetta",
+"ko": "우뢰플레이트",
+"ja": "いかずちプレート",
+"ja-jp": "いかずちプレート",
+"zh-hans": "雷电石板",
+"zh-hant": "雷電石板"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
 },
 "held_zinc_band": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",

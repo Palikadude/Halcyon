@@ -366,6 +366,24 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = "normal"
+		},		
+		
+		Farfetchd = {
+			species = "farfetchd",
+			nickname = 'Mido',
+			instance = "Farfetch'd",
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
+		},	
+
+		Stunky = {
+			species = "stunky",
+			nickname = 'Rhizo',
+			instance = 'Stunky',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
 		},
 		
 	

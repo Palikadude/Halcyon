@@ -530,7 +530,9 @@ function BATTLE_SCRIPT.SynergyScarfPass(owner, ownerChar, context, args)
 				--cannot bodyguard if sleeping, paralyzed, or frozen
 				if partymember:GetStatusEffect("sleep") == nil and partymember:GetStatusEffect("paralyze") == nil and partymember:GetStatusEffect("freeze") == nil then
 				
-					_DUNGEON:LogMsg(STRINGS:Format("{0} is concerned for {1}'s safety!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
+					local scarves_name = STRINGS:Format('\\uE0AE')..'[color=#FFCEFF]Synergy Scarves[color]'
+
+					_DUNGEON:LogMsg(STRINGS:Format("{0}'s and {1}'s " .. scarves_name .. " glow brightly!", partymember:GetDisplayName(false), ownerChar:GetDisplayName(false)))
 					
 					local olddir = partymember.CharDir 
 					

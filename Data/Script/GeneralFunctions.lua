@@ -1040,6 +1040,22 @@ function GeneralFunctions.DuoTurnTowardsChar(chara, heroDelay, turnFrames)
 
 end 
 
+--set speaker and emotion beforehand!
+function GeneralFunctions.DuoTurnTowardsCharWithDialogue(chara, dialogue, heroDelay, turnFrames)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	turnFrames = turnFrames or 4
+	heroDelay = heroDelay or 4
+	
+	local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(heroDelay) GROUND:CharTurnToCharAnimated(hero, chara, 4) end)
+	local coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+	UI:WaitShowDialogue(dialogue)
+	
+	TASK:JoinCoroutines({coro1, coro2})
+
+end 
+
 
 
 --feed it a list of pairs of values and weights, it will return a value randomly with regards to the weights
