@@ -17,7 +17,7 @@ function metano_town.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-	GROUND:AddMapStatus("cloudy")
+	GROUND:AddMapStatus("clouds_overhead")
 	
 		
 	--if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
@@ -338,10 +338,18 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   for ii = 1,#dungeon_entrances,1 do
     if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
 	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon_entrances[ii])
-	  local zone_name = zone_summary:GetColoredName()
-		if mission_dests[dungeon_entrances[ii]] then 
-			zone_name = STRINGS:Format("\\uE10F ") .. zone_name --open letter
-		end
+	  local zone_name = ""
+	  if _DATA.Save:GetDungeonUnlock(dungeon_entrances[ii]) == RogueEssence.Data.GameProgress.UnlockState.Completed then
+		zone_name = zone_summary:GetColoredName()
+	  else
+	    zone_name = "[color=#00FFFF]"..zone_summary.Name:ToLocal().."[color]"
+	  end
+
+	  if dungeon_entrances[ii] == SV.ChapterProgression.CurrentStoryDungeon then 
+	      zone_name = STRINGS:Format('\\uE111 ') .. zone_name --exclamation symbol 
+	  elseif mission_dests[dungeon_entrances[ii]] then 
+	      zone_name = STRINGS:Format("\\uE10F ") .. zone_name --open letter
+      end
       table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
 	end
   end
@@ -2450,6 +2458,11 @@ function metano_town.Audino_Action(obj, activator)
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Audino_Action(...,...)"), obj, activator))
 end
 
+function metano_town.Zigzagoon_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), obj, activator))
+end
+
 function metano_town.Growlithe_Desk_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Desk_Action(...,...)"), obj, activator))
@@ -2579,20 +2592,38 @@ end
 function metano_town.Postboard_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   UI:ResetSpeaker()
-  UI:SetAutoFinish(true)
-  UI:SetCenter(true)  
   local hero = CH('PLAYER')
   local partner = CH('Teammate1')
   partner.IsInteracting = true
   GROUND:CharSetAnim(partner, 'None', true)
   GROUND:CharSetAnim(hero, 'None', true)	
-  UI:WaitShowDialogue("There's nothing here right now.\nCome back again another time!")
-  UI:SetAutoFinish(false)
-  UI:SetCenter(false)
+  if SV.Chapter3.DefeatedBoss then -- Only after unlocking missions should this board do anything. This board can be repurposed for something else once missions are added to the main esc menu.
+     GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+     GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+	  if SV.TakenBoard[1].Client == "" then --No missions taken! Don't display an empty taken board.
+          UI:SetAutoFinish(true)
+		  UI:SetCenter(true)  
+		  UI:WaitShowDialogue("You have no jobs currently!")
+		  UI:SetAutoFinish(false)
+		  UI:SetCenter(false)
+	  else
+		  local menu = BoardMenu:new("taken")
+		  UI:SetCustomMenu(menu.menu)
+		  UI:WaitForChoice()
+	  end
+  else
+	  UI:SetAutoFinish(true)
+	  UI:SetCenter(true)  
+	  UI:WaitShowDialogue("There's nothing here right now.\nCome back again another time!")
+	  UI:SetAutoFinish(false)
+	  UI:SetCenter(false)
+  end 
+  
   partner.IsInteracting = false
   GROUND:CharEndAnim(partner)
   GROUND:CharEndAnim(hero)	
 end
+
 --Change this to a little cutscene like how chimecho comes out to see you? Whoever ends up running the assmebly should come out to see you
 function metano_town.Assembly_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine

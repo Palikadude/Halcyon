@@ -21,18 +21,14 @@ end
 --NPC Scripts
 ----------------
 function guild_third_floor_lobby_ch_3.Noctowl_Action(chara, activator)
-	--if not SV.Chapter3.EnteredCavern then 
+	if not SV.Chapter3.DefeatedBoss then 
 		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Mareep") .. " and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " have helped you pick out an outlaw job from the board.")
 		UI:WaitShowDialogue("They should also be able to assist you with any trouble you may have.")
 		UI:WaitShowDialogue("Once you capture the outlaw,[pause=10] bring them back to the guild for your reward from " .. CharacterEssentials.GetCharacterName("Bisharp") .. ".")
 		GeneralFunctions.EndConversation(chara)
-	--else 
-	--	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
-	--	GeneralFunctions.StartConversation(chara, zone:GetColoredName() .. " is located to the north of town.")
-	--	UI:WaitShowDialogue("You should prepare yourselves with the proper facilities in town,[pause=10] then head north to search for " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
-	--	UI:WaitShowDialogue("If you manage to find him,[pause=10] please bring him back to town immediately.")
-	--	GeneralFunctions.EndConversation(chara)
-	--end
+	else
+		guild_third_floor_lobby_helper.GenericNoctowlResponse()
+	end
 end
 	
 

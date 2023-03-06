@@ -7,6 +7,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_electric_home.metano_electric_home_ch_2'
+require 'ground.metano_electric_home.metano_electric_home_ch_3'
 
 -- Package name
 local metano_electric_home = {}
@@ -65,6 +66,8 @@ end
 function metano_electric_home.PlotScripting()
 	if SV.ChapterProgression.Chapter == 2 then 
 		metano_electric_home_ch_2.SetupGround()
+	elseif SV.ChapterProgression.Chapter == 3 then 
+		metano_electric_home_ch_3.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

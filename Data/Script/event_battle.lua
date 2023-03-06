@@ -449,7 +449,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 		UI:WaitShowTimedDialogue("HWACHA!", 40)		
 		--Reset floor
 		local resetEvent = PMDC.Dungeon.ResetFloorEvent()
-		TASK:WaitTask(resetEvent:Apply(owner, ownerChar, chara))--chara is the one who's "activating the reset tile"
+		local charaContext = RogueEssence.Dungeon.SingleCharContext(chara)
+		TASK:WaitTask(resetEvent:Apply(owner, ownerChar, charaContext))
 	else 
 		UI:WaitShowDialogue("Hoiyah![pause=0] Onwards with the lesson then!")
 	end

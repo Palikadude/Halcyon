@@ -12,6 +12,38 @@ function metano_town_ch_3.SetupGround()
 		GROUND:Hide('Swap')
 		GROUND:Hide('Assembly')
 		
+		local wooper_boy, wooper_girl, numel, nidoqueen, quagsire, zigzagoon, furret, sentret, 
+			  snubbull, mareep, cranidos, mawile, azumarill, electrike, meditite, machamp, medicham, linoone, manectric = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Wooper_Boy', 400, 880, Direction.Left},
+				{'Wooper_Girl', 352, 952, Direction.DownRight},
+				{'Numel', 192, 536, Direction.Left},
+				{'Nidoqueen', 'Town_Seat_1'},
+				{'Quagsire', 'Town_Seat_2'},
+				{'Zigzagoon', 1312, 264, Direction.Up},
+				{'Furret', 356, 764, Direction.Right},
+				{'Sentret', 388, 716, Direction.Right},
+				{'Snubbull', 1040, 864, Direction.UpRight},
+				{'Mareep', 1120, 906, Direction.Right},
+				{'Cranidos', 1160, 906, Direction.Left},
+				{'Mawile', 1040, 1208, Direction.DownRight},
+				{'Azumarill', 876, 1168, Direction.Up},
+				{'Electrike', 400, 400, Direction.Right},
+				{'Meditite', 440, 400, Direction.Left},
+				{'Machamp', 760, 600, Direction.Down},
+				{'Medicham', 536, 192, Direction.Down},
+				{'Linoone', 891, 260, Direction.UpRight},
+				{'Manectric', 1204, 1144, Direction.DownRight}
+			})
+
+		GROUND:CharSetAnim(furret, 'Sleep', true)
+		GROUND:CharSetAnim(sentret, 'Sleep', true)
+		
+		AI:SetCharacterAI(wooper_girl, "ai.ground_default", RogueElements.Loc(336, 936), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(1024, 1192), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(machamp, "ai.ground_default", RogueElements.Loc(744, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(manectric, "ai.ground_default", RogueElements.Loc(1176, 1112), RogueElements.Loc(64, 64), 1, 16, 32, 40, 180)
+
 		
 		--let the cutscene handle the fade in if it hasnt played yet		
 		if SV.Chapter3.FinishedMerchantIntro then 
@@ -747,9 +779,9 @@ function metano_town_ch_3.MerchantIntro()
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(zigzagoon, Direction.Right, 4)
 											GROUND:MoveToPosition(zigzagoon, 820, 1208, false, 1) end) 
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											GeneralFunctions.FaceMovingCharacter(partner, zigzagoon, Direction.UpRight) end)
+											GeneralFunctions.FaceMovingCharacter(partner, zigzagoon, 4, Direction.UpRight) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											GeneralFunctions.FaceMovingCharacter(hero, zigzagoon)
+											GeneralFunctions.FaceMovingCharacter(hero, zigzagoon, 4, Direction.Right)
 											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3})
@@ -893,22 +925,68 @@ function metano_town_ch_3.Wooper_Conversation(chara)
 	partner.IsInteracting = false
 end
 
+function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
+	local meditite = CH('meditite')
+	local electrike = CH('Electrike')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(meditite, 'None', true)
+	GROUND:CharSetAnim(electrike, 'None', true)
+	
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+
+	UI:SetSpeaker(electrike)
+	--todo
+	
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
+	GROUND:CharEndAnim(electrike)
+	GROUND:CharEndAnim(meditite)
+	
+	partner.IsInteracting = false
+end
 function metano_town_ch_3.Electrike_Action(chara, activator)
-	metano_town_ch_3.Wooper_Conversation(chara)
+	if not SV.Chapter3.DefeatedBoss then
+		metano_town_ch_3.Wooper_Conversation(chara)
+	else
+		metano_town_ch_3.Meditite_Electrike_Conversation(chara)
+	end
 end
 
 function metano_town_ch_3.Wooper_Boy_Action(chara, activator)
-	metano_town_ch_3.Wooper_Conversation(chara)
+	if not SV.Chapter3.DefeatedBoss then
+		metano_town_ch_3.Wooper_Conversation(chara)
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Wooper_Girl") .. " is never gonna find me here![pause=0] This hiding spot is the best!", "Happy")
+		GeneralFunctions.EndConversation(chara)
+	end
 end
 
 function metano_town_ch_3.Wooper_Girl_Action(chara, activator)
-	metano_town_ch_3.Wooper_Conversation(chara)
+	if not SV.Chapter3.DefeatedBoss then
+		metano_town_ch_3.Wooper_Conversation(chara)
+	else
+		GeneralFunctions.StartConversation(chara, "Me and " .. CharacterEssentials.GetCharacterName("Wooper_Boy") .. " are playing hide and seek!")
+		UI:WaitShowDialogue("I've been looking for him,[pause=10] but I can't find him![pause=0] Where did he go?")
+		GeneralFunctions.EndConversation(chara)
+	end
 end
 
 
 function metano_town_ch_3.Sentret_Action(chara, activator) 
-	GeneralFunctions.StartConversation(chara, "I'm glad you're back " .. CharacterEssentials.GetCharacterName("Numel") .. "![pause=0] Now we can all play together again!", "Happy", false)
-	GeneralFunctions.EndConversation(chara)
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "I'm glad you're back " .. CharacterEssentials.GetCharacterName("Numel") .. "![pause=0] Now we can all play together again!", "Happy", false)
+		GeneralFunctions.EndConversation(chara)
+	else 
+		GeneralFunctions.StartConversation(chara, "I see why Dad always likes to snooze out here by the river now...[pause=0] This is nice...", "Happy",false, false)
+		GeneralFunctions.EndConversation(chara, false)
+	end 
 end
 
 function metano_town_ch_3.Oddish_Action(chara, activator) 
@@ -917,14 +995,27 @@ function metano_town_ch_3.Oddish_Action(chara, activator)
 end
 
 function metano_town_ch_3.Numel_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Let's all play tag![pause=0] I can start as " .. '"it"!', "Happy", false)
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "Let's all play tag![pause=0] I can start as " .. '"it"!', "Happy", false)
+	else 
+		GeneralFunctions.StartConversation(chara, "I can't play with the other kids today because I have to do my chores...", "Worried")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("...That's OK though.[pause=0] My momma needs my help,[pause=10] after all!")
+	end
 	GeneralFunctions.EndConversation(chara)
 end
 
 
 function metano_town_ch_3.Mawile_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Word around the town is that you two managed to save the missing kid![pause=0] That's wonderful!", "Happy")
-	UI:WaitShowDialogue("I just knew you two were gonna do great in the guild!")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "Word around the town is that you two managed to save the missing kid![pause=0] That's wonderful!", "Happy")
+		UI:WaitShowDialogue("I just knew you two were gonna do great in the guild!")
+	else
+		local partner = CH('Teammate1')
+		local hero = CH('PLAYER')
+		GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. "![pause=0] " .. hero:GetDisplayName() .. "![pause=0] Have you guys heard?[pause=0] Those two merchants that hang out south of the guild are back!")
+		UI:WaitShowDialogue("They're pretty strange,[pause=10] but I bet they'll have some useful items for adventurers like you!")
+	end	
 	GeneralFunctions.EndConversation(chara)
 end 
 function metano_town_ch_3.Nidorina_Action(chara, activator)
@@ -941,14 +1032,28 @@ end
 
 
 function metano_town_ch_3.Azumarill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " knows where child is now![pause=0] That makes " .. chara:GetDisplayName() .. " happy!", "Happy")
-	UI:WaitShowDialogue("The water looks happy too![pause=0] It must know child is home now,[pause=10] just like " .. chara:GetDisplayName() .. "!")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " knows where child is now![pause=0] That makes " .. chara:GetDisplayName() .. " happy!", "Happy")
+		UI:WaitShowDialogue("The water looks happy too![pause=0] It must know child is home now,[pause=10] just like " .. chara:GetDisplayName() .. "!")
+	else 
+		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " hears about scary outlaws all the time now...[pause=0] " .. chara:GetDisplayName() .. " not want outlaws to beat " .. chara:GetDisplayName() .. " up!", "Worried")
+		UI:WaitShowDialogue(chara:GetDisplayName() .. " wonders if he should train at dojo so " .. chara:GetDisplayName() .. " can be stronger to defend " .. chara:GetDisplayName() .. " from bad Pokémon...")
+	end
 	GeneralFunctions.EndConversation(chara)
 end
 
 function metano_town_ch_3.Manectric_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "So you were the ones who rescued " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s little boy?")
-	UI:WaitShowDialogue("How amazing![pause=0] I can have peace of mind knowing that adventurers like you live in town!")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "So you were the ones who rescued " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s little boy?")
+		UI:WaitShowDialogue("How amazing![pause=0] I can have peace of mind knowing that adventurers like you live in town!")
+	else
+		GeneralFunctions.StartConversation(chara, "Some Pokémon are saying that the outlaw activity lately is linked with the increase in mystery dungeons popping up.")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I don't know much about that,[pause=10] but the increase in outlaw activity has me worried.")
+		UI:WaitShowDialogue("What if outlaws go after me and my family?[pause=0]\nI wouldn't want anything bad to happen to any of us!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("But I know that you adventurers will keep us safe![pause=0] We're all counting on you!")
+	end
 	GeneralFunctions.EndConversation(chara)
 end
 
@@ -959,19 +1064,32 @@ function metano_town_ch_3.Camerupt_Action(chara, activator)
 end
 
 function metano_town_ch_3.Furret_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara , "Ah,[pause=10] I can relax again now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back safe and sound!", "Happy", false, false)
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara , "Ah,[pause=10] I can relax again now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back safe and sound!", "Happy", false, false)
+	else  
+		GeneralFunctions.StartConversation(chara , "The only thing better than sleeping in my favorite spot...", "Normal", false, false)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("...Is sleeping in my favorite spot next to my son!")
+	end
 	GeneralFunctions.EndConversation(chara, false)
 end
 
 function metano_town_ch_3.Linoone_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Now that things are back to normal,[pause=10] I can focus on getting through this book " .. CharacterEssentials.GetCharacterName("Medicham") .. " recommended to me.")
-	UI:WaitShowDialogue("I can enjoy a refreshing drink with it too,[pause=10] now that the café is open again.")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "Now that things are back to normal,[pause=10] I can focus on getting through this book " .. CharacterEssentials.GetCharacterName("Medicham") .. " recommended to me.")
+		UI:WaitShowDialogue("I can enjoy a refreshing drink with it too,[pause=10] now that the café is open again.")
+	else
+		GeneralFunctions.StartConversation(chara, "This spot by the river is a great place to read.")
+		UI:WaitShowDialogue("Right now,[pause=10] I'm reading a book recommended to me by my son about mystery dungeons.")
+		UI:WaitShowDialogue("Did you know that if you stay on the same floor for too long,[pause=10] a mysterious force will eject you from the dungeon?")
+		UI:WaitShowDialogue("The author notes that nobody knows the source of the mysterious force.[pause=0] How strange!")
+	end	
 	GeneralFunctions.EndConversation(chara)
 end
 
 
 function metano_town_ch_3.Luxray_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Hmmph.[pause=0] " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s son runs away,[pause=10] and now that he's been returned to her she gives him no punishment?")
+	GeneralFunctions.StartConversation(chara, "Hmmph.[pause=0] " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s son runs away,[pause=10] and now that he's been returned to her,[pause=10] she gives him no punishment?")
 	UI:WaitShowDialogue("The way she parents her child is appalling.[pause=0] With no discipline,[pause=10] that child will grow up to be a troublemaker.")
 	GeneralFunctions.EndConversation(chara)
 end
@@ -983,40 +1101,95 @@ function metano_town_ch_3.Nidoking_Action(chara, activator)
 end 
 
 function metano_town_ch_3.Medicham_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Clear my mind is and again meditate can I with thanks to rescue of " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+	if not SV.Chapter3.DefeatedBoss then 
+		--My mind is clear and I can meditate again now that Nubbor's rescued.
+		GeneralFunctions.StartConversation(chara, "Clear my mind is and again meditate can I with thanks to rescue of " .. CharacterEssentials.GetCharacterName("Numel") .. ".")
+	else
+		--This is the best place in town to meditate. Usually some older kids hang out here, but they're not here today.
+		GeneralFunctions.StartConversation(chara, "Find I that meditation is done best in this town's spot.")
+		UI:WaitShowDialogue("Usually hang here older children,[pause=10] but today here not are they.")
+	end	
 	GeneralFunctions.EndConversation(chara)
 
 end
 
 function metano_town_ch_3.Meditite_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Wish play coul' I wit' the other kids...")
-	UI:WaitShowDialogue("It's hard fa' me friends to make...[pause=0] The other kids trouble have talkin' wit' me...")
-	UI:WaitShowDialogue("I don' get it...[pause=0] What am I sayin' hard that's ta' understand?")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "Wish play coul' I wit' the other kids...")
+		UI:WaitShowDialogue("It's hard fa' me friends to make...[pause=0] The other kids trouble have talkin' wit' me...")
+		UI:WaitShowDialogue("I don' get it...[pause=0] What am I sayin' hard that's ta' understand?")
+	else 
+		metano_town_ch_3.Meditite_Electrike_Conversation(chara)
+	end
 	GeneralFunctions.EndConversation(chara)
 
+end
+
+function metano_town_ch_3.Machamp_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Oi![pause=0] Didja hear the news?")
+	UI:WaitShowDialogue("A whole forest chock full o' Apricorn trees were just found!")
+	UI:WaitShowDialogue("That'll surely solve the Apricorn shortage we were havin'!")
+	GeneralFunctions.EndConversation(chara)
 end
 
 
 function metano_town_ch_3.Growlithe_Desk_Action(chara, activator)
 	local growlithe = CH('Growlithe')
-	GeneralFunctions.StartConversation(growlithe, "I heard you two rescued " .. CharacterEssentials.GetCharacterName("Numel") .. ",[pause=10] ruff!", "Happy")
-	UI:WaitShowDialogue("That's amazing![pause=0] I knew you could do it,[pause=10] ruff!")
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(growlithe, "I heard you two rescued " .. CharacterEssentials.GetCharacterName("Numel") .. ",[pause=10] ruff!", "Happy")
+		UI:WaitShowDialogue("That's amazing![pause=0] I knew you could do it,[pause=10] ruff!")
+	else 
+		GeneralFunctions.StartConversation(growlithe, "Great job on arresting that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. " you guys![pause=0] You've been on a roll lately,[pause=10] ruff!", "Happy")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("I hope I can go on some missions soon too,[pause=10] ruff.")
+		UI:WaitShowDialogue("I'm always on sentry duty,[pause=10] so I haven't gone on an adventure with " .. CharacterEssentials.GetCharacterName("Zigzagoon") .. " in a while,[pause=10] ruff...")
+	end
 	GeneralFunctions.EndConversation(growlithe)
 end
 
 function metano_town_ch_3.Audino_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] are you t-two headed out for the day?")
 	UI:WaitShowDialogue("Make sure you leave town to the east,[pause=10] r-right over there!")
-	UI:WaitShowDialogue("That's where you should go whenever you want to go out on an adventure!")
+	UI:WaitShowDialogue("That's where you should go w-whenever you want to go out on an adventure!")
 	GeneralFunctions.EndConversation(chara)
 end
 
 function metano_town_ch_3.Snubbull_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
-	UI:WaitShowDialogue("Apparently there's been a shortage of Apricorns lately.")
-	UI:WaitShowDialogue("Without Apricorns,[pause=10] recruiting new team members is impossible!")
-	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("More importantly,[pause=10] I can't make this special dish I've been working on without Apricorns![pause=0] Now what will I cook?")
+	if not SV.Chapter3.DefeatedBoss then
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+		UI:WaitShowDialogue("Apparently there's been a shortage of Apricorns lately.")
+		UI:WaitShowDialogue("Without Apricorns,[pause=10] recruiting new team members is impossible!")
+		UI:SetSpeakerEmotion("Sad")
+		UI:WaitShowDialogue("More importantly,[pause=10] I can't make this special dish I've been working on without Apricorns![pause=0] Now what will I cook?")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
+		UI:WaitShowDialogue("With Apricorns,[pause=10] adventuring teams will be able to recruit new team members again.")
+		UI:SetSpeakerEmotion("Special0")
+		UI:WaitShowDialogue("More importantly,[pause=10] I'll be able to work on this new dish of mine with those Apricorns. " .. STRINGS:Format("\\u266A"))
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
+
+function metano_town_ch_3.Zigzagoon_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Did you know you can use this board here to check what jobs you've taken?[pause=0] It's perfect for someone like me!")
+	UI:WaitShowDialogue("It's a lot faster than walking all the way back into the guild to see what jobs you need to do!")
 	GeneralFunctions.EndConversation(chara)
 end
 
+function metano_town_ch_3.Mareep_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Fa-a-a-antastic you two![pause=0] I knew you could na-a-a-ab that baddie!", "Joyous")
+	UI:WaitShowDialogue("You both have a real ta-a-a-alent for capturing outlaws![pause=0] I'm so proud of you!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+function metano_town_ch_3.Cranidos_Action(chara, activator)
+	local sandile_species = _DATA:GetMonster('sandile'):GetColoredName()
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
+	GeneralFunctions.StartConversation(chara, "What,[pause=10] am I supposed to be impressed you captured that " .. sandile_species .. "?")
+	UI:WaitShowDialogue("He was an easy mark![pause=0] That's why I chose him for you,[pause=10] even if he was in a place like " .. zone:GetColoredName() .. ".")
+	UI:SetSpeakerEmotion("Determined")
+	UI:WaitShowDialogue("You can speak to me when you take down an outlaw that's worth my notice.")
+	GeneralFunctions.EndConversation(chara)
+end

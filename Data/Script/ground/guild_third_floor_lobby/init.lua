@@ -117,14 +117,16 @@ function guild_third_floor_lobby.PostAddressScripting()
 			guild_third_floor_lobby_ch_2.FailedRiver()--partner mentions that you need to go return to Illuminant Riverbed to rescue numel
 		end
 	elseif SV.ChapterProgression.Chapter == 3 then 
-		if SV.Chapter3.EncounteredBoss then 
+		if SV.Chapter3.DefeatedBoss then --Second half of chapter 3, after defeating team style. 
+			guild_third_floor_lobby.GenericMissions()
+		elseif SV.Chapter3.EncounteredBoss then 
 			guild_third_floor_lobby_ch_3.FailedCavernAfterBoss()--You made it to Team Style but haven't beaten them yet. Partner is mad about them. 
 		elseif SV.TemporaryFlags.LastDungeonEntered ~= 57 then 
 			guild_third_floor_lobby_ch_3.NotEnteredCavern() --Latest dungeon attempt was not the cavern and you haven't seen Team Style yet.
 		else
 			guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()--Your last dungeon was the cavern but you've not made it to Team Style yet.
 		end	
-	else --if there's nothing special to do, just give back control.
+	else --if there's nothing special to do, just give back control. I don't think this block should be reached in normal play.
 		GeneralFunctions.PanCamera()
 		GAME:CutsceneMode(false)
 		AI:EnableCharacterAI(CH('Teammate1'))
@@ -132,6 +134,32 @@ function guild_third_floor_lobby.PostAddressScripting()
 	end
 end
 
+
+function guild_third_floor_lobby.GenericMissions()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local noctowl = CH('Noctowl')
+	
+	GROUND:CharAnimateTurnTo(noctowl, Direction.DownLeft, 4)
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. ".[pause=0] Allow me to give you your assignment for the day.")
+	
+	GAME:WaitFrames(16)
+	GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
+	GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
+	
+	UI:WaitShowDialogue("Complete requests from the Job Bulletin Board and the Outlaw Notice Board.")
+	UI:WaitShowDialogue("That will be all for today.[pause=0] I wish you luck in your day's endeavors.")
+	
+	GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4)
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end
 
 function guild_third_floor_lobby.MorningAddress(generic)
 	

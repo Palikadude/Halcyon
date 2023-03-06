@@ -118,6 +118,7 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.Chapter3.LostToBoss = true
 		else 
 			SV.Chapter3.DefeatedBoss = true
+			SV.ChapterProgression.CurrentStoryDungeon = ''
 		end
 		
 		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 42, 0, false, false) --Go to Crooked Den ground map

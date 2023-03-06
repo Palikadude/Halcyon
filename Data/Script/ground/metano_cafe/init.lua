@@ -85,11 +85,19 @@ end
 function metano_cafe.Cafe_Sign_Action(obj, activator)
 	DEBUG.EnableDbgCoro()
 	print("Cafe sign action")
-	UI:ResetSpeaker()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	UI:ResetSpeaker(false)
 	local state = 0
 	UI:SetCenter(true)
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)		
+    GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+    GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+
+	
 	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Intro']))
-	UI:SetCenter(false)
 	
 	local item1
 	local item2
@@ -122,7 +130,11 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 			state = -1
 		end
 	end
-	
+
+	UI:SetCenter(false)
+	partner.IsInteracting = false
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
 end
 
 

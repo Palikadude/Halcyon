@@ -6,11 +6,13 @@ require 'CharacterEssentials'
 metano_rock_home_ch_3 = {}
 
 function metano_rock_home_ch_3.SetupGround()
-	local machamp  = 
+	if not SV.Chapter3.DefeatedBoss then
+		local machamp  = 
 			CharacterEssentials.MakeCharactersFromList({
-				{'Machamp', 98, 128, Direction.Down},
+				{'Machamp', 98, 128, Direction.Down}
 
 			})
+	end
 
 	GAME:FadeIn(20)
 end

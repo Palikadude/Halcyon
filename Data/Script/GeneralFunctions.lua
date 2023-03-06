@@ -871,13 +871,14 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 	else	
 		local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(itemID)
 		
-		if amount == nil then amount = itemEntry.MaxStack end 
+		--give at least 1 item
+		if amount == nil then amount = math.max(1, itemEntry.MaxStack) end 
 
 		local item = RogueEssence.Dungeon.InvItem(itemID, false, amount)
 
 		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".[pause=40]") 
 		
-		--bag is full - equipped count is separate from bag and most be included in the calc
+		--bag is full - equipped count is separate from bag and must be included in the calc
 		if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 			UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
 			GAME:GivePlayerStorageItem(item.ID, amount)

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.1.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -458,7 +458,7 @@
 "mud_slap",
 "mud_sport"
 ],
-"Intrinsic": "",
+"Intrinsic": "oblivious",
 "Tactic": "patrol",
 "SpawnConditions": [],
 "SpawnFeatures": [
@@ -563,7 +563,12 @@
 }
 },
 {
-"$type": "RogueEssence.LevelGen.FloorNameIDZoneStep, RogueEssence",
+"$type": "PMDC.LevelGen.FloorNameDropZoneStep, PMDC",
+"DropPriority": {
+"str": [
+-15
+]
+},
 "Name": {
 "DefaultText": "Illuminant Riverbed\\n{0}F",
 "LocalTexts": {}
@@ -610,7 +615,7 @@
 "Amount": 0,
 "Price": 0
 },
-"Rate": 9,
+"Rate": 15,
 "Range": {
 "Min": 0,
 "Max": 8
@@ -676,7 +681,7 @@
 "SpawnRates": {
 "nodes": [
 {
-"Item": 15,
+"Item": 18,
 "Range": {
 "Min": 0,
 "Max": 8
@@ -1192,9 +1197,10 @@
 "Max": 8
 },
 "SpecifiedSkills": [
-"confusion",
 "scratch",
-"tail_whip"
+"tail_whip",
+"water_sport",
+"confusion"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -1205,7 +1211,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
+"StartAt": 4,
 "Remove": false
 }
 ]

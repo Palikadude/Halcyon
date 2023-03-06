@@ -30,7 +30,7 @@ function altere_pond.Init(map)
 	print('=>> Init_altere_pond <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	GROUND:AddMapStatus("cloudy")
+	GROUND:AddMapStatus("clouds_overhead")
 	PartnerEssentials.InitializePartnerSpawn()
 
 end

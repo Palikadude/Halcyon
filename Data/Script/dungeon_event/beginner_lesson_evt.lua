@@ -88,23 +88,25 @@ end
 
 function beginner_lesson_evt.Floor_3_Wand_Speech(owner, ownerChar, character, args)
 	local chara = beginner_lesson_evt.FindLedian()
+	local item = RogueEssence.Dungeon.InvItem('orb_cleanse')
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Now it is time to learn about wands and orbs!")
 	UI:WaitShowDialogue("They are versatile items that can manipulate enemies or serve utility![pause=0] Useful against foes you wish not to fight.")
 	UI:WaitShowDialogue("Hoiyah![pause=0] The volunteer blocking the path ahead is very strong! You cannot fight him directly!")
 	UI:WaitShowDialogue("You must use a wand to move him out of the way instead![pause=0] The wand is sticky however!")
-	UI:WaitShowDialogue("Sticky items cannot be used![pause=0] You must use a Cleanse Orb to clean them off!")
+	UI:WaitShowDialogue("Sticky items cannot be used![pause=0] You must use a " .. item:GetDisplayName() .. " to clean them off!")
 	UI:WaitShowDialogue("Oohcha![pause=0] Your next trial begins now!")
 	SV.Tutorial.Progression = 4
 end
 
 function beginner_lesson_evt.Floor_3_HeldItem_Speech(owner, ownerChar, character, args)
 	local chara = beginner_lesson_evt.FindLedian()
+	local item = RogueEssence.Dungeon.InvItem('held_band_of_passage')
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] Great work so far my student![pause=0] It is now time to learn about held items!")
 	UI:WaitShowDialogue("Wahtah![pause=0] Items such as bands and scarves may be given to a Pokémon to gain useful effects!")
 	UI:WaitShowDialogue("Some items boost stats while others prevent certain status afflications!")
-	UI:WaitShowDialogue("Hoiyah![pause=0] For this trial,[pause=10] you must equip yourself with a Band of Passage and continue forward!")
+	UI:WaitShowDialogue("Hoiyah![pause=0] For this trial,[pause=10] you must equip yourself with a " .. item:GetDisplayName() .. " and continue forward!")
 	UI:WaitShowDialogue("You won't be allowed to continue on without equipping the band!")
 	SV.Tutorial.Progression = 5
 end 
@@ -112,13 +114,17 @@ end
 function beginner_lesson_evt.Floor_3_ThrownReviver_Speech(owner, ownerChar, character, args)
 	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
-	UI:WaitShowDialogue("Hwacha![pause=0] Some items such as Sticks and Gravelerock are to be thrown at opponents to deal damage!")
+	local sticks = STRINGS:Format('\\uE0A1')..'[color=#FFCEFF]Sticks[color]'
+	local stick = STRINGS:Format('\\uE0A1')..'[color=#FFCEFF]Stick[color]'
+	local rock = STRINGS:Format('\\uE0A0')..'[color=#FFCEFF]Gravelerock[color]'
+	local seed = STRINGS:Format('\\uE0A4')..'[color=#FFCEFF]Reviver Seeds[color]'
+	UI:WaitShowDialogue("Hwacha![pause=0] Some items such as " .. sticks .. " and " .. rock .. " can be thrown at foes to deal damage!")
 	UI:WaitShowDialogue("They are useful for damaging enemies that are far away from you![pause=0] Be sure not to throw them at teammates!")
-	UI:WaitShowDialogue("Hoiyah![pause=0] I also want to tell you about Reviver Seeds!")
+	UI:WaitShowDialogue("Hoiyah![pause=0] I also want to tell you about " .. seed .. "!")
 	UI:WaitShowDialogue("They are rare,[pause=10] but allow you to revive a teammate who has just fainted!")
 	UI:WaitShowDialogue("They are invaluable on difficult journeys![pause=0] Be sure to use them wisely!")
-	UI:WaitShowDialogue("Wahtah![pause=0] For this trial,[pause=10] you must throw a Stick at the volunteer ahead!")
-	UI:WaitShowDialogue("After,[pause=10] you must use Reviver Seeds to revive us from the volunteer's powerful counterattack!")
+	UI:WaitShowDialogue("Wahtah![pause=0] For this trial,[pause=10] you must throw a " .. stick .. " at the volunteer ahead!")
+	UI:WaitShowDialogue("After,[pause=10] you must use " .. seed .. " to revive us from the volunteer's powerful counterattack!")
 	UI:WaitShowDialogue("Oohcha![pause=0] It may be scary,[pause=10] but you must show no fear in the face of danger,[pause=10] my student!") 
 	SV.Tutorial.Progression = 6
 end 

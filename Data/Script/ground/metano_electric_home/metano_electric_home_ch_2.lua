@@ -10,7 +10,7 @@ function metano_electric_home_ch_2.SetupGround()
 	if not SV.Chapter2.FinishedFirstDay then
 		local manectric  = 
 			CharacterEssentials.MakeCharactersFromList({
-				{'Manectric', 216, 136, Direction.Down}
+				{'Manectric', 184, 162, Direction.Right}
 
 			})
 	else 

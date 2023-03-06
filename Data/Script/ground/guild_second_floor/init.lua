@@ -143,7 +143,7 @@ function guild_second_floor.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
 end
 
-function guild_second_floor.Mission_Board_Action(chara, activator)
+function guild_second_floor.Mission_Board_Action(obj, activator)
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	if SV.ChapterProgression.Chapter < 3 and not SV.Chapter2.FinishedFirstDay then 
@@ -168,13 +168,23 @@ function guild_second_floor.Mission_Board_Action(chara, activator)
 		GeneralFunctions.EndConversation(partner)
 	else
 	  --Mission Board
+	  partner.IsInteracting = true
+	  GROUND:CharSetAnim(partner, 'None', true)
+	  GROUND:CharSetAnim(hero, 'None', true)
+	  GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	  GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	  
 	  local menu = BoardSelectionMenu:new("mission")
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
+	
+	  partner.IsInteracting = false
+	  GROUND:CharEndAnim(partner)
+	  GROUND:CharEndAnim(hero)	
 	end
 end
 
-function guild_second_floor.Outlaw_Board_Action(chara, activator)
+function guild_second_floor.Outlaw_Board_Action(obj, activator)
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	if SV.ChapterProgression.Chapter < 3 and not SV.Chapter2.FinishedFirstDay then 
@@ -199,9 +209,20 @@ function guild_second_floor.Outlaw_Board_Action(chara, activator)
 		GeneralFunctions.EndConversation(partner)
 	else
 	  --Outlaw Board
+	  partner.IsInteracting = true
+	  GROUND:CharSetAnim(partner, 'None', true)
+	  GROUND:CharSetAnim(hero, 'None', true)
+	  GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	  GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	  	 
+
 	  local menu = BoardSelectionMenu:new("outlaw")
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
+	  
+	  partner.IsInteracting = false
+	  GROUND:CharEndAnim(partner)
+	  GROUND:CharEndAnim(hero)	
 	end
 end
 

@@ -9,19 +9,92 @@ guild_second_floor_ch_3 = {}
 
 function guild_second_floor_ch_3.SetupGround()
 
-	local mareep, cranidos, silcoon, metapod = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Mareep', 360, 224, Direction.UpRight},
-			{'Cranidos', 424, 224, Direction.UpLeft},
-			{'Silcoon', 'Left_Duo_2'},
-			{'Metapod', 'Left_Duo_1'}
-		})
+	if not SV.Chapter3.DefeatedBoss then
+	
+
+		local mareep, cranidos, silcoon, metapod = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Mareep', 360, 224, Direction.UpRight},
+				{'Cranidos', 424, 224, Direction.UpLeft},
+				{'Silcoon', 'Left_Duo_2'},
+				{'Metapod', 'Left_Duo_1'}
+			})
+	else
+		local spheal, jigglypuff, marill, doduo, bagon, audino = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Spheal', 'Left_Trio_1'},
+				{'Jigglypuff', 'Left_Trio_2'},
+				{'Marill', 'Left_Trio_3'},
+				{'Doduo', 'Right_Duo_1'},
+				{'Bagon', 'Right_Duo_2'},
+				{'Audino', 'Generic_Spawn_1'}
+			})
+			
+		AI:SetCharacterAI(jigglypuff, "ai.ground_talking", true, 240, 60, 130, false, 'Default', {marill, spheal})
+		AI:SetCharacterAI(marill, "ai.ground_talking", true, 240, 60, 0, false, 'Default', {jigglypuff, spheal})
+		AI:SetCharacterAI(spheal, "ai.ground_talking", true, 240, 60, 50, false, 'Default', {jigglypuff, marill})
+		
+		AI:SetCharacterAI(bagon, "ai.ground_talking", true, 240, 60, 80, false, 'Default', {doduo})
+		AI:SetCharacterAI(doduo, "ai.ground_talking", true, 240, 60, 0, false, 'Default', {bagon})
+
+		AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(176, 264), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+	end
 			
 	
 	GAME:FadeIn(20)
 	
 end
 
+function guild_second_floor_ch_3.Spheal_Action(chara, activator)
+	local item = RogueEssence.Dungeon.InvItem('gummi_blue')
+	GeneralFunctions.StartConversation(chara, "Let's do this job![pause=0] The reward is a " .. item:GetDisplayName() .. "![pause=0] They're too yummy to pass up!", "Normal", false)
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Jigglypuff_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Some jobs are harder than others.[pause=0] The difficulty of a job depends on the location and the type of mission.")
+	UI:WaitShowDialogue("Escort and outlaw missions are tougher than other types of missions for example.")
+	UI:WaitShowDialogue("Harder jobs give more Adventurer Rank Points and usually have better rewards though,[pause=10] so they're worth doing!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Marill_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Our team doesn't like to do outlaw missions.[pause=0] They're too scary!", "Worried")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("We prefer doing rescue missions.[pause=0] They're easier and we still get to help Pokémon in need!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_3.Doduo_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "We've heard that some outlaws will use other Pokémon to defend themself from adventuring teams.", "Normal")
+	UI:WaitShowDialogue("When the outlaw gets found,[pause=10] they spring a trap and an entire group of Pokémon will attack you!")
+	UI:WaitShowDialogue("We can personally attest to the power of numbers.[pause=0] You should be prepared for these sorts of outlaws!")
+	GeneralFunctions.EndConversation(chara)
+
+end
+
+function guild_second_floor_ch_3.Bagon_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Some outlaws run for it when they see an adventuring team!")
+	UI:WaitShowDialogue("If they make it to the stairs,[pause=10] then they'll get away!")
+	UI:WaitShowDialogue("It's a good thing " .. CharacterEssentials.GetCharacterName("Doduo") .. " can fly![pause=0] It'll make it much easier to catch up to outlaws!")
+	GeneralFunctions.EndConversation(chara)
+
+end
+
+function guild_second_floor_ch_3.Audino_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "New j-jobs come in on the b-boards here each day![pause=0] I w-would know,[pause=10] since it's my job to keep the boards u-updated!")
+	UI:WaitShowDialogue("You can c-check the boards whenever you like to see what jobs are available for the t-taking.")
+	UI:WaitShowDialogue("You can h-hold onto jobs as long as you want,[pause=10] but know t-that you can only have up to eight j-jobs at a time!")
+	UI:WaitShowDialogue("You can a-also use the b-boards to check which jobs you've t-taken already.")
+	UI:WaitShowDialogue("Oh![pause=0] You s-should also know you need to activate a job before you can do it!")
+	UI:WaitShowDialogue("To do t-that,[pause=10] look at the j-jobs you've taken and pick one.[pause=0] Then c-choose Take Job to activate that mission!")
+	UI:WaitShowDialogue("Y-you can also s-suspend an activated job to save for later.[pause=0] Just choose Take Job on it a-again to reactivate it!")
+	UI:WaitShowDialogue("A-anyways,[pause=10] once you've activated a job,[pause=10] just go to the m-mystery dungeon it's in to do it.")
+	UI:WaitShowDialogue("You can even activate m-multiple jobs in the same dungeon and do them all at once if you w-want!")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("A-and that's all there is to it![pause=0] Good luck with your m-missions!")
+	GeneralFunctions.EndConversation(chara)
+end
 
 
 function guild_second_floor_ch_3.Silcoon_Action(chara, activator)

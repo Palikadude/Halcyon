@@ -6,13 +6,23 @@ require 'CharacterEssentials'
 metano_cafe_ch_3 = {}
 
 function metano_cafe_ch_3.SetupGround()
-	local breloom, girafarig, gulpin, lickitung = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Breloom', 'Cafe_Table_9'},
-			{'Girafarig', 'Cafe_Table_10'},
-			{'Gulpin', 'Cafe_Table_2'},
-			{'Lickitung', 'Cafe_Table_1'}
-		})
+	if not SV.Chapter3.DefeatedBoss then
+		local breloom, girafarig, gulpin, lickitung = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Breloom', 'Cafe_Table_9'},
+				{'Girafarig', 'Cafe_Table_10'},
+				{'Gulpin', 'Cafe_Table_2'},
+				{'Lickitung', 'Cafe_Table_1'}
+			})
+	else
+		local cleffa, aggron, gulpin, lickitung = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Cleffa', 'Cafe_Table_5'},
+				{'Aggron', 'Cafe_Table_6'},
+				{'Gulpin', 'Cafe_Table_2'},
+				{'Lickitung', 'Cafe_Table_1'}
+			})
+	end
 		
 	GAME:FadeIn(20)
 end
@@ -117,12 +127,39 @@ end
 
 
 function metano_cafe_ch_3.Lickitung_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "With the café open again,[pause=10] me and " .. CharacterEssentials.GetCharacterName("Gulpin") .. " can get our daily drinks again.")
-	UI:WaitShowDialogue("I'm a big fan of the drinks here,[pause=10] but " .. CharacterEssentials.GetCharacterName("Gulpin") .. " is a total fanatic compared to me.")
+	if not SV.Chapter3.DefeatedBoss then
+		GeneralFunctions.StartConversation(chara, "With the café open again,[pause=10] me and " .. CharacterEssentials.GetCharacterName("Gulpin") .. " can get our daily drinks again.")
+		UI:WaitShowDialogue("I'm a big fan of the drinks here,[pause=10] but " .. CharacterEssentials.GetCharacterName("Gulpin") .. " is a total fanatic compared to me.")
+	else
+		local item = RogueEssence.Dungeon.InvItem('cafe_domi_blend')
+		GeneralFunctions.StartConversation(item:GetDisplayName() .. " is " .. CharacterEssentials.GetCharacterName("Shuckle") .. "'s specialty.[pause=0] Despite the odd ingredients,[pause=10] it's very healthy for you.")
+		UI:WaitShowDialogue("The taste,[pause=10] on the other hand,[pause=10] leaves something to be desired...")
+	end
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_cafe_ch_3.Gulpin_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Precious drink,[pause=10] you are mine again to savor...!", "Happy")
+	if not SV.Chapter3.DefeatedBoss then
+		GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Precious drink,[pause=10] you are mine again to savor...!", "Happy")
+	else
+		local item = RogueEssence.Dungeon.InvItem('cafe_apple_cider')
+		GeneralFunctions.StartConversation("Mmmm...[pause=0] " .. item:GetDisplayName() .. "...[pause=0] So delicious and filling...", "Inspired")
+	end
 	GeneralFunctions.EndConversation(chara)
 end 
+
+
+
+function metano_cafe_ch_3.Cleffa_Action(chara, activator)
+	local item = RogueEssence.Dungeon.InvItem('cafe_cheri_bomb')
+	GeneralFunctions.StartConversation(chara, "You moron![pause=0] This is a café,[pause=10] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " sells drinks![pause=0] Of course we're going to drink the " .. item:GetDisplayName() .. "!", "Determined")
+	UI:WaitShowDialogue("If it's volatile,[pause=10] it'll probably give us an attack boost![pause=0] Give it to me so I can carry your dead weight on our next mission!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_cafe_ch_3.Aggron_Action(chara, activator)
+	local item = RogueEssence.Dungeon.InvItem('cafe_cheri_bomb')
+	GeneralFunctions.StartConversation(chara, "Hey boss...[pause=0] I got this " .. item:GetDisplayName() .. " from " .. CharacterEssentials.GetCharacterName("Shuckle") .. "...")
+	UI:WaitShowDialogue("He said not to drink it,[pause=10] since it's volatile...[pause=0] Maybe we could throw it instead of drinking it?")
+	GeneralFunctions.EndConversation(chara)
+end
