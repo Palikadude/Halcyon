@@ -97,6 +97,8 @@ function first_core_location_ch_3.RootDeactivationScene()
 	
 	GAME:WaitFrames(60)
 	UI:ResetSpeaker()
+	
+	--[[
 	UI:WaitShowDialogue("That's the end of the demo! Thank you so much for playing.")
 	UI:WaitShowDialogue("I worked so very hard on this project over the last couple of years...")
 	UI:WaitShowDialogue("...So it means a lot that you would play it!")
@@ -113,7 +115,6 @@ function first_core_location_ch_3.RootDeactivationScene()
 	UI:WaitShowDialogue("This'll let you playthrough again if you so wish.")
 	UI:WaitShowDialogue("Alright. Resetting... Now!")
 	GAME:WaitFrames(60)
-	SV.Chapter3.FinishedRootScene = true
 	
 	SV.Chapter3 = 
 	{
@@ -132,7 +133,11 @@ function first_core_location_ch_3.RootDeactivationScene()
 		TropiusGaveWand = false,--did tropius give some wands to help the duo?
 		BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?
 	}
-		
+	]]--
+	
+	SV.Chapter3.FinishedRootScene = true
+	SV.TemporaryFlags.MorningAddress = true
+	SV.TemporaryFlags.MorningWakeup = true
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
 end

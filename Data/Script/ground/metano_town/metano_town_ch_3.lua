@@ -941,8 +941,11 @@ function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
 	GROUND:CharTurnToChar(partner, chara)
 
 	UI:SetSpeaker(electrike)
-	--todo
+	UI:WaitShowDialogue("So,[pause=10] " .. meditite:GetDisplayName() .. ",[pause=10] what do you want to play?[pause=0] Adventurers and outlaws,[pause=10] maybe?")
+	GAME:WaitFrames(20)
 	
+	UI:SetSpeaker(meditite)
+	UI:WaitShowDialogue("")
 	
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)	
@@ -1051,8 +1054,8 @@ function metano_town_ch_3.Manectric_Action(chara, activator)
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("I don't know much about that,[pause=10] but the increase in outlaw activity has me worried.")
 		UI:WaitShowDialogue("What if outlaws go after me and my family?[pause=0]\nI wouldn't want anything bad to happen to any of us!")
-		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("But I know that you adventurers will keep us safe![pause=0] We're all counting on you!")
+		--UI:SetSpeakerEmotion("Normal")
+		--UI:WaitShowDialogue("But I know that you adventurers will keep us safe![pause=0] We're all counting on you!")
 	end
 	GeneralFunctions.EndConversation(chara)
 end
