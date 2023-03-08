@@ -42,7 +42,7 @@ function metano_inn_ch_3.Nidoran_M_Action(chara, activator)
 		GeneralFunctions.StartConversation(chara, ".........")
 		GROUND:CharSetEmote(chara, "question", 1)
 		SOUND:PlayBattleSE('EVT_Emote_Confused')
-		UI:WaitShowDialogue("...Nyuh?")
+		UI:WaitShowDialogue("...Nyuh?[pause=40]")
 	end
 	GeneralFunctions.EndConversation(chara)
 end

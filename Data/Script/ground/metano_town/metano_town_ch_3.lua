@@ -13,7 +13,8 @@ function metano_town_ch_3.SetupGround()
 		GROUND:Hide('Assembly')
 		
 		local wooper_boy, wooper_girl, numel, nidoqueen, quagsire, zigzagoon, furret, sentret, 
-			  snubbull, mareep, cranidos, mawile, azumarill, electrike, meditite, machamp, medicham, linoone, manectric = 
+			  snubbull, mareep, cranidos, mawile, azumarill, electrike, meditite, machamp, medicham, linoone, manectric,
+			  bellossom, floatzel, gloom, oddish = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Wooper_Boy', 400, 880, Direction.Left},
 				{'Wooper_Girl', 352, 952, Direction.DownRight},
@@ -33,7 +34,11 @@ function metano_town_ch_3.SetupGround()
 				{'Machamp', 760, 600, Direction.Down},
 				{'Medicham', 536, 192, Direction.Down},
 				{'Linoone', 891, 260, Direction.UpRight},
-				{'Manectric', 1204, 1144, Direction.DownRight}
+				{'Manectric', 1204, 1144, Direction.DownRight},
+				{'Bellossom', 472, 608, Direction.UpLeft},
+				{'Floatzel', 368, 1096, Direction.Up},	
+				{'Gloom', 'Cafe_Seat_4'},	
+				{'Oddish', 'Cafe_Seat_3'}	
 			})
 
 		GROUND:CharSetAnim(furret, 'Sleep', true)
@@ -75,7 +80,7 @@ function metano_town_ch_3.SetupGround()
 		
 		
 		local sentret, oddish, numel, camerupt, manectric, gloom, nidorina, mawile, furret, azumarill, nidoking, luxray,
-			  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull, meditite = 
+			  linoone, electrike, wooper_girl, wooper_boy, audino, snubbull, meditite  = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Sentret', 400, 424, Direction.DownRight},
 				{'Oddish', 440, 424, Direction.DownLeft},
@@ -96,8 +101,7 @@ function metano_town_ch_3.SetupGround()
 				{'Audino', 1264, 592, Direction.DownRight},
 				{'Snubbull', 1040, 864, Direction.UpRight},
 				{'Medicham', 888, 240, Direction.UpRight},			
-				{'Meditite', 520, 384, Direction.DownLeft}			
-				
+				{'Meditite', 520, 384, Direction.DownLeft}				
 			})
 		
 		
@@ -926,7 +930,7 @@ function metano_town_ch_3.Wooper_Conversation(chara)
 end
 
 function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
-	local meditite = CH('meditite')
+	local meditite = CH('Meditite')
 	local electrike = CH('Electrike')
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
@@ -941,11 +945,31 @@ function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
 	GROUND:CharTurnToChar(partner, chara)
 
 	UI:SetSpeaker(electrike)
-	UI:WaitShowDialogue("So,[pause=10] " .. meditite:GetDisplayName() .. ",[pause=10] what do you want to play?[pause=0] Adventurers and outlaws,[pause=10] maybe?")
+	UI:WaitShowDialogue("Hey,[pause=10] " .. meditite:GetDisplayName() .. ",[pause=10] let's play![pause=0] Wanna play adventurers and outlaws?")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(meditite)
-	UI:WaitShowDialogue("")
+	--Yeah, I've never played that before, how do you play?
+	UI:WaitShowDialogue("Oh![pause=0] Befor' I've never played that,[pause=10] play how do ya?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(electrike)
+	GeneralFunctions.EmoteAndPause(electrike, "Question", true)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Um...[pause=0] What did you say?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(meditite)
+	--I said I've never played that before, how do we play it?
+	UI:WaitShowDialogue("Adventurers an' outlaws befor' never played I,[pause=10] do play how we?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(electrike)
+	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
+	UI:SetSpeakerEmotion("Stunned")
+	UI:WaitShowDialogue("Err...[pause=0] Right...")
+	UI:WaitShowDialogue("(I can't really understand her...[pause=0] I guess the twins aren't so bad after all...)")
+	
 	
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)	
@@ -954,6 +978,94 @@ function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
 	
 	partner.IsInteracting = false
 end
+
+function metano_town_ch_3.Quagsire_Nidoqueen_Conversation(chara)
+	local nidoqueen = CH('Nidoqueen')
+	local quagsire = CH('Quagsire')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(nidoqueen, 'None', true)
+	GROUND:CharSetAnim(quagsire, 'None', true)
+	
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+
+	UI:SetSpeaker(quagsire)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("All this talk about outlaw activity lately has me concerned...[pause=0] What if one comes to town?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(nidoqueen)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("It's got me worried too hun.")
+	UI:WaitShowDialogue("It'd tear me up somethin' awful to see anything happen to any of my young'uns or the folks in town...")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("But I don't think got any worryin' to do.[pause=0] We have the fine adventurers in the guild nearby after all!")
+	UI:WaitShowDialogue("If any outlaws are foolish enough to come to town,[pause=10] them adventurers will send them packin'!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(quagsire)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Well,[pause=10] I suppose that's true.[pause=0] Still,[pause=10] as a mother,[pause=10] it's hard for me not to worry...")
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
+	GROUND:CharEndAnim(nidoqueen)
+	GROUND:CharEndAnim(quagsire)
+	
+	partner.IsInteracting = false
+end
+
+function metano_town_ch_3.Oddish_Gloom_Conversation(chara)
+	local gloom = CH('Gloom')
+	local oddish = CH('Oddish')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(gloom, 'None', true)
+	GROUND:CharSetAnim(oddish, 'None', true)
+	
+	GROUND:CharTurnToChar(hero, chara)
+	GROUND:CharTurnToChar(partner, chara)
+	
+	UI:SetSpeaker(gloom)
+	UI:WaitShowDialogue("Do you like your drink,[pause=10] " .. oddish:GetDisplayName() .. "?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(oddish)
+	UI:SetSpeakerEmotion("Joyous")
+	UI:WaitShowDialogue("Yeah![pause=0] This drink is so yummy!")
+	UI:WaitShowDialogue("Thanks for taking me to the café,[pause=10] " .. gloom:GetDisplayName() .. "!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(gloom)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Of course![pause=0] What's a big sister for,[pause=10] after all?[pause=0]\nI'm just happy you're enjoying your drink!")
+
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
+	GROUND:CharEndAnim(oddish)
+	GROUND:CharEndAnim(gloom)
+	
+	partner.IsInteracting = false
+end
+
+function metano_town_ch_3.Quagsire_Action(chara, activator)
+	metano_town_ch_3.Quagsire_Nidoqueen_Conversation(chara)
+end
+
+function metano_town_ch_3.Nidoqueen_Action(chara, activator)
+	metano_town_ch_3.Quagsire_Nidoqueen_Conversation(chara)
+end
+
+
 function metano_town_ch_3.Electrike_Action(chara, activator)
 	if not SV.Chapter3.DefeatedBoss then
 		metano_town_ch_3.Wooper_Conversation(chara)
@@ -981,6 +1093,17 @@ function metano_town_ch_3.Wooper_Girl_Action(chara, activator)
 	end
 end
 
+function metano_town_ch_3.Floatzel_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "I've been hiding behind this bush for hours now and the twins still haven't found me!", "Happy")
+	UI:SetSpeakerEmotion("Joyous")
+	UI:WaitShowDialogue("Hahaha![pause=0] This spot is so good![pause=0] It's almost like they're not looking for me!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_3.Bellossom_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "It's a lovely day as always![pause=0] My flower garden is looking lovely today too!", "Happy")
+	GeneralFunctions.EndConversation(chara)
+end
 
 function metano_town_ch_3.Sentret_Action(chara, activator) 
 	if not SV.Chapter3.DefeatedBoss then 
@@ -992,9 +1115,14 @@ function metano_town_ch_3.Sentret_Action(chara, activator)
 	end 
 end
 
+
 function metano_town_ch_3.Oddish_Action(chara, activator) 
-	GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Playing will be more fun now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back!", "Happy", false)
-	GeneralFunctions.EndConversation(chara)
+	if not SV.Chapter3.DefeatedBoss then 
+		GeneralFunctions.StartConversation(chara, "Hooray![pause=0] Playing will be more fun now that " .. CharacterEssentials.GetCharacterName("Numel") .. " is back!", "Happy", false)
+		GeneralFunctions.EndConversation(chara)
+	else 
+		metano_town_ch_3.Oddish_Gloom_Conversation(chara)
+	end
 end
 
 function metano_town_ch_3.Numel_Action(chara, activator)
@@ -1028,9 +1156,13 @@ function metano_town_ch_3.Nidorina_Action(chara, activator)
 end 
 
 function metano_town_ch_3.Gloom_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Maybe your parents were just worried...[pause=0] My dad worries a lot.", "Worried", false)
-	UI:WaitShowDialogue("He says the world's becoming more dangerous,[pause=10] with all the mystery dungeons appearing lately.")
-	GeneralFunctions.EndConversation(chara)
+	if not SV.Chapter3.DefeatedBoss then
+		GeneralFunctions.StartConversation(chara, "Maybe your parents were just worried...[pause=0] My dad worries a lot.", "Worried", false)
+		UI:WaitShowDialogue("He says the world's becoming more dangerous,[pause=10] with all the mystery dungeons appearing lately.")
+		GeneralFunctions.EndConversation(chara)
+	else
+		metano_town_ch_3.Oddish_Gloom_Conversation(chara)
+	end
 end
 
 

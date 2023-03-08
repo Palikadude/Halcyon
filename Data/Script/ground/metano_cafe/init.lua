@@ -508,6 +508,17 @@ function metano_cafe.Girafarig_Action(chara, activator)
  assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), chara, activator))
 end
 
+function metano_cafe.Cleffa_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cleffa_Action(...,...)"), chara, activator))
+end
+
+function metano_cafe.Aggron_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Aggron_Action(...,...)"), chara, activator))
+end
+
+
 function metano_cafe.Gulpin_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gulpin_Action(...,...)"), chara, activator))

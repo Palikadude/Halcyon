@@ -7,12 +7,14 @@ metano_water_home_ch_3 = {}
 
 function metano_water_home_ch_3.SetupGround()
 	
-	local quagsire, floatzel  = 
-		CharacterEssentials.MakeCharactersFromList({
-			{'Quagsire', 232, 168, Direction.Up},
-			{'Floatzel', 232, 120, Direction.Down}
-		})
-	
+	if not SV.Chapter3.DefeatedBoss then
+		local quagsire, floatzel  = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Quagsire', 232, 168, Direction.Up},
+				{'Floatzel', 232, 120, Direction.Down}
+			})
+	end
+		
 	GAME:FadeIn(20)
 end
 

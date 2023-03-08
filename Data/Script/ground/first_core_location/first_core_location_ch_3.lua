@@ -138,6 +138,7 @@ function first_core_location_ch_3.RootDeactivationScene()
 	SV.Chapter3.FinishedRootScene = true
 	SV.TemporaryFlags.MorningAddress = true
 	SV.TemporaryFlags.MorningWakeup = true
+	GeneralFunctions.EndOfDay()
 	GAME:CutsceneMode(false)
 	GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
 end
