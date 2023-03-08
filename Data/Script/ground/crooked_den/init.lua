@@ -66,7 +66,7 @@ end
 
 function crooked_den.PlotScripting()
 	if SV.ChapterProgression.Chapter == 3 then 
-		if SV.Chapter3.DefeatedBoss then
+		if SV.Chapter3.FinishedRootScene then
 			crooked_den.GenericEnding()
 		elseif SV.Chapter3.LostToBoss then--player just died
 			crooked_den_ch_3.DiedToBoss()

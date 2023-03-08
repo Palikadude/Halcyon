@@ -81,7 +81,7 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 		
 		else 
 			--dont set generic end flags if you haven't beaten the boss (i.e. you're arresting sandile)
-			if SV.Chapter3.DefeatedBoss then 
+			if SV.Chapter3.FinishedRootScene then 
 				--set generic flags for generic end of day / start of next day.
 				SV.TemporaryFlags.Dinnertime = true 
 				SV.TemporaryFlags.Bedtime = true
