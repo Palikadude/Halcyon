@@ -136,6 +136,7 @@ function first_core_location_ch_3.RootDeactivationScene()
 	]]--
 	
 	SV.Chapter3.FinishedRootScene = true
+	SV.ChapterProgression.CurrentStoryDungeon = ''--Clear the current story dungeon flag
 	SV.TemporaryFlags.MorningAddress = true
 	SV.TemporaryFlags.MorningWakeup = true
 	GeneralFunctions.EndOfDay()

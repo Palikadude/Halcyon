@@ -16,7 +16,7 @@ function metano_cave_ch_3.Sunflora_Action(chara, activator)
 	else
 		GeneralFunctions.StartConversation(chara, "...Outlaws,[pause=10] huh?", "Worried", true, false)
 		UI:SetSpeakerEmotion("Pain")
-		UI:WaitShowDialogue("...I don't really care about that sort of stuff anymore.[pause=0] Please leave me alone.")
+		UI:WaitShowDialogue("...I don't really care about that sort of stuff anymore.[pause=0] Please leave me be.")
 	end
 	GeneralFunctions.EndConversation(chara, false)
 end 

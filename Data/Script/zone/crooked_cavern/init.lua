@@ -87,7 +87,7 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 				SV.TemporaryFlags.Bedtime = true
 				SV.TemporaryFlags.MorningWakeup = true 
 				SV.TemporaryFlags.MorningAddress = true 
-				GAME:EnterZone("master_zone", -1, 42, 0) --Go to Crooked Den ground map, end dungeon run in the ground rather than here 
+				GAME:EnterGroundMap('crooked_den', 'Main_Entrance_Marker') --Go to Crooked Den, end dungeon run in the ground rather than here 
 
 			else--for chapter 3, dont show results and dont set generic end flags
 				GAME:EnterZone("master_zone", -1, 42, 0) --Go to Crooked Den ground map, end dungeon run in the boss fight zone rather than here so the replays concatenate.
@@ -118,7 +118,6 @@ function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.Chapter3.LostToBoss = true
 		else 
 			SV.Chapter3.DefeatedBoss = true
-			SV.ChapterProgression.CurrentStoryDungeon = ''
 		end
 		
 		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 42, 0, false, false) --Go to Crooked Den ground map

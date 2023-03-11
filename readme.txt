@@ -13,6 +13,7 @@ Minemaker0430
 NanaelJustice
 Trio-
 Dovey
+Brimcon
 
 
 Spriting credits:

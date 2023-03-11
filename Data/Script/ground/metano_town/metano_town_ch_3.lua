@@ -1004,7 +1004,7 @@ function metano_town_ch_3.Quagsire_Nidoqueen_Conversation(chara)
 	UI:WaitShowDialogue("It's got me worried too hun.")
 	UI:WaitShowDialogue("It'd tear me up somethin' awful to see anything happen to any of my young'uns or the folks in town...")
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("But I don't think got any worryin' to do.[pause=0] We have the fine adventurers in the guild nearby after all!")
+	UI:WaitShowDialogue("But I don't think we got any worryin' to do.[pause=0] We have the fine adventurers in the guild nearby after all!")
 	UI:WaitShowDialogue("If any outlaws are foolish enough to come to town,[pause=10] them adventurers will send them packin'!")
 	GAME:WaitFrames(20)
 	
@@ -1216,7 +1216,7 @@ function metano_town_ch_3.Linoone_Action(chara, activator)
 	else
 		GeneralFunctions.StartConversation(chara, "This spot by the river is a great place to read.")
 		UI:WaitShowDialogue("Right now,[pause=10] I'm reading a book recommended to me by my son about mystery dungeons.")
-		UI:WaitShowDialogue("Did you know that if you stay on the same floor for too long,[pause=10] a mysterious force will eject you from the dungeon?")
+		UI:WaitShowDialogue("Did you know that if you stay on one floor for too long,[pause=10] a mysterious force will eject you from the dungeon?")
 		UI:WaitShowDialogue("The author notes that nobody knows the source of the mysterious force.[pause=0] How strange!")
 	end	
 	GeneralFunctions.EndConversation(chara)
@@ -1283,9 +1283,9 @@ function metano_town_ch_3.Growlithe_Desk_Action(chara, activator)
 end
 
 function metano_town_ch_3.Audino_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] are you t-two headed out for the day?")
+	GeneralFunctions.StartConversation(chara, "Oh,[pause=10] are you two headed out for the day?")
 	UI:WaitShowDialogue("Make sure you leave town to the east,[pause=10] r-right over there!")
-	UI:WaitShowDialogue("That's where you should go w-whenever you want to go out on an adventure!")
+	UI:WaitShowDialogue("That's where you should go whenever you want to go out on an adventure!")
 	GeneralFunctions.EndConversation(chara)
 end
 
