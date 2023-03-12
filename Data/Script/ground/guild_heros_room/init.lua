@@ -106,6 +106,78 @@ end
 
 
 
+function guild_heros_room.Book_Action(obj, activator)
+	UI:ResetSpeaker(false)
+	local hero = GAME:GetPlayerPartyMember(0)
+	local partner = GAME:GetPlayerPartyMember(1)
+	local hero_ground = CH('PLAYER')
+	local partner_ground = CH('Teammate1')
+	partner_ground.IsInteracting = true
+	GROUND:CharSetAnim(partner_ground, 'None', true)
+	GROUND:CharSetAnim(hero_ground, 'None', true)		
+    GeneralFunctions.TurnTowardsLocation(hero_ground, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+    GeneralFunctions.TurnTowardsLocation(partner_ground, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	
+	
+	
+	local choices = {"Change nicknames", "Change team name", "Nothing"}
+	UI:BeginChoiceMenu("What would you like to do?", choices, 1, #choices)
+	UI:WaitForChoice()
+	local choice_result = UI:ChoiceResult()
+	
+	if choice_result ~= #choices then
+		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Opening', 0, 0, 0, Direction.Left)	  
+	    GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Left, 1)
+		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Opening', 0, 3, 3, Direction.Left)
+		GAME:WaitFrames(40)
+	end
+	
+	if choice_result == 1 then
+		UI:BeginChoiceMenu("Whose name would you like to change?", {hero_ground:GetDisplayName(), partner_ground:GetDisplayName(), "Neither"}, 1, 3)
+		UI:WaitForChoice()
+		local name_result = UI:ChoiceResult()
+
+		if name_result == 1 then
+			local name = hero.Nickname
+			UI:NameMenu("What is your name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			--if no name given, set name to previous name
+			if result == "" then result = name end
+			GAME:SetCharacterNickname(hero, result)
+			UI:WaitShowDialogue("Your name is now " .. hero_ground:GetDisplayName() .. "!")
+		elseif name_result == 2 then
+			local name = partner.Nickname
+			UI:NameMenu("What is your partner's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+			UI:WaitForChoice()
+			local result = UI:ChoiceResult()
+			--if no name given, set name to previous name
+			if result == "" then result = name end
+			GAME:SetCharacterNickname(partner, result)
+			UI:WaitShowDialogue("Your partner's name is now " .. partner_ground:GetDisplayName() .. "!")
+		end
+		
+	elseif choice_result == 2 then
+		local name = _DATA.Save.ActiveTeam.Name
+		UI:NameMenu("What is your team's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+		UI:WaitForChoice()
+		local result = UI:ChoiceResult()
+		--if no name given, set name to previous name
+		if result == "" then result = name end
+		GAME:SetTeamName(result)
+		UI:WaitShowDialogue("Your team's name is now Team " .. GAME:GetTeamName() .. "!")
+	end
+	
+	if choice_result ~= #choices then
+		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Closing', 0, 0, 0, Direction.Left)
+		GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Left, 1)
+		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Closing', 0, 3, 3, Direction.Left)	  
+	end
+	
+end
+
+
+
 ---------------------------------
 -- Event Trigger
 -- This is a temporary object created by a script used to trigger events that only happen

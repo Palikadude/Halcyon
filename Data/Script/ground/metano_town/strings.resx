@@ -674,7 +674,7 @@
     <value>I can safeguard any items you just can't bear to lose.</value>
   </data>
   <data name="Storage_Info_2" xml:space="preserve">
-    <value>When you faint in dungeons,[pause=10] all of your items will be lost...</value>
+    <value>When you faint in dungeons,[pause=10] most of your items will be lost...</value>
   </data>
   <data name="Storage_Info_3" xml:space="preserve">
     <value>But items you keep with me will be safe![pause=0] Nothing gets past this momma's watchful eye!</value>
@@ -707,7 +707,7 @@
     <value>No transaction then?[pause=0] Very well.</value>
   </data>
   <data name="Bank_Info_1" xml:space="preserve">
-    <value>When you fall in dungeons,[pause=10] all of your money will be lost forever...</value>
+    <value>When you fall in dungeons,[pause=10] most of your money will be lost forever...</value>
   </data>
   <data name="Bank_Info_2" xml:space="preserve">
     <value>You can avoid that tragedy by leaving it with me instead.</value>
