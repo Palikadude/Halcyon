@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.2.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
-"AssetName": "guild_heros_room",
 "Name": {
 "DefaultText": "Your Room",
 "LocalTexts": {}
@@ -139026,6 +139025,47 @@
 "Width": 16,
 "Height": 16
 }
+},
+{
+"EntName": "Book",
+"Direction": 2,
+"EntEnabled": true,
+"triggerType": 1,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Diary_Red_Opening",
+"FrameTime": 6,
+"StartFrame": 0,
+"EndFrame": 0,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": false,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": -1,
+"Y": 7
+},
+"Collider": {
+"X": 288,
+"Y": 208,
+"Width": 24,
+"Height": 24
+}
 }
 ],
 "Spawners": [
@@ -139092,7 +139132,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },
