@@ -458,7 +458,8 @@ end
 
 
 function guild_second_floor_ch_1.Marill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because our signature attack is the move Round!")
+	local move = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("round")--healbell
+	GeneralFunctions.StartConversation(chara, "We're Team [color=#FFA5FF]Round[color]![pause=0] We're called that because our signature attack is the move " .. move:GetColoredName() .. "!")
 	GeneralFunctions.EndConversation(chara)
 end
 
