@@ -691,8 +691,20 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 			UI:WaitShowDialogue("That Team [color=#FFA5FF]Style[color]...[pause=0] Who do they think they are?")
 			UI:WaitShowDialogue("We have to go back to " .. zone:GetColoredName() .. " to defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
-		else 
-			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+		else
+			if ground == 'guild_third_floor_lobby' then--special dialogue on the third floor post boss. Changes depending on whether or not you had talked to girafarig/breloom at the cafe preboss 
+				UI:WaitShowDialogue("I didn't see " .. CharacterEssentials.GetCharacterName("Girafarig") .. " or " .. CharacterEssentials.GetCharacterName("Breloom") .. " at the address this morning.")
+				if SV.Chapter3.BreloomGirafarigConvo then 
+					UI:WaitShowDialogue("They must be on that expedition they were talking about at the café the other day.")
+				else 
+					UI:SetSpeakerEmotion("Worried")
+					UI:WaitShowDialogue("I wonder where they've gone off to?")
+					UI:SetSpeakerEmotion("Normal")
+				end
+				UI:WaitShowDialogue("Anyways,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+			else
+				UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+			end
 			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	
