@@ -248,10 +248,11 @@ function guild_second_floor.Hand_In_Missions()
 									Segment = -1,
 									Floor = -1,
 									Reward = "",
-									Type = "",
+									Type = -1,
 									Completion = -1,
 									Taken = false,
-									Difficulty = ""
+									Difficulty = "",
+									Item = "",
 								}
 		end
 	end 

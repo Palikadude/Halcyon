@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.1.0",
+"Version": "0.7.2.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "berry_aspear": {
@@ -2713,6 +2713,30 @@
 },
 "Released": true,
 "Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
+"SortOrder": 0
+},
+"stolen_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [],
+"Name": {
+"DefaultText": "Stolen Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"lost_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [],
+"Name": {
+"DefaultText": "Lost Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
 "SortOrder": 0
 }
 }

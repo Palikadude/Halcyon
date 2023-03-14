@@ -76,7 +76,7 @@ function testmap.See_Taken_Action(chara, activator)
 	for i = 1, 8, 1 do
 		UI:WaitShowDialogue("Job " .. tostring(i) .. ": Client: " .. SV.TakenBoard[i].Client .. " Target: " .. SV.TakenBoard[i].Target ..
 			" Zone: " .. SV.TakenBoard[i].Zone .. " Reward: " .. SV.TakenBoard[i].Reward .. " Floor: " .. SV.TakenBoard[i].Floor .. " Type: "
-			.. SV.TakenBoard[i].Type .. " Completion: " .. SV.TakenBoard[i].Completion .. " Taken: " .. tostring(SV.TakenBoard[i].Taken) .. " Difficulty: " .. SV.TakenBoard[i].Difficulty)			
+			.. SV.TakenBoard[i].Type .. " Completion: " .. SV.TakenBoard[i].Completion .. " Taken: " .. tostring(SV.TakenBoard[i].Taken) .. " Difficulty: " .. SV.TakenBoard[i].Difficulty .. " Item: " .. SV.TakenBoard[i].Item)			
 	end
 	UI:SetAutoFinish(false)
 end
@@ -88,7 +88,7 @@ function testmap.See_Mission_Action(chara, activator)
 	for i = 1, 8, 1 do
 		UI:WaitShowDialogue("Job " .. tostring(i) .. ": Client: " .. SV.MissionBoard[i].Client .. " Target: " .. SV.MissionBoard[i].Target ..
 			" Zone: " .. SV.MissionBoard[i].Zone .. " Reward: " .. SV.MissionBoard[i].Reward .. " Floor: " .. SV.MissionBoard[i].Floor .. " Type: "
-			.. SV.MissionBoard[i].Type .. " Completion: " .. SV.MissionBoard[i].Completion .. " Taken: " .. tostring(SV.MissionBoard[i].Taken) .. " Difficulty: " .. SV.MissionBoard[i].Difficulty)			
+			.. SV.MissionBoard[i].Type .. " Completion: " .. SV.MissionBoard[i].Completion .. " Taken: " .. tostring(SV.MissionBoard[i].Taken) .. " Difficulty: " .. SV.MissionBoard[i].Difficulty .. " Item: " .. SV.MissionBoard[i].Item)			
 	end
 	UI:SetAutoFinish(false)
 end
@@ -99,7 +99,7 @@ function testmap.See_Outlaw_Action(chara, activator)
 	for i = 1, 8, 1 do
 		UI:WaitShowDialogue("Job " .. tostring(i) .. ": Client: " .. SV.OutlawBoard[i].Client .. " Target: " .. SV.OutlawBoard[i].Target ..
 			" Zone: " .. SV.OutlawBoard[i].Zone .. " Reward: " .. SV.OutlawBoard[i].Reward .. " Floor: " .. SV.OutlawBoard[i].Floor .. " Type: "
-			.. SV.OutlawBoard[i].Type .. " Completion: " .. SV.OutlawBoard[i].Completion .. " Taken: " .. tostring(SV.OutlawBoard[i].Taken) .. " Difficulty: " .. SV.OutlawBoard[i].Difficulty)			
+			.. SV.OutlawBoard[i].Type .. " Completion: " .. SV.OutlawBoard[i].Completion .. " Taken: " .. tostring(SV.OutlawBoard[i].Taken) .. " Difficulty: " .. SV.OutlawBoard[i].Difficulty ..  " Item: " .. SV.OutlawBoard[i].Item)			
 	end
 	UI:SetAutoFinish(false)
 end

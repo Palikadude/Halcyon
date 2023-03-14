@@ -182,7 +182,10 @@ end
 function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
   local remaining_outlaw = false
-	local outlawName = ""
+	local outlaw_name = ""
+	local item_id = ""
+	local mission_type = -1
+
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
@@ -191,25 +194,45 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
       if found_outlaw then
 	    	remaining_outlaw = true
 	  	else
-				outlawName = _DATA:GetMonster(mission.Target):GetColoredName()
-	   	  -- if no outlaws of the mission list, mark quest as complete
-				--Mark mission completion flags
-				SV.TemporaryFlags.MissionCompleted = true
-				mission.Completion = 1
-
+				outlaw_name = _DATA:GetMonster(mission.Target):GetColoredName()
+				mission_type = mission.Type
+				item_id = mission.Item
 	  	end
     end
   end
-  if not remaining_outlaw then
-    -- if no outlaws are found in the map, return music to normal and remove this status from the map
-    SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
-    local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
-		TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
-		GAME:WaitFrames(30)
-		UI:ResetSpeaker()
-		UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlawName .. "!")
-		GeneralFunctions.AskMissionWarpOut()
-  end
+	if mission_type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+		if not remaining_outlaw then
+			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+		end
+		local slot = GAME:FindPlayerItem(item_id, false, true) 
+		if slot:IsValid() and not remaining_outlaw then
+			SV.TemporaryFlags.MissionCompleted = true
+			mission.Completion = 1
+			local item_name = _DATA:GetItem(item_id):GetColoredName()
+			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
+			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
+			GAME:WaitFrames(30)
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("Yes!\nYou retrieved the " .. item_name .. "!")
+			GeneralFunctions.AskMissionWarpOut()
+		end
+	else
+		if not remaining_outlaw then
+			SV.TemporaryFlags.MissionCompleted = true
+			mission.Completion = 1
+			-- if no outlaws are found in the map, return music to normal and remove this status from the map
+			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
+			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
+			GAME:WaitFrames(30)
+			UI:ResetSpeaker()
+			-- if no outlaws of the mission list, mark quest as complete
+			--Mark mission completion flags
+			UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlaw_name .. "!")
+			GeneralFunctions.AskMissionWarpOut()
+		end
+	end
 end
 
 

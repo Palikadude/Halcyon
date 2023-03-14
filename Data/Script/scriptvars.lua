@@ -61,10 +61,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -75,10 +76,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -89,10 +91,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -103,10 +106,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -117,10 +121,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -131,10 +136,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -145,10 +151,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -159,10 +166,11 @@ SV.TakenBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	}
 
 }
@@ -179,10 +187,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -193,10 +202,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -207,10 +217,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -221,10 +232,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -235,10 +247,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -249,10 +262,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -263,10 +277,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -277,10 +292,11 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	}
 
 }
@@ -297,10 +313,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -311,10 +328,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = 1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -325,10 +343,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -339,10 +358,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -353,10 +373,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -367,10 +388,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},
 	{
 		Client = "",
@@ -381,10 +403,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	},	
 	{
 		Client = "",
@@ -395,10 +418,11 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = ""
 	}
 }
 		

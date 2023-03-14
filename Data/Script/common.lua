@@ -91,6 +91,13 @@ end
 COMMON.MISSION_TYPE_RESCUE = 0
 COMMON.MISSION_TYPE_ESCORT = 1
 COMMON.MISSION_TYPE_OUTLAW = 2
+COMMON.MISSION_TYPE_EXPLORATION = 3
+COMMON.MISSION_TYPE_LOST_ITEM = 4
+COMMON.MISSION_TYPE_OUTLAW_ITEM = 5
+COMMON.MISSION_TYPE_OUTLAW_FLEE = 6
+COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE = 7
+COMMON.MISSION_TYPE_DELIVERY = 8
+
 
 COMMON.MISSION_INCOMPLETE = 0
 COMMON.MISSION_COMPLETE = 1
@@ -1025,8 +1032,8 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
   SOUND:StopBGM()
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
-      if mission.Type == 1 then -- escort
+    if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
+      if mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
         -- add escort to team
         local player_count = GAME:GetPlayerPartyCount()
         local guest_count = GAME:GetPlayerGuestCount()
@@ -1085,8 +1092,8 @@ end
 function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
   for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
-    if mission.Taken and mission.Completion == 0 and zoneId == mission.Zone and segmentID == mission.Segment then
-      if mission.Type == 1 then -- escort
+    if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneId == mission.Zone and segmentID == mission.Segment then
+      if mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
           -- remove the escort from the party
         local escort = COMMON.FindMissionEscort(name)
         if escort then
