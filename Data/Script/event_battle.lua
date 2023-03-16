@@ -92,19 +92,27 @@ end
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 	local targetName = context.Target:GetDisplayName(true);
   local oldDir = context.Target.CharDir
+
+	local tbl = LTBL(context.Target)
+	local mission = SV.TakenBoard[tonumber(tbl.Mission)]
   DUNGEON:CharTurnToChar(context.Target, context.User)
 	UI:ResetSpeaker()
+
+	if mission.Type == COMMON.MISSION_TYPE_RESCUE then
+		RescueCheck(mission)
+	elseif mission.Type == COMMON.MISSION_TYPE_DELIVERY then
+		DeliveryCheck(mission)
+	end
+end
+
+function RescueCheck(mission)
 	UI:ChoiceMenuYesNo("Yes! You've found " .. targetName .. "!\nDo you want to use your badge to rescue " .. targetName .. "?", false)
 	UI:WaitForChoice()
 	local use_badge = UI:ChoiceResult()
 	if use_badge then 
-		local tbl = LTBL(context.Target)
-		local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-		
 		--Mark mission completion flags
 		SV.TemporaryFlags.MissionCompleted = true
 		mission.Completion = 1
-		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and\n".. targetName .. " is transported away magically!" )
 		UI:SetSpeaker(context.Target)
 		UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
@@ -119,6 +127,40 @@ function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 	end
 end
 
+function DeliveryCheck(mission)
+	local inv_slot = GAME:FindPlayerItem(mission.Item, false, true)
+	local team_slot = GAME:FindPlayerItem(mission.Item, true, false)
+	local has_item = inv_slot:IsValid() or team_slot:IsValid()
+	local item_name = _DATA:GetItem(mission.Item):GetColoredName()
+
+	if has_item then
+		SV.TemporaryFlags.MissionCompleted = true
+		mission.Completion = 1
+		UI:ChoiceMenuYesNo("Yes! You've located " .. targetName .. "!" .. " Do you want to deliver the requested " .. item_name .. " to " .. targetName .. "?")
+		UI:WaitForChoice()
+		local deliver_item = UI:ChoiceResult()
+		if deliver_item then
+			-- Take from inventory first before held items 
+			if inv_slot:IsValid() then 
+				GAME:TakePlayerBagItem(inv_slot.Slot)
+			else 
+				GAME:TakePlayerEquippedItem(team_slot.Slot)
+			end
+			GAME:WaitFrames(20)
+			UI:SetSpeaker(context.Target)
+			UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
+			GAME:WaitFrames(20)
+			TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
+			_DUNGEON:RemoveChar(context.Target)
+			GAME:WaitFrames(50)
+			GeneralFunctions.AskMissionWarpOut()
+		end
+	else
+		UI:WaitShowDialogue("The requested " .. item_name .. " isn't in the Treasure Bag.\nThere is nothing to deliver.")
+	end
+end
 
 function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 

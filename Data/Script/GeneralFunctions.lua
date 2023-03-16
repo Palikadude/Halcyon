@@ -1381,3 +1381,36 @@ function GeneralFunctions.PrintPlotVariables()
 	print("BreloomGirafarigConvo = " .. tostring(SV.Chapter3.BreloomGirafarigConvo))
 
 end 
+
+function GeneralFunctions.TableContains(table, val)
+	for i=1,#table do
+		 if table[i] == val then 
+				return true
+		 end
+	end
+	return false
+end
+
+function GeneralFunctions.PrintMissionType(mission)
+	local val = mission.Type
+
+	if val == COMMON.MISSION_TYPE_RESCUE then
+		PrintInfo("=====RESCUE=====")
+  elseif val == COMMON.MISSION_TYPE_ESCORT then
+		PrintInfo("=====ESCORT=====")
+	elseif val == COMMON.MISSION_TYPE_EXPLORATION then
+		PrintInfo("=====EXPLORATION=====")
+  elseif val == COMMON.MISSION_TYPE_OUTLAW then 
+		PrintInfo("=====OUTLAW=====")
+	elseif val == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+		PrintInfo("=====OUTLAW_FLEE=====")
+	elseif val == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+		PrintInfo("=====OUTLAW_MONSTER_HOUSE=====")
+	elseif val == COMMON.MISSION_TYPE_LOST_ITEM then 
+		PrintInfo("=====LOST_ITEM=====")
+	elseif val == COMMON.MISSION_TYPE_DELIVERY then 
+		PrintInfo("=====OUTLAW_MONSTER_HOUSE=====")
+  elseif val == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
+		PrintInfo("=====OUTLAW_ITEM=====")
+  end
+end 

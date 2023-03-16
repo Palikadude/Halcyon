@@ -1,5 +1,5 @@
 require 'common'
-
+require 'GeneralFunctions'
 
 --Halcyon Custom work:
 --Code in this folder is used to generate, display, and handle randomized missions
@@ -475,9 +475,56 @@ MISSION_GEN.REWARDS = {
 		{'tm_drain_punch', 5}},
 	--additional, special, unique rewards. todo
 	SPECIAL = {}
-	
 }
 
+MISSION_GEN.SPECIAL_RESCUE_RIVAL = "RIVAL"
+MISSION_GEN.SPECIAL_RESCUE_CHILD = "CHILD"
+MISSION_GEN.SPECIAL_RESCUE_LOVER = "LOVER"
+MISSION_GEN.SPECIAL_RESCUE_FRIEND = "FRIEND"
+
+
+MISSION_GEN.SPECIAL_RESCUE_OPTIONS = {
+	MISSION_GEN.SPECIAL_RESCUE_RIVAL,
+	MISSION_GEN.SPECIAL_RESCUE_CHILD,
+	MISSION_GEN.SPECIAL_RESCUE_LOVER,
+	MISSION_GEN.SPECIAL_RESCUE_FRIEND
+}
+
+MISSION_GEN.SPECIAL_LOVER_PAIRS = {
+
+}
+
+MISSION_GEN.SPECIAL_CHILD_PAIRS = {
+
+}
+
+MISSION_GEN.SPECIAL_FRIENDS_PAIRS = {
+
+}
+
+MISSION_GEN.SPECIAL_RIVAL_PAIRS = {
+
+}
+
+
+
+MISSION_GEN.SPECIAL_OUTLAW = {
+
+}
+
+
+MISSION_GEN.LOST_ITEMS = {
+	"lost_scarf"
+}
+
+MISSION_GEN.STOLEN_ITEMS = {
+	"stolen_scarf"
+}
+
+MISSION_GEN.DELIVERABLE_ITEMS = {
+	"berry_oran",
+	"berry_leppa",
+}
 
 --"order" of dungeons
 MISSION_GEN.DUNGEON_ORDER = {}
@@ -532,7 +579,7 @@ function MISSION_GEN.ResetBoards()
 --jobs on the mission board.
 SV.MissionBoard =
 {
-		{
+	{
 		Client = "",
 		Target = "",
 		Flavor = "",
@@ -541,10 +588,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -555,10 +604,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -569,10 +620,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -583,10 +636,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -597,10 +652,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -611,10 +668,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -625,10 +684,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -639,10 +700,12 @@ SV.MissionBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	}
 
 }
@@ -659,10 +722,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -673,10 +738,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -687,10 +754,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -701,10 +770,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -715,10 +786,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -729,10 +802,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -743,10 +818,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -757,10 +834,12 @@ SV.OutlawBoard =
 		Segment = -1,
 		Floor = -1,
 		Reward = "",
-		Type = "",
+		Type = -1,
 		Completion = -1,
 		Taken = false,
-		Difficulty = ""
+		Difficulty = "",
+		Item = "",
+		Special = ""
 	}
 }
 
@@ -795,17 +874,23 @@ function MISSION_GEN.GenerateBoard(board_type)
 	
 	--generate jobs
 	for i = 1, jobs_to_make, 1 do 
-		--choose a dungeon, client, target, etc
+		--choose a dungeon, client, target, item, etc
 		local dungeon = dungeon_list[math.random(1, #dungeon_list)]
 		local client = MISSION_GEN.POKEMON[math.random(1, #MISSION_GEN.POKEMON)]
+		local item = ""
+		local special = ""
 
-		
 		--generate the objective. 10% chance of escort vs rescue.
 		local objective 
 		if mission_type == "Outlaw" then 
-			objective = COMMON.MISSION_TYPE_OUTLAW
+			if math.random(1, 2) == 1 then
+				objective = COMMON.MISSION_TYPE_OUTLAW
+			else
+				objective = COMMON.MISSION_TYPE_OUTLAW_ITEM
+			end
 		else
-			if math.random(1, 10) == 1 then 
+			local roll = math.random(1, 10)
+			if roll <= 1 then 
 				--if there's already an escort mission generated for this dungeon, don't gen another one and just make it a rescue.
 				objective = COMMON.MISSION_TYPE_ESCORT 
 				--only check from 1 to i-1 to save time.
@@ -822,11 +907,41 @@ function MISSION_GEN.GenerateBoard(board_type)
 						break
 					end
 				end
-			else 
+			elseif roll <= 2 then
+				-- TODO - Apply the same logic from escort missions to exploration
+				objective = COMMON.MISSION_TYPE_EXPLORATION
+			elseif roll <= 4 then
+				objective = COMMON.MISSION_TYPE_DELIVERY
+--				objective = COMMON.MISSION_TYPE_EXPLORATION
+			elseif roll <= 6 then
+				objective = COMMON.MISSION_TYPE_LOST_ITEM
+--				objective = COMMON.MISSION_TYPE_EXPLORATION
+			else
 				objective = COMMON.MISSION_TYPE_RESCUE
+--				objective = COMMON.MISSION_TYPE_EXPLORATION
 			end
 		end
-		
+
+		if objective == COMMON.MISSION_TYPE_DELIVERY then
+			item = MISSION_GEN.DELIVERABLE_ITEMS[math.random(1, #MISSION_GEN.DELIVERABLE_ITEMS)]
+		elseif objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+			item = MISSION_GEN.STOLEN_ITEMS[math.random(1, #MISSION_GEN.STOLEN_ITEMS)]
+		elseif objective == COMMON.MISSION_TYPE_LOST_ITEM then
+			item = MISSION_GEN.LOST_ITEMS[math.random(1, #MISSION_GEN.LOST_ITEMS)]
+		end
+
+		-- TODO handle special cases 
+		if objective == COMMON.MISSION_TYPE_RESCUE and math.random(1, 10) == 1 then
+			special = MISSION_GEN.SPECIAL_RESCUE_OPTIONS[math.random(1, #MISSION_GEN.SPECIAL_RESCUE_OPTIONS)]
+			if special == MISSION_GEN.SPECIAL_RESCUE_LOVER then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_CHILD then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_RIVAL then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_FRIEND then
+			end
+		end
 		
 		--50% chance that the client and target are the same. Target is the escort if its an escort mission.
 		--It is possible for this to roll the same target as the client again, which is fine.
@@ -846,12 +961,18 @@ function MISSION_GEN.GenerateBoard(board_type)
 			end
 		end
 		
-		--up the difficulty by 1 if its an outlaw or escort mission.
+
 		local difficulty = MISSION_GEN.DUNGEON_DIFFICULTY[dungeon]
-		if objective == COMMON.MISSION_TYPE_ESCORT or objective == COMMON.MISSION_TYPE_OUTLAW then
-				difficulty = MISSION_GEN.ORDER_TO_DIFF[MISSION_GEN.DIFF_TO_ORDER[difficulty]+1]
+		local offset = 0
+		--up the difficulty by 1 if its an outlaw or escort mission.
+		local difficult_objectives = { COMMON.MISSION_TYPE_ESCORT, COMMON.MISSION_TYPE_OUTLAW, COMMON.MISSION_TYPE_OUTLAW_FLEE, COMMON.MISSION_TYPE_OUTLAW_ITEM }
+		if GeneralFunctions.TableContains(difficult_objectives, objective) then
+			offset = 1
+		--up the difficulty by 2 if its an outlaw monster house
+		elseif objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+			offset = 2
 		end
-		
+		difficulty = MISSION_GEN.ORDER_TO_DIFF[MISSION_GEN.DIFF_TO_ORDER[difficulty]+offset]
 		--should pretty much always be in segment 0 for missions
 		local segment = 0
 		print(MISSION_GEN.DIFF_REWARDS[difficulty])
@@ -897,7 +1018,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local mission_floor = math.random(math.floor(zone.CountedFloors * .55), zone.CountedFloors)
 		
 		--don't generate this particular job slot if this floor's already been taken.
-		--a bit of a lazy approach, perphaps upgrade in future?
+		--a bit of a lazy approach, perhaps upgrade in future?
 		if not MISSION_GEN.has_value(used_floors, mission_floor) then 
 			if mission_type == "Outlaw" then
 				SV.OutlawBoard[i].Client = client
@@ -912,6 +1033,8 @@ function MISSION_GEN.GenerateBoard(board_type)
 				SV.OutlawBoard[i].Completion = MISSION_GEN.INCOMPLETE
 				SV.OutlawBoard[i].Taken = false
 				SV.OutlawBoard[i].Difficulty = difficulty
+				SV.OutlawBoard[i].Item = item
+				SV.OutlawBoard[i].Special = special
 			else 
 				SV.MissionBoard[i].Client = client
 				SV.MissionBoard[i].Target = target
@@ -925,6 +1048,8 @@ function MISSION_GEN.GenerateBoard(board_type)
 				SV.MissionBoard[i].Completion = MISSION_GEN.INCOMPLETE
 				SV.MissionBoard[i].Taken = false
 				SV.MissionBoard[i].Difficulty = difficulty
+				SV.MissionBoard[i].Item = item
+				SV.MissionBoard[i].Special = special
 			end
 		end
 			
@@ -977,7 +1102,7 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   --get relevant board
   local job
   if job_type == 'taken' then
-	job = SV.TakenBoard[job_number]
+		job = SV.TakenBoard[job_number]
   elseif job_type == 'outlaw' then
   	job = SV.OutlawBoard[job_number]
   else --default to mission board
@@ -1000,15 +1125,26 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   self.target = ""
   if job.Target ~= '' then self.target = _DATA:GetMonster(job.Target):GetColoredName() end
   
+	self.item = ""
+	if job.Item ~= '' then self.item = _DATA:GetItem(job.Item):GetColoredName() end
+  
   self.objective = ""
   self.type = job.Type
   
   if self.type == COMMON.MISSION_TYPE_RESCUE then
-	self.objective = "Rescue " .. self.client .. "."
+		self.objective = "Rescue " .. self.client .. "."
   elseif self.type == COMMON.MISSION_TYPE_ESCORT then
     self.objective = "Escort " .. self.client .. " to " .. self.target .. "."
-  elseif self.type == COMMON.MISSION_TYPE_OUTLAW then 
-	self.objective = "Arrest " .. self.target .. "."
+	elseif self.type == COMMON.MISSION_TYPE_EXPLORATION then
+		self.objective = "Explore with " .. self.client .. "."
+  elseif self.type == COMMON.MISSION_TYPE_OUTLAW or self.type == COMMON.MISSION_TYPE_OUTLAW_FLEE or self.type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then 
+		self.objective = "Arrest " .. self.target .. "."
+	elseif self.type == COMMON.MISSION_TYPE_LOST_ITEM then 
+		self.objective = "Find " .. self.item .. " for " .. self.client .. "."
+	elseif self.type == COMMON.MISSION_TYPE_DELIVERY then 
+		self.objective = "Deliver " .. self.item .. " to " .. self.client .. "."
+  elseif self.type == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
+		self.objective = "Retrieve " .. self.item .. " from " .. self.target .. "."
   end
   
   
@@ -1076,10 +1212,12 @@ function JobMenu:DeleteJob()
 										Segment = -1,
 										Floor = -1,
 										Reward = "",
-										Type = "",
+										Type = -1,
 										Completion = -1,
 										Taken = false,
-										Difficulty = ""
+										Difficulty = "",
+										Item = "",
+										Special = ""
 									}
 	
 	MISSION_GEN.SortTaken()

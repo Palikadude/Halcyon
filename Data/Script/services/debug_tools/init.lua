@@ -96,23 +96,23 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  --mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
-	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
+	  mon_id = RogueEssence.Dungeon.MonsterID("tropius", 0, "normal", Gender.Male)
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 50, "", 0))
 	  
 	  
-		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
-		--_DATA.Save.ActiveTeam.Players[0].AtkBonus = 1
-		--_DATA.Save.ActiveTeam.Players[0].DefBonus = 1
-		--_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 1
-		--_DATA.Save.ActiveTeam.Players[0].MDefBonus = 1
-	--	_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 1
+		_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
+		_DATA.Save.ActiveTeam.Players[0].AtkBonus = 1
+		_DATA.Save.ActiveTeam.Players[0].DefBonus = 1
+		_DATA.Save.ActiveTeam.Players[0].MAtkBonus = 1
+		_DATA.Save.ActiveTeam.Players[0].MDefBonus = 1
+		_DATA.Save.ActiveTeam.Players[0].SpeedBonus = 1
 
-		--_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 3
-		--_DATA.Save.ActiveTeam.Players[1].AtkBonus = 1
-		--_DATA.Save.ActiveTeam.Players[1].DefBonus = 1
-		--_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
-		--_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
-		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
+		_DATA.Save.ActiveTeam.Players[1].MaxHPBonus = 3
+		_DATA.Save.ActiveTeam.Players[1].AtkBonus = 1
+		_DATA.Save.ActiveTeam.Players[1].DefBonus = 1
+		_DATA.Save.ActiveTeam.Players[1].MAtkBonus = 1
+		_DATA.Save.ActiveTeam.Players[1].MDefBonus = 1
+		_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
 	   -- mon_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
@@ -242,10 +242,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -256,10 +258,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -270,10 +274,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -284,10 +290,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -298,10 +306,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -312,10 +322,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -326,10 +338,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -340,10 +354,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		}
 
 	}
@@ -361,10 +377,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -375,10 +393,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -389,10 +409,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -403,10 +425,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -417,10 +441,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -431,10 +457,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -445,10 +473,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -459,10 +489,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		}
 
 	}
@@ -480,10 +512,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -494,10 +528,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -508,10 +544,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -522,10 +560,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -536,10 +576,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -550,10 +592,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -564,10 +608,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -578,10 +624,12 @@ end
 			Segment = -1,
 			Floor = -1,
 			Reward = "",
-			Type = "",
+			Type = -1,
 			Completion = -1,
 			Taken = false,
-			Difficulty = ""
+			Difficulty = "",
+			Item = "",
+			Special = ""
 		}
 	}
 	end

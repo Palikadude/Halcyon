@@ -10,29 +10,50 @@ end
 PresetMultiTeamSpawnerType = luanet.import_type('RogueEssence.LevelGen.PresetMultiTeamSpawner`1')
 PlaceRandomMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceRandomMobsStep`1')
 PlaceEntranceMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceEntranceMobsStep`2')
+MonsterHouseStepType = luanet.import_type('RogueEssence.LevelGen.MonsterHouseStep`1')
+
 MapEffectStepType = luanet.import_type('RogueEssence.LevelGen.MapEffectStep`1')
 MapGenContextType = luanet.import_type('RogueEssence.LevelGen.ListMapGenContext')
 EntranceType = luanet.import_type('RogueEssence.LevelGen.MapGenEntrance')
 
+
 function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed, args)
-  -- choose a the floor to spawn it on
+  -- TODO try to add monster house gen step first
+ 
   local destinationFloor = false
   local outlawFloor = false
   for name, mission in pairs(SV.TakenBoard) do
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.Zone
 	  and zoneContext.CurrentSegment == mission.Segment and zoneContext.CurrentID + 1 == mission.Floor then
       PrintInfo("Spawning Mission Goal")
-      if mission.Type == COMMON.MISSION_TYPE_OUTLAW then -- outlaw
+      local outlaw_arr = { 
+        COMMON.MISSION_TYPE_OUTLAW,
+        COMMON.MISSION_TYPE_OUTLAW_ITEM,
+        COMMON.MISSION_TYPE_OUTLAW_FLEE,
+        COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE
+      }
+
+      if GeneralFunctions.TableContains(outlaw_arr, mission.Type) then -- outlaw
         local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
         local post_mob = RogueEssence.LevelGen.MobSpawn()
         post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
-        post_mob.Tactic = "boss"
+
+        if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+          --TODO: Change to get tact
+          post_mob.Tactic = "get_away"
+        else
+          post_mob.Tactic = "boss"
+        end
         -- Grab the outlaw level
         post_mob.Level = RogueElements.RandRange(
           math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
         )
         
         post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+        if mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+          local item_feature = PMDC.LevelGen.MobSpawnItem(true, mission.Item)
+          post_mob.SpawnFeatures:Add(item_feature)
+        end
 
         local boost_feature = PMDC.LevelGen.MobSpawnBoost()
         boost_feature.MaxHPBonus = MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2;
@@ -51,19 +72,19 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         PrintInfo("Done")
         outlawFloor = true
       else
-          local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
-          local post_mob = RogueEssence.LevelGen.MobSpawn()
-          post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
-          post_mob.Tactic = "slow_wander"
-          post_mob.Level = RogueElements.RandRange(50)
-        if mission.Type == COMMON.MISSION_TYPE_RESCUE then -- rescue
+        local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
+        local post_mob = RogueEssence.LevelGen.MobSpawn()
+        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+        post_mob.Tactic = "slow_wander"
+        post_mob.Level = RogueElements.RandRange(50)
+        if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY then -- rescue
           local dialogue = RogueEssence.Dungeon.BattleScriptEvent("RescueReached")
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
-          elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+        elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
           local dialogue = RogueEssence.Dungeon.BattleScriptEvent("EscortRescueReached")
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
         end
         specificTeam.Spawns:Add(post_mob)
           PrintInfo("Creating Spawn")
@@ -84,22 +105,21 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
       end
     end
   end
-  
   if destinationFloor then
     -- add destination floor notification
     local activeEffect = RogueEssence.Data.ActiveEffect()
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("DestinationFloor"))
-	local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
-	local priority = RogueElements.Priority(-6)
-	queue:Enqueue(priority, destNote)
+	  local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
+	  local priority = RogueElements.Priority(-6)
+	  queue:Enqueue(priority, destNote)
   end
   if outlawFloor then
     -- add destination floor notification
     local activeEffect = RogueEssence.Data.ActiveEffect()
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFloor"))
-	local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
-	local priority = RogueElements.Priority(-6)
-	queue:Enqueue(priority, destNote)
+	  local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
+	  local priority = RogueElements.Priority(-6)
+	  queue:Enqueue(priority, destNote)
   end
 end
 
@@ -317,6 +337,3 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 	
 	
 end
- 
-
-
