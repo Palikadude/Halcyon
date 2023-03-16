@@ -1,8 +1,10 @@
 <Header>
   <Name>Halcyon</Name>
+  <Author>Palika</Author>
+  <Description>An original story in the style of Explorers.</Description>
   <Namespace>halcyon</Namespace>
   <UUID>CAE98609-7A96-4CFC-B5AB-0E1D41F6A1FF</UUID>
-  <Version>0.2.3</Version>
+  <Version>0.2.4</Version>
   <ModType>Quest</ModType>
   <Relationships />
 </Header>

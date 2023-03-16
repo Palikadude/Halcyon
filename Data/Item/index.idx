@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.2.0",
+"Version": "0.7.3.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "berry_aspear": {
@@ -926,7 +926,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -939,7 +939,7 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_draco_plate": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -1561,7 +1561,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1574,14 +1574,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_reunion_cape": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1595,7 +1595,7 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_sharp_beak": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -1757,7 +1757,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1770,7 +1770,7 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_spell_tag": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -1958,6 +1958,32 @@
 "Comment": "",
 "SortOrder": 10
 },
+"held_warp_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EquipState"
+},
+{
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"Name": {
+"DefaultText": "Warp Scarf",
+"LocalTexts": {
+"fr": "Télécharpe",
+"de": "Warp-Schal",
+"ko": "워프스카프",
+"zh-hans": "瞬移围巾"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
 "held_zap_plate": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
@@ -1994,7 +2020,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.9.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2006,7 +2032,7 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "orb_all_aim": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2498,7 +2524,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2508,7 +2534,7 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "cafe_apple_cider": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2536,7 +2562,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.4.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
@@ -2546,7 +2572,7 @@
 },
 "Released": true,
 "Comment": "Cafe ammo item.",
-"SortOrder": 0
+"SortOrder": 9
 },
 "cafe_domi_blend": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2601,7 +2627,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2611,14 +2637,14 @@
 },
 "Released": true,
 "Comment": "For use within the beginner lesson tutorial.",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_cheri_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2628,14 +2654,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_insomniascope": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2645,14 +2671,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_pecha_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2662,14 +2688,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_persim_band": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2679,14 +2705,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_rawst_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2696,14 +2722,14 @@
 },
 "Released": true,
 "Comment": "",
-"SortOrder": 0
+"SortOrder": 10
 },
 "held_synergy_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.6.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.3.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2713,9 +2739,9 @@
 },
 "Released": true,
 "Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
-"SortOrder": 0
+"SortOrder": 10
 },
-"stolen_scarf": {
+"mission_stolen_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [],
@@ -2727,7 +2753,7 @@
 "Comment": "",
 "SortOrder": 0
 },
-"lost_scarf": {
+"mission_lost_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [],
