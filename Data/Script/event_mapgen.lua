@@ -27,10 +27,10 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
 	  and zoneContext.CurrentSegment == mission.Segment and zoneContext.CurrentID + 1 == mission.Floor then
       PrintInfo("Spawning Mission Goal")
       local outlaw_arr = { 
-        COMMON.MISSION_TYPE_OUTLAW, 
-        COMMON.MISSION_TYPE_OUTLAW_ITEM, 
-        COMMON.MISSION_TYPE_OUTLAW_FLEE, 
-        COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE 
+        COMMON.MISSION_TYPE_OUTLAW,
+        COMMON.MISSION_TYPE_OUTLAW_ITEM,
+        COMMON.MISSION_TYPE_OUTLAW_FLEE,
+        COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE
       }
 
       if GeneralFunctions.TableContains(outlaw_arr, mission.Type) then -- outlaw
@@ -77,15 +77,14 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
         post_mob.Tactic = "slow_wander"
         post_mob.Level = RogueElements.RandRange(50)
-        GeneralFunctions.PrintMissionType(mission)
         if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY then -- rescue
           local dialogue = RogueEssence.Dungeon.BattleScriptEvent("RescueReached")
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
-          elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+        elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
           local dialogue = RogueEssence.Dungeon.BattleScriptEvent("EscortRescueReached")
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
         end
         specificTeam.Spawns:Add(post_mob)
           PrintInfo("Creating Spawn")
@@ -106,22 +105,21 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
       end
     end
   end
-  
   if destinationFloor then
     -- add destination floor notification
     local activeEffect = RogueEssence.Data.ActiveEffect()
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("DestinationFloor"))
-	local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
-	local priority = RogueElements.Priority(-6)
-	queue:Enqueue(priority, destNote)
+	  local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
+	  local priority = RogueElements.Priority(-6)
+	  queue:Enqueue(priority, destNote)
   end
   if outlawFloor then
     -- add destination floor notification
     local activeEffect = RogueEssence.Data.ActiveEffect()
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFloor"))
-	local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
-	local priority = RogueElements.Priority(-6)
-	queue:Enqueue(priority, destNote)
+	  local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
+	  local priority = RogueElements.Priority(-6)
+	  queue:Enqueue(priority, destNote)
   end
 end
 

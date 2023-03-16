@@ -1033,13 +1033,14 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
-      if mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
+      if mission.Type == COMMON.MISSION_TYPE_ESCORT or mission.Type == COMMON.MISSION_TYPE_EXPLORATION then -- escort
         -- add escort to team
         local player_count = GAME:GetPlayerPartyCount()
         local guest_count = GAME:GetPlayerGuestCount()
         if player_count + guest_count >= 4 then
           local state = 0
           while state > -1 do
+            UI:ResetSpeaker()
             UI:WaitShowDialogue("Have one of your team members return to the guild to make room for your client, " .. _DATA:GetMonster(mission.Client):GetColoredName() .. ".")
             local MemberReturnMenu = CreateMemberReturnMenu()
             local menu = MemberReturnMenu:new()
@@ -1065,6 +1066,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
         local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.80)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
+        
         -- place in a legal position on map
         local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
         local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
@@ -1093,7 +1095,7 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
   for name, mission in ipairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneId == mission.Zone and segmentID == mission.Segment then
-      if mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
+      if mission.Type == COMMON.MISSION_TYPE_ESCORT or mission.Type == COMMON.MISSION_TYPE_EXPLORATION then -- escort
           -- remove the escort from the party
         local escort = COMMON.FindMissionEscort(name)
         if escort then

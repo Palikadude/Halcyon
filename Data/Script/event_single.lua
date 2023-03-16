@@ -163,7 +163,6 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 	end
 end
 
-
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
   local tbl = LTBL(context.User)
 	if tbl ~= nil and tbl.Mission then

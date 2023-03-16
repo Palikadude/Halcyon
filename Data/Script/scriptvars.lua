@@ -65,7 +65,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -80,7 +81,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -95,7 +97,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -110,7 +113,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -125,7 +129,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -140,7 +145,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -155,7 +161,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -170,7 +177,8 @@ SV.TakenBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	}
 
 }
@@ -191,7 +199,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -206,7 +215,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -221,7 +231,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -236,7 +247,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -251,7 +263,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -266,7 +279,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -281,7 +295,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -296,7 +311,8 @@ SV.MissionBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	}
 
 }
@@ -317,7 +333,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -332,7 +349,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -347,7 +365,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -362,7 +381,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -377,7 +397,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -392,7 +413,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},
 	{
 		Client = "",
@@ -407,7 +429,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	},	
 	{
 		Client = "",
@@ -422,7 +445,8 @@ SV.OutlawBoard =
 		Completion = -1,
 		Taken = false,
 		Difficulty = "",
-		Item = ""
+		Item = "",
+		Special = ""
 	}
 }
 		

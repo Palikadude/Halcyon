@@ -246,7 +246,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -261,7 +262,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -276,7 +278,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -291,7 +294,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -306,7 +310,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -321,7 +326,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -336,7 +342,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -351,7 +358,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		}
 
 	}
@@ -373,7 +381,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -388,7 +397,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -403,7 +413,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -418,7 +429,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -433,7 +445,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -448,7 +461,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -463,7 +477,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -478,7 +493,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		}
 
 	}
@@ -500,7 +516,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -515,7 +532,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -530,7 +548,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -545,7 +564,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -560,7 +580,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -575,7 +596,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},
 		{
 			Client = "",
@@ -590,7 +612,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		},	
 		{
 			Client = "",
@@ -605,7 +628,8 @@ end
 			Completion = -1,
 			Taken = false,
 			Difficulty = "",
-			Item = ""
+			Item = "",
+			Special = ""
 		}
 	}
 	end
