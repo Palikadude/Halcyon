@@ -139,6 +139,20 @@ function testmap.Teammate1_Action(chara, activator)
 end
 
 
+function testmap.CompleteTakens_Action()
+	if SV.TakenBoard[1].Client ~= '' then
+		for i =1, 8, 1 do 
+			if SV.TakenBoard[i].Client ~= '' then
+				SV.TakenBoard[i].Completion = MISSION_GEN.COMPLETE
+			else 
+				break
+			end 
+		end 
+	end 
+	SV.TemporaryFlags.MissionCompleted = true
+	SV.TemporaryFlags.Dinnertime = true
+	UI:WaitShowDialogue("Taken missions completed!")
+end 
 
 function testmap.Get_Released_Mons_Action()
 	--mons is a list of all species index strings

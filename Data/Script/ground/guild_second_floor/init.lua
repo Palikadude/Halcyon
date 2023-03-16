@@ -230,7 +230,8 @@ end
 function guild_second_floor.Hand_In_Missions()
 	for i = 1, 8, 1 do
 		if SV.TakenBoard[i].Client ~= "" and SV.TakenBoard[i].Completion == MISSION_GEN.COMPLETE then
-			if SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW then
+			if SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW or SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW_ITEM 
+					or SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW_FLEE or SV.TakenBoard[i].Type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
 				guild_second_floor.Outlaw_Job_Clear(SV.TakenBoard[i])
 			else
 				guild_second_floor.Mission_Job_Clear(SV.TakenBoard[i])
@@ -256,7 +257,6 @@ function guild_second_floor.Hand_In_Missions()
 								}
 		end
 	end 
-	
 	--reset this flag
 	SV.TemporaryFlags.MissionCompleted = false
 
@@ -268,7 +268,11 @@ function guild_second_floor.Hand_In_Missions()
 	if SV.TemporaryFlags.Dinnertime then
 		GAME:EnterGroundMap('guild_dining_room', 'Main_Entrance_Marker')
 	else 
-		GAME:EnterGroundMap(SV.TemporaryFlags.PostJobsGround, 'Main_Entrance_Marker')
+		if SV.TemporaryFlags.PostJobsGround == '' then --just in case, if theres no postjobsground defined, just go to your bed room. This shouldn't happen though.
+			GAME:EnterGroundMap('guild_heros_room', 'Main_Entrance_Marker')
+		else
+			GAME:EnterGroundMap(SV.TemporaryFlags.PostJobsGround, 'Main_Entrance_Marker')
+		end
 	end
 
 end
@@ -372,7 +376,9 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 		SOUND:PlayBGM("Job Clear!.ogg", true)
 		UI:SetSpeaker(client)
 		
-		UI:WaitShowDialogue("Thank you for taking down that outlaw " .. _DATA:GetMonster(job.Target):GetColoredName() .. " for me!")
+		
+		local item = RogueEssence.Dungeon.InvItem(job.Item)
+		UI:WaitShowDialogue("Thank you for getting my " .. item:GetDisplayName() .. " back!")
 		GAME:WaitFrames(20)
 		UI:WaitShowDialogue("Please take this as my thanks!")
 		GAME:WaitFrames(20)
@@ -412,8 +418,8 @@ function guild_second_floor.Mission_Job_Clear(job)
 	local money = false
 	if job.Reward == 'money' then money = true end
 
-	--client is target
-	if job.Client == job.Target  then
+	--client is target. Check on escort is needed in case the escort is to the same species.
+	if job.Client == job.Target and job.Type ~= COMMON.MISSION_TYPE_ESCORT then
 		--pick a random, appropriate gender for the client
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
 		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
@@ -426,7 +432,20 @@ function guild_second_floor.Mission_Job_Clear(job)
 		SOUND:PlayBGM("Job Clear!.ogg", true)
 		UI:SetSpeaker(client)
 		
-		UI:WaitShowDialogue("Thank you for rescuing me!")
+		--different thank you message depending on the job type
+		if job.Type == COMMON.MISSION_TYPE_RESCUE then
+			UI:WaitShowDialogue("Thank you for rescuing me!")
+		elseif job.Type == COMMON.MISSION_TYPE_EXPLORATION then 
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(job.Zone)
+			UI:WaitShowDialogue("Thank you for taking me on an adventure in " .. zone:GetColoredName() .. "!")
+		elseif job.Type == COMMON.MISSION_TYPE_LOST_ITEM then
+			local item = RogueEssence.Dungeon.InvItem(job.Item)
+			UI:WaitShowDialogue("Thank you for finding my " .. item:GetDisplayName() .. "!")
+		else--delivery 
+			local item = RogueEssence.Dungeon.InvItem(job.Item)
+			UI:WaitShowDialogue("Thank you for delivering the " .. item:GetDisplayName() .. " to me!")
+		end
+		
 		GAME:WaitFrames(20)
 		UI:WaitShowDialogue("Please take this as my thanks!")
 		GAME:WaitFrames(20)
@@ -450,7 +469,7 @@ function guild_second_floor.Mission_Job_Clear(job)
 
 	
 	else--client not the target
-			--pick a random, appropriate gender for the client
+		--pick a random, appropriate gender for the client
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
 		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 		

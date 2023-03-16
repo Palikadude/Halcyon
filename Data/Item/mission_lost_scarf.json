@@ -1,25 +1,25 @@
 ﻿{
-"Version": "0.7.2.0",
+"Version": "0.7.3.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Stolen Scarf",
+"DefaultText": "Lost Scarf",
 "LocalTexts": {}
 },
 "Desc": {
-"DefaultText": "A stolen scarf.",
+"DefaultText": "A lost scarf.",
 "LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Scarf_Tan",
-"Icon": -1,
+"Sprite": "Scarf_2_Orange",
+"Icon": 14,
 "SortCategory": 0,
 "Price": 0,
 "Rarity": 0,
 "MaxStack": 0,
-"CannotDrop": false,
-"BagEffect": true,
+"CannotDrop": true,
+"BagEffect": false,
 "ItemStates": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.AttackAction, RogueEssence",

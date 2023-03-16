@@ -514,11 +514,11 @@ MISSION_GEN.SPECIAL_OUTLAW = {
 
 
 MISSION_GEN.LOST_ITEMS = {
-	"lost_scarf"
+	"mission_lost_scarf"
 }
 
 MISSION_GEN.STOLEN_ITEMS = {
-	"stolen_scarf"
+	"mission_stolen_scarf"
 }
 
 MISSION_GEN.DELIVERABLE_ITEMS = {
@@ -945,20 +945,21 @@ function MISSION_GEN.GenerateBoard(board_type)
 		
 		--50% chance that the client and target are the same. Target is the escort if its an escort mission.
 		--It is possible for this to roll the same target as the client again, which is fine.
-		--Always give a target if objective is escort.
+		--Always give a target if objective is escort or a outlaw stole an item.
+		--Target should always be client for 
 		local target = client
-		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT then 
+		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT or objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
 			target = seen_pokemon[ math.random( #seen_pokemon ) ]
 		end
 		
-		--if its an outlaw mission, 50% chance client is Zhayn. Otherwise, someone different than the target.
-		--It is possible for this to roll the same target as the client again, which is fine.
-		if objective == COMMON.MISSION_TYPE_OUTLAW then
-			if math.random(1, 2) == 1 then
-				client = "zhayn"
-			else
-				client = MISSION_GEN.POKEMON[math.random(1, #MISSION_GEN.POKEMON)]
-			end
+		--if its a generic outlaw mission, or a monster house / fleeing outlaw, Zhayn is the client. Normal mons only ask you to go after their stolen items.
+		if objective == COMMON.MISSION_TYPE_OUTLAW or objective == COMMON.MISSION_TYPE_OUTLAW_FLEE or objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+			client = "zhayn"
+		end
+		
+		--if it's a delivery, exploration, or lost item, target and client should match.
+		if objective == COMMON.MISSION_TYPE_EXPLORATION or objective == COMMON.MISSION_TYPE_DELIVERY or objective == COMMON.MISSION_TYPE_LOST_ITEM then
+			target = client
 		end
 		
 

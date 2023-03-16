@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.3.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -14,7 +14,7 @@
 "Comment": "",
 "Sprite": "Band_Pink",
 "Icon": 14,
-"SortCategory": 0,
+"SortCategory": 10,
 "Price": 300,
 "Rarity": 0,
 "MaxStack": 0,
@@ -117,11 +117,13 @@
 },
 "HitCharAction": {
 "$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
-"Process": 0
+"Process": 0,
+"AnimOverride": 0
 }
 },
 "UsageType": 0,
 "ArcThrow": false,
+"BreakOnThrow": false,
 "ThrowAnim": {
 "AnimIndex": "",
 "FrameTime": 1,
