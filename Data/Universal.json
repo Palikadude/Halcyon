@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.3.0",
 "Object": {
 "$type": "RogueEssence.Data.ActiveEffect, RogueEssence",
 "UniversalStates": [
@@ -599,7 +599,20 @@
 }
 ],
 "OnEquips": [],
-"OnPickups": [],
+"OnPickups": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.ItemScriptEvent, RogueEssence",
+"Script": "MissionPickup",
+"ArgTable": "{}"
+}
+}
+],
 "BeforeStatusAdds": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
@@ -720,7 +733,9 @@
 "$type": "PMDC.Dungeon.HandoutRelativeExpEvent, PMDC",
 "Numerator": 1,
 "Denominator": 35,
-"LevelBuffer": 0
+"LevelBuffer": 0,
+"ScaleMin": 0,
+"PowerCurve": 3
 }
 }
 ],

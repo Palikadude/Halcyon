@@ -12,15 +12,24 @@ PlaceRandomMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceRandomM
 PlaceEntranceMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceEntranceMobsStep`2')
 MonsterHouseStepType = luanet.import_type('RogueEssence.LevelGen.MonsterHouseStep`1')
 
+
 MapEffectStepType = luanet.import_type('RogueEssence.LevelGen.MapEffectStep`1')
 MapGenContextType = luanet.import_type('RogueEssence.LevelGen.ListMapGenContext')
 EntranceType = luanet.import_type('RogueEssence.LevelGen.MapGenEntrance')
 
+SpawnListType = luanet.import_type('RogueElements.SpawnList`1')
+ItemSpawnStepType = luanet.import_type('RogueEssence.LevelGen.ItemSpawnStep`1')
+InvItemType = luanet.import_type('RogueEssence.Dungeon.InvItem')
+
+RandomRoomSpawnStepType = luanet.import_type('RogueElements.RandomRoomSpawnStep`2')
+PickerSpawnType = luanet.import_type('RogueElements.PickerSpawner`2')
+PresetMultiRandType = luanet.import_type('RogueElements.PresetMultiRand`1')
+PresetPickerType = luanet.import_type('RogueElements.PresetPicker`1')
+MapItemType = luanet.import_type('RogueEssence.Dungeon.MapItem')
 
 function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed, args)
-  -- TODO try to add monster house gen step first
- 
-  local destinationFloor = false
+  local destinationFloor = false 
+  
   local outlawFloor = false
   for name, mission in pairs(SV.TakenBoard) do
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.Zone
@@ -72,35 +81,50 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         PrintInfo("Done")
         outlawFloor = true
       else
-        local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
-        local post_mob = RogueEssence.LevelGen.MobSpawn()
-        post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
-        post_mob.Tactic = "slow_wander"
-        post_mob.Level = RogueElements.RandRange(50)
-        if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY then -- rescue
-          local dialogue = RogueEssence.Dungeon.BattleScriptEvent("RescueReached")
-          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
-        elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
-          local dialogue = RogueEssence.Dungeon.BattleScriptEvent("EscortRescueReached")
-          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
-          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+        if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY or mission.Type == COMMON.MISSION_TYPE_ESCORT then 
+          local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
+          local post_mob = RogueEssence.LevelGen.MobSpawn()
+          post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+          post_mob.Tactic = "slow_wander"
+          post_mob.Level = RogueElements.RandRange(50)
+          if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY then -- rescue
+            local dialogue = RogueEssence.Dungeon.BattleScriptEvent("RescueReached")
+            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+          elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then -- escort
+            local dialogue = RogueEssence.Dungeon.BattleScriptEvent("EscortRescueReached")
+            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnInteractable(dialogue))
+            post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+          end
+          specificTeam.Spawns:Add(post_mob)
+            PrintInfo("Creating Spawn")
+            local picker = LUA_ENGINE:MakeGenericType(PresetMultiTeamSpawnerType, { MapGenContextType }, { })
+          picker.Spawns:Add(specificTeam)
+            PrintInfo("Creating Step")
+            local mobPlacement = LUA_ENGINE:MakeGenericType(PlaceRandomMobsStepType, { MapGenContextType }, { picker })
+            PrintInfo("Setting everything else")
+
+            mobPlacement.Ally = true
+            mobPlacement.Filters:Add(PMDC.LevelGen.RoomFilterConnectivity(PMDC.LevelGen.ConnectivityRoom.Connectivity.Main))
+            mobPlacement.ClumpFactor = 20
+            PrintInfo("Enqueueing")
+          -- Priority 5.2.1 is for NPC spawning in PMDO, but any dev can choose to roll with their own standard of priority.
+          local priority = RogueElements.Priority(5, 2, 1)
+          queue:Enqueue(priority, mobPlacement)
+        
+
+        elseif mission.Type == COMMON.MISSION_TYPE_LOST_ITEM then
+          PrintInfo("Spawning Lost Item")
+          local lost_item = RogueEssence.Dungeon.MapItem(mission.Item)
+          local preset_picker = LUA_ENGINE:MakeGenericType(PresetPickerType, { MapItemType }, { lost_item })
+          local multi_preset_picker = LUA_ENGINE:MakeGenericType(PresetMultiRandType, { MapItemType }, { preset_picker })
+          local picker_spawner = LUA_ENGINE:MakeGenericType(PickerSpawnType, {  MapGenContextType, MapItemType }, { multi_preset_picker })
+          local random_room_spawn = LUA_ENGINE:MakeGenericType(RandomRoomSpawnStepType, { MapGenContextType, MapItemType }, { })
+          random_room_spawn.Spawn = picker_spawner
+          random_room_spawn.Filters:Add(PMDC.LevelGen.RoomFilterConnectivity(PMDC.LevelGen.ConnectivityRoom.Connectivity.Main))
+          local priority = RogueElements.Priority(5, 2, 1)
+          queue:Enqueue(priority, random_room_spawn)
         end
-        specificTeam.Spawns:Add(post_mob)
-          PrintInfo("Creating Spawn")
-          local picker = LUA_ENGINE:MakeGenericType(PresetMultiTeamSpawnerType, { MapGenContextType }, { })
-        picker.Spawns:Add(specificTeam)
-          PrintInfo("Creating Step")
-          local mobPlacement = LUA_ENGINE:MakeGenericType(PlaceRandomMobsStepType, { MapGenContextType }, { picker })
-          PrintInfo("Setting everything else")
-          mobPlacement.Ally = true
-          mobPlacement.Filters:Add(PMDC.LevelGen.RoomFilterConnectivity(PMDC.LevelGen.ConnectivityRoom.Connectivity.Main))
-          mobPlacement.ClumpFactor = 20
-          PrintInfo("Enqueueing")
-        -- Priority 5.2.1 is for NPC spawning in PMDO, but any dev can choose to roll with their own standard of priority.
-        local priority = RogueElements.Priority(5, 2, 1)
-        queue:Enqueue(priority, mobPlacement)
-          PrintInfo("Done")
         destinationFloor = true
       end
     end
