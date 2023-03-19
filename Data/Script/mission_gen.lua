@@ -912,13 +912,10 @@ function MISSION_GEN.GenerateBoard(board_type)
 				objective = COMMON.MISSION_TYPE_EXPLORATION
 			elseif roll <= 4 then
 				objective = COMMON.MISSION_TYPE_DELIVERY
---				objective = COMMON.MISSION_TYPE_EXPLORATION
 			elseif roll <= 6 then
-				objective = COMMON.MISSION_TYPE_LOST_ITEM
---				objective = COMMON.MISSION_TYPE_EXPLORATION
+				objective = COMMON.MISSION_TYPE_DELIVERY
 			else
 				objective = COMMON.MISSION_TYPE_RESCUE
---				objective = COMMON.MISSION_TYPE_EXPLORATION
 			end
 		end
 
