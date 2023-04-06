@@ -305,8 +305,7 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 			})
 		
 		--pick a random, appropriate gender for the outlaw
-		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", Gender.Genderless)
-		outlaw_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
 		
 		local outlaw = RogueEssence.Ground.GroundChar(outlaw_monster, RogueElements.Loc(392, 224), Direction.Down, outlaw_monster.Species, 'Outlaw')
 		outlaw:ReloadEvents()
@@ -328,6 +327,15 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 		else
 			GeneralFunctions.RewardItem(job.Reward)
 		end
+		
+		
+		if job.BonusReward ~= '' then 
+			UI:SetSpeaker(bisharp)
+			GAME:WaitFrames(20)
+			UI:WaitShowDialogue("Please take this here item as well.")
+			GAME:WaitFrames(20)
+			GeneralFunctions.RewardItem(job.BonusReward)
+		end 
 		
 		GAME:WaitFrames(20)
 		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
@@ -365,8 +373,7 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 	
 	else--client is some random mon
 		--pick a random, appropriate gender for the client
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
-		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(392, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
@@ -389,6 +396,14 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 		else
 			GeneralFunctions.RewardItem(job.Reward)
 		end
+		
+		if job.BonusReward ~= '' then 
+			UI:SetSpeaker(client)
+			GAME:WaitFrames(20)
+			UI:WaitShowDialogue("Please take this as well!")
+			GAME:WaitFrames(20)
+			GeneralFunctions.RewardItem(job.BonusReward)
+		end 
 		
 		GAME:WaitFrames(20)
 		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
@@ -421,8 +436,7 @@ function guild_second_floor.Mission_Job_Clear(job)
 	--client is target. Check on escort is needed in case the escort is to the same species.
 	if job.Client == job.Target and job.Type ~= COMMON.MISSION_TYPE_ESCORT then
 		--pick a random, appropriate gender for the client
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
-		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(104, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
@@ -457,6 +471,14 @@ function guild_second_floor.Mission_Job_Clear(job)
 			GeneralFunctions.RewardItem(job.Reward)
 		end
 		
+		if job.BonusReward ~= '' then 
+			UI:SetSpeaker(client)
+			GAME:WaitFrames(20)
+			UI:WaitShowDialogue("Please take this as well!")
+			GAME:WaitFrames(20)
+			GeneralFunctions.RewardItem(job.BonusReward)
+		end 
+		
 		GAME:WaitFrames(20)
 		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])
 		GAME:WaitFrames(20)
@@ -470,15 +492,14 @@ function guild_second_floor.Mission_Job_Clear(job)
 	
 	else--client not the target
 		--pick a random, appropriate gender for the client
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", Gender.Genderless)
-		client_monster.Gender = _DATA:GetMonster(job.Client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(88, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
 		GAME:GetCurrentGround():AddTempChar(client)
 				
 		--pick a random, appropriate gender for the target
-		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", Gender.Genderless)
+		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
 		target_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 		
 		local target = RogueEssence.Ground.GroundChar(target_monster, RogueElements.Loc(120, 240), Direction.Down, job.Target:gsub("^%l", string.upper), target_monster.Species)
@@ -505,6 +526,14 @@ function guild_second_floor.Mission_Job_Clear(job)
 		else
 			GeneralFunctions.RewardItem(job.Reward)
 		end
+		
+		if job.BonusReward ~= '' then 
+			UI:SetSpeaker(client)
+			GAME:WaitFrames(20)
+			UI:WaitShowDialogue("Please take this as well!")
+			GAME:WaitFrames(20)
+			GeneralFunctions.RewardItem(job.BonusReward)
+		end 
 		
 		GAME:WaitFrames(20)
 		GeneralFunctions.RewardPoints(MISSION_GEN.DIFFICULTY[job.Difficulty])

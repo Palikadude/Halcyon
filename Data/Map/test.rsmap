@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -8,7 +8,6 @@
 },
 "Released": false,
 "Comment": "",
-"AssetName": "test",
 "Begun": false,
 "ID": 0,
 "MapTeams": [
@@ -96,6 +95,7 @@
 "Amount": 0,
 "Price": 0
 },
+"Absentee": false,
 "ChargeBoost": 0,
 "HP": 141,
 "HPRemainder": 0,
@@ -155,7 +155,6 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"Unrecruitable": false,
 "CharStates": [],
 "BackRef": {
 "Assembly": false,
@@ -221,13 +220,16 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 }
 ],
 "Guests": [],
 "inventory": [],
+"Name": "",
 "LeaderIndex": 0,
 "FoeConflict": false
 }
@@ -243,6 +245,7 @@
 17909611376780542444
 ]
 },
+"AssetName": "test",
 "ScriptEvents": {},
 "Music": "Miracle Sea.ogg",
 "TileSight": 0,
@@ -459,7 +462,6 @@
 0
 ]
 ],
-"DropTitle": false,
 "Layers": [
 {
 "Name": "New Layer",

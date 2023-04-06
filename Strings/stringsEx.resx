@@ -4054,13 +4054,923 @@ As he is a volunteer, he won't be staying with you once you leave.
 
 
 
+  <data name="MISSION_TITLE_RESCUE_SELF_001" xml:space="preserve">
+    <value>I'm too worn out to go on...</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_002" xml:space="preserve">
+    <value>I'm lost in this dungeon!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_003" xml:space="preserve">
+    <value>Please, help me!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_004" xml:space="preserve">
+    <value>Trapped in a dungeon!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_005" xml:space="preserve">
+    <value>I need a rescue!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_006" xml:space="preserve">
+    <value>I went on an adventure, but...</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_007" xml:space="preserve">
+    <value>I was KO'd...</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_008" xml:space="preserve">
+    <value>I want to go home!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_009" xml:space="preserve">
+    <value>I'm scared!</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_SELF_010" xml:space="preserve">
+    <value>Where am I?</value>
+    <comment>Mission Title Text - Target is Client</comment>  </data>
+
+  <data name="MISSION_TITLE_RESCUE_FRIEND_001" xml:space="preserve">
+    <value>[target] needs help!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_002" xml:space="preserve">
+    <value>I'm worried about [target]!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_003" xml:space="preserve">
+    <value>A Pokémon's gone missing!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_004" xml:space="preserve">
+    <value>[target] hasn't returned yet!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_005" xml:space="preserve">
+    <value>Our adventure went wrong!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_006" xml:space="preserve">
+    <value>Please save [target]!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_007" xml:space="preserve">
+    <value>[target] might be lost!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_008" xml:space="preserve">
+    <value>Please, rescue [target]!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_009" xml:space="preserve">
+    <value>A Pokémon failed to return!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+  <data name="MISSION_TITLE_RESCUE_FRIEND_010" xml:space="preserve">
+    <value>My friend needs a rescue!</value>
+    <comment>Mission Title Text - Target is not Client</comment>  </data>
+
+
+  <data name="MISSION_TITLE_ESCORT_001" xml:space="preserve">
+    <value>Escort me!</value>
+    <comment>Mission Title Text - Escort</comment>  </data>
+  <data name="MISSION_TITLE_ESCORT_002" xml:space="preserve">
+    <value>Please bring me to see [target]!</value>
+    <comment>Mission Title Text - Escort</comment>  </data>
+  <data name="MISSION_TITLE_ESCORT_003" xml:space="preserve">
+    <value>Take me to [target]!</value>
+    <comment>Mission Title Text - Escort</comment>  </data>
+  <data name="MISSION_TITLE_ESCORT_004" xml:space="preserve">
+    <value>I need a bodyguard!</value>
+    <comment>Mission Title Text - Escort</comment>  </data>
+  <data name="MISSION_TITLE_ESCORT_005" xml:space="preserve">
+    <value>Please, I need to see [target]!</value>
+    <comment>Mission Title Text - Escort</comment>  </data>
+
+
+
+  <data name="MISSION_TITLE_EXPLORATION_001" xml:space="preserve">
+    <value>Seeking exploration!</value>
+    <comment>Mission Title Text - Exploration</comment>  </data>
+  <data name="MISSION_TITLE_EXPLORATION_002" xml:space="preserve">
+    <value>Let's explore!</value>
+    <comment>Mission Title Text - Exploration</comment>  </data>
+  <data name="MISSION_TITLE_EXPLORATION_003" xml:space="preserve">
+    <value>Seeking adventurers!</value>
+    <comment>Mission Title Text - Exploration</comment>  </data>
+  <data name="MISSION_TITLE_EXPLORATION_004" xml:space="preserve">
+    <value>I want to explore this dungeon!</value>
+    <comment>Mission Title Text - Exploration</comment>  </data>
+  <data name="MISSION_TITLE_EXPLORATION_005" xml:space="preserve">
+    <value>Help needed with this exploration!</value>
+    <comment>Mission Title Text - Exploration</comment>  </data>
+
+
+
+  <data name="MISSION_TITLE_DELIVERY_001" xml:space="preserve">
+    <value>Please deliver one [item]!</value>
+    <comment>Mission Title Text - Delivery</comment>  </data>
+  <data name="MISSION_TITLE_DELIVERY_002" xml:space="preserve">
+    <value>In need of one [item]!</value>
+    <comment>Mission Title Text - Delivery</comment>  </data>
+  <data name="MISSION_TITLE_DELIVERY_003" xml:space="preserve">
+    <value>Deliver one [item].</value>
+    <comment>Mission Title Text - Delivery</comment>  </data>
+  <data name="MISSION_TITLE_DELIVERY_004" xml:space="preserve">
+    <value>I really need a [item]!</value>
+    <comment>Mission Title Text - Delivery</comment>  </data>
+  <data name="MISSION_TITLE_DELIVERY_005" xml:space="preserve">
+    <value>I need one [item] delivered!</value>
+    <comment>Mission Title Text - Delivery</comment>  </data>
+
+
+
+  <data name="MISSION_TITLE_LOST_ITEM_001" xml:space="preserve">
+    <value>Lost my [item]!</value>
+    <comment>Mission Title Text - Lost Item</comment>  </data>
+  <data name="MISSION_TITLE_LOST_ITEM_002" xml:space="preserve">
+    <value>I can't find my [item]!</value>
+    <comment>Mission Title Text - Lost Item</comment>  </data>
+  <data name="MISSION_TITLE_LOST_ITEM_003" xml:space="preserve">
+    <value>Where's my [item]?</value>
+    <comment>Mission Title Text - Lost Item</comment>  </data>
+  <data name="MISSION_TITLE_LOST_ITEM_004" xml:space="preserve">
+    <value>My precious [item] is gone!</value>
+    <comment>Mission Title Text - Lost Item</comment>  </data>
+  <data name="MISSION_TITLE_LOST_ITEM_005" xml:space="preserve">
+    <value>Misplaced my [item]!</value>
+    <comment>Mission Title Text - Lost Item</comment>  </data>
+
+
+
+
+  <data name="MISSION_TITLE_OUTLAW_001" xml:space="preserve">
+    <value>Ruthless [target]</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_002" xml:space="preserve">
+    <value>Criminal [target]</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_003" xml:space="preserve">
+    <value>Dastardly [target]</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_004" xml:space="preserve">
+    <value>Despicable [target]</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_005" xml:space="preserve">
+    <value>Nasty [target]</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_006" xml:space="preserve">
+    <value>[target]'s bounty!</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_007" xml:space="preserve">
+    <value>Bounty for arrest of [target]!</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_008" xml:space="preserve">
+    <value>[target] still at large!</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_009" xml:space="preserve">
+    <value>Wanted: [target]!</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_010" xml:space="preserve">
+    <value>Arrest [target]!</value>
+    <comment>Mission Title Text - Regular Outlaw</comment>  </data>
+
+
+  <data name="MISSION_TITLE_OUTLAW_ITEM_001" xml:space="preserve">
+    <value>Someone stole it!</value>
+    <comment>Mission Title Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_ITEM_002" xml:space="preserve">
+    <value>A thief! Please help!</value>
+    <comment>Mission Title Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_ITEM_003" xml:space="preserve">
+    <value>Waah! Who took it!?</value>
+    <comment>Mission Title Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_ITEM_004" xml:space="preserve">
+    <value>Grr... They stole my item!</value>
+    <comment>Mission Title Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_ITEM_005" xml:space="preserve">
+    <value>Please, catch this thief!</value>
+    <comment>Mission Title Text - Outlaw Item</comment>  </data>
+
+
+  <data name="MISSION_TITLE_OUTLAW_MONSTER_HOUSE_001" xml:space="preserve">
+    <value>[target]'s Gang</value>
+    <comment>Mission Title Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_MONSTER_HOUSE_002" xml:space="preserve">
+    <value>[target]'s Ambush</value>
+    <comment>Mission Title Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_MONSTER_HOUSE_003" xml:space="preserve">
+    <value>[target]'s House of Monsters!</value>
+    <comment>Mission Title Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_MONSTER_HOUSE_004" xml:space="preserve">
+    <value>[target], Protected by Bodyguards!</value>
+    <comment>Mission Title Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_MONSTER_HOUSE_005" xml:space="preserve">
+    <value>[target]'s Group!</value>
+    <comment>Mission Title Text - Outlaw Monster House</comment>  </data>
+
+
+  <data name="MISSION_TITLE_OUTLAW_FLEE_001" xml:space="preserve">
+    <value>Hotfoot [target]</value>
+    <comment>Mission Title Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_FLEE_002" xml:space="preserve">
+    <value>Cowardly [target]</value>
+    <comment>Mission Title Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_FLEE_003" xml:space="preserve">
+    <value>[target] will give you the slip! </value>
+    <comment>Mission Title Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_FLEE_004" xml:space="preserve">
+    <value>Don't let [target] run away!</value>
+    <comment>Mission Title Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_TITLE_OUTLAW_FLEE_005" xml:space="preserve">
+    <value>Slippery [target]</value>
+   <comment>Mission Title Text - Outlaw Flee</comment>  </data>
+
+
+
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_001" xml:space="preserve">
+    <value>I'm so hungry...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_002" xml:space="preserve">
+    <value>My adventure went wrong...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_003" xml:space="preserve">
+    <value>I got lost while on an adventure!</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_004" xml:space="preserve">
+    <value>I can't get back home!</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_005" xml:space="preserve">
+    <value>I'm at my limit...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_006" xml:space="preserve">
+    <value>Coming here was a mistake...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_007" xml:space="preserve">
+    <value>I'm about to faint...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_008" xml:space="preserve">
+    <value>I was attacked when my guard was down!</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_009" xml:space="preserve">
+    <value>That enemy was too tough for me...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_SELF_010" xml:space="preserve">
+    <value>Aargh, my head...</value>
+    <comment>Mission Body Text Top- Target is Client</comment>  </data>
+	
+	
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_001" xml:space="preserve">
+    <value>Please, help me!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_002" xml:space="preserve">
+    <value>I'm fading... Help...</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_003" xml:space="preserve">
+    <value>I can't take any more... Help...</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_004" xml:space="preserve">
+    <value>Send help, please!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_005" xml:space="preserve">
+    <value>Help! Help!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_006" xml:space="preserve">
+    <value>Anyone, please, help!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_007" xml:space="preserve">
+    <value>I can't take much more! Help!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_008" xml:space="preserve">
+    <value>Can anyone please help me?</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_009" xml:space="preserve">
+    <value>I need help, right now!</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_SELF_010" xml:space="preserve">
+    <value>Please, anybody...</value>
+    <comment>Mission Body Text Bottom- Target is Client</comment>  </data>
+	
+
+	
+
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_001" xml:space="preserve">
+    <value>[target] might be in danger!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_002" xml:space="preserve">
+    <value>[target] hasn't returned from their adventure!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_003" xml:space="preserve">
+    <value>[target] may be hurt!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_004" xml:space="preserve">
+    <value>I haven't heard from [target]!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_005" xml:space="preserve">
+    <value>I got separated from [target]!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_006" xml:space="preserve">
+    <value>[target] can't escape the dungeon!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_007" xml:space="preserve">
+    <value>I think [target] is trapped!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_008" xml:space="preserve">
+    <value>[target] may already have fainted!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_009" xml:space="preserve">
+    <value>[target] is lost in the dungeon!</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_TOP_RESCUE_FRIEND_010" xml:space="preserve">
+    <value>[target] hasn't come home yet...</value>
+    <comment>Mission Body Top Text - Target is not Client</comment>  </data>
+	
+	
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_001" xml:space="preserve">
+    <value>I'm offering a reward upon rescue!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_002" xml:space="preserve">
+    <value>Please, I need adventurers to help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_003" xml:space="preserve">
+    <value>Anyone, please, help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_004" xml:space="preserve">
+    <value>A rescue is needed badly!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_005" xml:space="preserve">
+    <value>Won't someone please help!?</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_006" xml:space="preserve">
+    <value>Please, I can't do it myself! Help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_007" xml:space="preserve">
+    <value>Please, rescue my friend!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_008" xml:space="preserve">
+    <value>My friend needs a rescue! Help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_009" xml:space="preserve">
+    <value>I'll reward anyone who can help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_RESCUE_FRIEND_010" xml:space="preserve">
+    <value>Please, help!</value>
+    <comment>Mission Body Bottom Text - Target is not Client</comment>  </data>
+	
+	
+	
+
+
+  <data name="MISSION_BODY_TOP_ESCORT_001" xml:space="preserve">
+    <value>I really need to see [target]!</value>
+    <comment>Mission Body Top Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_TOP_ESCORT_002" xml:space="preserve">
+    <value>Please, I want to see [target]!</value>
+    <comment>Mission Body Top Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_TOP_ESCORT_003" xml:space="preserve">
+    <value>[target] and I are great friends!</value>
+    <comment>Mission Body Top Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_TOP_ESCORT_004" xml:space="preserve">
+    <value>Please, take me to where [target] is!</value>
+    <comment>Mission Body Top Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_TOP_ESCORT_005" xml:space="preserve">
+    <value>I need help meeting [target]!</value>
+    <comment>Mission Body Top Text - Escort</comment>  </data>
+
+
+  <data name="MISSION_BODY_BOTTOM_ESCORT_001" xml:space="preserve">
+    <value>Please, take me there!</value>
+    <comment>Mission Body Bottom Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_ESCORT_002" xml:space="preserve">
+    <value>I need an adventurer team's help!</value>
+    <comment>Mission Body Bottom Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_ESCORT_003" xml:space="preserve">
+    <value>I'll do whatever it takes!</value>
+    <comment>Mission Body Bottom Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_ESCORT_004" xml:space="preserve">
+    <value>I can't do it alone! Help!</value>
+    <comment>Mission Body Bottom Text - Escort</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_ESCORT_005" xml:space="preserve">
+    <value>I'm so lonely! Please, take me there!</value>
+    <comment>Mission Body Bottom Text - Escort</comment>  </data>
+
+
+
+  <data name="MISSION_BODY_TOP_EXPLORATION_001" xml:space="preserve">
+    <value>I really want to explore [dungeon]!</value>
+    <comment>Mission Body Top Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_TOP_EXPLORATION_002" xml:space="preserve">
+    <value>Please, I need help exploring [dungeon]!</value>
+    <comment>Mission Body Top Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_TOP_EXPLORATION_003" xml:space="preserve">
+    <value>I can't explore [dungeon] by myself!</value>
+    <comment>Mission Body Top Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_TOP_EXPLORATION_004" xml:space="preserve">
+    <value>I'm too weak to go to [dungeon] alone...</value>
+    <comment>Mission Body Top Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_TOP_EXPLORATION_005" xml:space="preserve">
+    <value>It's my dream to explore [dungeon]!</value>
+    <comment>Mission Body Top Text - Exploration</comment>  </data>
+	
+  <data name="MISSION_BODY_BOTTOM_EXPLORATION_001" xml:space="preserve">
+    <value>Let's do our best on this exploration!</value>
+    <comment>Mission Body Bottom Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_EXPLORATION_002" xml:space="preserve">
+    <value>Please join me for this exploration!</value>
+    <comment>Mission Body Bottom Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_EXPLORATION_003" xml:space="preserve">
+    <value>Please take me there!</value>
+    <comment>Mission Body Bottom Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_EXPLORATION_004" xml:space="preserve">
+    <value>Please, take me! I'll reward generously!</value>
+    <comment>Mission Body Bottom Text - Exploration</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_EXPLORATION_005" xml:space="preserve">
+    <value>I have rewards for anyone who will explore with me!</value>
+    <comment>Mission Body Bottom Text - Exploration</comment>  </data>
+	
+	
+  <data name="MISSION_BODY_TOP_DELIVERY_001" xml:space="preserve">
+    <value>Having [item] lets me feel confident!</value>
+    <comment>Mission Body Top Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_TOP_DELIVERY_002" xml:space="preserve">
+    <value>[item] has such a lovely scent to it!</value>
+    <comment>Mission Body Top Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_TOP_DELIVERY_003" xml:space="preserve">
+    <value>[item] wanted as an fashion accessory.</value>
+    <comment>Mission Body Top Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_TOP_DELIVERY_004" xml:space="preserve">
+    <value>[item] helps me sleep easy at night!</value>
+    <comment>Mission Body Top Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_TOP_DELIVERY_005" xml:space="preserve">
+    <value>I like having [item] for adventures!</value>
+    <comment>Mission Body Top Text - Delivery</comment>  </data>
+	
+  <data name="MISSION_BODY_BOTTOM_DELIVERY_001" xml:space="preserve">
+    <value>Please, give me one!</value>
+    <comment>Mission Body Bottom Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_DELIVERY_002" xml:space="preserve">
+    <value>Please trade me one!</value>
+    <comment>Mission Body Bottom Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_DELIVERY_003" xml:space="preserve">
+    <value>Share one with me, please!</value>
+    <comment>Mission Body Bottom Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_DELIVERY_004" xml:space="preserve">
+    <value>I'll reward you if you bring me one!</value>
+    <comment>Mission Body Bottom Text - Delivery</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_DELIVERY_005" xml:space="preserve">
+    <value>Give me one and I will reward you, please!</value>
+    <comment>Mission Body Bottom Text - Delivery</comment>  </data>
+
+
+  <data name="MISSION_BODY_TOP_LOST_ITEM_001" xml:space="preserve">
+    <value>My [item]... Gone!</value>
+    <comment>Mission Body Top Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_LOST_ITEM_002" xml:space="preserve">
+    <value>My precious [item] is in this awful dungeon!</value>
+    <comment>Mission Body Top Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_LOST_ITEM_003" xml:space="preserve">
+    <value>I dropped my [item] on the ground somewhere!</value>
+    <comment>Mission Body Top Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_LOST_ITEM_004" xml:space="preserve">
+    <value>My [item] is there... I just know it!</value>
+    <comment>Mission Body Top Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_LOST_ITEM_005" xml:space="preserve">
+    <value>My [item] just has to be there! It must be!</value>
+    <comment>Mission Body Top Text - Lost Item</comment>  </data>
+
+  <data name="MISSION_BODY_BOTTOM_LOST_ITEM_001" xml:space="preserve">
+    <value>Please find it for me!</value>
+    <comment>Mission Body Bottom Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_LOST_ITEM_002" xml:space="preserve">
+    <value>I can't sleep at night until I get it back!</value>
+    <comment>Mission Body Bottom Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_LOST_ITEM_003" xml:space="preserve">
+    <value>I won't be able to rest until I have it again!</value>
+    <comment>Mission Body Bottom Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_LOST_ITEM_004" xml:space="preserve">
+    <value>Please, get it back for me!</value>
+    <comment>Mission Body Bottom Text - Lost Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_LOST_ITEM_005" xml:space="preserve">
+    <value>I need it! Help!</value>
+    <comment>Mission Body Bottom Text - Lost Item</comment>  </data>
 
 
 
 
 
+  <data name="MISSION_BODY_TOP_OUTLAW_001" xml:space="preserve">
+    <value>This crook is downright dastardly.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_002" xml:space="preserve">
+    <value>This outlaw has been at large for some time. </value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_003" xml:space="preserve">
+    <value>Don't expect any mercy from this no-good.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_004" xml:space="preserve">
+    <value>This fiend has a bad streak going.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_005" xml:space="preserve">
+    <value>Even other outlaws avoid this felon.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_006" xml:space="preserve">
+    <value>This scoundrel has ripped off countless Pokémon.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_007" xml:space="preserve">
+    <value>A real piece of work, this one.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_008" xml:space="preserve">
+    <value>You'd be hard-pressed to find a more vile crook.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_009" xml:space="preserve">
+    <value>There's no bounds to this Pokémon's wickedness.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_010" xml:space="preserve">
+    <value>This villain is awful, through and through.</value>
+    <comment>Mission Body Top Text - Regular Outlaw</comment>  </data>
+
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_001" xml:space="preserve">
+    <value>Please lend us a hand in capturing this criminal.</value>
+    <comment>Mission Body Bottom Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_002" xml:space="preserve">
+    <value>Assist us with bringing this Pokémon to justice.</value>
+    <comment>Mission Body Bottom Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_003" xml:space="preserve">
+    <value>Take caution when taking on this crook.</value>
+    <comment>Mission Body Bottom Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_004" xml:space="preserve">
+    <value>Be prepared when capturing this thug.</value>
+    <comment>Mission Body Bottom Text - Regular Outlaw</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_005" xml:space="preserve">
+    <value>Be on your guard when arresting this wrongdoer.</value>
+    <comment>Mission Body Bottom Text - Regular Outlaw</comment>  </data>
+
+
+  <data name="MISSION_BODY_TOP_OUTLAW_ITEM_001" xml:space="preserve">
+    <value>[target] took my [item]!</value>
+    <comment>Mission Body Top Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_ITEM_002" xml:space="preserve">
+    <value>[target] ran off with my [item]!</value>
+    <comment>Mission Body Top Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_ITEM_003" xml:space="preserve">
+    <value>[target] stole my beloved [item]!</value>
+    <comment>Mission Body Top Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_ITEM_004" xml:space="preserve">
+    <value>That [target]... They pilfered my [item]!</value>
+    <comment>Mission Body Top Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_ITEM_005" xml:space="preserve">
+    <value>Waah! [target] snatched my only [item]!</value>
+    <comment>Mission Body Top Text - Outlaw Item</comment>  </data>
 
 
 
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_001" xml:space="preserve">
+    <value>Please get it back for me!</value>
+    <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_002" xml:space="preserve">
+    <value>I need it back! I'm offering a reward for its return!</value>
+    <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_003" xml:space="preserve">
+    <value>Please punish the thief and get it back for me!</value>
+    <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_004" xml:space="preserve">
+    <value>Beat that robber and bring it back, please!</value>
+    <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_005" xml:space="preserve">
+    <value>I absolutely need it back!</value>
+    <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
+
+
+  <data name="MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_001" xml:space="preserve">
+    <value>This no-good commands a group of henchmen.</value>
+    <comment>Mission Body Top Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_002" xml:space="preserve">
+    <value>This coward leads an entire pack of crooks.</value>
+    <comment>Mission Body Top Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_003" xml:space="preserve">
+    <value>When spotted, they'll summon a Monster House.</value>
+    <comment>Mission Body Top Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_004" xml:space="preserve">
+    <value>A group of goons are under this thief's control.</value>
+    <comment>Mission Body Top Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_005" xml:space="preserve">
+    <value>This big boss has a base full of fellow outlaws.</value>
+    <comment>Mission Body Top Text - Outlaw Monster House</comment>  </data>
+
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_001" xml:space="preserve">
+    <value>Be ready for a horde when taking them down.</value>
+    <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_002" xml:space="preserve">
+    <value>Be extra careful taking on this lowlife.</value>
+    <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_003" xml:space="preserve">
+    <value>Please lend us a hand in arresting this crime boss.</value>
+    <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_004" xml:space="preserve">
+    <value>Use extreme caution going after this scoundrel.</value>
+    <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_005" xml:space="preserve">
+    <value>Prepare for a brawl when targeting this criminal.</value>
+    <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
+
+
+
+
+  <data name="MISSION_BODY_TOP_OUTLAW_FLEE_001" xml:space="preserve">
+    <value>As soon as this thug is spotted, they'll run for it.</value>
+    <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_FLEE_002" xml:space="preserve">
+    <value>This coward will run away from you on sight.</value>
+    <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_FLEE_003" xml:space="preserve">
+    <value>This scoundrel will do whatever it takes to escape.</value>
+    <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_FLEE_004" xml:space="preserve">
+    <value>This slippery thief hates confrontation.</value>
+    <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_TOP_OUTLAW_FLEE_005" xml:space="preserve">
+    <value>As soon as they see an adventurer, they'll flee.</value>
+    <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
+
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_FLEE_001" xml:space="preserve">
+    <value>Chase them down, and bring 'em in.</value>
+    <comment>Mission Body Bottom Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_FLEE_002" xml:space="preserve">
+    <value>Don't let this yellow-belly escape.</value>
+    <comment>Mission Body Bottom Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_FLEE_003" xml:space="preserve">
+    <value>Please lend us a hand in catching this runaway.</value>
+    <comment>Mission Body Bottom Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_FLEE_004" xml:space="preserve">
+    <value>Be sure not to let this no-good get away.</value>
+    <comment>Mission Body Bottom Text - Outlaw Flee</comment>  </data>
+  <data name="MISSION_BODY_BOTTOM_OUTLAW_FLEE_005" xml:space="preserve">
+    <value>Be prepared to chase after this lowlife.</value>
+    <comment>Mission Body Bottom Text - Outlaw Flee</comment>  </data>
+
+
+
+  <data name="MISSION_TITLE_SPECIAL_LOVER_001" xml:space="preserve">
+    <value>Please save my beloved!</value>
+    <comment>Mission Title - Special Lover</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_LOVER_002" xml:space="preserve">
+    <value>My love is in danger!</value>
+    <comment>Mission Title - Special Lover</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_LOVER_003" xml:space="preserve">
+    <value>Please rescue my sweetheart!</value>
+    <comment>Mission Title - Special Lover</comment>  </data>	
+
+  <data name="MISSION_TITLE_SPECIAL_CHILD_001" xml:space="preserve">
+    <value>Please save my child!</value>
+    <comment>Mission Title - Special Parent Child</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_CHILD_002" xml:space="preserve">
+    <value>My child is in danger!</value>
+    <comment>Mission Title - Special Parent Child</comment>  </data>  
+  <data name="MISSION_TITLE_SPECIAL_CHILD_003" xml:space="preserve">
+    <value>My child needs rescuing now!</value>
+    <comment>Mission Title - Special Parent Child</comment>  </data>
+
+  <data name="MISSION_TITLE_SPECIAL_FRIENDS_001" xml:space="preserve">
+    <value>Please save my friend!</value>
+    <comment>Mission Title - Special Friends</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_FRIENDS_002" xml:space="preserve">
+    <value>My friend is in danger!</value>
+    <comment>Mission Title - Special Friends</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_FRIENDS_003" xml:space="preserve">
+    <value>Please rescue my friend!</value>
+    <comment>Mission Title - Special Friends</comment>  </data>
+
+  <data name="MISSION_TITLE_SPECIAL_RIVAL_001" xml:space="preserve">
+    <value>Please save my rival!</value>
+    <comment>Mission Title - Special Rival</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_RIVAL_002" xml:space="preserve">
+    <value>Rescue my rival!</value>
+    <comment>Mission Title - Special Rival</comment>  </data>
+  <data name="MISSION_TITLE_SPECIAL_RIVAL_003" xml:space="preserve">
+    <value>My rival is in danger!</value>
+    <comment>Mission Title - Special Rival</comment>  </data>
+
+  <data name="MISSION_BODY_SPECIAL_LOVER_001" xml:space="preserve">
+    <value>Please rescue the love of my life!\nWithout her sweet fragrance, I feel so lost!</value>
+    <comment>Mission Body - Lovers - Illumise and Volbeat</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_002" xml:space="preserve">
+    <value>Please, save my love!\nShe's the positivity in my life! The plus to my minus!</value>
+    <comment>Mission Body - Lovers - Plusle and Minun</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_003" xml:space="preserve">
+    <value>My love rolled off and got lost in a dungeon!\n My love is soft and wooly, just like me! Please, rescue him!</value>
+    <comment>Mission Body - Lovers - Wooloo and Mareep</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_004" xml:space="preserve">
+    <value>Our love for each other is so strong! We need each other!\nPlease, rescue my sweetheart!</value>
+    <comment>Mission Body - Lovers - Luvdisc and Luvdisc</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_005" xml:space="preserve">
+    <value>He charged off and can't find his way back home!\nHe's really sweet at heart! Please save him!</value>
+    <comment>Mission Body - Lovers - Miltank and Tauros</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_006" xml:space="preserve">
+    <value>My beloved [color=#00FF00]Butterfree[color] has gone missing!\nI love her more than anything else! Save her!</value>
+    <comment>Mission Body - Lovers - Venomoth and Butterfree</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_007" xml:space="preserve">
+    <value>Please, rescue my beloved!\nWe truly understand each other's fickleness! Please!</value>
+    <comment>Mission Body - Lovers - Persian and Liepard</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_008" xml:space="preserve">
+    <value>Please save my sweetheart!\nWe've been in love even when we were [color=#00FF00]Wurmple[color]! Help her!</value>
+    <comment>Mission Body - Lovers - Dustox and Beautifly</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_009" xml:space="preserve">
+    <value>We've been in love ever since we were both [color=#00FF00]Snorunt[color]!\nPlease, someone, help her!</value>
+    <comment>Mission Body - Lovers - Glalie and Froslass</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_010" xml:space="preserve">
+    <value>His antennae's patterns have enamored me so!\nPlease rescue him so we can be together again!</value>
+    <comment>Mission Body - Lovers - Ribombee and Masquerain</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_011" xml:space="preserve">
+    <value>Nobody else understands our prickly love!\nSomeone! Please, help him!</value>
+    <comment>Mission Body - Lovers - Maractus and Cacturne</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_LOVER_012" xml:space="preserve">
+    <value>The way she lights up the ocean depths takes my breath away!\nPlease, you have to save my love!</value>
+    <comment>Mission Body - Lovers - Lanturn and Lumineon</comment>  </data>	
+  <data name="MISSION_BODY_SPECIAL_LOVER_013" xml:space="preserve">
+    <value>She's the only one that can quell the sandstorm in my heart!\nPlease, rescue her, somebody!</value>
+    <comment>Mission Body - Lovers - Tyranitar and Altaria</comment>  </data>	
+  <data name="MISSION_BODY_SPECIAL_LOVER_014" xml:space="preserve">
+    <value>Nothing compares to her beauty! I miss her so much!\nPlease, rescue her from that terrible dungeon!</value>
+    <comment>Mission Body - Lovers - Gyarados and Milotic</comment>  </data>	
+  <data name="MISSION_BODY_SPECIAL_LOVER_015" xml:space="preserve">
+    <value>He's my knight in shining armor!\nPlease, save the love of my life!</value>
+    <comment>Mission Body - Lovers - Gardevoir and Gallade</comment>  </data>	
+
+
+  <data name="MISSION_BODY_SPECIAL_CHILD_001" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Clefable and Cleffa</comment>  </data>	
+  <data name="MISSION_BODY_SPECIAL_CHILD_002" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Wigglytuff and Igglybuff</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_003" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Togekiss and Togepi</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_004" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Roserade and Budew</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_005" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Chimecho and Chingling</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_006" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Sudowoodo and Bonsly</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_007" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Mr. Mime and Mime Jr.</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_008" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Raticate and Rattata</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_009" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Leavanny and Sewaddle</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_010" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Appletun and Applin</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_011" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Aggron and Aron</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_012" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Jynx and Smoochum</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_013" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Magmortar and Magby</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_014" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Electivire and Elekid</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_015" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Tsareena and Bounsweet</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_016" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Hatterene and Hatenna</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_017" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Gothitelle and Gothita</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_018" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Dugtrio and Diglett</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_019" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Tyranitar and Larvitar</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_020" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Salamence and Bagon</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_021" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Dragonite and Dratini</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_CHILD_022" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Parent Child - Noivern and Noibat</comment>  </data>
+
+
+  <data name="MISSION_BODY_SPECIAL_FRIEND_001" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Cherubi and Applin</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_002" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Mantyke and Remoraid</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_003" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Magikarp and Feebas</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_004" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Poliwag and Lotad</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_005" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Teddiursa and Combee</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_006" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Woobat and Zubat</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_007" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Trubbish and Grimer</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_008" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Shroomish and Paras</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_009" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Chansey and Togepi</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_010" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Salandit and Combee</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_011" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Lunatone and Solrock</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_012" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Emolga and Pachirisu</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_013" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Spinda and Hypno</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_014" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Cramorant and Pelipper</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_015" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Magnemite and Nosepass</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_016" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Venomoth and Lampent</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_017" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Lilligant and Kricketune</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_018" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Wigglytuff and Exploud</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_019" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Beedrill and Florges</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_020" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Dunsparce and Dugtrio</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_FRIEND_021" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Friends - Whimsicott and Jumpluff </comment>  </data>
+
+  <data name="MISSION_BODY_SPECIAL_RIVAL_001" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Koffing and Stunky</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_002" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Krabby and Corphish</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_003" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Shuppet and Duskull</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_004" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Pidgey and Spearow</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_005" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Kabuto and Omanyte</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_006" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Joltik and Spinarak</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_007" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Tyrogue and Makuhita</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_008" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Lillipup and Poochyena</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_009" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Vigoroth and Primeape</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_010" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Sawsbuck and Stantler</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_011" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Jangmo-o and Axew</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_012" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Mareanie and Corsola</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_013" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Heracross and Pinsir</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_014" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Slowking and Slowbro</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_015" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Magmortar and Electivire</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_016" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Cradily and Armaldo</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_017" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Bastiodon and Rampardos</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_018" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Archeops and Aerodactyl</comment>  </data>
+  <data name="MISSION_BODY_SPECIAL_RIVAL_019" xml:space="preserve">
+    <value></value>
+    <comment>Mission Body - Rivals - Swellow and Staraptor</comment>  </data>
 
 </root>

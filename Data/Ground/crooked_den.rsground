@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
-"AssetName": "crooked_den",
 "Name": {
 "DefaultText": "Crooked Den",
 "LocalTexts": {}
@@ -68281,6 +68280,7 @@
 ]
 }
 ],
+"AssetName": "crooked_den",
 "Music": "",
 "EdgeView": 1,
 "NoSwitching": false,
@@ -68368,7 +68368,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },

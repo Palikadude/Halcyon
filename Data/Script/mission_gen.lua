@@ -79,29 +79,288 @@ MISSION_GEN.EXPECTED_LEVEL = {}
 MISSION_GEN.EXPECTED_LEVEL["illuminant_riverbed"] = 8
 MISSION_GEN.EXPECTED_LEVEL["crooked_cavern"] = 10
 
---pokemon to choose from for missions
+
+MISSION_GEN.TITLES =  {
+	RESCUE_SELF = {
+		"MISSION_TITLE_RESCUE_SELF_001",
+		"MISSION_TITLE_RESCUE_SELF_002",
+		"MISSION_TITLE_RESCUE_SELF_003",
+		"MISSION_TITLE_RESCUE_SELF_004",
+		"MISSION_TITLE_RESCUE_SELF_005",
+		"MISSION_TITLE_RESCUE_SELF_006",
+		"MISSION_TITLE_RESCUE_SELF_007",
+		"MISSION_TITLE_RESCUE_SELF_008",
+		"MISSION_TITLE_RESCUE_SELF_009",
+		"MISSION_TITLE_RESCUE_SELF_010"
+	},
+	RESCUE_FRIEND =	{
+		"MISSION_TITLE_RESCUE_FRIEND_001",
+		"MISSION_TITLE_RESCUE_FRIEND_002",
+		"MISSION_TITLE_RESCUE_FRIEND_003",
+		"MISSION_TITLE_RESCUE_FRIEND_004",
+		"MISSION_TITLE_RESCUE_FRIEND_005",
+		"MISSION_TITLE_RESCUE_FRIEND_006",
+		"MISSION_TITLE_RESCUE_FRIEND_007",
+		"MISSION_TITLE_RESCUE_FRIEND_008",
+		"MISSION_TITLE_RESCUE_FRIEND_009",
+		"MISSION_TITLE_RESCUE_FRIEND_010"
+	},
+	ESCORT = {
+		"MISSION_TITLE_ESCORT_001",
+		"MISSION_TITLE_ESCORT_002",
+		"MISSION_TITLE_ESCORT_003",
+		"MISSION_TITLE_ESCORT_004",
+		"MISSION_TITLE_ESCORT_005"
+	},
+	EXPLORATION = {
+		"MISSION_TITLE_EXPLORATION_001",
+		"MISSION_TITLE_EXPLORATION_002",
+		"MISSION_TITLE_EXPLORATION_003",
+		"MISSION_TITLE_EXPLORATION_004",
+		"MISSION_TITLE_EXPLORATION_005"
+	},
+	DELIVERY = {
+		"MISSION_TITLE_DELIVERY_001",
+		"MISSION_TITLE_DELIVERY_002",
+		"MISSION_TITLE_DELIVERY_003",
+		"MISSION_TITLE_DELIVERY_004",
+		"MISSION_TITLE_DELIVERY_005"
+	},	
+	LOST_ITEM = {
+		"MISSION_TITLE_LOST_ITEM_001",
+		"MISSION_TITLE_LOST_ITEM_002",
+		"MISSION_TITLE_LOST_ITEM_003",
+		"MISSION_TITLE_LOST_ITEM_004",
+		"MISSION_TITLE_LOST_ITEM_005"
+	},
+	OUTLAW = {
+		"MISSION_TITLE_OUTLAW_001",
+		"MISSION_TITLE_OUTLAW_002",
+		"MISSION_TITLE_OUTLAW_003",
+		"MISSION_TITLE_OUTLAW_004",
+		"MISSION_TITLE_OUTLAW_005",
+		"MISSION_TITLE_OUTLAW_006",
+		"MISSION_TITLE_OUTLAW_007",
+		"MISSION_TITLE_OUTLAW_008",
+		"MISSION_TITLE_OUTLAW_009",
+		"MISSION_TITLE_OUTLAW_010",
+	},
+	OUTLAW_ITEM = {
+		"MISSION_TITLE_OUTLAW_ITEM_001",
+		"MISSION_TITLE_OUTLAW_ITEM_002",
+		"MISSION_TITLE_OUTLAW_ITEM_003",
+		"MISSION_TITLE_OUTLAW_ITEM_004",
+		"MISSION_TITLE_OUTLAW_ITEM_005"
+	},	
+	OUTLAW_MONSTER_HOUSE = {
+		"MISSION_TITLE_OUTLAW_MONSTER_HOUSE_001",
+		"MISSION_TITLE_OUTLAW_MONSTER_HOUSE_002",
+		"MISSION_TITLE_OUTLAW_MONSTER_HOUSE_003",
+		"MISSION_TITLE_OUTLAW_MONSTER_HOUSE_004",
+		"MISSION_TITLE_OUTLAW_MONSTER_HOUSE_005"
+	},	
+	OUTLAW_FLEE = {
+		"MISSION_TITLE_OUTLAW_FLEE_001",
+		"MISSION_TITLE_OUTLAW_FLEE_002",
+		"MISSION_TITLE_OUTLAW_FLEE_003",
+		"MISSION_TITLE_OUTLAW_FLEE_004",
+		"MISSION_TITLE_OUTLAW_FLEE_005"
+	}
+}
+
+MISSION_GEN.FLAVOR_TOP =  {
+	RESCUE_SELF = {
+		"MISSION_BODY_TOP_RESCUE_SELF_001",
+		"MISSION_BODY_TOP_RESCUE_SELF_002",
+		"MISSION_BODY_TOP_RESCUE_SELF_003",
+		"MISSION_BODY_TOP_RESCUE_SELF_004",
+		"MISSION_BODY_TOP_RESCUE_SELF_005",
+		"MISSION_BODY_TOP_RESCUE_SELF_006",
+		"MISSION_BODY_TOP_RESCUE_SELF_007",
+		"MISSION_BODY_TOP_RESCUE_SELF_008",
+		"MISSION_BODY_TOP_RESCUE_SELF_009",
+		"MISSION_BODY_TOP_RESCUE_SELF_010"
+	},
+	RESCUE_FRIEND =	{
+		"MISSION_BODY_TOP_RESCUE_FRIEND_001",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_002",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_003",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_004",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_005",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_006",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_007",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_008",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_009",
+		"MISSION_BODY_TOP_RESCUE_FRIEND_010"
+	},
+	ESCORT = {
+		"MISSION_BODY_TOP_ESCORT_001",
+		"MISSION_BODY_TOP_ESCORT_002",
+		"MISSION_BODY_TOP_ESCORT_003",
+		"MISSION_BODY_TOP_ESCORT_004",
+		"MISSION_BODY_TOP_ESCORT_005"
+	},
+	EXPLORATION = {
+		"MISSION_BODY_TOP_EXPLORATION_001",
+		"MISSION_BODY_TOP_EXPLORATION_002",
+		"MISSION_BODY_TOP_EXPLORATION_003",
+		"MISSION_BODY_TOP_EXPLORATION_004",
+		"MISSION_BODY_TOP_EXPLORATION_005"
+	},
+	DELIVERY = {
+		"MISSION_BODY_TOP_DELIVERY_001",
+		"MISSION_BODY_TOP_DELIVERY_002",
+		"MISSION_BODY_TOP_DELIVERY_003",
+		"MISSION_BODY_TOP_DELIVERY_004",
+		"MISSION_BODY_TOP_DELIVERY_005"
+	},	
+	LOST_ITEM = {
+		"MISSION_BODY_TOP_LOST_ITEM_001",
+		"MISSION_BODY_TOP_LOST_ITEM_002",
+		"MISSION_BODY_TOP_LOST_ITEM_003",
+		"MISSION_BODY_TOP_LOST_ITEM_004",
+		"MISSION_BODY_TOP_LOST_ITEM_005"
+	},
+	OUTLAW = {
+		"MISSION_BODY_TOP_OUTLAW_001",
+		"MISSION_BODY_TOP_OUTLAW_002",
+		"MISSION_BODY_TOP_OUTLAW_003",
+		"MISSION_BODY_TOP_OUTLAW_004",
+		"MISSION_BODY_TOP_OUTLAW_005",
+		"MISSION_BODY_TOP_OUTLAW_006",
+		"MISSION_BODY_TOP_OUTLAW_007",
+		"MISSION_BODY_TOP_OUTLAW_008",
+		"MISSION_BODY_TOP_OUTLAW_009",
+		"MISSION_BODY_TOP_OUTLAW_010"
+	},
+	OUTLAW_ITEM = {
+		"MISSION_BODY_TOP_OUTLAW_ITEM_001",
+		"MISSION_BODY_TOP_OUTLAW_ITEM_002",
+		"MISSION_BODY_TOP_OUTLAW_ITEM_003",
+		"MISSION_BODY_TOP_OUTLAW_ITEM_004",
+		"MISSION_BODY_TOP_OUTLAW_ITEM_005"
+	},	
+	OUTLAW_MONSTER_HOUSE = {
+		"MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_001",
+		"MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_002",
+		"MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_003",
+		"MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_004",
+		"MISSION_BODY_TOP_OUTLAW_MONSTER_HOUSE_005"
+	},	
+	OUTLAW_FLEE = {
+		"MISSION_BODY_TOP_OUTLAW_FLEE_001",
+		"MISSION_BODY_TOP_OUTLAW_FLEE_002",
+		"MISSION_BODY_TOP_OUTLAW_FLEE_003",
+		"MISSION_BODY_TOP_OUTLAW_FLEE_004",
+		"MISSION_BODY_TOP_OUTLAW_FLEE_005"
+	}
+}
+
+MISSION_GEN.FLAVOR_BOTTOM =  {
+	RESCUE_SELF = {
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_001",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_002",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_003",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_004",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_005",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_006",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_007",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_008",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_009",
+		"MISSION_BODY_BOTTOM_RESCUE_SELF_010"
+	},
+	RESCUE_FRIEND =	{
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_001",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_002",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_003",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_004",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_005",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_006",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_007",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_008",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_009",
+		"MISSION_BODY_BOTTOM_RESCUE_FRIEND_010"
+	},
+	ESCORT = {
+		"MISSION_BODY_BOTTOM_ESCORT_001",
+		"MISSION_BODY_BOTTOM_ESCORT_002",
+		"MISSION_BODY_BOTTOM_ESCORT_003",
+		"MISSION_BODY_BOTTOM_ESCORT_004",
+		"MISSION_BODY_BOTTOM_ESCORT_005"
+	},
+	EXPLORATION = {
+		"MISSION_BODY_BOTTOM_EXPLORATION_001",
+		"MISSION_BODY_BOTTOM_EXPLORATION_002",
+		"MISSION_BODY_BOTTOM_EXPLORATION_003",
+		"MISSION_BODY_BOTTOM_EXPLORATION_004",
+		"MISSION_BODY_BOTTOM_EXPLORATION_005"
+	},
+	DELIVERY = {
+		"MISSION_BODY_BOTTOM_DELIVERY_001",
+		"MISSION_BODY_BOTTOM_DELIVERY_002",
+		"MISSION_BODY_BOTTOM_DELIVERY_003",
+		"MISSION_BODY_BOTTOM_DELIVERY_004",
+		"MISSION_BODY_BOTTOM_DELIVERY_005"
+	},	
+	LOST_ITEM = {
+		"MISSION_BODY_BOTTOM_LOST_ITEM_001",
+		"MISSION_BODY_BOTTOM_LOST_ITEM_002",
+		"MISSION_BODY_BOTTOM_LOST_ITEM_003",
+		"MISSION_BODY_BOTTOM_LOST_ITEM_004",
+		"MISSION_BODY_BOTTOM_LOST_ITEM_005"
+	},
+	OUTLAW = {
+		"MISSION_BODY_BOTTOM_OUTLAW_001",
+		"MISSION_BODY_BOTTOM_OUTLAW_002",
+		"MISSION_BODY_BOTTOM_OUTLAW_003",
+		"MISSION_BODY_BOTTOM_OUTLAW_004",
+		"MISSION_BODY_BOTTOM_OUTLAW_005"
+	},
+	OUTLAW_ITEM = {
+		"MISSION_BODY_BOTTOM_OUTLAW_ITEM_001",
+		"MISSION_BODY_BOTTOM_OUTLAW_ITEM_002",
+		"MISSION_BODY_BOTTOM_OUTLAW_ITEM_003",
+		"MISSION_BODY_BOTTOM_OUTLAW_ITEM_004",
+		"MISSION_BODY_BOTTOM_OUTLAW_ITEM_005"
+	},	
+	OUTLAW_MONSTER_HOUSE = {
+		"MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_001",
+		"MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_002",
+		"MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_003",
+		"MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_004",
+		"MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_005"
+	},	
+	OUTLAW_FLEE = {
+		"MISSION_BODY_BOTTOM_OUTLAW_FLEE_001",
+		"MISSION_BODY_BOTTOM_OUTLAW_FLEE_002",
+		"MISSION_BODY_BOTTOM_OUTLAW_FLEE_003",
+		"MISSION_BODY_BOTTOM_OUTLAW_FLEE_004",
+		"MISSION_BODY_BOTTOM_OUTLAW_FLEE_005"
+	}
+}
+--master pokemon list
 --This is a list of all Released Pokemon, minus ones who are in the same evolutionary family as a named character in the game,
 --starters, legendaries, and a few other "special" mons (unown for example)
-MISSION_GEN.POKEMON = 
+MISSION_GEN.MASTER_POKEMON_LIST = 
 {"abra","absol","aerodactyl","aipom","alakazam","alcremie","altaria","amaura","anorith","appletun","applin","arbok","archen","ariados","armaldo","aron","arrokuda","aurorus","axew",
-"baltoy","banette","barboach","bastiodon","beedrill","beldum","bellsprout","bibarel","bidoof","blissey","bonsly","bronzong","bronzor","buneary","burmy",
+"baltoy","banette","barboach","bastiodon","beedrill","beldum","bellsprout","bibarel","bidoof","blissey","bonsly","bounsweet","bronzong","bronzor","buneary","burmy",
 "carnivine","carvanha","cascoon","castform","chandelure","chansey","chatot","cherrim","cherubi","chimecho","chinchou","chingling","clamperl","claydol","clobbopus","cloyster","combee","corphish","corsola","corviknight","cradily","cramorant","crawdaunt","croagunk","crobat","cubchoo","cursola","cutiefly",
 "deerling","deino","delibird","dewgong","diglett","ditto","donphan","dragonair","dragonite","drampa","drapion","dratini","drifblim","drifloon","drowzee","dugtrio","dunsparce","duosion","dusclops","dusknoir","duskull","dustox",
-"ekans","electabuzz","electivire","electrike","electrode","elekid","emolga","espurr","exeggcute","exeggutor","exploud",
-"farfetchd","fearow","feebas","finneon","flabebe","floette","florges","flygon","fomantis","forretress","froslass",
-"gallade","galvantula","gardevoir","gastly","gastrodon","gengar","geodude","glalie","gligar","gliscor","golbat","goldeen","golduck","golem","golisopod","golurk","goomy","gorebyss","gothorita","gourgeist","graveler","grimer","grumpig","gyarados",
-"happiny","hariyama","hatenna","hatterene","hattrem","haunter","helioptile","heracross","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honchkrow","honedge","hoppip","horsea","houndoom","houndour","huntail","hypno",
+"ekans","electabuzz","electivire","electrode","elekid","emolga","espurr","exeggcute","exeggutor","exploud",
+"fearow","feebas","finneon","flabebe","floette","florges","flygon","fomantis","forretress","froslass",
+"gallade","galvantula","gardevoir","gastly","gastrodon","gengar","geodude","glalie","gligar","gliscor","golbat","goldeen","golduck","golem","golisopod","golurk","goomy","gorebyss","gothita","gothitelle","gothorita","gourgeist","graveler","grimer","grumpig","gyarados",
+"happiny","hariyama","hatenna","hatterene","hattrem","haunter","helioptile","heracross","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honedge","hoppip","horsea","houndoom","houndour","huntail","hypno",
 "illumise","indeedee",
 "jangmo_o","joltik","jumpluff","jynx",
 "kabuto","kabutops","kadabra","kakuna","kingdra","kingler","kirlia","koffing","krabby","kricketot","kricketune",
-"lanturn","lapras","larvitar","leavanny","lileep","lillipup","litwick","lopunny","loudred","lumineon","lunatone","luvdisc",
-"magby","magcargo","magikarp","magmar","magmortar","magnemite","magneton","magnezone","makuhita","mamoswine","mandibuzz","mankey","mantine","mantyke","maractus","mareanie","masquerain","meowstic","metagross","metang","mienfoo","mightyena","milotic","miltank","mime_jr","minccino","minior","minun","misdreavus","mismagius","morgrem","mothim","mr_mime","muk","murkrow",
+"lampent","lanturn","lapras","larvitar","leavanny","lileep","lillipup","litwick","lopunny","loudred","lumineon","lunatone","luvdisc",
+"magby","magcargo","magikarp","magmar","magmortar","magnemite","magneton","magnezone","makuhita","mamoswine","mandibuzz","mankey","mantine","mantyke","maractus","mareanie","masquerain","meowstic","metagross","metang","mienfoo","mightyena","milotic","miltank","mime_jr","minccino","minior","minun","misdreavus","mismagius","morgrem","mothim","mr_mime","muk",
 "natu","nincada","ninjask","noibat","noivern","nosepass","nuzleaf",
 "octillery","omanyte","omastar","onix",
 "pachirisu","paras","parasect","phantump","pidgeot","pidgeotto","pidgey","pidove","piloswine","pineco","pinsir","plusle","politoed","poliwag","poliwhirl","poliwrath","ponyta","poochyena","porygon","porygon_z","porygon2","primeape","probopass","psyduck","pumpkaboo","pupitar","purrloin","purugly",
 "qwilfish",
 "ralts","rapidash","raticate","rattata","remoraid","rhydon","rhyhorn","rhyperior","ribombee","roggenrola",
-"sableye","salandit","salazzle","sandshrew","sandslash","sandygast","sawsbuck","scizor","scrafty","scyther","seadra","seaking","seedot","seel","sewaddle","sharpedo","shedinja","shellder","shellos","shieldon","shiftry","shuppet","sinistea","skarmory","skiploom","skorupi","skuntank","slaking","slakoth","slugma","smeargle","smoochum","snorunt","snover","solrock","spearow","spinarak","spiritomb","spoink","stantler","staraptor","staravia","starly","starmie","staryu","steelix","steenee","stoutland","stunky","sudowoodo","surskit","swablu","swellow","swinub","swirlix","swoobat",
+"sableye","salandit","salazzle","sandshrew","sandslash","sandygast","sawsbuck","scizor","scrafty","scyther","seadra","seaking","seedot","seel","sewaddle","sharpedo","shedinja","shellder","shellos","shieldon","shiftry","shuppet","sinistea","skarmory","skiploom","skorupi","skuntank","slaking","slakoth","slugma","smeargle","smoochum","snorunt","snover","solrock","spearow","spinarak","spiritomb","spoink","stantler","staraptor","staravia","starly","starmie","staryu","steelix","steenee","stoutland","sudowoodo","surskit","swablu","swellow","swinub","swirlix","swoobat",
 "taillow","tangela","tangrowth","tauros","teddiursa","tentacool","tentacruel","thievul","togedemaru","togekiss","togepi","togetic","torkoal","toxicroak","trapinch","trubbish","tsareena","tympole","tyranitar","tyrogue",
 "ursaring",
 "vanillish","vanillite","venomoth","venonat","vespiquen","vibrava","victreebel","vigoroth","volbeat","voltorb",
@@ -109,6 +368,129 @@ MISSION_GEN.POKEMON =
 "xatu",
 "yanma","yanmega",
 "zubat"}
+
+MISSION_GEN.POKEMON = {
+	--weak mons for easy missions
+	TIER_LOW = 
+	{"abra","amaura","anorith","applin","archen","aron","arrokuda","axew",
+	"baltoy","barboach","beldum","bellsprout","bidoof","bonsly","bounsweet","bronzor","buneary","burmy",
+	"carvanha","cascoon","cherubi","chinchou","chingling","clamperl","clobbopus","combee","corphish","croagunk","cubchoo","cutiefly",
+	"deerling","deino","diglett","dratini","drifloon","drowzee","duskull",
+	"ekans","elekid","espurr","exeggcute",
+	"feebas","finneon","flabebe","fomantis",
+	"gastly","geodude","goldeen","goomy","gothita","grimer",
+	"happiny","hatenna","helioptile","hippopotas","honedge","hoppip","horsea","houndour",
+
+	"jangmo_o","joltik",
+	"kabuto","kakuna","koffing","krabby","kricketot",
+	"larvitar","lileep","lillipup","litwick","luvdisc",
+	"magby","magikarp","magnemite","makuhita","mankey","mantyke","mareanie","mienfoo","mime_jr","minccino",
+	"natu","nincada","noibat","nosepass",
+	"omanyte","onix",
+	"paras","phantump","pidgey","pidove","pineco","poliwag","ponyta","poochyena","porygon","psyduck","pumpkaboo","purrloin",
+
+	"ralts","rattata","remoraid","rhyhorn","roggenrola",
+	"salandit","sandshrew","sandygast","seedot","seel","sewaddle","shellder","shellos","shieldon","shuppet","sinistea","skorupi","slakoth","slugma","smoochum","snorunt","snover","spearow","spinarak","spoink","starly","staryu","surskit","swablu","swinub","swirlix",
+	"taillow","teddiursa","tentacool","togepi","trapinch","trubbish","tympole","tyrogue",
+
+	"vanillite","venonat","voltorb",
+	"wailmer","weedle","whismur","woobat","wooloo","wynaut",
+
+
+	"zubat"},
+
+	--middling mons for medium missions
+	TIER_MID = 
+	{"aipom","arbok","ariados",
+	"beedrill","bibarel",
+	"carnivine","castform","chansey","chatot","cherrim","chimecho","corsola","cramorant",
+	"delibird","ditto","dragonair","dunsparce","duosion","dustox",
+	"electabuzz","emolga",
+	"floette",
+	"gligar","golbat","gothorita","graveler",
+	"hattrem","haunter",
+	"illumise","indeedee",
+	"jynx",
+	"kadabra","kirlia","kricketune",
+	"lampent","loudred","lunatone",
+	"magmar","magneton","maractus","masquerain","metang","mightyena","miltank","minior","minun","misdreavus","morgrem","mothim","mr_mime",
+	"ninjask","nuzleaf",
+
+	"pachirisu","parasect","pidgeotto","piloswine","plusle","poliwhirl","porygon2","pupitar",
+	"qwilfish",
+	"raticate","ribombee",
+	"sableye","scyther","seadra","shedinja","skiploom","smeargle","solrock","stantler","staravia","steenee","sudowoodo",
+	"tangela","thievul","togedemaru","togetic","torkoal",
+
+	"vanillish","venomoth","vespiquen","vibrava","vigoroth","volbeat",
+	"weepinbell","wobbuffet","wormadam",
+
+	"yanma"
+	},
+
+	--strong pokemon for difficult missions
+	TIER_HIGH = 
+	{"absol","aerodactyl","alakazam","alcremie","altaria","appletun","armaldo","aurorus",
+	"banette","bastiodon","blissey","bronzong",
+	"chandelure","claydol","cloyster","corviknight","cradily","crawdaunt","crobat","cursola",
+	"dewgong","donphan","dragonite","drampa","drapion","drifblim","dugtrio","dusclops","dusknoir",
+	"electivire","exeggutor","exploud",
+	"fearow","florges","flygon","forretress","froslass",
+	"gallade","galvantula","gardevoir","gastrodon","gengar","glalie","gliscor","golduck","golem","golisopod","gorebyss","gothitelle","gourgeist","grumpig","gyarados",
+	"hariyama","hatterene","heracross","hippowdon","hitmonchan","hitmonlee","hitmontop","houndoom","huntail","hypno",
+
+	"jumpluff",
+	"kabutops","kingdra","kingler",
+	"lanturn","lapras","leavanny","lopunny","lumineon",
+	"magcargo","magmortar","magnezone","mamoswine","mandibuzz","mantine","meowstic","metagross","milotic","mismagius","muk",
+	"noivern",
+	"octillery","omastar",
+	"pidgeot","pinsir","politoed","poliwrath","porygon_z","primeape","probopass","purugly",
+
+	"rapidash","rhydon","rhyperior",
+	"salazzle","sandslash","sawsbuck","scizor","scrafty","seaking","sharpedo","shiftry","skarmory","skuntank","slaking","spiritomb","staraptor","starmie","steelix","stoutland","swellow","swoobat",
+	"tangrowth","tauros","tentacruel","togekiss","toxicroak","tsareena","tyranitar",
+	"ursaring",
+	"victreebel",
+	"wailord","weezing","whimsicott","whiscash",
+	"xatu",
+	"yanmega",
+	}
+}
+
+--weighting of possible client/target pokemon based on difficulty of mission
+MISSION_GEN.DIFF_POKEMON = {
+	E = {
+		{"TIER_LOW", 10},
+		{"TIER_MID", 0},
+		{"TIER_HIGH", 0}
+		},
+	D = {
+		{"TIER_LOW", 9},
+		{"TIER_MID", 1},
+		{"TIER_HIGH", 0}
+		},
+	C = {
+		{"TIER_LOW", 8},
+		{"TIER_MID", 2},
+		{"TIER_HIGH", 0}
+		},
+	B = {
+		{"TIER_LOW", 7},
+		{"TIER_MID", 3},
+		{"TIER_HIGH", 0}
+		},
+	A = {
+		{"TIER_LOW", 5},
+		{"TIER_MID", 5},
+		{"TIER_HIGH", 0}
+		},
+	S = {
+		{"TIER_LOW", 2},
+		{"TIER_MID", 7},
+		{"TIER_HIGH", 1}
+		}
+}
 
 --weighting of each loot table based on difficulty of mission
 
@@ -198,6 +580,8 @@ MISSION_GEN.DIFF_REWARDS = {
 		{"SPECIAL", 0}
 		}
 }
+
+
 
 --Weighted list of rewards to choose from for missions
 --todo: balance the weightings
@@ -490,20 +874,129 @@ MISSION_GEN.SPECIAL_RESCUE_OPTIONS = {
 	MISSION_GEN.SPECIAL_RESCUE_FRIEND
 }
 
+--Order matters for these! First is the client, second is the target
+--Titles are random from a small list. Each pair has a unique body text however included in the data below.
 MISSION_GEN.SPECIAL_LOVER_PAIRS = {
+	TIER_LOW = {
+		{'volbeat', Gender.Male, 'illumise', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_001"},
+		{'minun', Gender.Male, 'plusle', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_002"},
+		{'mareep', Gender.Female, 'wooloo', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_003"},
+		{'luvdisc', Gender.Female, 'luvdisc', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_004"}	
+	},
+	TIER_MID = {
+		{'miltank', Gender.Female, 'tauros', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_005"},
+		{'venomoth', Gender.Male, 'butterfree', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_006"},
+		{'liepard', Gender.Female, 'persian', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_007"},
+		{'dustox', Gender.Male, 'beautifly', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_008"},
+		{'glalie', Gender.Male, 'froslass', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_009"},
+		{'ribombee', Gender.Female, 'masquerain', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_010"},
+		{'maractus', Gender.Female, 'cacturne', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_011"},---my prickly love!
+		{'lanturn', Gender.Male, 'lumineon', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_012"}
+	},
+	TIER_HIGH = {
+		{'tyranitar', Gender.Male, 'altaria', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_013"},--reference to an old idea i had
+		{'gyarados', Gender.Male, 'milotic', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_014"},
+		{'gardevoir', Gender.Female, 'gallade', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_015"}
+	}
 
 }
 
 MISSION_GEN.SPECIAL_CHILD_PAIRS = {
-
+	TIER_LOW = {
+		{'clefable', 'cleffa'},
+		{'wigglytuff', 'igglybuff'},
+		{'togekiss', 'togepi'},
+		{'roserade', 'budew'},
+		{'chimecho', 'chingling'},
+		{'sudowoodo', 'bonsly'},
+		{'mr_mime', 'mime_jr'},
+		{'raticate', 'rattata'},--hes still not so good at gnawing!
+		{'leavanny', 'sewaddle'}
+	},
+	TIER_MID = {
+		{'appletun', 'applin'},
+		{'aggron', 'aron'},--probably munched too much metal!
+		{'jynx', 'smoochum'},
+		{'electivire', 'elekid'},
+		{'magmortar', 'magby'},
+		{'tsareena', 'bounsweet'},
+		{'hatterene', 'hatenna'},
+		{'gothitelle', 'gothita'},
+		{'dugtrio', 'diglett'}
+	},	
+	TIER_HIGH = {
+		{'tyranitar', 'larvitar'},
+		{'salamence', 'bagon'},
+		{'dragonite', 'dratini'},
+		{'noivern', 'noibat'}
+	}
+	
+	
+	
+	
 }
 
 MISSION_GEN.SPECIAL_FRIENDS_PAIRS = {
-
+	TIER_LOW = {
+		{'cherubi', 'applin'},--We both get mistaken for fruit! What if someone ate him!?
+		{'mantyke', 'remoraid'},--My best friend is missing! I'll never be able to evolve without him!
+		{'magikarp', 'feebas'},--feebas is the only one who understands what it's like to be dogshit!
+		{'poliwag', 'lotad'},--frog and his lilypad. I have no lilypad now, save him!
+		{'teddiursa', 'combee'}, --Without Combee, I have no honey! Please find them!
+		{'woobat', 'zubat'},--we both use ultrasonic waves to see!
+		{'trubbish', 'grimer'},--we both love eating garbage!
+		{'shroomish', 'paras'},--we both love to spread spores!
+		{'chansey', 'togepi'},--cares for togepi because its an egg
+		{'salandit', 'combee'}--they relate in being useless
+	},
+	TIER_MID = {
+		{'lunatone', 'solrock'},
+		{'emolga', 'pachirisu'},
+		{'spinda', 'hypno'}, --Hypno went missing; only he can help stop my dizziness
+		{'cramorant', 'pelipper'},
+		{'magnemite', 'nosepass'},--We're both sensitive to magnetism!
+		{'venomoth', 'lampent'}
+	},
+	TIER_HIGH = {
+		{'lilligant', 'kricketune'},--I can't dance without Kricketune's music!
+		{'wigglytuff', 'exploud'}, --we love making loud, silly noises together!
+		{'beedrill', 'florges'},--without my flower, i have no meaning!
+		{'dunsparce', 'dugtrio'},--we both love to burrow!
+		{'whimsicott', 'jumpluff'}
+	}
 }
 
 MISSION_GEN.SPECIAL_RIVAL_PAIRS = {
+	TIER_LOW = {
+		{'koffing', 'stunky'},--they compete to see whose odor is stronger
+		{'krabby', 'corphish'},--compare claw strength
+		{'shuppet', 'duskull'},--we like to see who can pull better pranks!
+		{'pidgey', 'spearow'},--we compete at flying!
+		{'kabuto', 'omanyte'}, --we've been rivals since our ancestors' time!
+		{'joltik', 'spinarak'},--We like to see who can spin the better web!
+		{'tyrogue', 'makuhita'},--my punching bag training partner!
+		{'lillipup', 'poochyena'}
 
+},
+	
+	TIER_MID = {
+		{'vigoroth', 'primeape'},--full of energy!
+		{'sawsbuck', 'stantler'},--butt antlers!
+		{'jangmo_o', 'axew'},
+		{'mareanie', 'corsola'}
+
+	},
+	
+	TIER_HIGH = {
+		{'heracross', 'pinsir'},
+		{'slowking', 'slowbro'},--slowbro may not be as smart as me, but we're still great friends!
+		{'magmortar', 'electivire'}, --we need to settle who is stronger!
+		{'cradily', 'armaldo'}, --we've been rivals since our ancestors' time!
+		{'bastiodon', 'rampardos'}, --we've been rivals since our ancestors' time!
+		{'archeops', 'aerodactyl'}, --we've been rivals since our ancestors' time!
+		{'swellow', 'staraptor'},--brave birds!
+
+	}
 }
 
 
@@ -593,7 +1086,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},
 	{
 		Client = "",
@@ -609,7 +1105,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -625,7 +1124,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -641,7 +1143,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -657,7 +1162,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -673,7 +1181,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},
 	{
 		Client = "",
@@ -689,7 +1200,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -705,7 +1219,10 @@ SV.MissionBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	}
 
 }
@@ -727,7 +1244,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},
 	{
 		Client = "",
@@ -743,7 +1263,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -759,7 +1282,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -775,7 +1301,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -791,7 +1320,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -807,7 +1339,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},
 	{
 		Client = "",
@@ -823,7 +1358,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	},	
 	{
 		Client = "",
@@ -839,7 +1377,10 @@ SV.OutlawBoard =
 		Taken = false,
 		Difficulty = "",
 		Item = "",
-		Special = ""
+		Special = "",
+		ClientGender = nil,
+		TargetGender = nil,
+		BonusReward = ""
 	}
 }
 
@@ -853,13 +1394,13 @@ function MISSION_GEN.GenerateBoard(board_type)
 	
 
 	-- All seen Pokemon in the pokedex
-	local seen_pokemon = {}
+	--local seen_pokemon = {}
 
-	for entry in luanet.each(_DATA.Save.Dex) do
-		if entry.Value == RogueEssence.Data.GameProgress.UnlockState.Discovered then
-			table.insert(seen_pokemon, entry.Key)
-		end
-	end
+	--for entry in luanet.each(_DATA.Save.Dex) do
+	--	if entry.Value == RogueEssence.Data.GameProgress.UnlockState.Discovered then
+	--		table.insert(seen_pokemon, entry.Key)
+	--	end
+	--end
 
 	--print( seen_pokemon[ math.random( #seen_pokemon ) ] )
 	
@@ -876,17 +1417,22 @@ function MISSION_GEN.GenerateBoard(board_type)
 	for i = 1, jobs_to_make, 1 do 
 		--choose a dungeon, client, target, item, etc
 		local dungeon = dungeon_list[math.random(1, #dungeon_list)]
-		local client = MISSION_GEN.POKEMON[math.random(1, #MISSION_GEN.POKEMON)]
+		local client = ""
 		local item = ""
 		local special = ""
 
 		--generate the objective. 10% chance of escort vs rescue.
 		local objective 
 		if mission_type == "Outlaw" then 
-			if math.random(1, 2) == 1 then
+			local roll = math.random(1, 10)
+			if roll <= 5 then
 				objective = COMMON.MISSION_TYPE_OUTLAW
-			else
+			elseif roll <= 8 then 
 				objective = COMMON.MISSION_TYPE_OUTLAW_ITEM
+			elseif roll <= 9 then 
+				objective = COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE
+			else
+				objective = COMMON.MISSION_TYPE_OUTLAW_FLEE
 			end
 		else
 			local roll = math.random(1, 10)
@@ -913,7 +1459,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 			elseif roll <= 4 then
 				objective = COMMON.MISSION_TYPE_DELIVERY
 			elseif roll <= 6 then
-				objective = COMMON.MISSION_TYPE_DELIVERY
+				objective = COMMON.MISSION_TYPE_LOST_ITEM
 			else
 				objective = COMMON.MISSION_TYPE_RESCUE
 			end
@@ -927,38 +1473,6 @@ function MISSION_GEN.GenerateBoard(board_type)
 			item = MISSION_GEN.LOST_ITEMS[math.random(1, #MISSION_GEN.LOST_ITEMS)]
 		end
 
-		-- TODO handle special cases 
-		if objective == COMMON.MISSION_TYPE_RESCUE and math.random(1, 10) == 1 then
-			special = MISSION_GEN.SPECIAL_RESCUE_OPTIONS[math.random(1, #MISSION_GEN.SPECIAL_RESCUE_OPTIONS)]
-			if special == MISSION_GEN.SPECIAL_RESCUE_LOVER then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_CHILD then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_RIVAL then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_FRIEND then
-			end
-		end
-		
-		--50% chance that the client and target are the same. Target is the escort if its an escort mission.
-		--It is possible for this to roll the same target as the client again, which is fine.
-		--Always give a target if objective is escort or a outlaw stole an item.
-		--Target should always be client for 
-		local target = client
-		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT or objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
-			target = seen_pokemon[ math.random( #seen_pokemon ) ]
-		end
-		
-		--if its a generic outlaw mission, or a monster house / fleeing outlaw, Zhayn is the client. Normal mons only ask you to go after their stolen items.
-		if objective == COMMON.MISSION_TYPE_OUTLAW or objective == COMMON.MISSION_TYPE_OUTLAW_FLEE or objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
-			client = "zhayn"
-		end
-		
-		--if it's a delivery, exploration, or lost item, target and client should match.
-		if objective == COMMON.MISSION_TYPE_EXPLORATION or objective == COMMON.MISSION_TYPE_DELIVERY or objective == COMMON.MISSION_TYPE_LOST_ITEM then
-			target = client
-		end
-		
 
 		local difficulty = MISSION_GEN.DUNGEON_DIFFICULTY[dungeon]
 		local offset = 0
@@ -971,10 +1485,64 @@ function MISSION_GEN.GenerateBoard(board_type)
 			offset = 2
 		end
 		difficulty = MISSION_GEN.ORDER_TO_DIFF[MISSION_GEN.DIFF_TO_ORDER[difficulty]+offset]
-		--should pretty much always be in segment 0 for missions
-		local segment = 0
-		print(MISSION_GEN.DIFF_REWARDS[difficulty])
-		print(MISSION_GEN.REWARDS["AMMO_LOW"])
+		
+		
+		
+		--Generate a tier, then the client
+		local tier = MISSION_GEN.WeightedRandom(MISSION_GEN.DIFF_POKEMON[difficulty])
+		local client_candidates = MISSION_GEN.POKEMON[tier]
+		client = client_candidates[math.random(1, #client_candidates)]
+		print(tier)
+		
+		--50% chance that the client and target are the same. Target is the escort if its an escort mission.
+		--It is possible for this to roll the same target as the client again, which is fine.
+		--Always give a target if objective is escort or a outlaw stole an item.
+		--Target should always be client for 
+		local target = client
+		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT or objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
+			local target_candidates = MISSION_GEN.POKEMON[tier]
+			target = target_candidates[math.random(1, #target_candidates)]	
+			--print(target_candidates[1]) --to give an idea of what tier we rolled
+		end
+		
+		--if its a generic outlaw mission, or a monster house / fleeing outlaw, Zhayn is the client. Normal mons only ask you to go after their stolen items.
+		if objective == COMMON.MISSION_TYPE_OUTLAW or objective == COMMON.MISSION_TYPE_OUTLAW_FLEE or objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+			client = "zhayn"
+		end
+		
+		--if it's a delivery, exploration, or lost item, target and client should match.
+		if objective == COMMON.MISSION_TYPE_EXPLORATION or objective == COMMON.MISSION_TYPE_DELIVERY or objective == COMMON.MISSION_TYPE_LOST_ITEM then
+			target = client
+		end
+		
+		
+		--Roll for genders. Use base form because it PROBABLY won't ever matter.
+		local client_gender
+		
+		if client == "zhayn" then--Zhayn is a special exception
+			client_gender = Gender.Male
+		else
+			client_gender = _DATA:GetMonster(client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+		end 
+		
+		local target_gender = _DATA:GetMonster(target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+
+
+		-- TODO handle special cases 
+		--[[
+		if objective == COMMON.MISSION_TYPE_RESCUE and math.random(1, 10) == 1 then
+			special = MISSION_GEN.SPECIAL_RESCUE_OPTIONS[math.random(1, #MISSION_GEN.SPECIAL_RESCUE_OPTIONS)]
+			if special == MISSION_GEN.SPECIAL_RESCUE_LOVER then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_CHILD then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_RIVAL then
+
+			elseif special == MISSION_GEN.SPECIAL_RESCUE_FRIEND then
+			end
+		end
+		]]--
+		
 		
 		--generate reward with hardcoded list of weighted rewards
 		local reward = "money"
@@ -984,16 +1552,122 @@ function MISSION_GEN.GenerateBoard(board_type)
 			reward = MISSION_GEN.WeightedRandom(MISSION_GEN.REWARDS[MISSION_GEN.WeightedRandom(MISSION_GEN.DIFF_REWARDS[difficulty])])
 		end
 		
+		--1/3 chance you get a bonus reward. Bonus reward is always an item, never money 
+		local bonus_reward = ""
+		
+		if math.random(1,3) == 1 then 
+			bonus_reward = MISSION_GEN.WeightedRandom(MISSION_GEN.REWARDS[MISSION_GEN.WeightedRandom(MISSION_GEN.DIFF_REWARDS[difficulty])])
+		end 
+		
 		--get the zone, and max floors (counted floors of relevant segments)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon)
 		
 		
-		--todo
-		local flavor = "Flavor text.\nI love the sweet, succulent flavor text!"
-		
 
-		--todo
-		local title = "I need help!"
+
+		--Choose a random title that's appropriate.
+		local title = "Default title."
+		local title_candidates = {}
+		
+		if special ~= "" then -- get special title
+			print("and i oop")
+		else 
+			if objective == COMMON.MISSION_TYPE_RESCUE and client ~= target then
+				title_candidates = MISSION_GEN.TITLES["RESCUE_FRIEND"]
+			elseif objective == COMMON.MISSION_TYPE_RESCUE and client == target then
+				title_candidates = MISSION_GEN.TITLES["RESCUE_SELF"]
+			elseif objective == COMMON.MISSION_TYPE_ESCORT then
+				title_candidates = MISSION_GEN.TITLES["ESCORT"]
+			elseif objective == COMMON.MISSION_TYPE_EXPLORATION then
+				title_candidates = MISSION_GEN.TITLES["EXPLORATION"]
+			elseif objective == COMMON.MISSION_TYPE_LOST_ITEM then
+				title_candidates = MISSION_GEN.TITLES["LOST_ITEM"]
+			elseif objective == COMMON.MISSION_TYPE_DELIVERY then
+				title_candidates = MISSION_GEN.TITLES["DELIVERY"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW then
+				title_candidates = MISSION_GEN.TITLES["OUTLAW"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+				title_candidates = MISSION_GEN.TITLES["OUTLAW_ITEM"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+				title_candidates = MISSION_GEN.TITLES["OUTLAW_MONSTER_HOUSE"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+				title_candidates = MISSION_GEN.TITLES["OUTLAW_FLEE"]			
+			end
+			title = RogueEssence.StringKey(title_candidates[math.random(1, #title_candidates)]):ToLocal()
+			
+			--string substitutions, if needed.
+			if string.find(title, "%[target%]") then
+				title = string.gsub(title, "%[target%]", _DATA:GetMonster(target):GetColoredName())
+			end 
+			
+			if string.find(title, "%[dungeon%]") then
+				title = string.gsub(title, "%[dungeon%]", _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon):GetColoredName())
+			end 
+			
+			if string.find(title, "%[item%]") then
+				title = string.gsub(title, "%[item%]",  _DATA:GetItem(item):GetColoredName())
+			end
+		end 
+		
+		
+		
+		--Flavor text generation
+		local flavor = "Default flavor text.\nHow did you see this? Tell Palika, please!"
+		local flavor_top_candidates = {}
+		local flavor_bottom_candidates = {}
+		
+		if special ~= "" then -- get special title
+		
+		else 
+			if objective == COMMON.MISSION_TYPE_RESCUE and client ~= target then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["RESCUE_FRIEND"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["RESCUE_FRIEND"]
+			elseif objective == COMMON.MISSION_TYPE_RESCUE and client == target then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["RESCUE_SELF"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["RESCUE_SELF"]
+			elseif objective == COMMON.MISSION_TYPE_ESCORT then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["ESCORT"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["ESCORT"]
+			elseif objective == COMMON.MISSION_TYPE_EXPLORATION then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["EXPLORATION"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["EXPLORATION"]
+			elseif objective == COMMON.MISSION_TYPE_LOST_ITEM then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["LOST_ITEM"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["LOST_ITEM"]
+			elseif objective == COMMON.MISSION_TYPE_DELIVERY then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["DELIVERY"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["DELIVERY"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["OUTLAW"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["OUTLAW"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["OUTLAW_ITEM"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["OUTLAW_ITEM"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["OUTLAW_MONSTER_HOUSE"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["OUTLAW_MONSTER_HOUSE"]
+			elseif objective == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["OUTLAW_FLEE"]
+				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["OUTLAW_FLEE"]
+			end
+			flavor = RogueEssence.StringKey(flavor_top_candidates[math.random(1, #flavor_top_candidates)]):ToLocal() .. '\n' .. RogueEssence.StringKey(flavor_bottom_candidates[math.random(1, #flavor_bottom_candidates)]):ToLocal()
+		
+			--string substitutions, if needed.
+			if string.find(flavor, "%[target%]") then
+				flavor = string.gsub(flavor, "%[target%]", _DATA:GetMonster(target):GetColoredName())
+			end
+			
+			if string.find(flavor, "%[dungeon%]") then
+				flavor = string.gsub(flavor, "%[dungeon%]", _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon):GetColoredName())
+			end
+						
+			if string.find(flavor, "%[item%]") then
+				flavor = string.gsub(flavor, "%[item%]",  _DATA:GetItem(item):GetColoredName())
+			end
+			
+		end 
+
+
 
 		
 		--mission floor should be in last 45% of the dungeon
@@ -1033,6 +1707,9 @@ function MISSION_GEN.GenerateBoard(board_type)
 				SV.OutlawBoard[i].Difficulty = difficulty
 				SV.OutlawBoard[i].Item = item
 				SV.OutlawBoard[i].Special = special
+				SV.OutlawBoard[i].ClientGender = client_gender
+				SV.OutlawBoard[i].TargetGender = target_gender
+				SV.OutlawBoard[i].BonusReward = bonus_reward
 			else 
 				SV.MissionBoard[i].Client = client
 				SV.MissionBoard[i].Target = target
@@ -1047,7 +1724,10 @@ function MISSION_GEN.GenerateBoard(board_type)
 				SV.MissionBoard[i].Taken = false
 				SV.MissionBoard[i].Difficulty = difficulty
 				SV.MissionBoard[i].Item = item
-				SV.MissionBoard[i].Special = special
+				SV.MissionBoard[i].Special = special		
+				SV.MissionBoard[i].ClientGender = client_gender
+				SV.MissionBoard[i].TargetGender = target_gender
+				SV.MissionBoard[i].BonusReward = bonus_reward
 			end
 		end
 			
@@ -1086,7 +1766,7 @@ JobMenu = Class('JobMenu')
 --job number should be 1-8
 function JobMenu:initialize(job_type, job_number, parent_board_menu)
   assert(self, "JobMenu:initialize(): Error, self is nil!")
-  self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 272, 192, function(input) self:Update(input) end)
+  self.menu = RogueEssence.Menu.ScriptableMenu(32, 32, 256, 176, function(input) self:Update(input) end)
   --self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(jobs[i], RogueElements.Loc(16, 8 + 14 * (i-1))))
     
   local job 
@@ -1128,9 +1808,10 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   
   self.objective = ""
   self.type = job.Type
+  self.taken_count = MISSION_GEN.GetTakenCount()
   
   if self.type == COMMON.MISSION_TYPE_RESCUE then
-		self.objective = "Rescue " .. self.client .. "."
+		self.objective = "Rescue " .. self.target .. "."
   elseif self.type == COMMON.MISSION_TYPE_ESCORT then
     self.objective = "Escort " .. self.client .. " to " .. self.target .. "."
 	elseif self.type == COMMON.MISSION_TYPE_EXPLORATION then
@@ -1142,7 +1823,7 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
 	elseif self.type == COMMON.MISSION_TYPE_DELIVERY then 
 		self.objective = "Deliver " .. self.item .. " to " .. self.client .. "."
   elseif self.type == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
-		self.objective = "Retrieve " .. self.item .. " from " .. self.target .. "."
+		self.objective = "Reclaim " .. self.item .. " from " .. self.target .. "."
   end
   
   
@@ -1168,6 +1849,10 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
     end
   end
   
+  --add in the ??? for a bonus reward if one exists
+  if job.BonusReward ~= "" then
+	self.reward = self.reward .. ' + ?'
+  end
   
   
 	self:DrawJob()
@@ -1177,11 +1862,16 @@ end
 
 function JobMenu:DrawJob()
   --Standard menu divider. Reuse this whenever you need a menu divider at the top for a title.
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, 8 + 12), self.menu.Bounds.Width - 8 * 2));
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, 8 + 12), self.menu.Bounds.Width - 8 * 2))
 
   --Standard title. Reuse this whenever a title is needed.
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Job Summary", RogueElements.Loc(16, 8)))
   
+  --Accepted element 
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, self.menu.Bounds.Height - 24), self.menu.Bounds.Width - 8 * 2))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Accepted: " .. self.taken_count .. "/8", RogueElements.Loc(96, self.menu.Bounds.Height - 20)))
+
+
   
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.flavor, RogueElements.Loc(16, 24)))
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Client:", RogueElements.Loc(16, 54)))
@@ -1215,7 +1905,10 @@ function JobMenu:DeleteJob()
 										Taken = false,
 										Difficulty = "",
 										Item = "",
-										Special = ""
+										Special = "",
+										ClientGender = nil,
+										TargetGender = nil,
+										BonusReward = ""
 									}
 	
 	MISSION_GEN.SortTaken()
@@ -1267,13 +1960,18 @@ function JobMenu:AddJobToTaken()
 	end
 	
 	if self.parent_board_menu ~= nil then 
-
+		--redraw board with potentially changed information from job board
+		self.parent_board_menu.menu.MenuElements:Clear()
+		self.parent_board_menu:RefreshSelf()
+		self.parent_board_menu:DrawBoard()
+		
 		--redraw selection board with potentially changed information
 		if self.parent_board_menu.parent_selection_menu ~= nil then 
 			self.parent_board_menu.parent_selection_menu.menu.MenuElements:Clear()
 			self.parent_board_menu.parent_selection_menu:DrawMenu()
 		end
 	end
+	
 
 	_MENU:RemoveMenu()
 end
@@ -1302,7 +2000,7 @@ function JobMenu:OpenSubMenu()
 					   {"Cancel", true, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end} }
 		end 
 	
-		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(220, 24, 24, choices, 1, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end) 
+		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(232, 138, 24, choices, 1, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end) 
 		_MENU:AddMenu(submenu, true)
 		
 	end
@@ -1334,7 +2032,7 @@ BoardMenu = Class('BoardMenu')
 function BoardMenu:initialize(board_type, parent_selection_menu)
   assert(self, "BoardMenu:initialize(): Error, self is nil!")
     
-  self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 272, 192, function(input) self:Update(input) end)
+  self.menu = RogueEssence.Menu.ScriptableMenu(32, 32, 256, 176, function(input) self:Update(input) end)
   self.cursor = RogueEssence.Menu.MenuCursor(self.menu)
   
   self.board_type = board_type
@@ -1358,8 +2056,9 @@ function BoardMenu:initialize(board_type, parent_selection_menu)
   end
   
   self.current_item = 0
-  self.cursor.Loc = RogueElements.Loc(8, 22)
+  self.cursor.Loc = RogueElements.Loc(9, 24)
   self.page = 1--1 or 2
+  self.taken_count = MISSION_GEN.GetTakenCount()
   self.total_pages = math.ceil(self.total_items / 4)
 
 
@@ -1392,7 +2091,7 @@ function BoardMenu:RefreshSelf()
 	
 	--move cursor to reflect new current item location
 	self.cursor:ResetTimeOffset()
-    self.cursor.Loc = RogueElements.Loc(8, 22 + 26 * self.current_item)
+    self.cursor.Loc = RogueElements.Loc(9, 24 + 26 * self.current_item)
   end
   
   self.total_pages = math.ceil(self.total_items / 4)
@@ -1401,6 +2100,9 @@ function BoardMenu:RefreshSelf()
   if self.page == 2 and self.total_pages == 1 then
 	self.page = 1
   end
+
+  --refresh taken count
+  self.taken_count = MISSION_GEN.GetTakenCount()
   
   --if there are no more missions and we're on the taken screen, close the menu.  
   if SV.TakenBoard[1].Client == "" and self.board_type == 'taken' then 
@@ -1413,13 +2115,19 @@ end
 --If you want to edit this, you'll probably have to change most instances of the number 4 here and some references to page. Sorry!
 function BoardMenu:DrawBoard()
   --Standard menu divider. Reuse this whenever you need a menu divider at the top for a title.
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, 8 + 12), self.menu.Bounds.Width - 8 * 2));
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, 8 + 12), self.menu.Bounds.Width - 8 * 2))
 
   --Standard title. Reuse this whenever a title is needed.
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Notice Board", RogueElements.Loc(16, 8)))
   
   --page element
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("(" .. tostring(self.page) .. "/" .. tostring(self.total_pages) .. ")", RogueElements.Loc(self.menu.Bounds.Width - 35, 8)))
+
+	
+  --Accepted element 
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, self.menu.Bounds.Height - 24), self.menu.Bounds.Width - 8 * 2))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Accepted: " .. tostring(self.taken_count) .. "/8", RogueElements.Loc(96, self.menu.Bounds.Height - 20)))
+
 
   self.menu.MenuElements:Add(self.cursor)
   
@@ -1462,9 +2170,9 @@ function BoardMenu:DrawBoard()
 	
 	--modulo the iterator so that if we're on the 2nd page it goes to the right spot
 	
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(16, 23 + 26 * ((i-1) % 4))))
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(title, RogueElements.Loc(28, 23 + 26 * ((i-1) % 4))))
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(location, RogueElements.Loc(28, 35 + 26 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(21, 23 + 26 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(title, RogueElements.Loc(33, 23 + 26 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(location, RogueElements.Loc(33, 35 + 26 * ((i-1) % 4))))
 
 
   end
@@ -1534,7 +2242,7 @@ function BoardMenu:Update(input)
     if moved then
       _GAME:SE("Menu/Select")
       self.cursor:ResetTimeOffset()
-      self.cursor.Loc = RogueElements.Loc(8, 22 + 26 * self.current_item)
+      self.cursor.Loc = RogueElements.Loc(9, 24 + 26 * self.current_item)
     end
   end
 end 
@@ -1560,12 +2268,19 @@ BoardSelectionMenu = Class('BoardSelectionMenu')
 --Used to choose between viewing the board, your job list, or to cancel
 function BoardSelectionMenu:initialize(board_type)
   assert(self, "BoardSelectionMenu:initialize(): Error, self is nil!")
-  self.menu = RogueEssence.Menu.ScriptableMenu(24, 24, 128, 60, function(input) self:Update(input) end)
+  
+  --I'm bad at this. Need different menu sizes depending on the board 
+  if board_type == "outlaw" then
+	self.menu = RogueEssence.Menu.ScriptableMenu(24, 22, 128, 60, function(input) self:Update(input) end)
+  else
+  	self.menu = RogueEssence.Menu.ScriptableMenu(24, 22, 119, 60, function(input) self:Update(input) end)
+
+  end 
   self.cursor = RogueEssence.Menu.MenuCursor(self.menu)
   self.board_type = board_type
   
   self.current_item = 0
-  self.cursor.Loc = RogueElements.Loc(8, 8)
+  self.cursor.Loc = RogueElements.Loc(9, 8)
   
   self:DrawMenu()
 
@@ -1601,9 +2316,9 @@ function BoardSelectionMenu:DrawMenu()
 	self.taken_populated = false 
   end
   
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(board_name, RogueElements.Loc(16, 8)))
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.job_list, RogueElements.Loc(16, 22)))
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Exit", RogueElements.Loc(16, 36)))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(board_name, RogueElements.Loc(21, 8)))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.job_list, RogueElements.Loc(21, 22)))
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Exit", RogueElements.Loc(21, 36)))
 
   self.menu.MenuElements:Add(self.cursor)
 end 
@@ -1650,7 +2365,20 @@ function BoardSelectionMenu:Update(input)
     if moved then
       _GAME:SE("Menu/Select")
       self.cursor:ResetTimeOffset()
-      self.cursor.Loc = RogueElements.Loc(8, 8 + 14 * self.current_item)
+      self.cursor.Loc = RogueElements.Loc(9, 8 + 14 * self.current_item)
     end
   end
 end 
+
+--How many missions are taken? Probably shoulda just had a variable that kept track, but oh well...
+function MISSION_GEN.GetTakenCount()
+	local count = 0
+	for i = 1, 8, 1 do
+		if SV.TakenBoard[i].Client == "" then 
+			break 
+		else
+			count = count + 1 
+		end 
+	end 
+	return count
+end

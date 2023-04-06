@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Data.MonsterData, RogueEssence",
 "Name": {
@@ -54,7 +54,6 @@
 "$type": "PMDC.Data.MonsterFormData, PMDC",
 "Released": true,
 "Generation": 7,
-"Ratio": 0,
 "GenderlessWeight": 0,
 "MaleWeight": 7,
 "FemaleWeight": 1,

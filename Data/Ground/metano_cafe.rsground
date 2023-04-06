@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
-"AssetName": "metano_cafe",
 "Name": {
 "DefaultText": "Metano Cafe",
 "LocalTexts": {}
@@ -131332,6 +131331,7 @@
 ]
 }
 ],
+"AssetName": "metano_cafe",
 "Music": "Spinda's Cafe.ogg",
 "EdgeView": 0,
 "NoSwitching": false,
@@ -131428,7 +131428,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },
@@ -131630,7 +131632,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },
@@ -131711,7 +131715,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },
@@ -131792,7 +131798,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },

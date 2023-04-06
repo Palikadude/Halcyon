@@ -1328,3 +1328,39 @@ function metano_town_ch_3.Cranidos_Action(chara, activator)
 	UI:WaitShowDialogue("You can speak to me when you take down an outlaw that's worth my notice.")
 	GeneralFunctions.EndConversation(chara)
 end
+
+
+function metano_town_ch_3.TrailerCameraPan()
+	GROUND:Hide('Green_Merchant')
+	GROUND:Hide('Red_Merchant')
+	GAME:FadeOut(false, 1)
+	GAME:WaitFrames(40)
+	GAME:FadeIn(1)
+	GAME:MoveCamera(436, 120, 1, false) 
+	GAME:MoveCamera(436, 1020, 450, false)
+	
+	GAME:FadeOut(false, 1)
+	GAME:WaitFrames(40)
+	
+	GAME:MoveCamera(1130, 552, 1, false) 
+	GAME:FadeIn(1)
+	GAME:MoveCamera(1130, 1252, 350, false) 
+	GAME:FadeOut(false, 1)
+	GAME:WaitFrames(40)
+	
+	
+	GAME:MoveCamera(666, 1200, 1, false) 
+	GAME:FadeIn(1)
+	GAME:MoveCamera(666, 1040, 80, false) 
+	GAME:MoveCamera(746, 960, 40, false) 
+	GAME:MoveCamera(746, 792, 84, false) 
+	GAME:WaitFrames(120)
+	GAME:FadeOut(false, 1)
+	GAME:WaitFrames(40)
+	
+	GAME:WaitFrames(60)
+	GAME:MoveCamera(0,0,1, true)
+	GAME:FadeIn(1)
+
+
+end

@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
-"AssetName": "guild_storage_room",
 "Name": {
 "DefaultText": "Guild Storage Room",
 "LocalTexts": {}
@@ -165854,6 +165853,7 @@
 ]
 }
 ],
+"AssetName": "guild_storage_room",
 "Music": "Wigglytuff's Guild.ogg",
 "EdgeView": 1,
 "NoSwitching": true,
@@ -165983,7 +165983,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },

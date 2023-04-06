@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.6.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "PMDC.Data.MonsterFeatureData, PMDC",
 "FeatureData": {
@@ -215,6 +215,486 @@
 "WorstStat": -1
 },
 "9": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"10": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"11": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"12": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"13": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"14": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"15": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"16": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"17": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"18": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"19": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"20": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"21": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"22": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"23": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"24": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"25": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"26": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"27": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"28": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"29": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"30": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"31": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"32": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"33": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"34": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"35": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"36": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"37": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"38": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"39": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"40": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"41": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"42": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"43": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"44": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"45": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"46": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"47": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"48": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"49": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"50": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"51": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"52": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"53": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"54": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"55": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"56": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"57": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"58": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"59": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"60": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"61": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"62": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"63": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"64": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"65": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"66": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"67": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"68": {
+"Family": "milcery",
+"Stage": 4,
+"Element1": "fairy",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"69": {
 "Family": "milcery",
 "Stage": 4,
 "Element1": "fairy",
@@ -775,6 +1255,7 @@
 "WorstStat": -1
 }
 },
+"basculegion": {},
 "basculin": {
 "0": {
 "Family": "basculin",
@@ -3017,6 +3498,7 @@
 "WorstStat": -1
 }
 },
+"enamorus": {},
 "entei": {
 "0": {
 "Family": "entei",
@@ -5069,6 +5551,7 @@
 "WorstStat": -1
 }
 },
+"kleavor": {},
 "klefki": {
 "0": {
 "Family": "klefki",
@@ -7061,6 +7544,7 @@
 "WorstStat": -1
 }
 },
+"overqwil": {},
 "pachirisu": {
 "0": {
 "Family": "pachirisu",
@@ -9229,6 +9713,7 @@
 "WorstStat": -1
 }
 },
+"sneasler": {},
 "snivy": {
 "0": {
 "Family": "snivy",
@@ -9412,6 +9897,16 @@
 "Family": "spoink",
 "Stage": 2,
 "Element1": "psychic",
+"Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+}
+},
+"sprigatito": {
+"0": {
+"Family": "sprigatito",
+"Stage": 1,
+"Element1": "grass",
 "Element2": "none",
 "BestStat": -1,
 "WorstStat": -1
@@ -10575,6 +11070,7 @@
 "WorstStat": -1
 }
 },
+"ursaluna": {},
 "ursaring": {
 "0": {
 "Family": "teddiursa",
@@ -11307,6 +11803,7 @@
 "WorstStat": -1
 }
 },
+"wyrdeer": {},
 "xatu": {
 "0": {
 "Family": "natu",
@@ -11616,24 +12113,7 @@
 "BestStat": -1,
 "WorstStat": -1
 }
-},
-"sprigatito": {
-"0": {
-"Family": "sprigatito",
-"Stage": 1,
-"Element1": "grass",
-"Element2": "none",
-"BestStat": -1,
-"WorstStat": -1
 }
-},
-"wyrdeer": {},
-"kleavor": {},
-"ursaluna": {},
-"basculegion": {},
-"sneasler": {},
-"overqwil": {},
-"enamorus": {}
 }
 }
 }

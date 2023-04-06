@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.1.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "backup_master_zone": {
@@ -15,6 +15,71 @@
 "Rescues": 0,
 "CountedFloors": 0,
 "Rogue": 0,
+"Grounds": [
+"relic_forest",
+"metano_town",
+"guild_heros_room",
+"guild_bedroom_hallway",
+"guild_bottom_left_bedroom",
+"guild_bottom_right_bedroom",
+"guild_dining_room",
+"guild_first_floor",
+"guild_guildmasters_room",
+"altere_pond",
+"base_camp",
+"base_camp_2",
+"forest_camp",
+"cliff_camp",
+"canyon_camp",
+"rest_stop",
+"final_stop",
+"guildmaster_summit",
+"guild_path",
+"guild_hut",
+"luminous_spring",
+"post_office",
+"guild_second_floor",
+"guild_storage_hallway",
+"guild_storage_room",
+"guild_third_floor_lobby",
+"guild_top_left_bedroom",
+"guild_top_right_bedroom",
+"metano_altere_transition",
+"metano_cafe",
+"metano_cave",
+"metano_electric_home",
+"metano_fire_home",
+"metano_grass_home",
+"metano_rock_home",
+"metano_water_home",
+"ledian_dojo",
+"metano_normal_home",
+"illuminant_riverbed_entrance",
+"metano_inn",
+"personality_test",
+"crooked_cavern_entrance",
+"crooked_den",
+"first_core_location",
+"testmap",
+"test_grounds"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+]
+],
 "Name": {
 "DefaultText": "Guildmaster Island",
 "LocalTexts": {
@@ -40,6 +105,16 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Beginner Lesson",
 "LocalTexts": {}
@@ -61,6 +136,27 @@
 "Rescues": 0,
 "CountedFloors": 10,
 "Rogue": 0,
+"Grounds": [
+"crooked_cavern_entrance",
+"crooked_den"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+0
+]
+],
 "Name": {
 "DefaultText": "Crooked Cavern",
 "LocalTexts": {}
@@ -82,6 +178,16 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Fire Maze",
 "LocalTexts": {}
@@ -103,6 +209,16 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Grass Maze",
 "LocalTexts": {}
@@ -124,6 +240,22 @@
 "Rescues": 0,
 "CountedFloors": 8,
 "Rogue": 0,
+"Grounds": [
+"luminous_spring",
+"illuminant_riverbed_entrance"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+],
 "Name": {
 "DefaultText": "Illuminant Riverbed",
 "LocalTexts": {}
@@ -145,6 +277,196 @@
 "Rescues": 0,
 "CountedFloors": 0,
 "Rogue": 0,
+"Grounds": [
+"relic_forest",
+"metano_town",
+"guild_heros_room",
+"guild_bedroom_hallway",
+"guild_bottom_left_bedroom",
+"guild_bottom_right_bedroom",
+"guild_dining_room",
+"guild_first_floor",
+"guild_guildmasters_room",
+"altere_pond",
+"base_camp",
+"base_camp_2",
+"forest_camp",
+"cliff_camp",
+"canyon_camp",
+"rest_stop",
+"final_stop",
+"guildmaster_summit",
+"guild_path",
+"guild_hut",
+"luminous_spring",
+"post_office",
+"guild_second_floor",
+"guild_storage_hallway",
+"guild_storage_room",
+"guild_third_floor_lobby",
+"guild_top_left_bedroom",
+"guild_top_right_bedroom",
+"metano_altere_transition",
+"metano_cafe",
+"metano_cave",
+"metano_electric_home",
+"metano_fire_home",
+"metano_grass_home",
+"metano_rock_home",
+"metano_water_home",
+"ledian_dojo",
+"metano_normal_home",
+"illuminant_riverbed_entrance",
+"metano_inn",
+"personality_test",
+"crooked_cavern_entrance",
+"crooked_den",
+"first_core_location",
+"testmap",
+"test_grounds"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8
+],
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99
+],
+[
+0,
+1,
+2,
+3,
+4
+],
+[
+0,
+1,
+2
+],
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+0
+]
+],
 "Name": {
 "DefaultText": "Debug",
 "LocalTexts": {
@@ -169,6 +491,55 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [
+"relic_forest",
+"metano_town",
+"guild_heros_room",
+"guild_bedroom_hallway",
+"guild_bottom_left_bedroom",
+"guild_bottom_right_bedroom",
+"guild_dining_room",
+"guild_first_floor",
+"guild_guildmasters_room",
+"altere_pond",
+"base_camp",
+"base_camp_2",
+"forest_camp",
+"cliff_camp",
+"canyon_camp",
+"rest_stop",
+"final_stop",
+"guildmaster_summit",
+"guild_path",
+"guild_hut",
+"luminous_spring",
+"post_office",
+"guild_second_floor",
+"guild_storage_hallway",
+"guild_storage_room",
+"guild_third_floor_lobby",
+"guild_top_left_bedroom",
+"guild_top_right_bedroom",
+"metano_altere_transition",
+"metano_cafe",
+"metano_cave",
+"metano_electric_home",
+"metano_fire_home",
+"metano_grass_home",
+"metano_rock_home",
+"metano_water_home",
+"testmap",
+"test_grounds"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Normal Maze",
 "LocalTexts": {}
@@ -190,6 +561,20 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [
+"metano_town",
+"relic_forest",
+"altere_pond"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Relic Forest",
 "LocalTexts": {}
@@ -211,6 +596,16 @@
 "Rescues": 0,
 "CountedFloors": 5,
 "Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
 "Name": {
 "DefaultText": "Water Maze",
 "LocalTexts": {}

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -999,7 +999,12 @@
 }
 },
 {
-"$type": "RogueEssence.LevelGen.FloorNameIDZoneStep, RogueEssence",
+"$type": "PMDC.LevelGen.FloorNameDropZoneStep, PMDC",
+"DropPriority": {
+"str": [
+-15
+]
+},
 "Name": {
 "DefaultText": "Crooked Cavern\\nB{0}F",
 "LocalTexts": {}
@@ -2040,6 +2045,353 @@
 },
 {
 "$type": "PMDC.LevelGen.SpreadHouseZoneStep, PMDC",
+"Priority": {
+"str": [
+6
+]
+},
+"Items": [
+{
+"Spawn": {
+"IsMoney": true,
+"Cursed": false,
+"Value": "",
+"HiddenValue": "",
+"Amount": 75,
+"Price": 0,
+"TileLoc": {
+"X": 0,
+"Y": 0
+}
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+}
+],
+"ItemThemes": [
+{
+"Spawn": {
+"$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
+"SpecialRatio": 50,
+"Amount": {
+"Min": 2,
+"Max": 4
+}
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+}
+],
+"Mobs": [
+{
+"Spawn": {
+"BaseForm": {
+"Species": "houndour",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"ember",
+"thief",
+"howl"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+}
+]
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "stunky",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thief",
+"scratch",
+"poison_gas",
+"screech"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+}
+]
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "mankey",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"covet",
+"low_kick",
+"focus_energy"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Odds": 0
+}
+]
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+}
+],
+"MobThemes": [
+{
+"Spawn": {
+"$type": "PMDC.LevelGen.MobThemeNone, PMDC",
+"SpecialRatio": 100,
+"Amount": {
+"Min": 2,
+"Max": 4
+}
+},
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 9
+}
+}
+],
+"HouseStepSpawns": [
+{
+"Spawn": {
+"$type": "PMDC.LevelGen.MonsterHallStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Filters": [
+{
+"$type": "RogueElements.RoomFilterComponent, RogueElements",
+"Negate": true,
+"Components": [
+{
+"$type": "RogueEssence.LevelGen.ImmutableRoom, RogueEssence"
+},
+{
+"$type": "PMDC.LevelGen.NoEventRoom, PMDC"
+}
+]
+}
+],
+"Size": {
+"X": 0,
+"Y": 0
+},
+"Items": [
+{
+"Spawn": {
+"IsMoney": true,
+"Cursed": false,
+"Value": "",
+"HiddenValue": "",
+"Amount": 75,
+"Price": 0,
+"TileLoc": {
+"X": 0,
+"Y": 0
+}
+},
+"Rate": 10
+}
+],
+"ItemThemes": [
+{
+"Spawn": {
+"$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
+"SpecialRatio": 50,
+"Amount": {
+"Min": 1,
+"Max": 4
+}
+},
+"Rate": 10
+}
+],
+"Mobs": [
+{
+"Spawn": {
+"BaseForm": {
+"Species": "houndour",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"ember",
+"thief",
+"howl"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+}
+]
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "stunky",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thief",
+"scratch",
+"poison_gas",
+"screech"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+}
+]
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "mankey",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"covet",
+"low_kick",
+"focus_energy"
+],
+"Intrinsic": "",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+}
+]
+},
+"Rate": 10
+}
+],
+"MobThemes": [
+{
+"Spawn": {
+"$type": "PMDC.LevelGen.MobThemeNone, PMDC",
+"SpecialRatio": 100,
+"Amount": {
+"Min": 2,
+"Max": 4
+}
+},
+"Rate": 10
+}
+]
+},
+"Rate": 10
+}
+],
 "SpreadPlan": {
 "$type": "RogueEssence.LevelGen.SpreadPlanChance, RogueEssence",
 "Chance": 50,
@@ -2048,6 +2400,10 @@
 "Max": 9
 }
 },
+"ModStates": []
+},
+{
+"$type": "PMDC.LevelGen.SpreadHouseZoneStep, PMDC",
 "Priority": {
 "str": [
 6
@@ -2060,7 +2416,7 @@
 "Cursed": false,
 "Value": "",
 "HiddenValue": "",
-"Amount": 75,
+"Amount": 100,
 "Price": 0,
 "TileLoc": {
 "X": 0,
@@ -2069,8 +2425,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 }
 ],
@@ -2086,8 +2442,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 }
 ],
@@ -2129,8 +2485,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 },
 {
@@ -2166,8 +2522,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 },
 {
@@ -2207,8 +2563,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 }
 ],
@@ -2224,8 +2580,8 @@
 },
 "Rate": 10,
 "Range": {
-"Min": 5,
-"Max": 9
+"Min": 9,
+"Max": 10
 }
 }
 ],
@@ -2258,7 +2614,7 @@
 "Cursed": false,
 "Value": "",
 "HiddenValue": "",
-"Amount": 75,
+"Amount": 100,
 "Price": 0,
 "TileLoc": {
 "X": 0,
@@ -2395,10 +2751,6 @@
 "Rate": 10
 }
 ],
-"ModStates": []
-},
-{
-"$type": "PMDC.LevelGen.SpreadHouseZoneStep, PMDC",
 "SpreadPlan": {
 "$type": "RogueEssence.LevelGen.SpreadPlanChance, RogueEssence",
 "Chance": 100,
@@ -2407,353 +2759,6 @@
 "Max": 10
 }
 },
-"Priority": {
-"str": [
-6
-]
-},
-"Items": [
-{
-"Spawn": {
-"IsMoney": true,
-"Cursed": false,
-"Value": "",
-"HiddenValue": "",
-"Amount": 100,
-"Price": 0,
-"TileLoc": {
-"X": 0,
-"Y": 0
-}
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-}
-],
-"ItemThemes": [
-{
-"Spawn": {
-"$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
-"SpecialRatio": 50,
-"Amount": {
-"Min": 2,
-"Max": 4
-}
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-}
-],
-"Mobs": [
-{
-"Spawn": {
-"BaseForm": {
-"Species": "houndour",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"ember",
-"thief",
-"howl"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
-"Odds": 0
-}
-]
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-},
-{
-"Spawn": {
-"BaseForm": {
-"Species": "stunky",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"thief",
-"scratch",
-"poison_gas",
-"screech"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
-"Odds": 0
-}
-]
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-},
-{
-"Spawn": {
-"BaseForm": {
-"Species": "mankey",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"covet",
-"low_kick",
-"focus_energy"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
-"Odds": 0
-}
-]
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-}
-],
-"MobThemes": [
-{
-"Spawn": {
-"$type": "PMDC.LevelGen.MobThemeNone, PMDC",
-"SpecialRatio": 100,
-"Amount": {
-"Min": 2,
-"Max": 4
-}
-},
-"Rate": 10,
-"Range": {
-"Min": 9,
-"Max": 10
-}
-}
-],
-"HouseStepSpawns": [
-{
-"Spawn": {
-"$type": "PMDC.LevelGen.MonsterHallStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
-"Filters": [
-{
-"$type": "RogueElements.RoomFilterComponent, RogueElements",
-"Negate": true,
-"Components": [
-{
-"$type": "RogueEssence.LevelGen.ImmutableRoom, RogueEssence"
-},
-{
-"$type": "PMDC.LevelGen.NoEventRoom, PMDC"
-}
-]
-}
-],
-"Size": {
-"X": 0,
-"Y": 0
-},
-"Items": [
-{
-"Spawn": {
-"IsMoney": true,
-"Cursed": false,
-"Value": "",
-"HiddenValue": "",
-"Amount": 100,
-"Price": 0,
-"TileLoc": {
-"X": 0,
-"Y": 0
-}
-},
-"Rate": 10
-}
-],
-"ItemThemes": [
-{
-"Spawn": {
-"$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
-"SpecialRatio": 50,
-"Amount": {
-"Min": 1,
-"Max": 4
-}
-},
-"Rate": 10
-}
-],
-"Mobs": [
-{
-"Spawn": {
-"BaseForm": {
-"Species": "houndour",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"ember",
-"thief",
-"howl"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-}
-]
-},
-"Rate": 10
-},
-{
-"Spawn": {
-"BaseForm": {
-"Species": "stunky",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"thief",
-"scratch",
-"poison_gas",
-"screech"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-}
-]
-},
-"Rate": 10
-},
-{
-"Spawn": {
-"BaseForm": {
-"Species": "mankey",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"covet",
-"low_kick",
-"focus_energy"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 3,
-"Remove": false
-},
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-}
-]
-},
-"Rate": 10
-}
-],
-"MobThemes": [
-{
-"Spawn": {
-"$type": "PMDC.LevelGen.MobThemeNone, PMDC",
-"SpecialRatio": 100,
-"Amount": {
-"Min": 2,
-"Max": 4
-}
-},
-"Rate": 10
-}
-]
-},
-"Rate": 10
-}
-],
 "ModStates": []
 }
 ],
@@ -2790,7 +2795,12 @@
 }
 },
 {
-"$type": "RogueEssence.LevelGen.FloorNameIDZoneStep, RogueEssence",
+"$type": "PMDC.LevelGen.FloorNameDropZoneStep, PMDC",
+"DropPriority": {
+"str": [
+-15
+]
+},
 "Name": {
 "DefaultText": "Crooked Den",
 "LocalTexts": {}

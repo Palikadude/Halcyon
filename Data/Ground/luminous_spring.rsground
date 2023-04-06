@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.6.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
-"AssetName": "luminous_spring",
 "Name": {
 "DefaultText": "Luminous Spring",
 "LocalTexts": {
@@ -68372,6 +68371,7 @@
 ]
 }
 ],
+"AssetName": "luminous_spring",
 "Music": "",
 "EdgeView": 1,
 "NoSwitching": false,
@@ -68563,6 +68563,7 @@
 "Amount": 0,
 "Price": 0
 },
+"Absentee": false,
 "ChargeBoost": 0,
 "HP": 0,
 "HPRemainder": 0,
@@ -68596,7 +68597,6 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"Unrecruitable": false,
 "CharStates": [],
 "BackRef": {
 "Assembly": false,
@@ -68662,7 +68662,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []
@@ -68766,6 +68768,7 @@
 "Amount": 0,
 "Price": 0
 },
+"Absentee": false,
 "ChargeBoost": 0,
 "HP": 0,
 "HPRemainder": 0,
@@ -68799,7 +68802,6 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"Unrecruitable": false,
 "CharStates": [],
 "BackRef": {
 "Assembly": false,
@@ -68865,7 +68867,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []
@@ -68969,6 +68973,7 @@
 "Amount": 0,
 "Price": 0
 },
+"Absentee": false,
 "ChargeBoost": 0,
 "HP": 0,
 "HPRemainder": 0,
@@ -69002,7 +69007,6 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"Unrecruitable": false,
 "CharStates": [],
 "BackRef": {
 "Assembly": false,
@@ -69068,7 +69072,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []
@@ -69172,6 +69178,7 @@
 "Amount": 0,
 "Price": 0
 },
+"Absentee": false,
 "ChargeBoost": 0,
 "HP": 0,
 "HPRemainder": 0,
@@ -69205,7 +69212,6 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"Unrecruitable": false,
 "CharStates": [],
 "BackRef": {
 "Assembly": false,
@@ -69271,7 +69277,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []

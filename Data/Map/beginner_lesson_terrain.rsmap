@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -8,7 +8,6 @@
 },
 "Released": false,
 "Comment": "",
-"AssetName": "beginner_lesson_terrain",
 "Begun": false,
 "ID": 0,
 "MapTeams": [],
@@ -23,6 +22,7 @@
 17909611376780542444
 ]
 },
+"AssetName": "beginner_lesson_terrain",
 "ScriptEvents": {},
 "Music": "Marowak Dojo.ogg",
 "TileSight": 0,
@@ -886,7 +886,6 @@
 0
 ]
 ],
-"DropTitle": false,
 "Layers": [
 {
 "Name": "New Layer",

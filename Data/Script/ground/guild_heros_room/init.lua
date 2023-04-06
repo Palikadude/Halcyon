@@ -159,7 +159,7 @@ function guild_heros_room.Book_Action(obj, activator)
 		
 	elseif choice_result == 2 then
 		local name = _DATA.Save.ActiveTeam.Name
-		UI:NameMenu("What is your team's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+		UI:NameMenu("What is your team's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old team name.", 60)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
 		--if no name given, set name to previous name

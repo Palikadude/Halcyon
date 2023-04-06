@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
-"AssetName": "post_office",
 "Name": {
 "DefaultText": "Pelipper Post Office",
 "LocalTexts": {
@@ -20991,6 +20990,7 @@
 ]
 }
 ],
+"AssetName": "post_office",
 "Music": "Treasure Town.ogg",
 "EdgeView": 1,
 "NoSwitching": false,
@@ -21087,7 +21087,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []
@@ -21175,7 +21177,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": {
 "Table": []
@@ -21379,7 +21383,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },

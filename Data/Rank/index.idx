@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.6.9.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "bronze": {
@@ -61,6 +61,21 @@
 },
 "Released": true,
 "Comment": "Rank 12",
+"SortOrder": 0
+},
+"guildmaster": {
+"Name": {
+"DefaultText": "Guildmaster",
+"LocalTexts": {
+"fr-ca": "Grand Maître",
+"de": "Gildenmeister",
+"es": "Maestro",
+"pt": "Grão-Mestre",
+"ko": "그레이트 마스터"
+}
+},
+"Released": true,
+"Comment": "Rank 11",
 "SortOrder": 0
 },
 "hyper": {
@@ -182,21 +197,6 @@
 },
 "Released": true,
 "Comment": "Rank 8",
-"SortOrder": 0
-},
-"guildmaster": {
-"Name": {
-"DefaultText": "Guildmaster",
-"LocalTexts": {
-"fr-ca": "Grand Maître",
-"de": "Gildenmeister",
-"es": "Maestro",
-"pt": "Grão-Mestre",
-"ko": "그레이트 마스터"
-}
-},
-"Released": true,
-"Comment": "Rank 11",
 "SortOrder": 0
 },
 "unranked": {

@@ -1,9 +1,8 @@
 ﻿{
-"Version": "0.6.2.0",
+"Version": "0.7.4.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
-"AssetName": "metano_altere_transition",
 "Name": {
 "DefaultText": "Metano Outskirts",
 "LocalTexts": {}
@@ -157304,6 +157303,7 @@
 ]
 }
 ],
+"AssetName": "metano_altere_transition",
 "Music": "Treasure Town.ogg",
 "EdgeView": 1,
 "NoSwitching": true,
@@ -157474,7 +157474,9 @@
 },
 "IsFounder": false,
 "IsPartner": false,
+"NameLocked": false,
 "IsFavorite": false,
+"Unrecruitable": false,
 "ActionEvents": [],
 "ScriptVars": null
 },

@@ -213,7 +213,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
 			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
 			GAME:WaitFrames(30)
 			UI:ResetSpeaker()
-			UI:WaitShowDialogue("Yes!\nYou retrieved the " .. item_name .. "!")
+			UI:WaitShowDialogue("Yes!\nYou reclaimed the " .. item_name .. "!")
 			GeneralFunctions.AskMissionWarpOut()
 		end
 	else
