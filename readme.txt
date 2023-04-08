@@ -31,5 +31,6 @@ Other custom sprites and animations come from the master PMD Sprite Repository a
 If you helped in some way and aren't listed here (probably because I forgot, sorry!) please let me know.
 
 Special thanks:
+NeoGeoThomas - For putting the trailer together
 borzoiteeth - for inspiring the game in the first place
-Sky Temple - For helping me figure out base Explorer's behavior for some cutscenes and functions
+SkyTemple - For helping me figure out base Explorer's behavior for some cutscenes and functions

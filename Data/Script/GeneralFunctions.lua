@@ -34,6 +34,13 @@ function GeneralFunctions.UpdateDailyFlags()
 	if SV.metano_cafe.FermentedItem ~= "" then 
 		SV.metano_cafe.ItemFinishedFermenting = true
 	end
+	
+	--Generate jobs
+	MISSION_GEN.ResetBoards()
+	MISSION_GEN.GenerateBoard("Mission")
+	MISSION_GEN.GenerateBoard("Outlaw")
+	MISSION_GEN.SortMission()
+	MISSION_GEN.SortOutlaw()
 end 
 
 --to be called at the end of the day. A generic function for generic days (i.e. no cutscene) 

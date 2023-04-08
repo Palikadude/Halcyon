@@ -38,6 +38,7 @@ MISSION_GEN.DIFFICULTY["C"] = 20
 MISSION_GEN.DIFFICULTY["B"] = 30
 MISSION_GEN.DIFFICULTY["A"] = 50
 MISSION_GEN.DIFFICULTY["S"] = 70
+MISSION_GEN.DIFFICULTY["STAR_1"] = 100
 
 --dungeon's assigned difficulty
 MISSION_GEN.DUNGEON_DIFFICULTY = {}
@@ -57,9 +58,10 @@ MISSION_GEN.DIFF_TO_ORDER["C"] = 5
 MISSION_GEN.DIFF_TO_ORDER["B"] = 6
 MISSION_GEN.DIFF_TO_ORDER["A"] = 7
 MISSION_GEN.DIFF_TO_ORDER["S"] = 8
+MISSION_GEN.DIFF_TO_ORDER["STAR_1"] = 9
 
 --use this to get back from above.
-MISSION_GEN.ORDER_TO_DIFF = {"", "F", "E", "D", "C", "B", "A", "S"}
+MISSION_GEN.ORDER_TO_DIFF = {"", "F", "E", "D", "C", "B", "A", "S", "STAR_1"}
 
 --mapping of difficulty to reward amounts for money
 MISSION_GEN.DIFF_TO_MONEY = {}
@@ -71,6 +73,21 @@ MISSION_GEN.DIFF_TO_MONEY["C"] = 200
 MISSION_GEN.DIFF_TO_MONEY["B"] = 250
 MISSION_GEN.DIFF_TO_MONEY["A"] = 300
 MISSION_GEN.DIFF_TO_MONEY["S"] = 350
+MISSION_GEN.DIFF_TO_MONEY["STAR_1"] = 400
+
+--color coding for mission difficulty letters
+MISSION_GEN.DIFF_TO_COLOR = {}
+MISSION_GEN.DIFF_TO_COLOR[""] = "[color=#000000]"
+MISSION_GEN.DIFF_TO_COLOR["F"] = "[color=#000000]"
+MISSION_GEN.DIFF_TO_COLOR["E"] = "[color=#F8F8F8]"
+MISSION_GEN.DIFF_TO_COLOR["D"] = "[color=#F8C8C8]"
+MISSION_GEN.DIFF_TO_COLOR["C"] = "[color=#40F840]"
+MISSION_GEN.DIFF_TO_COLOR["B"] = "[color=#F8C060]"
+MISSION_GEN.DIFF_TO_COLOR["A"] = "[color=#00F8F8]"
+MISSION_GEN.DIFF_TO_COLOR["S"] = "[color=#F80000]"
+MISSION_GEN.DIFF_TO_COLOR["STAR_1"] = "[color=#F8F800]"
+
+
 
 MISSION_GEN.COMPLETE = 1
 MISSION_GEN.INCOMPLETE = 0
@@ -165,7 +182,30 @@ MISSION_GEN.TITLES =  {
 		"MISSION_TITLE_OUTLAW_FLEE_003",
 		"MISSION_TITLE_OUTLAW_FLEE_004",
 		"MISSION_TITLE_OUTLAW_FLEE_005"
-	}
+	},
+	
+	--For special client/targets
+	RIVAL = {
+		"MISSION_TITLE_SPECIAL_RIVAL_001",
+		"MISSION_TITLE_SPECIAL_RIVAL_002",
+		"MISSION_TITLE_SPECIAL_RIVAL_003"
+	},
+	
+	CHILD = {
+		"MISSION_TITLE_SPECIAL_CHILD_001",
+		"MISSION_TITLE_SPECIAL_CHILD_002",
+		"MISSION_TITLE_SPECIAL_CHILD_003"
+	},
+	FRIEND = {
+		"MISSION_TITLE_SPECIAL_FRIEND_001",
+		"MISSION_TITLE_SPECIAL_FRIEND_002",
+		"MISSION_TITLE_SPECIAL_FRIEND_003"
+	},
+	LOVER = {
+		"MISSION_TITLE_SPECIAL_LOVER_001",
+		"MISSION_TITLE_SPECIAL_LOVER_002",
+		"MISSION_TITLE_SPECIAL_LOVER_003"
+	}	
 }
 
 MISSION_GEN.FLAVOR_TOP =  {
@@ -348,7 +388,7 @@ MISSION_GEN.MASTER_POKEMON_LIST =
 "deerling","deino","delibird","dewgong","diglett","ditto","donphan","dragonair","dragonite","drampa","drapion","dratini","drifblim","drifloon","drowzee","dugtrio","dunsparce","duosion","dusclops","dusknoir","duskull","dustox",
 "ekans","electabuzz","electivire","electrode","elekid","emolga","espurr","exeggcute","exeggutor","exploud",
 "fearow","feebas","finneon","flabebe","floette","florges","flygon","fomantis","forretress","froslass",
-"gallade","galvantula","gardevoir","gastly","gastrodon","gengar","geodude","glalie","gligar","gliscor","golbat","goldeen","golduck","golem","golisopod","golurk","goomy","gorebyss","gothita","gothitelle","gothorita","gourgeist","graveler","grimer","grumpig","gyarados",
+"gallade","galvantula","gardevoir","gastly","gastrodon","gengar","geodude","glalie","gligar","gliscor","golbat","goldeen","golduck","golem","golisopod","golurk","goodra","goomy","gorebyss","gothita","gothitelle","gothorita","gourgeist","graveler","grimer","grumpig","gyarados",
 "happiny","hariyama","hatenna","hatterene","hattrem","haunter","helioptile","heracross","hippopotas","hippowdon","hitmonchan","hitmonlee","hitmontop","honedge","hoppip","horsea","houndoom","houndour","huntail","hypno",
 "illumise","indeedee",
 "jangmo_o","joltik","jumpluff","jynx",
@@ -360,7 +400,7 @@ MISSION_GEN.MASTER_POKEMON_LIST =
 "pachirisu","paras","parasect","phantump","pidgeot","pidgeotto","pidgey","pidove","piloswine","pineco","pinsir","plusle","politoed","poliwag","poliwhirl","poliwrath","ponyta","poochyena","porygon","porygon_z","porygon2","primeape","probopass","psyduck","pumpkaboo","pupitar","purrloin","purugly",
 "qwilfish",
 "ralts","rapidash","raticate","rattata","remoraid","rhydon","rhyhorn","rhyperior","ribombee","roggenrola",
-"sableye","salandit","salazzle","sandshrew","sandslash","sandygast","sawsbuck","scizor","scrafty","scyther","seadra","seaking","seedot","seel","sewaddle","sharpedo","shedinja","shellder","shellos","shieldon","shiftry","shuppet","sinistea","skarmory","skiploom","skorupi","skuntank","slaking","slakoth","slugma","smeargle","smoochum","snorunt","snover","solrock","spearow","spinarak","spiritomb","spoink","stantler","staraptor","staravia","starly","starmie","staryu","steelix","steenee","stoutland","sudowoodo","surskit","swablu","swellow","swinub","swirlix","swoobat",
+"sableye","salandit","salazzle","sandshrew","sandslash","sandygast","sawsbuck","scizor","scrafty","scyther","seadra","seaking","seedot","seel","sewaddle","sharpedo","shedinja","shellder","shellos","shieldon","shiftry","shuppet","sinistea","skarmory","skiploom","skorupi","skuntank","slaking","slakoth","sliggoo","slugma","smeargle","smoochum","snorunt","snover","solrock","spearow","spinarak","spiritomb","spoink","stantler","staraptor","staravia","starly","starmie","staryu","steelix","steenee","stoutland","sudowoodo","surskit","swablu","swellow","swinub","swirlix","swoobat",
 "taillow","tangela","tangrowth","tauros","teddiursa","tentacool","tentacruel","thievul","togedemaru","togekiss","togepi","togetic","torkoal","toxicroak","trapinch","trubbish","tsareena","tympole","tyranitar","tyrogue",
 "ursaring",
 "vanillish","vanillite","venomoth","venonat","vespiquen","vibrava","victreebel","vigoroth","volbeat","voltorb",
@@ -419,7 +459,7 @@ MISSION_GEN.POKEMON = {
 	"pachirisu","parasect","pidgeotto","piloswine","plusle","poliwhirl","porygon2","pupitar",
 	"qwilfish",
 	"raticate","ribombee",
-	"sableye","scyther","seadra","shedinja","skiploom","smeargle","solrock","stantler","staravia","steenee","sudowoodo",
+	"sableye","scyther","seadra","shedinja","skiploom","sliggoo","smeargle","solrock","stantler","staravia","steenee","sudowoodo",
 	"tangela","thievul","togedemaru","togetic","torkoal",
 
 	"vanillish","venomoth","vespiquen","vibrava","vigoroth","volbeat",
@@ -436,7 +476,7 @@ MISSION_GEN.POKEMON = {
 	"dewgong","donphan","dragonite","drampa","drapion","drifblim","dugtrio","dusclops","dusknoir",
 	"electivire","exeggutor","exploud",
 	"fearow","florges","flygon","forretress","froslass",
-	"gallade","galvantula","gardevoir","gastrodon","gengar","glalie","gliscor","golduck","golem","golisopod","gorebyss","gothitelle","gourgeist","grumpig","gyarados",
+	"gallade","galvantula","gardevoir","gastrodon","gengar","glalie","gliscor","golduck","golem","golisopod","goodra","gorebyss","gothitelle","gourgeist","grumpig","gyarados",
 	"hariyama","hatterene","heracross","hippowdon","hitmonchan","hitmonlee","hitmontop","houndoom","huntail","hypno",
 
 	"jumpluff",
@@ -489,6 +529,11 @@ MISSION_GEN.DIFF_POKEMON = {
 		{"TIER_LOW", 2},
 		{"TIER_MID", 7},
 		{"TIER_HIGH", 1}
+		},
+	STAR_1 = {
+		{"TIER_LOW", 0},
+		{"TIER_MID", 7},
+		{"TIER_HIGH", 3}
 		}
 }
 
@@ -553,30 +598,44 @@ MISSION_GEN.DIFF_REWARDS = {
 		},
 	A = {
 		{"AMMO_LOW", 5},
-		{"AMMO_HIGH", 0},
+		{"AMMO_HIGH", 1},
 		{"FOOD_LOW", 5},
-		{"FOOD_HIGH", 0},
+		{"FOOD_HIGH", 1},
 		{"SEED_LOW", 5},
-		{"SEED_HIGH", 0},
-		{"HELD_LOW", 2},
+		{"SEED_HIGH", 1},
+		{"HELD_LOW", 5},
 		{"HELD_HIGH", 0},
-		{"TM_LOW", 0},
-		{"TM_MID", 0},
+		{"TM_LOW", 3},
+		{"TM_MID", 1},
 		{"TM_HIGH", 0},
 		{"SPECIAL", 0}
 		},
 	S = {
-		{"AMMO_LOW", 5},
-		{"AMMO_HIGH", 0},
-		{"FOOD_LOW", 5},
-		{"FOOD_HIGH", 0},
-		{"SEED_LOW", 5},
-		{"SEED_HIGH", 0},
-		{"HELD_LOW", 2},
-		{"HELD_HIGH", 0},
-		{"TM_LOW", 0},
-		{"TM_MID", 0},
+		{"AMMO_LOW", 4},
+		{"AMMO_HIGH", 1},
+		{"FOOD_LOW", 4},
+		{"FOOD_HIGH", 1},
+		{"SEED_LOW", 4},
+		{"SEED_HIGH", 1},
+		{"HELD_LOW", 4},
+		{"HELD_HIGH", 1},
+		{"TM_LOW", 2},
+		{"TM_MID", 3},
 		{"TM_HIGH", 0},
+		{"SPECIAL", 0}
+		},
+	STAR_1 = {
+		{"AMMO_LOW", 3},
+		{"AMMO_HIGH", 2},
+		{"FOOD_LOW", 3},
+		{"FOOD_HIGH", 2},
+		{"SEED_LOW", 3},
+		{"SEED_HIGH", 2},
+		{"HELD_LOW", 3},
+		{"HELD_HIGH", 2},
+		{"TM_LOW", 0},
+		{"TM_MID", 4},
+		{"TM_HIGH", 1},
 		{"SPECIAL", 0}
 		}
 }
@@ -612,7 +671,7 @@ MISSION_GEN.REWARDS = {
 		{"gummi_black", 1},
 		{"gummi_clear", 1}, 
 		{"gummi_grass", 1},
-		{"green_gummi", 1},
+		{"gummi_green", 1},
 		{"gummi_brown", 1},
 		{"gummi_orange", 1},
 		{"gummi_gold", 1},
@@ -637,7 +696,7 @@ MISSION_GEN.REWARDS = {
 		{"gummi_black", 1},
 		{"gummi_clear", 1}, 
 		{"gummi_grass", 1},
-		{"green_gummi", 1},
+		{"gummi_green", 1},
 		{"gummi_brown", 1},
 		{"gummi_orange", 1},
 		{"gummi_gold", 1},
@@ -682,7 +741,7 @@ MISSION_GEN.REWARDS = {
 	SEED_HIGH = {
 		{'seed_reviver', 5},
 		{'seed_pure', 5},
-		{'seed_joy', 5},
+		{'seed_joy', 2},
 		{'berry_sitrus', 5},
 		{'berry_lum', 5}
 	}, 
@@ -704,8 +763,8 @@ MISSION_GEN.REWARDS = {
 	},
 	
 	HELD_HIGH = {
-		{'held_friend_bow', 5},
-		{'held_mobile_scarf', 5},
+		{'held_friend_bow', 2},
+		{'held_mobile_scarf', 2},
 		{'held_cover_band', 5},
 		{'held_scope_lens', 5},
 		{'held_trap_scarf', 5},
@@ -861,17 +920,17 @@ MISSION_GEN.REWARDS = {
 	SPECIAL = {}
 }
 
-MISSION_GEN.SPECIAL_RESCUE_RIVAL = "RIVAL"
-MISSION_GEN.SPECIAL_RESCUE_CHILD = "CHILD"
-MISSION_GEN.SPECIAL_RESCUE_LOVER = "LOVER"
-MISSION_GEN.SPECIAL_RESCUE_FRIEND = "FRIEND"
+MISSION_GEN.SPECIAL_CLIENT_RIVAL = "RIVAL"
+MISSION_GEN.SPECIAL_CLIENT_CHILD = "CHILD"
+MISSION_GEN.SPECIAL_CLIENT_LOVER = "LOVER"
+MISSION_GEN.SPECIAL_CLIENT_FRIEND = "FRIEND"
 
 
-MISSION_GEN.SPECIAL_RESCUE_OPTIONS = {
-	MISSION_GEN.SPECIAL_RESCUE_RIVAL,
-	MISSION_GEN.SPECIAL_RESCUE_CHILD,
-	MISSION_GEN.SPECIAL_RESCUE_LOVER,
-	MISSION_GEN.SPECIAL_RESCUE_FRIEND
+MISSION_GEN.SPECIAL_CLIENT_OPTIONS = {
+	MISSION_GEN.SPECIAL_CLIENT_LOVER,
+	MISSION_GEN.SPECIAL_CLIENT_RIVAL,
+	MISSION_GEN.SPECIAL_CLIENT_CHILD,
+	MISSION_GEN.SPECIAL_CLIENT_FRIEND
 }
 
 --Order matters for these! First is the client, second is the target
@@ -903,32 +962,33 @@ MISSION_GEN.SPECIAL_LOVER_PAIRS = {
 
 MISSION_GEN.SPECIAL_CHILD_PAIRS = {
 	TIER_LOW = {
-		{'clefable', 'cleffa'},
-		{'wigglytuff', 'igglybuff'},
-		{'togekiss', 'togepi'},
-		{'roserade', 'budew'},
-		{'chimecho', 'chingling'},
-		{'sudowoodo', 'bonsly'},
-		{'mr_mime', 'mime_jr'},
-		{'raticate', 'rattata'},--hes still not so good at gnawing!
-		{'leavanny', 'sewaddle'}
+		{'clefable', Gender.Female, 'cleffa', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_001"},
+		{'wigglytuff', Gender.Male, 'igglybuff', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_002"},
+		{'togekiss', Gender.Female, 'togepi', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_003"},
+		{'roserade', Gender.Female, 'budew', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_004"},
+		{'chimecho', Gender.Female, 'chingling', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_005"},
+		{'sudowoodo', Gender.Male, 'bonsly', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_006"},
+		{'mr_mime', Gender.Male, 'mime_jr', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_007"},
+		{'raticate', Gender.Male, 'rattata', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_008"},--hes still not so good at gnawing!
+		{'leavanny', Gender.Female, 'sewaddle', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_009"}
 	},
 	TIER_MID = {
-		{'appletun', 'applin'},
-		{'aggron', 'aron'},--probably munched too much metal!
-		{'jynx', 'smoochum'},
-		{'electivire', 'elekid'},
-		{'magmortar', 'magby'},
-		{'tsareena', 'bounsweet'},
-		{'hatterene', 'hatenna'},
-		{'gothitelle', 'gothita'},
-		{'dugtrio', 'diglett'}
+		{'appletun', Gender.Female, 'applin', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_010"},
+		{'aggron', Gender.Male, 'aron', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_011"},--probably munched too much metal!
+		{'jynx', Gender.Female, 'smoochum', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_012"},
+		{'magmortar', Gender.Female, 'magby', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_013"},
+		{'electivire', Gender.Male, 'elekid', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_014"},
+		{'tsareena', Gender.Female, 'bounsweet', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_015"},
+		{'hatterene', Gender.Female, 'hatenna', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_016"},
+		{'gothitelle', Gender.Female, 'gothita', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_017"},
+		{'dugtrio', Gender.Male, 'diglett', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_018"}
 	},	
 	TIER_HIGH = {
-		{'tyranitar', 'larvitar'},
-		{'salamence', 'bagon'},
-		{'dragonite', 'dratini'},
-		{'noivern', 'noibat'}
+		{'tyranitar', Gender.Female, 'larvitar', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_019"},
+		{'salamence', Gender.Male, 'bagon', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_020"},
+		{'dragonite', Gender.Female, 'dratini', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_021"},
+		{'noivern', Gender.Male, 'noibat', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_022"},
+		{'goodra', Gender.Female, 'goomy', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_023"}
 	}
 	
 	
@@ -936,65 +996,65 @@ MISSION_GEN.SPECIAL_CHILD_PAIRS = {
 	
 }
 
-MISSION_GEN.SPECIAL_FRIENDS_PAIRS = {
+MISSION_GEN.SPECIAL_FRIEND_PAIRS = {
 	TIER_LOW = {
-		{'cherubi', 'applin'},--We both get mistaken for fruit! What if someone ate him!?
-		{'mantyke', 'remoraid'},--My best friend is missing! I'll never be able to evolve without him!
-		{'magikarp', 'feebas'},--feebas is the only one who understands what it's like to be dogshit!
-		{'poliwag', 'lotad'},--frog and his lilypad. I have no lilypad now, save him!
-		{'teddiursa', 'combee'}, --Without Combee, I have no honey! Please find them!
-		{'woobat', 'zubat'},--we both use ultrasonic waves to see!
-		{'trubbish', 'grimer'},--we both love eating garbage!
-		{'shroomish', 'paras'},--we both love to spread spores!
-		{'chansey', 'togepi'},--cares for togepi because its an egg
-		{'salandit', 'combee'}--they relate in being useless
+		{'applin', Gender.Male, 'cherubi', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_001"},--We both get mistaken for fruit! What if someone ate him!?
+		{'mantyke', Gender.Female, 'remoraid', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_002"},--My best friend is missing! I'll never be able to evolve without him!
+		{'magikarp', Gender.Male, 'feebas', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_003"},--feebas is the only one who understands what it's like to be dogshit!
+		{'poliwag', Gender.Female, 'lotad', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_004"},--frog and his lilypad. I have no lilypad now, save him!
+		{'teddiursa', Gender.Male, 'combee', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_005"}, --Without Combee, I have no honey! Please find them!
+		{'woobat', Gender.Female, 'zubat', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_006"},--we both use ultrasonic waves to see!
+		{'trubbish', Gender.Male, 'grimer', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_007"},--we both love eating garbage!
+		{'shroomish', Gender.Male, 'paras', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_008"},--we both love to spread spores!
+		{'chansey', Gender.Female, 'togepi', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_009"},--cares for togepi because its an egg
+		{'salandit', Gender.Male, 'combee', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_010"}--they relate in being useless
 	},
 	TIER_MID = {
-		{'lunatone', 'solrock'},
-		{'emolga', 'pachirisu'},
-		{'spinda', 'hypno'}, --Hypno went missing; only he can help stop my dizziness
-		{'cramorant', 'pelipper'},
-		{'magnemite', 'nosepass'},--We're both sensitive to magnetism!
-		{'venomoth', 'lampent'}
+		{'lunatone', Gender.Genderless, 'solrock', Gender.Genderless, "MISSION_BODY_SPECIAL_FRIEND_011"},
+		{'emolga', Gender.Female, 'pachirisu', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_012"},
+		{'spinda', Gender.Female, 'hypno', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_013"}, --Hypno went missing; only he can help stop my dizziness
+		{'cramorant', Gender.Male, 'pelipper', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_014"},
+		{'magnemite', Gender.Genderless, 'nosepass', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_015"},--We're both sensitive to magnetism!
+		{'dustox', Gender.Male, 'lampent', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_016"}
 	},
 	TIER_HIGH = {
-		{'lilligant', 'kricketune'},--I can't dance without Kricketune's music!
-		{'wigglytuff', 'exploud'}, --we love making loud, silly noises together!
-		{'beedrill', 'florges'},--without my flower, i have no meaning!
-		{'dunsparce', 'dugtrio'},--we both love to burrow!
-		{'whimsicott', 'jumpluff'}
+		{'lilligant', Gender.Female, 'kricketune', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_017"},--I can't dance without Kricketune's music!
+		{'wigglytuff', Gender.Female, 'exploud', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_018"}, --we love making loud, silly noises together!
+		{'beedrill', Gender.Male, 'florges', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_019"},--without my flower, i have no meaning!
+		{'dunsparce', Gender.Male, 'dugtrio', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_020"},--we both love to burrow!
+		{'whimsicott', Gender.Female, 'jumpluff', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_021"}
 	}
 }
 
 MISSION_GEN.SPECIAL_RIVAL_PAIRS = {
 	TIER_LOW = {
-		{'koffing', 'stunky'},--they compete to see whose odor is stronger
-		{'krabby', 'corphish'},--compare claw strength
-		{'shuppet', 'duskull'},--we like to see who can pull better pranks!
-		{'pidgey', 'spearow'},--we compete at flying!
-		{'kabuto', 'omanyte'}, --we've been rivals since our ancestors' time!
-		{'joltik', 'spinarak'},--We like to see who can spin the better web!
-		{'tyrogue', 'makuhita'},--my punching bag training partner!
-		{'lillipup', 'poochyena'}
+		{'koffing', Gender.Male, 'stunky', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_001"},--they compete to see whose odor is stronger
+		{'krabby', Gender.Male, 'corphish', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_002"},--compare claw strength
+		{'shuppet', Gender.Female, 'duskull', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_003"},--we like to see who can pull better pranks!
+		{'pidgey', Gender.Female, 'spearow', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_004"},--we compete at flying!
+		{'kabuto', Gender.Male, 'omanyte', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_005"}, --we've been rivals since our ancestors' time!
+		{'joltik', Gender.Female, 'spinarak', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_006"},--We like to see who can spin the better web!
+		{'tyrogue', Gender.Male, 'makuhita', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_007"},--my punching bag training partner!
+		{'lillipup', Gender.Female, 'poochyena', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_008"}
 
 },
 	
 	TIER_MID = {
-		{'vigoroth', 'primeape'},--full of energy!
-		{'sawsbuck', 'stantler'},--butt antlers!
-		{'jangmo_o', 'axew'},
-		{'mareanie', 'corsola'}
+		{'vigoroth', Gender.Male, 'primeape', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_009"},--full of energy!
+		{'sawsbuck', Gender.Male, 'stantler', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_010"},--butt antlers!
+		{'jangmo_o', Gender.Male, 'axew', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_011"},
+		{'mareanie', Gender.Female, 'corsola', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_012"}
 
 	},
 	
 	TIER_HIGH = {
-		{'heracross', 'pinsir'},
-		{'slowking', 'slowbro'},--slowbro may not be as smart as me, but we're still great friends!
-		{'magmortar', 'electivire'}, --we need to settle who is stronger!
-		{'cradily', 'armaldo'}, --we've been rivals since our ancestors' time!
-		{'bastiodon', 'rampardos'}, --we've been rivals since our ancestors' time!
-		{'archeops', 'aerodactyl'}, --we've been rivals since our ancestors' time!
-		{'swellow', 'staraptor'},--brave birds!
+		{'heracross', Gender.Male, 'pinsir', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_013"},
+		{'slowking', Gender.Male, 'slowbro', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_014"},--slowbro may not be as smart as me, but we're still great friends!
+		{'magmortar', Gender.Female, 'electivire', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_015"}, --we need to settle who is stronger!
+		{'cradily', Gender.Female, 'armaldo', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_016"}, --we've been rivals since our ancestors' time!
+		{'bastiodon', Gender.Female, 'rampardos', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_017"}, --we've been rivals since our ancestors' time!
+		{'archeops', Gender.Male, 'aerodactyl', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_018"}, --we've been rivals since our ancestors' time!
+		{'swellow', Gender.Female, 'staraptor', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_019"}--brave birds!
 
 	}
 }
@@ -1017,6 +1077,9 @@ MISSION_GEN.STOLEN_ITEMS = {
 MISSION_GEN.DELIVERABLE_ITEMS = {
 	"berry_oran",
 	"berry_leppa",
+	"food_apple",
+	"berry_pecha",
+	"berry_cheri"
 }
 
 --"order" of dungeons
@@ -1420,8 +1483,11 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local client = ""
 		local item = ""
 		local special = ""
+		local title = "Default title."
+		local flavor = "Default flavor text.\nHow did you see this? Tell Palika, please!"
 
-		--generate the objective. 10% chance of escort vs rescue.
+
+		--generate the objective.
 		local objective 
 		if mission_type == "Outlaw" then 
 			local roll = math.random(1, 10)
@@ -1528,20 +1594,40 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local target_gender = _DATA:GetMonster(target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 
 
-		-- TODO handle special cases 
-		--[[
-		if objective == COMMON.MISSION_TYPE_RESCUE and math.random(1, 10) == 1 then
-			special = MISSION_GEN.SPECIAL_RESCUE_OPTIONS[math.random(1, #MISSION_GEN.SPECIAL_RESCUE_OPTIONS)]
-			if special == MISSION_GEN.SPECIAL_RESCUE_LOVER then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_CHILD then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_RIVAL then
-
-			elseif special == MISSION_GEN.SPECIAL_RESCUE_FRIEND then
+		--Special cases
+		--Roll for the main 3 rescue special cases 
+		if objective == COMMON.MISSION_TYPE_RESCUE and math.random(1, 10) <= 2 then
+			local special_candidates = {}
+			special = MISSION_GEN.SPECIAL_CLIENT_OPTIONS[math.random(1, #MISSION_GEN.SPECIAL_CLIENT_OPTIONS)]
+			if special == MISSION_GEN.SPECIAL_CLIENT_CHILD then
+				special_candidates = MISSION_GEN.SPECIAL_CHILD_PAIRS[tier]
+			elseif special == MISSION_GEN.SPECIAL_CLIENT_LOVER then
+				special_candidates = MISSION_GEN.SPECIAL_LOVER_PAIRS[tier]
+			elseif special == MISSION_GEN.SPECIAL_CLIENT_RIVAL then
+				special_candidates = MISSION_GEN.SPECIAL_RIVAL_PAIRS[tier]
+			elseif special == MISSION_GEN.SPECIAL_CLIENT_FRIEND then
+				special_candidates = MISSION_GEN.SPECIAL_FRIEND_PAIRS[tier]
 			end
+				
+		
+			--Set variables with special client/target info
+			local special_choice = special_candidates[math.random(1, #special_candidates)]
+			client = special_choice[1]
+			client_gender = special_choice[2]
+			target = special_choice[3]
+			target_gender = special_choice[4]
+			
+			print(special)
+			local special_title_candidates = MISSION_GEN.TITLES[special]
+			title = RogueEssence.StringKey(special_title_candidates[math.random(1, #special_title_candidates)]):ToLocal()
+
+			print(special_choice[5])
+			flavor = RogueEssence.StringKey(special_choice[5]):ToLocal()
+			
+	
 		end
-		]]--
+
+
 		
 		
 		--generate reward with hardcoded list of weighted rewards
@@ -1566,12 +1652,9 @@ function MISSION_GEN.GenerateBoard(board_type)
 
 
 		--Choose a random title that's appropriate.
-		local title = "Default title."
 		local title_candidates = {}
 		
-		if special ~= "" then -- get special title
-			print("and i oop")
-		else 
+		if special == "" then -- get title if special didn't already generate it
 			if objective == COMMON.MISSION_TYPE_RESCUE and client ~= target then
 				title_candidates = MISSION_GEN.TITLES["RESCUE_FRIEND"]
 			elseif objective == COMMON.MISSION_TYPE_RESCUE and client == target then
@@ -1612,13 +1695,10 @@ function MISSION_GEN.GenerateBoard(board_type)
 		
 		
 		--Flavor text generation
-		local flavor = "Default flavor text.\nHow did you see this? Tell Palika, please!"
 		local flavor_top_candidates = {}
 		local flavor_bottom_candidates = {}
 		
-		if special ~= "" then -- get special title
-		
-		else 
+		if special == "" then -- get flavor if special didn't already generate it 
 			if objective == COMMON.MISSION_TYPE_RESCUE and client ~= target then
 				flavor_top_candidates = MISSION_GEN.FLAVOR_TOP["RESCUE_FRIEND"]
 				flavor_bottom_candidates = MISSION_GEN.FLAVOR_BOTTOM["RESCUE_FRIEND"]
@@ -1834,7 +1914,7 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   if job.Floor ~= -1 then self.floor = MISSION_GEN.STAIR_TYPE[job.Zone] .. '[color=#00FFFF]' .. tostring(job.Floor) .. "[color]F" end
   
   self.difficulty = ""
-  if job.Difficulty ~= "" then self.difficulty = "[color=#FFC663]" .. job.Difficulty .. "[color]   (" .. tostring(MISSION_GEN.DIFFICULTY[job.Difficulty]) .. ")" end 
+  if job.Difficulty ~= "" then self.difficulty = MISSION_GEN.DIFF_TO_COLOR[job.Difficulty] .. job.Difficulty .. "[color]   (" .. tostring(MISSION_GEN.DIFFICULTY[job.Difficulty]) .. ")" end 
   
   
   
@@ -2140,7 +2220,7 @@ function BoardMenu:DrawBoard()
 	local title = self.jobs[i].Title
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(self.jobs[i].Zone):GetColoredName()
     local floor =  MISSION_GEN.STAIR_TYPE[self.jobs[i].Zone] ..'[color=#00FFFF]' .. tostring(self.jobs[i].Floor) .. "[color]F"
-    local difficulty = "[color=#FFC663]" .. self.jobs[i].Difficulty .. "[color]" 
+    local difficulty = MISSION_GEN.DIFF_TO_COLOR[self.jobs[i].Difficulty] .. self.jobs[i].Difficulty .. "[color]" 
 	
 	local icon = ""
 	if self.board_type == 'taken' then
@@ -2157,7 +2237,8 @@ function BoardMenu:DrawBoard()
 		end
 	end
 	
-	local location = zone .. " " .. floor .. " " .. difficulty
+	local location = zone .. " " .. floor
+
 	
 	--color everything red if job is taken and this is a job board
 	if self.jobs[i].Taken and self.board_type ~= 'taken' then
@@ -2173,7 +2254,7 @@ function BoardMenu:DrawBoard()
 	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(21, 23 + 26 * ((i-1) % 4))))
 	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(title, RogueElements.Loc(33, 23 + 26 * ((i-1) % 4))))
 	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(location, RogueElements.Loc(33, 35 + 26 * ((i-1) % 4))))
-
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(difficulty, RogueElements.Loc(self.menu.Bounds.Width - 33, 35 + 26 * ((i-1) % 4))))
 
   end
 end 

@@ -514,7 +514,15 @@ function guild_second_floor.Mission_Job_Clear(job)
 		if job.Type == COMMON.MISSION_TYPE_ESCORT then
 			UI:WaitShowDialogue("Thank you for escorting me to my friend!")
 		else 
-			UI:WaitShowDialogue("Thank you for rescuing my friend!")
+			if job.Special == MISSION_GEN.SPECIAL_CLIENT_LOVER then
+				UI:WaitShowDialogue("Thank you for rescuing my love!")
+			elseif job.Special == MISSION_GEN.SPECIAL_CLIENT_RIVAL then
+				UI:WaitShowDialogue("Thank you for rescuing my rival!")
+			elseif job.Special == MISSION_GEN.SPECIAL_CLIENT_CHILD then
+				UI:WaitShowDialogue("Thank you for rescuing my child!")
+			else
+				UI:WaitShowDialogue("Thank you for rescuing my friend!")
+			end
 		end
 		GAME:WaitFrames(20)
 		UI:WaitShowDialogue("Please take this as my thanks!")
