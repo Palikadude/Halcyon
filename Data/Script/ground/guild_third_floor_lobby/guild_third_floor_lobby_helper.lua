@@ -39,9 +39,10 @@ function guild_third_floor_lobby_helper.SetupMorningAddress()
 end
 
 function guild_third_floor_lobby_helper.GenericNoctowlResponse()
-	UI:SetSpeaker(CH('Noctowl'))
-	UI:WaitShowDialogue("Complete requests from the Job Bulletin Board and the Outlaw Notice Board.")
+	local noctowl = CH('Noctowl')
+	GeneralFunctions.StartConversation(noctowl, "Complete requests from the Job Bulletin Board and the Outlaw Notice Board.")
 	UI:WaitShowDialogue("That will be all for today.[pause=0] I wish you luck in your day's endeavors.")
+	GeneralFunctions.EndConversation(noctowl)
 end
 
 --used for having apprentices leave towards the stairs
