@@ -3,16 +3,16 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Stolen Scarf",
+"DefaultText": "Stolen Band",
 "LocalTexts": {}
 },
 "Desc": {
-"DefaultText": "A scarf stolen by an outlaw. Return it to its owner to complete your mission!",
+"DefaultText": "A band stolen by an outlaw. Return it to its owner to complete your mission!",
 "LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Scarf_Tan",
+"Sprite": "Scarf_Red",
 "Icon": 14,
 "SortCategory": 0,
 "Price": 0,

@@ -766,7 +766,7 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			end
 		else
 			UI:SetSpeakerEmotion("Worried")
-			UI:WaitShowDialogue("Do you think the Guildmaster ever had to deal with teams like Team [color=#FFA5FF]Style[color] when he was an active adventurer?")
+			UI:WaitShowDialogue("Do you think the Guildmaster dealt with teams like Team [color=#FFA5FF]Style[color] when he was an active adventurer?")
 			UI:WaitShowDialogue("I wonder what he did whenever he met teams like that...")
 		end 
 	elseif ground == 'ledian_dojo' then
@@ -921,12 +921,12 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 				UI:WaitShowDialogue("Seems like most of the townsfolk are worried about all the outlaws running around lately...")
 				UI:SetSpeakerEmotion("Normal")
 				UI:WaitShowDialogue("We'll just have to do our best to arrest as many bad outlaws as we can then!")
-				UI:WaitShowDialogue("Let's take on as many jobs as we can from the Outlaw Notice Board so we can make the world a safer place!")
+				UI:WaitShowDialogue("Let's take on as many jobs as we can from the Outlaw Notice Board to help keep everyone safe!")
 			elseif location == 'Merchants' then 
 				UI:SetSpeakerEmotion("Worried")
 				UI:WaitShowDialogue("These two are definitely a couple of characters...[pause=0] I still don't really get them...")
 				UI:SetSpeakerEmotion("Normal")
-				UI:WaitShowDialogue("But the items they sell could be really handy for us![pause=0] We should visit them every day to see what they have for sale!")
+				UI:WaitShowDialogue("But the items they sell might be handy for us![pause=0] Let's visit them every day to see what they have for sale!")
 				UI:WaitShowDialogue("We'll have to choose carefully who we buy from each day,[pause=10] though.")
 			else
 				UI:WaitShowDialogue("No dialogue assigned for this section of town. Let Palika know where you got this message.")

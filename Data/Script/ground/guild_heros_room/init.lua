@@ -65,10 +65,25 @@ function guild_heros_room.GameSave(map)
 	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 end
 
+--Check if a new story event needs to be triggered
+function guild_heros_room.CheckTriggerEvent()
+	--Marking the end of the demo. In the future, this will trigger chapter 4. 
+	--Triggers after going to bed, at the end of chapter 3, once bronze rank is obtained.
+	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank == "bronze" and not SV.TemporaryFlags.Bedtime then
+		GAME:WaitFrames(90)
+		guild_heros_room_ch_3.DemoThanks()
+	end
+		
+end
+
 function guild_heros_room.PlotScripting()
 	--if generic morning is flagged, prioritize that.
 	if SV.TemporaryFlags.MorningWakeup or SV.TemporaryFlags.Bedtime then 
 		if SV.TemporaryFlags.Bedtime then guild_heros_room_helper.Bedtime(true) end
+	
+		--Does a new story event need to be triggered?
+		guild_heros_room.CheckTriggerEvent()
+	
 		if SV.TemporaryFlags.MorningWakeup then guild_heros_room_helper.Morning(true) end
 	else
 		--plot scripting
@@ -120,7 +135,7 @@ function guild_heros_room.Book_Action(obj, activator)
 	
 	
 	
-	local choices = {"Change nicknames", "Change team name", "Nothing"}
+	local choices = {"Change nicknames", "Change team name", "Check rank", "Nothing"}
 	UI:BeginChoiceMenu("What would you like to do?", choices, 1, #choices)
 	UI:WaitForChoice()
 	local choice_result = UI:ChoiceResult()
@@ -166,13 +181,26 @@ function guild_heros_room.Book_Action(obj, activator)
 		if result == "" then result = name end
 		GAME:SetTeamName(result)
 		UI:WaitShowDialogue("Your team's name is now Team " .. GAME:GetTeamName() .. "!")
+	elseif choice_result == 3 then
+		local current_rank = _DATA.Save.ActiveTeam.Rank
+		local next_rank = _DATA:GetRank(current_rank).Next
+		local to_go = _DATA:GetRank(current_rank).FameToNext - _DATA.Save.ActiveTeam.Fame 
+
+		UI:WaitShowDialogue("Your team is currently [color=#FFA5FF]" .. current_rank:gsub("^%l", string.upper) .. " Rank[color].")
+		UI:WaitShowDialogue("You need [color=#00FFFF]" .. to_go .. "[color] Adventurer Rank Points to become [color=#FFA5FF]" .. next_rank:gsub("^%l", string.upper) .. " Rank[color].")
 	end
 	
 	if choice_result ~= #choices then
 		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Closing', 0, 0, 0, Direction.Left)
 		GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Left, 1)
-		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Closing', 0, 3, 3, Direction.Left)	  
+		GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Closing', 0, 3, 3, Direction.Left)	
+		GAME:WaitFrames(40)		
 	end
+	
+	
+	partner_ground.IsInteracting = false
+	GROUND:CharEndAnim(partner_ground)
+	GROUND:CharEndAnim(hero_ground)
 	
 end
 

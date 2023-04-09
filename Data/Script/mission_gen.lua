@@ -1067,11 +1067,15 @@ MISSION_GEN.SPECIAL_OUTLAW = {
 
 
 MISSION_GEN.LOST_ITEMS = {
-	"mission_lost_scarf"
+	"mission_lost_scarf",
+	"mission_lost_specs",
+	"mission_lost_band"
 }
 
 MISSION_GEN.STOLEN_ITEMS = {
-	"mission_stolen_scarf"
+	"mission_stolen_scarf",
+	"mission_stolen_band",
+	"mission_stolen_specs"
 }
 
 MISSION_GEN.DELIVERABLE_ITEMS = {
@@ -1558,7 +1562,6 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local tier = MISSION_GEN.WeightedRandom(MISSION_GEN.DIFF_POKEMON[difficulty])
 		local client_candidates = MISSION_GEN.POKEMON[tier]
 		client = client_candidates[math.random(1, #client_candidates)]
-		print(tier)
 		
 		--50% chance that the client and target are the same. Target is the escort if its an escort mission.
 		--It is possible for this to roll the same target as the client again, which is fine.
@@ -1617,11 +1620,9 @@ function MISSION_GEN.GenerateBoard(board_type)
 			target = special_choice[3]
 			target_gender = special_choice[4]
 			
-			print(special)
 			local special_title_candidates = MISSION_GEN.TITLES[special]
 			title = RogueEssence.StringKey(special_title_candidates[math.random(1, #special_title_candidates)]):ToLocal()
 
-			print(special_choice[5])
 			flavor = RogueEssence.StringKey(special_choice[5]):ToLocal()
 			
 	
@@ -1837,6 +1838,20 @@ function MISSION_GEN.SortOutlaw()
 	table.sort(SV.OutlawBoard, MISSION_GEN.JobSortFunction)
 end
 
+--Used to copy job from one board to another (mainly for taking jobs)
+function MISSION_GEN.ShallowCopy(orig)
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in pairs(orig) do
+            copy[orig_key] = orig_value
+        end
+    else -- number, string, boolean, etc
+        copy = orig
+    end
+    return copy
+end
 
 
 JobMenu = Class('JobMenu')
@@ -1878,7 +1893,6 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   elseif job.Client ~= "" then 
 	self.client = _DATA:GetMonster(job.Client):GetColoredName() 
   end
-  print(self.client)
 
   self.target = ""
   if job.Target ~= '' then self.target = _DATA:GetMonster(job.Target):GetColoredName() end
@@ -2032,9 +2046,10 @@ function JobMenu:AddJobToTaken()
 	--this should already be true if we get to this point, but just in case, check if the last job slot is empty
 	if SV.TakenBoard[8].Client == "" then
 		if self.job_type == 'outlaw' then
-			SV.TakenBoard[8] = SV.OutlawBoard[self.job_number]
+			--Need to copy the table rather than just pass the pointer, or you can dupe missions which is not good
+			SV.TakenBoard[8] = MISSION_GEN.ShallowCopy(SV.OutlawBoard[self.job_number])
 		elseif self.job_type == 'mission' then
-			SV.TakenBoard[8] = SV.MissionBoard[self.job_number]
+			SV.TakenBoard[8] = MISSION_GEN.ShallowCopy(SV.MissionBoard[self.job_number])
 		end 
 		MISSION_GEN.SortTaken()
 	end
@@ -2062,7 +2077,7 @@ function JobMenu:OpenSubMenu()
 	else 
 		--create prompt menu
 		local choices = {}
-		print(self.job_type .. " taken: " .. tostring(self.taken))
+		--print(self.job_type .. " taken: " .. tostring(self.taken))
 		if self.job_type == 'taken' then
 			local choice_str = "Take Job"
 			if self.taken then
@@ -2156,6 +2171,7 @@ function BoardMenu:RefreshSelf()
   else --default to mission board
   	self.jobs = SV.MissionBoard
   end
+  print("Boardtype: " .. self.board_type)
   
   self.total_items = #self.jobs
   --get total job count
@@ -2242,9 +2258,11 @@ function BoardMenu:DrawBoard()
 	
 	--color everything red if job is taken and this is a job board
 	if self.jobs[i].Taken and self.board_type ~= 'taken' then
-		location = string.gsub(location, '%[color=#00FFFF]', '')
-		location = string.gsub(location, '%[color=#FFC663]', '')
-		location = string.gsub(location, '%[color]', '')
+		location = string.gsub(location, '%b[]', '')
+		title = string.gsub(title, '%b[]', '')
+		difficulty = string.gsub(difficulty, '%b[]', '')
+
+		difficulty = "[color=#FF0000]" .. difficulty .. "[color]"
 		title = "[color=#FF0000]" .. title .. "[color]"
 		location = "[color=#FF0000]" .. location .. "[color]"
 	end

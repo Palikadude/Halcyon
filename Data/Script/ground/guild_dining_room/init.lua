@@ -117,6 +117,7 @@ function guild_dining_room.Dinnertime(generic)
 			{'Zigzagoon', 'Zigzagoon'}
 		})
 	
+
 	AI:DisableCharacterAI(partner)
 
 	local nightWindow1 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Night_Window", 1, 0, 0), 
@@ -204,6 +205,16 @@ function guild_dining_room.Dinnertime(generic)
 	GROUND:TeleportTo(girafarig, MRKR('Girafarig').Position.X, MRKR('Girafarig').Position.Y, MRKR('Girafarig').Direction)
 	GROUND:TeleportTo(audino, MRKR('Audino').Position.X, MRKR('Audino').Position.Y, MRKR('Audino').Direction)
 	GROUND:TeleportTo(snubbull, MRKR('Snubbull').Position.X, MRKR('Snubbull').Position.Y, MRKR('Snubbull').Direction)
+
+	--during second half of chapter 3, girafarig and breloom are absent.
+	--This is kind of a hacky way of doing this, but it works
+	--todo? Handle this better instead of a hardcode here
+	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss then
+		GROUND:TeleportTo(breloom, 640, 280, Direction.Up)
+		GROUND:TeleportTo(girafarig, 640, 312, Direction.Up)
+		GROUND:Hide("Food_Breloom")
+		GROUND:Hide("Food_Girafarig")
+	end
 
 	GAME:MoveCamera(288, 156, 1, false)
 	

@@ -19,10 +19,20 @@ function guild_third_floor_lobby_ch_1.SetupGround()
 end
 
 function guild_third_floor_lobby_ch_1.Event_Object_1_Action(obj, activator)
+	local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+	partner.IsInteracting = true
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+	
 	UI:ResetSpeaker(false)
 	UI:SetCenter(true)
 	UI:WaitShowDialogue("(The door is locked.)")
 	UI:SetCenter(false)
+	
+	partner.IsInteracting = false	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
 end
 
 

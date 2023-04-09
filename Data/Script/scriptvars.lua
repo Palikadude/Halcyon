@@ -674,6 +674,7 @@ SV.Chapter3 =
 	RootSceneTransition = false, --Used to remember where in the root scene we are after transitioning away to show the root 
 	FinishedRootScene = false, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
 	FinishedMerchantIntro = false, --Did merchant intro cutscene?
+	DemoThankYou = false,--Showed demo thank you?
 
 	TropiusGaveWand = false,--did tropius give some wands to help the duo?
 	BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?

@@ -162,3 +162,22 @@ function guild_heros_room_ch_3.PostOutlawBedtalkSecondHalf()
 
 
 end 
+
+function guild_heros_room_ch_3.DemoThanks()
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("That's the end of the demo! Thank you so much for playing!")
+	UI:WaitShowDialogue("I hope you enjoyed playing the Halcyon demo! More chapters to come in the future!")
+	UI:WaitShowDialogue("Special thanks to Audino for all his help with the Origins engine.")
+	UI:WaitShowDialogue("Without his help, Halcyon could not have been made!")
+	UI:WaitShowDialogue("Please check the readme for the full list of credits!")
+	UI:WaitShowDialogue("Everyone who helped out did a great job, and I appreciate all that they've done!")
+	UI:WaitShowDialogue("If you have any feedback you would like to share, please do so in the relevant Halcyon discord channel!")
+	UI:WaitShowDialogue("I'm interested to hear what people think about the game or if they have any suggestions or thoughts!")
+	UI:WaitShowDialogue("If you're interesting in contributing to Halcyon as well, please let Palika know!")
+	UI:WaitShowDialogue("I would need sprite artists and musicians to help with custom assets now and then...")
+	UI:WaitShowDialogue("So if that's up your alley and you're interested, please let me know!")
+	UI:WaitShowDialogue("Anyways, you can keep playing Halcyon to complete the randomly generated missions if you feel like.")
+	UI:WaitShowDialogue("Nothing can progress the game any further right now, as I need to develop more of the story.")
+	UI:WaitShowDialogue("Thank you again for playing! Returning back to normal gameplay... now!")
+	SV.Chapter3.DemoThankYou = true
+end

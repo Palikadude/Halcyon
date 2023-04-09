@@ -4113,7 +4113,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>A Pokémon failed to return!</value>
     <comment>Mission Title Text - Target is not Client</comment>  </data>
   <data name="MISSION_TITLE_RESCUE_FRIEND_010" xml:space="preserve">
-    <value>My friend needs a rescue!</value>
+    <value>[target] needs a rescue!</value>
     <comment>Mission Title Text - Target is not Client</comment>  </data>
 
 
@@ -4650,7 +4650,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>Be extra careful taking on this lowlife.</value>
     <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
   <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_003" xml:space="preserve">
-    <value>Please lend us a hand in arresting this crime boss.</value>
+    <value>Please lend a hand in arresting this crime boss.</value>
     <comment>Mission Body Bottom Text - Outlaw Monster House</comment>  </data>
   <data name="MISSION_BODY_BOTTOM_OUTLAW_MONSTER_HOUSE_004" xml:space="preserve">
     <value>Use extreme caution going after this scoundrel.</value>

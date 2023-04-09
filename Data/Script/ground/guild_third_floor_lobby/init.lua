@@ -309,11 +309,21 @@ end
 -- Map Objects 
 ---------------------------
 function guild_third_floor_lobby.Board_Action(chara, activator)
+	local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+	partner.IsInteracting = true
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)
+	
 	UI:ResetSpeaker(false)
 	UI:SetCenter(true)
 	UI:WaitShowDialogue("(There are a number of internal guild postings here...)")
 	UI:WaitShowDialogue("(...But you're not really sure what to make of them yet.)")
 	UI:SetCenter(false)
+	
+	partner.IsInteracting = false	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
 end
 
 
