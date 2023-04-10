@@ -1650,6 +1650,9 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon)
 		
 		
+		--segment is typically 0. If needed, add more advanced logic here in the future to pick relevant segments for a given zone.
+		local segment = 0
+		
 
 
 		--Choose a random title that's appropriate.

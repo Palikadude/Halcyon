@@ -4614,7 +4614,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>Please get it back for me!</value>
     <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
   <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_002" xml:space="preserve">
-    <value>I need it back! I'm offering a reward for its return!</value>
+    <value>I need it back! I'll reward you for its return!</value>
     <comment>Mission Body Bottom Text - Outlaw Item</comment>  </data>
   <data name="MISSION_BODY_BOTTOM_OUTLAW_ITEM_003" xml:space="preserve">
     <value>Please punish the thief and get it back for me!</value>
@@ -4669,7 +4669,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>This coward will run away from you on sight.</value>
     <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
   <data name="MISSION_BODY_TOP_OUTLAW_FLEE_003" xml:space="preserve">
-    <value>This scoundrel will do whatever it takes to escape.</value>
+    <value>This scoundrel will do anything to escape.</value>
     <comment>Mission Body Top Text - Outlaw Flee</comment>  </data>
   <data name="MISSION_BODY_TOP_OUTLAW_FLEE_004" xml:space="preserve">
     <value>This slippery thief hates confrontation.</value>
