@@ -645,7 +645,15 @@ function guild_second_floor.Silcoon_Action(chara, activator)
 end
 
 
-
+function guild_second_floor.Mission_Test_Action(chara, activator)
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Outlaw and Mission board have been refreshed!")
+	MISSION_GEN.ResetBoards()
+	MISSION_GEN.GenerateBoard("Mission")
+	MISSION_GEN.GenerateBoard("Outlaw")
+	MISSION_GEN.SortMission()
+	MISSION_GEN.SortOutlaw()
+end
 
 
 ---------------------------

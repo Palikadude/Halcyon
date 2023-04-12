@@ -2154,7 +2154,7 @@ function BoardMenu:initialize(board_type, parent_selection_menu)
   end
   
   self.current_item = 0
-  self.cursor.Loc = RogueElements.Loc(9, 24)
+  self.cursor.Loc = RogueElements.Loc(9, 27)
   self.page = 1--1 or 2
   self.taken_count = MISSION_GEN.GetTakenCount()
   self.total_pages = math.ceil(self.total_items / 4)
@@ -2186,11 +2186,11 @@ function BoardMenu:RefreshSelf()
   --in the event of deleting the last item on the board, move the cursor to accomodate.
   if self:GetSelectedJobIndex() > self.total_items then 
 	print("On refresh self, needed to adjust current item!")
-	self.current_item = (self.total_items % 4) - 1
+	self.current_item = (self.total_items - 1) % 4
 	
 	--move cursor to reflect new current item location
 	self.cursor:ResetTimeOffset()
-    self.cursor.Loc = RogueElements.Loc(9, 24 + 26 * self.current_item)
+    self.cursor.Loc = RogueElements.Loc(9, 27 + 28 * self.current_item)
   end
   
   self.total_pages = math.ceil(self.total_items / 4)
@@ -2272,10 +2272,10 @@ function BoardMenu:DrawBoard()
 	
 	--modulo the iterator so that if we're on the 2nd page it goes to the right spot
 	
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(21, 23 + 26 * ((i-1) % 4))))
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(title, RogueElements.Loc(33, 23 + 26 * ((i-1) % 4))))
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(location, RogueElements.Loc(33, 35 + 26 * ((i-1) % 4))))
-	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(difficulty, RogueElements.Loc(self.menu.Bounds.Width - 33, 35 + 26 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(21, 26 + 28 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(title, RogueElements.Loc(33, 26 + 28 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(location, RogueElements.Loc(33, 38 + 28 * ((i-1) % 4))))
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(difficulty, RogueElements.Loc(self.menu.Bounds.Width - 33, 38 + 28 * ((i-1) % 4))))
 
   end
 end 
@@ -2344,7 +2344,7 @@ function BoardMenu:Update(input)
     if moved then
       _GAME:SE("Menu/Select")
       self.cursor:ResetTimeOffset()
-      self.cursor.Loc = RogueElements.Loc(9, 24 + 26 * self.current_item)
+      self.cursor.Loc = RogueElements.Loc(9, 27 + 28 * self.current_item)
     end
   end
 end 
