@@ -62,18 +62,16 @@ function ITEM_SCRIPT.Test(owner, ownerChar, context, args)
 end
 
 function ITEM_SCRIPT.MissionPickup(owner, ownerChar, context, args)
-  for name, mission in pairs(SV.TakenBoard) do
-    if mission.Taken and _ZONE.CurrentZoneID == mission.Zone
-	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID + 1 == mission.Floor
-    and mission.Type == COMMON.MISSION_TYPE_LOST_ITEM and mission.Item == context.Item.Value then
-
-      mission.Completion = COMMON.MISSION_COMPLETE
-      SV.TemporaryFlags.MissionCompleted = true
-      GAME:WaitFrames(70)
-      UI:WaitShowDialogue("Yes! You found one " .. context.Item:GetDungeonName() .. "!")
-      GeneralFunctions.AskMissionWarpOut()
-      break
-    end
+  local missionNum = args.Mission
+  local mission = SV.TakenBoard[missionNum]
+  if mission.Taken and _ZONE.CurrentZoneID == mission.Zone
+  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID + 1 == mission.Floor
+  and mission.Type == COMMON.MISSION_TYPE_LOST_ITEM and mission.Item == context.Item.Value then
+    mission.Completion = COMMON.MISSION_COMPLETE
+    SV.TemporaryFlags.MissionCompleted = true
+    GAME:WaitFrames(70)
+    UI:WaitShowDialogue("Yes! You found one " .. context.Item:GetDungeonName() .. "!")
+    GeneralFunctions.AskMissionWarpOut()
   end
 end
 

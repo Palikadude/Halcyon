@@ -94,18 +94,18 @@ function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
   local oldDir = context.Target.CharDir
 
 	local tbl = LTBL(context.Target)
-	local mission = SV.TakenBoard[tonumber(tbl.Mission)]
+	local mission = SV.TakenBoard[tbl.Mission]
   DUNGEON:CharTurnToChar(context.Target, context.User)
 	UI:ResetSpeaker()
 
 	if mission.Type == COMMON.MISSION_TYPE_RESCUE then
-		RescueCheck(mission)
+		RescueCheck(context, targetName, mission)
 	elseif mission.Type == COMMON.MISSION_TYPE_DELIVERY then
-		DeliveryCheck(mission)
+		DeliveryCheck(context, targetName, mission)
 	end
 end
 
-function RescueCheck(mission)
+function RescueCheck(context, targetName, mission)
 	UI:ChoiceMenuYesNo("Yes! You've found " .. targetName .. "!\nDo you want to use your badge to rescue " .. targetName .. "?", false)
 	UI:WaitForChoice()
 	local use_badge = UI:ChoiceResult()
@@ -113,7 +113,7 @@ function RescueCheck(mission)
 		--Mark mission completion flags
 		SV.TemporaryFlags.MissionCompleted = true
 		mission.Completion = 1
-		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and\n".. targetName .. " is transported away magically!" )
+		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and ".. targetName .. " is transported away magically!" )
 		UI:SetSpeaker(context.Target)
 		UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
 		UI:ResetSpeaker()
@@ -127,7 +127,7 @@ function RescueCheck(mission)
 	end
 end
 
-function DeliveryCheck(mission)
+function DeliveryCheck(context, targetName, mission)
 	local inv_slot = GAME:FindPlayerItem(mission.Item, false, true)
 	local team_slot = GAME:FindPlayerItem(mission.Item, true, false)
 	local has_item = inv_slot:IsValid() or team_slot:IsValid()
@@ -167,8 +167,8 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
   --Mark this as the last dungeon entered.
   local tbl = LTBL(context.Target)
 	if tbl ~= nil and tbl.Mission ~= nil then
-		local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-		local escort = COMMON.FindMissionEscort(tonumber(tbl.Mission))
+		local mission = SV.TakenBoard[tbl.Mission]
+		local escort = COMMON.FindMissionEscort(tbl.Mission)
 		local escortName = _DATA:GetMonster(mission.Client):GetColoredName()
 		if escort then
 			local oldDir = context.Target.CharDir
@@ -190,7 +190,7 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 				-- warp out
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
 				_DUNGEON:RemoveChar(escort)
-				GAME:WaitFrames(10)
+				GAME:WaitFrames(70)
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
 				_DUNGEON:RemoveChar(context.Target)
 				

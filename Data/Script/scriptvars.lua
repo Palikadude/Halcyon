@@ -47,6 +47,7 @@ SV.partner =
 	LoadDirection = -1
 
 }
+SV.DestinationFloorNotified = false
 
 --empty string or a -1 indicates that there's nothing there currently.
 --board of jobs you've actually taken.

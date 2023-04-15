@@ -1274,7 +1274,10 @@ function GeneralFunctions.WarpOut()
 		local player = GAME:GetPlayerPartyMember(i)
 		if not player.Dead then
 			GAME:WaitFrames(60)
+			local anim = RogueEssence.Dungeon.CharAbsentAnim(player.CharLoc, player.CharDir)
+			player:FullRestore()
 			TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
+			TASK:WaitTask(player:StartAnim(anim))
 		end
 	end
 
@@ -1282,8 +1285,10 @@ function GeneralFunctions.WarpOut()
 		local guest = GAME:GetPlayerGuestMember(i)
 		if not guest.Dead then
 			GAME:WaitFrames(60)
+			local anim = RogueEssence.Dungeon.CharAbsentAnim(guest.CharLoc, guest.CharDir)
+			guest:FullRestore()
 			TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
-			--_DUNGEON:RemoveChar(guest)
+			TASK:WaitTask(guest:StartAnim(anim))
 		end
 	end
 end

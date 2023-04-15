@@ -154,12 +154,32 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, context, args)
 end
 
 function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
-	local tbl = LTBL(context.User)
-	if tbl ~= nil and tbl.Mission ~= nil then
-		--local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-		SOUND:PlayFanfare("Fanfare/Note")
-		UI:ResetSpeaker()
-		UI:WaitShowDialogue("You've reached a destination floor!")
+	local missionNum = args.Mission
+	local mission = SV.TakenBoard[missionNum]
+	if not SV.DestinationFloorNotified then
+		if mission.Type == COMMON.MISSION_TYPE_EXPLORATION then
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("Yes! You've reached the destination! " .. _DATA:GetMonster(mission.Client):GetColoredName().. " seems happy!")
+			local escort = COMMON.FindMissionEscort(missionNum)
+			if escort then
+				UI:SetSpeaker(escort)
+				DUNGEON:CharTurnToChar(escort, GAME:GetPlayerPartyMember(0))
+				DUNGEON:CharTurnToChar(GAME:GetPlayerPartyMember(0), escort)
+				UI:WaitShowDialogue("Thank you for exploring with me!")
+
+				GAME:WaitFrames(30)
+				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
+				_DUNGEON:RemoveChar(escort)
+				GAME:WaitFrames(50)
+				GeneralFunctions.AskMissionWarpOut()
+			end
+		else
+			SOUND:PlayFanfare("Fanfare/Note")
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("You've reached a destination floor!")
+		end
+		SV.DestinationFloorNotified = true
+		GAME:WaitFrames(10)
 	end
 end
 
@@ -182,32 +202,30 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
   local remaining_outlaw = false
 	local outlaw_name = ""
-	local item_id = ""
-	local mission_type = -1
+	local curr_mission = nil
 
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
 	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID + 1 == mission.Floor then
+		curr_mission = mission
 	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(name))
       if found_outlaw then
 	    	remaining_outlaw = true
 	  	else
 				outlaw_name = _DATA:GetMonster(mission.Target):GetColoredName()
-				mission_type = mission.Type
-				item_id = mission.Item
 	  	end
     end
   end
-	if mission_type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+	if curr_mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
 		if not remaining_outlaw then
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 		end
-		local slot = GAME:FindPlayerItem(item_id, false, true) 
+		local slot = GAME:FindPlayerItem(curr_mission.Item, false, true) 
 		if slot:IsValid() and not remaining_outlaw then
 			SV.TemporaryFlags.MissionCompleted = true
-			mission.Completion = 1
-			local item_name = _DATA:GetItem(item_id):GetColoredName()
+			curr_mission.Completion = 1
+			local item_name = _DATA:GetItem(curr_mission.Item):GetColoredName()
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
 			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
@@ -219,7 +237,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
 	else
 		if not remaining_outlaw then
 			SV.TemporaryFlags.MissionCompleted = true
-			mission.Completion = 1
+			curr_mission.Completion = 1
 			-- if no outlaws are found in the map, return music to normal and remove this status from the map
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check

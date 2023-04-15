@@ -1081,7 +1081,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
             new_mob.ActionEvents:Add(talk_evt)
         
         local tbl = LTBL(new_mob)
-        tbl.Escort = name         
+        tbl.Escort = name     
         UI:ResetSpeaker()
         UI:WaitShowDialogue("Added ".. new_mob.Name .." to the party as a guest.")
       end
