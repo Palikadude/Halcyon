@@ -154,12 +154,32 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, context, args)
 end
 
 function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
-	local tbl = LTBL(context.User)
-	if tbl ~= nil and tbl.Mission ~= nil then
-		--local mission = SV.TakenBoard[tonumber(tbl.Mission)]
-		SOUND:PlayFanfare("Fanfare/Note")
-		UI:ResetSpeaker()
-		UI:WaitShowDialogue("You've reached a destination floor!")
+	local missionNum = args.Mission
+	local mission = SV.TakenBoard[missionNum]
+	if not SV.DestinationFloorNotified then
+		if mission.Type == COMMON.MISSION_TYPE_EXPLORATION then
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("Yes! You've reached the destination! " .. _DATA:GetMonster(mission.Client):GetColoredName().. " seems happy!")
+			local escort = COMMON.FindMissionEscort(missionNum)
+			if escort then
+				UI:SetSpeaker(escort)
+				DUNGEON:CharTurnToChar(escort, GAME:GetPlayerPartyMember(0))
+				DUNGEON:CharTurnToChar(GAME:GetPlayerPartyMember(0), escort)
+				UI:WaitShowDialogue("Thank you for exploring with me!")
+
+				GAME:WaitFrames(30)
+				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
+				_DUNGEON:RemoveChar(escort)
+				GAME:WaitFrames(50)
+				GeneralFunctions.AskMissionWarpOut()
+			end
+		else
+			SOUND:PlayFanfare("Fanfare/Note")
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("You've reached a destination floor!")
+		end
+		SV.DestinationFloorNotified = true
+		GAME:WaitFrames(10)
 	end
 end
 

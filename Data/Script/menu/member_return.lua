@@ -38,7 +38,8 @@ function CreateMemberReturnMenu()
       local player = GAME:GetPlayerPartyMember(i)
       if not player.IsPartner then 
         self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(player:GetDisplayName(true), RogueElements.Loc(16 + 8, offset)))
-        self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(STRINGS:FormatKey("MENU_TEAM_LEVEL_SHORT", player.Level), RogueElements.Loc(16 + 8 + 100, offset), RogueElements.DirH.Right))
+        self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(STRINGS:FormatKey("MENU_TEAM_LEVEL_SHORT"), RogueElements.Loc(16 + 8 + 100, offset), RogueElements.DirH.Right))
+        self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(tostring(player.Level), RogueElements.Loc(16 + 8 + 100 + 18, offset), RogueElements.DirH.Right))
         offset = offset + self.spacer
       end
     end
