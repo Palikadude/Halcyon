@@ -32,6 +32,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneContext.CurrentZone == mission.Zone
 	  and zoneContext.CurrentSegment == mission.Segment and zoneContext.CurrentID + 1 == mission.Floor then
       missionNum = name
+      missionType = mission.Type
       PrintInfo("Spawning Mission Goal")
       local outlaw_arr = {
         COMMON.MISSION_TYPE_OUTLAW,
@@ -130,6 +131,11 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
     -- add destination floor notification
     local activeEffect = RogueEssence.Data.ActiveEffect()
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("DestinationFloor", '{ Mission = '..missionNum..' }'))
+
+    if missionType == COMMON.MISSION_TYPE_LOST_ITEM then
+      activeEffect.OnPickups:Add(-6, RogueEssence.Dungeon.ItemScriptEvent("MissionPickup", '{ Mission = '..missionNum..' }'))
+    end
+
 	  local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
 	  local priority = RogueElements.Priority(-6)
 	  queue:Enqueue(priority, destNote)

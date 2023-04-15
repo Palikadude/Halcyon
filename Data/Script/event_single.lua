@@ -202,32 +202,30 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
   -- check for no outlaw in the mission list
   local remaining_outlaw = false
 	local outlaw_name = ""
-	local item_id = ""
-	local mission_type = -1
+	local curr_mission = nil
 
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and _ZONE.CurrentZoneID == mission.Zone
 	  and _ZONE.CurrentMapID.Segment == mission.Segment and _ZONE.CurrentMapID.ID + 1 == mission.Floor then
+		curr_mission = mission
 	  local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(name))
       if found_outlaw then
 	    	remaining_outlaw = true
 	  	else
 				outlaw_name = _DATA:GetMonster(mission.Target):GetColoredName()
-				mission_type = mission.Type
-				item_id = mission.Item
 	  	end
     end
   end
-	if mission_type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+	if curr_mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
 		if not remaining_outlaw then
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 		end
-		local slot = GAME:FindPlayerItem(item_id, false, true) 
+		local slot = GAME:FindPlayerItem(curr_mission.Item, false, true) 
 		if slot:IsValid() and not remaining_outlaw then
 			SV.TemporaryFlags.MissionCompleted = true
-			mission.Completion = 1
-			local item_name = _DATA:GetItem(item_id):GetColoredName()
+			curr_mission.Completion = 1
+			local item_name = _DATA:GetItem(curr_mission.Item):GetColoredName()
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
 			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
@@ -239,7 +237,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
 	else
 		if not remaining_outlaw then
 			SV.TemporaryFlags.MissionCompleted = true
-			mission.Completion = 1
+			curr_mission.Completion = 1
 			-- if no outlaws are found in the map, return music to normal and remove this status from the map
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check

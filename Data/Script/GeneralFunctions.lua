@@ -1288,7 +1288,7 @@ function GeneralFunctions.WarpOut()
 			local anim = RogueEssence.Dungeon.CharAbsentAnim(guest.CharLoc, guest.CharDir)
 			guest:FullRestore()
 			TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
-			TASK:WaitTask(player:StartAnim(anim))
+			TASK:WaitTask(guest:StartAnim(anim))
 		end
 	end
 end

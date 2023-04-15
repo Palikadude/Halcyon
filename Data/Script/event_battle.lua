@@ -190,7 +190,7 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 				-- warp out
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
 				_DUNGEON:RemoveChar(escort)
-				GAME:WaitFrames(50)
+				GAME:WaitFrames(70)
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(context.Target, context.Target, _DATA.SendHomeFX))
 				_DUNGEON:RemoveChar(context.Target)
 				
