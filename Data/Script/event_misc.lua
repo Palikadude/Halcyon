@@ -70,7 +70,7 @@ function ITEM_SCRIPT.MissionPickup(owner, ownerChar, context, args)
     mission.Completion = COMMON.MISSION_COMPLETE
     SV.TemporaryFlags.MissionCompleted = true
     GAME:WaitFrames(70)
-    UI:WaitShowDialogue("Yes! You found one " .. context.Item:GetDungeonName() .. "!")
+    UI:WaitShowDialogue("Yes! You found " .. _DATA:GetMonster(mission.Client):GetColoredName() .. "'s " .. context.Item:GetDungeonName() .. "!")
     GeneralFunctions.AskMissionWarpOut()
   end
 end

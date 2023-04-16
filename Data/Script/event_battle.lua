@@ -85,7 +85,23 @@ function BATTLE_SCRIPT.EscortInteract(owner, ownerChar, context, args)
   local oldDir = context.Target.CharDir
   DUNGEON:CharTurnToChar(context.Target, context.User)
   UI:SetSpeaker(context.Target)
-  UI:WaitShowDialogue("I'm counting on you!")
+  
+  --Basic for now, but choose a different line based on mission type/special 
+  --Should be expanded on in the future to be more dynamic, and to have more special lines for special pairs
+  local tbl = LTBL(context.Target)
+  local mission_slot = tbl.Escort
+  local job = SV.TakenBoard[mission_slot]
+  
+  if job.Type == COMMON.MISSION_TYPE_EXPLORATION then
+	local floor = MISSION_GEN.STAIR_TYPE[job.Zone] .. '[color=#00FFFF]' .. tostring(job.Floor) .. '[color]' .. "F"
+	UI:WaitShowDialogue("Please, take me to " .. floor .. "!")
+  elseif job.Type == COMMON.MISSION_TYPE_ESCORT then
+    if job.Special == MISSION_GEN.SPECIAL_CLIENT_LOVER then
+	  UI:WaitShowDialogue("Please, bring me to my love! I'm counting on you!")
+	else
+	  UI:WaitShowDialogue("I'm counting on you to bring me to " .. _DATA:GetMonster(job.Target):GetColoredName() .. "!") 
+	end
+   end
   context.Target.CharDir = oldDir
 end
 
@@ -112,10 +128,13 @@ function RescueCheck(context, targetName, mission)
 	if use_badge then 
 		--Mark mission completion flags
 		SV.TemporaryFlags.MissionCompleted = true
+		GAME:WaitFrames(20)
 		mission.Completion = 1
 		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and ".. targetName .. " is transported away magically!" )
+		GAME:WaitFrames(20)
 		UI:SetSpeaker(context.Target)
 		UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
+		GAME:WaitFrames(20)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
 		GAME:WaitFrames(20)
@@ -134,12 +153,12 @@ function DeliveryCheck(context, targetName, mission)
 	local item_name = _DATA:GetItem(mission.Item):GetColoredName()
 
 	if has_item then
-		SV.TemporaryFlags.MissionCompleted = true
-		mission.Completion = 1
 		UI:ChoiceMenuYesNo("Yes! You've located " .. targetName .. "!" .. " Do you want to deliver the requested " .. item_name .. " to " .. targetName .. "?")
 		UI:WaitForChoice()
 		local deliver_item = UI:ChoiceResult()
 		if deliver_item then
+			SV.TemporaryFlags.MissionCompleted = true
+			mission.Completion = 1
 			-- Take from inventory first before held items 
 			if inv_slot:IsValid() then 
 				GAME:TakePlayerBagItem(inv_slot.Slot)
@@ -149,6 +168,7 @@ function DeliveryCheck(context, targetName, mission)
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)
 			UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
+			GAME:WaitFrames(20)
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
 			GAME:WaitFrames(20)
@@ -174,18 +194,20 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 			local oldDir = context.Target.CharDir
 			DUNGEON:CharTurnToChar(context.Target, context.User)
 			UI:ResetSpeaker()
-			if math.abs(escort.CharLoc:Dist8() - context.Target.CharLoc:Dist8()) <= 4 then
+			if math.abs(escort.CharLoc.X - context.Target.CharLoc.X) <= 4 and math.abs(escort.CharLoc.Y - context.Target.CharLoc.Y) <= 4 then
 				--Mark mission completion flags
 				SV.TemporaryFlags.MissionCompleted = true
 				mission.Completion = 1
 				UI:WaitShowDialogue("Yes! You completed " .. escortName .. "'s escort mission.\n" .. escortName .. " is delighted!")
-				
+				GAME:WaitFrames(20)
 				
 				UI:SetSpeaker(escort)
 				UI:WaitShowDialogue("Thank you for escorting me to " .. _DATA:GetMonster(context.Target.CurrentForm.Species):GetColoredName() .. "!")
+				GAME:WaitFrames(20)
 				UI:ResetSpeaker()
 				UI:WaitShowDialogue(escortName .. "'s twosome left the dungeon!")
-				
+				GAME:WaitFrames(20)
+
 				
 				-- warp out
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))

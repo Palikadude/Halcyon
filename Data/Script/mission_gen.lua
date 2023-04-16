@@ -1506,26 +1506,28 @@ function MISSION_GEN.GenerateBoard(board_type)
 			end
 		else
 			local roll = math.random(1, 10)
-			if roll <= 1 then 
-				--if there's already an escort mission generated for this dungeon, don't gen another one and just make it a rescue.
-				objective = COMMON.MISSION_TYPE_ESCORT 
+			if roll <= 2 then 
+				--if there's already an escort or exploration mission generated for this dungeon, don't gen another one and just make it a rescue.
+				if roll == 1 then
+					objective = COMMON.MISSION_TYPE_EXPLORATION 
+				else
+					objective = COMMON.MISSION_TYPE_ESCORT
+				end
+
 				--only check from 1 to i-1 to save time.
 				for j = 1, i-1, 1 do 
-					if SV.MissionBoard[j].Zone == dungeon and SV.MissionBoard[j].Type == COMMON.MISSION_TYPE_ESCORT then
+					if SV.MissionBoard[j].Zone == dungeon and (SV.MissionBoard[j].Type == COMMON.MISSION_TYPE_ESCORT or SV.MissionBoard[j].Type == COMMON.MISSION_TYPE_EXPLORATION) then
 						objective = COMMON.MISSION_TYPE_RESCUE
 						break
 					end 
 				end 
 				
 				for j = 1, 8, 1 do
-					if SV.TakenBoard[j].Zone == dungeon and SV.TakenBoard[j].Type == COMMON.MISSION_TYPE_ESCORT then
+					if SV.TakenBoard[j].Zone == dungeon and (SV.TakenBoard[j].Type == COMMON.MISSION_TYPE_ESCORT or SV.TakenBoard[j].Type == COMMON.MISSION_TYPE_EXPLORATION) then
 						objective = COMMON.MISSION_TYPE_RESCUE
 						break
 					end
 				end
-			elseif roll <= 2 then
-				-- TODO - Apply the same logic from escort missions to exploration
-				objective = COMMON.MISSION_TYPE_EXPLORATION
 			elseif roll <= 4 then
 				objective = COMMON.MISSION_TYPE_DELIVERY
 			elseif roll <= 6 then
@@ -2483,4 +2485,121 @@ function MISSION_GEN.GetTakenCount()
 		end 
 	end 
 	return count
+end
+
+
+function MISSION_GEN.GetDebugMissionInfo(board, slot)
+	if board == "outlaw" then
+		print("client = " .. SV.OutlawBoard[slot].Client)
+		print("target = " .. SV.OutlawBoard[slot].Target)
+		print("flavor = " .. SV.OutlawBoard[slot].Flavor)
+		print("title = " .. SV.OutlawBoard[slot].Title)
+		print("zone = " .. SV.OutlawBoard[slot].Zone)
+		print("segment = " .. SV.OutlawBoard[slot].Segment)
+		print("floor = " .. SV.OutlawBoard[slot].Floor)
+		print("reward = " .. SV.OutlawBoard[slot].Reward)
+		print("type = " .. SV.OutlawBoard[slot].Type)
+		print("Completion = " .. SV.OutlawBoard[slot].Completion)
+		print("Taken = " .. tostring(SV.OutlawBoard[slot].Taken))
+		print("Difficulty = " .. SV.OutlawBoard[slot].Difficulty)
+		print("item = " .. SV.OutlawBoard[slot].Item)
+		print("Special = " .. SV.OutlawBoard[slot].Special)
+		local client_gender = SV.OutlawBoard[slot].ClientGender
+		if client_gender == Gender.Male then
+			print("ClientGender = male")
+		elseif client_gender == Gender.Female then
+			print("ClientGender = female")
+		elseif client_gender == Gender.Genderless then
+			print("ClientGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		
+		local target_Gender = SV.OutlawBoard[slot].ClientGender
+		if target_Gender == Gender.Male then
+			print("TargetGender = male")
+		elseif target_Gender == Gender.Female then
+			print("TargetGender = female")
+		elseif target_Gender == Gender.Genderless then
+			print("TargetGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		print("Bonus = " .. SV.OutlawBoard[slot].BonusReward)
+
+	elseif board == "mission" then
+		print("client = " .. SV.MissionBoard[slot].Client)
+		print("target = " .. SV.MissionBoard[slot].Target)
+		print("flavor = " .. SV.MissionBoard[slot].Flavor)
+		print("title = " .. SV.MissionBoard[slot].Title)
+		print("zone = " .. SV.MissionBoard[slot].Zone)
+		print("segment = " .. SV.MissionBoard[slot].Segment)
+		print("floor = " .. SV.MissionBoard[slot].Floor)
+		print("reward = " .. SV.MissionBoard[slot].Reward)
+		print("type = " .. SV.MissionBoard[slot].Type)
+		print("Completion = " .. SV.MissionBoard[slot].Completion)
+		print("Taken = " .. tostring(SV.MissionBoard[slot].Taken))
+		print("Difficulty = " .. SV.MissionBoard[slot].Difficulty)
+		print("item = " .. SV.MissionBoard[slot].Item)
+		print("Special = " .. SV.MissionBoard[slot].Special)
+		local client_gender = SV.MissionBoard[slot].ClientGender
+		if client_gender == Gender.Male then
+			print("ClientGender = male")
+		elseif client_gender == Gender.Female then
+			print("ClientGender = female")
+		elseif client_gender == Gender.Genderless then
+			print("ClientGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		
+		local target_Gender = SV.MissionBoard[slot].ClientGender
+		if target_Gender == Gender.Male then
+			print("TargetGender = male")
+		elseif target_Gender == Gender.Female then
+			print("TargetGender = female")
+		elseif target_Gender == Gender.Genderless then
+			print("TargetGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		print("Bonus = " .. SV.MissionBoard[slot].BonusReward)
+	else
+		print("client = " .. SV.TakenBoard[slot].Client)
+		print("target = " .. SV.TakenBoard[slot].Target)
+		print("flavor = " .. SV.TakenBoard[slot].Flavor)
+		print("title = " .. SV.TakenBoard[slot].Title)
+		print("zone = " .. SV.TakenBoard[slot].Zone)
+		print("segment = " .. SV.TakenBoard[slot].Segment)
+		print("floor = " .. SV.TakenBoard[slot].Floor)
+		print("reward = " .. SV.TakenBoard[slot].Reward)
+		print("type = " .. SV.TakenBoard[slot].Type)
+		print("Completion = " .. SV.TakenBoard[slot].Completion)
+		print("Taken = " .. tostring(SV.TakenBoard[slot].Taken))
+		print("Difficulty = " .. SV.TakenBoard[slot].Difficulty)
+		print("item = " .. SV.TakenBoard[slot].Item)
+		print("Special = " .. SV.TakenBoard[slot].Special)
+		local client_gender = SV.TakenBoard[slot].ClientGender
+		if client_gender == Gender.Male then
+			print("ClientGender = male")
+		elseif client_gender == Gender.Female then
+			print("ClientGender = female")
+		elseif client_gender == Gender.Genderless then
+			print("ClientGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		
+		local target_Gender = SV.TakenBoard[slot].ClientGender
+		if target_Gender == Gender.Male then
+			print("TargetGender = male")
+		elseif target_Gender == Gender.Female then
+			print("TargetGender = female")
+		elseif target_Gender == Gender.Genderless then
+			print("TargetGender = genderless")
+		else 
+			print("Non valid gender!!!!!!")
+		end
+		print("Bonus = " .. SV.TakenBoard[slot].BonusReward)
+	end
 end

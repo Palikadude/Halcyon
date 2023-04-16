@@ -231,6 +231,9 @@ end
  	SV.ChapterProgression.CurrentStoryDungeon = "crooked_cavern" -- Crooked Cavern
  end 
  
+ 
+ if SV.DestinationFloorNotified == nil then SV.DestinationFloorNotified = false end
+
  if SV.TakenBoard == nil then
 	SV.TakenBoard =
 	{

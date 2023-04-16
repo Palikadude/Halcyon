@@ -162,6 +162,9 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 			UI:WaitShowDialogue("Yes! You've reached the destination! " .. _DATA:GetMonster(mission.Client):GetColoredName().. " seems happy!")
 			local escort = COMMON.FindMissionEscort(missionNum)
 			if escort then
+				GAME:WaitFrames(20)
+				SV.TemporaryFlags.MissionCompleted = true
+				mission.Completion = 1
 				UI:SetSpeaker(escort)
 				DUNGEON:CharTurnToChar(escort, GAME:GetPlayerPartyMember(0))
 				DUNGEON:CharTurnToChar(GAME:GetPlayerPartyMember(0), escort)
@@ -229,7 +232,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
 			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
-			GAME:WaitFrames(30)
+			GAME:WaitFrames(70)
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue("Yes!\nYou reclaimed the " .. item_name .. "!")
 			GeneralFunctions.AskMissionWarpOut()
@@ -242,7 +245,7 @@ function SINGLE_CHAR_SCRIPT.OutlawClearCheck(owner, ownerChar, context, args)
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			local checkClearStatus = "outlaw_clear_check" -- outlaw clear check
 			TASK:WaitTask(_DUNGEON:RemoveMapStatus(checkClearStatus))
-			GAME:WaitFrames(30)
+			GAME:WaitFrames(70)
 			UI:ResetSpeaker()
 			-- if no outlaws of the mission list, mark quest as complete
 			--Mark mission completion flags

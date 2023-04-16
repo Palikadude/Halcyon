@@ -27,7 +27,7 @@ end
 function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> ExitSegment_illuminant_riverbed (Illuminant Riverbed) result "..tostring(result).." segment "..tostring(segmentID))
-
+  
 	GAME:SetRescueAllowed(false)
 	
 	--[[Different dungeon result typeS (cleared, died, etc)
@@ -54,10 +54,14 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.TemporaryFlags.Bedtime = true
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
+		
+	    --Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor
+		local exit_ground = 6
+		if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
 					
 		--I use the components of the general function version of this so I can have the textbox pop up after the results screen
 		--this saves the game, so it must be called 2nd to last.
-		GAME:EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
+		GAME:EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true)
 	
 		if not SV.Chapter2.FinishedRiver and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then --team died before making it to the end for the first time. 
 			UI:SetSpeaker(GAME:GetPlayerPartyMember(1))--set partner as speaker 
@@ -67,7 +71,7 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 		end
 				
 		--go to dinner room 
-		GAME:EnterZone("master_zone", -1, 6, 0)
+		GAME:EnterZone("master_zone", -1, exit_ground, 0)
 
 	
 	else 
@@ -78,7 +82,8 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.TemporaryFlags.Bedtime = true
 			SV.TemporaryFlags.MorningWakeup = true 
 			SV.TemporaryFlags.MorningAddress = true 
-			GAME:EnterGroundMap('luminous_spring', 'Main_Entrance_Marker') --Go to Luminous Spring, end dungeon run in the ground rather than here 
+		
+			GAME:EnterGroundMap('luminous_spring', 'Main_Entrance_Marker') --Go to Crooked Den, end dungeon run in the ground rather than here 
 
 		else--for chapter 2, dont show results and dont set generic end flags
 			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 20, 0, false, false) --Go to Luminous Spring 

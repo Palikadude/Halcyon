@@ -131,8 +131,13 @@ function crooked_den.GenericEnding()
 	GAME:FadeOut(false, 60)
 	GAME:CutsceneMode(false)
 	GAME:WaitFrames(20)
-	GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 6, 0, true, true)
 	
+	--Go to second floor if mission was done, else, dinner room
+	if SV.TemporaryFlags.MissionCompleted then
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 22, 0, true, true)
+	else
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 6, 0, true, true)
+	end
 	
 end
 

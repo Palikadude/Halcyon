@@ -304,7 +304,6 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 				{'Bisharp', 392, 248, Direction.Down}
 			})
 		
-		--pick a random, appropriate gender for the outlaw
 		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
 		
 		local outlaw = RogueEssence.Ground.GroundChar(outlaw_monster, RogueElements.Loc(392, 224), Direction.Down, outlaw_monster.Species, 'Outlaw')
@@ -372,7 +371,6 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 
 	
 	else--client is some random mon
-		--pick a random, appropriate gender for the client
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(392, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
@@ -435,7 +433,6 @@ function guild_second_floor.Mission_Job_Clear(job)
 
 	--client is target. Check on escort is needed in case the escort is to the same species.
 	if job.Client == job.Target and job.Type ~= COMMON.MISSION_TYPE_ESCORT then
-		--pick a random, appropriate gender for the client
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(104, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
@@ -491,14 +488,12 @@ function guild_second_floor.Mission_Job_Clear(job)
 
 	
 	else--client not the target
-		--pick a random, appropriate gender for the client
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(88, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
 		GAME:GetCurrentGround():AddTempChar(client)
 				
-		--pick a random, appropriate gender for the target
 		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
 		target_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 		

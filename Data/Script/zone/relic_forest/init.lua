@@ -22,9 +22,8 @@ end
 function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> ExitSegment_relic_forest (Relic Forest) result "..tostring(result).." segment "..tostring(segmentID))
+  GAME:SetRescueAllowed(false)
 
-	GAME:SetRescueAllowed(false)
-	
 	--[[Different dungeon result typeS (cleared, died, etc)
 	       public enum ResultType
         {
@@ -79,15 +78,22 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 			end
 		end
 	else--generic case (no special cutscenes to be played)
+		--This shouldn't be needed, but just in case.
+		COMMON.ExitDungeonMissionCheck(zone.ID, segmentID)
+		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 
 		SV.TemporaryFlags.Bedtime = true
 		SV.TemporaryFlags.MorningWakeup = true 
 		SV.TemporaryFlags.MorningAddress = true 
-		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then--go to relic forest, end the dungeon run in that ground
-			GAME:EnterGroundMap('relic_forest', 'Main_Entrance_Marker')
-		else--go to dinner 
-			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 6, 0, true, true)
+		
+		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then	
+			GAME:EnterGroundMap('relic_forest', 'Main_Entrance_Marker') --Go to Crooked Den, end dungeon run in the ground rather than here 
+		else 
+			--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor. This probably won't be used since missions shouldnt get in relic forest
+			local exit_ground = 6
+			if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
+			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, false, false)				
 		end
 	end
 end

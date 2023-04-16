@@ -12,9 +12,12 @@ function metano_inn_ch_3.SetupGround()
 		CharacterEssentials.MakeCharactersFromList({
 			{'Nidorina', 'Innkeeper_Right'},
 			{'Nidoking', 'Innkeeper_Left'},
-			{'Nidoran_M', 168, 192, Direction.Down}
+			{'Nidoran_M', 280, 184, Direction.Down}
 
 		})
+		
+		AI:SetCharacterAI(nidoran_m, "ai.ground_default", RogueElements.Loc(264, 168), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)
+
 	else 
 		GROUND:Hide('Innkeeper_Desk_Left')
 		

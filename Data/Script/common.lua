@@ -1083,7 +1083,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
         local tbl = LTBL(new_mob)
         tbl.Escort = name     
         UI:ResetSpeaker()
-        UI:WaitShowDialogue("Added ".. new_mob.Name .." to the party as a guest.")
+        UI:WaitShowDialogue("Added [color=#00FF00]".. new_mob.Name .."[color] to the party as a guest.")
       end
     end
   end
@@ -1104,6 +1104,30 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
       end
     end
   end
+  
+  --Remove any lost/stolen items. If the item's ID starts with "mission" then delete it on exiting the dungeon.
+  	local itemCount = GAME:GetPlayerBagCount()
+	local item
+	
+	local i = 0
+	while i <= itemCount - 1 do 
+		item = GAME:GetPlayerBagItem(i)
+		if string.sub(item.ID, 1, 7) == "mission" then
+			GAME:TakePlayerBagItem(i)
+			itemCount = itemCount - 1
+		else
+			i = i + 1 
+		end
+	end
+	
+	--send equipped items to storage
+	for i = 1, GAME:GetPlayerPartyCount(), 1 do
+		item = GAME:GetPlayerEquippedItem(i-1)
+		if string.sub(item.ID, 1, 7) == "mission" then
+			GAME:TakePlayerEquippedItem(i-1)
+		end
+	end
+	
 end
 
 

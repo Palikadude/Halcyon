@@ -882,8 +882,14 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 		if amount == nil then amount = math.max(1, itemEntry.MaxStack) end 
 
 		local item = RogueEssence.Dungeon.InvItem(itemID, false, amount)
+		
+		local article = "a"
+		
+		local first_letter = string.upper(string.sub(_DATA:GetItem(item.ID).Name:ToLocal(), 1, 1))
+		
+		if  first_letter == "A" or first_letter == 'I' or first_letter == 'O' then article = 'an' end
 
-		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received a " .. item:GetDisplayName() ..".[pause=40]") 
+		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. article .. " " .. item:GetDisplayName() ..".[pause=40]") 
 		
 		--bag is full - equipped count is separate from bag and must be included in the calc
 		if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
@@ -1308,17 +1314,19 @@ function GeneralFunctions.AskMissionWarpOut()
 				local leave_confirm = UI:ChoiceResult()
 				if leave_confirm then
 					state = -1
-					GAME:WaitFrames(40)
 					GeneralFunctions.WarpOut()
 					GAME:WaitFrames(80)
-					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Cleared))
+					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Escaped))
 				end
 			else
-				UI:ChoiceMenuYesNo("You want to continue exploring?", true)
+				GAME:WaitFrames(20)
+				UI:ChoiceMenuYesNo("You want to continue this adventure?", true)
 				UI:WaitForChoice()
 				local continue_exploring = UI:ChoiceResult()
 				if continue_exploring then
 					state = -1
+					--to prevent accidentally doing something by pressing the button to select yes
+					GAME:WaitFrames(10)
 				end
 			end
 		end
