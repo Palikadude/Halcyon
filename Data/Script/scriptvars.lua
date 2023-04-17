@@ -557,7 +557,8 @@ SV.TemporaryFlags =
 	JustWokeUp = false,--Did the duo JUST wake up on a new day?
 	LastDungeonEntered = -1,--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
 	MissionCompleted = false,--used to mark if there are any pending missions to hand in.
-	PostJobsGround = ''--used to mark the ground to go to after handing in randomly generated missions if the default choice of generic dinnertime is not wanted.
+	PostJobsGround = '',--used to mark the ground to go to after handing in randomly generated missions if the default choice of generic dinnertime is not wanted.
+	PriorMapSetting = nil--Used to mark what the player had their minimap setting whenever the game needs to temporarily change it to something else.
 }
 
 

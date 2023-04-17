@@ -887,7 +887,7 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 		
 		local first_letter = string.upper(string.sub(_DATA:GetItem(item.ID).Name:ToLocal(), 1, 1))
 		
-		if  first_letter == "A" or first_letter == 'I' or first_letter == 'O' then article = 'an' end
+		if first_letter == "A" or first_letter == 'E' or first_letter == 'I' or first_letter == 'O' or first_letter == 'U' then article = 'an' end
 
 		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. article .. " " .. item:GetDisplayName() ..".[pause=40]") 
 		
@@ -1316,17 +1316,23 @@ function GeneralFunctions.AskMissionWarpOut()
 					state = -1
 					GeneralFunctions.WarpOut()
 					GAME:WaitFrames(80)
+					--Set minimap state back to old setting
+					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
+					SV.TemporaryFlags.PriorMapSetting = nil
 					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Escaped))
 				end
 			else
 				GAME:WaitFrames(20)
-				UI:ChoiceMenuYesNo("You want to continue this adventure?", true)
+				UI:ChoiceMenuYesNo("Do you want to continue this adventure?", true)
 				UI:WaitForChoice()
 				local continue_exploring = UI:ChoiceResult()
 				if continue_exploring then
 					state = -1
 					--to prevent accidentally doing something by pressing the button to select yes
 					GAME:WaitFrames(10)
+					--Set minimap state back to old setting
+					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
+					SV.TemporaryFlags.PriorMapSetting = nil
 				end
 			end
 		end

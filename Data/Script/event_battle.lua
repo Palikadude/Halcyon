@@ -128,6 +128,9 @@ function RescueCheck(context, targetName, mission)
 	if use_badge then 
 		--Mark mission completion flags
 		SV.TemporaryFlags.MissionCompleted = true
+		--Clear but remember minimap state
+		SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
+		_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 		GAME:WaitFrames(20)
 		mission.Completion = 1
 		UI:WaitShowDialogue("Your badge shines on " .. targetName .. ", and ".. targetName .. " is transported away magically!" )
@@ -159,6 +162,9 @@ function DeliveryCheck(context, targetName, mission)
 		if deliver_item then
 			SV.TemporaryFlags.MissionCompleted = true
 			mission.Completion = 1
+			--Clear but remember minimap state
+			SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
+			_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 			-- Take from inventory first before held items 
 			if inv_slot:IsValid() then 
 				GAME:TakePlayerBagItem(inv_slot.Slot)
@@ -199,6 +205,9 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 				SV.TemporaryFlags.MissionCompleted = true
 				mission.Completion = 1
 				UI:WaitShowDialogue("Yes! You completed " .. escortName .. "'s escort mission.\n" .. escortName .. " is delighted!")
+				--Clear but remember minimap state
+				SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
+				_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 				GAME:WaitFrames(20)
 				
 				UI:SetSpeaker(escort)

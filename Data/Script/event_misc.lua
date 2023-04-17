@@ -71,7 +71,10 @@ function ITEM_SCRIPT.MissionPickup(owner, ownerChar, context, args)
     SV.TemporaryFlags.MissionCompleted = true
     GAME:WaitFrames(70)
     UI:WaitShowDialogue("Yes! You found " .. _DATA:GetMonster(mission.Client):GetColoredName() .. "'s " .. context.Item:GetDungeonName() .. "!")
-    GeneralFunctions.AskMissionWarpOut()
+	--Clear but remember minimap state
+	SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
+	_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
+	GeneralFunctions.AskMissionWarpOut()
   end
 end
 
