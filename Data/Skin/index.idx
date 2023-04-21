@@ -1,0 +1,105 @@
+﻿{
+"Version": "0.7.4.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"normal_black": {
+"Name": {
+"DefaultText": "Normal (Black)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"normal_blue": {
+"Name": {
+"DefaultText": "Normal (Blue)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 9
+},
+"normal_cyan": {
+"Name": {
+"DefaultText": "Normal (Cyan)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 8
+},
+"normal_green": {
+"Name": {
+"DefaultText": "Normal (Green)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 7
+},
+"normal_magenta": {
+"Name": {
+"DefaultText": "Normal (Magenta)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"normal_orange": {
+"Name": {
+"DefaultText": "Normal (Orange)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 5
+},
+"normal_pink": {
+"Name": {
+"DefaultText": "Normal (Pink)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 12
+},
+"normal_purple": {
+"Name": {
+"DefaultText": "Normal (Purple)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 10
+},
+"normal_red": {
+"Name": {
+"DefaultText": "Normal (Red)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 4
+},
+"normal_white": {
+"Name": {
+"DefaultText": "Normal (White)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 3
+},
+"normal_yellow": {
+"Name": {
+"DefaultText": "Normal (Yellow)",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+}
+}
+}
