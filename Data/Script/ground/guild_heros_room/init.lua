@@ -133,9 +133,10 @@ function guild_heros_room.Book_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(hero_ground, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
     GeneralFunctions.TurnTowardsLocation(partner_ground, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
+	--Change where the choice menu goes; put it on the left because of placement of book in the map.
+	--UI:SetChoiceLoc(8, 102)
 	
-	
-	local choices = {"Change nicknames", "Change team name", "Check rank", "Change bandanas", "Nothing"}
+	local choices = {"Change scarves", "Change nicknames", "Change team name", "Check rank", "Nothing"}
 	UI:BeginChoiceMenu("What would you like to do?", choices, 1, #choices)
 	UI:WaitForChoice()
 	local choice_result = UI:ChoiceResult()
@@ -148,6 +149,88 @@ function guild_heros_room.Book_Action(obj, activator)
 	end
 	
 	if choice_result == 1 then
+		local state = 1
+		while state > 0 do
+			UI:BeginChoiceMenu("Whose scarf would you like to change?", {hero_ground:GetDisplayName(), partner_ground:GetDisplayName(), "Neither"}, 1, 3)
+			UI:WaitForChoice()
+			local chara_choice = UI:ChoiceResult()
+			local chara
+			
+			if chara_choice == 1 then 
+				chara = hero_ground
+			elseif chara_choice == 2 then
+				chara = partner_ground
+			else
+				state = -1
+				break
+			end
+			
+			--check if sprites exist for that pokemon
+			--Current form updates from base form when a new ground/map is entered. Need to change both so the base form is updated proper, and current form needs to change to visually show it without reloading map.
+			local monId = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, 'normal_black', chara.CurrentForm.Gender)
+			local fallback = RogueEssence.Content.GraphicsManager.GetFallbackForm(RogueEssence.Content.GraphicsManager.CharaIndex, monId:ToCharID())
+			if fallback.Skin == monId:ToCharID().Skin then			
+				UI:BeginChoiceMenu("Which color would you like?", {"Black", "Blue", "Cyan", "Green", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow", "No scarf"}, 1, 12)
+				UI:WaitForChoice()
+				local scarf_choice = UI:ChoiceResult()
+				local current_skin = chara.CurrentForm.Skin
+				local new_skin
+				if scarf_choice == 1 then
+					new_skin = "normal_black"
+				elseif scarf_choice == 2 then
+					new_skin = "normal_blue"
+				elseif scarf_choice == 3 then
+					new_skin = "normal_cyan"
+				elseif scarf_choice == 4 then
+					new_skin = "normal_green"
+				elseif scarf_choice == 5 then
+					new_skin = "normal_magenta"
+				elseif scarf_choice == 6 then
+					new_skin = "normal_orange"
+				elseif scarf_choice == 7 then
+					new_skin = "normal_pink"
+				elseif scarf_choice == 8 then
+					new_skin = "normal_purple"
+				elseif scarf_choice == 9 then
+					new_skin = "normal_red"
+				elseif scarf_choice == 10 then
+					new_skin = "normal_white"
+				elseif scarf_choice == 11 then
+					new_skin = "normal_yellow"
+				elseif scarf_choice == 12 then
+					new_skin = "normal"
+				else 
+					new_skin = current_skin
+				end
+			
+				if new_skin ~= current_skin then 
+					GAME:FadeOut(false, 20)
+					chara.Data.BaseForm = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, new_skin, chara.CurrentForm.Gender)
+					chara.Data.CurrentForm = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, new_skin, chara.CurrentForm.Gender)
+					GAME:WaitFrames(20)
+					SOUND:PlayBattleSE('_UNK_EVT_023')
+					GAME:WaitFrames(40)
+					GAME:FadeIn(20)
+					
+					GAME:WaitFrames(40)
+					if chara_choice == 1 then
+						GeneralFunctions.HeroDialogue(chara, "(Looking good!)", "Normal")
+					else
+						UI:SetSpeaker(chara)
+						UI:WaitShowDialogue("Looking good!")
+					end
+					GAME:WaitFrames(20)
+				end
+				
+				state = -1
+			else
+				UI:WaitShowDialogue("There aren't scarf sprites made yet for this Pokémon.[pause=0] Check back later!")
+				state = -1
+			end
+
+		end 
+	
+	elseif choice_result == 2 then
 		UI:BeginChoiceMenu("Whose name would you like to change?", {hero_ground:GetDisplayName(), partner_ground:GetDisplayName(), "Neither"}, 1, 3)
 		UI:WaitForChoice()
 		local name_result = UI:ChoiceResult()
@@ -172,7 +255,7 @@ function guild_heros_room.Book_Action(obj, activator)
 			UI:WaitShowDialogue("Your partner's name is now " .. partner_ground:GetDisplayName() .. "!")
 		end
 		
-	elseif choice_result == 2 then
+	elseif choice_result == 3 then
 		local name = _DATA.Save.ActiveTeam.Name
 		UI:NameMenu("What is your team's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old team name.", 60)
 		UI:WaitForChoice()
@@ -181,90 +264,13 @@ function guild_heros_room.Book_Action(obj, activator)
 		if result == "" then result = name end
 		GAME:SetTeamName(result)
 		UI:WaitShowDialogue("Your team's name is now Team " .. GAME:GetTeamName() .. "!")
-	elseif choice_result == 3 then
+	elseif choice_result == 4 then
 		local current_rank = _DATA.Save.ActiveTeam.Rank
 		local next_rank = _DATA:GetRank(current_rank).Next
 		local to_go = _DATA:GetRank(current_rank).FameToNext - _DATA.Save.ActiveTeam.Fame 
 
 		UI:WaitShowDialogue("Your team is currently [color=#FFA5FF]" .. current_rank:gsub("^%l", string.upper) .. " Rank[color].")
 		UI:WaitShowDialogue("You need [color=#00FFFF]" .. to_go .. "[color] Adventurer Rank Points to become [color=#FFA5FF]" .. next_rank:gsub("^%l", string.upper) .. " Rank[color].")
-	elseif choice_result == 4 then
-		local state = 1
-		while state > 0 do
-			UI:BeginChoiceMenu("Whose bandana would you like to change?", {hero_ground:GetDisplayName(), partner_ground:GetDisplayName(), "Neither"}, 1, 3)
-			UI:WaitForChoice()
-			local chara_choice = UI:ChoiceResult()
-			local chara
-			
-			if chara_choice == 1 then 
-				chara = hero_ground
-			elseif chara_choice == 2 then
-				chara = partner_ground
-			else
-				state = -1
-				break
-			end
-			
-			--check if sprites exist for that pokemon
-			--Current form updates from base form when a new ground/map is entered. Need to change both so the base form is updated proper, and current form needs to change to visually show it without reloading map.
-			local monId = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, 'normal_black', chara.CurrentForm.Gender)
-			local fallback = RogueEssence.Content.GraphicsManager.GetFallbackForm(RogueEssence.Content.GraphicsManager.CharaIndex, monId:ToCharID())
-			print(monId:ToCharID())
-			print(fallback)
-			if fallback == monId:ToCharID() then			
-				UI:BeginChoiceMenu("Which color would you like?", {"Black", "Blue", "Cyan", "Green", "Magenta", "Orange", "Pink", "Purple", "Red", "White", "Yellow", "No bandana"}, 1, 12)
-				UI:WaitForChoice()
-				local bandana_choice = UI:ChoiceResult()
-				local current_skin = chara.CurrentForm.Skin
-				local new_skin
-				if bandana_choice == 1 then
-					new_skin = "normal_black"
-				elseif bandana_choice == 2 then
-					new_skin = "normal_blue"
-				elseif bandana_choice == 3 then
-					new_skin = "normal_cyan"
-				elseif bandana_choice == 4 then
-					new_skin = "normal_green"
-				elseif bandana_choice == 5 then
-					new_skin = "normal_magenta"
-				elseif bandana_choice == 6 then
-					new_skin = "normal_orange"
-				elseif bandana_choice == 7 then
-					new_skin = "normal_pink"
-				elseif bandana_choice == 8 then
-					new_skin = "normal_purple"
-				elseif bandana_choice == 9 then
-					new_skin = "normal_red"
-				elseif bandana_choice == 10 then
-					new_skin = "normal_white"
-				elseif bandana_choice == 11 then
-					new_skin = "normal_yellow"
-				else
-					new_skin = "normal"
-				end
-			
-				GAME:FadeOut(false, 20)
-				chara.Data.BaseForm = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, new_skin, chara.CurrentForm.Gender)
-				chara.Data.CurrentForm = RogueEssence.Dungeon.MonsterID(chara.CurrentForm.Species, chara.CurrentForm.Form, new_skin, chara.CurrentForm.Gender)
-				SOUND:PlayBattleSE('UNK_EVT_023')
-				GAME:WaitFrames(40)
-				GAME:FadeIn(20)
-				
-				GAME:WaitFrames(40)
-				if chara_choice == 1 then
-					GeneralFunctions.HeroDialogue(chara, "(Looking good!)", "Normal")
-				else
-					UI:SetSpeaker(chara)
-					UI:WaitShowDialogue("Looking good!")
-				end
-				GAME:WaitFrames(20)
-				state = -1
-			else
-				UI:WaitShowDialogue("There aren't bandana sprites made yet for this Pokémon.[pause=0] Check back later!")
-				state = -1
-			end
-
-		end 
 	end
 
 	if choice_result ~= #choices then
@@ -274,7 +280,7 @@ function guild_heros_room.Book_Action(obj, activator)
 		GAME:WaitFrames(40)		
 	end
 	
-	
+	--UI:ResetChoiceLoc()
 	partner_ground.IsInteracting = false
 	GROUND:CharEndAnim(partner_ground)
 	GROUND:CharEndAnim(hero_ground)
