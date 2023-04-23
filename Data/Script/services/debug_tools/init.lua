@@ -76,16 +76,34 @@ function DebugTools:OnMenuButtonPressed()
 	--local hp_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_HP") .. " {999}/{999}")
 	--local hunger_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_HUNGER") .. " {Character.MAX_FULLNESS}/{Character.MAX_FULLNESS}");
 
-	--local rankStart = RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4 + DebugTools.NicknameMenu.MAX_LENGTH + level_length + hp_length + remaining_width
-    DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("Rank: Dogshit!",
-											RogueElements.Loc(98, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
-					
+	--local rankStart = RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4 + DebugTools.NicknameMenu.MAX_LENGTH + level_length + hp_length + remaining_width				
 	--local remaining_width = DebugTools.MainMenu.SummaryMenuBounds.End.X - DebugTools.MainMenu.SummaryMenuBounds.X - (RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4) * 2 - level_length - hp_length - hunger_length - DebugTools.NicknameMenu.MAX_LENGTH
-	DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("To go: Poop!",
-                    RogueElements.Loc(200, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
+
 
  end
   DebugTools.MainMenu:SetupTitleAndSummary()
+  
+  --need to do this after setting up title and summary
+  --Add rank/points to go in overworld
+  if RogueEssence.GameManager.Instance.CurrentScene ~= RogueEssence.Dungeon.DungeonScene.Instance then
+  	local rank = _DATA.Save.ActiveTeam.Rank
+	local to_go = _DATA:GetRank(rank).FameToNext - _DATA.Save.ActiveTeam.Fame 
+	rank = "[color=#FFA5FF]" .. rank:gsub("^%l", string.upper) .. "[color]"
+	
+	-- -1 to go represents max rank
+	if to_go < 0 then
+		to_go = "Maxed!"
+	end
+	
+	to_go = "[color=#00FFFF]" .. to_go .. "[color]"
+  
+    DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("Rank: " .. rank,
+											RogueElements.Loc(104, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
+	
+  	DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("To go: " .. to_go,
+                    RogueElements.Loc(206, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
+  end
+  
   DebugTools.MainMenu:InitMenu()
   TASK:WaitTask(_MENU:ProcessMenuCoroutine(DebugTools.MainMenu))
 end
