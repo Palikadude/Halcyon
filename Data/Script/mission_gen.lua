@@ -2022,8 +2022,17 @@ function JobMenu:DeleteJob()
 			self.parent_board_menu.parent_selection_menu.menu.MenuElements:Clear()
 			self.parent_board_menu.parent_selection_menu:DrawMenu()
 		end
+		
 	end
 	_MENU:RemoveMenu()
+	
+	--If we accessed the job via the main menu, then close the main menu if we've deleted our last job. Only need it here because only on total job deletion should the main menu ever need to change.
+	if self.parent_board_menu.parent_main_menu ~= nil then 
+		if self.taken_count == 1 then--1 instead of 0 as the taken_count of the last job that was just deleted would be 1
+			_MENU:RemoveMenu()
+		end
+	end
+	
 end
 
 --for use with submenu
@@ -2129,7 +2138,7 @@ end
 BoardMenu = Class('BoardMenu')
 
 --board type should be taken, mission, or outlaw 
-function BoardMenu:initialize(board_type, parent_selection_menu)
+function BoardMenu:initialize(board_type, parent_selection_menu, parent_main_menu)
   assert(self, "BoardMenu:initialize(): Error, self is nil!")
     
   self.menu = RogueEssence.Menu.ScriptableMenu(32, 32, 256, 176, function(input) self:Update(input) end)
@@ -2139,6 +2148,9 @@ function BoardMenu:initialize(board_type, parent_selection_menu)
   
   --For refreshing the parent selection menu
   self.parent_selection_menu = parent_selection_menu
+  
+  --for refreshing the main menu (esc menu) if we accessed the board menu via that
+  self.parent_main_menu = parent_main_menu
   
   if self.board_type == 'taken' then
 	self.jobs = SV.TakenBoard

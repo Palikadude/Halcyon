@@ -7,6 +7,7 @@
 ]]--
 require 'common'
 require 'services.baseservice'
+require 'mission_gen'
 
 --Declare class DebugTools
 local DebugTools = Class('DebugTools', BaseService)
@@ -57,6 +58,33 @@ function DebugTools:OnMenuButtonPressed()
     DebugTools.MainMenu = RogueEssence.Menu.MainMenu()
   end
   DebugTools.MainMenu:SetupChoices()
+  --Halcyon custom menu stuff for jobs. 
+  --Check if we're in a dungeon or not.
+  if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+  
+  else--not in a dungeon
+	--Add Job List option
+	local taken_count = MISSION_GEN.GetTakenCount()
+	local job_list_color = Color.Red
+	if taken_count > 0 then
+		job_list_color = Color.White
+	end 
+	DebugTools.MainMenu.Choices:Insert(4, RogueEssence.Menu.MenuTextChoice("Job List", function () _MENU:AddMenu(BoardMenu:new("taken", nil, DebugTools.MainMenu).menu, false) end, taken_count > 0, job_list_color))
+ 
+	--Add rank/points to go 
+	--local level_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_LEVEL_SHORT") .. tostring(RogueEssence.Data.DataManager.Instance.Start.MaxLevel))
+	--local hp_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_HP") .. " {999}/{999}")
+	--local hunger_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_HUNGER") .. " {Character.MAX_FULLNESS}/{Character.MAX_FULLNESS}");
+
+	--local rankStart = RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4 + DebugTools.NicknameMenu.MAX_LENGTH + level_length + hp_length + remaining_width
+    DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("Rank: Dogshit!",
+											RogueElements.Loc(98, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
+					
+	--local remaining_width = DebugTools.MainMenu.SummaryMenuBounds.End.X - DebugTools.MainMenu.SummaryMenuBounds.X - (RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4) * 2 - level_length - hp_length - hunger_length - DebugTools.NicknameMenu.MAX_LENGTH
+	DebugTools.MainMenu.SummaryElements:Add(RogueEssence.Menu.MenuText("To go: Poop!",
+                    RogueElements.Loc(200, RogueEssence.Content.GraphicsManager.MenuBG.TileHeight), RogueElements.DirH.Left))
+
+ end
   DebugTools.MainMenu:SetupTitleAndSummary()
   DebugTools.MainMenu:InitMenu()
   TASK:WaitTask(_MENU:ProcessMenuCoroutine(DebugTools.MainMenu))
