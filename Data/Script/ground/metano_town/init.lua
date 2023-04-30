@@ -345,13 +345,14 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	    zone_name = "[color=#00FFFF]"..zone_summary.Name:ToLocal().."[color]"
 	  end
 
+		local zone_title = zone_name
 	  if dungeon_entrances[ii] == SV.ChapterProgression.CurrentStoryDungeon then 
 	      zone_name = STRINGS:Format('\\uE111 ') .. zone_name --exclamation symbol 
 	  elseif mission_dests[dungeon_entrances[ii]] then 
 	      zone_name = STRINGS:Format("\\uE10F ") .. zone_name --open letter
       end
-      table.insert(open_dests, { Name=zone_name, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
-	end
+      table.insert(open_dests, { Name=zone_name, Title=zone_title, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
+		end
   end
   
   --check for unlock of grounds
