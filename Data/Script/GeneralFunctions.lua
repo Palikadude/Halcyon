@@ -1271,6 +1271,14 @@ function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turndurat
 	end
 end
 
+function GeneralFunctions.RemoveCharEffects(char)
+	char.StatusEffects:Clear();
+	char.ProxyAtk = -1;
+	char.ProxyDef = -1;
+	char.ProxyMAtk = -1;
+	char.ProxyMDef = -1;
+	char.ProxySpeed = -1;
+end
 
 --called whenever to warp the party out, including guests
 function GeneralFunctions.WarpOut()
@@ -1281,7 +1289,7 @@ function GeneralFunctions.WarpOut()
 		if not player.Dead then
 			GAME:WaitFrames(60)
 			local anim = RogueEssence.Dungeon.CharAbsentAnim(player.CharLoc, player.CharDir)
-			player:FullRestore()
+			GeneralFunctions.RemoveCharEffects(player)
 			TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
 			TASK:WaitTask(player:StartAnim(anim))
 		end
@@ -1292,7 +1300,7 @@ function GeneralFunctions.WarpOut()
 		if not guest.Dead then
 			GAME:WaitFrames(60)
 			local anim = RogueEssence.Dungeon.CharAbsentAnim(guest.CharLoc, guest.CharDir)
-			guest:FullRestore()
+			GeneralFunctions.RemoveCharEffects(guest)
 			TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
 			TASK:WaitTask(guest:StartAnim(anim))
 		end
