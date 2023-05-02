@@ -106,6 +106,7 @@ function BATTLE_SCRIPT.EscortInteract(owner, ownerChar, context, args)
 end
 
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
+	context.CancelState.Cancel = true
 	local targetName = context.Target:GetDisplayName(true);
   local oldDir = context.Target.CharDir
 
@@ -189,7 +190,7 @@ function DeliveryCheck(context, targetName, mission)
 end
 
 function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
-
+	context.CancelState.Cancel = true
   --Mark this as the last dungeon entered.
   local tbl = LTBL(context.Target)
 	if tbl ~= nil and tbl.Mission ~= nil then
