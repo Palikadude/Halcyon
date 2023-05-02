@@ -74,6 +74,9 @@ function ITEM_SCRIPT.MissionPickup(owner, ownerChar, context, args)
 	--Clear but remember minimap state
 	SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
 	_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
+	
+	--Slight pause before asking to warp out 
+	GAME:WaitFrames(20)
 	GeneralFunctions.AskMissionWarpOut()
   end
 end

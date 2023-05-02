@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -112,6 +112,7 @@
 "X": 0,
 "Y": 0
 },
+"HideMinimap": false,
 "NoRescue": false,
 "NoSwitching": false,
 "MapTurns": 0,
@@ -6063,8 +6064,8 @@
 "X": 2,
 "Y": 10
 },
-"ID": "",
-"Revealed": false,
+"ID": "tile_reset",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -14025,8 +14026,8 @@
 "X": 23,
 "Y": 10
 },
-"ID": "",
-"Revealed": false,
+"ID": "tile_reset",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }

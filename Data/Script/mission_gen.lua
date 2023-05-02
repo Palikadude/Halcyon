@@ -2486,6 +2486,136 @@ function BoardSelectionMenu:Update(input)
   end
 end 
 
+
+
+
+------------------------
+-- DungeonJobList  Menu
+------------------------
+DungeonJobList = Class('DungeonJobList')
+
+--Used to see what jobs are in this dungeon
+function DungeonJobList:initialize()
+  assert(self, "DungeonJobList:initialize(): Error, self is nil!")
+  
+  self.menu = RogueEssence.Menu.ScriptableMenu(32, 32, 256, 176, function(input) self:Update(input) end)
+  self.dungeon = ""
+  
+  --This menu should only be accessible from dungeons, but add this as a check just in case we somehow access this menu from outside a dungeon.
+  if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+	self.dungeon = _ZONE.CurrentZoneID
+  end
+  
+  self.jobs = SV.TakenBoard
+  self.job_count = 0
+  
+  for i = 1, 8, 1 do
+    if SV.TakenBoard[i].Client == "" then 
+	  break 
+    elseif SV.TakenBoard[i].Zone ~= '' and SV.TakenBoard[i].Zone == self.dungeon then 
+	  self.job_count = self.job_count + 1 
+	end
+  end 
+  self:DrawMenu()
+
+end
+
+--refreshes information and draws to the menu. This is important in case there's a change to the taken board
+function DungeonJobList:DrawMenu()
+    --Standard menu divider. Reuse this whenever you need a menu divider at the top for a title.
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuDivider(RogueElements.Loc(8, 8 + 12), self.menu.Bounds.Width - 8 * 2))
+
+  --Standard title. Reuse this whenever a title is needed.
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Mission Objectives", RogueElements.Loc(16, 8)))
+  
+  --how many jobs have we populated so far
+  local count = 0
+  
+  --populate jobs that are in this dungeon
+  for i = 1, 8, 1 do 
+	--stop populating if we hit a job that's empty
+    if self.jobs[i].Client == "" then break end 
+	
+	--only look at jobs in the current dungeon that aren't suspended
+	if self.jobs[i].Zone == self.dungeon and self.jobs[i].Taken then 	
+		local floor =  MISSION_GEN.STAIR_TYPE[self.jobs[i].Zone] ..'[color=#00FFFF]' .. tostring(self.jobs[i].Floor) .. "[color]F"
+		local objective = ""
+		local icon = ""
+		local goal = self.jobs[i].Type
+		
+		local target = _DATA:GetMonster(self.jobs[i].Target):GetColoredName()
+	
+		local client = ""
+		if self.jobs[i].Client == "zhayn" then 
+			client = "[color=#00FFFF]Zhayn[color]"
+		else 
+			client = _DATA:GetMonster(self.jobs[i].Client):GetColoredName()
+		end
+		
+		local item = "" 
+		if self.jobs[i].Item ~= "" then
+			item = _DATA:GetItem(self.jobs[i].Item):GetColoredName()
+		end
+		
+		if goal == COMMON.MISSION_TYPE_RESCUE then
+			objective = "Rescue " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_ESCORT then 
+			objective = "Escort " .. client .. " to " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_OUTLAW then
+			objective = "Arrest " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_EXPLORATION then
+			objective = "Explore with " .. client .. "."
+		elseif goal == COMMON.MISSION_TYPE_LOST_ITEM then 
+			objective = "Find " .. item .. " for " .. client .. "."
+		elseif goal == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+			objective = "Reclaim " .. item .. " from " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+			objective = "Arrest cowardly " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+			objective = "Arrest big boss " .. target .. "."
+		elseif goal == COMMON.MISSION_TYPE_DELIVERY then
+			objective = "Deliver " .. item .. " to " .. client .. "."
+		end
+		
+		
+		
+		if self.jobs[i].Completion == COMMON.MISSION_INCOMPLETE then 
+			icon = STRINGS:Format("\\uE10F")--open letter
+		else
+			icon = STRINGS:Format("\\uE10A")--check mark
+		end
+
+		
+
+		
+		self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(icon, RogueElements.Loc(16, 24 + 14 * count)))
+		self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(floor, RogueElements.Loc(28, 24 + 14 * count)))
+		self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(objective, RogueElements.Loc(60, 24 + 14 * count)))
+		
+		count = count + 1
+	end
+
+  end
+  
+  --put a default message if no jobs.
+  if count == 0 then 
+  	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Go as far as you can.", RogueElements.Loc(16, 12 + 14)))
+  end 
+  
+end 
+
+
+function DungeonJobList:Update(input)
+
+ if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then
+	_GAME:SE("Menu/Cancel")
+    _MENU:RemoveMenu()
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+    _GAME:SE("Menu/Cancel")
+    _MENU:RemoveMenu()
+  end
+end 
+
 --How many missions are taken? Probably shoulda just had a variable that kept track, but oh well...
 function MISSION_GEN.GetTakenCount()
 	local count = 0

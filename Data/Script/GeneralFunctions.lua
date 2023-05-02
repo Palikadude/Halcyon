@@ -1308,6 +1308,7 @@ function GeneralFunctions.AskMissionWarpOut()
 			UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", false)
 			UI:WaitForChoice()
 			local leave_dungeon = UI:ChoiceResult()
+			GAME:WaitFrames(20)
 			if leave_dungeon then
 				UI:ChoiceMenuYesNo("Do you really want to leave?", true)
 				UI:WaitForChoice()
@@ -1320,9 +1321,11 @@ function GeneralFunctions.AskMissionWarpOut()
 					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
 					SV.TemporaryFlags.PriorMapSetting = nil
 					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Escaped))
+				else
+					--pause between textboxes if player de-confirms
+					GAME:WaitFrames(20)
 				end
 			else
-				GAME:WaitFrames(20)
 				UI:ChoiceMenuYesNo("Do you want to continue this adventure?", true)
 				UI:WaitForChoice()
 				local continue_exploring = UI:ChoiceResult()
@@ -1333,6 +1336,9 @@ function GeneralFunctions.AskMissionWarpOut()
 					--Set minimap state back to old setting
 					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
 					SV.TemporaryFlags.PriorMapSetting = nil
+				else
+					--pause between textboxes if player de-confirms
+					GAME:WaitFrames(20)
 				end
 			end
 		end

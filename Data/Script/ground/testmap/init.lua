@@ -60,6 +60,13 @@ end
 -- Entities Callbacks
 -------------------------------
 
+function testmap.EnterCavern_Action(chara, activator)
+GAME:EnterDungeon("crooked_cavern", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
+
+function testmap.EnterRiver_Action(chara, activator)
+GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
 
 function testmap.Make_Missions_Action(chara, activator)
 	print("Running mission generation!")

@@ -4832,7 +4832,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>Please help my [color=#00FF00]Hatenna[color]! She was scared by\na strong emotion and ran off! Help her!</value>
     <comment>Mission Body - Parent Child - Hatterene and Hatenna</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_017" xml:space="preserve">
-    <value>[color=#00FF00]Gothita[color] got separated from me!\nShe probably was staring at something when we were split up! Somebody, rescue her!</value>
+    <value>[color=#00FF00]Gothita[color] got separated from me! She was staring\nat something when we got split up! Please, help!</value>
     <comment>Mission Body - Parent Child - Gothitelle and Gothita</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_018" xml:space="preserve">
     <value>Our son is missing! He isn't a strong tunneler yet!\nSomebody, help him! </value>

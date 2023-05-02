@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "audino": {
@@ -60,17 +60,6 @@
 "Comment": "",
 "SortOrder": 531
 },
-"basculegion": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 902
-},
 "cubone": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [
@@ -110,17 +99,6 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 104
-},
-"enamorus": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 905
 },
 "kecleon": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -169,28 +147,6 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 352
-},
-"kleavor": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 900
-},
-"overqwil": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 904
 },
 "rowlet": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -290,48 +246,6 @@
 "Comment": "",
 "SortOrder": 551
 },
-"sneasler": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 903
-},
-"sprigatito": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [
-{
-"Name": {
-"DefaultText": "Sprigatito",
-"LocalTexts": {}
-},
-"Released": true,
-"Temporary": false
-}
-],
-"Name": {
-"DefaultText": "Sprigatito",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Halcyon custom add. Uses SV learnset but removes anything exclusive to later games..\r\nDoesn't evolve yet.",
-"SortOrder": 906
-},
-"ursaluna": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 901
-},
 "vulpix": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [
@@ -390,17 +304,6 @@
 "Comment": "",
 "SortOrder": 37
 },
-"wyrdeer": {
-"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
-"Forms": [],
-"Name": {
-"DefaultText": "",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"SortOrder": 899
-},
 "zorua": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [
@@ -440,6 +343,103 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 570
+},
+"basculegion": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 902
+},
+"enamorus": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 905
+},
+"kleavor": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 900
+},
+"overqwil": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 904
+},
+"sneasler": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 903
+},
+"sprigatito": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Sprigatito",
+"LocalTexts": {}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Sprigatito",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Halcyon custom add. Uses SV learnset but removes anything exclusive to later games..\r\nDoesn't evolve yet.",
+"SortOrder": 906
+},
+"ursaluna": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 901
+},
+"wyrdeer": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [],
+"Name": {
+"DefaultText": "",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 899
 }
 }
 }

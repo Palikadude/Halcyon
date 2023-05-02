@@ -57,18 +57,22 @@ function DebugTools:OnMenuButtonPressed()
   if DebugTools.MainMenu == nil then
     DebugTools.MainMenu = RogueEssence.Menu.MainMenu()
   end
-  DebugTools.MainMenu:SetupChoices()
-  --Halcyon custom menu stuff for jobs. 
-  --Check if we're in a dungeon or not.
-  if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
   
-  else--not in a dungeon
+  DebugTools.MainMenu:SetupChoices()
+  
+  --Halcyon custom menu stuff for jobs. 
+  --Check if we're in a dungeon or not. Only do main menu changes outside of a dungeon. Do others menu changes in dungeon only.
+  if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+    DebugTools.MainMenu.Choices:RemoveAt(5)
+    DebugTools.MainMenu.Choices:Insert(5, RogueEssence.Menu.MenuTextChoice("Others", function () _MENU:AddMenu(DebugTools:CustomDungeonOthersMenu(), false) end))
+  else--not in a dungeon 
 	--Add Job List option
 	local taken_count = MISSION_GEN.GetTakenCount()
 	local job_list_color = Color.Red
 	if taken_count > 0 then
 		job_list_color = Color.White
 	end 
+	
 	DebugTools.MainMenu.Choices:Insert(4, RogueEssence.Menu.MenuTextChoice("Job List", function () _MENU:AddMenu(BoardMenu:new("taken", nil, DebugTools.MainMenu).menu, false) end, taken_count > 0, job_list_color))
  
 	--Add rank/points to go 
@@ -80,7 +84,8 @@ function DebugTools:OnMenuButtonPressed()
 	--local remaining_width = DebugTools.MainMenu.SummaryMenuBounds.End.X - DebugTools.MainMenu.SummaryMenuBounds.X - (RogueEssence.Content.GraphicsManager.MenuBG.TileWidth + 4) * 2 - level_length - hp_length - hunger_length - DebugTools.NicknameMenu.MAX_LENGTH
 
 
- end
+  end
+ 
   DebugTools.MainMenu:SetupTitleAndSummary()
   
   --need to do this after setting up title and summary
@@ -108,6 +113,17 @@ function DebugTools:OnMenuButtonPressed()
   TASK:WaitTask(_MENU:ProcessMenuCoroutine(DebugTools.MainMenu))
 end
 
+
+
+function DebugTools:CustomDungeonOthersMenu()
+    local menu = RogueEssence.Menu.OthersMenu()
+    menu:SetupChoices();
+	if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+		menu.Choices:Add(RogueEssence.Menu.MenuTextChoice("Mission Objectives", function () _MENU:AddMenu(DungeonJobList:new().menu, false) end))
+	end
+	menu:InitMenu();
+    return menu
+end
 
 
 --[[---------------------------------------------------------------

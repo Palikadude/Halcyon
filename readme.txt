@@ -1,4 +1,6 @@
-Halcyon is a mod for PMDO created by Palika that aims to recapture the vibes and energy of Explorers. It currently consists of 3 chapters.
+Halcyon is a mod for PMDO created by Palika that aims to recapture the vibes and energy of Explorers.
+It currently consists of 3 chapters. 
+A final length of 8-12 chapters is currently planned.
 
 Credits:
 Palika - mod author. scripting, writing, balancing, etc. (all non-engine work, except where other credit is given)
@@ -26,6 +28,7 @@ Baroness Faron - Audino upwards eating + posing sprites
 Happysmily - Shuckle's cafe animations, sandile scarf sprites
 Cait_Sith - Luxio fainting animation
 NanaelJustice - Cleaning up staircases inside guild and adding some detail to them
+Minemaker0430 - Scarf sprites for player/partner characters
 
 Other custom sprites and animations come from the master PMD Sprite Repository and were not custom made for this mod.
 If you helped in some way and aren't listed here (probably because I forgot, sorry!) please let me know.
