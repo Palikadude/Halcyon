@@ -57,7 +57,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
           math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
         )
         
-        post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = "'..name..'" }'))
+        post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = '..name..' }'))
         if mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
           local item_feature = PMDC.LevelGen.MobSpawnItem(true, mission.Item)
           post_mob.SpawnFeatures:Add(item_feature)
@@ -146,6 +146,7 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
     if missionType ~= COMMON.MISSION_TYPE_OUTLAW_ITEM then
       activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawDeath", '{ Mission = '..missionNum..' }'))
     else 
+      activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawItemDeath", '{ Mission = '..missionNum..' }'))
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawItemCheck", '{ Mission = '..missionNum..' }'))
     end
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFloor", '{ Mission = '..missionNum..' }'))

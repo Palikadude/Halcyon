@@ -198,11 +198,20 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 	end
 end
 
+function SINGLE_CHAR_SCRIPT.OnOutlawItemDeath(owner, ownerChar, context, args)
+	local tbl = LTBL(context.User)
+	local mission_num = tbl.Mission
+	if mission_num ~= nil then
+		SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+	end
+end
+
+
 function SINGLE_CHAR_SCRIPT.OnOutlawDeath(owner, ownerChar, context, args)
 	local tbl = LTBL(context.User)
 	local mission_num = tbl.Mission
 	if mission_num ~= nil then
-		local curr_mission = SV.TakenBoard[tonumber(mission_num)]
+		local curr_mission = SV.TakenBoard[mission_num]
 		local outlaw_name = _DATA:GetMonster(curr_mission.Target):GetColoredName()
 		PrintInfo(tostring(curr_mission.Completion))
 		SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
@@ -224,11 +233,11 @@ end
 
 function SINGLE_CHAR_SCRIPT.OutlawItemCheck(owner, ownerChar, context, args)
 	local mission_num = args.Mission
-	local curr_mission = SV.TakenBoard[tonumber(mission_num)]
+	local curr_mission = SV.TakenBoard[mission_num]
 
 	if curr_mission.Completion == COMMON.MISSION_INCOMPLETE then
 		local remaining_outlaw = false
-		local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", tostring(mission_num))
+		local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", mission_num)
 		if found_outlaw then
 			remaining_outlaw = true
 		else
