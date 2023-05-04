@@ -93,8 +93,8 @@ function BATTLE_SCRIPT.EscortInteract(owner, ownerChar, context, args)
   local job = SV.TakenBoard[mission_slot]
   
   if job.Type == COMMON.MISSION_TYPE_EXPLORATION then
-	local floor = MISSION_GEN.STAIR_TYPE[job.Zone] .. '[color=#00FFFF]' .. tostring(job.Floor) .. '[color]' .. "F"
-	UI:WaitShowDialogue("Please, take me to " .. floor .. "!")
+		local floor = MISSION_GEN.STAIR_TYPE[job.Zone] .. '[color=#00FFFF]' .. tostring(job.Floor) .. '[color]' .. "F"
+		UI:WaitShowDialogue("Please, take me to " .. floor .. "!")
   elseif job.Type == COMMON.MISSION_TYPE_ESCORT then
     if job.Special == MISSION_GEN.SPECIAL_CLIENT_LOVER then
 	  UI:WaitShowDialogue("Please, bring me to my love! I'm counting on you!")
@@ -107,7 +107,9 @@ end
 
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 	context.CancelState.Cancel = true
-	local targetName = context.Target:GetDisplayName(true);
+
+	local targetName = _DATA:GetMonster(context.Target.BaseForm.Species):GetColoredName()
+
   local oldDir = context.Target.CharDir
 
 	local tbl = LTBL(context.Target)
