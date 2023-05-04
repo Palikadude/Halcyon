@@ -21,7 +21,7 @@ function metano_town_ch_3.SetupGround()
 				{'Numel', 192, 536, Direction.Left},
 				{'Nidoqueen', 'Town_Seat_1'},
 				{'Quagsire', 'Town_Seat_2'},
-				{'Zigzagoon', 1312, 264, Direction.Up},
+				{'Zigzagoon', 1232, 360, Direction.Up},
 				{'Furret', 356, 764, Direction.Right},
 				{'Sentret', 388, 716, Direction.Right},
 				{'Snubbull', 1040, 864, Direction.UpRight},
@@ -45,6 +45,7 @@ function metano_town_ch_3.SetupGround()
 		GROUND:CharSetAnim(sentret, 'Sleep', true)
 		
 		AI:SetCharacterAI(wooper_girl, "ai.ground_default", RogueElements.Loc(336, 936), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+		AI:SetCharacterAI(zigzagoon, "ai.ground_default", RogueElements.Loc(1216, 344), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 		AI:SetCharacterAI(mawile, "ai.ground_default", RogueElements.Loc(1024, 1192), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 		AI:SetCharacterAI(machamp, "ai.ground_default", RogueElements.Loc(744, 584), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 		AI:SetCharacterAI(manectric, "ai.ground_default", RogueElements.Loc(1176, 1112), RogueElements.Loc(64, 64), 1, 16, 32, 40, 180)
@@ -1307,8 +1308,9 @@ function metano_town_ch_3.Snubbull_Action(chara, activator)
 end
 
 function metano_town_ch_3.Zigzagoon_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Did you know you can use this board here to check what jobs you've taken?[pause=0] It's perfect for someone like me!")
-	UI:WaitShowDialogue("It's a lot faster than walking all the way back into the guild to see what jobs you need to do!")
+	GeneralFunctions.StartConversation(chara, "Did you know you can check your active jobs while you're in a dungeon?[pause=0] It's perfect for someone like me!")
+	UI:WaitShowDialogue("Just press " .. STRINGS:LocalKeyString(9) .. ",[pause=10] go to the Others menu,[pause=10] then choose Mission Objectives!")
+	UI:WaitShowDialogue("It's really useful if you forget what jobs you've taken for that dungeon,[pause=10] or what floors your jobs are on!")
 	GeneralFunctions.EndConversation(chara)
 end
 

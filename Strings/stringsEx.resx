@@ -4940,7 +4940,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>[color=#00FF00]Makuhita[color] makes an excellent training partner!\nSomebody, anybody, please!</value>
     <comment>Mission Body - Rivals - Tyrogue and Makuhita</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_RIVAL_008" xml:space="preserve">
-    <value>He got lost somewhere! Who will I play with now?\nPlease save him!</value>
+    <value>He got lost somewhere! Who will I play with\nnow? Please save him!</value>
     <comment>Mission Body - Rivals - Lillipup and Poochyena</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_RIVAL_009" xml:space="preserve">
     <value>My friend and rival has gone missing! We're\nrivals because we both have lots of energy!</value>

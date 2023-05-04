@@ -2598,6 +2598,7 @@ function metano_town.Postboard_Action(obj, activator)
   partner.IsInteracting = true
   GROUND:CharSetAnim(partner, 'None', true)
   GROUND:CharSetAnim(hero, 'None', true)	
+  --[[This has been obsoleted by the main menu scripting changes. Down the road, this board can be used for something else instead, like rescues perhaps.
   if SV.Chapter3.DefeatedBoss then -- Only after unlocking missions should this board do anything. This board can be repurposed for something else once missions are added to the main esc menu.
      GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
      GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
@@ -2619,7 +2620,13 @@ function metano_town.Postboard_Action(obj, activator)
 	  UI:SetAutoFinish(false)
 	  UI:SetCenter(false)
   end 
-  
+  ]]--
+  UI:SetAutoFinish(true)
+  UI:SetCenter(true)  
+  UI:WaitShowDialogue("There's nothing here right now.\nCome back again another time!")
+  UI:SetAutoFinish(false)
+  UI:SetCenter(false)
+
   partner.IsInteracting = false
   GROUND:CharEndAnim(partner)
   GROUND:CharEndAnim(hero)	
