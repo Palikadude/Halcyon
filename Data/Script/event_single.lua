@@ -213,16 +213,11 @@ function SINGLE_CHAR_SCRIPT.OnOutlawDeath(owner, ownerChar, context, args)
 	if mission_num ~= nil then
 		local curr_mission = SV.TakenBoard[mission_num]
 		local outlaw_name = _DATA:GetMonster(curr_mission.Target):GetColoredName()
-		PrintInfo(tostring(curr_mission.Completion))
 		SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 		SV.TemporaryFlags.MissionCompleted = true
 		curr_mission.Completion = 1
-		-- if no outlaws are found in the map, return music to normal and remove this status from the map
-		SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 		GAME:WaitFrames(50)
 		UI:ResetSpeaker()
-		-- if no outlaws of the mission list, mark quest as complete
-		--Mark mission completion flags
 		UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlaw_name .. "!")
 		--Clear but remember minimap state
 		SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
@@ -240,8 +235,6 @@ function SINGLE_CHAR_SCRIPT.OutlawItemCheck(owner, ownerChar, context, args)
 		local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", mission_num)
 		if found_outlaw then
 			remaining_outlaw = true
-		else
-			outlaw_name = _DATA:GetMonster(curr_mission.Target):GetColoredName()
 		end
 
 		if not remaining_outlaw then
@@ -275,8 +268,9 @@ end
 function SINGLE_CHAR_SCRIPT.MissionGuestCheck(owner, ownerChar, context, args)
 	local tbl = LTBL(context.User)
 	if tbl ~= nil and tbl.Escort ~= nil then
+		local targetName = _DATA:GetMonster(context.User.BaseForm.Species):GetColoredName()
 		UI:ResetSpeaker()
-		UI:WaitShowDialogue("Oh no! " ..  context.User:GetDisplayName(true) .. " fainted!")
+		UI:WaitShowDialogue("Oh no! " ..  targetName .. " fainted!")
 		GAME:WaitFrames(40)
 		GeneralFunctions.WarpOut()
 		GAME:WaitFrames(80)

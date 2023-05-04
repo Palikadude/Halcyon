@@ -1456,6 +1456,14 @@ function GeneralFunctions.RemoveAllItems()
   end
 end
 
+function GeneralFunctions.RemoveAllGuests()
+	local guest_count = GAME:GetPlayerGuestCount()
+	for i = 0, guest_count - 1, 1 do --beam everyone else out
+		PrintInfo("REMOVING GUESTS")
+		GAME:RemovePlayerGuest(0)
+	end
+end
+
 function GeneralFunctions.PrintMissionType(mission)
 	local val = mission.Type
 
