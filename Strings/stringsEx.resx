@@ -4793,7 +4793,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>Please save my son! He's just a baby!\nHe's even partially in his egg still!</value>
     <comment>Mission Body - Parent Child - Togekiss and Togepi</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_004" xml:space="preserve">
-    <value>My sweet little girl has disappeared! Please, someone, find her!\nYou'll know her by the cute bud on her head!</value>
+    <value>My sweet little girl has disappeared!\nYou'll know her by the cute bud on her head!</value>
     <comment>Mission Body - Parent Child - Roserade and Budew</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_005" xml:space="preserve">
     <value>My poor little [color=#00FF00]Chingling[color]! Please rescue him!\nIf you hear a high-pitched cry, that's him!</value>

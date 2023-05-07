@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'CharacterEssentials'
 require 'GeneralFunctions'
+require 'AudinoAssembly'
 require 'mission_gen'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
@@ -29,6 +30,13 @@ function guild_second_floor.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+
+
+	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
+		GROUND:Hide('Assembly')
+		GROUND:Hide('Assembly_Owner')
+	end
+
 end
 
 ---guild_second_floor.Enter
@@ -650,6 +658,9 @@ function guild_second_floor.Mission_Test_Action(chara, activator)
 	MISSION_GEN.SortOutlaw()
 end
 
+function guild_second_floor.Assembly_Action(obj, activator)
+	AudinoAssembly.Assembly(CH('Assembly_Owner'))
+end
 
 ---------------------------
 -- Map Transitions
