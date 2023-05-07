@@ -106,6 +106,10 @@ function BATTLE_SCRIPT.EscortInteract(owner, ownerChar, context, args)
 end
 
 function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
+	-- Set the nickname of the target, removing the gender sign
+	local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(context.Target.BaseForm.Species).Name:ToLocal()
+	GAME:SetCharacterNickname(context.Target, base_name)
+
 	context.CancelState.Cancel = true
 
 	local targetName = _DATA:GetMonster(context.Target.BaseForm.Species):GetColoredName()
