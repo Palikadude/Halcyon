@@ -208,13 +208,14 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
-			UI:WaitShowDialogue("E-exploration team! Run!")
+			UI:WaitShowDialogue("A-adventurers! Run for it!")
 			local leaderDir = _DUNGEON.ActiveTeam.Leader.CharDir
 			outlaw.CharDir = leaderDir
 		elseif mission.Type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
 			UI:WaitShowDialogue("You've fallen into my trap!")
+			GAME:WaitFrames(20)
 			local origin = _DUNGEON.ActiveTeam.Leader.CharLoc
 			local house_event = PMDC.Dungeon.MonsterHouseMapEvent();
 			local radius = 5
@@ -235,10 +236,16 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			)
 
 			post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
-			local exclaim = _DATA:GetEmote("exclaim");
-			_DUNGEON.ActiveTeam.Leader:StartEmote(RogueEssence.Content.Emote(exclaim.Anim, exclaim.LocHeight, 1));
+			
+			--this feels a bit off so I will comment it out for now
+			--local exclaim = _DATA:GetEmote("exclaim");
+			--_DUNGEON.ActiveTeam.Leader:StartEmote(RogueEssence.Content.Emote(exclaim.Anim, exclaim.LocHeight, 1));
 
-			-- TODO: Add the same goon twice, can be replaced later on
+			-- TODO: Add the same goon six times, can be replaced later on
+			house_event.Mobs:Add(post_mob)
+			house_event.Mobs:Add(post_mob)
+			house_event.Mobs:Add(post_mob)
+			house_event.Mobs:Add(post_mob)
 			house_event.Mobs:Add(post_mob)
 			house_event.Mobs:Add(post_mob)
 
