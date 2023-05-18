@@ -400,6 +400,15 @@ function SINGLE_CHAR_SCRIPT.MissionGuestCheck(owner, ownerChar, context, args)
 	end
 end
 
+function SINGLE_CHAR_SCRIPT.MobilityEndTurn(owner, ownerChar, context, args)
+	local mission_num = args.Mission
+	if SV.TakenBoard[mission_num].Completion == COMMON.MISSION_INCOMPLETE then
+		local npc = COMMON.FindNpcWithTable(false, "Mission", args.Mission)
+		if npc then
+			npc.Mobility = RogueEssence.Data.TerrainData.Mobility.Passable
+		end
+	end
+end
 
 --custom Halcyon SINGLE_CHAR_SCRIPT scripts
 
