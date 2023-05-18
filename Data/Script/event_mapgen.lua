@@ -51,12 +51,19 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
         }
   
         if GeneralFunctions.TableContains(outlaw_arr, mission.Type) then -- outlaw
+          local boost_feature = PMDC.LevelGen.MobSpawnBoost()
           local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
           local post_mob = RogueEssence.LevelGen.MobSpawn()
           post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
   
           if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
-            --TODO: Change to get tactics
+            local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
+            local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
+            local speedBoost = RogueElements.RandRange(speedMin, speedMax)
+            speedBoost = math.min(speedBoost:Pick(_DATA.Save.Rand), 50)
+            boost_feature.SpeedBonus = speedBoost
+
+            -- TODO - Change the tactic from "get_away" to "flee_stairs" after tactic PR is merged
             post_mob.Tactic = "get_away"
           else
             post_mob.Tactic = "boss"
@@ -72,7 +79,6 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
             post_mob.SpawnFeatures:Add(item_feature)
           end
   
-          local boost_feature = PMDC.LevelGen.MobSpawnBoost()
           boost_feature.MaxHPBonus = MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2;
           post_mob.SpawnFeatures:Add(boost_feature)
   
@@ -93,6 +99,8 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
             local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
             local post_mob = RogueEssence.LevelGen.MobSpawn()
             post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+
+            -- TODO - Change into tactic like slow_wander but only traverses ground tiles only
             post_mob.Tactic = "slow_wander"
             post_mob.Level = RogueElements.RandRange(50)
             if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY then -- rescue
@@ -151,7 +159,15 @@ function ZONE_GEN_SCRIPT.SpawnMissionNpcFromSV(zoneContext, context, queue, seed
   if outlawFloor then
     -- add destination floor notification
     if missionType ~= COMMON.MISSION_TYPE_OUTLAW_ITEM then
-      activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawDeath", '{ Mission = '..missionNum..' }'))
+
+      if missionType == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+        activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnMonsterHouseOutlawDeath", '{ Mission = '..missionNum..' }'))
+      else 
+        activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawDeath", '{ Mission = '..missionNum..' }'))
+      end
+      if missionType == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+        activeEffect.OnMapTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFleeStairsCheck", '{ Mission = '..missionNum..' }'))
+      end
     else 
       activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawItemDeath", '{ Mission = '..missionNum..' }'))
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawItemCheck", '{ Mission = '..missionNum..' }'))

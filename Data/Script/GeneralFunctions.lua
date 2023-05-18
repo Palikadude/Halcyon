@@ -1464,6 +1464,24 @@ function GeneralFunctions.RemoveAllGuests()
 	end
 end
 
+function GeneralFunctions.TeamTurnTo(char) 
+	local player_count = GAME:GetPlayerPartyCount()
+	local guest_count = GAME:GetPlayerGuestCount()
+	for i = 0, player_count - 1, 1 do 
+		local player = GAME:GetPlayerPartyMember(i)
+		if not player.Dead then
+			DUNGEON:CharTurnToChar(player, char)
+		end
+	end
+
+	for i = 0, guest_count - 1, 1 do
+		local guest = GAME:GetPlayerGuestMember(i)
+		if not guest.Dead then
+			DUNGEON:CharTurnToChar(guest, char)
+		end
+	end
+end
+
 function GeneralFunctions.PrintMissionType(mission)
 	local val = mission.Type
 
