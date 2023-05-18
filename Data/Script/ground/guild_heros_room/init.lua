@@ -237,7 +237,7 @@ function guild_heros_room.Book_Action(obj, activator)
 
 		if name_result == 1 then
 			local name = hero.Nickname
-			UI:NameMenu("What is your name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+			UI:NameMenu("What is your name?", "Press [ESC] to keep the old nickname.", 60)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			--if no name given, set name to previous name
@@ -246,7 +246,7 @@ function guild_heros_room.Book_Action(obj, activator)
 			UI:WaitShowDialogue("Your name is now " .. hero_ground:GetDisplayName() .. "!")
 		elseif name_result == 2 then
 			local name = partner.Nickname
-			UI:NameMenu("What is your partner's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old nickname.", 60)
+			UI:NameMenu("What is your partner's name?", "Press [ESC] to keep the old nickname.", 60)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			--if no name given, set name to previous name
@@ -257,7 +257,7 @@ function guild_heros_room.Book_Action(obj, activator)
 		
 	elseif choice_result == 3 then
 		local name = _DATA.Save.ActiveTeam.Name
-		UI:NameMenu("What is your team's name?", "Press " .. STRINGS:LocalKeyString(9) .. " to keep the old team name.", 60)
+		UI:NameMenu("What is your team's name?", "Press [ESC] to keep the old team name.", 60)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
 		--if no name given, set name to previous name
