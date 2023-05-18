@@ -190,11 +190,61 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 end
 
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
-  local tbl = LTBL(context.User)
+	local outlaw = context.User
+  local tbl = LTBL(outlaw)
 	if tbl ~= nil and tbl.Mission then
+		local mission_num = tbl.Mission
+		local mission = SV.TakenBoard[mission_num]
+		DUNGEON:CharTurnToChar(outlaw, _DUNGEON.ActiveTeam.Leader)
+		GeneralFunctions.TeamTurnTo(outlaw)
+
+
 		SOUND:PlayBGM("C07. Outlaw.ogg", false)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Wanted outlaw spotted!")
+
+		local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(outlaw.BaseForm.Species).Name:ToLocal()
+		GAME:SetCharacterNickname(outlaw, base_name)
+		if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+			GAME:WaitFrames(20)
+			UI:SetSpeaker(outlaw)
+			UI:WaitShowDialogue("E-exploration team! Run!")
+			local leaderDir = _DUNGEON.ActiveTeam.Leader.CharDir
+			outlaw.CharDir = leaderDir
+		elseif mission.Type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
+			GAME:WaitFrames(20)
+			UI:SetSpeaker(outlaw)
+			UI:WaitShowDialogue("You've fallen into my trap!")
+			local origin = _DUNGEON.ActiveTeam.Leader.CharLoc
+			local house_event = PMDC.Dungeon.MonsterHouseMapEvent();
+			local radius = 5
+
+			-- Create the monster house spawn in a 5 tile radius around the leader
+			-- TODO: Figure out a way to get the bounds of the entrance room
+			local topLeft = RogueElements.Loc(origin.X - radius, origin.Y - radius)
+			local bottomRight =  RogueElements.Loc(origin.X + radius, origin.Y + radius)
+			local bounds = RogueElements.Rect.FromPoints(topLeft, bottomRight)
+			house_event.Bounds = bounds
+
+			-- TODO: Change the post_mob to fit thematically with the dungeon or outlaw
+			local post_mob = RogueEssence.LevelGen.MobSpawn()
+			post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+			post_mob.Tactic = "wander_normal"
+			post_mob.Level = RogueElements.RandRange(
+				math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.70)
+			)
+
+			post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
+			local exclaim = _DATA:GetEmote("exclaim");
+			_DUNGEON.ActiveTeam.Leader:StartEmote(RogueEssence.Content.Emote(exclaim.Anim, exclaim.LocHeight, 1));
+
+			-- TODO: Add the same goon twice, can be replaced later on
+			house_event.Mobs:Add(post_mob)
+			house_event.Mobs:Add(post_mob)
+
+			local charaContext = RogueEssence.Dungeon.SingleCharContext(_DUNGEON.ActiveTeam.Leader)
+			TASK:WaitTask(house_event:Apply(owner, ownerChar, charaContext))
+		end
 	end
 end
 
@@ -220,6 +270,51 @@ function SINGLE_CHAR_SCRIPT.OnOutlawDeath(owner, ownerChar, context, args)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlaw_name .. "!")
 		--Clear but remember minimap state
+		SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
+		_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
+		GeneralFunctions.AskMissionWarpOut()
+	end
+end
+
+function SINGLE_CHAR_SCRIPT.OnMonsterHouseOutlawDeath(owner, ownerChar, context, args)
+	local mission_number = args.Mission
+
+	local tbl = LTBL(context.User)
+	local mission_num = tbl.Mission
+	local goon_num = tbl.Goon
+
+	tbl.Mission = nil
+	tbl.Goon = nil
+
+	local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", mission_number)
+	local found_goon = COMMON.FindNpcWithTable(true, "Goon", mission_number)
+
+	local curr_mission = SV.TakenBoard[mission_number]
+	local outlaw_name = _DATA:GetMonster(curr_mission.Target):GetColoredName()
+
+	if mission_num ~= nil then
+		if found_goon then
+			GAME:WaitFrames(20)
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue("Yes! You defeated " .. outlaw_name .. "! Defeat the rest of the goons!" )
+		end
+
+	end
+	if goon_num ~= nil then
+		if not found_goon and found_outlaw then
+			GAME:WaitFrames(40)
+			UI:SetSpeaker(found_outlaw)
+			UI:WaitShowDialogue("Grr! You won't be able to defeat me!")
+		end
+	end
+
+	if not (found_goon or found_outlaw) then
+		SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+		SV.TemporaryFlags.MissionCompleted = true
+		curr_mission.Completion = 1
+		GAME:WaitFrames(20)
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("Yes!\nKnocked out outlaw " .. outlaw_name .. " and goons!")
 		SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
 		_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 		GeneralFunctions.AskMissionWarpOut()
@@ -254,6 +349,33 @@ function SINGLE_CHAR_SCRIPT.OutlawItemCheck(owner, ownerChar, context, args)
 			SV.TemporaryFlags.PriorMapSetting = _DUNGEON.ShowMap
 			_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 			GeneralFunctions.AskMissionWarpOut()
+		end
+	end
+end
+
+function SINGLE_CHAR_SCRIPT.OutlawFleeStairsCheck(owner, ownerChar, context, args)
+	local stairs_arr = {
+		"stairs_back_down", "stairs_back_up", "stairs_exit_down", 
+		"stairs_exit_up", "stairs_go_up", "stairs_go_down"
+	}
+
+	local mission_num = args.Mission
+	local curr_mission = SV.TakenBoard[mission_num]
+	local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", mission_num)
+
+	if found_outlaw then
+		local targetName = found_outlaw:GetDisplayName(true)
+		local map = _ZONE.CurrentMap;
+		local charLoc = found_outlaw.CharLoc
+		local tile = map:GetTile(charLoc)
+		local tile_effect_id = tile.Effect.ID
+		if tile and GeneralFunctions.TableContains(stairs_arr, tile_effect_id) then
+			GAME:WaitFrames(20)
+			_DUNGEON:RemoveChar(found_outlaw)
+			GAME:WaitFrames(20)
+			UI:ResetSpeaker()
+			UI:WaitShowDialogue(targetName .. " escaped...")
+			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 		end
 	end
 end
