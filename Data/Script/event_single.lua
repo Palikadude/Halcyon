@@ -286,14 +286,14 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
-			UI:WaitShowDialogue("E-exploration team! Run!")
+			UI:WaitShowDialogue("A-adventurers! Run for it!")
 			local leaderDir = _DUNGEON.ActiveTeam.Leader.CharDir
 			outlaw.CharDir = leaderDir
 		elseif mission.Type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
 			UI:WaitShowDialogue("You've fallen into my trap!")
-
+      
 			-- ===========Monster house spawning logic============
 			local rect_area = RogueElements.Loc(1)
 			local rect_area2 = RogueElements.Loc(3)
@@ -309,6 +309,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			
 			
 			local goon_spawn_radius = 5
+      
 			local origin = _DUNGEON.ActiveTeam.Leader.CharLoc
 
 			local leftmost_x = math.maxinteger
