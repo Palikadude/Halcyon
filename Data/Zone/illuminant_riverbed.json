@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -363,7 +363,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 25,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -371,7 +370,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 25
 }
 },
 {
@@ -382,31 +382,6 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.PlaceTerrainMobsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"AcceptedTiles": [
-{
-"$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-"Data": {
-"ID": "water",
-"TileTex": {
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-"StableTex": false
-},
-"Effect": {
-"TileLoc": {
-"X": 0,
-"Y": 0
-},
-"ID": "",
-"Revealed": false,
-"Owner": 0,
-"TileStates": []
-}
-}
-],
 "Spawn": {
 "$type": "RogueEssence.LevelGen.PresetMultiTeamSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Spawns": [
@@ -476,7 +451,32 @@
 }
 ]
 },
-"Ally": false
+"Ally": false,
+"AcceptedTiles": [
+{
+"$type": "RogueEssence.Dungeon.Tile, RogueEssence",
+"Data": {
+"ID": "water",
+"TileTex": {
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"StableTex": false
+},
+"Effect": {
+"TileLoc": {
+"X": 0,
+"Y": 0
+},
+"ID": "",
+"Revealed": false,
+"Owner": 0,
+"TileStates": []
+}
+}
+]
 }
 },
 {
@@ -1286,7 +1286,7 @@
 },
 {
 "$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
-"Script": "SpawnMissionNpcFromSV",
+"Script": "GenerateMissionFromSV",
 "ArgTable": "{}"
 },
 {

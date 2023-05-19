@@ -192,7 +192,8 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 	end
 end
 
-function SpawnOutlaw(origin, radius, mission)
+function SpawnOutlaw(origin, radius, mission_num)
+	local mission = SV.TakenBoard[mission_num]
 	local max_boost = 128
 	local top_left = RogueElements.Loc(origin.X - radius, origin.Y - radius)
 	local bottom_right =  RogueElements.Loc(origin.X + radius, origin.Y + radius)
@@ -275,7 +276,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		local mission_num = args.Mission
 		local mission = SV.TakenBoard[mission_num]
 		local outlaw_spawn_radius = 3
-		local outlaw = SpawnOutlaw(_DUNGEON.ActiveTeam.Leader.CharLoc, outlaw_spawn_radius, mission)
+		local outlaw = SpawnOutlaw(_DUNGEON.ActiveTeam.Leader.CharLoc, outlaw_spawn_radius, mission_num)
 
 
 
