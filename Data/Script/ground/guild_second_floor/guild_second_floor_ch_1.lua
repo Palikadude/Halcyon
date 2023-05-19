@@ -470,7 +470,7 @@ function guild_second_floor_ch_1.Jigglypuff_Action(chara, activator)
 end
 
 function guild_second_floor_ch_1.Spheal_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Let's hurry up and find tomorrow's job,[pause=10] guys...")
+	GeneralFunctions.StartConversation(chara, "Let's hurry up and find tomorrow's job,[pause=10] guys...", "Normal", false)
 	UI:WaitShowDialogue("It's getting late and I wanna eeeeeaaatttt![pause=0] I'm starving!")
 	GeneralFunctions.EndConversation(chara)
 end

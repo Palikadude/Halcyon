@@ -356,7 +356,7 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
 			UI:WaitShowDialogue("Now and then in my adventures,[pause=10] I've come across enemies that were just too strong for me to deal with directly.")
 			UI:WaitShowDialogue("This could be because I was worn down,[pause=10] or that opponent was simply stronger than I was...")
 			UI:WaitShowDialogue("Anyway,[pause=10] even if I'm weaker than my opponent,[pause=10] there are strategies I've learned to help me come out on top.")
-			UI:WaitShowDialogue("One is to use items like orbs and wands to disable the opponent so they can't attack me as effectively or at all.")
+			UI:WaitShowDialogue("One is to use items like Orbs and Wands to disable the opponent so they can't attack me as effectively or at all.")
 			UI:WaitShowDialogue("It doesn't matter if they're stronger if they can't fight back that well!")
 			UI:WaitShowDialogue("Another strategy is to simply just run away.[pause=0] You don't have to beat every opponent you find after all!")
 			UI:WaitShowDialogue("If they have moves that help them chase you down though,[pause=10] this probably won't work very well.")
@@ -506,7 +506,7 @@ function guild_bottom_right_bedroom.Data_Almanac_Action(obj, activator)
 			UI:WaitShowDialogue("I think Ledian Dojo's " .. zone:GetColoredName() .. " has the information on how that works anyway...")
 			UI:WaitShowDialogue("...And I think that covers it.[pause=0] My paw and my brain hurts a bit after writing all this...")
 			UI:WaitShowDialogue("Still,[pause=10] it's good that I write this all down,[pause=10] especially after I did all that work to figure it all out!")
-			UI:WaitShowDialogue("After all,[pause=10] who knows when this sort of information could come in handy after all!")
+			UI:WaitShowDialogue("After all,[pause=10] who knows when this sort of information could come in handy!")
 		  end
 			
 			 
