@@ -1456,7 +1456,7 @@ end
 --Generate a board. Board_type should be given as "Mission" or "Outlaw".
 --Job/Outlaw Boards should be cleared before being regenerated.
 function MISSION_GEN.GenerateBoard(board_type)
-	local jobs_to_make = math.random(5, 8)--Todo: jobs generated is based on your rank or how many dungeons you've done.
+	local jobs_to_make = math.random(5, 7)--Todo: jobs generated is based on your rank or how many dungeons you've done.
 	local assigned_combos = {}--floor/dungeon combinations that already have had missions genned for it. Need to consider already genned missions and missions on taken board.
 	
 
@@ -1570,8 +1570,8 @@ function MISSION_GEN.GenerateBoard(board_type)
 		--Always give a target if objective is escort or a outlaw stole an item.
 		--Target should always be client for 
 		local target = client
+		local target_candidates = MISSION_GEN.POKEMON[tier]
 		if math.random(1, 2) == 1 or objective == COMMON.MISSION_TYPE_ESCORT or objective == COMMON.MISSION_TYPE_OUTLAW_ITEM then 
-			local target_candidates = MISSION_GEN.POKEMON[tier]
 			target = target_candidates[math.random(1, #target_candidates)]	
 			--print(target_candidates[1]) --to give an idea of what tier we rolled
 		end
@@ -1586,6 +1586,17 @@ function MISSION_GEN.GenerateBoard(board_type)
 			target = client
 		end
 		
+		
+		--Reroll target if target is ghost and target is a fleeing outlaw, that shit would be too obnoxious to deal with
+		local target_type_1 = _DATA:GetMonster(target).Forms[0].Element1
+		local target_type_2 = _DATA:GetMonster(target).Forms[0].Element2
+		while objective == COMMON.MISSION_TYPE_OUTLAW_FLEE and (target_type_1 == "ghost" or target_type_2 == "ghost") do
+			print(target .. ": Rerolling cowardly ghost outlaw!!!")
+			target = target_candidates[math.random(1, #target_candidates)]	
+			target_type_1 = _DATA:GetMonster(target).Forms[0].Element1
+			target_type_2 = _DATA:GetMonster(target).Forms[0].Element2
+			print("new target is " .. target)
+		end
 		
 		--Roll for genders. Use base form because it PROBABLY won't ever matter.
 		local client_gender
@@ -1758,8 +1769,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 		
 		--mission floor should be in last 45% of the dungeon
 		--don't pick a floor that's already been chosen for another mission in a dungeon
-		
-		
+		--It's smart; it'll only randomly choose floors that haven't been used up yet. If all floors are used up that are possible, only then is the job thrown out.
 		local used_floors = {}
 		for j = 1, 8, 1 do 
 			if SV.OutlawBoard[j].Zone == dungeon then
@@ -1773,11 +1783,20 @@ function MISSION_GEN.GenerateBoard(board_type)
 			end
 		end
 				
-		local mission_floor = math.random(math.floor(zone.CountedFloors * .55), zone.CountedFloors)
+		local floor_candidates = MISSION_GEN.Generate_List_Range(math.floor(zone.CountedFloors * .55), zone.CountedFloors)
+		MISSION_GEN.array_sub(used_floors, floor_candidates)	
+		 
 		
-		--don't generate this particular job slot if this floor's already been taken.
-		--a bit of a lazy approach, perhaps upgrade in future?
-		if not MISSION_GEN.has_value(used_floors, mission_floor) then 
+
+		local mission_floor = -1
+		if #floor_candidates > 0 then
+			mission_floor = floor_candidates[math.random(1, #floor_candidates)]
+		end
+		
+		if mission_floor == -1 then print("Can't generate job, no more floors available!") end
+		
+		--don't generate this particular job slot if no more are available for the dungeon.
+		if mission_floor ~= -1 then 
 			if mission_type == "Outlaw" then
 				SV.OutlawBoard[i].Client = client
 				SV.OutlawBoard[i].Target = target
@@ -1830,6 +1849,29 @@ function MISSION_GEN.JobSortFunction(j1, j2)
 	end
 end
 
+--used to get the minus of one list minus another list
+function MISSION_GEN.array_sub(t1, t2)
+  local t = {}
+  for i = 1, #t1 do
+    t[t1[i]] = true;
+  end
+  for i = #t2, 1, -1 do
+    if t[t2[i]] then
+      table.remove(t2, i);
+    end
+  end
+end
+
+--used to get an array of a range. For figuring out floor candidates
+function MISSION_GEN.Generate_List_Range(low, up)
+	local array = {}
+	local count = 1
+	for i = low, up, 1 do
+		array[count] = i
+		count = count + 1
+	end
+	return array
+end
 
 function MISSION_GEN.SortTaken()
 	table.sort(SV.TakenBoard, MISSION_GEN.JobSortFunction)
@@ -2611,6 +2653,9 @@ function DungeonJobList:Update(input)
 	_GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
   elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+    _GAME:SE("Menu/Cancel")
+    _MENU:RemoveMenu()
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Menu) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
   end

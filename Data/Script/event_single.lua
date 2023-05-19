@@ -293,6 +293,8 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
 			UI:WaitShowDialogue("You've fallen into my trap!")
+			SOUND:FadeOutBGM(20)
+			GAME:WaitFrames(20)
       
 			-- ===========Monster house spawning logic============
 			local rect_area = RogueElements.Loc(1)
