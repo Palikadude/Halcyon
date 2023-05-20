@@ -4755,7 +4755,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>My beloved [color=#00FF00]Butterfree[color] has gone missing!\nI love her more than anything else! Save her!</value>
     <comment>Mission Body - Lovers - Venomoth and Butterfree</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_LOVER_007" xml:space="preserve">
-    <value>Please, rescue my beloved!\nWe truly understand each other's fickleness! Please!</value>
+    <value>Please, rescue my beloved! We truly\nunderstand each other's fickleness! Please!</value>
     <comment>Mission Body - Lovers - Persian and Liepard</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_LOVER_008" xml:space="preserve">
     <value>Please save my sweetheart!\nWe've been in love even when we were [color=#00FF00]Wurmple[color]! Help her!</value>

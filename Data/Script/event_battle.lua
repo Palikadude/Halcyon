@@ -151,10 +151,13 @@ function RescueCheck(context, targetName, mission)
 		elseif mission.Special == MISSION_GEN.SPECIAL_CLIENT_FRIEND then
 			UI:WaitShowDialogue("Oh, my friend sent you to rescue me? Thank goodness! We'll see you at the guild later to say thanks!")
 		elseif mission.Special == MISSION_GEN.SPECIAL_CLIENT_RIVAL then 
-			UI:WaitShowDialogue("Tch, my rival sent you to rescue me, huh? Well, thank you. We'll thank you later at the guild.")
+			UI:WaitShowDialogue("Tch, my rival sent you to rescue me, huh? Well, thank you. We'll reward you later at the guild.")		
+		elseif mission.Special == MISSION_GEN.SPECIAL_CLIENT_LOVER then 
+			UI:SetSpeakerEmotion("Joyous")
+			UI:WaitShowDialogue("Oh, my beloved " .. _DATA:GetMonster(mission.Client):GetColoredName() .. " sent you to rescue me? I can't wait to reunite with them!")
 		else
-			UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
-		end
+			UI:WaitShowDialogue("Thanks for the rescue!\nI'll see you at the guild after with your reward!")
+			end
 		GAME:WaitFrames(20)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
@@ -165,6 +168,9 @@ function RescueCheck(context, targetName, mission)
 		GAME:WaitFrames(50)
 		GeneralFunctions.AskMissionWarpOut()
 	else 
+		--quickly hide the minimap for the 20 frame pause
+		local map_setting = _DUNGEON.ShowMap
+		_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(context.Target)
 		if mission.Special == MISSION_GEN.SPECIAL_CLIENT_CHILD then 
@@ -175,11 +181,16 @@ function RescueCheck(context, targetName, mission)
 			UI:WaitShowDialogue("Please don't leave me here! My friend is probably worried sick!")
 		elseif mission.Special == MISSION_GEN.SPECIAL_CLIENT_RIVAL then 
 			UI:SetSpeakerEmotion("Worried")
-			UI:WaitShowDialogue("Woah, don't just leave me hanging here!")
+			UI:WaitShowDialogue("Woah, don't just leave me hanging here!")	
+		elseif mission.Special == MISSION_GEN.SPECIAL_CLIENT_LOVER then 
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("Please, get me out of here! I just want to see my dear " .. _DATA:GetMonster(mission.Client):GetColoredName() .. " again!")
 		else
 			UI:SetSpeakerEmotion("Surprised")
 			UI:WaitShowDialogue("H-hey! Don't just leave me here!")
 		end
+		--change map setting back to what it was
+		_DUNGEON.ShowMap = map_setting
 		GAME:WaitFrames(20)
 	end
 end
@@ -208,7 +219,7 @@ function DeliveryCheck(context, targetName, mission)
 			end
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)
-			UI:WaitShowDialogue("Thank you!\n I'll see you at the guild with your reward when you return!")
+			UI:WaitShowDialogue("Thanks for the rescue!\n I'll see you at the guild after with your reward!")
 			GAME:WaitFrames(20)
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
@@ -218,18 +229,27 @@ function DeliveryCheck(context, targetName, mission)
 			GAME:WaitFrames(50)
 			GeneralFunctions.AskMissionWarpOut()
 		else --they are sad if you dont give them the item
+			--quickly hide the minimap for the 20 frame pause
+			local map_setting = _DUNGEON.ShowMap
+			_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)
 			UI:SetSpeakerEmotion("Sad")
 			UI:WaitShowDialogue("Oh, please! I really need that " .. item_name .. "...")
-			GAME:WaitFrames(20)
-		end
+			--change map setting back to what it was
+			_DUNGEON.ShowMap = map_setting
+			GAME:WaitFrames(20)		end
 	else
 		UI:WaitShowDialogue("The requested " .. item_name .. " isn't in the Treasure Bag.\nThere is nothing to deliver.")
+		--quickly hide the minimap for the 20 frame pause
+		local map_setting = _DUNGEON.ShowMap
+		_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(context.Target)
 		UI:SetSpeakerEmotion("Sad")
 		UI:WaitShowDialogue("Huh, you don't have the " .. item_name .. "? That's too bad...")
+		--change map setting back to what it was
+		_DUNGEON.ShowMap = map_setting
 		GAME:WaitFrames(20)
 	end
 end

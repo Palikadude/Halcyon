@@ -174,7 +174,7 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 				UI:SetSpeaker(escort)
 				DUNGEON:CharTurnToChar(escort, GAME:GetPlayerPartyMember(0))
 				DUNGEON:CharTurnToChar(GAME:GetPlayerPartyMember(0), escort)
-				UI:WaitShowDialogue("Thank you for exploring with me!")
+				UI:WaitShowDialogue("Thank you for exploring this place with me!")
 
 				GAME:WaitFrames(30)
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
@@ -217,7 +217,27 @@ function SpawnOutlaw(origin, radius, mission_num)
 			local is_choke_point = RogueElements.Grid.IsChokePoint(testLoc - rect_area, rect_area2, testLoc, checkBlock, checkDiagBlock)
 			local tile_block = _ZONE.CurrentMap:TileBlocked(testLoc)
 			local char_at = _ZONE.CurrentMap:GetCharAtLoc(testLoc)
-			if tile_block == false and char_at == nil and not is_choke_point then
+
+			--don't spawn the outlaw directly next to the player or their teammates
+			local next_to_player_units = false
+			for i = 1, GAME:GetPlayerPartyCount(), 1 do 
+				local party_member = GAME:GetPlayerPartyMember(i-1)
+				if math.abs(party_member.CharLoc.X - x) <= 1 and math.abs(party_member.CharLoc.Y - y) <= 1 then
+					next_to_player_units = true
+					break
+				end
+			end
+				
+			--guests too!
+			for i = 1, GAME:GetPlayerGuestCount(), 1 do 
+				local party_member = GAME:GetPlayerGuestMember(i-1)
+				if math.abs(party_member.CharLoc.X - x) <= 1 and math.abs(party_member.CharLoc.Y - y) <= 1 then
+					next_to_player_units = true
+					break
+				end
+			end	
+			
+			if tile_block == false and char_at == nil and not is_choke_point and not next_to_player_units then
 				table.insert(spawn_candidates, testLoc)
 			end
 		end
