@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -415,7 +415,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 30,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -423,7 +422,8 @@
 "Max": 6
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 30
 }
 },
 {
@@ -896,7 +896,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 30,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -904,7 +903,8 @@
 "Max": 7
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 30
 }
 },
 {
@@ -2030,7 +2030,7 @@
 },
 {
 "$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
-"Script": "SpawnMissionNpcFromSV",
+"Script": "GenerateMissionFromSV",
 "ArgTable": "{}"
 },
 {
