@@ -72,8 +72,8 @@ function testmap.Make_Missions_Action(chara, activator)
 	print("Running mission generation!")
 	MISSION_GEN.ResetBoards()
 	MISSION_GEN.RemoveMissionBackReference()
-	MISSION_GEN.GenerateBoard("Mission")
-	MISSION_GEN.GenerateBoard("Outlaw")
+	MISSION_GEN.GenerateBoard(COMMON.MISSION_BOARD_MISSION)
+	MISSION_GEN.GenerateBoard(COMMON.MISSION_BOARD_OUTLAW)
 	MISSION_GEN.SortMission()
 	MISSION_GEN.SortOutlaw()
 end
@@ -114,20 +114,20 @@ end
 
 
 function testmap.See_Job_1_Menu_Action(chara, activator)
-  local menu = JobMenu:new("mission", 1)
+  local menu = JobMenu:new(COMMON.MISSION_BOARD_MISSION, 1)
   UI:SetCustomMenu(menu.menu)
   UI:WaitForChoice()
 end
 
 function testmap.See_Mission_Board_Action(chara, activator)
-	  local menu = BoardSelectionMenu:new("mission")
+	  local menu = BoardSelectionMenu:new(COMMON.MISSION_BOARD_MISSION)
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
 end
 
 
 function testmap.See_Outlaw_Board_Action(chara, activator)
-	  local menu = BoardSelectionMenu:new("outlaw")
+	  local menu = BoardSelectionMenu:new(COMMON.MISSION_BOARD_OUTLAW)
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
 end

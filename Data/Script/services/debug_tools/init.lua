@@ -73,7 +73,7 @@ function DebugTools:OnMenuButtonPressed()
 		job_list_color = Color.White
 	end 
 	
-	DebugTools.MainMenu.Choices:Insert(4, RogueEssence.Menu.MenuTextChoice("Job List", function () _MENU:AddMenu(BoardMenu:new("taken", nil, DebugTools.MainMenu).menu, false) end, taken_count > 0, job_list_color))
+	DebugTools.MainMenu.Choices:Insert(4, RogueEssence.Menu.MenuTextChoice("Job List", function () _MENU:AddMenu(BoardMenu:new(COMMON.MISSION_BOARD_TAKEN, nil, DebugTools.MainMenu).menu, false) end, taken_count > 0, job_list_color))
  
 	--Add rank/points to go 
 	--local level_length = RogueEssence.Content.GraphicsManager.TextFont.SubstringWidth(STRINGS:FormatKey("MENU_TEAM_LEVEL_SHORT") .. tostring(RogueEssence.Data.DataManager.Instance.Start.MaxLevel))
