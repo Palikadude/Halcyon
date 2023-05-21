@@ -182,7 +182,7 @@ function guild_second_floor.Mission_Board_Action(obj, activator)
 	  GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	  GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	  
-	  local menu = BoardSelectionMenu:new("mission")
+	  local menu = BoardSelectionMenu:new(COMMON.MISSION_BOARD_MISSION)
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
 	
@@ -224,7 +224,7 @@ function guild_second_floor.Outlaw_Board_Action(obj, activator)
 	  GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	  	 
 
-	  local menu = BoardSelectionMenu:new("outlaw")
+	  local menu = BoardSelectionMenu:new(COMMON.MISSION_BOARD_OUTLAW)
 	  UI:SetCustomMenu(menu.menu)
 	  UI:WaitForChoice()
 	  
@@ -674,8 +674,8 @@ function guild_second_floor.Mission_Test_Action(chara, activator)
 	UI:WaitShowDialogue("Outlaw and Mission board have been refreshed!")
 	MISSION_GEN.RemoveMissionBackReference()
 	MISSION_GEN.ResetBoards()
-	MISSION_GEN.GenerateBoard("Mission")
-	MISSION_GEN.GenerateBoard("Outlaw")
+	MISSION_GEN.GenerateBoard(COMMON.MISSION_BOARD_MISSION)
+	MISSION_GEN.GenerateBoard(COMMON.MISSION_BOARD_OUTLAW)
 	MISSION_GEN.SortMission()
 	MISSION_GEN.SortOutlaw()
 end

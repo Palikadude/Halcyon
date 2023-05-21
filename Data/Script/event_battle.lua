@@ -380,7 +380,21 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	
 	local dungeon = GAME:GetCurrentDungeon().Name:ToLocal()
 	local segment = _ZONE.CurrentMapID.Segment
-	
+
+	local tbl = LTBL(target)
+	local outlaw = nil
+	local rescuee = nil
+	local mission = nil
+	if tbl.MissionNumber ~= nil then
+		mission = SV.TakenBoard[tbl.MissionNumber]
+		if tbl.MissionType == COMMON.MISSION_BOARD_MISSION then
+			rescuee = COMMON.FindNpcWithTable(false, "Mission", tbl.MissionNumber)
+		elseif tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
+			outlaw = COMMON.FindNpcWithTable(true, "Mission", tbl.MissionNumber)
+		end
+	end
+	PrintInfo(tostring(rescuee))
+	PrintInfo(tostring(outlaw))
 	if SV.ChapterProgression.Chapter == 1 and dungeon == 'Relic Forest' then
 		personality = 52
 	elseif SV.ChapterProgression.Chapter == 2 and dungeon == 'Illuminant Riverbed' then

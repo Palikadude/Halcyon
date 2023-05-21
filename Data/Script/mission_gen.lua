@@ -1474,8 +1474,8 @@ function MISSION_GEN.GenerateBoard(board_type)
 
 
 	--default to mission.
-	local mission_type = "Mission"
-	if board_type == "Outlaw" then mission_type = "Outlaw" end
+	local mission_type = COMMON.MISSION_BOARD_MISSION
+	if board_type == COMMON.MISSION_BOARD_OUTLAW then mission_type = COMMON.MISSION_BOARD_OUTLAW end
 	
 	--todo: figures out dungeons based on what you've completed, minus certain ones like dojo dungeons and relic forest.
 	local dungeon_list = {"illuminant_riverbed", "crooked_cavern"}
@@ -1493,7 +1493,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 
 		--generate the objective.
 		local objective 
-		if mission_type == "Outlaw" then 
+		if mission_type == COMMON.MISSION_BOARD_OUTLAW then 
 			local roll = math.random(1, 10)
 			if roll <= 5 then
 				objective = COMMON.MISSION_TYPE_OUTLAW
@@ -1800,7 +1800,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 		
 		--don't generate this particular job slot if no more are available for the dungeon.
 		if mission_floor ~= -1 then 
-			if mission_type == "Outlaw" then
+			if mission_type == COMMON.MISSION_BOARD_OUTLAW then
 				SV.OutlawBoard[i].Client = client
 				SV.OutlawBoard[i].Target = target
 				SV.OutlawBoard[i].Flavor = flavor
@@ -1924,9 +1924,9 @@ function JobMenu:initialize(job_type, job_number, parent_board_menu)
   
   --get relevant board
   local job
-  if job_type == 'taken' then
+  if job_type == COMMON.MISSION_BOARD_TAKEN then
 		job = SV.TakenBoard[job_number]
-  elseif job_type == 'outlaw' then
+  elseif job_type == COMMON.MISSION_BOARD_OUTLAW then
   	job = SV.OutlawBoard[job_number]
   else --default to mission board
   	job = SV.MissionBoard[job_number]
@@ -2102,9 +2102,9 @@ end
 --flips taken status of self, and also updates the appropriate SV var's taken value
 function JobMenu:FlipTakenStatus()
 	self.taken = not self.taken
-	if self.job_type == 'taken' then
+	if self.job_type == COMMON.MISSION_BOARD_TAKEN then
 		SV.TakenBoard[self.job_number].Taken = self.taken
-	elseif self.job_type == 'outlaw' then
+	elseif self.job_type == COMMON.MISSION_BOARD_OUTLAW then
 		SV.OutlawBoard[self.job_number].Taken = self.taken
 	else 
 		SV.MissionBoard[self.job_number].Taken = self.taken
@@ -2122,10 +2122,10 @@ end
 function JobMenu:AddJobToTaken()
 	--this should already be true if we get to this point, but just in case, check if the last job slot is empty
 	if SV.TakenBoard[8].Client == "" then
-		if self.job_type == 'outlaw' then
+		if self.job_type == COMMON.MISSION_BOARD_OUTLAW then
 			--Need to copy the table rather than just pass the pointer, or you can dupe missions which is not good
 			SV.TakenBoard[8] = MISSION_GEN.ShallowCopy(SV.OutlawBoard[self.job_number])
-		elseif self.job_type == 'mission' then
+		elseif self.job_type == COMMON.MISSION_BOARD_MISSION then
 			SV.TakenBoard[8] = MISSION_GEN.ShallowCopy(SV.MissionBoard[self.job_number])
 		end 
 		SV.TakenBoard[8].BackReference = self.job_number
@@ -2150,13 +2150,13 @@ function JobMenu:AddJobToTaken()
 end
 
 function JobMenu:OpenSubMenu()
-	if self.job_type ~= 'taken' and self.taken then 
+	if self.job_type ~= COMMON.MISSION_BOARD_TAKEN and self.taken then 
 		--This is a job from the board that was already taken!
 	else 
 		--create prompt menu
 		local choices = {}
 		--print(self.job_type .. " taken: " .. tostring(self.taken))
-		if self.job_type == 'taken' then
+		if self.job_type == COMMON.MISSION_BOARD_TAKEN then
 			local choice_str = "Take Job"
 			if self.taken then
 				choice_str = 'Suspend'
@@ -2182,7 +2182,7 @@ end
 function JobMenu:Update(input)
     assert(self, "BaseState:Begin(): Error, self is nil!")
   if input:JustPressed(RogueEssence.FrameInput.InputType.Confirm) then  
-	if self.job_type ~= 'taken' and self.taken then 
+	if self.job_type ~= COMMON.MISSION_BOARD_TAKEN and self.taken then 
 		--This is a job from the board that was already taken! Play a cancel noise.
 		_GAME:SE("Menu/Cancel")
 	else 
@@ -2216,9 +2216,9 @@ function BoardMenu:initialize(board_type, parent_selection_menu, parent_main_men
   --for refreshing the main menu (esc menu) if we accessed the board menu via that
   self.parent_main_menu = parent_main_menu
   
-  if self.board_type == 'taken' then
+  if self.board_type == COMMON.MISSION_BOARD_TAKEN then
 	self.jobs = SV.TakenBoard
-  elseif self.board_type == 'outlaw' then
+  elseif self.board_type == COMMON.MISSION_BOARD_OUTLAW then
   	self.jobs = SV.OutlawBoard
   else --default to mission board
   	self.jobs = SV.MissionBoard
@@ -2245,9 +2245,9 @@ end
 --refresh information from results of job menu
 function BoardMenu:RefreshSelf()
   print("Debug: Refreshing self!")
-  if self.board_type == 'taken' then
+  if self.board_type == COMMON.MISSION_BOARD_TAKEN then
 	self.jobs = SV.TakenBoard
-  elseif self.board_type == 'outlaw' then
+  elseif self.board_type == COMMON.MISSION_BOARD_OUTLAW then
   	self.jobs = SV.OutlawBoard
   else --default to mission board
   	self.jobs = SV.MissionBoard
@@ -2282,7 +2282,7 @@ function BoardMenu:RefreshSelf()
   self.taken_count = MISSION_GEN.GetTakenCount()
   
   --if there are no more missions and we're on the taken screen, close the menu.  
-  if SV.TakenBoard[1].Client == "" and self.board_type == 'taken' then 
+  if SV.TakenBoard[1].Client == "" and self.board_type == COMMON.MISSION_BOARD_TAKEN then 
 	  _MENU:RemoveMenu()
   end
 end 
@@ -2320,7 +2320,7 @@ function BoardMenu:DrawBoard()
     local difficulty = MISSION_GEN.DIFF_TO_COLOR[self.jobs[i].Difficulty] .. self.jobs[i].Difficulty .. "[color]" 
 	
 	local icon = ""
-	if self.board_type == 'taken' then
+	if self.board_type == COMMON.MISSION_BOARD_TAKEN then
 		if self.jobs[i].Taken then 
 			icon = STRINGS:Format("\\uE10F")--open letter
 		else
@@ -2338,7 +2338,7 @@ function BoardMenu:DrawBoard()
 
 	
 	--color everything red if job is taken and this is a job board
-	if self.jobs[i].Taken and self.board_type ~= 'taken' then
+	if self.jobs[i].Taken and self.board_type ~= COMMON.MISSION_BOARD_TAKEN then
 		location = string.gsub(location, '%b[]', '')
 		title = string.gsub(title, '%b[]', '')
 		difficulty = string.gsub(difficulty, '%b[]', '')
@@ -2450,7 +2450,7 @@ function BoardSelectionMenu:initialize(board_type)
   assert(self, "BoardSelectionMenu:initialize(): Error, self is nil!")
   
   --I'm bad at this. Need different menu sizes depending on the board 
-  if board_type == "outlaw" then
+  if board_type == COMMON.MISSION_BOARD_OUTLAW then
 	self.menu = RogueEssence.Menu.ScriptableMenu(24, 22, 128, 60, function(input) self:Update(input) end)
   else
   	self.menu = RogueEssence.Menu.ScriptableMenu(24, 22, 119, 60, function(input) self:Update(input) end)
@@ -2472,7 +2472,7 @@ function BoardSelectionMenu:DrawMenu()
   --color this red if there's no jobs and mark there's no jobs to view.
   self.board_populated = true
   local board_name = ""
-  if self.board_type == "outlaw" then
+  if self.board_type == COMMON.MISSION_BOARD_OUTLAW then
 	if SV.OutlawBoard[1].Client == '' then 
 		board_name = "[color=#FF0000]Outlaw Notice Board[color]"
 		self.board_populated = false
@@ -2518,7 +2518,7 @@ function BoardSelectionMenu:Update(input)
 	elseif self.current_item == 1 then--open taken missions
 		if self.taken_populated then
 			_GAME:SE("Menu/Confirm")
-			local board_menu = BoardMenu:new("taken", self)
+			local board_menu = BoardMenu:new(COMMON.MISSION_BOARD_TAKEN, self)
 			_MENU:AddMenu(board_menu.menu, false)
 		else
 		    _GAME:SE("Menu/Cancel")
