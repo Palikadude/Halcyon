@@ -336,7 +336,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},
 		{
 			Client = "",
@@ -355,7 +356,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},	
 		{
 			Client = "",
@@ -374,7 +376,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},	
 		{
 			Client = "",
@@ -393,7 +396,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},	
 		{
 			Client = "",
@@ -412,7 +416,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},	
 		{
 			Client = "",
@@ -431,7 +436,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},
 		{
 			Client = "",
@@ -450,7 +456,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		},	
 		{
 			Client = "",
@@ -469,7 +476,8 @@ end
 			Special = "",
 			ClientGender = -1,
 			TargetGender = -1,
-			BonusReward = ""
+			BonusReward = "",
+			BackReference = -1
 		}
 
 	}

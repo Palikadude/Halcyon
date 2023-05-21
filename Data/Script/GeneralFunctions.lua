@@ -37,6 +37,7 @@ function GeneralFunctions.UpdateDailyFlags()
 	
 	--Generate jobs
 	MISSION_GEN.ResetBoards()
+	MISSION_GEN.RemoveMissionBackReference()
 	MISSION_GEN.GenerateBoard("Mission")
 	MISSION_GEN.GenerateBoard("Outlaw")
 	MISSION_GEN.SortMission()
