@@ -1607,26 +1607,12 @@ function MISSION_GEN.GenerateBoard(board_type)
 			client_gender = 0
 		else
 			client_gender = _DATA:GetMonster(client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
-			
-			if client_gender == Gender.Male then
-				client_gender = 1
-			elseif client_gender == Gender.Female then
-				client_gender = 2
-			else
-				client_gender = 0
-			end
-			
+			client_gender = GeneralFunctions.GenderToNum(client_gender)
 		end 
 		
 		local target_gender = _DATA:GetMonster(target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 	
-		if target_gender == Gender.Male then
-			target_gender = 1
-		elseif target_gender == Gender.Female then
-			target_gender = 2
-		else
-			target_gender = 0
-		end
+		target_gender = GeneralFunctions.GenderToNum(target_gender)
 
 		--Special cases
 		--Roll for the main 3 rescue special cases 
@@ -2712,7 +2698,7 @@ function MISSION_GEN.GetDebugMissionInfo(board, slot)
 		local client_gender = SV.OutlawBoard[slot].ClientGender
 		if client_gender == 1 then
 			print("ClientGender = male")
-		elseif client_gender == 2then
+		elseif client_gender == 2 then
 			print("ClientGender = female")
 		elseif client_gender == 0 then
 			print("ClientGender = genderless")

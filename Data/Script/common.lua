@@ -1061,10 +1061,12 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
           --GAME:FadeIn(60)
         end
 
-        local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", Gender.Male)
+        local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", GeneralFunctions.NumToGender(mission.ClientGender))
         -- set the escort level 20% less than the expected level
         local level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 0.80)
         local new_mob = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, level, "", -1)
+        local tactic = _DATA:GetAITactic("stick_together")
+        new_mob.Tactic = RogueEssence.Data.AITactic(tactic);
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
         
         -- place in a legal position on map
@@ -1081,7 +1083,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
             new_mob.ActionEvents:Add(talk_evt)
         
         local tbl = LTBL(new_mob)
-        tbl.Escort = name     
+        tbl.Escort = name   
         UI:ResetSpeaker()
         UI:WaitShowDialogue("Added [color=#00FF00]".. new_mob.Name .."[color] to the party as a guest.")
       end

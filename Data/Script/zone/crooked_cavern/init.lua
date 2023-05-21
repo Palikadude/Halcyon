@@ -32,7 +32,7 @@ end
 
 
 function crooked_cavern.ExitSegment(zone, result, rescue, segmentID, mapID)
-
+	GeneralFunctions.RestoreIdleAnim()
   if segmentID == 0 then--crooked cavern exit segment 
 	  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
 	  PrintInfo("=>> ExitSegment_crooked_cavern (Crooked Cavern) result "..tostring(result).." segment "..tostring(segmentID))
