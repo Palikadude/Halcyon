@@ -73,7 +73,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},
 	{
 		Client = "",
@@ -92,7 +93,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},	
 	{
 		Client = "",
@@ -111,7 +113,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},	
 	{
 		Client = "",
@@ -130,7 +133,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},	
 	{
 		Client = "",
@@ -149,7 +153,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},	
 	{
 		Client = "",
@@ -168,7 +173,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},
 	{
 		Client = "",
@@ -187,7 +193,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	},	
 	{
 		Client = "",
@@ -206,7 +213,8 @@ SV.TakenBoard =
 		Special = "",
 		ClientGender = -1,
 		TargetGender = -1,
-		BonusReward = ""
+		BonusReward = "",
+		BackReference = -1
 	}
 
 }

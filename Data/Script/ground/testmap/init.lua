@@ -71,6 +71,7 @@ end
 function testmap.Make_Missions_Action(chara, activator)
 	print("Running mission generation!")
 	MISSION_GEN.ResetBoards()
+	MISSION_GEN.RemoveMissionBackReference()
 	MISSION_GEN.GenerateBoard("Mission")
 	MISSION_GEN.GenerateBoard("Outlaw")
 	MISSION_GEN.SortMission()

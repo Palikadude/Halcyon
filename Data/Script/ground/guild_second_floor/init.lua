@@ -265,7 +265,8 @@ function guild_second_floor.Hand_In_Missions()
 									Special = "",
 									ClientGender = -1,
 									TargetGender = -1,
-									BonusReward = ""
+									BonusReward = "",
+									BackReference = -1
 								}
 		end
 	end 
@@ -389,7 +390,7 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 		local client_gender = job.ClientGender
 		client_gender = GeneralFunctions.NumToGender(client_gender)
 		client_gender = client_gender
-		
+
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(392, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
@@ -671,6 +672,7 @@ end
 function guild_second_floor.Mission_Test_Action(chara, activator)
 	UI:ResetSpeaker()
 	UI:WaitShowDialogue("Outlaw and Mission board have been refreshed!")
+	MISSION_GEN.RemoveMissionBackReference()
 	MISSION_GEN.ResetBoards()
 	MISSION_GEN.GenerateBoard("Mission")
 	MISSION_GEN.GenerateBoard("Outlaw")

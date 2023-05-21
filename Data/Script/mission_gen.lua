@@ -24,7 +24,6 @@ require 'GeneralFunctions'
 --Difficulty - Letter rank that are hardcoded to represent certain number amounts
 --Flavor - Flavor text for the mission, should be a string in strings.resx that can potentially be filled in by blanks.
 
-
 --Hardcoded number values. Adjust those sorts of things here.
 --Difficulty's point ranks
 MISSION_GEN = {}
@@ -2036,6 +2035,23 @@ end
 
 --for use with submenu
 function JobMenu:DeleteJob()
+	local mission = SV.TakenBoard[self.job_number]
+	local back_ref = mission.BackReference
+	if back_ref ~= -1 and back_ref ~= nil then
+		local outlaw_arr = {
+			COMMON.MISSION_TYPE_OUTLAW,
+			COMMON.MISSION_TYPE_OUTLAW_ITEM,
+			COMMON.MISSION_TYPE_OUTLAW_FLEE,
+			COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE
+		}
+
+		if GeneralFunctions.TableContains(outlaw_arr, mission.Type) then 
+			SV.OutlawBoard[back_ref].Taken = false
+		else
+			SV.MissionBoard[back_ref].Taken = false
+		end
+	end 
+	
 	SV.TakenBoard[self.job_number] = {
 										Client = "",
 										Target = "",
@@ -2053,7 +2069,8 @@ function JobMenu:DeleteJob()
 										Special = "",
 										ClientGender = -1,
 										TargetGender = -1,
-										BonusReward = ""
+										BonusReward = "",
+										BackReference = -1
 									}
 	
 	MISSION_GEN.SortTaken()
@@ -2111,6 +2128,7 @@ function JobMenu:AddJobToTaken()
 		elseif self.job_type == 'mission' then
 			SV.TakenBoard[8] = MISSION_GEN.ShallowCopy(SV.MissionBoard[self.job_number])
 		end 
+		SV.TakenBoard[8].BackReference = self.job_number
 		MISSION_GEN.SortTaken()
 	end
 	
@@ -2678,6 +2696,11 @@ function MISSION_GEN.GetTakenCount()
 	return count
 end
 
+function MISSION_GEN.RemoveMissionBackReference()
+	for mission_num, _ in pairs(SV.TakenBoard) do
+		SV.TakenBoard[mission_num].BackReference = -1
+	end
+end
 
 function MISSION_GEN.GetDebugMissionInfo(board, slot)
 	if board == "outlaw" then
@@ -2770,6 +2793,7 @@ function MISSION_GEN.GetDebugMissionInfo(board, slot)
 		print("Difficulty = " .. SV.TakenBoard[slot].Difficulty)
 		print("item = " .. SV.TakenBoard[slot].Item)
 		print("Special = " .. SV.TakenBoard[slot].Special)
+		print("BackReference = " .. SV.TakenBoard[slot].BackReference)
 		local client_gender = SV.TakenBoard[slot].ClientGender
 		if client_gender == 1 then
 			print("ClientGender = male")

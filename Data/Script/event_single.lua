@@ -295,6 +295,9 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		local mission_num = args.Mission
 		local mission = SV.TakenBoard[mission_num]
 
+		local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(outlaw.BaseForm.Species).Name:ToLocal()
+		GAME:SetCharacterNickname(outlaw, base_name)
+
 		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Wanted outlaw spotted!")
@@ -385,7 +388,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 				spawn.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
 				house_event.Mobs:Add(spawn)
 			end
-			local charaContext = RogueEssence.Dungeon.SingleCharContext(new_mob)
+			local charaContext = RogueEssence.Dungeon.SingleCharContext(_DUNGEON.ActiveTeam.Leader)
 			TASK:WaitTask(house_event:Apply(owner, ownerChar, charaContext))
 			GAME:WaitFrames(20)
 		end
@@ -411,10 +414,6 @@ function SINGLE_CHAR_SCRIPT.OnOutlawDeath(owner, ownerChar, context, args)
 	if not found_goon then
 		SV.OutlawGoonsDefeated = true
 	end
-end
-
-function SINGLE_CHAR_SCRIPT.TestTest(owner, ownerChar, context, args)
-	PrintInfo(tostring(ownerChar))
 end
 
 function SINGLE_CHAR_SCRIPT.OnMonsterHouseOutlawCheck(owner, ownerChar, context, args)
