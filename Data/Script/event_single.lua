@@ -289,15 +289,11 @@ function SpawnOutlaw(origin, radius, mission_num)
 end
 
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
-	if not SV.DestinationFloorNotified then
-		SV.DestinationFloorNotified = true
-
-
+	local outlaw = context.User
+  local tbl = LTBL(outlaw)
+	if tbl ~= nil and tbl.Mission then
 		local mission_num = args.Mission
 		local mission = SV.TakenBoard[mission_num]
-		local outlaw_spawn_radius = 3
-		local outlaw = SpawnOutlaw(_DUNGEON.ActiveTeam.Leader.CharLoc, outlaw_spawn_radius, mission_num)
-
 
 		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()

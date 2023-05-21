@@ -25,6 +25,7 @@ end
 
 
 function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
+	GeneralFunctions.RestoreIdleAnim()
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> ExitSegment_illuminant_riverbed (Illuminant Riverbed) result "..tostring(result).." segment "..tostring(segmentID))
   

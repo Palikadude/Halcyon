@@ -317,13 +317,7 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 			})
 		
 		local outlaw_gender = job.TargetGender
-		if outlaw_gender == 1 then
-			outlaw_gender = Gender.Male
-		elseif outlaw_gender == 2 then
-			outlaw_gender = Gender.Female
-		else
-			outlaw_gender = Gender.Genderless
-		end
+		outlaw_gender = GeneralFunctions.NumToGender(outlaw_gender)
 				
 		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", outlaw_gender)
 		
@@ -393,13 +387,8 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 	
 	else--client is some random mon
 		local client_gender = job.ClientGender
-		if client_gender == 1 then
-			client_gender = Gender.Male
-		elseif client_gender == 2 then
-			client_gender = Gender.Female
-		else
-			client_gender = Gender.Genderless
-		end
+		client_gender = GeneralFunctions.NumToGender(client_gender)
+		client_gender = client_gender
 		
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)
 		
@@ -464,14 +453,8 @@ function guild_second_floor.Mission_Job_Clear(job)
 	--client is target. Check on escort is needed in case the escort is to the same species.
 	if job.Client == job.Target and job.Type ~= COMMON.MISSION_TYPE_ESCORT then
 		local client_gender = job.ClientGender
-		if client_gender == 1 then
-			client_gender = Gender.Male
-		elseif client_gender == 2 then
-			client_gender = Gender.Female
-		else
-			client_gender = Gender.Genderless
-		end
-		
+		client_gender = GeneralFunctions.NumToGender(client_gender)
+
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(104, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
@@ -527,28 +510,17 @@ function guild_second_floor.Mission_Job_Clear(job)
 	
 	else--client not the target
 		local client_gender = job.ClientGender
-		if client_gender == 1 then
-			client_gender = Gender.Male
-		elseif client_gender == 2 then
-			client_gender = Gender.Female
-		else
-			client_gender = Gender.Genderless
-		end
+		client_gender = GeneralFunctions.NumToGender(client_gender)
+		
 		
 		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(88, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
 		GAME:GetCurrentGround():AddTempChar(client)
-				
+
 		local target_gender = job.TargetGender
-		if target_gender == 1 then
-			target_gender = Gender.Male
-		elseif target_gender == 2 then
-			target_gender = Gender.Female
-		else
-			target_gender = Gender.Genderless
-		end
+		target_gender = GeneralFunctions.NumToGender(target_gender)
 				
 		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", target_gender)
 		target_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)

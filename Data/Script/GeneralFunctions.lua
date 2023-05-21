@@ -111,6 +111,29 @@ function GeneralFunctions.DirToNum(dir)
 	
 end
 
+function GeneralFunctions.GenderToNum(gender)
+	local res = -1
+	if gender == Gender.Genderless then
+		res = 0
+	elseif gender == Gender.Male then
+		res = 1
+	elseif gender == Gender.Female then
+		res = 2
+	end
+	return res
+end
+
+function GeneralFunctions.NumToGender(num)
+	local res = Gender.Unknown
+	if num == 0 then
+		res = Gender.Genderless
+	elseif num == 1 then
+		res = Gender.Male
+	elseif num == 2 then
+		res = Gender.Female
+	end
+	return res
+end
 
 --converts a number to a direction
 function GeneralFunctions.NumToDir(num)
@@ -1461,6 +1484,22 @@ function GeneralFunctions.RemoveAllGuests()
 	for i = 0, guest_count - 1, 1 do --beam everyone else out
 		PrintInfo("REMOVING GUESTS")
 		GAME:RemovePlayerGuest(0)
+	end
+end
+
+function GeneralFunctions.RestoreIdleAnim()
+	local player_count = GAME:GetPlayerPartyCount()
+	local guest_count = GAME:GetPlayerGuestCount()
+	for i = 0, player_count - 1, 1 do 
+		local player = GAME:GetPlayerPartyMember(i)
+		local anim = RogueEssence.Dungeon.CharAnimIdle(player.CharLoc, player.CharDir)
+		TASK:WaitTask(player:StartAnim(anim))
+	end
+
+	for i = 0, guest_count - 1, 1 do
+		local guest = GAME:GetPlayerGuestMember(i)
+		local anim = RogueEssence.Dungeon.CharAnimIdle(guest.CharLoc, guest.CharDir)
+		TASK:WaitTask(guest:StartAnim(anim))
 	end
 end
 
