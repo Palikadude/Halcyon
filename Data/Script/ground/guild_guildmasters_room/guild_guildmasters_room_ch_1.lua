@@ -264,7 +264,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("The best teams are those whose members share a strong bond and put their teammates before anything else.")
 		GAME:WaitFrames(20)
-		UI:SetSpeakerEmotion("Sad")--foreshadowing
+		UI:SetSpeakerEmotion("Worried")--foreshadowing
 		UI:WaitShowDialogue("...And the worst are those who put glory or treasure first.")--FORESHADOWING
 		UI:SetSpeakerEmotion("Normal")
 	end

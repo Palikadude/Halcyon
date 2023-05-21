@@ -8,7 +8,7 @@ metano_inn_ch_3 = {}
 function metano_inn_ch_3.SetupGround()
 	if SV.Chapter3.DefeatedBoss then
 		
-		local nidoqueen, nidoran_m = 
+		local nidorina, nidoking, nidoran_m = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Nidorina', 'Innkeeper_Right'},
 			{'Nidoking', 'Innkeeper_Left'},
