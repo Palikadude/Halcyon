@@ -27,6 +27,11 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
   SV.MonsterHouseMessageNotified = false
   SV.OutlawDefeated = false
   SV.OutlawGoonsDefeated = false
+  local partner = GAME:GetPlayerPartyMember(1)
+  local tbl = LTBL(partner)
+  tbl.MissionNumber = nil
+  tbl.MissionType = nil
+
   local missionType = nil
   local missionNum = nil
   local escortMissionNum = nil
@@ -146,7 +151,9 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
       end
     end
   end
-
+  if missionNum ~= nil then
+    tbl.MissionNumber = missionNum
+  end
   if escortDeathEvent then
     activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("MissionGuestCheck", '{ Mission = '..escortMissionNum..' }'))
   end
@@ -161,6 +168,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
     if GeneralFunctions.TableContains(npcMissions, missionType) then
       activeEffect.OnMapTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("MobilityEndTurn", '{ Mission = '..missionNum..' }'))
     end
+    tbl.MissionType = COMMON.MISSION_BOARD_MISSION
   end
   if outlawFloor then
     activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnOutlawDeath", '{ Mission = '..missionNum..' }'))
@@ -176,6 +184,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
     end
 
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFloor", '{ Mission = '..missionNum..' }'))
+    tbl.MissionType = COMMON.MISSION_BOARD_OUTLAW
   end
 
   local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
