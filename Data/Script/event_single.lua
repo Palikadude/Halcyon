@@ -299,8 +299,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		local outlaw = SpawnOutlaw(_DUNGEON.ActiveTeam.Leader.CharLoc, outlaw_spawn_radius, mission_num)
 
 
-
-		SOUND:PlayBGM("C07. Outlaw.ogg", false)
+		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Wanted outlaw spotted!")
 

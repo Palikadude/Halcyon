@@ -739,7 +739,7 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		else
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the boards here.")
 			UI:SetSpeakerEmotion("Sad")
-			UI:WaitShowDialogue("I'm still feeling a bit down about the whole situation with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
 			UI:SetSpeakerEmotion("Normal")
 			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take here.")
 			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")

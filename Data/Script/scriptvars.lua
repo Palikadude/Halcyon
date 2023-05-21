@@ -71,8 +71,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -90,8 +90,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -109,8 +109,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -128,8 +128,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -147,8 +147,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -166,8 +166,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -185,8 +185,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -204,8 +204,8 @@ SV.TakenBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	}
 
@@ -229,8 +229,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -248,8 +248,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -267,8 +267,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -286,8 +286,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -305,8 +305,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -324,8 +324,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -343,8 +343,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -362,8 +362,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	}
 
@@ -387,8 +387,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -406,8 +406,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -425,8 +425,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -444,8 +444,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -463,8 +463,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -482,8 +482,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -501,8 +501,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -520,8 +520,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	}
 }

@@ -935,60 +935,61 @@ MISSION_GEN.SPECIAL_CLIENT_OPTIONS = {
 
 --Order matters for these! First is the client, second is the target
 --Titles are random from a small list. Each pair has a unique body text however included in the data below.
+--Number represents that mon's gender, 1 for male, 2 for female, 0 for genderless
 MISSION_GEN.SPECIAL_LOVER_PAIRS = {
 	TIER_LOW = {
-		{'volbeat', Gender.Male, 'illumise', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_001"},
-		{'minun', Gender.Male, 'plusle', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_002"},
-		{'mareep', Gender.Female, 'wooloo', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_003"},
-		{'luvdisc', Gender.Female, 'luvdisc', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_004"}	
+		{'volbeat', 1, 'illumise', 2, "MISSION_BODY_SPECIAL_LOVER_001"},
+		{'minun', 1, 'plusle', 2, "MISSION_BODY_SPECIAL_LOVER_002"},
+		{'mareep', 2, 'wooloo', 1, "MISSION_BODY_SPECIAL_LOVER_003"},
+		{'luvdisc', 2, 'luvdisc', 2, "MISSION_BODY_SPECIAL_LOVER_004"}	
 	},
 	TIER_MID = {
-		{'miltank', Gender.Female, 'tauros', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_005"},
-		{'venomoth', Gender.Male, 'butterfree', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_006"},
-		{'liepard', Gender.Female, 'persian', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_007"},
-		{'dustox', Gender.Male, 'beautifly', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_008"},
-		{'glalie', Gender.Male, 'froslass', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_009"},
-		{'ribombee', Gender.Female, 'masquerain', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_010"},
-		{'maractus', Gender.Female, 'cacturne', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_011"},---my prickly love!
-		{'lanturn', Gender.Male, 'lumineon', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_012"}
+		{'miltank', 2, 'tauros', 1, "MISSION_BODY_SPECIAL_LOVER_005"},
+		{'venomoth', 1, 'butterfree', 2, "MISSION_BODY_SPECIAL_LOVER_006"},
+		{'liepard', 2, 'persian', 1, "MISSION_BODY_SPECIAL_LOVER_007"},
+		{'dustox', 1, 'beautifly', 2, "MISSION_BODY_SPECIAL_LOVER_008"},
+		{'glalie', 1, 'froslass', 2, "MISSION_BODY_SPECIAL_LOVER_009"},
+		{'ribombee', 2, 'masquerain', 1, "MISSION_BODY_SPECIAL_LOVER_010"},
+		{'maractus', 2, 'cacturne', 1, "MISSION_BODY_SPECIAL_LOVER_011"},---my prickly love!
+		{'lanturn', 1, 'lumineon', 2, "MISSION_BODY_SPECIAL_LOVER_012"}
 	},
 	TIER_HIGH = {
-		{'tyranitar', Gender.Male, 'altaria', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_013"},--reference to an old idea i had
-		{'gyarados', Gender.Male, 'milotic', Gender.Female, "MISSION_BODY_SPECIAL_LOVER_014"},
-		{'gardevoir', Gender.Female, 'gallade', Gender.Male, "MISSION_BODY_SPECIAL_LOVER_015"}
+		{'tyranitar', 1, 'altaria', 2, "MISSION_BODY_SPECIAL_LOVER_013"},--reference to an old idea i had
+		{'gyarados', 1, 'milotic', 2, "MISSION_BODY_SPECIAL_LOVER_014"},
+		{'gardevoir', 2, 'gallade', 1, "MISSION_BODY_SPECIAL_LOVER_015"}
 	}
 
 }
 
 MISSION_GEN.SPECIAL_CHILD_PAIRS = {
 	TIER_LOW = {
-		{'clefable', Gender.Female, 'cleffa', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_001"},
-		{'wigglytuff', Gender.Male, 'igglybuff', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_002"},
-		{'togekiss', Gender.Female, 'togepi', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_003"},
-		{'roserade', Gender.Female, 'budew', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_004"},
-		{'chimecho', Gender.Female, 'chingling', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_005"},
-		{'sudowoodo', Gender.Male, 'bonsly', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_006"},
-		{'mr_mime', Gender.Male, 'mime_jr', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_007"},
-		{'raticate', Gender.Male, 'rattata', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_008"},--hes still not so good at gnawing!
-		{'leavanny', Gender.Female, 'sewaddle', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_009"}
+		{'clefable', 2, 'cleffa', 2, "MISSION_BODY_SPECIAL_CHILD_001"},
+		{'wigglytuff', 1, 'igglybuff', 1, "MISSION_BODY_SPECIAL_CHILD_002"},
+		{'togekiss', 2, 'togepi', 1, "MISSION_BODY_SPECIAL_CHILD_003"},
+		{'roserade', 2, 'budew', 2, "MISSION_BODY_SPECIAL_CHILD_004"},
+		{'chimecho', 2, 'chingling', 1, "MISSION_BODY_SPECIAL_CHILD_005"},
+		{'sudowoodo', 1, 'bonsly', 1, "MISSION_BODY_SPECIAL_CHILD_006"},
+		{'mr_mime', 1, 'mime_jr', 1, "MISSION_BODY_SPECIAL_CHILD_007"},
+		{'raticate', 1, 'rattata', 2, "MISSION_BODY_SPECIAL_CHILD_008"},--hes still not so good at gnawing!
+		{'leavanny', 2, 'sewaddle', 2, "MISSION_BODY_SPECIAL_CHILD_009"}
 	},
 	TIER_MID = {
-		{'appletun', Gender.Female, 'applin', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_010"},
-		{'aggron', Gender.Male, 'aron', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_011"},--probably munched too much metal!
-		{'jynx', Gender.Female, 'smoochum', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_012"},
-		{'magmortar', Gender.Female, 'magby', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_013"},
-		{'electivire', Gender.Male, 'elekid', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_014"},
-		{'tsareena', Gender.Female, 'bounsweet', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_015"},
-		{'hatterene', Gender.Female, 'hatenna', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_016"},
-		{'gothitelle', Gender.Female, 'gothita', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_017"},
-		{'dugtrio', Gender.Male, 'diglett', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_018"}
+		{'appletun', 2, 'applin', 1, "MISSION_BODY_SPECIAL_CHILD_010"},
+		{'aggron', 1, 'aron', 1, "MISSION_BODY_SPECIAL_CHILD_011"},--probably munched too much metal!
+		{'jynx', 2, 'smoochum', 2, "MISSION_BODY_SPECIAL_CHILD_012"},
+		{'magmortar', 2, 'magby', 2, "MISSION_BODY_SPECIAL_CHILD_013"},
+		{'electivire', 1, 'elekid', 1, "MISSION_BODY_SPECIAL_CHILD_014"},
+		{'tsareena', 2, 'bounsweet', 2, "MISSION_BODY_SPECIAL_CHILD_015"},
+		{'hatterene', 2, 'hatenna', 2, "MISSION_BODY_SPECIAL_CHILD_016"},
+		{'gothitelle', 2, 'gothita', 2, "MISSION_BODY_SPECIAL_CHILD_017"},
+		{'dugtrio', 1, 'diglett', 1, "MISSION_BODY_SPECIAL_CHILD_018"}
 	},	
 	TIER_HIGH = {
-		{'tyranitar', Gender.Female, 'larvitar', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_019"},
-		{'salamence', Gender.Male, 'bagon', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_020"},
-		{'dragonite', Gender.Female, 'dratini', Gender.Female, "MISSION_BODY_SPECIAL_CHILD_021"},
-		{'noivern', Gender.Male, 'noibat', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_022"},
-		{'goodra', Gender.Female, 'goomy', Gender.Male, "MISSION_BODY_SPECIAL_CHILD_023"}
+		{'tyranitar', 2, 'larvitar', 1, "MISSION_BODY_SPECIAL_CHILD_019"},
+		{'salamence', 1, 'bagon', 2, "MISSION_BODY_SPECIAL_CHILD_020"},
+		{'dragonite', 2, 'dratini', 2, "MISSION_BODY_SPECIAL_CHILD_021"},
+		{'noivern', 1, 'noibat', 1, "MISSION_BODY_SPECIAL_CHILD_022"},
+		{'goodra', 2, 'goomy', 1, "MISSION_BODY_SPECIAL_CHILD_023"}
 	}
 	
 	
@@ -998,63 +999,63 @@ MISSION_GEN.SPECIAL_CHILD_PAIRS = {
 
 MISSION_GEN.SPECIAL_FRIEND_PAIRS = {
 	TIER_LOW = {
-		{'applin', Gender.Male, 'cherubi', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_001"},--We both get mistaken for fruit! What if someone ate him!?
-		{'mantyke', Gender.Female, 'remoraid', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_002"},--My best friend is missing! I'll never be able to evolve without him!
-		{'magikarp', Gender.Male, 'feebas', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_003"},--feebas is the only one who understands what it's like to be dogshit!
-		{'poliwag', Gender.Female, 'lotad', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_004"},--frog and his lilypad. I have no lilypad now, save him!
-		{'teddiursa', Gender.Male, 'combee', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_005"}, --Without Combee, I have no honey! Please find them!
-		{'woobat', Gender.Female, 'zubat', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_006"},--we both use ultrasonic waves to see!
-		{'trubbish', Gender.Male, 'grimer', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_007"},--we both love eating garbage!
-		{'shroomish', Gender.Male, 'paras', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_008"},--we both love to spread spores!
-		{'chansey', Gender.Female, 'togepi', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_009"},--cares for togepi because its an egg
-		{'salandit', Gender.Male, 'combee', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_010"}--they relate in being useless
+		{'applin', 1, 'cherubi', 2, "MISSION_BODY_SPECIAL_FRIEND_001"},--We both get mistaken for fruit! What if someone ate him!?
+		{'mantyke', 2, 'remoraid', 1, "MISSION_BODY_SPECIAL_FRIEND_002"},--My best friend is missing! I'll never be able to evolve without him!
+		{'magikarp', 1, 'feebas', 2, "MISSION_BODY_SPECIAL_FRIEND_003"},--feebas is the only one who understands what it's like to be dogshit!
+		{'poliwag', 2, 'lotad', 1, "MISSION_BODY_SPECIAL_FRIEND_004"},--frog and his lilypad. I have no lilypad now, save him!
+		{'teddiursa', 1, 'combee', 2, "MISSION_BODY_SPECIAL_FRIEND_005"}, --Without Combee, I have no honey! Please find them!
+		{'woobat', 2, 'zubat', 1, "MISSION_BODY_SPECIAL_FRIEND_006"},--we both use ultrasonic waves to see!
+		{'trubbish', 1, 'grimer', 1, "MISSION_BODY_SPECIAL_FRIEND_007"},--we both love eating garbage!
+		{'shroomish', 1, 'paras', 1, "MISSION_BODY_SPECIAL_FRIEND_008"},--we both love to spread spores!
+		{'chansey', 2, 'togepi', 2, "MISSION_BODY_SPECIAL_FRIEND_009"},--cares for togepi because its an egg
+		{'salandit', 1, 'combee', 1, "MISSION_BODY_SPECIAL_FRIEND_010"}--they relate in being useless
 	},
 	TIER_MID = {
-		{'lunatone', Gender.Genderless, 'solrock', Gender.Genderless, "MISSION_BODY_SPECIAL_FRIEND_011"},
-		{'emolga', Gender.Female, 'pachirisu', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_012"},
-		{'spinda', Gender.Female, 'hypno', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_013"}, --Hypno went missing; only he can help stop my dizziness
-		{'cramorant', Gender.Male, 'pelipper', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_014"},
-		{'magnemite', Gender.Genderless, 'nosepass', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_015"},--We're both sensitive to magnetism!
-		{'dustox', Gender.Male, 'lampent', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_016"}
+		{'lunatone', 0, 'solrock', 0, "MISSION_BODY_SPECIAL_FRIEND_011"},
+		{'emolga', 2, 'pachirisu', 2, "MISSION_BODY_SPECIAL_FRIEND_012"},
+		{'spinda', 2, 'hypno', 1, "MISSION_BODY_SPECIAL_FRIEND_013"}, --Hypno went missing; only he can help stop my dizziness
+		{'cramorant', 1, 'pelipper', 2, "MISSION_BODY_SPECIAL_FRIEND_014"},
+		{'magnemite', 0, 'nosepass', 1, "MISSION_BODY_SPECIAL_FRIEND_015"},--We're both sensitive to magnetism!
+		{'dustox', 1, 'lampent', 2, "MISSION_BODY_SPECIAL_FRIEND_016"}
 	},
 	TIER_HIGH = {
-		{'lilligant', Gender.Female, 'kricketune', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_017"},--I can't dance without Kricketune's music!
-		{'wigglytuff', Gender.Female, 'exploud', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_018"}, --we love making loud, silly noises together!
-		{'beedrill', Gender.Male, 'florges', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_019"},--without my flower, i have no meaning!
-		{'dunsparce', Gender.Male, 'dugtrio', Gender.Male, "MISSION_BODY_SPECIAL_FRIEND_020"},--we both love to burrow!
-		{'whimsicott', Gender.Female, 'jumpluff', Gender.Female, "MISSION_BODY_SPECIAL_FRIEND_021"}
+		{'lilligant', 2, 'kricketune', 1, "MISSION_BODY_SPECIAL_FRIEND_017"},--I can't dance without Kricketune's music!
+		{'wigglytuff', 2, 'exploud', 1, "MISSION_BODY_SPECIAL_FRIEND_018"}, --we love making loud, silly noises together!
+		{'beedrill', 1, 'florges', 2, "MISSION_BODY_SPECIAL_FRIEND_019"},--without my flower, i have no meaning!
+		{'dunsparce', 1, 'dugtrio', 1, "MISSION_BODY_SPECIAL_FRIEND_020"},--we both love to burrow!
+		{'whimsicott', 2, 'jumpluff', 2, "MISSION_BODY_SPECIAL_FRIEND_021"}
 	}
 }
 
 MISSION_GEN.SPECIAL_RIVAL_PAIRS = {
 	TIER_LOW = {
-		{'koffing', Gender.Male, 'stunky', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_001"},--they compete to see whose odor is stronger
-		{'krabby', Gender.Male, 'corphish', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_002"},--compare claw strength
-		{'shuppet', Gender.Female, 'duskull', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_003"},--we like to see who can pull better pranks!
-		{'pidgey', Gender.Female, 'spearow', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_004"},--we compete at flying!
-		{'kabuto', Gender.Male, 'omanyte', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_005"}, --we've been rivals since our ancestors' time!
-		{'joltik', Gender.Female, 'spinarak', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_006"},--We like to see who can spin the better web!
-		{'tyrogue', Gender.Male, 'makuhita', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_007"},--my punching bag training partner!
-		{'lillipup', Gender.Female, 'poochyena', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_008"}
+		{'koffing', 1, 'stunky', 2, "MISSION_BODY_SPECIAL_RIVAL_001"},--they compete to see whose odor is stronger
+		{'krabby', 1, 'corphish', 1, "MISSION_BODY_SPECIAL_RIVAL_002"},--compare claw strength
+		{'shuppet', 2, 'duskull', 1, "MISSION_BODY_SPECIAL_RIVAL_003"},--we like to see who can pull better pranks!
+		{'pidgey', 2, 'spearow', 2, "MISSION_BODY_SPECIAL_RIVAL_004"},--we compete at flying!
+		{'kabuto', 1, 'omanyte', 1, "MISSION_BODY_SPECIAL_RIVAL_005"}, --we've been rivals since our ancestors' time!
+		{'joltik', 2, 'spinarak', 1, "MISSION_BODY_SPECIAL_RIVAL_006"},--We like to see who can spin the better web!
+		{'tyrogue', 1, 'makuhita', 1, "MISSION_BODY_SPECIAL_RIVAL_007"},--my punching bag training partner!
+		{'lillipup', 2, 'poochyena', 1, "MISSION_BODY_SPECIAL_RIVAL_008"}
 
 },
 	
 	TIER_MID = {
-		{'vigoroth', Gender.Male, 'primeape', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_009"},--full of energy!
-		{'sawsbuck', Gender.Male, 'stantler', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_010"},--butt antlers!
-		{'jangmo_o', Gender.Male, 'axew', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_011"},
-		{'mareanie', Gender.Female, 'corsola', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_012"}
+		{'vigoroth', 1, 'primeape', 1, "MISSION_BODY_SPECIAL_RIVAL_009"},--full of energy!
+		{'sawsbuck', 1, 'stantler', 1, "MISSION_BODY_SPECIAL_RIVAL_010"},--butt antlers!
+		{'jangmo_o', 1, 'axew', 1, "MISSION_BODY_SPECIAL_RIVAL_011"},
+		{'mareanie', 2, 'corsola', 2, "MISSION_BODY_SPECIAL_RIVAL_012"}
 
 	},
 	
 	TIER_HIGH = {
-		{'heracross', Gender.Male, 'pinsir', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_013"},
-		{'slowking', Gender.Male, 'slowbro', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_014"},--slowbro may not be as smart as me, but we're still great friends!
-		{'magmortar', Gender.Female, 'electivire', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_015"}, --we need to settle who is stronger!
-		{'cradily', Gender.Female, 'armaldo', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_016"}, --we've been rivals since our ancestors' time!
-		{'bastiodon', Gender.Female, 'rampardos', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_017"}, --we've been rivals since our ancestors' time!
-		{'archeops', Gender.Male, 'aerodactyl', Gender.Female, "MISSION_BODY_SPECIAL_RIVAL_018"}, --we've been rivals since our ancestors' time!
-		{'swellow', Gender.Female, 'staraptor', Gender.Male, "MISSION_BODY_SPECIAL_RIVAL_019"}--brave birds!
+		{'heracross', 1, 'pinsir', 1, "MISSION_BODY_SPECIAL_RIVAL_013"},
+		{'slowking', 1, 'slowbro', 1, "MISSION_BODY_SPECIAL_RIVAL_014"},--slowbro may not be as smart as me, but we're still great friends!
+		{'magmortar', 2, 'electivire', 1, "MISSION_BODY_SPECIAL_RIVAL_015"}, --we need to settle who is stronger!
+		{'cradily', 2, 'armaldo', 1, "MISSION_BODY_SPECIAL_RIVAL_016"}, --we've been rivals since our ancestors' time!
+		{'bastiodon', 2, 'rampardos', 1, "MISSION_BODY_SPECIAL_RIVAL_017"}, --we've been rivals since our ancestors' time!
+		{'archeops', 1, 'aerodactyl', 2, "MISSION_BODY_SPECIAL_RIVAL_018"}, --we've been rivals since our ancestors' time!
+		{'swellow', 2, 'staraptor', 1, "MISSION_BODY_SPECIAL_RIVAL_019"}--brave birds!
 
 	}
 }
@@ -1154,8 +1155,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -1173,8 +1174,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1192,8 +1193,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1211,8 +1212,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1230,8 +1231,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1249,8 +1250,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -1268,8 +1269,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1287,8 +1288,8 @@ SV.MissionBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	}
 
@@ -1312,8 +1313,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -1331,8 +1332,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1350,8 +1351,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1369,8 +1370,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1388,8 +1389,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1407,8 +1408,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},
 	{
@@ -1426,8 +1427,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	},	
 	{
@@ -1445,8 +1446,8 @@ SV.OutlawBoard =
 		Difficulty = "",
 		Item = "",
 		Special = "",
-		ClientGender = nil,
-		TargetGender = nil,
+		ClientGender = -1,
+		TargetGender = -1,
 		BonusReward = ""
 	}
 }
@@ -1599,16 +1600,33 @@ function MISSION_GEN.GenerateBoard(board_type)
 		end
 		
 		--Roll for genders. Use base form because it PROBABLY won't ever matter.
+		--because Scriptvars doesnt like saving genders instead of regular structures, use 1/2/0 for m/f/genderless respectively, and convert when needed
 		local client_gender
 		
 		if client == "zhayn" then--Zhayn is a special exception
-			client_gender = Gender.Male
+			client_gender = 0
 		else
 			client_gender = _DATA:GetMonster(client).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
+			
+			if client_gender == Gender.Male then
+				client_gender = 1
+			elseif client_gender == Gender.Female then
+				client_gender = 2
+			else
+				client_gender = 0
+			end
+			
 		end 
 		
 		local target_gender = _DATA:GetMonster(target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
-
+	
+		if target_gender == Gender.Male then
+			target_gender = 1
+		elseif target_gender == Gender.Female then
+			target_gender = 2
+		else
+			target_gender = 0
+		end
 
 		--Special cases
 		--Roll for the main 3 rescue special cases 
@@ -2047,8 +2065,8 @@ function JobMenu:DeleteJob()
 										Difficulty = "",
 										Item = "",
 										Special = "",
-										ClientGender = nil,
-										TargetGender = nil,
+										ClientGender = -1,
+										TargetGender = -1,
 										BonusReward = ""
 									}
 	
@@ -2692,22 +2710,22 @@ function MISSION_GEN.GetDebugMissionInfo(board, slot)
 		print("item = " .. SV.OutlawBoard[slot].Item)
 		print("Special = " .. SV.OutlawBoard[slot].Special)
 		local client_gender = SV.OutlawBoard[slot].ClientGender
-		if client_gender == Gender.Male then
+		if client_gender == 1 then
 			print("ClientGender = male")
-		elseif client_gender == Gender.Female then
+		elseif client_gender == 2then
 			print("ClientGender = female")
-		elseif client_gender == Gender.Genderless then
+		elseif client_gender == 0 then
 			print("ClientGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")
 		end
 		
 		local target_Gender = SV.OutlawBoard[slot].ClientGender
-		if target_Gender == Gender.Male then
+		if target_Gender == 1 then
 			print("TargetGender = male")
-		elseif target_Gender == Gender.Female then
+		elseif target_Gender == 2 then
 			print("TargetGender = female")
-		elseif target_Gender == Gender.Genderless then
+		elseif target_Gender == 0 then
 			print("TargetGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")
@@ -2730,22 +2748,22 @@ function MISSION_GEN.GetDebugMissionInfo(board, slot)
 		print("item = " .. SV.MissionBoard[slot].Item)
 		print("Special = " .. SV.MissionBoard[slot].Special)
 		local client_gender = SV.MissionBoard[slot].ClientGender
-		if client_gender == Gender.Male then
+		if client_gender == 1 then
 			print("ClientGender = male")
-		elseif client_gender == Gender.Female then
+		elseif client_gender == 2 then
 			print("ClientGender = female")
-		elseif client_gender == Gender.Genderless then
+		elseif client_gender == 0 then
 			print("ClientGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")
 		end
 		
 		local target_Gender = SV.MissionBoard[slot].ClientGender
-		if target_Gender == Gender.Male then
+		if target_Gender == 1 then
 			print("TargetGender = male")
-		elseif target_Gender == Gender.Female then
+		elseif target_Gender == 2 then
 			print("TargetGender = female")
-		elseif target_Gender == Gender.Genderless then
+		elseif target_Gender == 0 then
 			print("TargetGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")
@@ -2767,22 +2785,22 @@ function MISSION_GEN.GetDebugMissionInfo(board, slot)
 		print("item = " .. SV.TakenBoard[slot].Item)
 		print("Special = " .. SV.TakenBoard[slot].Special)
 		local client_gender = SV.TakenBoard[slot].ClientGender
-		if client_gender == Gender.Male then
+		if client_gender == 1 then
 			print("ClientGender = male")
-		elseif client_gender == Gender.Female then
+		elseif client_gender == 2 then
 			print("ClientGender = female")
-		elseif client_gender == Gender.Genderless then
+		elseif client_gender == 0 then
 			print("ClientGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")
 		end
 		
 		local target_Gender = SV.TakenBoard[slot].ClientGender
-		if target_Gender == Gender.Male then
+		if target_Gender == 1 then
 			print("TargetGender = male")
-		elseif target_Gender == Gender.Female then
+		elseif target_Gender == 2 then
 			print("TargetGender = female")
-		elseif target_Gender == Gender.Genderless then
+		elseif target_Gender == 0 then
 			print("TargetGender = genderless")
 		else 
 			print("Non valid gender!!!!!!")

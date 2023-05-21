@@ -262,6 +262,10 @@ function guild_second_floor.Hand_In_Missions()
 									Taken = false,
 									Difficulty = "",
 									Item = "",
+									Special = "",
+									ClientGender = -1,
+									TargetGender = -1,
+									BonusReward = ""
 								}
 		end
 	end 
@@ -312,7 +316,16 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 				{'Bisharp', 392, 248, Direction.Down}
 			})
 		
-		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
+		local outlaw_gender = job.TargetGender
+		if outlaw_gender == 1 then
+			outlaw_gender = Gender.Male
+		elseif outlaw_gender == 2 then
+			outlaw_gender = Gender.Female
+		else
+			outlaw_gender = Gender.Genderless
+		end
+				
+		local outlaw_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", outlaw_gender)
 		
 		local outlaw = RogueEssence.Ground.GroundChar(outlaw_monster, RogueElements.Loc(392, 224), Direction.Down, outlaw_monster.Species, 'Outlaw')
 		outlaw:ReloadEvents()
@@ -379,7 +392,16 @@ function guild_second_floor.Outlaw_Job_Clear(job)
 
 	
 	else--client is some random mon
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
+		local client_gender = job.ClientGender
+		if client_gender == 1 then
+			client_gender = Gender.Male
+		elseif client_gender == 2 then
+			client_gender = Gender.Female
+		else
+			client_gender = Gender.Genderless
+		end
+		
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(392, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
@@ -441,8 +463,16 @@ function guild_second_floor.Mission_Job_Clear(job)
 
 	--client is target. Check on escort is needed in case the escort is to the same species.
 	if job.Client == job.Target and job.Type ~= COMMON.MISSION_TYPE_ESCORT then
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
+		local client_gender = job.ClientGender
+		if client_gender == 1 then
+			client_gender = Gender.Male
+		elseif client_gender == 2 then
+			client_gender = Gender.Female
+		else
+			client_gender = Gender.Genderless
+		end
 		
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(104, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
 		GAME:GetCurrentGround():AddTempChar(client)
@@ -496,13 +526,31 @@ function guild_second_floor.Mission_Job_Clear(job)
 
 	
 	else--client not the target
-		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", job.ClientGender)
+		local client_gender = job.ClientGender
+		if client_gender == 1 then
+			client_gender = Gender.Male
+		elseif client_gender == 2 then
+			client_gender = Gender.Female
+		else
+			client_gender = Gender.Genderless
+		end
+		
+		local client_monster = RogueEssence.Dungeon.MonsterID(job.Client, 0, "normal", client_gender)
 		
 		local client = RogueEssence.Ground.GroundChar(client_monster, RogueElements.Loc(88, 240), Direction.Down, job.Client:gsub("^%l", string.upper), client_monster.Species)
 		client:ReloadEvents()
 		GAME:GetCurrentGround():AddTempChar(client)
 				
-		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", job.TargetGender)
+		local target_gender = job.TargetGender
+		if target_gender == 1 then
+			target_gender = Gender.Male
+		elseif target_gender == 2 then
+			target_gender = Gender.Female
+		else
+			target_gender = Gender.Genderless
+		end
+				
+		local target_monster = RogueEssence.Dungeon.MonsterID(job.Target, 0, "normal", target_gender)
 		target_monster.Gender = _DATA:GetMonster(job.Target).Forms[0]:RollGender(_ZONE.CurrentGround.Rand)
 		
 		local target = RogueEssence.Ground.GroundChar(target_monster, RogueElements.Loc(120, 240), Direction.Down, job.Target:gsub("^%l", string.upper), target_monster.Species)

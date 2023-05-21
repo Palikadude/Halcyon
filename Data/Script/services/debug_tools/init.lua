@@ -334,8 +334,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -353,8 +353,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -372,8 +372,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -391,8 +391,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -410,8 +410,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -429,8 +429,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -448,8 +448,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -467,8 +467,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		}
 
@@ -493,8 +493,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -512,8 +512,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -531,8 +531,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -550,8 +550,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -569,8 +569,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -588,8 +588,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -607,8 +607,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -626,8 +626,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		}
 
@@ -652,8 +652,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -671,8 +671,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -690,8 +690,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -709,8 +709,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -728,8 +728,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -747,8 +747,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},
 		{
@@ -766,8 +766,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		},	
 		{
@@ -785,8 +785,8 @@ end
 			Difficulty = "",
 			Item = "",
 			Special = "",
-			ClientGender = nil,
-			TargetGender = nil,
+			ClientGender = -1,
+			TargetGender = -1,
 			BonusReward = ""
 		}
 	}
