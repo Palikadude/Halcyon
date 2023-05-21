@@ -192,6 +192,8 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 	end
 end
 
+--this function is currently unused, though it works good when used.
+--problem with it was that the mob would pop in after the floor fade in, and couldn't be easily placed to run before the fade in
 function SpawnOutlaw(origin, radius, mission_num)
 	local mission = SV.TakenBoard[mission_num]
 	local max_boost = 128
@@ -300,12 +302,14 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 
 		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()
+		DUNGEON:CharTurnToChar(outlaw, GAME:GetPlayerPartyMember(0))
+		GeneralFunctions.TeamTurnTo(outlaw)
 		UI:WaitShowDialogue("Wanted outlaw spotted!")
 
 		if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
-			UI:WaitShowDialogue("A-adventurers! Run for it!")
+			UI:WaitShowDialogue("Waah! A-adventurers! Run for it!")
 			local leaderDir = _DUNGEON.ActiveTeam.Leader.CharDir
 			outlaw.CharDir = leaderDir
 		elseif mission.Type == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
@@ -390,6 +394,9 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			end
 			local charaContext = RogueEssence.Dungeon.SingleCharContext(_DUNGEON.ActiveTeam.Leader)
 			TASK:WaitTask(house_event:Apply(owner, ownerChar, charaContext))
+			GAME:WaitFrames(20)
+		else
+			--to prevent accidental button mashing making you waste your turn
 			GAME:WaitFrames(20)
 		end
 	end

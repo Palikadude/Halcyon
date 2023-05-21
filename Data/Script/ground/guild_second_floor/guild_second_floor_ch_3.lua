@@ -87,7 +87,7 @@ end
 function guild_second_floor_ch_3.Bagon_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Some outlaws run for it when they see an adventuring team!")
 	UI:WaitShowDialogue("If they make it to the stairs,[pause=10] then they'll get away!")
-	UI:WaitShowDialogue("It's a good thing " .. CharacterEssentials.GetCharacterName("Doduo") .. " can fly![pause=0] It'll make it much easier to catch up to outlaws!")
+	UI:WaitShowDialogue("It's a good thing " .. CharacterEssentials.GetCharacterName("Doduo") .. " can fly![pause=0] It'll make it much easier to catch up to those outlaws!")
 	GeneralFunctions.EndConversation(chara)
 
 end

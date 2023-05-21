@@ -2188,7 +2188,7 @@ function JobMenu:Update(input)
 	else 
 		--This job has not yet been taken.  This block will never be hit because the submenu will automatically open.
 	end
-  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) or input:JustPressed(RogueEssence.FrameInput.InputType.Menu) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
 	--open job menu for that particular job
@@ -2367,7 +2367,7 @@ function BoardMenu:Update(input)
 	local job_menu = JobMenu:new(self.board_type, self:GetSelectedJobIndex(), self)
 	_MENU:AddMenu(job_menu.menu, false)
 	job_menu:OpenSubMenu()
-  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) or input:JustPressed(RogueEssence.FrameInput.InputType.Menu) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
 	--open job menu for that particular job
@@ -2527,7 +2527,7 @@ function BoardSelectionMenu:Update(input)
 		_GAME:SE("Menu/Cancel")
 		_MENU:RemoveMenu()
 	end 
-  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) then
+  elseif input:JustPressed(RogueEssence.FrameInput.InputType.Cancel) or input:JustPressed(RogueEssence.FrameInput.InputType.Menu) then
     _GAME:SE("Menu/Cancel")
     _MENU:RemoveMenu()
 	--open job menu for that particular job
