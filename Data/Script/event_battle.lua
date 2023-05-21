@@ -381,6 +381,7 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	local dungeon = GAME:GetCurrentDungeon().Name:ToLocal()
 	local segment = _ZONE.CurrentMapID.Segment
 	
+	--todo: Partner dynamically understands there is a client/target/outlaw on the dungeon floor, and comments accordingly
 	if SV.ChapterProgression.Chapter == 1 and dungeon == 'Relic Forest' then
 		personality = 52
 	elseif SV.ChapterProgression.Chapter == 2 and dungeon == 'Illuminant Riverbed' then
