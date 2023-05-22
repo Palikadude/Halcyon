@@ -486,8 +486,7 @@ function SINGLE_CHAR_SCRIPT.OutlawItemCheck(owner, ownerChar, context, args)
 	local mission_num = args.Mission
 	local curr_mission = SV.TakenBoard[mission_num]
 	if curr_mission.Completion == COMMON.MISSION_INCOMPLETE then
-		local slot = GAME:FindPlayerItem(curr_mission.Item, false, true) 
-		if slot:IsValid() and SV.OutlawDefeated then
+		if SV.OutlawDefeated and SV.OutlawItemPickedUp then
 			SV.TemporaryFlags.MissionCompleted = true
 			curr_mission.Completion = 1
 			local item_name =  RogueEssence.Dungeon.InvItem(curr_mission.Item):GetDisplayName()

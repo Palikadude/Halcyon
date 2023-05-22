@@ -315,6 +315,7 @@ end
  if SV.MonsterHouseMessageNotified == nil then SV.MonsterHouseMessageNotified = false end
  if SV.OutlawDefeated == nil then SV.OutlawDefeated = false end
  if SV.OutlawGoonsDefeated == nil then SV.OutlawGoonsDefeated = false end
+ if SV.OutlawItemPickedUp == nil then SV.OutlawItemPickedUp = false end
 
  if SV.TakenBoard == nil then
 	SV.TakenBoard =
