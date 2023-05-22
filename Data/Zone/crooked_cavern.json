@@ -1093,7 +1093,7 @@
 "Amount": 0,
 "Price": 0
 },
-"Rate": 20,
+"Rate": 25,
 "Range": {
 "Min": 0,
 "Max": 10
@@ -1131,7 +1131,7 @@
 "SpawnRates": {
 "nodes": [
 {
-"Item": 20,
+"Item": 25,
 "Range": {
 "Min": 0,
 "Max": 10
