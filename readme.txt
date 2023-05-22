@@ -15,7 +15,7 @@ Github link: https://github.com/Palikadude/Halcyon
 Credits:
 Palika - mod author. scripting, writing, balancing, etc. (all non-engine work, except where other credit is given)
 Audino - for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist
-Trio- - Assisted with mission_gen scripting
+Trio- - Assisted with mission_gen in-dungeon scripting, other scripting features/enhancements on occasion
 
 Playtesters:
 Sunkern
@@ -26,6 +26,7 @@ NanaelJustice
 Trio-
 Dovey
 Brimcon
+The kitchen sunk
 
 
 Spriting credits:

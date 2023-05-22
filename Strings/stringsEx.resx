@@ -3473,88 +3473,352 @@
 
 
 
+
+
+   <data name="TALK_FULL_1020" xml:space="preserve">
+    <value>C'mon, [player]! [mission_target] has to be around here somewhere!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_FULL_1021" xml:space="preserve">
+    <value>This is where [mission_target] needed a rescue! Let's help them, [player]!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_FULL_1022" xml:space="preserve">
+    <value>[mission_target] should be here somewhere! We've got to help them!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_FULL_1023" xml:space="preserve">
+    <value>[mission_target] needs a rescue! Let's find them and get them out of here!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_FULL_1024" xml:space="preserve">
+    <value>We've got a rescue to do here! Let's go, [player]!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+
+  <data name="TALK_HALF_1020" xml:space="preserve">
+    <value>It's not easy, but [mission_target] still needs our help!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_HALF_1021" xml:space="preserve">
+    <value>I'm getting worn out, but I won't quit until our rescue is complete!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_HALF_1022" xml:space="preserve">
+    <value>It's getting rough, but we still have a rescue to do!</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+
+  <data name="TALK_PINCH_1020" xml:space="preserve">
+    <value>N-no... We still need to... R-rescue [mission_target]...</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_PINCH_1021" xml:space="preserve">
+    <value>N-not yet... [mission_target] n-needs us...</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+  <data name="TALK_PINCH_1022" xml:space="preserve">
+    <value>I can't go down yet... Not until we rescue... [mission_target]...</value>
+    <comment>Partner Generic Rescue comment</comment>  </data>
+
+
+
+
+
+
+
+  <data name="TALK_FULL_1030" xml:space="preserve">
+    <value>Let's get [mission_client] to [mission_target] safely.</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_FULL_1031" xml:space="preserve">
+    <value>[mission_target] should be around here somewhere. Let's go, [player]!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_FULL_1032" xml:space="preserve">
+    <value>We're almost there! Just a little further until we get to [mission_target]!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_FULL_1033" xml:space="preserve">
+    <value>We've nearly done it! [mission_client] and [mission_target] will be reunited soon!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_FULL_1034" xml:space="preserve">
+    <value>Let's do our best to protect [mission_client] from harm!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+
+
+  <data name="TALK_HALF_1030" xml:space="preserve">
+    <value>Getting tough... But I won't let [mission_client] down now!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_HALF_1031" xml:space="preserve">
+    <value>Urf! It's not so easy, but I'll make sure [mission_target] gets to [mission_client]!</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_HALF_1032" xml:space="preserve">
+    <value>Feeling weak... I hope we can still get [mission_target] to [mission_client] safely. </value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+
+  <data name="TALK_PINCH_1030" xml:space="preserve">
+    <value>So c-close... S-sorry... [mission_client]... [mission_target]...</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_PINCH_1031" xml:space="preserve">
+    <value>I can't take any more... S-sorry... [mission_client]...</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+  <data name="TALK_PINCH_1032" xml:space="preserve">
+    <value>Not s-strong enough... [player], protect... [mission_client]...</value>
+    <comment>Partner Generic Escort comment</comment>  </data>
+
+
+
+  <data name="TALK_FULL_1040" xml:space="preserve">
+    <value>Let's get this [mission_item] over to [mission_target]!</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_FULL_1041" xml:space="preserve">
+    <value>[mission_target] is waiting for this [mission_item]. Let's deliver it, [player]!</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_FULL_1042" xml:space="preserve">
+    <value>[mission_target] should be around here somewhere. Let's give them this [mission_item] they asked for!</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_FULL_1043" xml:space="preserve">
+    <value>Whoops! We don't seem to have the [mission_item] [mission_target] asked for!</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+  <data name="TALK_FULL_1044" xml:space="preserve">
+    <value>Oh no! We forgot to get a [mission_item] to give to [mission_target]!</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+  <data name="TALK_FULL_1045" xml:space="preserve">
+    <value>Looks like we don't have a [mission_item] for [mission_target]... We'll need to find one somewhere.</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+
+  <data name="TALK_HALF_1040" xml:space="preserve">
+    <value>This delivery is proving tougher than expected...</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_HALF_1041" xml:space="preserve">
+    <value>It's getting difficult, but we still need to deliver this [mission_item] to [mission_target]!</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_HALF_1042" xml:space="preserve">
+    <value>I'm a bit banged up and we forgot the [mission_item]... Today's just not our day, huh [player]?</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data> 
+  <data name="TALK_HALF_1043" xml:space="preserve">
+    <value>It's getting rough... We don't even have the [mission_item] to deliver either...</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+
+  <data name="TALK_PINCH_1040" xml:space="preserve">
+    <value>I'm about to c-collapse... T-the [mission_item]... N-no...</value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_PINCH_1041" xml:space="preserve">
+    <value>Urf... Can't go down yet... [mission_target]'s... [mission_item]... </value>
+    <comment>Partner Generic Delivery comment - you have the item</comment>  </data>
+  <data name="TALK_PINCH_1042" xml:space="preserve">
+    <value>I'm g-going down... Where's the... [mission_item]...</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+  <data name="TALK_PINCH_1043" xml:space="preserve">
+    <value>No m-more... N-no more damage... N-no [mission_item], either...</value>
+    <comment>Partner Generic Delivery comment - you don't have the item</comment>  </data>
+
+
   <data name="TALK_FULL_1050" xml:space="preserve">
+    <value>Hmm... That [mission_item] should be around here somewhere...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_FULL_1051" xml:space="preserve">
+    <value>[mission_client]'s [mission_item] should be nearby. Let's find it, [player]!</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_FULL_1052" xml:space="preserve">
+    <value>We've got a job to do! Let's get that [mission_item] for [mission_client], [player]!</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_FULL_1053" xml:space="preserve">
+    <value>I wonder where that [mission_item] could be...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_FULL_1054" xml:space="preserve">
+    <value>This must be where [mission_client] dropped their [mission_item]. Let's get it back for them, [player]!</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+
+
+  <data name="TALK_HALF_1050" xml:space="preserve">
+    <value>Finding this [mission_item] is going to be tougher than I thought...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_HALF_1051" xml:space="preserve">
+    <value>I'm a bit hurt, but I won't give up until we return [mission_client]'s [mission_item]!</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_HALF_1052" xml:space="preserve">
+    <value>It's getting tough... But we still have a [mission_item] to find!</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+
+  <data name="TALK_PINCH_1050" xml:space="preserve">
+    <value>C-can't take any more... Where's the... [mission_item]...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_PINCH_1051" xml:space="preserve">
+    <value>Urf... I need to be h-healed or... Won't find... [mission_item]...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+  <data name="TALK_PINCH_1052" xml:space="preserve">
+    <value>N-no... At this rate, I'm g-going down... With no [mission_item]...</value>
+    <comment>Partner Generic Lost Item comment</comment>  </data>
+
+
+
+  <data name="TALK_FULL_1060" xml:space="preserve">
+    <value>Let's get [mission_client] to [mission_target] safely.</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+  <data name="TALK_FULL_1061" xml:space="preserve">
+    <value>We'll need to do our best to protect [mission_client] from any danger.</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+  <data name="TALK_FULL_1062" xml:space="preserve">
+    <value>Stick close to [mission_client]! We can't let anything happen to them.</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+
+
+  <data name="TALK_HALF_1060" xml:space="preserve">
+    <value>Urf! It's not easy, but I'll still do what I can to protect [mission_client]!</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+  <data name="TALK_HALF_1061" xml:space="preserve">
+    <value>Being a bodyguard isn't as easy as I had thought...</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+
+  <data name="TALK_PINCH_1060" xml:space="preserve">
+    <value>D-didn't even get close... S-sorry... [mission_client]...</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+  <data name="TALK_PINCH_1061" xml:space="preserve">
+    <value>Too much l-left to go... I'm sorry, [player]... [mission_client]...</value>
+    <comment>Partner Generic escort is with you comment</comment>  </data>
+
+
+  <data name="TALK_FULL_1070" xml:space="preserve">
+    <value>Let's have a fun adventure with [mission_client]!</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+  <data name="TALK_FULL_1071" xml:space="preserve">
+    <value>We'll need to do our best to protect [mission_client] from any danger.</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+  <data name="TALK_FULL_1072" xml:space="preserve">
+    <value>I hope [mission_client] is having a good time adventuring with us!</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+
+
+  <data name="TALK_HALF_1070" xml:space="preserve">
+    <value>Urf! It's not easy, but I'll still do what I can to protect [mission_client]!</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+  <data name="TALK_HALF_1071" xml:space="preserve">
+    <value>It's getting tough... But that'll just make a more interesting adventure for [mission_client], right?</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+
+  <data name="TALK_PINCH_1070" xml:space="preserve">
+    <value>This adventure is too t-tough... I'm g-gonna faint... [player], help...</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+  <data name="TALK_PINCH_1071" xml:space="preserve">
+    <value>D-didn't get far enough... Sorry, [player]... [mission_client]...</value>
+    <comment>Partner Generic Exploration Escort comment</comment>  </data>
+
+
+
+
+  <data name="TALK_FULL_1080" xml:space="preserve">
+    <value>Let's take this outlaw down, [player]!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_FULL_1081" xml:space="preserve">
+    <value>This crook won't beat us! Come on, [player]!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_FULL_1082" xml:space="preserve">
+    <value>This outlaw won't get away from us! Let's do it, [player]!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_FULL_1083" xml:space="preserve">
+    <value>Let's do our best to beat this outlaw!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_FULL_1084" xml:space="preserve">
+    <value>This crook is as good as arrested! Let's go, [player]!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+
+
+  <data name="TALK_HALF_1080" xml:space="preserve">
+    <value>They're tougher than they look... But I'm not giving up!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_HALF_1081" xml:space="preserve">
+    <value>I'm roughed up a bit... But I won't let this outlaw get the better of me!</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_HALF_1082" xml:space="preserve">
+    <value>This outlaw is stronger than I thought...</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+
+  <data name="TALK_PINCH_1080" xml:space="preserve">
+    <value>Th-they're... t-too strong... [player], help...</value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_PINCH_1081" xml:space="preserve">
+    <value>Urf... I'm g-going down... [player]... The o-outlaw... </value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+  <data name="TALK_PINCH_1082" xml:space="preserve">
+    <value>This outlaw... Urgh... C-can't let them get away... </value>
+    <comment>Partner Generic Outlaw comment</comment>  </data>
+
+
+
+
+
+
+ <data name="TALK_FULL_1100" xml:space="preserve">
     <value>Mystery dungeons can be dangerous,[pause=10] but we'll be OK if we stick together!</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
-  <data name="TALK_FULL_1051" xml:space="preserve">
+  <data name="TALK_FULL_1101" xml:space="preserve">
     <value>Let's make it back to Metano Town, [player]!</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
-  <data name="TALK_FULL_1052" xml:space="preserve">
+  <data name="TALK_FULL_1102" xml:space="preserve">
     <value>There sure are a lot of ruins in this forest.</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
-  <data name="TALK_FULL_1053" xml:space="preserve">
+  <data name="TALK_FULL_1103" xml:space="preserve">
     <value>Don't worry, I'll keep you safe, [player]!</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
 
 
-  <data name="TALK_HALF_1050" xml:space="preserve">
+  <data name="TALK_HALF_1100" xml:space="preserve">
     <value>Urf... The forest is proving to be a challenge...</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
-  <data name="TALK_HALF_1051" xml:space="preserve">
+  <data name="TALK_HALF_1101" xml:space="preserve">
     <value>This forest is a bit more dangerous that expected. But I'm still good to go!</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
 	
-  <data name="TALK_PINCH_1050" xml:space="preserve">
+  <data name="TALK_PINCH_1100" xml:space="preserve">
     <value>N-no... Gonna collapse... S-sorry, [player]... </value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
-  <data name="TALK_PINCH_1051" xml:space="preserve">
+  <data name="TALK_PINCH_1101" xml:space="preserve">
     <value>Urgh... Metano Town... Too f-far...</value>
     <comment>Relic Forest Chapter 1 Comment</comment>  </data>
 	
 	
-  <data name="TALK_FULL_1060" xml:space="preserve">
+  <data name="TALK_FULL_1110" xml:space="preserve">
     <value>Quickly, [player]! We need to rescue [color=#00FFFF]Nubbor[color]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
-  <data name="TALK_FULL_1061" xml:space="preserve">
+  <data name="TALK_FULL_1111" xml:space="preserve">
     <value>[color=#00FFFF]Nubbor[color] is counting on us! Let's go, [player]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
-  <data name="TALK_FULL_1062" xml:space="preserve">
+  <data name="TALK_FULL_1112" xml:space="preserve">
     <value>We've got to make it to the Luminous Spring and find [color=#00FFFF]Nubbor[color]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
-  <data name="TALK_FULL_1063" xml:space="preserve">
+  <data name="TALK_FULL_1113" xml:space="preserve">
     <value>This is our first mission, [player]! Let's do our best and get it done!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
 
-  <data name="TALK_HALF_1060" xml:space="preserve">
+  <data name="TALK_HALF_1110" xml:space="preserve">
     <value>This is getting rough, but I can push through it to rescue [color=#00FFFF]Nubbor[color]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
-  <data name="TALK_HALF_1061" xml:space="preserve">
+  <data name="TALK_HALF_1111" xml:space="preserve">
     <value>Our first mission seems to be a bit tougher than I was expecting...</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
 
-  <data name="TALK_PINCH_1060" xml:space="preserve">
+  <data name="TALK_PINCH_1110" xml:space="preserve">
     <value>N-no... I d-don't want to fail, n-not on our first... m-mission...</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
-  <data name="TALK_PINCH_1061" xml:space="preserve">
+  <data name="TALK_PINCH_1111" xml:space="preserve">
     <value>I can't take anymore... [color=#00FFFF]N[color]-[color=#00FFFF]Nubbor[color], I'm s-sorry...</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
 
 
 
-  <data name="TALK_FULL_1070" xml:space="preserve">
+  <data name="TALK_FULL_1120" xml:space="preserve">
     <value>Let's catch this outlaw, [player]!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
-  <data name="TALK_FULL_1071" xml:space="preserve">
+  <data name="TALK_FULL_1121" xml:space="preserve">
     <value>It's scary, but I know we can catch this outlaw, [player]!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data> 
-  <data name="TALK_FULL_1072" xml:space="preserve">
+  <data name="TALK_FULL_1122" xml:space="preserve">
     <value>Be on guard for any bandits!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1073" xml:space="preserve">
+  <data name="TALK_FULL_1123" xml:space="preserve">
     <value>Let's prove to [color=#00FFFF]Ganlon[color] that we're capable, [player]!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
 
-  <data name="TALK_HALF_1070" xml:space="preserve">
+  <data name="TALK_HALF_1120" xml:space="preserve">
     <value>This is getting rough... This place really is as dangerous as I thought...</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
-  <data name="TALK_HALF_1071" xml:space="preserve">
+  <data name="TALK_HALF_1121" xml:space="preserve">
     <value>I'm a bit hurt, but I'm good to keep going. Let's get that outlaw!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
 
-  <data name="TALK_PINCH_1070" xml:space="preserve">
+  <data name="TALK_PINCH_1120" xml:space="preserve">
     <value>Urf... I'm about to keel over... Was [color=#00FFFF]Ganlon[color] right after all...?</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
-  <data name="TALK_PINCH_1071" xml:space="preserve">
+  <data name="TALK_PINCH_1121" xml:space="preserve">
     <value>N-no... A-at this r-rate, I'm going down... I c-can't... The outlaw...</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
 	
@@ -3562,73 +3826,72 @@
 	
 	
 	
-  <data name="TALK_FULL_1080" xml:space="preserve">
+  <data name="TALK_FULL_1130" xml:space="preserve">
     <value>We won't let Team [color=#FFA5FF]Style[color] beat us this time!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1081" xml:space="preserve">
+  <data name="TALK_FULL_1131" xml:space="preserve">
     <value>We have to help [color=#00FFFF]Thwait[color]! Come on, [player]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1082" xml:space="preserve">
+  <data name="TALK_FULL_1132" xml:space="preserve">
     <value>Team [color=#FFA5FF]Style[color]... Those no-goods are going down!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1083" xml:space="preserve">
+  <data name="TALK_FULL_1133" xml:space="preserve">
     <value>[color=#00FFFF]Thwait[color] needs us! Let's do this, [player]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
 	
 	
-  <data name="TALK_HALF_1080" xml:space="preserve">
+  <data name="TALK_HALF_1130" xml:space="preserve">
     <value>It's getting difficult... But I won't go down until we've beaten Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
-  <data name="TALK_HALF_1081" xml:space="preserve">
+  <data name="TALK_HALF_1131" xml:space="preserve">
     <value>I'm a bit beat up, but I won't give in until we've saved [color=#00FFFF]Thwait[color] from Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>
 	
-  <data name="TALK_PINCH_1080" xml:space="preserve">
+  <data name="TALK_PINCH_1130" xml:space="preserve">
     <value>N-no... T-the d-damage... B-but I need to... Team [color=#FFA5FF]Style[color]...</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
-  <data name="TALK_PINCH_1081" xml:space="preserve">
+  <data name="TALK_PINCH_1131" xml:space="preserve">
     <value>Urgh... No m-more... I'm sorry... [color=#00FFFF]Thwait[color]...</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>
 	
 	
 	
 	
-  <data name="TALK_FULL_1090" xml:space="preserve">
+  <data name="TALK_FULL_1140" xml:space="preserve">
     <value>We won't lose to these jerks!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1091" xml:space="preserve">
+  <data name="TALK_FULL_1141" xml:space="preserve">
     <value>We have to help [color=#00FFFF]Thwait[color]! Come on, [player]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1092" xml:space="preserve">
+  <data name="TALK_FULL_1142" xml:space="preserve">
     <value>These no-goods are going down here and now!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
-  <data name="TALK_FULL_1093" xml:space="preserve">
+  <data name="TALK_FULL_1143" xml:space="preserve">
     <value>[color=#00FFFF]Thwait[color] needs us! Let's do this, [player]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
-  <data name="TALK_FULL_1094" xml:space="preserve">
+  <data name="TALK_FULL_1144" xml:space="preserve">
     <value>Let's put these bullies in their place, [player]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
 	
-  <data name="TALK_HALF_1090" xml:space="preserve">
+  <data name="TALK_HALF_1140" xml:space="preserve">
     <value>It's getting difficult... But I won't go down until we defeat Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
-  <data name="TALK_HALF_1091" xml:space="preserve">
+  <data name="TALK_HALF_1141" xml:space="preserve">
     <value>I'm a bit beat up, but I won't give in until we've saved [color=#00FFFF]Thwait[color] from Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
-  <data name="TALK_HALF_1092" xml:space="preserve">
+  <data name="TALK_HALF_1142" xml:space="preserve">
     <value>They're tough... But I can keep going!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
 	
-  <data name="TALK_PINCH_1090" xml:space="preserve">
+  <data name="TALK_PINCH_1140" xml:space="preserve">
     <value>N-no... T-the d-damage... B-but I need to... Team [color=#FFA5FF]Style[color]...</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
-  <data name="TALK_PINCH_1091" xml:space="preserve">
+  <data name="TALK_PINCH_1141" xml:space="preserve">
     <value>Urgh... No m-more... I'm sorry... [color=#00FFFF]Thwait[color]...</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
-  <data name="TALK_PINCH_1092" xml:space="preserve">
+  <data name="TALK_PINCH_1142" xml:space="preserve">
     <value>They're... too t-tough... I'm about to k-keel over...</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
-
 
   <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_1_TITLE" xml:space="preserve">
     <value>Welcome to the Beginner Lesson!</value>

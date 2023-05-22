@@ -199,7 +199,7 @@ function DeliveryCheck(context, targetName, mission)
 	local inv_slot = GAME:FindPlayerItem(mission.Item, false, true)
 	local team_slot = GAME:FindPlayerItem(mission.Item, true, false)
 	local has_item = inv_slot:IsValid() or team_slot:IsValid()
-	local item_name = _DATA:GetItem(mission.Item):GetColoredName()
+	local item_name =  RogueEssence.Dungeon.InvItem(mission.Item):GetDisplayName()
 
 	if has_item then
 		UI:ChoiceMenuYesNo("Yes! You've located " .. targetName .. "!" .. " Do you want to deliver the requested " .. item_name .. " to " .. targetName .. "?")
@@ -219,7 +219,7 @@ function DeliveryCheck(context, targetName, mission)
 			end
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)
-			UI:WaitShowDialogue("Thanks for the rescue!\n I'll see you at the guild after with your reward!")
+			UI:WaitShowDialogue("Thanks for the " .. item_name .. "!\n I'll see you at the guild after with your reward!")
 			GAME:WaitFrames(20)
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue(targetName .. " escaped from the dungeon!")
@@ -386,6 +386,8 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	local outlaw = nil
 	local rescuee = nil
 	local mission = nil
+	local objective_item = nil
+	local escort = tbl.EscortMissionNum
 	if tbl.MissionNumber ~= nil then
 		mission = SV.TakenBoard[tbl.MissionNumber]
 		if tbl.MissionType == COMMON.MISSION_BOARD_MISSION then
@@ -393,23 +395,64 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 		elseif tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
 			outlaw = COMMON.FindNpcWithTable(true, "Mission", tbl.MissionNumber)
 		end
+				
+		if mission.Type == COMMON.MISSION_TYPE_LOST_ITEM then 
+			objective_item = mission.Item
+		end
 	end
 	PrintInfo(tostring(rescuee))
 	PrintInfo(tostring(outlaw))
-  
-	if SV.ChapterProgression.Chapter == 1 and dungeon == 'Relic Forest' then
-		personality = 52
-	elseif SV.ChapterProgression.Chapter == 2 and dungeon == 'Illuminant Riverbed' then
-		personality = 53
-	elseif SV.ChapterProgression.Chapter == 3 and dungeon == 'Crooked Cavern' then
-		if not SV.Chapter3.EncounteredBoss and segment == 0 then --dungeon, havent fought boss yet
-			personality = 54
-		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 0 then --dungeon, lost to boss already
-			personality = 55
-		elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 1 then
-			personality = 56
+	PrintInfo(tostring(tbl.MissionNumber))
+	PrintInfo(tostring(tbl.EscortMissionNum))
+	
+	
+	
+	if rescuee ~= nil then--comment on rescue target
+		if mission.Type == COMMON.MISSION_TYPE_RESCUE then
+			personality = 52
+		elseif mission.Type == COMMON.MISSION_TYPE_ESCORT then
+			personality = 53
+		elseif mission.Type == COMMON.MISSION_TYPE_DELIVERY then
+			local inv_slot = GAME:FindPlayerItem(mission.Item, false, true)
+			local team_slot = GAME:FindPlayerItem(mission.Item, true, false)
+			local has_item = inv_slot:IsValid() or team_slot:IsValid()
+			--partner comments change depending on whether you actually have the delivery item or not
+			if has_item then
+				personality = 54
+			else
+				UI:SetSpeakerEmotion("Worried")
+				personality = 55
+			end
+		end
+	elseif outlaw ~= nil then--comment on outlaw target
+		personality = 59
+		UI:SetSpeakerEmotion("Determined")--this is overriden to worried/pain if hp is low enough
+	elseif objective_item ~= nil and mission.Completion == COMMON.MISSION_INCOMPLETE then --comment on needing to find the item
+		personality = 56
+	elseif escort ~= nil and SV.TakenBoard[escort].Completion == COMMON.MISSION_INCOMPLETE then 
+		if SV.TakenBoard[escort].Type == COMMON.MISSION_TYPE_ESCORT then
+			personality = 57
+		else
+			personality = 58
+		end	
+	else
+		--Story personalities
+		if SV.ChapterProgression.Chapter == 1 and dungeon == 'Relic Forest' then
+			personality = 60
+		elseif SV.ChapterProgression.Chapter == 2 and dungeon == 'Illuminant Riverbed' then
+			personality = 61
+		elseif SV.ChapterProgression.Chapter == 3 and dungeon == 'Crooked Cavern' then
+			if not SV.Chapter3.EncounteredBoss and segment == 0 then --dungeon, havent fought boss yet
+				personality = 62
+			elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 0 then --dungeon, lost to boss already
+				personality = 63
+			elseif SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene and segment == 1 then
+				personality = 64
+				UI:SetSpeakerEmotion("Determined")--this is overriden to worried/pain if hp is low enough
+			end
 		end
 	end
+	PrintInfo("Personality in use: " .. tostring(personality))
     
     local personality_group = COMMON.PERSONALITY[personality]
     local pool = {}
@@ -480,8 +523,40 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
   	    end
       end
   	
+	      
+      if string.find(chosen_quote, "%[mission_client%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(mission.Client):GetColoredName())
+		elseif escort ~= nil then 
+		    chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(SV.TakenBoard[escort].Client):GetColoredName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+	 
+	   if string.find(chosen_quote, "%[mission_target%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(mission.Target):GetColoredName())
+  	   	elseif escort ~= nil then 
+		  chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(SV.TakenBoard[escort].Target):GetColoredName())
+        else
+  	      valid_quote = false
+  	    end
+      end
+	  
+	  
+	  if string.find(chosen_quote, "%[mission_item%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_item%]", RogueEssence.Dungeon.InvItem(mission.Item):GetDisplayName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+	  
+	
+	
   	  if not valid_quote then
-        -- PrintInfo("Rejected "..chosen_quote)
+        PrintInfo("Rejected "..chosen_quote)
   	    table.remove(running_pool, chosen_idx)
   	    chosen_quote = ""
   	  end

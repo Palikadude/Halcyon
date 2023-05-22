@@ -827,7 +827,10 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 				UI:WaitShowDialogue("...A story will help cheer me up too.[pause=0] Our trouble with Team [color=#FFA5FF]Style[color] has me upset,[pause=10] truth be told...")
 			end
 		else
-		
+			UI:SetSpeakerEmotion("Inspired")
+			UI:WaitShowDialogue("I want to hear " .. CharacterEssentials.GetCharacterName("Relicanth") .. " tell the legend of the Anima Cores again sometime soon!")
+			UI:WaitShowDialogue("He tells it way better than I do![pause=0] I'm sure he could even tell us more about the legend than I did the other night!")	
+			
 		end
 	elseif ground == 'post_office' then
 		UI:SetSpeakerEmotion("Worried")

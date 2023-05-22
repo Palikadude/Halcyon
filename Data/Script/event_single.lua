@@ -490,7 +490,7 @@ function SINGLE_CHAR_SCRIPT.OutlawItemCheck(owner, ownerChar, context, args)
 		if slot:IsValid() and SV.OutlawDefeated then
 			SV.TemporaryFlags.MissionCompleted = true
 			curr_mission.Completion = 1
-			local item_name = _DATA:GetItem(curr_mission.Item):GetColoredName()
+			local item_name =  RogueEssence.Dungeon.InvItem(curr_mission.Item):GetDisplayName()
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			GAME:WaitFrames(50)
 			UI:ResetSpeaker()

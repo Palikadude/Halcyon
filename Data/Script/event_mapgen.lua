@@ -31,8 +31,9 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
   local tbl = LTBL(partner)
   tbl.MissionNumber = nil
   tbl.MissionType = nil
-
-  local missionType = nil
+  tbl.EscortMissionNum = nil
+ 
+ local missionType = nil
   local missionNum = nil
   local escortMissionNum = nil
   local destinationFloor = false
@@ -155,7 +156,8 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
     tbl.MissionNumber = missionNum
   end
   if escortDeathEvent then
-    activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("MissionGuestCheck", '{ Mission = '..escortMissionNum..' }'))
+    tbl.EscortMissionNum = escortMissionNum
+	activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("MissionGuestCheck", '{ Mission = '..escortMissionNum..' }'))
   end
   if destinationFloor then
     -- add destination floor notification
