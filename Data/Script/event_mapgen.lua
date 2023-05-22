@@ -27,6 +27,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
   SV.MonsterHouseMessageNotified = false
   SV.OutlawDefeated = false
   SV.OutlawGoonsDefeated = false
+  SV.OutlawItemPickedUp = false
   local partner = GAME:GetPlayerPartyMember(1)
   local tbl = LTBL(partner)
   tbl.MissionNumber = nil
@@ -180,6 +181,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
       activeEffect.OnMapTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFleeStairsCheck", '{ Mission = '..missionNum..' }'))
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawCheck", '{ Mission = '..missionNum..' }'))
     elseif missionType == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+      activeEffect.OnPickups:Add(-6, RogueEssence.Dungeon.ItemScriptEvent("OutlawItemPickup", '{ Mission = '..missionNum..' }'))
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawItemCheck", '{ Mission = '..missionNum..' }'))
     elseif missionType == COMMON.MISSION_TYPE_OUTLAW_MONSTER_HOUSE then
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnMonsterHouseOutlawCheck", '{ Mission = '..missionNum..' }'))
