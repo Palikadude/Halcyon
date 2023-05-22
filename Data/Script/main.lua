@@ -11,4 +11,6 @@
 --------------------------------------------------------------------------------------------------------------
 require 'services.chatter'
 require 'services.debug_tools'
---require 'services.example_service' --Uncommment to try out the ExampleService
+require 'services.music_service'
+
+math.randomseed(os.time())
