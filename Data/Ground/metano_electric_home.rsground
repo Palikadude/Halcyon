@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -51347,7 +51347,7 @@
 }
 ],
 "AssetName": "metano_electric_home",
-"Music": "Treasure Town.ogg",
+"Music": "",
 "EdgeView": 0,
 "NoSwitching": false,
 "ViewCenter": null,

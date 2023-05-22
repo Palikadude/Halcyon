@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -157304,7 +157304,7 @@
 }
 ],
 "AssetName": "metano_altere_transition",
-"Music": "Treasure Town.ogg",
+"Music": "",
 "EdgeView": 1,
 "NoSwitching": true,
 "ViewCenter": null,

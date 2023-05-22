@@ -597,7 +597,8 @@ function metano_town_ch_3.MeetTeamStyle()
 	GeneralFunctions.HeroDialogue(hero, "(What exactly were they whispering about,[pause=10] anyway?)", "Worried")
 	
 	GAME:WaitFrames(20)
-	SOUND:PlayBGM('Treasure Town.ogg', true)
+	--resuming playing whatever song is selected for town.
+	SOUND:PlayBGM(SV.metano_town.Song, true)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("There isn't much point in dwelling on them,[pause=10] though.[pause=0] Let's just hope their change in attitude sticks.")

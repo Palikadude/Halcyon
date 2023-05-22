@@ -29,7 +29,10 @@ function metano_inn.Init(map, time)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-
+	
+	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
+      SOUND:PlayBGM(SV.metano_town.Song, true)
+    end
 end
 
 ---metano_inn.Enter

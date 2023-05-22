@@ -29,7 +29,6 @@ function metano_cafe.Init(map, time)
 	print('=>> Init_metano_cafe <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
-	
 	PartnerEssentials.InitializePartnerSpawn()
 end
 

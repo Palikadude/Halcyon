@@ -30,7 +30,9 @@ function metano_altere_transition.Init(map)
   COMMON.RespawnAllies()
   PartnerEssentials.InitializePartnerSpawn()
   GROUND:AddMapStatus("clouds_overhead")
-
+  if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
+    SOUND:PlayBGM(SV.metano_town.Song, true)
+  end
 end
 
 ---metano_altere_transition.Enter

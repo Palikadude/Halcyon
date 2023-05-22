@@ -759,7 +759,8 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	coro3 = TASK:BranchCoroutine(function() GAME:MoveCamera(0, 0, GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, hero.Position.X + 8, hero.Position.Y + 8, 3), true) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
-	SOUND:PlayBGM('Treasure Town.ogg', true)
+	--resuming playing whatever song is selected for town.
+	SOUND:PlayBGM(SV.metano_town.Song, true)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")

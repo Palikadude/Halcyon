@@ -30,6 +30,11 @@ function metano_cave.Init(map, time)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+	
+	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
+		SOUND:PlayBGM(SV.metano_town.Song, true)
+    end
+  
 	GROUND:CharSetAnim(CH('Sunflora'), "None", true) --sunflora is not happy and so does not bounce around with her idle anim 
 
 	GROUND:AddMapStatus("darkness")--darkness

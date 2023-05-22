@@ -19,7 +19,11 @@ function metano_town.Init(map)
 	PartnerEssentials.InitializePartnerSpawn()
 	GROUND:AddMapStatus("clouds_overhead")
 	
-		
+	--Musician must wiggle as long as he's playing a song!	
+	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
+      SOUND:PlayBGM(SV.metano_town.Song, true)
+      GROUND:CharSetAnim(CH('Musician'), "Wiggle", true)
+    end
 	--if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
 	--	GROUND:Hide('Aggron')
 	--end

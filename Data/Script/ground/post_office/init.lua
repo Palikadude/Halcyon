@@ -14,9 +14,9 @@ function post_office.Init(map)
   COMMON.RespawnAllies()
   PartnerEssentials.InitializePartnerSpawn()
   
-  --if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
-  --  SOUND:PlayBGM(SV.metano_town.Song, true)
-  --end
+  if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
+    SOUND:PlayBGM(SV.metano_town.Song, true)
+  end
   
 end
 
