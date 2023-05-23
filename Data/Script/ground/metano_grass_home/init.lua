@@ -85,7 +85,7 @@ end
 function metano_grass_home.Grass_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Grass_Home_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Grass_Home_Entrance_Marker", true)
   SV.partner.Spawn = 'Grass_Home_Entrance_Marker_Partner'
 end
 
