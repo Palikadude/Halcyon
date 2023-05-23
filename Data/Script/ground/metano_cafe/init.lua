@@ -68,9 +68,9 @@ end
 
 function metano_cafe.Cafe_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)
+  if SV.metano_town.Song ~= "Spinda's Cafe.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Cafe_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Cafe_Entrance_Marker", SV.metano_town.Song == "Spinda's Cafe.ogg")
   SV.partner.Spawn = 'Cafe_Entrance_Marker_Partner'
 end
 

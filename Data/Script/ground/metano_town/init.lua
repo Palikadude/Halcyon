@@ -154,17 +154,17 @@ end
 
 function metano_town.Guild_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild.ogg")
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Cafe_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Spinda's Cafe.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_cafe", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_cafe", "Main_Entrance_Marker", SV.metano_town.Song == "Spinda's Cafe.ogg")
   SV.partner.Spawn = 'Default'
 end
 
@@ -219,9 +219,9 @@ end
 
 function metano_town.Dojo_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild Remix.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild Remix.ogg")
   SV.partner.Spawn = 'Default'
 end
 
@@ -2230,7 +2230,7 @@ Quagsire
 Wooper Boy (Dee)
 Wooper Girl (Dun)
 
-???
+Luxray
 Manetric
 Electrike
 
@@ -2246,9 +2246,10 @@ Bellossom
 Gloom
 Oddish
 
-???
-???
-???
+Furret
+Linoone
+Sentret
+(Zigzagoon)
 
 Sunflora (Cave Hermit)
 

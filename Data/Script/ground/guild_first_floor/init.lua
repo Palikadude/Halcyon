@@ -65,9 +65,9 @@ end
 
 function guild_first_floor.Main_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Guild_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Guild_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild.ogg")
   SV.partner.Spawn = 'Default'
 end
 

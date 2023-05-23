@@ -380,9 +380,9 @@ end
 
 function ledian_dojo.Dojo_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild Remix.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Dojo_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Dojo_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild Remix.ogg")
   SV.partner.Spawn = 'Dojo_Entrance_Marker_Partner'
 end
 
