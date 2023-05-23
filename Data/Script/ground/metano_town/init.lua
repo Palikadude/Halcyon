@@ -19,22 +19,14 @@ function metano_town.Init(map)
 	PartnerEssentials.InitializePartnerSpawn()
 	GROUND:AddMapStatus("clouds_overhead")
 	
-	--Musician must wiggle as long as he's playing a song!	
 	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
       SOUND:PlayBGM(SV.metano_town.Song, true)
-      GROUND:CharSetAnim(CH('Musician'), "Wiggle", true)
     end
-	--if SV.metano_town.AggronGuided then--Hide Aggron if he's been guided to the Dojo
-	--	GROUND:Hide('Aggron')
-	--end
 	
-	--local chara = CH('Aggron')
-	--metano_town.CreateWalkArea(chara, 1264, 560, 32, 32)
-	--chara = CH('Delcatty')
-	--metano_town.CreateWalkArea(chara, 1122, 888, 32, 32)
-	
-
-
+	--Musician must wiggle as long as he's playing a song!	
+	if SV.metano_town.Song ~= 'Treasure Town.ogg' then
+	   GROUND:CharSetAnim(CH('Musician'), "Wiggle", true)
+	end
 
 end
 
@@ -162,17 +154,17 @@ end
 
 function metano_town.Guild_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("guild_first_floor", "Main_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild.ogg")
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Cafe_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Spinda's Cafe.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_cafe", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_cafe", "Main_Entrance_Marker", SV.metano_town.Song == "Spinda's Cafe.ogg")
   SV.partner.Spawn = 'Default'
 end
 
@@ -227,9 +219,9 @@ end
 
 function metano_town.Dojo_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "Wigglytuff's Guild Remix.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("ledian_dojo", "Main_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild Remix.ogg")
   SV.partner.Spawn = 'Default'
 end
 
@@ -2238,7 +2230,7 @@ Quagsire
 Wooper Boy (Dee)
 Wooper Girl (Dun)
 
-???
+Luxray
 Manetric
 Electrike
 
@@ -2254,9 +2246,10 @@ Bellossom
 Gloom
 Oddish
 
-???
-???
-???
+Furret
+Linoone
+Sentret
+(Zigzagoon)
 
 Sunflora (Cave Hermit)
 

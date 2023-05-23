@@ -88,9 +88,9 @@ end
 
 function metano_altere_transition.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  SOUND:FadeOutBGM(20)--map transition will result in a music change
+  if SV.metano_town.Song ~= "File Select.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker", SV.metano_town.Song == 'File Select.ogg')
   SV.partner.Spawn = 'Default'
 end
 

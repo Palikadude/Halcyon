@@ -21,7 +21,7 @@ end
 function metano_water_home_ch_3.Quagsire_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "It's wonderful that " .. CharacterEssentials.GetCharacterName("Numel") .. " was rescued after wandering off,[pause=10] but...", "Worried")
 	UI:WaitShowDialogue("It's got me worried about my own kids.[pause=0] They're quite prone to wandering themselves...")
-	UI:WaitShowDialogue("I hope they won't wander off somewhere where they would need rescuing...")
+	UI:WaitShowDialogue("I hope they won't go off somewhere where they would need rescuing...")
 	GeneralFunctions.EndConversation(chara)
 end 
 
