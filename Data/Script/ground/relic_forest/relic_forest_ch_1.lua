@@ -543,7 +543,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	GAME:CutsceneMode(false)
 
 	--relic forest dungeon round 2
-	GAME:EnterDungeon("relic_forest", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	GAME:EnterDungeon("relic_forest", 0, 4, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
 
 end
 

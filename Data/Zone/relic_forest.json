@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -431,7 +431,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -439,7 +438,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -977,7 +977,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -985,7 +984,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -1523,7 +1523,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1531,7 +1530,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -2069,7 +2069,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2077,7 +2076,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -2615,7 +2615,6 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2623,7 +2622,8 @@
 "Max": 4
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -3108,6 +3108,11 @@
 ]
 },
 "Spawns": []
+},
+{
+"$type": "RogueEssence.LevelGen.ScriptZoneStep, RogueEssence",
+"Script": "ReverseRelicForest",
+"ArgTable": "{}"
 }
 ],
 "IsRelevant": true
