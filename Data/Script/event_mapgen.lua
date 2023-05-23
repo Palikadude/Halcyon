@@ -11,6 +11,7 @@ PresetMultiTeamSpawnerType = luanet.import_type('RogueEssence.LevelGen.PresetMul
 PlaceRandomMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceRandomMobsStep`1')
 PlaceEntranceMobsStepType = luanet.import_type('RogueEssence.LevelGen.PlaceEntranceMobsStep`2')
 MonsterHouseStepType = luanet.import_type('RogueEssence.LevelGen.MonsterHouseStep`1')
+ScriptGenStepType = luanet.import_type('RogueEssence.LevelGen.ScriptGenStep`1')
 
 MapEffectStepType = luanet.import_type('RogueEssence.LevelGen.MapEffectStep`1')
 MapGenContextType = luanet.import_type('RogueEssence.LevelGen.ListMapGenContext')
@@ -196,6 +197,15 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
   queue:Enqueue(priority, destNote)
 end
 
+function ZONE_GEN_SCRIPT.ReverseRelicForest(zoneContext, context, queue, seed, args)
+  if SV.Chapter1.PartnerMetHero and not SV.Chapter1.TeamCompletedForest then
+    local activeEffect = RogueEssence.Data.ActiveEffect()
+    local destNote = LUA_ENGINE:MakeGenericType( MapEffectStepType, { MapGenContextType }, { activeEffect })
+    local priority = RogueElements.Priority(-6)
+    activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("RelicForestFlipStairs"))
+    queue:Enqueue(priority, destNote)
+  end
+end
 
 FLOOR_GEN_SCRIPT = {}
 
@@ -237,7 +247,6 @@ function FLOOR_GEN_SCRIPT.TestGrid(map, args)
   
 end
 
-  
 function FLOOR_GEN_SCRIPT.Test(map, args)
   PrintInfo("Test Tile")
   
