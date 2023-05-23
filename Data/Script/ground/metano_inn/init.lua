@@ -84,7 +84,7 @@ end
 function metano_inn.Inn_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Inn_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Inn_Entrance_Marker", true)
   SV.partner.Spawn = 'Inn_Entrance_Marker_Partner'
 end
 

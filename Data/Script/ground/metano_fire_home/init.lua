@@ -85,7 +85,7 @@ end
 function metano_fire_home.Fire_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Fire_Home_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Fire_Home_Entrance_Marker", true)
   SV.partner.Spawn = 'Fire_Home_Entrance_Marker_Partner'
 end
 

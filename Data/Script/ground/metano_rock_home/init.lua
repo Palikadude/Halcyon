@@ -32,8 +32,8 @@ function metano_rock_home.Init(map, time)
 	PartnerEssentials.InitializePartnerSpawn()
 	
 	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
-      SOUND:PlayBGM(SV.metano_town.Song, true)
-    end
+    SOUND:PlayBGM(SV.metano_town.Song, true)
+  end
 end
 
 ---metano_rock_home.Enter
@@ -85,7 +85,7 @@ end
 function metano_rock_home.Rock_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Rock_Home_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Rock_Home_Entrance_Marker", true)
   SV.partner.Spawn = 'Rock_Home_Entrance_Marker_Partner'
 end
 

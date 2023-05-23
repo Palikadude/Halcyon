@@ -33,7 +33,7 @@ function metano_cave.Init(map, time)
 	
 	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
 		SOUND:PlayBGM(SV.metano_town.Song, true)
-    end
+  end
   
 	GROUND:CharSetAnim(CH('Sunflora'), "None", true) --sunflora is not happy and so does not bounce around with her idle anim 
 
@@ -87,7 +87,7 @@ end
 function metano_cave.Cave_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Cave_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Cave_Entrance_Marker", true)
   SV.partner.Spawn = 'Cave_Entrance_Marker_Partner'
 end
 

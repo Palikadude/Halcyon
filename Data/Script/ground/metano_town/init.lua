@@ -156,7 +156,7 @@ end
 function metano_town.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_altere_transition", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_altere_transition", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
@@ -179,49 +179,49 @@ end
 function metano_town.Fire_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_fire_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_fire_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Rock_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_rock_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_rock_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Water_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_water_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_water_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Grass_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_grass_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_grass_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Electric_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_electric_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_electric_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Normal_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_normal_home", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_normal_home", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Cave_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_cave", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_cave", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
@@ -236,14 +236,14 @@ end
 function metano_town.Post_Office_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("post_office", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("post_office", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 
 function metano_town.Inn_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_inn", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("metano_inn", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 

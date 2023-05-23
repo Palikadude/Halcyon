@@ -82,7 +82,7 @@ end
 function metano_altere_transition.North_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Metano_South_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Metano_South_Entrance_Marker", true)
   SV.partner.Spawn = 'Metano_South_Entrance_Marker_Partner'
 end
 
@@ -90,7 +90,7 @@ function metano_altere_transition.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   SOUND:FadeOutBGM(20)--map transition will result in a music change
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker")
+  GAME:EnterGroundMap("altere_pond", "Main_Entrance_Marker", true)
   SV.partner.Spawn = 'Default'
 end
 

@@ -100,7 +100,7 @@ end
 function post_office.South_Exit_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Post_Office_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Post_Office_Entrance_Marker", true)
   SV.partner.Spawn = 'Post_Office_Entrance_Marker_Partner'
 end
 

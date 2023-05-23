@@ -84,7 +84,7 @@ end
 function metano_electric_home.Electric_Home_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   GAME:FadeOut(false, 20)
-  GAME:EnterGroundMap("metano_town", "Electric_Home_Entrance_Marker")
+  GAME:EnterGroundMap("metano_town", "Electric_Home_Entrance_Marker", true)
   SV.partner.Spawn = 'Electric_Home_Entrance_Marker_Partner'
 end
 
