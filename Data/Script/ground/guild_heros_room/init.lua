@@ -68,8 +68,8 @@ end
 --Check if a new story event needs to be triggered
 function guild_heros_room.CheckTriggerEvent()
 	--Marking the end of the demo. In the future, this will trigger chapter 4. 
-	--Triggers after going to bed, at the end of chapter 3, once bronze rank is obtained.
-	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank == "bronze" and not SV.TemporaryFlags.Bedtime then
+	--Triggers after going to bed, at the end of chapter 3, once bronze rank (or better, somehow) is obtained.
+	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
 		GAME:WaitFrames(90)
 		guild_heros_room_ch_3.DemoThanks()
 	end
