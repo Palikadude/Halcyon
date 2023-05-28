@@ -110,7 +110,8 @@ function BATTLE_SCRIPT.RescueReached(owner, ownerChar, context, args)
 	local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(context.Target.BaseForm.Species).Name:ToLocal()
 	GAME:SetCharacterNickname(context.Target, base_name)
 
-	context.CancelState.Cancel = true
+	context.CancelState.Cancel = false
+	context.TurnCancel.Cancel = true
 
 	local targetName = _DATA:GetMonster(context.Target.BaseForm.Species):GetColoredName()
 
@@ -255,7 +256,8 @@ function DeliveryCheck(context, targetName, mission)
 end
 
 function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
-	context.CancelState.Cancel = true
+	context.CancelState.Cancel = false
+	context.TurnCancel.Cancel = true
   --Mark this as the last dungeon entered.
   local tbl = LTBL(context.Target)
 	if tbl ~= nil and tbl.Mission ~= nil then
@@ -640,7 +642,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	local target = context.Target--ledian
 	UI:SetSpeaker(target)
 	
-	context.CancelState.Cancel = true
+	context.CancelState.Cancel = false
+	context.TurnCancel.Cancel = true
 
 	local olddir = target.CharDir
 	DUNGEON:CharTurnToChar(target, chara)
