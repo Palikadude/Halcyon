@@ -89,8 +89,10 @@ function metano_inn_ch_2.Innkeeper_Desk_Right_Action(chara, activator)
 end
 
 function metano_inn_ch_2.Nidorina_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "Can't believe I'm not allowed out until that stupid kid is found.", "Angry")
-	UI:WaitShowDialogue("Just cause some dumb brat runs off doesn't mean I'm going to![pause=0] But of course my parents don't get that.")
+	GeneralFunctions.StartConversation(chara, "Can't believe I'm not allowed out until that stupid kid is found.", "Determined")
+	UI:WaitShowDialogue("Just cause some dumb brat runs off doesn't mean I'm going to![pause=0] But of course my parents don't get that!")
+	UI:SetSpeakerEmotion("Angry")
+	UI:WaitShowDialogue("UGH![pause=0] This is so annoying![pause=0] And they're so annoying too!")
 	GeneralFunctions.EndConversation(chara)
 end
 

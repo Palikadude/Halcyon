@@ -287,6 +287,7 @@ function DebugTools:OnUpgrade()
  if SV.Chapter3.DemoThankYou == nil then SV.Chapter3.DemoThankYou = false end
  if SV.Chapter3.TropiusGaveWand == nil then SV.Chapter3.TropiusGaveWand = false end
  if SV.Chapter3.BreloomGirafarigConvo == nil then SV.Chapter3.BreloomGirafarigConvo = false end
+ if SV.Chapter3.PostBossSpokeToCranidos == nil then SV.Chapter3.PostBossSpokeToCranidos = false end
  
  
  --Fix old chapter 2 and before saves that have bad cafe variables

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -5453,21 +5453,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
-},
-{
-"Bounds": {
-"X": 104,
-"Y": 240,
-"Width": 8,
-"Height": 8
-},
 "Tags": 1
 },
 {
 "Bounds": {
 "X": 104,
-"Y": 248,
+"Y": 240,
 "Width": 8,
 "Height": 8
 },
@@ -5476,6 +5467,15 @@
 {
 "Bounds": {
 "X": 104,
+"Y": 248,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 104,
 "Y": 256,
 "Width": 8,
 "Height": 8
@@ -5851,21 +5851,12 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
 "X": 112,
 "Y": 240,
-"Width": 8,
-"Height": 8
-},
-"Tags": 0
-},
-{
-"Bounds": {
-"X": 112,
-"Y": 248,
 "Width": 8,
 "Height": 8
 },
@@ -5874,6 +5865,15 @@
 {
 "Bounds": {
 "X": 112,
+"Y": 248,
+"Width": 8,
+"Height": 8
+},
+"Tags": 1
+},
+{
+"Bounds": {
+"X": 112,
 "Y": 256,
 "Width": 8,
 "Height": 8
@@ -13332,7 +13332,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -13341,7 +13341,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -13730,7 +13730,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -13739,7 +13739,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -14128,7 +14128,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -14137,7 +14137,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 0
+"Tags": 1
 },
 {
 "Bounds": {
@@ -138921,7 +138921,7 @@
 ]
 }
 ],
-"AssetName": "",
+"AssetName": "guild_heros_room",
 "Music": "Wigglytuff's Guild.ogg",
 "EdgeView": 1,
 "NoSwitching": true,

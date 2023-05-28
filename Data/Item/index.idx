@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.6.0",
+"Version": "0.7.10.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "berry_aspear": {
@@ -2374,6 +2374,32 @@
 "Comment": "",
 "SortOrder": 0
 },
+"seed_ice": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.10.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.10.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.SeedState"
+}
+],
+"Name": {
+"DefaultText": "Ice Seed",
+"LocalTexts": {
+"fr": "Glacigraine",
+"de": "Eissamen",
+"ko": "얼음씨앗",
+"zh-hans": "冰冻之种"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 4
+},
 "seed_plain": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,
@@ -2429,11 +2455,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.4.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.10.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.4.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.10.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],

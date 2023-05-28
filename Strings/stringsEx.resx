@@ -3959,7 +3959,7 @@ Accuracy - How likely a move is to hit. The Speed stat, as well as temporary Acc
     <value>Moves and their Properties (cont.)</value>
     <comment>Sign title in beginner lesson</comment>  </data>
   <data name="BEGINNER_LESSON_GENERAL_SIGN_2_2_BODY" xml:space="preserve">
-    <value>Type - Determines how effective a move is against an enemy. For example, water moves are strong against fire Pokémon.
+    <value>Type - Determines how effective a move is against an enemy. For example, Water moves are strong against Fire Pokémon.
 Damage Category - Physical, special, or status. Physical moves use Attack/Defense, special moves use Sp. Attack/Sp. Defense. Status moves don’t directly inflict damage, but have other effects instead such as inflicting status or lowering stats.
 Max PP - Power Points (PP) are the energy required to use a move. A move can't be used if it runs out of PP until its restored.
 </value>
@@ -4070,7 +4070,7 @@ By the way, a Pokémon can never miss an attack twice in a row. If you miss, the
   <data name="BEGINNER_LESSON_GENERAL_SIGN_6_1_BODY" xml:space="preserve">
     <value>Types are the elemental affiliation of a Pokémon or move. Certain types are strong or weak against other types. For example, Grass moves are ineffective against Fire Pokémon but are strong against Water Pokémon.
 Some types are completely ineffective against other types. For example, Normal moves can’t hit Ghost Pokémon.
-Basic attacks have no type and hit every Pokémon for normal damage.
+Basic attacks have no type and hit every Pokémon for regular damage.
 </value>
     <comment>Sign info in beginner lesson</comment>  </data>
 	

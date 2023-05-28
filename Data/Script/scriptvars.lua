@@ -690,9 +690,9 @@ SV.Chapter3 =
 	DemoThankYou = false,--Showed demo thank you?
 
 	TropiusGaveWand = false,--did tropius give some wands to help the duo?
-	BreloomGirafarigConvo = false --talked to breloom/girafarig about their expedition?
+	BreloomGirafarigConvo = false, --talked to breloom/girafarig about their expedition?
+	PostBossSpokeToCranidos = false -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
 }
-
 
 
 ----------------------------------

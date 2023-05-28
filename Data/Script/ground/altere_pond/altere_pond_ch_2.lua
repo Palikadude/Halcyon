@@ -29,7 +29,7 @@ function altere_pond_ch_2.Relicanth_Action(chara, activator)
 	local hero = CH('PLAYER')
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 
-	GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. ",[pause=10] is that you?[pause=0] You are keeping out of trouble,[pause=10] I trust?")
+	GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. ",[pause=10] is that you?[pause=0] You are keeping out of trouble,[pause=10] I trust?", "Normal", true, false)
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
@@ -52,7 +52,7 @@ function altere_pond_ch_2.Relicanth_Action(chara, activator)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Stunned")
 	UI:WaitShowDialogue("Of course![pause=0] You know I would never do something as irresponsible as that...")
-	GeneralFunctions.EndConversation(chara)
+	GeneralFunctions.EndConversation(chara, false)
 end 
 
 function altere_pond_ch_2.Event_Trigger_1_Touch(obj, activator)

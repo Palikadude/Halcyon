@@ -3,27 +3,29 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Sleep Seed",
+"DefaultText": "Ice Seed",
 "LocalTexts": {
-"fr": "Roupigraine",
-"de": "Schlafsamen",
-"ko": "수면의씨앗"
+"fr": "Glacigraine",
+"de": "Eissamen",
+"ko": "얼음씨앗",
+"zh-hans": "冰冻之种"
 }
 },
 "Desc": {
-"DefaultText": "A seed that puts the Pokémon to sleep for a few turns.",
+"DefaultText": "A seed that freezes the Pokémon for a few turns.",
 "LocalTexts": {
-"fr": "Aliment qui inflige au Pokémon le statut Sommeil. Il ne peut plus rien faire. Remplit aussi un peu l'Estomac",
-"de": "Ein Samen, der das Pokémon für viele Runden in Schlaf versetzt.",
-"ko": "먹으면 몇 턴동안 잠들게 된다."
+"fr": "Aliment qui gêle le Pokémon pour plusieurs tours.",
+"de": "Ein Samen, der das Pokémon für viele Runden einfriert.",
+"ko": "먹으면 몇 턴동안 얼게 된다.",
+"zh-hans": "一种种子，食用后陷入冰冻状态。"
 }
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Seed_DarkBlue",
+"Sprite": "Seed_Blue",
 "Icon": 4,
-"SortCategory": 0,
-"Price": 20,
+"SortCategory": 4,
+"Price": 50,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
@@ -39,8 +41,9 @@
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 1,
 "TileEmitter": {
@@ -116,7 +119,7 @@
 "Counter": 5
 }
 ],
-"StatusID": "sleep",
+"StatusID": "freeze",
 "AffectTarget": true,
 "SilentCheck": false,
 "Anonymous": false,

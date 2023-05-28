@@ -12,6 +12,9 @@ Github link: https://github.com/Palikadude/Halcyon
 5. Make sure Halcyon is not embedded an extra folder down! When you click on Halcyon's folder in your MODS folder, it should have the readme file in plain sight, and not in another folder!
 6. Start PMDO, and select Halcyon from the main menu via Special Episodes.
 
+If you're having trouble installing the game, or have any questions, comments, feedback, etc., please join the PMDO discord and talk with Palika there!  Discord link: https://discord.gg/37VKndMsr2
+The dedicated channel for Halcyon discussion is #quest-halcyon.
+
 Credits:
 Palika - mod author. scripting, writing, balancing, etc. (all non-engine work, except where other credit is given)
 Audino - for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist

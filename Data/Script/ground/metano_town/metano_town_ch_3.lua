@@ -455,7 +455,7 @@ function metano_town_ch_3.MeetTeamStyle()
 	GeneralFunctions.DoubleHop(partner)
 	UI:WaitShowDialogue("But it doesn't matter why " .. CharacterEssentials.GetCharacterName("Tropius") .. " took us in!")
 	UI:WaitShowDialogue("All that matters is that me and " .. hero:GetDisplayName() .. " are in the guild and we're learning to become adventurers!")
-	UI:WaitShowDialogue("It's not hard to see why he didn't want you guys in the guild!")
+	UI:WaitShowDialogue("It's not hard to see why he didn't want you in the guild!")
 	
 	SOUND:PlayBattleSE('EVT_Emote_Shock_2')
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EmoteAndPause(luxio, "Shock", false) end)
@@ -920,6 +920,7 @@ function metano_town_ch_3.Wooper_Conversation(chara)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(electrike)
 	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
+	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("Groan...")
 	
 	GROUND:CharEndAnim(partner)
@@ -970,7 +971,7 @@ function metano_town_ch_3.Meditite_Electrike_Conversation(chara)
 	GeneralFunctions.EmoteAndPause(electrike, "Sweatdrop", true)
 	UI:SetSpeakerEmotion("Stunned")
 	UI:WaitShowDialogue("Err...[pause=0] Right...")
-	UI:WaitShowDialogue("(I can't really understand her...[pause=0] I guess the twins aren't so bad after all...)")
+	UI:WaitShowDialogue("(I can't understand her at all...[pause=0] I guess the twins aren't so bad after all...)")
 	
 	
 	GROUND:CharEndAnim(partner)
@@ -1043,10 +1044,12 @@ function metano_town_ch_3.Oddish_Gloom_Conversation(chara)
 	
 	UI:SetSpeaker(oddish)
 	UI:SetSpeakerEmotion("Joyous")
+	GROUND:CharSetEmote(oddish, "glowing", 0)
 	UI:WaitShowDialogue("Yeah![pause=0] This drink is so yummy!")
 	UI:WaitShowDialogue("Thanks for taking me to the café,[pause=10] " .. gloom:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
 	
+	GROUND:CharSetEmote(oddish, "", 0)
 	UI:SetSpeaker(gloom)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("Of course![pause=0] What's a big sister for,[pause=10] after all?[pause=0]\nI'm just happy you're enjoying your drink!")
@@ -1129,7 +1132,7 @@ end
 
 function metano_town_ch_3.Numel_Action(chara, activator)
 	if not SV.Chapter3.DefeatedBoss then 
-		GeneralFunctions.StartConversation(chara, "Let's all play tag![pause=0] I can start as " .. '"it"!', "Happy", false)
+		GeneralFunctions.StartConversation(chara, "Let's all play tag![pause=0] I'll be it first!", "Happy", false)
 	else 
 		GeneralFunctions.StartConversation(chara, "I can't play with the other kids today because I have to do my chores...", "Worried")
 		UI:SetSpeakerEmotion("Normal")
@@ -1146,7 +1149,8 @@ function metano_town_ch_3.Mawile_Action(chara, activator)
 	else
 		local partner = CH('Teammate1')
 		local hero = CH('PLAYER')
-		GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. "![pause=0] " .. hero:GetDisplayName() .. "![pause=0] Have you guys heard?[pause=0] Those two merchants that hang out south of the guild are back!")
+		GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. "![pause=0] " .. hero:GetDisplayName() .. "![pause=0] Have you guys heard?")
+		UI:WaitShowDialogue("Those two merchants that hang out south of the guild are back!")
 		UI:WaitShowDialogue("They're pretty strange,[pause=10] but I bet they'll have some useful items for adventurers like you!")
 	end	
 	GeneralFunctions.EndConversation(chara)
@@ -1329,6 +1333,7 @@ function metano_town_ch_3.Cranidos_Action(chara, activator)
 	UI:WaitShowDialogue("He was an easy mark![pause=0] That's why I chose him for you,[pause=10] even if he was in a place like " .. zone:GetColoredName() .. ".")
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("You can speak to me when you take down an outlaw that's worth my notice.")
+	SV.Chapter3.PostBossSpokeToCranidos = true
 	GeneralFunctions.EndConversation(chara)
 end
 

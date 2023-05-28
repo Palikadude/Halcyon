@@ -545,7 +545,7 @@
     <value>As you already know,[pause=10] I sell wonderful items here each day.</value>
   </data>
   <data name="Red_Merchant_Info_Happy_2" xml:space="preserve">
-    <value>You bought all of my stock today,[pause=10] but I'll have more tomorrow valued shoppers!</value>
+    <value>You bought all of my stock today,[pause=10] but I'll have more tomorrow,[pause=10] valued shoppers!</value>
   </data>
   <data name="Red_Merchant_Info_Happy_3" xml:space="preserve">
     <value>If only I could sell more than one item per day to clients like you...</value>

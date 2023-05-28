@@ -639,6 +639,8 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 	local chara = context.User--player 
 	local target = context.Target--ledian
 	UI:SetSpeaker(target)
+	
+	context.CancelState.Cancel = true
 
 	local olddir = target.CharDir
 	DUNGEON:CharTurnToChar(target, chara)

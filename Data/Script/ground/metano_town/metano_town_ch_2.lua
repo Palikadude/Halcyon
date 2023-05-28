@@ -545,7 +545,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Hey,[pause=10] " .. hero:GetDisplayName() .. ",[pause=10] look over there!")
-	SOUND:FadeOutBGM(120)
+	SOUND:FadeOutBGM(60)
 	GAME:WaitFrames(20)
 	
 	--set this to true to stop their running 

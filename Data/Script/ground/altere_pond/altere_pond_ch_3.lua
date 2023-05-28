@@ -13,7 +13,7 @@ function altere_pond_ch_3.Relicanth_Action(chara, activator)
 	if not SV.Chapter3.DefeatedBoss then
 
 
-		GeneralFunctions.StartConversation(chara, "Who's there?")
+		GeneralFunctions.StartConversation(chara, "Who's there?", "Normal", true, false)
 		
 		GAME:WaitFrames(20)
 		UI:SetSpeaker(partner)
@@ -32,8 +32,8 @@ function altere_pond_ch_3.Relicanth_Action(chara, activator)
 		UI:SetSpeaker(chara)
 		UI:WaitShowDialogue("Hmmph.[pause=0] Very well.[pause=0] Make sure you keep out of trouble in the meanwhile.")
 	else
-		GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. ".[pause=0] I hope you and your friend there continue to keep out of trouble.")
+		GeneralFunctions.StartConversation(chara, partner:GetDisplayName() .. ".[pause=0] I hope you and your friend there continue to keep out of trouble.", "Normal", true, false)
 		UI:WaitShowDialogue("Just because my eyes aren't what they used to be doesn't mean I won't know if you're up to something!")
 	end
-	GeneralFunctions.EndConversation(chara)
+	GeneralFunctions.EndConversation(chara, false)
 end 

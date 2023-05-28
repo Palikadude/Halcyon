@@ -7,10 +7,12 @@ guild_bottom_right_bedroom_ch_3 = {}
 
 
 function guild_bottom_right_bedroom_ch_3.SetupGround()
-	local zigzagoon = CharacterEssentials.MakeCharactersFromList({
-		{'Zigzagoon', 88, 256, Direction.Down}
-	})
-
+	if not SV.Chapter3.DefeatedBoss then
+		local zigzagoon = CharacterEssentials.MakeCharactersFromList({
+			{'Zigzagoon', 88, 256, Direction.Down}
+		})
+	end
+	
 	GAME:FadeIn(20)
 
 end

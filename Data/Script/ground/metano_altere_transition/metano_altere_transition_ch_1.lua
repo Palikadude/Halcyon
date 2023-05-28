@@ -42,7 +42,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion('Normal')
 	
-	UI:WaitShowDialogue("Alright,[pause=10] this is spot is better to talk.")
+	UI:WaitShowDialogue("Alright,[pause=10] this spot is better to talk.")
 	--GeneralFunctions.HeroDialogue(hero, "(But what was wrong with staying near the pond?[pause=0] Something seems off...)", "Worried")
 	--GeneralFunctions.HeroDialogue(hero, "(And why )", "Worried")
 

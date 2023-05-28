@@ -80,7 +80,7 @@
     <value>Sorry you two,[pause=10] I can only sell one special a day.[pause=0] Come back tomorrow!</value>
   </data>
   <data name="Cafe_Daily_Special" xml:space="preserve">
-    <value>Today's special is {0} and it'll cost ya {1} \uE024,[pause=10] is that ok?</value>
+    <value>Today's special is {0} and it'll cost ya [color=#00FFFF]{1}[color] \uE024,[pause=10] is that ok?</value>
   </data>
   <data name="Cafe_No_Money" xml:space="preserve">
     <value>Looks like you haven't got enough money.</value>

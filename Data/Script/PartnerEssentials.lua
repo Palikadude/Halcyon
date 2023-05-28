@@ -670,7 +670,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("We have to go back to " .. zone:GetColoredName() .. " to defeat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .."![pause=0] Come on!")
 		else
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif in_array(ground, {'guild_bedroom_hallway',
 						     'guild_storage_room',
@@ -702,10 +706,15 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 					UI:SetSpeakerEmotion("Normal")
 				end
 				UI:WaitShowDialogue("Anyways,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+				UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
 			else
 				UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+				UI:SetSpeakerEmotion("Sad")
+				UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+				UI:SetSpeakerEmotion("Normal")
+				UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+				UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 			end
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	
 	elseif ground == 'guild_bottom_right_bedroom' then
@@ -717,7 +726,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("Do you think there's any info on Team [color=#FFA5FF]Style[color] in one of these almanacs?")
 		else
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif ground == 'guild_second_floor' then
 		if not SV.Chapter3.EncounteredBoss then
@@ -779,7 +792,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("I don't want to lose next time we face them!")
 		else 
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif in_array(ground, {'metano_electric_home',
 							 'metano_normal_home',
@@ -802,7 +819,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("Let's get ready here in town,[pause=10] then get back to " .. zone:GetColoredName() .. " to save " .. CharacterEssentials.GetCharacterName("Sandile") .." from Team [color=#FFA5FF]Style[color]!")
 		else 
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif ground == 'metano_fire_home' then
 		if not SV.Chapter3.DefeatedBoss then
@@ -812,7 +833,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("Though the problem with Luminous Spring still has me puzzled...")
 		else
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif ground == 'altere_pond' then
 		if not SV.Chapter3.DefeatedBoss then
@@ -829,7 +854,8 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 		else
 			UI:SetSpeakerEmotion("Inspired")
 			UI:WaitShowDialogue("I want to hear " .. CharacterEssentials.GetCharacterName("Relicanth") .. " tell the legend of the Anima Cores again sometime soon!")
-			UI:WaitShowDialogue("He tells it way better than I do![pause=0] I'm sure he could even tell us more about the legend than I did the other night!")	
+			UI:WaitShowDialogue("He tells it way better than I do!")
+			UI:WaitShowDialogue("I'm sure he could even tell us more about the legend than I did the other night!")	
 			
 		end
 	elseif ground == 'post_office' then
@@ -851,7 +877,11 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			UI:WaitShowDialogue("We need to get back to " .. zone:GetColoredName() .. " as soon as possible to beat Team [color=#FFA5FF]Style[color] and help " .. CharacterEssentials.GetCharacterName("Sandile") .. "!")
 		else 
 			UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-			UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+			UI:SetSpeakerEmotion("Sad")
+			UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+			UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
 		end
 	elseif ground == 'metano_town' then
 		--metano town uses a series of touch objects to mark where the player/partner is on the map so the partner can comment on specific surroundings.
@@ -917,8 +947,20 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 			end
 		else--Mission days
 			if in_array(location, {'Guild', 'Cave', 'Well', 'Post', 'Dojo', 'Exploration', 'Cafe', 'Market'}) then 
-				UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
-				UI:WaitShowDialogue("Let's keep doing good work as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+				if location == 'Market' and SV.Chapter3.PostBossSpokeToCranidos then
+					UI:SetSpeakerEmotion("Worried")
+					UI:WaitShowDialogue("I guess we can't impress " .. CharacterEssentials.GetCharacterName("Cranidos") .. " no matter what we do,[pause=10] huh " .. CH('PLAYER'):GetDisplayName() .. "?")
+					UI:SetSpeakerEmotion("Normal")
+					UI:WaitShowDialogue("Well,[pause=10] no use getting worked up over his attitude.")
+					UI:WaitShowDialogue("We'll just have to work hard to impress ourselves instead of Pokémon like him!")
+				else 
+					UI:WaitShowDialogue("Today,[pause=10] " .. CharacterEssentials.GetCharacterName("Noctowl") .. " wants us to do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+					UI:SetSpeakerEmotion("Sad")
+					UI:WaitShowDialogue("I'm still feeling a bit down about the whole ordeal with " .. CharacterEssentials.GetCharacterName("Sandile") .. "...")
+					UI:SetSpeakerEmotion("Normal")
+					UI:WaitShowDialogue("Hopefully,[pause=10] that sort of situation won't pop up again with any more jobs we take.")
+					UI:WaitShowDialogue("So let's keep up the good work,[pause=10] " .. hero:GetDisplayName() .. "!")
+				end
 			elseif in_array(location, {'North Houses', 'South Houses'}) then
 				UI:SetSpeakerEmotion("Worried")
 				UI:WaitShowDialogue("Seems like most of the townsfolk are worried about all the outlaws running around lately...")
@@ -929,7 +971,7 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 				UI:SetSpeakerEmotion("Worried")
 				UI:WaitShowDialogue("These two are definitely a couple of characters...[pause=0] I still don't really get them...")
 				UI:SetSpeakerEmotion("Normal")
-				UI:WaitShowDialogue("But the items they sell might be handy for us![pause=0] Let's visit them every day to see what they have for sale!")
+				UI:WaitShowDialogue("But the items they sell might be handy for us![pause=0] Let's visit them every day to see what they're selling!")
 				UI:WaitShowDialogue("We'll have to choose carefully who we buy from each day,[pause=10] though.")
 			else
 				UI:WaitShowDialogue("No dialogue assigned for this section of town. Let Palika know where you got this message.")
