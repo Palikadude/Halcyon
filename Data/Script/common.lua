@@ -1098,7 +1098,6 @@ function COMMON.BeginDungeon(zoneId, segmentID, mapId)
 end
 
 function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
-  SOUND:StopBGM()
   for name, mission in pairs(SV.TakenBoard) do
     PrintInfo("Checking Mission: "..tostring(name))
     if mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and zoneId == mission.Zone and segmentID == mission.Segment and mission.Client ~= "" then
@@ -1107,6 +1106,7 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
         local player_count = GAME:GetPlayerPartyCount()
         local guest_count = GAME:GetPlayerGuestCount()
         if player_count + guest_count >= 4 then
+          SOUND:StopBGM()
           local state = 0
           while state > -1 do
             UI:ResetSpeaker()
@@ -1127,7 +1127,6 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
               state = -1
             end
           end
-          --GAME:FadeIn(60)
         end
 
         local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", GeneralFunctions.NumToGender(mission.ClientGender))
