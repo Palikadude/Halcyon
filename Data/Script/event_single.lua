@@ -245,7 +245,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 		end
 	end
 
-	local spawn_loc = spawn_candidates[math.random(1, #spawn_candidates)]
+	local spawn_loc = spawn_candidates[_DATA.Save.Rand:Next(1, #spawn_candidates)]
 
 
 	local new_team = RogueEssence.Dungeon.MonsterTeam()
@@ -258,9 +258,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 	if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
 		local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
 		local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
-		local speedBoost = RogueElements.RandRange(speedMin, speedMax)
-		speedBoost = math.min(speedBoost:Pick(_DATA.Save.Rand), 50)
-		new_mob.SpeedBonus = speedBoost
+		new_mob.SpeedBonus = math.min(_DATA.Save.Rand:Next(speedMin, speedMax), 50)
 		tactic = _DATA:GetAITactic("get_away")
 	else
 		tactic = _DATA:GetAITactic("boss")
@@ -375,7 +373,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 
 			local min_goons = math.floor(valid_tile_total / 5)
 			local max_goons = math.floor(valid_tile_total / 4)
-			local total_goons = math.random(min_goons, max_goons)
+			local total_goons = _DATA.Save.Rand:Next(min_goons, max_goons)
 			
 			local all_spawns = LUA_ENGINE:MakeGenericType( ListType, { MobSpawnType }, { })
 			for i = 0,  _ZONE.CurrentMap.TeamSpawns.Count - 1, 1 do
@@ -387,7 +385,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			end
 
 			for _ = 1, total_goons, 1 do
-				local randint = math.random(0, all_spawns.Count - 1)
+				local randint = _DATA.Save.Rand:Next(0, all_spawns.Count - 1)
 				local spawn = all_spawns[randint]
 				spawn.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
 				house_event.Mobs:Add(spawn)
