@@ -1,0 +1,32 @@
+﻿{
+"Version": "0.7.11.0",
+"Object": {
+"$type": "RogueEssence.Data.AITactic, RogueEssence",
+"Name": {
+"DefaultText": "Super Flee Stairs",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"ID": "super_flee_stairs",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.FleeStairsPlan, PMDC",
+"stairIds": [
+"stairs_back_down",
+"stairs_back_up",
+"stairs_exit_down",
+"stairs_exit_up",
+"stairs_go_up",
+"stairs_go_down"
+],
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 224
+}
+]
+}
+}

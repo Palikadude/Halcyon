@@ -1,0 +1,46 @@
+﻿{
+"Version": "0.7.11.0",
+"Object": {
+"$type": "RogueEssence.Data.AITactic, RogueEssence",
+"Name": {
+"DefaultText": "Flee Stairs",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"ID": "flee_stairs",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.FleeStairsPlan, PMDC",
+"stairIds": [
+"stairs_back_down",
+"stairs_back_up",
+"stairs_exit_down",
+"stairs_exit_up",
+"stairs_go_up",
+"stairs_go_down"
+],
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.AvoidFoesCornerPlan, PMDC",
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 224
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 224
+}
+]
+}
+}
