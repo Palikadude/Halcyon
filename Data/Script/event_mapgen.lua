@@ -73,9 +73,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
             local speedBoost = RogueElements.RandRange(speedMin, speedMax)
             speedBoost = math.min(speedBoost:Pick(_DATA.Save.Rand), 50)
             boost_feature.SpeedBonus = speedBoost
-
-            -- TODO - Change the tactic from "get_away" to "flee_stairs" after tactic PR is merged
-            post_mob.Tactic = "get_away"
+            post_mob.Tactic = "super_flee_stairs"
           else
             post_mob.Tactic = "boss"
           end

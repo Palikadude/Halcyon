@@ -523,6 +523,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFleeStairsCheck(owner, ownerChar, context, arg
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue(targetName .. " escaped...")
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+			GAME:WaitFrames(20)
 		end
 	end
 end
