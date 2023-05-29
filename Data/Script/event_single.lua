@@ -259,7 +259,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 		local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
 		local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
 		new_mob.SpeedBonus = math.min(_DATA.Save.Rand:Next(speedMin, speedMax), 50)
-		tactic = _DATA:GetAITactic("get_away")
+		tactic = _DATA:GetAITactic("super_flee_stairs")
 	else
 		tactic = _DATA:GetAITactic("boss")
 	end
