@@ -163,7 +163,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
     -- add destination floor notification
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("DestinationFloor", '{ Mission = '..missionNum..' }'))
     if missionType == COMMON.MISSION_TYPE_LOST_ITEM then
-      activeEffect.OnPickups:Add(-6, RogueEssence.Dungeon.ItemScriptEvent("MissionPickup", '{ Mission = '..missionNum..' }'))
+      activeEffect.OnPickups:Add(-6, RogueEssence.Dungeon.ItemScriptEvent("MissionItemPickup", '{ Mission = '..missionNum..' }'))
     end
 
     local npcMissions = { COMMON.MISSION_TYPE_DELIVERY, COMMON.MISSION_TYPE_ESCORT, COMMON.MISSION_TYPE_RESCUE }
