@@ -168,6 +168,9 @@ function guild_bottom_right_bedroom.Team_Almanac_Action(obj, activator)
 		table.insert(choices, #choices + 1, GAME:GetTeamName()) 
 	end
 	
+	--cancel goes at end of choice list always
+	table.insert(choices, #choices + 1, 'Never Mind')
+	
 	
 	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Adventuring Teams". Read it?')
 	UI:WaitForChoice()
@@ -178,7 +181,7 @@ function guild_bottom_right_bedroom.Team_Almanac_Action(obj, activator)
 	      GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Right, 1)
 		  GROUND:ObjectSetDefaultAnim(obj, 'Diary_Red_Opening', 0, 3, 3, Direction.Right)
 		  GAME:WaitFrames(40)
-		  UI:BeginMultiPageMenu(24, 24, 196, "Team Almanac", choices, 8, 1, #choices + 1)		  
+		  UI:BeginMultiPageMenu(24, 24, 196, "Team Almanac", choices, 8, 1, #choices)		  
 		  UI:WaitForChoice()
 		  
 		  local entry = choices[UI:ChoiceResult()]
@@ -322,8 +325,9 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
-	local choices = {'Using Attacks to Move', 'Tough Opponents'}
+	local choices = {'Using Attacks to Move', 'Tough Opponents', 'Never Mind'}
 		
+	
 	--todo: Different mons use different AI types
 	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Adventuring Tips". Read it?')
 	UI:WaitForChoice()
@@ -334,7 +338,7 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
 	      GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Right, 1)
 		  GROUND:ObjectSetDefaultAnim(obj, 'Diary_Blue_Opening', 0, 3, 3, Direction.Right)
 		  GAME:WaitFrames(40)
-		  UI:BeginMultiPageMenu(24, 24, 196, "Tips Almanac", choices, 8, 1, #choices + 1)		  
+		  UI:BeginMultiPageMenu(24, 24, 196, "Tips Almanac", choices, 8, 1, #choices)		  
 		  UI:WaitForChoice()
 		  
 		  local entry = choices[UI:ChoiceResult()]
@@ -398,7 +402,7 @@ function guild_bottom_right_bedroom.Data_Almanac_Action(obj, activator)
 
 
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
-	local choices = {'Gummi Stats', "Same Type Attack Bonus", "Type Matchups", "Stat Changes"}
+	local choices = {'Gummi Stats', "Same Type Attack Bonus", "Type Matchups", "Stat Changes", "Never Mind"}
 	--todos: Critical hit mechanics, belly mechanics and specifics
 	
 	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Measurements and Calculations". Read it?')
@@ -410,7 +414,7 @@ function guild_bottom_right_bedroom.Data_Almanac_Action(obj, activator)
 	      GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Left, 1)
 		  GROUND:ObjectSetDefaultAnim(obj, 'Diary_Blue_Opening', 0, 3, 3, Direction.Left)
 		  GAME:WaitFrames(40)
-		  UI:BeginMultiPageMenu(24, 24, 196, "Data Almanac", choices, 8, 1, #choices + 1)		  
+		  UI:BeginMultiPageMenu(24, 24, 196, "Data Almanac", choices, 8, 1, #choices)		  
 		  UI:WaitForChoice()
 		  
 		  local entry = choices[UI:ChoiceResult()]
