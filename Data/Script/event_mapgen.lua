@@ -62,46 +62,46 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
         }
   
         if GeneralFunctions.TableContains(outlaw_arr, mission.Type) then -- outlaw
-          local boost_feature = PMDC.LevelGen.MobSpawnBoost()
-          local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
-          local post_mob = RogueEssence.LevelGen.MobSpawn()
-          post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+          -- local boost_feature = PMDC.LevelGen.MobSpawnBoost()
+          -- local specificTeam = RogueEssence.LevelGen.SpecificTeamSpawner()
+          -- local post_mob = RogueEssence.LevelGen.MobSpawn()
+          -- post_mob.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
   
-          if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
-            local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
-            local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
-            local speedBoost = RogueElements.RandRange(speedMin, speedMax)
-            speedBoost = math.min(speedBoost:Pick(_DATA.Save.Rand), 50)
-            boost_feature.SpeedBonus = speedBoost
-            post_mob.Tactic = "super_flee_stairs"
-          else
-            post_mob.Tactic = "boss"
-          end
-          -- Grab the outlaw level
-          post_mob.Level = RogueElements.RandRange(
-            math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
-          )
+          -- if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
+          --   local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
+          --   local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
+          --   local speedBoost = RogueElements.RandRange(speedMin, speedMax)
+          --   speedBoost = math.min(speedBoost:Pick(_DATA.Save.Rand), 50)
+          --   boost_feature.SpeedBonus = speedBoost
+          --   post_mob.Tactic = "super_flee_stairs"
+          -- else
+          --   post_mob.Tactic = "boss"
+          -- end
+          -- -- Grab the outlaw level
+          -- post_mob.Level = RogueElements.RandRange(
+          --   math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
+          -- )
           
-          post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = '..name..' }'))
-          if mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
-            local item_feature = PMDC.LevelGen.MobSpawnItem(true, mission.Item)
-            post_mob.SpawnFeatures:Add(item_feature)
-          end
+          -- post_mob.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Mission = '..name..' }'))
+          -- if mission.Type == COMMON.MISSION_TYPE_OUTLAW_ITEM then
+          --   local item_feature = PMDC.LevelGen.MobSpawnItem(true, mission.Item)
+          --   post_mob.SpawnFeatures:Add(item_feature)
+          -- end
   
-          boost_feature.MaxHPBonus = MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2;
-          post_mob.SpawnFeatures:Add(boost_feature)
+          -- boost_feature.MaxHPBonus = MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2;
+          -- post_mob.SpawnFeatures:Add(boost_feature)
   
-          specificTeam.Spawns:Add(post_mob)
-          PrintInfo("Creating Spawn")
-          local picker = LUA_ENGINE:MakeGenericType(PresetMultiTeamSpawnerType, { MapGenContextType }, { })
-          picker.Spawns:Add(specificTeam)
-          PrintInfo("Creating Step")
-          local mobPlacement = LUA_ENGINE:MakeGenericType(PlaceEntranceMobsStepType, { MapGenContextType, EntranceType }, { picker })
-          PrintInfo("Enqueueing")
-          -- Priority 5.2.1 is for NPC spawning in PMDO, but any dev can choose to roll with their own standard of priority.
-          local priority = RogueElements.Priority(5, 2, 1)
-          queue:Enqueue(priority, mobPlacement)
-          PrintInfo("Done")
+          -- specificTeam.Spawns:Add(post_mob)
+          -- PrintInfo("Creating Spawn")
+          -- local picker = LUA_ENGINE:MakeGenericType(PresetMultiTeamSpawnerType, { MapGenContextType }, { })
+          -- picker.Spawns:Add(specificTeam)
+          -- PrintInfo("Creating Step")
+          -- local mobPlacement = LUA_ENGINE:MakeGenericType(PlaceEntranceMobsStepType, { MapGenContextType, EntranceType }, { picker })
+          -- PrintInfo("Enqueueing")
+          -- -- Priority 5.2.1 is for NPC spawning in PMDO, but any dev can choose to roll with their own standard of priority.
+          -- local priority = RogueElements.Priority(5, 2, 1)
+          -- queue:Enqueue(priority, mobPlacement)
+          -- PrintInfo("Done")
           outlawFloor = true
         else
           if mission.Type == COMMON.MISSION_TYPE_RESCUE or mission.Type == COMMON.MISSION_TYPE_DELIVERY or mission.Type == COMMON.MISSION_TYPE_ESCORT then 

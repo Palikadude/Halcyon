@@ -192,8 +192,6 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 	end
 end
 
---this function is currently unused, though it works good when used.
---problem with it was that the mob would pop in after the floor fade in, and couldn't be easily placed to run before the fade in
 function SpawnOutlaw(origin, radius, mission_num)
 	local mission = SV.TakenBoard[mission_num]
 	local max_boost = 128
@@ -272,7 +270,6 @@ function SpawnOutlaw(origin, radius, mission_num)
 	new_mob.HP = new_mob.MaxHP;
 	new_mob.Tactic = tactic
 	new_mob.CharLoc = spawn_loc
-	new_mob.CharDir = _ZONE.CurrentMap:ApproximateClosestDir8(new_mob.CharLoc, _DUNGEON.ActiveTeam.Leader.CharLoc)
 	new_team.Players:Add(new_mob)
 	
 	tbl = LTBL(new_mob)
@@ -282,7 +279,6 @@ function SpawnOutlaw(origin, radius, mission_num)
 	new_mob:RefreshTraits()
 	_ZONE.CurrentMap:UpdateExploration(new_mob)
 	
-	GeneralFunctions.TeamTurnTo(new_mob)
 	local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(new_mob.BaseForm.Species).Name:ToLocal()
 	GAME:SetCharacterNickname(new_mob, base_name)
 	return new_mob
@@ -294,9 +290,6 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 	if tbl ~= nil and tbl.Mission then
 		local mission_num = args.Mission
 		local mission = SV.TakenBoard[mission_num]
-
-		local base_name = RogueEssence.Data.DataManager.Instance.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:Get(outlaw.BaseForm.Species).Name:ToLocal()
-		GAME:SetCharacterNickname(outlaw, base_name)
 
 		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()
