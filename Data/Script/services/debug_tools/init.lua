@@ -842,7 +842,7 @@ function DebugTools:OnLossPenalty(save)
 end
 
 function DebugTools:OnDungeonMapInit(mapname, mapobj)
-	if GAME:GetPlayerPartyCount() > 1 and _ZONE.CurrentZoneID ~= "relic_forest" then
+	if GAME:GetPlayerPartyCount() > 1 and GeneralFunctions.TableContains(MISSION_GEN.DUNGEON_LIST, _ZONE.CurrentZoneID) then
 		local partner = GAME:GetPlayerPartyMember(1)
 		local tbl = LTBL(partner)
 		if tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
