@@ -669,6 +669,7 @@ function guild_second_floor.Silcoon_Action(chara, activator)
 end
 
 
+--[[
 function guild_second_floor.Mission_Test_Action(chara, activator)
 	UI:ResetSpeaker()
 	UI:WaitShowDialogue("Outlaw and Mission board have been refreshed!")
@@ -679,6 +680,7 @@ function guild_second_floor.Mission_Test_Action(chara, activator)
 	MISSION_GEN.SortMission()
 	MISSION_GEN.SortOutlaw()
 end
+]]--
 
 function guild_second_floor.Assembly_Action(obj, activator)
 	AudinoAssembly.Assembly(CH('Assembly_Owner'))

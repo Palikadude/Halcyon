@@ -39,15 +39,6 @@ function guild_second_floor_ch_3.SetupGround()
 
 		AI:SetCharacterAI(audino, "ai.ground_default", RogueElements.Loc(176, 264), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 	
-		--THIS IS FOR TESTING MISSIONS ONLY!!! REMOVE FOR ACTUAL RELEASE!!!
-		local testing_sign = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Sign", 1, 0, 0), 
-														RogueElements.Rect(456, 200, 16, 16),
-														RogueElements.Loc(12, 16), 
-														false, 
-														"Mission_Test")
-														
-		testing_sign:ReloadEvents()
-		GAME:GetCurrentGround():AddTempObject(testing_sign)
 		
 	end
 			
