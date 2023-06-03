@@ -28,6 +28,8 @@ require 'GeneralFunctions'
 --Difficulty's point ranks
 MISSION_GEN = {}
 
+MISSION_GEN.DUNGEON_LIST = {"illuminant_riverbed", "crooked_cavern"}
+
 MISSION_GEN.DIFFICULTY = {}
 MISSION_GEN.DIFFICULTY[""] = 0
 MISSION_GEN.DIFFICULTY["F"] = 0
@@ -1477,13 +1479,10 @@ function MISSION_GEN.GenerateBoard(board_type)
 	local mission_type = COMMON.MISSION_BOARD_MISSION
 	if board_type == COMMON.MISSION_BOARD_OUTLAW then mission_type = COMMON.MISSION_BOARD_OUTLAW end
 	
-	--todo: figures out dungeons based on what you've completed, minus certain ones like dojo dungeons and relic forest.
-	local dungeon_list = {"illuminant_riverbed", "crooked_cavern"}
-	
 	--generate jobs
 	for i = 1, jobs_to_make, 1 do 
 		--choose a dungeon, client, target, item, etc
-		local dungeon = dungeon_list[math.random(1, #dungeon_list)]
+		local dungeon = MISSION_GEN.DUNGEON_LIST[math.random(1, #MISSION_GEN.DUNGEON_LIST)]
 		local client = ""
 		local item = ""
 		local special = ""
