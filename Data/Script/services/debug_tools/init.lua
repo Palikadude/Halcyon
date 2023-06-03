@@ -842,13 +842,15 @@ function DebugTools:OnLossPenalty(save)
 end
 
 function DebugTools:OnDungeonMapInit(mapname, mapobj)
-	local partner = GAME:GetPlayerPartyMember(1)
-	local tbl = LTBL(partner)
-	if tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
-		local origin = _DATA.Save.ActiveTeam.Leader.CharLoc
-		local radius = 2
-		local mission_num = tbl.MissionNumber
-		SpawnOutlaw(origin, radius, mission_num)
+	if GAME:GetPlayerPartyCount() > 1 then
+		local partner = GAME:GetPlayerPartyMember(1)
+		local tbl = LTBL(partner)
+		if tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
+			local origin = _DATA.Save.ActiveTeam.Leader.CharLoc
+			local radius = 2
+			local mission_num = tbl.MissionNumber
+			SpawnOutlaw(origin, radius, mission_num)
+		end
 	end
 end
 
