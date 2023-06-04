@@ -777,7 +777,7 @@ function metano_town_ch_2.NumelTantrumCutscene()
 	
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Well,[pause=10] it can't be helped.[pause=0] I hope they're able to get along again soon though.")
-	UI:WaitShowDialogue("Anyways,[pause=10] this is part of town is where most of the residents live.")
+	UI:WaitShowDialogue("Anyways,[pause=10] this part of town is where most of the residents live.")
 	UI:WaitShowDialogue("Pokémon here are pretty friendly and welcoming,[pause=10] scenes like that don't happen usually.")
 	GAME:WaitFrames(20)
 	
