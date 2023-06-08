@@ -186,6 +186,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
       activeEffect.OnTurnEnds:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OnMonsterHouseOutlawCheck", '{ Mission = '..missionNum..' }'))
     end
 
+    activeEffect.OnMapStarts:Add(-11, RogueEssence.Dungeon.SingleCharScriptEvent("SpawnOutlaw", '{ Mission = '..missionNum..' }'))
     activeEffect.OnMapStarts:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("OutlawFloor", '{ Mission = '..missionNum..' }'))
     tbl.MissionType = COMMON.MISSION_BOARD_OUTLAW
   end

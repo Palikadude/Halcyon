@@ -841,18 +841,18 @@ function DebugTools:OnLossPenalty(save)
   --end
 end
 
-function DebugTools:OnDungeonMapInit(mapname, mapobj)
-	if GAME:GetPlayerPartyCount() > 1 and GeneralFunctions.TableContains(MISSION_GEN.DUNGEON_LIST, _ZONE.CurrentZoneID) then
-		local partner = GAME:GetPlayerPartyMember(1)
-		local tbl = LTBL(partner)
-		if tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
-			local origin = _DATA.Save.ActiveTeam.Leader.CharLoc
-			local radius = 2
-			local mission_num = tbl.MissionNumber
-			SpawnOutlaw(origin, radius, mission_num)
-		end
-	end
-end
+-- function DebugTools:OnDungeonMapInit(mapname, mapobj)
+-- 	if GAME:GetPlayerPartyCount() > 1 and GeneralFunctions.TableContains(MISSION_GEN.DUNGEON_LIST, _ZONE.CurrentZoneID) then
+-- 		local partner = GAME:GetPlayerPartyMember(1)
+-- 		local tbl = LTBL(partner)
+-- 		if tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
+-- 			local origin = _DATA.Save.ActiveTeam.Leader.CharLoc
+-- 			local radius = 2
+-- 			local mission_num = tbl.MissionNumber
+-- 			SpawnOutlaw(origin, radius, mission_num)
+-- 		end
+-- 	end
+-- end
 
 ---Summary
 -- Subscribe to all channels this service wants callbacks from
@@ -863,7 +863,7 @@ function DebugTools:Subscribe(med)
   med:Subscribe("DebugTools", EngineServiceEvents.NewGame,        function() self.OnNewGame(self) end )
   med:Subscribe("DebugTools", EngineServiceEvents.UpgradeSave,        function() self.OnUpgrade(self) end )
   med:Subscribe("DebugTools", EngineServiceEvents.LossPenalty,        function(_, args) self.OnLossPenalty(self, args[0]) end )
-	med:Subscribe("DebugTools", EngineServiceEvents.DungeonMapInit,        function(_, args) self.OnDungeonMapInit(self, args[0], args[1]) end )
+	-- med:Subscribe("DebugTools", EngineServiceEvents.DungeonMapInit,        function(_, args) self.OnDungeonMapInit(self, args[0], args[1]) end )
   --  med:Subscribe("DebugTools", EngineServiceEvents.GraphicsUnload,      function() self.OnGraphicsUnload(self) end )
   --  med:Subscribe("DebugTools", EngineServiceEvents.Restart,             function() self.OnRestart(self) end )
 end
