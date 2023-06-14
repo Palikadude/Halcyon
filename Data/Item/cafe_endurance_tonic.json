@@ -3,21 +3,21 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Apple Cider",
+"DefaultText": "Endurance Tonic",
 "LocalTexts": {}
 },
 "Desc": {
-"DefaultText": "Some delicious Apple Cider fermented by Dion. Can contain multiple servings. Each serving restores half of your HP and somewhat fills your Belly.",
+"DefaultText": "A bitter tonic fermented by Dion. Gives the Endurance Tonic status to the Pokémon that drinks it for a few turns, preventing them from fainting, even if they move around.",
 "LocalTexts": {}
 },
 "Released": true,
 "Comment": "Cafe food item.",
-"Sprite": "Bottle_Gold",
+"Sprite": "Bottle_Purple",
 "Icon": 7,
 "SortCategory": 0,
 "Price": 0,
 "Rarity": 0,
-"MaxStack": 4,
+"MaxStack": 0,
 "CannotDrop": false,
 "BagEffect": false,
 "ItemStates": [
@@ -101,12 +101,21 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.RestoreBellyEvent, PMDC",
-"BoostAnims": [],
-"Heal": 40,
-"Msg": true,
-"AddMaxBelly": 0,
-"NeedFullBelly": false
+"$type": "PMDC.Dungeon.StatusStateBattleEvent, PMDC",
+"States": [
+{
+"$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
+"Counter": 5
+}
+],
+"StatusID": "endurance_tonic",
+"AffectTarget": true,
+"SilentCheck": false,
+"Anonymous": false,
+"TriggerMsg": {
+"Key": null
+},
+"Anims": []
 }
 },
 {
@@ -116,10 +125,12 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.RestoreHPEvent, PMDC",
-"Numerator": 1,
-"Denominator": 2,
-"AffectTarget": false
+"$type": "PMDC.Dungeon.RestoreBellyEvent, PMDC",
+"BoostAnims": [],
+"Heal": 5,
+"Msg": false,
+"AddMaxBelly": 0,
+"NeedFullBelly": false
 }
 }
 ],
@@ -129,7 +140,7 @@
 "IntroFX": [],
 "HitFX": {
 "Delay": 15,
-"Sound": "DUN_Drink",
+"Sound": "DUN_Berry",
 "Emitter": {
 "$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
 "LocHeight": 0,
@@ -173,7 +184,7 @@
 "FrameTime": 1,
 "StartFrame": -1,
 "EndFrame": -1,
-"AnimDir": 0,
+"AnimDir": -1,
 "Alpha": 255,
 "AnimFlip": 0
 },

@@ -187,4 +187,19 @@
   <data name="Cafe_Fermented_Give_Item_2" xml:space="preserve">
     <value>And here it is![pause=0] One {0},[pause=10] freshly fermented!</value>
   </data>
+  <data name="Cafe_Option_Endurance" xml:space="preserve">
+    <value>Endurance Tonic</value>
+  </data>
+  <data name="Cafe_Sign_Endurance_1" xml:space="preserve">
+    <value>A bitter tonic that prevents the user from fainting for a few turns, even if they move.</value>
+  </data>
+  <data name="Cafe_Sign_Endurance_2" xml:space="preserve">
+    <value>Requires 1 {0} and 1 {1}.</value>
+  </data>
+  <data name="Cafe_New_Drink_1" xml:space="preserve">
+    <value>Oh,[pause=10] it's you two![pause=0] Just a heads up,[pause=10] there's a new drink on the menu!</value>
+  </data>
+  <data name="Cafe_New_Drink_2" xml:space="preserve">
+    <value>You can check the ingredients you need for it on the sign over there![pause=0] Be sure to try it sometime!</value>
+  </data>
 </root>

@@ -3,13 +3,13 @@
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
-"DefaultText": "Water Maze",
+"DefaultText": "Rock Maze",
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
+"Comment": "In the third set of training mazes. Unlocked in Chapter 4.",
 "NoEXP": false,
-"Level": 7,
+"Level": 10,
 "LevelCap": false,
 "TeamRestrict": false,
 "TeamSize": -1,
@@ -211,30 +211,7 @@
 {
 "Key": {
 "str": [
-1,
-2
-]
-},
-"Value": {
-"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
-"Priority": {
-"str": [
-15
-]
-},
-"Respawn": {
-"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 25
-},
-"MaxFoes": 8,
-"RespawnTime": 25
-}
-},
-{
-"Key": {
-"str": [
-2
+1
 ]
 },
 "Value": {
@@ -286,116 +263,24 @@
 {
 "Key": {
 "str": [
-3
-]
-},
-"Value": {
-"$type": "RogueElements.PerlinWaterStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-"OrderComplexity": 3,
-"OrderSoftness": 1,
-"WaterPercent": {
-"Min": 3,
-"Max": 36
-},
-"Bowl": false,
-"Terrain": {
-"$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-"Data": {
-"ID": "water",
-"TileTex": {
-"AutoTileset": "water_maze_secondary",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-"StableTex": false
-},
-"Effect": {
-"TileLoc": {
-"X": 0,
-"Y": 0
-},
-"ID": "",
-"Revealed": false,
-"Owner": 0,
-"TileStates": []
-}
-},
-"TerrainStencil": {
-"$type": "RogueElements.MapTerrainStencil`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-"Room": false,
-"Wall": true,
-"Blocked": false,
-"Not": false
-}
-}
-},
-{
-"Key": {
-"str": [
-3,
-1
-]
-},
-"Value": {
-"$type": "RogueElements.DropDiagonalBlockStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-"Terrain": {
-"$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-"Data": {
-"ID": "water",
-"TileTex": {
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-"StableTex": false
-},
-"Effect": {
-"TileLoc": {
-"X": 0,
-"Y": 0
-},
-"ID": "",
-"Revealed": false,
-"Owner": 0,
-"TileStates": []
-}
-}
-}
-},
-{
-"Key": {
-"str": [
-3,
+2,
 2
 ]
 },
 "Value": {
-"$type": "RogueElements.EraseIsolatedStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-"Terrain": {
-"$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-"Data": {
-"ID": "water",
-"TileTex": {
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
+"$type": "PMDC.LevelGen.MobSpawnSettingsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], PMDC",
+"Priority": {
+"str": [
+15
+]
 },
-"StableTex": false
+"Respawn": {
+"$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
+"MaxFoes": 8,
+"RespawnTime": 25
 },
-"Effect": {
-"TileLoc": {
-"X": 0,
-"Y": 0
-},
-"ID": "",
-"Revealed": false,
-"Owner": 0,
-"TileStates": []
-}
-}
+"MaxFoes": 8,
+"RespawnTime": 25
 }
 },
 {
@@ -406,12 +291,12 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.MapTextureStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"GroundTileset": "water_maze_floor",
-"BlockTileset": "water_maze_wall",
-"WaterTileset": "water_maze_secondary",
+"GroundTileset": "rock_maze_floor",
+"BlockTileset": "rock_maze_wall",
+"WaterTileset": "rock_maze_secondary",
 "LayeredGround": false,
 "IndependentGround": false,
-"GroundElement": "water"
+"GroundElement": "rock"
 }
 },
 {
@@ -559,7 +444,7 @@
 ]
 },
 "Name": {
-"DefaultText": "Water Maze\\nB{0}F",
+"DefaultText": "Rock Maze\\nB{0}F",
 "LocalTexts": {}
 },
 "Priority": {
@@ -637,7 +522,7 @@
 },
 {
 "Spawn": {
-"ID": "berry_chesto",
+"ID": "berry_persim",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -677,14 +562,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "horsea",
+"Species": "rhyhorn",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -715,14 +600,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "shellos",
+"Species": "anorith",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -753,14 +638,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "finneon",
+"Species": "omanyte",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",

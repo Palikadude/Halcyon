@@ -3,13 +3,13 @@
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
-"DefaultText": "Water Maze",
+"DefaultText": "Flying Maze",
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
+"Comment": "In the third set of training mazes. Unlocked in Chapter 4.",
 "NoEXP": false,
-"Level": 7,
+"Level": 10,
 "LevelCap": false,
 "TeamRestrict": false,
 "TeamSize": -1,
@@ -301,7 +301,7 @@
 "Terrain": {
 "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
 "Data": {
-"ID": "water",
+"ID": "pit",
 "TileTex": {
 "AutoTileset": "water_maze_secondary",
 "Associates": [],
@@ -342,7 +342,7 @@
 "Terrain": {
 "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
 "Data": {
-"ID": "water",
+"ID": "pit",
 "TileTex": {
 "AutoTileset": "",
 "Associates": [],
@@ -376,7 +376,7 @@
 "Terrain": {
 "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
 "Data": {
-"ID": "water",
+"ID": "pit",
 "TileTex": {
 "AutoTileset": "",
 "Associates": [],
@@ -406,12 +406,12 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.MapTextureStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"GroundTileset": "water_maze_floor",
-"BlockTileset": "water_maze_wall",
-"WaterTileset": "water_maze_secondary",
+"GroundTileset": "craggy_peak_floor",
+"BlockTileset": "craggy_peak_wall",
+"WaterTileset": "craggy_peak_secondary",
 "LayeredGround": false,
 "IndependentGround": false,
-"GroundElement": "water"
+"GroundElement": "flying"
 }
 },
 {
@@ -559,7 +559,7 @@
 ]
 },
 "Name": {
-"DefaultText": "Water Maze\\nB{0}F",
+"DefaultText": "Flying Maze\\nB{0}F",
 "LocalTexts": {}
 },
 "Priority": {
@@ -637,7 +637,7 @@
 },
 {
 "Spawn": {
-"ID": "berry_chesto",
+"ID": "berry_persim",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -677,14 +677,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "horsea",
+"Species": "pidove",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -715,14 +715,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "shellos",
+"Species": "swablu",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -753,14 +753,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "finneon",
+"Species": "natu",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 6,
-"Max": 8
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",

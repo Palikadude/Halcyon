@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.10.0",
+"Version": "0.7.12.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "backup_master_zone": {
@@ -194,6 +194,37 @@
 },
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
+"SortOrder": 0
+},
+"flying_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 10,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 5,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Flying Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the third set of training mazes. Unlocked in Chapter 4.",
 "SortOrder": 0
 },
 "grass_maze": {
@@ -444,6 +475,37 @@
 },
 "Released": true,
 "Comment": "Chapter 1 - First dungeon of the game",
+"SortOrder": 0
+},
+"rock_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 10,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 5,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Rock Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the third set of training mazes. Unlocked in Chapter 4.",
 "SortOrder": 0
 },
 "water_maze": {

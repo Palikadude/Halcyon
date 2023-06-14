@@ -248,6 +248,7 @@ function DebugTools:OnUpgrade()
  if SV.metano_cafe.BoughtSpecial == nil then SV.metano_cafe.BoughtSpecial = false end
  if SV.metano_cafe.FermentedItem == nil then SV.metano_cafe.FermentedItem = "" end
  if SV.metano_cafe.ItemFinishedFermenting == nil then SV.metano_cafe.ItemFinishedFermenting = false end
+ if SV.metano_cafe.NewDrinkUnlocked == nil then SV.metano_cafe.NewDrinkUnlocked = false end
   
   
  if SV.Dojo.LessonCompletedGeneric == nil then SV.Dojo.LessonCompletedGeneric = false end

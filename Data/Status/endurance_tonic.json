@@ -1,0 +1,192 @@
+﻿{
+"Version": "0.7.12.0",
+"Object": {
+"$type": "RogueEssence.Data.StatusData, RogueEssence",
+"Name": {
+"DefaultText": "Endurance Tonic",
+"LocalTexts": {}
+},
+"Desc": {
+"DefaultText": "The Pokémon is under the effect of Endurance Tonic, preventing it from fainting from a direct attack. This status wears off after a few turns. Unlike regular Endure, this status will not be removed by moving.",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"MenuName": true,
+"CarryOver": false,
+"Emoticon": "Exclaim_Red",
+"DropEmoticon": "",
+"FreeEmote": "",
+"DrawEffect": 3,
+"Targeted": false,
+"StatusStates": [
+{
+"$type": "PMDC.Dungeon.TransferStatusState, PMDC"
+},
+{
+"$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
+"Counter": 4
+}
+],
+"OnSkillChanges": [],
+"TargetPassive": {
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeHittings": [],
+"BeforeBeingHits": [],
+"AfterHittings": [],
+"AfterBeingHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"UserElementEffects": [],
+"TargetElementEffects": [],
+"ModifyHPs": [],
+"RestoreHPs": []
+},
+"ProximityEvent": {
+"Radius": -1,
+"TargetAlignments": 0,
+"BeforeExplosions": [],
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeHittings": [],
+"BeforeBeingHits": [],
+"AfterHittings": [],
+"AfterBeingHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"UserElementEffects": [],
+"TargetElementEffects": [],
+"ModifyHPs": [],
+"RestoreHPs": []
+},
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.SameStatusCheck, PMDC",
+"Message": {
+"Key": "MSG_NOTHING_HAPPENED"
+}
+}
+}
+],
+"OnStatusAdds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.StatusBattleLogEvent, PMDC",
+"Message": {
+"Key": "MSG_ENDURE_START"
+},
+"Delay": true
+}
+}
+],
+"OnStatusRemoves": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.StatusBattleLogEvent, PMDC",
+"Message": {
+"Key": "MSG_ENDURE_END"
+},
+"Delay": false
+}
+}
+],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.CountDownRemoveEvent, PMDC",
+"ShowMessage": true
+}
+}
+],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeHittings": [],
+"BeforeBeingHits": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.AddContextStateEvent, PMDC",
+"AddedState": {
+"$type": "PMDC.Dungeon.AttackEndure, PMDC"
+},
+"Global": false
+}
+}
+],
+"AfterHittings": [],
+"AfterBeingHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"UserElementEffects": [],
+"TargetElementEffects": [],
+"ModifyHPs": [],
+"RestoreHPs": []
+}
+}

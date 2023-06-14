@@ -9,6 +9,7 @@ require 'PartnerEssentials'
 require 'ground.guild_heros_room.guild_heros_room_ch_1'
 require 'ground.guild_heros_room.guild_heros_room_ch_2'
 require 'ground.guild_heros_room.guild_heros_room_ch_3'
+require 'ground.guild_heros_room.guild_heros_room_ch_4'
 require 'ground.guild_heros_room.guild_heros_room_helper'
 
 
@@ -65,8 +66,22 @@ function guild_heros_room.GameSave(map)
 	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 end
 
---Check if a new story event needs to be triggered
+--Check if a new story event needs to be triggered for a generic day end
 function guild_heros_room.CheckTriggerEvent()
+	
+	--once bronze rank is obtained in chapter 3, flag chapter 4 to start.
+	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
+		SV.ChapterProgression.Chapter = 4
+		SV.Dojo.NewMazeUnlocked = true
+		SV.metano_cafe.NewDrinkUnlocked = true
+		GAME:UnlockDungeon("flying_maze")--unlock new mazes at ledian dojo
+		GAME:UnlockDungeon("rock_maze")--unlock new mazes at ledian dojo
+		
+		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
+		guild_heros_room_ch_4.ShowTitleCard()
+	end
+	
+	--todo: remove this once enough of chapter 4 is built out.
 	--Marking the end of the demo. In the future, this will trigger chapter 4. 
 	--Triggers after going to bed, at the end of chapter 3, once bronze rank (or better, somehow) is obtained.
 	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then

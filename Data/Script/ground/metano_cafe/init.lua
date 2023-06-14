@@ -106,6 +106,13 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 						STRINGS:Format(MapStrings['Cafe_Option_Cider']), 
 						STRINGS:Format(MapStrings['Cafe_Option_Bomb']), 
 						STRINGS:FormatKey('MENU_EXIT')}
+						
+		--Endurance Tonic is added in Chapter 4.
+		if SV.ChapterProgression.Chapter >= 4 then 
+			table.insert(choices, 4, STRINGS:Format(MapStrings['Cafe_Option_Endurance']))
+		end
+				
+				
 		UI:BeginChoiceMenu(STRINGS:Format(MapStrings['Cafe_Sign_Which_Drinks']), choices, 1, #choices)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()
@@ -125,6 +132,11 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 			item2 = RogueEssence.Dungeon.InvItem("seed_blast")--blast seed 
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Bomb_2'], item1:GetDisplayName(), item2:GetDisplayName()))
+		elseif result == 4 and #choices > 4 then 
+			item1 = RogueEssence.Dungeon.InvItem("seed_reviver")
+			item2 = RogueEssence.Dungeon.InvItem("berry_chesto")
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Endurance_1']))
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Endurance_2'], item1:GetDisplayName(), item2:GetDisplayName()))
 		else
 			state = -1
 		end
@@ -206,6 +218,15 @@ function metano_cafe.Cafe_Action(obj, activator)
 	GROUND:CharTurnToChar(hero, owner)
 	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, owner, 4) end)
 
+
+	--He has a new type of drink he can serve
+	if SV.metano_cafe.NewDrinkUnlocked then
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_New_Drink_1']))
+		UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_New_Drink_2']))
+		SV.metano_cafe.NewDrinkUnlocked = false
+		GAME:WaitFrames(20)
+	end 
 	
 	--he has a fermented item to give you
 	if SV.metano_cafe.FermentedItem ~= "" and SV.metano_cafe.ItemFinishedFermenting then
@@ -277,8 +298,14 @@ function metano_cafe.Cafe_Action(obj, activator)
 										 STRINGS:Format(MapStrings['Cafe_Option_Cider']),
 										 STRINGS:Format(MapStrings['Cafe_Option_Bomb']),
 										 STRINGS:FormatKey('MENU_EXIT')}
-										 
-				--TODO: As game grows and more drinks get added later in the plot, add scripting here to expand ferment_choices.						 
+										 						 
+				--TODO: As game grows and more drinks get added later in the plot, add scripting here to expand ferment_choices.	
+
+				--Endurance Tonic is added in Chapter 4
+				if SV.ChapterProgression.Chapter >= 4 then 
+					table.insert(ferment_choices, 4, STRINGS:Format(MapStrings['Cafe_Option_Endurance']))
+				end
+				
 				
 				UI:SetSpeakerEmotion("Normal")
 				UI:BeginChoiceMenu(STRINGS:Format(MapStrings['Cafe_Ferment_Prompt']), ferment_choices, 1, #ferment_choices)
@@ -296,6 +323,9 @@ function metano_cafe.Cafe_Action(obj, activator)
 					elseif result == 3 then--Cheri Bomb - 1 Cheri Berry, 1 Blast Seed
 						item_to_ferment = "cafe_cheri_bomb"
 						recipe_list = {{"berry_cheri", 1}, {"seed_blast", 1}}
+					elseif result == 4 and #ferment_choices > 4 then--starts appearing in chapter 4
+						item_to_ferment = "cafe_endurance_tonic"
+						recipe_list = {{"seed_reviver", 1}, {"berry_chesto", 1}}
 					end
 					
 					

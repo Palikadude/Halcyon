@@ -593,7 +593,9 @@ SV.metano_cafe =
   CafeSpecial = -1,
   BoughtSpecial = false,
   FermentedItem = "", 
-  ItemFinishedFermenting = false
+  ItemFinishedFermenting = false,
+  
+  NewDrinkUnlocked = false--set to true when a new drink is unlocked so Dion knows to let the player know
 }
 
 

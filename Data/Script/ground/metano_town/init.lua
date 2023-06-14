@@ -519,14 +519,42 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 		
 	}
 	
-	table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
-	table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	--replaces a medicine roll starting with chapter 4. Before then, isn't used.
+	local apricorn_stock = {
+		{"apricorn_plain", 10},
+		{"apricorn_black", 5},
+		{"apricorn_blue", 5},
+		{"apricorn_brown", 5},
+		{"apricorn_green", 5},
+		{"apricorn_purple", 5},
+		{"apricorn_red", 5},
+		{"apricorn_white", 5},
+		{"apricorn_yellow", 5}
+	}
+	
+
+
+	--Apricorns become available chapter 4
+	if SV.ChapterProgression.Chapter >= 4 then
+		table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(apricorn_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	
+	else
+		table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(food_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))	
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+		table.insert(stock, GeneralFunctions.WeightedRandom(medicine_stock))
+	end
 	
 	if not generate_random_item then 
 		--set stock to randomized assortment and flag that the stock was refreshed for the day
