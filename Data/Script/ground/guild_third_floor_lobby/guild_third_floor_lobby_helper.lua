@@ -23,7 +23,7 @@ function guild_third_floor_lobby_helper.SetupMorningAddress()
 	--during second half of chapter 3, girafarig and breloom are absent.
 	--This is kind of a hacky way of doing this, but it works
 	--todo? Handle this better instead of a hardcode here
-	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss then
+	if (SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss) or SV.ChapterProgression.Chapter == 4 then
 		GROUND:TeleportTo(breloom, 640, 280, Direction.Up)
 		GROUND:TeleportTo(girafarig, 640, 312, Direction.Up)
 	end

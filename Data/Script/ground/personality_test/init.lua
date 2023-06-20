@@ -159,6 +159,7 @@ function personality_test.CharacterSelect()
 					RogueEssence.Dungeon.MonsterID("munchlax", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("riolu", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("snivy", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("tepig", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("oshawott", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("lillipup", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("zorua", 0, "normal", Gender.Genderless),
@@ -214,6 +215,7 @@ function personality_test.CharacterSelect()
 		 ["munchlax"] = "zen_headbutt", --zen headbutt, munchlax
 		 ["riolu"] = "bullet_punch", --bullet punch, riolu
 		 ["snivy"] = "twister", --twister, snivy 
+		 ["tepig"] = "sucker_punch", --sucker punch, tepig 
 		 ["oshawott"] = "assurance", --assurance, oshawatt
 		 --["lillipup"] = "fire_fang", --fire fang, lillipup
 		 ["zorua"] = "copycat", --copycat, zorua 

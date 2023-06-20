@@ -1,0 +1,25 @@
+﻿{
+"Version": "0.7.12.0",
+"Object": {
+"$type": "RogueEssence.Data.ZoneData, RogueEssence",
+"Name": {
+"DefaultText": "Apricorn Grove",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Persistent": false,
+"Rescues": 0,
+"Rogue": 0,
+"Segments": [],
+"GroundMaps": []
+}
+}

@@ -10,6 +10,7 @@ require 'GeneralFunctions'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_3'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_4'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_helper'
 
 

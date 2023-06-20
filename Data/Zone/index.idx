@@ -538,6 +538,29 @@
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
 "SortOrder": 0
+},
+"apricorn_grove": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [],
+"Name": {
+"DefaultText": "Apricorn Grove",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 0
 }
 }
 }

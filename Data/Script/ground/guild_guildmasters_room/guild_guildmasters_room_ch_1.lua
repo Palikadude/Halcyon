@@ -468,7 +468,7 @@ function guild_guildmasters_room_ch_1.MeetGuildmaster()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("We give a pair to all of our apprentices to help encourage team work.")
+	UI:WaitShowDialogue("We give a pair to all of our apprentices to help encourage teamwork.")
 	UI:WaitShowDialogue("Please make good use of them!")
 
 
