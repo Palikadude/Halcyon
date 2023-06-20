@@ -378,7 +378,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			end
 
 			for _ = 1, total_goons, 1 do
-				local randint = _DATA.Save.Rand:Next(0, all_spawns.Count - 1)
+				local randint = _DATA.Save.Rand:Next(0, all_spawns.Count)
 				local spawn = all_spawns[randint]
 				spawn.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
 				house_event.Mobs:Add(spawn)
