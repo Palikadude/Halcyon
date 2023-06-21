@@ -1,4 +1,29 @@
 require 'common'
+require 'config'
+
+local function FirstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
+local function AdjustNickname(name, characters)
+	local nickname = characters[name].nickname
+	if not CONFIG.UseNicknames then
+
+		-- Skip Crum
+		if nickname ~= "Crum" then
+			local species = characters[name].species
+
+			-- Format Nidoran
+			if species ~= "nidoran_m" then
+				nickname = FirstToUpper(species)
+			else 
+				nickname = "Nidoran"
+			end
+		end
+	end
+	return nickname
+end
+
 CharacterEssentials = {}
 
 local characters = {
@@ -729,12 +754,13 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 	for i = 1, #list, 1 do
 		local name = list[i][1]
 		length = #list[i]
+		local nickname = AdjustNickname(name, characters)
 		if length == 1 then--this case is so we can reference characters that aren't on the map. Put them at 0, 0 and hide them
 			local monster = RogueEssence.Dungeon.MonsterID(characters[name].species,
 															characters[name].form,
 															characters[name].skin,
 															characters[name].gender)
-			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(0, 0), Direction.Down, characters[name].nickname, characters[name].instance)
+			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(0, 0), Direction.Down, nickname, characters[name].instance)
 			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
 			GROUND:Hide(chara.EntName)
@@ -745,7 +771,7 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].form,
 															characters[name].skin,
 															characters[name].gender)
-			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(marker.Position.X, marker.Position.Y), marker.Direction, characters[name].nickname, characters[name].instance)
+			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(marker.Position.X, marker.Position.Y), marker.Direction, nickname, characters[name].instance)
 			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
 		else
@@ -756,7 +782,7 @@ function CharacterEssentials.MakeCharactersFromList(list, retTable)
 															characters[name].form,
 															characters[name].skin,
 															characters[name].gender)
-			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(x, y), direction, characters[name].nickname, characters[name].instance)
+			chara = RogueEssence.Ground.GroundChar(monster, RogueElements.Loc(x, y), direction, nickname, characters[name].instance)
 			chara:ReloadEvents()
 			GAME:GetCurrentGround():AddTempChar(chara)
 
@@ -778,8 +804,9 @@ end
 
 --get a character's name without having to create them
 function CharacterEssentials.GetCharacterName(name)
-	return "[color=#00FFFF]" .. characters[name].nickname .. "[color]"
-end 
+	local nickname = AdjustNickname(name, characters)
+	return "[color=#00FFFF]" .. nickname .. "[color]"
+end
 
 
 
