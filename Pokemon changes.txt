@@ -4,6 +4,8 @@ Vulpix-A: Ice shard moved from level 10 to level 1. Powder snow removed.
 Zorua: Ability 1 Illusion changed to Keen eye.
 Cubone: Gets tackle at level 1. By level 5, its level moveset originally was only growl and tail whip, which is pretty awkward.
 Sprigatito: Custom Halcyon add. Uses SV Learnset but removes anything exclusive to later games.
+Espurr: Normally doesn't get level up moves past 25, so it's been given a mix of male and female Meowstic's moves. It's post 25 moveset is:
+	28: Charge Beam 31: Shadow Ball 35: Reflect 40: Psychic 43: Role Play 45: Signal Beam 48: Sucker Punch 50: Future Sight 53: Quick Guard
 
 Sandile is given a second form that wears a scarf.
 Luxio's regular portrait has been swapped out for something a bit more smug. Original portrait is now Special0.

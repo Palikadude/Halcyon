@@ -12,3 +12,5 @@ V 0.3.1
 - Lars will now sell colored and plain Apricorns once Chapter 4 begins. He'll sell one guaranteed a day. 
 - Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4 begins.
 - Fixed Water Maze's element being Fire and not Water.
+- Espurr and Tepig are added as starters. Check pokemon changes file to see some changes to Espurr's level up table.
+- Fixed a bug where a client pokemon with temporary water privileges (i.e. water sport) being beamed out while on water caused an error.

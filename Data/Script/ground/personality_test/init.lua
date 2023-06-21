@@ -170,7 +170,7 @@ function personality_test.CharacterSelect()
 					RogueEssence.Dungeon.MonsterID("fennekin", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("froakie", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("skiddo", 0, "normal", Gender.Genderless),
-					--RogueEssence.Dungeon.MonsterID("espurr", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("espurr", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("amaura", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("noibat", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rowlet", 0, "normal", Gender.Genderless),
@@ -226,7 +226,7 @@ function personality_test.CharacterSelect()
 		 ["fennekin"] = "wish", --wish, fennekin
 		 ["froakie"] = "mud_sport", --mud sport froakie 
 		 ["skiddo"] = "zen_headbutt", --zen headbutt, Skiddo
-		 --["espurr"] = "assist", --assist, espurr (also bad egg moves)
+		 ["espurr"] = "assist", --assist, espurr (also bad egg moves)
 		 --["amaura"] = "mirror_shot", --mirror coat, amaura (discharge is an absurdly busted option i could give it though)
 		 --["noibat"] = "tailwind", --tailwind, noibat
 		 ["rowlet"] = "confuse_ray", --Confuse Ray, rowlet

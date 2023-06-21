@@ -1,0 +1,354 @@
+﻿{
+"Version": "0.7.12.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Espurr",
+"LocalTexts": {
+"ja": "ニャスパー",
+"ko": "냐스퍼",
+"zh-hant": "妙喵",
+"fr": "Psystigri",
+"de": "Psiau",
+"es": "Espurr",
+"it": "Espurr",
+"ja-jp": "ニャスパー",
+"zh-hans": "妙喵"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Restraint Pokémon",
+"LocalTexts": {
+"ja": "じせいポケモン",
+"ko": "자제포켓몬",
+"zh-hant": "自制寶可夢",
+"fr": "Pokémon Retenue",
+"de": "Zügelungs-Pokémon",
+"es": "Pokémon Moderación",
+"it": "Pokémon Moderazione",
+"ja-jp": "じせいポケモン",
+"zh-hans": "自制宝可梦"
+}
+},
+"IndexNum": 677,
+"EXPTable": "medium_fast",
+"SkillGroup1": "field",
+"SkillGroup2": "amorphous",
+"JoinRate": 48,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "meowstic",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 25
+},
+{
+"$type": "PMDC.Data.EvoSetForm, PMDC",
+"Conditions": [
+{
+"$type": "PMDC.Data.EvoGender, PMDC",
+"ReqGender": 2
+}
+],
+"Form": 1
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 62,
+"BaseAtk": 48,
+"BaseDef": 54,
+"BaseMAtk": 63,
+"BaseMDef": 60,
+"BaseSpeed": 68,
+"ExpYield": 71,
+"Height": 0.3,
+"Weight": 3.5,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "psychic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "reflect"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "psych_up"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "trick_room"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "psyshock"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "barrier"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "assist"
+},
+{
+"Skill": "yawn"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "heal_bell"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "snatch"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "covet"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "gravity"
+},
+{
+"Skill": "zen_headbutt"
+},
+{
+"Skill": "wonder_room"
+},
+{
+"Skill": "magic_room"
+}
+],
+"FormName": {
+"DefaultText": "Espurr",
+"LocalTexts": {
+"ja": "ニャスパー",
+"ko": "냐스퍼",
+"zh-hant": "妙喵",
+"fr": "Psystigri",
+"de": "Psiau",
+"es": "Espurr",
+"it": "Espurr",
+"ja-jp": "ニャスパー",
+"zh-hans": "妙喵"
+}
+},
+"Temporary": false,
+"Element1": "psychic",
+"Element2": "none",
+"Intrinsic1": "keen_eye",
+"Intrinsic2": "infiltrator",
+"Intrinsic3": "own_tempo",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 5,
+"Skill": "covet"
+},
+{
+"Level": 9,
+"Skill": "confusion"
+},
+{
+"Level": 13,
+"Skill": "light_screen"
+},
+{
+"Level": 17,
+"Skill": "psybeam"
+},
+{
+"Level": 19,
+"Skill": "fake_out"
+},
+{
+"Level": 22,
+"Skill": "disarming_voice"
+},
+{
+"Level": 25,
+"Skill": "psyshock"
+},
+{
+"Level": 28,
+"Skill": "charge_beam"
+},
+{
+"Level": 31,
+"Skill": "shadow_ball"
+},
+{
+"Level": 35,
+"Skill": "reflect"
+},
+{
+"Level": 40,
+"Skill": "psychic"
+},
+{
+"Level": 43,
+"Skill": "role_play"
+},
+{
+"Level": 45,
+"Skill": "signal_beam"
+},
+{
+"Level": 48,
+"Skill": "sucker_punch"
+},
+{
+"Level": 50,
+"Skill": "future_sight"
+},
+{
+"Level": 53,
+"Skill": "quick_guard"
+}
+]
+}
+]
+}
+}

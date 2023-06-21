@@ -683,7 +683,28 @@ end
 ]]--
 
 function guild_second_floor.Assembly_Action(obj, activator)
+	--this reimplementation of start conversation may break if you can change player/partner using assembly...
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local audino = CH('Assembly_Owner')
+	audino.IsInteracting = true
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(audino, 'None', true)
+	GROUND:CharTurnToChar(hero, audino)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, audino, 4) end)
+
 	AudinoAssembly.Assembly(CH('Assembly_Owner'))
+
+	--reimplementing parts of endconversation
+	TASK:JoinCoroutines({coro1})
+	partner.IsInteracting = false
+	audino.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	GROUND:CharEndAnim(audino)
 end
 
 ---------------------------
