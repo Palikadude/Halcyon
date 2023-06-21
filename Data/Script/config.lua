@@ -1,0 +1,3 @@
+CONFIG = {}
+
+CONFIG.UseNicknames = true
