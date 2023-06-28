@@ -10,7 +10,6 @@ function metano_town_ch_3.SetupGround()
 		--hide NPCs not in use for chapter 3 part 2	
 		GROUND:Hide('Swap_Owner')
 		GROUND:Hide('Swap')
-		GROUND:Hide('Assembly')
 		
 		local wooper_boy, wooper_girl, numel, nidoqueen, quagsire, zigzagoon, furret, sentret, 
 			  snubbull, mareep, cranidos, mawile, azumarill, electrike, meditite, machamp, medicham, linoone, manectric,
@@ -62,7 +61,6 @@ function metano_town_ch_3.SetupGround()
 		GROUND:Hide('Green_Merchant')
 		GROUND:Hide('Swap_Owner')
 		GROUND:Hide('Swap')
-		GROUND:Hide('Assembly')
 		
 		--trigger for partner pointing out cafe is open. only place if they havent done the cutscene for it yet
 		if not SV.Chapter3.FinishedCafeCutscene then

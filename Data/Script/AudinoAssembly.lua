@@ -81,14 +81,17 @@ function AudinoAssembly.Assembly(owner)
 					end
 					
 					--audino rings the bell and makes the changes
-					--todo: make an animation for audino where she rings the bell
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Assembly_Make_Changes']))
 					GAME:WaitFrames(10)
 					SOUND:PlayBattleSE("EVT_Assembly_Bell")
-					GAME:FadeOut(false, 40)
-					COMMON.RespawnAllies()
-					GAME:FadeIn(40)
-					GAME:WaitFrames(10)
+					GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+					GAME:WaitFrames(100)
+					--commented out as Halcyon itself won't need to call respawn allies ever when using the assembly
+					--GAME:FadeOut(false, 40)
+					--COMMON.RespawnAllies()
+					--GAME:FadeIn(40)
+					--GAME:WaitFrames(10)
+					GROUND:CharSetAnim(owner, "None", true)
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Assembly_Make_Changes_Done']))
 				end
 			end

@@ -35,6 +35,9 @@ function GeneralFunctions.UpdateDailyFlags()
 		SV.metano_cafe.ItemFinishedFermenting = true
 	end
 	
+	--Reset amount of times audino was summoned on that day 
+	SV.TemporaryFlags.AudinoSummonCount = 0
+	
 	--Generate jobs
 	MISSION_GEN.ResetBoards()
 	MISSION_GEN.RemoveMissionBackReference()
@@ -1138,6 +1141,47 @@ function GeneralFunctions.RunInCircle(chara, duration, speed, clockwise, run)
 	
 end
 
+
+
+--Halcyon edit for COMMON.GroundInteract; basically just adds a start and end conversation call to it. Removes a charturntochar as well
+function GeneralFunctions.GroundInteract(chara, target)
+  UI:SetSpeaker(target)
+  
+  local mon = RogueEssence.Data.DataManager.Instance:GetMonster(target.CurrentForm.Species)
+  local form = mon.Forms[target.CurrentForm.Form]
+  
+  local personality = form:GetPersonalityType(target.Data.Discriminator)
+  
+  local personality_group = COMMON.PERSONALITY[personality]
+  local pool = personality_group.WAIT
+  local key = "TALK_WAIT_%04d"
+  
+  local running_pool = {table.unpack(pool)}
+  local valid_quote = false
+  local chosen_quote = ""
+  
+  while not valid_quote and #running_pool > 0 do
+    valid_quote = true
+    local chosen_idx = math.random(1, #running_pool)
+	local chosen_pool_idx = running_pool[chosen_idx]
+    chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
+	
+    chosen_quote = string.gsub(chosen_quote, "%[hero%]", chara:GetDisplayName())
+    
+	if not valid_quote then
+      -- PrintInfo("Rejected "..chosen_quote)
+	  table.remove(running_pool, chosen_idx)
+	  chosen_quote = ""
+	end
+  end
+  -- PrintInfo("Selected "..chosen_quote)
+  
+  
+  GeneralFunctions.StartConversation(target, chosen_quote)
+  GeneralFunctions.EndConversation(target)
+end
+
+
 --used to start a coroutine to have partner turn towards target NPC while having a conversation start.
 --also stops their animations 
 function GeneralFunctions.StartConversation(target, dialogue, emotion, npcTurn, changeNPCanimation, changeSpeaker, animation, turnframes)
@@ -1259,8 +1303,8 @@ end
 --used to turn towards a specified position which is needed if chara's position is dynamic
 function GeneralFunctions.TurnTowardsLocation(chara, targetX, targetY, turnduration)
 
-	local x = chara.Position.X
-	local y = chara.Position.Y
+	local x = chara.Position.X + 8
+	local y = chara.Position.Y + 8
 	turnduration = turnduration or 4
 
 

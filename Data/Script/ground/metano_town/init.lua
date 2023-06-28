@@ -1,6 +1,8 @@
 require 'common'
 require 'GeneralFunctions'
 require 'PartnerEssentials'
+require 'CharacterEssentials'
+require 'AudinoAssembly'
 require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
 require 'ground.metano_town.metano_town_ch_3'
@@ -26,6 +28,10 @@ function metano_town.Init(map)
 	--Musician must wiggle as long as he's playing a song!	
 	if SV.metano_town.Song ~= 'Treasure Town.ogg' then
 	   GROUND:CharSetAnim(CH('Musician'), "Wiggle", true)
+	end
+	
+	if not SV.ChapterProgression.UnlockedAssembly then
+		GROUND:Hide('Assembly')
 	end
 
 end
@@ -2659,9 +2665,98 @@ end
 
 --Change this to a little cutscene like how chimecho comes out to see you? Whoever ends up running the assmebly should come out to see you
 function metano_town.Assembly_Action(obj, activator)
-  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  UI:ResetSpeaker()
-  COMMON.ShowTeamAssemblyMenu(COMMON.RespawnAllies)
+    local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+    partner.IsInteracting = true
+	AI:DisableCharacterAI(partner)
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)		
+    GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+    GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	
+	UI:ResetSpeaker()
+	UI:SetCenter(true)
+	UI:SetAutoFinish(true)
+	UI:ChoiceMenuYesNo("Ring the bell and summon " .. CharacterEssentials.GetCharacterName("Audino") .. "?")
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	UI:SetCenter(false)
+	UI:SetAutoFinish(false)
+	
+	if result then
+		--Ring the bell and summon audino
+		SOUND:PlayBattleSE('EVT_Assembly_Bell')
+		GROUND:ObjectSetAnim(obj, 6, 0, 3, Direction.Down, 1)
+		GAME:WaitFrames(24)
+		GROUND:ObjectSetAnim(obj, 10, 0, 3, Direction.Down, 1)
+		GROUND:ObjectSetDefaultAnim(obj, 'Assembly', 0, 0, 0, Direction.Down)
+		
+		--abuse the bell and it no longer works
+		if SV.TemporaryFlags.AudinoSummonCount >= 10 then 
+			GAME:WaitFrames(60)
+			UI:WaitShowDialogue("...Nobody's coming.[pause=0] Perhaps you shouldn't have abused the bell...")
+		else
+			GAME:FadeOut(false, 40)
+			GROUND:TeleportTo(hero, 1276, 608, Direction.Up)
+			GROUND:TeleportTo(partner, 1244, 608, Direction.Up)
+			local audino = CharacterEssentials.MakeCharactersFromList({{'Audino', 1260, 576, Direction.Down}})
+			GROUND:CharSetAnim(audino, "None", true)
+			audino.IsInteracting = true
+			GAME:MoveCamera(1268, 600, 1, false)
+			GAME:FadeIn(40)
+			
+			UI:SetSpeaker(audino)
+			SV.TemporaryFlags.AudinoSummonCount = SV.TemporaryFlags.AudinoSummonCount + 1
+			if SV.TemporaryFlags.AudinoSummonCount == 3 then
+				UI:WaitShowDialogue("Phew![pause=0] You two sure need to use the assembly a lot today!")
+			elseif SV.TemporaryFlags.AudinoSummonCount == 6 then
+				UI:SetSpeakerEmotion("Pain")
+				GROUND:CharSetEmote(audino, "sweating", 1)
+				UI:WaitShowDialogue("Huff...[pause=0] Puff...[pause=0] Y-you've certainly got me doing a lot of running around today,[pause=10] huh?")
+				GAME:WaitFrames(20)
+				GeneralFunctions.ShakeHead(audino)
+			elseif SV.TemporaryFlags.AudinoSummonCount == 9 then
+				UI:SetSpeakerEmotion("Dizzy")
+				GROUND:CharSetEmote(audino, "sweating", 1)
+				UI:WaitShowDialogue("Hurf...[pause=0] A-all this r-running around is t-too much...[pause=0] I'm\ne-exhausted...")
+				UI:WaitShowDialogue("P-please...[pause=0] D-don't abuse the b-bell...")
+				GAME:WaitFrames(40)
+				GeneralFunctions.ShakeHead(audino)
+			elseif SV.TemporaryFlags.AudinoSummonCount == 10 then
+				UI:SetSpeakerEmotion("Pain")
+				GROUND:CharSetEmote(audino, "sweating", 1)
+				UI:WaitShowDialogue("Huff...[pause=0] Puff...")
+				GAME:WaitFrames(20)
+				GeneralFunctions.Hop(audino)
+				GROUND:CharSetAnim(audino, "None", true)
+				UI:SetSpeakerEmotion("Determined")
+				UI:WaitShowDialogue("I'm starting to t-think you two are d-doing this on purpose!")
+				UI:WaitShowDialogue("Well I'm not f-falling for it anymore![pause=0] If you want to use the assembly anymore today,[pause=10] you come to me!")
+			else
+				UI:WaitShowDialogue(hero:GetDisplayName() .. "! " .. partner:GetDisplayName() .. "! You r-rang?")
+			end
+			
+			UI:SetSpeakerEmotion("Normal")
+			
+			--she won't service you if you make her angry
+			if SV.TemporaryFlags.AudinoSummonCount < 10 then 
+				GAME:WaitFrames(20)
+				AudinoAssembly.Assembly(audino)
+			end 
+			GAME:FadeOut(false, 40)
+			GAME:GetCurrentGround():RemoveTempChar(audino)
+			GAME:MoveCamera(0,0,1,true)
+			GAME:FadeIn(40)
+		end
+	end
+
+   UI:SetCenter(false)
+   partner.IsInteracting = false
+   AI:EnableCharacterAI(partner)
+   AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+   GROUND:CharEndAnim(partner)
+   GROUND:CharEndAnim(hero)	
+
 end
 
 function metano_town.Well_Action(obj, activator)

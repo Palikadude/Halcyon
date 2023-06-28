@@ -1,0 +1,78 @@
+﻿{
+"Version": "0.7.12.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"apricorn_grove_black": {
+"Name": {
+"DefaultText": "Apricorn Grove Black",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_blue": {
+"Name": {
+"DefaultText": "Apricorn Grove Blue",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_brown": {
+"Name": {
+"DefaultText": "Apricorn Grove Brown",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_green": {
+"Name": {
+"DefaultText": "Apricorn Grove Green",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_purple": {
+"Name": {
+"DefaultText": "Apricorn Grove Purple",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_red": {
+"Name": {
+"DefaultText": "Apricorn Grove Red",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_white": {
+"Name": {
+"DefaultText": "Apricorn Grove White",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"apricorn_grove_yellow": {
+"Name": {
+"DefaultText": "Apricorn Grove Yellow",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+}
+}
+}

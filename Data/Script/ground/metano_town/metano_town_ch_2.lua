@@ -12,7 +12,6 @@ function metano_town_ch_2.SetupGround()
 	GROUND:Hide('Swap_Owner')
 	GROUND:Hide('Swap')
 	GROUND:Hide('Cafe_Entrance')
-	GROUND:Hide('Assembly')
 	
 
 	if SV.Chapter2.FirstMorningMeetingDone and not SV.Chapter2.FinishedTraining then

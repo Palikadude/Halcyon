@@ -40,12 +40,13 @@ Anima core and anima root animations. Scarfed Sandile Portraits.
 * Cait_Sith — Luxio fainting animation
 * NanaelJustice — Cleaning up staircases inside guild and adding some detail to them
 * Minemaker0430 — Scarf sprites for player/partner characters
+* Sunkern — Apricorn Grove tilesets
 
 Other custom sprites and animations come from the master [PMD Sprite Repository](https://sprites.pmdcollab.org/) and were not custom made for this mod.
 
 If you helped in some way and aren't listed here (probably because I forgot, sorry!) please let me know.
 
 ### Special thanks
-* NeoGeoThomas — For putting the trailer together
+* NeoGeoThomas — For putting the first trailer together
 * borzoiteeth — for inspiring the game in the first place
 * [SkyTemple](https://skytemple.org/) community — For helping me figure out base Explorer's behavior for some cutscenes and functions

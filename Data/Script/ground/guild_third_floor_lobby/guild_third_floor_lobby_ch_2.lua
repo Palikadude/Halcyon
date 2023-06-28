@@ -318,7 +318,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("On to business...[pause=0] As it's your first day,[pause=10] let me to explain how your guild training will work.")
+	UI:WaitShowDialogue("On to business...[pause=0] As it's your first day,[pause=10] allow me to explain how your guild training will work.")
 	UI:WaitShowDialogue("Every morning,[pause=10] after the daily meeting,[pause=10] " .. noctowl:GetDisplayName() .. " will give you an assignment for the day.")
 	UI:WaitShowDialogue("This could be taking requests from the boards downstairs or tasks " .. noctowl:GetDisplayName() .. " comes up with for you.")
 	UI:WaitShowDialogue("Make sure to speak with him before you leave for the day and that you do whatever he asks of you!")

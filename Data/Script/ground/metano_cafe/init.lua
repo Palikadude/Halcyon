@@ -28,7 +28,7 @@ function metano_cafe.Init(map, time)
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_metano_cafe <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
-	COMMON.RespawnAllies()
+	COMMON.RespawnAllies(true)
 	PartnerEssentials.InitializePartnerSpawn()
 end
 
@@ -571,12 +571,12 @@ end
 --your allies will wait for you in the cafe if you have any.
 function metano_cafe.Teammate2_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+  GeneralFunctions.GroundInteract(activator, chara)
 end
 
 function metano_cafe.Teammate3_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+  GeneralFunctions.GroundInteract(activator, chara)
 end
 
 

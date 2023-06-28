@@ -13,6 +13,7 @@ require 'mission_gen'
 require 'ground.guild_second_floor.guild_second_floor_ch_1'
 require 'ground.guild_second_floor.guild_second_floor_ch_2'
 require 'ground.guild_second_floor.guild_second_floor_ch_3'
+require 'ground.guild_second_floor.guild_second_floor_ch_4'
 
 
 -- Package name

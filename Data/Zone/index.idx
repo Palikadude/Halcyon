@@ -550,16 +550,20 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 1,
 "Rogue": 0,
 "Grounds": [],
-"Maps": [],
+"Maps": [
+[
+0
+]
+],
 "Name": {
 "DefaultText": "Apricorn Grove",
 "LocalTexts": {}
 },
-"Released": false,
-"Comment": "",
+"Released": true,
+"Comment": "4th dungeon of the game.",
 "SortOrder": 0
 }
 }

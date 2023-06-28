@@ -569,7 +569,8 @@ SV.TemporaryFlags =
 	LastDungeonEntered = -1,--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
 	MissionCompleted = false,--used to mark if there are any pending missions to hand in.
 	PostJobsGround = '',--used to mark the ground to go to after handing in randomly generated missions if the default choice of generic dinnertime is not wanted.
-	PriorMapSetting = nil--Used to mark what the player had their minimap setting whenever the game needs to temporarily change it to something else.
+	PriorMapSetting = nil,--Used to mark what the player had their minimap setting whenever the game needs to temporarily change it to something else.
+	AudinoSummonCount = 0--How many times have you made poor Rin run out for your assembly needs that day?
 }
 
 
@@ -696,6 +697,12 @@ SV.Chapter3 =
 	PostBossSpokeToCranidos = false -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
 }
 
+SV.Chapter4 = 
+{
+	FinishedFirstAddress = false,--Did you get the address regarding your mission for the chapter and the expedition?
+	FinishedAssemblyIntro = false,--did audino teach you about her assembly?
+	FinishedSignpostCutscene = false--Did audino show you her signpost for the assembly by the cafe?
+}
 
 ----------------------------------
 --Dungeon relevant flags 
