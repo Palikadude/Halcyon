@@ -28,7 +28,7 @@ require 'GeneralFunctions'
 --Difficulty's point ranks
 MISSION_GEN = {}
 
-MISSION_GEN.DUNGEON_LIST = {"illuminant_riverbed", "crooked_cavern"}
+MISSION_GEN.DUNGEON_LIST = {"illuminant_riverbed", "crooked_cavern", "apricorn_grove"}
 
 MISSION_GEN.DIFFICULTY = {}
 MISSION_GEN.DIFFICULTY[""] = 0
@@ -1479,10 +1479,21 @@ function MISSION_GEN.GenerateBoard(board_type)
 	local mission_type = COMMON.MISSION_BOARD_MISSION
 	if board_type == COMMON.MISSION_BOARD_OUTLAW then mission_type = COMMON.MISSION_BOARD_OUTLAW end
 	
+	--get list of potential dungeons for missions, remove any that haven't been completed yet.
+	local dungeon_candidates = MISSION_GEN.ShallowCopy(MISSION_GEN.DUNGEON_LIST)
+	for i = #dungeon_candidates, 1, -1 do
+		if _DATA.Save:GetDungeonUnlock(dungeon_candidates[i]) ~= RogueEssence.Data.GameProgress.UnlockState.Completed then
+			table.remove(dungeon_candidates, i)
+		end
+	end
+	
+	--failsafe. Just quit if no dungeons are eligible.
+	if #dungeon_candidates == 0 then return end
+	
 	--generate jobs
 	for i = 1, jobs_to_make, 1 do 
 		--choose a dungeon, client, target, item, etc
-		local dungeon = MISSION_GEN.DUNGEON_LIST[math.random(1, #MISSION_GEN.DUNGEON_LIST)]
+		local dungeon = dungeon_candidates[math.random(1, #dungeon_candidates)]
 		local client = ""
 		local item = ""
 		local special = ""
@@ -2023,7 +2034,13 @@ function JobMenu:DrawJob()
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Difficulty:", RogueElements.Loc(16, 96)))
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Reward:", RogueElements.Loc(16, 110))) 
 
-  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.client, RogueElements.Loc(68, 54)))
+  local client = self.client 
+  --Don't show "Zhayn" if the nickname mod is enabled. Need to still save it internally as Zhayn though for other processes.
+  if not CONFIG.UseNicknames then
+	client = string.gsub(client, "Zhayn", "Bisharp")
+  end
+  
+  self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(client, RogueElements.Loc(68, 54)))
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.objective, RogueElements.Loc(68, 68)))
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.zone .. " " .. self.floor, RogueElements.Loc(68, 82)))
   self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(self.difficulty, RogueElements.Loc(68, 96)))

@@ -18,16 +18,8 @@ If you're having trouble installing the game, or have any questions, comments, f
 * **Audino** — for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist  
 * **Trio-** — Assisted with mission_gen in-dungeon scripting, other scripting features/enhancements  
 
-### Playtesters:
-* Sunkern
-* Audino
-* Xindage
-* Minemaker0430
-* NanaelJustice
-* Trio-
-* Dovey
-* Brimcon
-* The kitchen sunk
+### Music credits:
+* Minemaker0430 - Anima Core theme
 
 ### Spriting credits:
 * Edan Momu — guild exterior and partial interior sprite work
@@ -41,6 +33,17 @@ Anima core and anima root animations. Scarfed Sandile Portraits.
 * NanaelJustice — Cleaning up staircases inside guild and adding some detail to them
 * Minemaker0430 — Scarf sprites for player/partner characters
 * Sunkern — Apricorn Grove tilesets
+
+### Playtesters:
+* Sunkern
+* Audino
+* Xindage
+* Minemaker0430
+* NanaelJustice
+* Trio-
+* Dovey
+* Brimcon
+* The kitchen sunk
 
 Other custom sprites and animations come from the master [PMD Sprite Repository](https://sprites.pmdcollab.org/) and were not custom made for this mod.
 

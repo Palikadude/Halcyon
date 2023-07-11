@@ -1,6 +1,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
+require 'CharacterEssentials'
 
 guild_first_floor_ch_1 = {}
 
@@ -44,7 +45,7 @@ function guild_first_floor_ch_1.EnterGuild()
 	GROUND:CharAnimateTurnTo(partner, Direction.UpLeft, 4)
 	GAME:WaitFrames(40)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	UI:WaitShowDialogue("But for now,[pause=10] we shouldn't keep [color=#00FFFF]Phileas[color] waiting.")
+	UI:WaitShowDialogue("But for now,[pause=10] we shouldn't keep " .. CharacterEssentials.GetCharacterName("Noctowl") .. " waiting.")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("There's more things to see on the upper levels anyway![pause=0] C'mon!")
 
@@ -95,7 +96,7 @@ function guild_first_floor_ch_1.EnterGuild()
 	GAME:WaitFrames(40)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Alright,[pause=10] let's not keep [color=#00FFFF]Phileas[color] waiting any longer.")
+	UI:WaitShowDialogue("Alright,[pause=10] let's not keep " .. CharacterEssentials.GetCharacterName("Noctowl") .. " waiting any longer.")
 	GAME:WaitFrames(20)
 	
 	--walk away, then walk away again while fading out

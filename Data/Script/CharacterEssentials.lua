@@ -411,6 +411,24 @@ local characters = {
 			skin = "normal"
 		},
 		
+		Pelipper_Rescue = {
+			species = "pelipper",
+			nickname = 'Mael',
+			instance = 'Pelipper_Rescue',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
+		},
+		
+		Pelipper_Connect = {
+			species = "pelipper",
+			nickname = 'Anlin',
+			instance = 'Pelipper_Connect',
+			gender = Gender.Female,
+			form = 0,
+			skin = "normal"
+		},
+		
 	
 	
 	--Town NPCs - Families

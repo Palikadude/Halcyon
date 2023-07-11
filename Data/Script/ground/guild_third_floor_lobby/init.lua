@@ -93,6 +93,12 @@ function guild_third_floor_lobby.PlotScripting()
 			else 
 				guild_third_floor_lobby_ch_3.SetupGround()
 			end
+		elseif SV.ChapterProgression.Chapter == 4 then
+			if not SV.Chapter4.FinishedFirstAddress then 
+				guild_third_floor_lobby_ch_4.ExpeditionAnnouncementAddress()
+			else
+				guild_third_floor_lobby_ch_4.SetupGround()
+			end				
 		else
 			GAME:FadeIn(20)
 		end

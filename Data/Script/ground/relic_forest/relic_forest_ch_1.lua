@@ -1,6 +1,7 @@
 require 'common'
 require 'PartnerEssentials'
 require 'GeneralFunctions'
+require 'CharacterEssentials'
 
 relic_forest_ch_1 = {}
 
@@ -117,7 +118,7 @@ function relic_forest_ch_1.PartnerFindsHeroCutscene()
 	UI:WaitShowDialogue("I've been at it for a while...[pause=0] Looks like I've made it to the deepest part of the forest.")
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("I'll never understand why [color=#00FFFF]Erleuchtet[color] thinks the forest is so dangerous.")
+	UI:WaitShowDialogue("I'll never understand why " .. CharacterEssentials.GetCharacterName("Relicanth") .. " thinks the forest is so dangerous.")
 	GAME:WaitFrames(40)
 	UI:WaitShowDialogue("I've been here plenty of times before,[pause=10] but...")
 	UI:SetSpeakerEmotion("Happy")

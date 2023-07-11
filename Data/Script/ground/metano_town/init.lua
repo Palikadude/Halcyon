@@ -6,6 +6,7 @@ require 'AudinoAssembly'
 require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
 require 'ground.metano_town.metano_town_ch_3'
+require 'ground.metano_town.metano_town_ch_4'
 
 
 local MapStrings = {}
@@ -20,6 +21,13 @@ function metano_town.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 	GROUND:AddMapStatus("clouds_overhead")
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		metano_town.SetMerchantNicknames()
+	else 
+		metano_town.RemoveMerchantNicknames()
+	end
 	
 	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
       SOUND:PlayBGM(SV.metano_town.Song, true)
@@ -79,6 +87,8 @@ function metano_town.PlotScripting()
 		elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedMerchantIntro then 
 			metano_town_ch_3.MerchantIntro()
 		end	
+	elseif SV.ChapterProgression.Chapter == 4 then
+		metano_town_ch_4.SetupGround()	
 	else
 		GAME:FadeIn(20)
 	end
@@ -2732,6 +2742,7 @@ function metano_town.Assembly_Action(obj, activator)
 				UI:SetSpeakerEmotion("Determined")
 				UI:WaitShowDialogue("I'm starting to t-think you two are d-doing this on purpose!")
 				UI:WaitShowDialogue("Well I'm not f-falling for it anymore![pause=0] If you want to use the assembly anymore today,[pause=10] you come to me!")
+				GAME:WaitFrames(10)
 			else
 				UI:WaitShowDialogue(hero:GetDisplayName() .. "! " .. partner:GetDisplayName() .. "! You r-rang?")
 			end
@@ -2790,4 +2801,58 @@ function metano_town.Well_Action(obj, activator)
    GROUND:CharEndAnim(hero)	
 end   
    
+function metano_town.RemoveMerchantNicknames()
+	local green_kec = CH('Shop_Owner')
+	local purp_kec = CH('TM_Owner')
+	local kanga = CH('Storage_Owner')
+	local murkrow = CH('Bank_Owner')
+	local sneasel = CH('Appraisal')
+	local chatot = CH('Musician')
+	local ambipom = CH('Swap_Owner')
+	local slowpoke = CH('Tutor_Owner')
+	local stunky = CH('Red_Owner')
+	local farfetchd = CH('Green_Owner')
+	local growlithe = CH('Growlithe')
+	
+	green_kec.Data.Nickname = 'Kecleon'
+	purp_kec.Data.Nickname = 'Kecleon'
+	kanga.Data.Nickname = 'Kangaskhan'
+	murkrow.Data.Nickname = 'Murkrow'
+	sneasel.Data.Nickname = 'Sneasel'
+	chatot.Data.Nickname = 'Chatot'
+	ambipom.Data.Nickname = 'Ambipom'
+	slowpoke.Data.Nickname = 'Slowpoke'
+	stunky.Data.Nickname = 'Stunky'
+	farfetchd.Data.Nickname = "Farfetch'd"
+	growlithe.Data.Nickname = 'Growlithe'
+
+end 
+
+function metano_town.SetMerchantNicknames()
+	local green_kec = CH('Shop_Owner')
+	local purp_kec = CH('TM_Owner')
+	local kanga = CH('Storage_Owner')
+	local murkrow = CH('Bank_Owner')
+	local sneasel = CH('Appraisal')
+	local chatot = CH('Musician')
+	local ambipom = CH('Swap_Owner')
+	local slowpoke = CH('Tutor_Owner')
+	local stunky = CH('Red_Merchant')
+	local farfetchd = CH('Green_Merchant')
+	local growlithe = CH('Growlithe')
+	
+	green_kec.Data.Nickname = CharacterEssentials.GetCharacterName('Kecleon')
+	purp_kec.Data.Nickname = CharacterEssentials.GetCharacterName('Kecleon_Purple')
+	kanga.Data.Nickname = CharacterEssentials.GetCharacterName('Kangaskhan')
+	murkrow.Data.Nickname = CharacterEssentials.GetCharacterName('Murkrow')
+	sneasel.Data.Nickname = CharacterEssentials.GetCharacterName('Sneasel')
+	chatot.Data.Nickname = CharacterEssentials.GetCharacterName('Chatot')
+	ambipom.Data.Nickname = CharacterEssentials.GetCharacterName('Ambipom')
+	slowpoke.Data.Nickname = CharacterEssentials.GetCharacterName('Slowpoke')
+	stunky.Data.Nickname = CharacterEssentials.GetCharacterName('Stunky')
+	farfetchd.Data.Nickname = CharacterEssentials.GetCharacterName('Farfetchd')
+	growlithe.Data.Nickname = CharacterEssentials.GetCharacterName('Growlithe')
+
+end
+
 return metano_town

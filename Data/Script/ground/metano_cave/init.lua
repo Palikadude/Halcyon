@@ -38,7 +38,13 @@ function metano_cave.Init(map, time)
 	GROUND:CharSetAnim(CH('Sunflora'), "None", true) --sunflora is not happy and so does not bounce around with her idle anim 
 
 	GROUND:AddMapStatus("darkness")--darkness
-
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Sunflora').Data.Nickname = CharacterEssentials.GetCharacterName('Sunflora')
+	else 
+		CH('Sunflora').Data.Nickname = 'Sunflora'
+	end
 end
 
 ---metano_cave.Enter

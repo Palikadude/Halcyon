@@ -32,6 +32,12 @@ function guild_second_floor.Init(map)
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
 
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Assembly_Owner').Data.Nickname = CharacterEssentials.GetCharacterName('Audino')
+	else 
+		CH('Assembly_Owner').Data.Nickname = 'Audino'
+	end
 
 	if not SV.ChapterProgression.UnlockedAssembly then--hide audino at her assembly if it isn't unlocked yet
 		GROUND:Hide('Assembly')
@@ -97,6 +103,12 @@ function guild_second_floor.PlotScripting()
 				guild_second_floor_ch_3.OutlawRewardScene()
 			else
 				guild_second_floor_ch_3.SetupGround()
+			end
+		elseif SV.ChapterProgression.Chapter == 4 then
+			if not SV.Chapter4.FinishedAssemblyIntro then
+				guild_second_floor_ch_4.AudinoAssemblyIntro()
+			else
+				guild_second_floor_ch_4.SetupGround()
 			end
 		else
 			GAME:FadeIn(20)

@@ -30,6 +30,13 @@ function metano_cafe.Init(map, time)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies(true)
 	PartnerEssentials.InitializePartnerSpawn()
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Cafe_Owner').Data.Nickname = CharacterEssentials.GetCharacterName('Shuckle')
+	else 
+		CH('Cafe_Owner').Data.Nickname = 'Shuckle'
+	end
 end
 
 ---metano_cafe.Enter

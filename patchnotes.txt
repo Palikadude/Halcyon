@@ -16,3 +16,4 @@ V 0.3.1
 - Fixed a bug where a client pokemon with temporary water privileges (i.e. water sport) being beamed out while on water caused an error.
 - Adjusted logic for turning towards a specified location, this should make certain scripted character turns better at looking in the proper direction when turning to look at a location.
 - Fixed a number of minor typos.
+- Time Gear Remix has been replaced with an original composition by Minemaker0430. Thank you again!

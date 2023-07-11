@@ -108,7 +108,7 @@ function guild_heros_room_ch_3.PostOutlawBedtalkFirstHalf()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner:GetDisplayName(), true, "", -1, "", RogueEssence.Data.Gender.Unknown)
-	SOUND:PlayBGM('Time Gear Remix.ogg', false)
+	SOUND:PlayBGM('Anima Core.ogg', false)
 	UI:WaitShowDialogue("Anima Cores are mystical,[pause=10] living fragments of something greater that exist in hidden places.")
 	--cut here to a preview of the root
 	GAME:WaitFrames(20)

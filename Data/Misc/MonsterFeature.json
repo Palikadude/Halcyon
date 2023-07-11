@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.13.0",
 "Object": {
 "$type": "PMDC.Data.MonsterFeatureData, PMDC",
 "FeatureData": {
@@ -11499,6 +11499,14 @@
 "Stage": 2,
 "Element1": "electric",
 "Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "voltorb",
+"Stage": 2,
+"Element1": "electric",
+"Element2": "grass",
 "BestStat": -1,
 "WorstStat": -1
 }

@@ -73,6 +73,7 @@ function guild_heros_room.CheckTriggerEvent()
 	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
 		SV.ChapterProgression.Chapter = 4
 		SV.ChapterProgression.UnlockedAssembly = true
+		SV.ChapterProgression.CurrentStoryDungeon = "apricorn_grove" 
 		SV.Dojo.NewMazeUnlocked = true
 		SV.metano_cafe.NewDrinkUnlocked = true
 		GAME:UnlockDungeon("flying_maze")--unlock new mazes at ledian dojo

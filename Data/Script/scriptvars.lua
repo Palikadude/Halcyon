@@ -701,7 +701,12 @@ SV.Chapter4 =
 {
 	FinishedFirstAddress = false,--Did you get the address regarding your mission for the chapter and the expedition?
 	FinishedAssemblyIntro = false,--did audino teach you about her assembly?
-	FinishedSignpostCutscene = false--Did audino show you her signpost for the assembly by the cafe?
+	FinishedSignpostCutscene = false,--Did audino show you her signpost for the assembly by the cafe?
+
+	EnteredGrove = false,--has player set foot at all into the grove yet?
+	BacktrackedOutGroveYet = false,--has player ever backtracked out the entrance of the grove yet? if not, give them a cutscene explaining what just happened
+	FinishedGrove = false--has player finished the grove?
+
 }
 
 ----------------------------------

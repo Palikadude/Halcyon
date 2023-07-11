@@ -6,7 +6,7 @@ require 'CharacterEssentials'
 guild_second_floor_ch_4 = {}
 
 function guild_second_floor_ch_4.SetupGround()
-
+	GAME:FadeIn(20)
 end 
 
 

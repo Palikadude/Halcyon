@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.13.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
@@ -21021,13 +21021,13 @@
 "EntEnabled": true,
 "serializationLoc": {
 "X": 168,
-"Y": 158
+"Y": 157
 },
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
 "Data": {
-"Nickname": "",
+"Nickname": "Anlin",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -21097,10 +21097,10 @@
 },
 "CollisionDisabled": false,
 "Collider": {
-"X": 0,
-"Y": 0,
-"Width": 0,
-"Height": 0
+"X": 168,
+"Y": 158,
+"Width": 16,
+"Height": 16
 }
 },
 {
@@ -21117,7 +21117,7 @@
 "triggerType": 1,
 "<AI>k__BackingField": null,
 "Data": {
-"Nickname": "",
+"Nickname": "Mael",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -21187,10 +21187,10 @@
 },
 "CollisionDisabled": false,
 "Collider": {
-"X": 0,
-"Y": 0,
-"Width": 0,
-"Height": 0
+"X": 224,
+"Y": 158,
+"Width": 16,
+"Height": 16
 }
 }
 ],

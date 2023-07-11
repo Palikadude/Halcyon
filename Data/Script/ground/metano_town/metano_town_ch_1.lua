@@ -458,14 +458,14 @@ function metano_town_ch_1.EnterGuild()
 	GROUND:CharSetEmote(growlithe, "", 0)
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("You need to speak with [color=#00FFFF]Phileas[color].[pause=0] He's a [color=#00FF00]Noctowl[color].[pause=0] He'll be looking for you on the second floor!")
+	UI:WaitShowDialogue("You need to speak with " .. CharacterEssentials.GetCharacterName("Noctowl") .. ".[pause=0] He's a [color=#00FF00]Noctowl[color].[pause=0] He'll be looking for you on the second floor!")
 
 
 	GAME:WaitFrames(20)
 	GeneralFunctions.Hop(partner)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Thanks,[pause=10] " .. growlithe:GetDisplayName() .. "![pause=0] We'll go find [color=#00FFFF]Phileas[color] on the second floor now then!")
+	UI:WaitShowDialogue("Thanks,[pause=10] " .. growlithe:GetDisplayName() .. "![pause=0] We'll go find " .. CharacterEssentials.GetCharacterName("Noctowl") .. " on the second floor now then!")
 	UI:SetSpeaker(growlithe)
 	
 	GAME:WaitFrames(20)

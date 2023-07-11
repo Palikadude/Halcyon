@@ -32,7 +32,13 @@ function altere_pond.Init(map)
 	COMMON.RespawnAllies()
 	GROUND:AddMapStatus("clouds_overhead")
 	PartnerEssentials.InitializePartnerSpawn()
-
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Relicanth').Data.Nickname = CharacterEssentials.GetCharacterName('Relicanth')
+	else 
+		CH('Relicanth').Data.Nickname = 'Relicanth'
+	end
 end
 
 ---altere_pond.Enter

@@ -18,6 +18,16 @@ function post_office.Init(map)
     SOUND:PlayBGM(SV.metano_town.Song, true)
   end
   
+--Remove nicknames from characters if the nickname mod is enabled.
+  if CONFIG.UseNicknames then
+	CH('Connect_Owner').Data.Nickname = CharacterEssentials.GetCharacterName('Pelipper_Connect')
+	CH('Rescue_Owner').Data.Nickname = CharacterEssentials.GetCharacterName('Pelipper_Rescue')
+  else 
+	CH('Connect_Owner').Data.Nickname = 'Pelipper'
+	CH('Rescue_Owner').Data.Nickname = 'Pelipper'
+  end
+
+	
 end
 
 function post_office.Enter(map)

@@ -30,9 +30,16 @@ function ledian_dojo.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
-
 	GROUND:AddMapStatus("darkness")--darkness
-
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Sensei').Data.Nickname = CharacterEssentials.GetCharacterName('Ledian')
+		CH('Gible').Data.Nickname = CharacterEssentials.GetCharacterName('Gible')
+	else 
+		CH('Sensei').Data.Nickname = 'Ledian'
+		CH('Gible').Data.Nickname = 'Gible'
+	end
 end
 
 ---ledian_dojo.Enter

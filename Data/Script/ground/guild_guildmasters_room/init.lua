@@ -30,6 +30,13 @@ function guild_guildmasters_room.Init(map)
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies()
 	PartnerEssentials.InitializePartnerSpawn()
+	
+	--Remove nicknames from characters if the nickname mod is enabled.
+	if CONFIG.UseNicknames then
+		CH('Tropius').Data.Nickname = CharacterEssentials.GetCharacterName('Tropius')
+	else 
+		CH('Tropius').Data.Nickname = 'Tropius'
+	end
 end
 
 ---guild_guildmasters_room.Enter
