@@ -3767,20 +3767,20 @@
 	
 	
   <data name="TALK_FULL_1110" xml:space="preserve">
-    <value>Quickly, [player]! We need to rescue [numel]!</value>
+    <value>Quickly, [player]! We need to rescue [(Numel)]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
   <data name="TALK_FULL_1111" xml:space="preserve">
-    <value>[numel] is counting on us! Let's go, [player]!</value>
+    <value>[(Numel)] is counting on us! Let's go, [player]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
   <data name="TALK_FULL_1112" xml:space="preserve">
-    <value>We've got to make it to the Luminous Spring and find [numel]!</value>
+    <value>We've got to make it to the Luminous Spring and find [(Numel)]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
   <data name="TALK_FULL_1113" xml:space="preserve">
     <value>This is our first mission, [player]! Let's do our best and get it done!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
 
   <data name="TALK_HALF_1110" xml:space="preserve">
-    <value>This is getting rough, but I can push through it to rescue [numel]!</value>
+    <value>This is getting rough, but I can push through it to rescue [(Numel)]!</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
   <data name="TALK_HALF_1111" xml:space="preserve">
     <value>Our first mission seems to be a bit tougher than I was expecting...</value>
@@ -3790,7 +3790,7 @@
     <value>N-no... I d-don't want to fail, n-not on our first... m-mission...</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
   <data name="TALK_PINCH_1111" xml:space="preserve">
-    <value>I can't take anymore... [color=#00FFFF]N[color]-[numel], I'm s-sorry...</value>
+    <value>I can't take anymore... [color=#00FFFF]N[color]-[(Numel)], I'm s-sorry...</value>
     <comment>Illuminant Riverbed Chapter 2 Comment</comment>  </data>
 
 
@@ -3805,7 +3805,7 @@
     <value>Be on guard for any bandits!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1123" xml:space="preserve">
-    <value>Let's prove to [cranidos] that we're capable, [player]!</value>
+    <value>Let's prove to [(Cranidos)] that we're capable, [player]!</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
 
   <data name="TALK_HALF_1120" xml:space="preserve">
@@ -3816,7 +3816,7 @@
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
 
   <data name="TALK_PINCH_1120" xml:space="preserve">
-    <value>Urf... I'm about to keel over... Was [cranidos] right after all...?</value>
+    <value>Urf... I'm about to keel over... Was [(Cranidos)] right after all...?</value>
     <comment>Crooked Cavern Chapter 3 Comment</comment>  </data>
   <data name="TALK_PINCH_1121" xml:space="preserve">
     <value>N-no... A-at this r-rate, I'm going down... I c-can't... The outlaw...</value>
@@ -3830,13 +3830,13 @@
     <value>We won't let Team [color=#FFA5FF]Style[color] beat us this time!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1131" xml:space="preserve">
-    <value>We have to help [sandile]! Come on, [player]!</value>
+    <value>We have to help [(Sandile)]! Come on, [player]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1132" xml:space="preserve">
     <value>Team [color=#FFA5FF]Style[color]... Those no-goods are going down!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1133" xml:space="preserve">
-    <value>[sandile] needs us! Let's do this, [player]!</value>
+    <value>[(Sandile)] needs us! Let's do this, [player]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
 	
 	
@@ -3844,14 +3844,14 @@
     <value>It's getting difficult... But I won't go down until we've beaten Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
   <data name="TALK_HALF_1131" xml:space="preserve">
-    <value>I'm a bit beat up, but I won't give in until we've saved [sandile] from Team [color=#FFA5FF]Style[color]!</value>
+    <value>I'm a bit beat up, but I won't give in until we've saved [(Sandile)] from Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>
 	
   <data name="TALK_PINCH_1130" xml:space="preserve">
     <value>N-no... T-the d-damage... B-but I need to... Team [color=#FFA5FF]Style[color]...</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>		
   <data name="TALK_PINCH_1131" xml:space="preserve">
-    <value>Urgh... No m-more... I'm sorry... [sandile]...</value>
+    <value>Urgh... No m-more... I'm sorry... [(Sandile)]...</value>
     <comment>Crooked Cavern Lost To Boss Chapter 3 Comment</comment>  </data>
 	
 	
@@ -3861,13 +3861,13 @@
     <value>We won't lose to these jerks!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1141" xml:space="preserve">
-    <value>We have to help [sandile]! Come on, [player]!</value>
+    <value>We have to help [(Sandile)]! Come on, [player]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1142" xml:space="preserve">
     <value>These no-goods are going down here and now!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>	
   <data name="TALK_FULL_1143" xml:space="preserve">
-    <value>[sandile] needs us! Let's do this, [player]!</value>
+    <value>[(Sandile)] needs us! Let's do this, [player]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
   <data name="TALK_FULL_1144" xml:space="preserve">
     <value>Let's put these bullies in their place, [player]!</value>
@@ -3877,7 +3877,7 @@
     <value>It's getting difficult... But I won't go down until we defeat Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
   <data name="TALK_HALF_1141" xml:space="preserve">
-    <value>I'm a bit beat up, but I won't give in until we've saved [sandile] from Team [color=#FFA5FF]Style[color]!</value>
+    <value>I'm a bit beat up, but I won't give in until we've saved [(Sandile)] from Team [color=#FFA5FF]Style[color]!</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
   <data name="TALK_HALF_1142" xml:space="preserve">
     <value>They're tough... But I can keep going!</value>
@@ -3887,7 +3887,7 @@
     <value>N-no... T-the d-damage... B-but I need to... Team [color=#FFA5FF]Style[color]...</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>		
   <data name="TALK_PINCH_1141" xml:space="preserve">
-    <value>Urgh... No m-more... I'm sorry... [sandile]...</value>
+    <value>Urgh... No m-more... I'm sorry... [(Sandile)]...</value>
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
   <data name="TALK_PINCH_1142" xml:space="preserve">
     <value>They're... too t-tough... I'm about to k-keel over...</value>

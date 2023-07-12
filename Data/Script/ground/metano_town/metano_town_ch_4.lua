@@ -62,7 +62,7 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 	GAME:WaitFrames(10)
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4) end)
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	UI:WaitShowDialogue("You can ring the bell on it and I'll come running from the guild so you can use the Assembly here!")
@@ -83,6 +83,16 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 	GAME:WaitFrames(20)
 	
 	GROUND:CharAnimateTurnTo(audino, Direction.UpLeft, 4)
-	UI:WaitShowDialogue("I spoke to " .. CharacterEssentials.GetCharacterName("Shuckle") .. " at the café")
-
+	UI:WaitShowDialogue("I spoke to " .. CharacterEssentials.GetCharacterName("Shuckle") .. " at the café earlier today.")
+	GAME:WaitFrames(10)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.UpLeft, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) GROUND:CharAnimateTurnTo(hero, Direction.UpLeft, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	--Can the assmeblites stay at the cafe while they wait?
+	UI:WaitShowDialogue("I arranged for teammates accompanying you on adventures to wait at the café!")
 end
+
+
+

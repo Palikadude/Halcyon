@@ -482,20 +482,31 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
     while not valid_quote and #running_pool > 0 do
       valid_quote = true
 
-      local numel_name = CharacterEssentials.GetCharacterName("Numel")
-			local cranidos_name = CharacterEssentials.GetCharacterName("Cranidos")
-      local sandile_name = CharacterEssentials.GetCharacterName("Sandile")
 
       local chosen_idx = math.random(1, #running_pool)
   	  local chosen_pool_idx = running_pool[chosen_idx]
+	  
+	  --for use with [(name)] replacing
+	  local char_list = {}
+	  local char_count = 0
+	  
       chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
+
+	  --[(stuff)] indicates that the item inside (in this case stuff) is a pokemon's identifer and should be fed to CharacterEssentials to get their name. THANKS NO NICKNAME ENTHUSIASTS I HATE YOU
+	  --NOTE/TODO: This breaks for characters who have _ (or other special chars) in their character call name. If this situation pops up, either address it here or remove the underscore from all instances of that character call name.
+	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
+		char_count = char_count + 1
+		char_list[char_count] = i
+		print('alo ' .. i)
+	  end
+	  
+	  for i = 1, #char_list, 1 do
+		chosen_quote = string.gsub(chosen_quote, "%[%(" .. char_list[i] .. "%)%]", CharacterEssentials.GetCharacterName(char_list[i]))
+	  end
+
   	
       chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
       chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
-
-      chosen_quote = string.gsub(chosen_quote, "%[numel%]", numel_name)
-			chosen_quote = string.gsub(chosen_quote, "%[cranidos%]", cranidos_name)
-      chosen_quote = string.gsub(chosen_quote, "%[sandile%]", sandile_name)
 
       if string.find(chosen_quote, "%[move%]") then
         local moves = {}

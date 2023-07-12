@@ -102,7 +102,7 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 
-	local shuckle_name = CharacterEssentials.GetCharacterName("Shuckle", true)
+	local shuckle_name = CharacterEssentials.GetCharacterName("Shuckle")
 	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Intro'], shuckle_name))
 	
 	local item1
@@ -115,6 +115,7 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
 						STRINGS:FormatKey('MENU_EXIT')}
 						
 		--Endurance Tonic is added in Chapter 4.
+		--todo: better system for this?
 		if SV.ChapterProgression.Chapter >= 4 then 
 			table.insert(choices, 4, STRINGS:Format(MapStrings['Cafe_Option_Endurance']))
 		end
