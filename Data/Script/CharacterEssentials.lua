@@ -10,15 +10,17 @@ local function AdjustNickname(name, characters)
 	if not CONFIG.UseNicknames then
 
 		-- Skip Crum
-		if nickname ~= "Crum" then
-			local species = characters[name].species
+		if nickname == "Crum" then
+			return nickname
+		end
 
-			-- Format Nidoran
-			if species ~= "nidoran_m" then
-				nickname = FirstToUpper(species)
-			else 
-				nickname = "Nidoran"
-			end
+		local species = characters[name].species
+		if species == "nidoran_m" then -- Format Nidoran
+			nickname = "Nidoran"
+		elseif species == "farfetchd" then -- Format Farfetch'd
+			nickname = "Farfetch'd"
+		else
+			nickname = FirstToUpper(species)
 		end
 	end
 	return nickname
@@ -821,9 +823,13 @@ end
 
 
 --get a character's name without having to create them
-function CharacterEssentials.GetCharacterName(name)
+function CharacterEssentials.GetCharacterName(name, no_color)
 	local nickname = AdjustNickname(name, characters)
-	return "[color=#00FFFF]" .. nickname .. "[color]"
+	if no_color then
+		return nickname
+	else
+		return "[color=#00FFFF]" .. nickname .. "[color]"
+	end
 end
 
 

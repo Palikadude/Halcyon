@@ -1343,6 +1343,9 @@ function metano_town.Red_Merchant_Action(obj, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	
+	local farfetchd_name = CharacterEssentials.GetCharacterName("Farfetchd")
+	local stunky_name = chara:GetDisplayName()
+
 	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.RedMerchantItem)
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
 	item.Amount = itemEntry.MaxStack
@@ -1371,7 +1374,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 		local happy = SV.DailyFlags.RedMerchantBought
 		
 		UI:SetSpeakerEmotion('Normal')
-		local msg = STRINGS:Format(MapStrings['Red_Merchant_Intro'])
+		local msg = STRINGS:Format(MapStrings['Red_Merchant_Intro'], stunky_name)
 		
 		
 		if repeated then
@@ -1386,7 +1389,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 			end
 		elseif happy then
 			UI:SetSpeakerEmotion('Happy')
-			msg = STRINGS:Format(MapStrings['Red_Merchant_Intro_Happy'])
+			msg = STRINGS:Format(MapStrings['Red_Merchant_Intro_Happy'], stunky_name)
 		elseif angry then 
 			UI:SetSpeakerEmotion('Determined')
 			msg = STRINGS:Format(MapStrings['Red_Merchant_Intro_Angry'])
@@ -1402,7 +1405,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Stock']))
 			elseif angry then 
 				UI:SetSpeakerEmotion('Angry')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Refuse_Service']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Refuse_Service'], farfetchd_name))
 			else
 				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item'], itemName, itemPrice))
 				UI:WaitForChoice()
@@ -1427,7 +1430,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 		elseif result == 2 then 
 			if angry then 
 				UI:SetSpeakerEmotion('Angry')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Angry']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Angry'], farfetchd_name))
 			elseif happy then 
 				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Happy_1']))
@@ -1435,17 +1438,17 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Sad')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Happy_3']))
 				UI:SetSpeakerEmotion('Inspired')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Happy_4']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Happy_4'], farfetchd_name))
 				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_Happy_5']))
 			else 
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_1']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_1'], stunky_name))
 				UI:SetSpeakerEmotion('Sad')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_2']))
 				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_3']))
 				UI:SetSpeakerEmotion('Determined')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_4']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_4'], farfetchd_name))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Info_5']))
 				UI:SetSpeakerEmotion('Normal')
 			end 
@@ -1539,7 +1542,10 @@ function metano_town.Green_Merchant_Action(obj, activator)
 	local chara = CH('Green_Merchant')
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	
+
+	local farfetchd_name = chara:GetDisplayName()
+	local stunky_name = CharacterEssentials.GetCharacterName("Stunky")
+
 	local item = RogueEssence.Dungeon.InvItem(SV.DailyFlags.GreenMerchantItem)
 	local itemEntry = RogueEssence.Data.DataManager.Instance:GetItem(item.ID)
 	item.Amount = itemEntry.MaxStack
@@ -1566,7 +1572,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 		local happy = SV.DailyFlags.GreenMerchantBought
 		
 		UI:SetSpeakerEmotion('Normal')
-		local msg = STRINGS:Format(MapStrings['Green_Merchant_Intro'])
+		local msg = STRINGS:Format(MapStrings['Green_Merchant_Intro'], farfetchd_name)
 		
 		
 		if repeated then
@@ -1581,7 +1587,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 			end
 		elseif happy then
 			UI:SetSpeakerEmotion('Happy')
-			msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Happy'])
+			msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Happy'], farfetchd_name)
 		elseif angry then 
 			UI:SetSpeakerEmotion('Determined')
 			msg = STRINGS:Format(MapStrings['Green_Merchant_Intro_Angry'])
@@ -1622,7 +1628,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 		elseif result == 2 then 
 			if angry then 
 				UI:SetSpeakerEmotion('Angry')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_Angry']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_Angry'], stunky_name))
 			elseif happy then 
 				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_Happy_1']))
@@ -1633,10 +1639,10 @@ function metano_town.Green_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Normal')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_Happy_5']))
 			else 
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_1']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_1'], farfetchd_name))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_2']))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_3']))
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_4']))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_4'], stunky_name))
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Info_5']))
 			end 
 		else
@@ -2810,8 +2816,8 @@ function metano_town.RemoveMerchantNicknames()
 	local chatot = CH('Musician')
 	local ambipom = CH('Swap_Owner')
 	local slowpoke = CH('Tutor_Owner')
-	local stunky = CH('Red_Owner')
-	local farfetchd = CH('Green_Owner')
+	local stunky = CH('Red_Merchant')
+	local farfetchd = CH('Green_Merchant')
 	local growlithe = CH('Growlithe')
 	
 	green_kec.Data.Nickname = 'Kecleon'

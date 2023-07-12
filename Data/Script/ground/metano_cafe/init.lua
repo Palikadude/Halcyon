@@ -102,8 +102,8 @@ function metano_cafe.Cafe_Sign_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 
-	
-	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Intro']))
+	local shuckle_name = CharacterEssentials.GetCharacterName("Shuckle", true)
+	UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Sign_Intro'], shuckle_name))
 	
 	local item1
 	local item2
