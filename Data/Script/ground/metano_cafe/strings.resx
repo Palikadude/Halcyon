@@ -137,7 +137,7 @@
     <value>What drink would you like me to ferment for you?</value>
   </data>
   <data name="Cafe_Sign_Intro" xml:space="preserve">
-    <value>Dion's drink recipes and effects are listed on the sign.</value>
+    <value>{0}'s drink recipes and effects are listed on the sign.</value>
   </data>
   <data name="Cafe_Sign_Which_Drinks" xml:space="preserve">
     <value>Which would you like to know more about?</value>

@@ -157,6 +157,7 @@ function guild_bottom_right_bedroom.Team_Almanac_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
+	local zig_name_no_color = CharacterEssentials.GetCharacterName("Zigzagoon", true)
 	local choices = {'Round', 'Cadence', 'Starlight', 'Rivals', 'Flutter', 'Flight'}
 	
 	--local team_name_length = string.len(GAME:GetTeamName())
@@ -172,7 +173,7 @@ function guild_bottom_right_bedroom.Team_Almanac_Action(obj, activator)
 	table.insert(choices, #choices + 1, 'Never Mind')
 	
 	
-	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Adventuring Teams". Read it?')
+	UI:ChoiceMenuYesNo("This is one of " .. zig_name_no_color .. "'s almanacs.\nIt's entitled " .. '"Adventuring Teams". Read it?')
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	UI:SetAutoFinish(false)
@@ -325,11 +326,12 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
+	local zig_name_no_color = CharacterEssentials.GetCharacterName("Zigzagoon", true)
 	local choices = {'Using Attacks to Move', 'Tough Opponents', 'Never Mind'}
 		
 	
 	--todo: Different mons use different AI types
-	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Adventuring Tips". Read it?')
+	UI:ChoiceMenuYesNo("This is one of " .. zig_name_no_color .. "'s almanacs.\nIt's entitled " .. '"Adventuring Tips". Read it?')
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	UI:SetAutoFinish(false)
@@ -402,10 +404,11 @@ function guild_bottom_right_bedroom.Data_Almanac_Action(obj, activator)
 
 
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
+	local zig_name_no_color = CharacterEssentials.GetCharacterName("Zigzagoon", true)
 	local choices = {'Gummi Stats', "Same Type Attack Bonus", "Type Matchups", "Stat Changes", "Never Mind"}
 	--todos: Critical hit mechanics, belly mechanics and specifics
 	
-	UI:ChoiceMenuYesNo("This is one of Almotz's almanacs.\nIt's entitled " .. '"Measurements and Calculations". Read it?')
+	UI:ChoiceMenuYesNo("This is one of " .. zig_name_no_color .. "'s almanacs.\nIt's entitled " .. '"Measurements and Calculations". Read it?')
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()
 	UI:SetAutoFinish(false)

@@ -1,5 +1,7 @@
 require 'common'
 
+require "CharacterEssentials"
+
 BATTLE_SCRIPT = {}
 
 RedirectionType = luanet.import_type('PMDC.Dungeon.Redirected')
@@ -479,13 +481,22 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
     
     while not valid_quote and #running_pool > 0 do
       valid_quote = true
+
+      local numel_name = CharacterEssentials.GetCharacterName("Numel")
+			local cranidos_name = CharacterEssentials.GetCharacterName("Cranidos")
+      local sandile_name = CharacterEssentials.GetCharacterName("Sandile")
+
       local chosen_idx = math.random(1, #running_pool)
   	  local chosen_pool_idx = running_pool[chosen_idx]
       chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
   	
       chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
       chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
-      
+
+      chosen_quote = string.gsub(chosen_quote, "%[numel%]", numel_name)
+			chosen_quote = string.gsub(chosen_quote, "%[cranidos%]", cranidos_name)
+      chosen_quote = string.gsub(chosen_quote, "%[sandile%]", sandile_name)
+
       if string.find(chosen_quote, "%[move%]") then
         local moves = {}
   	    for move_idx = 0, 3 do

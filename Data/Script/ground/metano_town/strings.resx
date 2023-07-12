@@ -491,7 +491,7 @@
     <value>Let's go into town and get everything we need.[pause=0] We should see what we have in storage before we shop.</value>
   </data>
   <data name="Red_Merchant_Intro" xml:space="preserve">
-    <value>Welcome to [color=#00FFFF]Rhizo[color]'s Wares, what can I do for you?</value>
+    <value>Welcome to {0}'s Wares, what can I do for you?</value>
   </data>
   <data name="Red_Merchant_Intro_Return_Happy" xml:space="preserve">
     <value>Anything else I can do for you two?</value>
@@ -500,7 +500,7 @@
     <value>Anything else?</value>
   </data>
   <data name="Red_Merchant_Intro_Happy" xml:space="preserve">
-    <value>Hey hey! Welcome back to [color=#00FFFF]Rhizo[color]'s Wares!</value>
+    <value>Hey hey! Welcome back to {0}'s Wares!</value>
   </data>
   <data name="Red_Merchant_Intro_Angry" xml:space="preserve">
     <value>What do YOU two want?</value>
@@ -509,7 +509,7 @@
     <value>Sorry,[pause=10] you've cleaned out today's stock.[pause=0] Come again tomorrow.</value>
   </data>
   <data name="Red_Merchant_Refuse_Service" xml:space="preserve">
-    <value>You chose [color=#00FFFF]Mido[color]'s overpriced junk over my well-priced wares.[pause=0] Get lost.</value>
+    <value>You chose {0}'s overpriced junk over my well-priced wares.[pause=0] Get lost.</value>
   </data>
   <data name="Red_Merchant_Daily_Item" xml:space="preserve">
     <value>Today's item is {0} and it'll set you back [color=#00FFFF]{1}[color] \uE024, that alright with you?</value>
@@ -524,10 +524,10 @@
     <value>Thank you for your purchase![pause=0] I know you'd choose my wares!</value>
   </data>
   <data name="Red_Merchant_Info_Angry" xml:space="preserve">
-    <value>I'm not telling you anything,[pause=10] I saw you buy [color=#00FFFF]Mido[color]'s junk.[pause=0] Get out of my sight.</value>
+    <value>I'm not telling you anything,[pause=10] I saw you buy {0}'s junk.[pause=0] Get out of my sight.</value>
   </data>
   <data name="Red_Merchant_Info_1" xml:space="preserve">
-    <value>Here at [color=#00FFFF]Rhizo[color]'s,[pause=10] I sell useful items for adventurers like you two each day.</value>
+    <value>Here at {0}'s,[pause=10] I sell useful items for adventurers like you two each day.</value>
   </data>
   <data name="Red_Merchant_Info_2" xml:space="preserve">
     <value>My stocks are more limited that I would like to admit,[pause=10] so I only sell one item per day.</value>
@@ -536,7 +536,7 @@
     <value>However,[pause=10] you'll get that item for much cheaper than if you had gone to the Kecleon Shop to buy it.</value>
   </data>
   <data name="Red_Merchant_Info_4" xml:space="preserve">
-    <value>Oh,[pause=10] but if I see you buying from that snob [color=#00FFFF]Mido[color],[pause=10] you can forget doing business with me.</value>
+    <value>Oh,[pause=10] but if I see you buying from that snob {0},[pause=10] you can forget doing business with me.</value>
   </data>
   <data name="Red_Merchant_Info_5" xml:space="preserve">
     <value>I don't wanna see your faces again if I catch you doing that!</value>
@@ -551,7 +551,7 @@
     <value>If only I could sell more than one item per day to clients like you...</value>
   </data>
   <data name="Red_Merchant_Info_Happy_4" xml:space="preserve">
-    <value>You knew a good deal when you saw it,[pause=10] which is why you came to me and not that snoot [color=#00FFFF]Mido[color].</value>
+    <value>You knew a good deal when you saw it,[pause=10] which is why you came to me and not that snoot {0}.</value>
   </data>
   <data name="Red_Merchant_Info_Happy_5" xml:space="preserve">
     <value>If you buy from him,[pause=10] you can forget about buying anything from me.[pause=0] But that won't happen,[pause=10] right?</value>
@@ -575,7 +575,7 @@
     <value>A done deal! \u266A\n Thank you \u266A</value>
   </data>
   <data name="Green_Merchant_Intro" xml:space="preserve">
-    <value>Welcome to [color=#00FFFF]Mido[color]'s Curios, where wonderous equipment is found!</value>
+    <value>Welcome to {0}'s Curios, where wonderous equipment is found!</value>
   </data>
   <data name="Green_Merchant_Intro_Return_Happy" xml:space="preserve">
     <value>How else may I be of service, my valued customers?</value>
@@ -584,7 +584,7 @@
     <value>Is there anything else today, my friends?</value>
   </data>
   <data name="Green_Merchant_Intro_Happy" xml:space="preserve">
-    <value>Ah, welcome, my valued customers, to [color=#00FFFF]Mido[color]'s Curios! How may I be of service to you?</value>
+    <value>Ah, welcome, my valued customers, to {0}'s Curios! How may I be of service to you?</value>
   </data>
   <data name="Green_Merchant_Intro_Angry" xml:space="preserve">
     <value>You dare show your faces to me!?</value>
@@ -608,7 +608,7 @@
     <value>Thank you for your business,[pause=10] my esteemed patrons![pause=0]\nI knew you would make the right choice!</value>
   </data>
   <data name="Green_Merchant_Info_Angry" xml:space="preserve">
-    <value>Why not go ask [color=#00FFFF]Rhizo[color] about his "great" deals,[pause=10] hmm!?</value>
+    <value>Why not go ask {0} about his "great" deals,[pause=10] hmm!?</value>
   </data>
   <data name="Green_Merchant_Info_Happy_1" xml:space="preserve">
     <value>As you may already know,[pause=10] esteemed patrons,[pause=10] I sell a rare held item here daily.</value>
@@ -626,7 +626,7 @@
     <value>I would not like to think about the words I would say to those who choose his garbage over my fine goods.</value>
   </data>
   <data name="Green_Merchant_Info_1" xml:space="preserve">
-    <value>I,[pause=10] [color=#00FFFF]Mido[color],[pause=10] sell a different held item here each day.</value>
+    <value>I,[pause=10] {0},[pause=10] sell a different held item here each day.</value>
   </data>
   <data name="Green_Merchant_Info_2" xml:space="preserve">
     <value>Due to the rare nature of my items,[pause=10] I only have one item in stock per day.[pause=0] Visit often to see what I carry!</value>
@@ -635,7 +635,7 @@
     <value>Many of my items cannot be found anywhere else,[pause=10] and are well worth their weight in \uE024!</value>
   </data>
   <data name="Green_Merchant_Info_4" xml:space="preserve">
-    <value>I trust that you will buy from me and not that charlatan [color=#00FFFF]Rhizo[color]...</value>
+    <value>I trust that you will buy from me and not that charlatan {0}...</value>
   </data>
   <data name="Green_Merchant_Info_5" xml:space="preserve">
     <value>If you buy anything from him,[pause=10] you can forget getting any of my precious equipment!</value>
