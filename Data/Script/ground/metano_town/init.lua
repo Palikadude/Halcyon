@@ -335,6 +335,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   local dungeon_entrance_mapping = {}
   dungeon_entrance_mapping["illuminant_riverbed"] = 38 --Illuminant Riverbed, but this shouldn't ever be used.
   dungeon_entrance_mapping["crooked_cavern"] = 41--Crooked Cavern
+  dungeon_entrance_mapping["apricorn_grove"] = 44--Apricorn Grove
     
 
 	local mission_dests = {}

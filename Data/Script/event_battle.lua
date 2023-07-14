@@ -497,7 +497,6 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
 		char_count = char_count + 1
 		char_list[char_count] = i
-		print('alo ' .. i)
 	  end
 	  
 	  for i = 1, #char_list, 1 do
