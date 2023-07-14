@@ -9,7 +9,7 @@ require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
 require 'ground.metano_cafe.metano_cafe_ch_3'
-
+require 'menu/ferment_menu'
 -- Package name
 local metano_cafe = {}
 
@@ -286,103 +286,84 @@ function metano_cafe.Cafe_Action(obj, activator)
 		local result = UI:ChoiceResult()
 		repeated = true
 		if result == 1 then --drinks
-			local ferment_state = 0
-			local item_to_ferment = ""
-			local recipe_list = {}
-			
 			--he's already brewing something
 			if SV.metano_cafe.FermentedItem ~= "" then
 				local ferment_item = RogueEssence.Dungeon.InvItem(SV.metano_cafe.FermentedItem)
 				local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(SV.metano_cafe.FermentedItem)
-				
 				if ferment_item_entry.MaxStack > 1 then ferment_item.Amount = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
-				
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Already_Fermenting'], ferment_item:GetDisplayName()))
-				ferment_state = -1
-			end
-			
-			while ferment_state > -1 do
-				local ferment_choices = {STRINGS:Format(MapStrings['Cafe_Option_Domi']), 
-										 STRINGS:Format(MapStrings['Cafe_Option_Cider']),
-										 STRINGS:Format(MapStrings['Cafe_Option_Bomb']),
-										 STRINGS:FormatKey('MENU_EXIT')}
-										 						 
-				--TODO: As game grows and more drinks get added later in the plot, add scripting here to expand ferment_choices.	
-
-				--Endurance Tonic is added in Chapter 4
-				if SV.ChapterProgression.Chapter >= 4 then 
-					table.insert(ferment_choices, 4, STRINGS:Format(MapStrings['Cafe_Option_Endurance']))
-				end
-				
-				
+			else		
 				UI:SetSpeakerEmotion("Normal")
-				UI:BeginChoiceMenu(STRINGS:Format(MapStrings['Cafe_Ferment_Prompt']), ferment_choices, 1, #ferment_choices)
-				UI:WaitForChoice()
-				result = UI:ChoiceResult()
-				if result == #ferment_choices then--back
-					ferment_state = -1
-				else
-					if result == 1 then --Domi Blend - 3 Orans, 5 Sticks
-						item_to_ferment = "cafe_domi_blend"
-						recipe_list = {{"berry_oran", 3}, {"ammo_stick", 5}}
-					elseif result == 2 then --Apple Cider - 1 Oran, 3 Apples
-						item_to_ferment = "cafe_apple_cider"
-						recipe_list = {{"berry_oran", 1}, {"food_apple", 3}}
-					elseif result == 3 then--Cheri Bomb - 1 Cheri Berry, 1 Blast Seed
-						item_to_ferment = "cafe_cheri_bomb"
-						recipe_list = {{"berry_cheri", 1}, {"seed_blast", 1}}
-					elseif result == 4 and #ferment_choices > 4 then--starts appearing in chapter 4
-						item_to_ferment = "cafe_endurance_tonic"
-						recipe_list = {{"seed_reviver", 1}, {"berry_chesto", 1}}
-					end
-					
-					
-					local ferment_item = RogueEssence.Dungeon.InvItem(item_to_ferment)
-					local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(item_to_ferment)--need item entry to get maxstack.
-			
-					if ferment_item_entry.MaxStack > 1 then ferment_item.Amount = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Ferment_Prompt']))
 				
-					--if we have the ingredients, set the fermented item to the one requested and let the player know.
-					if metano_cafe.CheckForItems(recipe_list) then 
-						--confirm that's the correct drink
-						UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Cafe_Confirm_Ferment_Choice'], ferment_item:GetDisplayName()), true)
-						UI:WaitForChoice()
-						local confirm = UI:ChoiceResult()
-						--make drink if confirmed. Otherwise go back to previous menu asking which drink to make
-						if confirm then
-							SV.metano_cafe.FermentedItem = item_to_ferment
-							metano_cafe.RemoveItems(recipe_list) 
-							ferment_state = -1
-							UI:SetSpeakerEmotion("Happy")
-							UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_1']))
-							--puts the items in his shell
-							SOUND:PlayBattleSE('DUN_Equip')
-							GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Special0")))
-							GAME:WaitFrames(60)
-							GROUND:CharSetDrawEffect(owner, DrawEffect.Trembling)
-							SOUND:PlayBattleSE('DUN_Drink')
-							GAME:WaitFrames(60)
-							SOUND:PlayBattleSE('DUN_Fake_Tears')
-							GAME:WaitFrames(60)
-							SOUND:PlayBattleSE('DUN_Food')
-							GAME:WaitFrames(60)
-							SOUND:PlayBattleSE('DUN_Worry_Seed')
-							GROUND:CharEndDrawEffect(owner, DrawEffect.Trembling)
-							GROUND:CharWaitAnim(owner, "Special1")
-							GROUND:CharSetAnim(owner, "None", true)
-							UI:SetSpeakerEmotion("Inspired")
-							UI:WaitShowTimedDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_2']), 60)
-							GAME:WaitFrames(20)
-							UI:SetSpeakerEmotion("Happy")
-							UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_3'], ferment_item:GetDisplayName()))
-						end
-					else --otherwise, say they don't have enough ingredients.
-						UI:SetSpeakerEmotion("Worried")
-						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Missing_Ingredients'], ferment_item:GetDisplayName()))
+				local CreateFermentMenu = CreateFermentMenu()
+				local items = {
+					{ 
+						item_to_ferment = "cafe_domi_blend",
+						servings = 1,
+						recipe_list = {{"berry_oran", 3}, {"ammo_stick", 5}},
+						description_key = "Cafe_Sign_Domi_1",
+					},
+					{
+						item_to_ferment = "cafe_apple_cider",
+						servings = 4,
+						recipe_list = {{"berry_oran", 1}, {"food_apple", 3}},
+						description_key = "Cafe_Sign_Cider_1"
+					},
+					{
+						item_to_ferment = "cafe_cheri_bomb",
+						servings = 1,
+						recipe_list = {{"berry_cheri", 1}, {"seed_blast", 1}},
+						description_key = "Cafe_Sign_Bomb_1"
+					},
+	
+				}
+				if SV.ChapterProgression.Chapter >= 4 then 
+					local endurance_tonic = {
+						item_to_ferment = "cafe_endurance_tonic",
+						servings = 1,
+						recipe_list = {{"seed_reviver", 1}, {"berry_chesto", 1}},
+						description_key = "Cafe_Sign_Endurance_1"
+					}
+					table.insert(items, 4, endurance_tonic)
+				end
+	
+				local menu = CreateFermentMenu:new(items, MapStrings)
+				UI:SetCustomMenu(menu.menu)
+				UI:WaitForChoice()
+	
+				if (menu.item_list_index > -1) then
+					local menu_item = items[menu.item_list_index + 1]
+					local ferment_item = RogueEssence.Dungeon.InvItem(menu_item.item_to_ferment)
+					UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Cafe_Confirm_Ferment_Choice'], ferment_item:GetDisplayName()), true)
+					UI:WaitForChoice()
+					local confirm = UI:ChoiceResult()
+					if confirm then
+						SV.metano_cafe.FermentedItem = menu_item.item_to_ferment
+						metano_cafe.RemoveItems(menu_item.recipe_list)
+						UI:SetSpeakerEmotion("Happy")
+						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_1']))
+						--puts the items in his shell
+						SOUND:PlayBattleSE('DUN_Equip')
+						GROUND:CharSetAction(owner, RogueEssence.Ground.PoseGroundAction(owner.Position, owner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Special0")))
+						GAME:WaitFrames(60)
+						GROUND:CharSetDrawEffect(owner, DrawEffect.Trembling)
+						SOUND:PlayBattleSE('DUN_Drink')
+						GAME:WaitFrames(60)
+						SOUND:PlayBattleSE('DUN_Fake_Tears')
+						GAME:WaitFrames(60)
+						SOUND:PlayBattleSE('DUN_Food')
+						GAME:WaitFrames(60)
+						SOUND:PlayBattleSE('DUN_Worry_Seed')
+						GROUND:CharEndDrawEffect(owner, DrawEffect.Trembling)
+						GROUND:CharWaitAnim(owner, "Special1")
+						GROUND:CharSetAnim(owner, "None", true)
+						UI:SetSpeakerEmotion("Inspired")
+						UI:WaitShowTimedDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_2']), 60)
+						GAME:WaitFrames(20)
+						UI:SetSpeakerEmotion("Happy")
+						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Begin_Fermenting_3'], ferment_item:GetDisplayName()))
 					end
-
-					
-						
 				end
 			end
 		elseif result == 2 then --today's special

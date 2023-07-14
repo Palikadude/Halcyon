@@ -143,7 +143,7 @@
     <value>Which would you like to know more about?</value>
   </data>
   <data name="Cafe_Sign_Domi_1" xml:space="preserve">
-    <value>Fully restores the party's HP. Lowers the party's Atk/Sp. Atk but raises Def and Sp. Def in return. </value>
+    <value>Fully restores the party's HP. Lowers the party's Atk / Sp. Atk but raises Def and Sp. Def in return. </value>
   </data>
   <data name="Cafe_Sign_Domi_2" xml:space="preserve">
     <value>Requires 3 {0} and {1}.</value>
