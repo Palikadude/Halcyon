@@ -347,11 +347,11 @@
 {
 "$type": "PMDC.Dungeon.DestState, PMDC",
 "Dest": {
-"Segment": 0,
-"ID": -1
+"Segment": -1,
+"ID": 0
 },
-"Relative": true,
-"PreserveMusic": true
+"Relative": false,
+"PreserveMusic": false
 }
 ]
 }
@@ -6633,6 +6633,8 @@
 "IsRelevant": true
 }
 ],
-"GroundMaps": []
+"GroundMaps": [
+"apricorn_grove_entrance"
+]
 }
 }

@@ -705,7 +705,8 @@ SV.Chapter4 =
 
 	EnteredGrove = false,--has player set foot at all into the grove yet?
 	BacktrackedOutGroveYet = false,--has player ever backtracked out the entrance of the grove yet? if not, give them a cutscene explaining what just happened
-	FinishedGrove = false--has player finished the grove?
+	ReachedGlade = false, --has player reached the glade yet?
+	FinishedGrove = false--has player finished the grove for good?
 
 }
 
@@ -723,6 +724,11 @@ SV.Tutorial =
 	Lesson = "null",
 	LastSpeech = "null",--remember which function for a dialogue set was spoken last.
 	Progression = 0--a number value that corresponds to how many dialogues Ledian has said so far. Used to remember if ledian said anything already when the floor is reset so she doesn't repeat herself.
+}
+
+SV.ApricornGrove = 
+{
+	InDungeon = false--has character actually left the dungeon run yet? Used to determine what cutscenes to play inside the dungeon entrance/end
 }
 
 

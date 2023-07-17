@@ -1,0 +1,10 @@
+<Header>
+  <Name>Halcyon No Nickname</Name>
+  <Author>Palika</Author>
+  <Description>Removes all the nicknames in Halcyon!</Description>
+  <Namespace>halcyon_nickname</Namespace>
+  <UUID>B2BA3CB7-10A4-4D44-9589-B2C4145E48D7</UUID>
+  <Version>0.1</Version>
+  <ModType>Mod</ModType>
+  <Relationships />
+</Header>

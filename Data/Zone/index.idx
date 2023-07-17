@@ -553,7 +553,9 @@
 "Rescues": 0,
 "CountedFloors": 8,
 "Rogue": 0,
-"Grounds": [],
+"Grounds": [
+"apricorn_grove_entrance"
+],
 "Maps": [
 [
 0,

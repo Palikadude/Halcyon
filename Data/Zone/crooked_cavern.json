@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.10.0",
+"Version": "0.7.13.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -1200,7 +1200,7 @@
 },
 {
 "Spawn": {
-"ID": "seed_hunger",
+"ID": "seed_decoy",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,

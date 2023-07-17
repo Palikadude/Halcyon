@@ -27,7 +27,7 @@ function apricorn_grove_entrance.Init(map)
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_apricorn_grove_entrance <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
-	COMMON.RespawnAllies()
+	COMMON.RespawnAllies(true)
 	PartnerEssentials.InitializePartnerSpawn()
 
 end
@@ -74,16 +74,31 @@ end
 
 function apricorn_grove_entrance.PlotScripting()
 	if SV.ChapterProgression.Chapter == 4 then 
-		if not SV.Chapter3.EnteredCavern then
-			apricorn_grove_entrance_ch_3.FirstAttemptCutscene()
-		elseif not SV.Chapter3.EncounteredBoss then
-			apricorn_grove_entrance_ch_3.LostBeforeStyle()
-		else 
-			apricorn_grove_entrance_ch_3.LostToStyle()
+		if not SV.Chapter4.EnteredGrove then--first time
+			apricorn_grove_entrance_ch_4.FirstAttemptCutscene()
+		elseif not SV.Chapter4.FinishedGrove and not SV.Chapter4.ReachedGlade and not SV.ApricornGrove.InDungeon then 
+			apricorn_grove_entrance_ch_4.SubsequentAttemptCutscene()--failed; hasn't made it to the end yet
+		elseif not SV.Chapter4.FinishedGrove and SV.Chapter4.ReachedGlade and not SV.ApricornGrove.InDungeon then  
+			apricorn_grove_entrance_ch_4.FailedNoFullTeamReattempt()--failed; made it to the end, but couldn't get the apricorn
+		elseif not SV.Chapter4.FinishedGrove and SV.ApricornGrove.InDungeon and not SV.Chapter4.BacktrackedOutGroveYet then
+			apricorn_grove_entrance_ch_4.FirstComeOutFront()--Came out the front from the dungeon for the first time
+		elseif not SV.Chapter4.FinishedGrove and SV.ApricornGrove.InDungeon and SV.Chapter4.BacktrackedOutGroveYet then
+			apricorn_grove_entrance.ComeOutFront()--generic come out front from dungeon
+		else
+			GAME:FadeIn(20)--this should never happen in actual gameplay, but useful for debug warping here
 		end
 	else
-		GAME:FadeIn(20)
+		if SV.ApricornGrove.InDungeon then
+			apricorn_grove_entrance.ComeOutFront()
+		else 
+			GAME:FadeIn(20)
+		end
 	end
+end
+
+--Generic come out front cutscene
+function apricorn_grove_entrance.ComeOutFront() 
+
 end
 
 -------------------------------
@@ -93,6 +108,16 @@ function apricorn_grove_entrance.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
  end
+
+function apricorn_grove_entrance.Teammate2_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
+
+function apricorn_grove_entrance.Teammate3_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
  
 return apricorn_grove_entrance
 
