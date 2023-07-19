@@ -178,6 +178,7 @@ function guild_second_floor_ch_1.MeetNoctowl()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(noctowl)
+	--too long with no nicknames
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Growlithe") .. " informed me that two Pokémon were coming in who required me.[pause=0] That would be you two,[pause=10] correct?")
 	GAME:WaitFrames(20)
 

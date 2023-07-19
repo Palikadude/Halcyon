@@ -606,8 +606,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -1071,8 +1071,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -1271,8 +1271,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -1736,8 +1736,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -1936,8 +1936,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -2401,8 +2401,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -2601,8 +2601,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -3066,8 +3066,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -3266,8 +3266,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -3731,8 +3731,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -3931,8 +3931,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -4149,8 +4149,8 @@
 }
 ],
 "MergeRate": {
-"Min": 2,
-"Max": 4
+"Min": 1,
+"Max": 3
 },
 "Combos": [
 {
@@ -4596,8 +4596,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -4814,8 +4814,8 @@
 }
 ],
 "MergeRate": {
-"Min": 2,
-"Max": 4
+"Min": 1,
+"Max": 3
 },
 "Combos": [
 {
@@ -5061,8 +5061,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 8,
-"RespawnTime": 45
+"MaxFoes": 7,
+"RespawnTime": 55
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -5261,8 +5261,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 7,
-"Max": 9
+"Min": 5,
+"Max": 7
 }
 },
 "Ally": false,
@@ -6054,8 +6054,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6085,8 +6085,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 13
+"Min": 10,
+"Max": 12
 },
 "SpecifiedSkills": [
 "rock_throw"
@@ -6118,8 +6118,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6149,8 +6149,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 13
+"Min": 10,
+"Max": 12
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6180,8 +6180,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6211,8 +6211,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 13
+"Min": 10,
+"Max": 12
 },
 "SpecifiedSkills": [
 "razor_leaf"
@@ -6244,8 +6244,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 11
+"Min": 9,
+"Max": 10
 },
 "SpecifiedSkills": [
 "stun_spore"
@@ -6277,8 +6277,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 12
+"Min": 10,
+"Max": 11
 },
 "SpecifiedSkills": [
 "stun_spore"
@@ -6310,8 +6310,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 12
+"Min": 10,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6341,8 +6341,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 12,
-"Max": 13
+"Min": 11,
+"Max": 12
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6366,14 +6366,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "starly",
+"Species": "taillow",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
+"Min": 9,
+"Max": 11
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6397,14 +6397,14 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "starly",
+"Species": "taillow",
 "Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 13
+"Min": 10,
+"Max": 12
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
@@ -6434,8 +6434,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 11,
-"Max": 12
+"Min": 10,
+"Max": 11
 },
 "SpecifiedSkills": [
 "poison_powder"
@@ -6467,8 +6467,8 @@
 "Gender": -1
 },
 "Level": {
-"Min": 12,
-"Max": 13
+"Min": 11,
+"Max": 12
 },
 "SpecifiedSkills": [
 "poison_powder"
@@ -6605,7 +6605,7 @@
 },
 {
 "Spawn": 1,
-"Rate": 10,
+"Rate": 12,
 "Range": {
 "Min": 0,
 "Max": 8

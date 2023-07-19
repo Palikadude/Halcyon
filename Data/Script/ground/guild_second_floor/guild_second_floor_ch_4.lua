@@ -103,6 +103,7 @@ function guild_second_floor_ch_4.AudinoAssemblyIntro()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(audino)
+	--too long with no nicknames
 	UI:WaitShowDialogue("No no![pause=0] I m-meant recruits to your team![pause=0] Surely you've thought about adding more Pokémon to your team,[pause=10] r-right?")
 
 	GAME:WaitFrames(10)
@@ -150,6 +151,7 @@ function guild_second_floor_ch_4.AudinoAssemblyIntro()
 	UI:WaitShowDialogue("Pokémon are also more willing to join your team if they've been weakened!")
 	UI:WaitShowDialogue("Of course,[pause=10] a Pokémon won't always join your team when you t-throw an Apricorn at them...")
 	UI:WaitShowDialogue("But you should be able to tell how willing a Pokémon is to join you based on their reaction to the Apricorn!")
+	--too long with no nicknames
 	UI:WaitShowDialogue("Anyways,[pause=10] once you've r-recruited some Pokémon,[pause=10] come see me and I'll help you manage who goes on adventures!")
 	GAME:WaitFrames(20)
 	

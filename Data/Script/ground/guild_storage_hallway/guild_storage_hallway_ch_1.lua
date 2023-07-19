@@ -204,6 +204,7 @@ function guild_storage_hallway_ch_1.MeetAudino()
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("You must have been in his office.[pause=0] His actual bedroom is right down this hall.[pause=0] But...")
+	--too long with no nicknames
 	UI:WaitShowDialogue("The Guildmaster doesn't like anyone going into his room.[pause=0] He only allows me to so I can take care of the chores.")
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("S-so please don't go in his room.[pause=0] I don't w-want to see you guys getting in trouble.")

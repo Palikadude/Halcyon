@@ -20,7 +20,11 @@ function apricorn_grove.Init(zone)
 end
 
 function apricorn_grove.EnterSegment(zone, rescuing, segmentID, mapID)
-	SV.ApricornGrove.InDungeon = true
+	
+	if segmentID == 0 then
+		SV.ApricornGrove.InDungeon = true
+	end
+	
 	if rescuing ~= true then
 		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
 	end
@@ -58,7 +62,7 @@ function apricorn_grove.ExitSegment(zone, result, rescue, segmentID, mapID)
 		GAME:WaitFrames(20)
 
 		--no longer in the dungeon.
-		SV.ApricornGrove.InDungeon = true
+		SV.ApricornGrove.InDungeon = false
 		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 

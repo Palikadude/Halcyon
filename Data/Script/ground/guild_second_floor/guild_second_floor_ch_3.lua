@@ -56,6 +56,7 @@ end
 function guild_second_floor_ch_3.Jigglypuff_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Some jobs are harder than others.[pause=0] The difficulty of a job depends on the location and the type of mission.")
 	UI:WaitShowDialogue("Escort and outlaw missions are tougher than other types of missions for example.")
+	--too long with no nicknames
 	UI:WaitShowDialogue("Harder jobs give more Adventurer Rank Points and usually have better rewards though,[pause=10] so they're worth doing!")
 	GeneralFunctions.EndConversation(chara)
 end
@@ -88,6 +89,7 @@ function guild_second_floor_ch_3.Audino_Action(chara, activator)
 	UI:WaitShowDialogue("You can check the boards whenever you like to see what jobs are available for the taking.")
 	UI:WaitShowDialogue("You can hold onto jobs as long as you want,[pause=10] but know that you can only have up to eight jobs at a time!")
 	UI:WaitShowDialogue("To check your taken jobs,[pause=10] you can use the boards here or press " .. STRINGS:LocalKeyString(9) .. " and choose Job List.")
+	--too long with no nicknames
 	UI:WaitShowDialogue("When you take a job from the board,[pause=10] it'll be activated automatically.[pause=0] Only jobs that are activated can be done!")
 	UI:WaitShowDialogue("Y-you can suspend an activated job to save for later.[pause=0] Just choose Take Job on it to reactivate it!")
 	UI:WaitShowDialogue("A-anyways,[pause=10] as long as a job is activated,[pause=10] you can just go to the mystery dungeon it's in to do it.")
@@ -106,6 +108,7 @@ end
 
 function guild_second_floor_ch_3.Metapod_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Me and " .. CharacterEssentials.GetCharacterName("Silcoon") .. " evolved recently.")
+	--too long with no nicknames
 	UI:WaitShowDialogue("We're hoping to evolve again as soon as we can.[pause=0] Our current forms are...[pause=30] pretty inconvenient,[pause=10] to say the least.")
 	UI:WaitShowDialogue("It took us a lot longer than I'd like to admit to make it up the ramp to get here...")
 	GeneralFunctions.EndConversation(chara)

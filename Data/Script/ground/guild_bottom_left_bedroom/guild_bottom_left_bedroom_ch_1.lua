@@ -304,7 +304,8 @@ function guild_bottom_left_bedroom_ch_1.Breloom_Action(chara, activator)
 		GAME:WaitFrames(20)
 		
 		GROUND:CharTurnToChar(partner, breloom)
-		GROUND:CharTurnToChar(hero, breloom)	
+		GROUND:CharTurnToChar(hero, breloom)
+		--too long with no nicknames
 		UI:WaitShowDialogue("By the way,[pause=10] if you gatecrashers ever need help with anything,[pause=10] especially exploring,[pause=10] come see me or " .. girafarig:GetDisplayName() .. "!")
 		UI:WaitShowDialogue("We're the best explorers at this guild![pause=0] After the Guildmaster,[pause=10] of course.")
 		GAME:WaitFrames(20)

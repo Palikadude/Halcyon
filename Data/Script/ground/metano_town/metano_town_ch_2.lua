@@ -1209,6 +1209,7 @@ function metano_town_ch_2.Bellossom_Action(chara, activator)
 		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " asked me if I've seen " .. CharacterEssentials.GetCharacterName("Numel") .. " this morning.[pause=0] Apparently,[pause=10] he's gone missing...", "Worried")
 		UI:WaitShowDialogue("She seemed sad.[pause=0] I hope " .. CharacterEssentials.GetCharacterName("Numel") .. " is found soon!")
 		UI:SetSpeakerEmotion("Normal")
+		--too long with no nicknames
 		UI:WaitShowDialogue("I'm going to take some flowers over to " .. CharacterEssentials.GetCharacterName("Camerupt") .. "'s house later to cheer her up.[pause=0] Flowers always cheer me up!")
 	else
 		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Camerupt") .. " appreciated the flowers I brought her,[pause=10] but she still seemed down.")

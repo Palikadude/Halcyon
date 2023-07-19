@@ -18,3 +18,4 @@ V 0.3.1
 - Fixed a number of minor typos.
 - Time Gear Remix has been replaced with an original composition by Minemaker0430. Thank you again!
 - Hunger seeds in Crooked Cavern have been replaced with Decoy seeds. These should help with the unique challenges that dungeon provides.
+- Slightly reduced the first boss leader's stats.

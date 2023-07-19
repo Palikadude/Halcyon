@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.13.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -172,14 +172,14 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 11,
+"Level": 10,
 "EXP": 0,
-"MaxHPBonus": 30,
-"AtkBonus": 1,
-"DefBonus": 1,
-"MAtkBonus": 1,
-"MDefBonus": 1,
-"SpeedBonus": 1,
+"MaxHPBonus": 31,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
 "BaseSkills": [
 {
 "SkillNum": "howl",
@@ -694,7 +694,7 @@
 17909611376780542444
 ]
 },
-"AssetName": "",
+"AssetName": "chapter_3_boss_fight",
 "ScriptEvents": {},
 "Music": "Boss Battle!.ogg",
 "TileSight": 0,
@@ -827,6 +827,7 @@
 "X": 0,
 "Y": 0
 },
+"HideMinimap": false,
 "NoRescue": false,
 "NoSwitching": false,
 "MapTurns": 0,

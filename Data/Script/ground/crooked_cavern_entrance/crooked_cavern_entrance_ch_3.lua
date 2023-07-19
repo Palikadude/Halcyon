@@ -10,13 +10,13 @@ function crooked_cavern_entrance_ch_3.FirstAttemptCutscene()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
-	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	AI:DisableCharacterAI(partner)
 
 	GROUND:TeleportTo(hero, 136, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 168, 256, Direction.Up)
 	
 	GAME:FadeIn(40)
+	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	GAME:WaitFrames(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 168, 168, false, 1) end)
@@ -69,13 +69,13 @@ function crooked_cavern_entrance_ch_3.LostBeforeStyle()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
-	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	AI:DisableCharacterAI(partner)
 
 	GROUND:TeleportTo(hero, 136, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 168, 256, Direction.Up)
 	
 	GAME:FadeIn(40)
+	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	GAME:WaitFrames(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 168, 168, false, 1) end)
@@ -127,13 +127,13 @@ function crooked_cavern_entrance_ch_3.LostToStyle()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
-	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	AI:DisableCharacterAI(partner)
 
 	GROUND:TeleportTo(hero, 136, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 168, 256, Direction.Up)
 	
 	GAME:FadeIn(40)
+	SOUND:PlayBGM('Mt. Horn.ogg', false)
 	GAME:WaitFrames(20)
 	
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 168, 168, false, 1) end)

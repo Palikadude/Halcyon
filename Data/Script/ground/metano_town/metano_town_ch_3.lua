@@ -847,6 +847,7 @@ function metano_town_ch_3.MerchantIntro()
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, farfetchd, 4) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											GROUND:CharTurnToCharAnimated(hero, farfetchd, 4) end)
+    --too long with no nicknames
 	coro3 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("Well,[pause=10] I know you two will make the correct choice![pause=0] As such,[pause=10] I look forward to serving you in the future!") end)
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3})
@@ -1155,6 +1156,7 @@ function metano_town_ch_3.Mawile_Action(chara, activator)
 end 
 function metano_town_ch_3.Nidorina_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Can you believe my parents kept me inside while that brat was missing?", "Determined", false)
+	--too long with no nicknames
 	UI:WaitShowDialogue("Obviously the dumb kid had just ran off![pause=0] This town is so boring,[pause=10] there's nothing dangerous anywhere near here!")
 	GeneralFunctions.EndConversation(chara)
 end 
@@ -1176,6 +1178,7 @@ function metano_town_ch_3.Azumarill_Action(chara, activator)
 		UI:WaitShowDialogue("The water looks happy too![pause=0] It must know child is home now,[pause=10] just like " .. chara:GetDisplayName() .. "!")
 	else 
 		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " hears about scary outlaws all the time now...[pause=0] " .. chara:GetDisplayName() .. " not want outlaws to beat " .. chara:GetDisplayName() .. " up!", "Worried")
+		--too long with no nicknames
 		UI:WaitShowDialogue(chara:GetDisplayName() .. " wonders if he should train at dojo so " .. chara:GetDisplayName() .. " can be stronger to defend " .. chara:GetDisplayName() .. " from bad Pokémon...")
 	end
 	GeneralFunctions.EndConversation(chara)
@@ -1299,6 +1302,7 @@ function metano_town_ch_3.Snubbull_Action(chara, activator)
 		UI:WaitShowDialogue("Apparently there's been a shortage of Apricorns lately.")
 		UI:WaitShowDialogue("Without Apricorns,[pause=10] recruiting new team members is impossible!")
 		UI:SetSpeakerEmotion("Sad")
+		--too long with no nicknames
 		UI:WaitShowDialogue("More importantly,[pause=10] I can't make this special dish I've been working on without Apricorns![pause=0] Now what will I cook?")
 	else
 		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
@@ -1311,6 +1315,7 @@ function metano_town_ch_3.Snubbull_Action(chara, activator)
 end
 
 function metano_town_ch_3.Zigzagoon_Action(chara, activator)
+	--too long with no nicknames
 	GeneralFunctions.StartConversation(chara, "Did you know you can check your active jobs while you're in a dungeon?[pause=0] It's perfect for someone like me!")
 	UI:WaitShowDialogue("Just press " .. STRINGS:LocalKeyString(9) .. ",[pause=10] go to the Others menu,[pause=10] then choose Mission Objectives!")
 	UI:WaitShowDialogue("It's really useful if you forget what jobs you've taken for that dungeon,[pause=10] or what floors your jobs are on!")

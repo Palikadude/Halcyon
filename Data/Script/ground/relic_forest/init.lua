@@ -28,7 +28,7 @@ function relic_forest.Init(map)
   DEBUG.EnableDbgCoro()
   print('=>> Init_relic_forest <<=')
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  COMMON.RespawnAllies()
+  COMMON.RespawnAllies(true)
   PartnerEssentials.InitializePartnerSpawn()
   
 end
@@ -79,20 +79,26 @@ function relic_forest.PlotScripting()
 end
 
 --No cutscene to play, play a generic ending saying there's nothing here.
---todo: add in teammate 2 and teammate 3 if they exist. not needed for now.
---todo: have results screen pop up after this instead of before this
 function relic_forest.GenericEnding()
-local hero = CH('PLAYER')
+	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
+	local team2 = CH('Teammate2')
+	local team3 = CH('Teammate3')
+
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	GAME:WaitFrames(20)
 
-	
+	GAME:MoveCamera(301, 224, 1, false)
 	GROUND:TeleportTo(hero, 277, 400, Direction.Up)
 	GROUND:TeleportTo(partner, 309, 400, Direction.Up)
-	GAME:MoveCamera(301, 224, 1, false)
-		
+	if team2 ~= nil then
+		GROUND:TeleportTo(team2, 293, 432, Direction.Up)
+	end
+	if team3 ~= nil then
+		GROUND:TeleportTo(team3, 325, 432, Direction.Up)
+	end
+	
 	GAME:CutsceneMode(true)
 	UI:ResetSpeaker()
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
@@ -106,13 +112,18 @@ local hero = CH('PLAYER')
 	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 309, 240, false, 1) end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 												  GROUND:MoveToPosition(hero, 277, 240, false, 1) end)
-	TASK:JoinCoroutines({coro1, coro2})
+	local coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GROUND:MoveToPosition(team2, 293, 272, false, 1) end end)
+	local coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GROUND:MoveToPosition(team3, 325, 272, false, 1) end end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	GAME:WaitFrames(10)	
 	
-	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
-	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-												  GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
-	TASK:JoinCoroutines({coro1, coro2})
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
+	coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GeneralFunctions.LookAround(team2, 3, 4, false, false, true, Direction.Left) end end)										  
+	coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GeneralFunctions.LookAround(team3, 3, 4, false, false, true, Direction.Right) end end)										  
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 
 	--temporary flags are set by the zone script rather than here.
 	GAME:WaitFrames(20)
@@ -124,7 +135,11 @@ local hero = CH('PLAYER')
 	--touch the rock, for luck 
 	UI:WaitShowDialogue("...But first...")
 	GAME:WaitFrames(20)
-	GeneralFunctions.EightWayMove(partner, 293, 210, false, 1)
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 293, 210, false, 1) end)
+	coro2 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(2) GROUND:CharAnimateTurnTo(team2, Direction.Up, 4) end end)
+	coro3 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(6) GROUND:CharAnimateTurnTo(team3, Direction.Up, 4) end end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+
 	GAME:WaitFrames(20)
 	GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
 	GAME:WaitFrames(60)
@@ -160,7 +175,7 @@ local hero = CH('PLAYER')
 	GAME:WaitFrames(20)
 	--Go to second floor if mission was done, else, dinner room. Missions shouldn't be genned for relic_forest, but just in case.
 	if SV.TemporaryFlags.MissionCompleted then
-			GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 22, 0, true, true)
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 22, 0, true, true)
 	else
 		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 6, 0, true, true)
 	end

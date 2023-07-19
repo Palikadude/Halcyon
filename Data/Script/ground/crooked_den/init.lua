@@ -28,7 +28,7 @@ function crooked_den.Init(map, time)
 	DEBUG.EnableDbgCoro()
 	print('=>> Init_crooked_den <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
-	COMMON.RespawnAllies()
+	COMMON.RespawnAllies(true)
 	PartnerEssentials.InitializePartnerSpawn()
 end
 
@@ -88,17 +88,23 @@ end
 
 
 --No cutscene to play, play a generic ending saying there's nothing here.
---todo: add in teammate 2 and teammate 3 if they exist. not needed for now.
---todo: have results screen pop up after this instead of before this
 function crooked_den.GenericEnding()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
+	local team2 = CH('Teammate2')
+	local team3 = CH('Teammate3')
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	GAME:WaitFrames(20)
 	
 	GROUND:TeleportTo(hero, 188, 256, Direction.Up)
 	GROUND:TeleportTo(partner, 156, 256, Direction.Up)
+	if team2 ~= nil then
+		GROUND:TeleportTo(team2, 172, 288, Direction.Up)
+	end
+	if team3 ~= nil then
+		GROUND:TeleportTo(team3, 204, 288, Direction.Up)
+	end
 	GAME:MoveCamera(180, 120, 1, false)
 		
 	GAME:CutsceneMode(true)
@@ -110,16 +116,20 @@ function crooked_den.GenericEnding()
 	
 	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
 	
-	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 156, 152, false, 1) end)
-	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:MoveToPosition(hero, 188, 152, false, 1) end)
-
-	TASK:JoinCoroutines({coro1, coro2})
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 156, 144, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:MoveToPosition(hero, 188, 144, false, 1) end)
+	local coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GROUND:MoveToPosition(team2, 172, 176, false, 1) end end)
+	local coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GROUND:MoveToPosition(team3, 204, 176, false, 1) end end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	GAME:WaitFrames(10)	
 	
-	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
-	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-												  GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
-	TASK:JoinCoroutines({coro1, coro2})
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
+	coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GeneralFunctions.LookAround(team2, 3, 4, false, false, true, Direction.Right) end end)										  
+	coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GeneralFunctions.LookAround(team3, 3, 4, false, false, true, Direction.Down) end end)										  
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 
 	--temporary flags are set by the zone script rather than here.
 	GAME:WaitFrames(20)

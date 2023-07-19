@@ -2735,7 +2735,7 @@ function metano_town.Assembly_Action(obj, activator)
 			elseif SV.TemporaryFlags.AudinoSummonCount == 9 then
 				UI:SetSpeakerEmotion("Dizzy")
 				GROUND:CharSetEmote(audino, "sweating", 1)
-				UI:WaitShowDialogue("Hurf...[pause=0] A-all this r-running around is t-too much...[pause=0] I'm\ne-exhausted...")
+				UI:WaitShowDialogue("Hurf...[pause=0] A-all this r-running around is t-too much...[pause=0]\nI'm e-exhausted...")
 				UI:WaitShowDialogue("P-please...[pause=0] D-don't abuse the b-bell...")
 				GAME:WaitFrames(40)
 				GeneralFunctions.ShakeHead(audino)

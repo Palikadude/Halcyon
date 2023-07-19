@@ -77,6 +77,7 @@ end
 
 function metano_inn_ch_3.Zangoose_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "This inn is one of the best places we've stayed at in our travels.[pause=0] Guess it's earned its reputation.")
+	--too long with no nicknames
 	UI:WaitShowDialogue("As nice as it is,[pause=10] I'd prefer if we were out getting work done instead of lollygagging like " .. CharacterEssentials.GetCharacterName("Seviper") .. " there wants to.")
 	UI:WaitShowDialogue("Suppose that's what a professional like me gets for parterning up with a layabout like him.")
 	GeneralFunctions.EndConversation(chara)

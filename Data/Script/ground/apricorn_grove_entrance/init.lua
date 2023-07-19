@@ -98,7 +98,112 @@ end
 
 --Generic come out front cutscene
 function apricorn_grove_entrance.ComeOutFront() 
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local team2 = CH('Teammate2')
+	local team3 = CH('Teammate3')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('apricorn_grove')
+	GAME:CutsceneMode(true)
+	AI:DisableCharacterAI(partner)
+	GAME:MoveCamera(164, 184, 1, false)
+	GROUND:TeleportTo(hero, 140, 40, Direction.Down)
+	GROUND:TeleportTo(partner, 172, 40, Direction.Down)
+	if team2 ~= nil then
+		GROUND:TeleportTo(team2, 156, 16, Direction.Down)
+	end
+	if team3 ~= nil then
+		GROUND:TeleportTo(team3, 188, 16, Direction.Down)
+	end
+	
+	GAME:WaitFrames(60)
+	GAME:FadeIn(40)
+	SOUND:PlayBGM('Star Cave.ogg', false)
+	GAME:WaitFrames(20)
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 172, 200, false, 1) 
+											      GAME:WaitFrames(20)
+												  GeneralFunctions.LookAround(partner, 3 , 4, true, true, false, Direction.Right) end)
+	local coro2 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(hero, 140, 200, false, 1) 
+												  GAME:WaitFrames(20)
+												  GeneralFunctions.LookAround(hero, 3 , 4, true, false, false, Direction.Left) end)
+	local coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then 
+												  GAME:WaitFrames(2)
+												  GROUND:MoveToPosition(team2, 156, 176, false, 1) 
+												  GAME:WaitFrames(28)
+												  GeneralFunctions.LookAround(team2, 3 , 4, true, false, false, Direction.Down) end end)
+	local coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then 
+												  GAME:WaitFrames(6)
+												  GROUND:MoveToPosition(team3, 188, 176, false, 1) 
+												  GAME:WaitFrames(32)
+												  GeneralFunctions.LookAround(team3, 3 , 4, true, false, false, Direction.DownLeft) end end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(10)
+	coro1 = TASK:BranchCoroutine(function()	GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})
 
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Hmm...[pause=0] Looks like we're back at the entrance.") 
+	GAME:WaitFrames(20)
+	UI:WaitShowDialogue(hero:GetDisplayName() .. ",[pause=10] what should we do?")
+	UI:BeginChoiceMenu("Should we head back into the dungeon,[pause=10] or should we call it a day and head back to the guild?", {"Go back in", "Head home"}, 1, 2)
+	UI:WaitForChoice()
+	local result = UI:ChoiceResult()
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	if result == 1 then
+		UI:WaitShowDialogue("OK,[pause=10] we'll head back into the dungeon then.")
+		UI:WaitShowDialogue("Let's go,[pause=10] " .. hero:GetDisplayName() .. "!")
+		GAME:WaitFrames(20)
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, "Nod") end)
+		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(partner, "Nod") end)
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		GAME:WaitFrames(10)
+		coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+												GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+												GROUND:MoveToPosition(hero, 140, 32, false, 1) end)	
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
+												GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+												GROUND:MoveToPosition(partner, 172, 32, false, 1) end)
+		coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then 
+												GROUND:CharAnimateTurnTo(team2, Direction.Up, 4)
+												GROUND:MoveToPosition(team2, 156, 8, false, 1) end end)
+		coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then 
+												GROUND:CharAnimateTurnTo(team3, Direction.Up, 4)
+												GROUND:MoveToPosition(team3, 188, 8, false, 1) end end)
+		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GAME:FadeOut(false, 40) end)
+
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
+		GAME:CutsceneMode(false)
+		GAME:ContinueDungeon("apricorn_grove", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+	else 
+		UI:WaitShowDialogue("OK,[pause=10] we'll call it a day and head back to the guild then.")
+		UI:WaitShowDialogue("C'mon.[pause=0] Let's head home!")
+		GAME:WaitFrames(40)
+		SOUND:FadeOutBGM(40)
+		GAME:FadeOut(false, 40)	
+		SV.ApricornGrove.InDungeon = false
+		GAME:CutsceneMode(false)
+		GAME:WaitFrames(90)
+
+		--set generic flags for generic end of day / start of next day.
+		SV.TemporaryFlags.Dinnertime = true 
+		SV.TemporaryFlags.Bedtime = true
+		SV.TemporaryFlags.MorningWakeup = true 
+		SV.TemporaryFlags.MorningAddress = true 
+
+		--Go to second floor if mission was done, else, dinner room
+		if SV.TemporaryFlags.MissionCompleted then
+			GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Escaped, "master_zone", -1, 22, 0, true, true)
+		else
+			GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Escaped, "master_zone", -1, 6, 0, true, true)
+		end		
+		
+	end
 end
 
 -------------------------------
