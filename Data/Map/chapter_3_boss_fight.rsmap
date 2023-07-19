@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.13.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -694,7 +694,7 @@
 17909611376780542444
 ]
 },
-"AssetName": "",
+"AssetName": "chapter_3_boss_fight",
 "ScriptEvents": {},
 "Music": "Boss Battle!.ogg",
 "TileSight": 0,
@@ -767,11 +767,36 @@
 "$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
 "CheckClearStatus": "map_clear_check"
 }
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "ResetTurnCounter",
+"ArgTable": "{}"
+}
 }
 ],
 "OnTurnStarts": [],
 "OnTurnEnds": [],
-"OnMapTurnEnds": [],
+"OnMapTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "IncrementTurnCounter",
+"ArgTable": "{}"
+}
+}
+],
 "OnWalks": [],
 "OnDeaths": [],
 "OnRefresh": [],
@@ -827,6 +852,7 @@
 "X": 0,
 "Y": 0
 },
+"HideMinimap": false,
 "NoRescue": false,
 "NoSwitching": false,
 "MapTurns": 0,

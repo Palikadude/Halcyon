@@ -9,6 +9,15 @@ function SINGLE_CHAR_SCRIPT.Test(owner, ownerChar, context, args)
   PrintInfo("Test")
 end
 
+function SINGLE_CHAR_SCRIPT.ResetTurnCounter(owner, ownerChar, context, args)
+	if context.User == _DUNGEON.ActiveTeam.Leader then
+  	SV.MapTurnCounter = 1
+	end
+end
+
+function SINGLE_CHAR_SCRIPT.IncrementTurnCounter(owner, ownerChar, context, args)
+  SV.MapTurnCounter = SV.MapTurnCounter + 1
+end
 
 ShopSecurityType = luanet.import_type('PMDC.Dungeon.ShopSecurityState')
 MapIndexType = luanet.import_type('RogueEssence.Dungeon.MapIndexState')

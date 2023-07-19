@@ -51,6 +51,7 @@ SV.DestinationFloorNotified = false
 SV.MonsterHouseMessageNotified = false
 SV.OutlawDefeated = false
 SV.OutlawGoonsDefeated = false
+SV.MapTurnCounter = -1
 
 --empty string or a -1 indicates that there's nothing there currently.
 --board of jobs you've actually taken.

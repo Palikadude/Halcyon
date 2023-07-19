@@ -632,6 +632,11 @@ function crooked_den_ch_3.DefeatedBoss()
 	GAME:WaitFrames(30)
 	UI:SetSpeaker(luxio)
 	UI:SetSpeakerEmotion("Pain")
+	
+	if SV.MapTurnCounter <= 5 then
+		UI:WaitShowDialogue("Th-that...[pause=0] was cheap...")
+	end
+	SV.MapTurnCounter = nil
 	UI:WaitShowDialogue("Th-this...[pause=0] isn't o-over...")
 	UI:WaitShowDialogue("Y-you haven't s-seen the last of...[pause=0] T-Team [color=#FFA5FF]Style[color]...[pause=0] Losers...")
 
