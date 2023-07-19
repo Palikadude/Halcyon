@@ -767,11 +767,36 @@
 "$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
 "CheckClearStatus": "map_clear_check"
 }
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "ResetTurnCounter",
+"ArgTable": "{}"
+}
 }
 ],
 "OnTurnStarts": [],
 "OnTurnEnds": [],
-"OnMapTurnEnds": [],
+"OnMapTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "IncrementTurnCounter",
+"ArgTable": "{}"
+}
+}
+],
 "OnWalks": [],
 "OnDeaths": [],
 "OnRefresh": [],
