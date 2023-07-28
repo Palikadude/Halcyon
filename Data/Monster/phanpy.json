@@ -1,0 +1,372 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Phanpy",
+"LocalTexts": {
+"ja": "ゴマゾウ",
+"ko": "코코리",
+"zh-hant": "小小象",
+"fr": "Phanpy",
+"de": "Phanpy",
+"es": "Phanpy",
+"it": "Phanpy",
+"ja-jp": "ゴマゾウ",
+"zh-hans": "小小象"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Long Nose Pokémon",
+"LocalTexts": {
+"ja": "ながはなポケモン",
+"ko": "긴코포켓몬",
+"zh-hant": "長鼻寶可夢",
+"fr": "Pokémon Long-Nez",
+"de": "Langrüssel",
+"es": "Pokémon Narizotas",
+"it": "Pokémon Nasone",
+"ja-jp": "ながはなポケモン",
+"zh-hans": "长鼻宝可梦"
+}
+},
+"IndexNum": 231,
+"EXPTable": "medium_fast",
+"SkillGroup1": "field",
+"SkillGroup2": "amorphous",
+"JoinRate": 35,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "donphan",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 25
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 90,
+"BaseAtk": 60,
+"BaseDef": 60,
+"BaseMAtk": 40,
+"BaseMDef": 40,
+"BaseSpeed": 40,
+"ExpYield": 66,
+"Height": 0.5,
+"Weight": 33.5,
+"Personalities": [
+0,
+1,
+2,
+3,
+8,
+9,
+11,
+16,
+24,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sandstorm"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "fissure"
+},
+{
+"Skill": "focus_energy"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "endeavor"
+},
+{
+"Skill": "ice_shard"
+},
+{
+"Skill": "head_smash"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "heavy_slam"
+},
+{
+"Skill": "play_rough"
+}
+],
+"SecretSkills": [
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "defense_curl"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "rollout"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "superpower"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "endeavor"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "earth_power"
+},
+{
+"Skill": "gunk_shot"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hyper_voice"
+},
+{
+"Skill": "last_resort"
+},
+{
+"Skill": "stealth_rock"
+}
+],
+"FormName": {
+"DefaultText": "Phanpy",
+"LocalTexts": {
+"ja": "ゴマゾウ",
+"ko": "코코리",
+"zh-hant": "小小象",
+"fr": "Phanpy",
+"de": "Phanpy",
+"es": "Phanpy",
+"it": "Phanpy",
+"ja-jp": "ゴマゾウ",
+"zh-hans": "小小象"
+}
+},
+"Temporary": false,
+"Element1": "ground",
+"Element2": "none",
+"Intrinsic1": "pickup",
+"Intrinsic2": "none",
+"Intrinsic3": "sand_veil",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "odor_sleuth"
+},
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "growl"
+},
+{
+"Level": 1,
+"Skill": "defense_curl"
+},
+{
+"Level": 6,
+"Skill": "flail"
+},
+{
+"Level": 8,
+"Skill": "mud_slap"
+},
+{
+"Level": 10,
+"Skill": "rollout"
+},
+{
+"Level": 15,
+"Skill": "natural_gift"
+},
+{
+"Level": 19,
+"Skill": "endure"
+},
+{
+"Level": 22,
+"Skill": "bulldoze"
+},
+{
+"Level": 24,
+"Skill": "slam"
+},
+{
+"Level": 28,
+"Skill": "take_down"
+},
+{
+"Level": 33,
+"Skill": "charm"
+},
+{
+"Level": 37,
+"Skill": "last_resort"
+},
+{
+"Level": 42,
+"Skill": "double_edge"
+}
+]
+}
+]
+}
+}

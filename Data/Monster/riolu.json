@@ -1,0 +1,397 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Riolu",
+"LocalTexts": {
+"ja": "リオル",
+"ko": "리오르",
+"zh-hant": "利歐路",
+"fr": "Riolu",
+"de": "Riolu",
+"es": "Riolu",
+"it": "Riolu",
+"ja-jp": "リオル",
+"zh-hans": "利欧路"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Emanation Pokémon",
+"LocalTexts": {
+"ja": "はもんポケモン",
+"ko": "파문포켓몬",
+"zh-hant": "波紋寶可夢",
+"fr": "Pokémon Émanation",
+"de": "Wellenspiel-Pokémon",
+"es": "Pokémon Emanación",
+"it": "Pokémon Emanazione",
+"ja-jp": "はもんポケモン",
+"zh-hans": "波纹宝可梦"
+}
+},
+"IndexNum": 447,
+"EXPTable": "medium_slow",
+"SkillGroup1": "undiscovered",
+"SkillGroup2": "amorphous",
+"JoinRate": 25,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "lucario",
+"Details": [
+{
+"$type": "PMDC.Data.EvoFriendship, PMDC",
+"Allies": 2
+},
+{
+"$type": "PMDC.Data.EvoItem, PMDC",
+"ItemNum": "evo_sun_ribbon"
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 40,
+"BaseAtk": 70,
+"BaseDef": 40,
+"BaseMAtk": 35,
+"BaseMDef": 40,
+"BaseSpeed": 60,
+"ExpYield": 57,
+"Height": 0.7,
+"Weight": 20.2,
+"Personalities": [
+0,
+1,
+2,
+3,
+7,
+8,
+9,
+11,
+14,
+15,
+16,
+24,
+29,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "roar"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "focus_punch"
+},
+{
+"Skill": "brick_break"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "bulk_up"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "poison_jab"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "focus_blast"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "low_sweep"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "work_up"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "power_up_punch"
+}
+],
+"SharedSkills": [
+{
+"Skill": "bite"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "high_jump_kick"
+},
+{
+"Skill": "mind_reader"
+},
+{
+"Skill": "detect"
+},
+{
+"Skill": "cross_chop"
+},
+{
+"Skill": "crunch"
+},
+{
+"Skill": "blaze_kick"
+},
+{
+"Skill": "sky_uppercut"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "vacuum_wave"
+},
+{
+"Skill": "bullet_punch"
+},
+{
+"Skill": "follow_me"
+},
+{
+"Skill": "circle_throw"
+}
+],
+"SecretSkills": [
+{
+"Skill": "ice_punch"
+},
+{
+"Skill": "thunder_punch"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "fury_cutter"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "magnet_rise"
+},
+{
+"Skill": "vacuum_wave"
+},
+{
+"Skill": "zen_headbutt"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "low_kick"
+},
+{
+"Skill": "role_play"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "drain_punch"
+},
+{
+"Skill": "dual_chop"
+},
+{
+"Skill": "focus_punch"
+}
+],
+"FormName": {
+"DefaultText": "Riolu",
+"LocalTexts": {
+"ja": "リオル",
+"ko": "리오르",
+"zh-hant": "利歐路",
+"fr": "Riolu",
+"de": "Riolu",
+"es": "Riolu",
+"it": "Riolu",
+"ja-jp": "リオル",
+"zh-hans": "利欧路"
+}
+},
+"Temporary": false,
+"Element1": "fighting",
+"Element2": "none",
+"Intrinsic1": "steadfast",
+"Intrinsic2": "inner_focus",
+"Intrinsic3": "prankster",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "foresight"
+},
+{
+"Level": 1,
+"Skill": "quick_attack"
+},
+{
+"Level": 1,
+"Skill": "endure"
+},
+{
+"Level": 6,
+"Skill": "counter"
+},
+{
+"Level": 11,
+"Skill": "force_palm"
+},
+{
+"Level": 15,
+"Skill": "feint"
+},
+{
+"Level": 19,
+"Skill": "copycat"
+},
+{
+"Level": 24,
+"Skill": "screech"
+},
+{
+"Level": 29,
+"Skill": "reversal"
+},
+{
+"Level": 47,
+"Skill": "nasty_plot"
+},
+{
+"Level": 50,
+"Skill": "final_gambit"
+}
+]
+}
+]
+}
+}

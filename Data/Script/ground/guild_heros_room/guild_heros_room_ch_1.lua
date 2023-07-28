@@ -30,7 +30,7 @@ function guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)
 			SOUND:FadeOutBGM(120)
 			GAME:FadeOut(false, 60)
 			GAME:WaitFrames(120)
-		GeneralFunctions.EndConversation(partner)
+			GeneralFunctions.EndConversation(partner)
 			guild_heros_room_ch_1.Bedtalk()
 		else
 			UI:WaitShowDialogue("OK,[pause=10] we can look around a little more.")
@@ -38,7 +38,7 @@ function guild_heros_room_ch_1.Save_Bed_Dialogue(obj, activator)
 			GAME:WaitFrames(20)
 			GeneralFunctions.PromptSaveAndQuit()
 			GeneralFunctions.EndConversation(partner)
-	end
+		end
 	else
 		GeneralFunctions.StartPartnerConversation("It's not that late yet...[pause=0] Let's look around the guild and try to meet all of the other guild members!")
 		GAME:WaitFrames(20)

@@ -1,11 +1,18 @@
-All mons use ORAS learnsets, unless they were introduced later, in which case they use the earliest learnset they have. 
+All mons use ORAS learnsets, unless they were introduced later, in which case they use the earliest learnset they have.
+For the sake of usability and balance, some starters have had their level up moves adjusted slightly (and Zorua its ability).
 
 Vulpix-A: Ice shard moved from level 10 to level 1. Powder snow removed.
-Zorua: Ability 1 Illusion changed to Keen eye.
+Zorua: Ability 1 Illusion changed to Keen eye. Now learns Feint Attack at 13 and Fury Swipes at 17 instead of the other way around.
 Cubone: Gets tackle at level 1. By level 5, its level moveset originally was only growl and tail whip, which is pretty awkward.
 Sprigatito: Custom Halcyon add. Uses SV Learnset but removes anything exclusive to later games.
 Espurr: Normally doesn't get level up moves past 25, so it's been given a mix of male and female Meowstic's moves. It's post 25 moveset is:
 	28: Charge Beam 31: Shadow Ball 35: Reflect 40: Psychic 43: Role Play 45: Signal Beam 48: Sucker Punch 50: Future Sight 53: Quick Guard
+Riolu: Learns Force Palm at 11 and Feint at 15 instead of the other way around.
+Shinx: Learns Spark at 11 and Baby Doll Eyes at 13 instead of the other way around.
+Phanpy: Now learns Mud-Slap at 8 and Bulldoze at 22.
+Yamper: Learns Spark at 15 and Roar at 20, instead of the other way around.
+Rockruff: Learns Rock Throw at 12 and Howl at 15 instead of the other way around. 
+
 
 Sandile is given a second form that wears a scarf.
 Luxio's regular portrait has been swapped out for something a bit more smug. Original portrait is now Special0.

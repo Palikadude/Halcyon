@@ -188,6 +188,126 @@
 "Comment": "",
 "SortOrder": 352
 },
+"phanpy": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Phanpy",
+"LocalTexts": {
+"ja": "ゴマゾウ",
+"ko": "코코리",
+"zh-hant": "小小象",
+"fr": "Phanpy",
+"de": "Phanpy",
+"es": "Phanpy",
+"it": "Phanpy",
+"ja-jp": "ゴマゾウ",
+"zh-hans": "小小象"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Phanpy",
+"LocalTexts": {
+"ja": "ゴマゾウ",
+"ko": "코코리",
+"zh-hant": "小小象",
+"fr": "Phanpy",
+"de": "Phanpy",
+"es": "Phanpy",
+"it": "Phanpy",
+"ja-jp": "ゴマゾウ",
+"zh-hans": "小小象"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 231
+},
+"riolu": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Riolu",
+"LocalTexts": {
+"ja": "リオル",
+"ko": "리오르",
+"zh-hant": "利歐路",
+"fr": "Riolu",
+"de": "Riolu",
+"es": "Riolu",
+"it": "Riolu",
+"ja-jp": "リオル",
+"zh-hans": "利欧路"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Riolu",
+"LocalTexts": {
+"ja": "リオル",
+"ko": "리오르",
+"zh-hant": "利歐路",
+"fr": "Riolu",
+"de": "Riolu",
+"es": "Riolu",
+"it": "Riolu",
+"ja-jp": "リオル",
+"zh-hans": "利欧路"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 447
+},
+"rockruff": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Rockruff",
+"LocalTexts": {
+"ja": "イワンコ",
+"ko": "암멍이",
+"zh-hant": "岩狗狗",
+"fr": "Rocabot",
+"de": "Wuffels",
+"es": "Rockruff",
+"it": "Rockruff",
+"ja-jp": "イワンコ",
+"zh-hans": "岩狗狗"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Rockruff",
+"LocalTexts": {
+"ja": "イワンコ",
+"ko": "암멍이",
+"zh-hant": "岩狗狗",
+"fr": "Rocabot",
+"de": "Wuffels",
+"es": "Rockruff",
+"it": "Rockruff",
+"ja-jp": "イワンコ",
+"zh-hans": "岩狗狗"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 744
+},
 "rowlet": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [
@@ -285,6 +405,46 @@
 "Released": false,
 "Comment": "",
 "SortOrder": 551
+},
+"shinx": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Shinx",
+"LocalTexts": {
+"ja": "コリンク",
+"ko": "꼬링크",
+"zh-hant": "小貓怪",
+"fr": "Lixy",
+"de": "Sheinux",
+"es": "Shinx",
+"it": "Shinx",
+"ja-jp": "コリンク",
+"zh-hans": "小猫怪"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Shinx",
+"LocalTexts": {
+"ja": "コリンク",
+"ko": "꼬링크",
+"zh-hant": "小貓怪",
+"fr": "Lixy",
+"de": "Sheinux",
+"es": "Shinx",
+"it": "Shinx",
+"ja-jp": "コリンク",
+"zh-hans": "小猫怪"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 403
 },
 "voltorb": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -391,6 +551,46 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 37
+},
+"yamper": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Yamper",
+"LocalTexts": {
+"ja": "ワンパチ",
+"ko": "멍파치",
+"zh-hant": "來電汪",
+"fr": "Voltoutou",
+"de": "Voldi",
+"es": "Yamper",
+"it": "Yamper",
+"ja-jp": "ワンパチ",
+"zh-hans": "来电汪"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Yamper",
+"LocalTexts": {
+"ja": "ワンパチ",
+"ko": "멍파치",
+"zh-hant": "來電汪",
+"fr": "Voltoutou",
+"de": "Voldi",
+"es": "Yamper",
+"it": "Yamper",
+"ja-jp": "ワンパチ",
+"zh-hans": "来电汪"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 835
 },
 "zorua": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",

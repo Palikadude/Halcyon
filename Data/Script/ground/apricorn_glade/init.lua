@@ -5,6 +5,8 @@
 ]]--
 -- Commonly included lua functions and data
 require 'common'
+require 'PartnerEssentials'
+require 'ground.apricorn_glade.apricorn_glade_ch_4'
 
 -- Package name
 local apricorn_glade = {}
@@ -22,9 +24,11 @@ local MapStrings = {}
 --Engine callback function
 function apricorn_glade.Init(map)
 
-  --This will fill the localized strings table automatically based on the locale the game is 
-  -- currently in. You can use the MapStrings table after this line!
-  MapStrings = COMMON.AutoLoadLocalizedStrings()
+	DEBUG.EnableDbgCoro()
+	print('=>> Init_apricorn_glade <<=')
+	MapStrings = COMMON.AutoLoadLocalizedStrings()
+	COMMON.RespawnAllies(true)
+	PartnerEssentials.InitializePartnerSpawn()
 
 end
 
@@ -32,7 +36,7 @@ end
 --Engine callback function
 function apricorn_glade.Enter(map)
 
-  GAME:FadeIn(20)
+  apricorn_glade.PlotScripting()
 
 end
 
@@ -54,21 +58,39 @@ end
 --Engine callback function
 function apricorn_glade.GameSave(map)
 
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 
 end
 
 ---apricorn_glade.GameLoad(map)
 --Engine callback function
 function apricorn_glade.GameLoad(map)
-
-  GAME:FadeIn(20)
-
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	apricorn_glade.PlotScripting()
 end
+
+function apricorn_glade.PlotScripting()
+	GAME:FadeIn(20)
+end 
+
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+function apricorn_glade.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+ end
 
+function apricorn_glade.Teammate2_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
+
+function apricorn_glade.Teammate3_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
 
 return apricorn_glade
 

@@ -633,8 +633,12 @@ function crooked_den_ch_3.DefeatedBoss()
 	UI:SetSpeaker(luxio)
 	UI:SetSpeakerEmotion("Pain")
 	
-	if SV.MapTurnCounter <= 5 then
-		UI:WaitShowDialogue("Th-that...[pause=0] was cheap...")
+	--special message if you completely shit on them
+	if SV.MapTurnCounter ~= nil then --nil check as a failsafe
+		if SV.MapTurnCounter <= 5 then
+			UI:WaitShowDialogue("Th-that...[pause=0] was cheap...")
+			GAME:WaitFrames(20)
+		end
 	end
 	SV.MapTurnCounter = nil
 	UI:WaitShowDialogue("Th-this...[pause=0] isn't o-over...")
@@ -655,11 +659,11 @@ function crooked_den_ch_3.DefeatedBoss()
 	
 	GAME:WaitFrames(20)
 	SOUND:PlayBGM("In the Depths of the Pit.ogg", false)
-	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 142, 138, false, 1) 
+	local coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 142, 138, false, 1) 
 												  GROUND:MoveToPosition(partner, 142, 122, false, 1)
 												  GeneralFunctions.EightWayMove(partner, 156, 104, false, 1) end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
-												  GROUND:MoveToPosition(hero, 204, 138, false, 1) 
+												  GeneralFunctions.EightWayMove(hero, 204, 138, false, 1) 
 												  GROUND:MoveToPosition(hero, 204, 122, false, 1)
 												  GeneralFunctions.EightWayMove(hero, 188, 104, false, 1) end)
 	TASK:JoinCoroutines({coro1, coro2})

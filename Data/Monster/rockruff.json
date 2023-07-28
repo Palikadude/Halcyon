@@ -1,0 +1,246 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Rockruff",
+"LocalTexts": {
+"ja": "イワンコ",
+"ko": "암멍이",
+"zh-hant": "岩狗狗",
+"fr": "Rocabot",
+"de": "Wuffels",
+"es": "Rockruff",
+"it": "Rockruff",
+"ja-jp": "イワンコ",
+"zh-hans": "岩狗狗"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Puppy Pokémon",
+"LocalTexts": {
+"ja": "こいぬポケモン",
+"ko": "강아지포켓몬",
+"zh-hant": "小狗寶可夢",
+"fr": "Pokémon Chiot",
+"de": "Welpen-Pokémon",
+"es": "Pokémon Perrito",
+"it": "Pokémon Cagnolino",
+"ja-jp": "こいぬポケモン",
+"zh-hans": "小狗宝可梦"
+}
+},
+"IndexNum": 744,
+"EXPTable": "medium_fast",
+"SkillGroup1": "field",
+"SkillGroup2": "amorphous",
+"JoinRate": 42,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "lycanroc",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 25
+},
+{
+"$type": "PMDC.Data.EvoFormDusk, PMDC"
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 7,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 45,
+"BaseAtk": 65,
+"BaseDef": 40,
+"BaseMAtk": 30,
+"BaseMDef": 40,
+"BaseSpeed": 60,
+"ExpYield": 56,
+"Height": 0.5,
+"Weight": 9.2,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "rock_polish"
+},
+{
+"Skill": "stone_edge"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "echoed_voice"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "thrash"
+},
+{
+"Skill": "crush_claw"
+},
+{
+"Skill": "sucker_punch"
+},
+{
+"Skill": "thunder_fang"
+},
+{
+"Skill": "fire_fang"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Rockruff",
+"LocalTexts": {
+"ja": "イワンコ",
+"ko": "암멍이",
+"zh-hant": "岩狗狗",
+"fr": "Rocabot",
+"de": "Wuffels",
+"es": "Rockruff",
+"it": "Rockruff",
+"ja-jp": "イワンコ",
+"zh-hans": "岩狗狗"
+}
+},
+"Temporary": false,
+"Element1": "rock",
+"Element2": "none",
+"Intrinsic1": "keen_eye",
+"Intrinsic2": "vital_spirit",
+"Intrinsic3": "steadfast",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 4,
+"Skill": "sand_attack"
+},
+{
+"Level": 7,
+"Skill": "bite"
+},
+{
+"Level": 12,
+"Skill": "rock_throw"
+},
+{
+"Level": 15,
+"Skill": "howl"
+},
+{
+"Level": 18,
+"Skill": "odor_sleuth"
+},
+{
+"Level": 23,
+"Skill": "rock_tomb"
+},
+{
+"Level": 26,
+"Skill": "roar"
+},
+{
+"Level": 29,
+"Skill": "stealth_rock"
+},
+{
+"Level": 34,
+"Skill": "rock_slide"
+},
+{
+"Level": 37,
+"Skill": "scary_face"
+},
+{
+"Level": 40,
+"Skill": "crunch"
+},
+{
+"Level": 45,
+"Skill": "rock_climb"
+},
+{
+"Level": 48,
+"Skill": "stone_edge"
+}
+]
+}
+]
+}
+}

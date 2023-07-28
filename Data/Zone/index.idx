@@ -354,6 +354,7 @@
 "crooked_den",
 "first_core_location",
 "apricorn_grove_entrance",
+"apricorn_glade",
 "testmap",
 "test_grounds"
 ],
@@ -554,7 +555,8 @@
 "CountedFloors": 8,
 "Rogue": 0,
 "Grounds": [
-"apricorn_grove_entrance"
+"apricorn_grove_entrance",
+"apricorn_glade"
 ],
 "Maps": [
 [

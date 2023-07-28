@@ -135,6 +135,7 @@ function personality_test.CharacterSelect()
 					RogueEssence.Dungeon.MonsterID("vulpix", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("vulpix", 1, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("meowth", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("meowth", 1, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("machop", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("cubone", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("eevee", 0, "normal", Gender.Genderless),
@@ -175,7 +176,7 @@ function personality_test.CharacterSelect()
 					--RogueEssence.Dungeon.MonsterID("noibat", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rowlet", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("litten", 0, "normal", Gender.Genderless),
-					--RogueEssence.Dungeon.MonsterID("popplio", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("popplio", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("rockruff", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("fomantis", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("scorbunny", 0, "normal", Gender.Genderless),
@@ -190,7 +191,7 @@ function personality_test.CharacterSelect()
 		 ["squirtle"] = "icy_wind", --icy wind, squirtle		
 		 ["pikachu"] = "disarming_voice", --disarming voice, pikachu
 		 ["vulpix"] = "tail_slap", --tail slap, vulpix and vulpix-a
-		 ["meowth"] = "foul_play", --foul play, meowth
+		 ["meowth"] = "foul_play", --foul play, meowth and meowth-a
 		 ["machop"] = "bullet_punch", --bullet punch, machop
 		 ["cubone"] = "double_kick", --double kick, cubone 
 		 ["eevee"] = "double_kick", --double kick, eevee 
@@ -231,7 +232,7 @@ function personality_test.CharacterSelect()
 		 --["noibat"] = "tailwind", --tailwind, noibat
 		 ["rowlet"] = "confuse_ray", --Confuse Ray, rowlet
 		 ["litten"] = "revenge", --revenge, litten 
-		 --["popplio"] = "charm", --popplio, charm
+		 ["popplio"] = "charm", --popplio, charm
 		 ["rockruff"] = "thunder_fang", --thunder fang, rockruff
 		 --["fomantis"] = "weather_ball", --weather ball, fomantis
 		 ["scorbunny"] = "assurance", --assurance, scorbunny

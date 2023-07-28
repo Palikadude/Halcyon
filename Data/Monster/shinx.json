@@ -1,0 +1,342 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Shinx",
+"LocalTexts": {
+"ja": "コリンク",
+"ko": "꼬링크",
+"zh-hant": "小貓怪",
+"fr": "Lixy",
+"de": "Sheinux",
+"es": "Shinx",
+"it": "Shinx",
+"ja-jp": "コリンク",
+"zh-hans": "小猫怪"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Flash Pokémon",
+"LocalTexts": {
+"ja": "せんこうポケモン",
+"ko": "섬광포켓몬",
+"zh-hant": "閃光寶可夢",
+"fr": "Pokémon Flash",
+"de": "Flacker-Pokémon",
+"es": "Pokémon Flash",
+"it": "Pokémon Baleno",
+"ja-jp": "せんこうポケモン",
+"zh-hans": "闪光宝可梦"
+}
+},
+"IndexNum": 403,
+"EXPTable": "medium_slow",
+"SkillGroup1": "field",
+"SkillGroup2": "amorphous",
+"JoinRate": 69,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "luxio",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 15
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 45,
+"BaseAtk": 65,
+"BaseDef": 34,
+"BaseMAtk": 40,
+"BaseMDef": 34,
+"BaseSpeed": 45,
+"ExpYield": 53,
+"Height": 0.5,
+"Weight": 9.5,
+"Personalities": [
+0,
+1,
+2,
+3,
+8,
+9,
+11,
+12,
+13,
+16,
+24,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "volt_switch"
+},
+{
+"Skill": "wild_charge"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "take_down"
+},
+{
+"Skill": "quick_attack"
+},
+{
+"Skill": "howl"
+},
+{
+"Skill": "thunder_fang"
+},
+{
+"Skill": "ice_fang"
+},
+{
+"Skill": "fire_fang"
+},
+{
+"Skill": "night_slash"
+},
+{
+"Skill": "double_kick"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "fake_tears"
+},
+{
+"Skill": "eerie_impulse"
+}
+],
+"SecretSkills": [
+{
+"Skill": "swift"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "fury_cutter"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "magnet_rise"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "shock_wave"
+}
+],
+"FormName": {
+"DefaultText": "Shinx",
+"LocalTexts": {
+"ja": "コリンク",
+"ko": "꼬링크",
+"zh-hant": "小貓怪",
+"fr": "Lixy",
+"de": "Sheinux",
+"es": "Shinx",
+"it": "Shinx",
+"ja-jp": "コリンク",
+"zh-hans": "小猫怪"
+}
+},
+"Temporary": false,
+"Element1": "electric",
+"Element2": "none",
+"Intrinsic1": "rivalry",
+"Intrinsic2": "intimidate",
+"Intrinsic3": "guts",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 5,
+"Skill": "leer"
+},
+{
+"Level": 9,
+"Skill": "charge"
+},
+{
+"Level": 11,
+"Skill": "spark"
+},
+{
+"Level": 13,
+"Skill": "baby_doll_eyes"
+},
+{
+"Level": 17,
+"Skill": "bite"
+},
+{
+"Level": 21,
+"Skill": "roar"
+},
+{
+"Level": 25,
+"Skill": "swagger"
+},
+{
+"Level": 29,
+"Skill": "thunder_fang"
+},
+{
+"Level": 33,
+"Skill": "crunch"
+},
+{
+"Level": 37,
+"Skill": "scary_face"
+},
+{
+"Level": 41,
+"Skill": "discharge"
+},
+{
+"Level": 45,
+"Skill": "wild_charge"
+}
+]
+}
+]
+}
+}

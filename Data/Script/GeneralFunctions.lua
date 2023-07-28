@@ -267,6 +267,14 @@ function GeneralFunctions.MoveCharAndCamera(chara, x, y, run, charSpeed, cameraF
 
 end
 
+--easy speed control on camera movements
+function GeneralFunctions.MoveCamera(x, y, speed)
+	if speed == nil then speed = 2 end
+	
+	local cameraFrames = GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, x, y, speed)
+	GAME:MoveCamera(camX, camY, cameraFrames, false)
+end
+
 --old movetoposition behavior
 --move diagonially, then on one axis to get to the destination (2 movements)
 --only moves in 8 directions 
