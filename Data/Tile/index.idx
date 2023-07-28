@@ -1,0 +1,78 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"stairs_back_down": {
+"Name": {
+"DefaultText": "Stairs",
+"LocalTexts": {
+"fr": "Escaliers",
+"de": "Treppe",
+"es": "Escaleras",
+"ko": "계단",
+"zh-hans": "楼梯"
+}
+},
+"Released": true,
+"Comment": "Back Down",
+"SortOrder": 0
+},
+"stairs_back_up": {
+"Name": {
+"DefaultText": "Stairs",
+"LocalTexts": {
+"fr": "Escaliers",
+"de": "Treppe",
+"es": "Escaleras",
+"ko": "계단",
+"zh-hans": "楼梯"
+}
+},
+"Released": true,
+"Comment": "Back Up",
+"SortOrder": 0
+},
+"stairs_exit_up": {
+"Name": {
+"DefaultText": "Exit Stairs",
+"LocalTexts": {
+"fr": "Escaliers de sortie",
+"zh-hans": "出口楼梯"
+}
+},
+"Released": true,
+"Comment": "Up",
+"SortOrder": 0
+},
+"stairs_go_down": {
+"Name": {
+"DefaultText": "Stairs",
+"LocalTexts": {
+"fr": "Escaliers",
+"de": "Treppe",
+"es": "Escaleras",
+"ko": "계단",
+"zh-hans": "楼梯"
+}
+},
+"Released": true,
+"Comment": "Down",
+"SortOrder": 0
+},
+"stairs_go_up": {
+"Name": {
+"DefaultText": "Stairs",
+"LocalTexts": {
+"fr": "Escaliers",
+"de": "Treppe",
+"es": "Escaleras",
+"ko": "계단",
+"zh-hans": "楼梯"
+}
+},
+"Released": true,
+"Comment": "Up",
+"SortOrder": 0
+}
+}
+}

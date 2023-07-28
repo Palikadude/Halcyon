@@ -467,7 +467,7 @@ function SINGLE_CHAR_SCRIPT.SpawnOutlaw(owner, ownerChar, context, args)
 		local curr_mission = SV.TakenBoard[mission_num]
 		if curr_mission.Completion == COMMON.MISSION_INCOMPLETE then
 			local origin = _DATA.Save.ActiveTeam.Leader.CharLoc
-			local radius = 2
+			local radius = 3
 			SpawnOutlaw(origin, radius, mission_num)
 		end
 	end
@@ -536,6 +536,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFleeStairsCheck(owner, ownerChar, context, arg
 			GAME:WaitFrames(20)
 			UI:ResetSpeaker()
 			UI:WaitShowDialogue(targetName .. " escaped...")
+			curr_mission.BackReference = COMMON.FLEE_BACKREFERENCE
 			SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
 			GAME:WaitFrames(20)
 		end
@@ -713,8 +714,26 @@ function SINGLE_CHAR_SCRIPT.BeginnerLessonHeldItemCheck(owner, ownerChar, contex
 	end
 end
 
-function SINGLE_CHAR_SCRIPT.RelicForestFlipStairs(owner, ownerChar, context, args)
+function SINGLE_CHAR_SCRIPT.CheckOngoingMissions(owner, ownerChar, context, args)
+	local curr_zone = _ZONE.CurrentZoneID
+	local curr_segment = _ZONE.CurrentMapID.Segment
+	local curr_floor = GAME:GetCurrentFloor().ID + 1
+	for _, mission in ipairs(SV.TakenBoard) do
+		if mission.BackReference ~= COMMON.FLEE_BACKREFERENCE and mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and curr_floor == mission.Floor and curr_zone == mission.Zone and curr_segment == mission.Segment then
+			UI:ResetSpeaker()
+			UI:ChoiceMenuYesNo("You currently have an ongoing mission on this floor.\nDo you still want to proceed?")
+			UI:WaitForChoice()
+			local continue = UI:ChoiceResult()
+			if not continue then
+				context.CancelState.Cancel = true
+				context.TurnCancel.Cancel = true
+				break
+			end
+		end
+	end
+end
 
+function SINGLE_CHAR_SCRIPT.RelicForestFlipStairs(owner, ownerChar, context, args)
 	if context.User == _DUNGEON.ActiveTeam.Leader then
 		local map = _ZONE.CurrentMap
 		for xx = 0, map.Width - 1, 1 do

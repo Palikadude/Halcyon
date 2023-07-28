@@ -1,0 +1,99 @@
+﻿{
+"Version": "0.7.13.0",
+"Object": {
+"$type": "RogueEssence.Data.TileData, RogueEssence",
+"Name": {
+"DefaultText": "Exit Stairs",
+"LocalTexts": {
+"fr": "Escaliers de sortie",
+"zh-hans": "出口楼梯"
+}
+},
+"Desc": {
+"DefaultText": "Stairs leading to the dungeon's exit.",
+"LocalTexts": {
+"fr": "Escaliers menant à la sortie du donjon.",
+"zh-hans": "通向迷宫出口的楼梯。"
+}
+},
+"Released": true,
+"Comment": "Up",
+"Anim": {
+"AnimIndex": "Stairs_Up",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Offset": {
+"X": 0,
+"Y": 0
+},
+"Layer": 0,
+"BlockItem": true,
+"StepType": 2,
+"MinimapIcon": {
+"X": 4,
+"Y": 0
+},
+"MinimapColor": "0, 255, 255, 255",
+"LandedOnTiles": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.RevealSecretEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.AskLeaderEvent, PMDC"
+}
+}
+],
+"InteractWithTiles": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "CheckOngoingMissions",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.NextFloorEvent, PMDC"
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.SwitchMapEvent, PMDC"
+}
+}
+]
+}
+}

@@ -2053,7 +2053,7 @@ end
 function JobMenu:DeleteJob()
 	local mission = SV.TakenBoard[self.job_number]
 	local back_ref = mission.BackReference
-	if back_ref ~= -1 and back_ref ~= nil then
+	if back_ref > 0 and back_ref ~= nil then
 		local outlaw_arr = {
 			COMMON.MISSION_TYPE_OUTLAW,
 			COMMON.MISSION_TYPE_OUTLAW_ITEM,

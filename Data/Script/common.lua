@@ -106,6 +106,11 @@ COMMON.MISSION_BOARD_MISSION = 0
 COMMON.MISSION_BOARD_OUTLAW = 1
 COMMON.MISSION_BOARD_TAKEN = 2
 
+
+-- Used in checks for flee outlaws when ongoing missions and returning back to the same floor
+-- It might be better just to have a flag on each mission that marks if it's "valid" but this works
+COMMON.FLEE_BACKREFERENCE = -2
+
 COMMON.PERSONALITY = { }
 COMMON.PERSONALITY[0] = { -- partner
   FULL = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11},
