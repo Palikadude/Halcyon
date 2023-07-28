@@ -1153,7 +1153,8 @@ function metano_town_ch_3.Mawile_Action(chara, activator)
 		UI:WaitShowDialogue("They're pretty strange,[pause=10] but I bet they'll have some useful items for adventurers like you!")
 	end	
 	GeneralFunctions.EndConversation(chara)
-end 
+end 
+
 function metano_town_ch_3.Nidorina_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Can you believe my parents kept me inside while that brat was missing?", "Determined", false)
 	--too long with no nicknames
