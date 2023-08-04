@@ -3,7 +3,7 @@ Initial public demo release.
 
 
 
-V 0.3.1
+V 0.4.0
 - Improved outlaw spawning code from Trio-
 - Fixed Domi Blend displaying a belly fill message (it should do that silently)
 - Fixed Apple Cider NOT displaying a belly fill message (it should say your belly was filled)
@@ -21,3 +21,7 @@ V 0.3.1
 - Hunger seeds in Crooked Cavern have been replaced with Decoy seeds. These should help with the unique challenges that dungeon provides.
 - Slightly reduced the first boss leader's stats.
 - Changed some starter movesets around a bit to allow certain mons to get STAB moves earlier on. Check pokemon changes file for details.
+- Added a QoL message that warns you when leaving a floor with an incomplete job.
+- Improve Fleeing Outlaw AI to be less cheesable.
+- The range at which certain enemies are allowed to use moves from has been reduced. This should prevent unfair sniping from certain enemies early on in the game.
+- Added scarf sprites for Mudkip. It seems I had accidentially passed over him when I first added all the scarf pokemon I had sprites for.

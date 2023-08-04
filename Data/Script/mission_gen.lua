@@ -47,6 +47,7 @@ MISSION_GEN.DUNGEON_DIFFICULTY[""] = "F"--just in case lul
 MISSION_GEN.DUNGEON_DIFFICULTY["relic_forest"] = "E"--missions shouldn't be given for relic forest 
 MISSION_GEN.DUNGEON_DIFFICULTY["illuminant_riverbed"] = "D"
 MISSION_GEN.DUNGEON_DIFFICULTY["crooked_cavern"] = "C"
+MISSION_GEN.DUNGEON_DIFFICULTY["apricorn_grove"] = "B"
 
 
 --order of difficulties. 
@@ -96,6 +97,7 @@ MISSION_GEN.INCOMPLETE = 0
 MISSION_GEN.EXPECTED_LEVEL = {}
 MISSION_GEN.EXPECTED_LEVEL["illuminant_riverbed"] = 8
 MISSION_GEN.EXPECTED_LEVEL["crooked_cavern"] = 10
+MISSION_GEN.EXPECTED_LEVEL["apricorn_grove"] = 12
 
 
 MISSION_GEN.TITLES =  {
@@ -1094,6 +1096,7 @@ MISSION_GEN.DUNGEON_ORDER[""] = 99999--empty missions should get shoved towards 
 MISSION_GEN.DUNGEON_ORDER["relic_forest"] = 1
 MISSION_GEN.DUNGEON_ORDER["illuminant_riverbed"] = 2
 MISSION_GEN.DUNGEON_ORDER["crooked_cavern"] = 3
+MISSION_GEN.DUNGEON_ORDER["apricorn_grove"] = 4
 
 
 
@@ -1103,6 +1106,7 @@ MISSION_GEN.STAIR_TYPE[""] = ""
 MISSION_GEN.STAIR_TYPE["relic_forest"] = ""
 MISSION_GEN.STAIR_TYPE["illuminant_riverbed"] = ""
 MISSION_GEN.STAIR_TYPE["crooked_cavern"] = "B"
+MISSION_GEN.STAIR_TYPE["apricorn_grove"] = ""
 
 
 

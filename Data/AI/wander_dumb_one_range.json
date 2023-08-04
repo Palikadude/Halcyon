@@ -1,0 +1,46 @@
+﻿{
+"Version": "0.7.14.0",
+"Object": {
+"$type": "RogueEssence.Data.AITactic, RogueEssence",
+"Name": {
+"DefaultText": "Dumb Wander",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"ID": "wander_dumb",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+}
+]
+}
+}

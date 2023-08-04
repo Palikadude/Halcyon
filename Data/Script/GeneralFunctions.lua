@@ -272,7 +272,7 @@ function GeneralFunctions.MoveCamera(x, y, speed)
 	if speed == nil then speed = 2 end
 	
 	local cameraFrames = GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, x, y, speed)
-	GAME:MoveCamera(camX, camY, cameraFrames, false)
+	GAME:MoveCamera(x, y, cameraFrames, false)
 end
 
 --old movetoposition behavior
@@ -791,19 +791,20 @@ end
 
 
 
-function GeneralFunctions.Recoil(chara, anim, height, duration, sound)
+function GeneralFunctions.Recoil(chara, anim, height, duration, sound, emote)
 
 	anim = anim or 'Hurt'
 	height = height or 10
 	duration = duration or 10
 	if sound == nil then sound = true end
+	if emote == nil then emote = true end
 	
-	GROUND:CharSetEmote(chara, "shock", 1)
-	SOUND:PlayBattleSE('EVT_Emote_Startled')
+	if emote then GROUND:CharSetEmote(chara, "shock", 1) end
+	if sound then SOUND:PlayBattleSE('EVT_Emote_Startled') end
 	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex(anim)
 	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 	GAME:WaitFrames(duration)
-	GROUND:CharSetEmote(chara, "", 0)
+	if emote then GROUND:CharSetEmote(chara, "", 0) end
 	
 end
 

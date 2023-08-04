@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -7,7 +7,8 @@
 "LocalTexts": {
 "fr": "Explograine",
 "de": "Plosivsamen",
-"ko": "폭렬의씨앗"
+"ko": "폭렬의씨앗",
+"zh-hans": "爆炸之种"
 }
 },
 "Desc": {
@@ -15,14 +16,15 @@
 "LocalTexts": {
 "fr": "Aliment qui permet au Pokémon de cracher des flammes puissantes et dangereuses.",
 "de": "Ein Samen, durch welches eine Explosion auf dem Feld vor dem Pokémon verursacht wird, welche Schaden verursacht.",
-"ko": "먹으면 바로 앞에 폭발을 일으켜 데미지를 준다."
+"ko": "먹으면 바로 앞에 폭발을 일으켜 데미지를 준다.",
+"zh-hans": "一种种子，食用后在前方释放爆炸，造成伤害。"
 }
 },
 "Released": true,
 "Comment": "",
 "Sprite": "Seed_Red",
 "Icon": 4,
-"SortCategory": 0,
+"SortCategory": 4,
 "Price": 20,
 "Rarity": 0,
 "MaxStack": 0,
@@ -36,11 +38,13 @@
 "$type": "PMDC.Dungeon.SeedState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 1,
 "TileEmitter": {
@@ -246,27 +250,16 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.RemoveTerrainEvent, PMDC",
-"TileTypes": [
-"wall"
-],
-"RemoveSound": "",
-"RemoveAnim": {
-"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
-"LocHeight": 0
-}
-}
+"$type": "PMDC.Dungeon.RemoveTerrainStateEvent, PMDC",
+"States": [
+{
+"assembly": "PMDC, Version=0.7.14.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.WallTerrainState"
 },
 {
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.RemoveTerrainEvent, PMDC",
-"TileTypes": [
-"grass"
+"assembly": "PMDC, Version=0.7.14.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.FoliageTerrainState"
+}
 ],
 "RemoveSound": "",
 "RemoveAnim": {
@@ -300,7 +293,8 @@
 },
 "Msg": {
 "Key": null
-}
+},
+"AffectTarget": true
 }
 },
 {

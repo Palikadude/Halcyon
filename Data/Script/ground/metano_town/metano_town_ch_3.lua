@@ -1201,7 +1201,7 @@ function metano_town_ch_3.Manectric_Action(chara, activator)
 end
 
 function metano_town_ch_3.Camerupt_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "I still cannot thank you too enough for saving my baby boy!", "Happy")
+	GeneralFunctions.StartConversation(chara, "I still cannot thank you two enough for saving my baby boy!", "Happy")
 	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Numel") .. " and I will always be grateful for what you've done for us!")
 	GeneralFunctions.EndConversation(chara)
 end

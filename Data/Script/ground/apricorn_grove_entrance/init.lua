@@ -179,6 +179,7 @@ function apricorn_grove_entrance.ComeOutFront()
 
 		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 		GAME:CutsceneMode(false)
+		GAME:WaitFrames(20)
 		GAME:ContinueDungeon("apricorn_grove", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else 
 		UI:WaitShowDialogue("OK,[pause=10] we'll call it a day and head back to the guild then.")

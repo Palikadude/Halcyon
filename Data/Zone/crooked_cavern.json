@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -1562,7 +1562,7 @@
 },
 "SpecifiedSkills": [],
 "Intrinsic": "",
-"Tactic": "wander_dumb",
+"Tactic": "wander_dumb_two_range",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
@@ -1595,7 +1595,7 @@
 "smack_down"
 ],
 "Intrinsic": "",
-"Tactic": "wander_dumb",
+"Tactic": "wander_dumb_two_range",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
@@ -1935,10 +1935,10 @@
 "SpecifiedSkills": [
 "harden",
 "bind",
-"rock_tomb"
+"rock_throw"
 ],
 "Intrinsic": "",
-"Tactic": "wander_dumb",
+"Tactic": "wander_dumb_one_range",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
@@ -1978,7 +1978,7 @@
 "block"
 ],
 "Intrinsic": "",
-"Tactic": "wander_dumb",
+"Tactic": "wander_dumb_two_range",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {

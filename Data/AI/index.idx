@@ -23,6 +23,28 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"wander_dumb_one_range": {
+"$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
+"Assignable": false,
+"Name": {
+"DefaultText": "One Range Dumb Wander",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"wander_dumb_two_range": {
+"$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
+"Assignable": false,
+"Name": {
+"DefaultText": "Two Range Dumb Wander",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
 }
 }
 }
