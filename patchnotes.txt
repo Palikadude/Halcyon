@@ -20,6 +20,8 @@ V 0.4.0
 - Time Gear Remix has been replaced with an original composition by Minemaker0430. Thank you again!
 - Hunger seeds in Crooked Cavern have been replaced with Decoy seeds. These should help with the unique challenges that dungeon provides.
 - Slightly reduced the first boss leader's stats.
+- Significantly reduced a certain Hypnosis user's Speed stat. This will make her more likely to miss her Hypnosis as well as easier to land attacks on.
+- Adjusted a certain moron's stat EVs. This ends up giving him less Atk and Sp. Atk, but more Speed, Def. and Sp. Def.
 - Changed some starter movesets around a bit to allow certain mons to get STAB moves earlier on. Check pokemon changes file for details.
 - Added a QoL message that warns you when leaving a floor with an incomplete job.
 - Improve Fleeing Outlaw AI to be less cheesable.

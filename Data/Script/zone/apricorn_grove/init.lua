@@ -21,6 +21,8 @@ end
 
 function apricorn_grove.EnterSegment(zone, rescuing, segmentID, mapID)
 	
+	--without this check, entering the apricorn grove grounds (entrance/glade) after officially entering the dungeon
+	--would call the EnterSegment callback and trigger the InDungeon flag to become true.
 	if segmentID == 0 then
 		SV.ApricornGrove.InDungeon = true
 	end

@@ -9,6 +9,7 @@ require 'PartnerEssentials'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_1'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_2'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_3'
+require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_4'
 
 -- Package name
 local guild_guildmasters_room = {}

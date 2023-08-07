@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -762,7 +762,11 @@
 "Min": 9,
 "Max": 11
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"night_shade",
+"leer",
+"peck"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
@@ -776,6 +780,11 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },

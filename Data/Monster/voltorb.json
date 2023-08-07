@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.MonsterData, RogueEssence",
 "Name": {
@@ -332,7 +332,7 @@
 "BaseMAtk": 55,
 "BaseMDef": 55,
 "BaseSpeed": 100,
-"ExpYield": 660,
+"ExpYield": 66,
 "Height": 5.0,
 "Weight": 13.0,
 "Personalities": [

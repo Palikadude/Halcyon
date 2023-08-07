@@ -30,6 +30,10 @@ function apricorn_glade_ch_4.FirstArrivalCutscene()
 		GROUND:TeleportTo(team3, 316, 608, Direction.Up)
 	end
 	
+	
+	--Flag that the glade has been reached. This sort of stuff is usually done at the end of scripts, but it's wiser to put it up here.
+	SV.Chapter4.ReachedGlade = true
+	
 	GAME:CutsceneMode(true)
 	UI:ResetSpeaker()
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
@@ -447,14 +451,14 @@ function apricorn_glade_ch_4.PickApricorn()
 		GAME:FadeIn(40)
 		GAME:WaitFrames(20)
 		
-		UI:WaitShowDialogue("Alright![pause=0] I can get a good grip on this Apricorn now!")
+		UI:WaitShowDialogue("Yeah![pause=0] I can get a good grip on this Apricorn now!")
 		GAME:WaitFrames(20)
 		
 		apricorn_glade_ch_4.TowerWobble(partner, stack_order)
 		GAME:WaitFrames(20)
 		GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 		UI:SetSpeakerEmotion("Surprised")
-		UI:WaitShowDialogue("Woah![pause=0] Careful,[pause=10] everyone![pause=0] Just try to hold steady!")
+		UI:WaitShowDialogue("Careful,[pause=10] everyone![pause=0] Just try to hold steady!")
 		GAME:WaitFrames(20)
 		
 
@@ -464,7 +468,7 @@ function apricorn_glade_ch_4.PickApricorn()
 			GeneralFunctions.HeroDialogue(hero, "(I just hope everyone below me is doing alright.)", "Worried")
 		elseif LTBL(stack_order[2]).Importance == "Hero" then
 			GeneralFunctions.HeroDialogue(hero, "(Urgh...[pause=0] This is tough...)", "Pain")
-			GeneralFunctions.HeroDialogue(hero, "(I just hope we can hold out long enough for " .. partner:GetDisplayName() .. " to grab one of those Apricorns...)", "Pain")
+			GeneralFunctions.HeroDialogue(hero, "(I just hope we can hold out long enough for " .. partner:GetDisplayName() .. " to grab that Apricorn...)", "Pain")
 		else
 			GeneralFunctions.HeroDialogue(hero, "(Easy for you to say...[pause=0] You're not on the bottom of the totem...)", "Dizzy")
 		end
@@ -502,7 +506,7 @@ function apricorn_glade_ch_4.PickApricorn()
 			GeneralFunctions.HeroDialogue(hero, "(Urf...[pause=0] It's getting tough to keep balanced...)", "Pain")
 			GeneralFunctions.HeroDialogue(hero, "(I don't think I can hold my spot on the totem much longer...)", "Pain")
 		else
-			GeneralFunctions.HeroDialogue(hero, "(I can't hold everyone up anymore...[pause=0] We're...[pause=0] about to fall over...)", "Dizzy")
+			GeneralFunctions.HeroDialogue(hero, "(I can't hold everyone up anymore...[pause=0] We're...[pause=0] going to fall over...)", "Dizzy")
 		end
 		
 		UI:SetSpeaker(partner)
@@ -643,7 +647,7 @@ function apricorn_glade_ch_4.PickApricorn()
 		
 		UI:SetSpeakerEmotion("Sigh")
 		SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
-		UI:WaitShowDialogue("Phew![pause=0] Looks like everyone's okay after that tumble.")
+		UI:WaitShowDialogue("Looks like everyone's okay after that tumble.[pause=0] That's a relief.")
 		
 		GAME:WaitFrames(20)
 		GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
@@ -662,10 +666,11 @@ function apricorn_glade_ch_4.PickApricorn()
 		GROUND:CharTurnToCharAnimated(partner, hero, 4)
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		GROUND:CharSetEmote(partner, "glowing", 0)
-		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "! Everyone![pause=0] We got the Apricorn!")
+		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "! Everyone![pause=0] We got the big Apricorn!")
 		GROUND:CharSetEmote(partner, "", 0)
-		UI:WaitShowDialogue("Let's bring it back to the Guildmaster![pause=0] I bet he'll be so impressed by the size of this thing!")
+		UI:WaitShowDialogue("Let's bring it back to the Guildmaster![pause=0] He'll be amazed by the size of this thing!")
 
+		SV.ApricornGrove.InDungeon = false
 		SV.Chapter4.FinishedGrove = true
 		GAME:WaitFrames(30)
 		SOUND:FadeOutBGM(60)
@@ -746,10 +751,11 @@ function apricorn_glade_ch_4.TurnBack()
 		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
 		GAME:CutsceneMode(false)
 		GAME:WaitFrames(20)
+		--go back in at floor 8
 		GAME:ContinueDungeon("apricorn_grove", 0, 7, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	else 
 		UI:WaitShowDialogue("OK,[pause=10] we'll go back to the guild then.")
-		UI:WaitShowDialogue("Alright.[pause=0] Let's get back home!")
+		UI:WaitShowDialogue("Alright.[pause=0] Let's head home!")
 		GAME:WaitFrames(40)
 		SOUND:FadeOutBGM(40)
 		GAME:FadeOut(false, 40)	

@@ -206,10 +206,10 @@ function guild_dining_room.Dinnertime(generic)
 	GROUND:TeleportTo(audino, MRKR('Audino').Position.X, MRKR('Audino').Position.Y, MRKR('Audino').Direction)
 	GROUND:TeleportTo(snubbull, MRKR('Snubbull').Position.X, MRKR('Snubbull').Position.Y, MRKR('Snubbull').Direction)
 
-	--during second half of chapter 3, girafarig and breloom are absent.
+	--during second half of chapter 3 and all of chapter 4, girafarig and breloom are absent
 	--This is kind of a hacky way of doing this, but it works
 	--todo? Handle this better instead of a hardcode here
-	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss then
+	if SV.ChapterProgression.Chapter == 4 or (SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss) then
 		GROUND:TeleportTo(breloom, 640, 280, Direction.Up)
 		GROUND:TeleportTo(girafarig, 640, 312, Direction.Up)
 		GROUND:Hide("Food_Breloom")

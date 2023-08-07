@@ -292,6 +292,24 @@ function DebugTools:OnUpgrade()
  if SV.Chapter3.PostBossSpokeToCranidos == nil then SV.Chapter3.PostBossSpokeToCranidos = false end
  
  
+ --for pre-chapter 4 saves
+ if SV.Chapter4 == nil then SV.Chapter4 = {} end
+
+ if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
+ if SV.Chapter4.FinishedAssemblyIntro == nil then SV.Chapter4.FinishedAssemblyIntro = false end
+ if SV.Chapter4.FinishedSignpostCutscene == nil then SV.Chapter4.FinishedSignpostCutscene = false end
+ if SV.Chapter4.EnteredGrove == nil then SV.Chapter4.EnteredGrove = false end
+ if SV.Chapter4.BacktrackedOutGroveYet == nil then SV.Chapter4.BacktrackedOutGroveYet = false end
+ if SV.Chapter4.ReachedGlade == nil then SV.Chapter4.ReachedGlade = false end
+ if SV.Chapter4.FinishedGrove == nil then SV.Chapter4.FinishedGrove = false end
+ if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
+ if SV.Chapter4.FinishedBedtimeCutscene == nil then SV.Chapter4.FinishedBedtimeCutscene = false end
+
+ if SV.ApricornGrove == nil then SV.ApricornGrove = {} end
+ 
+ if SV.ApricornGrove.InDungeon == nil then SV.ApricornGrove.InDungeon = false end
+ 
+ 
  --Fix old chapter 2 and before saves that have bad cafe variables
  --Curse you sunkern
  if type(SV.metano_cafe.CafeSpecial) == "number" then SV.metano_cafe.CafeSpecial = -1 SV.metano_cafe.BoughtSpecial = false end
@@ -309,7 +327,7 @@ function DebugTools:OnUpgrade()
 end	
  
  --set current story dungeon in case current one is not accurate
- if SV.ChapterProgression.Chapter == 3 then
+ if SV.ChapterProgression.Chapter == 3 and not SV.Chapter3.DefeatedBoss then
  	SV.ChapterProgression.CurrentStoryDungeon = "crooked_cavern" -- Crooked Cavern
  end 
  

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -122,19 +122,31 @@
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 1,
 "PositionPattern": 0,
-"IQ": 36
+"IQ": 36,
+"AttackRange": 4,
+"StatusRange": 4,
+"SelfStatusRange": 3
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 }
 ]
 },
@@ -347,11 +359,17 @@
 "$type": "PMDC.Dungeon.BossPlan, PMDC",
 "AttackPattern": 4,
 "PositionPattern": 2,
-"IQ": 253
+"IQ": 253,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 253
+"IQ": 253,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 }
 ]
 },
@@ -396,7 +414,7 @@
 "DefBonus": 0,
 "MAtkBonus": 0,
 "MDefBonus": 0,
-"SpeedBonus": 3,
+"SpeedBonus": 0,
 "BaseSkills": [
 {
 "SkillNum": "fake_out",
@@ -564,19 +582,31 @@
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 1,
 "PositionPattern": 0,
-"IQ": 36
+"IQ": 36,
+"AttackRange": 4,
+"StatusRange": 4,
+"SelfStatusRange": 3
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 164
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 }
 ]
 },
@@ -621,11 +651,11 @@
 "Level": 9,
 "EXP": 0,
 "MaxHPBonus": 12,
-"AtkBonus": 2,
-"DefBonus": -1,
-"MAtkBonus": 2,
-"MDefBonus": -1,
-"SpeedBonus": -2,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
 "BaseSkills": [
 {
 "SkillNum": "absorb",

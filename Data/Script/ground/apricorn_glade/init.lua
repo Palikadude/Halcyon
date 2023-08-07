@@ -70,9 +70,28 @@ function apricorn_glade.GameLoad(map)
 end
 
 function apricorn_glade.PlotScripting()
-	GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 4 then 
+		if not SV.Chapter4.ReachedGlade then--first time reaching the glade
+			apricorn_glade.FirstArrivalCutscene()
+		elseif not SV.Chapter4.FinishedGrove then
+			apricorn_glade.SubsequentArrivalCutscene()--came back after failing to get the apricorn
+		else 
+			--generic end
+			apricorn_glade.GenericEnding()
+		end
+	else
+		--generic end
+		apricorn_glade.GenericEnding()
+	end
 end 
 
+
+
+
+--No cutscene to play, play a generic ending saying there's nothing here.
+function apricorn_glade.GenericEnding()
+	GAME:FadeIn(20)
+end
 
 -------------------------------
 -- Entities Callbacks

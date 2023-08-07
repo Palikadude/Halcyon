@@ -82,7 +82,7 @@ function apricorn_grove_entrance.PlotScripting()
 			apricorn_grove_entrance_ch_4.FailedNoFullTeamReattempt()--failed; made it to the end, but couldn't get the apricorn
 		elseif not SV.Chapter4.FinishedGrove and SV.ApricornGrove.InDungeon and not SV.Chapter4.BacktrackedOutGroveYet then
 			apricorn_grove_entrance_ch_4.FirstComeOutFront()--Came out the front from the dungeon for the first time
-		elseif not SV.Chapter4.FinishedGrove and SV.ApricornGrove.InDungeon and SV.Chapter4.BacktrackedOutGroveYet then
+		elseif SV.ApricornGrove.InDungeon and SV.Chapter4.BacktrackedOutGroveYet then
 			apricorn_grove_entrance.ComeOutFront()--generic come out front from dungeon
 		else
 			GAME:FadeIn(20)--this should never happen in actual gameplay, but useful for debug warping here

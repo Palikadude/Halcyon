@@ -77,6 +77,7 @@ function guild_heros_room.CheckTriggerEvent()
 		SV.ChapterProgression.CurrentStoryDungeon = "apricorn_grove" 
 		SV.Dojo.NewMazeUnlocked = true
 		SV.metano_cafe.NewDrinkUnlocked = true
+		GAME:UnlockDungeon("apricorn_grove")
 		GAME:UnlockDungeon("flying_maze")--unlock new mazes at ledian dojo
 		GAME:UnlockDungeon("rock_maze")--unlock new mazes at ledian dojo
 		

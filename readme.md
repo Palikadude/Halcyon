@@ -13,10 +13,19 @@ A final length of 8-12 chapters is currently planned.
 
 If you're having trouble installing the game, or have any questions, comments, feedback, etc., please join the [PMDO discord](https://discord.gg/37VKndMsr2) and talk with Palika there! The dedicated channel for Halcyon discussion is #quest-halcyon.
 
+
+
+## FAQ
+1. I'm having a weird audio stuttering issue! How can I fix it?
+* If you're encountering this issue, you'll need to run PMDO with the following command line argument to force it to use a different audio driver: -audiodriver:wasapi
+* If you don't know how to this, look in the Halcyon Mods folder and put the audio-wasapi.bat file into the same folder as your PMDO.exe, then use the .bat file to boot the game instead of the .exe file.
+
+
+
 ## Credits
 * **Palika** — mod author. scripting, writing, balancing, mapping, etc. (all non-engine work, except where other credit is given)  
 * **Audino** — for making the engine, adding features that I needed for the game. His work cannot be understated as without him this mod would not exist  
-* **Trio-** — Assisted with mission_gen in-dungeon scripting, other scripting features/enhancements  
+* **Trio-** — Mission_gen in-dungeon scripting, other scripting features/enhancements/quality of lifes 
 
 ### Music credits:
 * Minemaker0430 - Anima Core theme

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.MonsterData, RogueEssence",
 "Name": {
@@ -287,16 +287,20 @@
 "Skill": "pursuit"
 },
 {
-"Level": 9,
+"Level": 8,
 "Skill": "fake_tears"
 },
 {
+"Level": 10,
+"Skill": "thief"
+},
+{
 "Level": 13,
-"Skill": "feint_attack"
+"Skill": "fury_swipes"
 },
 {
 "Level": 17,
-"Skill": "fury_swipes"
+"Skill": "feint_attack"
 },
 {
 "Level": 21,

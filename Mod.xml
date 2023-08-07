@@ -17,5 +17,10 @@
       <Namespace>starter_mod</Namespace>
       <Relationship>Incompatible</Relationship>
     </RelatedMod>
+    <RelatedMod>
+      <UUID>14301507-4C59-4EA0-9494-8673FA46131D</UUID>
+      <Namespace>visible_monster_houses</Namespace>
+      <Relationship>Incompatible</Relationship>
+    </RelatedMod>
   </Relationships>
 </Header>

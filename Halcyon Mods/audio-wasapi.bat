@@ -1,0 +1,1 @@
+PMDO.exe -audiodriver:wasapi
