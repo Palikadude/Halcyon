@@ -268,7 +268,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("It's a bit concerning that the spring doesn't seem to be working...")
-	UI:WaitShowDialogue("We should probably let " .. CharacterEssentials.GetCharacterName("Noctowl") .. " know about this when we get back.")
+	UI:WaitShowDialogue("We should let " .. CharacterEssentials.GetCharacterName("Noctowl") .. " know about this when we get back.")
 	
 	GAME:WaitFrames(20)
 	

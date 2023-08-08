@@ -435,7 +435,7 @@ function guild_second_floor_ch_1.Event_Trigger_1_Touch(obj, activator)
 	UI:WaitShowDialogue("I know you might want to look around town...")
 	UI:WaitShowDialogue("But since we just joined,[pause=10] I don't think we should leave the tree tonight.")
 	if SV.Chapter1.MetSnubbull and SV.Chapter1.MetZigzagoon and SV.Chapter1.MetCranidosMareep and SV.Chapter1.MetBreloomGirafarig and SV.Chapter1.MetAudino then
-		UI:WaitShowDialogue("Plus it's getting late...[pause=0] We should probably head to bed now actually.")
+		UI:WaitShowDialogue("Plus it's getting late...[pause=0] We should go to bed now actually.")
 		UI:WaitShowDialogue("But we can look around a bit more if you want!")
 	else 
 		UI:WaitShowDialogue("Let's go look around the guild some more.[pause=0] I think there's more guildmates for us to meet!")
@@ -594,7 +594,7 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 			UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 			GROUND:CharTurnToCharAnimated(hero, partner, 4)
 			GAME:WaitFrames(12)
-			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
+			UI:WaitShowDialogue("We should head back to our room and hit the hay for the night.")
 			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
 		end
 		
@@ -908,7 +908,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 			UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 			GROUND:CharTurnToCharAnimated(hero, partner, 4)
 			GAME:WaitFrames(12)
-			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
+			UI:WaitShowDialogue("We should head back to our room and hit the hay for the night.")
 			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
 		end
 		GROUND:CharEndAnim(cranidos)

@@ -177,7 +177,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 			UI:WaitShowDialogue("Hey " .. hero:GetDisplayName() .. "...[pause=0] It's getting pretty late...")
 			GROUND:CharTurnToCharAnimated(hero, partner, 4)
 			GAME:WaitFrames(12)
-			UI:WaitShowDialogue("We should probably head back to our room and hit the hay for the night.")
+			UI:WaitShowDialogue("We should head back to our room and hit the hay for the night.")
 			UI:WaitShowDialogue("Let's head there whenever you're ready,[pause=10] " .. hero:GetDisplayName() .. ".")
 		end
 	else

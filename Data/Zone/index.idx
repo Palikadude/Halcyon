@@ -2,6 +2,43 @@
 "Version": "0.7.14.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"apricorn_grove": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 8,
+"Rogue": 0,
+"Grounds": [
+"apricorn_grove_entrance",
+"apricorn_glade"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+],
+"Name": {
+"DefaultText": "Apricorn Grove",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "4th dungeon of the game.",
+"SortOrder": 0
+},
 "backup_master_zone": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
 "NoEXP": false,
@@ -539,43 +576,6 @@
 },
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
-"SortOrder": 0
-},
-"apricorn_grove": {
-"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
-"Level": -1,
-"LevelCap": false,
-"TeamRestrict": false,
-"TeamSize": -1,
-"MoneyRestrict": false,
-"BagRestrict": -1,
-"BagSize": -1,
-"Rescues": 0,
-"CountedFloors": 8,
-"Rogue": 0,
-"Grounds": [
-"apricorn_grove_entrance",
-"apricorn_glade"
-],
-"Maps": [
-[
-0,
-1,
-2,
-3,
-4,
-5,
-6,
-7
-]
-],
-"Name": {
-"DefaultText": "Apricorn Grove",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "4th dungeon of the game.",
 "SortOrder": 0
 }
 }
