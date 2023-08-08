@@ -15,7 +15,7 @@ function apricorn_grove.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_apricorn_grove")
   --Mark this as the last dungeon entered.
-  SV.TemporaryFlags.LastDungeonEntered = 60
+  SV.TemporaryFlags.LastDungeonEntered = 'apricorn_grove'
   
 end
 

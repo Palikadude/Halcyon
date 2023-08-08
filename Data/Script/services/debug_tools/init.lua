@@ -239,7 +239,7 @@ function DebugTools:OnUpgrade()
  if SV.TemporaryFlags.MorningWakeup == nil then SV.TemporaryFlags.MorningWakeup = false end
  if SV.TemporaryFlags.MorningAddress == nil then SV.TemporaryFlags.MorningAddress = false end 
  if SV.TemporaryFlags.JustWokeUp == nil then SV.TemporaryFlags.JustWokeUp = false end 
- if SV.TemporaryFlags.LastDungeonEntered == nil then SV.TemporaryFlags.LastDungeonEntered = false end
+ if SV.TemporaryFlags.LastDungeonEntered == nil then SV.TemporaryFlags.LastDungeonEntered = '' end
  if SV.TemporaryFlags.MissionCompleted == nil then SV.TemporaryFlags.MissionCompleted = false end
  if SV.TemporaryFlags.PostJobsGround == nil then SV.TemporaryFlags.PostJobsGround = '' end
  if SV.TemporaryFlags.AudinoSummonCount == nil then SV.TemporaryFlags.AudinoSummonCount = 0 end
@@ -295,6 +295,7 @@ function DebugTools:OnUpgrade()
  --for pre-chapter 4 saves
  if SV.Chapter4 == nil then SV.Chapter4 = {} end
 
+ if SV.Chapter4.ShowedTitleCard == nil then SV.Chapter4.ShowedTitleCard = false end
  if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
  if SV.Chapter4.FinishedAssemblyIntro == nil then SV.Chapter4.FinishedAssemblyIntro = false end
  if SV.Chapter4.FinishedSignpostCutscene == nil then SV.Chapter4.FinishedSignpostCutscene = false end

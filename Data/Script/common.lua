@@ -1162,7 +1162,11 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
       end
     end
   end
-  SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+  
+  --play music if zone current map exists. It seems to me that current map check would otherwise fail if we're in a dungeon's ground temporarily (for example, coming out the front of Apricorn Grove)
+  if _ZONE.CurrentMap ~= nil then 
+	SOUND:PlayBGM(_ZONE.CurrentMap.Music, true)
+  end 
 end
 
 

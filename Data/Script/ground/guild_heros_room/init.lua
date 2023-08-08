@@ -74,24 +74,24 @@ function guild_heros_room.CheckTriggerEvent()
 		SV.ChapterProgression.Chapter = 4
 		SV.ChapterProgression.UnlockedAssembly = true
 		SV.TemporaryFlags.MorningAddress = false--unflag the generic address so the special one can play 
+		SV.TemporaryFlags.MorningWakeup = false--unflag the generic wakeup so the card can play out properly
 		SV.ChapterProgression.CurrentStoryDungeon = "apricorn_grove" 
 		SV.Dojo.NewMazeUnlocked = true
 		SV.metano_cafe.NewDrinkUnlocked = true
 		GAME:UnlockDungeon("apricorn_grove")
 		GAME:UnlockDungeon("flying_maze")--unlock new mazes at ledian dojo
 		GAME:UnlockDungeon("rock_maze")--unlock new mazes at ledian dojo
-		
+		GAME:WaitFrames(60)
 		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
-		guild_heros_room_ch_4.ShowTitleCard()
 	end
 	
 	--todo: remove this once enough of chapter 4 is built out.
 	--Marking the end of the demo. In the future, this will trigger chapter 4. 
 	--Triggers after going to bed, at the end of chapter 3, once bronze rank (or better, somehow) is obtained.
-	if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
-		GAME:WaitFrames(90)
-		guild_heros_room_ch_3.DemoThanks()
-	end
+	--if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
+	--	GAME:WaitFrames(90)
+	--	guild_heros_room_ch_3.DemoThanks()
+	--end
 		
 end
 
@@ -129,6 +129,12 @@ function guild_heros_room.PlotScripting()
 				guild_heros_room_ch_3.PostOutlawBedtalkFirstHalf()
 			elseif SV.Chapter3.DefeatedBoss and not SV.Chapter3.FinishedRootScene then
 				guild_heros_room_ch_3.PostOutlawBedtalkSecondHalf()
+			else
+				GAME:FadeIn(20)
+			end
+		elseif SV.ChapterProgression.Chapter == 4 then
+			if not SV.Chapter4.ShowedTitleCard then 
+				guild_heros_room_ch_4.ShowTitleCard()
 			else
 				GAME:FadeIn(20)
 			end

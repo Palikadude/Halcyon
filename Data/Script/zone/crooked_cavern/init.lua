@@ -16,7 +16,7 @@ function crooked_cavern.Init(zone)
 	--	local g = GAME:RemovePlayerGuest(i-1)
 	--end
   --Mark this as the last dungeon entered.
-  SV.TemporaryFlags.LastDungeonEntered = 57
+  SV.TemporaryFlags.LastDungeonEntered = 'crooked_cavern'
 
 end
 

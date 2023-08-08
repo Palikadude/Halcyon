@@ -10,7 +10,7 @@ function relic_forest.Init(zone)
   PrintInfo("=>> Init_relic_forest")
    
   --Mark this as the last dungeon entered.
-  SV.TemporaryFlags.LastDungeonEntered = 50
+  SV.TemporaryFlags.LastDungeonEntered = 'relic_forest'
 
 end
 

@@ -120,7 +120,7 @@ function guild_third_floor_lobby.PostAddressScripting()
 			guild_third_floor_lobby.GenericMissions()
 		elseif SV.Chapter3.EncounteredBoss then 
 			guild_third_floor_lobby_ch_3.FailedCavernAfterBoss()--You made it to Team Style but haven't beaten them yet. Partner is mad about them. 
-		elseif SV.TemporaryFlags.LastDungeonEntered ~= 57 then 
+		elseif SV.TemporaryFlags.LastDungeonEntered ~= 'crooked_cavern' then 
 			guild_third_floor_lobby_ch_3.NotEnteredCavern() --Latest dungeon attempt was not the cavern and you haven't seen Team Style yet.
 		else
 			guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()--Your last dungeon was the cavern but you've not made it to Team Style yet.

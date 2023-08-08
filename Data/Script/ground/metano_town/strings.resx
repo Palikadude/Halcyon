@@ -882,11 +882,14 @@
   </data>
   <data name="Assembly_Info_005" xml:space="preserve">
     <value>Just know that sometimes only the two of you will be allowed on an adventure!</value>
-  </data>
+  </data>  
   <data name="Assembly_Info_006" xml:space="preserve">
-    <value>Oh,[pause=10] you can also ring the signpost by the café to call me to use the assembly!</value>
+    <value>By the way,[pause=10] Pokémon names colored like [color=#00FF00]this[color] instead of [color=#00FFFF]this[color] are species you've already recruited!</value>
   </data>
   <data name="Assembly_Info_007" xml:space="preserve">
+    <value>Oh,[pause=10] one more thing![pause=0] You can also ring the signpost by the café to call me to use the assembly!</value>
+  </data>
+  <data name="Assembly_Info_008" xml:space="preserve">
     <value>My e-ears are really sensitive,[pause=10] so I'll hear the bell and come running!</value>
   </data>
 </root>

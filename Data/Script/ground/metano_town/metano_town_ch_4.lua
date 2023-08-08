@@ -6,18 +6,20 @@ require 'CharacterEssentials'
 metano_town_ch_4 = {}
 
 function metano_town_ch_4.SetupGround()
+	GROUND:Hide('Swap_Owner')
+	GROUND:Hide('Swap')
 	
-		--trigger for audino showing you the signpost/cafe stuff
-		if not SV.Chapter4.FinishedSignpostCutscene then
-			local signBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
-																RogueElements.Rect(1368, 584, 8, 56),
-																RogueElements.Loc(0, 0), 
-																true, 
-																"Event_Trigger_1")
-			
-			signBlock:ReloadEvents()
-			GAME:GetCurrentGround():AddTempObject(signBlock)
-		end
+	--trigger for audino showing you the signpost/cafe stuff
+	if not SV.Chapter4.FinishedSignpostCutscene then
+		local signBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+															RogueElements.Rect(1368, 584, 8, 56),
+															RogueElements.Loc(0, 0), 
+															true, 
+															"Event_Trigger_1")
+		
+		signBlock:ReloadEvents()
+		GAME:GetCurrentGround():AddTempObject(signBlock)
+	end
 		
 	GAME:FadeIn(20)
 end
@@ -155,7 +157,8 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 	
 	
 	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
-											GROUND:MoveToPosition(audino, 1152, 608, false, 1) 
+											GROUND:MoveToPosition(audino, 1248, 608, false, 1) 
+											GROUND:MoveToPosition(audino, 1152, 704, false, 1) 
 											GAME:GetCurrentGround():RemoveTempChar(audino) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(48) GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) GROUND:CharAnimateTurnTo(partner, Direction.Left, 4) end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(56) GROUND:CharAnimateTurnTo(hero, Direction.Left, 4) end)

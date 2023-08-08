@@ -22,6 +22,7 @@ function guild_heros_room_ch_4.ShowTitleCard()
 												  UI:WaitHideBG(20) end)
 	TASK:JoinCoroutines({coro1, coro2})
 	
-	GAME:WaitFrames(120)
-
+	GAME:WaitFrames(60)
+	SV.Chapter4.ShowedTitleCard = true
+	guild_heros_room_helper.Morning(true)
 end

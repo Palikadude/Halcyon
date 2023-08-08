@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.14.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -151,6 +151,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -158,10 +162,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -816,6 +816,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -823,10 +827,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -1481,6 +1481,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -1488,10 +1492,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -2146,6 +2146,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -2153,10 +2157,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -2811,6 +2811,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -2818,10 +2822,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -3476,6 +3476,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 2,
+"Max": 4
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -3483,10 +3487,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 2,
-"Max": 4
-},
 "Combos": [
 {
 "Spawn": {
@@ -4141,6 +4141,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 1,
+"Max": 3
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -4148,10 +4152,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 1,
-"Max": 3
-},
 "Combos": [
 {
 "Spawn": {
@@ -4531,8 +4531,8 @@
 "Spawn": {
 "$type": "RogueElements.ContextSpawner`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.Dungeon.InvItem, RogueEssence]], RogueElements",
 "Amount": {
-"Min": 5,
-"Max": 7
+"Min": 6,
+"Max": 8
 }
 }
 }
@@ -4806,6 +4806,10 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.CombineGridRoomStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"MergeRate": {
+"Min": 1,
+"Max": 3
+},
 "Filters": [],
 "RoomComponents": [
 {
@@ -4813,10 +4817,6 @@
 "Connection": 1
 }
 ],
-"MergeRate": {
-"Min": 1,
-"Max": 3
-},
 "Combos": [
 {
 "Spawn": {
@@ -5261,8 +5261,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 5,
-"Max": 7
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -6438,7 +6438,10 @@
 "Max": 11
 },
 "SpecifiedSkills": [
-"poison_powder"
+"poison_powder",
+"disable",
+"supersonic",
+"tackle"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -6471,7 +6474,10 @@
 "Max": 12
 },
 "SpecifiedSkills": [
-"poison_powder"
+"poison_powder",
+"disable",
+"supersonic",
+"confusion"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",

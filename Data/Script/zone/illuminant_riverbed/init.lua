@@ -9,7 +9,7 @@ function illuminant_riverbed.Init(zone)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> Init_illuminant_riverbed")
   --Mark this as the last dungeon entered.
-  SV.TemporaryFlags.LastDungeonEntered = 53
+  SV.TemporaryFlags.LastDungeonEntered = 'illuminant_riverbed'
   
 end
 

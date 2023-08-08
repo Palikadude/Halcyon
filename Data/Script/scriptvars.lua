@@ -567,7 +567,7 @@ SV.TemporaryFlags =
 	MorningWakeup = false,--used to indicate whether to do a generic morning wakeup call or not when entering the heros room
 	MorningAddress = false,--used to indicate whether to do a generic morning address
 	JustWokeUp = false,--Did the duo JUST wake up on a new day?
-	LastDungeonEntered = -1,--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
+	LastDungeonEntered = '',--Used to mark what dungeon the player was in last. Dojo dungeons don't count.This variable is set by init scripts for relevant zones.
 	MissionCompleted = false,--used to mark if there are any pending missions to hand in.
 	PostJobsGround = '',--used to mark the ground to go to after handing in randomly generated missions if the default choice of generic dinnertime is not wanted.
 	PriorMapSetting = nil,--Used to mark what the player had their minimap setting whenever the game needs to temporarily change it to something else.
@@ -700,6 +700,7 @@ SV.Chapter3 =
 
 SV.Chapter4 = 
 {
+	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 4 title card.
 	FinishedFirstAddress = false,--Did you get the address regarding your mission for the chapter and the expedition?
 	FinishedAssemblyIntro = false,--did audino teach you about her assembly?
 	FinishedSignpostCutscene = false,--Did audino show you her signpost for the assembly by the cafe?

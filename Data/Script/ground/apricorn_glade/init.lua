@@ -72,9 +72,9 @@ end
 function apricorn_glade.PlotScripting()
 	if SV.ChapterProgression.Chapter == 4 then 
 		if not SV.Chapter4.ReachedGlade then--first time reaching the glade
-			apricorn_glade.FirstArrivalCutscene()
+			apricorn_glade_ch_4.FirstArrivalCutscene()
 		elseif not SV.Chapter4.FinishedGrove then
-			apricorn_glade.SubsequentArrivalCutscene()--came back after failing to get the apricorn
+			apricorn_glade_ch_4.SubsequentArrivalCutscene()--came back after failing to get the apricorn
 		else 
 			--generic end
 			apricorn_glade.GenericEnding()
