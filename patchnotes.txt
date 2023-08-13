@@ -10,10 +10,10 @@ V 0.4.0
 - Added a new UI to the cafe drink system that should be much more convenient for players.
 - Added a new drink to the cafe that unlocks in Chapter 4. Endurance Tonic costs a Reviver Seed and a Chesto Berry and gives the consumer 5 turns of Endure status, preventing their HP from going below 1. Unlike the usual endure effect given by the move, this one is not cleared by moving.
 - Two new training mazes unlock in Chapter 4, Flying and Rock.
-- Lars will now sell colored and plain Apricorns once Chapter 4 begins. He'll sell one guaranteed a day. 
-- Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4 begins.
+- Lars will now sell colored and plain Apricorns once Chapter 4's dungeon is cleared. He'll sell one guaranteed a day. 
+- Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4's dungeon is completed.
 - Fixed Water Maze's element being Fire and not Water.
-- Espurr, Meowth-A, Popplio, and Tepig are added as starters. Check pokemon changes file to see some changes to Espurr's level up table.
+- Espurr, Meowth-A, Popplio, Charcadet, and Tepig are added as starters. Check pokemon changes file to see some changes to Espurr's and Charcadet's level up table.
 - Fixed a bug where a client pokemon with temporary water privileges (i.e. water sport) being beamed out while on water caused an error.
 - Adjusted logic for turning towards a specified location, this should make certain scripted character turns better at looking in the proper direction when turning to look at a location.
 - Fixed a number of minor typos.

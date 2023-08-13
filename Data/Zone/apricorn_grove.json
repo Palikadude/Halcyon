@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.15.1",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -64,8 +64,37 @@
 "SpawnTable": [
 {
 "Item1": {
-"Item": "food_apple",
-"Species": "applin"
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_brown",
+"Species": "voltorb"
 },
 "Item2": {
 "BaseForm": {
@@ -114,8 +143,37 @@
 "SpawnTable": [
 {
 "Item1": {
-"Item": "food_apple",
-"Species": "applin"
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_brown",
+"Species": "voltorb"
 },
 "Item2": {
 "BaseForm": {
@@ -157,8 +215,37 @@
 "SpawnTable": [
 {
 "Item1": {
-"Item": "food_apple",
-"Species": "applin"
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_brown",
+"Species": "voltorb"
 },
 "Item2": {
 "BaseForm": {
@@ -875,6 +962,259 @@
 {
 "Key": {
 "str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_green",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_green",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_green",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
+}
+},
+{
+"Key": {
+"str": [
 -5
 ]
 },
@@ -1535,6 +1875,259 @@
 "TileSight": 0,
 "CharSight": 0,
 "ClampCamera": false
+}
+},
+{
+"Key": {
+"str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_red",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_red",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_red",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
 }
 },
 {
@@ -2205,6 +2798,259 @@
 {
 "Key": {
 "str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_white",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_white",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_white",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
+}
+},
+{
+"Key": {
+"str": [
 -5
 ]
 },
@@ -2865,6 +3711,259 @@
 "TileSight": 0,
 "CharSight": 1,
 "ClampCamera": false
+}
+},
+{
+"Key": {
+"str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_yellow",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_yellow",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_yellow",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
 }
 },
 {
@@ -3535,6 +4634,259 @@
 {
 "Key": {
 "str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_blue",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_blue",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_blue",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
+}
+},
+{
+"Key": {
+"str": [
 -5
 ]
 },
@@ -4200,6 +5552,259 @@
 {
 "Key": {
 "str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_purple",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_purple",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_purple",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
+}
+},
+{
+"Key": {
+"str": [
 -5
 ]
 },
@@ -4697,8 +6302,8 @@
 "Spawn": {
 "$type": "RogueElements.ContextSpawner`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.Dungeon.InvItem, RogueEssence]], RogueElements",
 "Amount": {
-"Min": 6,
-"Max": 8
+"Min": 5,
+"Max": 7
 }
 }
 }
@@ -4860,6 +6465,259 @@
 "TileSight": 0,
 "CharSight": 1,
 "ClampCamera": false
+}
+},
+{
+"Key": {
+"str": [
+-6
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Effect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemBattleEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_black",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_black",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"OnPickups": [
+{
+"Key": {
+"str": [
+-1
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.FakeItemEvent, PMDC",
+"SpawnTable": [
+{
+"Item1": {
+"Item": "apricorn_plain",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+},
+{
+"Item1": {
+"Item": "apricorn_black",
+"Species": "voltorb"
+},
+"Item2": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+}
+}
+]
+}
+}
+],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+}
 }
 },
 {
@@ -6331,7 +8189,7 @@
 "SpawnRates": {
 "nodes": [
 {
-"Item": 100,
+"Item": 1,
 "Range": {
 "Min": 0,
 "Max": 8
@@ -6611,7 +8469,7 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "exeggcute",
+"Species": "mime_jr",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -6620,7 +8478,12 @@
 "Min": 10,
 "Max": 11
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"double_slap",
+"light_screen",
+"meditate",
+"confusion"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
@@ -6642,7 +8505,7 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "exeggcute",
+"Species": "mime_jr",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -6651,7 +8514,12 @@
 "Min": 11,
 "Max": 12
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"double_slap",
+"light_screen",
+"meditate",
+"confusion"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],

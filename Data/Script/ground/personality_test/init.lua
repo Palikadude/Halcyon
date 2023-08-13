@@ -182,7 +182,8 @@ function personality_test.CharacterSelect()
 					RogueEssence.Dungeon.MonsterID("scorbunny", 0, "normal", Gender.Genderless),
 					--RogueEssence.Dungeon.MonsterID("wooloo", 0, "normal", Gender.Genderless),
 					RogueEssence.Dungeon.MonsterID("yamper", 0, "normal", Gender.Genderless),
-					RogueEssence.Dungeon.MonsterID("sprigatito", 0, "normal", Gender.Genderless)}
+					RogueEssence.Dungeon.MonsterID("sprigatito", 0, "normal", Gender.Genderless),
+					RogueEssence.Dungeon.MonsterID("charcadet", 0, "normal", Gender.Genderless)}
 					
 	--not all moves listed are egg moves. Sometimes, egg move choices are too over or under powered and so something else had to be chosen				
 	local egg_move_list = 
@@ -238,7 +239,8 @@ function personality_test.CharacterSelect()
 		 ["scorbunny"] = "assurance", --assurance, scorbunny
 		 --["wooloo"] = "counter", --counter, wooloo
 		 ["yamper"] = "flame_charge", --flame charge, yamper
-		 ["sprigatito"] = "copycat"} --sprigatito, copycat
+		 ["sprigatito"] = "copycat", --sprigatito, copycat
+		 ["charcadet"] = "destiny_bond"} --charcadet, destiny bond
 	
 	local continue = false 
 	local hero_choice = -1

@@ -182,7 +182,7 @@ end
 function metano_town_ch_1.GrowlitheRunInside()
 	local chara = CH('Growlithe')
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
-	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Right, 694, 924, 1, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Right, 694, 924, 1, 2, 0)
 	GROUND:MoveToPosition(chara, 712, 924, true, 4)
 	GROUND:MoveToPosition(chara, 712, 876, true, 4)
 	GROUND:Hide('Growlithe')	
@@ -191,7 +191,7 @@ end
 function metano_town_ch_1.PartnerPushedBack()
 	local chara = CH('Teammate1')
 	GROUND:CharSetEmote(chara, "shock", 1)
-	GROUND:AnimateToPosition(chara, 'Hurt', Direction.Down, 696, 900, 1, 3)
+	GROUND:AnimateToPosition(chara, 'Hurt', Direction.Down, 696, 900, 1, 3, 0)
 	GROUND:CharEndAnim(chara)
 	GAME:WaitFrames(6)
 	--GROUND:EntTurn(chara, Direction.Down)
@@ -508,7 +508,7 @@ function metano_town_ch_1.GrowlitheReturn()
 	GROUND:MoveToPosition(chara, 712, 924, false, 2)
 	GROUND:MoveToPosition(chara, 694, 924, false, 2)
 	SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
-	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Left, 662, 924, 1, 2)
+	GROUND:AnimateToPosition(chara, 'Rumble', Direction.Left, 662, 924, 1, 2, 0)
 	GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
 end 
 

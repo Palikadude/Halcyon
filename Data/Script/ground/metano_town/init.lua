@@ -551,8 +551,8 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	
 
 
-	--Apricorns become available chapter 4
-	if SV.ChapterProgression.Chapter >= 4 then
+	--Apricorns become available once Apricorn Grove is cleared
+	if SV.Chapter4.FinishedGrove then
 		table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
 		table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
 		table.insert(stock, GeneralFunctions.WeightedRandom(apricorn_stock))

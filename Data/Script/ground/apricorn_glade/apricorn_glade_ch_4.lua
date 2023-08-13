@@ -7,7 +7,7 @@ apricorn_glade_ch_4 = {}
 
 
 --first time you reach the end
---BEWARE ONIX
+--This whole thing is a mess, honestly. This was a cursed idea from the beginning. Too many exceptions and bullshit to deal with.
 function apricorn_glade_ch_4.FirstArrivalCutscene()
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
@@ -226,26 +226,50 @@ function apricorn_glade_ch_4.FirstArrivalCutscene()
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	GAME:WaitFrames(20)
-	--TODO: IMPROVE WHEN ABLE TO
+	--ActionPointTypes = Shadow, Center, Head, LeftHand, RightHand
+	partner.CollisionDisabled = true
+	--GROUND:AnimateInDirection(partner, "Walk", Direction.Up, Direction.Down, 12, 1, 1)
+	--GAME:WaitFrames(10)
+	GROUND:MoveInDirection(partner, Direction.Up, 3, false, 1)
 	
-	coro1 = TASK:BranchCoroutine(function() SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx. Maybe find a better one if possible?
-											GROUND:AnimateInDirection(partner, "LeapForth", Direction.Up, Direction.Up, 13, 1, 2)
-											GROUND:TeleportTo(partner, 284, 188, Direction.Up) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(14)
-											GROUND:CharSetEmote(hero, "shock", 1) end)
-	coro3 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Hup!", 30) end)
-	TASK:JoinCoroutines({coro1, coro2, coro3})
-	
+	--LocHeight is the character's height relative to their shadow
+	local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
+	local frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 0, Direction.Up, partner_anim, false)
+  
+	local hero_center = GROUND:CharGetAnimPoint(hero, RogueEssence.Content.ActionPointType.Center)
+	local hero_shadow = GROUND:CharGetAnimPoint(hero, RogueEssence.Content.ActionPointType.Shadow)
+	local hero_shoulders = hero_shadow.Y - hero_center.Y + 6 -- an approximation of their "shoulders"
+	coro1 = TASK:BranchCoroutine(function() SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx
+											GROUND:AnimateInDirection(partner, "Hop", Direction.Up, Direction.Up, 15, 1, 1)
+											frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 23, Direction.Up, partner_anim, false)
+											--Mouth gives inconsistent results, center + an amount seems more consistent.
+											GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 1, 1, 1, hero_shoulders)
+											GROUND:CharSetEmote(hero, "shock", 1)
+											--GROUND:CharSetAction(partner, RogueEssence.Ground.FrameGroundAction(partner.Position, partner.LocHeight, Direction.Up, partner_anim, 0))
+											end)
+	coro2 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Hup!", 30) end)
+	TASK:JoinCoroutines({coro1, coro2})
+
 	GAME:WaitFrames(60)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Hmm...[pause=0] It's still too far away.")
 	
-	--todo: improve
 	GAME:WaitFrames(20)
 	SOUND:PlayBattleSE('_UNK_EVT_010')
-	GROUND:AnimateInDirection(partner, "Walk", Direction.Up, Direction.Down, 24, 1, 2)
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
-	
+	--jumping off. Did my best to give it the look of a parabola, but...
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 5, 1, 1, hero_shoulders + 6)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders+6, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 9, 1, 1, hero_shoulders + 6)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders+6, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 13, 1, 1, hero_shoulders)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 19, 1, 1, 0)
+
+	coro1 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(partner, "Walk", Direction.Up, Direction.Down, 12, 1, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})
+
 	--GROUND:CharSetAction(partner, RogueEssence.Ground.HopGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex('None'), 16, 16))
 	--GROUND:MoveToPosition(partner, 284, 188, false, 2)
 	
@@ -257,6 +281,131 @@ function apricorn_glade_ch_4.FirstArrivalCutscene()
 	
 	
 end 
+
+function apricorn_glade_ch_4.AnimationTest()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GAME:CutsceneMode(true)
+	GROUND:TeleportTo(hero, 284, 204, Direction.Up)
+	GROUND:TeleportTo(partner, 284, 228, Direction.Up)
+	--ActionPointTypes = Shadow, Center, Head, LeftHand, RightHand
+	partner.CollisionDisabled = true
+	--GROUND:AnimateInDirection(partner, "Walk", Direction.Up, Direction.Down, 12, 1, 1)
+	--GAME:WaitFrames(10)
+	GROUND:MoveInDirection(partner, Direction.Up, 3, false, 1)
+	
+	--LocHeight is the character's height relative to their shadow
+	local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
+	local frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 0, Direction.Up, partner_anim, false)
+  
+	local hero_center = GROUND:CharGetAnimPoint(hero, RogueEssence.Content.ActionPointType.Center)
+	local hero_shadow = GROUND:CharGetAnimPoint(hero, RogueEssence.Content.ActionPointType.Shadow)
+	local hero_shoulders = hero_shadow.Y - hero_center.Y + 6 -- an approximation of their "shoulders"
+	coro1 = TASK:BranchCoroutine(function() SOUND:PlayBattleSE('_UNK_EVT_010')--jump sfx
+											GROUND:AnimateInDirection(partner, "Hop", Direction.Up, Direction.Up, 15, 1, 1)
+											frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 23, Direction.Up, partner_anim, false)
+											--Mouth gives inconsistent results, center + an amount seems more consistent.
+											print("oh!")
+											GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 1, 1, 1, hero_shoulders)
+											print("Shit!")
+											--GROUND:CharSetAction(partner, RogueEssence.Ground.FrameGroundAction(partner.Position, partner.LocHeight, Direction.Up, partner_anim, 0))
+											end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GROUND:CharSetEmote(hero, "shock", 1) end)
+	coro3 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Hup!", 30) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GAME:WaitFrames(20)
+	
+	--frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders, Direction.Up, partner_anim, false)
+	--GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 1, 1, 1, hero_shadow.Y - hero_center.Y + 6)
+	
+	--jumping off. Did my best to give it the look of a parabola, but...
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 5, 1, 1, hero_shoulders + 6)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders+6, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 9, 1, 1, hero_shoulders + 6)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders+6, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 13, 1, 1, hero_shoulders)
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, hero_shoulders, Direction.Up, partner_anim, false)
+	GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 19, 1, 1, 0)
+  
+
+end 
+
+
+function apricorn_glade_ch_4.AnimationTest2()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GAME:CutsceneMode(true)
+	--ActionPointTypes = Shadow, Center, Head, LeftHand, RightHand
+	partner.CollisionDisabled = true
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local team2 = CH('Teammate2')
+	local team3 = CH('Teammate3')
+	local apricorn = OBJ('Apricorn_Scene')
+	
+	GAME:MoveCamera(292, 192, 1, false)
+	AI:DisableCharacterAI(partner)
+	GROUND:TeleportTo(partner, 276, 160, Direction.Up)
+	GAME:WaitFrames(40)
+	
+	
+	---Figure out if we this is an onix situation. If not, then order by weight, heaviest at the bottom. Partner is always at the top, however.
+	local team2species = 'default'
+	local team3species = 'default'
+	local onix_teammate = nil
+	
+	if team2 ~= nil then team2species = team2.CurrentForm.Species end 
+	if team3 ~= nil then team3species = team3.CurrentForm.Species end 
+	
+	if team2species == 'onix' then 
+		onix_teammate = team2
+	elseif team3species == 'onix' then
+		onix_teammate = team3
+	end
+	
+		
+	
+	--Determine the order of the bottom 3 of the stack. TODO: Improve by teleporting based on heights of characters
+	local stack_order = {hero, team2, team3}
+	table.sort(stack_order, apricorn_glade_ch_4.WeightCompare)
+	GROUND:TeleportTo(stack_order[1], 276, 160, Direction.Up)
+	GROUND:TeleportTo(stack_order[2], 276, 160, Direction.Up)
+	GROUND:TeleportTo(stack_order[3], 276, 160, Direction.Up)
+	
+	local stack_1_head = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Head)
+	local stack_1_shadow = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Shadow)
+	local stack_1_center = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Center)
+	local stack_2_head = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Head)
+	local stack_2_shadow = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Shadow)
+	local stack_2_center = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Center)
+	local stack_3_head = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Head)
+	local stack_3_shadow = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Shadow)		
+	local stack_3_center = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Center)		
+	
+	local stack_1_height = math.max(stack_1_shadow.Y - stack_1_head.Y, stack_1_shadow.Y - stack_1_center.Y + 6, 13)
+	local stack_2_height = math.max(stack_2_shadow.Y - stack_2_head.Y, stack_2_shadow.Y - stack_2_center.Y + 6, 13)
+	local stack_3_height = math.max(stack_3_shadow.Y - stack_3_head.Y, stack_3_shadow.Y - stack_3_center.Y + 6, 13)
+
+	print(stack_1_height)
+	print(stack_2_height)
+	print(stack_3_height)
+	--bottom member of totem
+	GROUND:TeleportTo(stack_order[3], partner.Position.X, partner.Position.Y + stack_1_height + stack_2_height + stack_3_height, Direction.Up)
+	  
+	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
+	local frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, 0, Direction.Up, animId, false)
+	GROUND:ActionToPosition(stack_order[2], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 1, 1, 2, stack_3_height)
+
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[1].Position, 0, Direction.Up, animId, false)
+	GROUND:ActionToPosition(stack_order[1], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 2, 1, 2, stack_3_height + stack_2_height)
+	
+	frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 0, Direction.Up, animId, false)
+	GROUND:ActionToPosition(partner, frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 3, 1, 2, stack_3_height + stack_2_height + stack_1_height)	
+
+end
 
 function apricorn_glade_ch_4.PartyCountCheck()
 	local party_count = GAME:GetPlayerPartyCount()
@@ -276,6 +425,22 @@ function apricorn_glade_ch_4.PartyCountCheck()
 	elseif team3species == 'onix' then
 		onix_teammate = team3
 	end
+	
+	local fail_condition = ""
+	
+	--check if any illegal mons/combos are here. Flying-onl and fish mons and diglett are not allowed, unless you also have an onix (as onix does all the work)
+	--No way to check for "flying/fish" attribute for cutscenes. Hardcode check for mons that are like that that are available by now.
+		
+	if team2species == "goldeen" or team3species == "goldeen" then
+		fail_condition = 'goldeen'
+	elseif team2species == "barboach" or team3species == "barboach" then
+		fail_condition = 'barboach'
+	elseif team2species == "zubat" or team3species == "zubat" then
+		fail_condition = 'zubat'
+	elseif team2species == "diglett" or team3species == "diglett" then
+		fail_condition = 'diglett'	
+	end
+	
 	
 	UI:SetSpeaker(partner)
 	--having an onix, since they're so tall, lets you skip having a 4th member
@@ -301,9 +466,16 @@ function apricorn_glade_ch_4.PartyCountCheck()
 		else
 			UI:WaitShowDialogue("There's three of us here,[pause=10] but I still don't think that'll be enough.")
 			UI:WaitShowDialogue("I think we'll need a full team if we want to bring that Apricorn back to the Guildmaster.")
+			if fail_condition ~= '' then 
+				UI:WaitShowDialogue("Besides,[pause=10] our teammate doesn't have an appropriate body type for this sort of thing.")
+			end
 		end
 		GAME:WaitFrames(20)
 		apricorn_glade_ch_4.TurnBack()
+	elseif fail_condition ~= '' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("We have four of us here,[pause=10] but some of our teammates aren't really well-suited to stacking up in a totem...")
+		UI:WaitShowDialogue("We'll need Pokémon with more appropriate body types for laddering.")
 	elseif party_count == 4 then
 		UI:WaitShowDialogue("With the four of us here...[pause=0] We might actually be able to stack up to that Apricorn!")
 		GAME:WaitFrames(10)
@@ -369,6 +541,8 @@ function apricorn_glade_ch_4.SubsequentArrivalCutscene()
 	
 end
 
+
+
 --subscene of picking the apricorn off the tree 
 --BEWARE OF ONIX!
 --TODO: Order based on weight, base of the tower and the spacing of the characters based on height of the sprite, change render order of pokemon in the stack so it looks right
@@ -379,11 +553,12 @@ function apricorn_glade_ch_4.PickApricorn()
 	local team2 = CH('Teammate2')
 	local team3 = CH('Teammate3')
 	local apricorn = OBJ('Apricorn_Scene')
+	GAME:CutsceneMode(true)
 	
 	GAME:MoveCamera(292, 192, 1, false)
-	GROUND:TeleportTo(partner, 276, 144, Direction.Up)
-	
-	GAME:WaitFrames(60)
+	GROUND:TeleportTo(partner, 276, 160, Direction.Up)
+	AI:DisableCharacterAI(partner)
+	GAME:WaitFrames(40)
 	
 	
 	---Figure out if we this is an onix situation. If not, then order by weight, heaviest at the bottom. Partner is always at the top, however.
@@ -403,24 +578,126 @@ function apricorn_glade_ch_4.PickApricorn()
 	--Onix Teammate? if so, play a special scene where the one onix helps the partner up
 	if onix_teammate ~= nil then
 	
-		--TODO!!!!!!!!!!!!
+		GROUND:TeleportTo(hero, 300, 240, Direction.Up)
+		GROUND:TeleportTo(team2, 300, 240, Direction.Up)
+		GROUND:TeleportTo(team3, 300, 240, Direction.Up)
 		
-	
-	else
-		--Determine the order of the bottom 3 of the stack. TODO: Improve by teleporting based on heights of characters
+		local onix_head = GROUND:CharGetAnimPoint(onix_teammate, RogueEssence.Content.ActionPointType.Head)
+		local onix_shadow = GROUND:CharGetAnimPoint(onix_teammate, RogueEssence.Content.ActionPointType.Shadow)		
+		
+		--This is the appropriate way to "move to a position with a height". The one in the generic version of this scene was before i realized teleport to took a height.
+		GROUND:TeleportTo(onix_teammate, 276, 160 + onix_shadow.Y - onix_head.Y, Direction.Up)
+		GROUND:TeleportTo(partner, onix_teammate.Position.X, onix_teammate.Position.Y + 1, Direction.Up, onix_shadow.Y - onix_head.Y)
+		
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("Alright,[pause=0] I'll just climb up along your back then.")
+		SOUND:PlayBattleSE("_UNK_EVT_089")
+		GAME:WaitFrames(60)
+
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Almost...[pause=0] to...[pause=0] the top...")
+		GAME:WaitFrames(20)
+		
+		SOUND:PlayBattleSE("_UNK_EVT_023")
+		GAME:WaitFrames(60)
+		
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("And...[pause=0] there!")
+		
+		GAME:FadeIn(40)
+		GAME:WaitFrames(20)
+		UI:WaitShowDialogue("Yeah![pause=0] I can get a good grip on this Apricorn now!")
+		UI:WaitShowDialogue("Here goes nothing!")
+		GAME:WaitFrames(20)
+		
+		GROUND:CharSetAnim(partner, "Pull", true)
+		GAME:WaitFrames(40)
+		
+		UI:SetSpeakerEmotion("Determined")
+		UI:WaitShowDialogue("Arrrrgh![pause=0] It's stuck on there good!")
+		GAME:WaitFrames(40)
+
+		GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Oh,[pause=10] I think it's coming loose![pause=0] Just a little more!")
+		
+		GAME:WaitFrames(20)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Yes![pause=0] I think I've got it!")
+		
+		GAME:WaitFrames(30)
+		
+		local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Waaaaaaah!", 60) end)
+		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
+													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, onix_teammate.Position.Y, 3)
+													  end)
+											
+
+		local coro3 = TASK:BranchCoroutine(function() local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
+													  local frameActionPartner = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim, false)
+													  GROUND:ActionToPosition(partner, frameActionPartner, 276, onix_teammate.Position.Y + 4, 1, 2, 0)
+													  GROUND:AnimateToPosition(partner, "Tumble", Direction.Up, 276, onix_teammate.Position.Y + 40, 1, 3, 0)
+													  GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pain")))
+													  end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		--todo: make this once this is more easily doable
+		
+		
+		SV.ApricornGrove.InDungeon = false
+		SV.Chapter4.FinishedGrove = true
+		GAME:WaitFrames(30)
+		SOUND:FadeOutBGM(60)
+		GAME:FadeOut(false, 60)	
+		GAME:WaitFrames(90)
+		GAME:CutsceneMode(false)	
+		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 8, 0, false, false)
+		
+		
+		
+	else		
+		--Determine the order of the bottom 3 of the stack.
 		local stack_order = {hero, team2, team3}
 		table.sort(stack_order, apricorn_glade_ch_4.WeightCompare)
+		GROUND:TeleportTo(stack_order[1], 276, 160, Direction.Up)
+		GROUND:TeleportTo(stack_order[2], 276, 160, Direction.Up)
+		GROUND:TeleportTo(stack_order[3], 276, 160, Direction.Up)
 		
-		GROUND:TeleportTo(stack_order[1], 276, 164, Direction.Up)
-		GROUND:TeleportTo(stack_order[2], 276, 184, Direction.Up)
-		GROUND:TeleportTo(stack_order[3], 276, 204, Direction.Up)
+		local stack_1_head = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Head)
+		local stack_1_shadow = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Shadow)
+		local stack_1_center = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Center)
+		local stack_2_head = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Head)
+		local stack_2_shadow = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Shadow)
+		local stack_2_center = GROUND:CharGetAnimPoint(stack_order[2], RogueEssence.Content.ActionPointType.Center)
+		local stack_3_head = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Head)
+		local stack_3_shadow = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Shadow)		
+		local stack_3_center = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Center)		
+		
+		local stack_1_height = math.max(stack_1_shadow.Y - stack_1_head.Y, stack_1_shadow.Y - stack_1_center.Y + 6, 13)
+		local stack_2_height = math.max(stack_2_shadow.Y - stack_2_head.Y, stack_2_shadow.Y - stack_2_center.Y + 6, 13)
+		local stack_3_height = math.max(stack_3_shadow.Y - stack_3_head.Y, stack_3_shadow.Y - stack_3_center.Y + 6, 13)
+
+
+		--bottom member of totem
+		GROUND:TeleportTo(stack_order[3], partner.Position.X, partner.Position.Y + stack_1_height + stack_2_height + stack_3_height, Direction.Up)
+		  
+		local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
+		local frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, 0, Direction.Up, animId, false)
+		GROUND:ActionToPosition(stack_order[2], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 1, 1, 2, stack_3_height)
+
+		frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[1].Position, 0, Direction.Up, animId, false)
+		GROUND:ActionToPosition(stack_order[1], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 2, 1, 2, stack_3_height + stack_2_height)
+	
+		frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 0, Direction.Up, animId, false)
+		GROUND:ActionToPosition(partner, frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 3, 1, 2, stack_3_height + stack_2_height + stack_1_height)	
+
+	
 	
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("OK![pause=0] So I guess you get on top of you,[pause=10] and...")
 		
 		SOUND:PlayBattleSE("_UNK_EVT_089")
 		GAME:WaitFrames(60)
-		GAME:WaitFrames(20)
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("OK,[pause=10] you can stand there and...[pause=10] Alright!")
 		UI:WaitShowDialogue("Now,[pause=10] I'll just climb up...")
@@ -492,10 +769,10 @@ function apricorn_glade_ch_4.PickApricorn()
 		UI:WaitShowDialogue("Oh,[pause=10] I think it's coming loose![pause=0] Just hang tight a little longer,[pause=10] everyone!")
 		
 		GAME:WaitFrames(10)
-		GeneralFunctions.StartTremble(stack_order[1])
-		GeneralFunctions.StartTremble(stack_order[2])
-		GeneralFunctions.StartTremble(stack_order[3])
 		GROUND:CharSetDrawEffect(partner, DrawEffect.Trembling)
+		GROUND:CharSetDrawEffect(stack_order[1], DrawEffect.Trembling)
+		GROUND:CharSetDrawEffect(stack_order[2], DrawEffect.Trembling)
+		GROUND:CharSetDrawEffect(stack_order[3], DrawEffect.Trembling)
 		
 		GAME:WaitFrames(40)
 		--different comment depending on where the hero is in the stack
@@ -516,7 +793,6 @@ function apricorn_glade_ch_4.PickApricorn()
 		UI:WaitShowDialogue("Yes![pause=0] I think I've got it!")
 		
 		--london bridge is falling! TODO: IMPROVE
-		--TODO: Falling / rustling sounds from Apple Woods scene.
 		local totem_base = stack_order[3].Position.Y
 		
 		
@@ -533,9 +809,10 @@ function apricorn_glade_ch_4.PickApricorn()
 
 
 		--see which mons have pain sprites. If they dont have pain animation, use hurt
-		anim1 = 'Hurt'
+		--In the Future, use GROUND:CharGetAnimFallback in conjunction with gfxparams.xml to do this.
+		anim1 = "Hurt"
 		if RogueEssence.Content.GraphicsManager.GetChara(mon_id_1:ToCharID()).AnimData:ContainsKey(52) then
-			anim1 = 'Pain'
+			anim1 = "Pain"
 		end
 
 		anim2 = 'Hurt'
@@ -549,46 +826,97 @@ function apricorn_glade_ch_4.PickApricorn()
 		end
 		
 		--secondary animation for the "sitting" portion of the fall for the non-bottoms.
-		local second_anim1 = 'None'
+		local second_anim1 = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
 		if RogueEssence.Content.GraphicsManager.GetChara(mon_id_1:ToCharID()).AnimData:ContainsKey(56) then
-			second_anim1 = 'Sit'
+			second_anim1 = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
 		end
 
-		local second_anim2 = 'None'
+		local second_anim2 = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
 		if RogueEssence.Content.GraphicsManager.GetChara(mon_id_2:ToCharID()).AnimData:ContainsKey(56) then
-			second_anim2 = 'Sit'
+			second_anim2 = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
 		end
 
 		
+		--Hack. Like, very hacky. Keep three invisible Apricorn that replaces the one we see as it falls down. The 
+		--clones have a disjoint on their vertical position so that the layering works so that the bottom totem mon has it render over them as it moves past
+		--without rendering over the partner as they fall through the totem.
+		
+		local apriclone = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Apricorn_Big", 1), --anim data. Don't set that number to 0 for valid anims
+								 				 RogueElements.Rect(apricorn.Position.X, apricorn.Position.Y + 24 + 24, 16, 16),--xy coords, then size
+								  				 RogueElements.Loc(0, 24), --offset
+												 true, 
+												 "Apricorn_Clone")--object entity name	
+				
+		apriclone:ReloadEvents()
+		GAME:GetCurrentGround():AddTempObject(apriclone)
+		GROUND:Hide(apriclone.EntName)
+		
+		local apriclone2 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Apricorn_Big", 1), --anim data. Don't set that number to 0 for valid anims
+								 				 RogueElements.Rect(apricorn.Position.X, totem_base + 24, 16, 16),--xy coords, then size
+								  				 RogueElements.Loc(0, 15), --offset
+												 true, 
+												 "Apricorn_Clone_2")--object entity name	
+				
+		apriclone2:ReloadEvents()
+		GAME:GetCurrentGround():AddTempObject(apriclone2)
+		GROUND:Hide(apriclone2.EntName)
+		
+		local apriclone3 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Apricorn_Big", 1), --anim data. Don't set that number to 0 for valid anims
+														 RogueElements.Rect(apricorn.Position.X, totem_base + 28, 16, 16),--xy coords, then size
+														 RogueElements.Loc(0, 12), --offset
+														 true, 
+														 "Apricorn_Clone_3")--object entity name	
+				
+		apriclone3:ReloadEvents()
+		GAME:GetCurrentGround():AddTempObject(apriclone3)
+		GROUND:Hide(apriclone3.EntName)
+	
+	
+	
 		GAME:WaitFrames(20)
 		UI:SetSpeakerEmotion("Shouting")
 		SOUND:PlayBattleSE('_UNK_EVT_038')
 		local coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(18) UI:WaitShowTimedDialogue("Waaaaaaah!", 60) end)
 		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
-													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, 216, 3) 
-													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, 192, 3) 
-													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, 216, 3) end)
-		local coro3 = TASK:BranchCoroutine(function() GROUND:CharEndDrawEffect(stack_order[3], DrawEffect.Trembling)
+													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, apricorn.Position.Y + 24, 3) 
+													  GROUND:Hide(apricorn.EntName)
+													  GROUND:Unhide(apriclone.EntName)
+													  GROUND:MoveObjectToPosition(apriclone, apriclone.Position.X, totem_base + 31, 3) 
+												      GROUND:Hide(apriclone.EntName)
+													  GROUND:Unhide(apriclone2.EntName)
+													  GROUND:MoveObjectToPosition(apriclone2, apriclone2.Position.X, totem_base + 31, 3) 
+													  GROUND:Hide(apriclone2.EntName)
+													  GROUND:Unhide(apriclone3.EntName)
+													  GROUND:MoveObjectToPosition(apriclone3, apriclone3.Position.X, totem_base + 4, 3) 
+													  GROUND:MoveObjectToPosition(apriclone3, apriclone3.Position.X, totem_base + 28, 3) end)
+		local coro3 = TASK:BranchCoroutine(function() GROUND:CharEndDrawEffect(stack_order[3], DrawEffect.Trembling)													  
 													  GROUND:CharSetAction(stack_order[3], RogueEssence.Ground.PoseGroundAction(stack_order[3].Position, stack_order[3].Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim3))) end)
 		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
 													  GROUND:CharEndDrawEffect(stack_order[2], DrawEffect.Trembling)
-													  GROUND:AnimateToPosition(stack_order[2], second_anim2, Direction.Left, 252, stack_order[2].Y + 8, 1, 3)
-													  GROUND:AnimateToPosition(stack_order[2], second_anim2, Direction.Left, 252, totem_base + 12, 1, 3)
+													  
+													  local frameAction2 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, stack_order[2].LocHeight, Direction.Left, second_anim2, false)
+													  --GROUND:ActionToPosition(stack_order[2], frameAction2, 252, totem_base + 12, 1, 1, stack_order[2].LocHeight)
+													  --frameAction2 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, stack_order[2].LocHeight, Direction.Left, second_anim2, false)
+												      GROUND:ActionToPosition(stack_order[2], frameAction2, 252, totem_base + 12, 1, 3, 0)
 													  SOUND:PlaySE('Hit Ground out of Fall')
-													  GeneralFunctions.Recoil(stack_order[2], "Hurt", 10, 10, false)
+													  GeneralFunctions.Recoil(stack_order[2], "Hurt", 10, 10, false, false)
 													  GROUND:CharSetAction(stack_order[2], RogueEssence.Ground.PoseGroundAction(stack_order[2].Position, stack_order[2].Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim2)))
 													  end)
 		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
 													  GROUND:CharEndDrawEffect(stack_order[1], DrawEffect.Trembling)
-													  GROUND:AnimateToPosition(stack_order[1], second_anim1, Direction.Right, 300, stack_order[1].Y + 8, 1, 3)
-													  GROUND:AnimateToPosition(stack_order[1], second_anim1, Direction.Right, 300, totem_base + 16, 1, 3)
-													  GeneralFunctions.Recoil(stack_order[1], "Hurt", 10, 10, false)
+													  local frameAction1 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[1].Position, stack_order[1].LocHeight, Direction.Right, second_anim1, false)
+													  --GROUND:ActionToPosition(stack_order[1], frameAction1, 300, totem_base + 16, 1,1, stack_order[1].LocHeight)
+													  --frameAction1 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[1].Position, stack_order[1].LocHeight, Direction.Right, second_anim1, false)
+													  GROUND:ActionToPosition(stack_order[1], frameAction1, 300, totem_base + 16, 1, 2, 0)
+													  GeneralFunctions.Recoil(stack_order[1], "Hurt", 10, 10, false, false)
 													  GROUND:CharSetAction(stack_order[1], RogueEssence.Ground.PoseGroundAction(stack_order[1].Position, stack_order[1].Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim1)))
 													  end)
 		local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
 													  GROUND:CharEndDrawEffect(partner, DrawEffect.Trembling)
-													  GROUND:AnimateToPosition(partner, "Sit", Direction.Left, 276, 232, 1, 3)
-													  GeneralFunctions.Recoil(partner, "Hurt", 10, 10, false)
+													  local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
+													  local frameActionPartner = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim, false)
+													  GROUND:ActionToPosition(partner, frameActionPartner, 276, totem_base + 32, 1, 2, 0)
+													  GeneralFunctions.Recoil(partner, "Hurt", 10, 10, false, false)
 													  GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pain")))
 													  end)
 		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6})
@@ -656,7 +984,7 @@ function apricorn_glade_ch_4.PickApricorn()
 		
 		GAME:WaitFrames(20)
 		GROUND:MoveInDirection(partner, Direction.Up, 4, false, 1)
-		GROUND:Hide(apricorn.EntName)
+		GROUND:Hide(apriclone3.EntName)
 		SOUND:PlaySE("Event Item Pickup")
 		GeneralFunctions.Monologue(partner:GetDisplayName() .. " picked up the huge Apricorn.")
 		

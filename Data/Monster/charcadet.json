@@ -1,0 +1,223 @@
+﻿{
+"Version": "0.7.15.1",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Charcadet",
+"LocalTexts": {
+"ja": "カルボウ",
+"ko": "카르본",
+"zh-hant": "炭小侍",
+"fr": "Charbambin",
+"de": "Knarbon",
+"ja-jp": "カルボウ",
+"zh-hans": "炭小侍"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Fire Child Pokémon",
+"LocalTexts": {
+"ja": "ひのこポケモン",
+"ko": "",
+"zh-hant": "小火星寶可夢",
+"fr": "",
+"de": "Feuerkind",
+"ja-jp": "",
+"zh-hans": "小火星宝可梦"
+}
+},
+"IndexNum": 935,
+"EXPTable": "slow",
+"SkillGroup1": "humanlike",
+"SkillGroup2": "amorphous",
+"JoinRate": 10,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "armarouge",
+"Details": [
+{
+"$type": "PMDC.Data.EvoItem, PMDC",
+"ItemNum": "empty"
+}
+]
+},
+{
+"Result": "ceruledge",
+"Details": [
+{
+"$type": "PMDC.Data.EvoItem, PMDC",
+"ItemNum": "empty"
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 9,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 40,
+"BaseAtk": 50,
+"BaseDef": 40,
+"BaseMAtk": 50,
+"BaseMDef": 40,
+"BaseSpeed": 35,
+"ExpYield": 63,
+"Height": 0.6,
+"Weight": 10.5,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "take_down"
+},
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "fire_spin"
+},
+{
+"Skill": "night_shade"
+},
+{
+"Skill": "confuse_ray"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "heat_wave"
+},
+{
+"Skill": "will_o_wisp"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "overheat"
+},
+{
+"Skill": "flare_blitz"
+},
+{
+"Skill": "flame_charge"
+},
+{
+"Skill": "tera_blast"
+}
+],
+"SharedSkills": [
+{
+"Skill": "disable"
+},
+{
+"Skill": "spite"
+},
+{
+"Skill": "destiny_bond"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Charcadet",
+"LocalTexts": {
+"ja": "カルボウ",
+"ko": "카르본",
+"zh-hant": "炭小侍",
+"fr": "Charbambin",
+"de": "Knarbon",
+"ja-jp": "カルボウ",
+"zh-hans": "炭小侍"
+}
+},
+"Temporary": false,
+"Element1": "fire",
+"Element2": "none",
+"Intrinsic1": "flash_fire",
+"Intrinsic2": "none",
+"Intrinsic3": "flame_body",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 1,
+"Skill": "ember"
+},
+{
+"Level": 1,
+"Skill": "astonish"
+},
+{
+"Level": 8,
+"Skill": "clear_smog"
+},
+{
+"Level": 12,
+"Skill": "fire_spin"
+},
+{
+"Level": 16,
+"Skill": "will_o_wisp"
+},
+{
+"Level": 20,
+"Skill": "psybeam"
+},
+{
+"Level": 24,
+"Skill": "night_shade"
+},
+{
+"Level": 28,
+"Skill": "flame_charge"
+},
+{
+"Level": 32,
+"Skill": "shadow_sneak"
+},
+{
+"Level": 36,
+"Skill": "flamethrower"
+},
+{
+"Level": 40,
+"Skill": "lava_plume"
+},
+{
+"Level": 44,
+"Skill": "incinerate"
+}
+]
+}
+]
+}
+}
