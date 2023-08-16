@@ -558,7 +558,7 @@ function apricorn_glade_ch_4.PickApricorn()
 	GAME:MoveCamera(292, 192, 1, false)
 	GROUND:TeleportTo(partner, 276, 160, Direction.Up)
 	AI:DisableCharacterAI(partner)
-	GAME:WaitFrames(40)
+	GAME:WaitFrames(60)
 	
 	
 	---Figure out if we this is an onix situation. If not, then order by weight, heaviest at the bottom. Partner is always at the top, however.
@@ -659,10 +659,25 @@ function apricorn_glade_ch_4.PickApricorn()
 		--Determine the order of the bottom 3 of the stack.
 		local stack_order = {hero, team2, team3}
 		table.sort(stack_order, apricorn_glade_ch_4.WeightCompare)
+
+		
+		--Addresses the rendering order when characters are stacked on top of each other. This will help with their shadows.
+		--The last one reintroduced like this will be the one who renders top most.
+		--currently has a weird side effect of doubling animation/move speed?
+		_ZONE.CurrentGround:RemoveMapChar(partner)
+		_ZONE.CurrentGround:RemoveMapChar(stack_order[1])
+		_ZONE.CurrentGround:RemoveMapChar(stack_order[2])
+		_ZONE.CurrentGround:RemoveMapChar(stack_order[3])
+		_ZONE.CurrentGround:AddMapChar(stack_order[3])
+		_ZONE.CurrentGround:AddMapChar(stack_order[2])
+		_ZONE.CurrentGround:AddMapChar(stack_order[1])
+		_ZONE.CurrentGround:AddMapChar(partner)
+		
+
 		GROUND:TeleportTo(stack_order[1], 276, 160, Direction.Up)
 		GROUND:TeleportTo(stack_order[2], 276, 160, Direction.Up)
 		GROUND:TeleportTo(stack_order[3], 276, 160, Direction.Up)
-		
+
 		local stack_1_head = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Head)
 		local stack_1_shadow = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Shadow)
 		local stack_1_center = GROUND:CharGetAnimPoint(stack_order[1], RogueEssence.Content.ActionPointType.Center)
@@ -680,19 +695,13 @@ function apricorn_glade_ch_4.PickApricorn()
 
 		--bottom member of totem
 		GROUND:TeleportTo(stack_order[3], partner.Position.X, partner.Position.Y + stack_1_height + stack_2_height + stack_3_height, Direction.Up)
+		local totem_base = stack_order[3].Position.Y
+
+		GROUND:TeleportTo(stack_order[2], partner.Position.X, totem_base+1, Direction.Up, stack_3_height)
+		GROUND:TeleportTo(stack_order[1], partner.Position.X, totem_base+2, Direction.Up, stack_3_height + stack_2_height)
+		GROUND:TeleportTo(partner, partner.Position.X, totem_base+3, Direction.Up, stack_3_height + stack_2_height + stack_1_height)
 		  
 		local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
-		local frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, 0, Direction.Up, animId, false)
-		GROUND:ActionToPosition(stack_order[2], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 1, 1, 2, stack_3_height)
-
-		frameAction = RogueEssence.Ground.IdleAnimGroundAction(stack_order[1].Position, 0, Direction.Up, animId, false)
-		GROUND:ActionToPosition(stack_order[1], frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 2, 1, 2, stack_3_height + stack_2_height)
-	
-		frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 0, Direction.Up, animId, false)
-		GROUND:ActionToPosition(partner, frameAction, stack_order[3].MapLoc.X, stack_order[3].MapLoc.Y + 3, 1, 2, stack_3_height + stack_2_height + stack_1_height)	
-
-	
-	
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("OK![pause=0] So I guess you get on top of you,[pause=10] and...")
 		
@@ -793,7 +802,6 @@ function apricorn_glade_ch_4.PickApricorn()
 		UI:WaitShowDialogue("Yes![pause=0] I think I've got it!")
 		
 		--london bridge is falling! TODO: IMPROVE
-		local totem_base = stack_order[3].Position.Y
 		
 		
 		--number to name mapping for an animation
