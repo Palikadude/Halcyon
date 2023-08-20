@@ -286,7 +286,7 @@ function DebugTools:OnUpgrade()
  if SV.Chapter3.RootSceneTransition == nil then SV.Chapter3.RootSceneTransition = false end
  if SV.Chapter3.FinishedRootScene == nil then SV.Chapter3.FinishedRootScene = false end
  if SV.Chapter3.FinishedMerchantIntro == nil then SV.Chapter3.FinishedMerchantIntro = false end
- if SV.Chapter3.DemoThankYou == nil then SV.Chapter3.DemoThankYou = false end
+-- if SV.Chapter3.DemoThankYou == nil then SV.Chapter3.DemoThankYou = false end
  if SV.Chapter3.TropiusGaveWand == nil then SV.Chapter3.TropiusGaveWand = false end
  if SV.Chapter3.BreloomGirafarigConvo == nil then SV.Chapter3.BreloomGirafarigConvo = false end
  if SV.Chapter3.PostBossSpokeToCranidos == nil then SV.Chapter3.PostBossSpokeToCranidos = false end
@@ -305,6 +305,7 @@ function DebugTools:OnUpgrade()
  if SV.Chapter4.FinishedGrove == nil then SV.Chapter4.FinishedGrove = false end
  if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
  if SV.Chapter4.FinishedBedtimeCutscene == nil then SV.Chapter4.FinishedBedtimeCutscene = false end
+ if SV.Chapter4.DemoThankYou == nil then SV.Chapter4.DemoThankYou = false end
 
  if SV.ApricornGrove == nil then SV.ApricornGrove = {} end
  

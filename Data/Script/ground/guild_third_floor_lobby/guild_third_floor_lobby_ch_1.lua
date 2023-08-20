@@ -131,8 +131,7 @@ function guild_third_floor_lobby_ch_1.GoToGuildmasterRoom()
 	UI:WaitShowDialogue("Wow![pause=0] I can't believe we're about to meet the Guildmaster!")
 	UI:WaitShowDialogue("The first time I came here I only met with " .. noctowl:GetDisplayName() .. ".[pause=0] I didn't get to see the Guildmaster!")
 	UI:WaitShowDialogue("He's a world famous adventurer![pause=0] And we're going to meet him!")
-	UI:WaitShowDialogue("I knew we'd have to see him eventually...[pause=0] But I'm still starstruck!")
-	--todo: jump at the end of this sentence
+	UI:WaitShowDialogue("I knew we'd have to see him eventually...[pause=0] But I'm still starstruck![script=0]", {function() return GeneralFunctions.Hop(partner) end})
 
 --[[ I think it's too early for serious emotional support between these two but im not deleting all this scripting
 	UI:WaitShowDialogue("I don't know if I should be estatic or if I should be panicking!")

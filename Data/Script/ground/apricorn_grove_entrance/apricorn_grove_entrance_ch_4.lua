@@ -174,8 +174,7 @@ function apricorn_grove_entrance_ch_4.FirstComeOutFront()
 
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	--todo: hop at the end of this sentence
-	UI:WaitShowDialogue("Well,[pause=10] we can't let this stop us from properly exploring the forest.[pause=0] We'll just have to try again!")
+	UI:WaitShowDialogue("Well,[pause=10] we can't let this stop us from properly exploring the forest.[pause=0] We'll just have to try again![script=0]", {function() return GeneralFunctions.Hop(partner) end})
 	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "!")
 	
 	GAME:WaitFrames(20)

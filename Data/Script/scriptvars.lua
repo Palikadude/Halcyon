@@ -691,7 +691,7 @@ SV.Chapter3 =
 	RootSceneTransition = false, --Used to remember where in the root scene we are after transitioning away to show the root 
 	FinishedRootScene = false, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
 	FinishedMerchantIntro = false, --Did merchant intro cutscene?
-	DemoThankYou = false,--Showed demo thank you?
+	--DemoThankYou = false,--Showed demo thank you? Not needed for future versions.
 
 	TropiusGaveWand = false,--did tropius give some wands to help the duo?
 	BreloomGirafarigConvo = false, --talked to breloom/girafarig about their expedition?
@@ -708,7 +708,9 @@ SV.Chapter4 =
 	BacktrackedOutGroveYet = false,--has player ever backtracked out the entrance of the grove yet? if not, give them a cutscene explaining what just happened
 	ReachedGlade = false, --has player reached the glade yet?
 	FinishedGrove = false,--has player finished the grove for good?
-	FinishedBedtimeCutscene = false--has player watched the bedtime cutscene? this is the last cutscene of this chapter
+	FinishedBedtimeCutscene = false,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
+	
+	DemoThankYou = false--Showed demo thank you?
 
 }
 

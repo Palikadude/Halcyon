@@ -663,7 +663,6 @@ end
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, context, args)
   if context.User == nil then return end
   if context.User == GAME:GetPlayerPartyMember(0) then--this check is needed so that the script runs only once, otherwise it'll run for each entity in the map. 
-	--TODO: change character check to player and use the below call to call speeches. location of triggers will need to shift on actual maps
 	GAME:QueueLeaderEvent(function() BeginnerLessonSpeechHelper(owner, ownerChar, context, args) end)--
   end
 end

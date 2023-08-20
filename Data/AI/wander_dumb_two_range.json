@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.15.1",
 "Object": {
 "$type": "RogueEssence.Data.AITactic, RogueEssence",
 "Name": {
@@ -7,8 +7,8 @@
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "",
-"ID": "wander_dumb",
+"Comment": "Same as wander dumb, but can only attack when within 2 tiles of an enemy unit.",
+"ID": "wander_dumb_two_range",
 "Assignable": false,
 "Plans": [
 {

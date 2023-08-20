@@ -85,13 +85,27 @@ function guild_heros_room.CheckTriggerEvent()
 		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 	end
 	
-	--todo: remove this once enough of chapter 4 is built out.
-	--Marking the end of the demo. In the future, this will trigger chapter 4. 
-	--Triggers after going to bed, at the end of chapter 3, once bronze rank (or better, somehow) is obtained.
-	--if SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss and not SV.Chapter3.DemoThankYou and _DATA.Save.ActiveTeam.Rank ~= "normal" and not SV.TemporaryFlags.Bedtime then
-	--	GAME:WaitFrames(90)
-	--	guild_heros_room_ch_3.DemoThanks()
-	--end
+	if SV.ChapterProgression.Chapter == 4 and SV.ChapterProgression.DaysPassed >= SV.ChapterProgression.DaysToReach and not SV.Chapter4.DemoThankYou then
+		--start chapter 5 once that's ready. For now, trigger a demo thank you.
+		UI:ResetSpeaker()
+		UI:WaitShowDialogue("That's the end of the demo! Thank you so much for playing!")
+		UI:WaitShowDialogue("I hope you enjoyed playing the Halcyon demo! More chapters to come in the future!")
+		UI:WaitShowDialogue("Special thanks to Audino for all his help with the Origins engine.")
+		UI:WaitShowDialogue("Without his help, Halcyon could not have been made!")
+		UI:WaitShowDialogue("I'd also like to thank Trio- for helping with mission generation scripts and other scripting odds and ends.")
+		UI:WaitShowDialogue("He saved me a lot of time and grief with all the help he provided.")
+		UI:WaitShowDialogue("Please check the readme for the full list of credits!")
+		UI:WaitShowDialogue("Everyone who helped out did a great job, and I appreciate all that they've done!")
+		UI:WaitShowDialogue("If you have any feedback you would like to share, please do so in the relevant Halcyon discord channel!")
+		UI:WaitShowDialogue("I'm interested to hear what people think about the game or if they have any suggestions or thoughts!")
+		UI:WaitShowDialogue("If you're interesting in contributing to Halcyon as well, please let Palika know!")
+		UI:WaitShowDialogue("I would need sprite artists and musicians to help with custom assets now and then...")
+		UI:WaitShowDialogue("So if that's up your alley and you're interested, please let me know!")
+		UI:WaitShowDialogue("Anyways, you can keep playing Halcyon to complete the randomly generated missions if you feel like.")
+		UI:WaitShowDialogue("Nothing can progress the game any further right now, as I need to develop more of the story.")
+		UI:WaitShowDialogue("Thank you again for playing! Returning back to normal gameplay... now!")
+		SV.Chapter4.DemoThankYou = true
+	end
 		
 end
 
@@ -135,6 +149,8 @@ function guild_heros_room.PlotScripting()
 		elseif SV.ChapterProgression.Chapter == 4 then
 			if not SV.Chapter4.ShowedTitleCard then 
 				guild_heros_room_ch_4.ShowTitleCard()
+			elseif SV.Chapter4.FinishedGrove and not SV.Chapter4.FinishedBedtimeCutscene then
+				guild_heros_room_ch_4.PostGroveBedtalk()	
 			else
 				GAME:FadeIn(20)
 			end

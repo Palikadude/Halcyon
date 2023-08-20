@@ -83,6 +83,12 @@ function guild_guildmasters_room.PlotScripting()
 		else
 			GAME:FadeIn(20)
 		end
+	elseif SV.ChapterProgression.Chapter == 4 then
+		if SV.Chapter4.FinishedGrove and not SV.Chapter4.FinishedBedtimeCutscene then
+			guild_guildmasters_room_ch_4.PresentApricornCutscene()
+		else 
+			GAME:FadeIn(20)
+		end
 	else
 		GAME:FadeIn(20)
 	end

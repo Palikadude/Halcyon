@@ -11,7 +11,7 @@ V 0.4.0
 - Added a new drink to the cafe that unlocks in Chapter 4. Endurance Tonic costs a Reviver Seed and a Chesto Berry and gives the consumer 5 turns of Endure status, preventing their HP from going below 1. Unlike the usual endure effect given by the move, this one is not cleared by moving.
 - Two new training mazes unlock in Chapter 4, Flying and Rock.
 - Lars will now sell colored and plain Apricorns once Chapter 4's dungeon is cleared. He'll sell one guaranteed a day. 
-- Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4's dungeon is completed.
+- Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4's dungeon is cleared.
 - Fixed Water Maze's element being Fire and not Water.
 - Espurr, Meowth-A, Popplio, Charcadet, and Tepig are added as starters. Check pokemon changes file to see some changes to Espurr's and Charcadet's level up table.
 - Fixed a bug where a client pokemon with temporary water privileges (i.e. water sport) being beamed out while on water caused an error.
@@ -27,3 +27,6 @@ V 0.4.0
 - Improve Fleeing Outlaw AI to be less cheesable.
 - The range at which certain enemies are allowed to use moves from has been reduced. This should prevent unfair sniping from certain enemies early on in the game.
 - Added scarf sprites for Mudkip. It seems I had accidentially passed over him when I first added all the scarf pokemon I had sprites for.
+- Added certain actions that happen mid sentence, now that the [script] tag is available. This has been added throughout the game here and there, where appropriate. Typically used to have a character hop at the end of a sentence.
+- Added plot-based goals to Mission Objectives, ala Explorers. If you're in the current story dungeon, Mission Objectives now has a non-generic line telling you what the objective is instead of just "Go as far as you can."
+- Power Band, Def. Scarf, Special Band, and Zinc Band all boost their respective stat by 20% now instead of 10%.

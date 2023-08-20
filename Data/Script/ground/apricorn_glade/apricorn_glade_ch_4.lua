@@ -273,6 +273,7 @@ function apricorn_glade_ch_4.FirstArrivalCutscene()
 	--GROUND:CharSetAction(partner, RogueEssence.Ground.HopGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex('None'), 16, 16))
 	--GROUND:MoveToPosition(partner, 284, 188, false, 2)
 	
+	GAME:WaitFrames(10)
 	UI:WaitShowDialogue("We'd need more than just the two of us if we want to reach that low-hanging Apricorn.")
 	GAME:WaitFrames(20)
 	apricorn_glade_ch_4.PartyCountCheck()			
@@ -651,7 +652,7 @@ function apricorn_glade_ch_4.PickApricorn()
 		GAME:FadeOut(false, 60)	
 		GAME:WaitFrames(90)
 		GAME:CutsceneMode(false)	
-		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 8, 0, false, false)
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 8, 0, false, false)
 		
 		
 		
@@ -663,15 +664,18 @@ function apricorn_glade_ch_4.PickApricorn()
 		
 		--Addresses the rendering order when characters are stacked on top of each other. This will help with their shadows.
 		--The last one reintroduced like this will be the one who renders top most.
-		--currently has a weird side effect of doubling animation/move speed?
-		_ZONE.CurrentGround:RemoveMapChar(partner)
-		_ZONE.CurrentGround:RemoveMapChar(stack_order[1])
-		_ZONE.CurrentGround:RemoveMapChar(stack_order[2])
-		_ZONE.CurrentGround:RemoveMapChar(stack_order[3])
-		_ZONE.CurrentGround:AddMapChar(stack_order[3])
-		_ZONE.CurrentGround:AddMapChar(stack_order[2])
-		_ZONE.CurrentGround:AddMapChar(stack_order[1])
-		_ZONE.CurrentGround:AddMapChar(partner)
+		--characters spawned in via spawners are temp characters. The hero is not a temp character therefore.
+		--Take eeveryone out, then respawn them as proper map characters.
+		
+		--Temp characters are not saved on map save, where as map characters are. Luckily, this won't be an issue as you can't save on this map.
+		_ZONE.CurrentGround:RemoveMapChar(hero)
+        _ZONE.CurrentGround:RemoveTempChar(partner)
+        _ZONE.CurrentGround:RemoveTempChar(team2)
+        _ZONE.CurrentGround:RemoveTempChar(team3)
+        _ZONE.CurrentGround:AddMapChar(stack_order[3])
+        _ZONE.CurrentGround:AddMapChar(stack_order[2])
+        _ZONE.CurrentGround:AddMapChar(stack_order[1])
+        _ZONE.CurrentGround:AddMapChar(partner)
 		
 
 		GROUND:TeleportTo(stack_order[1], 276, 160, Direction.Up)
@@ -1013,7 +1017,7 @@ function apricorn_glade_ch_4.PickApricorn()
 		GAME:FadeOut(false, 60)	
 		GAME:WaitFrames(90)
 		GAME:CutsceneMode(false)	
-		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 8, 0, false, false)
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 8, 0, false, false)
 	end
 	
 end 
@@ -1054,7 +1058,7 @@ function apricorn_glade_ch_4.TurnBack()
 	local team3 = CH('Teammate3')
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("That being said...[pause=0] We can either head back into the dungeon,[pause=10] or we can call it a day.")
+	UI:WaitShowDialogue("With that in mind...[pause=0] We can either head back into the dungeon,[pause=10] or we can call it a day.")
 	UI:BeginChoiceMenu(hero:GetDisplayName() .. ",[pause=10] which do you think we should do?", {"Go back in", "Head home"}, 1, 2)
 	UI:WaitForChoice()
 	local result = UI:ChoiceResult()

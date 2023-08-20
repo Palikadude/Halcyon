@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.11.0",
+"Version": "0.7.15.1",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "super_flee_stairs": {
@@ -28,22 +28,22 @@
 "$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
 "Assignable": false,
 "Name": {
-"DefaultText": "One Range Dumb Wander",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
 "SortOrder": 0
 },
 "wander_dumb_two_range": {
 "$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
 "Assignable": false,
 "Name": {
-"DefaultText": "Two Range Dumb Wander",
+"DefaultText": "Dumb Wander",
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "",
+"Comment": "Same as wander dumb, but can only attack when within 2 tiles of an enemy unit.",
 "SortOrder": 0
 }
 }

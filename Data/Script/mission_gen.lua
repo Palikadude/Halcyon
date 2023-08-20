@@ -1,5 +1,6 @@
 require 'common'
 require 'GeneralFunctions'
+require 'CharacterEssentials'
 
 --Halcyon Custom work:
 --Code in this folder is used to generate, display, and handle randomized missions
@@ -2681,10 +2682,39 @@ function DungeonJobList:DrawMenu()
 
   end
   
-  --put a default message if no jobs.
+  --put a special message if no jobs dependent on story progression.
+  local message = ""
   if count == 0 then 
-  	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText("Go as far as you can.", RogueElements.Loc(16, 12 + 14)))
+	--partner only relic forest
+    if SV.ChapterProgression.Chapter == 1 and self.dungeon == 'relic_forest' and not SV.Chapter1.PartnerCompletedForest then
+		message = "Explore the forest."
+	--partner+hero relic forest
+	elseif SV.ChapterProgression.Chapter == 1 and self.dungeon == 'relic_forest' and SV.Chapter1.PartnerCompletedForest then
+		message = "Get back to Metano Town."
+	--Illuminant Riverbed
+	elseif SV.ChapterProgression.Chapter == 2 and self.dungeon == 'illuminant_riverbed' and not SV.Chapter2.FinishedRiver then
+		message = 'Rescue ' .. CharacterEssentials.GetCharacterName('Numel') .. "."
+	--Crooked Cavern, before seeing the boss
+	elseif SV.ChapterProgression.Chapter == 3 and self.dungeon == 'crooked_cavern' and not SV.Chapter3.EncounteredBoss then 
+		message = 'Apprehend ' .. CharacterEssentials.GetCharacterName('Sandile') .. "."
+	--Crooked cavern, at the boss
+	elseif SV.ChapterProgression.Chapter == 3 and self.dungeon == 'crooked_cavern' and SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and _ZONE.CurrentMapID.Segment == 1 then 
+		message = 'Defeat Team [color=#FFA5FF]Style[color]!'
+	--crooked cavern, lost to boss, on the way back.
+	elseif SV.ChapterProgression.Chapter == 3 and self.dungeon == 'crooked_cavern' and SV.Chapter3.EncounteredBoss and not SV.Chapter3.DefeatedBoss and _ZONE.CurrentMapID.Segment == 0 then 
+		message = 'Get back to the end of the cavern.'
+	elseif SV.ChapterProgression.Chapter == 4 and self.dungeon == 'apricorn_grove' and not SV.Chapter4.ReachedGlade and not SV.Chapter4.FinishedGrove then
+		message = 'Try to find something of interest.'
+	elseif SV.ChapterProgression.Chapter == 4 and self.dungeon == 'apricorn_grove' and SV.Chapter4.ReachedGlade and not SV.Chapter4.FinishedGrove then
+		message = 'Return to the large Apricorn tree with enough\nPokémon to reach a big Apricorn.'
+	else
+		message = "Go as far as you can."
+	end 
+	self.menu.MenuElements:Add(RogueEssence.Menu.MenuText(message, RogueElements.Loc(16, 12 + 14)))
   end 
+
+  
+  
   
 end 
 

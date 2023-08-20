@@ -601,8 +601,7 @@ function relic_forest_ch_1.WipedInForest()
 	GAME:WaitFrames(40)
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	UI:WaitShowDialogue("Well,[pause=10] we can't dawdle here.[pause=0] We got to make it back to town before it gets any later.")
-	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "!")
-	--todo: do a little hop at the end of the dialogue
+	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "![script=0]", {function() return GeneralFunctions.Hop(partner) end})
 	GAME:WaitFrames(20)
 
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 308, 612, false, 1) end)

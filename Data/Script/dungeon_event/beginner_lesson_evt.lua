@@ -172,7 +172,7 @@ function beginner_lesson_evt.Floor_5_Intro(owner, ownerChar, character, args)
 	local chara = beginner_lesson_evt.FindLedian()
 	UI:SetSpeaker(chara)
 	UI:WaitShowDialogue("Hwacha![pause=0] This is the last floor![pause=0] Your final trial lies ahead!")
-	UI:WaitShowDialogue("Use the apricorns to recruit the correct volunteer,[pause=10] and have him bust open the path to the stairs!")
+	UI:WaitShowDialogue("Use the Apricorns to recruit the correct volunteer,[pause=10] and have him bust open the path to the stairs!")
 	UI:WaitShowDialogue("You can do it,[pause=10] my student![pause=0] Use all that you've learned so far and you will succeed![pause=0] Hoiyah!")
 	SV.Tutorial.Progression = 9
 end

@@ -21,7 +21,20 @@ function metano_town_ch_4.SetupGround()
 		GAME:GetCurrentGround():AddTempObject(signBlock)
 	end
 		
+	if not SV.Chapter4.FinishedGrove then
+		local linoone = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Linoone', 'Cafe_Seat_2'},
+				{'Spinda', 1204, 1160, Direction.Up},
+				{'Ludicolo', 1184, 1128, Direction.DownRight},
+				{'Roselia', 1224, 1128, Direction.DownLeft}
+			})
+	else
+	
+	end
+	
 	GAME:FadeIn(20)
+	
 end
 
 function metano_town_ch_4.Event_Trigger_1_Touch(obj, activator)
@@ -98,8 +111,7 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 											GAME:MoveCamera(1352, 616, GeneralFunctions.CalculateCameraFrames(GAME:GetCameraCenter().X, GAME:GetCameraCenter().Y, 1352, 616, 1), false) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
-	--todo: a hop at the end of this sentence
-	UI:WaitShowDialogue("See?[pause=0] It's right here!")
+	UI:WaitShowDialogue("See?[pause=0] It's right here![script=0]", {function() return GeneralFunctions.Hop(audino) end})
 	GAME:WaitFrames(10)
 	GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
 	UI:WaitShowDialogue("You can ring the bell on it and I'll come running from the guild so you can use the Assembly out here!")
@@ -173,5 +185,45 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 	
 end
 
+
+function metano_town_ch_4.Snubbull_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
+
+function metano_town_ch_4.Roselia_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
+
+function metano_town_ch_4.Ludicolo_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
+
+function metano_town_ch_4.Spinda_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] the Kecleon Shop is out of Apricorns...", "Worried")
+	else
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Kecleon") .. " says that the Kecleon Shop will be getting a fresh shipment of Apricorns soon.")
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
 
 

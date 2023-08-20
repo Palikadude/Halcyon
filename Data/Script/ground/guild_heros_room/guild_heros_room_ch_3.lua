@@ -181,5 +181,4 @@ function guild_heros_room_ch_3.DemoThanks()
 	UI:WaitShowDialogue("Anyways, you can keep playing Halcyon to complete the randomly generated missions if you feel like.")
 	UI:WaitShowDialogue("Nothing can progress the game any further right now, as I need to develop more of the story.")
 	UI:WaitShowDialogue("Thank you again for playing! Returning back to normal gameplay... now!")
-	SV.Chapter3.DemoThankYou = true
 end

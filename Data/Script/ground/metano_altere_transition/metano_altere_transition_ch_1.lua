@@ -124,8 +124,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	
 	--GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 	
-	UI:WaitShowDialogue("These are things I dream of doing![pause=0] Don't you think it's exciting too?")
-	--todo: have this hop trigger at the end of the sentence, waiting for [script] from audino
+	UI:WaitShowDialogue("These are things I dream of doing![pause=0] Don't you think it's exciting too?[script=0]", {function() return GeneralFunctions.Hop(partner) end})
 	--GeneralFunctions.Hop(partner, 'None', 10, 10, false, false)
 	
 	--hero is excited by the idea of adventurers because THATS WHY THEY CAME TO THIS WORLD :v)
