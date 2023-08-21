@@ -100,3 +100,121 @@ SKILL_CHANGE_SCRIPT = {}
 function SKILL_CHANGE_SCRIPT.Test(owner, character, skillIndices, args)
   PrintInfo("Test")
 end
+
+GROUND_ITEM_EVENT_SCRIPT = {}
+
+-- context.Item - The current inventory being used (InvItem)
+-- context.Owner - The current ground user that used the item (GroundChar)
+-- context.User = The party member that the item is going to apply its effect to (Character)
+-- Reimplementation of the GummiEvent (BattleEvent) in PMDC.Dungeon but for ground usage
+function GROUND_ITEM_EVENT_SCRIPT.GroundGummiEvent(context, args)
+  assert(args.TargetElement ~= nil, "Gummi type needs to be initialized")
+  local form_data = context.User.BaseForm
+  local form = _DATA:GetMonster(form_data.Species).Forms[form_data.Form]
+  local target_element = args.TargetElement
+
+  local type_matchup = PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element1)
+  type_matchup = type_matchup + PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element2)
+  -- print("Type matchup: " .. tostring(type_matchup) .. " with " .. target_element)
+  local heal = 5
+  local stats = {}
+  if target_element == _DATA.DefaultElement or context.User.Element1 == target_element or context.User.Element2 == target_element then
+    heal = 20
+    table.insert(stats, RogueEssence.Data.Stat.HP)
+    table.insert(stats, RogueEssence.Data.Stat.Attack)
+    table.insert(stats, RogueEssence.Data.Stat.Defense)
+    table.insert(stats, RogueEssence.Data.Stat.MAtk)
+    table.insert(stats, RogueEssence.Data.Stat.MDef)
+    table.insert(stats, RogueEssence.Data.Stat.Speed)
+  elseif type_matchup < PMDC.Dungeon.PreTypeEvent.NRM_2 then
+    heal = 10
+    table.insert(stats, RogueEssence.Data.Stat.Attack)
+    table.insert(stats, RogueEssence.Data.Stat.MAtk)
+  elseif type_matchup > PMDC.Dungeon.PreTypeEvent.NRM_2 then
+    heal = 10
+    table.insert(stats, RogueEssence.Data.Stat.Defense)
+    table.insert(stats, RogueEssence.Data.Stat.MDef)
+  else
+    heal = 5
+    table.insert(stats, RogueEssence.Data.Stat.HP)
+    table.insert(stats, RogueEssence.Data.Stat.Speed)
+  end
+
+  UI:ResetSpeaker()
+  for _, stat in ipairs(stats) do
+    AddStat(stat, context)
+  end
+
+
+  if args.PrintFillBelly then
+    if heal > 15 then
+      UI:WaitShowDialogue(RogueEssence.Text.FormatGrammar(RogueEssence.StringKey("MSG_HUNGER_FILL"):ToLocal(), context.User:GetDisplayName(false)))
+    elseif heal > 5 then
+      UI:WaitShowDialogue(RogueEssence.Text.FormatGrammar(RogueEssence.StringKey("MSG_HUNGER_FILL_MIN"):ToLocal(), context.User:GetDisplayName(false)))
+    end
+  end
+
+  context.User.Fullness = context.User.Fullness + heal
+  if context.User.Fullness >= context.User.MaxFullness then
+    context.User.Fullness = context.User.MaxFullness
+    context.User.FullnessRemainder = 0
+  end
+end
+
+function AddStat(stat, context)
+  local prev_stat = 0
+  local new_stat = 0
+  local lookup_table = {}
+  lookup_table[RogueEssence.Data.Stat.HP] = function()
+    if context.User.MaxHPBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.MaxHP;
+      context.User.MaxHPBonus = context.User.MaxHPBonus + 1;
+      new_stat = context.User.MaxHP;
+    end
+  end
+
+  lookup_table[RogueEssence.Data.Stat.Attack] = function()
+    if context.User.AtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.BaseAtk;
+      context.User.AtkBonus = context.User.AtkBonus + 1;
+      new_stat = context.User.BaseAtk;
+    end
+  end
+
+  lookup_table[RogueEssence.Data.Stat.Defense] = function()
+    if context.User.DefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.BaseDef;
+      context.User.DefBonus = context.User.DefBonus + 1;
+      new_stat = context.User.BaseDef;
+    end
+  end
+
+  lookup_table[RogueEssence.Data.Stat.MAtk] = function()
+    if context.User.MAtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.MAtkBonus;
+      context.User.MAtkBonus = context.User.MAtkBonus + 1;
+      new_stat = context.User.MAtkBonus;
+    end
+  end
+
+  lookup_table[RogueEssence.Data.Stat.MDef] = function()
+    if context.User.MDefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.BaseMDef;
+      context.User.MDefBonus = context.User.MDefBonus + 1;
+      new_stat = context.User.BaseMDef;
+    end
+  end
+
+  lookup_table[RogueEssence.Data.Stat.Speed] = function()
+    if context.User.SpeedBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
+      prev_stat = context.User.BaseSpeed;
+      context.User.SpeedBonus = context.User.SpeedBonus + 1;
+      new_stat = context.User.BaseSpeed;
+    end
+  end
+
+  lookup_table[stat]()
+  if new_stat - prev_stat > 0 then
+    UI:WaitShowDialogue(RogueEssence.Text.FormatGrammar(RogueEssence.StringKey("MSG_STAT_BOOST"):ToLocal(), context.User:GetDisplayName(false), RogueEssence.Text.ToLocal(stat), tostring(new_stat - prev_stat)))
+  end
+end
