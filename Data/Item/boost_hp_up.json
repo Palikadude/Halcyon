@@ -3,27 +3,40 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Wonder Gummi",
+"DefaultText": "HP Up",
 "LocalTexts": {
-"fr": "Gelée Miracle",
-"de": "Wundergummi",
-"ko": "이상한구미"
+"fr": "PV Plus",
+"de": "KP-Plus",
+"es": "Más PS",
+"pt": "Elevador de PS",
+"it": "PS-Su",
+"ko": "맥스업",
+"ja": "マックスアップ",
+"ja-jp": "マックスアップ",
+"zh-hans": "HP增强剂",
+"zh-hant": "ＨＰ增強劑"
 }
 },
 "Desc": {
-"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats.",
+"DefaultText": "A drink that permanently raises the Pokémon's Maximum HP.",
 "LocalTexts": {
-"fr": "Aliment à la texture étrange, différent des autres gelées, qui augmente de façon permanente le Q.I. du coéquipier qui en mange. Remplit aussi un peu l'estomac du Pokémon.",
-"de": "Nahrungsmittel, dass den Magen des Pokémons einigermaßen füllt und die Basiswerte permanent erhöht.",
-"ko": "먹으면 포만감을 약간 회복하고 스탯을 영구적으로 증가시킨다."
+"fr": "Une boisson très nutritive qui augmente les PV de base d’un Pokémon.",
+"de": "Ein gehaltvolles Getränk, das den KP-Basiswert eines Pokémon dauerhaft erhöht.",
+"es": "Nutritiva bebida que potencia los PS de base de un Pokémon.",
+"it": "Una bevanda che aumenta permanentemente i PS massimi del Pokémon.",
+"ko": "마시는 포켓몬의 체력을 영구적으로 올린다.",
+"ja": "ポケモンの　えいようドリンク。 ポケモン　１ひきの　ＨＰの きそポイントを　あげる。",
+"ja-jp": "ポケモンの　栄養ドリンク。 ポケモン　１匹の　ＨＰの 基礎ポイントを　あげる。",
+"zh-hans": "宝可梦的营养饮料。能提高1只宝可梦的HP的基础点数。",
+"zh-hant": "寶可夢的營養飲料。 能提高１隻寶可夢的 ＨＰ的基礎點數。"
 }
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Gummi_White",
-"Icon": 6,
-"SortCategory": 0,
-"Price": 800,
+"Sprite": "Medicine_Orange",
+"Icon": 7,
+"SortCategory": 6,
+"Price": 750,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
@@ -33,23 +46,24 @@
 "$type": "PMDC.Dungeon.EdibleState, PMDC"
 },
 {
-"$type": "PMDC.Dungeon.GummiState, PMDC"
+"$type": "PMDC.Dungeon.DrinkState, PMDC"
 }
 ],
 "GroundUseActions": [
 {
 "$type": "RogueEssence.Ground.ScriptItemEvent, RogueEssence",
-"Script": "GroundWonderGummiEvent",
-"ArgTable": "{ Heal = 20, Msg = false, Change = 2, BoostedStat = \"none\" }",
-"GroundUsageType": 4,
+"Script": "GroundVitaminEvent",
+"ArgTable": "{ BoostedStat = \"hp\", Change = 3 }",
+"GroundUsageType": 5,
 "Selection": 1
 }
 ],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 1,
 "TileEmitter": {
@@ -119,8 +133,23 @@
 },
 "Value": {
 "$type": "PMDC.Dungeon.VitaminEvent, PMDC",
-"BoostedStat": -1,
-"Change": 2
+"BoostedStat": 0,
+"Change": 3
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.RestoreBellyEvent, PMDC",
+"BoostAnims": [],
+"Heal": 3,
+"Msg": false,
+"AddMaxBelly": 0,
+"NeedFullBelly": false
 }
 }
 ],
@@ -130,7 +159,7 @@
 "IntroFX": [],
 "HitFX": {
 "Delay": 15,
-"Sound": "DUN_Gummi",
+"Sound": "DUN_Drink",
 "Emitter": {
 "$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
 "LocHeight": 0,
@@ -166,7 +195,7 @@
 "AnimOverride": 0
 }
 },
-"UsageType": 4,
+"UsageType": 5,
 "ArcThrow": false,
 "BreakOnThrow": false,
 "ThrowAnim": {
