@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.16.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -22,7 +22,7 @@
 "Sprite": "Apricorn_White",
 "Icon": 11,
 "SortCategory": 8,
-"Price": 80,
+"Price": 300,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
@@ -32,6 +32,7 @@
 "$type": "PMDC.Dungeon.RecruitState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.AttackAction, RogueEssence",
 "HitTiles": false,
@@ -174,6 +175,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -202,6 +204,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

@@ -180,36 +180,97 @@ function metano_cafe.Cafe_Action(obj, activator)
 	local state = 0
 	local repeated = false
 	
-	--list of ~100 items, a random one is taken for new day to be sold as the cafe's special. entries show up multiple times if they're more common
-	local specials_catalog  = 
+	--list of ~100 items, a random one is taken for new day to be sold as the cafe's special.
+	local specials_catalog = 
 	{
-		"food_apple_big", "food_apple_big", "food_apple_big", "food_apple_big", "food_apple_big",  --big apples
-		"food_apple_huge", "food_apple_huge", "food_apple_huge", "food_apple_huge", "food_apple_huge",  --huge apples
-		"food_apple_golden", 				--gold apples
-		"food_apple_perfect", "food_apple_perfect", "food_apple_perfect",        --perfect apples
-		"food_banana", "food_banana" ,"food_banana", "food_banana", "food_banana",  --bananas
-		"food_banana_big", "food_banana_big", "food_banana_big",		--big bananas
-		"food_banana_golden", 				--golden banana
-		"berry_lum", "berry_lum", "berry_lum",		--lum berry
-		"berry_tanga", "berry_colbur", "berry_haban", "berry_wacan", "berry_chople", "berry_occa", "berry_coba", "berry_kasib", "berry_rindo", "berry_shuca", "berry_yache", "berry_chilan", "berry_kebia", "berry_payapa", "berry_charti", "berry_babiri", "berry_passho", "berry_roseli", --type berries
-		"berry_jaboca", "berry_rowap", "berry_apicot", "berry_liechi", "berry_ganlon", "berry_salac", "berry_petaya", "berry_starf", "berry_micle", "berry_enigma",  --other rare berries (enigma, starf, etc)
-		"berry_sitrus", "berry_sitrus", "berry_sitrus",     --sitrus berry
-		"gummi_wonder", "gummi_blue", "gummi_black", "gummi_clear", "gummi_grass", "green_gummi", "gummi_brown", "gummi_orange", "gummi_gold", "gummi_pink", "gummi_purple", "gummi_red", "gummi_royal", "gummi_silver", "gummi_white", "gummi_yellow", "gummi_sky", "gummi_gray", "gummi_magenta", --gummis
-		"seed_plain", "seed_plain", "seed_plain", "seed_plain", "seed_plain", --plain seeds
-		"seed_reviver", "seed_reviver", "seed_reviver", "seed_reviver",  --rev seed 
-		"seed_joy",            --joy seed
-		"seed_doom", "seed_doom", "seed_doom",  --doom seed 
-		"boost_nectar", "boost_protein", "boost_iron", "boost_calcium", "boost_zinc", "boost_carbos", "boost_hp_up", --nectar + vitamins
-		"herb_mental", "herb_power", "herb_white"  --mental, power, white herb
+		{"food_apple_big", 30},
+		{"food_apple_huge", 20},
+		{"food_apple_perfect", 3},
+		{"food_apple_golden", 1},
+		
+		{"food_banana", 10},
+		{"food_banana_big", 2},
+		{"food_banana_golden", 1},
+		
+		{"berry_lum", 15},
+		{"berry_sitrus", 5},
+		
+		{"berry_tanga", 3},
+		{"berry_colbur", 3},
+		{"berry_haban", 3},
+		{"berry_wacan", 3},
+		{"berry_chople", 3},
+		{"berry_occa", 3},
+		{"berry_coba", 3},
+		{"berry_kasib", 3},
+		{"berry_rindo", 3},
+		{"berry_shuca", 3},
+		{"berry_yache", 3},
+		{"berry_chilan", 3},
+		{"berry_kebia", 3},
+		{"berry_payapa", 3},
+		{"berry_charti", 3},
+		{"berry_babiri", 3},
+		{"berry_passho", 3},
+		{"berry_roseli", 3},
+		
+		{"berry_jaboca", 3},
+		{"berry_rowap", 3},
+		{"berry_apicot", 3},
+		{"berry_liechi", 3},
+		{"berry_ganlon", 3},
+		{"berry_salac", 3},
+		{"berry_petaya", 3},
+		{"berry_starf", 3},
+		{"berry_micle", 3},
+		{"berry_enigma", 3},
+		
+				
+		{"gummi_blue", 1}, --Blue Gummi
+		{"gummi_black", 1}, --Black Gummi
+		{"gummi_clear", 1}, --Clear Gummi
+		{"gummi_grass", 1}, --Grass Gummi
+		{"gummi_green", 1}, --Green Gummi
+		{"gummi_brown", 1}, --Brown Gummi
+		{"gummi_orange", 1}, --Orange Gummi
+		{"gummi_gold", 1}, --Gold Gummi
+		{"gummi_pink", 1}, --Pink Gummi
+		{"gummi_purple", 1}, --Purple Gummi
+		{"gummi_red", 1}, --Red Gummi
+		{"gummi_royal", 1}, --Royal Gummi
+		{"gummi_silver", 1}, --Silver Gummi
+		{"gummi_white", 1}, --White Gummi
+		{"gummi_yellow", 1}, --Yellow Gummi
+		{"gummi_sky", 1}, --Sky Gummi
+		{"gummi_gray", 1}, --Gray Gummi
+		{"gummi_magenta", 1},	--Magenta Gummi
+		{"gummi_wonder", 1}, --Wonder Gummi
+		
+		{"seed_plain", 20},
+		{"seed_reviver", 10},
+		{"seed_joy", 1},
+		{"seed_doom", 3},
+
+		{"boost_nectar", 1},
+		{"boost_protein", 1},
+		{"boost_iron", 1},
+		{"boost_calcium", 1},
+		{"boost_zinc", 1},
+		{"boost_carbos", 1},
+		{"boost_hp_up", 1},
+		
+		{"herb_mental", 5},
+		{"herb_power", 5},
+		{"herb_white", 5}
 	}
 	
 	-- special is -1 if nothing has been selected as the daily special. It should be set back to -1 when a new day happens
 	--but more ideally it should just be reinitialized when a new day happens. I just need to figure out how to do that properly
-	if SV.metano_cafe.CafeSpecial == -1 then 
-		SV.metano_cafe.CafeSpecial = GAME.Rand:Next(1, #specials_catalog)
+	if SV.metano_cafe.CafeSpecial == "" then 
+		SV.metano_cafe.CafeSpecial =  GeneralFunctions.WeightedRandom(specials_catalog)
 	end
 	
-	local special = RogueEssence.Dungeon.InvItem(specials_catalog[SV.metano_cafe.CafeSpecial])
+	local special = RogueEssence.Dungeon.InvItem(SV.metano_cafe.CafeSpecial)
 	local specialName = special:GetDisplayName()
 	local specialPrice = special:GetSellValue()
 	local owner = CH('Cafe_Owner')

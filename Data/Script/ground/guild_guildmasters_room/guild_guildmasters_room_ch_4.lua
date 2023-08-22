@@ -207,7 +207,7 @@ function guild_guildmasters_room_ch_4.PresentApricornCutscene()
 		GAME:WaitFrames(20)
 		--UI:SetSpeakerEmotion("Normal")
 		--UI:WaitShowDialogue("But honestly,[pause=10] my team did most of the work by acting as the base of the totem.[pause=0] My part was easy.")
-		UI:WaitShowDialogue("If it wasn't my teammates,[pause=10] there's no way I would have been able to reach the Apricorn!")
+		UI:WaitShowDialogue("If it wasn't for my teammates,[pause=10] there's no way I would have been able to reach the Apricorn!")
 	end
 	GAME:WaitFrames(20)
 	
@@ -247,7 +247,7 @@ function guild_guildmasters_room_ch_4.PresentApricornCutscene()
 	
 	GeneralFunctions.EmoteAndPause(tropius, "Exclaim", true)
 	UI:SetSpeaker(tropius)
-	UI:WaitShowDialogue("Me?[pause=0] Goodness,[pause=10] no!")
+	UI:WaitShowDialogue("Me?[pause=0] Goodness,[pause=10] no![script=0]", {function() return GeneralFunctions.ShakeHead(tropius) end})
 	UI:WaitShowDialogue("Your team worked hard to retrieve this Apricorn![pause=0] It's all yours!")
 	GAME:WaitFrames(20)
 	

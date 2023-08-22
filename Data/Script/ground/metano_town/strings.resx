@@ -512,7 +512,7 @@
     <value>You chose {0}'s overpriced junk over my well-priced wares.[pause=0] Get lost.</value>
   </data>
   <data name="Red_Merchant_Daily_Item" xml:space="preserve">
-    <value>Today's item is {0} and it'll set you back [color=#00FFFF]{1}[color] \uE024, that alright with you?</value>
+    <value>Today's item is {2} {0} and it'll set you back [color=#00FFFF]{1}[color] \uE024, that alright with you?</value>
   </data>
   <data name="Red_Merchant_No_Money" xml:space="preserve">
     <value>Hey,[pause=10] looks like you don't have the cash to buy my wares.</value>
@@ -569,7 +569,7 @@
     <value>Deal</value>
   </data>
   <data name="Shop_Buy_One" xml:space="preserve">
-    <value>A {1}? That will be [color=#00FFFF]{0}[color] \uE024.</value>
+    <value>{2} {1}? That will be [color=#00FFFF]{0}[color] \uE024.</value>
   </data>
   <data name="Shop_Sell_Complete" xml:space="preserve">
     <value>A done deal! \u266A\n Thank you \u266A</value>
@@ -596,7 +596,7 @@
     <value>You have the gall to try to purchase my wares after consorting with that fiend over there!?[pause=0] Away with you!</value>
   </data>
   <data name="Green_Merchant_Daily_Item" xml:space="preserve">
-    <value>For sale today, I have a {0}.\nIt costs [color=#00FFFF]{1}[color] \uE024, is that acceptable?</value>
+    <value>For sale today, I have {2} {0}.\nIt costs [color=#00FFFF]{1}[color] \uE024, is that acceptable?</value>
   </data>
   <data name="Green_Merchant_No_Money" xml:space="preserve">
     <value>Sorry,[pause=10] my friends,[pause=10] but you don't have enough money!</value>
@@ -833,7 +833,7 @@
     <value>I can [color=#00FFFF]{0}[color] \uE024 for that {1}. Is that acceptable?</value>
   </data>
   <data name="TM_Shop_Buy_One" xml:space="preserve">
-    <value>A {1} will cost you [color=#00FFFF]{0}[color] \uE024.</value>
+    <value>{2} {1} will cost you [color=#00FFFF]{0}[color] \uE024.</value>
   </data>
   <data name="TM_Shop_Sell_Complete" xml:space="preserve">
     <value>Another closed sale! \u266a Thank you my friends! \u266a</value>
@@ -882,7 +882,7 @@
   </data>
   <data name="Assembly_Info_005" xml:space="preserve">
     <value>Just know that sometimes only the two of you will be allowed on an adventure!</value>
-  </data>  
+  </data>
   <data name="Assembly_Info_006" xml:space="preserve">
     <value>By the way,[pause=10] Pokémon names colored like [color=#00FF00]this[color] instead of [color=#00FFFF]this[color] are species you've already recruited!</value>
   </data>

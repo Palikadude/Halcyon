@@ -85,7 +85,7 @@ function guild_heros_room.CheckTriggerEvent()
 		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
 	end
 	
-	if SV.ChapterProgression.Chapter == 4 and SV.ChapterProgression.DaysPassed >= SV.ChapterProgression.DaysToReach and not SV.Chapter4.DemoThankYou then
+	if SV.ChapterProgression.Chapter == 4 and SV.Chapter4.FinishedGrove and SV.ChapterProgression.DaysPassed >= SV.ChapterProgression.DaysToReach and not SV.Chapter4.DemoThankYou then
 		--start chapter 5 once that's ready. For now, trigger a demo thank you.
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("That's the end of the demo! Thank you so much for playing!")

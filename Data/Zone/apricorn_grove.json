@@ -7425,20 +7425,6 @@
 "Spawns": [
 {
 "Spawn": {
-"ID": "berry_chesto",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Rate": 6,
-"Range": {
-"Min": 0,
-"Max": 8
-}
-},
-{
-"Spawn": {
 "ID": "berry_leppa",
 "Cursed": false,
 "HiddenValue": "",
@@ -7487,7 +7473,7 @@
 "Amount": 0,
 "Price": 0
 },
-"Rate": 8,
+"Rate": 10,
 "Range": {
 "Min": 0,
 "Max": 8
@@ -7501,7 +7487,7 @@
 "Amount": 0,
 "Price": 0
 },
-"Rate": 10,
+"Rate": 12,
 "Range": {
 "Min": 0,
 "Max": 8

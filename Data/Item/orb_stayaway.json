@@ -1,56 +1,99 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.15.1",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Green Gummi",
+"DefaultText": "Stayaway Orb",
 "LocalTexts": {
-"fr": "Gelée Verte",
-"de": "Grüngummi",
-"ko": "초록구미"
+"fr": "Envoûtorbe",
+"de": "Wandelorb",
+"ko": "저리가구슬",
+"zh-hans": "远离之玉"
 }
 },
 "Desc": {
-"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. Bug-type Pokémon like it the most.",
+"DefaultText": "An orb that warps enemies to the nearest stairway, and puts them all into a deep sleep. It affects all enemies up to 5 tiles away.",
 "LocalTexts": {
-"fr": "Aliment qui remplit légèrement l'Estomac du Pokémon. Augmente le Q.I. des membres de l'équipe de secours qui en mangent. Plaît particulièrement aux Pokémon de type Insecte.",
-"de": "Nahrungsmittel, dass den Magen des Pokémons einigermaßen füllt und die Basiswerte permanent erhöht. Käfer-Pokémon mögen es am liebsten.",
-"ko": "먹으면 포만감을 약간 회복하고 스탯을 영구적으로 증가시킨다. 벌레타입 포켓몬이 좋아한다."
+"fr": "Téléporte les ennemis près des escaliers et les plongent dans un sommeil profond. Affecte tout les ennemis dans un rayon de 5 cases.",
+"de": "Ein Orb, welcher Gegner zur nächstgelegenen Treppe teleportiert und diese in einen tiefen Schlaf versetzt. Es betrifft alle Gegner in 5 Felder Entfernung.",
+"ko": "5칸 범위 내의 적을 가장 근처의 계단으로 순간이동시킨뒤, 깊은 잠에 빠지게 한다.",
+"zh-hans": "一种不可思议之玉，使用后将5格范围内的对手传送至最近的楼梯附近，并陷入深度睡眠。"
 }
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Gummi_Green",
-"Icon": 6,
-"SortCategory": 0,
-"Price": 160,
+"Sprite": "Orb_Purple",
+"Icon": 9,
+"SortCategory": 12,
+"Price": 50,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
 "BagEffect": false,
 "ItemStates": [
 {
-"$type": "PMDC.Dungeon.EdibleState, PMDC"
-},
-{
-"$type": "PMDC.Dungeon.GummiState, PMDC"
+"$type": "PMDC.Dungeon.OrbState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
-"$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
-"CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.AreaAction, RogueEssence",
+"Emitter": {
+"$type": "RogueEssence.Content.EmptyCircleSquareEmitter, RogueEssence",
+"LocHeight": 0
 },
-"TargetAlignments": 1,
+"HitTiles": false,
+"BurstTiles": 0,
+"HitArea": 0,
+"Range": 5,
+"Speed": 10,
+"CharAnimData": {
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
+},
+"TargetAlignments": 4,
 "TileEmitter": {
 "$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
 "LocHeight": 0
 },
-"PreActions": [],
+"PreActions": [
+{
+"Delay": 10,
+"Sound": "DUN_Move_Start",
+"Emitter": {
+"$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
+"LocHeight": 0,
+"finished": false,
+"Offset": 0,
+"Anim": {
+"$type": "RogueEssence.Content.StaticAnim, RogueEssence",
+"Anim": {
+"AnimIndex": "Charge_Up",
+"FrameTime": 3,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"TotalTime": 0,
+"Cycles": 1,
+"FrameOffset": 0
+},
+"Layer": 2,
+"UseDest": false
+},
+"ScreenMovement": {
+"MinShake": 0,
+"MaxShake": 0,
+"MaxShakeTime": 0
+}
+}
+],
 "ActionFX": {
 "Delay": 0,
-"Sound": "",
+"Sound": "DUN_Disable",
 "Emitter": {
 "$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
 "LocHeight": 0
@@ -64,7 +107,7 @@
 "LagBehindTime": 0
 },
 "Explosion": {
-"TargetAlignments": 1,
+"TargetAlignments": 4,
 "HitTiles": false,
 "Range": 0,
 "Speed": 0,
@@ -109,8 +152,34 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.GummiEvent, PMDC",
-"TargetElement": "bug"
+"$type": "PMDC.Dungeon.StatusStateBattleEvent, PMDC",
+"States": [
+{
+"$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
+"Counter": -1
+}
+],
+"StatusID": "sleep",
+"AffectTarget": true,
+"SilentCheck": false,
+"Anonymous": false,
+"TriggerMsg": {
+"Key": null
+},
+"Anims": []
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.WarpToEndEvent, PMDC",
+"Distance": 80,
+"DiffRange": 0,
+"AffectTarget": true
 }
 }
 ],
@@ -119,30 +188,11 @@
 "ElementEffects": [],
 "IntroFX": [],
 "HitFX": {
-"Delay": 15,
-"Sound": "DUN_Gummi",
+"Delay": 0,
+"Sound": "",
 "Emitter": {
-"$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
-"LocHeight": 0,
-"finished": false,
-"Offset": 0,
-"Anim": {
-"$type": "RogueEssence.Content.StaticAnim, RogueEssence",
-"Anim": {
-"AnimIndex": "Circle_Small_Blue_In",
-"FrameTime": 2,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"TotalTime": 0,
-"Cycles": 1,
-"FrameOffset": 0
-},
-"Layer": 2,
-"UseDest": false
+"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
+"LocHeight": 0
 },
 "ScreenMovement": {
 "MinShake": 0,
@@ -156,7 +206,7 @@
 "AnimOverride": 0
 }
 },
-"UsageType": 4,
+"UsageType": 1,
 "ArcThrow": false,
 "BreakOnThrow": false,
 "ThrowAnim": {

@@ -532,7 +532,12 @@ function guild_second_floor_ch_1.Zigzagoon_Action(chara, activator)
 	
 		UI:SetSpeaker(zigzagoon)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("Yeah![pause=0] Everything I learn about adventuring I write down in my almanac![script=0]", {function() return GeneralFunctions.Hop(zigzagoon) end})
+		--need to group these together for the script=0 call next line.
+		function HopThenIdle()
+			GeneralFunctions.Hop(CH('Zigzagoon'))
+			GROUND:CharSetAnim(CH('Zigzagoon'), "None", true)
+		end
+		UI:WaitShowDialogue("Yeah![pause=0] Everything I learn about adventuring I write down in my almanac![script=0]", {function() return HopThenIdle() end})
 		UI:WaitShowDialogue("Adventuring teams,[pause=10] expedition discoveries,[pause=10] and dungeoneering techniques and knowledge!")
 		UI:WaitShowDialogue("It's all in my almanac so that myself and others can all learn everything there is to know about adventuring!")
 		GAME:WaitFrames(20)

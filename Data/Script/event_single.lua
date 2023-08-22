@@ -277,6 +277,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 	
 	new_mob.MaxHPBonus = math.min(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2, max_boost);
 	new_mob.HP = new_mob.MaxHP;
+	new_mob.Unrecruitable = true
 	new_mob.Tactic = tactic
 	new_mob.CharLoc = spawn_loc
 	new_team.Players:Add(new_mob)
@@ -390,6 +391,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 				local randint = _DATA.Save.Rand:Next(0, all_spawns.Count)
 				local spawn = all_spawns[randint]
 				spawn.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnLuaTable('{ Goon = '..mission_num..' }'))
+				spawn.SpawnFeatures:Add(PMDC.LevelGen.MobSpawnUnrecruitable())
 				house_event.Mobs:Add(spawn)
 			end
 			local charaContext = RogueEssence.Dungeon.SingleCharContext(_DUNGEON.ActiveTeam.Leader)

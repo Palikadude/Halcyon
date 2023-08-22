@@ -592,7 +592,7 @@ SV.metano_town =
 
 SV.metano_cafe =
 {
-  CafeSpecial = -1,
+  CafeSpecial = "",
   BoughtSpecial = false,
   FermentedItem = "", 
   ItemFinishedFermenting = false,

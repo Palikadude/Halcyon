@@ -4280,7 +4280,7 @@ You can Team Mode off by pressing {1} again.
   <data name="BEGINNER_LESSON_RECRUITMENT_SIGN_1_1_BODY" xml:space="preserve">
     <value>Enemy Pokémon can be recruited to your team by throwing an Apricorn at them!
 Different colors of Apricorn are better for recruiting certain types of Pokémon, and work better if the Pokémon is low on health.
-You can't recruit Pokémon that are a higher level than you. 
+You can't recruit Pokémon that are more than five levels higher than you. 
 To leave, recruit the Diglett, then use Team Mode to have him use Rock Smash to break open the path to the stairs!
 As he is a volunteer, he won't be staying with you once you leave.
 </value>

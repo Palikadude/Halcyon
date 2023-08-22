@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.15.1",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
@@ -20992,7 +20992,7 @@
 ],
 "AssetName": "post_office",
 "Music": "Treasure Town.ogg",
-"EdgeView": 1,
+"EdgeView": 0,
 "NoSwitching": false,
 "ViewCenter": null,
 "ViewOffset": {
@@ -21023,6 +21023,7 @@
 "X": 168,
 "Y": 157
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -21113,6 +21114,7 @@
 "X": 224,
 "Y": 158
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
