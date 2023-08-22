@@ -27,7 +27,7 @@ function GeneralFunctions.UpdateDailyFlags()
 	}
 	
 	--reset cafe special
-    SV.metano_cafe.CafeSpecial = -1
+    SV.metano_cafe.CafeSpecial = ""
 	SV.metano_cafe.BoughtSpecial = false
 	
 	--finish fermenting any pending items if there are any
@@ -942,6 +942,25 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 		
 end
 
+
+local function FirstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
+--a or an before an item?
+function GeneralFunctions.GetItemArticle(item, uppercase)
+	if uppercase == nil then uppercase = false end 
+	
+	local article = 'a'
+	local first_letter = string.upper(string.sub(_DATA:GetItem(item.ID).Name:ToLocal(), 1, 1))
+
+	if first_letter == "A" or first_letter == 'E' or first_letter == 'I' or first_letter == 'O' or first_letter == 'U' then article = 'an' end
+	
+	if uppercase then article = FirstToUpper(article) end
+	
+	return article
+end
+
 --gives adventurer points
 function GeneralFunctions.RewardPoints(amount, silent)
 	if silent == nil then silent = false end
@@ -1051,7 +1070,7 @@ function GeneralFunctions.GetFavoriteGummi(chara)
 		if rand then typing = forme.Element2 end
 	end
 	
-	local gummis = {bug = "green_gummi",
+	local gummis = {bug = "gummi_green",
 					dark = "gummi_black", 
 					dragon = "gummi_royal", 
 					electric = "gummi_yellow", 

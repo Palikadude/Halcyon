@@ -676,7 +676,7 @@ function metano_town_ch_3.MerchantIntro()
 	UI:WaitShowDialogue("Where do you even source that garbage?[pause=0] From the Kecleon Shop's trash pile?")
 	
 	GROUND:CharTurnToCharAnimated(stunky, farfetchd, 4)
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(10)
 	UI:SetSpeaker(STRINGS:Format("\\uE040"), true, stunky.CurrentForm.Species, stunky.CurrentForm.Form, stunky.CurrentForm.Skin, stunky.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Angry")
 	GeneralFunctions.Complain(stunky, true)

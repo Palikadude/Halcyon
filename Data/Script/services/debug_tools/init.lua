@@ -245,7 +245,7 @@ function DebugTools:OnUpgrade()
  if SV.TemporaryFlags.AudinoSummonCount == nil then SV.TemporaryFlags.AudinoSummonCount = 0 end
   
 
- if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = -1 end
+ if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = "" end
  if SV.metano_cafe.BoughtSpecial == nil then SV.metano_cafe.BoughtSpecial = false end
  if SV.metano_cafe.FermentedItem == nil then SV.metano_cafe.FermentedItem = "" end
  if SV.metano_cafe.ItemFinishedFermenting == nil then SV.metano_cafe.ItemFinishedFermenting = false end
@@ -314,7 +314,7 @@ function DebugTools:OnUpgrade()
  
  --Fix old chapter 2 and before saves that have bad cafe variables
  --Curse you sunkern
- if type(SV.metano_cafe.CafeSpecial) == "number" then SV.metano_cafe.CafeSpecial = -1 SV.metano_cafe.BoughtSpecial = false end
+ if type(SV.metano_cafe.CafeSpecial) == "number" then SV.metano_cafe.CafeSpecial = "" SV.metano_cafe.BoughtSpecial = false end
  if type(SV.metano_cafe.FermentedItem) == "number" then SV.metano_cafe.FermentedItem = "" SV.metano_cafe.ItemFinishedFermenting = false end
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end

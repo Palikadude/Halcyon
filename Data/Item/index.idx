@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.16.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_big": {
@@ -7,7 +7,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.16.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -28,7 +28,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -49,7 +49,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -72,7 +72,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -95,7 +95,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -118,7 +118,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -141,7 +141,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -164,7 +164,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -187,7 +187,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -210,7 +210,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
@@ -233,11 +233,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -265,11 +265,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -297,11 +297,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -329,11 +329,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -361,11 +361,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -393,11 +393,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -425,11 +425,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -457,11 +457,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -489,11 +489,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
@@ -521,11 +521,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
@@ -549,11 +549,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
@@ -578,11 +578,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -603,11 +603,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -628,11 +628,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -653,11 +653,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -678,11 +678,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -703,11 +703,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -728,11 +728,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -748,16 +748,43 @@
 "Comment": "",
 "SortOrder": 0
 },
+"gummi_green": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.GummiState"
+}
+],
+"Name": {
+"DefaultText": "Green Gummi",
+"LocalTexts": {
+"fr": "Gelée Verte",
+"de": "Grüngummi",
+"it": "Gommaverde",
+"ko": "초록구미",
+"zh-hans": "绿色软糖"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
 "gummi_magenta": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -778,11 +805,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -803,11 +830,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -828,11 +855,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -853,11 +880,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -878,11 +905,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -903,11 +930,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -928,11 +955,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -953,11 +980,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -978,11 +1005,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -1003,11 +1030,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -1028,11 +1055,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1059,11 +1086,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1090,11 +1117,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1121,11 +1148,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1172,11 +1199,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1203,11 +1230,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1234,11 +1261,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1265,11 +1292,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1296,11 +1323,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1327,11 +1354,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1358,11 +1385,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1389,11 +1416,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1420,11 +1447,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1451,11 +1478,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1482,11 +1509,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1513,11 +1540,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1544,11 +1571,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1575,11 +1602,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1606,11 +1633,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1637,11 +1664,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1668,11 +1695,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1699,11 +1726,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1725,11 +1752,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1756,11 +1783,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1807,7 +1834,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1828,11 +1855,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1859,11 +1886,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1890,11 +1917,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1921,11 +1948,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -1952,11 +1979,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2003,11 +2030,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2034,11 +2061,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2065,11 +2092,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2096,11 +2123,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2127,11 +2154,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2158,11 +2185,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2189,11 +2216,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2215,11 +2242,11 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2265,7 +2292,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2286,7 +2313,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2307,7 +2334,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2328,7 +2355,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2349,7 +2376,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2370,7 +2397,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2391,7 +2418,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2412,7 +2439,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2433,7 +2460,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2454,7 +2481,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2475,7 +2502,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2496,7 +2523,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2517,7 +2544,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2533,12 +2560,34 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_stayaway": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Stayaway Orb",
+"LocalTexts": {
+"fr": "Envoûtorbe",
+"de": "Wandelorb",
+"ko": "저리가구슬",
+"zh-hans": "远离之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 12
+},
 "orb_totter": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2559,7 +2608,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2580,11 +2629,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.14.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.14.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2606,11 +2655,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2632,11 +2681,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2657,11 +2706,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2682,11 +2731,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2707,11 +2756,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2731,11 +2780,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -2756,7 +2805,7 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.WandState"
 }
 ],
@@ -2777,11 +2826,11 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 }
 ],
@@ -2798,7 +2847,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
@@ -2815,11 +2864,11 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
@@ -2838,11 +2887,11 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 },
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 }
 ],
@@ -2854,37 +2903,12 @@
 "Comment": "Cafe food item.",
 "SortOrder": 0
 },
-"green_gummi": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"UsageType": 4,
-"States": [
-{
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.EdibleState"
-},
-{
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.GummiState"
-}
-],
-"Name": {
-"DefaultText": "Green Gummi",
-"LocalTexts": {
-"fr": "Gelée Verte",
-"de": "Grüngummi",
-"ko": "초록구미"
-}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "held_aspear_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2901,7 +2925,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2918,7 +2942,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2935,7 +2959,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2952,7 +2976,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2969,7 +2993,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -2986,7 +3010,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -3003,7 +3027,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.12.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],

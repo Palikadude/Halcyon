@@ -468,12 +468,12 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	
 	--total weight = 100
 	local food_stock = {
-		{"food_apple", 82}, --Apple
+		{"food_apple", 182}, --Apple
 		{"gummi_blue", 1}, --Blue Gummi
 		{"gummi_black", 1}, --Black Gummi
 		{"gummi_clear", 1}, --Clear Gummi
 		{"gummi_grass", 1}, --Grass Gummi
-		{"green_gummi", 1}, --Green Gummi
+		{"gummi_green", 1}, --Green Gummi
 		{"gummi_brown", 1}, --Brown Gummi
 		{"gummi_orange", 1}, --Orange Gummi
 		{"gummi_gold", 1}, --Gold Gummi
@@ -551,8 +551,8 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	
 
 
-	--Apricorns become available once Apricorn Grove is cleared
-	if SV.Chapter4.FinishedGrove then
+	--Apricorns become available once Chapter 4 starts
+	if SV.ChapterProgression.Chapter == 4 then
 		table.insert(stock, GeneralFunctions.WeightedRandom(held_stock))
 		table.insert(stock, GeneralFunctions.WeightedRandom(ammo_stock))
 		table.insert(stock, GeneralFunctions.WeightedRandom(apricorn_stock))
@@ -801,7 +801,7 @@ function metano_town.Shop_Action(obj, activator)
 			else
 				if #cart == 1 then
 					local name = catalog[cart[1]].Item:GetDisplayName()
-					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name)
+					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name, GeneralFunctions.GetItemArticle(catalog[cart[1]].Item, true))
 				else
 					msg = STRINGS:Format(MapStrings['Shop_Buy_Multi'], total)
 				end
@@ -1009,7 +1009,7 @@ function metano_town.TM_Action(obj, activator)
 			else
 				if #cart == 1 then
 					local name = catalog[cart[1]].Item:GetDisplayName()
-					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_One'], total, name)
+					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_One'], total, name, GeneralFunctions.GetItemArticle(catalog[cart[1]].Item, true))
 				else
 					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_Multi'], total)
 				end
@@ -1408,7 +1408,7 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Refuse_Service'], farfetchd_name))
 			else
-				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item'], itemName, itemPrice))
+				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item)))
 				UI:WaitForChoice()
 				result = UI:ChoiceResult()
 				if result then
@@ -1606,7 +1606,7 @@ function metano_town.Green_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Refuse_Service']))
 			else
-				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item'], itemName, itemPrice))
+				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item)))
 				UI:WaitForChoice()
 				result = UI:ChoiceResult()
 				if result then

@@ -667,10 +667,10 @@ MISSION_GEN.REWARDS = {
 	},
 	--Rare chance for gummis
 	FOOD_LOW = {
-		{"food_apple", 15},
-		{"food_apple_big", 9},
-		{"food_banana", 9},
-		{"food_chestnut", 6},
+		{"food_apple", 30},
+		{"food_apple_big", 18},
+		{"food_banana", 18},
+		{"food_chestnut", 12},
 		{"gummi_blue", 1},
 		{"gummi_black", 1},
 		{"gummi_clear", 1}, 
@@ -692,10 +692,10 @@ MISSION_GEN.REWARDS = {
 	},
 	--Better chance for gummis over low tier, small chance for vitamins
 	FOOD_HIGH = {
-		{"food_apple_big", 15},
-		{"food_apple_huge", 9},
-		{"food_apple_perfect", 6},
-		{"food_banana_big", 9},
+		{"food_apple_big", 30},
+		{"food_apple_huge", 18},
+		{"food_apple_perfect", 12},
+		{"food_banana_big", 18},
 		{"gummi_blue", 1},
 		{"gummi_black", 1},
 		{"gummi_clear", 1}, 
@@ -1564,7 +1564,7 @@ function MISSION_GEN.GenerateBoard(board_type)
 		local difficulty = MISSION_GEN.DUNGEON_DIFFICULTY[dungeon]
 		local offset = 0
 		--up the difficulty by 1 if its an outlaw or escort mission.
-		local difficult_objectives = { COMMON.MISSION_TYPE_ESCORT, COMMON.MISSION_TYPE_OUTLAW, COMMON.MISSION_TYPE_OUTLAW_FLEE, COMMON.MISSION_TYPE_OUTLAW_ITEM }
+		local difficult_objectives = { COMMON.MISSION_TYPE_ESCORT, COMMON.MISSION_TYPE_EXPLORATION, COMMON.MISSION_TYPE_OUTLAW, COMMON.MISSION_TYPE_OUTLAW_FLEE, COMMON.MISSION_TYPE_OUTLAW_ITEM }
 		if GeneralFunctions.TableContains(difficult_objectives, objective) then
 			offset = 1
 		--up the difficulty by 2 if its an outlaw monster house

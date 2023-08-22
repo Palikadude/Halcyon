@@ -171,6 +171,16 @@ function guild_bottom_right_bedroom.Team_Almanac_Action(obj, activator)
 	--cancel goes at end of choice list always
 	table.insert(choices, #choices + 1, 'Never Mind')
 	
+	--Don't read his books until he tells you you can.
+	if not SV.Chapter1.MetZigzagoon then
+		UI:WaitShowDialogue("This appears to be someone else's book.\nBest not read it without their permission.")
+		UI:SetCenter(false)
+		UI:SetAutoFinish(false)
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)
+		return
+	end
 	
 	UI:ChoiceMenuYesNo("This is one of " .. zig_name .. "'s almanacs.\nIt's entitled " .. '"Adventuring Teams". Read it?')
 	UI:WaitForChoice()
@@ -325,8 +335,18 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
-	local choices = {'Using Attacks to Move', 'Tough Opponents', 'Never Mind'}
+	local choices = {'Using Attacks to Move', 'Tough Opponents', 'Basic Attacks', 'Never Mind'}
 		
+	--Don't read his books until he tells you you can.
+	if not SV.Chapter1.MetZigzagoon then
+		UI:WaitShowDialogue("This appears to be someone else's book.\nBest not read it without their permission.")
+		UI:SetCenter(false)
+		UI:SetAutoFinish(false)
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)
+		return
+	end
 	
 	--todo: Different mons use different AI types
 	UI:ChoiceMenuYesNo("This is one of " .. zig_name .. "'s almanacs.\nIt's entitled " .. '"Adventuring Tips". Read it?')
@@ -372,6 +392,24 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
 			UI:WaitShowDialogue("Well,[pause=10] that depends on the opponent,[pause=10] what items we have,[pause=10] my and " .. CharacterEssentials.GetCharacterName("Growlithe") .. "'s health,[pause=10] and so many other factors...")
 			UI:WaitShowDialogue("I guess knowing which option to choose in a tough spot is part of what it takes to be a great adventurer,[pause=10] hmm.")
 			UI:WaitShowDialogue("Either way,[pause=10] it's good to know what my options are before I have to choose one while out on an adventure!")
+		  elseif entry == 'Basic Attacks' then
+			local headbutt = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("headbutt")
+			local aron_species = _DATA:GetMonster('aron'):GetColoredName()
+			UI:WaitShowDialogue(zig_name .. "'s Almanac\n Tips Entry: Basic Attacks")
+			UI:SetCenter(false)
+			UI:WaitShowDialogue("Basic attacks are something all Pokémon can perform,[pause=10] regardless of what moves they know!")
+			UI:WaitShowDialogue("They're weak compared to most moves,[pause=10] and you won't get any EXP if you only use basic attacks to defeat an enemy...")
+			UI:WaitShowDialogue("But you don't need energy to perform them,[pause=10] so even when you've exhausted your moves,[pause=10] you still have basic attacks!")
+			UI:WaitShowDialogue("This makes them perfect for conserving energy you need to perform regular moves!")
+			UI:WaitShowDialogue("For example,[pause=10] if my " .. headbutt:GetColoredName() .. " barely misses the mark of knocking out my opponent...")
+			UI:WaitShowDialogue("I can use a basic attack to finish them off instead of wasting more energy performing another " .. headbutt:GetColoredName() .. "!")
+			UI:WaitShowDialogue("Something else that's great about basic attacks is they're typeless![pause=0] That means no type is weak to or resists them!")
+			UI:WaitShowDialogue("So sometimes,[pause=10] if your opponent resists all of your moves,[pause=10] basic attacks can be the strongest option you have!")
+			UI:WaitShowDialogue("My " .. headbutt:GetColoredName() .. " for example would barely scratch an " .. aron_species .. ",[pause=10] since Steel and Rock resist Normal...")
+			UI:WaitShowDialogue("But a basic attack would do more damage than " .. headbutt:GetColoredName() .. " since basic attacks can't be resisted!")
+			UI:WaitShowDialogue("A lot of Pokémon think that basic attacks aren't worth using,[pause=10] but that's not true!")
+			UI:WaitShowDialogue("They're just something you need to know when to use to get the most out of them!")
+
 		  end
 		  
 		  
@@ -404,6 +442,17 @@ function guild_bottom_right_bedroom.Data_Almanac_Action(obj, activator)
 	local zig_name = CharacterEssentials.GetCharacterName("Zigzagoon")
 	local choices = {'Gummi Stats', "Same Type Attack Bonus", "Type Matchups", "Stat Changes", "Never Mind"}
 	--todos: Critical hit mechanics, belly mechanics and specifics
+		
+	--Don't read his books until he tells you you can.
+	if not SV.Chapter1.MetZigzagoon then
+		UI:WaitShowDialogue("This appears to be someone else's book.\nBest not read it without their permission.")
+		UI:SetCenter(false)
+		UI:SetAutoFinish(false)
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)
+		return
+	end
 	
 	UI:ChoiceMenuYesNo("This is one of " .. zig_name .. "'s almanacs.\nIt's entitled " .. '"Measurements and Calculations". Read it?')
 	UI:WaitForChoice()

@@ -77,11 +77,13 @@ function apricorn_glade.PlotScripting()
 			apricorn_glade_ch_4.SubsequentArrivalCutscene()--came back after failing to get the apricorn
 		else 
 			--generic end
-			apricorn_glade.GenericEnding()
+			apricorn_glade.GenericEnding() 
 		end
-	else
+	elseif SV.ChapterProgression.Chapter > 4 then 
 		--generic end
 		apricorn_glade.GenericEnding()
+	else
+		GAME:FadeIn(20)
 	end
 end 
 
@@ -90,7 +92,70 @@ end
 
 --No cutscene to play, play a generic ending saying there's nothing here.
 function apricorn_glade.GenericEnding()
-	GAME:FadeIn(20)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local team2 = CH('Teammate2')
+	local team3 = CH('Teammate3')
+	AI:DisableCharacterAI(partner)
+	SOUND:StopBGM()
+	GAME:WaitFrames(20)
+	
+	--the apricorn was picked
+	GROUND:Hide('Apricorn_Scene')
+	GROUND:TeleportTo(hero, 268, 368, Direction.Up)
+	GROUND:TeleportTo(partner, 300, 368, Direction.Up)
+	if team2 ~= nil then
+		GROUND:TeleportTo(team2, 284, 400, Direction.Up)
+	end
+	if team3 ~= nil then
+		GROUND:TeleportTo(team3, 316, 400, Direction.Up)
+	end
+	GAME:MoveCamera(292, 224, 1, false)
+
+		
+	GAME:CutsceneMode(true)
+	UI:ResetSpeaker()
+	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
+	GAME:WaitFrames(60)
+	UI:WaitHideTitle(20)
+	GAME:FadeIn(40)
+	
+	SOUND:PlayBGM('In The Depths of the Pit.ogg', true)
+	
+	local coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 300, 248, false, 1) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												  GROUND:MoveToPosition(hero, 268, 248, false, 1) end)
+	local coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GROUND:MoveToPosition(team2, 284, 280, false, 1) end end)
+	local coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GROUND:MoveToPosition(team3, 316, 280, false, 1) end end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	GAME:WaitFrames(10)	
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Up) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.LookAround(hero, 3, 4, false, false, true, Direction.Up) end)
+	coro3 = TASK:BranchCoroutine(function() if team2 ~= nil then GAME:WaitFrames(14) GeneralFunctions.LookAround(team2, 3, 4, false, false, true, Direction.Left) end end)										  
+	coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then GAME:WaitFrames(18) GeneralFunctions.LookAround(team3, 3, 4, false, false, true, Direction.Right) end end)										  
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+
+	--temporary flags are set by the zone script rather than here.
+	GAME:WaitFrames(20)
+	UI:SetCenter(true)
+	UI:WaitShowDialogue("There doesn't appear to be anything of interest here.")
+	UI:WaitShowDialogue("It's impossible to go any further.[pause=0]\nIt's time to go back.")
+	UI:SetCenter(false)
+	SOUND:FadeOutBGM(60)
+	GAME:FadeOut(false, 60)
+	GAME:CutsceneMode(false)
+	GAME:WaitFrames(20)
+	
+	SV.ApricornGrove.InDungeon = false
+	--Go to second floor if mission was done, else, dinner room
+	if SV.TemporaryFlags.MissionCompleted then
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 22, 0, true, true)
+	else
+		GeneralFunctions.EndDungeonRun(RogueEssence.Data.GameProgress.ResultType.Cleared, "master_zone", -1, 6, 0, true, true)
+	end
 end
 
 -------------------------------
