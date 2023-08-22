@@ -516,6 +516,226 @@
 "Comment": "",
 "SortOrder": 0
 },
+"boost_calcium": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Calcium",
+"LocalTexts": {
+"fr": "Calcium",
+"de": "Kalzium",
+"es": "Calcio",
+"pt": "Cálcio",
+"it": "Calcio",
+"ko": "리보플라빈",
+"ja": "リゾチウム",
+"ja-jp": "リゾチウム",
+"zh-hans": "特攻增强剂",
+"zh-hant": "特攻增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_carbos": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Carbos",
+"LocalTexts": {
+"fr": "Carbone",
+"de": "Carbon",
+"es": "Carburante",
+"pt": "Carbos",
+"it": "Carburante",
+"ko": "알칼로이드",
+"ja": "インドメタシン",
+"ja-jp": "インドメタシン",
+"zh-hans": "速度增强剂",
+"zh-hant": "速度增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_hp_up": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "HP Up",
+"LocalTexts": {
+"fr": "PV Plus",
+"de": "KP-Plus",
+"es": "Más PS",
+"pt": "Elevador de PS",
+"it": "PS-Su",
+"ko": "맥스업",
+"ja": "マックスアップ",
+"ja-jp": "マックスアップ",
+"zh-hans": "HP增强剂",
+"zh-hant": "ＨＰ增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_iron": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Iron",
+"LocalTexts": {
+"fr": "Fer",
+"de": "Eisen",
+"es": "Hierro",
+"pt": "Ferro",
+"it": "Ferro",
+"ko": "사포닌",
+"ja": "ブロムヘキシン",
+"ja-jp": "ブロムヘキシン",
+"zh-hans": "防御增强剂",
+"zh-hant": "防禦增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_nectar": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Nectar",
+"LocalTexts": {
+"fr": "Nectar",
+"de": "Nektar",
+"it": "Nettare",
+"ko": "맛있는꿀",
+"zh-hans": "蜂蜜",
+"zh-hant": "蜂蜜"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_protein": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Protein",
+"LocalTexts": {
+"fr": "Protéine",
+"de": "Protein",
+"es": "Proteína",
+"pt": "Proteína",
+"it": "Proteina",
+"ko": "타우린",
+"ja": "タウリン",
+"ja-jp": "タウリン",
+"zh-hans": "攻击增强剂",
+"zh-hant": "攻擊增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
+"boost_zinc": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"Name": {
+"DefaultText": "Zinc",
+"LocalTexts": {
+"fr": "Zinc",
+"de": "Zink",
+"es": "Zinc",
+"pt": "Zinco",
+"it": "Zinco",
+"ko": "키토산",
+"ja": "キトサン",
+"ja-jp": "キトサン",
+"zh-hans": "特防增强剂",
+"zh-hant": "特防增強劑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 6
+},
 "food_apple": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,

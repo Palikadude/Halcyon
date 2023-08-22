@@ -3,27 +3,40 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Grass Gummi",
+"DefaultText": "Carbos",
 "LocalTexts": {
-"fr": "Gelée Plante",
-"de": "Floragummi",
-"ko": "새싹구미"
+"fr": "Carbone",
+"de": "Carbon",
+"es": "Carburante",
+"pt": "Carbos",
+"it": "Carburante",
+"ko": "알칼로이드",
+"ja": "インドメタシン",
+"ja-jp": "インドメタシン",
+"zh-hans": "速度增强剂",
+"zh-hant": "速度增強劑"
 }
 },
 "Desc": {
-"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. Grass-type Pokémon like it the most.",
+"DefaultText": "A drink that permanently raises the Pokémon's Speed.",
 "LocalTexts": {
-"fr": "Aliment qui remplit légèrement l'Estomac du Pokémon. Augmente le Q.I. des membres de l'équipe de secours qui en mangent. Plaît particulièrement aux Pokémon de type Plante.",
-"de": "Nahrungsmittel, dass den Magen des Pokémons einigermaßen füllt und die Basiswerte permanent erhöht. Pflanzen-Pokémon mögen es am liebsten.",
-"ko": "먹으면 포만감을 약간 회복하고 스탯을 영구적으로 증가시킨다. 풀타입 포켓몬이 좋아한다."
+"fr": "Une boisson très nutritive qui augmente la Vitesse de base d’un Pokémon.",
+"de": "Ein gehaltvolles Getränk, das den Initiative-Basiswert eines Pokémon dauerhaft erhöht.",
+"es": "Nutritiva bebida que potencia la Velocidad de base de un Pokémon.",
+"it": "Una bevanda che aumenta permanentemente la Velocità del Pokémon.",
+"ko": "마시는 포켓몬의 스피드를 영구적으로 올린다.",
+"ja": "ポケモンの　えいようドリンク。 ポケモン　１ひきの　すばやさの きそポイントを　あげる。",
+"ja-jp": "ポケモンの　栄養ドリンク。 ポケモン　１匹の　素早さの 基礎ポイントを　あげる。",
+"zh-hans": "宝可梦的营养饮料。能提高1只宝可梦的速度的基础点数。",
+"zh-hant": "寶可夢的營養飲料。 能提高１隻寶可夢的 速度的基礎點數。"
 }
 },
 "Released": true,
 "Comment": "",
-"Sprite": "Gummi_Grass",
-"Icon": 6,
-"SortCategory": 0,
-"Price": 160,
+"Sprite": "Medicine_Orange",
+"Icon": 7,
+"SortCategory": 6,
+"Price": 750,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
@@ -33,23 +46,24 @@
 "$type": "PMDC.Dungeon.EdibleState, PMDC"
 },
 {
-"$type": "PMDC.Dungeon.GummiState, PMDC"
+"$type": "PMDC.Dungeon.DrinkState, PMDC"
 }
 ],
 "GroundUseActions": [
 {
 "$type": "RogueEssence.Ground.ScriptItemEvent, RogueEssence",
-"Script": "GroundGummiEvent",
-"ArgTable": "{  TargetElement = \"grass\" }",
-"GroundUsageType": 4,
+"Script": "GroundVitaminEvent",
+"ArgTable": "{ BoostedStat = \"speed\", Change = 3 }",
+"GroundUsageType": 5,
 "Selection": 1
 }
 ],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 1,
 "TileEmitter": {
@@ -118,8 +132,24 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.GummiEvent, PMDC",
-"TargetElement": "grass"
+"$type": "PMDC.Dungeon.VitaminEvent, PMDC",
+"BoostedStat": 5,
+"Change": 3
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.RestoreBellyEvent, PMDC",
+"BoostAnims": [],
+"Heal": 3,
+"Msg": false,
+"AddMaxBelly": 0,
+"NeedFullBelly": false
 }
 }
 ],
@@ -129,7 +159,7 @@
 "IntroFX": [],
 "HitFX": {
 "Delay": 15,
-"Sound": "DUN_Gummi",
+"Sound": "DUN_Drink",
 "Emitter": {
 "$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
 "LocHeight": 0,
@@ -165,7 +195,7 @@
 "AnimOverride": 0
 }
 },
-"UsageType": 4,
+"UsageType": 5,
 "ArcThrow": false,
 "BreakOnThrow": false,
 "ThrowAnim": {

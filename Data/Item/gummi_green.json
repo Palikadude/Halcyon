@@ -40,7 +40,15 @@
 "$type": "PMDC.Dungeon.GummiState, PMDC"
 }
 ],
-"GroundUseActions": [],
+"GroundUseActions": [
+{
+"$type": "RogueEssence.Ground.ScriptItemEvent, RogueEssence",
+"Script": "GroundGummiEvent",
+"ArgTable": "{  TargetElement = \"bug\" }",
+"GroundUsageType": 4,
+"Selection": 1
+}
+],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
