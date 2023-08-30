@@ -685,11 +685,12 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 		tbl = LTBL(p)
 		--print(tbl.Importance)
 		--print(p.Nickname)
-		GAME:RemovePlayerAssembly(i-found)
 		if tbl.Importance == 'Hero' then --hero goes in slot 1
+			GAME:RemovePlayerAssembly(i-found)
 			bufferTable[1] = p
 			found = found + 1
 		elseif tbl.Importance == 'Partner' then --partner in slot 2
+			GAME:RemovePlayerAssembly(i-found)
 			bufferTable[2] = p
 			found = found + 1
 			--if spawn then --call teammate 1 spawner
@@ -697,6 +698,7 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 			--	GROUND:SpawnerDoSpawn("TEAMMATE_1", p)
 			--end
 		elseif tbl.AddBack ~= nil then--misc goons go in remaining slots
+			GAME:RemovePlayerAssembly(i-found)
 			bufferTable[tbl.AddBack] = p
 			found = found + 1
 			--if spawn then --WARNING: Most places won't have teammate 2 and 3 spawners. Cafe and zone grounds are probably it.

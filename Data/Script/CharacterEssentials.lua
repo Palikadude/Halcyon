@@ -760,6 +760,26 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = "normal"
+		},
+		
+		--Inn Passersby
+		Smeargle = {
+			species = "Smeargle",
+			nickname = 'Passerby',
+			instance = 'Passerby_1',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
+		},
+		
+		--Inn Passersby
+		Skorupi = {
+			species = "Skorupi",
+			nickname = 'Passerby',
+			instance = 'Passerby_1',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
 		}
 			
 	}

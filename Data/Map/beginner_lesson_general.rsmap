@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.16.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -121,17 +121,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -343,17 +352,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -565,17 +583,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -787,17 +814,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -1009,17 +1045,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -1231,17 +1276,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -1453,17 +1507,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -1675,17 +1738,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -1899,17 +1971,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -2126,17 +2207,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -2348,17 +2438,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -2570,17 +2669,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -2792,17 +2900,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -3014,17 +3131,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -3236,17 +3362,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -3458,17 +3593,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -3680,17 +3824,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -3902,17 +4055,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -4124,17 +4286,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -4346,17 +4517,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -4568,17 +4748,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -4790,17 +4979,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -5012,17 +5210,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -5234,17 +5441,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -5456,17 +5672,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -5678,17 +5903,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -5900,17 +6134,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -6122,17 +6365,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -6344,17 +6596,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -6566,17 +6827,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -6788,17 +7058,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -7010,17 +7289,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -7232,17 +7520,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -7458,17 +7755,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -7680,17 +7986,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -7902,17 +8217,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 }
 ]
 },
@@ -8116,6 +8440,7 @@
 "X": 0,
 "Y": 0
 },
+"HideMinimap": false,
 "NoRescue": false,
 "NoSwitching": false,
 "MapTurns": 0,
@@ -20068,6 +20393,14 @@
 }
 ]
 ]
+}
+],
+"Decorations": [
+{
+"Name": "New Deco",
+"Layer": 0,
+"Visible": true,
+"Anims": []
 }
 ],
 "Tiles": [

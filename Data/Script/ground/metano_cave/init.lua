@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_cave.metano_cave_ch_2'
 require 'ground.metano_cave.metano_cave_ch_3'
+require 'ground.metano_cave.metano_cave_ch_4'
 
 -- Package name
 local metano_cave = {}
@@ -106,6 +107,11 @@ end
 function metano_cave.Sunflora_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("metano_cave_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Sunflora_Action(...,...)"), chara, activator))
+end
+
+function metano_cave.Oddish_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("metano_cave_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Oddish_Action(...,...)"), chara, activator))
 end
 
 function metano_cave.Teammate1_Action(chara, activator)

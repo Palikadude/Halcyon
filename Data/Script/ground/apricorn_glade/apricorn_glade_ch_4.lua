@@ -306,9 +306,7 @@ function apricorn_glade_ch_4.AnimationTest()
 											GROUND:AnimateInDirection(partner, "Hop", Direction.Up, Direction.Up, 15, 1, 1)
 											frameAction = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, 23, Direction.Up, partner_anim, false)
 											--Mouth gives inconsistent results, center + an amount seems more consistent.
-											print("oh!")
 											GROUND:ActionToPosition(partner, frameAction, hero.MapLoc.X, hero.MapLoc.Y + 1, 1, 1, hero_shoulders)
-											print("Shit!")
 											--GROUND:CharSetAction(partner, RogueEssence.Ground.FrameGroundAction(partner.Position, partner.LocHeight, Direction.Up, partner_anim, 0))
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
@@ -557,7 +555,7 @@ function apricorn_glade_ch_4.PickApricorn()
 	GAME:CutsceneMode(true)
 	
 	GAME:MoveCamera(292, 192, 1, false)
-	GROUND:TeleportTo(partner, 276, 160, Direction.Up)
+	GROUND:TeleportTo(partner, 276, 158, Direction.Up)
 	AI:DisableCharacterAI(partner)
 	GAME:WaitFrames(60)
 	
@@ -566,29 +564,40 @@ function apricorn_glade_ch_4.PickApricorn()
 	local team2species = 'default'
 	local team3species = 'default'
 	local onix_teammate = nil
+	local other_teammate = nil
 	
 	if team2 ~= nil then team2species = team2.CurrentForm.Species end 
 	if team3 ~= nil then team3species = team3.CurrentForm.Species end 
 	
+	
 	if team2species == 'onix' then 
 		onix_teammate = team2
+		other_teammate = team3
 	elseif team3species == 'onix' then
 		onix_teammate = team3
+		other_teammate = team2
 	end
 	
 	--Onix Teammate? if so, play a special scene where the one onix helps the partner up
 	if onix_teammate ~= nil then
-	
-		GROUND:TeleportTo(hero, 300, 240, Direction.Up)
-		GROUND:TeleportTo(team2, 300, 240, Direction.Up)
-		GROUND:TeleportTo(team3, 300, 240, Direction.Up)
+
+		GROUND:TeleportTo(hero, 252, 239, Direction.UpRight)
+		GROUND:TeleportTo(other_teammate, 300, 239, Direction.UpLeft)
 		
 		local onix_head = GROUND:CharGetAnimPoint(onix_teammate, RogueEssence.Content.ActionPointType.Head)
 		local onix_shadow = GROUND:CharGetAnimPoint(onix_teammate, RogueEssence.Content.ActionPointType.Shadow)		
 		
+		
+		--used to cast the shadow, as our onix's true position is going to be super offscreen with a huge height. this is to handle rendering shenanigans.
+		local onix_clone_monster = RogueEssence.Dungeon.MonsterID("onix", 0, "normal", Gender.Male)
+		local onix_clone = RogueEssence.Ground.GroundChar(onix_clone_monster, RogueElements.Loc(392, 240), Direction.Up, "The Backstreet Boys", onix_clone_monster.Species)
+		onix_clone:ReloadEvents()
+		GAME:GetCurrentGround():AddTempChar(onix_clone)
+		
 		--This is the appropriate way to "move to a position with a height". The one in the generic version of this scene was before i realized teleport to took a height.
-		GROUND:TeleportTo(onix_teammate, 276, 160 + onix_shadow.Y - onix_head.Y, Direction.Up)
-		GROUND:TeleportTo(partner, onix_teammate.Position.X, onix_teammate.Position.Y + 1, Direction.Up, onix_shadow.Y - onix_head.Y)
+		GROUND:TeleportTo(onix_clone, 276, 158 + onix_shadow.Y - onix_head.Y, Direction.Up, 200)
+		GROUND:TeleportTo(onix_teammate, 276, 8 + onix_shadow.Y - onix_head.Y, Direction.Up, -150)
+		GROUND:TeleportTo(partner, onix_clone.Position.X, onix_clone.Position.Y + 1, Direction.Up, onix_shadow.Y - onix_head.Y)
 		
 		UI:SetSpeaker(partner)
 		UI:WaitShowDialogue("Alright,[pause=0] I'll just climb up along your back then.")
@@ -627,22 +636,81 @@ function apricorn_glade_ch_4.PickApricorn()
 		UI:WaitShowDialogue("Yes![pause=0] I think I've got it!")
 		
 		GAME:WaitFrames(30)
-		
+		--TODO: PLAY THE TUMBLE ANIMATION IN REVERSE IF THIS EVER BECOMES AN OPTION
+		--NOTE: The shadow of the partner shifts a decent amount and it's a bit awkward if you pay close attention, but it's because the tumble animation shifts the shadow around itself. Not worth worrying about i think...
+		SOUND:PlayBattleSE('EVT_CH05_Tumble_Behind_Waterfall')
+		UI:SetSpeakerEmotion("Shouting")
 		local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Waaaaaaah!", 60) end)
-		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
-													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, onix_teammate.Position.Y, 3)
+		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
+													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, onix_clone.Position.Y + 16, 2)
 													  end)
-											
-
-		local coro3 = TASK:BranchCoroutine(function() local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
+		local coro3 = TASK:BranchCoroutine(function() local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("Tumble")
 													  local frameActionPartner = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim, false)
-													  GROUND:ActionToPosition(partner, frameActionPartner, 276, onix_teammate.Position.Y + 4, 1, 2, 0)
-													  GROUND:AnimateToPosition(partner, "Tumble", Direction.Up, 276, onix_teammate.Position.Y + 40, 1, 3, 0)
+													  GROUND:ActionToPosition(partner, frameActionPartner, 276, onix_clone.Position.Y + 1, 1, 2, 0)
+													  GROUND:AnimateToPosition(partner, "Tumble", Direction.Up, 276, onix_clone.Position.Y + 36, 1, 3, 0)
 													  GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pain")))
+													  GROUND:EntTurn(partner, Direction.Left)
 													  end)
-		TASK:JoinCoroutines({coro1, coro2, coro3})
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+													  GROUND:CharSetEmote(hero, "shock", 1)
+													  GAME:WaitFrames(12)
+													  GROUND:EntTurn(hero, Direction.Right) 
+													  GAME:WaitFrames(60)
+													  --GROUND:MoveToPosition(hero, hero.Position.X + 4, hero.Position.Y, false, 1)
+													  --GAME:WaitFrames(10)
+													  GeneralFunctions.EmoteAndPause(hero, "Sweating", false) end)
+		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(14)
+													  GROUND:CharSetEmote(other_teammate, "exclaim", 1)
+													  GAME:WaitFrames(12)
+													  GROUND:EntTurn(other_teammate, Direction.Left) end)
+        local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
+													  GROUND:CharSetEmote(onix_teammate, "exclaim", 1) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6})
 		
-		--todo: make this once this is more easily doable
+		GROUND:CharAnimateTurnTo(onix_teammate, Direction.Down, 4)
+		GAME:WaitFrames(10)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("Owowowowow...")
+			
+		
+		
+		GAME:WaitFrames(30)
+		GeneralFunctions.DoAnimation(partner, "Wake") 
+		GeneralFunctions.ShakeHead(partner) 		
+		GAME:WaitFrames(30)
+
+		
+		UI:SetSpeakerEmotion("Normal")
+		SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
+		UI:WaitShowDialogue("Urgh...[pause=0] Don't worry,[pause=10] I'm alright.")
+		--GAME:WaitFrames(20)
+		--GROUND:AnimateToPosition(hero, "Walk", Direction.Right, hero.Position.X - 4, hero.Position.Y, 1, 1, 0)
+		GAME:WaitFrames(30)
+		
+		GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+		GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
+		GROUND:EntTurn(other_teammate, Direction.UpLeft)
+		GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Oh![pause=0] The Apricorn![pause=0] We managed to get it off the tree!")
+		
+		GAME:WaitFrames(20)
+		GROUND:MoveInDirection(partner, Direction.Up, 4, false, 1)
+		GROUND:Hide(apricorn.EntName)
+		SOUND:PlaySE("Event Item Pickup")
+		GeneralFunctions.Monologue(partner:GetDisplayName() .. " picked up the huge Apricorn.")
+		
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Inspired")
+		GAME:WaitFrames(30)
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		--GeneralFunctions.DoubleHop(partner)
+		GROUND:CharSetEmote(partner, "glowing", 0)
+		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "! Everyone![pause=0] We got the big Apricorn!")
+		GROUND:CharSetEmote(partner, "", 0)
+		UI:WaitShowDialogue("Let's bring it back to the Guildmaster![pause=0] He'll be amazed by the size of this thing!")
+		
 		
 		
 		SV.ApricornGrove.InDungeon = false
@@ -668,6 +736,8 @@ function apricorn_glade_ch_4.PickApricorn()
 		--Take eeveryone out, then respawn them as proper map characters.
 		
 		--Temp characters are not saved on map save, where as map characters are. Luckily, this won't be an issue as you can't save on this map.
+		
+		--NOTE:This is bugged for the player; they can't be deleted for whatever reason, so they get double speed animations. Waiting on audino fix.
 		_ZONE.CurrentGround:RemoveMapChar(hero)
         _ZONE.CurrentGround:RemoveTempChar(partner)
         _ZONE.CurrentGround:RemoveTempChar(team2)
@@ -692,18 +762,18 @@ function apricorn_glade_ch_4.PickApricorn()
 		local stack_3_shadow = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Shadow)		
 		local stack_3_center = GROUND:CharGetAnimPoint(stack_order[3], RogueEssence.Content.ActionPointType.Center)		
 		
-		local stack_1_height = math.max(stack_1_shadow.Y - stack_1_head.Y, stack_1_shadow.Y - stack_1_center.Y + 6, 13)
-		local stack_2_height = math.max(stack_2_shadow.Y - stack_2_head.Y, stack_2_shadow.Y - stack_2_center.Y + 6, 13)
-		local stack_3_height = math.max(stack_3_shadow.Y - stack_3_head.Y, stack_3_shadow.Y - stack_3_center.Y + 6, 13)
+		local stack_1_height = math.max(stack_1_shadow.Y - stack_1_head.Y, stack_1_shadow.Y - stack_1_center.Y + 6, 14)
+		local stack_2_height = math.max(stack_2_shadow.Y - stack_2_head.Y, stack_2_shadow.Y - stack_2_center.Y + 6, 14)
+		local stack_3_height = math.max(stack_3_shadow.Y - stack_3_head.Y, stack_3_shadow.Y - stack_3_center.Y + 6, 14)
 
 
 		--bottom member of totem
 		GROUND:TeleportTo(stack_order[3], partner.Position.X, partner.Position.Y + stack_1_height + stack_2_height + stack_3_height, Direction.Up)
 		local totem_base = stack_order[3].Position.Y
 
-		GROUND:TeleportTo(stack_order[2], partner.Position.X, totem_base+1, Direction.Up, stack_3_height)
-		GROUND:TeleportTo(stack_order[1], partner.Position.X, totem_base+2, Direction.Up, stack_3_height + stack_2_height)
-		GROUND:TeleportTo(partner, partner.Position.X, totem_base+3, Direction.Up, stack_3_height + stack_2_height + stack_1_height)
+		GROUND:TeleportTo(stack_order[2], partner.Position.X, totem_base, Direction.Up, stack_3_height)
+		GROUND:TeleportTo(stack_order[1], partner.Position.X, totem_base, Direction.Up, stack_3_height + stack_2_height)
+		GROUND:TeleportTo(partner, partner.Position.X, totem_base, Direction.Up, stack_3_height + stack_2_height + stack_1_height)
 		  
 		local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("None")
 		UI:SetSpeaker(partner)
@@ -1005,6 +1075,7 @@ function apricorn_glade_ch_4.PickApricorn()
 		GAME:WaitFrames(30)
 		GROUND:CharTurnToCharAnimated(partner, hero, 4)
 		GROUND:CharTurnToCharAnimated(hero, partner, 4)
+		--GeneralFunctions.DoubleHop(partner)
 		GROUND:CharSetEmote(partner, "glowing", 0)
 		UI:WaitShowDialogue("We did it,[pause=10] " .. hero:GetDisplayName() .. "! Everyone![pause=0] We got the big Apricorn!")
 		GROUND:CharSetEmote(partner, "", 0)

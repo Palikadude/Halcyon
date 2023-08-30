@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.ledian_dojo.ledian_dojo_ch_2'
 require 'ground.ledian_dojo.ledian_dojo_ch_3'
+require 'ground.ledian_dojo.ledian_dojo_ch_4'
 
 
 -- Package name
@@ -107,7 +108,9 @@ function ledian_dojo.PlotScripting()
 			ledian_dojo_ch_2.SetupGround()
 		end
 	elseif SV.ChapterProgression.Chapter == 3 then 
-				ledian_dojo_ch_3.SetupGround()
+				ledian_dojo_ch_3.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 4 then 
+				ledian_dojo_ch_4.SetupGround()
 	else
 		GAME:FadeIn(20)	
 	end 
@@ -116,6 +119,11 @@ end
 function ledian_dojo.Gible_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("ledian_dojo_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Gible_Action(...,...)"), chara, activator))
+end
+
+function ledian_dojo.Azumarill_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("ledian_dojo_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Azumarill_Action(...,...)"), chara, activator))
 end
 
 function ledian_dojo.Sensei_Action(chara, activator)

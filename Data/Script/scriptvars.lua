@@ -615,6 +615,7 @@ SV.Dojo =
 	NewLessonUnlocked = false,--Was a new lesson unlocked since the player last spoke to Ledian? If so have her mention that there are new lessons.
 	NewTrialUnlocked = false,--Was a new trial unlocked since the player last spoke to Ledian? If so have her mention that there are new trials.
 	
+	SkippedTutorialNotifiedTeamMode = false,--If the player skips the tutorial, there should be a pop up in normal maze 1F that tells them about team mode. Only tell them about it once, though.
 	LastZone = "master_zone"--Which dojo dungeon did the player just come out of?
 }
 
@@ -710,6 +711,7 @@ SV.Chapter4 =
 	FinishedGrove = false,--has player finished the grove for good?
 	FinishedBedtimeCutscene = false,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
 	
+	MedichamMachampArgument = false,--did you see machamp and medicham arguing over their mailbox?
 	DemoThankYou = false--Showed demo thank you?
 
 }

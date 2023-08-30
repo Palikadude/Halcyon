@@ -125,6 +125,16 @@ function guild_third_floor_lobby.PostAddressScripting()
 		else
 			guild_third_floor_lobby_ch_3.FailedCavernBeforeBoss()--Your last dungeon was the cavern but you've not made it to Team Style yet.
 		end	
+	elseif SV.ChapterProgression.Chapter == 4 then 
+		if SV.Chapter4.FinishedGrove then --Second half of chapter 4, after clearing Apricorn Grove
+			guild_third_floor_lobby.GenericMissions()
+		elseif SV.Chapter4.ReachedGlade then 
+			guild_third_floor_lobby_ch_4.FailedToGrabApricorn()--You made it to the big Apricorn but weren't able to grab it. 
+		elseif SV.TemporaryFlags.LastDungeonEntered ~= 'apricorn_grove' then 
+			guild_third_floor_lobby_ch_4.NotEnteredGrove() --Latest dungeon attempt was not the grove and you haven't seen the big Apricorn yet.
+		else
+			guild_third_floor_lobby_ch_4.FailedGroveBeforeEnd()--Your last dungeon was the grove but you've not made it to the big Apricorn yet.
+		end	
 	else --if there's nothing special to do, just give back control. I don't think this block should be reached in normal play.
 		GeneralFunctions.PanCamera()
 		GAME:CutsceneMode(false)

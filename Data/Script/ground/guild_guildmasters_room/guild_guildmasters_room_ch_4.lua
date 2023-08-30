@@ -7,7 +7,31 @@ guild_guildmasters_room_ch_4 = {}
 
 
 function guild_guildmasters_room_ch_4.Tropius_Action(chara, activator)
-
+	if not SV.Chapter4.FinishedGrove then		
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('apricorn_grove')
+		GeneralFunctions.StartConversation(chara, "Howdy,[pause=10] Team " .. GAME:GetTeamName() .. "![pause=0] Good luck exploring " .. zone:GetColoredName() .. " today![")
+		if SV.Chapter3.TropiusGaveWand or SV.Chapter2.TropiusGaveReviver then 
+			UI:WaitShowDialogue("Oh,[pause=10] and if you're looking for some help like before...")
+		else
+			UI:WaitShowDialogue("Oh,[pause=10] and if you're looking for some help...")
+		end 
+		UI:SetSpeakerEmotion("Joyous")
+		GROUND:CharSetEmote(chara, "glowing", 0)
+		UI:WaitShowDialogue("I have nothing to give you![pause=0] This is supposed to be a test of sorts,[pause=10] after all!")
+		GAME:WaitFrames(20)
+		GROUND:CharSetEmote(chara, "", 0)		
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I will offer some advice however.")
+		UI:WaitShowDialogue("You should make use of the Apricorns you're sure to find in the dungeon to recruit a full team of four Pokémon")
+		UI:WaitShowDialogue("More teammates will make overcoming any challenges you come across easier![pause=0] So aim to fill up your team!")
+	else 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('apricorn_grove')
+		GeneralFunctions.StartConversation(chara, "Great work again you two exploring " .. zone:GetColoredName() .."![pause=0] I'm still in disbelief at the size of that Apricorn!", "Happy")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("I hope you two are as excited for the upcoming expedition as I am!")
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " will be back any day now,[pause=10] so keep up the good work and prepare yourselves until then!")
+	end
+	GeneralFunctions.EndConversation(chara)
 end
 
 

@@ -18,6 +18,81 @@ end
 
 
 
+----------------
+--NPC Scripts
+----------------
+function guild_third_floor_lobby_ch_4.Noctowl_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+		GeneralFunctions.StartConversation(chara, "The Guildmaster has asked you to explore the newly discovered " .. zone:GetColoredName() .. " and to report back should you find anything of note.")
+		UI:WaitShowDialogue("Investigate the dungeon to the best of your abilities,[pause=10] then report back with your findings.")
+		GeneralFunctions.EndConversation(chara)
+	else
+		guild_third_floor_lobby_helper.GenericNoctowlResponse()
+	end
+end
+	
+
+------------------------
+--Post Address Scripts
+------------------------
+
+--Player's last dungeon wasn't the grove and they haven't reached the end of the grove yet.
+function guild_third_floor_lobby_ch_4.NotEnteredGrove()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] We have to explore that new dungeon!" )
+	UI:WaitShowDialogue("Let's go to " .. zone:GetColoredName() .. " and discover something amazing!")
+	
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end
+
+--player died before making it to the glade
+function guild_third_floor_lobby_ch_4.FailedGroveBeforeEnd()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] Our exploration isn't complete yet!" )
+	UI:WaitShowDialogue("Let's hurry back to " .. zone:GetColoredName() .. " and discover something this time!")
+		
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end 
+
+--player failed to grab the apricorn, but did reach the glade.
+function guild_third_floor_lobby_ch_4.FailedToGrabApricorn()
+	local partner = CH('Teammate1')
+	local hero = CH('PLAYER')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("C'mon " .. hero:GetDisplayName() .. "![pause=0] That huge Apricorn is calling our name!")
+	UI:WaitShowDialogue("Let's hurry back to " .. zone:GetColoredName() .. " with enough Pokémon to reach it!")
+		
+	GeneralFunctions.PanCamera()
+	GAME:CutsceneMode(false)
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+end
+
+
 
 ------------------------
 --Cutscene Scripts

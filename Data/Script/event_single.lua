@@ -753,6 +753,19 @@ function SINGLE_CHAR_SCRIPT.RelicForestFlipStairs(owner, ownerChar, context, arg
 	end
 end
 
+
+--Halcyon Script
+--Popup in Normal maze IF player skipped the tutorial to let them know that Team Mode exists.
+function SINGLE_CHAR_SCRIPT.SkippedTutorialTeamModeNotification(owner, ownerChar, context, args)
+	if context.User == nil and SV.Chapter2.SkippedTutorial and not SV.Dojo.SkippedTutorialNotifiedTeamMode then 
+		UI:ResetSpeaker()
+		SOUND:PlayFanfare("Fanfare/Note")
+		UI:WaitShowDialogue("Did you know?[pause=0] You can control each of your party member's actions for a given turn with Team Mode!")
+		UI:WaitShowDialogue("You can toggle Team Mode by pressing " .. STRINGS:LocalKeyString(7) .. ".")
+		SV.Dojo.SkippedTutorialNotifiedTeamMode = true
+		GAME:WaitFrames(20)--to prevent mashing making you do an attack after clearing box
+	end
+end
 --Halcyon script
 --Popups with information on how to play the game in Relic Forest's first two pass throughs
 function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, context, args)

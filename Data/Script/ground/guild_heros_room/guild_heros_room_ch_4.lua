@@ -66,17 +66,19 @@ player notes he got caught up in the fun it slipped his mind. Thinks about it a 
 Thinks about when he feels strange besides the times he told the partner, they muse a bit on it, then resolve to look into it once the expedition is through
 ]]--
 
+
 	SOUND:PlayBGM('Goodnight.ogg', true)
 	GAME:WaitFrames(40)
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Today was absolutely amazing,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] I had so much fun!")
 	UI:SetSpeakerEmotion("Inspired")
-	UI:WaitShowDialogue("Our first true adventure went so well![pause=0] We even found a treasure and got to keep it!")
+	UI:WaitShowDialogue("Our first real adventure went so well![pause=0] We even found a treasure and got to keep it!")
 	UI:WaitShowDialogue("Working together with you and our teammates...[pause=0] It couldn't have been any better!")
-	UI:WaitShowDialogue("With the expedition coming up too,[pause=10] isn't this all so exciting?")
+	UI:WaitShowDialogue("With the expedition coming up too,[pause=10] I'm so excited about everything![pause=0] Aren't you?")
 
 	GAME:WaitFrames(20)
-	GeneralFunctions.HeroDialogue(hero, "(Things have been exciting for us lately.[pause=0] It's been a lot of fun adventuring with " .. partner:GetDisplayName() .. "!)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(Things have been exciting lately.[pause=0] It seems that excitement has helped " .. partner:GetDisplayName() .. " get " .. GeneralFunctions.GetPronoun(partner, "their") .. " mind off of " .. CharacterEssentials.GetCharacterName("Sandile") .. ",[pause=10] too.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(It's been a lot of fun adventuring with " .. partner:GetDisplayName() .. "!)", "Normal")
 	GeneralFunctions.HeroDialogue(hero, "(Life in the guild has been a blast so far...[pause=0] I'd like to keep going on adventures with " .. partner:GetDisplayName() .. "!)", "Happy")
 	
 	GAME:WaitFrames(20)
@@ -160,8 +162,8 @@ Thinks about when he feels strange besides the times he told the partner, they m
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("But...[pause=0] I can't think of anything in common between all those moments...[pause=0] They all seem pretty different to me!")
-	UI:WaitShowDialogue("I also don't get why the feelings would be stronger some times and weaker other times.")
+	UI:WaitShowDialogue("It's just...[pause=0] I can't think of anything in common between all those moments...[pause=0] They all seem pretty different to me!")
+	UI:WaitShowDialogue("I don't get why the feelings would be stronger some times and weaker other times either.")
 	UI:WaitShowDialogue("So I have no clue what the meaning behind your strange feelings could be...")
 	GAME:WaitFrames(20)
 	
@@ -171,9 +173,11 @@ Thinks about when he feels strange besides the times he told the partner, they m
 	SOUND:FadeOutBGM(120)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("However,[pause=10] just because we can't figure anything else out right now doesn't mean we won't solve this!")
+	--UI:WaitShowDialogue("However,[pause=10] just because we can't figure anything else out right now doesn't mean we won't solve this!")
+	UI:WaitShowDialogue("But,[pause=10] lately I've felt that we can do anything when we work together.")
+	UI:WaitShowDialogue("So I'm confident that we'll be able to figure this all out together.")
 	UI:WaitShowDialogue("Though with the expedition coming up,[pause=10] we should concentrate on that first.")
-	UI:WaitShowDialogue("But we'll get to the bottom of this![pause=0] I promise,[pause=10] " .. hero:GetDisplayName() .. "!")
+	UI:WaitShowDialogue("We'll get to the bottom of this though![pause=0] I promise,[pause=10] " .. hero:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
 	
 	GeneralFunctions.HeroDialogue(hero, "(It's frustrating we won't be able to make any progress on this soon...)", "Worried")

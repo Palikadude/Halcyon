@@ -151,7 +151,7 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.NoSwitching = true--switching is not allowed
 
 	  
-	  local mon_id = RogueEssence.Dungeon.MonsterID("treecko", 0, "normal", Gender.Male)
+	  local mon_id = RogueEssence.Dungeon.MonsterID("fennekin", 0, "normal", Gender.Male)
 	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 12, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
@@ -160,7 +160,7 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Palika'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("riolu", 0, "normal", Gender.Male)
+	  mon_id = RogueEssence.Dungeon.MonsterID("turtwig", 0, "normal", Gender.Male)
 	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 12, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
@@ -261,6 +261,7 @@ function DebugTools:OnUpgrade()
  if SV.Dojo.NewMazeUnlocked == nil then SV.Dojo.NewMazeUnlocked = false end
  if SV.Dojo.NewLessonUnlocked == nil then SV.Dojo.NewLessonUnlocked = false end
  if SV.Dojo.NewTrialUnlocked == nil then SV.Dojo.NewTrialUnlocked = false end
+ if SV.Dojo.SkippedTutorialNotifiedTeamMode == nil then SV.Dojo.SkippedTutorialNotifiedTeamMode = false end
  if SV.Dojo.LastZone == nil then SV.Dojo.LastZone = "master_zone" end
   
   
@@ -305,6 +306,7 @@ function DebugTools:OnUpgrade()
  if SV.Chapter4.FinishedGrove == nil then SV.Chapter4.FinishedGrove = false end
  if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
  if SV.Chapter4.FinishedBedtimeCutscene == nil then SV.Chapter4.FinishedBedtimeCutscene = false end
+ if SV.Chapter4.MedichamMachampArgument == nil then SV.Chapter4.MedichamMachampArgument = false end
  if SV.Chapter4.DemoThankYou == nil then SV.Chapter4.DemoThankYou = false end
 
  if SV.ApricornGrove == nil then SV.ApricornGrove = {} end

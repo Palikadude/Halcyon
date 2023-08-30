@@ -4157,7 +4157,7 @@ Freeze: Frozen Pokémon cannot do anything and cannot be affected by attacks. Th
     <comment>Sign title in beginner lesson</comment>  </data>
   <data name="BEGINNER_LESSON_STATUS_SIGN_2_2_BODY" xml:space="preserve">
     <value>Some examples of minor statuses:
-Confusion: Confused Pokémon will choose a random direction moving or attacking. Watch out for friendly fire!
+Confusion: Confused Pokémon will sometimes turn slightly left or right of their intended direction when taking any action. Also causes moves to target any Pokémon, friend or foe, so beware!
 Immobilization: Immobilized Pokémon cannot move. 
 Leech Seed: The seeder will drain some of the seeded Pokémon's HP periodically. Grass types can't be seeded.
 </value>
