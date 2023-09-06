@@ -1,7 +1,30 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.16.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"synergizing": {
+"Name": {
+"DefaultText": "Synergizing",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"passive_regen": {
+"Name": {
+"DefaultText": "Regeneration",
+"LocalTexts": {
+"fr": "Régénération",
+"de": "Regeneration",
+"es": "Regeneración",
+"zh-hans": "再生"
+}
+},
+"Released": true,
+"Comment": "1/16 HP per turn, does not wear off",
+"SortOrder": 0
+},
 "critical_health": {
 "Name": {
 "DefaultText": "Critical Health",
@@ -14,15 +37,6 @@
 "endurance_tonic": {
 "Name": {
 "DefaultText": "Endurance Tonic",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"synergizing": {
-"Name": {
-"DefaultText": "Synergizing",
 "LocalTexts": {}
 },
 "Released": true,

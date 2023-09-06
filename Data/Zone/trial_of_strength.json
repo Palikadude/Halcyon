@@ -578,6 +578,18 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "passive_regen",
+"StatusStates": []
+},
+"Rate": 10
+}
+]
 }
 ]
 },
