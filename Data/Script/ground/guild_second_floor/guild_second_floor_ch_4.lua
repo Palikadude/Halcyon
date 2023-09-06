@@ -11,6 +11,37 @@ end
 
 
 
+function guild_second_floor_ch_4.Mareep_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "")
+	else
+	
+	end
+end
+
+
+function guild_second_floor_ch_4.Cranidos_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "")
+	else
+	
+	end
+end
+
+
+function guild_second_floor_ch_4.Snubbull_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Apricorns are finally in stock at the Kecleon Shop,[pause=10] but that dish of mine will have to wait.")
+		UI:SetSpeakerEmotion("Special0")
+		UI:WaitShowDialogue("With the expedition coming up now,[pause=10] my culinary expertise will need to be applied elsewhere in the near future. " .. STRINGS:Format("\\u266A")))
+	else
+		--N/A
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+
 
 function guild_second_floor_ch_4.AudinoAssemblyIntro()
 	local partner = CH('Teammate1')

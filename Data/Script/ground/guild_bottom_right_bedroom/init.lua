@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'CharacterEssentials'
 require 'ground.guild_bottom_right_bedroom.guild_bottom_right_bedroom_ch_3'
+require 'ground.guild_bottom_right_bedroom.guild_bottom_right_bedroom_ch_4'
 
 -- Package name
 local guild_bottom_right_bedroom = {}
@@ -63,7 +64,9 @@ end
 
 function guild_bottom_right_bedroom.PlotScripting()
 	if SV.ChapterProgression.Chapter == 3 then 
-		guild_bottom_right_bedroom_ch_3.SetupGround()
+		guild_bottom_right_bedroom_ch_3.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 4 then 
+		guild_bottom_right_bedroom_ch_4.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

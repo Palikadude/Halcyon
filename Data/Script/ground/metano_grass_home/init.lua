@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_grass_home.metano_grass_home_ch_2'
 require 'ground.metano_grass_home.metano_grass_home_ch_3'
+require 'ground.metano_grass_home.metano_grass_home_ch_4'
 
 -- Package name
 local metano_grass_home = {}
@@ -72,7 +73,9 @@ function metano_grass_home.PlotScripting()
 	if SV.ChapterProgression.Chapter == 2 then 
 		metano_grass_home_ch_2.SetupGround()
 	elseif SV.ChapterProgression.Chapter == 3 then 
-		metano_grass_home_ch_3.SetupGround()
+		metano_grass_home_ch_3.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 4 then 
+		metano_grass_home_ch_4.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

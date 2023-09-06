@@ -712,6 +712,7 @@ SV.Chapter4 =
 	FinishedBedtimeCutscene = false,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
 	
 	MedichamMachampArgument = false,--did you see machamp and medicham arguing over their mailbox?
+	WoopersMedititeConvo = false,--did you see woopers and meditite talk to each other?
 	DemoThankYou = false--Showed demo thank you?
 
 }

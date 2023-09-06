@@ -8,6 +8,7 @@ require 'common'
 require 'PartnerEssentials'
 require 'ground.metano_rock_home.metano_rock_home_ch_2'
 require 'ground.metano_rock_home.metano_rock_home_ch_3'
+require 'ground.metano_rock_home.metano_rock_home_ch_4'
 
 -- Package name
 local metano_rock_home = {}
@@ -32,8 +33,8 @@ function metano_rock_home.Init(map, time)
 	PartnerEssentials.InitializePartnerSpawn()
 	
 	if SOUND:GetCurrentSong() ~= SV.metano_town.Song then
-    SOUND:PlayBGM(SV.metano_town.Song, true)
-  end
+		SOUND:PlayBGM(SV.metano_town.Song, true)
+	end
 end
 
 ---metano_rock_home.Enter
@@ -73,6 +74,8 @@ function metano_rock_home.PlotScripting()
 		metano_rock_home_ch_2.SetupGround()
 	elseif SV.ChapterProgression.Chapter == 3 then 
 		metano_rock_home_ch_3.SetupGround()
+	elseif SV.ChapterProgression.Chapter == 4 then 
+		metano_rock_home_ch_4.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

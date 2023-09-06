@@ -764,7 +764,7 @@ local characters = {
 		
 		--Inn Passersby
 		Smeargle = {
-			species = "Smeargle",
+			species = "smeargle",
 			nickname = 'Passerby',
 			instance = 'Passerby_1',
 			gender = Gender.Male,
@@ -774,7 +774,7 @@ local characters = {
 		
 		--Inn Passersby
 		Skorupi = {
-			species = "Skorupi",
+			species = "skorupi",
 			nickname = 'Passerby',
 			instance = 'Passerby_1',
 			gender = Gender.Male,

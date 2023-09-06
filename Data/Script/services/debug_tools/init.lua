@@ -307,6 +307,7 @@ function DebugTools:OnUpgrade()
  if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
  if SV.Chapter4.FinishedBedtimeCutscene == nil then SV.Chapter4.FinishedBedtimeCutscene = false end
  if SV.Chapter4.MedichamMachampArgument == nil then SV.Chapter4.MedichamMachampArgument = false end
+ if SV.Chapter4.WoopersMedititeConvo == nil then SV.Chapter4.WoopersMedititeConvo = false end
  if SV.Chapter4.DemoThankYou == nil then SV.Chapter4.DemoThankYou = false end
 
  if SV.ApricornGrove == nil then SV.ApricornGrove = {} end

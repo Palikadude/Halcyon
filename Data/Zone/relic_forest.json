@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.10.0",
+"Version": "0.7.16.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -2961,6 +2961,9 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 1,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -2999,6 +3002,9 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 2,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -3037,6 +3043,9 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 2,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },
@@ -3075,6 +3084,9 @@
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
 "StartAt": 2,
 "Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
 }
 ]
 },

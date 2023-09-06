@@ -9,6 +9,7 @@ require 'PartnerEssentials'
 require 'GeneralFunctions'
 require 'CharacterEssentials'
 require 'ground.metano_cafe.metano_cafe_ch_3'
+require 'ground.metano_cafe.metano_cafe_ch_4'
 require 'menu/ferment_menu'
 -- Package name
 local metano_cafe = {}
@@ -64,6 +65,8 @@ end
 function metano_cafe.PlotScripting()
 	if SV.ChapterProgression.Chapter == 3 then
 		metano_cafe_ch_3.SetupGround()
+	elseif SV.ChapterProgression.Chapter == 4 then
+		metano_cafe_ch_4.SetupGround()
 	else 
 		GAME:FadeIn(20)
 	end 
@@ -585,6 +588,11 @@ end
 function metano_cafe.Girafarig_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), chara, activator))
+end
+
+function metano_cafe.Linoone_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_cafe_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Linoone_Action(...,...)"), chara, activator))
 end
 
 function metano_cafe.Cleffa_Action(chara, activator)
