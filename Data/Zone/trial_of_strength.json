@@ -7,7 +7,7 @@
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "Beginner trial at Ledian's dojo.",
+"Comment": "First trial at Ledian's dojo. Themed around opponents with proficiencies in specific stats.",
 "NoEXP": false,
 "Level": 10,
 "LevelCap": true,
@@ -490,6 +490,447 @@
 }
 }
 ]
+},
+{
+"$type": "RogueEssence.LevelGen.TeamSpawnZoneStep, RogueEssence",
+"Priority": {
+"str": [
+2,
+2
+]
+},
+"Spawns": [
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "snorunt",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"leer",
+"ice_shard"
+],
+"Intrinsic": "inner_focus",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 2,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "phanpy",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"flail"
+],
+"Intrinsic": "",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "rhyhorn",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"smack_down"
+],
+"Intrinsic": "",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_defense",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "chingling",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"confusion"
+],
+"Intrinsic": "",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_special_attack",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "tentacool",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"acid"
+],
+"Intrinsic": "clear_body",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_special_defense",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "trapinch",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"feint_attack"
+],
+"Intrinsic": "hyper_cutter",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_attack",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "poliwag",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"hypnosis",
+"bubble"
+],
+"Intrinsic": "",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_evasion",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 1,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+}
+],
+"TeamSizes": [
+{
+"Spawn": 1,
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 10
+}
+},
+{
+"Spawn": 2,
+"Rate": 10,
+"Range": {
+"Min": 5,
+"Max": 15
+}
+},
+{
+"Spawn": 1,
+"Rate": 5,
+"Range": {
+"Min": 10,
+"Max": 15
+}
+},
+{
+"Spawn": 3,
+"Rate": 5,
+"Range": {
+"Min": 10,
+"Max": 15
+}
+}
+],
+"SpecificSpawns": []
 }
 ],
 "IsRelevant": true
