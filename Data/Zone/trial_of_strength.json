@@ -939,7 +939,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-"StartAt": 1,
+"StartAt": 2,
 "Remove": false
 }
 ]
