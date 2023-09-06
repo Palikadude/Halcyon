@@ -568,7 +568,7 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -612,7 +612,7 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -685,7 +685,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -746,7 +746,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -807,7 +807,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -859,7 +859,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
@@ -930,7 +930,7 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
-"StartFromID": 1,
+"StartFromID": 0,
 "AddNumerator": 1,
 "AddDenominator": 1
 },
