@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "PMDC.Data.MonsterFeatureData, PMDC",
 "FeatureData": {
@@ -13407,6 +13407,14 @@
 "Stage": 2,
 "Element1": "dark",
 "Element2": "none",
+"BestStat": -1,
+"WorstStat": -1
+},
+"1": {
+"Family": "zorua",
+"Stage": 2,
+"Element1": "normal",
+"Element2": "ghost",
 "BestStat": -1,
 "WorstStat": -1
 }

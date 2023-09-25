@@ -175,7 +175,7 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("taillow", 0, "normal", Gender.Male)
+	  mon_id = RogueEssence.Dungeon.MonsterID("geodude", 0, "normal", Gender.Male)
 	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 10, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
@@ -194,7 +194,7 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	    mon_id = RogueEssence.Dungeon.MonsterID("taillow", 0, "normal", Gender.Female)
+	    mon_id = RogueEssence.Dungeon.MonsterID("oddish", 0, "normal", Gender.Female)
 	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
 	  _DATA.Save.ActiveTeam:SetRank("normal")
 	  _DATA.Save:UpdateTeamProfile(true)
@@ -306,7 +306,11 @@ function DebugTools:OnUpgrade()
  if SV.Chapter4.FinishedGrove == nil then SV.Chapter4.FinishedGrove = false end
  if SV.Chapter4.FinishedFirstAddress == nil then SV.Chapter4.FinishedFirstAddress = false end
  if SV.Chapter4.FinishedBedtimeCutscene == nil then SV.Chapter4.FinishedBedtimeCutscene = false end
+ if SV.Chapter4.TropiusGaveAdvice == nil then SV.Chapter4.TropiusGaveAdvice = false end
+ if SV.Chapter4.SpokeToRelicanthDayOne == nil then SV.Chapter4.SpokeToRelicanthDayOne = false end
+ if SV.Chapter4.HeardRelicanthStory == nil then SV.Chapter4.HeardRelicanthStory = false end
  if SV.Chapter4.MedichamMachampArgument == nil then SV.Chapter4.MedichamMachampArgument = false end
+ if SV.Chapter4.CranidosBlush == nil then SV.Chapter4.CranidosBlush = false end
  if SV.Chapter4.WoopersMedititeConvo == nil then SV.Chapter4.WoopersMedititeConvo = false end
  if SV.Chapter4.DemoThankYou == nil then SV.Chapter4.DemoThankYou = false end
 

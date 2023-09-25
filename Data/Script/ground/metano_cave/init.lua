@@ -84,7 +84,11 @@ function metano_cave.GameLoad(map)
 end
 
 function metano_cave.PlotScripting()
-	GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 4 then
+		metano_cave_ch_4.SetupGround()
+	else 
+		GAME:FadeIn(20)
+	end
 end
 
 -------------------------------

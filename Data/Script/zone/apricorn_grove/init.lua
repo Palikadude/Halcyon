@@ -38,7 +38,7 @@ end
 
 
 function apricorn_grove.ExitSegment(zone, result, rescue, segmentID, mapID)
-	GeneralFunctions.RestoreIdleAnim()
+  GeneralFunctions.RestoreIdleAnim()
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> ExitSegment_apricorn_grove (Illuminant Riverbed) result "..tostring(result).." segment "..tostring(segmentID))
   
@@ -92,6 +92,15 @@ function apricorn_grove.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 	
 	else 
+		if SV.Chapter4.FinishedGrove then 
+			--set generic flags for generic end of day / start of next day.
+			SV.TemporaryFlags.Dinnertime = true 
+			SV.TemporaryFlags.Bedtime = true
+			SV.TemporaryFlags.MorningWakeup = true 
+			SV.TemporaryFlags.MorningAddress = true 
+		end
+				
+		
 		--since you can choose to go back into the dungeon at the end or not, do all end of dungeon stuff in the ground.
 		GAME:EnterGroundMap('apricorn_glade', 'Main_Entrance_Marker') --Go to Apricorn Glade, end dungeon run in the ground rather than here 
 	end

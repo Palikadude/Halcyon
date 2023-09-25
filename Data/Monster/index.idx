@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "audino": {
@@ -596,6 +596,19 @@
 "it": "Zorua",
 "ja-jp": "ゾロア",
 "zh-hans": "索罗亚"
+}
+},
+"Released": true,
+"Temporary": false
+},
+{
+"Name": {
+"DefaultText": "Hisuian Zorua",
+"LocalTexts": {
+"ja": "",
+"fr": "Zorua de Hisui",
+"de": "Hisui Zorua",
+"ja-jp": ""
 }
 },
 "Released": true,

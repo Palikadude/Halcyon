@@ -454,6 +454,12 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
 				personality = 64
 				UI:SetSpeakerEmotion("Determined")--this is overriden to worried/pain if hp is low enough
 			end
+		elseif SV.ChapterProgression.Chapter == 4 and dungeon == 'Apricorn Grove' then
+			if not SV.Chapter4.ReachedGlade then
+				personality = 65
+			elseif not SV.Chapter4.FinishedGrove then
+				personality = 66
+			end
 		end
 	end
 	PrintInfo("Personality in use: " .. tostring(personality))

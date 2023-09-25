@@ -106,6 +106,7 @@ function guild_second_floor.PlotScripting()
 			end
 		elseif SV.ChapterProgression.Chapter == 4 then
 			if not SV.Chapter4.FinishedAssemblyIntro then
+				guild_second_floor_ch_4.SetupGround()
 				guild_second_floor_ch_4.AudinoAssemblyIntro()
 			else
 				guild_second_floor_ch_4.SetupGround()

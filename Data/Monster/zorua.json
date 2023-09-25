@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "RogueEssence.Data.MonsterData, RogueEssence",
 "Name": {
@@ -268,6 +268,7 @@
 }
 },
 "Temporary": false,
+"PromoteForm": 0,
 "Element1": "dark",
 "Element2": "none",
 "Intrinsic1": "keen_eye",
@@ -341,6 +342,225 @@
 {
 "Level": 57,
 "Skill": "night_daze"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 9,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 35,
+"BaseAtk": 60,
+"BaseDef": 40,
+"BaseMAtk": 85,
+"BaseMDef": 40,
+"BaseSpeed": 70,
+"ExpYield": 82,
+"Height": 0.7,
+"Weight": 12.5,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "take_down"
+},
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "night_shade"
+},
+{
+"Skill": "confuse_ray"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sludge_bomb"
+},
+{
+"Skill": "icy_wind"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "shadow_ball"
+},
+{
+"Skill": "will_o_wisp"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "trick"
+},
+{
+"Skill": "imprison"
+},
+{
+"Skill": "fake_tears"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "u_turn"
+},
+{
+"Skill": "fling"
+},
+{
+"Skill": "dark_pulse"
+},
+{
+"Skill": "giga_impact"
+},
+{
+"Skill": "nasty_plot"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "hex"
+},
+{
+"Skill": "snarl"
+},
+{
+"Skill": "phantom_force"
+},
+{
+"Skill": "tera_blast"
+},
+{
+"Skill": "snowscape"
+}
+],
+"SharedSkills": [
+{
+"Skill": "detect"
+},
+{
+"Skill": "memento"
+},
+{
+"Skill": "extrasensory"
+},
+{
+"Skill": "comeuppance"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Hisuian Zorua",
+"LocalTexts": {
+"ja": "",
+"fr": "Zorua de Hisui",
+"de": "Hisui Zorua",
+"ja-jp": ""
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "normal",
+"Element2": "ghost",
+"Intrinsic1": "keen_eye",
+"Intrinsic2": "none",
+"Intrinsic3": "none",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "scratch"
+},
+{
+"Level": 1,
+"Skill": "leer"
+},
+{
+"Level": 4,
+"Skill": "torment"
+},
+{
+"Level": 8,
+"Skill": "shadow_sneak"
+},
+{
+"Level": 12,
+"Skill": "hone_claws"
+},
+{
+"Level": 16,
+"Skill": "curse"
+},
+{
+"Level": 20,
+"Skill": "taunt"
+},
+{
+"Level": 24,
+"Skill": "knock_off"
+},
+{
+"Level": 28,
+"Skill": "spite"
+},
+{
+"Level": 32,
+"Skill": "agility"
+},
+{
+"Level": 36,
+"Skill": "shadow_ball"
+},
+{
+"Level": 40,
+"Skill": "bitter_malice"
+},
+{
+"Level": 44,
+"Skill": "nasty_plot"
+},
+{
+"Level": 48,
+"Skill": "foul_play"
 }
 ]
 }

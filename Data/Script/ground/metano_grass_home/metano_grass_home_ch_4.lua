@@ -9,7 +9,7 @@ function metano_grass_home_ch_4.SetupGround()
 	if not SV.Chapter4.FinishedGrove then
 		local vileplume  = 
 			CharacterEssentials.MakeCharactersFromList({
-				{'Vileplume', 112, 192, Direction.Up}
+				{'Vileplume', 120, 192, Direction.Up}
 			})
 	else 
 		local vileplume  = 
@@ -24,7 +24,7 @@ end
 
 function metano_grass_home_ch_4.Vileplume_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then 
-		GeneralFunctions.StartConversation(chara, "Between the increase in mystery dungeons and outlaws lately,[pause=10] it amazes me how the town can remain so calm.", "Worried")
+		GeneralFunctions.StartConversation(chara, "With the increase in mystery dungeons and outlaws lately,[pause=10] it amazes me how the town can remain so calm.", "Worried")
 		UI:WaitShowDialogue("Things are getting so dangerous,[pause=10] it's all I can think about...")
 		GeneralFunctions.EndConversation(chara)
 	else

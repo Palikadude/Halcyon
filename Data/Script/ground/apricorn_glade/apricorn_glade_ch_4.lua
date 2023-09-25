@@ -636,7 +636,6 @@ function apricorn_glade_ch_4.PickApricorn()
 		UI:WaitShowDialogue("Yes![pause=0] I think I've got it!")
 		
 		GAME:WaitFrames(30)
-		--TODO: PLAY THE TUMBLE ANIMATION IN REVERSE IF THIS EVER BECOMES AN OPTION
 		--NOTE: The shadow of the partner shifts a decent amount and it's a bit awkward if you pay close attention, but it's because the tumble animation shifts the shadow around itself. Not worth worrying about i think...
 		SOUND:PlayBattleSE('EVT_CH05_Tumble_Behind_Waterfall')
 		UI:SetSpeakerEmotion("Shouting")
@@ -645,9 +644,10 @@ function apricorn_glade_ch_4.PickApricorn()
 													  GROUND:MoveObjectToPosition(apricorn, apricorn.Position.X, onix_clone.Position.Y + 16, 2)
 													  end)
 		local coro3 = TASK:BranchCoroutine(function() local partner_anim = RogueEssence.Content.GraphicsManager.GetAnimIndex("Tumble")
-													  local frameActionPartner = RogueEssence.Ground.IdleAnimGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim, false)
+													  local frameActionPartner = RogueEssence.Ground.ReverseGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim)
 													  GROUND:ActionToPosition(partner, frameActionPartner, 276, onix_clone.Position.Y + 1, 1, 2, 0)
-													  GROUND:AnimateToPosition(partner, "Tumble", Direction.Up, 276, onix_clone.Position.Y + 36, 1, 3, 0)
+													  frameActionPartner = RogueEssence.Ground.ReverseGroundAction(partner.Position, partner.LocHeight, Direction.Left, partner_anim)
+													  GROUND:ActionToPosition(partner, frameActionPartner, 276, onix_clone.Position.Y + 36, 1, 3, 0)
 													  GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pain")))
 													  GROUND:EntTurn(partner, Direction.Left)
 													  end)
@@ -731,22 +731,12 @@ function apricorn_glade_ch_4.PickApricorn()
 
 		
 		--Addresses the rendering order when characters are stacked on top of each other. This will help with their shadows.
-		--The last one reintroduced like this will be the one who renders top most.
-		--characters spawned in via spawners are temp characters. The hero is not a temp character therefore.
-		--Take eeveryone out, then respawn them as proper map characters.
-		
-		--Temp characters are not saved on map save, where as map characters are. Luckily, this won't be an issue as you can't save on this map.
-		
-		--NOTE:This is bugged for the player; they can't be deleted for whatever reason, so they get double speed animations. Waiting on audino fix.
-		_ZONE.CurrentGround:RemoveMapChar(hero)
-        _ZONE.CurrentGround:RemoveTempChar(partner)
-        _ZONE.CurrentGround:RemoveTempChar(team2)
-        _ZONE.CurrentGround:RemoveTempChar(team3)
-        _ZONE.CurrentGround:AddMapChar(stack_order[3])
-        _ZONE.CurrentGround:AddMapChar(stack_order[2])
-        _ZONE.CurrentGround:AddMapChar(stack_order[1])
-        _ZONE.CurrentGround:AddMapChar(partner)
-		
+		stack_order[3].EntOrder = 1
+		stack_order[2].EntOrder = 3
+		stack_order[1].EntOrder = 4
+		partner.EntOrder = 5
+		apricorn.EntOrder = 2
+				
 
 		GROUND:TeleportTo(stack_order[1], 276, 160, Direction.Up)
 		GROUND:TeleportTo(stack_order[2], 276, 160, Direction.Up)
@@ -979,7 +969,7 @@ function apricorn_glade_ch_4.PickApricorn()
 													  local frameAction2 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, stack_order[2].LocHeight, Direction.Left, second_anim2, false)
 													  --GROUND:ActionToPosition(stack_order[2], frameAction2, 252, totem_base + 12, 1, 1, stack_order[2].LocHeight)
 													  --frameAction2 = RogueEssence.Ground.IdleAnimGroundAction(stack_order[2].Position, stack_order[2].LocHeight, Direction.Left, second_anim2, false)
-												      GROUND:ActionToPosition(stack_order[2], frameAction2, 252, totem_base + 12, 1, 3, 0)
+												      GROUND:ActionToPosition(stack_order[2], frameAction2, 252, totem_base + 12, 1, 2, 0)
 													  SOUND:PlaySE('Hit Ground out of Fall')
 													  GeneralFunctions.Recoil(stack_order[2], "Hurt", 10, 10, false, false)
 													  GROUND:CharSetAction(stack_order[2], RogueEssence.Ground.PoseGroundAction(stack_order[2].Position, stack_order[2].Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim2)))

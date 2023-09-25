@@ -209,6 +209,9 @@ function CreateFermentMenu()
       self.item_list_index = self.current_page * self.total_items_per_page + self.current_item
       _GAME:SE("Menu/Confirm")
       _MENU:RemoveMenu()
+	  else
+	  	--play a sfx if you try to make something you can't
+	    _GAME:SE("Menu/Cancel")
       end
     end
 

@@ -7,17 +7,19 @@ metano_cafe_ch_4 = {}
 
 function metano_cafe_ch_4.SetupGround()
 	if not SV.Chapter4.FinishedGrove then
-		local breloom, girafarig, gulpin, lickitung = 
+		local gulpin, lickitung, linoone = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Gulpin', 'Cafe_Table_2'},
 				{'Lickitung', 'Cafe_Table_1'},
 				{'Linoone', 'Cafe_Table_14'}
 			})
 	else
-		local cleffa, aggron, gulpin, lickitung = 
+		local gulpin, lickitung, mareep, cranidos = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Gulpin', 'Cafe_Table_2'},
-				{'Lickitung', 'Cafe_Table_1'}
+				{'Lickitung', 'Cafe_Table_1'},
+				{'Mareep', 'Cafe_Table_9'},
+				{'Cranidos', 'Cafe_Table_10'}
 			})
 	end
 		
@@ -28,11 +30,11 @@ end
 
 function metano_cafe_ch_4.Lickitung_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		local item = RogueEssence.Dungeon.InvItem('cafe_domi_blend')
+		local item = RogueEssence.Dungeon.InvItem('cafe_endurance_tonic')
 		GeneralFunctions.StartConversation(chara, "You hear the news?[pause=0] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " just added a new drink to the menu.")
-		UI:WaitShowDialogue("He calls it " .. item:GetDisplayName() .. ".[pause=0] It's supposed to help with hanging on in tough situations,[pause=10] according to him.")
+		UI:WaitShowDialogue("He calls it " .. item:GetDisplayName() .. ".[pause=0] According to him,[pause=10] it helps with hanging on in tough situations.")
 	else
-		GeneralFunctions.StartConversation(chara, "Besides his special drinks,[pause=10] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " also has a daily special he sells on the side.")
+		GeneralFunctions.StartConversation(chara, "Besides his drinks,[pause=10] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " also has a daily special he sells on the side.")
 		UI:WaitShowDialogue("The special isn't always great,[pause=10] but sometimes he has something you won't be able to find anywhere else.")
 	end
 	GeneralFunctions.EndConversation(chara)
@@ -40,7 +42,7 @@ end
 
 function metano_cafe_ch_4.Gulpin_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		local item = RogueEssence.Dungeon.InvItem('cafe_domi_blend')
+		local item = RogueEssence.Dungeon.InvItem('cafe_endurance_tonic')
 		GeneralFunctions.StartConversation(chara, "So tasty...[pause=0] When I drink " .. item:GetDisplayName() .. ",[pause=10] I feel like nothing can stop me...", "Inspired")
 	else
 		local item = RogueEssence.Dungeon.InvItem('food_apple_perfect')
@@ -57,10 +59,10 @@ function metano_cafe_ch_4.Linoone_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "I'm still reading this book on mystery dungeons.[pause=0] This chapter talks about the stairs within dungeons.")
 		UI:WaitShowDialogue("It says that while all mystery dungeons have stairs that lead forward,[pause=10] some also have stairs that lead back.")
-		UI:WaitShowDialogue("The type of stair that leads forward depends on whether it's an ascending or descending dungeon.")
+		UI:WaitShowDialogue("The type of stairs that leads forward depends on whether it's an ascending or descending dungeon.")
 		UI:WaitShowDialogue("...That doesn't make sense though.")
 		UI:WaitShowDialogue("Mystery dungeons are in places such as caves and forests as far as I understand.")
-		UI:WaitShowDialogue("What would stairs be doing in the middle of a place such as that?[pause=0] Mystery dungeons truly are a mystery.")
+		UI:WaitShowDialogue("What would stairs be doing in the middle of a place such as that?[pause=0] Mystery dungeons truly are strange.")
 	else
 		--N/A
 	end
@@ -68,3 +70,40 @@ function metano_cafe_ch_4.Linoone_Action(chara, activator)
 		
 end
 
+
+function metano_cafe_ch_4.Cranidos_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		if not SV.Chapter4.CranidosBlush then
+			GeneralFunctions.StartConversation(chara, "Even with the expedition approaching,[pause=10] I'd rather continue nabbing outlaws than rest here.")
+			UI:WaitShowDialogue("But this is what " .. CharacterEssentials.GetCharacterName("Mareep") .. " wants to do.[pause=0] And spending time with her like this is nice too...")
+			GAME:WaitFrames(40)
+			GeneralFunctions.EmoteAndPause(chara, "Exclaim", true)
+			GROUND:CharSetEmote(cranidos, "sweating", 1)
+			UI:SetSpeakerEmotion("Surprised")
+			UI:WaitShowDialogue("U-umm![pause=0] I m-mean...")
+			GAME:WaitFrames(20)
+			--TODO: Get a blushing portrait for cranidos here! :3
+			UI:SetSpeakerEmotion("Stunned")
+			UI:WaitShowDialogue("D-don't you rookies have anything better to do than laze around here?[pause=0] Go do something productive for once!")
+			SV.Chapter4.CranidosBlush = true
+		else 
+			GeneralFunctions.StartConversation(chara, "H-hey...[pause=0] Please don't tell her what I said before...", "Stunned")
+		end
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end
+
+function metano_cafe_ch_4.Mareep_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		GeneralFunctions.StartConversation(chara, "Hi you two![pause=0] Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are relaxing here until the expedition starts!", "Happy")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Once we leave,[pause=10] it'll be a lot of time before we can come back to town,[pause=10] so we gotta relax while we still can!")
+	end
+	GeneralFunctions.EndConversation(chara)
+		
+end

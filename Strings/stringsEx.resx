@@ -3891,7 +3891,66 @@
     <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
   <data name="TALK_PINCH_1142" xml:space="preserve">
     <value>They're... too t-tough... I'm about to k-keel over...</value>
-    <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data>
+    <comment>Crooked Den Boss Fight Chapter 3 Comment</comment>  </data> 
+
+
+
+  <data name="TALK_FULL_1150" xml:space="preserve">
+    <value>This is our first real adventure, [player]! Let's do our best!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1151" xml:space="preserve">
+    <value>I hope we find something really cool here to bring back to the guild!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1152" xml:space="preserve">
+    <value>Can you believe we're the first to explore this dungeon? I'm so excited!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1153" xml:space="preserve">
+    <value>This is our chance to show the Guildmaster what we can do! Let's give it our all, [player]!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>		
+
+  <data name="TALK_HALF_1150" xml:space="preserve">
+    <value>This is rough... But I won't give up, not on our first proper adventure!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>		
+  <data name="TALK_HALF_1151" xml:space="preserve">
+    <value>This forest is proving difficult... But that just makes this a better adventure!</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>
+
+  <data name="TALK_PINCH_1150" xml:space="preserve">
+    <value>T-this forest... It's t-too tough... H-help, [player]...</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>		
+  <data name="TALK_PINCH_1151" xml:space="preserve">
+    <value>Our first r-real adventure... N-no... S-sorry, [player]...</value>
+    <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>
+
+
+  <data name="TALK_FULL_1160" xml:space="preserve">
+    <value>Let's hurry to the end and get that Apricorn, [player]!</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1161" xml:space="preserve">
+    <value>We need to have a full team if we want to grab that Apricorn, [player]!</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1162" xml:space="preserve">
+    <value>We really found something amazing, [player]! We just need to retrieve it now!</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>	
+  <data name="TALK_FULL_1163" xml:space="preserve">
+    <value>The Guildmaster is going to be so impressed when we show him that Apricorn!</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>		
+
+  <data name="TALK_HALF_1160" xml:space="preserve">
+    <value>I'm dinged up... But I can't stop until we bring that Apricorn home!</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>		
+  <data name="TALK_HALF_1161" xml:space="preserve">
+    <value>This place hasn't gotten any easier since our first exploration...</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>
+
+  <data name="TALK_PINCH_1160" xml:space="preserve">
+    <value>N-no... We n-need... T-the Apricorn...</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>		
+  <data name="TALK_PINCH_1161" xml:space="preserve">
+    <value>Urf... C-can't get the Apricorn... At t-this rate...</value>
+    <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>
+
+
 
   <data name = "BEGINNER_LESSON_GENERAL_SIGN_1_1_TITLE" xml:space="preserve">
     <value>Welcome to the Beginner Lesson!</value>

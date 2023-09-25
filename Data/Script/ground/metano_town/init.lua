@@ -719,9 +719,11 @@ function metano_town.Shop_Action(obj, activator)
   chara.IsInteracting = true
   partner.IsInteracting = true
   UI:SetSpeaker(chara)
+  
   GROUND:CharSetAnim(partner, 'None', true)
   GROUND:CharSetAnim(hero, 'None', true)
-  GROUND:CharSetAnim(chara, 'None', true)
+  --put kec in first frame of walk to simulate explorers behavior
+  GROUND:CharSetAction(chara, RogueEssence.Ground.FrameGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Walk"), 0))
 		
   GROUND:CharTurnToChar(hero, chara)
   local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
@@ -927,10 +929,12 @@ function metano_town.TM_Action(obj, activator)
   chara.IsInteracting = true
   partner.IsInteracting = true
   UI:SetSpeaker(chara)
+
   GROUND:CharSetAnim(partner, 'None', true)
   GROUND:CharSetAnim(hero, 'None', true)
-  GROUND:CharSetAnim(chara, 'None', true)
-		
+  --put kec in first frame of walk to simulate explorers behavior
+  GROUND:CharSetAction(chara, RogueEssence.Ground.FrameGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Walk"), 0))
+				
   GROUND:CharTurnToChar(hero, chara)
   local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
 
@@ -2482,6 +2486,16 @@ end
 function metano_town.Spheal_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Spheal_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Bagon_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Bagon_Action(...,...)"), obj, activator))
+end
+
+function metano_town.Doduo_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("metano_town_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Doduo_Action(...,...)"), obj, activator))
 end
 
 

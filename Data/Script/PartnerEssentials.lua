@@ -989,6 +989,245 @@ function PartnerEssentials.Chapter_3_Dialogue(partner)
 end
 
 
+
+
+function PartnerEssentials.Chapter_4_Dialogue(partner)
+	local ground = GAME:GetCurrentGround().AssetName--get ground's internal name
+	UI:SetSpeaker(partner)
+	local hero = CH('PLAYER')
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharTurnToCharAnimated(partner, hero, 4)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	UI:SetSpeakerEmotion('Normal')
+	
+	--yes i know this is yandere dev shit i dont know how better to structure this. a lua table doesn't really make sense here without having to do a bunch of extra bullshit that i feel makes it less categorized/ordered.
+	--can redo this with a better approach if a good one can be figured out.
+	if ground == 'guild_heros_room' then 
+		if SV.TemporaryFlags.JustWokeUp then 
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("Good morning,[pause=10] " .. hero:GetDisplayName() .. "!")
+	
+		else
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+		end
+	elseif in_array(ground, {'guild_bedroom_hallway',
+						     'guild_storage_room',
+							 'guild_top_left_bedroom',
+							 'guild_top_right_bedroom',
+							 'guild_third_floor_lobby',
+							 'guild_first_floor',
+							 'guild_dining_room',
+							 'guild_storage_hallway'}) then 
+		PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+	elseif ground == 'guild_bottom_left_bedroom' then
+		if not SV.Chapter4.FinishedGrove then
+			if SV.Chapter3.BreloomGirafarigConvo then
+				UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " are exploring the nothern mountains,[pause=10] like said they would the other day at the café.")
+			else 
+				UI:WaitShowDialogue("The expedition explains " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. "'s absence the last few days.[pause=0] I had no clue where they were!")
+			end
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("I hope they're back soon![pause=0] The expedition sounds like it's gonna be a lot of fun!")
+		else
+			UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " should be back any day now!")
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("Honestly,[pause=10] I'm half expecting them to return right now,[pause=10] just in time to catch us in their room...")
+		end
+	elseif ground == 'guild_bottom_right_bedroom' then
+		if not SV.Chapter4.FinishedGrove then
+			UI:SetSpeakerEmotion("Worried")
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+			UI:WaitShowDialogue("Given that " .. zone:GetColoredName() .. " is unexplored,[pause=10] I'm not sure if " .. CharacterEssentials.GetCharacterName("Zigzagoon") .. "'s almanacs are going to be much help...")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("Still,[pause=10] it can't hurt to review them.[pause=0] Maybe there's some info in one of them that can still help us!")
+		else 
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+		end
+	elseif ground == 'guild_second_floor' then
+		if not SV.Chapter4.FinishedGrove then
+			local audino_species = _DATA:GetMonster('audino'):GetColoredName()
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("It's really awesome of " .. CharacterEssentials.GetCharacterName("Audino") .. " to open up her " .. audino_species .. " Assembly!")
+			UI:WaitShowDialogue("We'll have to recruit as many new teammates as we can to make use of it!")
+		else 
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+		end
+	elseif ground == 'guild_guildmasters_room' then
+		if not SV.Chapter4.FinishedGrove then
+			if (SV.Chapter2.TropiusGaveReviver or SV.Chapter3.TropiusGaveWand) and not SV.Chapter4.TropiusGaveAdvice and not SV.Chapter4.ReachedGlade then
+				UI:WaitShowDialogue("The Guildmaster was able to help us out with our past missions...[pause=0] I'm sure he could help us again!")
+			elseif not SV.Chapter4.TropiusGaveAdvice and not SV.Chapter4.ReachedGlade then 
+				--UI:SetSpeakerEmotion("Worried")
+				UI:WaitShowDialogue("I hope the Guildmaster can help us out in some way with our first proper adventure!")
+				UI:WaitShowDialogue("He is an expert at this sort of stuff,[pause=10] so he should be able to help us out somehow!")
+			elseif SV.Chapter4.TropiusGaveAdvice and not SV.Chapter4.ReachedGlade then
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+				UI:WaitShowDialogue("We'll have to take the Guildmaster's advice and recruit as many Pokémon as we can!")
+				UI:WaitShowDialogue("With all the Apricorns there are in " .. zone:GetColoredName() .. ",[pause=10] it shouldn't be too hard!")
+			else 
+				UI:WaitShowDialogue("Let's not tell the Guildmaster about the huge Apricorn we found until we can actually get it off the tree.")
+				UI:SetSpeakerEmotion("Joyous")
+				UI:WaitShowDialogue("I want to surprise him when we bring it right to him![pause=0] He's sure to be impressed by it!")
+			end
+		else
+			UI:WaitShowDialogue("The Guildmaster must have gone on all sorts of expeditions during his time as an adventurer.")
+			UI:SetSpeakerEmotion("Inspired")
+			UI:WaitShowDialogue("It'd be really cool if he told us about one of them sometime!")
+		end 
+	elseif ground == 'ledian_dojo' then
+		if not SV.Chapter4.FinishedGrove then
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+		else 
+			UI:WaitShowDialogue("There's not much time until the expedition.[pause=0] We should get in as much training as we can until then!")
+			UI:WaitShowDialogue("We'll want to be prepared for anything on the expedition,[pause=10] after all!")
+		end
+	elseif in_array(ground, {'metano_electric_home',
+							 'metano_normal_home',
+							 'metano_water_home',
+							 'metano_grass_home',
+							 'metano_inn',
+							 'metano_rock_home',
+							 'metano_fire_home',
+							 'metano_cave',
+							 'metano_altere_transition'
+								}) then 
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+	elseif ground == 'altere_pond' then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+		if not SV.Chapter4.FinishedGrove then
+			if not SV.Chapter4.SpokeToRelicanthDayOne then 
+				UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Relicanth") .. " must get lonely living in the pond.[pause=0] It's rare to see other Pokémon come down here from town.")
+				UI:WaitShowDialogue("We should visit him before we leave for " .. zone:GetColoredName() .. " today.")
+				UI:WaitShowDialogue("He comes off as grouchy,[pause=10] but I think he likes it when Pokémon come and visit him.")
+			else 
+				UI:SetSpeakerEmotion("Inspired")
+				UI:WaitShowDialogue("It's been a while since I've heard one of " .. CharacterEssentials.GetCharacterName("Relicanth") .. "'s stories.[pause=0] We've been too busy to come hear one!")
+				UI:WaitShowDialogue("We have to come back and listen to his story once we've finished exploring " .. zone:GetColoredName() .. "!")
+			end
+		else 
+			if not SV.Chapter4.HeardRelicanthStory and SV.Chapter4.SpokeToRelicanthDayOne then 
+				UI:SetSpeakerEmotion("Inspired")
+				UI:WaitShowDialogue("I'm so excited to hear " .. CharacterEssentials.GetCharacterName("Relicanth") .. "'s story![pause=0] It's been too long since the last one!")
+				UI:SetSpeakerEmotion("Normal")
+				UI:WaitShowDialogue("I just hope it's a story of his I haven't heard before!")
+				UI:WaitShowDialogue("He has a tendency to forget which stories he's already told me.")
+			elseif not SV.Chapter4.HeardRelicanthStory then
+				UI:WaitShowDialogue("We have some spare time before the expedition starts.")
+				UI:WaitShowDialogue("This is a great opportunity to listen to one of " .. CharacterEssentials.GetCharacterName("Relicanth") .. "'s stories!")
+				UI:SetSpeakerEmotion("Inspired")
+				UI:WaitShowDialogue("Let's talk to him and see if he'll tell us one![pause=0] I'm sure you'll enjoy it as much as I do!")
+			else
+				--todo
+			end
+		end
+	elseif ground == 'post_office' then
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Looks like the post office isn't working right now...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Guess we'll have to come back another time.")
+	elseif ground == 'metano_cafe' then
+		if not SV.Chapter4.FinishedGrove then 
+			local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+			UI:WaitShowDialogue("Seems like there's a new drink on the menu!")
+			UI:SetSpeakerEmotion("Worried")
+			UI:WaitShowDialogue("I wonder if it could help us with our exploration of " .. zone:GetColoredName() .. "?")
+		else 
+			if SV.Chapter4.CranidosBlush then
+				UI:SetSpeakerEmotion("Happy")
+				UI:WaitShowDialogue("Looks like a certain somebody is a little bit softer than they like to lead on!")
+				UI:WaitShowDialogue("We could tell " .. CharacterEssentials.GetCharacterName("Mareep") .. " what " .. CharacterEssentials.GetCharacterName("Cranidos") .. " said...[pause=0] But I don't want to stoop to his level.") 
+				GROUND:CharSetEmote(partner, "glowing", 0)
+				UI:SetSpeakerEmotion("Joyous")
+				UI:WaitShowDialogue("It is pretty funny to think about though,[pause=10] heeheehee!")
+				GROUND:CharSetEmote(partner, "", 0)
+			else
+				PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+			end
+	end
+	elseif ground == 'metano_town' then
+		--metano town uses a series of touch objects to mark where the player/partner is on the map so the partner can comment on specific surroundings.
+		local location = SV.metano_town.Locale
+		--North Houses
+		--South Houses
+		--Guild
+		--Cafe
+		--Well
+		--Post
+		--Cave
+		--Market
+		--Dojo
+		--Exploration
+		--Merchants 
+		
+		if not SV.Chapter4.FinishedGrove then 
+			if in_array(location, {'North Houses', 'South Houses', 'Guild', 'Cafe', 'Well', 'Post', 'Cave', 'Dojo', 'Merchants'}) then
+				PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+			elseif location == 'Market' then
+				local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+				if not SV.Chapter4.ReachedGlade then
+					UI:WaitShowDialogue("Let's get ready in the market here for our exploration.")
+					UI:WaitShowDialogue("We have no idea what we'll encounter in " .. zone:GetColoredName() .. ",[pause=10] so we want to be as prepared as possible!")
+				else
+					UI:WaitShowDialogue("Let's get ready in the market here for trekking through " .. zone:GetColoredName() .. ".")
+					UI:WaitShowDialogue("We'll need to be well-equipped if we want to make it back to that huge Apricorn!")
+				end
+			elseif location == 'Exploration' then
+				if SV.TemporaryFlags.AudinoSummonCount < 10 then
+					UI:SetSpeakerEmotion("Happy")
+					UI:WaitShowDialogue("It's so nice of " .. CharacterEssentials.GetCharacterName("Audino") .. " to set up that signpost for us to call her all the way out here!")
+					--UI:WaitShowDialogue("It's in such a convenient spot,[pause=10] here at the road out of town!")
+					UI:SetSpeakerEmotion("Normal")
+					UI:WaitShowDialogue("Let's make sure not to abuse it though.[pause=0] She does enough running around as it is!")
+				else
+					UI:SetSpeakerEmotion("Pain")
+					UI:WaitShowDialogue("That was kind of mean of us,[pause=10] wasn't it...?[pause=0] We shouldn't do that to poor " .. CharacterEssentials.GetCharacterName("Audino") .. " again.")
+				end
+			else--failsafe
+				if location == 'Exploration' and SV.TemporaryFlags.AudinoSummonCount >= 10 then
+					UI:SetSpeakerEmotion("Pain")
+					UI:WaitShowDialogue("That was kind of mean of us,[pause=10] wasn't it...?[pause=0] We shouldn't do that to poor " .. CharacterEssentials.GetCharacterName("Audino") .. " again.")
+				else
+					PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+				end
+			end 
+		else 
+			PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+		end	
+	else	
+		UI:WaitShowDialogue("Chapter 4 dialogue not found for this ground/scenario. Please notify Palika.")
+	end
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
+end
+
+--Figured this would be a smarter way of handling default dialogue situations from now on.
+function PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	if not SV.Chapter4.ReachedGlade then 
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("I still can't believe it,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] A real adventure in an unexplored dungeon!")
+		UI:WaitShowDialogue("Let's go to " .. zone:GetColoredName() .. " right now and see what we can find![pause=0] I can't wait much longer!")
+	elseif not SV.Chapter4.FinishedGrove then
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
+		UI:WaitShowDialogue("That huge Apricorn is waiting for us still,[pause=10] " .. hero:GetDisplayName() .. "!")
+		UI:WaitShowDialogue("Let's get back to " .. zone:GetColoredName() .. " and bring that it home!")
+	else
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("We'll be leaving for the expedition really soon![pause=0] It's gonna be so much fun!")
+		UI:WaitShowDialogue("I hope " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " come back quickly so we can go on it already!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("While we wait,[pause=10] we should do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
+		UI:WaitShowDialogue("Let's work hard as always,[pause=10] " .. hero:GetDisplayName() .. "!")
+	end
+end
+
+
 function PartnerEssentials.GetPartnerDungeonDialogue()
 end
 

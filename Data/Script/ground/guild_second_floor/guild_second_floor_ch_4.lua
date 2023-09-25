@@ -6,26 +6,69 @@ require 'CharacterEssentials'
 guild_second_floor_ch_4 = {}
 
 function guild_second_floor_ch_4.SetupGround()
-	GAME:FadeIn(20)
+	if not SV.Chapter4.FinishedGrove then
+		local spheal, jigglypuff, marill, mareep, cranidos, snubbull = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Spheal', 'Left_Trio_2'},
+				{'Jigglypuff', 'Left_Trio_3'},
+				{'Marill', 'Left_Trio_1'},
+				{'Mareep', 'Generic_Spawn_Duo_1'},
+				{'Cranidos', 'Generic_Spawn_Duo_2'},
+				{'Snubbull', 'Generic_Spawn_2'}
+			})
+		
+		
+		AI:SetCharacterAI(jigglypuff, "ai.ground_talking", true, 240, 60, 60, false, 'Default', {marill, spheal})
+		AI:SetCharacterAI(marill, "ai.ground_talking", true, 240, 60, 110, false, 'Default', {jigglypuff, spheal})
+		AI:SetCharacterAI(spheal, "ai.ground_talking", true, 240, 60, 10, false, 'Default', {jigglypuff, marill})
+
+		
+		AI:SetCharacterAI(mareep, "ai.ground_talking", true, 240, 60, 90, false, 'Default', {cranidos})
+		
+		AI:SetCharacterAI(snubbull, "ai.ground_default", RogueElements.Loc(snubbull.Position.X - 16, snubbull.Position.Y - 16), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+
+	else
+		local silcoon, metapod = 
+			CharacterEssentials.MakeCharactersFromList({
+				{'Silcoon', 'Generic_Spawn_Duo_1'},
+				{'Metapod', 'Generic_Spawn_Duo_2'},
+				{'Zangoose', 'Right_Duo_1'},
+				{'Seviper', 'Right_Duo_2'}
+				
+			})
+	end
+	
+	--let the cutscene handle the fade in if one is needed
+	if SV.Chapter4.FinishedAssemblyIntro then
+		GAME:FadeIn(20)
+	end
 end 
 
 
 
 function guild_second_floor_ch_4.Mareep_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		GeneralFunctions.StartConversation(chara, "")
+		GeneralFunctions.StartConversation(chara, "This expedition is gonna be a bla-a-a-ast![pause=0] I don't know how I'm gonna wait until we leave!", "Joyous")
+		UI:WaitShowDialogue("I'm full of excitement from head to tail!")
+		UI:WaitShowDialogue("I've gotta release this energy out on some ba-a-a-addies or I won't sleep tonight!")
 	else
 	
 	end
+	GeneralFunctions.EndConversation(chara)
 end
 
 
 function guild_second_floor_ch_4.Cranidos_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		GeneralFunctions.StartConversation(chara, "")
+		GeneralFunctions.StartConversation(chara, "I'm surprised the Guildmaster is allowing greenhorns like you to come along on the expedition.")
+		UI:SetSpeakerEmotion("Joyous")
+		GROUND:CharSetEmote(chara, "glowing", 0)
+		UI:WaitShowDialogue("It must be a really easy exploration if he's letting you rookies tag along![pause=0] Hahaha!")
+		GROUND:CharSetEmote(chara, "", 0)
 	else
 	
 	end
+	GeneralFunctions.EndConversation(chara)
 end
 
 
@@ -33,7 +76,7 @@ function guild_second_floor_ch_4.Snubbull_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "Apricorns are finally in stock at the Kecleon Shop,[pause=10] but that dish of mine will have to wait.")
 		UI:SetSpeakerEmotion("Special0")
-		UI:WaitShowDialogue("With the expedition coming up now,[pause=10] my culinary expertise will need to be applied elsewhere in the near future. " .. STRINGS:Format("\\u266A")))
+		UI:WaitShowDialogue("With the expedition coming up now,[pause=10] my culinary expertise will need to be applied elsewhere. " .. STRINGS:Format("\\u266A"))
 	else
 		--N/A
 	end
@@ -41,6 +84,97 @@ function guild_second_floor_ch_4.Snubbull_Action(chara, activator)
 end
 
 
+
+function guild_second_floor_ch_4.Jigglypuff_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Normally,[pause=10] if one of your team members faint,[pause=10] the entire team gets ejected from the dungeon.")
+		UI:WaitShowDialogue("But if that team member was recruited with Apricorns,[pause=10] the rest of the team can still continue on.")
+	else
+		--N/A
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_4.Marill_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "You can use Apricorns to recruit more members to your adventuring team,[pause=10] but we like ours just the way it is.")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("The three of us work great as a team,[pause=10] we don't need any more members!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Besides,[pause=10] it'd be hard to find someone that shares our team's unique talents!")
+	else
+		--N/A
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_4.Spheal_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		GeneralFunctions.StartConversation(chara, "Everyone's talking about Apricorns,[pause=10] but who cares about those!")
+		UI:WaitShowDialogue("They smell nice,[pause=10] especially the blue ones,[pause=10] but they're completely inedible![pause=0] How worthless!")
+	else
+		--N/A
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+
+
+function guild_second_floor_ch_4.Metapod_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		local move = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("poison_sting")
+		local ability = _DATA:GetIntrinsic("shield_dust"):GetColoredName()
+		local silcoon_species = _DATA:GetMonster('audino'):GetColoredName()
+		local metapod_species = _DATA:GetMonster('audino'):GetColoredName()
+		GeneralFunctions.StartConversation(chara, "Secondary effects from attacks like " .. move:GetColoredName() .. " are more common than you think.")
+		UI:WaitShowDialogue("Moves that do damage and cause other effects...[pause=0] How nasty.")
+		UI:WaitShowDialogue("Before we evolved,[pause=10] our " .. ability .. " ability prevented secondary effects from working on us.")
+		UI:WaitShowDialogue("But now that we're a " .. metapod_species .. " and " .. silcoon_species .. ",[pause=10] our abilities are completely different.")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("...Between that and our current lack of mobility,[pause=10] I'm starting to regret our choice to evolve...")
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_4.Silcoon_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		local focus = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("focus_energy")
+		local slash = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("slash")
+		local leaf_blade = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("leaf_blade")
+
+		GeneralFunctions.StartConversation(chara, "Adventurers like you must know about critical hits,[pause=10] right?")
+		UI:WaitShowDialogue("What I bet you don't know is that only certain kinds of moves can critical hit!")
+		UI:WaitShowDialogue("Moves like " .. slash:GetColoredName() .. " and " .. leaf_blade:GetColoredName() .. " are able to land critical hits.")
+		UI:WaitShowDialogue("Other attacks can land critical hits too if you've used a move like " .. focus:GetColoredName() .. ".")
+		UI:WaitShowDialogue("Not many adventurers know about this![pause=0] But at least you two know about it now!")
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_4.Seviper_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		GeneralFunctions.StartConversation(chara, "Word on the sssstreet issss that the guild issss leaving on an expedition quite ssssoon.")
+		UI:WaitShowDialogue("Ssssounds intriguing...[pause=0] I would love to join in,[pause=10] but I undersssstand that it issss for guild memberssss only.")
+		UI:WaitShowDialogue("Besidessss...[pause=0] The expedition would be too much given I would have to haul " .. CharacterEssentials.GetCharacterName("Zangoose") .. "'ssss dead weight around.")	
+	end
+	GeneralFunctions.EndConversation(chara)
+end
+
+function guild_second_floor_ch_4.Zangoose_Action(chara, activator)
+	if not SV.Chapter4.FinishedGrove then
+		--N/A
+	else
+		GeneralFunctions.StartConversation(chara, "An expedition...[pause=0] Seems interesting,[pause=10] but our skillset isn't well suited to exploring.")
+		UI:WaitShowDialogue("I would do fine,[pause=10] but " .. CharacterEssentials.GetCharacterName("Seviper") .. "?[pause=0] He'd be completely hopeless on an exploration like that.")
+	end
+	GeneralFunctions.EndConversation(chara)
+end
 
 
 function guild_second_floor_ch_4.AudinoAssemblyIntro()
@@ -201,7 +335,7 @@ function guild_second_floor_ch_4.AudinoAssemblyIntro()
 	UI:WaitShowDialogue("We will![pause=0] Thank you again,[pause=10] " .. audino:GetDisplayName() .. "!")
 	GAME:WaitFrames(10)
 	
-	GeneralFunctions.Hop(partner)
+	--GeneralFunctions.Hop(partner)
 	UI:SetSpeakerEmotion("Inspired")
 	GROUND:CharTurnToCharAnimated(partner, hero, 4)
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)

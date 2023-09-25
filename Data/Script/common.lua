@@ -5,28 +5,7 @@
 require 'common_gen'
 require 'menu/member_return'
 
-----------------------------------------
--- Debugging
-----------------------------------------
-DEBUG = 
-{
-  EnableDbgCoro = function() end, --Call this function inside coroutines you want to allow debugging of, at the start. Default is empty
-  --FIXME: fix mobdebug and sockets
-  IsDevMode = function() return false end, --RogueEssence.DiagManager.Instance.DevMode end,
-  GroundAIShowDebugInfo = false,
-}
 
-DEBUG.GroundAIShowDebugInfo = false--DEBUG.IsDevMode()
-
---Disable debugging for non devs
-if DEBUG.IsDevMode() then
-  ___mobdebug = require('mobdebug')
-  ___mobdebug.coro() --Enable coroutine debugging
-  ___mobdebug.checkcount = 1 --Increase debugger update frequency
-  ___mobdebug.verbose=true --Enable debugger verbose mode
-  ___mobdebug.start() --Enable debugging
-  DEBUG.EnableDbgCoro = function() require('mobdebug').on() end --Set the content of the function to this in dev mode, so it does something
-end
 
 
 ----------------------------------------
@@ -410,6 +389,23 @@ COMMON.PERSONALITY[64] = {
 	
 }
 
+--Apricorn Grove - Ch 4
+COMMON.PERSONALITY[65] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1150, 1151, 1152, 1153},
+	HALF = {1000, 1001, 1002, 1003, 1004, 1150, 1151},
+	PINCH = {1000, 1001, 1002, 1003, 1004, 1150, 1151},
+	WAIT = {1000}
+	
+}
+
+--Apricorn Grove - Ch 4 - Reached the end but did not get the Apricorn
+COMMON.PERSONALITY[66] = { 
+	FULL = {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1160, 1161, 1162, 1163},
+	HALF = {1000, 1001, 1002, 1003, 1004, 1160, 1161},
+	PINCH = {1000, 1001, 1002, 1003, 1004, 1160, 1161},
+	WAIT = {1000}
+	
+}
 
 COMMON.ESSENTIALS = {
   { Index = 1, Hidden = 0, Price = 50},

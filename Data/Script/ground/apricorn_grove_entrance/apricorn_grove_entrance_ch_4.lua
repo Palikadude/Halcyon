@@ -323,7 +323,7 @@ function apricorn_grove_entrance_ch_4.FailedNoFullTeamReattempt()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Last time we were here,[pause=10] we weren't able to get the huge Apricorn off the tree in depths of the dungeon...")
+	UI:WaitShowDialogue("Last time we were here,[pause=10] we couldn't get the huge Apricorn off the tree in depths of the dungeon...")
 
 	--should player comment on being excited about a new exploration opportunity? They already expressed this kind of sentiment with the expedition, which is probably more fitting anyway.
 	--Probably should not comment, i think the happy and strange feelings about adventuring should stay ultimately related to the Anima Core stuff

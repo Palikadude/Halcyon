@@ -711,7 +711,11 @@ SV.Chapter4 =
 	FinishedGrove = false,--has player finished the grove for good?
 	FinishedBedtimeCutscene = false,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
 	
+	TropiusGaveAdvice = false,--did you speak with Tropius day one?
+	SpokeToRelicanthDayOne = false,--did you speak with relicanth day one?
+	HeardRelicanthStory = false,--did you hear with relicanth's story? (TO BE USED ONCE STORY IS CREATED)
 	MedichamMachampArgument = false,--did you see machamp and medicham arguing over their mailbox?
+	CranidosBlush = false,--did Cranidos accidentally spill the beans on being a softy towards mareep?
 	WoopersMedititeConvo = false,--did you see woopers and meditite talk to each other?
 	DemoThankYou = false--Showed demo thank you?
 

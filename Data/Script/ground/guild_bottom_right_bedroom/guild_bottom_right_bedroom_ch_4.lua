@@ -7,7 +7,7 @@ guild_bottom_right_bedroom_ch_4 = {}
 
 
 function guild_bottom_right_bedroom_ch_4.SetupGround()
-	if not SV.Chapter3.DefeatedBoss then
+	if SV.Chapter4.FinishedGrove then
 		local zigzagoon = CharacterEssentials.MakeCharactersFromList({
 			{'Zigzagoon', 224, 248, Direction.DownLeft}
 		})
