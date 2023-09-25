@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -11,6 +11,7 @@
 "NoEXP": false,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -8175,7 +8176,7 @@
 "SpawnRates": {
 "nodes": [
 {
-"Item": 1,
+"Item": 2,
 "Range": {
 "Min": 0,
 "Max": 8

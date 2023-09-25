@@ -588,8 +588,8 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 	for i = 0, player_count - 1, 1 do 
 		local player = GAME:GetPlayerPartyMember(i)
 		if player.Dead and player.IsPartner then --someone died 
-			for i = 0, player_count - 1, 1 do --beam everyone else out
-				player = GAME:GetPlayerPartyMember(i)
+			for j = 0, player_count - 1, 1 do --beam everyone else out
+				player = GAME:GetPlayerPartyMember(j)
 				if not player.Dead then--dont beam out whoever died
 					--delay between beam outs
 					GAME:WaitFrames(60)
@@ -598,8 +598,8 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 				end
 			end
 			--beam out guests
-			for i = 0, guest_count - 1, 1 do --beam everyone else out
-				guest = GAME:GetPlayerGuestMember(i)
+			for j = 0, guest_count - 1, 1 do --beam everyone else out
+				guest = GAME:GetPlayerGuestMember(j)
 				if not guest.Dead then--dont beam out whoever died
 					--delay between beam outs
 					GAME:WaitFrames(60)
@@ -612,6 +612,8 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 		elseif player.Dead and not player.IsPartner then 
 			--Send them back to the assembly and boot them from the current team if they died and aren't important.
 			--todo: make this silent once PMDO updates
+			print(tostring(i))
+			GAME:WaitFrames(60)
 			TASK:WaitTask(_DUNGEON:SendHome(i))
 		end
 	end
@@ -622,16 +624,16 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 		local guest = GAME:GetPlayerGuestMember(i)
 		if guest.Dead and guest.IsPartner then --someone died 
 			--beam player's team out first
-			for i = 0, player_count - 1, 1 do --beam everyone else out
-				player = GAME:GetPlayerPartyMember(i)
+			for j = 0, player_count - 1, 1 do --beam everyone else out
+				player = GAME:GetPlayerPartyMember(j)
 				if not player.Dead then--dont beam out whoever died
 					TASK:WaitTask(_DUNGEON:ProcessBattleFX(player, player, _DATA.SendHomeFX))
 					player.Dead = true
 					GAME:WaitFrames(60)
 				end
 			end
-			for i = 0, guest_count - 1, 1 do --beam everyone else out
-				guest = GAME:GetPlayerGuestMember(i)
+			for j = 0, guest_count - 1, 1 do --beam everyone else out
+				guest = GAME:GetPlayerGuestMember(j)
 				if not guest.Dead then--dont beam out whoever died
 					TASK:WaitTask(_DUNGEON:ProcessBattleFX(guest, guest, _DATA.SendHomeFX))
 					guest.Dead = true
@@ -648,7 +650,6 @@ end
 function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, context, args)
 	local player_count = GAME:GetPlayerPartyCount()
 	local critical = RogueEssence.Dungeon.StatusEffect("critical_health")
-
 	for i = 0, player_count - 1, 1 do 
 	local player = GAME:GetPlayerPartyMember(i)
 		if player.HP <= player.MaxHP / 4 and player:GetStatusEffect("critical_health") == nil then 
