@@ -275,6 +275,7 @@ function BoostStat(stat, change, target)
     while (target.MaxHP == prev_stat and target.MaxHPBonus <  PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
       target.MaxHPBonus = target.MaxHPBonus + 1
     end
+    target.HP = target.MaxHP
     new_stat = target.MaxHP
   end
 
@@ -340,49 +341,50 @@ function AddStat(stat, context)
   local lookup_table = {}
   lookup_table[RogueEssence.Data.Stat.HP] = function()
     if context.User.MaxHPBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.MaxHP;
-      context.User.MaxHPBonus = context.User.MaxHPBonus + 1;
-      new_stat = context.User.MaxHP;
+      prev_stat = context.User.MaxHP
+      context.User.MaxHPBonus = context.User.MaxHPBonus + 1
+      context.User.HP = context.User.MaxHP
+      new_stat = context.User.MaxHP
     end
   end
 
   lookup_table[RogueEssence.Data.Stat.Attack] = function()
     if context.User.AtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.BaseAtk;
-      context.User.AtkBonus = context.User.AtkBonus + 1;
-      new_stat = context.User.BaseAtk;
+      prev_stat = context.User.BaseAtk
+      context.User.AtkBonus = context.User.AtkBonus + 1
+      new_stat = context.User.BaseAtk
     end
   end
 
   lookup_table[RogueEssence.Data.Stat.Defense] = function()
     if context.User.DefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.BaseDef;
-      context.User.DefBonus = context.User.DefBonus + 1;
-      new_stat = context.User.BaseDef;
+      prev_stat = context.User.BaseDef
+      context.User.DefBonus = context.User.DefBonus + 1
+      new_stat = context.User.BaseDef
     end
   end
 
   lookup_table[RogueEssence.Data.Stat.MAtk] = function()
     if context.User.MAtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.MAtkBonus;
-      context.User.MAtkBonus = context.User.MAtkBonus + 1;
-      new_stat = context.User.MAtkBonus;
+      prev_stat = context.User.MAtkBonus
+      context.User.MAtkBonus = context.User.MAtkBonus + 1
+      new_stat = context.User.MAtkBonus
     end
   end
 
   lookup_table[RogueEssence.Data.Stat.MDef] = function()
     if context.User.MDefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.BaseMDef;
-      context.User.MDefBonus = context.User.MDefBonus + 1;
-      new_stat = context.User.BaseMDef;
+      prev_stat = context.User.BaseMDef
+      context.User.MDefBonus = context.User.MDefBonus + 1
+      new_stat = context.User.BaseMDef
     end
   end
 
   lookup_table[RogueEssence.Data.Stat.Speed] = function()
     if context.User.SpeedBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST then
-      prev_stat = context.User.BaseSpeed;
-      context.User.SpeedBonus = context.User.SpeedBonus + 1;
-      new_stat = context.User.BaseSpeed;
+      prev_stat = context.User.BaseSpeed
+      context.User.SpeedBonus = context.User.SpeedBonus + 1
+      new_stat = context.User.BaseSpeed
     end
   end
 
