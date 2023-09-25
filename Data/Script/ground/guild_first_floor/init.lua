@@ -67,6 +67,7 @@ function guild_first_floor.Main_Entrance_Touch(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   if SV.metano_town.Song ~= "Wigglytuff's Guild.ogg" then SOUND:FadeOutBGM(20) end--map transition may result in a music change depending on song Falo is playing
   GAME:FadeOut(false, 20)
+  SV.metano_town.Locale = 'Guild'--flag the locale as guild when leaving, or else the locale will be whatever it was when you entered the dungeon from yesterday (typically exploration).
   GAME:EnterGroundMap("metano_town", "Guild_Entrance_Marker", SV.metano_town.Song == "Wigglytuff's Guild.ogg")
   SV.partner.Spawn = 'Default'
 end

@@ -580,7 +580,8 @@ end
 --Check to make sure the partner or hero is not dead, or anyone else marked as "IsPartner"
 --checks guests as well
 --if one is dead, then cause an instant game over
-function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, context, args)
+--if someone died and they aren't "IsPartner", then send them home automatically.
+function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 	local player_count = GAME:GetPlayerPartyCount()
 	local guest_count = GAME:GetPlayerGuestCount()
 	if player_count < 1 then return end--If there's no party members then we dont need to do anything
@@ -608,6 +609,10 @@ function SINGLE_CHAR_SCRIPT.HeroPartnerCheck(owner, ownerChar, context, args)
 			end
 			--TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))
 			return--cut the script short here if someone died, no need to check guests
+		elseif player.Dead and not player.IsPartner then 
+			--Send them back to the assembly and boot them from the current team if they died and aren't important.
+			--todo: make this silent once PMDO updates
+			TASK:WaitTask(_DUNGEON:SendHome(i))
 		end
 	end
 	
@@ -645,9 +650,9 @@ function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, context, a
 	local critical = RogueEssence.Dungeon.StatusEffect("critical_health")
 
 	for i = 0, player_count - 1, 1 do 
-		local player = GAME:GetPlayerPartyMember(i)
+	local player = GAME:GetPlayerPartyMember(i)
 		if player.HP <= player.MaxHP / 4 and player:GetStatusEffect("critical_health") == nil then 
-			TASK:WaitTask(player:AddStatusEffect(nil, critical, nil))
+			TASK:WaitTask(player:AddStatusEffect(nil, critical, false))
 			--print("Set crit health!")
 		elseif player.HP > player.MaxHP / 4 and player:GetStatusEffect("critical_health") ~= nil then
 			TASK:WaitTask(player:RemoveStatusEffect("critical_health"))

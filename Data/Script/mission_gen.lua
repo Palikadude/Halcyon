@@ -2194,7 +2194,7 @@ function JobMenu:OpenSubMenu()
 					   {"Cancel", true, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end} }
 		end 
 	
-		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(232, 138, 24, choices, 1, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end) 
+		submenu = RogueEssence.Menu.ScriptableSingleStripMenu(232, 138, 24, choices, 0, function() _MENU:RemoveMenu() _MENU:RemoveMenu() end) 
 		_MENU:AddMenu(submenu, true)
 		
 	end

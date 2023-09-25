@@ -96,6 +96,8 @@ function apricorn_grove_entrance_ch_4.FirstComeOutFront()
 	local partner = CH('Teammate1')
 	local team2 = CH('Teammate2')
 	local team3 = CH('Teammate3')
+	local guest1 = CH('Guest1')
+	local guest2 = CH('Guest2')
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('apricorn_grove')
 	GAME:CutsceneMode(true)
 	SOUND:StopBGM()
@@ -103,6 +105,16 @@ function apricorn_grove_entrance_ch_4.FirstComeOutFront()
 	GAME:MoveCamera(164, 184, 1, false)
 	GROUND:TeleportTo(hero, 140, 40, Direction.Down)
 	GROUND:TeleportTo(partner, 172, 40, Direction.Down)
+	
+	--Check if we have a guest. If we do, overwrite team2 or team3 accordingly based on party size so they take that slot in the cutscene.
+	if guest1 ~= nil then
+		if GAME:GetPlayerPartyCount() == 2 then 
+			team2 = guest1 
+		else
+			team3 = guest1
+		end
+	end 
+	
 	if team2 ~= nil then
 		GROUND:TeleportTo(team2, 156, 16, Direction.Down)
 	end
@@ -174,7 +186,7 @@ function apricorn_grove_entrance_ch_4.FirstComeOutFront()
 
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Well,[pause=10] we can't let this stop us from properly exploring the forest.[pause=0] We'll just have to try again![script=0]", {function() return GeneralFunctions.Hop(partner) end})
+	UI:WaitShowDialogue("Well,[pause=10] we can't let this stop us.[pause=0] We'll just have to try again![script=0]", {function() return GeneralFunctions.Hop(partner) end})
 	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "!")
 	
 	GAME:WaitFrames(20)

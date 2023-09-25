@@ -8,9 +8,10 @@ require 'common'
 require 'PartnerEssentials'
 require 'mission_gen'
 
-SV.ChapterProgression.Chapter = 3
+SV.ChapterProgression.Chapter = 4
 GAME:UnlockDungeon("crooked_cavern")
 GAME:UnlockDungeon("illuminant_riverbed")
+GAME:UnlockDungeon("apricorn_grove")
 
 -- Package name
 local testmap = {}

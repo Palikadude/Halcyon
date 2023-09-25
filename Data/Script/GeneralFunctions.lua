@@ -874,27 +874,35 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 end
 
 --sends all bagged items and money to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
-function GeneralFunctions.SendInvToStorage()
+function GeneralFunctions.SendInvToStorage(sendItems, sendMoney)
 	local itemCount = GAME:GetPlayerBagCount()
 	local money = GAME:GetPlayerMoney()
 	local item
 	
-	--move player's money to the bank
-	GAME:RemoveFromPlayerMoney(money)
-	GAME:AddToPlayerMoneyBank(money)
+	--only send money/items if we specify it. By default, send items AND money to storage.
+	if sendItems == nil then sendItems = true end
+	if sendMoney == nil then sendMoney = true end
 	
-	for i = 1, itemCount, 1 do
-		item = GAME:GetPlayerBagItem(0)
-		GAME:TakePlayerBagItem(0)
-		GAME:GivePlayerStorageItem(item)
+	if sendMoney then 
+		--move player's money to the bank
+		GAME:RemoveFromPlayerMoney(money)
+		GAME:AddToPlayerMoneyBank(money)
 	end
 	
-	--send equipped items to storage
-	for i = 1, GAME:GetPlayerPartyCount(), 1 do
-		item = GAME:GetPlayerEquippedItem(i-1)
-		if item.ID ~= "" then 
-			GAME:TakePlayerEquippedItem(i-1)
+	if sendItems then 
+		for i = 1, itemCount, 1 do
+			item = GAME:GetPlayerBagItem(0)
+			GAME:TakePlayerBagItem(0)
 			GAME:GivePlayerStorageItem(item)
+		end
+		
+		--send equipped items to storage
+		for i = 1, GAME:GetPlayerPartyCount(), 1 do
+			item = GAME:GetPlayerEquippedItem(i-1)
+			if item.ID ~= "" then 
+				GAME:TakePlayerEquippedItem(i-1)
+				GAME:GivePlayerStorageItem(item)
+			end
 		end
 	end
 end
@@ -1411,7 +1419,7 @@ function GeneralFunctions.AskMissionWarpOut()
 	while state > -1 do
 		if state == 0 then
 			UI:ResetSpeaker()
-			UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", false)
+			UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", true)
 			UI:WaitForChoice()
 			local leave_dungeon = UI:ChoiceResult()
 			GAME:WaitFrames(20)

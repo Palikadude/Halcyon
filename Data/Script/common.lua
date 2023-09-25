@@ -547,6 +547,17 @@ function COMMON.RespawnAllies(reviveAll)
   end
 	
 end
+
+function COMMON.RespawnGuests()
+	local guests = GAME:GetPlayerGuestCount()
+	for i=1, guests, 1 do 
+		GROUND:RemoveCharacter("Guest" .. tostring(i))
+		local g = GAME:GetPlayerGuestMember(i-1)
+		GROUND:SpawnerSetSpawn("GUEST_" .. tostring(i), g)
+		local chara = GROUND:SpawnerDoSpawn("GUEST_" .. tostring(i))
+	end
+end 
+
 function COMMON.ShowTeamAssemblyMenu(init_fun)
   SOUND:PlaySE("Menu/Skip")
   UI:AssemblyMenu()
@@ -1106,6 +1117,14 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
         -- add escort to team
         local player_count = GAME:GetPlayerPartyCount()
         local guest_count = GAME:GetPlayerGuestCount()
+		
+		--check to see if an escort is already in the team. If so, stop right here and don't assign him back in.
+		--This is mostly relevant for coming out the front and going back in at Apricorn Grove.
+		for i = 0, guest_count - 1, 1 do 
+			local guest_tbl = LTBL(GAME:GetPlayerGuestMember(i))
+			if guest_tbl.Escort ~= nil then return end 
+		end 
+		
         if player_count + guest_count >= 4 then
           SOUND:StopBGM()
           local state = 0

@@ -1,7 +1,8 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.17.0",
 "Object": {
-"$type": "RogueEssence.Data.ActiveEffect, RogueEssence",
+"$type": "RogueEssence.Data.UniversalActiveEffect, RogueEssence",
+"ZoneSteps": [],
 "UniversalStates": [
 {
 "$type": "PMDC.Dungeon.HitRateLevelTableState, PMDC",
@@ -514,7 +515,10 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.PreActionEvent, PMDC"
+"$type": "PMDC.Dungeon.PreActionEvent, PMDC",
+"LastSlotStatusID": "last_used_move_slot",
+"LastMoveStatusID": "last_used_move",
+"RepeatStatusID": "times_move_used"
 }
 }
 ],
@@ -578,8 +582,6 @@
 },
 "Value": {
 "$type": "PMDC.Dungeon.UsePostEvent, PMDC",
-"LastSlotStatusID": "last_used_move_slot",
-"LastMoveStatusID": "last_used_move",
 "RepeatStatusID": "times_move_used",
 "AllyStatusID": "last_ally_move",
 "MissedAllID": "missed_all_last_turn"
@@ -683,7 +685,8 @@
 },
 "Value": {
 "$type": "PMDC.Dungeon.ImpostorReviveEvent, PMDC",
-"AbilityID": "imposter"
+"AbilityID": "imposter",
+"StatusID": ""
 }
 },
 {
@@ -694,7 +697,7 @@
 },
 "Value": {
 "$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
-"Script": "HeroPartnerCheck",
+"Script": "AllyDeathCheck",
 "ArgTable": "{}"
 }
 },

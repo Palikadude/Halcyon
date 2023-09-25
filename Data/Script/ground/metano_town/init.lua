@@ -1185,6 +1185,7 @@ function metano_town.Storage_Action(obj, activator)
 		
 		local storage_choices = { { STRINGS:FormatKey('MENU_STORAGE_STORE'), has_items},
 		{ STRINGS:FormatKey('MENU_STORAGE_TAKE_ITEM'), has_storage},
+		{ STRINGS:FormatKey('MENU_STORAGE_STORE_ALL'), has_items},
 		{ STRINGS:FormatKey('MENU_INFO'), true},
 		{ STRINGS:FormatKey("MENU_CANCEL"), true}}
 		
@@ -1194,7 +1195,7 @@ function metano_town.Storage_Action(obj, activator)
 			UI:SetSpeakerEmotion('Normal')			
 		end
 		
-		UI:BeginChoiceMenu(msg, storage_choices, 1, 4)
+		UI:BeginChoiceMenu(msg, storage_choices, 1, 5)
 		UI:WaitForChoice()
 		local result = UI:ChoiceResult()	
 		UI:SetSpeakerEmotion('Normal')
@@ -1219,6 +1220,11 @@ function metano_town.Storage_Action(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Storage_Withdrew_Items']))
 			end 
 		elseif result == 3 then
+			repeated = true
+			GeneralFunctions.SendInvToStorage(true, false)
+			UI:SetSpeakerEmotion('Happy')
+			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Storage_Stored_All_Items']))
+		elseif result == 4 then
 			repeated = true
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Storage_Info_1']))
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Storage_Info_2']))

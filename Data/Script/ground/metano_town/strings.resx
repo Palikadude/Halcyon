@@ -662,7 +662,7 @@
     <value>What items would you like to store?\n (You can use {0} to choose multiple items.)</value>
   </data>
   <data name="Storage_Stored_Items" xml:space="preserve">
-    <value>Stored away! Your items are safe with me dearie.</value>
+    <value>Stored away! Your items are safe with me, dearie.</value>
   </data>
   <data name="Storage_Withdraw" xml:space="preserve">
     <value>What items would you like to take out?\n (You can use {0} to choose multiple items.)</value>
@@ -891,5 +891,8 @@
   </data>
   <data name="Assembly_Info_008" xml:space="preserve">
     <value>My e-ears are really sensitive,[pause=10] so I'll hear the bell and come running!</value>
+  </data>
+  <data name="Storage_Stored_All_Items" xml:space="preserve">
+    <value>All your items are stored away! They're safe with me, dearie.</value>
   </data>
 </root>

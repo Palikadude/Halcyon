@@ -38,3 +38,5 @@ V 0.4.0
 - Revamped internal logic for Cafe Specials and added a more updated system for determining which item to pick.
 - Fixed a display bug in the pokemon's info menu when a scarf sprite was being used.
 - Fixed Kecleon's not leaning over their counter when talking to them.
+- Fixed fail result in Relic Forest not giving a results screen.
+- Added a Store All option to Kanga in town.

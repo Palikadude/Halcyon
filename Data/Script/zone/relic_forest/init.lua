@@ -93,7 +93,7 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 			--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor. This probably won't be used since missions shouldnt get in relic forest
 			local exit_ground = 6
 			if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
-			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, false, false)				
+			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true)				
 		end
 	end
 end

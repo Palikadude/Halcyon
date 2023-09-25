@@ -28,6 +28,7 @@ function apricorn_grove_entrance.Init(map)
 	print('=>> Init_apricorn_grove_entrance <<=')
 	MapStrings = COMMON.AutoLoadLocalizedStrings()
 	COMMON.RespawnAllies(true)
+	COMMON.RespawnGuests()
 	PartnerEssentials.InitializePartnerSpawn()
 
 end
@@ -80,7 +81,7 @@ function apricorn_grove_entrance.PlotScripting()
 			apricorn_grove_entrance_ch_4.SubsequentAttemptCutscene()--failed; hasn't made it to the end yet
 		elseif not SV.Chapter4.FinishedGrove and SV.Chapter4.ReachedGlade and not SV.ApricornGrove.InDungeon then  
 			apricorn_grove_entrance_ch_4.FailedNoFullTeamReattempt()--failed; made it to the end, but couldn't get the apricorn
-		elseif not SV.Chapter4.FinishedGrove and SV.ApricornGrove.InDungeon and not SV.Chapter4.BacktrackedOutGroveYet then
+		elseif SV.ApricornGrove.InDungeon and not SV.Chapter4.BacktrackedOutGroveYet then
 			apricorn_grove_entrance_ch_4.FirstComeOutFront()--Came out the front from the dungeon for the first time
 		elseif SV.ApricornGrove.InDungeon and SV.Chapter4.BacktrackedOutGroveYet then
 			apricorn_grove_entrance.ComeOutFront()--generic come out front from dungeon
@@ -102,12 +103,25 @@ function apricorn_grove_entrance.ComeOutFront()
 	local partner = CH('Teammate1')
 	local team2 = CH('Teammate2')
 	local team3 = CH('Teammate3')
+	local guest1 = CH('Guest1')
+	local guest2 = CH('Guest2')
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('apricorn_grove')
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	GAME:MoveCamera(164, 184, 1, false)
 	GROUND:TeleportTo(hero, 140, 40, Direction.Down)
 	GROUND:TeleportTo(partner, 172, 40, Direction.Down)
+	
+	--Check if we have a guest. If we do, overwrite team2 or team3 accordingly based on party size so they take that slot in the cutscene.
+	if guest1 ~= nil then
+		if GAME:GetPlayerPartyCount() == 2 then 
+			team2 = guest1 
+		else
+			team3 = guest1
+		end
+	end 
+	
+	
 	if team2 ~= nil then
 		GROUND:TeleportTo(team2, 156, 16, Direction.Down)
 	end
