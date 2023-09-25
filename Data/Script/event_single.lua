@@ -612,9 +612,9 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 		elseif player.Dead and not player.IsPartner then 
 			--Send them back to the assembly and boot them from the current team if they died and aren't important.
 			--todo: make this silent once PMDO updates
-			print(tostring(i))
-			GAME:WaitFrames(60)
-			TASK:WaitTask(_DUNGEON:SendHome(i))
+			--print(tostring(i))
+			--GAME:WaitFrames(60)
+			--TASK:WaitTask(_DUNGEON:SendHome(i))
 		end
 	end
 	
