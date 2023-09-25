@@ -1156,22 +1156,11 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
         local tactic = _DATA:GetAITactic("stick_together")
         new_mob.Tactic = RogueEssence.Data.AITactic(tactic);
         _DATA.Save.ActiveTeam.Guests:Add(new_mob)
-        
-        -- place in a legal position on map
-        local dest = _ZONE.CurrentMap:GetClosestTileForChar(new_mob, _DATA.Save.ActiveTeam.Leader.CharLoc)
-        local endLoc = _DATA.Save.ActiveTeam.Leader.CharLoc
-
-        --if dest.HasValue then
-          endLoc = dest
-        --end
-
-        new_mob.CharLoc = endLoc
-        
         local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EscortInteract")
-            new_mob.ActionEvents:Add(talk_evt)
-        
+        new_mob.ActionEvents:Add(talk_evt)
+      
         local tbl = LTBL(new_mob)
-        tbl.Escort = name   
+        tbl.Escort = name
         UI:ResetSpeaker()
         UI:WaitShowDialogue("Added [color=#00FF00]".. new_mob.Name .."[color] to the party as a guest.")
       end
