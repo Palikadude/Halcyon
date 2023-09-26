@@ -473,7 +473,7 @@ function apricorn_glade_ch_4.PartyCountCheck()
 		apricorn_glade_ch_4.TurnBack()
 	elseif fail_condition ~= '' then
 		UI:SetSpeakerEmotion("Worried")
-		UI:WaitShowDialogue("We have four of us here,[pause=10] but some of our teammates aren't really well-suited to stacking up in a totem...")
+		UI:WaitShowDialogue("We have four of us here,[pause=10] but some of our teammates aren't suited to stacking up in a totem...")
 		UI:WaitShowDialogue("We'll need Pokémon with more appropriate body types for laddering.")
 		GAME:WaitFrames(20)
 		apricorn_glade_ch_4.TurnBack()
@@ -1148,7 +1148,7 @@ function apricorn_glade_ch_4.TurnBack()
 												GROUND:MoveInDirection(team2, Direction.Down, 120, false, 1) end end)
 		coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then 
 												GROUND:CharAnimateTurnTo(team3, Direction.Down, 4)
-												GROUND:MoveToPosition(team3, Direction.Down, 120, false, 1) end end)
+												GROUND:MoveInDirection(team3, Direction.Down, 120, false, 1) end end)
 		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) SOUND:FadeOutBGM(40) GAME:FadeOut(false, 40) end)
 
 		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
