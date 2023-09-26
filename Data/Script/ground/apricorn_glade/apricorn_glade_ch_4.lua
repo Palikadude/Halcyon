@@ -475,6 +475,8 @@ function apricorn_glade_ch_4.PartyCountCheck()
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("We have four of us here,[pause=10] but some of our teammates aren't really well-suited to stacking up in a totem...")
 		UI:WaitShowDialogue("We'll need Pokémon with more appropriate body types for laddering.")
+		GAME:WaitFrames(20)
+		apricorn_glade_ch_4.TurnBack()
 	elseif party_count == 4 then
 		UI:WaitShowDialogue("With the four of us here...[pause=0] We might actually be able to stack up to that Apricorn!")
 		GAME:WaitFrames(10)
