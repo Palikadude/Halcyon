@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.16.0",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_big": {
@@ -3067,7 +3067,7 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -47,7 +47,7 @@
 "Element": {
 "SkillNum": "knock_off",
 "Charges": 20,
-"Enabled": true,
+"Enabled": false,
 "Sealed": false
 },
 "BackRef": 0
@@ -56,7 +56,7 @@
 "Element": {
 "SkillNum": "tackle",
 "Charges": 22,
-"Enabled": true,
+"Enabled": false,
 "Sealed": false
 },
 "BackRef": 1
@@ -72,8 +72,8 @@
 },
 {
 "Element": {
-"SkillNum": "swift",
-"Charges": 14,
+"SkillNum": "fake_out",
+"Charges": 19,
 "Enabled": true,
 "Sealed": false
 },
@@ -121,17 +121,26 @@
 {
 "$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
 "StatusIndex": "was_hurt_last_turn",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
 "AttackPattern": 2,
 "PositionPattern": 1,
-"IQ": 96
+"IQ": 96,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224
+"IQ": 224,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
 }
 ]
 },
@@ -191,8 +200,8 @@
 "Charges": 22
 },
 {
-"SkillNum": "swift",
-"Charges": 14
+"SkillNum": "fake_out",
+"Charges": 19
 }
 ],
 "BaseIntrinsics": [
@@ -247,7 +256,7 @@
 },
 "AssetName": "test",
 "ScriptEvents": {},
-"Music": "Miracle Sea.ogg",
+"Music": "",
 "TileSight": 0,
 "CharSight": 0,
 "Status": {},
@@ -328,6 +337,7 @@
 "X": 0,
 "Y": 0
 },
+"HideMinimap": false,
 "NoRescue": false,
 "NoSwitching": false,
 "MapTurns": 0,
@@ -1089,6 +1099,14 @@
 }
 ]
 ]
+}
+],
+"Decorations": [
+{
+"Name": "New Deco",
+"Layer": 0,
+"Visible": true,
+"Anims": []
 }
 ],
 "Tiles": [
