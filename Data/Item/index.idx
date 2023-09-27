@@ -741,11 +741,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
@@ -769,11 +769,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
@@ -789,9 +789,9 @@
 "zh-hans": "刺栗"
 }
 },
-"Released": false,
+"Released": true,
 "Comment": "",
-"SortOrder": 1
+"SortOrder": 0
 },
 "gummi_black": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",

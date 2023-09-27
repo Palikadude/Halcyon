@@ -1147,6 +1147,7 @@ function apricorn_glade_ch_4.TurnBack()
 												GROUND:CharAnimateTurnTo(team2, Direction.Down, 4)
 												GROUND:MoveInDirection(team2, Direction.Down, 120, false, 1) end end)
 		coro4 = TASK:BranchCoroutine(function() if team3 ~= nil then 
+												GAME:WaitFrames(4)
 												GROUND:CharAnimateTurnTo(team3, Direction.Down, 4)
 												GROUND:MoveInDirection(team3, Direction.Down, 120, false, 1) end end)
 		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) SOUND:FadeOutBGM(40) GAME:FadeOut(false, 40) end)
