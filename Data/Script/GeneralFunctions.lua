@@ -1415,44 +1415,69 @@ end
 
 --called whenever a mission is completed
 function GeneralFunctions.AskMissionWarpOut()
+	local function MissionWarpOut()
+		GeneralFunctions.WarpOut()
+		GAME:WaitFrames(80)
+		--Set minimap state back to old setting
+		_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
+		SV.TemporaryFlags.PriorMapSetting = nil
+		TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Escaped))
+	end
+	
+	local function SetMinimap()
+		--to prevent accidentally doing something by pressing the button to select yes
+		GAME:WaitFrames(10)
+		--Set minimap state back to old setting
+		_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
+		SV.TemporaryFlags.PriorMapSetting = nil
+	end
+	
+	local has_ongoing_mission = false
+	local curr_floor = GAME:GetCurrentFloor().ID + 1
+	local curr_zone = _ZONE.CurrentZoneID
+	local curr_segment = _ZONE.CurrentMapID.Segment
+
+	for _, mission in ipairs(SV.TakenBoard) do
+		if mission.Floor > curr_floor and mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and curr_zone == mission.Zone and curr_segment == mission.Segment then
+			has_ongoing_mission = true
+			break
+		end
+	end
+
+
+	UI:ResetSpeaker()
 	local state = 0
 	while state > -1 do
 		if state == 0 then
-			UI:ResetSpeaker()
-			UI:ChoiceMenuYesNo("You've completed a mission! Would you like to leave the dungeon now?", true)
-			UI:WaitForChoice()
-			local leave_dungeon = UI:ChoiceResult()
-			GAME:WaitFrames(20)
-			if leave_dungeon then
-				UI:ChoiceMenuYesNo("Do you really want to leave?", true)
+			if has_ongoing_mission then
+				UI:ChoiceMenuYesNo("You have more ongoing missions, but would you like to leave the dungeon now?", true)
 				UI:WaitForChoice()
-				local leave_confirm = UI:ChoiceResult()
-				if leave_confirm then
-					state = -1
-					GeneralFunctions.WarpOut()
-					GAME:WaitFrames(80)
-					--Set minimap state back to old setting
-					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
-					SV.TemporaryFlags.PriorMapSetting = nil
-					TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Escaped))
+				local leave_dungeon = UI:ChoiceResult()
+				if leave_dungeon then
+					UI:ChoiceMenuYesNo("Do you really want to leave?", true)
+					UI:WaitForChoice()
+					local leave_confirm = UI:ChoiceResult()
+					if leave_confirm then
+						state = -1
+						MissionWarpOut()
+					else
+						--pause between textboxes if player de-confirms
+						GAME:WaitFrames(20)
+					end
 				else
-					--pause between textboxes if player de-confirms
-					GAME:WaitFrames(20)
+					state = -1
+					SetMinimap()
 				end
 			else
-				UI:ChoiceMenuYesNo("Do you want to continue this adventure?", true)
+				UI:ChoiceMenuYesNo("You have no more ongoing missions beyond this point.\nWould you like to leave the dungeon now?", false)
 				UI:WaitForChoice()
-				local continue_exploring = UI:ChoiceResult()
-				if continue_exploring then
-					state = -1
-					--to prevent accidentally doing something by pressing the button to select yes
-					GAME:WaitFrames(10)
-					--Set minimap state back to old setting
-					_DUNGEON.ShowMap = SV.TemporaryFlags.PriorMapSetting
-					SV.TemporaryFlags.PriorMapSetting = nil
+				local leave_dungeon = UI:ChoiceResult()
+				if leave_dungeon then
+						state = -1
+						MissionWarpOut()
 				else
-					--pause between textboxes if player de-confirms
-					GAME:WaitFrames(20)
+					state = -1
+					SetMinimap()
 				end
 			end
 		end
