@@ -741,7 +741,7 @@ function SINGLE_CHAR_SCRIPT.CheckOngoingMissions(owner, ownerChar, context, args
 	for _, mission in ipairs(SV.TakenBoard) do
 		if mission.BackReference ~= COMMON.FLEE_BACKREFERENCE and mission.Taken and mission.Completion == COMMON.MISSION_INCOMPLETE and curr_floor == mission.Floor and curr_zone == mission.Zone and curr_segment == mission.Segment then
 			UI:ResetSpeaker()
-			UI:ChoiceMenuYesNo("You currently have an ongoing mission on this floor.\nDo you still want to proceed?")
+			UI:ChoiceMenuYesNo("You currently have an ongoing mission on this floor.\nDo you still want to proceed?", true)
 			UI:WaitForChoice()
 			local continue = UI:ChoiceResult()
 			if not continue then
