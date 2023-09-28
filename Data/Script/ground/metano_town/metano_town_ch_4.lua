@@ -169,9 +169,19 @@ function metano_town_ch_4.SignpostIntroductionCutscene()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
 	UI:WaitShowDialogue("See?[pause=0] It's right here![script=0]", {function() return GeneralFunctions.Hop(audino) end})
+	UI:WaitShowDialogue("Just ring the bell on it like so...")
 	GAME:WaitFrames(10)
+	
+	local post = OBJ("Assembly")
+	SOUND:PlayBattleSE('EVT_Assembly_Bell')
+	GROUND:ObjectSetAnim(post, 6, 0, 3, Direction.Down, 1)
+	GAME:WaitFrames(24)
+	GROUND:ObjectSetAnim(post, 10, 0, 3, Direction.Down, 1)
+	GROUND:ObjectSetDefaultAnim(post, 'Assembly', 0, 0, 0, Direction.Down)
+	GAME:WaitFrames(60)
+
 	GROUND:CharAnimateTurnTo(audino, Direction.Left, 4)
-	UI:WaitShowDialogue("You can ring the bell on it and I'll come running from the guild so you can use the Assembly out here!")
+	UI:WaitShowDialogue("...And I'll come running from the guild so you can use the Assembly out here!")
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("M-my ears are really sensitive,[pause=10] so I'll hear it even all the way out here!")
 	
