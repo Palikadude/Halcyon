@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -131360,10 +131360,12 @@
 "AIEnabled": false,
 "EntName": "Cafe_Owner",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 136,
 "Y": 93
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -131448,6 +131450,7 @@
 "EntName": "Cafe",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131489,6 +131492,7 @@
 "EntName": "Cafe_Entrance",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131530,6 +131534,7 @@
 "EntName": "Cafe_Sign",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131641,6 +131646,7 @@
 "EntName": "TEAMMATE_1",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131724,6 +131730,7 @@
 "EntName": "TEAMMATE_2",
 "Direction": 6,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131807,6 +131814,7 @@
 "EntName": "TEAMMATE_3",
 "Direction": 2,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131824,6 +131832,7 @@
 "EntName": "entrance",
 "Direction": -1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 220,
@@ -131836,6 +131845,7 @@
 "EntName": "Main_Entrance_Marker",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 272,
@@ -131848,6 +131858,7 @@
 "EntName": "Cafe_Table_1",
 "Direction": 6,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 36,
@@ -131860,6 +131871,7 @@
 "EntName": "Cafe_Table_2",
 "Direction": 2,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 108,
@@ -131872,6 +131884,7 @@
 "EntName": "Cafe_Table_3",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 72,
@@ -131884,6 +131897,7 @@
 "EntName": "Cafe_Table_4",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 72,
@@ -131896,6 +131910,7 @@
 "EntName": "Cafe_Table_5",
 "Direction": 6,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 196,
@@ -131908,6 +131923,7 @@
 "EntName": "Cafe_Table_6",
 "Direction": 2,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 268,
@@ -131920,6 +131936,7 @@
 "EntName": "Cafe_Table_7",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 232,
@@ -131932,6 +131949,7 @@
 "EntName": "Cafe_Table_8",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 232,
@@ -131944,6 +131962,7 @@
 "EntName": "Cafe_Table_9",
 "Direction": 6,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 268,
@@ -131956,6 +131975,7 @@
 "EntName": "Cafe_Table_10",
 "Direction": 2,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 340,
@@ -131968,6 +131988,7 @@
 "EntName": "Cafe_Table_11",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -131980,6 +132001,7 @@
 "EntName": "Cafe_Table_12",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -131992,6 +132014,7 @@
 "EntName": "Cafe_Table_13",
 "Direction": 6,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 320,
@@ -132004,6 +132027,7 @@
 "EntName": "Cafe_Table_14",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 360,
@@ -132016,6 +132040,7 @@
 "EntName": "Cafe_Table_15",
 "Direction": 2,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 384,
@@ -132028,6 +132053,7 @@
 "EntName": "Cafe_Table_16",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 360,

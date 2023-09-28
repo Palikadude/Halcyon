@@ -40,3 +40,7 @@ V 0.4.0
 - Fixed Kecleon's not leaning over their counter when talking to them.
 - Fixed fail result in Relic Forest not giving a results screen.
 - Added a Store All option to Kanga in town.
+- Fixed a display bug for Apple Cider in the ferment prompt.
+- Fixed a bug where outlaws would spawn with no moves.
+- Fixed cheri bombs not working due to a PMDO issue.
+- Tweaked some wording in the cafe to prevent an issue where you'd get "a (vowel)" on fermented item get.

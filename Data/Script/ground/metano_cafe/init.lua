@@ -398,7 +398,7 @@ function metano_cafe.Cafe_Action(obj, activator)
 	
 				if (menu.item_list_index > -1) then
 					local menu_item = items[menu.item_list_index + 1]
-					local ferment_item = RogueEssence.Dungeon.InvItem(menu_item.item_to_ferment)
+					local ferment_item = RogueEssence.Dungeon.InvItem(menu_item.item_to_ferment, false, menu_item.servings)
 					UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Cafe_Confirm_Ferment_Choice'], ferment_item:GetDisplayName()), true)
 					UI:WaitForChoice()
 					local confirm = UI:ChoiceResult()

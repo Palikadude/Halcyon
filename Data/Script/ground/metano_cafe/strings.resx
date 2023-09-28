@@ -113,7 +113,7 @@
     <value>Hey,[pause=10] welcome back![pause=0] I finished fermenting that {0} for you!</value>
   </data>
   <data name="Cafe_Fermented_Item_Received" xml:space="preserve">
-    <value>You received a {0} from {1}![pause=40]</value>
+    <value>You received the {0} from {1}![pause=40]</value>
   </data>
   <data name="Cafe_Expedition_Item_Intro_1" xml:space="preserve">
     <value>You two are leaving on that expedition tomorrow right?</value>
