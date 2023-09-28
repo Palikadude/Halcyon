@@ -25,7 +25,6 @@ function ledian_dojo_ch_4.SetupGround()
 
 	end
 
-	GAME:FadeIn(20)
 end
 
 --todo: depending on when the first trial is added, perhaps replace dialogue here with info on trials?

@@ -7,7 +7,7 @@ ledian_dojo_ch_2 = {}
 
 --NOTE: Gible and Ledian appear on the map without needing to be spawned in.
 function ledian_dojo_ch_2.SetupGround()
-	GAME:FadeIn(20)
+
 end
 
 
@@ -507,6 +507,7 @@ function ledian_dojo_ch_2.PostTrainingCutscene()
 		GROUND:TeleportTo(ledian, 196, 176, Direction.Down)
 		GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 		GROUND:TeleportTo(partner, 184, 200, Direction.Up)
+		GROUND:EntTurn(gible, Direction.UpLeft)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("normal_maze")
 		GAME:FadeIn(40)
 		

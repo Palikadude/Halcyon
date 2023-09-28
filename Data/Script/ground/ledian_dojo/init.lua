@@ -79,8 +79,22 @@ function ledian_dojo.GameLoad(map)
 end
 
 function ledian_dojo.PlotScripting()
+	
+	--Setup Ground first before checking what cutscene to run.
+	if SV.ChapterProgression.Chapter == 2 then 
+			ledian_dojo_ch_2.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 3 then 
+			ledian_dojo_ch_3.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 4 then 
+			ledian_dojo_ch_4.SetupGround()
+	else
+		GAME:FadeIn(20)
+	end
+
 	--if a generic ending has been flagged, prioritize that
 	if SV.Dojo.LessonCompletedGeneric or SV.Dojo.TrainingCompletedGeneric or SV.Dojo.TrialCompletedGeneric or SV.Dojo.LessonFailedGeneric or SV.Dojo.TrainingFailedGeneric or SV.Dojo.TrialFailedGeneric then
+	
+		
 		if SV.Dojo.LessonCompletedGeneric then
 			ledian_dojo.GenericLessonSuccess()
 		elseif SV.Dojo.TrainingCompletedGeneric then
@@ -105,12 +119,8 @@ function ledian_dojo.PlotScripting()
 		elseif not SV.Chapter2.FinishedDojoCutscenes then--Cutscene for finishing first lesson/maze. cutscene function has logic for appropriate scene
 			ledian_dojo_ch_2.PostTrainingCutscene()
 		else 
-			ledian_dojo_ch_2.SetupGround()
+			GAME:FadeIn(20)
 		end
-	elseif SV.ChapterProgression.Chapter == 3 then 
-				ledian_dojo_ch_3.SetupGround()	
-	elseif SV.ChapterProgression.Chapter == 4 then 
-				ledian_dojo_ch_4.SetupGround()
 	else
 		GAME:FadeIn(20)	
 	end 
@@ -287,8 +297,12 @@ function ledian_dojo.GenericTrainingSuccess()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	local ledian = CH('Sensei')
-	GAME:CutsceneMode(true)
+	--GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
+	
+	--set their animations to none rather than using cutscene mode, as background NPCs need to continue to idle.
+	GROUND:CharSetAnim(hero, "None", true)
+	GROUND:CharSetAnim(partner, "None", true)
 	
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
@@ -324,7 +338,9 @@ function ledian_dojo.GenericTrainingSuccess()
 
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
-	GAME:CutsceneMode(false)			
+	--GAME:CutsceneMode(false)	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
 end
 		
 function ledian_dojo.GenericLessonSuccess()
@@ -344,8 +360,12 @@ function ledian_dojo.GenericTrainingFailure()
 	local partner = CH('Teammate1')
 	local hero = CH('PLAYER')
 	local ledian = CH('Sensei')
-	GAME:CutsceneMode(true)
+	--GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
+	
+	--set their animations to none rather than using cutscene mode, as background NPCs need to continue to idle.
+	GROUND:CharSetAnim(hero, "None", true)
+	GROUND:CharSetAnim(partner, "None", true)
 	
 	GROUND:TeleportTo(hero, 208, 200, Direction.Up)	
 	GROUND:TeleportTo(partner, 184, 200, Direction.Up)
@@ -374,7 +394,9 @@ function ledian_dojo.GenericTrainingFailure()
 
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
-	GAME:CutsceneMode(false)	
+	--GAME:CutsceneMode(false)
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
 	
 end
 		
