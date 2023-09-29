@@ -257,12 +257,19 @@ function metano_town_ch_4.Snubbull_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		--N/A
 	else
-		GeneralFunctions.StartConversation(chara, "With the expedition getting closer,[pause=10] I'm wondering more and more what we'll find on it.")
+		GeneralFunctions.StartConversation(chara, "I heard at dinner the other night about the huge Apricorn you two found during your recent adventure.")
+		UI:WaitShowDialogue("An impressive find,[pause=10] but it's of no use to someone such as myself.")
 		UI:SetSpeakerEmotion("Special0")
-		UI:WaitShowDialogue("It would be wonderful if we found an exotic delicacy that I can use to make a fantastic new meal. " .. STRINGS:Format("\\u266A"))
+		UI:WaitShowDialogue("Any chef worth their salt knows the larger the Apricorn,[pause=10] the harder and more bitter it becomes.")
+		UI:WaitShowDialogue("An Apricorn like that would be totally worthless for the dish that I've been cooking up. "  .. STRINGS:Format("\\u266A"))
+		
 	end
 	GeneralFunctions.EndConversation(chara)
-		
+--[[Removed to add more characters talking about their successful apricorn get.
+GeneralFunctions.StartConversation(chara, "With the expedition getting closer,[pause=10] I'm wondering more and more what we'll find on it.")
+		UI:SetSpeakerEmotion("Special0")
+		UI:WaitShowDialogue("It would be wonderful if we found an exotic delicacy that I can use to make a fantastic new meal. " .. STRINGS:Format("\\u266A"))
+]]--		
 end
 
 function metano_town_ch_4.Zigzagoon_Action(chara, activator)
@@ -336,6 +343,15 @@ function metano_town_ch_4.Mawile_Action(chara, activator)
 		UI:SetSpeakerEmotion("Happy")
 		UI:WaitShowDialogue("Sounds like it'll be a great adventure![pause=0] Good luck,[pause=10] I'm rooting for the both of you!")
 	else
+		GeneralFunctions.StartConversation(chara, "Oh,[pause=10] there you two are![pause=0] How'd your exploration of that forest go?", "Happy")
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("...Woah,[pause=10] you managed to retrieve a huge Apricorn from the forest's center?")
+		UI:SetSpeakerEmotion("Joyous")
+		UI:WaitShowDialogue("Seems to me like your adventure was a complete success then![pause=0] I knew you two could do it!")		
+	end
+	GeneralFunctions.EndConversation(chara)
+--[[
+		Repurpose this in chapter 5's dialogue for Mawile.
 		GeneralFunctions.StartConversation(chara, "I overheard that the guild is going on an expedition soon![pause=0] That sounds like it'll be a lot of fun for you two!")
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("But an expedition means I won't see either of you for a while,[pause=10] doesn't it?")
@@ -346,9 +362,7 @@ function metano_town_ch_4.Mawile_Action(chara, activator)
 		GROUND:CharSetEmote(chara, "glowing", 0)
 		UI:WaitShowDialogue("You'll just have to make that up to me by finding something fantastic on that expedition,[pause=10] got it?")
 		GROUND:CharSetEmote(chara, "", 0)
-	end
-	GeneralFunctions.EndConversation(chara)
-		
+]]--		
 end
 
 function metano_town_ch_4.Electrike_Action(chara, activator)

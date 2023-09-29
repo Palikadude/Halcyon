@@ -1072,9 +1072,10 @@ function PartnerEssentials.Chapter_4_Dialogue(partner)
 				UI:WaitShowDialogue("I want to surprise him when we bring it right to him![pause=0] He's sure to be impressed by it!")
 			end
 		else
-			UI:WaitShowDialogue("The Guildmaster must have gone on all sorts of expeditions during his time as an adventurer.")
-			UI:SetSpeakerEmotion("Inspired")
-			UI:WaitShowDialogue("It'd be really cool if he told us about one of them sometime!")
+			UI:SetSpeakerEmotion("Happy")
+			UI:WaitShowDialogue("It was so nice of the Guildmaster to let us keep the Apricorn we found![pause=0] It's our first treasure!")
+			UI:SetSpeakerEmotion("Normal")
+			UI:WaitShowDialogue("I wonder what kind of treasures he's managed to find over his adventuring career?")
 		end 
 	elseif ground == 'ledian_dojo' then
 		if not SV.Chapter4.FinishedGrove then
@@ -1218,9 +1219,11 @@ function PartnerEssentials.Default_Partner_Chapter_4_Dialogue()
 		UI:WaitShowDialogue("That huge Apricorn is waiting for us still,[pause=10] " .. hero:GetDisplayName() .. "!")
 		UI:WaitShowDialogue("Let's get back to " .. zone:GetColoredName() .. " and bring that it home!")
 	else
+		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("apricorn_grove")
 		UI:SetSpeakerEmotion("Inspired")
-		UI:WaitShowDialogue("We'll be leaving for the expedition really soon![pause=0] It's gonna be so much fun!")
-		UI:WaitShowDialogue("I hope " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " come back quickly so we can go on it already!")
+		UI:WaitShowDialogue("I'm so happy that our first real adventure went so well![pause=0] We really impressed the Guildmaster too!")
+		UI:WaitShowDialogue("Between that and the expedition coming up,[pause=10] I'm overflowing with excitement!")
+		UI:WaitShowDialogue("I hope " .. CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " come back quickly so we can go on the expedition already!")
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue("While we wait,[pause=10] we should do jobs posted on the Job Bulletin Board and the Outlaw Notice Board.")
 		UI:WaitShowDialogue("Let's work hard as always,[pause=10] " .. hero:GetDisplayName() .. "!")

@@ -627,7 +627,7 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 			--todo: make this silent once PMDO updates
 			--print(tostring(i))
 			--GAME:WaitFrames(60)
-			--TASK:WaitTask(_DUNGEON:SendHome(i))
+			--TASK:WaitTask(_DUNGEON:SilentSendHome(i))
 		end
 	end
 	

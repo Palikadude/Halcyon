@@ -482,6 +482,59 @@
 "Comment": "",
 "SortOrder": 403
 },
+"voltorb": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Voltorb",
+"LocalTexts": {
+"ja": "ビリリダマ",
+"ko": "찌리리공",
+"zh-hant": "霹靂電球",
+"fr": "Voltorbe",
+"de": "Voltobal",
+"es": "Voltorb",
+"it": "Voltorb",
+"ja-jp": "ビリリダマ",
+"zh-hans": "霹雳电球"
+}
+},
+"Released": true,
+"Temporary": false
+},
+{
+"Name": {
+"DefaultText": "Hisuian Voltorb",
+"LocalTexts": {
+"ja": "",
+"fr": "Voltorbe de Hisui",
+"de": "Hisui Voltobal",
+"ja-jp": ""
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Voltorb",
+"LocalTexts": {
+"ja": "ビリリダマ",
+"ko": "찌리리공",
+"zh-hant": "霹靂電球",
+"fr": "Voltorbe",
+"de": "Voltobal",
+"es": "Voltorb",
+"it": "Voltorb",
+"ja-jp": "ビリリダマ",
+"zh-hans": "霹雳电球"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 100
+},
 "vulpix": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [

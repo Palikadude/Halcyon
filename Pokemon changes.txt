@@ -17,6 +17,9 @@ Yamper: Ability Ball Fetch changed to Static until Ball Fetch is properly implem
 Rockruff: Learns Rock Throw at 12 and Howl at 15 instead of the other way around. 
 
 
+Voltorb-H - learns Sonicboom at level 1.
+
+
 Sandile is given a second form that wears a scarf.
 Luxio's regular portrait has been swapped out for something a bit more smug. Original portrait is now Special0.
 Shuckle has some additional animations added for use in the cafe.

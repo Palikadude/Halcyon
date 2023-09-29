@@ -8176,7 +8176,7 @@
 "SpawnRates": {
 "nodes": [
 {
-"Item": 2,
+"Item": 3,
 "Range": {
 "Min": 0,
 "Max": 8
@@ -8206,10 +8206,15 @@
 "Gender": -1
 },
 "Level": {
-"Min": 9,
-"Max": 11
+"Min": 10,
+"Max": 12
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"low_kick",
+"flail",
+"rock_throw",
+"copycat"
+],
 "Intrinsic": "",
 "Tactic": "weird_tree",
 "SpawnConditions": [],
@@ -8237,11 +8242,14 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
+"Min": 11,
+"Max": 13
 },
 "SpecifiedSkills": [
-"rock_throw"
+"low_kick",
+"flail",
+"rock_throw",
+"copycat"
 ],
 "Intrinsic": "",
 "Tactic": "weird_tree",
@@ -8270,10 +8278,15 @@
 "Gender": -1
 },
 "Level": {
-"Min": 9,
-"Max": 11
+"Min": 10,
+"Max": 12
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"self_destruct",
+"bug_bite",
+"protect",
+"tackle"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
@@ -8301,211 +8314,14 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 12
-},
-"SpecifiedSkills": [],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 4,
-"Max": 8
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "sewaddle",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 9,
-"Max": 11
-},
-"SpecifiedSkills": [],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 4
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "sewaddle",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 10,
-"Max": 12
-},
-"SpecifiedSkills": [
-"razor_leaf"
-],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 4,
-"Max": 8
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "voltorb",
-"Form": 1,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 9,
-"Max": 10
-},
-"SpecifiedSkills": [
-"stun_spore"
-],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 4
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "voltorb",
-"Form": 1,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 10,
-"Max": 11
-},
-"SpecifiedSkills": [
-"stun_spore"
-],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 4,
-"Max": 8
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "mime_jr",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 10,
-"Max": 11
-},
-"SpecifiedSkills": [
-"double_slap",
-"light_screen",
-"meditate",
-"confusion"
-],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 4
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "mime_jr",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
 "Min": 11,
-"Max": 12
+"Max": 13
 },
 "SpecifiedSkills": [
-"double_slap",
-"light_screen",
-"meditate",
-"confusion"
+"self_destruct",
+"bug_bite",
+"protect",
+"take_down"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -8528,38 +8344,7 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
-"Species": "taillow",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 9,
-"Max": 11
-},
-"SpecifiedSkills": [],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 0,
-"Max": 4
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "taillow",
+"Species": "sewaddle",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -8568,41 +8353,10 @@
 "Min": 10,
 "Max": 12
 },
-"SpecifiedSkills": [],
-"Intrinsic": "",
-"Tactic": "wander_dumb",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-}
-]
-},
-"Role": 0
-},
-"Rate": 10,
-"Range": {
-"Min": 4,
-"Max": 8
-}
-},
-{
-"Spawn": {
-"Spawn": {
-"BaseForm": {
-"Species": "venonat",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 10,
-"Max": 11
-},
 "SpecifiedSkills": [
-"poison_powder",
-"disable",
-"supersonic",
+"bug_bite",
+"razor_leaf",
+"string_shot",
 "tackle"
 ],
 "Intrinsic": "",
@@ -8626,6 +8380,258 @@
 "Spawn": {
 "Spawn": {
 "BaseForm": {
+"Species": "sewaddle",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 11,
+"Max": 13
+},
+"SpecifiedSkills": [
+"bug_bite",
+"razor_leaf",
+"string_shot",
+"struggle_bug"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 4,
+"Max": 8
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"stun_spore",
+"sonic_boom",
+"thunder_shock",
+"bullet_seed"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "voltorb",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 11,
+"Max": 12
+},
+"SpecifiedSkills": [
+"stun_spore",
+"sonic_boom",
+"thunder_shock",
+"bullet_seed"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 4,
+"Max": 8
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "mime_jr",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 11,
+"Max": 12
+},
+"SpecifiedSkills": [
+"double_slap",
+"light_screen",
+"meditate",
+"confusion"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "mime_jr",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 12,
+"Max": 13
+},
+"SpecifiedSkills": [
+"double_slap",
+"light_screen",
+"meditate",
+"confusion"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 4,
+"Max": 8
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "taillow",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 12
+},
+"SpecifiedSkills": [
+"focus_energy",
+"growl",
+"quick_attack",
+"wing_attack"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "taillow",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 11,
+"Max": 13
+},
+"SpecifiedSkills": [
+"focus_energy",
+"growl",
+"quick_attack",
+"wing_attack"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 4,
+"Max": 8
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
 "Species": "venonat",
 "Form": 0,
 "Skin": "",
@@ -8640,6 +8646,42 @@
 "disable",
 "supersonic",
 "confusion"
+],
+"Intrinsic": "",
+"Tactic": "wander_dumb",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 4
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "venonat",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 12,
+"Max": 13
+},
+"SpecifiedSkills": [
+"poison_powder",
+"disable",
+"supersonic",
+"psybeam"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -8668,11 +8710,14 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 11
+"Min": 11,
+"Max": 12
 },
 "SpecifiedSkills": [
-"sleep_powder"
+"sleep_powder",
+"vine_whip",
+"mega_drain",
+"ingrain"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -8701,10 +8746,15 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 11
+"Min": 11,
+"Max": 12
 },
-"SpecifiedSkills": [],
+"SpecifiedSkills": [
+"seismic_toss",
+"bind",
+"brick_break",
+"vice_grip"
+],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
@@ -8732,11 +8782,16 @@
 "Gender": -1
 },
 "Level": {
-"Min": 10,
-"Max": 11
+"Min": 11,
+"Max": 12
 },
-"SpecifiedSkills": [],
-"Intrinsic": "",
+"SpecifiedSkills": [
+"pursuit",
+"leer",
+"wing_attack",
+"quick_attack"
+],
+"Intrinsic": "technician",
 "Tactic": "wander_dumb",
 "SpawnConditions": [],
 "SpawnFeatures": [
@@ -8757,7 +8812,7 @@
 "TeamSizes": [
 {
 "Spawn": 2,
-"Rate": 4,
+"Rate": 6,
 "Range": {
 "Min": 0,
 "Max": 4
@@ -8765,7 +8820,7 @@
 },
 {
 "Spawn": 2,
-"Rate": 8,
+"Rate": 10,
 "Range": {
 "Min": 3,
 "Max": 8
