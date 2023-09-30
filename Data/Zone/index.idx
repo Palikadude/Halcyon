@@ -13,7 +13,7 @@
 "MoneyRestrict": false,
 "BagRestrict": -1,
 "BagSize": -1,
-"Rescues": 0,
+"Rescues": 1,
 "CountedFloors": 8,
 "Rogue": 0,
 "Grounds": [

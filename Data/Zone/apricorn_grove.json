@@ -18,7 +18,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Persistent": false,
-"Rescues": 0,
+"Rescues": 1,
 "Rogue": 0,
 "Segments": [
 {
@@ -569,6 +569,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -661,7 +674,7 @@
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
 "MaxFoes": 8,
-"RespawnTime": 45
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -1487,6 +1500,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -1578,8 +1604,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -2405,6 +2431,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -2496,8 +2535,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -3323,6 +3362,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -3414,8 +3466,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -4241,6 +4293,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -4332,8 +4397,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -5159,6 +5224,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -5250,8 +5328,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -6077,6 +6155,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -6169,7 +6260,7 @@
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
 "MaxFoes": 8,
-"RespawnTime": 45
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
@@ -6995,6 +7086,19 @@
 {
 "Key": {
 "str": [
+0,
+3
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateCrossHalls",
+"ArgTable": "{}"
+}
+},
+{
+"Key": {
+"str": [
 1
 ]
 },
@@ -7086,8 +7190,8 @@
 },
 "Respawn": {
 "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
-"MaxFoes": 7,
-"RespawnTime": 55
+"MaxFoes": 8,
+"RespawnTime": 50
 },
 "MaxFoes": 0,
 "RespawnTime": 0
