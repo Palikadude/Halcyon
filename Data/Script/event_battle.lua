@@ -287,6 +287,8 @@ function BATTLE_SCRIPT.EscortRescueReached(owner, ownerChar, context, args)
 				UI:WaitShowDialogue(escortName .. "'s twosome left the dungeon!")
 				GAME:WaitFrames(20)
 
+				--Set max team size to 4 as the guest is no longer "taking" up a party slot
+				RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 4
 				
 				-- warp out
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))

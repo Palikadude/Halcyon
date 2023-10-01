@@ -185,7 +185,9 @@ function SINGLE_CHAR_SCRIPT.DestinationFloor(owner, ownerChar, context, args)
 				DUNGEON:CharTurnToChar(GAME:GetPlayerPartyMember(0), escort)
 				UI:WaitShowDialogue("Thank you for exploring this place with me!")
 
-				GAME:WaitFrames(30)
+				GAME:WaitFrames(30)		
+				--Set max team size to 4 as the guest is no longer "taking" up a party slot
+				RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 4
 				TASK:WaitTask(_DUNGEON:ProcessBattleFX(escort, escort, _DATA.SendHomeFX))
 				_DUNGEON:RemoveChar(escort)
 				GAME:WaitFrames(50)
@@ -572,6 +574,8 @@ function SINGLE_CHAR_SCRIPT.MissionGuestCheck(owner, ownerChar, context, args)
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Oh no! " ..  targetName .. " fainted!")
 		GAME:WaitFrames(40)
+		--Set max team size to 4 as the guest is no longer "taking" up a party slot
+		RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 4
 		GeneralFunctions.WarpOut()
 		GAME:WaitFrames(80)
 		TASK:WaitTask(_GAME:EndSegment(RogueEssence.Data.GameProgress.ResultType.Failed))

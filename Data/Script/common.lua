@@ -1148,6 +1148,9 @@ function COMMON.EnterDungeonMissionCheck(zoneId, segmentID)
             end
           end
         end
+		
+		--Set max team size to 3 as the guest is "taking" up a party slot
+		RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 3
 
         local mon_id = RogueEssence.Dungeon.MonsterID(mission.Client, 0, "normal", GeneralFunctions.NumToGender(mission.ClientGender))
         -- set the escort level 20% less than the expected level
@@ -1182,6 +1185,8 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
           -- remove the escort from the party
         local escort = COMMON.FindMissionEscort(name)
         if escort then
+		  --Set max team size to 4 as the guest is no longer "taking" up a party slot
+		  RogueEssence.Dungeon.ExplorerTeam.MAX_TEAM_SLOTS = 4
           _DUNGEON:RemoveChar(escort)
         end
       end
