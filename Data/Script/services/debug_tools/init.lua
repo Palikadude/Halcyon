@@ -175,7 +175,7 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("barboach", 0, "normal", Gender.Male)
+	  mon_id = RogueEssence.Dungeon.MonsterID("bonsly", 0, "normal", Gender.Male)
 	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 10, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
@@ -194,10 +194,10 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	    mon_id = RogueEssence.Dungeon.MonsterID("oddish", 0, "normal", Gender.Female)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
-	  _DATA.Save.ActiveTeam:SetRank("normal")
-	  _DATA.Save:UpdateTeamProfile(true)
+	  --  mon_id = RogueEssence.Dungeon.MonsterID("barboach", 0, "normal", Gender.Female)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
+	  --_DATA.Save.ActiveTeam:SetRank("normal")
+	  --_DATA.Save:UpdateTeamProfile(true)
 	  
 
 	  

@@ -192,7 +192,7 @@ Thinks about when he feels strange besides the times he told the partner, they m
 	UI:WaitShowDialogue("...Well,[pause=10] it's getting pretty late.[pause=0] Staying up stressing more won't do us any good.")
 	UI:WaitShowDialogue("We should get some sleep so we can put in a good day tomorrow.")
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(40)
 	GROUND:CharSetAnim(partner, "Laying", true)
 	GAME:WaitFrames(60)
 	GROUND:CharSetAnim(hero, "Laying", true)

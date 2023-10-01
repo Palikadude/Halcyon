@@ -444,8 +444,19 @@ function apricorn_glade_ch_4.PartyCountCheck()
 	UI:SetSpeaker(partner)
 	--having an onix, since they're so tall, lets you skip having a 4th member
 	if onix_teammate ~= nil then
-		GROUND:CharAnimateTurnTo(partner, onix_teammate, 4)
-		GROUND:CharAnimateTurnTo(onix_teammate, partner, 4)
+		local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
+		local coro2 = TASK:BranchCoroutine(function()
+			GAME:WaitFrames(10)
+			--hero should turn down as opposed to towards if team2 is onix because of the way this all works out.
+			if team3species == 'onix' then
+				GROUND:CharTurnToCharAnimated(hero, onix_teammate, 4)
+			else
+				GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+			end
+		end)
+		TASK:JoinCoroutines({coro1, coro2})
+			
+		--GROUND:CharTurnToCharAnimated(onix_teammate, partner, 4)
 		UI:WaitShowDialogue("I think with a large teammate like " .. onix_teammate:GetDisplayName() .. ",[pause=10] we should be able to reach that Apricorn!")
 		UI:WaitShowDialogue("Mind coming over here and giving me a boost,[pause=10] " .. onix_teammate:GetDisplayName() .. "?")
 		GAME:WaitFrames(20)
@@ -457,7 +468,9 @@ function apricorn_glade_ch_4.PartyCountCheck()
 		UI:SetSpeakerEmotion("Surprised")
 		UI:WaitShowDialogue("How'd you even manage this?[pause=0] Only one member in the party?")
 		UI:WaitShowDialogue("Tell Palika how you managed this. Now enjoy your softlock :)")
-	elseif party_count > 1 and party_count < 4 then
+	elseif party_count > 1 and party_count < 4 then		
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:SetSpeakerEmotion("Worried")
 		if party_count == 2 then 
 			UI:WaitShowDialogue("With just us two here,[pause=10] I don't think it'll be possible to get that Apricorn off the tree.")
@@ -471,13 +484,17 @@ function apricorn_glade_ch_4.PartyCountCheck()
 		end
 		GAME:WaitFrames(20)
 		apricorn_glade_ch_4.TurnBack()
-	elseif fail_condition ~= '' then
+	elseif fail_condition ~= '' then	
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("We have four of us here,[pause=10] but some of our teammates aren't suited to stacking up in a totem...")
 		UI:WaitShowDialogue("We'll need Pokémon with more appropriate body types for laddering.")
 		GAME:WaitFrames(20)
 		apricorn_glade_ch_4.TurnBack()
 	elseif party_count == 4 then
+		GROUND:CharTurnToCharAnimated(partner, hero, 4)
+		GROUND:CharTurnToCharAnimated(hero, partner, 4)
 		UI:WaitShowDialogue("With the four of us here...[pause=0] We might actually be able to stack up to that Apricorn!")
 		GAME:WaitFrames(10)
 		GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
@@ -533,9 +550,6 @@ function apricorn_glade_ch_4.SubsequentArrivalCutscene()
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Alright![pause=0] We've made it back to the big Apricorn tree.")
 	GAME:WaitFrames(10)
-	
-	GROUND:CharTurnToCharAnimated(partner, hero, 4)
-	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	
 	apricorn_glade_ch_4.PartyCountCheck()
 		
