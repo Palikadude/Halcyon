@@ -5092,7 +5092,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>Nobody else understands our prickly love!\nSomeone! Please, help him!</value>
     <comment>Mission Body - Lovers - Maractus and Cacturne</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_LOVER_012" xml:space="preserve">
-    <value>The way she lights up the ocean depths takes my breath away!\nPlease, you have to save my love!</value>
+    <value>The way she lights up the ocean depths takes my\nbreath away! Please, you have to save my love!</value>
     <comment>Mission Body - Lovers - Lanturn and Lumineon</comment>  </data>	
   <data name="MISSION_BODY_SPECIAL_LOVER_013" xml:space="preserve">
     <value>She's the only one that can quell the sandstorm\nin my heart! Please, rescue her, somebody!</value>
@@ -5274,7 +5274,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>We're competing to see who grows up stronger!\nWho else could I do that with? Help my rival!</value>
     <comment>Mission Body - Rivals - Jangmo-o and Axew</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_RIVAL_012" xml:space="preserve">
-    <value>We detest each other, but we push each other to do better too!\nPlease save my rival!</value>
+    <value>We detest each other, but we push each other\nto do better too! Please save my rival!</value>
     <comment>Mission Body - Rivals - Mareanie and Corsola</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_RIVAL_013" xml:space="preserve">
     <value>[color=#00FF00]Pinsir[color] and I love to wrestle with our horns!\nPlease help, he's in a real pinch!</value>
