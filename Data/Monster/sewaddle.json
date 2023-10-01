@@ -1,0 +1,285 @@
+﻿{
+"Version": "0.7.17.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Sewaddle",
+"LocalTexts": {
+"ja": "クルミル",
+"ko": "두르보",
+"zh-hant": "蟲寶包",
+"fr": "Larveyette",
+"de": "Strawickl",
+"es": "Sewaddle",
+"it": "Sewaddle",
+"ja-jp": "クルミル",
+"zh-hans": "虫宝包"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Sewing Pokémon",
+"LocalTexts": {
+"ja": "さいほうポケモン",
+"ko": "재봉포켓몬",
+"zh-hant": "裁縫寶可夢",
+"fr": "Pokémon Couture",
+"de": "Schneider",
+"es": "Pokémon Sastre",
+"it": "Pokémon Grancucito",
+"ja-jp": "さいほうポケモン",
+"zh-hans": "裁缝宝可梦"
+}
+},
+"IndexNum": 540,
+"EXPTable": "medium_slow",
+"SkillGroup1": "bug",
+"SkillGroup2": "amorphous",
+"JoinRate": 80,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "swadloon",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 20
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 45,
+"BaseAtk": 53,
+"BaseDef": 70,
+"BaseMAtk": 40,
+"BaseMDef": 60,
+"BaseSpeed": 42,
+"ExpYield": 62,
+"Height": 0.3,
+"Weight": 2.5,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "struggle_bug"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "nature_power"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "razor_wind"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "screech"
+},
+{
+"Skill": "mind_reader"
+},
+{
+"Skill": "baton_pass"
+},
+{
+"Skill": "camouflage"
+},
+{
+"Skill": "silver_wind"
+},
+{
+"Skill": "me_first"
+},
+{
+"Skill": "air_slash"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "giga_drain"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "synthesis"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "worry_seed"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "bug_bite"
+},
+{
+"Skill": "electroweb"
+}
+],
+"FormName": {
+"DefaultText": "Sewaddle",
+"LocalTexts": {
+"ja": "クルミル",
+"ko": "두르보",
+"zh-hant": "蟲寶包",
+"fr": "Larveyette",
+"de": "Strawickl",
+"es": "Sewaddle",
+"it": "Sewaddle",
+"ja-jp": "クルミル",
+"zh-hans": "虫宝包"
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "bug",
+"Element2": "grass",
+"Intrinsic1": "swarm",
+"Intrinsic2": "chlorophyll",
+"Intrinsic3": "overcoat",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "string_shot"
+},
+{
+"Level": 8,
+"Skill": "leech_life"
+},
+{
+"Level": 15,
+"Skill": "razor_leaf"
+},
+{
+"Level": 22,
+"Skill": "struggle_bug"
+},
+{
+"Level": 29,
+"Skill": "endure"
+},
+{
+"Level": 31,
+"Skill": "sticky_web"
+},
+{
+"Level": 36,
+"Skill": "bug_buzz"
+},
+{
+"Level": 43,
+"Skill": "flail"
+}
+]
+}
+]
+}
+}

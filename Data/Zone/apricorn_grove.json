@@ -8458,7 +8458,7 @@
 "Max": 12
 },
 "SpecifiedSkills": [
-"bug_bite",
+"leech_life",
 "razor_leaf",
 "string_shot",
 "tackle"
@@ -8494,10 +8494,10 @@
 "Max": 13
 },
 "SpecifiedSkills": [
-"bug_bite",
+"leech_life",
 "razor_leaf",
 "string_shot",
-"struggle_bug"
+"tackle"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",

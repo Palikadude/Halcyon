@@ -442,6 +442,46 @@
 "Comment": "",
 "SortOrder": 551
 },
+"sewaddle": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Sewaddle",
+"LocalTexts": {
+"ja": "クルミル",
+"ko": "두르보",
+"zh-hant": "蟲寶包",
+"fr": "Larveyette",
+"de": "Strawickl",
+"es": "Sewaddle",
+"it": "Sewaddle",
+"ja-jp": "クルミル",
+"zh-hans": "虫宝包"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Sewaddle",
+"LocalTexts": {
+"ja": "クルミル",
+"ko": "두르보",
+"zh-hant": "蟲寶包",
+"fr": "Larveyette",
+"de": "Strawickl",
+"es": "Sewaddle",
+"it": "Sewaddle",
+"ja-jp": "クルミル",
+"zh-hans": "虫宝包"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 540
+},
 "shinx": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [

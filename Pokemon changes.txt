@@ -1,6 +1,7 @@
 All mons use ORAS learnsets, unless they were introduced later, in which case they use the earliest learnset they have.
 For the sake of usability and balance, some starters have had their level up moves adjusted slightly (and Zorua its ability).
 
+Starter Pokemon:
 Vulpix-A: Ice shard moved from level 10 to level 1. Powder snow removed.
 Zorua: Ability Illusion changed to Keen eye. Gets Fake Tears at level 8 instead of 9, and now gets Thief at level 10.
 Zorua-H: Has wall-walking disabled. Ability Illusion changed to Keen Eye. Gets Shadow Sneak at 8 and Hone Claws at 12 instead of the other way around.
@@ -17,8 +18,9 @@ Yamper: Ability Ball Fetch changed to Static until Ball Fetch is properly implem
 Rockruff: Learns Rock Throw at 12 and Howl at 15 instead of the other way around. 
 
 
+Dungeon Pokemon:
 Voltorb-H - learns Sonicboom at level 1.
-
+Sewaddle - Replaced Bug Bite with Leech Life.
 
 Sandile is given a second form that wears a scarf.
 Luxio's regular portrait has been swapped out for something a bit more smug. Original portrait is now Special0.
