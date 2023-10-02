@@ -39,10 +39,11 @@ V 0.4.0
 - Fixed a display bug in the pokemon's info menu when a scarf sprite was being used.
 - Fixed Kecleon's not leaning over their counter when talking to them.
 - Fixed fail result in Relic Forest not giving a results screen.
-- Added a Store All option to Kanga in town.
+- Added a Store All option to Kanga in town. This option won't store your equipped items, be aware.
 - Fixed a display bug for Apple Cider in the ferment prompt.
 - Fixed a bug where outlaws would spawn with no moves.
 - Fixed cheri bombs not working due to a PMDO issue.
 - Tweaked some wording in the cafe to prevent an issue where you'd get "a (vowel)" on fermented item get.
 - Fixed an issue where finishing/losing in Ledian Dojo would cause the ground to not setup in the same way that it would had you entered in the map from the ladder.
 - Fixed an issue where generic win/lose scenes in Ledian Dojo would cause background NPCs to not animate correctly. 
+- Fixed a bug where you couldn't store items at Kanga if the only items you had were equipped to someone.

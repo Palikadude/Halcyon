@@ -893,6 +893,6 @@
     <value>My e-ears are really sensitive,[pause=10] so I'll hear the bell and come running!</value>
   </data>
   <data name="Storage_Stored_All_Items" xml:space="preserve">
-    <value>All your items are stored away! They're safe with me, dearie.</value>
+    <value>All your unequipped items are stored away! They're safe with me, dearie.</value>
   </data>
 </root>

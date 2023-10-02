@@ -1179,11 +1179,12 @@ function metano_town.Storage_Action(obj, activator)
 	
 	while state > -1 do
 		local has_items = GAME:GetPlayerBagCount() > 0
+		local has_equipment = GAME:GetPlayerEquippedCount() > 0
 		local has_storage = GAME:GetPlayerStorageCount() > 0
 		
 		local item_count = GAME:GetPlayerBagCount()
 		
-		local storage_choices = { { STRINGS:FormatKey('MENU_STORAGE_STORE'), has_items},
+		local storage_choices = { { STRINGS:FormatKey('MENU_STORAGE_STORE'), has_items or has_equipment},
 		{ STRINGS:FormatKey('MENU_STORAGE_TAKE_ITEM'), has_storage},
 		{ STRINGS:FormatKey('MENU_STORAGE_STORE_ALL'), has_items},
 		{ STRINGS:FormatKey('MENU_INFO'), true},
@@ -1221,7 +1222,7 @@ function metano_town.Storage_Action(obj, activator)
 			end 
 		elseif result == 3 then
 			repeated = true
-			GeneralFunctions.SendInvToStorage(true, false)
+			GeneralFunctions.SendInvToStorage(true, false, true)
 			UI:SetSpeakerEmotion('Happy')
 			UI:WaitShowDialogue(STRINGS:Format(MapStrings['Storage_Stored_All_Items']))
 		elseif result == 4 then

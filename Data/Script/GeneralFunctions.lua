@@ -874,7 +874,7 @@ function GeneralFunctions.PromptChapterSaveAndQuit(ground, marker, ground_id)
 end
 
 --sends all bagged items and money to storage. There is no practical limit on storage size (it stores as many as an int32, so... lol)
-function GeneralFunctions.SendInvToStorage(sendItems, sendMoney)
+function GeneralFunctions.SendInvToStorage(sendItems, sendMoney, keepEquips)
 	local itemCount = GAME:GetPlayerBagCount()
 	local money = GAME:GetPlayerMoney()
 	local item
@@ -882,6 +882,7 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney)
 	--only send money/items if we specify it. By default, send items AND money to storage.
 	if sendItems == nil then sendItems = true end
 	if sendMoney == nil then sendMoney = true end
+	if keepEquips == nil then keepEquips = false end
 	
 	if sendMoney then 
 		--move player's money to the bank
@@ -896,12 +897,14 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney)
 			GAME:GivePlayerStorageItem(item)
 		end
 		
-		--send equipped items to storage
-		for i = 1, GAME:GetPlayerPartyCount(), 1 do
-			item = GAME:GetPlayerEquippedItem(i-1)
-			if item.ID ~= "" then 
-				GAME:TakePlayerEquippedItem(i-1)
-				GAME:GivePlayerStorageItem(item)
+		if not keepEquips then
+			--send equipped items to storage
+			for i = 1, GAME:GetPlayerPartyCount(), 1 do
+				item = GAME:GetPlayerEquippedItem(i-1)
+				if item.ID ~= "" then 
+					GAME:TakePlayerEquippedItem(i-1)
+					GAME:GivePlayerStorageItem(item)
+				end
 			end
 		end
 	end
