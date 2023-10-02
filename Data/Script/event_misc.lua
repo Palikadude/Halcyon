@@ -112,6 +112,12 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundGummiEvent(context, args)
   local form_data = context.User.BaseForm
   local form = _DATA:GetMonster(form_data.Species).Forms[form_data.Form]
   local target_element = args.TargetElement
+  local sound = ""
+  if args.Sound == nil then
+    sound = "DUN_Gummi"
+  else
+    sound = args.Sound
+  end
 
   local type_matchup = PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element1)
   type_matchup = type_matchup + PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element2)
@@ -141,6 +147,7 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundGummiEvent(context, args)
   end
 
   UI:ResetSpeaker()
+  SOUND:PlayBattleSE(sound)
   for _, stat in ipairs(stats) do
     AddStat(stat, context)
   end
@@ -241,12 +248,19 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundVitaminEvent(context, args)
 
   assert(lookup_table[args.BoostedStat] ~= nil, "Stat type needs to be initialized")
   assert(args.Change ~= nil, "Change amount needs to be initialized")
+  local sound = ""
+  if args.Sound == nil then
+    sound = "DUN_Drink"
+  else
+    sound = args.Sound
+  end
 
   local boosted = false
   local boosted_stat = lookup_table[args.BoostedStat]
   local change = args.Change
 
   UI:ResetSpeaker()
+  SOUND:PlayBattleSE(sound)
   if boosted_stat ~= RogueEssence.Data.Stat.None then
     boosted = boosted or BoostStat(boosted_stat, change, context.User)
   else

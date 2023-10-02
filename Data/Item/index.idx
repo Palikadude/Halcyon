@@ -1125,11 +1125,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
@@ -1225,11 +1225,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.15.1, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.17.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
