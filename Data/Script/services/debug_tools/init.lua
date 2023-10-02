@@ -169,7 +169,8 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Genshi'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
-	  
+	  _DATA.Save.ActiveTeam:SetRank("bronze")
+
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("HeroInteract")
 	  _DATA.Save.ActiveTeam.Players[0].ActionEvents:Add(talk_evt)
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")

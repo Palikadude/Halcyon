@@ -17,7 +17,7 @@ function altere_pond_ch_4.Relicanth_Action(chara, activator)
 			
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(partner)
-			UI:WaitShowDialogue("No " .. CharacterEssentials.GetCharacterName("Relicanth") .. ".[pause=0] We came by to visit!")
+			UI:WaitShowDialogue("No,[pause=10] " .. CharacterEssentials.GetCharacterName("Relicanth") .. ".[pause=0] We came by to visit!")
 			UI:WaitShowDialogue("It must get lonely out here,[pause=10] being all by yourself,[pause=10] so we wanted to come say hello!")
 			
 			GAME:WaitFrames(20)

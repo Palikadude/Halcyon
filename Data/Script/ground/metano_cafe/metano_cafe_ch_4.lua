@@ -100,9 +100,9 @@ function metano_cafe_ch_4.Mareep_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		--N/A
 	else
-		GeneralFunctions.StartConversation(chara, "Hi you two![pause=0] Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are relaxing here until the expedition starts!", "Happy")
+		GeneralFunctions.StartConversation(chara, "Hi you two![pause=0] Me and " .. CharacterEssentials.GetCharacterName("Cranidos") .. " are relaxing here until the expedition sta-a-a-arts!", "Happy")
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("Once we leave,[pause=10] it'll be a lot of time before we can come back to town,[pause=10] so we gotta relax while we still can!")
+		UI:WaitShowDialogue("Once we leave,[pause=10] it'll be a long time before we can come back to town,[pause=10] so we gotta relax while we still can!")
 	end
 	GeneralFunctions.EndConversation(chara)
 		

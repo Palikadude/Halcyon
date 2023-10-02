@@ -416,7 +416,7 @@ function guild_third_floor_lobby_ch_4.ExpeditionAnnouncementAddress()
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetEmote(tropius, "glowing", 0)
-	UI:WaitShowDialogue("Hahaha![pause=0] I see your already brimming with excitement!")
+	UI:WaitShowDialogue("Hahaha![pause=0] I see you're already brimming with excitement!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeakerEmotion("Normal")
