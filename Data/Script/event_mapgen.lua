@@ -157,7 +157,7 @@ function ZONE_GEN_SCRIPT.GenerateMissionFromSV(zoneContext, context, queue, seed
   end
   if escortDeathEvent then
     tbl.EscortMissionNum = escortMissionNum
-	activeEffect.OnDeaths:Add(-6, RogueEssence.Dungeon.SingleCharScriptEvent("MissionGuestCheck", '{ Mission = '..escortMissionNum..' }'))
+	activeEffect.OnDeaths:Add(6, RogueEssence.Dungeon.SingleCharScriptEvent("MissionGuestCheck", '{ Mission = '..escortMissionNum..' }'))
   end
   if destinationFloor then
     -- add destination floor notification
