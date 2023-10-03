@@ -568,7 +568,13 @@ end
 
 
 function SINGLE_CHAR_SCRIPT.MissionGuestCheck(owner, ownerChar, context, args)
+	
+	if not context.User.Dead then
+		return
+	end
+
 	local tbl = LTBL(context.User)
+
 	if tbl ~= nil and tbl.Escort ~= nil then
 		local targetName = _DATA:GetMonster(context.User.BaseForm.Species):GetColoredName()
 		UI:ResetSpeaker()
