@@ -6,5 +6,11 @@
   <UUID>B2BA3CB7-10A4-4D44-9589-B2C4145E48D7</UUID>
   <Version>0.1</Version>
   <ModType>Mod</ModType>
-  <Relationships />
+  <Relationships>
+    <RelatedMod>
+      <UUID>6E4AC3AB-80C6-44B7-9C07-4790F03EE969</UUID>
+      <Namespace>halcyon_starters</Namespace>
+      <Relationship>Incompatible</Relationship>
+    </RelatedMod>
+  </Relationships>
 </Header>

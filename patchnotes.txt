@@ -4,6 +4,13 @@ Initial public demo release.
 
 
 V 0.4.0
+- Added two mods you can enable on top of Halcyon! Know that they are not compatible with each other right now due to technical limitations. If you want both, simply use all starters when you start a new game, then toggle it off and toggle no nicknames on as soon as you can save your game.
+  To use these mods, drag the folder of the mod in the Halcyon Mods folder into the overal PMDO mods folder, then activate the mod on the main menu under Mods.
+  - No nicknames: Changes the names of NPCs to their species names, for people who prefer that over the custom names they had.
+  - All Starters: Allows you to pick ANY pokemon as a starter and partner! Allows more customization options as well with regards to egg moves and abilities.
+		  Please note that if there are no sprites for that Pokemon, they can't be selected.
+		  Please also note that this may cause certain cutscenes to look strange if the Pokemon chosen as a starter/partner lacks an animation.
+		  Furthermore, this mod may be a bit buggy; please report any issues with starter pokemon to Palika.
 - Improved outlaw spawning code from Trio-
 - Fixed Domi Blend displaying a belly fill message (it should do that silently)
 - Fixed Apple Cider NOT displaying a belly fill message (it should say your belly was filled)
@@ -47,3 +54,4 @@ V 0.4.0
 - Fixed an issue where finishing/losing in Ledian Dojo would cause the ground to not setup in the same way that it would had you entered in the map from the ladder.
 - Fixed an issue where generic win/lose scenes in Ledian Dojo would cause background NPCs to not animate correctly. 
 - Fixed a bug where you couldn't store items at Kanga if the only items you had were equipped to someone.
+- Fixed a bug where losing in Relic Forest Round 2 would skip you to the last floor of the backtrack.

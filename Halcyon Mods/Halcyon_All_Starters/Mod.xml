@@ -1,0 +1,16 @@
+<Header>
+  <Name>Halcyon All Starters</Name>
+  <Author>Palika</Author>
+  <Description>Allows any Pokémon to be chosen as starters in Halcyon! Adds more customization options as well, such as free egg move selection and the ability to be shiny.</Description>
+  <Namespace>halcyon_starters</Namespace>
+  <UUID>6E4AC3AB-80C6-44B7-9C07-4790F03EE969</UUID>
+  <Version>0.1</Version>
+  <ModType>Mod</ModType>
+  <Relationships>
+    <RelatedMod>
+      <UUID>B2BA3CB7-10A4-4D44-9589-B2C4145E48D7</UUID>
+      <Namespace>halcyon_nickname</Namespace>
+      <Relationship>Incompatible</Relationship>
+    </RelatedMod>
+  </Relationships>
+</Header>
