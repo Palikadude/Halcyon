@@ -32,7 +32,7 @@ function metano_cafe_ch_4.Lickitung_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		local item = RogueEssence.Dungeon.InvItem('cafe_endurance_tonic')
 		GeneralFunctions.StartConversation(chara, "You hear the news?[pause=0] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " just added a new drink to the menu.")
-		UI:WaitShowDialogue("He calls it " .. item:GetDisplayName() .. ".[pause=0] According to him,[pause=10] it helps with hanging on in tough situations.")
+		UI:WaitShowDialogue("He calls it " .. item:GetDisplayName() .. ".[pause=0] He says that it helps with hanging on in tough situations.")
 	else
 		GeneralFunctions.StartConversation(chara, "Besides his drinks,[pause=10] " .. CharacterEssentials.GetCharacterName("Shuckle") .. " also has a daily special he sells on the side.")
 		UI:WaitShowDialogue("The special isn't always great,[pause=10] but sometimes he has something you won't be able to find anywhere else.")
@@ -50,7 +50,7 @@ function metano_cafe_ch_4.Gulpin_Action(chara, activator)
 		UI:SetSpeakerEmotion("Inspired")
 		UI:WaitShowDialogue("It was so tasty...[pause=0] Mmmm...[pause=0] I'm drooling just thinking about it...")
 		UI:SetSpeakerEmotion("Sad")
-		UI:WaitShowDialogue("But it's been so long since he's sold another...[pause=0] Oh,[pause=10] woe is me...")
+		UI:WaitShowDialogue("But he hasn't sold another for some time now...[pause=0] Oh,[pause=10] woe is me...")
 	end
 	GeneralFunctions.EndConversation(chara)
 end 
@@ -89,7 +89,7 @@ function metano_cafe_ch_4.Cranidos_Action(chara, activator)
 			UI:WaitShowDialogue("D-don't you rookies have anything better to do than laze around here?[pause=0] Go do something productive for once!")
 			SV.Chapter4.CranidosBlush = true
 		else 
-			GeneralFunctions.StartConversation(chara, "H-hey...[pause=0] Please don't tell her what I said before...", "Stunned")
+			GeneralFunctions.StartConversation(chara, "H-hey...[pause=0] Please don't tell her what I said earlier...", "Stunned")
 		end
 	end
 	GeneralFunctions.EndConversation(chara)

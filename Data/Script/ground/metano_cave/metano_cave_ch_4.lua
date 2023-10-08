@@ -13,7 +13,7 @@ function metano_cave_ch_4.SetupGround()
 				{'Oddish', 272, 136, Direction.Right}
 			})
 		
-		AI:SetCharacterAI(oddish, "ai.ground_talking", false, 240, 60, 30, false, 'Default', {CH('Sunflora')})
+		AI:SetCharacterAI(oddish, "ai.ground_talking", false, 60, 60, 0, false, 'Default', {CH('Sunflora')})
 		
 		--She is trying to ignore oddish
 		GROUND:EntTurn(CH('Sunflora'), Direction.Down)
@@ -25,7 +25,9 @@ end
 function metano_cave_ch_4.Sunflora_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "...The guild is mounting an expedition soon,[pause=10] huh?", "Worried", true, false)
-		UI:WaitShowDialogue("...It's been so long since...[pause=0] Well,[pause=10] enjoy it while\nyou still can.")
+		UI:WaitShowDialogue("...It's been so long since...")
+		UI:WaitShowDialogue(".........")
+		UI:WaitShowDialogue("...Don't mind me.[pause=0] Enjoy yourselves on the expedition.")
 	else
 		GeneralFunctions.StartConversation(chara, "...Could you get this child out of here?", "Worried", true, false)
 		UI:SetSpeakerEmotion("Pain")

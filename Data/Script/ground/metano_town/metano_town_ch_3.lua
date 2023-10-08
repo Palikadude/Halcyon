@@ -1285,7 +1285,7 @@ function metano_town_ch_3.Growlithe_Desk_Action(chara, activator)
 		GeneralFunctions.StartConversation(growlithe, "Great job on arresting that outlaw " .. CharacterEssentials.GetCharacterName("Sandile") .. " you guys![pause=0] You've been on a roll lately,[pause=10] ruff!", "Happy")
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("I hope I can go on some missions soon too,[pause=10] ruff.")
-		UI:WaitShowDialogue("I'm always on sentry duty,[pause=10] so I haven't gone on an adventure with " .. CharacterEssentials.GetCharacterName("Zigzagoon") .. " in a while,[pause=10] ruff...")
+		UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Tropius") .. " always puts me on sentry duty,[pause=10] so I haven't gone on an adventure with " .. CharacterEssentials.GetCharacterName("Zigzagoon") .. " in a while,[pause=10] ruff...")
 	end
 	GeneralFunctions.EndConversation(growlithe)
 end

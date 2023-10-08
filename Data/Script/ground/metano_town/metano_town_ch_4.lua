@@ -276,6 +276,8 @@ function metano_town_ch_4.Zigzagoon_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "This expedition sounds absolutely amazing![pause=0] I've never been on one before!", "Happy")
 		UI:WaitShowDialogue("I hope I can learn a lot on it![pause=0] I'll be sure to write down everything I learn in my almanacs!")
+		UI:WaitShowDialogue("Plus,[pause=10] it's been a while since " .. CharacterEssentials.GetCharacterName("Growlithe") .. " and I have been on an adventure!")
+		UI:WaitShowDialogue("He's always stuck on sentry duty,[pause=10] so it'll be great to adventure with him again!")
 	else
 		--N/A
 	end
@@ -488,9 +490,9 @@ end
 
 function metano_town_ch_4.Oddish_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		GeneralFunctions.StartConversation(chara, "This is where that weird lady lives...", "Worried")
-		UI:WaitShowDialogue("Isn't she a Grass-type like me?[pause=0] The sun is so nice to be in!")
-		UI:WaitShowDialogue("Why does she stay in the cave all day?[pause=0] She must be sad being in there all the time!")
+		GeneralFunctions.StartConversation(chara, "This is where that weird lady lives.", "Worried")
+		--UI:WaitShowDialogue("Isn't she a Grass-type like me?[pause=0] The sun is so nice to be in!")
+		UI:WaitShowDialogue("Why does she stay in the cave all day?[pause=0] She must get lonely being in there all the time...")
 	else
 		--N/a
 	end
@@ -607,7 +609,7 @@ function metano_town_ch_4.Growlithe_Desk_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(growlithe, "Wow![pause=0] An expedition with everyone here at the guild![pause=0] I'm so excited,[pause=10] ruff!", "Inspired")
 		UI:SetSpeakerEmotion("Joyous")
-		UI:WaitShowDialogue("It's been so long since I've gone on an adventure,[pause=10] let alone an expedition![pause=0] It's gonna be great,[pause=10] ruff!")
+		UI:WaitShowDialogue("It's been forever since I've gone on an adventure,[pause=10] let alone an expedition![pause=0] It's gonna be great,[pause=10] ruff!")
 	else
 		GeneralFunctions.StartConversation(growlithe, CharacterEssentials.GetCharacterName("Breloom") .. " and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " better hurry on back,[pause=10] ruff!", "Happy")
 		UI:SetSpeakerEmotion("Inspired")
@@ -627,7 +629,7 @@ function metano_town_ch_4.Manectric_Action(chara, activator)
 		UI:WaitShowDialogue("They normally only handle rescue requests between adventuring teams...")
 		UI:WaitShowDialogue("...But they said they'd handle any mail between my friend and I!")
 		UI:WaitShowDialogue("...Wait a moment,[pause=10] you two are those wonderful adventurers that saved " .. CharacterEssentials.GetCharacterName("Numel") .. "!")
-		UI:WaitShowDialogue("You should check out the post office,[pause=10] I'm sure great adventurers like you would find it interesting!")
+		UI:WaitShowDialogue("The post office is perfect for great adventurers like you then![pause=0] I'm sure you'll find it useful!")
 		
 	end
 	GeneralFunctions.EndConversation(chara)
@@ -708,7 +710,7 @@ function metano_town_ch_4.Quagsire_Kecleon_Dialogue(chara)
 	
 	UI:SetSpeaker(kecleon)
 	UI:WaitShowDialogue("It's no problem at all my dear. " .. STRINGS:Format("\\u266A"))
-	UI:WaitShowDialogue("Your husband actually left proper payment for all the goods he took,[pause=10] so you're free to keep whatever you'd like. " .. STRINGS:Format("\\u266A"))
+	UI:WaitShowDialogue("Your husband actually left payment for all the goods he took,[pause=10] so you're free to keep whatever you'd like. " .. STRINGS:Format("\\u266A"))
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(quagsire)
@@ -724,7 +726,7 @@ function metano_town_ch_4.Quagsire_Kecleon_Dialogue(chara)
 	
 	UI:SetSpeaker(quagsire)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("His heart is usually in the right place...[pause=0] If only his head could be in the right place too...")
+	UI:WaitShowDialogue("His heart is usually in the right place...[pause=0] If only his head could be in the right place too.")
 	
 
 
@@ -742,7 +744,6 @@ function metano_town_ch_4.Camerupt_Action(chara, activator)
 	else
 	
 	end
-	GeneralFunctions.EndConversation(chara)
 end
 
 
@@ -752,7 +753,6 @@ function metano_town_ch_4.Bellossom_Action(chara, activator)
 	else
 
 	end
-	GeneralFunctions.EndConversation(chara)
 end
 
 --they talk about chores, bellossom doesnt even think about them cuz she's a ditz
@@ -791,12 +791,12 @@ function metano_town_ch_4.Bellossom_Camerupt_Dialogue(chara)
 	GeneralFunctions.EmoteAndPause(camerupt, "Shock", true)
 	UI:SetSpeaker(camerupt)
 	UI:SetSpeakerEmotion("Surprised")
-	UI:WaitShowDialogue("Wh-what?[pause=0] What do you mean you don't think about them at all?")
+	UI:WaitShowDialogue("Wh-what?[pause=0] You don't think about them at all?[pause=0] H-how?")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(bellossom)
-	UI:WaitShowDialogue("I don't worry about things like that![pause=0] When things need to get done,[pause=10] they'll get done!")
-	UI:WaitShowDialogue("There's no reason to put thought into stuff like that!")
+	UI:WaitShowDialogue("I don't worry about small stuff like chores![pause=0] When they need to get done,[pause=10] they'll get done!")
+	UI:WaitShowDialogue("There's no reason to put thought into them like that!")
 	GAME:WaitFrames(20)
 
 	UI:SetSpeaker(camerupt)

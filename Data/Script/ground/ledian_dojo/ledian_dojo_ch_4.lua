@@ -32,7 +32,7 @@ function ledian_dojo_ch_4.Gible_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "Of course![pause=0] Sensei " .. CharacterEssentials.GetCharacterName("Ledian") .. " and I would be happy to help you train!", "Normal", false)
 	else
-		GeneralFunctions.StartConversation(chara, "No problem![pause=0] I'm just so glad we were able to help you become stronger and more confident!", "Happy", false)
+		GeneralFunctions.StartConversation(chara, "No problem![pause=0] I'm glad we were able to help you become stronger and more confident!", "Happy", false)
 	end
 	GeneralFunctions.EndConversation(chara)
 end

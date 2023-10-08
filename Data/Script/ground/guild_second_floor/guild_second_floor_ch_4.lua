@@ -48,8 +48,8 @@ end
 
 function guild_second_floor_ch_4.Mareep_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		GeneralFunctions.StartConversation(chara, "This expedition is gonna be a bla-a-a-ast![pause=0] I don't know how I'm gonna wait until we leave!", "Joyous")
-		UI:WaitShowDialogue("I'm full of excitement from head to tail!")
+		GeneralFunctions.StartConversation(chara, "This expedition is gonna be a bla-a-a-ast![pause=0] I'm full of excitement from head to tail!", "Joyous")
+		UI:WaitShowDialogue("I don't know how I'm gonna wait until we leave!")
 		UI:WaitShowDialogue("I've gotta release this energy out on some\nba-a-a-addies or I won't sleep tonight!")
 	else
 	
