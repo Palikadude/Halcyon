@@ -257,22 +257,21 @@ function SpawnOutlaw(origin, radius, mission_num)
 	local spawn_loc = spawn_candidates[_DATA.Save.Rand:Next(1, #spawn_candidates)]
 	local new_team = RogueEssence.Dungeon.MonsterTeam()
 	local mob_data = RogueEssence.Dungeon.CharData(true)
-	mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", Gender.Unknown)
+	local base_form_idx = 0
+	local form = _DATA:GetMonster(mission.Target).Forms[base_form_idx]
+	-- local gender = form:RollGender(RogueElements.MathUtils.Rand)
+	mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, base_form_idx, "normal", GeneralFunctions.NumToGender(mission.TargetGender))
 	mob_data.Level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
 	local new_mob = RogueEssence.Dungeon.Character(mob_data)
-	local form = _DATA:GetMonster(new_mob.BaseForm.Species).Forms[new_mob.BaseForm.Form];
-
+	local ability = form:RollIntrinsic(RogueElements.MathUtils.Rand, 3)
+	new_mob.BaseIntrinsics[0] = ability
 	StringType = luanet.import_type('System.String')
 	local extra_moves = LUA_ENGINE:MakeGenericType(ListType, { StringType }, { })
-
-	local final_skills = form:RollLatestSkills(new_mob.Level, extra_moves);
+	local final_skills = form:RollLatestSkills(new_mob.Level, extra_moves)
 
 	for i = 0, final_skills.Count - 1, 1 do
 		local skill = final_skills[i]
-		-- Note: for some reason, this return false... we can add checks more later for enabled.
-		-- local enable = _DATA.Save:GetDefaultEnable(skill)
-		local enable = true
-		new_mob:LearnSkill(skill, enable)
+		new_mob:LearnSkill(skill, true)
   end
 
 	
