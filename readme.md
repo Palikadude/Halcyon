@@ -1,7 +1,7 @@
 # Halcyon
 Halcyon is a mod for [PMDO](https://github.com/audinowho/PMDODump/) created by Palika that aims to recapture the vibes and energy of Explorers in an all-new original adventure.
-It currently consists of 3 chapters. 
-A final length of 8-12 chapters is currently planned.
+It currently consists of 4 chapters. 
+A final length of 10-12 chapters is currently planned.
 
 ## To install and play
 1. [Download and install PMDO](https://github.com/audinowho/PMDODump/releases) if you have not already.

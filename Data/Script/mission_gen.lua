@@ -663,7 +663,7 @@ MISSION_GEN.REWARDS = {
 		{"ammo_rare_fossil", 5},
 		{"ammo_corsola_twig", 5},
 		{"ammo_cacnea_spike", 5},
-		{"ammo_golden_spike", 5}
+		{"ammo_golden_thorn", 5}
 	},
 	--Rare chance for gummis
 	FOOD_LOW = {
