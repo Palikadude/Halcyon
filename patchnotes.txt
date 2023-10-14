@@ -56,3 +56,5 @@ V 0.4.0
 - Fixed a bug where you couldn't store items at Kanga if the only items you had were equipped to someone.
 - Fixed a bug where losing in Relic Forest Round 2 would skip you to the last floor of the backtrack.
 - Fixed a bug where an invalid item type was trying to be rewarded (golden spike instead of golden thorn)
+- Fixed an issue where pokemon that spawn past the initial set on a MH outlaw floor would be marked as a goon.
+- Adjusted the logic for outlaw moveset; they now have 4 random moves they can know at that level, minus any moves that are blacklisted (teleport, OHKO moves, etc.)

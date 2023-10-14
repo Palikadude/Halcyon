@@ -5,6 +5,17 @@ MobSpawnType = luanet.import_type('RogueEssence.LevelGen.MobSpawn')
 
 SINGLE_CHAR_SCRIPT = {}
 
+local function in_array(value, array)
+    for index = 1, #array do
+        if array[index] == value then
+            return true
+        end
+    end
+
+    return false -- We could ommit this part, as nil is like false
+end
+
+
 function SINGLE_CHAR_SCRIPT.Test(owner, ownerChar, context, args)
   PrintInfo("Test")
 end
@@ -265,15 +276,47 @@ function SpawnOutlaw(origin, radius, mission_num)
 	local new_mob = RogueEssence.Dungeon.Character(mob_data)
 	local ability = form:RollIntrinsic(RogueElements.MathUtils.Rand, 3)
 	new_mob.BaseIntrinsics[0] = ability
-	StringType = luanet.import_type('System.String')
-	local extra_moves = LUA_ENGINE:MakeGenericType(ListType, { StringType }, { })
-	local final_skills = form:RollLatestSkills(new_mob.Level, extra_moves)
+	
+	--Old move learning logic
+	--StringType = luanet.import_type('System.String')
+	--local extra_moves = LUA_ENGINE:MakeGenericType(ListType, { StringType }, { })
+	--local final_skills = form:RollLatestSkills(new_mob.Level, extra_moves)
 
-	for i = 0, final_skills.Count - 1, 1 do
-		local skill = final_skills[i]
-		new_mob:LearnSkill(skill, true)
-  end
-
+	--for i = 0, final_skills.Count - 1, 1 do
+	--	local skill = final_skills[i]
+	--	new_mob:LearnSkill(skill, true)
+    --end
+	
+	
+	--TODO: Add logic to make sure outlaw has at least one decent attacking move.
+	--Pick 4 moves at random in the mon's level up table at that point. 
+	--certain moves are blacklisted due to snaids.
+	local skill_candidates = {}
+	local skill_blacklist = {'teleport', 'gullotine', 'sheer_cold', 'horn_drill', 'fissure', 'memento',
+							 'healing_wish', 'lunar_dance', 'self_destruct', 'explosion', 'final_gambit', 'perish_song',
+							 'dragon_rage'}
+	
+	--print("Outlaw level is!: " .. tostring(mob_data.Level))
+	--generate the skill candidate list based on level and the blacklist
+	for i = 0,  _DATA:GetMonster(new_mob.BaseForm.Species).Forms[new_mob.BaseForm.Form].LevelSkills.Count - 1, 1 do
+		local skill =_DATA:GetMonster(new_mob.BaseForm.Species).Forms[new_mob.BaseForm.Form].LevelSkills[i].Skill
+		if _DATA:GetMonster(new_mob.BaseForm.Species).Forms[new_mob.BaseForm.Form].LevelSkills[i].Level <= new_mob.Level and not in_array(skill, skill_blacklist) then
+			--print("new skill candidate!: " .. skill)
+			table.insert(skill_candidates, skill)
+		end 
+	end
+	
+	--learn as many skills as we can from the candidate list.
+	local learn_count = 0
+	while learn_count < 4 and #skill_candidates > 0 do	
+		local randval = _DATA.Save.Rand:Next(1, #skill_candidates)
+		local learned_skill = skill_candidates[randval]
+		new_mob:LearnSkill(learned_skill, true)
+		learn_count = learn_count + 1
+		--print("Outlaw learned " .. learned_skill)
+		table.remove(skill_candidates, randval)
+	end
+	
 	
 	local tactic = nil
 	if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
@@ -307,6 +350,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 	GAME:SetCharacterNickname(new_mob, base_name)
 	return new_mob
 end
+
 
 function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
   local outlaw = context.User
@@ -396,7 +440,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 			for i = 0,  _ZONE.CurrentMap.TeamSpawns.Count - 1, 1 do
 				local possible_spawns = _ZONE.CurrentMap.TeamSpawns:GetSpawn(i):GetPossibleSpawns()
 				for j = 0, possible_spawns.Count - 1, 1 do
-					local spawn = possible_spawns:GetSpawn(j)
+					local spawn = possible_spawns:GetSpawn(j):Copy()
 					all_spawns:Add(spawn)
 				end
 			end
@@ -447,7 +491,7 @@ function SINGLE_CHAR_SCRIPT.OnMonsterHouseOutlawCheck(owner, ownerChar, context,
 	if curr_mission.Completion == COMMON.MISSION_INCOMPLETE then
 		local found_outlaw = COMMON.FindNpcWithTable(true, "Mission", mission_number)
 		local found_goon = COMMON.FindNpcWithTable(true, "Goon", mission_number)
-
+		--print("found outlaw = " .. tostring(found_outlaw) .. ", found_goon = " .. tostring(found_goon))
 		if not SV.MonsterHouseMessageNotified then
 			if found_goon and not found_outlaw then
 				GAME:WaitFrames(20)

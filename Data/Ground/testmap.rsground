@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.10.0",
+"Version": "0.7.17.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -375377,10 +375377,12 @@
 "AIEnabled": true,
 "EntName": "NewObject",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 200
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375465,10 +375467,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_1",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 200
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375553,10 +375557,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_2",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 232
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375641,10 +375647,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_3",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 232
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375729,10 +375737,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_4",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 200
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375817,10 +375827,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_5",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 264
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375905,10 +375917,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_6",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 816,
 "Y": 200
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -375993,10 +376007,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_7",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 264
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376081,10 +376097,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_8",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 328
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376169,10 +376187,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_9",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 816,
 "Y": 392
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376257,10 +376277,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_10",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 328
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376345,10 +376367,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_11",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 392
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376433,10 +376457,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_12",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 816,
 "Y": 328
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376521,10 +376547,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_13",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 232
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376609,10 +376637,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_14",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 816,
 "Y": 232
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376697,10 +376727,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_15",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 328
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376785,10 +376817,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_16",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 744,
 "Y": 360
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376873,10 +376907,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_17",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 360
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -376961,10 +376997,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_18",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 392
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -377049,10 +377087,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_19",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 712,
 "Y": 392
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -377137,10 +377177,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_20",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 264
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -377225,10 +377267,12 @@
 "AIEnabled": true,
 "EntName": "NewObject_21",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 784,
 "Y": 360
 },
+"serializationHeight": 0,
 "serializationDir": 4,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -377313,6 +377357,7 @@
 "EntName": "Make_Missions",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377354,6 +377399,7 @@
 "EntName": "See_Taken",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377395,6 +377441,7 @@
 "EntName": "See_Mission",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377436,6 +377483,7 @@
 "EntName": "See_Outlaw",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377477,6 +377525,7 @@
 "EntName": "See_Job_1_Menu",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377518,6 +377567,7 @@
 "EntName": "See_Mission_Board",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377559,6 +377609,7 @@
 "EntName": "See_Outlaw_Board",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377600,6 +377651,7 @@
 "EntName": "See_Taken_Board",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377641,6 +377693,7 @@
 "EntName": "Get_Released_Mons",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377682,6 +377735,7 @@
 "EntName": "Test_Core_Deactivation",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377723,6 +377777,7 @@
 "EntName": "CompleteTakens",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377764,6 +377819,7 @@
 "EntName": "EnterRiver",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377805,6 +377861,7 @@
 "EntName": "EnterCavern",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -377841,6 +377898,48 @@
 "Width": 24,
 "Height": 16
 }
+},
+{
+"EntName": "EnterGrove",
+"Direction": 0,
+"EntEnabled": true,
+"EntOrder": 0,
+"triggerType": 1,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Sign",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": false,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": 8,
+"Y": 16
+},
+"Collider": {
+"X": 626,
+"Y": 252,
+"Width": 24,
+"Height": 16
+}
 }
 ],
 "Spawners": [],
@@ -377849,6 +377948,7 @@
 "EntName": "entrance",
 "Direction": -1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 126,

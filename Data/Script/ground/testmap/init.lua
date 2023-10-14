@@ -42,9 +42,11 @@ end
 --Engine callback function
 function testmap.Enter(map, time)
 	SV.ChapterProgression.Chapter = 4
-	GAME:UnlockDungeon("crooked_cavern")
-	GAME:UnlockDungeon("illuminant_riverbed")
-	GAME:UnlockDungeon("apricorn_grove")
+	--Mark all dungeons as completed as well just so we can actually make jobs for them
+	local dungeon_keys = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:GetOrderedKeys(false)
+	for ii = 0, dungeon_keys.Count-1 ,1 do
+		_DATA.Save:CompleteDungeon(dungeon_keys[ii])
+	end
 end
 
 ---testmap.Update
@@ -69,8 +71,12 @@ function testmap.EnterRiver_Action(chara, activator)
 GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 end
 
+function testmap.EnterGrove_Action(chara, activator)
+GAME:EnterDungeon("apricorn_grove", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
+
 function testmap.Make_Missions_Action(chara, activator)
-	print("Running mission generation!")
+	print("Running mission generation!")  
 	MISSION_GEN.ResetBoards()
 	MISSION_GEN.RemoveMissionBackReference()
 	MISSION_GEN.GenerateBoard(COMMON.MISSION_BOARD_MISSION)
