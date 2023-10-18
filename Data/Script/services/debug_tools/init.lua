@@ -151,7 +151,7 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.NoSwitching = true--switching is not allowed
 
 	  
-	  local mon_id = RogueEssence.Dungeon.MonsterID("cyndaquil", 0, "normal", Gender.Male)
+	  local mon_id = RogueEssence.Dungeon.MonsterID("pawmi", 0, "normal", Gender.Male)
 	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
@@ -160,7 +160,7 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Palika'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("phanpy", 0, "normal", Gender.Male)
+	  mon_id = RogueEssence.Dungeon.MonsterID("zorua", 1, "normal", Gender.Male)
 	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
@@ -176,8 +176,8 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  --mon_id = RogueEssence.Dungeon.MonsterID("bonsly", 0, "normal", Gender.Male)
-	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 10, "", 0))
+	  mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
 		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3

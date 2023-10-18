@@ -288,7 +288,8 @@ function SpawnOutlaw(origin, radius, mission_num)
     --end
 	
 	
-	--TODO: Add logic to make sure outlaw has at least one decent attacking move.
+	--TODO: Add logic to make sure outlaw has at least one decent attacking move based on their level.
+	--<skilldata>.Data.Category == RogueEssence.Data.BattleData.SkillCategory.Physical
 	--Pick 4 moves at random in the mon's level up table at that point. 
 	--certain moves are blacklisted due to snaids.
 	local skill_candidates = {}
@@ -677,10 +678,7 @@ function SINGLE_CHAR_SCRIPT.AllyDeathCheck(owner, ownerChar, context, args)
 			return--cut the script short here if someone died, no need to check guests
 		elseif player.Dead and not player.IsPartner then 
 			--Send them back to the assembly and boot them from the current team if they died and aren't important.
-			--todo: make this silent once PMDO updates
-			--print(tostring(i))
-			--GAME:WaitFrames(60)
-			--TASK:WaitTask(_DUNGEON:SilentSendHome(i))
+			TASK:WaitTask(_DUNGEON:SilentSendHome(i))
 		end
 	end
 	

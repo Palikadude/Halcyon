@@ -168,7 +168,7 @@ function personality_test.CharacterSelect()
 						RogueEssence.Dungeon.MonsterID("oshawott", 0, "normal", Gender.Genderless),
 						--RogueEssence.Dungeon.MonsterID("lillipup", 0, "normal", Gender.Genderless),
 						RogueEssence.Dungeon.MonsterID("zorua", 0, "normal", Gender.Genderless),
-						--RogueEssence.Dungeon.MonsterID("zorua", 1, "normal", Gender.Genderless),
+						RogueEssence.Dungeon.MonsterID("zorua", 1, "normal", Gender.Genderless),
 						--RogueEssence.Dungeon.MonsterID("minccino", 0, "normal", Gender.Genderless),
 						--RogueEssence.Dungeon.MonsterID("vanillite", 0, "normal", Gender.Genderless),
 						--RogueEssence.Dungeon.MonsterID("mienfoo", 0, "normal", Gender.Genderless),
@@ -188,7 +188,7 @@ function personality_test.CharacterSelect()
 						--RogueEssence.Dungeon.MonsterID("wooloo", 0, "normal", Gender.Genderless),
 						RogueEssence.Dungeon.MonsterID("yamper", 0, "normal", Gender.Genderless),
 						RogueEssence.Dungeon.MonsterID("sprigatito", 0, "normal", Gender.Genderless),
-					--	RogueEssence.Dungeon.MonsterID("pawmi", 0, "normal", Gender.Genderless),
+						RogueEssence.Dungeon.MonsterID("pawmi", 0, "normal", Gender.Genderless),
 						RogueEssence.Dungeon.MonsterID("charcadet", 0, "normal", Gender.Genderless)}
 						
 		--not all moves listed are egg moves. Sometimes, egg move choices are too over or under powered and so something else had to be chosen				

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.18.1",
 "Object": {
 "$type": "RogueEssence.Data.UniversalActiveEffect, RogueEssence",
 "ZoneSteps": [],
@@ -712,7 +712,6 @@
 "Numerator": 1,
 "Denominator": 35,
 "LevelBuffer": 0,
-"ScaleMin": 5,
 "PowerCurve": 4
 }
 }
@@ -733,6 +732,27 @@
 "flying": 7,
 "ghost": 8
 }
+}
+},
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.SpeciesMobilityEvent, PMDC",
+"IDPair": [
+{
+"Item1": {
+"Species": "zorua",
+"Form": 1,
+"Skin": "",
+"Gender": -1
+},
+"Item2": 0
+}
+]
 }
 }
 ],
