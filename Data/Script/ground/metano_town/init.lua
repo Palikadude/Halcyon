@@ -495,6 +495,7 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 		{"seed_warp", 5}, --Warp Seed 
 		{"seed_sleep", 5}, --Sleep seed 
 		{"seed_vile", 2}, --Vile seed 
+		{"seed_decoy", 6}, --decoy seed 
 		{"seed_blast", 8}, --Blast seed
 		
 		{"berry_leppa", 25}, --Leppa berry 
