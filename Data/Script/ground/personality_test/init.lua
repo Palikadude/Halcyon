@@ -440,9 +440,7 @@ function personality_test.CharacterSelect()
 					local form_continue = false
 					
 					while not form_continue do
-						UI:BeginChoiceMenu("Which form would you like?", forms, 1, #forms)
-						UI:WaitForChoice()
-						result = UI:ChoiceResult()
+						result = GeneralFunctions.PagedChoiceMenu("Which form would you like?", forms, 1, #forms)
 						form = result - 1
 						
 						--make sure this form is also released.
@@ -560,9 +558,7 @@ function personality_test.CharacterSelect()
 					table.insert(egg_move_list, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill):GetColoredName())
 				end		
 				
-				UI:BeginChoiceMenu("Which egg move would you like?", egg_move_list, 1, 1)
-				UI:WaitForChoice()
-				result = UI:ChoiceResult()
+				result = GeneralFunctions.PagedChoiceMenu("Which egg move would you like?", egg_move_list, 1, 1)
 				egg_move = _DATA:GetMonster(base_species).Forms[base_form].SharedSkills[result - 1].Skill
 			end
 			

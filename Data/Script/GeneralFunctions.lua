@@ -1632,6 +1632,60 @@ function GeneralFunctions.TeamTurnTo(char)
 	end
 end
 
+
+--When you need a multipaged Choice Menu. Returns the result, so use it as the BeginChoiceMenu, WaitFroChoice, and UIChoiceResult block.
+function GeneralFunctions.PagedChoiceMenu(message, choices, defaultchoice, cancelchoice)
+	local choice_amount = #choices
+	local choice_submenus = {}
+	local submenu_length = 10
+	local result
+	
+	--if you see weird - and + 1 with a modulo, its indexing shenanigans.
+	if choice_amount > submenu_length then
+		--populate choice_submenus 
+		for i = 1, choice_amount, 1 do 
+			if i % submenu_length == 1 then table.insert(choice_submenus, {}) end --add an empty table in if we need to start a new subtable
+			choice_submenus[math.ceil(i / submenu_length)][((i - 1) % submenu_length) + 1] = choices[i]
+		end 
+		
+		for i = 1, #choice_submenus, 1 do
+			table.insert(choice_submenus[i], "Prev Page")
+			table.insert(choice_submenus[i], "Next Page")
+		end
+		
+		local continue = false 
+		local current_submenu = 1
+		local total_submenus = #choice_submenus
+		--Loop submenus until player chooses an actual option.
+		while not continue do
+			UI:BeginChoiceMenu(message, choice_submenus[current_submenu], 1, # choice_submenus[current_submenu])
+			UI:WaitForChoice()
+			result = UI:ChoiceResult()
+			
+			--prev page 
+			if result == #choice_submenus[current_submenu] - 1 then 
+				current_submenu = ((current_submenu - 2) % total_submenus) + 1
+			--next page 
+			elseif result == #choice_submenus[current_submenu] then
+				current_submenu = (current_submenu % total_submenus) + 1
+			--an actual choice. Need to adjust the result according to the submenu.
+			else 
+				result = result + ((current_submenu - 1) * submenu_length)
+				continue = true 
+			end 
+		end 
+	else
+		UI:BeginChoiceMenu(message, choices, defaultchoice, cancelchoice)
+		UI:WaitForChoice()
+		result = UI:ChoiceResult()
+	end 
+	
+	print("result is: " .. tostring(result))
+	return result
+	
+end 
+
+
 function GeneralFunctions.PrintMissionType(mission)
 	local val = mission.Type
 
