@@ -1634,6 +1634,8 @@ end
 
 
 --When you need a multipaged Choice Menu. Returns the result, so use it as the BeginChoiceMenu, WaitFroChoice, and UIChoiceResult block.
+--One potential byproduct of using this menu is that it sets the text speed to instant, then back to normal. If you set text speed before to instant
+--it'll get undone by this function potentially, so be aware.
 function GeneralFunctions.PagedChoiceMenu(message, choices, defaultchoice, cancelchoice)
 	local choice_amount = #choices
 	local choice_submenus = {}
@@ -1656,22 +1658,27 @@ function GeneralFunctions.PagedChoiceMenu(message, choices, defaultchoice, cance
 		local continue = false 
 		local current_submenu = 1
 		local total_submenus = #choice_submenus
+		local default_cursor_option  = 1--stay on whatever we selected last (next or last page)
 		--Loop submenus until player chooses an actual option.
 		while not continue do
-			UI:BeginChoiceMenu(message, choice_submenus[current_submenu], 1, # choice_submenus[current_submenu])
+			UI:BeginChoiceMenu(message, choice_submenus[current_submenu], default_cursor_option, # choice_submenus[current_submenu])
 			UI:WaitForChoice()
 			result = UI:ChoiceResult()
+			UI:SetAutoFinish(true)--so submenus dont have to repeat the entire query.
 			
 			--prev page 
 			if result == #choice_submenus[current_submenu] - 1 then 
 				current_submenu = ((current_submenu - 2) % total_submenus) + 1
+				default_cursor_option = #choice_submenus[current_submenu] - 1
 			--next page 
 			elseif result == #choice_submenus[current_submenu] then
 				current_submenu = (current_submenu % total_submenus) + 1
+				default_cursor_option = #choice_submenus[current_submenu]
 			--an actual choice. Need to adjust the result according to the submenu.
 			else 
 				result = result + ((current_submenu - 1) * submenu_length)
 				continue = true 
+				UI:SetAutoFinish(false)--set this back to not auto finish. No way to check if it is on or off before we get here, so typical situation we'd want is to turn it back off. Destructive, but what can you do.
 			end 
 		end 
 	else
@@ -1680,7 +1687,7 @@ function GeneralFunctions.PagedChoiceMenu(message, choices, defaultchoice, cance
 		result = UI:ChoiceResult()
 	end 
 	
-	print("result is: " .. tostring(result))
+	--print("result is: " .. tostring(result))
 	return result
 	
 end 

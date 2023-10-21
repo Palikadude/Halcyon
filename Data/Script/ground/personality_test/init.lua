@@ -555,7 +555,10 @@ function personality_test.CharacterSelect()
 				local egg_move_list = {}
 				
 				for i = 0,  _DATA:GetMonster(base_species).Forms[base_form].SharedSkills.Count - 1, 1 do 
-					table.insert(egg_move_list, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill):GetColoredName())
+					--only add in released moves 
+					if _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill).Released then
+						table.insert(egg_move_list, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill):GetColoredName())
+					end 
 				end		
 				
 				result = GeneralFunctions.PagedChoiceMenu("Which egg move would you like?", egg_move_list, 1, 1)
