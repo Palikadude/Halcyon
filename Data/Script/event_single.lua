@@ -273,10 +273,9 @@ function SpawnOutlaw(origin, radius, mission_num)
 	-- local gender = form:RollGender(RogueElements.MathUtils.Rand)
 	mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, base_form_idx, "normal", GeneralFunctions.NumToGender(mission.TargetGender))
 	mob_data.Level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
-	local new_mob = RogueEssence.Dungeon.Character(mob_data)
 	local ability = form:RollIntrinsic(RogueElements.MathUtils.Rand, 3)
-	new_mob.BaseIntrinsics[0] = ability
-	
+	mob_data.BaseIntrinsics[0] = ability
+	local new_mob = RogueEssence.Dungeon.Character(mob_data)
 	--Old move learning logic
 	--StringType = luanet.import_type('System.String')
 	--local extra_moves = LUA_ENGINE:MakeGenericType(ListType, { StringType }, { })
@@ -358,7 +357,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 	if tbl ~= nil and tbl.Mission then
 		local mission_num = args.Mission
 		local mission = SV.TakenBoard[mission_num]
-
+		outlaw.Nickname = RogueEssence.Dungeon.CharData.GetFullFormName( RogueEssence.Dungeon.MonsterID(mission.Target, 0, "normal", GeneralFunctions.NumToGender(mission.TargetGender)))
 		SOUND:PlayBGM("C07. Outlaw.ogg", true, 20)
 		UI:ResetSpeaker()
 		DUNGEON:CharTurnToChar(outlaw, GAME:GetPlayerPartyMember(0))
