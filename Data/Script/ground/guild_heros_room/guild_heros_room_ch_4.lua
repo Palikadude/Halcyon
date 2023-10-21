@@ -163,7 +163,7 @@ Thinks about when he feels strange besides the times he told the partner, they m
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("It's just...[pause=0] I can't think of what those moments share in common...[pause=0] They all so different!")
+	UI:WaitShowDialogue("It's just...[pause=0] I can't think of what those moments share in common...[pause=0] They're all so different!")
 	UI:WaitShowDialogue("I don't get why the feelings would be stronger some times and weaker other times either.")
 	UI:WaitShowDialogue("So I have no clue what the meaning behind your strange feelings could be...")
 	GAME:WaitFrames(20)

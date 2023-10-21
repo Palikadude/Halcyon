@@ -20,7 +20,7 @@ V 0.4.0
 - Lars will now sell colored and plain Apricorns once Chapter 4 starts. He'll sell one guaranteed a day. 
 - Rhizo will also have a chance to sell plain and colored Apricorns once Chapter 4 starts.
 - Fixed Water Maze's element being Fire and not Water.
-- Espurr, Meowth-A, Popplio, Charcadet, Tepig, Zorua-H, and Pawmi are added as starters. Check pokemon changes file to see some changes to Espurr's and Charcadet's level up table, as well as the changes to Zorua-H.
+- Espurr, Meowth-A, Popplio, Charcadet, Tepig, and Zorua-H are added as starters. Check pokemon changes file to see some changes to Espurr's and Charcadet's level up table, as well as the changes to Zorua-H.
 - Fixed a bug where a client pokemon with temporary water privileges (i.e. water sport) being beamed out while on water caused an error.
 - Adjusted logic for turning towards a specified location, this should make certain scripted character turns better at looking in the proper direction when turning to look at a location.
 - Fixed a number of minor typos.
