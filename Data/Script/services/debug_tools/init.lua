@@ -176,8 +176,8 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
+	  --mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
 		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
@@ -326,6 +326,9 @@ function DebugTools:OnUpgrade()
  if type(SV.metano_cafe.FermentedItem) == "number" then SV.metano_cafe.FermentedItem = "" SV.metano_cafe.ItemFinishedFermenting = false end
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
+ 
+ --for terrakion's dungeon boulder variable timer
+ if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
  
  --dungeon unlocks that didnt exist for old versions
  if SV.ChapterProgression.Chapter >= 3 and not GAME:DungeonUnlocked("crooked_cavern") then

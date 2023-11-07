@@ -742,20 +742,11 @@ SV.ApricornGrove =
 	InDungeon = false--has character actually left the dungeon run yet? Used to determine what cutscenes to play inside the dungeon entrance/end
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+--to be renamed
+SV.TerrakionDungeon = 
+{
+	BoulderCountdown = -1--Used to determine when boulder falls should happen and resolve.
+}
 
 
 

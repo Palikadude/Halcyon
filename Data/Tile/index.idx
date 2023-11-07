@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.18.2",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "stairs_back_down": {
@@ -72,6 +72,15 @@
 },
 "Released": true,
 "Comment": "Up",
+"SortOrder": 0
+},
+"falling_rock_shadow": {
+"Name": {
+"DefaultText": "Falling Rock Shadow",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
 "SortOrder": 0
 }
 }

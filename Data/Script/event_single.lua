@@ -713,6 +713,8 @@ end
 function SINGLE_CHAR_SCRIPT.SetCriticalHealthStatus(owner, ownerChar, context, args)
 	local player_count = GAME:GetPlayerPartyCount()
 	local critical = RogueEssence.Dungeon.StatusEffect("critical_health")
+	--initialize status data before adding it to anything
+	critical:LoadFromData()
 	for i = 0, player_count - 1, 1 do 
 	local player = GAME:GetPlayerPartyMember(i)
 		if player.HP <= player.MaxHP / 4 and player:GetStatusEffect("critical_health") == nil then 
@@ -729,6 +731,267 @@ end
 
 
 --Halcyon dungeon scripts
+
+
+--For use in the Terrakion Fight and his dungeon after the midway point.
+function SINGLE_CHAR_SCRIPT.QueueRockFall(owner, ownerChar, context, args)
+	
+	--random chance for floor tiles to become a "falling rock shadow" tile.
+	if context.User == nil then
+		
+		local map = _ZONE.CurrentMap
+
+		SOUND:PlayBattleSE("EVT_Tower_Quake")
+		--minshake, maxshake, shaketime
+		DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(3, 6, 40))
+		_DUNGEON:LogMsg(STRINGS:Format("A great power shakes the cavern!"))
+	
+		--flavor rocks; rocks should fall all over, not just on you.
+		for xx = 0, map.Width - 1, 1 do
+			for yy = 0, map.Height - 1, 1 do
+				--1/8 chance to set a tile to rock fall.  is
+				if map.Rand:Next(1,9) == 1 then 
+					local loc = RogueElements.Loc(xx, yy)
+					local tile = map:GetTile(loc)
+					--Make sure the tile is a floor tile and has nothing on it already (traps)
+					if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
+						tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
+					end
+				end
+			end
+		end
+				
+		--for every pokemon on the floor, queue up extra rocks around them. Always make sure a spot is clear within one tile of them though!
+		--todo: Improve code efficiency. Multiple for loops for each party instead of transferring to a lua table if this proves to be too slow.
+		local floor_mons = {}
+	
+		--your team 
+		for i = 0, GAME:GetPlayerPartyCount() - 1, 1 do
+			table.insert(floor_mons, GAME:GetPlayerPartyMember(i))
+			print("PlayerParty" .. i)
+		end
+			
+		for i = 0, GAME:GetPlayerGuestCount() - 1, 1 do
+			table.insert(floor_mons, GAME:GetPlayerGuestMember(i))
+			print("GuestParty" .. i)
+		end
+		
+		--enemy teams
+		for i = 0, map.MapTeams.Count - 1, 1 do
+			local team = map.MapTeams[i].Players
+			for j = 0, team.Count - 1, 1 do
+				table.insert(floor_mons, team[j])	
+				print("EnemyTeam" .. i)
+			end
+		end
+		
+		--neutrals
+		for i = 0, map.AllyTeams.Count - 1, 1 do
+			local team = map.AllyTeams[i].Players
+			for j = 0, team.Count - 1, 1 do
+				table.insert(floor_mons, team[j])
+				print("Neutral" .. i)
+			end
+		end
+		
+		print("length = " .. tostring(#floor_mons))
+
+		for i = 1, #floor_mons, 1 do
+			local member = floor_mons[i] --RogueEssence.Dungeon.Character
+			local charLoc = member.CharLoc
+			
+			--Spawn extra boulders near Pokemon in a 3x3 radius.
+			--Don't spawn boulders on top of terrakion; they'll be too good at killing him if this happens.
+			if member.CurrentForm.Species ~= 'terrakion' then
+				for xx = -1, 1, 1 do
+					for yy = -1, 1, 1 do 
+						--pass a check with 66% success rate. If you do, spawn a boulder shadow.
+						--Bound these values to stay in bounds. This has a byproduct of condensing boulders a bit when at map edges, but this shouldn't come into practice much.
+						if map.Rand:Next(1, 4) ~= 1 then 
+							local boulderX = charLoc.X + xx
+							local boulderY = charLoc.Y + yy
+						
+							if boulderX < 0 then boulderX = 0 end 
+							if boulderY < 0 then boulderY = 0 end							
+							
+							if boulderX >= map.Width then boulderX = map.Width - 1 end 
+							if boulderY >= map.Height then boulderY = map.Height - 1 end
+							
+							local loc = RogueElements.Loc(charLoc.X + xx, charLoc.Y + yy)
+							local tile = map:GetTile(loc)
+							if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
+								tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
+							end
+						end
+					end			
+				end
+			end
+		end		
+	
+		
+		--loop through the pokemon on the floor again; this time clean 1 boulder next to each pokemon.
+		--this is to help prevent RNG screwing you over into a checkmate scenario
+		for i = 1, #floor_mons, 1 do
+			local member = floor_mons[i] --RogueEssence.Dungeon.Character
+			local charLoc = member.CharLoc
+			
+			--Clear 1 space nearby each pokemon.
+			local nearby_boulder_locs = {}
+			
+			--again, Terrakion is an exception. Dont remove boulders near him since we aren't spawning them near him.
+			--todo: make this less hacky? Maybe just remove him from the overall list instead of exceptioning him twice? but would such a search be too slow?
+			if member.CurrentForm.Species ~= 'terrakion' then 
+				for xx = -1, 1, 1 do
+					for yy = -1, 1, 1 do 
+						local boulderX = charLoc.X + xx
+						local boulderY = charLoc.Y + yy
+					
+						if boulderX < 0 then boulderX = 0 end 
+						if boulderY < 0 then boulderY = 0 end							
+						
+						if boulderX >= map.Width then boulderX = map.Width - 1 end 
+						if boulderY >= map.Height then boulderY = map.Height - 1 end
+						
+						local loc = RogueElements.Loc(charLoc.X + xx, charLoc.Y + yy)
+						local tile = map:GetTile(loc)
+						if tile.Effect.ID == 'falling_rock_shadow' then
+							table.insert(nearby_boulder_locs, loc)
+						end
+					end			
+				end
+			
+				--Finally clear the tile.
+				if #nearby_boulder_locs > 0 then
+					local loc = nearby_boulder_locs[map.Rand:Next(1, #nearby_boulder_locs + 1)]
+					local tile = map:GetTile(loc)
+					tile.Effect = RogueEssence.Dungeon.EffectTile('', true, loc)
+				end
+			end
+		end
+				
+	end
+	
+	GAME:WaitFrames(30)
+end 
+
+function SINGLE_CHAR_SCRIPT.ResolveRockFall(owner, ownerChar, context, args)
+	--Resolve the queued up rock falls. Play the animation in 4 waves so the animations aren't 100% synced up; what wave you're in is your x pos + y pos modulo 4 + 1.
+	
+	local waves = {{}, {}, {}, {}}
+	local map = _ZONE.CurrentMap
+	local width = map.Width 
+	local height = map.Height
+
+	SOUND:PlayBattleSE("DUN_Rock_Throw")
+	
+	--drops a boulder on a location
+	local function DropBoulder(loc)
+	
+		--emitter for the result anim of our main emitter
+		local result_emitter = RogueEssence.Content.SingleEmitter(RogueEssence.Content.AnimData("Rock_Smash_Front", 2))
+		result_emitter.Layer = RogueEssence.Content.DrawLayer.Front
+						
+		--falling boulder animation. Emitter attributes are mostly self explanatory.
+		local emitter = RogueEssence.Content.MoveToEmitter()
+		emitter.MoveTime = 30
+		emitter.Anim = RogueEssence.Content.AnimData("Rock_Piece_Rotating", 2)
+		emitter.ResultAnim = result_emitter--this result anim can be any other emitter i believe, not just an emptyfiniteemitter.
+		emitter.ResultLayer = RogueEssence.Content.DrawLayer.Front
+		emitter.HeightStart = 240
+		emitter.HeightEnd = 0
+		--emitter.OffsetStart = 0 --these are saved as Locations i believe, not as ints
+		--emitter.OffsetEnd = 0
+		emitter.LingerStart = 0--linger is having the anim stay still before or after it moves
+		emitter.LingerEnd = 0
+		DUNGEON:PlayVFX(emitter, loc.X * 24 + 12, loc.Y * 24 + 16)
+
+		GAME:WaitFrames(30)
+		
+		--clear the shadow
+		map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile('', true, loc)
+		
+		local flinch = RogueEssence.Dungeon.StatusEffect("flinch")
+		--initialize status data before adding it to anything
+		flinch:LoadFromData()
+		local chara =  map:GetCharAtLoc(loc)
+		
+		--damage anyone standing under a rock when it resolves.
+		if chara ~= nil then
+			--deal 1/4 max hp as damage, multiplied based on type effectiveness. Also flinch the target.
+			local damage = chara.MaxHP / 4
+			
+			--get the type effectiveness on each of the chara's types, then add that together. then run it through GetEffectivenessMult to get the actual multiplier. This is the numerator for x/4. so divide by 4 after for true amount
+			local type_effectiveness = PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup('rock', chara.Element1) + PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup('rock', chara.Element2)
+			type_effectiveness = PMDC.Dungeon.PreTypeEvent.GetEffectivenessMult(type_effectiveness)
+
+
+			damage = math.floor(type_effectiveness * damage) / 4
+
+			TASK:WaitTask(chara:InflictDamage(damage))
+			TASK:WaitTask(chara:AddStatusEffect(nil, flinch, true))
+		end		
+		
+	end
+		
+		--local arriveAnim = RogueEssence.Content.StaticAnim(RogueEssence.Content.AnimData("Rock_Pieces", 1), 1)
+		--arriveAnim:SetupEmitted(RogueElements.Loc(waves[i][j].X * 24 + 12, waves[i][j].Y * 24 + 12), 32, RogueElements.Dir8.Down)
+		--DUNGEON:PlayVFXAnim(arriveAnim, RogueEssence.Content.DrawLayer.Front)
+
+	if context.User == nil then
+		for xx = 0, map.Width - 1, 1 do
+			for yy = 0, map.Height - 1, 1 do
+				local loc = RogueElements.Loc(xx, yy)
+				local tile = map:GetTile(loc)
+				--queue up the shadow in that position for that wave.
+				if tile.Effect.ID == 'falling_rock_shadow' then
+					table.insert(waves[((xx + yy) % #waves) + 1], loc)
+				end
+			end
+		end
+	
+		local boulder_coroutines = {}
+		for i = 1, #waves, 1 do 
+			for j = 1, #waves[i], 1 do
+				table.insert(boulder_coroutines, TASK:BranchCoroutine(function() GAME:WaitFrames((i-1) * 10) DropBoulder(waves[i][j]) end))
+			end 
+		end 	
+		
+		TASK:JoinCoroutines(boulder_coroutines)
+		
+		--pause a bit after dropping all boulders
+		GAME:WaitFrames(20)
+		
+	end
+end
+
+
+
+function SINGLE_CHAR_SCRIPT.RockfallTemors(owner, ownerChar, context, args)
+	--args.ShadowDuration - how long the shadows are out before they fall. Should be 1 pretty much always. Dont let it be less than 1!!!!
+	--args.TurnsBetweenTremors - how many turns after one tremor should another trigger? Much less during the bossfight.
+	if context.User == nil then
+		--failsafes
+		if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
+		
+		--reset the counter when we go past 0. -1 or else it would end up taking 1 more turn than intended
+		if SV.TerrakionDungeon.BoulderCountdown < 0 then
+			SV.TerrakionDungeon.BoulderCountdown = args.TurnsBetweenTremors - 1
+		end
+		
+		--when there's only ShadowDuration turns left, trigger the shadow spawns.
+		if SV.TerrakionDungeon.BoulderCountdown == args.ShadowDuration then
+			SINGLE_CHAR_SCRIPT.QueueRockFall(owner, ownerChar, context, args)
+		end
+		
+		if SV.TerrakionDungeon.BoulderCountdown == 0 then
+			SINGLE_CHAR_SCRIPT.ResolveRockFall(owner, ownerChar, context, args)
+		end 
+		
+		SV.TerrakionDungeon.BoulderCountdown = SV.TerrakionDungeon.BoulderCountdown - 1
+		print("Im sharting! " .. tostring(SV.TerrakionDungeon.BoulderCountdown) )
+	end
+
+end
 
 --For Ledian's speeches within the beginner lesson
 function SINGLE_CHAR_SCRIPT.BeginnerLessonSpeech(owner, ownerChar, context, args)
