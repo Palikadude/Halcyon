@@ -1533,8 +1533,11 @@ function metano_town.GenerateGreenMerchantItem()
 		{"held_spooky_plate", 10},
 		{"held_stone_plate", 10},
 		{"held_toxic_plate", 10},
-		{"held_zap_plate", 10}
-		
+		{"held_zap_plate", 10},
+
+		{"held_flame_orb", 10},
+		{"held_toxic_orb", 10},
+		{"held_life_orb", 10}
 	}
 	
 	return GeneralFunctions.WeightedRandom(stock)
