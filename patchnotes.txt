@@ -58,3 +58,10 @@ V 0.4.0
 - Fixed a bug where an invalid item type was trying to be rewarded (golden spike instead of golden thorn)
 - Fixed an issue where pokemon that spawn past the initial set on a MH outlaw floor would be marked as a goon.
 - Adjusted the logic for outlaw moveset; they now have 4 random moves they can know at that level, minus any moves that are blacklisted (teleport, OHKO moves, etc.)
+
+
+
+V0.5.0
+-Added Bandana portraits and sprites for Tepig and Snivy. Thank you to 3P1C for making them!
+-Cafe special and the merchants now have a custom menu that gives info on what you're buying before you buy it. Thank you to MistressNebula for making it!
+-Mido can now sell Flame and Toxic orbs.

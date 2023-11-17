@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.19.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -359413,10 +359413,12 @@
 "AIEnabled": false,
 "EntName": "Assembly_Owner",
 "EntEnabled": true,
+"EntOrder": 0,
 "serializationLoc": {
 "X": 568,
 "Y": 184
 },
+"serializationHeight": 0,
 "serializationDir": 0,
 "triggerType": 1,
 "<AI>k__BackingField": null,
@@ -359501,6 +359503,7 @@
 "EntName": "Upwards_Stairs_Exit",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -359542,6 +359545,7 @@
 "EntName": "Downwards_Stairs_Exit",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -359583,6 +359587,7 @@
 "EntName": "Mission_Board",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -359624,6 +359629,7 @@
 "EntName": "Outlaw_Board",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -359665,6 +359671,7 @@
 "EntName": "Assembly",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -359776,6 +359783,7 @@
 "EntName": "TEAMMATE_1",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -359793,6 +359801,7 @@
 "EntName": "Main_Entrance_Marker",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 264,
@@ -359805,6 +359814,7 @@
 "EntName": "Guild_Second_Floor_Upwards_Stairs_Marker",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 480,
@@ -359817,6 +359827,7 @@
 "EntName": "Guild_Second_Floor_Upwards_Stairs_Marker_Partner",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 512,
@@ -359829,6 +359840,7 @@
 "EntName": "Left_Trio_1",
 "Direction": 5,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 72,
@@ -359841,6 +359853,7 @@
 "EntName": "Left_Trio_2",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 104,
@@ -359853,6 +359866,7 @@
 "EntName": "Left_Trio_3",
 "Direction": 3,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 136,
@@ -359865,6 +359879,7 @@
 "EntName": "Left_Duo_1",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 88,
@@ -359877,6 +359892,7 @@
 "EntName": "Left_Duo_2",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 120,
@@ -359889,6 +359905,7 @@
 "EntName": "Right_Trio_1",
 "Direction": 5,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 360,
@@ -359901,6 +359918,7 @@
 "EntName": "Right_Trio_2",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 392,
@@ -359913,6 +359931,7 @@
 "EntName": "Right_Trio_3",
 "Direction": 3,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 424,
@@ -359925,6 +359944,7 @@
 "EntName": "Right_Duo_1",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 376,
@@ -359937,6 +359957,7 @@
 "EntName": "Right_Duo_2",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 408,
@@ -359949,6 +359970,7 @@
 "EntName": "Right_Solo",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 392,
@@ -359961,6 +359983,7 @@
 "EntName": "Left_Solo",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 104,
@@ -359973,6 +359996,7 @@
 "EntName": "Generic_Spawn_1",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 192,
@@ -359985,6 +360009,7 @@
 "EntName": "Generic_Spawn_2",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -359997,6 +360022,7 @@
 "EntName": "Generic_Spawn_Duo_1",
 "Direction": 7,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 152,
@@ -360009,6 +360035,7 @@
 "EntName": "Generic_Spawn_Duo_2",
 "Direction": 3,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 176,
@@ -360021,6 +360048,7 @@
 "EntName": "Generic_Spawn_Duo_4",
 "Direction": 1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 328,
@@ -360033,6 +360061,7 @@
 "EntName": "Generic_Spawn_Duo_3",
 "Direction": 5,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -360045,6 +360074,7 @@
 "EntName": "Generic_Spawn_3",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 184,
@@ -360057,6 +360087,7 @@
 "EntName": "Generic_Spawn_4",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 248,
@@ -360069,6 +360100,7 @@
 "EntName": "Generic_Spawn_5",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 536,
@@ -360081,6 +360113,7 @@
 "EntName": "Generic_Spawn_6",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 448,
@@ -360093,6 +360126,7 @@
 "EntName": "Generic_Spawn_8",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 352,
@@ -360105,6 +360139,7 @@
 "EntName": "Generic_Spawn_7",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 48,

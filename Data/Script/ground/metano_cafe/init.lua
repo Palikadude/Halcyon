@@ -435,17 +435,17 @@ function metano_cafe.Cafe_Action(obj, activator)
 			if SV.metano_cafe.BoughtSpecial then 
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bought_Special']))	
 			else 					
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Daily_Special']))
+				--UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Cafe_Daily_Special'], specialName, specialPrice)) --deprecated
 				local SingleItemDealMenu = SingleItemDealMenu()
 				local menu = SingleItemDealMenu:new("Café Special", special, specialPrice)
 				UI:SetCustomMenu(menu.menu)
 				UI:WaitForChoice()
-				if specialPrice > GAME:GetPlayerMoney() then --TODO: decide if this line is worth keeping
-					UI:SetSpeakerEmotion('Worried')
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_No_Money']))
-					UI:SetSpeakerEmotion('Normal')
-				elseif menu.result then
-					if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+				if menu.result then
+					if specialPrice > GAME:GetPlayerMoney() then --Menu coding prevents this from being hit (can't try to buy if no money), but keep this here in case.
+						UI:SetSpeakerEmotion('Worried')
+						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_No_Money']))
+						UI:SetSpeakerEmotion('Normal')
+					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Cafe_Bag_Full'], CharacterEssentials.GetCharacterName('Kangaskhan')))
 						UI:SetSpeakerEmotion('Normal')
