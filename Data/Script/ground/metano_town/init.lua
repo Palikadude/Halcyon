@@ -7,7 +7,7 @@ require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
 require 'ground.metano_town.metano_town_ch_3'
 require 'ground.metano_town.metano_town_ch_4'
-
+require 'menu.single_deal_menu'
 
 local MapStrings = {}
 
@@ -1420,14 +1420,16 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Refuse_Service'], farfetchd_name))
 			else
-				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item)))
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item']))
+				local SingleItemDealMenu = SingleItemDealMenu()
+				local menu = SingleItemDealMenu:new(stunky_name.."'s Deal", item, itemPrice)
+				UI:SetCustomMenu(menu.menu)
 				UI:WaitForChoice()
-				result = UI:ChoiceResult()
-				if result then
-					if itemPrice > GAME:GetPlayerMoney() then
-						UI:SetSpeakerEmotion('Worried')
-						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Money']))
-					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+				if itemPrice > GAME:GetPlayerMoney() then --TODO: decide if this line is worth keeping
+					UI:SetSpeakerEmotion('Worried')
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Money']))
+				elseif menu.result then
+					if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Bag_Full']))
 					else
@@ -1617,18 +1619,21 @@ function metano_town.Green_Merchant_Action(obj, activator)
 			if happy then 
 				UI:SetSpeakerEmotion('Worried')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Stock']))
-			elseif angry then 
+			elseif angry then
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Refuse_Service']))
 			else
-				UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item)))
+				UI:SetSpeakerEmotion('Happy')
+				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item']))
+				local SingleItemDealMenu = SingleItemDealMenu()
+				local menu = SingleItemDealMenu:new(farfetchd_name.."'s Deal", item, itemPrice)
+				UI:SetCustomMenu(menu.menu)
 				UI:WaitForChoice()
-				result = UI:ChoiceResult()
-				if result then
-					if itemPrice > GAME:GetPlayerMoney() then
-						UI:SetSpeakerEmotion('Worried')
-						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Money']))
-					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+				if itemPrice > GAME:GetPlayerMoney() then --TODO: decide if this line is worth keeping
+					UI:SetSpeakerEmotion('Worried')
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Money']))
+				elseif menu.result then
+					if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Bag_Full']))
 					else
