@@ -721,6 +721,20 @@ SV.Chapter4 =
 
 }
 
+
+
+SV.Chapter5 = 
+{
+	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
+	FinnishedExpeditionAddress = false--Did the address about the expedition starting today?
+}
+
+
+SV.Chapter6 = 
+{
+
+}
+
 ----------------------------------
 --Dungeon relevant flags 
 ----------------------------------
@@ -740,6 +754,12 @@ SV.Tutorial =
 SV.ApricornGrove = 
 {
 	InDungeon = false--has character actually left the dungeon run yet? Used to determine what cutscenes to play inside the dungeon entrance/end
+}
+
+SV.SearingTunnel = 
+{
+	LavaFlowDirection = "None",--TopStraight, BottomStraight, DiagonalDown, DiagonalUp, or None
+	LavaCountdown = -1--Used to determine how long until the lava flow changes?
 }
 
 --to be renamed

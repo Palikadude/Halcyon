@@ -11,6 +11,7 @@ require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_1'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_2'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_3'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_4'
+require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_ch_5'
 require 'ground.guild_third_floor_lobby.guild_third_floor_lobby_helper'
 
 
@@ -98,7 +99,9 @@ function guild_third_floor_lobby.PlotScripting()
 				guild_third_floor_lobby_ch_4.ExpeditionAnnouncementAddress()
 			else
 				guild_third_floor_lobby_ch_4.SetupGround()
-			end				
+			end			
+		elseif SV.ChapterProgression.Chapter == 5 then
+			GAME:FadeIn(20)
 		else
 			GAME:FadeIn(20)
 		end

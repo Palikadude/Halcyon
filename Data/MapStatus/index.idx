@@ -19,6 +19,15 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"steam": {
+"Name": {
+"DefaultText": "Steam",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Used in hot dungeons as a visual effect. \r\nDoesn't actually cause any gameplay differences.",
+"SortOrder": 0
 }
 }
 }

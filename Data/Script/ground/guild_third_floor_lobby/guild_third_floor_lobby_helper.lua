@@ -21,9 +21,10 @@ function guild_third_floor_lobby_helper.SetupMorningAddress()
 			{'Cranidos', 'Cranidos'}})
 	
 	--during second half of chapter 3, girafarig and breloom are absent.
+	--They return at the beginning of Chapter 5, but they still need to be excluded in chapter 5 since they appear from offscreen.
 	--This is kind of a hacky way of doing this, but it works
 	--todo? Handle this better instead of a hardcode here
-	if (SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss) or SV.ChapterProgression.Chapter == 4 then
+	if (SV.ChapterProgression.Chapter == 3 and SV.Chapter3.DefeatedBoss) or SV.ChapterProgression.Chapter == 4 or SV.ChapterProgression.Chapter == 5 then
 		GROUND:TeleportTo(breloom, 640, 280, Direction.Up)
 		GROUND:TeleportTo(girafarig, 640, 312, Direction.Up)
 	end

@@ -151,8 +151,8 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.NoSwitching = true--switching is not allowed
 
 	  
-	  local mon_id = RogueEssence.Dungeon.MonsterID("pawmi", 0, "normal", Gender.Male)
-	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
+	  local mon_id = RogueEssence.Dungeon.MonsterID("turtwig", 0, "normal", Gender.Male)
+	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
 	  p.IsFounder = true
@@ -160,8 +160,8 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Palika'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("zorua", 1, "normal", Gender.Male)
-	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
+	  mon_id = RogueEssence.Dungeon.MonsterID("piplup", 0, "normal", Gender.Male)
+	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
 	  p.IsFounder = true
@@ -329,6 +329,10 @@ function DebugTools:OnUpgrade()
  
  --for terrakion's dungeon boulder variable timer
  if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
+ 
+ --For Searing Tunnel's boss fight
+ if SV.SearingTunnel.LavaFlowDirection == nil then SV.SearingTunnel.LavaFlowDirection = 'None' end
+ if SV.SearingTunnel.LavaCountdown == nil then SV.SearingTunnel.LavaCountdown = -1 end
  
  --dungeon unlocks that didnt exist for old versions
  if SV.ChapterProgression.Chapter >= 3 and not GAME:DungeonUnlocked("crooked_cavern") then

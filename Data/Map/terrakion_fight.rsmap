@@ -1251,7 +1251,7 @@
 {
 "Name": "New Deco",
 "Layer": 0,
-"Visible": true,
+"Visible": false,
 "Anims": [
 {
 "MapLoc": {

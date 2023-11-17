@@ -1,0 +1,3 @@
+--dummy file, for now.
+--This dummy file is needed to override the base game's upgrade service. Prevents a bug save files that had Halcyon mods on, saved, mods toggled off, then reloaded.
+--OnUpgrade in debug_tools' init.lua will still be called as previously expected. Continue to add on upgrade stuff there.

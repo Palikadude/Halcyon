@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.18.2",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
@@ -589,6 +589,101 @@
 },
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
+"SortOrder": 0
+},
+"searing_tunnel": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2
+],
+[]
+],
+"Name": {
+"DefaultText": "Searing Tunnel",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "2nd dungeon of the expedition. 6th dungeon overall.",
+"SortOrder": 0
+},
+"electric_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 13,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Electric Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the fourth set of training mazes. Unlocked in Chapter 5.",
+"SortOrder": 0
+},
+"bug_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 13,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Bug Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the fourth set of training mazes. Unlocked in Chapter 5.",
 "SortOrder": 0
 }
 }

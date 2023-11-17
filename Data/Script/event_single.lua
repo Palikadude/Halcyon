@@ -732,117 +732,461 @@ end
 
 --Halcyon dungeon scripts
 
+--For use in the Magcargo fight
+--These are kinda done in a yandere-dev fashion, but I wasn't sure how to be more clever than this. I tried :(
+
+
+--helper functions for Searing Tunnel's boss fight lava mechanic.
+function SINGLE_CHAR_SCRIPT.DrawLavaPool(right, bottom, remove_lava)
+	local map = _ZONE.CurrentMap
+	local posX = 5
+	local posY = 8
+	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
+	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
+
+	if right then 
+		posX = 15
+		spriteflip = 0
+	end 
+	
+	if bottom then
+		posY = 13
+	end
+	
+	local lava_anim = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Lava_Pool_Connected', 4)
+	--luacast the number value for the flip type needed to the RogueEssence SpriteFlip version
+	lava_anim.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
+	
+	--Do 1 "section" of lava at a time.
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim, RogueElements.Loc(posX * 24, posY * 24)))
+	end
+	
+	GAME:WaitFrames(40)
+end 
+
+
+function SINGLE_CHAR_SCRIPT.DrawStraightFlow(right, bottom, remove_lava)
+	local map = _ZONE.CurrentMap
+	local posX = 7
+	local posY = 8
+	local directionX = 1 -- -1 to reverse direction
+	local directionY = 1 -- -1 to reverse direction
+	local effect_tile = 'flowing_lava'
+	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
+	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
+	local offsetX = 0--Need to offset the flipped sprites by an amount.
+	local offsetY = 0
+
+	if right then 
+		posX = 14
+		directionX = -1
+		spriteflip = spriteflip - 1
+		offsetX = -24
+	end 
+	
+	if bottom then
+		posY = 13
+		directionY = -1
+		spriteflip = spriteflip + 2
+		offsetY = -24
+	end
+	
+	if remove_lava then effect_tile = '' end
+	
+	local lava_anim_small = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	lava_anim_small.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
+	local lava_anim_big = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_big.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)	
+
+	--Do 1 "section" of lava at a time.
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+	
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+	end
+	
+	--tiles 
+	local loc = RogueElements.Loc(posX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX + directionX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	--second wave
+	GAME:WaitFrames(40)
+	
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+	posX = posX + (2 * directionX)
+	
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+	end
+
+	--tiles
+	loc = RogueElements.Loc(posX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX + directionX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX + directionX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+		
+	GAME:WaitFrames(40)
+
+end 
+
+--gets the tile at location, and applies its effect if someone is also standing at the location.
+--Created for use with the lava flow scripts.
+function SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	local tile = _ZONE.CurrentMap:GetTile(loc)
+	local chara = _ZONE.CurrentMap:GetCharAtLoc(loc)
+	if chara ~= nil and tile.Effect.ID ~= '' then--don't try to apply the tile if it's a nothing tile
+		TASK:WaitTask(tile.Effect:InteractWithTile(RogueEssence.Dungeon.SingleCharContext(chara)))
+	end
+end 
+
+function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(right, bottom, remove_lava)
+	local map = _ZONE.CurrentMap
+	local posX = 7
+	local posY = 8
+	local directionX = 1 -- -1 to reverse direction
+	local directionY = 1 -- -1 to reverse direction
+	local effect_tile = 'flowing_lava'
+	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.\
+	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
+	local offsetX = 0--Need to offset the flipped sprites by an amount.
+	local offsetY = 0
+
+	
+	if right then 
+		posX = 14
+		directionX = -1
+		spriteflip = spriteflip - 1
+		offsetX = -24
+	end 
+	
+	if bottom then
+		posY = 13
+		directionY = -1
+		spriteflip = spriteflip + 2
+		offsetY = -24
+	end
+	
+	if remove_lava then effect_tile = '' end
+
+	local lava_anim_small = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	lava_anim_small.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
+	local lava_anim_big = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_big.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)	
+
+	--Do 1 "section" of lava at a time.
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+	end
+	
+	--tiles
+	local loc = RogueElements.Loc(posX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	
+	loc = RogueElements.Loc(posX + directionX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+		
+	GAME:WaitFrames(40)
+	
+	--second wave
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+	posX = posX + directionX
+	posY = posY + directionY
+	
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+	end
+	
+	--tiles
+	loc = RogueElements.Loc(posX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX + directionX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+		
+	GAME:WaitFrames(40)
+
+	SOUND:PlayBattleSE('_UNK_EVT_102')
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
+	posX = posX + directionX
+	posY = posY + directionY
+		
+	--vfx
+	if remove_lava then
+		map.Decorations[0].Anims:RemoveAt(0)
+	else
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+	end
+	
+	--tiles 
+	loc = RogueElements.Loc(posX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX + directionX, posY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+
+	loc = RogueElements.Loc(posX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)		
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	
+	loc = RogueElements.Loc(posX + directionX, posY + directionY)
+	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+		
+	GAME:WaitFrames(40)
+
+end
+function SINGLE_CHAR_SCRIPT.QueueLavaFlow(owner, ownerChar, context, args)
+	--Randomly choose top or bottom on each side. Draw a scripted lava flow from point A to point B afterwards.
+	local map = _ZONE.CurrentMap
+	
+	local top_left = RogueElements.Loc(7, 8)
+	local top_right = RogueElements.Loc(14, 8)
+	local bottom_left = RogueElements.Loc(7, 13)
+	local bottom_right = RogueElements.Loc(14, 13)
+	
+	--0 is top, 1 is bottom
+	local left_side = map.Rand:Next(0,2)
+	local right_side = map.Rand:Next(0,2)
+
+	print("left side :" .. tostring(left_side) .. " right side: " .. tostring(right_side))
+
+
+	--straight line across the top
+	if left_side == right_side and left_side == 0 then
+		SV.SearingTunnel.LavaFlowDirection = "TopStraight"
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, false)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, false) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, false)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, false, false) end)
+		TASK:JoinCoroutines({coro1, coro2})			
+	--Straight line across the bottom
+	elseif left_side == right_side and left_side == 1 then
+		SV.SearingTunnel.LavaFlowDirection = "BottomStraight"
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, false)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, true, false) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, false)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, false) end)
+		TASK:JoinCoroutines({coro1, coro2})		
+	--Diagonal Down
+	elseif left_side ~= right_side and left_side == 0 then
+		SV.SearingTunnel.LavaFlowDirection = "DiagonalDown"
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, false)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, false, false) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, false)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, true, false) end)
+		TASK:JoinCoroutines({coro1, coro2})
+	--diagonal up
+	else
+		SV.SearingTunnel.LavaFlowDirection = "DiagonalUp"
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, false)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, false) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, false)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, false) end)
+		TASK:JoinCoroutines({coro1, coro2})
+	end
+	
+
+end 
+
+
+function SINGLE_CHAR_SCRIPT.RemoveLavaFlow(owner, ownerChar, context, args)
+	--Remove the current lava flow.
+	local map = _ZONE.CurrentMap
+		
+	print("Removing lava flow! " .. SV.SearingTunnel.LavaFlowDirection)
+	--straight line across the top
+	if SV.SearingTunnel.LavaFlowDirection == 'TopStraight' then
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, true)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, true) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, true)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, false, true) end)
+		TASK:JoinCoroutines({coro1, coro2})			
+	--Straight line across the bottom
+	elseif SV.SearingTunnel.LavaFlowDirection == 'BottomStraight' then
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, true)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, true, true) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, true)
+													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, true) end)
+		TASK:JoinCoroutines({coro1, coro2})		
+	--Diagonal Down
+	elseif SV.SearingTunnel.LavaFlowDirection == 'DiagonalDown' then
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, true)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, false, true) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, true)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, true, true) end)
+		TASK:JoinCoroutines({coro1, coro2})
+	--diagonal up
+	elseif SV.SearingTunnel.LavaFlowDirection == 'DiagonalUp' then
+		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, true)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, true) end)			
+		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, true)
+													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, true) end)
+		TASK:JoinCoroutines({coro1, coro2})
+	end
+	
+	--clear the flag
+	SV.SearingTunnel.LavaFlowDirection = "None"
+end 
+
+function SINGLE_CHAR_SCRIPT.LavaFlowHandler(owner, ownerChar, context, args)
+	--args.LavaDuration - how long the lava is out before it recedes. Should be 1 pretty much always. Dont let it be less than 1!!!!
+	--args.NothingDuration - How long is there nothing until the lava returns?
+	if context.User == nil then
+		--failsafes
+		if SV.SearingTunnel.LavaCountdown == nil then SV.SearingTunnel.LavaCountdown = -1 end
+		
+		--reset the counter when we go past 0. -1 or else it would end up taking 1 more turn than intended
+		if SV.SearingTunnel.LavaCountdown < 0 then
+			SV.SearingTunnel.LavaCountdown = args.LavaDuration + args.NothingDuration - 1
+		end
+		
+		--When there's only Nothing Duration left, remove lava.
+		if SV.SearingTunnel.LavaCountdown == args.NothingDuration then
+			SINGLE_CHAR_SCRIPT.RemoveLavaFlow(owner, ownerChar, context, args)
+		end
+		
+		if SV.SearingTunnel.LavaCountdown == 0 then
+			SINGLE_CHAR_SCRIPT.QueueLavaFlow(owner, ownerChar, context, args)
+		end 
+		
+		SV.SearingTunnel.LavaCountdown = SV.SearingTunnel.LavaCountdown - 1
+		print("Lava counter " .. tostring(SV.SearingTunnel.LavaCountdown))
+	end
+end
+
+
 
 --For use in the Terrakion Fight and his dungeon after the midway point.
 function SINGLE_CHAR_SCRIPT.QueueRockFall(owner, ownerChar, context, args)
 	
 	--random chance for floor tiles to become a "falling rock shadow" tile.
-	if context.User == nil then
-		
-		local map = _ZONE.CurrentMap
+	local map = _ZONE.CurrentMap
 
-		SOUND:PlayBattleSE("EVT_Tower_Quake")
-		--minshake, maxshake, shaketime
-		DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(3, 6, 40))
-		_DUNGEON:LogMsg(STRINGS:Format("A great power shakes the cavern!"))
-	
-		--flavor rocks; rocks should fall all over, not just on you.
-		for xx = 0, map.Width - 1, 1 do
-			for yy = 0, map.Height - 1, 1 do
-				--1/8 chance to set a tile to rock fall.  is
-				if map.Rand:Next(1,9) == 1 then 
-					local loc = RogueElements.Loc(xx, yy)
-					local tile = map:GetTile(loc)
-					--Make sure the tile is a floor tile and has nothing on it already (traps)
-					if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
-						tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
-					end
+	SOUND:PlayBattleSE("EVT_Tower_Quake")
+	--minshake, maxshake, shaketime
+	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(3, 6, 40))
+	_DUNGEON:LogMsg(STRINGS:Format("A great power shakes the cavern!"))
+
+	--flavor rocks; rocks should fall all over, not just on you.
+	for xx = 0, map.Width - 1, 1 do
+		for yy = 0, map.Height - 1, 1 do
+			--1/8 chance to set a tile to rock fall.  is
+			if map.Rand:Next(1,9) == 1 then 
+				local loc = RogueElements.Loc(xx, yy)
+				local tile = map:GetTile(loc)
+				--Make sure the tile is a floor tile and has nothing on it already (traps)
+				if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
+					tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
 				end
 			end
 		end
-				
-		--for every pokemon on the floor, queue up extra rocks around them. Always make sure a spot is clear within one tile of them though!
-		--todo: Improve code efficiency. Multiple for loops for each party instead of transferring to a lua table if this proves to be too slow.
-		local floor_mons = {}
-	
-		--your team 
-		for i = 0, GAME:GetPlayerPartyCount() - 1, 1 do
-			table.insert(floor_mons, GAME:GetPlayerPartyMember(i))
-			print("PlayerParty" .. i)
-		end
+	end
 			
-		for i = 0, GAME:GetPlayerGuestCount() - 1, 1 do
-			table.insert(floor_mons, GAME:GetPlayerGuestMember(i))
-			print("GuestParty" .. i)
-		end
-		
-		--enemy teams
-		for i = 0, map.MapTeams.Count - 1, 1 do
-			local team = map.MapTeams[i].Players
-			for j = 0, team.Count - 1, 1 do
-				table.insert(floor_mons, team[j])	
-				print("EnemyTeam" .. i)
-			end
-		end
-		
-		--neutrals
-		for i = 0, map.AllyTeams.Count - 1, 1 do
-			local team = map.AllyTeams[i].Players
-			for j = 0, team.Count - 1, 1 do
-				table.insert(floor_mons, team[j])
-				print("Neutral" .. i)
-			end
-		end
-		
-		print("length = " .. tostring(#floor_mons))
+	--for every pokemon on the floor, queue up extra rocks around them. Always make sure a spot is clear within one tile of them though!
+	--todo: Improve code efficiency. Multiple for loops for each party instead of transferring to a lua table if this proves to be too slow.
+	local floor_mons = {}
 
-		for i = 1, #floor_mons, 1 do
-			local member = floor_mons[i] --RogueEssence.Dungeon.Character
-			local charLoc = member.CharLoc
-			
-			--Spawn extra boulders near Pokemon in a 3x3 radius.
-			--Don't spawn boulders on top of terrakion; they'll be too good at killing him if this happens.
-			if member.CurrentForm.Species ~= 'terrakion' then
-				for xx = -1, 1, 1 do
-					for yy = -1, 1, 1 do 
-						--pass a check with 66% success rate. If you do, spawn a boulder shadow.
-						--Bound these values to stay in bounds. This has a byproduct of condensing boulders a bit when at map edges, but this shouldn't come into practice much.
-						if map.Rand:Next(1, 4) ~= 1 then 
-							local boulderX = charLoc.X + xx
-							local boulderY = charLoc.Y + yy
-						
-							if boulderX < 0 then boulderX = 0 end 
-							if boulderY < 0 then boulderY = 0 end							
-							
-							if boulderX >= map.Width then boulderX = map.Width - 1 end 
-							if boulderY >= map.Height then boulderY = map.Height - 1 end
-							
-							local loc = RogueElements.Loc(charLoc.X + xx, charLoc.Y + yy)
-							local tile = map:GetTile(loc)
-							if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
-								tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
-							end
-						end
-					end			
-				end
-			end
-		end		
-	
+	--your team 
+	for i = 0, GAME:GetPlayerPartyCount() - 1, 1 do
+		table.insert(floor_mons, GAME:GetPlayerPartyMember(i))
+		print("PlayerParty" .. i)
+	end
 		
-		--loop through the pokemon on the floor again; this time clean 1 boulder next to each pokemon.
-		--this is to help prevent RNG screwing you over into a checkmate scenario
-		for i = 1, #floor_mons, 1 do
-			local member = floor_mons[i] --RogueEssence.Dungeon.Character
-			local charLoc = member.CharLoc
-			
-			--Clear 1 space nearby each pokemon.
-			local nearby_boulder_locs = {}
-			
-			--again, Terrakion is an exception. Dont remove boulders near him since we aren't spawning them near him.
-			--todo: make this less hacky? Maybe just remove him from the overall list instead of exceptioning him twice? but would such a search be too slow?
-			if member.CurrentForm.Species ~= 'terrakion' then 
-				for xx = -1, 1, 1 do
-					for yy = -1, 1, 1 do 
+	for i = 0, GAME:GetPlayerGuestCount() - 1, 1 do
+		table.insert(floor_mons, GAME:GetPlayerGuestMember(i))
+		print("GuestParty" .. i)
+	end
+	
+	--enemy teams
+	for i = 0, map.MapTeams.Count - 1, 1 do
+		local team = map.MapTeams[i].Players
+		for j = 0, team.Count - 1, 1 do
+			table.insert(floor_mons, team[j])	
+			print("EnemyTeam" .. i)
+		end
+	end
+	
+	--neutrals
+	for i = 0, map.AllyTeams.Count - 1, 1 do
+		local team = map.AllyTeams[i].Players
+		for j = 0, team.Count - 1, 1 do
+			table.insert(floor_mons, team[j])
+			print("Neutral" .. i)
+		end
+	end
+	
+	print("length = " .. tostring(#floor_mons))
+
+	for i = 1, #floor_mons, 1 do
+		local member = floor_mons[i] --RogueEssence.Dungeon.Character
+		local charLoc = member.CharLoc
+		
+		--Spawn extra boulders near Pokemon in a 3x3 radius.
+		--Don't spawn boulders on top of terrakion; they'll be too good at killing him if this happens.
+		if member.CurrentForm.Species ~= 'terrakion' then
+			for xx = -1, 1, 1 do
+				for yy = -1, 1, 1 do 
+					--pass a check with 66% success rate. If you do, spawn a boulder shadow.
+					--Bound these values to stay in bounds. This has a byproduct of condensing boulders a bit when at map edges, but this shouldn't come into practice much.
+					if map.Rand:Next(1, 4) ~= 1 then 
 						local boulderX = charLoc.X + xx
 						local boulderY = charLoc.Y + yy
 					
@@ -854,22 +1198,57 @@ function SINGLE_CHAR_SCRIPT.QueueRockFall(owner, ownerChar, context, args)
 						
 						local loc = RogueElements.Loc(charLoc.X + xx, charLoc.Y + yy)
 						local tile = map:GetTile(loc)
-						if tile.Effect.ID == 'falling_rock_shadow' then
-							table.insert(nearby_boulder_locs, loc)
+						if tile.ID == _DATA.GenFloor and tile.Effect.ID == '' then
+							tile.Effect = RogueEssence.Dungeon.EffectTile('falling_rock_shadow', true, loc)
 						end
-					end			
-				end
-			
-				--Finally clear the tile.
-				if #nearby_boulder_locs > 0 then
-					local loc = nearby_boulder_locs[map.Rand:Next(1, #nearby_boulder_locs + 1)]
-					local tile = map:GetTile(loc)
-					tile.Effect = RogueEssence.Dungeon.EffectTile('', true, loc)
-				end
+					end
+				end			
 			end
 		end
+	end		
+
+	
+	--loop through the pokemon on the floor again; this time clean 1 boulder next to each pokemon.
+	--this is to help prevent RNG screwing you over into a checkmate scenario
+	for i = 1, #floor_mons, 1 do
+		local member = floor_mons[i] --RogueEssence.Dungeon.Character
+		local charLoc = member.CharLoc
+		
+		--Clear 1 space nearby each pokemon.
+		local nearby_boulder_locs = {}
+		
+		--again, Terrakion is an exception. Dont remove boulders near him since we aren't spawning them near him.
+		--todo: make this less hacky? Maybe just remove him from the overall list instead of exceptioning him twice? but would such a search be too slow?
+		if member.CurrentForm.Species ~= 'terrakion' then 
+			for xx = -1, 1, 1 do
+				for yy = -1, 1, 1 do 
+					local boulderX = charLoc.X + xx
+					local boulderY = charLoc.Y + yy
 				
+					if boulderX < 0 then boulderX = 0 end 
+					if boulderY < 0 then boulderY = 0 end							
+					
+					if boulderX >= map.Width then boulderX = map.Width - 1 end 
+					if boulderY >= map.Height then boulderY = map.Height - 1 end
+					
+					local loc = RogueElements.Loc(charLoc.X + xx, charLoc.Y + yy)
+					local tile = map:GetTile(loc)
+					if tile.Effect.ID == 'falling_rock_shadow' then
+						table.insert(nearby_boulder_locs, loc)
+					end
+				end			
+			end
+		
+			--Finally clear the tile.
+			if #nearby_boulder_locs > 0 then
+				local loc = nearby_boulder_locs[map.Rand:Next(1, #nearby_boulder_locs + 1)]
+				local tile = map:GetTile(loc)
+				tile.Effect = RogueEssence.Dungeon.EffectTile('', true, loc)
+			end
+		end
 	end
+			
+
 	
 	GAME:WaitFrames(30)
 end 
@@ -937,31 +1316,30 @@ function SINGLE_CHAR_SCRIPT.ResolveRockFall(owner, ownerChar, context, args)
 		--arriveAnim:SetupEmitted(RogueElements.Loc(waves[i][j].X * 24 + 12, waves[i][j].Y * 24 + 12), 32, RogueElements.Dir8.Down)
 		--DUNGEON:PlayVFXAnim(arriveAnim, RogueEssence.Content.DrawLayer.Front)
 
-	if context.User == nil then
-		for xx = 0, map.Width - 1, 1 do
-			for yy = 0, map.Height - 1, 1 do
-				local loc = RogueElements.Loc(xx, yy)
-				local tile = map:GetTile(loc)
-				--queue up the shadow in that position for that wave.
-				if tile.Effect.ID == 'falling_rock_shadow' then
-					table.insert(waves[((xx + yy) % #waves) + 1], loc)
-				end
+
+	for xx = 0, map.Width - 1, 1 do
+		for yy = 0, map.Height - 1, 1 do
+			local loc = RogueElements.Loc(xx, yy)
+			local tile = map:GetTile(loc)
+			--queue up the shadow in that position for that wave.
+			if tile.Effect.ID == 'falling_rock_shadow' then
+				table.insert(waves[((xx + yy) % #waves) + 1], loc)
 			end
 		end
-	
-		local boulder_coroutines = {}
-		for i = 1, #waves, 1 do 
-			for j = 1, #waves[i], 1 do
-				table.insert(boulder_coroutines, TASK:BranchCoroutine(function() GAME:WaitFrames((i-1) * 10) DropBoulder(waves[i][j]) end))
-			end 
-		end 	
-		
-		TASK:JoinCoroutines(boulder_coroutines)
-		
-		--pause a bit after dropping all boulders
-		GAME:WaitFrames(20)
-		
 	end
+
+	local boulder_coroutines = {}
+	for i = 1, #waves, 1 do 
+		for j = 1, #waves[i], 1 do
+			table.insert(boulder_coroutines, TASK:BranchCoroutine(function() GAME:WaitFrames((i-1) * 10) DropBoulder(waves[i][j]) end))
+		end 
+	end 	
+	
+	TASK:JoinCoroutines(boulder_coroutines)
+	
+	--pause a bit after dropping all boulders
+	GAME:WaitFrames(20)
+		
 end
 
 
@@ -988,7 +1366,6 @@ function SINGLE_CHAR_SCRIPT.RockfallTemors(owner, ownerChar, context, args)
 		end 
 		
 		SV.TerrakionDungeon.BoulderCountdown = SV.TerrakionDungeon.BoulderCountdown - 1
-		print("Im sharting! " .. tostring(SV.TerrakionDungeon.BoulderCountdown) )
 	end
 
 end

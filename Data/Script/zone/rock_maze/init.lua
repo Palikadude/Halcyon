@@ -23,7 +23,7 @@ end
 
 function rock_maze.ExitSegment(zone, result, rescue, segmentID, mapID)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  PrintInfo("=>> ExitSegment_rock_maze (Water Maze) result "..tostring(result).." segment "..tostring(segmentID))
+  PrintInfo("=>> ExitSegment_rock_maze (Rock Maze) result "..tostring(result).." segment "..tostring(segmentID))
 
 	GAME:SetRescueAllowed(false)
 	
