@@ -512,10 +512,10 @@
     <value>You chose {0}'s overpriced junk over my well-priced wares.[pause=0] Get lost.</value>
   </data>
   <data name="Red_Merchant_Daily_Item" xml:space="preserve">
-    <value>Today's item is {2} {0} and it'll set you back [color=#00FFFF]{1}[color] \uE024, that alright with you?</value>
+    <value>Yes,[pause=10] here's what I can give you today...</value>
   </data>
   <data name="Red_Merchant_No_Money" xml:space="preserve">
-    <value>Hey,[pause=10] looks like you don't have the cash to buy my wares.</value>
+    <value>You don't have the cash to buy,[pause=10] huh?[pause=0] Maybe another time,[pause=10] then.</value>
   </data>
   <data name="Red_Merchant_Bag_Full" xml:space="preserve">
     <value>Hey,[pause=10] looks like your bag is full.[pause=0] Come back after you've made space.</value>
@@ -596,10 +596,10 @@
     <value>You have the gall to try to purchase my wares after consorting with that fiend over there!?[pause=0] Away with you!</value>
   </data>
   <data name="Green_Merchant_Daily_Item" xml:space="preserve">
-    <value>For sale today, I have {2} {0}.\nIt costs [color=#00FFFF]{1}[color] \uE024, is that acceptable?</value>
+    <value>Of course,[pause=10] of course![pause=0] Here's what I can offer you today...</value>
   </data>
   <data name="Green_Merchant_No_Money" xml:space="preserve">
-    <value>Sorry,[pause=10] my friends,[pause=10] but you don't have enough money!</value>
+    <value>Not enough money?[pause=0] That's a shame,[pause=10] then.</value>
   </data>
   <data name="Green_Merchant_Bag_Full" xml:space="preserve">
     <value>Sorry,[pause=10] my friends,[pause=10] but your bag is full!</value>
