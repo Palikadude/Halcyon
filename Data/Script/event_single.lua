@@ -737,127 +737,185 @@ end
 
 
 --helper functions for Searing Tunnel's boss fight lava mechanic.
-function SINGLE_CHAR_SCRIPT.DrawLavaPool(right, bottom, remove_lava)
+function SINGLE_CHAR_SCRIPT.DrawLavaPool(leftBottom, rightBottom, remove_lava)
 	local map = _ZONE.CurrentMap
-	local posX = 5
-	local posY = 8
-	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
+	local leftX = 5
+	local rightX = 15
+	local leftY = 8
+	local rightY = 8
+	--local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
+	local leftFlip = 1
+	local rightFlip = 0
 	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
 
-	if right then 
-		posX = 15
-		spriteflip = 0
+	if leftBottom then 
+		leftY = 13
 	end 
 	
-	if bottom then
-		posY = 13
+	if rightBottom then
+		rightY = 13
 	end
 	
-	local lava_anim = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Lava_Pool_Connected', 4)
-	--luacast the number value for the flip type needed to the RogueEssence SpriteFlip version
-	lava_anim.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
+	local lava_anim_left = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Lava_Pool_Connected', 4)
+	local lava_anim_right = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Lava_Pool_Connected', 4)
+	lava_anim_left.AnimFlip = LUA_ENGINE:LuaCast(leftFlip, fliptype)
+	lava_anim_right.AnimFlip = LUA_ENGINE:LuaCast(rightFlip, fliptype)
+
 	
-	--Do 1 "section" of lava at a time.
+	--Do both lava pools at the same time. Do left, then right.
 	SOUND:PlayBattleSE('_UNK_EVT_102')
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim, RogueElements.Loc(posX * 24, posY * 24)))
+		--luacast the number value for the flip type needed to the RogueEssence SpriteFlip version
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_left, RogueElements.Loc(leftX * 24, leftY * 24)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_right, RogueElements.Loc(rightX * 24, rightY * 24)))
 	end
 	
 	GAME:WaitFrames(40)
 end 
 
-
-function SINGLE_CHAR_SCRIPT.DrawStraightFlow(right, bottom, remove_lava)
+--left and right bottom should always match for this function, but im writing it like this to match the skeleton of the others where it doesnt necessarily match
+--this WAS more elegant before I had to rewrite it to avoid using couroutines from the parent call, but what can you do :v(
+function SINGLE_CHAR_SCRIPT.DrawStraightFlow(leftBottom, rightBottom, remove_lava)
 	local map = _ZONE.CurrentMap
-	local posX = 7
-	local posY = 8
-	local directionX = 1 -- -1 to reverse direction
-	local directionY = 1 -- -1 to reverse direction
+	local leftX = 7
+	local rightX = 14
+	local leftY = 8
+	local rightY = 8
+	local leftDirectionY = 1 -- -1 to reverse direction
+	local rightDirectionY = 1 -- -1 to reverse direction
 	local effect_tile = 'flowing_lava'
-	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
+	--local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
 	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
-	local offsetX = 0--Need to offset the flipped sprites by an amount.
-	local offsetY = 0
+	local leftFlip = 1
+	local rightFlip = 0
+	local leftOffsetY = 0--Need to offset the flipped sprites by an amount. Being on right side needs an x offset, being on the bottom needs a y offset.
+	local rightOffsetY = 0
 
-	if right then 
-		posX = 14
-		directionX = -1
-		spriteflip = spriteflip - 1
-		offsetX = -24
+	if leftBottom then 
+		leftY = 13
+		leftDirectionY = -1
+		leftOffsetY = -24
+		leftFlip = 3
 	end 
 	
-	if bottom then
-		posY = 13
-		directionY = -1
-		spriteflip = spriteflip + 2
-		offsetY = -24
+	if rightBottom then
+		rightY = 13
+		rightDirectionY = -1
+		rightOffsetY = -24
+		rightFlip = 2
 	end
 	
 	if remove_lava then effect_tile = '' end
 	
-	local lava_anim_small = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
-	lava_anim_small.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
-	local lava_anim_big = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
-	lava_anim_big.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)	
+	local lava_anim_small_left = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	local lava_anim_big_left = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_small_left.AnimFlip = LUA_ENGINE:LuaCast(leftFlip, fliptype)
+	lava_anim_big_left.AnimFlip = LUA_ENGINE:LuaCast(leftFlip, fliptype)
 
-	--Do 1 "section" of lava at a time.
+	local lava_anim_small_right = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	local lava_anim_big_right = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_small_right.AnimFlip = LUA_ENGINE:LuaCast(rightFlip, fliptype)
+	lava_anim_big_right.AnimFlip = LUA_ENGINE:LuaCast(rightFlip, fliptype)
+
+
+	--Do 2 "sections" of lava at a time, the equivalent ones on both the left and right side.
 	SOUND:PlayBattleSE('_UNK_EVT_102')
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
 	
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
+		--right needs to be offset on x axis by -24
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
+
 	end
 	
-	--tiles 
-	local loc = RogueElements.Loc(posX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	--tiles
+	local leftLoc = RogueElements.Loc(leftX, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX + directionX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
+	--then do right side.
+	local rightLoc = RogueElements.Loc(rightX, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+	
+	
 	--second wave
 	GAME:WaitFrames(40)
 	
 	SOUND:PlayBattleSE('_UNK_EVT_102')
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
-	posX = posX + (2 * directionX)
+	leftX = leftX + 2
+	rightX = rightX - 2
 	
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
 	end
 
 	--tiles
-	loc = RogueElements.Loc(posX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX + directionX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)	
+	
+	leftLoc = RogueElements.Loc(leftX + 1, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX + directionX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	--then do right side.
+	rightLoc = RogueElements.Loc(rightX, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+	
 		
 	GAME:WaitFrames(40)
 
@@ -873,39 +931,47 @@ function SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
 	end
 end 
 
-function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(right, bottom, remove_lava)
+function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(leftBottom, rightBottom, remove_lava)
 	local map = _ZONE.CurrentMap
-	local posX = 7
-	local posY = 8
-	local directionX = 1 -- -1 to reverse direction
-	local directionY = 1 -- -1 to reverse direction
+	local leftX = 7
+	local rightX = 14
+	local leftY = 8
+	local rightY = 8
+	local leftDirectionY = 1 -- -1 to reverse direction
+	local rightDirectionY = 1 -- -1 to reverse direction
 	local effect_tile = 'flowing_lava'
-	local spriteflip = 1 --it's already flipped to begin with, relative to left/right.\
+	--local spriteflip = 1 --it's already flipped to begin with, relative to left/right.
 	local fliptype = luanet.import_type('RogueEssence.Content.SpriteFlip')
-	local offsetX = 0--Need to offset the flipped sprites by an amount.
-	local offsetY = 0
+	local leftFlip = 1
+	local rightFlip = 0
+	local leftOffsetY = 0--Need to offset the flipped sprites by an amount. Being on right side needs an x offset, being on the bottom needs a y offset.
+	local rightOffsetY = 0
 
-	
-	if right then 
-		posX = 14
-		directionX = -1
-		spriteflip = spriteflip - 1
-		offsetX = -24
+	if leftBottom then 
+		leftY = 13
+		leftDirectionY = -1
+		leftOffsetY = -24
+		leftFlip = 3
 	end 
 	
-	if bottom then
-		posY = 13
-		directionY = -1
-		spriteflip = spriteflip + 2
-		offsetY = -24
+	if rightBottom then
+		rightY = 13
+		rightDirectionY = -1
+		rightOffsetY = -24
+		rightFlip = 2
 	end
 	
 	if remove_lava then effect_tile = '' end
+	
+	local lava_anim_small_left = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	local lava_anim_big_left = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_small_left.AnimFlip = LUA_ENGINE:LuaCast(leftFlip, fliptype)
+	lava_anim_big_left.AnimFlip = LUA_ENGINE:LuaCast(leftFlip, fliptype)
 
-	local lava_anim_small = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
-	lava_anim_small.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)
-	local lava_anim_big = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
-	lava_anim_big.AnimFlip = LUA_ENGINE:LuaCast(spriteflip, fliptype)	
+	local lava_anim_small_right = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Small_Lava_Stream', 4)
+	local lava_anim_big_right = RogueEssence.Content.ObjAnimData('Spring_Cave_Pit_Big_Lava_Stream', 4)
+	lava_anim_small_right.AnimFlip = LUA_ENGINE:LuaCast(rightFlip, fliptype)
+	lava_anim_big_right.AnimFlip = LUA_ENGINE:LuaCast(rightFlip, fliptype)
 
 	--Do 1 "section" of lava at a time.
 	SOUND:PlayBattleSE('_UNK_EVT_102')
@@ -914,81 +980,140 @@ function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(right, bottom, remove_lava)
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
+		--right needs to be offset on x axis by -24
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
 	end
 	
-	--tiles
-	local loc = RogueElements.Loc(posX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
 	
-	loc = RogueElements.Loc(posX + directionX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	--tiles
+	local leftLoc = RogueElements.Loc(leftX, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
+
+	leftLoc = RogueElements.Loc(leftX, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
+
+	--then do right side.
+	local rightLoc = RogueElements.Loc(rightX, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+	
 		
 	GAME:WaitFrames(40)
 	
 	--second wave
 	SOUND:PlayBattleSE('_UNK_EVT_102')
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
-	posX = posX + directionX
-	posY = posY + directionY
+	leftX = leftX + 1
+	rightX = rightX - 1
+	leftY = leftY + leftDirectionY
+	rightY = rightY + rightDirectionY
 	
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
+		--right needs to be offset on x axis by -24
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
+
 	end
-	
+
 	--tiles
-	loc = RogueElements.Loc(posX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX + directionX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
-		
+	leftLoc = RogueElements.Loc(leftX, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)	
+	
+
+	--then do right side.
+	rightLoc = RogueElements.Loc(rightX, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+	
 	GAME:WaitFrames(40)
 
 	SOUND:PlayBattleSE('_UNK_EVT_102')
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
-	posX = posX + directionX
-	posY = posY + directionY
-		
+	leftX = leftX + 1
+	rightX = rightX - 1
+	leftY = leftY + leftDirectionY
+	rightY = rightY + rightDirectionY
+	
 	--vfx
 	if remove_lava then
 		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(0)
 	else
-		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big, RogueElements.Loc(posX * 24 + offsetX, posY * 24 + offsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
+		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
 	end
-	
-	--tiles 
-	loc = RogueElements.Loc(posX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
 
-	loc = RogueElements.Loc(posX + directionX, posY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	--tiles
+	leftLoc = RogueElements.Loc(leftX, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
 
-	loc = RogueElements.Loc(posX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)		
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
+
+	leftLoc = RogueElements.Loc(leftX, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)	
 	
-	loc = RogueElements.Loc(posX + directionX, posY + directionY)
-	map:GetTile(loc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, loc)			
-	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(loc)
+	leftLoc = RogueElements.Loc(leftX + 1, leftY + leftDirectionY)
+	map:GetTile(leftLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, leftLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(leftLoc)
+
+	--then do right side.
+	rightLoc = RogueElements.Loc(rightX, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
+
+	rightLoc = RogueElements.Loc(rightX - 1, rightY + rightDirectionY)
+	map:GetTile(rightLoc).Effect = RogueEssence.Dungeon.EffectTile(effect_tile, true, rightLoc)			
+	SINGLE_CHAR_SCRIPT.ApplyTileToCharacter(rightLoc)
 		
 	GAME:WaitFrames(40)
 
@@ -997,10 +1122,10 @@ function SINGLE_CHAR_SCRIPT.QueueLavaFlow(owner, ownerChar, context, args)
 	--Randomly choose top or bottom on each side. Draw a scripted lava flow from point A to point B afterwards.
 	local map = _ZONE.CurrentMap
 	
-	local top_left = RogueElements.Loc(7, 8)
-	local top_right = RogueElements.Loc(14, 8)
-	local bottom_left = RogueElements.Loc(7, 13)
-	local bottom_right = RogueElements.Loc(14, 13)
+	--local top_left = RogueElements.Loc(7, 8)
+	--local top_right = RogueElements.Loc(14, 8)
+	--local bottom_left = RogueElements.Loc(7, 13)
+	--local bottom_right = RogueElements.Loc(14, 13)
 	
 	--0 is top, 1 is bottom
 	local left_side = map.Rand:Next(0,2)
@@ -1012,35 +1137,23 @@ function SINGLE_CHAR_SCRIPT.QueueLavaFlow(owner, ownerChar, context, args)
 	--straight line across the top
 	if left_side == right_side and left_side == 0 then
 		SV.SearingTunnel.LavaFlowDirection = "TopStraight"
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, false)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, false) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, false)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, false, false) end)
-		TASK:JoinCoroutines({coro1, coro2})			
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, false)
+		SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, false)		
 	--Straight line across the bottom
 	elseif left_side == right_side and left_side == 1 then
 		SV.SearingTunnel.LavaFlowDirection = "BottomStraight"
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, false)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, true, false) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, false)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, false) end)
-		TASK:JoinCoroutines({coro1, coro2})		
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, false)
+		SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, false)
 	--Diagonal Down
 	elseif left_side ~= right_side and left_side == 0 then
 		SV.SearingTunnel.LavaFlowDirection = "DiagonalDown"
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, false)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, false, false) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, false)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, true, false) end)
-		TASK:JoinCoroutines({coro1, coro2})
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, false)
+		SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, false)
 	--diagonal up
 	else
 		SV.SearingTunnel.LavaFlowDirection = "DiagonalUp"
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, false)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, false) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, false)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, false) end)
-		TASK:JoinCoroutines({coro1, coro2})
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, false)
+		SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, false)
 	end
 	
 
@@ -1054,32 +1167,20 @@ function SINGLE_CHAR_SCRIPT.RemoveLavaFlow(owner, ownerChar, context, args)
 	print("Removing lava flow! " .. SV.SearingTunnel.LavaFlowDirection)
 	--straight line across the top
 	if SV.SearingTunnel.LavaFlowDirection == 'TopStraight' then
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, true)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, true) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, true)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, false, true) end)
-		TASK:JoinCoroutines({coro1, coro2})			
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, true)
+		SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, false, true)
 	--Straight line across the bottom
 	elseif SV.SearingTunnel.LavaFlowDirection == 'BottomStraight' then
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, true)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(false, true, true) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, true)
-													  SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, true) end)
-		TASK:JoinCoroutines({coro1, coro2})		
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, true)
+		SINGLE_CHAR_SCRIPT.DrawStraightFlow(true, true, true)
 	--Diagonal Down
 	elseif SV.SearingTunnel.LavaFlowDirection == 'DiagonalDown' then
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, false, true)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, false, true) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, true, true)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, true, true) end)
-		TASK:JoinCoroutines({coro1, coro2})
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, true)
+		SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, true)
 	--diagonal up
 	elseif SV.SearingTunnel.LavaFlowDirection == 'DiagonalUp' then
-		local coro1 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(false, true, true)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(false, true, true) end)			
-		local coro2 = TASK:BranchCoroutine(function() SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, true)
-													  SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, true) end)
-		TASK:JoinCoroutines({coro1, coro2})
+		SINGLE_CHAR_SCRIPT.DrawLavaPool(true, false, true)
+		SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(true, false, true)
 	end
 	
 	--clear the flag
