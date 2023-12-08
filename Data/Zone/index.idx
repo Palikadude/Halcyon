@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.19.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
@@ -603,7 +603,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 0,
+"CountedFloors": 15,
 "Rogue": 0,
 "Grounds": [],
 "Maps": [
@@ -700,6 +700,81 @@
 },
 "Released": true,
 "Comment": "In the fourth set of training mazes. Unlocked in Chapter 5.",
+"SortOrder": 0
+},
+"vast_steppe": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 14,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+]
+],
+"Name": {
+"DefaultText": "Vast Steppe",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "1st dungeon of the expedition. 5th dungeon overall.",
+"SortOrder": 0
+},
+"mount_windswept": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 7,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6
+]
+],
+"Name": {
+"DefaultText": "Mt. Windswept",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "1st dungeon of the expedition. 5th dungeon overall.",
 "SortOrder": 0
 }
 }

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.19.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -27,6 +27,11 @@
 "Y": 1
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Magcargo",
+"ActionEvents": [],
+"HP": 125,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -100,7 +105,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 125,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -169,7 +173,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Magcargo",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -227,12 +230,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -258,6 +258,11 @@
 "Y": 1
 },
 "serializationDir": 1,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -331,7 +336,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -400,7 +404,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -458,12 +461,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -489,6 +489,11 @@
 "Y": 2
 },
 "serializationDir": 1,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -562,7 +567,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -631,7 +635,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -689,12 +692,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -720,6 +720,11 @@
 "Y": 3
 },
 "serializationDir": 3,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -793,7 +798,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -862,7 +866,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -920,12 +923,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -951,6 +951,11 @@
 "Y": 4
 },
 "serializationDir": 3,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1024,7 +1029,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1093,7 +1097,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -1151,12 +1154,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -1182,6 +1182,11 @@
 "Y": 3
 },
 "serializationDir": 5,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1255,7 +1260,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1324,7 +1328,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -1382,12 +1385,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -1413,6 +1413,11 @@
 "Y": 3
 },
 "serializationDir": 5,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1486,7 +1491,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1555,7 +1559,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -1613,12 +1616,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -1644,6 +1644,11 @@
 "Y": 2
 },
 "serializationDir": 7,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1717,7 +1722,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1786,7 +1790,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -1844,12 +1847,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -1875,6 +1875,11 @@
 "Y": 2
 },
 "serializationDir": 7,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1948,7 +1953,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -2017,7 +2021,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Slugma",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -2075,12 +2078,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -2121,22 +2121,22 @@
 "finished": false,
 "Offset": 0,
 "Anim": {
-"AnimIndex": "Fog_2",
+"AnimIndex": "Steam",
 "FrameTime": 3,
 "StartFrame": -1,
 "EndFrame": -1,
 "AnimDir": -1,
-"Alpha": 125,
+"Alpha": 200,
 "AnimFlip": 0
 },
 "Movement": {
 "X": 0,
-"Y": -16
+"Y": -20
 },
 "FadeIn": 0,
 "FadeOut": 0,
 "Layer": 4,
-"Color": "255, 255, 255, 255"
+"Color": "150, 150, 150, 90"
 },
 "Hidden": true
 },

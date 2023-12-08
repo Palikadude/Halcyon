@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.19.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -369,6 +369,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -407,6 +426,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -868,6 +888,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -906,6 +945,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1356,6 +1396,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -1394,6 +1453,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1867,6 +1927,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -1905,6 +1984,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2383,6 +2463,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -2421,6 +2520,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -3158,6 +3258,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_heavy",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3194,6 +3307,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_heavy",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3230,6 +3356,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3266,6 +3405,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3302,6 +3454,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_dainty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3338,6 +3503,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_dainty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3374,6 +3552,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3410,6 +3601,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3446,6 +3650,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_light",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3482,6 +3699,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_light",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3498,7 +3728,7 @@
 "Spawn": {
 "BaseForm": {
 "Species": "houndour",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
@@ -3518,6 +3748,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3554,6 +3797,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3570,7 +3826,7 @@
 "Spawn": {
 "BaseForm": {
 "Species": "magby",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
@@ -3590,6 +3846,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3626,6 +3895,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3662,6 +3944,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_heavy",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 5,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3698,6 +3993,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 5,
+"Denominator": 100
+}
 }
 ]
 },
@@ -3754,7 +4062,7 @@
 "Spawns": []
 }
 ],
-"IsRelevant": false
+"IsRelevant": true
 },
 {
 "$type": "RogueEssence.LevelGen.RangeDictSegment, RogueEssence",
@@ -4116,6 +4424,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -4154,6 +4481,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -4627,6 +4955,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -4665,6 +5012,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -5273,6 +5621,25 @@
 {
 "Key": {
 "str": [
+5
+]
+},
+"Value": {
+"$type": "RogueElements.TerminalSpawnStep`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.LevelGen.MoneySpawn, RogueEssence]], RogueElements",
+"IncludeHalls": false,
+"Filters": [],
+"Spawn": {
+"$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"DivAmount": {
+"Min": 2,
+"Max": 4
+}
+}
+}
+},
+{
+"Key": {
+"str": [
 5,
 2
 ]
@@ -5311,6 +5678,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -6048,6 +6416,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_heavy",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6084,6 +6465,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_dainty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6120,6 +6514,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6156,6 +6563,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6192,6 +6612,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_light",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 2,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6208,7 +6641,7 @@
 "Spawn": {
 "BaseForm": {
 "Species": "larvesta",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
@@ -6228,6 +6661,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 5,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6244,7 +6690,7 @@
 "Spawn": {
 "BaseForm": {
 "Species": "shelgon",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
@@ -6264,6 +6710,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_glittery",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 5,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6300,6 +6759,19 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnExclFamily, PMDC",
+"Rarity": {
+"Min": 1,
+"Max": 2
+},
+"Box": "box_nifty",
+"MapStartOnly": false,
+"Chance": {
+"Numerator": 5,
+"Denominator": 100
+}
 }
 ]
 },
@@ -6323,7 +6795,7 @@
 },
 {
 "Spawn": 1,
-"Rate": 14,
+"Rate": 12,
 "Range": {
 "Min": 0,
 "Max": 5
@@ -6348,7 +6820,7 @@
 "Spawns": []
 }
 ],
-"IsRelevant": false
+"IsRelevant": true
 },
 {
 "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",

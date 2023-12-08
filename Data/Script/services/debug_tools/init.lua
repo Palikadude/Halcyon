@@ -27,9 +27,9 @@ end
       DebugTools class gc method
       Essentially called when the garbage collector collects the service.
   ---------------------------------------------------------------]]
-function DebugTools:__gc()
-  PrintInfo('*****************DebugTools:__gc()')
-end
+--function DebugTools:__gc()
+--  PrintInfo('*****************DebugTools:__gc()')
+--end
 
 --[[---------------------------------------------------------------
     DebugTools:OnInit()

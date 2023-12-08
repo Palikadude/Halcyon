@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.18.2",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.MapStatusData, RogueEssence",
 "Name": {
@@ -19,22 +19,22 @@
 "finished": false,
 "Offset": 0,
 "Anim": {
-"AnimIndex": "Fog_2",
+"AnimIndex": "Steam",
 "FrameTime": 3,
 "StartFrame": -1,
 "EndFrame": -1,
 "AnimDir": -1,
-"Alpha": 125,
+"Alpha": 200,
 "AnimFlip": 0
 },
 "Movement": {
 "X": 0,
-"Y": -16
+"Y": -20
 },
 "FadeIn": 0,
 "FadeOut": 0,
 "Layer": 4,
-"Color": "180, 180, 180, 180"
+"Color": "150, 150, 150, 90"
 },
 "DefaultHidden": true,
 "StatusStates": [],
