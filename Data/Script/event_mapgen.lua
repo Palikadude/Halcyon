@@ -513,20 +513,67 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 		--set all non ground tiles to water tiles between our left and right bounds 
 		for x = leftShore, rightShore, 1 do 
 			local loc = RogueElements.Loc(x, y)
-			if not map:GetTile(loc):TileEquivalent(map.RoomTerrain) then
+            local maploc = map:GetTile(loc)
+			if not maploc:TileEquivalent(map.RoomTerrain) then
 				map:TrySetTile(loc, RogueEssence.Dungeon.Tile("water"))
-			end
-	
-	
-		end 
+            end
+
+            --Check all adjacent tiles to see if we need to change their texture
+            for curX = x-1, x+1, 1 do
+                for curY = y-1, y+1, 1 do
+                    local curLoc = RogueElements.Loc(curX, curY)
+                    if RogueElements.Collision.InBounds(map.Width, map.Height, curLoc) then
+                        local curMapLoc = map:GetTile(curLoc)
+                        if curMapLoc:TileEquivalent(map.RoomTerrain) and FLOOR_GEN_SCRIPT.IsBridge(map, curLoc, args) then
+                            curMapLoc.Data.StableTex = true
+                            local texture = curMapLoc.Data.TileTex
+                            texture.AutoTileset = "silver_trench_3_secondary"
+                        end
+                    end
+                end
+            end
+		end
 		
 		leftOffsetRemaining = leftOffsetRemaining - 1
 		rightOffsetRemaining = rightOffsetRemaining - 1
-		
-	end 
-	
+
+    end	
 	
 end
 
+--Checks to see if at least one tile and its opposite have water, and no side borders a wall
+function FLOOR_GEN_SCRIPT.IsBridge(map, loc, args)
+    local x = loc.X
+    local y = loc.Y
+    
+    local numSidesWithWater = 0
+
+    for curX = x-1, x+1, 1 do
+        for curY = y-1, y+1, 1 do
+            if curX ~= x or curY ~= y then
+                local curLoc = RogueElements.Loc(curX, curY)
+                if RogueElements.Collision.InBounds(map.Width, map.Height, curLoc) then
+                    local maploc = map:GetTile(curLoc)
+                    if maploc.ID == "wall" then
+                        return false
+                    end
+
+                    if maploc.ID == "water" then
+                        --Get the tile across from the original tile with this one
+                        local acrossX = (-1 * (curX - x)) + x
+                        local acrossY = (-1 * (curY - y)) + y
+                        local acrossLoc = RogueElements.Loc(acrossX, acrossY)
+                        if RogueElements.Collision.InBounds(map.Width, map.Height, acrossLoc) then
+                            local acrossMapLoc = map:GetTile(acrossLoc)
+                            if acrossMapLoc.ID == "water" then
+                                return true
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
 
 

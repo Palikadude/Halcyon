@@ -63,7 +63,7 @@
 {
 "Key": {
 "str": [
--3
+-4
 ]
 },
 "Value": {
@@ -85,7 +85,7 @@
 },
 "BumpPercent": {
 "Min": 20,
-"Max": 31
+"Max": 41
 }
 },
 "Rate": 10
@@ -115,6 +115,78 @@
 "Height": {
 "Min": 0,
 "Max": 1
+}
+},
+"Rate": 10
+}
+]
+},
+"HallComponents": [
+{
+"$type": "PMDC.LevelGen.ConnectivityRoom, PMDC",
+"Connection": 1
+}
+]
+}
+},
+{
+"Key": {
+"str": [
+-4
+]
+},
+"Value": {
+"$type": "RogueElements.SetGridDefaultsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"DefaultRatio": {
+"Min": 20,
+"Max": 41
+},
+"Filters": [
+{
+"$type": "PMDC.LevelGen.RoomFilterConnectivity, PMDC",
+"Connection": 1
+}
+]
+}
+},
+{
+"Key": {
+"str": [
+-4
+]
+},
+"Value": {
+"$type": "RogueElements.ConnectGridBranchStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"ConnectPercent": 50,
+"Filters": [
+{
+"$type": "RogueElements.RoomFilterComponent, RogueElements",
+"Negate": false,
+"Components": [
+{
+"$type": "PMDC.LevelGen.ConnectivityRoom, PMDC",
+"Connection": 1
+}
+]
+}
+],
+"GenericHalls": {
+"$type": "RogueElements.SpawnList`1[[RogueElements.PermissiveRoomGen`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements]], RogueElements",
+"$values": [
+{
+"Spawn": {
+"$type": "RogueElements.RoomGenAngledHall`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"HallTurnBias": 0,
+"Brush": {
+"$type": "RogueElements.DefaultHallBrush, RogueElements"
+},
+"Width": {
+"Min": 1,
+"Max": 2
+},
+"Height": {
+"Min": 1,
+"Max": 2
 }
 },
 "Rate": 10
