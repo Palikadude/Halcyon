@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -11,6 +11,7 @@
 "NoEXP": false,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -415,6 +416,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -896,6 +898,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2120,6 +2123,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2157,6 +2164,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2198,6 +2209,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2479,6 +2494,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2516,6 +2535,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2557,6 +2580,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
