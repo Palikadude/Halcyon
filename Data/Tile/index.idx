@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.19.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "stairs_back_down": {
@@ -90,6 +90,15 @@
 },
 "Released": true,
 "Comment": "Used for the 2nd boss fight's special effect.",
+"SortOrder": 0
+},
+"river_stone": {
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
 "SortOrder": 0
 }
 }
