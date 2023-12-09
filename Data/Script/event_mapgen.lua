@@ -469,7 +469,8 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 	local leftOffsetRemaining = map.Rand:Next(1, 5)--how many times this specific offset can be used before being regenerated 
 	local rightOffsetRemaining = map.Rand:Next(1, 5)
 	
-	
+    --Set river_rocks_secondary as an associate of sky_peak_4th_pass_secondary    
+    --map.Map.TextureMap["water"].Associates:Add("river_rocks_secondary")
 	
 	--go row by row. Replace ground tiles towards the center of the map with water tiles to create a river flowing through the dungeon.
 	--Ground tiles will remain untouched. River will ebb a bit side to side within a limit.
@@ -527,7 +528,10 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
                         if curMapLoc:TileEquivalent(map.RoomTerrain) and FLOOR_GEN_SCRIPT.IsBridge(map, curLoc, args) then
                             curMapLoc.Data.StableTex = true
                             local texture = curMapLoc.Data.TileTex
-                            texture.AutoTileset = "silver_trench_3_secondary"
+                            texture.AutoTileset = "sky_peak_4th_pass_secondary"
+                            
+                            local riverStone = RogueEssence.Dungeon.EffectTile("river_stone", true)
+                            curMapLoc.Effect = riverStone
                         end
                     end
                 end
@@ -537,11 +541,11 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 		leftOffsetRemaining = leftOffsetRemaining - 1
 		rightOffsetRemaining = rightOffsetRemaining - 1
 
-    end	
-	
+    end
 end
 
---Checks to see if at least one tile and its opposite have water, and no side borders a wall
+--Checks to see if at least one tile (with its two adjacent tiles having water) and its opposite have water
+--If the opposite is out of bounds or has unbreakable, it's the map edge and we return true too
 function FLOOR_GEN_SCRIPT.IsBridge(map, loc, args)
     local x = loc.X
     local y = loc.Y
@@ -554,19 +558,43 @@ function FLOOR_GEN_SCRIPT.IsBridge(map, loc, args)
                 local curLoc = RogueElements.Loc(curX, curY)
                 if RogueElements.Collision.InBounds(map.Width, map.Height, curLoc) then
                     local maploc = map:GetTile(curLoc)
-                    if maploc.ID == "wall" then
-                        return false
-                    end
-
                     if maploc.ID == "water" then
+
+                        local adjacentX1 = x
+                        local adjacentY1 = y
+                        local adjacentX2 = x
+                        local adjacentY2 = y
+
+                        --Get adjacent tiles
+                        if curY == y then
+                            adjacentX1 = x-1
+                            adjacentX2 = x+1
+                        elseif curX == x then
+                            adjacentY1 = y-1
+                            adjacentY2 = y+1
+                        else
+                            adjacentX1 = curX
+                            adjacentY2 = curY
+                        end
+                    
                         --Get the tile across from the original tile with this one
                         local acrossX = (-1 * (curX - x)) + x
                         local acrossY = (-1 * (curY - y)) + y
+                        local adjacentLoc1 = RogueElements.Loc(adjacentX1, adjacentY1)
+                        local adjacentLoc2 = RogueElements.Loc(adjacentX2, adjacentY2)
                         local acrossLoc = RogueElements.Loc(acrossX, acrossY)
-                        if RogueElements.Collision.InBounds(map.Width, map.Height, acrossLoc) then
-                            local acrossMapLoc = map:GetTile(acrossLoc)
-                            if acrossMapLoc.ID == "water" then
-                                return true
+                        if RogueElements.Collision.InBounds(map.Width, map.Height, adjacentLoc1) and RogueElements.Collision.InBounds(map.Width, map.Height, adjacentLoc2) then
+                            local adj1MapLoc = map:GetTile(adjacentLoc1)
+                            local adj2MapLoc = map:GetTile(adjacentLoc2)
+                            if adj1MapLoc.ID == "water" and adj2MapLoc.ID == "water" then
+                                if RogueElements.Collision.InBounds(map.Width, map.Height, acrossLoc) == false then
+                                    --This is adjacent to the edge of the map
+                                    return true
+                                end
+                                local acrossMapLoc = map:GetTile(acrossLoc)
+                                if acrossMapLoc.ID == "water" or acrossMapLoc.ID == "unbreakable" then
+                                    return true
+                                end
                             end
                         end
                     end

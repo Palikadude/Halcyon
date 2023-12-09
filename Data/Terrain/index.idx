@@ -1,0 +1,15 @@
+﻿{
+"Version": "0.7.20.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"river_rocks": {
+"Name": {
+"DefaultText": "Variable-Texture River Rocks",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Used for rocks in Illuminated Riverbed",
+"SortOrder": 0
+}
+}
+}

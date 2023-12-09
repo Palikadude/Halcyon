@@ -356,18 +356,6 @@
 {
 "Key": {
 "str": [
-4
-]
-},
-"Value": {
-"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Script": "CreateRiver",
-"ArgTable": "{}"
-}
-},
-{
-"Key": {
-"str": [
 5
 ]
 },
@@ -379,6 +367,18 @@
 "LayeredGround": false,
 "IndependentGround": false,
 "GroundElement": "water"
+}
+},
+{
+"Key": {
+"str": [
+5
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateRiver",
+"ArgTable": "{}"
 }
 },
 {
@@ -862,18 +862,6 @@
 {
 "Key": {
 "str": [
-4
-]
-},
-"Value": {
-"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Script": "CreateRiver",
-"ArgTable": "{}"
-}
-},
-{
-"Key": {
-"str": [
 5
 ]
 },
@@ -885,6 +873,18 @@
 "LayeredGround": false,
 "IndependentGround": false,
 "GroundElement": "water"
+}
+},
+{
+"Key": {
+"str": [
+5
+]
+},
+"Value": {
+"$type": "RogueEssence.LevelGen.ScriptGenStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+"Script": "CreateRiver",
+"ArgTable": "{}"
 }
 },
 {

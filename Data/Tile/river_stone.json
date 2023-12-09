@@ -1,0 +1,39 @@
+﻿{
+"Version": "0.7.20.0",
+"Object": {
+"$type": "RogueEssence.Data.TileData, RogueEssence",
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Desc": {
+"DefaultText": "A river stone that appears in the background of Illuminant Riverbed.",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"Anim": {
+"AnimIndex": "River_Stone",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Offset": {
+"X": 0,
+"Y": 0
+},
+"Layer": 0,
+"BlockItem": false,
+"StepType": 0,
+"MinimapIcon": {
+"X": -1,
+"Y": 0
+},
+"MinimapColor": "0, 0, 0, 0",
+"LandedOnTiles": [],
+"InteractWithTiles": []
+}
+}
