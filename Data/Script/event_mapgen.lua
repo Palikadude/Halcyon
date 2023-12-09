@@ -457,10 +457,11 @@ function FLOOR_GEN_SCRIPT.CreateCrossHalls(map, args)
 end 
 --used for making the river in the Illuminant Riverbed
 function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
+    local riverBaseLength = 9
 	local mapCenter = math.ceil(map.Width / 2)
 	local randomOffset = map.Rand:Next(-2,3) --a random small offset added to all tiles to help randomize where the river falls a bit 
-	local leftBound = math.floor(mapCenter / 2) + randomOffset --base left bound 
-	local rightBound = math.ceil(mapCenter * 3 / 2) + randomOffset -- base right bound
+	local leftBound = mapCenter - riverBaseLength + randomOffset --base left bound 
+	local rightBound = mapCenter + riverBaseLength - randomOffset -- base right bound
 	local leftOffset = map.Rand:Next(-1, 2)
 	local rightOffset = map.Rand:Next(-1, 2)
 	local leftShore = 0
@@ -513,22 +514,30 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 			local loc = RogueElements.Loc(x, y)
             local maploc = map:GetTile(loc)
 			if not maploc:TileEquivalent(map.RoomTerrain) then
-				map:TrySetTile(loc, RogueEssence.Dungeon.Tile("water"))
+                if maploc.ID == "unbreakable" then
+                    maploc.Data.StableTex = true
+                    local texture = maploc.Data.TileTex
+                    texture.AutoTileset = "sky_peak_4th_pass_secondary"
+                else
+                    map:TrySetTile(loc, RogueEssence.Dungeon.Tile("water"))
+                end
             end
 
             --Check all adjacent tiles to see if we need to change their texture
-            for curX = x-1, x+1, 1 do
-                for curY = y-1, y+1, 1 do
-                    local curLoc = RogueElements.Loc(curX, curY)
-                    if RogueElements.Collision.InBounds(map.Width, map.Height, curLoc) then
-                        local curMapLoc = map:GetTile(curLoc)
-                        if curMapLoc:TileEquivalent(map.RoomTerrain) and FLOOR_GEN_SCRIPT.IsBridge(map, curLoc, args) then
-                            curMapLoc.Data.StableTex = true
-                            local texture = curMapLoc.Data.TileTex
-                            texture.AutoTileset = "sky_peak_4th_pass_secondary"
-                            
-                            local riverStone = RogueEssence.Dungeon.EffectTile("river_stone", true)
-                            curMapLoc.Effect = riverStone
+            if RogueElements.Collision.InBounds(map.Width, map.Height, loc) then
+                for curX = x-1, x+1, 1 do
+                    for curY = y-1, y+1, 1 do
+                        local curLoc = RogueElements.Loc(curX, curY)
+                        if RogueElements.Collision.InBounds(map.Width, map.Height, curLoc) then
+                            local curMapLoc = map:GetTile(curLoc)
+                            if curMapLoc:TileEquivalent(map.RoomTerrain) and FLOOR_GEN_SCRIPT.IsBridge(map, curLoc, args) then
+                                curMapLoc.Data.StableTex = true
+                                local texture = curMapLoc.Data.TileTex
+                                texture.AutoTileset = "sky_peak_4th_pass_secondary"
+
+                                local riverStone = RogueEssence.Dungeon.EffectTile("river_stone", true)
+                                curMapLoc.Effect = riverStone
+                            end
                         end
                     end
                 end
