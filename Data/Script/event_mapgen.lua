@@ -546,8 +546,6 @@ end
 function FLOOR_GEN_SCRIPT.IsBridge(map, loc, args)
     local x = loc.X
     local y = loc.Y
-    
-    local numSidesWithWater = 0
 
     for curX = x-1, x+1, 1 do
         for curY = y-1, y+1, 1 do
