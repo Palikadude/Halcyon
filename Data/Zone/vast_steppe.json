@@ -52,10 +52,10 @@
 },
 "Value": {
 "$type": "RogueElements.InitGridPlanStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-"CellWidth": 8,
-"CellHeight": 8,
-"CellX": 3,
-"CellY": 3,
+"CellWidth": 10,
+"CellHeight": 10,
+"CellX": 4,
+"CellY": 4,
 "CellWall": 1,
 "Wrap": false
 }
@@ -77,12 +77,12 @@
 "Spawn": {
 "$type": "RogueElements.RoomGenCave`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
 "Width": {
-"Min": 6,
-"Max": 8
+"Min": 8,
+"Max": 10
 },
 "Height": {
-"Min": 6,
-"Max": 8
+"Min": 8,
+"Max": 10
 }
 },
 "Rate": 10
