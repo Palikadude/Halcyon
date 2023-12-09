@@ -142,6 +142,74 @@
 {
 "Key": {
 "str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 10,
+"Y": 10
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 6
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 10,
+"Y": 10
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 2
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 12,
+"Y": 12
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 4
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 12,
+"Y": 12
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 0
+}
+},
+{
+"Key": {
+"str": [
 -1
 ]
 },
@@ -204,7 +272,7 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.UnbreakableBorderStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Thickness": 1
+"Thickness": 11
 }
 },
 {
@@ -648,6 +716,74 @@
 {
 "Key": {
 "str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 10,
+"Y": 10
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 6
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 10,
+"Y": 10
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 2
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 12,
+"Y": 12
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 0
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 12,
+"Y": 12
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 4
+}
+},
+{
+"Key": {
+"str": [
 -1
 ]
 },
@@ -710,7 +846,7 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.UnbreakableBorderStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Thickness": 1
+"Thickness": 11
 }
 },
 {
