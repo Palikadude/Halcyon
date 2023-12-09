@@ -92,15 +92,6 @@
 "Comment": "Used for the 2nd boss fight's special effect.",
 "SortOrder": 0
 },
-"tile_warning": {
-"Name": {
-"DefaultText": "Monster House Tile",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "river_stone": {
 "Name": {
 "DefaultText": "River Stone",

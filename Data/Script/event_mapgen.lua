@@ -469,9 +469,6 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
 	local leftOffsetRemaining = map.Rand:Next(1, 5)--how many times this specific offset can be used before being regenerated 
 	local rightOffsetRemaining = map.Rand:Next(1, 5)
 	
-    --Set river_rocks_secondary as an associate of sky_peak_4th_pass_secondary    
-    --map.Map.TextureMap["water"].Associates:Add("river_rocks_secondary")
-	
 	--go row by row. Replace ground tiles towards the center of the map with water tiles to create a river flowing through the dungeon.
 	--Ground tiles will remain untouched. River will ebb a bit side to side within a limit.
 	
