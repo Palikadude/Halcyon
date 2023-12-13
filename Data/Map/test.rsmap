@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -17,6 +17,9 @@
 {
 "Element1": "fighting",
 "Element2": "none",
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
@@ -24,6 +27,11 @@
 "Y": 3
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Test Dummy",
+"ActionEvents": [],
+"HP": 141,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -89,7 +97,7 @@
 }
 ],
 "EquippedItem": {
-"ID": "",
+"ID": "held_aspear_scarf",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -97,16 +105,12 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 141,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
 "MaxFullness": 100,
 "StatusEffects": {},
 "MustHitNext": false,
-"TurnWait": 0,
-"TiersUsed": 0,
-"TurnUsed": false,
 "EXPMarked": false,
 "Tactic": {
 "Name": {
@@ -169,7 +173,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "Test Dummy",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -182,9 +185,9 @@
 "EXP": 0,
 "MaxHPBonus": 100,
 "AtkBonus": 0,
-"DefBonus": 0,
+"DefBonus": 5,
 "MAtkBonus": 0,
-"MDefBonus": 0,
+"MDefBonus": 5,
 "SpeedBonus": 0,
 "BaseSkills": [
 {
@@ -227,12 +230,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": false,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],
@@ -345,8 +345,7 @@
 "CurrentOrder": {
 "TurnTier": 0,
 "Faction": 0,
-"TurnIndex": 0,
-"SkipAll": false
+"TurnIndex": 0
 },
 "TurnToChar": []
 },

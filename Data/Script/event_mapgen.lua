@@ -457,7 +457,7 @@ function FLOOR_GEN_SCRIPT.CreateCrossHalls(map, args)
 end 
 --used for making the river in the Illuminant Riverbed
 function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
-    local riverBaseLength = 9
+    local riverBaseLength = 6
 	local mapCenter = math.ceil(map.Width / 2)
 	local randomOffset = map.Rand:Next(-2,3) --a random small offset added to all tiles to help randomize where the river falls a bit 
 	local leftBound = mapCenter - riverBaseLength + randomOffset --base left bound 

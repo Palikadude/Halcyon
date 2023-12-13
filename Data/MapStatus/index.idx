@@ -28,6 +28,15 @@
 "Released": true,
 "Comment": "Used in hot dungeons as a visual effect. \r\nDoesn't actually cause any gameplay differences.",
 "SortOrder": 0
+},
+"blowing_wind": {
+"Name": {
+"DefaultText": "Blowing Wind",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 0
 }
 }
 }

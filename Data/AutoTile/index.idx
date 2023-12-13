@@ -73,33 +73,6 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
-},
-"river_rocks_floor": {
-"Name": {
-"DefaultText": "River Rocks Floor",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"river_rocks_secondary": {
-"Name": {
-"DefaultText": "River Rocks Secondary",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"river_rocks_wall": {
-"Name": {
-"DefaultText": "River Rocks Wall",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
 }
 }
 }

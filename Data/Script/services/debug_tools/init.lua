@@ -200,7 +200,7 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	  --  mon_id = RogueEssence.Dungeon.MonsterID("barboach", 0, "normal", Gender.Female)
+	  --mon_id = RogueEssence.Dungeon.MonsterID("onix", 0, "normal", Gender.Female)
 	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
 	  --_DATA.Save.ActiveTeam:SetRank("normal")
 	  --_DATA.Save:UpdateTeamProfile(true)

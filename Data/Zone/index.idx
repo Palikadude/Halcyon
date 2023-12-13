@@ -496,7 +496,7 @@
 "BagRestrict": -1,
 "BagSize": -1,
 "Rescues": 0,
-"CountedFloors": 7,
+"CountedFloors": 13,
 "Rogue": 0,
 "Grounds": [],
 "Maps": [
@@ -507,7 +507,13 @@
 3,
 4,
 5,
-6
+6,
+7,
+8,
+9,
+10,
+11,
+12
 ]
 ],
 "Name": {
@@ -515,7 +521,7 @@
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "3rd dungeon of the expedition.7th dungeon overall.",
+"Comment": "3rd dungeon of the expedition. 7th dungeon overall.",
 "SortOrder": 0
 },
 "normal_maze": {

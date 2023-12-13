@@ -32,6 +32,7 @@ If you're having trouble installing the game, or have any questions, comments, f
 
 ### Scripting credits:
 * MistressNebula - Recruitment Search integration for Halcyon, Custom Menu used for Cafe/Merchant Daily Specials.
+* Touhou Project - Dungeon Generation help. Illuminant Riverbed rocks / river extension work.
 
 ### Spriting credits:
 * Edan Momu — guild exterior and partial interior sprite work

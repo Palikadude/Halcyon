@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.18.2",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -27,6 +27,11 @@
 "Y": 3
 },
 "serializationDir": 0,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "da boss :)",
+"ActionEvents": [],
+"HP": 250,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -100,7 +105,6 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 250,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -152,7 +156,6 @@
 "Assembly": false,
 "Index": -1
 },
-"Nickname": "da boss :)",
 "OriginalUUID": "",
 "OriginalTeam": "",
 "BaseForm": {
@@ -210,12 +213,9 @@
 },
 "EntryPoint": -1
 },
-"IsFounder": false,
-"IsPartner": false,
 "NameLocked": false,
 "IsFavorite": false,
 "Unrecruitable": true,
-"ActionEvents": [],
 "ScriptVars": null
 }
 ],

@@ -65,3 +65,5 @@ V0.5.0
 -Added Bandana portraits and sprites for Tepig and Snivy. Thank you to 3P1C for making them!
 -Cafe special and the merchants now have a custom menu that gives info on what you're buying before you buy it. Thank you to MistressNebula for making it!
 -Mido can now sell Flame and Toxic orbs.
+-Illuminant Riverbed has had its generation updated a bit to make it look more like a river is flowing through it. Thank you Touhou Project for the update!
+-Illuminant Riverbed now has you skipping across rocks to cross the river. Thank you Touhou Project for the update!

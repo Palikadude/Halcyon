@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -7,7 +7,9 @@
 "LocalTexts": {
 "fr": "Solidifiorbe",
 "de": "Füllorb",
-"ko": "채움구슬"
+"it": "Solidosfera",
+"ko": "채움구슬",
+"zh-hans": "填充之玉"
 }
 },
 "Desc": {
@@ -15,14 +17,16 @@
 "LocalTexts": {
 "fr": "Solidifie l'eau ou le magma et comble le vide dans tout l'étage.",
 "de": "Ein Orb, welcher alle Löcher in der Ebene füllt. Dabei werden Löcher, Wasser und Lava entfernt.",
-"ko": "층의 구덩이, 물, 용암이 있는 공간을 모두 채워넣어 사라지게 한다."
+"it": "Una sfera che riempie tutti i buchi del piano, rimuovendo burroni, acqua e lava.",
+"ko": "층의 구덩이, 물, 용암이 있는 공간을 모두 채워넣어 사라지게 한다.",
+"zh-hans": "一种不可思议之玉，使用后填充掉本层所有的坑、水和岩浆。"
 }
 },
 "Released": true,
 "Comment": "",
 "Sprite": "Orb_Brown",
 "Icon": 9,
-"SortCategory": 0,
+"SortCategory": 11,
 "Price": 100,
 "Rarity": 0,
 "MaxStack": 0,
@@ -33,6 +37,7 @@
 "$type": "PMDC.Dungeon.OrbState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.AreaAction, RogueEssence",
 "Emitter": {
@@ -45,8 +50,9 @@
 "Range": 80,
 "Speed": 36,
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 0,
 "TileEmitter": {
@@ -149,11 +155,20 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.RemoveTerrainEvent, PMDC",
-"TileTypes": [
-"water",
-"lava",
-"pit"
+"$type": "PMDC.Dungeon.RemoveTerrainStateEvent, PMDC",
+"States": [
+{
+"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.WaterTerrainState"
+},
+{
+"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.LavaTerrainState"
+},
+{
+"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AbyssTerrainState"
+}
 ],
 "RemoveSound": "",
 "RemoveAnim": {
@@ -239,6 +254,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -267,6 +283,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
