@@ -23,15 +23,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 18,
-"Y": 1
+"X": 11,
+"Y": 7
 },
 "serializationDir": 0,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Magcargo",
 "ActionEvents": [],
-"HP": 125,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -105,6 +104,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 125,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -254,15 +254,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 19,
-"Y": 1
+"X": 12,
+"Y": 8
 },
 "serializationDir": 1,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -336,6 +335,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -345,34 +345,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -485,15 +491,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 19,
-"Y": 2
+"X": 13,
+"Y": 9
 },
 "serializationDir": 1,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -567,6 +572,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -576,34 +582,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -716,15 +728,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 19,
-"Y": 3
+"X": 13,
+"Y": 12
 },
 "serializationDir": 3,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -798,6 +809,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -807,34 +819,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -947,15 +965,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 19,
-"Y": 4
+"X": 12,
+"Y": 13
 },
 "serializationDir": 3,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1029,6 +1046,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1038,34 +1056,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1178,15 +1202,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 17,
-"Y": 3
+"X": 8,
+"Y": 12
 },
 "serializationDir": 5,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1260,6 +1283,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1269,34 +1293,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1409,15 +1439,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 18,
-"Y": 3
+"X": 9,
+"Y": 13
 },
 "serializationDir": 5,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1491,6 +1520,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1500,34 +1530,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1640,15 +1676,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 17,
-"Y": 2
+"X": 8,
+"Y": 9
 },
 "serializationDir": 7,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1722,6 +1757,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1731,34 +1767,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1871,15 +1913,14 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 18,
-"Y": 2
+"X": 9,
+"Y": 8
 },
 "serializationDir": 7,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1953,6 +1994,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1962,34 +2004,40 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Tit for Tat",
+"DefaultText": "Dumb Wander One Range",
 "LocalTexts": {}
 },
 "Released": false,
-"Comment": "",
-"ID": "tit_for_tat",
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
 "Assignable": false,
 "Plans": [
 {
-"$type": "PMDC.Dungeon.WaitUntilAttackedPlan, PMDC",
-"StatusIndex": "was_hurt_last_turn",
-"IQ": 224,
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
 },
 {
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 0
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 164,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0

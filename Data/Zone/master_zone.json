@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -14,6 +14,7 @@
 "NoEXP": false,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -81221,7 +81222,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81285,7 +81290,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81349,7 +81358,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81413,7 +81426,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81477,7 +81494,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81541,7 +81562,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81605,7 +81630,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81669,7 +81698,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81733,7 +81766,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81797,7 +81834,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81861,7 +81902,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81925,7 +81970,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -81989,7 +82038,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82053,7 +82106,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82117,7 +82174,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82181,7 +82242,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82245,7 +82310,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82309,7 +82378,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82373,7 +82446,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82437,7 +82514,11 @@
 "Rate": 100
 }
 ],
-"MapStartOnly": true
+"MapStartOnly": true,
+"Chance": {
+"Numerator": 1,
+"Denominator": 1
+}
 }
 ]
 }
@@ -82991,6 +83072,8 @@
 "first_core_location",
 "apricorn_grove_entrance",
 "apricorn_glade",
+"vast_steppe_entrance",
+"searing_tunnel_midpoint",
 "testmap",
 "test_grounds"
 ]

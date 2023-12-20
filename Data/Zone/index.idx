@@ -465,6 +465,8 @@
 "first_core_location",
 "apricorn_grove_entrance",
 "apricorn_glade",
+"vast_steppe_entrance",
+"searing_tunnel_midpoint",
 "testmap",
 "test_grounds"
 ],
@@ -677,7 +679,9 @@
 "Rescues": 0,
 "CountedFloors": 15,
 "Rogue": 0,
-"Grounds": [],
+"Grounds": [
+"searing_tunnel_midpoint"
+],
 "Maps": [
 [
 0,
@@ -724,7 +728,9 @@
 "Rescues": 0,
 "CountedFloors": 14,
 "Rogue": 0,
-"Grounds": [],
+"Grounds": [
+"vast_steppe_entrance"
+],
 "Maps": [
 [
 0,

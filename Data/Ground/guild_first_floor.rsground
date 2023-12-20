@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -33861,6 +33861,7 @@
 "EntName": "Main_Entrance",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -33902,6 +33903,7 @@
 "EntName": "Stairs_Exit",
 "Direction": 0,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -34015,6 +34017,7 @@
 "EntName": "TEAMMATE_1",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -34032,6 +34035,7 @@
 "EntName": "entrance",
 "Direction": -1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 152,
@@ -34044,6 +34048,7 @@
 "EntName": "Main_Entrance_Marker",
 "Direction": 4,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 136,
@@ -34056,6 +34061,7 @@
 "EntName": "Guild_First_Floor_Stairs_Marker",
 "Direction": 1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 136,
@@ -34068,6 +34074,7 @@
 "EntName": "Guild_First_Floor_Stairs_Marker_Partner",
 "Direction": 1,
 "EntEnabled": true,
+"EntOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 160,
