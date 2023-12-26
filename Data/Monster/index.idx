@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.18.1",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "audino": {
@@ -59,6 +59,46 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 531
+},
+"bastiodon": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Bastiodon",
+"LocalTexts": {
+"ja": "トリデプス",
+"ko": "바리톱스",
+"zh-hant": "護城龍",
+"fr": "Bastiodon",
+"de": "Bollterus",
+"es": "Bastiodon",
+"it": "Bastiodon",
+"ja-jp": "トリデプス",
+"zh-hans": "护城龙"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Bastiodon",
+"LocalTexts": {
+"ja": "トリデプス",
+"ko": "바리톱스",
+"zh-hant": "護城龍",
+"fr": "Bastiodon",
+"de": "Bollterus",
+"es": "Bastiodon",
+"it": "Bastiodon",
+"ja-jp": "トリデプス",
+"zh-hans": "护城龙"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 411
 },
 "charcadet": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -135,6 +175,59 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 104
+},
+"electrode": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Electrode",
+"LocalTexts": {
+"ja": "マルマイン",
+"ko": "붐볼",
+"zh-hant": "頑皮雷彈",
+"fr": "Électrode",
+"de": "Lektrobal",
+"es": "Electrode",
+"it": "Electrode",
+"ja-jp": "マルマイン",
+"zh-hans": "顽皮雷弹"
+}
+},
+"Released": true,
+"Temporary": false
+},
+{
+"Name": {
+"DefaultText": "Hisuian Electrode",
+"LocalTexts": {
+"ja": "",
+"fr": "Électrode de Hisui",
+"de": "Hisui Lektrobal",
+"ja-jp": ""
+}
+},
+"Released": false,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Electrode",
+"LocalTexts": {
+"ja": "マルマイン",
+"ko": "붐볼",
+"zh-hant": "頑皮雷彈",
+"fr": "Électrode",
+"de": "Lektrobal",
+"es": "Electrode",
+"it": "Electrode",
+"ja-jp": "マルマイン",
+"zh-hans": "顽皮雷弹"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 101
 },
 "espurr": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -223,6 +316,46 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 352
+},
+"leavanny": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Leavanny",
+"LocalTexts": {
+"ja": "ハハコモリ",
+"ko": "모아머",
+"zh-hant": "保母蟲",
+"fr": "Manternel",
+"de": "Matrifol",
+"es": "Leavanny",
+"it": "Leavanny",
+"ja-jp": "ハハコモリ",
+"zh-hans": "保姆虫"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Leavanny",
+"LocalTexts": {
+"ja": "ハハコモリ",
+"ko": "모아머",
+"zh-hant": "保母蟲",
+"fr": "Manternel",
+"de": "Matrifol",
+"es": "Leavanny",
+"it": "Leavanny",
+"ja-jp": "ハハコモリ",
+"zh-hans": "保姆虫"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 542
 },
 "phanpy": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
@@ -482,6 +615,46 @@
 "Comment": "",
 "SortOrder": 540
 },
+"shieldon": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Shieldon",
+"LocalTexts": {
+"ja": "タテトプス",
+"ko": "방패톱스",
+"zh-hant": "盾甲龍",
+"fr": "Dinoclier",
+"de": "Schilterus",
+"es": "Shieldon",
+"it": "Shieldon",
+"ja-jp": "タテトプス",
+"zh-hans": "盾甲龙"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Shieldon",
+"LocalTexts": {
+"ja": "タテトプス",
+"ko": "방패톱스",
+"zh-hant": "盾甲龍",
+"fr": "Dinoclier",
+"de": "Schilterus",
+"es": "Shieldon",
+"it": "Shieldon",
+"ja-jp": "タテトプス",
+"zh-hans": "盾甲龙"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 410
+},
 "shinx": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
 "Forms": [
@@ -521,6 +694,46 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 403
+},
+"swadloon": {
+"$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",
+"Forms": [
+{
+"Name": {
+"DefaultText": "Swadloon",
+"LocalTexts": {
+"ja": "クルマユ",
+"ko": "두르쿤",
+"zh-hant": "寶包繭",
+"fr": "Couverdure",
+"de": "Folikon",
+"es": "Swadloon",
+"it": "Swadloon",
+"ja-jp": "クルマユ",
+"zh-hans": "宝包茧"
+}
+},
+"Released": true,
+"Temporary": false
+}
+],
+"Name": {
+"DefaultText": "Swadloon",
+"LocalTexts": {
+"ja": "クルマユ",
+"ko": "두르쿤",
+"zh-hant": "寶包繭",
+"fr": "Couverdure",
+"de": "Folikon",
+"es": "Swadloon",
+"it": "Swadloon",
+"ja-jp": "クルマユ",
+"zh-hans": "宝包茧"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 541
 },
 "voltorb": {
 "$type": "RogueEssence.Data.MonsterEntrySummary, RogueEssence",

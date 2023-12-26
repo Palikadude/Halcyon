@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
@@ -31925,7 +31925,7 @@
 "ScriptVars": null
 },
 "EntName": "TEAMMATE_2",
-"Direction": 4,
+"Direction": 1,
 "EntEnabled": true,
 "EntOrder": 0,
 "triggerType": 0,
@@ -32009,7 +32009,7 @@
 "ScriptVars": null
 },
 "EntName": "TEAMMATE_3",
-"Direction": 4,
+"Direction": 3,
 "EntEnabled": true,
 "EntOrder": 0,
 "triggerType": 0,
@@ -32017,7 +32017,7 @@
 0
 ],
 "Collider": {
-"X": 297,
+"X": 296,
 "Y": 248,
 "Width": 16,
 "Height": 16

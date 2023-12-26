@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -510,7 +510,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 },
@@ -1029,7 +1030,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 }
@@ -1537,7 +1539,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 },
@@ -2068,7 +2071,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 },
@@ -2604,7 +2608,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 }
@@ -4062,7 +4067,8 @@
 "Spawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.RangeDictSegment, RogueEssence",
@@ -4565,7 +4571,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 5
 },
@@ -5096,7 +5103,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 10
 },
@@ -5762,7 +5770,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Rate": 15
 }
@@ -6820,7 +6829,8 @@
 "Spawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
@@ -6839,7 +6849,8 @@
 "MapID": "searing_crucible"
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -6870,11 +6881,14 @@
 }
 }
 ],
-"IsRelevant": false
+"IsRelevant": false,
+"Comment": ""
 }
 ],
 "GroundMaps": [
-"searing_tunnel_midpoint"
+"searing_tunnel_entrance",
+"searing_tunnel_midpoint",
+"searing_crucible"
 ]
 }
 }

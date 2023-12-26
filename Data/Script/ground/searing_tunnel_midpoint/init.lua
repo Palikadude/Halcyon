@@ -25,7 +25,7 @@ function searing_tunnel_midpoint.Init(map)
   DEBUG.EnableDbgCoro()
   print('=>> Init_searing_tunnel_midpoint <<=')
   MapStrings = COMMON.AutoLoadLocalizedStrings()
-  COMMON.RespawnAllies()
+  COMMON.RespawnAllies(true)
   GROUND:AddMapStatus("steam")
   PartnerEssentials.InitializePartnerSpawn()
 
@@ -35,7 +35,7 @@ end
 --Engine callback function
 function searing_tunnel_midpoint.Enter(map)
 
-  GAME:FadeIn(20)
+  apricorn_glade.PlotScripting()
 
 end
 
@@ -57,21 +57,39 @@ end
 --Engine callback function
 function searing_tunnel_midpoint.GameSave(map)
 
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 
 end
 
 ---searing_tunnel_midpoint.GameLoad(map)
 --Engine callback function
 function searing_tunnel_midpoint.GameLoad(map)
-
-  GAME:FadeIn(20)
-
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	searing_tunnel_midpoint.PlotScripting()
 end
+
+function searing_tunnel_midpoint.PlotScripting()
+  GAME:FadeIn(20)
+end 
+
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+function searing_tunnel_midpoint.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+ end
 
+function searing_tunnel_midpoint.Teammate2_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
+
+function searing_tunnel_midpoint.Teammate3_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
 
 return searing_tunnel_midpoint
 

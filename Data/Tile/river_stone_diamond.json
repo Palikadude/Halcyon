@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "RogueEssence.Data.TileData, RogueEssence",
 "Name": {
@@ -13,7 +13,7 @@
 "Released": true,
 "Comment": "",
 "Anim": {
-"AnimIndex": "River_Stone",
+"AnimIndex": "River_Stone_Diamond",
 "FrameTime": 1,
 "StartFrame": -1,
 "EndFrame": -1,

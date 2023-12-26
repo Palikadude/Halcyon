@@ -67,3 +67,5 @@ V0.5.0
 -Mido can now sell Flame and Toxic orbs.
 -Illuminant Riverbed has had its generation updated a bit to make it look more like a river is flowing through it. Thank you Touhou Project for the update!
 -Illuminant Riverbed now has you skipping across rocks to cross the river. Thank you Touhou Project for the update!
+-Flabebe has been added to Apricorn Grove. It was always supposed to be there, I just forgot to add it before.
+-All Starters mod now has a wonderful UI for selecting your hero/partner created by MistressNebula!

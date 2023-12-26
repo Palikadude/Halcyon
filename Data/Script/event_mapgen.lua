@@ -534,8 +534,14 @@ function FLOOR_GEN_SCRIPT.CreateRiver(map, args)
                                 curMapLoc.Data.StableTex = true
                                 local texture = curMapLoc.Data.TileTex
                                 texture.AutoTileset = "sky_peak_4th_pass_secondary"
-
-                                local riverStone = RogueEssence.Dungeon.EffectTile("river_stone", true)
+								
+								--Roll to see what kind of rock to put down. Different varieties for flavor and to break up monotony, but this is purely a visual thing.
+								local rock_type = "river_stone_diamond"
+								if map.Rand:Next(0, 2) == 0 then
+									rock_type = 'river_stone_round'
+								end
+								
+                                local riverStone = RogueEssence.Dungeon.EffectTile(rock_type, true)
                                 curMapLoc.Effect = riverStone
                             end
                         end

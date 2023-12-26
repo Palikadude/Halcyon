@@ -5,6 +5,7 @@
 ]]--
 -- Commonly included lua functions and data
 require 'common'
+require 'PartnerEssentials'
 
 -- Package name
 local vast_steppe_entrance = {}
@@ -21,10 +22,11 @@ local MapStrings = {}
 ---vast_steppe_entrance.Init(map)
 --Engine callback function
 function vast_steppe_entrance.Init(map)
-
-  --This will fill the localized strings table automatically based on the locale the game is 
-  -- currently in. You can use the MapStrings table after this line!
+  DEBUG.EnableDbgCoro()
+  print('=>> Init_vast_steppe_entrance <<=')
   MapStrings = COMMON.AutoLoadLocalizedStrings()
+  COMMON.RespawnAllies()
+  PartnerEssentials.InitializePartnerSpawn()
 
 end
 
@@ -32,7 +34,7 @@ end
 --Engine callback function
 function vast_steppe_entrance.Enter(map)
 
-  GAME:FadeIn(20)
+  apricorn_glade.PlotScripting()
 
 end
 
@@ -54,21 +56,39 @@ end
 --Engine callback function
 function vast_steppe_entrance.GameSave(map)
 
+	PartnerEssentials.SaveGamePartnerPosition(CH('Teammate1'))
 
 end
 
 ---vast_steppe_entrance.GameLoad(map)
 --Engine callback function
 function vast_steppe_entrance.GameLoad(map)
-
-  GAME:FadeIn(20)
-
+	PartnerEssentials.LoadGamePartnerPosition(CH('Teammate1'))
+	vast_steppe_entrance.PlotScripting()
 end
+
+function vast_steppe_entrance.PlotScripting()
+  GAME:FadeIn(20)
+end 
+
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+function vast_steppe_entrance.Teammate1_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
+ end
 
+function vast_steppe_entrance.Teammate2_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
+
+function vast_steppe_entrance.Teammate3_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  COMMON.GroundInteract(activator, chara, true)
+end
 
 return vast_steppe_entrance
 

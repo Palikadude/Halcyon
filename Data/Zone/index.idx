@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
@@ -680,7 +680,9 @@
 "CountedFloors": 15,
 "Rogue": 0,
 "Grounds": [
-"searing_tunnel_midpoint"
+"searing_tunnel_entrance",
+"searing_tunnel_midpoint",
+"searing_crucible"
 ],
 "Maps": [
 [
