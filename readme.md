@@ -30,6 +30,10 @@ If you're having trouble installing the game, or have any questions, comments, f
 ### Music credits:
 * Minemaker0430 - Anima Core theme
 
+### Scripting credits:
+* MistressNebula - Recruitment Search integration for Halcyon, Custom Menu used for Cafe/Merchant Daily Specials. All starter's mod custom menu for picking player/partner.
+* Touhou Project - Dungeon Generation help. Illuminant Riverbed rocks / river extension work.
+
 ### Spriting credits:
 * Edan Momu — guild exterior and partial interior sprite work
 * D4yz — guild interior tilesets and original guild decorations pixel art
@@ -40,8 +44,9 @@ Anima core and anima root animations. Scarfed Sandile Portraits.
 * Happysmily — Shuckle's cafe animations, sandile scarf sprites
 * Cait_Sith — Luxio fainting animation
 * NanaelJustice — Cleaning up staircases inside guild and adding some detail to them
-* Minemaker0430 — Scarf sprites for player/partner characters
-* Sunkern — Apricorn Grove tilesets
+* Minemaker0430 — Scarf sprites for player/partner characters, except where other credit is given for these
+* Sunkern — Apricorn Grove tilesets, recolor for Searing Tunnel's exterior
+* 3P1C - Snivy and Tepig Scarf sprites
 
 ### Playtesters:
 * Sunkern

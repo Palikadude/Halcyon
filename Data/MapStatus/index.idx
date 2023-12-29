@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "darkness": {
@@ -17,6 +17,24 @@
 "LocalTexts": {}
 },
 "Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"steam": {
+"Name": {
+"DefaultText": "Steam",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Used in hot dungeons as a visual effect. \r\nDoesn't actually cause any gameplay differences.",
+"SortOrder": 0
+},
+"blowing_wind": {
+"Name": {
+"DefaultText": "Blowing Wind",
+"LocalTexts": {}
+},
+"Released": false,
 "Comment": "",
 "SortOrder": 0
 }

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.13.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "stairs_back_down": {
@@ -72,6 +72,42 @@
 },
 "Released": true,
 "Comment": "Up",
+"SortOrder": 0
+},
+"falling_rock_shadow": {
+"Name": {
+"DefaultText": "Falling Rock Shadow",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"flowing_lava": {
+"Name": {
+"DefaultText": "Flowing Lava",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Used for the 2nd boss fight's special effect.",
+"SortOrder": 0
+},
+"river_stone_diamond": {
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"river_stone_round": {
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
 "SortOrder": 0
 }
 }

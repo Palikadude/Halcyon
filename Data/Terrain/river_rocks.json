@@ -1,0 +1,22 @@
+﻿{
+"Version": "0.7.20.0",
+"Object": {
+"$type": "RogueEssence.Data.TerrainData, RogueEssence",
+"Name": {
+"DefaultText": "Variable-Texture River Rocks",
+"LocalTexts": {}
+},
+"Comment": "Used for rocks in Illuminated Riverbed",
+"Element": 0,
+"BlockType": 1,
+"MinimapColor": "0, 0, 0, 0",
+"BlockDiagonal": false,
+"BlockLight": false,
+"ShadowType": 3,
+"ItemLand": 0,
+"ItemDraw": 0,
+"ItemAllow": 0,
+"TerrainStates": [],
+"LandedOnTiles": []
+}
+}

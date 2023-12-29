@@ -69,7 +69,7 @@ function metano_inn_ch_4.Nidoran_M_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, ".........", "Normal", false)
 		UI:WaitShowDialogue(".........")
-		UI:WaitShowDialogue("...Eeeuuuwuaawu?")
+		UI:WaitShowDialogue("...Eeeuuuwaawu?")
 	else
 		GeneralFunctions.StartConversation(chara, "Uhhyeee!")
 	end

@@ -391,7 +391,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("I can't believe you jerks![pause=0] Don't you have anything better to do?")
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(10)
 	UI:SetSpeaker(luxio)
 	UI:SetSpeakerEmotion("Angry")
 	GeneralFunctions.Complain(luxio, true)

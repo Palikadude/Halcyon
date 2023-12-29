@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "PMDC.Data.RarityData, PMDC",
 "RarityMap": {
@@ -426,7 +426,7 @@
 "xcl_family_bidoof_04"
 ]
 },
-"moltres": {
+"articuno": {
 "5": [
 "xcl_family_bird_trio_00"
 ],
@@ -435,35 +435,49 @@
 ],
 "3": [
 "xcl_family_bird_trio_02",
-"xcl_family_bird_trio_05"
+"xcl_family_bird_trio_11"
 ],
 "1": [
-"xcl_family_bird_trio_03"
+"xcl_family_bird_trio_09"
 ],
 "2": [
-"xcl_family_bird_trio_04"
-]
-},
-"articuno": {
-"1": [
-"xcl_family_bird_trio_03"
-],
-"2": [
-"xcl_family_bird_trio_04"
-],
-"3": [
-"xcl_family_bird_trio_05"
+"xcl_family_bird_trio_10"
 ]
 },
 "zapdos": {
-"1": [
+"5": [
 "xcl_family_bird_trio_03"
 ],
-"2": [
+"4": [
 "xcl_family_bird_trio_04"
 ],
 "3": [
-"xcl_family_bird_trio_05"
+"xcl_family_bird_trio_05",
+"xcl_family_bird_trio_11"
+],
+"1": [
+"xcl_family_bird_trio_09"
+],
+"2": [
+"xcl_family_bird_trio_10"
+]
+},
+"moltres": {
+"5": [
+"xcl_family_bird_trio_06"
+],
+"4": [
+"xcl_family_bird_trio_07"
+],
+"3": [
+"xcl_family_bird_trio_08",
+"xcl_family_bird_trio_11"
+],
+"1": [
+"xcl_family_bird_trio_09"
+],
+"2": [
+"xcl_family_bird_trio_10"
 ]
 },
 "bronzor": {

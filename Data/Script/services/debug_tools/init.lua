@@ -28,9 +28,9 @@ end
       DebugTools class gc method
       Essentially called when the garbage collector collects the service.
   ---------------------------------------------------------------]]
-function DebugTools:__gc()
-  --PrintInfo('*****************DebugTools:__gc()')
-end
+--function DebugTools:__gc()
+--  PrintInfo('*****************DebugTools:__gc()')
+--end
 
 --[[---------------------------------------------------------------
     DebugTools:OnInit()
@@ -179,8 +179,8 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.NoSwitching = true--switching is not allowed
 
 	  
-	  local mon_id = RogueEssence.Dungeon.MonsterID("pawmi", 0, "normal", Gender.Male)
-	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
+	  local mon_id = RogueEssence.Dungeon.MonsterID("turtwig", 0, "normal", Gender.Male)
+	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
 	  p.IsFounder = true
@@ -188,8 +188,8 @@ function DebugTools:OnNewGame()
 	  p.Nickname = 'Palika'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("zorua", 1, "normal", Gender.Male)
-	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 13, "", 0)
+	  mon_id = RogueEssence.Dungeon.MonsterID("piplup", 0, "normal", Gender.Male)
+	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
 	  p.IsFounder = true
@@ -204,8 +204,8 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
+	  --mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
 		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
@@ -223,7 +223,7 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	  --  mon_id = RogueEssence.Dungeon.MonsterID("barboach", 0, "normal", Gender.Female)
+	  --mon_id = RogueEssence.Dungeon.MonsterID("onix", 0, "normal", Gender.Female)
 	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
 	  --_DATA.Save.ActiveTeam:SetRank("normal")
 	  --_DATA.Save:UpdateTeamProfile(true)
@@ -354,6 +354,13 @@ function DebugTools:OnUpgrade()
  if type(SV.metano_cafe.FermentedItem) == "number" then SV.metano_cafe.FermentedItem = "" SV.metano_cafe.ItemFinishedFermenting = false end
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
+ 
+ --for terrakion's dungeon boulder variable timer
+ if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
+ 
+ --For Searing Tunnel's boss fight
+ if SV.SearingTunnel.LavaFlowDirection == nil then SV.SearingTunnel.LavaFlowDirection = 'None' end
+ if SV.SearingTunnel.LavaCountdown == nil then SV.SearingTunnel.LavaCountdown = -1 end
  
  --dungeon unlocks that didnt exist for old versions
  if SV.ChapterProgression.Chapter >= 3 and not GAME:DungeonUnlocked("crooked_cavern") then

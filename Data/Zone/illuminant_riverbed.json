@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.20.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -11,6 +11,7 @@
 "NoEXP": false,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -141,6 +142,40 @@
 {
 "Key": {
 "str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 8,
+"Y": 8
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 6
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 8,
+"Y": 8
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 2
+}
+},
+{
+"Key": {
+"str": [
 -1
 ]
 },
@@ -203,7 +238,7 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.UnbreakableBorderStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Thickness": 1
+"Thickness": 5
 }
 },
 {
@@ -366,6 +401,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -646,6 +682,74 @@
 {
 "Key": {
 "str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 4,
+"Y": 4
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 6
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 4,
+"Y": 4
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 2
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 4,
+"Y": 4
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 0
+}
+},
+{
+"Key": {
+"str": [
+-2,
+1
+]
+},
+"Value": {
+"$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+"AddedSize": {
+"X": 4,
+"Y": 4
+},
+"ExpandDir": -1,
+"SpaceExpandDir": 4
+}
+},
+{
+"Key": {
+"str": [
 -1
 ]
 },
@@ -708,7 +812,7 @@
 },
 "Value": {
 "$type": "RogueEssence.LevelGen.UnbreakableBorderStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
-"Thickness": 1
+"Thickness": 5
 }
 },
 {
@@ -871,6 +975,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {

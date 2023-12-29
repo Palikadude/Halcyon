@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
@@ -163,6 +163,38 @@
 "Comment": "First tutorial lesson at Ledian Dojo.",
 "SortOrder": 0
 },
+"bug_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 13,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Bug Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the fourth set of training mazes. Unlocked in Chapter 5.",
+"SortOrder": 0
+},
 "crooked_cavern": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
 "NoEXP": false,
@@ -204,6 +236,38 @@
 },
 "Released": true,
 "Comment": "3rd Dungeon of the game.",
+"SortOrder": 0
+},
+"electric_maze": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": 13,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4
+]
+],
+"Name": {
+"DefaultText": "Electric Maze",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "In the fourth set of training mazes. Unlocked in Chapter 5.",
 "SortOrder": 0
 },
 "fire_maze": {
@@ -401,6 +465,8 @@
 "first_core_location",
 "apricorn_grove_entrance",
 "apricorn_glade",
+"vast_steppe_entrance",
+"searing_tunnel_midpoint",
 "testmap",
 "test_grounds"
 ],
@@ -418,6 +484,46 @@
 },
 "Released": true,
 "Comment": "",
+"SortOrder": 0
+},
+"mount_windswept": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 13,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12
+]
+],
+"Name": {
+"DefaultText": "Mt. Windswept",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "3rd dungeon of the expedition. 7th dungeon overall.",
 "SortOrder": 0
 },
 "normal_maze": {
@@ -557,6 +663,100 @@
 },
 "Released": true,
 "Comment": "In the third set of training mazes. Unlocked in Chapter 4.",
+"SortOrder": 0
+},
+"searing_tunnel": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 15,
+"Rogue": 0,
+"Grounds": [
+"searing_tunnel_entrance",
+"searing_tunnel_midpoint",
+"searing_crucible"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+0,
+1,
+2,
+3,
+4
+],
+[
+0
+]
+],
+"Name": {
+"DefaultText": "Searing Tunnel",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "2nd dungeon of the expedition. 6th dungeon overall.",
+"SortOrder": 0
+},
+"vast_steppe": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"NoEXP": false,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 14,
+"Rogue": 0,
+"Grounds": [
+"vast_steppe_entrance"
+],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13
+]
+],
+"Name": {
+"DefaultText": "Vast Steppe",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "1st dungeon of the expedition. 5th dungeon overall.",
 "SortOrder": 0
 },
 "water_maze": {

@@ -1,0 +1,39 @@
+﻿{
+"Version": "0.7.18.2",
+"Object": {
+"$type": "RogueEssence.Data.TileData, RogueEssence",
+"Name": {
+"DefaultText": "Falling Rock Shadow",
+"LocalTexts": {}
+},
+"Desc": {
+"DefaultText": "The shadow of a falling rock! One turn after the shadow appears, a rock will fall on that location, dealing damage and causing a flinch!",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"Anim": {
+"AnimIndex": "Falling_Rock_Shadow",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Offset": {
+"X": 0,
+"Y": 0
+},
+"Layer": 0,
+"BlockItem": false,
+"StepType": 0,
+"MinimapIcon": {
+"X": 0,
+"Y": 0
+},
+"MinimapColor": "0, 0, 0, 0",
+"LandedOnTiles": [],
+"InteractWithTiles": []
+}
+}

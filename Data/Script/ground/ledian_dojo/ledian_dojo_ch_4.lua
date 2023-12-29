@@ -44,7 +44,7 @@ function ledian_dojo_ch_4.Azumarill_Action(chara, activator)
 		GeneralFunctions.StartConversation(chara, "Can you help " .. chara:GetDisplayName() .. " get strong so that outlaws won't hurt " .. chara:GetDisplayName() .. "?", "Worried", false)
 	else
 		GeneralFunctions.StartConversation(chara, "Thank you so much for helping " .. chara:GetDisplayName() .. " train in the dojo!", "Happy", false)
-		GeneralFunctions.StartConversation(chara, chara:GetDisplayName() .. " feels much less afraid now that " .. chara:GetDisplayName() .. " has gotten stronger!")
+		UI:WaitShowDialogue(chara:GetDisplayName() .. " feels much less afraid now that " .. chara:GetDisplayName() .. " has gotten stronger!")
 	end
 	GeneralFunctions.EndConversation(chara)
 end

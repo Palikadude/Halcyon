@@ -105,7 +105,7 @@ function guild_guildmasters_room_ch_2.NoctowlTropiusScene()
 	UI:WaitShowDialogue(hero:GetDisplayName() .. " and " .. partner:GetDisplayName() .. "?[pause=0] Yup,[pause=10] they were raving about it at dinner.")
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetEmote(tropius, "glowing", 0)
-	UI:WaitShowDialogue("They were estatic about their first completed job.[pause=0] Good on them!")
+	UI:WaitShowDialogue("They were ecstatic about their first completed job.[pause=0] Good on them!")
 	UI:WaitShowDialogue("They're showing good potential,[pause=10] don't you think?")
 	
 	GAME:WaitFrames(20)

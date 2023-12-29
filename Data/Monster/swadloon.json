@@ -1,0 +1,276 @@
+﻿{
+"Version": "0.7.21.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Swadloon",
+"LocalTexts": {
+"ja": "クルマユ",
+"ko": "두르쿤",
+"zh-hant": "寶包繭",
+"fr": "Couverdure",
+"de": "Folikon",
+"es": "Swadloon",
+"it": "Swadloon",
+"ja-jp": "クルマユ",
+"zh-hans": "宝包茧"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Leaf-Wrapped Pokémon",
+"LocalTexts": {
+"ja": "はごもりポケモン",
+"ko": "잎숨기포켓몬",
+"zh-hant": "足不出葉寶可夢",
+"fr": "Pokémon Capefeuille",
+"de": "Wickelblatt",
+"es": "Pokémon Arropado",
+"it": "Pokémon Coprifoglia",
+"ja-jp": "はごもりポケモン",
+"zh-hans": "足不出叶宝可梦"
+}
+},
+"IndexNum": 541,
+"EXPTable": "medium_slow",
+"SkillGroup1": "bug",
+"SkillGroup2": "amorphous",
+"JoinRate": 12,
+"PromoteFrom": "sewaddle",
+"Promotions": [
+{
+"Result": "leavanny",
+"Details": [
+{
+"$type": "PMDC.Data.EvoFriendship, PMDC",
+"Allies": 3
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 55,
+"BaseAtk": 63,
+"BaseDef": 90,
+"BaseMAtk": 50,
+"BaseMDef": 80,
+"BaseSpeed": 42,
+"ExpYield": 133,
+"Height": 0.5,
+"Weight": 7.3,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "cut"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "struggle_bug"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "nature_power"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "razor_wind"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "screech"
+},
+{
+"Skill": "mind_reader"
+},
+{
+"Skill": "baton_pass"
+},
+{
+"Skill": "camouflage"
+},
+{
+"Skill": "silver_wind"
+},
+{
+"Skill": "me_first"
+},
+{
+"Skill": "air_slash"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "giga_drain"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "synthesis"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "worry_seed"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "bug_bite"
+},
+{
+"Skill": "electroweb"
+}
+],
+"FormName": {
+"DefaultText": "Swadloon",
+"LocalTexts": {
+"ja": "クルマユ",
+"ko": "두르쿤",
+"zh-hant": "寶包繭",
+"fr": "Couverdure",
+"de": "Folikon",
+"es": "Swadloon",
+"it": "Swadloon",
+"ja-jp": "クルマユ",
+"zh-hans": "宝包茧"
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "bug",
+"Element2": "grass",
+"Intrinsic1": "leaf_guard",
+"Intrinsic2": "chlorophyll",
+"Intrinsic3": "overcoat",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "grass_whistle"
+},
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "string_shot"
+},
+{
+"Level": 1,
+"Skill": "bug_bite"
+},
+{
+"Level": 1,
+"Skill": "razor_leaf"
+},
+{
+"Level": 1,
+"Skill": "leech_life"
+},
+{
+"Level": 20,
+"Skill": "protect"
+}
+]
+}
+]
+}
+}

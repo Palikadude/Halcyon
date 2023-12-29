@@ -88,7 +88,7 @@ function ledian_dojo.PlotScripting()
 	elseif SV.ChapterProgression.Chapter == 4 then 
 			ledian_dojo_ch_4.SetupGround()
 	else
-		GAME:FadeIn(20)
+		--GAME:FadeIn(20)
 	end
 
 	--if a generic ending has been flagged, prioritize that
@@ -441,7 +441,7 @@ function ledian_dojo.Dungeon_Entrance_Touch(obj, activator)
 	--these need to be updated as more dojo dungeons are created.
 	if result == 1 then
 		--training mazes
-		dungeon_entrances = {"normal_maze", "grass_maze", "fire_maze", "water_maze", "rock_maze", "flying_maze"}
+		dungeon_entrances = {"normal_maze", "grass_maze", "fire_maze", "water_maze", "rock_maze", "flying_maze", "electric_maze", "bug_maze"}
 	elseif result == 2 then
 		--lessons
 		dungeon_entrances = {"beginner_lesson"}

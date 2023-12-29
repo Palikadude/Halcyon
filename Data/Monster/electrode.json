@@ -1,0 +1,563 @@
+﻿{
+"Version": "0.7.21.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Electrode",
+"LocalTexts": {
+"ja": "マルマイン",
+"ko": "붐볼",
+"zh-hant": "頑皮雷彈",
+"fr": "Électrode",
+"de": "Lektrobal",
+"es": "Electrode",
+"it": "Electrode",
+"ja-jp": "マルマイン",
+"zh-hans": "顽皮雷弹"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Ball Pokémon",
+"LocalTexts": {
+"ja": "ボールポケモン",
+"ko": "볼포켓몬",
+"zh-hant": "球寶可夢",
+"fr": "Pokémon Balle",
+"de": "Ball",
+"es": "Pokémon Bola",
+"it": "Pokémon Ball",
+"ja-jp": "ボールポケモン",
+"zh-hans": "球宝可梦"
+}
+},
+"IndexNum": 101,
+"EXPTable": "medium_fast",
+"SkillGroup1": "mineral",
+"SkillGroup2": "amorphous",
+"JoinRate": -26,
+"PromoteFrom": "voltorb",
+"Promotions": [],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 8,
+"MaleWeight": 0,
+"FemaleWeight": 0,
+"BaseHP": 60,
+"BaseAtk": 50,
+"BaseDef": 70,
+"BaseMAtk": 80,
+"BaseMDef": 80,
+"BaseSpeed": 150,
+"ExpYield": 172,
+"Height": 1.2,
+"Weight": 66.6,
+"Personalities": [
+0,
+1,
+6,
+7,
+10,
+12,
+14,
+31
+],
+"TeachSkills": [
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "explosion"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "gyro_ball"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "giga_impact"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "volt_switch"
+},
+{
+"Skill": "wild_charge"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [],
+"SecretSkills": [
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "mimic"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "explosion"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "snore"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "rollout"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "sucker_punch"
+},
+{
+"Skill": "magnet_rise"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "self_destruct"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "shock_wave"
+}
+],
+"FormName": {
+"DefaultText": "Electrode",
+"LocalTexts": {
+"ja": "マルマイン",
+"ko": "붐볼",
+"zh-hant": "頑皮雷彈",
+"fr": "Électrode",
+"de": "Lektrobal",
+"es": "Electrode",
+"it": "Electrode",
+"ja-jp": "マルマイン",
+"zh-hans": "顽皮雷弹"
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "electric",
+"Element2": "none",
+"Intrinsic1": "soundproof",
+"Intrinsic2": "static",
+"Intrinsic3": "aftermath",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "magnetic_flux"
+},
+{
+"Level": 1,
+"Skill": "charge"
+},
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "sonic_boom"
+},
+{
+"Level": 1,
+"Skill": "spark"
+},
+{
+"Level": 4,
+"Skill": "sonic_boom"
+},
+{
+"Level": 6,
+"Skill": "eerie_impulse"
+},
+{
+"Level": 9,
+"Skill": "spark"
+},
+{
+"Level": 11,
+"Skill": "rollout"
+},
+{
+"Level": 13,
+"Skill": "screech"
+},
+{
+"Level": 16,
+"Skill": "charge_beam"
+},
+{
+"Level": 20,
+"Skill": "swift"
+},
+{
+"Level": 22,
+"Skill": "electro_ball"
+},
+{
+"Level": 26,
+"Skill": "self_destruct"
+},
+{
+"Level": 29,
+"Skill": "light_screen"
+},
+{
+"Level": 36,
+"Skill": "magnet_rise"
+},
+{
+"Level": 41,
+"Skill": "discharge"
+},
+{
+"Level": 47,
+"Skill": "explosion"
+},
+{
+"Level": 54,
+"Skill": "gyro_ball"
+},
+{
+"Level": 58,
+"Skill": "mirror_coat"
+}
+]
+},
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": false,
+"Generation": 9,
+"GenderlessWeight": 8,
+"MaleWeight": 0,
+"FemaleWeight": 0,
+"BaseHP": 60,
+"BaseAtk": 50,
+"BaseDef": 70,
+"BaseMAtk": 80,
+"BaseMDef": 80,
+"BaseSpeed": 150,
+"ExpYield": 122,
+"Height": 1.2,
+"Weight": 71.0,
+"Personalities": [
+31
+],
+"TeachSkills": [
+{
+"Skill": "take_down"
+},
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder_wave"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "reflect"
+},
+{
+"Skill": "swift"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "thief"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "scary_face"
+},
+{
+"Skill": "giga_drain"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "bullet_seed"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "giga_impact"
+},
+{
+"Skill": "leaf_storm"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "charge_beam"
+},
+{
+"Skill": "electro_ball"
+},
+{
+"Skill": "foul_play"
+},
+{
+"Skill": "volt_switch"
+},
+{
+"Skill": "wild_charge"
+},
+{
+"Skill": "grassy_terrain"
+},
+{
+"Skill": "electric_terrain"
+},
+{
+"Skill": "tera_blast"
+}
+],
+"SharedSkills": [
+{
+"Skill": "leech_seed"
+},
+{
+"Skill": "recycle"
+},
+{
+"Skill": "worry_seed"
+}
+],
+"SecretSkills": [],
+"FormName": {
+"DefaultText": "Hisuian Electrode",
+"LocalTexts": {
+"ja": "",
+"fr": "Électrode de Hisui",
+"de": "Hisui Lektrobal",
+"ja-jp": ""
+}
+},
+"Temporary": false,
+"PromoteForm": 1,
+"Element1": "electric",
+"Element2": "grass",
+"Intrinsic1": "soundproof",
+"Intrinsic2": "static",
+"Intrinsic3": "aftermath",
+"LevelSkills": [
+{
+"Level": 0,
+"Skill": "chloroblast"
+},
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "sonic_boom"
+},
+{
+"Level": 1,
+"Skill": "charge"
+},
+{
+"Level": 4,
+"Skill": "thunder_shock"
+},
+{
+"Level": 6,
+"Skill": "stun_spore"
+},
+{
+"Level": 9,
+"Skill": "bullet_seed"
+},
+{
+"Level": 11,
+"Skill": "rollout"
+},
+{
+"Level": 13,
+"Skill": "screech"
+},
+{
+"Level": 16,
+"Skill": "charge_beam"
+},
+{
+"Level": 20,
+"Skill": "swift"
+},
+{
+"Level": 22,
+"Skill": "electro_ball"
+},
+{
+"Level": 26,
+"Skill": "self_destruct"
+},
+{
+"Level": 29,
+"Skill": "energy_ball"
+},
+{
+"Level": 34,
+"Skill": "seed_bomb"
+},
+{
+"Level": 34,
+"Skill": "discharge"
+},
+{
+"Level": 41,
+"Skill": "explosion"
+},
+{
+"Level": 46,
+"Skill": "gyro_ball"
+},
+{
+"Level": 50,
+"Skill": "grassy_terrain"
+}
+]
+}
+]
+}
+}

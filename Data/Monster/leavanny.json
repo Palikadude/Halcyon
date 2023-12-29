@@ -1,0 +1,352 @@
+﻿{
+"Version": "0.7.21.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Leavanny",
+"LocalTexts": {
+"ja": "ハハコモリ",
+"ko": "모아머",
+"zh-hant": "保母蟲",
+"fr": "Manternel",
+"de": "Matrifol",
+"es": "Leavanny",
+"it": "Leavanny",
+"ja-jp": "ハハコモリ",
+"zh-hans": "保姆虫"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Nurturing Pokémon",
+"LocalTexts": {
+"ja": "こそだてポケモン",
+"ko": "육아포켓몬",
+"zh-hant": "育兒寶可夢",
+"fr": "Pokémon Précepteur",
+"de": "Kinderpflege",
+"es": "Pokémon Cuidador",
+"it": "Pokémon Balia",
+"ja-jp": "こそだてポケモン",
+"zh-hans": "育儿宝可梦"
+}
+},
+"IndexNum": 542,
+"EXPTable": "medium_slow",
+"SkillGroup1": "bug",
+"SkillGroup2": "amorphous",
+"JoinRate": -57,
+"PromoteFrom": "swadloon",
+"Promotions": [],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 4,
+"FemaleWeight": 4,
+"BaseHP": 75,
+"BaseAtk": 103,
+"BaseDef": 80,
+"BaseMAtk": 70,
+"BaseMDef": 80,
+"BaseSpeed": 92,
+"ExpYield": 225,
+"Height": 1.2,
+"Weight": 20.5,
+"Personalities": [
+0,
+31
+],
+"TeachSkills": [
+{
+"Skill": "swords_dance"
+},
+{
+"Skill": "cut"
+},
+{
+"Skill": "hyper_beam"
+},
+{
+"Skill": "solar_beam"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "light_screen"
+},
+{
+"Skill": "reflect"
+},
+{
+"Skill": "dream_eater"
+},
+{
+"Skill": "flash"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "false_swipe"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "safeguard"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "aerial_ace"
+},
+{
+"Skill": "calm_mind"
+},
+{
+"Skill": "payback"
+},
+{
+"Skill": "poison_jab"
+},
+{
+"Skill": "x_scissor"
+},
+{
+"Skill": "energy_ball"
+},
+{
+"Skill": "giga_impact"
+},
+{
+"Skill": "shadow_claw"
+},
+{
+"Skill": "grass_knot"
+},
+{
+"Skill": "hone_claws"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "retaliate"
+},
+{
+"Skill": "struggle_bug"
+},
+{
+"Skill": "steel_wing"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "nature_power"
+},
+{
+"Skill": "confide"
+},
+{
+"Skill": "secret_power"
+}
+],
+"SharedSkills": [
+{
+"Skill": "razor_wind"
+},
+{
+"Skill": "agility"
+},
+{
+"Skill": "screech"
+},
+{
+"Skill": "mind_reader"
+},
+{
+"Skill": "baton_pass"
+},
+{
+"Skill": "camouflage"
+},
+{
+"Skill": "silver_wind"
+},
+{
+"Skill": "me_first"
+},
+{
+"Skill": "air_slash"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "giga_drain"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "heal_bell"
+},
+{
+"Skill": "synthesis"
+},
+{
+"Skill": "helping_hand"
+},
+{
+"Skill": "magic_coat"
+},
+{
+"Skill": "knock_off"
+},
+{
+"Skill": "signal_beam"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "worry_seed"
+},
+{
+"Skill": "seed_bomb"
+},
+{
+"Skill": "bug_bite"
+},
+{
+"Skill": "electroweb"
+}
+],
+"FormName": {
+"DefaultText": "Leavanny",
+"LocalTexts": {
+"ja": "ハハコモリ",
+"ko": "모아머",
+"zh-hant": "保母蟲",
+"fr": "Manternel",
+"de": "Matrifol",
+"es": "Leavanny",
+"it": "Leavanny",
+"ja-jp": "ハハコモリ",
+"zh-hans": "保姆虫"
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "bug",
+"Element2": "grass",
+"Intrinsic1": "swarm",
+"Intrinsic2": "chlorophyll",
+"Intrinsic3": "overcoat",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "false_swipe"
+},
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "leech_life"
+},
+{
+"Level": 1,
+"Skill": "string_shot"
+},
+{
+"Level": 1,
+"Skill": "bug_bite"
+},
+{
+"Level": 1,
+"Skill": "razor_leaf"
+},
+{
+"Level": 8,
+"Skill": "bug_bite"
+},
+{
+"Level": 15,
+"Skill": "razor_leaf"
+},
+{
+"Level": 22,
+"Skill": "struggle_bug"
+},
+{
+"Level": 29,
+"Skill": "slash"
+},
+{
+"Level": 32,
+"Skill": "helping_hand"
+},
+{
+"Level": 34,
+"Skill": "fell_stinger"
+},
+{
+"Level": 36,
+"Skill": "leaf_blade"
+},
+{
+"Level": 39,
+"Skill": "x_scissor"
+},
+{
+"Level": 43,
+"Skill": "entrainment"
+},
+{
+"Level": 46,
+"Skill": "swords_dance"
+},
+{
+"Level": 50,
+"Skill": "leaf_storm"
+}
+]
+}
+]
+}
+}

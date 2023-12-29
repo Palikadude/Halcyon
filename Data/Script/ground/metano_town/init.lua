@@ -1420,16 +1420,16 @@ function metano_town.Red_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Refuse_Service'], farfetchd_name))
 			else
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item']))
-				local SingleItemDealMenu = SingleItemDealMenu()
+				--UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Red_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item)))	--deprecated
+				local SingleItemDealMenu = SingleItemDealMenu() 
 				local menu = SingleItemDealMenu:new(stunky_name.."'s Deal", item, itemPrice)
 				UI:SetCustomMenu(menu.menu)
 				UI:WaitForChoice()
-				if itemPrice > GAME:GetPlayerMoney() then --TODO: decide if this line is worth keeping
-					UI:SetSpeakerEmotion('Worried')
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Money']))
-				elseif menu.result then
-					if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+				if menu.result then
+					if itemPrice > GAME:GetPlayerMoney() then --With the new SingleItemDealMenu, this won't get hit anymore, but keep it anyway cause why not.
+						UI:SetSpeakerEmotion('Worried')
+						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_No_Money']))
+					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Red_Merchant_Bag_Full']))
 					else
@@ -1538,8 +1538,7 @@ function metano_town.GenerateGreenMerchantItem()
 		{"held_zap_plate", 10},
 
 		{"held_flame_orb", 10},
-		{"held_toxic_orb", 10},
-		{"held_life_orb", 10}
+		{"held_toxic_orb", 10}
 	}
 	
 	return GeneralFunctions.WeightedRandom(stock)
@@ -1623,17 +1622,16 @@ function metano_town.Green_Merchant_Action(obj, activator)
 				UI:SetSpeakerEmotion('Angry')
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Refuse_Service']))
 			else
-				UI:SetSpeakerEmotion('Happy')
-				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item']))
+				--UI:ChoiceMenuYesNo(STRINGS:Format(MapStrings['Green_Merchant_Daily_Item'], itemName, itemPrice, GeneralFunctions.GetItemArticle(item))) -- deprecated
 				local SingleItemDealMenu = SingleItemDealMenu()
 				local menu = SingleItemDealMenu:new(farfetchd_name.."'s Deal", item, itemPrice)
 				UI:SetCustomMenu(menu.menu)
 				UI:WaitForChoice()
-				if itemPrice > GAME:GetPlayerMoney() then --TODO: decide if this line is worth keeping
-					UI:SetSpeakerEmotion('Worried')
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Money']))
-				elseif menu.result then
-					if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
+				if menu.result then
+					if itemPrice > GAME:GetPlayerMoney() then --With the new SingleItemDealMenu, this won't get hit anymore, but keep it anyway cause why not.
+						UI:SetSpeakerEmotion('Worried')
+						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_No_Money']))
+					elseif GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 						UI:SetSpeakerEmotion('Worried')
 						UI:WaitShowDialogue(STRINGS:Format(MapStrings['Green_Merchant_Bag_Full']))
 					else

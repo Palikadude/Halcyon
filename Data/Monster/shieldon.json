@@ -1,0 +1,380 @@
+﻿{
+"Version": "0.7.21.0",
+"Object": {
+"$type": "RogueEssence.Data.MonsterData, RogueEssence",
+"Name": {
+"DefaultText": "Shieldon",
+"LocalTexts": {
+"ja": "タテトプス",
+"ko": "방패톱스",
+"zh-hant": "盾甲龍",
+"fr": "Dinoclier",
+"de": "Schilterus",
+"es": "Shieldon",
+"it": "Shieldon",
+"ja-jp": "タテトプス",
+"zh-hans": "盾甲龙"
+}
+},
+"Released": true,
+"Comment": "",
+"Title": {
+"DefaultText": "Shield Pokémon",
+"LocalTexts": {
+"ja": "シールドポケモン",
+"ko": "실드포켓몬",
+"zh-hant": "護盾寶可夢",
+"fr": "Pokémon Bouclier",
+"de": "Schutzschild",
+"es": "Pokémon Escudo",
+"it": "Pokémon Schermo",
+"ja-jp": "シールドポケモン",
+"zh-hans": "护盾宝可梦"
+}
+},
+"IndexNum": 410,
+"EXPTable": "erratic",
+"SkillGroup1": "monster",
+"SkillGroup2": "amorphous",
+"JoinRate": 19,
+"PromoteFrom": "",
+"Promotions": [
+{
+"Result": "bastiodon",
+"Details": [
+{
+"$type": "PMDC.Data.EvoLevel, PMDC",
+"Level": 30
+}
+]
+}
+],
+"Forms": [
+{
+"$type": "PMDC.Data.MonsterFormData, PMDC",
+"Released": true,
+"Generation": 6,
+"GenderlessWeight": 0,
+"MaleWeight": 7,
+"FemaleWeight": 1,
+"BaseHP": 30,
+"BaseAtk": 42,
+"BaseDef": 118,
+"BaseMAtk": 42,
+"BaseMDef": 88,
+"BaseSpeed": 30,
+"ExpYield": 70,
+"Height": 0.5,
+"Weight": 57.0,
+"Personalities": [
+0,
+1,
+2,
+3,
+7,
+8,
+9,
+11,
+12,
+15,
+16,
+29,
+30,
+31,
+36
+],
+"TeachSkills": [
+{
+"Skill": "roar"
+},
+{
+"Skill": "flamethrower"
+},
+{
+"Skill": "ice_beam"
+},
+{
+"Skill": "blizzard"
+},
+{
+"Skill": "strength"
+},
+{
+"Skill": "thunderbolt"
+},
+{
+"Skill": "thunder"
+},
+{
+"Skill": "earthquake"
+},
+{
+"Skill": "dig"
+},
+{
+"Skill": "toxic"
+},
+{
+"Skill": "double_team"
+},
+{
+"Skill": "fire_blast"
+},
+{
+"Skill": "rest"
+},
+{
+"Skill": "rock_slide"
+},
+{
+"Skill": "substitute"
+},
+{
+"Skill": "protect"
+},
+{
+"Skill": "sandstorm"
+},
+{
+"Skill": "endure"
+},
+{
+"Skill": "swagger"
+},
+{
+"Skill": "attract"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "return"
+},
+{
+"Skill": "frustration"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "hidden_power"
+},
+{
+"Skill": "rain_dance"
+},
+{
+"Skill": "sunny_day"
+},
+{
+"Skill": "rock_smash"
+},
+{
+"Skill": "torment"
+},
+{
+"Skill": "facade"
+},
+{
+"Skill": "taunt"
+},
+{
+"Skill": "secret_power"
+},
+{
+"Skill": "rock_tomb"
+},
+{
+"Skill": "shock_wave"
+},
+{
+"Skill": "natural_gift"
+},
+{
+"Skill": "rock_polish"
+},
+{
+"Skill": "flash_cannon"
+},
+{
+"Skill": "stone_edge"
+},
+{
+"Skill": "captivate"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "smack_down"
+},
+{
+"Skill": "round"
+},
+{
+"Skill": "incinerate"
+},
+{
+"Skill": "bulldoze"
+},
+{
+"Skill": "confide"
+}
+],
+"SharedSkills": [
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "body_slam"
+},
+{
+"Skill": "double_edge"
+},
+{
+"Skill": "fissure"
+},
+{
+"Skill": "screech"
+},
+{
+"Skill": "focus_energy"
+},
+{
+"Skill": "curse"
+},
+{
+"Skill": "scary_face"
+},
+{
+"Skill": "rock_blast"
+},
+{
+"Skill": "counter"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "wide_guard"
+},
+{
+"Skill": "guard_split"
+}
+],
+"SecretSkills": [
+{
+"Skill": "snore"
+},
+{
+"Skill": "mud_slap"
+},
+{
+"Skill": "ancient_power"
+},
+{
+"Skill": "iron_defense"
+},
+{
+"Skill": "magnet_rise"
+},
+{
+"Skill": "earth_power"
+},
+{
+"Skill": "iron_head"
+},
+{
+"Skill": "headbutt"
+},
+{
+"Skill": "sleep_talk"
+},
+{
+"Skill": "iron_tail"
+},
+{
+"Skill": "stealth_rock"
+},
+{
+"Skill": "shock_wave"
+}
+],
+"FormName": {
+"DefaultText": "Shieldon",
+"LocalTexts": {
+"ja": "タテトプス",
+"ko": "방패톱스",
+"zh-hant": "盾甲龍",
+"fr": "Dinoclier",
+"de": "Schilterus",
+"es": "Shieldon",
+"it": "Shieldon",
+"ja-jp": "タテトプス",
+"zh-hans": "盾甲龙"
+}
+},
+"Temporary": false,
+"PromoteForm": 0,
+"Element1": "rock",
+"Element2": "steel",
+"Intrinsic1": "sturdy",
+"Intrinsic2": "none",
+"Intrinsic3": "soundproof",
+"LevelSkills": [
+{
+"Level": 1,
+"Skill": "tackle"
+},
+{
+"Level": 1,
+"Skill": "protect"
+},
+{
+"Level": 6,
+"Skill": "taunt"
+},
+{
+"Level": 10,
+"Skill": "metal_sound"
+},
+{
+"Level": 12,
+"Skill": "rock_throw"
+},
+{
+"Level": 15,
+"Skill": "take_down"
+},
+{
+"Level": 19,
+"Skill": "iron_defense"
+},
+{
+"Level": 24,
+"Skill": "swagger"
+},
+{
+"Level": 28,
+"Skill": "ancient_power"
+},
+{
+"Level": 33,
+"Skill": "endure"
+},
+{
+"Level": 37,
+"Skill": "metal_burst"
+},
+{
+"Level": 42,
+"Skill": "iron_head"
+},
+{
+"Level": 46,
+"Skill": "heavy_slam"
+}
+]
+}
+]
+}
+}
