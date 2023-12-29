@@ -4,13 +4,13 @@
   <Description>Removes all the nicknames in Halcyon!</Description>
   <Namespace>halcyon_nickname</Namespace>
   <UUID>B2BA3CB7-10A4-4D44-9589-B2C4145E48D7</UUID>
-  <Version>0.1</Version>
+  <Version>0.2</Version>
   <ModType>Mod</ModType>
   <Relationships>
     <RelatedMod>
-      <UUID>6E4AC3AB-80C6-44B7-9C07-4790F03EE969</UUID>
-      <Namespace>halcyon_starters</Namespace>
-      <Relationship>Incompatible</Relationship>
+      <UUID>CAE98609-7A96-4CFC-B5AB-0E1D41F6A1FF</UUID>
+      <Namespace>halcyon</Namespace>
+      <Relationship>LoadBefore</Relationship>
     </RelatedMod>
   </Relationships>
 </Header>
