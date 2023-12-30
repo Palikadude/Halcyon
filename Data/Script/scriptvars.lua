@@ -28,14 +28,21 @@ SV.Services =
 -----------------------------------------------
 SV.General =
 {
-  Rescue = nil
+  Rescue = nil,
+  Starter = MonsterID("missingno", 0, "normal", Gender.Genderless)
   --Anything that applies to more than a single level, and that is too small to make a sub-table for, should be put in here ideally, or a sub-table of this
 }
 
 SV.checkpoint = 
 {
-  Zone    = "debug_zone", Structure  = -1,
+  Zone    = "master_zone", Structure  = -1,
   Map  = 1, Entry  = 0,
+}
+
+--Used for flags relevant for the current dungeon run. Currently just houses whether or not you've stolen from shopkeeps this dungeon run.
+SV.adventure = 
+{
+  Thief    = false
 }
 
 SV.partner = 
@@ -52,6 +59,8 @@ SV.MonsterHouseMessageNotified = false
 SV.OutlawDefeated = false
 SV.OutlawGoonsDefeated = false
 SV.MapTurnCounter = -1
+
+
 
 --empty string or a -1 indicates that there's nothing there currently.
 --board of jobs you've actually taken.

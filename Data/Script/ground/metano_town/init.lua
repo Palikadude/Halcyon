@@ -466,7 +466,7 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	--TODO: Add more types of stock progressions later on 
 	--Basic Stock, early game
 	
-	--total weight = 100
+	--total weight = 200
 	local food_stock = {
 		{"food_apple", 182}, --Apple
 		{"gummi_blue", 1}, --Blue Gummi
@@ -489,14 +489,15 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 		{"gummi_magenta", 1}	--Magenta Gummi
 	}
 	
-	--total weight = 120
+	--total weight = 126
 	local medicine_stock = {
 		{"seed_reviver", 10},--Reviver seed 
-		{"seed_warp", 5}, --Warp Seed 
-		{"seed_sleep", 5}, --Sleep seed 
+		{"seed_warp", 6}, --Warp Seed 
+		{"seed_sleep", 6}, --Sleep seed 
 		{"seed_vile", 2}, --Vile seed 
 		{"seed_decoy", 6}, --decoy seed 
 		{"seed_blast", 8}, --Blast seed
+		{"seed_quick", 6}, --Quick seed
 		
 		{"berry_leppa", 25}, --Leppa berry 
 
@@ -515,6 +516,7 @@ function metano_town.GenerateGreenKecleonStock(generate_random_item)
 	local ammo_stock = 
 	{
 		{"ammo_geo_pebble", 50}, --Geo pebble 
+		{"ammo_gravelerock", 50}, --Geo pebble 
 		{"ammo_stick", 50},--stick 
 		{"ammo_iron_thorn", 50}--iron thorn 
 	}
@@ -666,6 +668,7 @@ function metano_town.GeneratePurpleKecleonStock(generate_random_item)
 		{"orb_rollcall", 15},--rollcall orb 
 		{"orb_trawl", 5}, --trawl orb 
 		{"orb_all_aim", 10},--all aim orb
+		{"orb_slow", 10},--slow orb
 		{"orb_invert", 5}, --invert orb 
 		{"orb_fill_in", 5} --fill in orb
 	}
@@ -872,9 +875,9 @@ function metano_town.Shop_Action(obj, activator)
 			if result then
 				for ii = #cart, 1, -1 do
 					if cart[ii].IsEquipped then
-						GAME:TakePlayerEquippedItem(cart[ii].Slot)
+						GAME:TakePlayerEquippedItem(cart[ii].Slot, true)
 					else
-						GAME:TakePlayerBagItem(cart[ii].Slot)
+						GAME:TakePlayerBagItem(cart[ii].Slot, true)
 					end
 				end
 				SOUND:PlayBattleSE("DUN_Money")
@@ -1082,9 +1085,9 @@ function metano_town.TM_Action(obj, activator)
 			if result then
 				for ii = #cart, 1, -1 do
 					if cart[ii].IsEquipped then
-						GAME:TakePlayerEquippedItem(cart[ii].Slot)
+						GAME:TakePlayerEquippedItem(cart[ii].Slot, true)
 					else
-						GAME:TakePlayerBagItem(cart[ii].Slot)
+						GAME:TakePlayerBagItem(cart[ii].Slot, true)
 					end
 				end
 				SOUND:PlayBattleSE("DUN_Money")
@@ -1861,9 +1864,9 @@ function metano_town.Swap_Action(obj, activator)
 						--it is a certainty that there is an item in storage, due to previous checks
 						GAME:TakePlayerStorageItem(tribute[ii])
 					elseif item_slot.IsEquipped then
-						GAME:TakePlayerEquippedItem(item_slot.Slot)
+						GAME:TakePlayerEquippedItem(item_slot.Slot, true)
 					else
-						GAME:TakePlayerBagItem(item_slot.Slot)
+						GAME:TakePlayerBagItem(item_slot.Slot, true)
 					end
 				end
 				SOUND:PlayBattleSE("DUN_Money")
@@ -2171,10 +2174,10 @@ function metano_town.Appraisal_Action(obj, activator)
 						local stack = 0
 						if cart[ii].IsEquipped then
 							box = GAME:GetPlayerEquippedItem(cart[ii].Slot)
-							GAME:TakePlayerEquippedItem(cart[ii].Slot)
+							GAME:TakePlayerEquippedItem(cart[ii].Slot, true)
 						else
 							box = GAME:GetPlayerBagItem(cart[ii].Slot)
-							GAME:TakePlayerBagItem(cart[ii].Slot)
+							GAME:TakePlayerBagItem(cart[ii].Slot, true)
 						end
 						
 						local itemEntry = _DATA:GetItem(box.HiddenValue)

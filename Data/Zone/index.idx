@@ -1,10 +1,10 @@
 ﻿{
-"Version": "0.7.21.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -42,7 +42,7 @@
 },
 "backup_master_zone": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -133,7 +133,7 @@
 },
 "beginner_lesson": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 5,
 "LevelCap": true,
 "KeepSkills": false,
@@ -165,7 +165,7 @@
 },
 "bug_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 13,
 "LevelCap": false,
 "KeepSkills": false,
@@ -197,7 +197,7 @@
 },
 "crooked_cavern": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -240,7 +240,7 @@
 },
 "electric_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 13,
 "LevelCap": false,
 "KeepSkills": false,
@@ -272,7 +272,7 @@
 },
 "fire_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,
@@ -304,7 +304,7 @@
 },
 "flying_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 10,
 "LevelCap": false,
 "KeepSkills": false,
@@ -336,7 +336,7 @@
 },
 "grass_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,
@@ -368,7 +368,7 @@
 },
 "illuminant_riverbed": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -406,7 +406,7 @@
 },
 "master_zone": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -488,7 +488,7 @@
 },
 "mount_windswept": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -528,7 +528,7 @@
 },
 "normal_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 5,
 "LevelCap": false,
 "KeepSkills": false,
@@ -599,7 +599,7 @@
 },
 "relic_forest": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -635,7 +635,7 @@
 },
 "rock_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 10,
 "LevelCap": false,
 "KeepSkills": false,
@@ -667,7 +667,7 @@
 },
 "searing_tunnel": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -718,7 +718,7 @@
 },
 "vast_steppe": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -756,12 +756,12 @@
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "1st dungeon of the expedition. 5th dungeon overall.",
+"Comment": "1st dungeon of the expedition. 5th dungeon overall.\r\n\r\nLarge, open floors without any real rooms. Has pokemon that tend to form herds or packs, so that when encounters are made, a good chance it’s a lot of pokemon moving together that’ll work together.\r\n-Pokemon to add in the future if they get sprites: Blitzle, replace stantler probably\r\n-purp kec shop stocks Low Tier TMs",
 "SortOrder": 0
 },
 "water_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 0,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,

@@ -635,6 +635,173 @@ function COMMON.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   end
 end
 
+--Lifted functions below from vanilla COMMON for shopkeeps, 12-26-23
+function COMMON.ClearPlayerPrices()
+  local item_count = GAME:GetPlayerBagCount()
+  for item_idx = 0, item_count-1, 1 do
+    local inv_item = GAME:GetPlayerBagItem(item_idx)
+	inv_item.Price = 0
+  end
+  local player_count = _DUNGEON.ActiveTeam.Players.Count
+  for player_idx = 0, player_count-1, 1 do
+    local inv_item = GAME:GetPlayerEquippedItem(player_idx)
+	inv_item.Price = 0
+  end
+  
+  COMMON.ClearMapTeamPrices(_ZONE.CurrentMap.AllyTeams)
+  COMMON.ClearMapTeamPrices(_ZONE.CurrentMap.MapTeams)
+end
+
+function COMMON.ClearMapTeamPrices(team_list)
+
+  local team_count = team_list.Count
+  for team_idx = 0, team_count-1, 1 do
+	local player_count = team_list[team_idx].Players.Count
+	for player_idx = 0, player_count-1, 1 do
+      local inv_item = team_list[team_idx].Players[player_idx].EquippedItem
+	  inv_item.Price = 0
+	end
+  end
+end
+
+function COMMON.ClearAllPrices()
+  COMMON.ClearPlayerPrices()
+
+  -- clear map prices
+  local item_count = _ZONE.CurrentMap.Items.Count
+  for item_idx = 0, item_count-1, 1 do
+    local map_item = _ZONE.CurrentMap.Items[item_idx]
+	map_item.Price = 0
+  end
+end
+
+function COMMON.PayDungeonCartPrice(price)
+  COMMON.ClearPlayerPrices()
+  GAME:RemoveFromPlayerMoney(price)
+  
+  local security_price = COMMON.GetShopPriceState()
+  security_price.Amount = security_price.Amount - price
+  security_price.Cart = 0
+end
+
+function COMMON.PayDungeonSellPrice(price)
+  -- set prices for all items placed on the shop
+  local item_count = _ZONE.CurrentMap.Items.Count
+  for item_idx = 0, item_count-1, 1 do
+    local map_item = _ZONE.CurrentMap.Items[item_idx]
+	-- they should not already have a price
+	if map_item.Price <= 0 then
+	  local sell_value = map_item:GetSellValue()
+	  -- they should have value as sold items
+	  if sell_value > 0 then
+	    local tile = _ZONE.CurrentMap.Tiles[map_item.TileLoc.X][map_item.TileLoc.Y]
+	    -- only add price if on shop mat
+	    if tile.Effect.ID == "area_shop" then
+	      map_item.Price = sell_value * 5
+	    end
+	  end
+	end
+  end
+  
+  GAME:AddToPlayerMoney(price)
+  local security_price = COMMON.GetShopPriceState()
+  security_price.Amount = security_price.Amount + price * 2
+end
+
+ShopPriceType = luanet.import_type('PMDC.Dungeon.ShopPriceState')
+function COMMON.GetShopPriceState()
+  local security_status = "shop_security"
+  local status = _DUNGEON:GetMapStatus(security_status)
+  if status then
+	if status.StatusStates:Contains(luanet.ctype(ShopPriceType)) then
+	  return status.StatusStates:Get(luanet.ctype(ShopPriceType))
+	end
+  end
+  return nil
+end
+
+function COMMON.GetDungeonCartPrice()
+
+  local price = 0
+  local security_price = COMMON.GetShopPriceState()
+  price = security_price.Amount
+  
+  -- iterate items on shop mats and subtract total price
+  local item_count = _ZONE.CurrentMap.Items.Count
+  for item_idx = 0, item_count-1, 1 do
+    local map_item = _ZONE.CurrentMap.Items[item_idx]
+	if map_item.Price > 0 then
+	  local tile = _ZONE.CurrentMap.Tiles[map_item.TileLoc.X][map_item.TileLoc.Y]
+	  -- only subtract price if on shop mat
+	  if tile.Effect.ID == "area_shop" then
+	    price = price - map_item.Price
+	  end
+	end
+  end
+  return price
+end
+
+function COMMON.GetDungeonSellPrice()
+
+  local price = 0
+  -- iterate items on shop mats and add total price
+  local item_count = _ZONE.CurrentMap.Items.Count
+  for item_idx = 0, item_count-1, 1 do
+    local map_item = _ZONE.CurrentMap.Items[item_idx]
+	-- they should not already have a price
+	if map_item.Price <= 0 then
+	  local sell_value = map_item:GetSellValue()
+	  -- they should have value as sold items
+	  if sell_value > 0 then
+	    local tile = _ZONE.CurrentMap.Tiles[map_item.TileLoc.X][map_item.TileLoc.Y]
+	    -- only add price if on shop mat
+	    if tile.Effect.ID == "area_shop" then
+	      price = price + sell_value
+	    end
+	  end
+	end
+  end
+  return price
+end
+
+
+function COMMON.ThiefReturn()
+  _GAME:BGM("", false)
+  COMMON.ClearAllPrices()
+  
+  local thief_check_idx = "shop_security"
+  local thief_idx = "thief"
+  local check_status = _DUNGEON:GetMapStatus(thief_check_idx)
+  
+  local index_from = check_status.StatusStates:Get(luanet.ctype(MapIndexType))
+  UI:SetSpeakerEmotion("Angry")
+  UI:WaitShowDialogue(STRINGS:Format(RogueEssence.StringKey(string.format("TALK_SHOP_SUSPECT_%04d", index_from.Index)):ToLocal()))
+  _DUNGEON:LogMsg(STRINGS:Format(RogueEssence.StringKey(string.format("TALK_SHOP_THIEF_RETURN_%04d", index_from.Index)):ToLocal()))
+  
+  local thief_status = RogueEssence.Dungeon.MapStatus(thief_idx)
+  thief_status:LoadFromData()
+  -- put spawner from security status in thief status
+  local security_to = thief_status.StatusStates:Get(luanet.ctype(ShopSecurityType))
+  local security_from = check_status.StatusStates:Get(luanet.ctype(ShopSecurityType))
+  security_to.Security = security_from.Security
+  TASK:WaitTask(_DUNGEON:RemoveMapStatus(thief_check_idx))
+  TASK:WaitTask(_DUNGEON:AddMapStatus(thief_status))
+  GAME:WaitFrames(60)
+end
+
+function COMMON.ShopTileCheck(baseLoc, dir)
+  local dirLoc = RogueElements.DirExt.GetLoc(dir)
+  local loc = RogueElements.Loc(baseLoc.X + dirLoc.X, baseLoc.Y + dirLoc.Y)
+  if not RogueElements.Collision.InBounds(_ZONE.CurrentMap.Width, _ZONE.CurrentMap.Height, loc) then
+    return false
+  end
+  return (_ZONE.CurrentMap.Tiles[loc.X][loc.Y].Effect.ID == "area_shop")
+end
+
+
+
+
+
 
 function COMMON.MakeWhoosh(center, y, tier, reversed)
     local whoosh1 = RogueEssence.Content.FiniteOverlayEmitter()
@@ -1201,7 +1368,7 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
 	while i <= itemCount - 1 do 
 		item = GAME:GetPlayerBagItem(i)
 		if string.sub(item.ID, 1, 7) == "mission" then
-			GAME:TakePlayerBagItem(i)
+			GAME:TakePlayerBagItem(i, true)
 			itemCount = itemCount - 1
 		else
 			i = i + 1 
@@ -1212,7 +1379,7 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
 	for i = 1, GAME:GetPlayerPartyCount(), 1 do
 		item = GAME:GetPlayerEquippedItem(i-1)
 		if string.sub(item.ID, 1, 7) == "mission" then
-			GAME:TakePlayerEquippedItem(i-1)
+			GAME:TakePlayerEquippedItem(i-1, true)
 		end
 	end
 	

@@ -558,15 +558,15 @@ function metano_cafe.RemoveItems(itemList)
 			if item_entry.MaxStack > 1 then stack_count = item.Amount else stack_count = 1 end
 			if item.ID == recipe_item then
 				if item_entry.MaxStack <= 1 then 
-					GAME:TakePlayerBagItem(j)
+					GAME:TakePlayerBagItem(j, true)
 				else
 					if item.Amount > togo then--check if the stackable item needs to be deleted, or just subtracted from.
 						--remove from the player's bag item stack but not fully.
 						item.Amount = stack_count - togo
 					else
-						print(item.Amount)
-						print(j)
-						GAME:TakePlayerBagItem(j)
+						--print(item.Amount)
+						--print(j)
+						GAME:TakePlayerBagItem(j, true)
 					end
 				end
 				

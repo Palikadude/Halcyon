@@ -69,9 +69,14 @@ function BATTLE_SCRIPT.ShopkeeperInteract(owner, ownerChar, context, args)
 	if price == 0 and sell_price == 0 then
       context.CancelState.Cancel = true
       UI:SetSpeaker(context.Target)
-      UI:WaitShowDialogue(RogueEssence.StringKey(string.format("TALK_SHOP_%04d", context.Target.Discriminator)):ToLocal())
-      context.Target.CharDir = oldDir
-    end
+	  --Halcyon tweak: If you talk to kec or enter his shop after stealing, he'll aggro you
+	  if SV.adventure.Thief then
+		COMMON.ThiefReturn()
+	  else
+		UI:WaitShowDialogue(RogueEssence.StringKey(string.format("TALK_SHOP_%04d", context.Target.Discriminator)):ToLocal())
+		context.Target.CharDir = oldDir
+	  end
+	end
   else
 
     UI:ResetSpeaker()
@@ -216,9 +221,9 @@ function DeliveryCheck(context, targetName, mission)
 			_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 			-- Take from inventory first before held items 
 			if inv_slot:IsValid() then 
-				GAME:TakePlayerBagItem(inv_slot.Slot)
+				GAME:TakePlayerBagItem(inv_slot.Slot, true)
 			else 
-				GAME:TakePlayerEquippedItem(team_slot.Slot)
+				GAME:TakePlayerEquippedItem(team_slot.Slot, true)
 			end
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)

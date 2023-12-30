@@ -249,6 +249,10 @@ function DebugTools:OnUpgrade()
  if SV.TemporaryFlags.MissionCompleted == nil then SV.TemporaryFlags.MissionCompleted = false end
  if SV.TemporaryFlags.PostJobsGround == nil then SV.TemporaryFlags.PostJobsGround = '' end
  if SV.TemporaryFlags.AudinoSummonCount == nil then SV.TemporaryFlags.AudinoSummonCount = 0 end
+ 
+ 
+ if SV.adventure == nil then SV.adventure = {} end
+ if SV.adventure.Thief == nil then SV.adventure.Thief = false end
   
 
  if SV.metano_cafe.CafeSpecial == nil then SV.metano_cafe.CafeSpecial = "" end

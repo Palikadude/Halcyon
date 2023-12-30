@@ -1,7 +1,122 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"ammo_cacnea_spike": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Cacnea Spike",
+"LocalTexts": {
+"fr": "Cacnepic",
+"de": "Tuskadorn",
+"it": "Spina Cacnea",
+"ko": "선인왕가시",
+"zh-hans": "刺球仙人掌刺"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
+"ammo_corsola_twig": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Corsola Twig",
+"LocalTexts": {
+"fr": "Corapic",
+"de": "Corasonnast",
+"it": "Ramo Corsola",
+"ko": "코산호가시",
+"zh-hans": "太阳珊瑚枝"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
+"ammo_geo_pebble": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Geo Pebble",
+"LocalTexts": {
+"fr": "Racaillasse",
+"de": "Kleinkiesel",
+"it": "Geosasso",
+"ko": "돌멩이",
+"zh-hans": "小拳石之石"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
+"ammo_iron_thorn": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Iron Thorn",
+"LocalTexts": {
+"fr": "Epine de Fer",
+"de": "Eisendorn",
+"it": "Puntacciaio",
+"ko": "철가시",
+"zh-hans": "钢刺"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
+"ammo_stick": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"Name": {
+"DefaultText": "Stick",
+"LocalTexts": {
+"fr": "Bâton",
+"de": "Stock",
+"it": "Bastone",
+"ko": "나뭇가지",
+"zh-hans": "树枝"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 2
+},
 "apricorn_big": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 3,
@@ -763,6 +878,64 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"food_apple_big": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.FoodState"
+}
+],
+"Name": {
+"DefaultText": "Big Apple",
+"LocalTexts": {
+"fr": "Grosse Pomme",
+"de": "Großer Apfel",
+"es": "Manzana",
+"pt": "Maçã Grande",
+"it": "Melagrande",
+"ko": "큰사과",
+"zh-hans": "大苹果"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 4
+},
+"food_apple_huge": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.FoodState"
+}
+],
+"Name": {
+"DefaultText": "Huge Apple",
+"LocalTexts": {
+"fr": "Pomme Géante",
+"de": "Riesenapfel",
+"es": "Manzanota",
+"pt": "Maçã Gigante",
+"it": "Gigantomela",
+"ko": "특대사과",
+"zh-hans": "巨大苹果"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 4
 },
 "food_chestnut": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2528,6 +2701,29 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_all_dodge": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "All-Dodge Orb",
+"LocalTexts": {
+"fr": "Esquivorbe Tous",
+"de": "Ausweichorb",
+"it": "Sfera Schivatutti",
+"ko": "모두회피구슬",
+"zh-hans": "全回避之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
 "orb_cleanse": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -2548,6 +2744,29 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"orb_endure": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Endure Orb",
+"LocalTexts": {
+"fr": "Tankorbe",
+"de": "Ausdauerorb",
+"it": "Sfera Resistenza",
+"ko": "기합의구슬",
+"zh-hans": "忍耐之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
 },
 "orb_escape": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2635,6 +2854,52 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_freeze": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Freeze Orb",
+"LocalTexts": {
+"fr": "Blizzorbe",
+"de": "Frierorb",
+"it": "Gelosfera",
+"ko": "빙결구슬",
+"zh-hans": "冰冻之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_halving": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Halving Orb",
+"LocalTexts": {
+"fr": "Motiorbe",
+"de": "Halbierorb",
+"it": "Dimezzosfera",
+"ko": "절반구슬",
+"zh-hans": "减半之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
 "orb_invert": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -2677,6 +2942,75 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_mirror": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Mirror Orb",
+"LocalTexts": {
+"fr": "Mirrorbe",
+"de": "Spiegelorb",
+"it": "Specchiosfera",
+"ko": "거울구슬",
+"zh-hans": "镜面之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_mug": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Mug Orb",
+"LocalTexts": {
+"fr": "Dépouillorbe",
+"de": "Rauborb",
+"it": "Carpisfera",
+"ko": "훔치기구슬",
+"zh-hans": "窃取之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_nullify": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Nullify Orb",
+"LocalTexts": {
+"fr": "Orbe AntiCapSpé",
+"de": "Fähigkeitensperrorb",
+"it": "Neutralisfera",
+"ko": "무효구슬",
+"zh-hans": "特性消除之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
 "orb_petrify": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -2697,6 +3031,75 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"orb_pierce": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Pierce Orb",
+"LocalTexts": {
+"fr": "Perçorbe",
+"de": "Perforierorb",
+"it": "Perforosfera",
+"ko": "관통구슬",
+"zh-hans": "贯穿之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_rebound": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Rebound Orb",
+"LocalTexts": {
+"fr": "Rebondorbe",
+"de": "Konterorb",
+"it": "Ribattisfera",
+"ko": "반사구슬",
+"zh-hans": "反击之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_revival": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Revival Orb",
+"LocalTexts": {
+"fr": "Résurectorbe",
+"de": "Team-Beleberorb",
+"it": "Revitalsfera",
+"ko": "부활구슬",
+"zh-hans": "全复活之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
 },
 "orb_rollcall": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2740,12 +3143,35 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_slow": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Slow Orb",
+"LocalTexts": {
+"fr": "Lentorbe",
+"de": "Reduzorb",
+"it": "Lentosfera",
+"ko": "느림구슬",
+"zh-hans": "缓速之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
 "orb_slumber": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
@@ -2825,6 +3251,52 @@
 "Comment": "",
 "SortOrder": 0
 },
+"orb_trapbust": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Trapbust Orb",
+"LocalTexts": {
+"fr": "Désamorbe",
+"de": "Annulierorb",
+"it": "Annullosfera",
+"ko": "함정파괴구슬",
+"zh-hans": "陷阱破坏之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
+"orb_trap_see": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Trap-See Orb",
+"LocalTexts": {
+"fr": "Détectorbe",
+"de": "Seherorb",
+"it": "Trappolasfera",
+"ko": "함정보임구슬",
+"zh-hans": "陷阱查看之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
+},
 "orb_trawl": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -2845,6 +3317,29 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"orb_weather": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.OrbState"
+}
+],
+"Name": {
+"DefaultText": "Weather Orb",
+"LocalTexts": {
+"fr": "Météorbe",
+"de": "Wetterorb",
+"it": "Meteosfera",
+"ko": "기후조절구슬",
+"zh-hans": "天气变化之玉"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 11
 },
 "seed_blast": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
@@ -2872,16 +3367,70 @@
 "Comment": "",
 "SortOrder": 4
 },
+"seed_blinker": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.SeedState"
+}
+],
+"Name": {
+"DefaultText": "Blinker Seed",
+"LocalTexts": {
+"fr": "Eblouigraine",
+"de": "Flairsamen",
+"it": "Semetenebra",
+"ko": "앞못봄씨앗",
+"zh-hans": "失明之种"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 7
+},
+"seed_hunger": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.SeedState"
+}
+],
+"Name": {
+"DefaultText": "Hunger Seed",
+"LocalTexts": {
+"fr": "Famigraine",
+"de": "Gustosamen",
+"it": "Semevorax",
+"ko": "공복의씨앗",
+"zh-hans": "饥饿之种"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 7
+},
 "seed_ice": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
@@ -3022,6 +3571,465 @@
 "Comment": "",
 "SortOrder": 0
 },
+"tm_attract": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Attract",
+"LocalTexts": {
+"fr": "CT Attraction",
+"de": "TM Anziehung",
+"es": "MT Atracción",
+"pt": "MT Attract",
+"it": "MT Attrazione",
+"ko": "헤롱헤롱 기술머신 ",
+"ja": "わざマシンメロメロ",
+"zh-hans": "TM 迷人",
+"zh-hant": "TM 迷人"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_captivate": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Captivate",
+"LocalTexts": {
+"fr": "CT Séduction",
+"de": "TM Liebreiz",
+"es": "MT Seducción",
+"pt": "MT Captivate",
+"it": "MT Incanto",
+"ko": "유혹 기술머신 ",
+"ja": "わざマシンゆうわく",
+"zh-hans": "TM 诱惑",
+"zh-hant": "TM 誘惑"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_cut": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Cut",
+"LocalTexts": {
+"fr": "CT Coupe",
+"de": "TM Zerschneider",
+"es": "MT Corte",
+"pt": "MT Cortar",
+"it": "MT Taglio",
+"ko": "풀베기 기술머신 ",
+"ja": "わざマシンいあいぎり",
+"zh-hans": "TM 居合斩",
+"zh-hant": "TM 居合斬"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_defog": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Defog",
+"LocalTexts": {
+"fr": "CT Anti-Brume",
+"de": "TM Auflockern",
+"es": "MT Despejar",
+"pt": "MT Defog",
+"it": "MT Scacciabruma",
+"ko": "안개제거 기술머신 ",
+"ja": "わざマシンきりばらい",
+"zh-hans": "TM 清除浓雾",
+"zh-hant": "TM 清除濃霧"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_embargo": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Embargo",
+"LocalTexts": {
+"fr": "CT Embargo",
+"de": "TM Itemsperre",
+"es": "MT Embargo",
+"pt": "MT Embargo",
+"it": "MT Divieto",
+"ko": "금제 기술머신 ",
+"ja": "わざマシンさしおさえ",
+"zh-hans": "TM 查封",
+"zh-hant": "TM 查封"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_endure": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Endure",
+"LocalTexts": {
+"fr": "CT Ténacité",
+"de": "TM Ausdauer",
+"es": "MT Aguante",
+"pt": "MT Endure",
+"it": "MT Resistenza",
+"ko": "버티기 기술머신 ",
+"ja": "わざマシンこらえる",
+"zh-hans": "TM 挺住",
+"zh-hant": "TM 挺住"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_false_swipe": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM False Swipe",
+"LocalTexts": {
+"fr": "CT Faux-Chage",
+"de": "TM Trugschlag",
+"es": "MT Falsotortazo",
+"pt": "MT False Swipe",
+"it": "MT Falsofinale",
+"ko": "칼등치기 기술머신 ",
+"ja": "わざマシンみねうち",
+"zh-hans": "TM 点到为止",
+"zh-hant": "TM 點到為止"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_flash": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Flash",
+"LocalTexts": {
+"fr": "CT Flash",
+"de": "TM Blitz",
+"es": "MT Destello",
+"pt": "MT Flash",
+"it": "MT Flash",
+"ko": "플래시 기술머신 ",
+"ja": "わざマシンフラッシュ",
+"zh-hans": "TM 闪光",
+"zh-hant": "TM 閃光"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_infestation": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Infestation",
+"LocalTexts": {
+"fr": "CT Harcèlement",
+"de": "TM Plage",
+"es": "MT Acoso",
+"pt": "MT Infestation",
+"it": "MT Assillo",
+"ko": "엉겨붙기 기술머신 ",
+"ja": "わざマシンまとわりつく",
+"zh-hans": "TM 死缠烂打",
+"zh-hant": "TM 死纏爛打"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_psych_up": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Psych Up",
+"LocalTexts": {
+"fr": "CT Boost",
+"de": "TM Psycho-Plus",
+"es": "MT Más Psique",
+"pt": "MT Psych Up",
+"it": "MT Psicamisù",
+"ko": "자기암시 기술머신 ",
+"ja": "わざマシンじこあんじ",
+"zh-hans": "TM 自我暗示",
+"zh-hant": "TM 自我暗示"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_quash": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Quash",
+"LocalTexts": {
+"fr": "CT À la Queue",
+"de": "TM Verzögerung",
+"es": "MT Último Lugar",
+"pt": "MT Quash",
+"it": "MT Spintone",
+"ko": "순서미루기 기술머신 ",
+"ja": "わざマシンさきおくり",
+"zh-hans": "TM 延后",
+"zh-hant": "TM 延後"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_recycle": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Recycle",
+"LocalTexts": {
+"fr": "CT Recyclage",
+"de": "TM Aufbereitung",
+"es": "MT Reciclaje",
+"pt": "MT Recycle",
+"it": "MT Riciclo",
+"ko": "리사이클 기술머신 ",
+"ja": "わざマシンリサイクル",
+"zh-hans": "TM 回收利用",
+"zh-hant": "TM 回收利用"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_snatch": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Snatch",
+"LocalTexts": {
+"fr": "CT Saisie",
+"de": "TM Übernahme",
+"es": "MT Robo",
+"pt": "MT Snatch",
+"it": "MT Scippo",
+"ko": "가로챔 기술머신 ",
+"ja": "わざマシンよこどり",
+"zh-hans": "TM 抢夺",
+"zh-hant": "TM 搶奪"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_swagger": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Swagger",
+"LocalTexts": {
+"fr": "CT Vantardise",
+"de": "TM Angeberei",
+"es": "MT Contoneo",
+"pt": "MT Swagger",
+"it": "MT Bullo",
+"ko": "뽐내기 기술머신 ",
+"ja": "わざマシンいばる",
+"zh-hans": "TM 虚张声势",
+"zh-hant": "TM 虛張聲勢"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_telekinesis": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Telekinesis",
+"LocalTexts": {
+"fr": "CT Lévikinésie",
+"de": "TM Telekinese",
+"es": "MT Telequinesis",
+"pt": "MT Telekinesis",
+"it": "MT Telecinesi",
+"ko": "텔레키네시스 기술머신 ",
+"ja": "わざマシンテレキネシス",
+"zh-hans": "TM 意念移物",
+"zh-hant": "TM 意念移物"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_torment": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Torment",
+"LocalTexts": {
+"fr": "CT Tourmente",
+"de": "TM Folterknecht",
+"es": "MT Tormento",
+"pt": "MT Torment",
+"it": "MT Attaccalite",
+"ko": "트집 기술머신 ",
+"ja": "わざマシンいちゃもん",
+"zh-hans": "TM 无理取闹",
+"zh-hant": "TM 無理取鬧"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
+"tm_whirlpool": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 6,
+"States": [
+{
+"assembly": "RogueEssence, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null",
+"type": "RogueEssence.Dungeon.ItemIDState"
+}
+],
+"Name": {
+"DefaultText": "TM Whirlpool",
+"LocalTexts": {
+"fr": "CT Siphon",
+"de": "TM Whirlpool",
+"es": "MT Torbellino",
+"pt": "MT Whirlpool",
+"it": "MT Mulinello",
+"ko": "바다회오리 기술머신 ",
+"ja": "わざマシンうずしお",
+"zh-hans": "TM 潮旋",
+"zh-hant": "TM 潮旋"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 13
+},
 "wand_totter": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -3043,16 +4051,60 @@
 "Comment": "",
 "SortOrder": 11
 },
+"wand_transfer": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.WandState"
+}
+],
+"Name": {
+"DefaultText": "Transfer Wand",
+"LocalTexts": {
+"fr": "Branche Métamorph",
+"de": "Transferzweig",
+"it": "Ramo Sosia",
+"zh-hans": "变身之杖"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 3
+},
+"wand_vanish": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 1,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.WandState"
+}
+],
+"Name": {
+"DefaultText": "Vanish Wand",
+"LocalTexts": {
+"fr": "Branche Disparition",
+"de": "Verschwindezweig",
+"it": "Dileguaramo",
+"zh-hans": "隐身之杖"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 3
+},
 "cafe_apple_cider": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 },
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 }
 ],
@@ -3249,7 +4301,7 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.20.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
@@ -3332,6 +4384,27 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 0
+},
+"seed_quick": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.7.21.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.SeedState"
+}
+],
+"Name": {
+"DefaultText": "Quick Seed",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 7
 }
 }
 }

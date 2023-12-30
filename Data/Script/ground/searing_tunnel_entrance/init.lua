@@ -34,7 +34,7 @@ end
 --Engine callback function
 function searing_tunnel_entrance.Enter(map)
 
-  apricorn_glade.PlotScripting()
+  searing_tunnel_entrance.PlotScripting()
 
 end
 

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.MapStatusData, RogueEssence",
 "Name": {
@@ -10,7 +10,7 @@
 "DefaultText": "Taken from the end of Special Episode 5. Used to visually show strong winds, but doesn't actually do anything.",
 "LocalTexts": {}
 },
-"Released": false,
+"Released": true,
 "Comment": "",
 "CarryOver": false,
 "Emitter": {

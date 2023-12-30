@@ -2,7 +2,7 @@ require 'common'
 GeneralFunctions = {}
 
 --[[These are functions/procedures that are useful in a multitude of different maps or situations. Things such as
-reseting daily flags, a function to have the pokemon look in a random number of randections, etc.
+reseting daily flags, a function to have the pokemon look in a random number of directions, etc.
 
 List of custom variables attached to pokemon:
 Importance: used mainly to mark the Hero and the Partner. is equal to 'Hero' if hero and 'Partner' if partner.
@@ -37,6 +37,9 @@ function GeneralFunctions.UpdateDailyFlags()
 	
 	--Reset amount of times audino was summoned on that day 
 	SV.TemporaryFlags.AudinoSummonCount = 0
+	
+	--Reset in-dungeon thief status so shopkeepers won't continue remember your crimes in the next dungeon run
+	SV.adventure.Thief = false
 	
 	--Generate jobs
 	MISSION_GEN.ResetBoards()
@@ -893,7 +896,7 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney, keepEquips)
 	if sendItems then 
 		for i = 1, itemCount, 1 do
 			item = GAME:GetPlayerBagItem(0)
-			GAME:TakePlayerBagItem(0)
+			GAME:TakePlayerBagItem(0, true)
 			GAME:GivePlayerStorageItem(item)
 		end
 		
@@ -902,7 +905,7 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney, keepEquips)
 			for i = 1, GAME:GetPlayerPartyCount(), 1 do
 				item = GAME:GetPlayerEquippedItem(i-1)
 				if item.ID ~= "" then 
-					GAME:TakePlayerEquippedItem(i-1)
+					GAME:TakePlayerEquippedItem(i-1, true)
 					GAME:GivePlayerStorageItem(item)
 				end
 			end

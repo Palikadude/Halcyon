@@ -25,8 +25,14 @@ function MAP_STATUS_SCRIPT.ShopGreeting(owner, ownerChar, character, status, msg
   if found_shopkeep and COMMON.CanTalk(found_shopkeep) then
     DUNGEON:CharTurnToChar(found_shopkeep, _DUNGEON.ActiveTeam.Leader)
     UI:SetSpeaker(found_shopkeep)
-    UI:WaitShowDialogue(RogueEssence.StringKey(string.format("TALK_SHOP_START_%04d", found_shopkeep.Discriminator)):ToLocal())
 	GAME:WaitFrames(10)
+    --Halcyon tweak: If you talk to kec or enter his shop after stealing, he'll aggro you
+    if SV.adventure.Thief then
+	  COMMON.ThiefReturn()
+    else  
+	  UI:WaitShowDialogue(RogueEssence.StringKey(string.format("TALK_SHOP_START_%04d", found_shopkeep.Discriminator)):ToLocal())
+	  GAME:WaitFrames(10)
+    end
   end
 end
 
@@ -47,10 +53,10 @@ function MAP_STATUS_SCRIPT.SetShopkeeperHostile(owner, ownerChar, character, sta
 	
 	local berserk_idx = "shopkeeper"
 	local berserk = RogueEssence.Dungeon.StatusEffect(berserk_idx)
-	TASK:WaitTask(found_shopkeep:AddStatusEffect(nil, berserk, nil))
+	TASK:WaitTask(found_shopkeep:AddStatusEffect(nil, berserk, false))
   end
   -- force everyone to skip their turn for this entire session
-  _ZONE.CurrentMap.CurrentTurnMap:SkipRemainingTurns()
+  _DUNGEON:SkipRemainingTurns()
 end
 
 ITEM_SCRIPT = {}

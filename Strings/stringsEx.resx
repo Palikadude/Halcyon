@@ -3392,6 +3392,116 @@
     <comment></comment>  </data>
 	
 	
+	
+  <data name="TALK_SHOP_0000" xml:space="preserve">
+    <value>Always delighted to be of service! ~\u266A</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_0001" xml:space="preserve">
+    <value>Look, look! They're all shiny!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_0002" xml:space="preserve">
+    <value>OUR WARES ARE GUARANTEED PREMIUM QUALITY.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_END_0000" xml:space="preserve">
+    <value>Thank you! Please come again! ~\u266A</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_END_0001" xml:space="preserve">
+    <value>Thank you for coming!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_END_0002" xml:space="preserve">
+    <value>HAVE A NICE DAY.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_0000" xml:space="preserve">
+    <value>That merchandise is {0}. Want to buy it?</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_0001" xml:space="preserve">
+    <value>One...[pause=10] two...[pause=10] three...[pause=10] That will be {0}!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_0002" xml:space="preserve">
+    <value>YOUR TOTAL BILL IS {0}.\nCONFIRM YOUR PURCHASE.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_DONE_0000" xml:space="preserve">
+    <value>Thank you! So very much! ~\u266A</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_DONE_0001" xml:space="preserve">
+    <value>Come back soon!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_DONE_0002" xml:space="preserve">
+    <value>TRANSACTION COMPLETE. ALL SALES FINAL.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_REFUSE_0000" xml:space="preserve">
+    <value>Very disappointing.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_REFUSE_0001" xml:space="preserve">
+    <value>Awwww, not buying?</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_REFUSE_0002" xml:space="preserve">
+    <value>TRANSACTION CANCELLED.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_SHORT_0000" xml:space="preserve">
+    <value>You don't seem to have enough money.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_SHORT_0001" xml:space="preserve">
+    <value>Huh? That's not enough...</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_PAY_SHORT_0002" xml:space="preserve">
+    <value>ERROR. INSUFFICIENT FUNDS.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_0000" xml:space="preserve">
+    <value>For that, I shall pay {0}! Want to sell it?</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_0001" xml:space="preserve">
+    <value>I can buy your stuff for,[pause=10] um,[pause=10] {0}![pause=30] Is that okay?</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_0002" xml:space="preserve">
+    <value>YOU SHALL BE PAID {0} FOR THE SUPPLIES.\nCONFIRM?</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_DONE_0000" xml:space="preserve">
+    <value>Thank you! I value your patronage! ~\u266A</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_DONE_0001" xml:space="preserve">
+    <value>Yaay! Thank you!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SELL_DONE_0002" xml:space="preserve">
+    <value>EXCHANGE COMPLETE.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_START_0000" xml:space="preserve">
+    <value>Welcome! Welcome! ~\u266A</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_START_0001" xml:space="preserve">
+    <value>Welcome to my very own shop!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_START_0002" xml:space="preserve">
+    <value>GREETINGS, VALUED CUSTOMER.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SUSPECT_0000" xml:space="preserve">
+    <value>Did you think I'd forget the face of the thief that stole from my brothers!?[pause=0] Prepare for harsh justice!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SUSPECT_0001" xml:space="preserve">
+    <value>Hey wait![pause=10] I heard about you![pause=0]\nYou stole from my friends!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_SUSPECT_0002" xml:space="preserve">
+    <value>PROCESS HALTED.[pause=0]\nSEARCHING DATABASE...[br].[pause=4].[pause=4].[pause=4].[pause=4]CRIMINAL RECORD MATCHED.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_0000" xml:space="preserve">
+    <value>My precious merchandise! Catch that thief!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_0001" xml:space="preserve">
+    <value>Waaah! That meanie stole my shinies!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_0002" xml:space="preserve">
+    <value>THEFT WILL NOT BE TOLERATED.</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_RETURN_0000" xml:space="preserve">
+    <value>Catch that thief!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_RETURN_0001" xml:space="preserve">
+    <value>Help! The stealer is back!</value>
+    <comment></comment>  </data>
+  <data name="TALK_SHOP_THIEF_RETURN_0002" xml:space="preserve">
+    <value>THEFT WILL NOT BE TOLERATED.</value>
+    <comment></comment>  </data>
+	
 
 
 

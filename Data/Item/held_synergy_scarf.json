@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.21.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -7,7 +7,7 @@
 "LocalTexts": {}
 },
 "Desc": {
-"DefaultText": "A rare scarf made of many unique fibers. Normally dull, it glows a vibrant arrangement of bright colors when near another of its kind.",
+"DefaultText": "A rare scarf made of many unique fibers. Normally dull, it glows a vibrant arrangement of bright colors when near another of its kind, boosting the holders' offensive and defensive stats slightly.",
 "LocalTexts": {}
 },
 "Released": true,
@@ -25,6 +25,7 @@
 "$type": "PMDC.Dungeon.HeldState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.AttackAction, RogueEssence",
 "HitTiles": false,
@@ -153,6 +154,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -207,6 +209,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
