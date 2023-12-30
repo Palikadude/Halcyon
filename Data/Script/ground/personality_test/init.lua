@@ -103,15 +103,38 @@ function personality_test.CharacterSelect()
 	local assembly_count = GAME:GetPlayerAssemblyCount()
 	for i = 1, assembly_count, 1 do
 	   _DATA.Save.ActiveTeam.Assembly.RemoveAt(i-1)--not sure if this permanently deletes or not...
-	end 
-	
-	
-	GAME:WaitFrames(60)
-  	UI:WaitShowVoiceOver("Welcome to the world of Pokémon!", -1)  
-  	UI:WaitShowVoiceOver("Ahead of you lies a world full of exciting adventures\n and mysteries to discover!", -1)  
-	UI:WaitShowVoiceOver("Before you go, you need to make some important decisions.", -1)  
-	UI:WaitShowVoiceOver("Please think carefully before choosing!", -1)  
-	UI:WaitShowVoiceOver("Now, make your choices!", -1) 
+	end
+
+	local species_list = {}
+	if CONFIG.RegularStarters then
+		GAME:WaitFrames(60)
+	else
+		--this will already take its sweet time so might as well not put a wait command here
+		local mons = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:GetOrderedKeys(true)
+		local isStarterAllowed = function(id) -- this is the filtering function
+			local blacklist = {"missingno"} -- add ids in here to discard them manually
+
+			local mon = _DATA:GetMonster(id)
+			--edit this condition to alter the automatic filtering results
+			if mon.Released then
+				for _, species in pairs(blacklist) do if species == id then return false end end
+				return true
+			end
+			return false
+		end
+
+		for id in luanet.each(mons) do
+			if isStarterAllowed(id) then
+				--only if the check is passed, add the mon as a playable species
+				table.insert(species_list, id)
+			end
+		end
+	end
+  	UI:WaitShowVoiceOver("Welcome to the world of Pokémon!", -1)
+  	UI:WaitShowVoiceOver("Ahead of you lies a world full of exciting adventures\n and mysteries to discover!", -1)
+	UI:WaitShowVoiceOver("Before you go, you need to make some important decisions.", -1)
+	UI:WaitShowVoiceOver("Please think carefully before choosing!", -1)
+	UI:WaitShowVoiceOver("Now, make your choices!", -1)
 	GAME:WaitFrames(40)
 	
 	SOUND:PlayBGM("Welcome to the World of Pokémon!.ogg", true)
@@ -304,7 +327,7 @@ function personality_test.CharacterSelect()
 
 
 		--Partner data
-		result = hero_choice
+		local result = hero_choice
 		continue = false
 		local type_warning = true
 		local partner_choice = 0
@@ -370,218 +393,45 @@ function personality_test.CharacterSelect()
 	else
 
 		--loop this twice; one for player, one for partner.
-		--initialize some important variables out here.
-		local char_choice = -1	
-		local form = -1
-		for charslot = 0, 1, 1 do 
+		local menu_title = {"Create the hero", "Create the partner"}
+		for charslot = 0, 1, 1 do
 			if charslot == 1 then
 				GAME:WaitFrames(20)
-				UI:WaitShowDialogue("And now,[pause=10] your partner.")
+				UI:WaitShowDialogue("Very well.[pause=0] The choice has been made.")
+				UI:WaitShowDialogue("But what about your partner?")
 			end
-			local animation_continue = false
-			
-			while not animation_continue do
-				local species_continue = false 
-				char_choice = -1	
-				
-				while not species_continue do
-					local legit_species = false
-					while not legit_species do
-						local query_string = "Enter the species of the hero."
-						if charslot == 1 then
-							query_string = "Enter the species of the partner." 
-						end
-						
-						UI:NameMenu(query_string, "Put spaces or hyphens as underscores.")
-						UI:WaitForChoice()
-						local result = UI:ChoiceResult()
-						local lower_result = string.lower(result)
-						--check if the name they entered is a legit pokemon.
-						--todo: some catches for monsters like "nidoran_m" that people would reasonably enter as Nidoran_Male?
-						
-						--check if that string is a legit monster or not.
-						local mons = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:GetOrderedKeys(false)
-						--  Count - 1 to account for missingno, as count goes up one more than it should because of missingno
-						for i = 1, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Monster].Count - 1, 1 do
-							if mons[i] == lower_result then
-								legit_species = true		
-								break
-							end						
-						end
-						
-						--Was their input a legit species? If so, make sure it's released. If it's a legit species but not released, notify them.
-						if not legit_species then 
-							UI:WaitShowDialogue(result .. " is not a legit species.[pause=0] Please try again.")
-						else
-							if not _DATA:GetMonster(lower_result).Released then 
-								UI:WaitShowDialogue(_DATA:GetMonster(lower_result):GetColoredName() .. " does not have complete data and/or sprites.[pause=0] Please try again.")
-								UI:WaitShowDialogue("If you believe this is a mistake,[pause=10] please double check the sprite repository before notifying the developer.")
-								legit_species = false
-							else
-								char_choice = RogueEssence.Dungeon.MonsterID(lower_result, 0, "normal", Gender.Genderless)
-							end 
-						end
-					end
-					
-					UI:ChoiceMenuYesNo("Is " .. _DATA:GetMonster(char_choice.Species):GetColoredName() .. " correct?")
+			local continue = false
+
+			--run the character selection menu
+			local CharacterMenu = CharacterSelectionMenu()
+			local menu = CharacterMenu:new(menu_title[charslot+1], species_list)
+			while not continue do
+				while not menu.confirmed do
+					UI:SetCustomMenu(menu:getFocusedWindow())
 					UI:WaitForChoice()
-					species_continue = UI:ChoiceResult()
-					
+					continue = menu.data.has_animations
 				end
-				
-				--Check Pokemon's forms. If Pokemon has multiple forms, see which form the player wants.
-				form = 0
-				if  _DATA:GetMonster(char_choice.Species).Forms.Count > 1 then 
-					local forms = {}
-					for i = 0,  _DATA:GetMonster(char_choice.Species).Forms.Count - 1, 1 do 
-						table.insert(forms, "[color=#00FF00]" .. _DATA:GetMonster(char_choice.Species).Forms[i].FormName:ToLocal() .. "[color]")
-					end
-											
-					local form_continue = false
-					
-					while not form_continue do
-						result = GeneralFunctions.PagedChoiceMenu("Which form would you like?", forms, 1, #forms)
-						form = result - 1
-						
-						--make sure this form is also released.
-						if not _DATA:GetMonster(char_choice.Species).Forms[form].Released then
-							UI:WaitShowDialogue("This form does not have necessary data or sprites.[pause=0] Please try again.")
-							UI:WaitShowDialogue("If you believe this is a mistake,[pause=10] please double check the sprite repository before notifying the developer.")
-						else
-							UI:ChoiceMenuYesNo("Is [color=#00FF00]" .. _DATA:GetMonster(char_choice.Species).Forms[form].FormName:ToLocal() .. "[color] correct?")
-							UI:WaitForChoice()
-							form_continue = UI:ChoiceResult()
-						end
-					end
-				end 
-				
-				--Warn the player if starter animations are incomplete for the character. 
-				--Give them the option of selecting someone else if this is the case.
-				local animations = {"EventSleep", "Wake", "Eat", "Tumble", "Pose", "Pull", "Pain", "Float",
-									"DeepBreath", "Nod", "Sit", "LookUp", "Sink", "Trip", "Laying", "LeapForth", 
-									"Head", "Cringe", "LostBalance", "TumbleBack", "HitGround", "Faint"}
-									
-				--create an offscreen ground clone of the mon we're planning on making to use with the GROUND:CharGetAnimFallback function.
-				local temp_monster = RogueEssence.Dungeon.MonsterID(char_choice.Species, form, "normal", Gender.Genderless)
-	
-				local temp_ground_char = RogueEssence.Ground.GroundChar(temp_monster, RogueElements.Loc(600, 600), Direction.Down, "Dummy", char_choice.Species)
-				temp_ground_char:ReloadEvents()
-				GAME:GetCurrentGround():AddTempChar(temp_ground_char)
-			
-						
-				--check each animation.
-				local missing_animations = false
-				for i = 1, #animations, 1 do
-					if GROUND:CharGetAnimFallback(temp_ground_char, animations[i]) ~= animations[i] then
-						missing_animations = true 
-						print(animations[i])
-					end
-				end
-				
-				animation_continue = true
-				--todo: check for missing portraits
-				if missing_animations then 
+				--ask the player again if they selected a character with missing animations
+				if not menu.data.has_animations then
+					continue = false
 					UI:WaitShowDialogue("WARNING![pause=0] The species and form you've chosen lack certain starter animations used in cutscenes.")
 					UI:WaitShowDialogue("The game should still work fine,[pause=10] but some cutscenes and portrait emoting may be off as a result.")
 					UI:ChoiceMenuYesNo("With that said,[pause=10] would you like to choose a different Pokémon as your starter?")
 					UI:WaitForChoice()
 					--Do a not here because of the wording of the variables and the question to the player
-					animation_continue = not UI:ChoiceResult() 
+					continue = not UI:ChoiceResult()
+					menu.confirmed = false
 				end
-					
-				GAME:GetCurrentGround():RemoveTempChar(temp_ground_char)
-				
 			end
-			
-			--Choose Gender.
-			local gender = 0
-			local gender_choices = {'Boy', 'Girl', "Non-Binary"}
-			UI:BeginChoiceMenu("Are you a boy, girl, or non-binary?", gender_choices, 1, 1)
-			UI:WaitForChoice()
-			gender = UI:ChoiceResult()
-			
-			if gender == 1 then
-				gender = Gender.Male
-			elseif gender == 2 then
-				gender = Gender.Female
-			else --dunno if this will cause issues with sprites to use
-				gender = Gender.Genderless
-			end	
-			
-			
-			--Choose ability. Hidden abilities are now also selectable!
-			local monster = _DATA:GetMonster(char_choice.Species).Forms[form]
-			local ability = monster.Intrinsic1
-			local ability_choices = {monster.Intrinsic1}
-			if monster.Intrinsic2 ~= "none" then table.insert(ability_choices, monster.Intrinsic2) end
-			if monster.Intrinsic3 ~= "none" then table.insert(ability_choices, monster.Intrinsic3) end
-			
-			--for display purposes
-			local ability_display = {_DATA:GetIntrinsic(monster.Intrinsic1):GetColoredName()}
-			if monster.Intrinsic2 ~= "none" then table.insert(ability_display, _DATA:GetIntrinsic(monster.Intrinsic2):GetColoredName()) end
-			if monster.Intrinsic3 ~= "none" then table.insert(ability_display, _DATA:GetIntrinsic(monster.Intrinsic3):GetColoredName()) end
 
-			
-			if #ability_display > 1 then--if pokemon has multiple abilities, let player choose which to get
-				UI:BeginChoiceMenu("Which ability would you like to have?", ability_display, 1, 1)
-				UI:WaitForChoice()
-				local result = UI:ChoiceResult()
-				ability = ability_choices[result]
-			end
-			
-			--Choose shininess
-			--TODO: Add a check to make sure shiny sprite exists if they pick shiny, just in case shiny sprites don't exist.
-			local shiny = "normal"
-			UI:ChoiceMenuYesNo("Do you want to be shiny?", true)
-			UI:WaitForChoice()
-			result = UI:ChoiceResult()
-			
-			if result then shiny = 'shiny' end
-			
-			--Pick egg move. If none exist, skip this step.
-			local egg_move = "none"
-			local base_species = char_choice.Species
-			local base_form = form 
-			
-			--Get the most unevolved state of the mon to retrieve egg moves. Only unevolved Pokemon have egg moves defined.
-			--PromoteFrom  = species of the prevo
-			--PromoteForm = form of the prevo
-			while _DATA:GetMonster(base_species).PromoteFrom ~= '' do
-				base_form = _DATA:GetMonster(base_species).Forms[base_form].PromoteForm
-				base_species = _DATA:GetMonster(base_species).PromoteFrom
-			end 
-			
-			if _DATA:GetMonster(base_species).Forms[base_form].SharedSkills.Count > 0 then
-				local egg_move_list = {}
-				
-				for i = 0,  _DATA:GetMonster(base_species).Forms[base_form].SharedSkills.Count - 1, 1 do 
-					--only add in released moves 
-					if _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill).Released then
-						table.insert(egg_move_list, _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get(_DATA:GetMonster(base_species).Forms[base_form].SharedSkills[i].Skill):GetColoredName())
-					end 
-				end		
-				
-				result = GeneralFunctions.PagedChoiceMenu("Which egg move would you like?", egg_move_list, 1, 1)
-				egg_move = _DATA:GetMonster(base_species).Forms[base_form].SharedSkills[result - 1].Skill
-			end
-			
-			--Generate the hero now that all data's been accumulated.
-			local mon_id = char_choice
-			mon_id.Gender = gender
-			mon_id.Form = form
-			mon_id.Skin = shiny
-			_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, ability, 0))
-			if egg_move ~= 'none' then
-				if GAME:GetCharacterSkill(GAME:GetPlayerPartyMember(charslot), 3) ~= "" then 
-					GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(charslot), egg_move, 3)--override move in slot 4 if 4 moves are known. They can always go see slowpoke to get it back
-				else 
-					GAME:LearnSkill(GAME:GetPlayerPartyMember(charslot), egg_move)
-				end
+			--Generate the character now that all data's been accumulated.
+			local mon_id = menu:toMonsterID()
+			_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 5, menu.data.intrinsic, 0))
+			if menu.data.egg_move ~= '' then
+				GAME:SetCharacterSkill(GAME:GetPlayerPartyMember(charslot), menu.data.egg_move, menu.data.egg_move_index)
 			end
 		end
-		
 		GAME:SetTeamLeaderIndex(0)
-		
 	end 
 	
 	
@@ -619,8 +469,9 @@ function personality_test.CharacterSelect()
 	talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	_DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 
-  
-	local yesnoResult = false 
+
+	local result = ""
+	local yesnoResult = false
 	while not yesnoResult do
 		UI:NameMenu("What is your partner's name?", "It is highly recommended to give a nickname.", 60)
 		UI:WaitForChoice()

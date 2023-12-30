@@ -9,6 +9,7 @@ require 'common'
 require 'services.baseservice'
 require 'mission_gen'
 require 'recruit_list'
+require 'config'
 
 --Declare class DebugTools
 local DebugTools = Class('DebugTools', BaseService)
@@ -37,7 +38,29 @@ end
 ---------------------------------------------------------------]]
 function DebugTools:OnInit()
   assert(self, 'DebugTools:OnInit() : self is null!')
-  PrintInfo("\n<!> ExampleSvc: Init..")
+	PrintInfo("\n<!> DebugTools: Init..")
+	CONFIG.RegularStarters = true
+	CONFIG.UseNicknames = true
+	self.checkForMods()
+	print("CONFIG.RegularStarters = "..tostring(CONFIG.RegularStarters))
+	print("CONFIG.UseNicknames = "..tostring(CONFIG.UseNicknames).."\n")
+end
+
+function DebugTools.checkForMods()
+	print("\nChecking for Config Mods...")
+	for i=0, RogueEssence.PathMod.Mods.Length-1, 1 do
+		local mod = RogueEssence.PathMod.Mods[i]
+		print("checking: "..mod.Name)
+		if mod.Name == "Halcyon All Starters" then
+			print("> Starter mode set to \"all\"")
+			CONFIG.RegularStarters = false
+		elseif mod.Name == "Halcyon No Nickname" then
+			print("> Nicknames disabled")
+			CONFIG.UseNicknames = false
+		else
+			print("> No changes required")
+		end
+	end
 end
 
 --[[---------------------------------------------------------------
@@ -46,7 +69,7 @@ end
 ---------------------------------------------------------------]]
 function DebugTools:OnDeinit()
   assert(self, 'DebugTools:OnDeinit() : self is null!')
-  PrintInfo("\n<!> ExampleSvc: Deinit..")
+  PrintInfo("\n<!> DebugTools: Deinit..")
 end
 
 --[[---------------------------------------------------------------

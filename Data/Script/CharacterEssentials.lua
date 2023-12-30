@@ -1,5 +1,4 @@
 require 'common'
-require 'config'
 
 local function FirstToUpper(str)
 	return (str:gsub("^%l", string.upper))
