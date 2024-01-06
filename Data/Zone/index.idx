@@ -4,7 +4,7 @@
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -197,7 +197,7 @@
 },
 "crooked_cavern": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -368,7 +368,7 @@
 },
 "illuminant_riverbed": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -406,7 +406,7 @@
 },
 "master_zone": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -466,7 +466,10 @@
 "apricorn_grove_entrance",
 "apricorn_glade",
 "vast_steppe_entrance",
+"searing_tunnel_entrance",
 "searing_tunnel_midpoint",
+"searing_crucible",
+"mount_windswept_entrance",
 "testmap",
 "test_grounds"
 ],
@@ -500,7 +503,9 @@
 "Rescues": 0,
 "CountedFloors": 13,
 "Rogue": 0,
-"Grounds": [],
+"Grounds": [
+"mount_windswept_entrance"
+],
 "Maps": [
 [
 0,
@@ -599,7 +604,7 @@
 },
 "relic_forest": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,

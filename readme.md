@@ -20,7 +20,13 @@ If you're having trouble installing the game, or have any questions, comments, f
 * If you're encountering this issue, you'll need to run PMDO with the following command line argument to force it to use a different audio driver: -audiodriver:wasapi
 * If you don't know how to this, look in the Halcyon Mods folder and put the audio-wasapi.bat file into the same folder as your PMDO.exe, then use the .bat file to boot the game instead of the .exe file.
 
-
+2. I got softlocked in a dungeon/cutscene! Why is this, and how can I fix it?
+* This is typically caused by one of two things:
+* 1. PMDO has updated since the build of Halcyon you're playing on was released, and caused some sort of incompatibility issue due to changing how some function works or something else under the hood.
+* 2. The build of Halcyon you're playing on is meant for a later version of PMDO than the version you're playing on.
+* If the first case happens, you'll either need to downgrade using PMDOSetup.exe to an earlier version of PMDO that is compatible with that build of Halcyon, or you'll need to wait for a fix that addresses the incompatibility. This case is more likely if your PMDO version is recent, but the build of Halcyon is from a while ago.
+* If the second case happens, you'll need to simply update PMDO to the latest version using PMDOSetup.exe. This case is more likely if you haven't updated your PMDO in a while.
+* Alternatively, there is a third case which is more rare, which is simply a programming error. In any event, if you're struggling to fix the softlock, don't hestitate to report the issue in the Halcyon channel in the PMDO Discord. It'll help you (and the developer) figure out what's wrong and address it properly.
 
 ## Credits
 * **Palika** — mod author. scripting, writing, balancing, mapping, etc. (all non-engine work, except where other credit is given)  
@@ -64,6 +70,7 @@ Other custom sprites and animations come from the master [PMD Sprite Repository]
 If you helped in some way and aren't listed here (probably because I forgot, sorry!) please let me know.
 
 ### Special thanks
+* Game Freak, Spike Chunsoft, and The Pokémon Company for creating Pokémon and Pokémon Mystery Dungeon. They reserve all rights to Pokémon and Pokémon Mystery Dungeon.
 * NeoGeoThomas — For putting the first trailer together
 * borzoiteeth — for inspiring the game in the first place
 * [SkyTemple](https://skytemple.org/) community — For helping me figure out base Explorer's behavior for some cutscenes and functions

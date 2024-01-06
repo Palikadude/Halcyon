@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -22,7 +22,7 @@
 "Comment": "",
 "Sprite": "Seed_Yellow",
 "Icon": 4,
-"SortCategory": 0,
+"SortCategory": 7,
 "Price": 160,
 "Rarity": 0,
 "MaxStack": 0,
@@ -36,6 +36,7 @@
 "$type": "PMDC.Dungeon.SeedState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
@@ -179,6 +180,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -207,6 +209,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -225,7 +228,7 @@
 },
 "Value": {
 "$type": "PMDC.Dungeon.AutoReviveEvent, PMDC",
-"AskToUse": true,
+"AskToUse": false,
 "ChangeTo": "seed_plain"
 }
 }

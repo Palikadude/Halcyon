@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -24,7 +24,7 @@
 "Comment": "",
 "Sprite": "Seed_Red",
 "Icon": 4,
-"SortCategory": 4,
+"SortCategory": 7,
 "Price": 20,
 "Rarity": 0,
 "MaxStack": 0,
@@ -374,6 +374,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -402,6 +403,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

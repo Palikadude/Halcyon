@@ -34,7 +34,7 @@ end
 --Engine callback function
 function vast_steppe_entrance.Enter(map)
 
-  apricorn_glade.PlotScripting()
+  vast_steppe_entrance.PlotScripting()
 
 end
 

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -31,7 +31,7 @@
 "Comment": "",
 "Sprite": "Berry_Oran",
 "Icon": 3,
-"SortCategory": 0,
+"SortCategory": 6,
 "Price": 10,
 "Rarity": 0,
 "MaxStack": 0,
@@ -45,6 +45,7 @@
 "$type": "PMDC.Dungeon.BerryState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
@@ -201,6 +202,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -229,6 +231,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

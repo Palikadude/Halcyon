@@ -79,7 +79,7 @@ function guild_dining_room_ch_1.Snubbull_Action(chara, activator)
 		
 		UI:SetSpeaker(partner)
 		UI:SetSpeakerEmotion("Normal")
-		UI:WaitShowDialogue("So um...[pause=0] Is this the dining room?")
+		UI:WaitShowDialogue("So,[pause=10] um...[pause=0] Is this the dining room?")
 		GAME:WaitFrames(20)
 
 		UI:SetSpeaker(STRINGS:Format("\\uE040"), true, snubbull.CurrentForm.Species, snubbull.CurrentForm.Form, snubbull.CurrentForm.Skin, snubbull.CurrentForm.Gender)

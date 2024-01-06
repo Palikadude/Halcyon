@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.12.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -16,7 +16,7 @@
 "Comment": "Cafe food item.",
 "Sprite": "Bottle_DarkBlue",
 "Icon": 7,
-"SortCategory": 0,
+"SortCategory": 6,
 "Price": 0,
 "Rarity": 0,
 "MaxStack": 0,
@@ -30,6 +30,7 @@
 "$type": "PMDC.Dungeon.DrinkState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.AreaAction, RogueEssence",
 "Emitter": {
@@ -271,6 +272,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -299,6 +301,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

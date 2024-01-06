@@ -28,13 +28,10 @@ function testmap.Init(map, time)
 
   --This will fill the localized strings table automatically based on the locale the game is 
   -- currently in. You can use the MapStrings table after this line!
-  MapStrings = COMMON.AutoLoadLocalizedStrings()
-  
-  --local chara = CH('Teammate1')
-	--AI:SetCharacterAI(chara, "ai.ground_partner", CH('PLAYER'), chara.Position)
-   -- chara.CollisionDisabled = true
-	
-	--GROUND:AddMapStatus("darkness")
+	MapStrings = COMMON.AutoLoadLocalizedStrings()
+	COMMON.RespawnAllies()
+	PartnerEssentials.InitializePartnerSpawn()
+
 
 end
 
@@ -75,6 +72,17 @@ function testmap.EnterGrove_Action(chara, activator)
 GAME:EnterDungeon("apricorn_grove", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 end
 
+function testmap.EnterSteppe_Action(chara, activator)
+GAME:EnterDungeon("vast_steppe", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
+
+function testmap.EnterTunnel_Action(chara, activator)
+GAME:EnterDungeon("searing_tunnel", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
+
+function testmap.EnterMountain_Action(chara, activator)
+GAME:EnterDungeon("mount_windswept", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+end
 function testmap.Make_Missions_Action(chara, activator)
 	print("Running mission generation!")  
 	MISSION_GEN.ResetBoards()
@@ -277,9 +285,7 @@ function testmap.Test_Core_Deactivation_Action(chara, activator)
 end
 	
 	
-	
-												 
-												 
+											 
 
 return testmap
 

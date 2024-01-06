@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -14,7 +14,7 @@
 "Comment": "Cafe ammo item.",
 "Sprite": "Bottle_Purple",
 "Icon": 0,
-"SortCategory": 9,
+"SortCategory": 2,
 "Price": 0,
 "Rarity": 0,
 "MaxStack": 0,

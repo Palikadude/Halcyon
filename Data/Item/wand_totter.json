@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -22,7 +22,7 @@
 "Comment": "",
 "Sprite": "Wand_Blue",
 "Icon": 8,
-"SortCategory": 11,
+"SortCategory": 3,
 "Price": 5,
 "Rarity": 0,
 "MaxStack": 9,
@@ -33,6 +33,7 @@
 "$type": "PMDC.Dungeon.WandState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.ProjectileAction, RogueEssence",
 "Anim": {
@@ -223,6 +224,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -251,6 +253,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

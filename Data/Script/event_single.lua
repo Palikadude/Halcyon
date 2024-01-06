@@ -1556,7 +1556,7 @@ function SINGLE_CHAR_SCRIPT.RelicForestFlipStairs(owner, ownerChar, context, arg
 				local tl = map:GetTile(loc)
 				local sec_loc = RogueEssence.Dungeon.SegLoc(0, -1)
 				local dest_state = PMDC.Dungeon.DestState(sec_loc, true)
-				dest_state.PreserveMusic = true
+				dest_state.PreserveMusic = false
 				if tl.Effect.ID == "stairs_go_up" then
 					tl.Effect.TileStates:Set(dest_state)
 					tl.Effect.ID = "stairs_back_down"

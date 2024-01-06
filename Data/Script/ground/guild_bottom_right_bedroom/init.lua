@@ -392,7 +392,7 @@ function guild_bottom_right_bedroom.Tips_Almanac_Action(obj, activator)
 		    UI:WaitShowDialogue("Of course,[pause=10] I don't need his help for every opponent.")
 			UI:WaitShowDialogue("But there are times where a team needs to work together to overcome obstacles!")
 			UI:WaitShowDialogue("As for which strategy the situation calls for...")
-			UI:WaitShowDialogue("Well,[pause=10] that depends on the opponent,[pause=10] what items we have,[pause=10] my and " .. CharacterEssentials.GetCharacterName("Growlithe") .. "'s health,[pause=10] and so many other factors...")
+			UI:WaitShowDialogue("Well,[pause=10] that depends on the opponent,[pause=10] what items we have,[pause=10] " .. CharacterEssentials.GetCharacterName("Growlithe") .. " and I's condition,[pause=10] and so many other factors...")
 			UI:WaitShowDialogue("I guess knowing which option to choose in a tough spot is part of what it takes to be a great adventurer,[pause=10] hmm.")
 			UI:WaitShowDialogue("Either way,[pause=10] it's good to know what my options are before I have to choose one while out on an adventure!")
 		  elseif entry == 'Basic Attacks' then

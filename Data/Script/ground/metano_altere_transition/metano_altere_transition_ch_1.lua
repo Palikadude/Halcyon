@@ -47,7 +47,7 @@ function metano_altere_transition_ch_1.HeartToHeartCutscene()
 	--GeneralFunctions.HeroDialogue(hero, "(And why )", "Worried")
 
 	
-	GAME:WaitFrames(40)
+	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion('Normal')

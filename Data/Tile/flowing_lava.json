@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.19.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.TileData, RogueEssence",
 "Name": {
@@ -11,7 +11,7 @@
 "LocalTexts": {}
 },
 "Released": true,
-"Comment": "Used for the 2nd boss fight's special effect.",
+"Comment": "Used for the 2nd boss fight's special effect.\r\n\r\nDoesn't affect fire types. Burns other types, and applies a typed 1/16 damage to them for standing on it.",
 "Anim": {
 "AnimIndex": "",
 "FrameTime": 6,

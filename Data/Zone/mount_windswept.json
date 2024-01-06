@@ -562,8 +562,8 @@
 },
 "AmountSpawner": {
 "$type": "RogueElements.RandRange, RogueElements",
-"Min": 2,
-"Max": 4
+"Min": 3,
+"Max": 5
 }
 }
 }
@@ -1249,8 +1249,8 @@
 },
 "AmountSpawner": {
 "$type": "RogueElements.RandRange, RogueElements",
-"Min": 2,
-"Max": 4
+"Min": 3,
+"Max": 5
 }
 }
 }
@@ -5455,6 +5455,8 @@
 "Comment": ""
 }
 ],
-"GroundMaps": []
+"GroundMaps": [
+"mount_windswept_entrance"
+]
 }
 }

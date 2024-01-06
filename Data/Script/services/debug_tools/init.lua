@@ -229,7 +229,11 @@ function DebugTools:OnNewGame()
 	  --_DATA.Save:UpdateTeamProfile(true)
 	  
 
-	  
+		GAME:GivePlayerItem('seed_reviver')	  
+		GAME:GivePlayerItem('seed_reviver')	  
+		GAME:GivePlayerItem('seed_reviver')	  
+		
+		
 		local dungeon_keys = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:GetOrderedKeys(false)
 		for ii = 0, dungeon_keys.Count-1 ,1 do
 			GAME:UnlockDungeon(dungeon_keys[ii])
@@ -881,8 +885,9 @@ end
 function DebugTools:OnLossPenalty(save) 
   assert(self, 'DebugTools:OnLossPenalty() : self is null!')
  
-  --remove money. You'll keep 15-25% of what you had 
+  --remove money. You'll keep 15-25% of what you had. Thieves keep nothing
   local remainder = math.random(1500, 2500) 
+  if SV.adventure.Thief then remainder = 0 end
   save.ActiveTeam.Money = math.floor((save.ActiveTeam.Money * remainder) / 10000)
  
 
@@ -891,23 +896,27 @@ function DebugTools:OnLossPenalty(save)
   for i = inv_count, 0, -1 do
     local entry = _DATA:GetItem(save.ActiveTeam:GetInv(i).ID)
     if not entry.CannotDrop then
-		if math.random(1, 4) > 1 then --1/4 chance an individual item will be kept 
+		if math.random(1, 4) > 1 or SV.adventure.Thief then --1/4 chance an individual item will be kept. Thieves keep NOTHING
 			save.ActiveTeam:RemoveFromInv(i)
 		end
     end
   end
   
-  --DO NOT remove equips
-  --local player_count = save.ActiveTeam.Players.Count
-  --for i = 0, player_count - 1, 1 do 
-  --  local player = save.ActiveTeam.Players[i]
-  --  if player.EquippedItem.ID ~= '' and player.EquippedItem.ID ~= nil then 
-  --    local entry = _DATA:GetItem(player.EquippedItem.ID)
-  --    if not entry.CannotDrop then
-  --       player:SilentDequipItem()
-  --    end
-  --  end
-  --end
+  --DO NOT remove equips unless the player was a thief
+  
+  if SV.adventure.Thief then
+    local player_count = save.ActiveTeam.Players.Count
+	for i = 0, player_count - 1, 1 do 
+	  local player = save.ActiveTeam.Players[i]
+	  if player.EquippedItem.ID ~= '' and player.EquippedItem.ID ~= nil then 
+		local entry = _DATA:GetItem(player.EquippedItem.ID)
+		if not entry.CannotDrop then
+		  player:SilentDequipItem()
+		end
+	  end
+    end
+  end
+  
 end
 
 -- function DebugTools:OnDungeonMapInit(mapname, mapobj)

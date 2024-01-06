@@ -29,6 +29,9 @@ end
 ---vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
 --Engine callback function
 function vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
+				
+	GAME:EndDungeonRun(result, "master_zone", -1, 46, 0, true, true)
+	GAME:EnterZone("master_zone", -1, 46, 0)
 
 
 end

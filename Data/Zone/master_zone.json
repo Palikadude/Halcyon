@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -12,6 +12,7 @@
 "Released": true,
 "Comment": "",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -82997,7 +82998,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -83022,7 +83024,8 @@
 }
 }
 ],
-"IsRelevant": false
+"IsRelevant": false,
+"Comment": ""
 }
 ],
 "GroundMaps": [
@@ -83073,7 +83076,10 @@
 "apricorn_grove_entrance",
 "apricorn_glade",
 "vast_steppe_entrance",
+"searing_tunnel_entrance",
 "searing_tunnel_midpoint",
+"searing_crucible",
+"mount_windswept_entrance",
 "testmap",
 "test_grounds"
 ]

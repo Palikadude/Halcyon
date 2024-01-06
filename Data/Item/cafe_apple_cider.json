@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.21.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -14,7 +14,7 @@
 "Comment": "Cafe food item.",
 "Sprite": "Bottle_Gold",
 "Icon": 7,
-"SortCategory": 0,
+"SortCategory": 4,
 "Price": 10,
 "Rarity": 0,
 "MaxStack": 4,

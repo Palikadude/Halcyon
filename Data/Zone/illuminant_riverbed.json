@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,6 +9,7 @@
 "Released": true,
 "Comment": "2nd dungeon of the game.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -558,7 +559,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 0,
@@ -1162,7 +1164,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 4,
@@ -1919,7 +1922,8 @@
 "Spawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": [

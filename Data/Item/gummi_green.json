@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -26,7 +26,7 @@
 "Comment": "",
 "Sprite": "Gummi_Green",
 "Icon": 6,
-"SortCategory": 2,
+"SortCategory": 5,
 "Price": 160,
 "Rarity": 0,
 "MaxStack": 0,
@@ -189,6 +189,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -217,6 +218,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

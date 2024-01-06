@@ -69,6 +69,8 @@ V0.5.0
 -Illuminant Riverbed now has you skipping across rocks to cross the river. Thank you Touhou Project for the update!
 -Flabebe has been added to Apricorn Grove. It was always supposed to be there, I just forgot to add it before.
 -All Starters mod now has a wonderful UI for selecting your hero/partner created by MistressNebula!
+-All Starters can now be enabled alongside No Nicknames.
+	-Note: If you already have All Starters or No Nicknames installed in your mod folder, delete their folders and then reinstall with the new versions in the Halcyon Mods folder.
 -Added Quick seed. It temporarily boosts movement speed (as you would expect).
 -Metano Town Kecleon shop now sells Quick seeds, Slow Orbs, and Gravelerocks.
 -Some general item prices like seeds have been adjusted slightly. Adjusted the prices of TMs to better correlate to how good the TM is. Orbs have been scaled a bit differently, typically to be cheaper.
@@ -76,3 +78,5 @@ V0.5.0
 -Fixed a bug with Dion that caused him to not take the right number of sticks from you if the sticks were across multiple stacks and you had just enough sticks to make a Domi Blend.
 -Fixed a bug similar to the two above that occurs when the game would want to send a stackable item you've equipped to storage (for example, entering a dojo maze).
 -Fixed a bug where selling stackables to the Kecleon Shop would only remove 1 in the stack instead of deleting the entire stack properly. These stackable bugs were all caused by a PMDO update changing how the remove player bag/equipped item commands worked, so it's possible you weren't encountering them during your playthrough.
+-Reviver seeds no longer ask if you want to use them and are now automatically used instead.
+-Fixed bad sorting on items that were edited from base PMDO (typically to change their price). Let me know if any items still sort strangely.

@@ -735,7 +735,7 @@ SV.Chapter4 =
 SV.Chapter5 = 
 {
 	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
-	FinnishedExpeditionAddress = false--Did the address about the expedition starting today?
+	FinishedExpeditionAddress = false--Did the address about the expedition starting today?
 }
 
 

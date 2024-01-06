@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.20.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,6 +9,7 @@
 "Released": true,
 "Comment": "3rd Dungeon of the game.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -256,6 +257,7 @@
 "Max": 7
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 9
@@ -500,7 +502,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 0,
@@ -738,6 +741,7 @@
 "Max": 7
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 9
@@ -982,7 +986,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 5,
@@ -2789,7 +2794,8 @@
 "ModStates": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
@@ -2808,7 +2814,8 @@
 "MapID": "chapter_3_boss_fight"
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -2839,7 +2846,8 @@
 }
 }
 ],
-"IsRelevant": false
+"IsRelevant": false,
+"Comment": ""
 }
 ],
 "GroundMaps": [

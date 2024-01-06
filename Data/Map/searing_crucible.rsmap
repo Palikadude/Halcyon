@@ -91,7 +91,7 @@
 "Intrinsics": [
 {
 "Element": {
-"ID": "flame_body"
+"ID": "magma_armor"
 },
 "BackRef": 0
 }
@@ -214,6 +214,717 @@
 }
 ],
 "BaseIntrinsics": [
+"magma_armor"
+],
+"Relearnables": {},
+"Discriminator": 0,
+"MetAt": "",
+"MetLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"DefeatAt": "",
+"DefeatLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"NameLocked": false,
+"IsFavorite": false,
+"Unrecruitable": true,
+"ScriptVars": null
+}
+],
+"Guests": [],
+"inventory": [],
+"Name": "",
+"LeaderIndex": 0,
+"FoeConflict": false
+},
+{
+"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
+"Players": [
+{
+"Element1": "fire",
+"Element2": "none",
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
+"movementSpeed": 0,
+"dead": false,
+"serializationLoc": {
+"X": 12,
+"Y": 8
+},
+"serializationDir": 1,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
+"ProxyName": "",
+"ProxySprite": {
+"Species": "",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"CurrentForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 2
+},
+"ProxyAtk": -1,
+"ProxyDef": -1,
+"ProxyMAtk": -1,
+"ProxyMDef": -1,
+"ProxySpeed": -1,
+"Skills": [
+{
+"Element": {
+"SkillNum": "ember",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 0
+},
+{
+"Element": {
+"SkillNum": "rock_throw",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 1
+},
+{
+"Element": {
+"SkillNum": "smog",
+"Charges": 16,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 2
+},
+{
+"Element": {
+"SkillNum": "yawn",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 3
+}
+],
+"Intrinsics": [
+{
+"Element": {
+"ID": "flame_body"
+},
+"BackRef": 0
+}
+],
+"EquippedItem": {
+"ID": "",
+"Cursed": false,
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0
+},
+"Absentee": false,
+"ChargeBoost": 0,
+"HPRemainder": 0,
+"Fullness": 100,
+"FullnessRemainder": 0,
+"MaxFullness": 100,
+"StatusEffects": {},
+"MustHitNext": false,
+"EXPMarked": false,
+"Tactic": {
+"Name": {
+"DefaultText": "Dumb Wander One Range",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+}
+]
+},
+"Mobility": 2,
+"CantWalk": false,
+"ItemDisabled": false,
+"IntrinsicDisabled": false,
+"CanRemoveStuck": false,
+"StopItemAtHit": true,
+"MovesScrambled": false,
+"ChargeSaver": false,
+"WaitToAttack": false,
+"CantInteract": false,
+"EnemyOfFriend": false,
+"AttackFriend": false,
+"TileSight": -1,
+"CharSight": -1,
+"Unidentifiable": false,
+"Unlocatable": false,
+"SeeAllChars": false,
+"SeeItems": false,
+"SeeWallItems": false,
+"SeeTraps": false,
+"CharStates": [],
+"BackRef": {
+"Assembly": false,
+"Index": -1
+},
+"OriginalUUID": "",
+"OriginalTeam": "",
+"BaseForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 2
+},
+"Level": 13,
+"EXP": 0,
+"MaxHPBonus": 0,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
+"BaseSkills": [
+{
+"SkillNum": "ember",
+"Charges": 15
+},
+{
+"SkillNum": "rock_throw",
+"Charges": 15
+},
+{
+"SkillNum": "smog",
+"Charges": 16
+},
+{
+"SkillNum": "yawn",
+"Charges": 15
+}
+],
+"BaseIntrinsics": [
+"flame_body"
+],
+"Relearnables": {},
+"Discriminator": 0,
+"MetAt": "",
+"MetLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"DefeatAt": "",
+"DefeatLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"NameLocked": false,
+"IsFavorite": false,
+"Unrecruitable": true,
+"ScriptVars": null
+}
+],
+"Guests": [],
+"inventory": [],
+"Name": "",
+"LeaderIndex": 0,
+"FoeConflict": false
+},
+{
+"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
+"Players": [
+{
+"Element1": "fire",
+"Element2": "none",
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
+"movementSpeed": 0,
+"dead": false,
+"serializationLoc": {
+"X": 13,
+"Y": 9
+},
+"serializationDir": 1,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
+"ProxyName": "",
+"ProxySprite": {
+"Species": "",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"CurrentForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"ProxyAtk": -1,
+"ProxyDef": -1,
+"ProxyMAtk": -1,
+"ProxyMDef": -1,
+"ProxySpeed": -1,
+"Skills": [
+{
+"Element": {
+"SkillNum": "ember",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 0
+},
+{
+"Element": {
+"SkillNum": "rock_throw",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 1
+},
+{
+"Element": {
+"SkillNum": "smog",
+"Charges": 16,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 2
+},
+{
+"Element": {
+"SkillNum": "yawn",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 3
+}
+],
+"Intrinsics": [
+{
+"Element": {
+"ID": "magma_armor"
+},
+"BackRef": 0
+}
+],
+"EquippedItem": {
+"ID": "",
+"Cursed": false,
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0
+},
+"Absentee": false,
+"ChargeBoost": 0,
+"HPRemainder": 0,
+"Fullness": 100,
+"FullnessRemainder": 0,
+"MaxFullness": 100,
+"StatusEffects": {},
+"MustHitNext": false,
+"EXPMarked": false,
+"Tactic": {
+"Name": {
+"DefaultText": "Dumb Wander One Range",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+}
+]
+},
+"Mobility": 2,
+"CantWalk": false,
+"ItemDisabled": false,
+"IntrinsicDisabled": false,
+"CanRemoveStuck": false,
+"StopItemAtHit": true,
+"MovesScrambled": false,
+"ChargeSaver": false,
+"WaitToAttack": false,
+"CantInteract": false,
+"EnemyOfFriend": false,
+"AttackFriend": false,
+"TileSight": -1,
+"CharSight": -1,
+"Unidentifiable": false,
+"Unlocatable": false,
+"SeeAllChars": false,
+"SeeItems": false,
+"SeeWallItems": false,
+"SeeTraps": false,
+"CharStates": [],
+"BackRef": {
+"Assembly": false,
+"Index": -1
+},
+"OriginalUUID": "",
+"OriginalTeam": "",
+"BaseForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"Level": 13,
+"EXP": 0,
+"MaxHPBonus": 0,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
+"BaseSkills": [
+{
+"SkillNum": "ember",
+"Charges": 15
+},
+{
+"SkillNum": "rock_throw",
+"Charges": 15
+},
+{
+"SkillNum": "smog",
+"Charges": 16
+},
+{
+"SkillNum": "yawn",
+"Charges": 15
+}
+],
+"BaseIntrinsics": [
+"magma_armor"
+],
+"Relearnables": {},
+"Discriminator": 0,
+"MetAt": "",
+"MetLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"DefeatAt": "",
+"DefeatLoc": {
+"ID": "",
+"StructID": {
+"Segment": -1,
+"ID": -1
+},
+"EntryPoint": -1
+},
+"NameLocked": false,
+"IsFavorite": false,
+"Unrecruitable": true,
+"ScriptVars": null
+}
+],
+"Guests": [],
+"inventory": [],
+"Name": "",
+"LeaderIndex": 0,
+"FoeConflict": false
+},
+{
+"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
+"Players": [
+{
+"Element1": "fire",
+"Element2": "none",
+"TurnWait": 0,
+"TiersUsed": 0,
+"TurnUsed": false,
+"movementSpeed": 0,
+"dead": false,
+"serializationLoc": {
+"X": 13,
+"Y": 12
+},
+"serializationDir": 3,
+"IsFounder": false,
+"IsPartner": false,
+"Nickname": "Slugma",
+"ActionEvents": [],
+"HP": 32,
+"ProxyName": "",
+"ProxySprite": {
+"Species": "",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"CurrentForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"ProxyAtk": -1,
+"ProxyDef": -1,
+"ProxyMAtk": -1,
+"ProxyMDef": -1,
+"ProxySpeed": -1,
+"Skills": [
+{
+"Element": {
+"SkillNum": "ember",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 0
+},
+{
+"Element": {
+"SkillNum": "rock_throw",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 1
+},
+{
+"Element": {
+"SkillNum": "smog",
+"Charges": 16,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 2
+},
+{
+"Element": {
+"SkillNum": "yawn",
+"Charges": 15,
+"Enabled": true,
+"Sealed": false
+},
+"BackRef": 3
+}
+],
+"Intrinsics": [
+{
+"Element": {
+"ID": "flame_body"
+},
+"BackRef": 0
+}
+],
+"EquippedItem": {
+"ID": "",
+"Cursed": false,
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0
+},
+"Absentee": false,
+"ChargeBoost": 0,
+"HPRemainder": 0,
+"Fullness": 100,
+"FullnessRemainder": 0,
+"MaxFullness": 100,
+"StatusEffects": {},
+"MustHitNext": false,
+"EXPMarked": false,
+"Tactic": {
+"Name": {
+"DefaultText": "Dumb Wander One Range",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
+"ID": "wander_dumb_one_range",
+"Assignable": false,
+"Plans": [
+{
+"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 36,
+"AttackRange": 1,
+"StatusRange": 1,
+"SelfStatusRange": 1
+},
+{
+"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+},
+{
+"$type": "PMDC.Dungeon.WaitPlan, PMDC",
+"IQ": 164,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0
+}
+]
+},
+"Mobility": 2,
+"CantWalk": false,
+"ItemDisabled": false,
+"IntrinsicDisabled": false,
+"CanRemoveStuck": false,
+"StopItemAtHit": true,
+"MovesScrambled": false,
+"ChargeSaver": false,
+"WaitToAttack": false,
+"CantInteract": false,
+"EnemyOfFriend": false,
+"AttackFriend": false,
+"TileSight": -1,
+"CharSight": -1,
+"Unidentifiable": false,
+"Unlocatable": false,
+"SeeAllChars": false,
+"SeeItems": false,
+"SeeWallItems": false,
+"SeeTraps": false,
+"CharStates": [],
+"BackRef": {
+"Assembly": false,
+"Index": -1
+},
+"OriginalUUID": "",
+"OriginalTeam": "",
+"BaseForm": {
+"Species": "slugma",
+"Form": 0,
+"Skin": "normal",
+"Gender": 1
+},
+"Level": 13,
+"EXP": 0,
+"MaxHPBonus": 0,
+"AtkBonus": 0,
+"DefBonus": 0,
+"MAtkBonus": 0,
+"MDefBonus": 0,
+"SpeedBonus": 0,
+"BaseSkills": [
+{
+"SkillNum": "ember",
+"Charges": 15
+},
+{
+"SkillNum": "rock_throw",
+"Charges": 15
+},
+{
+"SkillNum": "smog",
+"Charges": 16
+},
+{
+"SkillNum": "yawn",
+"Charges": 15
+}
+],
+"BaseIntrinsics": [
 "flame_body"
 ],
 "Relearnables": {},
@@ -261,717 +972,6 @@
 "dead": false,
 "serializationLoc": {
 "X": 12,
-"Y": 8
-},
-"serializationDir": 1,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Slugma",
-"ActionEvents": [],
-"HP": 32,
-"ProxyName": "",
-"ProxySprite": {
-"Species": "",
-"Form": -1,
-"Skin": "",
-"Gender": -1
-},
-"CurrentForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 2
-},
-"ProxyAtk": -1,
-"ProxyDef": -1,
-"ProxyMAtk": -1,
-"ProxyMDef": -1,
-"ProxySpeed": -1,
-"Skills": [
-{
-"Element": {
-"SkillNum": "ember",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 0
-},
-{
-"Element": {
-"SkillNum": "rock_throw",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 1
-},
-{
-"Element": {
-"SkillNum": "smog",
-"Charges": 16,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 2
-},
-{
-"Element": {
-"SkillNum": "yawn",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 3
-}
-],
-"Intrinsics": [
-{
-"Element": {
-"ID": "magma_armor"
-},
-"BackRef": 0
-}
-],
-"EquippedItem": {
-"ID": "",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Absentee": false,
-"ChargeBoost": 0,
-"HPRemainder": 0,
-"Fullness": 100,
-"FullnessRemainder": 0,
-"MaxFullness": 100,
-"StatusEffects": {},
-"MustHitNext": false,
-"EXPMarked": false,
-"Tactic": {
-"Name": {
-"DefaultText": "Dumb Wander One Range",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
-"ID": "wander_dumb_one_range",
-"Assignable": false,
-"Plans": [
-{
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 36,
-"AttackRange": 1,
-"StatusRange": 1,
-"SelfStatusRange": 1
-},
-{
-"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-}
-]
-},
-"Mobility": 2,
-"CantWalk": false,
-"ItemDisabled": false,
-"IntrinsicDisabled": false,
-"CanRemoveStuck": false,
-"StopItemAtHit": true,
-"MovesScrambled": false,
-"ChargeSaver": false,
-"WaitToAttack": false,
-"CantInteract": false,
-"EnemyOfFriend": false,
-"AttackFriend": false,
-"TileSight": -1,
-"CharSight": -1,
-"Unidentifiable": false,
-"Unlocatable": false,
-"SeeAllChars": false,
-"SeeItems": false,
-"SeeWallItems": false,
-"SeeTraps": false,
-"CharStates": [],
-"BackRef": {
-"Assembly": false,
-"Index": -1
-},
-"OriginalUUID": "",
-"OriginalTeam": "",
-"BaseForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 2
-},
-"Level": 13,
-"EXP": 0,
-"MaxHPBonus": 0,
-"AtkBonus": 0,
-"DefBonus": 0,
-"MAtkBonus": 0,
-"MDefBonus": 0,
-"SpeedBonus": 0,
-"BaseSkills": [
-{
-"SkillNum": "ember",
-"Charges": 15
-},
-{
-"SkillNum": "rock_throw",
-"Charges": 15
-},
-{
-"SkillNum": "smog",
-"Charges": 16
-},
-{
-"SkillNum": "yawn",
-"Charges": 15
-}
-],
-"BaseIntrinsics": [
-"magma_armor"
-],
-"Relearnables": {},
-"Discriminator": 0,
-"MetAt": "",
-"MetLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"DefeatAt": "",
-"DefeatLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"NameLocked": false,
-"IsFavorite": false,
-"Unrecruitable": true,
-"ScriptVars": null
-}
-],
-"Guests": [],
-"inventory": [],
-"Name": "",
-"LeaderIndex": 0,
-"FoeConflict": false
-},
-{
-"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
-"Players": [
-{
-"Element1": "fire",
-"Element2": "none",
-"TurnWait": 0,
-"TiersUsed": 0,
-"TurnUsed": false,
-"movementSpeed": 0,
-"dead": false,
-"serializationLoc": {
-"X": 13,
-"Y": 9
-},
-"serializationDir": 1,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Slugma",
-"ActionEvents": [],
-"HP": 32,
-"ProxyName": "",
-"ProxySprite": {
-"Species": "",
-"Form": -1,
-"Skin": "",
-"Gender": -1
-},
-"CurrentForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"ProxyAtk": -1,
-"ProxyDef": -1,
-"ProxyMAtk": -1,
-"ProxyMDef": -1,
-"ProxySpeed": -1,
-"Skills": [
-{
-"Element": {
-"SkillNum": "ember",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 0
-},
-{
-"Element": {
-"SkillNum": "rock_throw",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 1
-},
-{
-"Element": {
-"SkillNum": "smog",
-"Charges": 16,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 2
-},
-{
-"Element": {
-"SkillNum": "yawn",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 3
-}
-],
-"Intrinsics": [
-{
-"Element": {
-"ID": "magma_armor"
-},
-"BackRef": 0
-}
-],
-"EquippedItem": {
-"ID": "",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Absentee": false,
-"ChargeBoost": 0,
-"HPRemainder": 0,
-"Fullness": 100,
-"FullnessRemainder": 0,
-"MaxFullness": 100,
-"StatusEffects": {},
-"MustHitNext": false,
-"EXPMarked": false,
-"Tactic": {
-"Name": {
-"DefaultText": "Dumb Wander One Range",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
-"ID": "wander_dumb_one_range",
-"Assignable": false,
-"Plans": [
-{
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 36,
-"AttackRange": 1,
-"StatusRange": 1,
-"SelfStatusRange": 1
-},
-{
-"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-}
-]
-},
-"Mobility": 2,
-"CantWalk": false,
-"ItemDisabled": false,
-"IntrinsicDisabled": false,
-"CanRemoveStuck": false,
-"StopItemAtHit": true,
-"MovesScrambled": false,
-"ChargeSaver": false,
-"WaitToAttack": false,
-"CantInteract": false,
-"EnemyOfFriend": false,
-"AttackFriend": false,
-"TileSight": -1,
-"CharSight": -1,
-"Unidentifiable": false,
-"Unlocatable": false,
-"SeeAllChars": false,
-"SeeItems": false,
-"SeeWallItems": false,
-"SeeTraps": false,
-"CharStates": [],
-"BackRef": {
-"Assembly": false,
-"Index": -1
-},
-"OriginalUUID": "",
-"OriginalTeam": "",
-"BaseForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"Level": 13,
-"EXP": 0,
-"MaxHPBonus": 0,
-"AtkBonus": 0,
-"DefBonus": 0,
-"MAtkBonus": 0,
-"MDefBonus": 0,
-"SpeedBonus": 0,
-"BaseSkills": [
-{
-"SkillNum": "ember",
-"Charges": 15
-},
-{
-"SkillNum": "rock_throw",
-"Charges": 15
-},
-{
-"SkillNum": "smog",
-"Charges": 16
-},
-{
-"SkillNum": "yawn",
-"Charges": 15
-}
-],
-"BaseIntrinsics": [
-"magma_armor"
-],
-"Relearnables": {},
-"Discriminator": 0,
-"MetAt": "",
-"MetLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"DefeatAt": "",
-"DefeatLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"NameLocked": false,
-"IsFavorite": false,
-"Unrecruitable": true,
-"ScriptVars": null
-}
-],
-"Guests": [],
-"inventory": [],
-"Name": "",
-"LeaderIndex": 0,
-"FoeConflict": false
-},
-{
-"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
-"Players": [
-{
-"Element1": "fire",
-"Element2": "none",
-"TurnWait": 0,
-"TiersUsed": 0,
-"TurnUsed": false,
-"movementSpeed": 0,
-"dead": false,
-"serializationLoc": {
-"X": 13,
-"Y": 12
-},
-"serializationDir": 3,
-"IsFounder": false,
-"IsPartner": false,
-"Nickname": "Slugma",
-"ActionEvents": [],
-"HP": 32,
-"ProxyName": "",
-"ProxySprite": {
-"Species": "",
-"Form": -1,
-"Skin": "",
-"Gender": -1
-},
-"CurrentForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"ProxyAtk": -1,
-"ProxyDef": -1,
-"ProxyMAtk": -1,
-"ProxyMDef": -1,
-"ProxySpeed": -1,
-"Skills": [
-{
-"Element": {
-"SkillNum": "ember",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 0
-},
-{
-"Element": {
-"SkillNum": "rock_throw",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 1
-},
-{
-"Element": {
-"SkillNum": "smog",
-"Charges": 16,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 2
-},
-{
-"Element": {
-"SkillNum": "yawn",
-"Charges": 15,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 3
-}
-],
-"Intrinsics": [
-{
-"Element": {
-"ID": "magma_armor"
-},
-"BackRef": 0
-}
-],
-"EquippedItem": {
-"ID": "",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Absentee": false,
-"ChargeBoost": 0,
-"HPRemainder": 0,
-"Fullness": 100,
-"FullnessRemainder": 0,
-"MaxFullness": 100,
-"StatusEffects": {},
-"MustHitNext": false,
-"EXPMarked": false,
-"Tactic": {
-"Name": {
-"DefaultText": "Dumb Wander One Range",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "Same as wander dumb, but can only attack when within 1 tile of an enemy unit.",
-"ID": "wander_dumb_one_range",
-"Assignable": false,
-"Plans": [
-{
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 36,
-"AttackRange": 1,
-"StatusRange": 1,
-"SelfStatusRange": 1
-},
-{
-"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-},
-{
-"$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 164,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0
-}
-]
-},
-"Mobility": 2,
-"CantWalk": false,
-"ItemDisabled": false,
-"IntrinsicDisabled": false,
-"CanRemoveStuck": false,
-"StopItemAtHit": true,
-"MovesScrambled": false,
-"ChargeSaver": false,
-"WaitToAttack": false,
-"CantInteract": false,
-"EnemyOfFriend": false,
-"AttackFriend": false,
-"TileSight": -1,
-"CharSight": -1,
-"Unidentifiable": false,
-"Unlocatable": false,
-"SeeAllChars": false,
-"SeeItems": false,
-"SeeWallItems": false,
-"SeeTraps": false,
-"CharStates": [],
-"BackRef": {
-"Assembly": false,
-"Index": -1
-},
-"OriginalUUID": "",
-"OriginalTeam": "",
-"BaseForm": {
-"Species": "slugma",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"Level": 13,
-"EXP": 0,
-"MaxHPBonus": 0,
-"AtkBonus": 0,
-"DefBonus": 0,
-"MAtkBonus": 0,
-"MDefBonus": 0,
-"SpeedBonus": 0,
-"BaseSkills": [
-{
-"SkillNum": "ember",
-"Charges": 15
-},
-{
-"SkillNum": "rock_throw",
-"Charges": 15
-},
-{
-"SkillNum": "smog",
-"Charges": 16
-},
-{
-"SkillNum": "yawn",
-"Charges": 15
-}
-],
-"BaseIntrinsics": [
-"magma_armor"
-],
-"Relearnables": {},
-"Discriminator": 0,
-"MetAt": "",
-"MetLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"DefeatAt": "",
-"DefeatLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"NameLocked": false,
-"IsFavorite": false,
-"Unrecruitable": true,
-"ScriptVars": null
-}
-],
-"Guests": [],
-"inventory": [],
-"Name": "",
-"LeaderIndex": 0,
-"FoeConflict": false
-},
-{
-"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
-"Players": [
-{
-"Element1": "fire",
-"Element2": "none",
-"TurnWait": 0,
-"TiersUsed": 0,
-"TurnUsed": false,
-"movementSpeed": 0,
-"dead": false,
-"serializationLoc": {
-"X": 12,
 "Y": 13
 },
 "serializationDir": 3,
@@ -1513,7 +1513,7 @@
 "Intrinsics": [
 {
 "Element": {
-"ID": "magma_armor"
+"ID": "flame_body"
 },
 "BackRef": 0
 }
@@ -1636,7 +1636,7 @@
 }
 ],
 "BaseIntrinsics": [
-"magma_armor"
+"flame_body"
 ],
 "Relearnables": {},
 "Discriminator": 0,
@@ -1987,7 +1987,7 @@
 "Intrinsics": [
 {
 "Element": {
-"ID": "magma_armor"
+"ID": "flame_body"
 },
 "BackRef": 0
 }
@@ -2110,7 +2110,7 @@
 }
 ],
 "BaseIntrinsics": [
-"magma_armor"
+"flame_body"
 ],
 "Relearnables": {},
 "Discriminator": 0,
@@ -2156,6 +2156,3399 @@
 17909611376780542444
 ]
 },
+"AssetName": "searing_crucible",
+"ScriptEvents": {},
+"Music": "Boss Battle!.ogg",
+"TileSight": 0,
+"CharSight": 0,
+"Status": {
+"steam": {
+"ID": "steam",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.MapWeatherState, RogueEssence"
+}
+],
+"Emitter": {
+"$type": "RogueEssence.Content.OverlayEmitter, RogueEssence",
+"LocHeight": 0,
+"finished": false,
+"Offset": 0,
+"Anim": {
+"AnimIndex": "Steam",
+"FrameTime": 3,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 200,
+"AnimFlip": 0
+},
+"Movement": {
+"X": 0,
+"Y": -20
+},
+"FadeIn": 0,
+"FadeOut": 0,
+"Layer": 4,
+"Color": "150, 150, 150, 90"
+},
+"Hidden": true
+},
+"mysterious_force": {
+"ID": "mysterious_force",
+"StatusStates": [],
+"Emitter": {
+"$type": "RogueEssence.Content.EmptySwitchOffEmitter, RogueEssence",
+"LocHeight": 0
+},
+"Hidden": false
+}
+},
+"MapEffect": {
+"UniversalStates": [],
+"BeforeTryActions": [],
+"BeforeActions": [],
+"OnActions": [],
+"BeforeExplosions": [],
+"BeforeHits": [],
+"OnHits": [],
+"OnHitTiles": [],
+"AfterActions": [],
+"ElementEffects": [],
+"OnEquips": [],
+"OnPickups": [],
+"BeforeStatusAdds": [],
+"OnStatusAdds": [],
+"OnStatusRemoves": [],
+"OnMapStatusAdds": [],
+"OnMapStatusRemoves": [],
+"OnMapStarts": [
+{
+"Key": {
+"str": [
+-15
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.BattlePositionEvent, PMDC",
+"StartLocs": [
+{
+"Loc": {
+"X": 0,
+"Y": 0
+},
+"Dir": 5
+},
+{
+"Loc": {
+"X": -1,
+"Y": 0
+},
+"Dir": 3
+},
+{
+"Loc": {
+"X": 0,
+"Y": -1
+},
+"Dir": 7
+},
+{
+"Loc": {
+"X": -1,
+"Y": -1
+},
+"Dir": 1
+}
+],
+"Positions": null
+}
+},
+{
+"Key": {
+"str": [
+-5
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
+"CheckClearStatus": "map_clear_check"
+}
+}
+],
+"OnTurnStarts": [],
+"OnTurnEnds": [],
+"OnMapTurnEnds": [
+{
+"Key": {
+"str": [
+0
+]
+},
+"Value": {
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "LavaFlowHandler",
+"ArgTable": "{LavaDuration = 2, NothingDuration = 1}"
+}
+}
+],
+"OnWalks": [],
+"OnDeaths": [],
+"OnRefresh": [],
+"OnMapRefresh": [],
+"ModifyHPs": [],
+"RestoreHPs": [],
+"InitActionData": []
+},
+"TeamSpawns": [],
+"MoneyAmount": {
+"Min": 0,
+"Max": 0
+},
+"ItemSpawns": {
+"Spawns": {
+"spawns": {},
+"spawnTotal": 0
+}
+},
+"BlankBG": {
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+"TextureMap": {},
+"Element": "fire",
+"Background": {
+"$type": "RogueEssence.Dungeon.MapBG, RogueEssence",
+"MapLoc": {
+"X": 0,
+"Y": 0
+},
+"BGAnim": {
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"BGMovement": {
+"X": 0,
+"Y": 0
+},
+"Parallax": "0, 0",
+"RepeatX": false,
+"RepeatY": false
+},
+"ViewCenter": null,
+"ViewOffset": {
+"X": 0,
+"Y": 0
+},
+"HideMinimap": false,
+"NoRescue": false,
+"NoSwitching": false,
+"MapTurns": 0,
+"CurrentTurnMap": {
+"CurrentOrder": {
+"TurnTier": 0,
+"Faction": 0,
+"TurnIndex": 0
+},
+"TurnToChar": []
+},
+"DiscoveryArray": [
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+],
+[
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+]
+],
+"Layers": [
+{
+"Name": "New Layer",
+"Layer": 0,
+"Visible": true,
+"Tiles": [
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+],
+[
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+},
+{
+"AutoTileset": "",
+"Associates": [],
+"Layers": [],
+"NeighborCode": -1
+}
+]
+]
+}
+],
+"Decorations": [
+{
+"Name": "New Deco",
+"Layer": 0,
+"Visible": true,
+"Anims": []
+}
+],
 "Tiles": [
 [
 {
@@ -17635,3400 +21028,6 @@
 }
 ]
 ],
-"Items": [],
-"AssetName": "searing_crucible",
-"ScriptEvents": {},
-"Music": "Boss Battle!.ogg",
-"TileSight": 0,
-"CharSight": 0,
-"Status": {
-"steam": {
-"ID": "steam",
-"StatusStates": [
-{
-"$type": "RogueEssence.Dungeon.MapWeatherState, RogueEssence"
-}
-],
-"Emitter": {
-"$type": "RogueEssence.Content.OverlayEmitter, RogueEssence",
-"LocHeight": 0,
-"finished": false,
-"Offset": 0,
-"Anim": {
-"AnimIndex": "Steam",
-"FrameTime": 3,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 200,
-"AnimFlip": 0
-},
-"Movement": {
-"X": 0,
-"Y": -20
-},
-"FadeIn": 0,
-"FadeOut": 0,
-"Layer": 4,
-"Color": "150, 150, 150, 90"
-},
-"Hidden": true
-},
-"mysterious_force": {
-"ID": "mysterious_force",
-"StatusStates": [],
-"Emitter": {
-"$type": "RogueEssence.Content.EmptySwitchOffEmitter, RogueEssence",
-"LocHeight": 0
-},
-"Hidden": false
-}
-},
-"MapEffect": {
-"UniversalStates": [],
-"BeforeTryActions": [],
-"BeforeActions": [],
-"OnActions": [],
-"BeforeExplosions": [],
-"BeforeHits": [],
-"OnHits": [],
-"OnHitTiles": [],
-"AfterActions": [],
-"ElementEffects": [],
-"OnEquips": [],
-"OnPickups": [],
-"BeforeStatusAdds": [],
-"OnStatusAdds": [],
-"OnStatusRemoves": [],
-"OnMapStatusAdds": [],
-"OnMapStatusRemoves": [],
-"OnMapStarts": [
-{
-"Key": {
-"str": [
--15
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.BattlePositionEvent, PMDC",
-"StartLocs": [
-{
-"Loc": {
-"X": 0,
-"Y": 0
-},
-"Dir": 5
-},
-{
-"Loc": {
-"X": -1,
-"Y": 0
-},
-"Dir": 3
-},
-{
-"Loc": {
-"X": 0,
-"Y": -1
-},
-"Dir": 7
-},
-{
-"Loc": {
-"X": -1,
-"Y": -1
-},
-"Dir": 1
-}
-],
-"Positions": null
-}
-},
-{
-"Key": {
-"str": [
--5
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
-"CheckClearStatus": "map_clear_check"
-}
-}
-],
-"OnTurnStarts": [],
-"OnTurnEnds": [],
-"OnMapTurnEnds": [
-{
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
-"Script": "LavaFlowHandler",
-"ArgTable": "{LavaDuration = 2, NothingDuration = 1}"
-}
-}
-],
-"OnWalks": [],
-"OnDeaths": [],
-"OnRefresh": [],
-"OnMapRefresh": [],
-"ModifyHPs": [],
-"RestoreHPs": [],
-"InitActionData": []
-},
-"TeamSpawns": [],
-"MoneyAmount": {
-"Min": 0,
-"Max": 0
-},
-"ItemSpawns": {
-"Spawns": {
-"spawns": {},
-"spawnTotal": 0
-}
-},
-"BlankBG": {
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-"TextureMap": {},
-"Element": "fire",
-"Background": {
-"$type": "RogueEssence.Dungeon.MapBG, RogueEssence",
-"MapLoc": {
-"X": 0,
-"Y": 0
-},
-"BGAnim": {
-"AnimIndex": "",
-"FrameTime": 1,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"BGMovement": {
-"X": 0,
-"Y": 0
-},
-"Parallax": "0, 0",
-"RepeatX": false,
-"RepeatY": false
-},
-"ViewCenter": null,
-"ViewOffset": {
-"X": 0,
-"Y": 0
-},
-"HideMinimap": false,
-"NoRescue": false,
-"NoSwitching": false,
-"MapTurns": 0,
-"CurrentTurnMap": {
-"CurrentOrder": {
-"TurnTier": 0,
-"Faction": 0,
-"TurnIndex": 0
-},
-"TurnToChar": []
-},
-"DiscoveryArray": [
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-],
-[
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
-]
-],
-"Layers": [
-{
-"Name": "New Layer",
-"Layer": 0,
-"Visible": true,
-"Tiles": [
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-],
-[
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-},
-{
-"AutoTileset": "",
-"Associates": [],
-"Layers": [],
-"NeighborCode": -1
-}
-]
-]
-}
-],
-"Decorations": [
-{
-"Name": "New Deco",
-"Layer": 0,
-"Visible": true,
-"Anims": []
-}
-],
 "EdgeView": 1,
 "EntryPoints": [
 {
@@ -21038,6 +21037,7 @@
 },
 "Dir": 0
 }
-]
+],
+"Items": []
 }
 }

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -22,7 +22,7 @@
 "Comment": "",
 "Sprite": "Orb_Blue",
 "Icon": 9,
-"SortCategory": 0,
+"SortCategory": 11,
 "Price": 50,
 "Rarity": 0,
 "MaxStack": 0,
@@ -33,6 +33,7 @@
 "$type": "PMDC.Dungeon.OrbState, PMDC"
 }
 ],
+"GroundUseActions": [],
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
@@ -220,6 +221,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -248,6 +250,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

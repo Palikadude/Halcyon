@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'menu.character_menu'
 
 -- Package name
 local personality_test = {}

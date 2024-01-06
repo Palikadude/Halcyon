@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.15.1",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -35,7 +35,7 @@
 "Comment": "",
 "Sprite": "Medicine_Orange",
 "Icon": 7,
-"SortCategory": 6,
+"SortCategory": 9,
 "Price": 750,
 "Rarity": 0,
 "MaxStack": 0,
@@ -214,6 +214,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],
@@ -242,6 +243,7 @@
 "OnEquips": [],
 "OnPickups": [],
 "BeforeStatusAdds": [],
+"BeforeStatusAddings": [],
 "OnStatusAdds": [],
 "OnStatusRemoves": [],
 "OnMapStatusAdds": [],

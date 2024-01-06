@@ -796,7 +796,7 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		UI:SetSpeaker(mareep)
 		UI:SetSpeakerEmotion("Normal")
 		UI:WaitShowDialogue(cranidos:GetDisplayName() .. "?[pause=0] Aren't you going to say something to our new friends?")
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(10)
 		
 		GROUND:CharSetEmote(cranidos, "shock", 1)
 		SOUND:PlayBattleSE('EVT_Emote_Shock_Bad')

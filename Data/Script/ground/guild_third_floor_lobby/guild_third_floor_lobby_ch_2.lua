@@ -351,7 +351,7 @@ function guild_third_floor_lobby_ch_2.FirstMorningMeeting()
 	UI:WaitShowDialogue("Since you are inexperienced,[pause=10] I would like you to go to Ledian Dojo and take the basic lesson with Sensei " .. CharacterEssentials.GetCharacterName('Ledian') .. ".")
 	
 	
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(10)
 	GeneralFunctions.EmoteAndPause(partner, "Question", true)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Worried")

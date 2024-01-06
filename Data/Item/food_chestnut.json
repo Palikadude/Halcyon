@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.22.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -22,7 +22,7 @@
 "Comment": "",
 "Sprite": "Chestnut_Brown",
 "Icon": 2,
-"SortCategory": 0,
+"SortCategory": 4,
 "Price": 0,
 "Rarity": 0,
 "MaxStack": 0,
