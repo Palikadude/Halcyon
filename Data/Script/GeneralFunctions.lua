@@ -204,7 +204,7 @@ function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections
 	local dir = 0
 	
 	--play the looking around sfx if we want a sound to be made
-	if sound then SOUND:PlaySE("EVT_Emote_Confused_2") end
+	if sound then SOUND:PlayBattleSE("EVT_Emote_Confused_2") end
 
 	--if all directions, look in any of the 8 directions randomly (except the one we are already facing)
 	--if not all directions, alternate between looking 90 degrees left and right from current direction

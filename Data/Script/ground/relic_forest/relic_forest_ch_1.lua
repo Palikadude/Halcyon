@@ -52,7 +52,7 @@ function relic_forest_ch_1.Intro_Cutscene()
 	UI:ResetSpeaker()
 	UI:SetSpeaker('', false, hero.CurrentForm.Species, hero.CurrentForm.Form, hero.CurrentForm.Skin, hero.CurrentForm.Gender)
 	UI:SetSpeakerEmotion('Pain')
-	UI:WaitShowDialogue("...[pause=0] No...[pause=0] Can't stay awake...")
+	UI:WaitShowDialogue("(...[pause=0] No...[pause=0] Can't stay awake...)")
 	GAME:WaitFrames(60)
 	GAME:FadeOut(false, 120)
 	

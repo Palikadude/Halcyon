@@ -85,11 +85,11 @@ function metano_cafe_ch_4.Cranidos_Action(chara, activator)
 			UI:WaitShowDialogue("U-umm![pause=0] I m-mean...")
 			GAME:WaitFrames(20)
 			--TODO: Get a blushing portrait for cranidos here! :3
-			UI:SetSpeakerEmotion("Stunned")
+			UI:SetSpeakerEmotion("Special0")
 			UI:WaitShowDialogue("D-don't you rookies have anything better to do than laze around here?[pause=0] Go do something productive for once!")
 			SV.Chapter4.CranidosBlush = true
 		else 
-			GeneralFunctions.StartConversation(chara, "H-hey...[pause=0] Please don't tell her what I said earlier...", "Stunned")
+			GeneralFunctions.StartConversation(chara, "H-hey...[pause=0] Please don't tell her what I said earlier...", "Special0")
 		end
 	end
 	GeneralFunctions.EndConversation(chara)

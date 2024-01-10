@@ -744,6 +744,21 @@ SV.Chapter6 =
 
 }
 
+
+
+--info related to guild member sidequests.
+SV.GuildSidequests = 
+{
+	ZigzagoonLevel = 19,
+	GrowlitheLevel = 17,
+	SnubbullLevel = 16,
+	AudinoLevel = 18,
+	MareepLevel = 19,
+	CranidosLevel = 20,
+	BreloomLevel = 33,
+	GirafarigLevel = 32
+}
+
 ----------------------------------
 --Dungeon relevant flags 
 ----------------------------------

@@ -220,7 +220,7 @@ function guild_third_floor_lobby_ch_4.ExpeditionAnnouncementAddress()
 	
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Adventures are more fun with more Pokémon,[pause=10] so expeditions are an absolute blast!")
-	UI:WaitShowDialogue("Having the entire guild present allows us cover more ground and helps keep everyone safe too.")
+	UI:WaitShowDialogue("Having the entire guild present allows us to cover more ground and helps keep everyone safe too.")
 	UI:WaitShowDialogue("Now,[pause=10] I'm sure you're all excited to go on the expedition...[br]...But we'll have to wait for " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " to return first!")
 	UI:WaitShowDialogue("They're scouting the road ahead so the expedition can go smoothly!")
 	UI:SetSpeakerEmotion("Happy")
