@@ -226,6 +226,7 @@ function guild_heros_room_ch_2.PostRiverBedtalk()
 	--note: there is signficance in the feelings, as both the tablet and the spring are connected to the tree of life, to which the hero has significance as they were "summoned" here to save it 
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(That is true...[pause=0] I could be looking for meaning where there is none.)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(It's even possible that these feelings have just been the excitement of the situations I've been in.)", "Worried")
 	GeneralFunctions.HeroDialogue(hero, "(It's hard to tell,[pause=10] given my whole situation...)", "Worried")
 	
 	GAME:WaitFrames(20)

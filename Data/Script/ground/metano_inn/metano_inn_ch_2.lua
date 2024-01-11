@@ -10,12 +10,12 @@ function metano_inn_ch_2.SetupGround()
 	if not SV.Chapter2.FinishedFirstDay then 
 		GROUND:Hide('Innkeeper_Desk_Right')
 		
-		local nidoking, nidoqueen, nidoran_m, snorlax = 
+		local nidoking, nidoqueen, nidoran_m, makuhita = 
 			CharacterEssentials.MakeCharactersFromList({
 				{'Nidoking', 'Innkeeper_Left'},
 				{'Nidoqueen', 168, 144, Direction.Right},
 				{'Nidoran_M', 264, 152, Direction.UpLeft},
-				{'Snorlax', 128, 248, Direction.DownRight}
+				{'Makuhita', 128, 248, Direction.DownRight}
 			})
 		
 		AI:SetCharacterAI(nidoqueen, "ai.ground_default", RogueElements.Loc(152, 128), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)
@@ -24,13 +24,13 @@ function metano_inn_ch_2.SetupGround()
 		
 
 	else
-		local nidoking, nidoqueen, nidoran_m, nidorina, snorlax = 
+		local nidoking, nidoqueen, nidoran_m, nidorina, makuhita = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Nidoking', 'Innkeeper_Left'},
 			{'Nidoqueen', 'Innkeeper_Right'},
 			{'Nidoran_M', 316, 164, Direction.Left},
 			{'Nidorina', 264, 152, Direction.Down},
-			{'Snorlax', 293, 273, Direction.Up}
+			{'Makuhita', 293, 273, Direction.Up}
 		})
 		
 		AI:SetCharacterAI(nidorina, "ai.ground_default", RogueElements.Loc(248, 136), RogueElements.Loc(32, 32), 1, 16, 64, 40, 180)

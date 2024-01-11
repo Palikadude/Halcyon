@@ -141,14 +141,14 @@ Thinks about when he feels strange besides the times he told the partner, they m
 	GeneralFunctions.EmoteAndPause(hero, "Exclaim", false)
 	
 	SOUND:PlayBGM('I Saw Something Again....ogg', false)
-	GeneralFunctions.HeroDialogue(hero, "(Wait![pause=0] Those aren't the only times I've felt strange![pause=0] I've gotten a strange feeling a few other times!)", "Surprised")
+	GeneralFunctions.HeroDialogue(hero, "(Wait![pause=0] Those aren't the only times I've felt that way![pause=0] I've gotten a strange feeling a few other times!)", "Surprised")
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroDialogue(hero, "(I felt strange when I came to the guild for the first time,[pause=10] when I heard about the expedition earlier,[pause=10] and...)", "Normal")
 	GAME:WaitFrames(40)
 	GeneralFunctions.HeroDialogue(hero, "(...And when I met " .. partner:GetDisplayName() .. ".)", "Worried")
 	GAME:WaitFrames(20)
 	
-	GeneralFunctions.HeroDialogue(hero, "(Those times weren't as strong as what I felt with the obelisk and Luminous Spring,[pause=10] but the feeling was similar.)", "Normal")
+	GeneralFunctions.HeroDialogue(hero, "(The tension I felt those times wasn't as strong as with the obelisk and Luminous Spring,[pause=10] but the feeling was similar.)", "Normal")
 	
 	GAME:WaitFrames(20)
 	GeneralFunctions.HeroSpeak(hero, 60)

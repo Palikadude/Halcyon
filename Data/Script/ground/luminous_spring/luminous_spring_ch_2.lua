@@ -245,7 +245,7 @@ function luminous_spring_ch_2.FindNumelCutscene()
 	GeneralFunctions.HeroDialogue(hero, "(Could it be however this evolution thing is supposed to feel?)", "Worried")
 	GAME:WaitFrames(40)
 	
-	GeneralFunctions.HeroDialogue(hero, "(...No.[pause=0] It can't be.[pause=0] I've felt this way before...[pause=0] But where?)", "Worried")
+	GeneralFunctions.HeroDialogue(hero, "(...No.[pause=0] It can't be.[pause=0] This weird tension,[pause=10] I've felt it before...[pause=0] But where?)", "Worried")
 	
 	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("relic_forest")
 	GAME:WaitFrames(40)

@@ -355,7 +355,7 @@ function guild_third_floor_lobby_ch_4.ExpeditionAnnouncementAddress()
 	GAME:WaitFrames(20)
 	
 	--Same feeling they felt when joining the guild and meeting partner; the expedition is the way forward in their "mission"
-	GeneralFunctions.HeroDialogue(hero, "(Hearing about this expedition has me feeling all strange and excited![pause=0] It seems like it'll be a lot of fun!)", "Inspired")
+	GeneralFunctions.HeroDialogue(hero, "(Hearing about this expedition has me feeling all tense and excited![pause=0] It seems like it'll be a lot of fun!)", "Inspired")
 	GAME:WaitFrames(20)
 	GeneralFunctions.DoAnimation(hero, 'Nod')
 	GAME:WaitFrames(20)

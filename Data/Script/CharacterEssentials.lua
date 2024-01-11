@@ -752,8 +752,8 @@ local characters = {
 		},
 		
 		--Inn Passersby
-		Snorlax = {
-			species = "snorlax",
+		Makuhita = {
+			species = "makuhita",
 			nickname = 'Passerby',
 			instance = 'Passerby_1',
 			gender = Gender.Male,
