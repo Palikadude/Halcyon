@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.23.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "ammo_cacnea_spike": {
@@ -2680,6 +2680,27 @@
 "Comment": "",
 "SortOrder": 1
 },
+"machine_recall_box": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"UsageType": 2,
+"States": [
+{
+"assembly": "PMDC, Version=0.7.23.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.MachineState"
+}
+],
+"Name": {
+"DefaultText": "Recall Box",
+"LocalTexts": {
+"de": "Abrufbox",
+"it": "Tecaricordo",
+"zh-hans": "招式回忆箱"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 12
+},
 "orb_all_aim": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "UsageType": 1,
@@ -3477,11 +3498,11 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.23.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.7.22.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.7.23.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],

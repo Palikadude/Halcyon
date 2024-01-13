@@ -219,7 +219,7 @@ end
 
 function SpawnOutlaw(origin, radius, mission_num)
 	local mission = SV.TakenBoard[mission_num]
-	local max_boost = 128
+	local max_boost = 256
 	local top_left = RogueElements.Loc(origin.X - radius, origin.Y - radius)
 	local bottom_right =  RogueElements.Loc(origin.X + radius, origin.Y + radius)
 
@@ -275,7 +275,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 	local form = _DATA:GetMonster(mission.Target).Forms[base_form_idx]
 	-- local gender = form:RollGender(RogueElements.MathUtils.Rand)
 	mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, base_form_idx, "normal", GeneralFunctions.NumToGender(mission.TargetGender))
-	mob_data.Level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.15)
+	mob_data.Level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.2)
 	local ability = form:RollIntrinsic(RogueElements.MathUtils.Rand, 3)
 	mob_data.BaseIntrinsics[0] = ability
 	local new_mob = RogueEssence.Dungeon.Character(mob_data)
@@ -323,9 +323,9 @@ function SpawnOutlaw(origin, radius, mission_num)
 	
 	local tactic = nil
 	if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
-		local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] / 1.5)
-		local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.5)
-		new_mob.SpeedBonus = math.min(_DATA.Save.Rand:Next(speedMin, speedMax), 50)
+		local speedMin = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * (4 / 3))
+		local speedMax = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 3)
+		new_mob.SpeedBonus = math.min(_DATA.Save.Rand:Next(speedMin, speedMax), 100)
 		tactic = _DATA:GetAITactic("super_flee_stairs")
 	else
 		tactic = _DATA:GetAITactic("boss")
@@ -335,7 +335,7 @@ function SpawnOutlaw(origin, radius, mission_num)
 		new_mob.EquippedItem = RogueEssence.Dungeon.InvItem(mission.Item)
 	end
 	
-	new_mob.MaxHPBonus = math.min(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 2, max_boost);
+	new_mob.MaxHPBonus = math.min(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 4, max_boost);
 	new_mob.HP = new_mob.MaxHP;
 	new_mob.Unrecruitable = true
 	new_mob.Tactic = tactic

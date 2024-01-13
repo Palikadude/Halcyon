@@ -177,6 +177,475 @@ function testmap.CompleteTakens_Action()
 	UI:WaitShowDialogue("Taken missions completed!")
 end 
 
+--skip to having entered the guild but not talking to anyone yet
+function testmap.Chapter1_2_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 1
+	
+	GAME:UnlockDungeon('relic_forest')
+	_DATA.Save.ActiveTeam:SetRank("normal")
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = false,--talked to snubbull?
+		MetZigzagoon = false,
+		MetCranidosMareep = false,
+		MetBreloomGirafarig = false,
+		MetAudino = false,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 1 before talking to guild mates!")
+
+end
+
+
+--skip to having just started chapter 2
+function testmap.Chapter2_1_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 2
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	_DATA.Save.ActiveTeam:SetRank("normal")
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 2 before doing anything!")
+
+end
+
+function testmap.Chapter2_2_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 2
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	_DATA.Save.ActiveTeam:SetRank("normal")
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = false,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = false,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = false,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+	
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 2 day 2!")
+	
+	
+
+end
+
+
+function testmap.Chapter3_1_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 3
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('crooked_cavern')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	GAME:UnlockDungeon('fire_maze')
+	GAME:UnlockDungeon('water_maze')
+	GAME:UnlockDungeon('grass_maze')
+	SV.ChapterProgression.CurrentStoryDungeon = 'crooked_cavern'
+	_DATA.Save.ActiveTeam:SetRank("normal")
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = true,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = true,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = true,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+		
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 3 day 1!")
+
+end
+
+
+function testmap.Chapter3_2_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 3
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('crooked_cavern')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	GAME:UnlockDungeon('fire_maze')
+	GAME:UnlockDungeon('water_maze')
+	GAME:UnlockDungeon('grass_maze')
+	SV.ChapterProgression.CurrentStoryDungeon = ''
+	_DATA.Save.ActiveTeam:SetRank("normal")
+
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = true,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = true,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = true,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+		
+	SV.Chapter3 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
+		FinishedOutlawIntro = true,--did shuca and ganlon teach you about outlaws?
+		MetTeamStyle = true,--did you meet team style?
+		FinishedCafeCutscene = true,--did partner point out the cafe's open?
+		EnteredCavern = true,--did duo enter the dungeon?
+		FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
+		EncounteredBoss = true,--did duo find team style in the dungeon yet?
+		LostToBoss = false,--did duo die to boss?
+		EscapedBoss = false,--due team use an escape orb to escape boss?
+		DefeatedBoss = true, --did duo defeat team style?
+		RootSceneTransition = true, --Used to remember where in the root scene we are after transitioning away to show the root 
+		FinishedRootScene = true, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
+		FinishedMerchantIntro = false, --Did merchant intro cutscene?
+		--DemoThankYou = false,--Showed demo thank you? Not needed for future versions.
+
+		TropiusGaveWand = true,--did tropius give some wands to help the duo?
+		BreloomGirafarigConvo = true, --talked to breloom/girafarig about their expedition?
+		PostBossSpokeToCranidos = false -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
+	}
+	
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 3 day 2!")
+
+end
+
+
+function testmap.Chapter4_1_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 4
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('crooked_cavern')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	GAME:UnlockDungeon('fire_maze')
+	GAME:UnlockDungeon('water_maze')
+	GAME:UnlockDungeon('grass_maze')
+	GAME:UnlockDungeon('apricorn_grove')
+	GAME:UnlockDungeon('flying_maze')
+	GAME:UnlockDungeon('rock_maze')
+	SV.ChapterProgression.CurrentStoryDungeon = 'apricorn_grove'
+	_DATA.Save.ActiveTeam:SetRank("bronze")
+	SV.ChapterProgression.UnlockedAssembly = true
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = true,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = true,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = true,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+		
+	SV.Chapter3 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
+		FinishedOutlawIntro = true,--did shuca and ganlon teach you about outlaws?
+		MetTeamStyle = true,--did you meet team style?
+		FinishedCafeCutscene = true,--did partner point out the cafe's open?
+		EnteredCavern = true,--did duo enter the dungeon?
+		FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
+		EncounteredBoss = true,--did duo find team style in the dungeon yet?
+		LostToBoss = false,--did duo die to boss?
+		EscapedBoss = false,--due team use an escape orb to escape boss?
+		DefeatedBoss = true, --did duo defeat team style?
+		RootSceneTransition = true, --Used to remember where in the root scene we are after transitioning away to show the root 
+		FinishedRootScene = true, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
+		FinishedMerchantIntro = true, --Did merchant intro cutscene?
+		--DemoThankYou = false,--Showed demo thank you? Not needed for future versions.
+
+		TropiusGaveWand = true,--did tropius give some wands to help the duo?
+		BreloomGirafarigConvo = true, --talked to breloom/girafarig about their expedition?
+		PostBossSpokeToCranidos = true -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
+	}
+	
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 4 day 1!")
+
+end
+
+function testmap.Chapter4_2_Action(chara, activator)
+	SV.ChapterProgression.Chapter = 4
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('crooked_cavern')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	GAME:UnlockDungeon('fire_maze')
+	GAME:UnlockDungeon('water_maze')
+	GAME:UnlockDungeon('grass_maze')
+	GAME:UnlockDungeon('apricorn_grove')
+	GAME:UnlockDungeon('flying_maze')
+	GAME:UnlockDungeon('rock_maze')
+	SV.ChapterProgression.CurrentStoryDungeon = ''
+	_DATA.Save.ActiveTeam:SetRank("bronze")
+	SV.ChapterProgression.UnlockedAssembly = true
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = true,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = true,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = true,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+		
+	SV.Chapter3 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
+		FinishedOutlawIntro = true,--did shuca and ganlon teach you about outlaws?
+		MetTeamStyle = true,--did you meet team style?
+		FinishedCafeCutscene = true,--did partner point out the cafe's open?
+		EnteredCavern = true,--did duo enter the dungeon?
+		FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
+		EncounteredBoss = true,--did duo find team style in the dungeon yet?
+		LostToBoss = false,--did duo die to boss?
+		EscapedBoss = false,--due team use an escape orb to escape boss?
+		DefeatedBoss = true, --did duo defeat team style?
+		RootSceneTransition = true, --Used to remember where in the root scene we are after transitioning away to show the root 
+		FinishedRootScene = true, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
+		FinishedMerchantIntro = true, --Did merchant intro cutscene?
+		--DemoThankYou = false,--Showed demo thank you? Not needed for future versions.
+
+		TropiusGaveWand = true,--did tropius give some wands to help the duo?
+		BreloomGirafarigConvo = true, --talked to breloom/girafarig about their expedition?
+		PostBossSpokeToCranidos = true -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
+	}
+	
+	SV.Chapter4 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 4 title card.
+		FinishedFirstAddress = true,--Did you get the address regarding your mission for the chapter and the expedition?
+		FinishedAssemblyIntro = true,--did audino teach you about her assembly?
+		FinishedSignpostCutscene = true,--Did audino show you her signpost for the assembly by the cafe?
+		EnteredGrove = true,--has player set foot at all into the grove yet?
+		BacktrackedOutGroveYet = true,--has player ever backtracked out the entrance of the grove yet? if not, give them a cutscene explaining what just happened
+		ReachedGlade = true, --has player reached the glade yet?
+		FinishedGrove = true,--has player finished the grove for good?
+		FinishedBedtimeCutscene = true,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
+		
+		TropiusGaveAdvice = true,--did you speak with Tropius day one?
+		SpokeToRelicanthDayOne = true,--did you speak with relicanth day one?
+		HeardRelicanthStory = false,--did you hear with relicanth's story? (TO BE USED ONCE STORY IS CREATED)
+		MedichamMachampArgument = false,--did you see machamp and medicham arguing over their mailbox?
+		CranidosBlush = false,--did Cranidos accidentally spill the beans on being a softy towards mareep?
+		WoopersMedititeConvo = false,--did you see woopers and meditite talk to each other?
+		DemoThankYou = false--Showed demo thank you?
+
+	}
+
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 4 day 2!")
+
+end
+
+
+
+
+
+
+
+
+
+
+
 function testmap.Get_Released_Mons_Action()
 	--mons is a list of all species index strings
 	--local mons = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Monster]:GetOrderedKeys(false)

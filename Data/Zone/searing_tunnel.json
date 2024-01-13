@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.23.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -3227,6 +3227,35 @@
 }
 ]
 }
+},
+"Other": {
+"Spawns": [
+{
+"Spawn": {
+"ID": "machine_recall_box",
+"Cursed": false,
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 10
+}
+}
+],
+"SpawnRates": {
+"nodes": [
+{
+"Item": 1,
+"Range": {
+"Min": 0,
+"Max": 10
+}
+}
+]
+}
 }
 }
 },
@@ -4643,6 +4672,21 @@
 "HiddenValue": "",
 "Amount": 4,
 "Price": 220,
+"TileLoc": {
+"X": 0,
+"Y": 0
+}
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"IsMoney": false,
+"Cursed": false,
+"Value": "machine_recall_box",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 600,
 "TileLoc": {
 "X": 0,
 "Y": 0
@@ -8964,6 +9008,35 @@
 }
 ]
 }
+},
+"Other": {
+"Spawns": [
+{
+"Spawn": {
+"ID": "machine_recall_box",
+"Cursed": false,
+"HiddenValue": "",
+"Amount": 0,
+"Price": 0
+},
+"Rate": 10,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+}
+],
+"SpawnRates": {
+"nodes": [
+{
+"Item": 1,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+}
+]
+}
 }
 }
 },
@@ -9980,6 +10053,21 @@
 "HiddenValue": "",
 "Amount": 4,
 "Price": 220,
+"TileLoc": {
+"X": 0,
+"Y": 0
+}
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"IsMoney": false,
+"Cursed": false,
+"Value": "machine_recall_box",
+"HiddenValue": "",
+"Amount": 0,
+"Price": 600,
 "TileLoc": {
 "X": 0,
 "Y": 0
