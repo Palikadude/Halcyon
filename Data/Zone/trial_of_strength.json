@@ -957,6 +957,201 @@
 "Min": 0,
 "Max": 5
 }
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "audino",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"simple_beam",
+"helping_hand"
+],
+"Intrinsic": "regenerator",
+"Tactic": "retreater",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 0,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 2,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 1
+},
+"Rate": 2,
+"Range": {
+"Min": 0,
+"Max": 15
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "bidoof",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"hyper_fang"
+],
+"Intrinsic": "unaware",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 0,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 3
+},
+"Rate": 2,
+"Range": {
+"Min": 0,
+"Max": 5
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "bibarel",
+"Form": -1,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"rollout",
+"hyper_fang"
+],
+"Intrinsic": "unaware",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 0,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 2,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+}
+]
+},
+"Role": 3
+},
+"Rate": 2,
+"Range": {
+"Min": 5,
+"Max": 15
+}
+},
+{
+"Spawn": {
+"Spawn": {
+"BaseForm": {
+"Species": "absol",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 10,
+"Max": 11
+},
+"SpecifiedSkills": [
+"punishment"
+],
+"Intrinsic": "justified",
+"Tactic": "wander_normal",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnLevelScale, PMDC",
+"StartFromID": 0,
+"AddNumerator": 1,
+"AddDenominator": 1
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 1,
+"Remove": false
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+},
+{
+"$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+"Statuses": [
+{
+"Spawn": {
+"ID": "mod_attack",
+"StatusStates": [
+{
+"$type": "RogueEssence.Dungeon.StackState, RogueEssence",
+"Stack": 1
+}
+]
+},
+"Rate": 10
+}
+]
+}
+]
+},
+"Role": 3
+},
+"Rate": 2,
+"Range": {
+"Min": 5,
+"Max": 15
+}
 }
 ],
 "TeamSizes": [
