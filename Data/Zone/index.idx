@@ -798,9 +798,10 @@
 },
 "trial_of_strength": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"NoEXP": false,
+"ExpPercent": 100,
 "Level": 10,
 "LevelCap": true,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": true,

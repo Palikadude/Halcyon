@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.16.0",
+"Version": "0.7.23.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,8 +9,10 @@
 "Released": false,
 "Comment": "First trial at Ledian's dojo. Themed around opponents with proficiencies in specific stats.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": 10,
 "LevelCap": true,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": true,
@@ -125,7 +127,7 @@
 }
 }
 ],
-"RemoveOnRoll": false
+"removeOnRoll": false
 },
 "RoomComponents": [
 {
@@ -331,6 +333,7 @@
 "Value": {
 "$type": "RogueEssence.LevelGen.PlaceRandomMobsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Filters": [],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -342,7 +345,8 @@
 "ClumpFactor": 0
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 0,
@@ -352,7 +356,8 @@
 {
 "Item": {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
-"GenSteps": []
+"GenSteps": [],
+"Comment": ""
 },
 "Range": {
 "Min": 5,
@@ -362,7 +367,8 @@
 {
 "Item": {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
-"GenSteps": []
+"GenSteps": [],
+"Comment": ""
 },
 "Range": {
 "Min": 10,
@@ -990,7 +996,8 @@
 "SpecificSpawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": []
