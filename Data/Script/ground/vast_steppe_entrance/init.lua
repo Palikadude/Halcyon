@@ -6,6 +6,8 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.vast_steppe_entrance.vast_steppe_entrance_ch_5'
+
 
 -- Package name
 local vast_steppe_entrance = {}
@@ -88,6 +90,62 @@ end
 function vast_steppe_entrance.Teammate3_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   COMMON.GroundInteract(activator, chara, true)
+end
+
+function vast_steppe_entrance.Kangaskhan_Rock_Action(obj, activator)
+	GeneralFunctions.Kangashkhan_Rock_Interact(obj, activator)
+end
+
+
+--Guild members
+function vast_steppe_entrance.Tropius_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Tropius_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Noctowl_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Noctowl_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Breloom_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Breloom_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Girafarig_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Growlithe_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Zigzagoon_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Snubbull_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Audino_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Audino_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Cranidos_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cranidos_Action(...,...)"), obj, activator))
+end
+
+function vast_steppe_entrance.Mareep_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Mareep_Action(...,...)"), obj, activator))
 end
 
 return vast_steppe_entrance

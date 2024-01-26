@@ -1,0 +1,27 @@
+﻿{
+"Version": "0.7.23.0",
+"Object": {
+"$type": "RogueEssence.Data.ZoneData, RogueEssence",
+"Name": {
+"DefaultText": "Cloven Ruins",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"NoEXP": false,
+"ExpPercent": 100,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Persistent": false,
+"Rescues": 0,
+"Rogue": 0,
+"Segments": [],
+"GroundMaps": []
+}
+}

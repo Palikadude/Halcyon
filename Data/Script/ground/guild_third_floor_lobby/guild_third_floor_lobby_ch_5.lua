@@ -659,9 +659,9 @@ function guild_third_floor_lobby_ch_5.ExpeditionAddress()
 											GROUND:CharAnimateTurnTo(snubbull, Direction.Right, 4)
 											end)	
 	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
-											GROUND:CharAnimateTurnTo(piplup, Direction.Right, 4)
+											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 											GAME:WaitFrames(30)
-											GROUND:CharSetEmote(piplup, "exclaim", 1)
+											GROUND:CharSetEmote(partner, "exclaim", 1)
 											end)
 	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(58)
 											GROUND:CharSetEmote(hero, "notice", 1)
@@ -790,7 +790,243 @@ end
 
 function guild_third_floor_lobby_ch_5.SecondExpeditionAddress()
 
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get('cloven_ruins')
+
+	SOUND:StopBGM() 
+
+	local tropius, noctowl, audino, snubbull, growlithe, zigzagoon, girafarig, 
+		  breloom, mareep, cranidos = guild_third_floor_lobby_helper.SetupMorningAddress(false)
+
+	local tail = CharacterEssentials.MakeCharactersFromList({{'Tail'}})
+
+	GAME:FadeIn(40)
+	SOUND:PlayBGM("Wigglytuff's Guild Remix.ogg", true)
+
+
+	GAME:WaitFrames(60)
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownLeft, 4)
+	GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownRight, 4)
+	GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	GAME:WaitFrames(20)
 	
+	
+	UI:SetSpeaker(tropius)
+	UI:WaitShowDialogue("Alright![pause=0] It looks like we have everyone![pause=0] Let's get started here!")
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
+	
+	UI:WaitShowDialogue(noctowl:GetDisplayName() .. ",[pause=10] would you mind explaining the expedition plans to everyone?")
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(noctowl, tropius, 4)
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Of course,[pause=10] Guildmaster.")
+	GAME:WaitFrames(12)
+	GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	
+	--cloven ruins/relic
+	--[color=#FFC663]Cloven Ruins[color]
+	UI:WaitShowDialogue("As you all already know,[pause=10] our destination is the ruins located in the mountain range far to the north.")
+	UI:WaitShowDialogue("For the sake of brevity,[pause=10] I will be referring to them as " .. zone:GetColoredName() .. " from now on.")
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Worried")
+	GeneralFunctions.EmoteAndPause(partner, "Question", true)
+	UI:WaitShowDialogue(zone:GetColoredName() .. "?[pause=0] Why that name?")
+	GAME:WaitFrames(12)
+	
+	UI:SetSpeaker(breloom)
+	UI:SetSpeakerEmotion("Happy")
+	local coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(breloom, Direction.Left, 4)
+												  UI:WaitShowDialogue("It's the name me and " .. girafarig:GetDisplayName() .. " came up with![pause=0] " .. noctowl:GetDisplayName() .. " isn't the only one with a fancy vocab!")
+												  UI:WaitShowDialogue("Once we reach the ruins,[pause=10] you'll see how we came up with it!")
+												  end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharAnimateTurnTo(girafarig, Direction.Left, 4) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) GROUND:CharAnimateTurnTo(partner, Direction.Right, 4) end)
+	local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(18) GROUND:CharAnimateTurnTo(hero, Direction.Right, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})									
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("Ahem.[pause=0] Let us stay on track with more pertinent details,[pause=10] please.[pause=0] Time is of the essence.")
+	
+	GAME:WaitFrames(12)
+	UI:SetSpeaker(breloom)
+	UI:SetSpeakerEmotion("Worried")
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(breloom, Direction.Up, 4)
+											GROUND:CharSetEmote(breloom, "sweating", 1)
+											UI:WaitShowDialogue("W-whoops.[pause=0] Sorry,[pause=10] " .. noctowl:GetDisplayName() .. "!") end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) GROUND:CharAnimateTurnTo(girafarig, Direction.Up, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(2) GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4) end)
+	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})	
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(noctowl)
+	UI:WaitShowDialogue("To recap,[pause=10] our intelligence suggests that " .. zone:GetColoredName() .. " houses an incredible secret.")
+	UI:WaitShowDialogue("What that secret is exactly,[pause=10] we do not know.")
+	UI:WaitShowDialogue("Treasure of incalculable value,[pause=10] remnants of an ancient civilization,[pause=10] or perhaps nothing at all.")
+	UI:WaitShowDialogue("It could be anything.[pause=0] It is simply an unknown as of now.")
+	UI:WaitShowDialogue("While " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " made efforts during their scouting trip to uncover what they could...")
+	UI:WaitShowDialogue("...They were ultimately unable to solve the mystery of the ruins.")
+	UI:WaitShowDialogue("It is our hope that with the entire guild present,[pause=10] we will be able to discover the true nature of " .. zone:GetColoredName() .. ".")
+	GAME:WaitFrames(20)
+	
+	--todo: if a map is made for the game, insert a scene here of opening up the wonder maps.
+	UI:WaitShowDialogue("As you all know,[pause=10] " .. zone:GetColoredName() .. " is a great distance from the guild.")
+	UI:WaitShowDialogue("I was able to plot out an efficient route thanks to " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. "'s efforts.")
+	UI:WaitShowDialogue("However,[pause=10] I estimate that it will still take several days for us to make the journey.")
+	UI:WaitShowDialogue("Furthermore,[pause=10] this route will take us through multiple mystery dungeons which we will need to overcome.")
+	UI:WaitShowDialogue("The Guildmaster has come up with a strategy to help us expeditiously pass through these mystery dungeons.")
+	GAME:WaitFrames(12)
+	
+	GROUND:CharTurnToCharAnimated(noctowl, tropius, 4)
+	UI:WaitShowDialogue("Guildmaster,[pause=10] if you would?")
+	GAME:WaitFrames(12)
+	
+	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
+	UI:SetSpeaker(tropius)
+	UI:WaitShowDialogue("Sure thing,[pause=10] " .. noctowl:GetDisplayName() .. "!")
+	GAME:WaitFrames(10)
+	
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4) end)
+	TASK:JoinCoroutines({coro1, coro2})	
+	
+	UI:WaitShowDialogue("As " .. noctowl:GetDisplayName() .. " said,[pause=10] we'll need to pass through multiple mystery dungeons.")
+	UI:WaitShowDialogue("But there's still plenty of regular traveling we have to do as well!")
+	UI:WaitShowDialogue("With that in mind,[pause=10] I've decided it's best if we stay as one large group at first.")
+	UI:WaitShowDialogue("Staying together will help keep everyone safe and on track towards " .. zone:GetColoredName() .. "!")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("I think it'll help keep everyone's spirits up too![pause=0] It's more fun traveling together!")
+	
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("We'll move as one large group until we reach the entrance of the first mystery dungeon.")
+	UI:WaitShowDialogue("From there,[pause=10] we'll split up into smaller teams.")
+	GROUND:EntTurn(tropius, Direction.DownLeft)
+	UI:WaitShowDialogue("As the most experienced,[pause=10] " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " will lead the way as a pair.")
+	UI:WaitShowDialogue("Their job will be to set up the base camps for us to rest at after each dungeon.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(girafarig)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("You can depend on us,[pause=10] Guildmaster![pause=0] We'll get ahead in the back of all you and get those camps set up!")
+	GAME:WaitFrames(16)
+	
+	UI:SetSpeaker(tropius)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Left, 4)
+	UI:WaitShowDialogue(noctowl:GetDisplayName() .. " and I will stay as a pair and bring up the rear.")
+	UI:WaitShowDialogue("That way,[pause=10] we can help anyone who's struggling with a mystery dungeon!")
+	GAME:WaitFrames(12)
+	
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	UI:WaitShowDialogue("The rest of you will split up into two teams.[pause=0] We'll change these teams up after each mystery dungeon as well.")
+	GAME:WaitFrames(20) 
+	
+	UI:SetSpeaker(zigzagoon)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Two teams?[pause=0] But there are eight of us left...")
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.EmoteAndPause(zigzagoon, "Exclaim", true)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Woah![pause=0] So does that mean we'll be teaming up with more than just our usual partner?")
+	GAME:WaitFrames(16)
+	
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownRight, 4)
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Yup![pause=0] This is a good opportunity for teambuilding![pause=0] I'm hoping you'll all be able to learn from each other!")
+	UI:SetSpeakerEmotion("Normal")
+    UI:WaitShowDialogue("But don't worry,[pause=10] I won't split up any of our duos.[pause=0] I know you all adventure best with your partner!")
+	
+	GAME:WaitFrames(16)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("We'll travel in these teams until we all reconvene at the next camp,[pause=10] where we'll rest for the night.")
+	UI:WaitShowDialogue("In the morning,[pause=10] we'll talk strategy and decide how to change up the teams for the next mystery dungeon.")
+	UI:WaitShowDialogue("That about covers it![pause=0] Are there any questions?")
+	GAME:WaitFrames(40)	
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownLeft, 4)
+	GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownRight, 4)
+	GAME:WaitFrames(40)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	GAME:WaitFrames(40)
+
+	
+	SOUND:PlayBGM("Wigglytuff's Guild.ogg", true)
+	UI:WaitShowDialogue("Looks like we're all set then![pause=0] We're ready to roll!")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Alright Pokémon![pause=0] Let's get this expedition going!")
+	GAME:WaitFrames(20)
+	
+	--HURRAH!
+	GROUND:CharSetEmote(growlithe, "happy", 0)
+	GROUND:CharSetEmote(zigzagoon, "happy", 0)
+	GROUND:CharSetEmote(mareep, "happy", 0)
+	GROUND:CharSetEmote(breloom, "happy", 0)
+	GROUND:CharSetEmote(audino, "happy", 0)	
+	GROUND:CharSetEmote(partner, "happy", 0)
+
+	--turn pokemon so pose is appropriate
+	GROUND:EntTurn(growlithe, Direction.Up)
+	GROUND:EntTurn(zigzagoon, Direction.Up)
+	GROUND:EntTurn(snubbull, Direction.Up)
+	GROUND:EntTurn(audino, Direction.Up)
+	GROUND:EntTurn(mareep, Direction.Up)
+	GROUND:EntTurn(cranidos, Direction.Up)
+	GROUND:EntTurn(breloom, Direction.Up)
+	GROUND:EntTurn(girafarig, Direction.Up)
+	GROUND:EntTurn(partner, Direction.Up)
+	GROUND:EntTurn(hero, Direction.Up)
+	
+	GROUND:CharSetAction(growlithe, RogueEssence.Ground.PoseGroundAction(growlithe.Position, growlithe.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(zigzagoon, RogueEssence.Ground.PoseGroundAction(zigzagoon.Position, zigzagoon.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(breloom, RogueEssence.Ground.PoseGroundAction(breloom.Position, breloom.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(girafarig, RogueEssence.Ground.PoseGroundAction(girafarig.Position, girafarig.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(cranidos, RogueEssence.Ground.PoseGroundAction(cranidos.Position, cranidos.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(mareep, RogueEssence.Ground.PoseGroundAction(mareep.Position, mareep.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(audino, RogueEssence.Ground.PoseGroundAction(audino.Position, audino.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))
+	GROUND:CharSetAction(snubbull, RogueEssence.Ground.PoseGroundAction(snubbull.Position, snubbull.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))	
+	GROUND:CharSetAction(partner, RogueEssence.Ground.PoseGroundAction(partner.Position, partner.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))	
+	GROUND:CharSetAction(hero, RogueEssence.Ground.PoseGroundAction(hero.Position, hero.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Pose")))	
+	UI:SetSpeaker('[color=#00FFFF]Everyone[color]', true, "", -1, "", RogueEssence.Data.Gender.Unknown)	
+	UI:WaitShowDialogue("HURRAH!")
+	
+	--perhaps show them leaving?
+	
+	GAME:WaitFrames(60)
+	SOUND:FadeOutBGM(60)
+	GAME:FadeOut(false, 60)
+	GAME:WaitFrames(120)
+	
+	UI:SetAutoFinish(true)
+	UI:WaitShowVoiceOver("And so,[pause=10] the guild began its long\nexpedition towards " .. zone:GetColoredName() .. ".", -1)
+	UI:WaitShowVoiceOver("With the excitement of adventure in the air,\nits members eagerly marched, stopping only at night to rest.", -1)
+	UI:WaitShowVoiceOver("After several uneventful days, the group\narrives at its first destination...", -1)
+	UI:WaitShowVoiceOver("The border of a great and expansive prairie.", -1)
+	UI:SetAutoFinish(false)
+	
+	GAME:WaitFrames(90)
+	GAME:CutsceneMode(false)
+	GAME:EnterGroundMap("vast_steppe_entrance", "Main_Entrance_Marker")	
+	
+	
+	 --[[pretty cool name, huh? 
+	--UI:WaitShowDialogue(breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " have proposed a name for them: [color=#FFC663]Cloven Ruins[color].")
+	--UI:WaitShowDialogue("But rather than continuing to refer to them in that verbose manner...[pause=10] " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " suggested a name: [color=#FFC663]Cloven Ruins[color].")
+	
+	--[[
 	GAME:WaitFrames(10)
 	GROUND:CharAnimateTurnTo(tropius, Direction.Left, 4)
 	UI:WaitShowDialogue(noctowl:GetDisplayName() .. ",[pause=10] would you mind explaining the plan to everyone?")
@@ -817,4 +1053,38 @@ function guild_third_floor_lobby_ch_5.SecondExpeditionAddress()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10, coro11})
 	
 	UI:WaitShowDialogue("As the Guildmaster explained the other day,[pause=10] ")
+	
+	
+		GAME:WaitFrames(10)
+	GeneralFunctions.EmoteAndPause(tropius, "notice", true)
+	GROUND:CharAnimateTurnTo(tropius, Direction.DownRight, 4)
+	UI:WaitShowDialogue("Oh,[pause=10] and " .. growlithe:GetDisplayName() .. "...")
+	UI:WaitShowDialogue("You'll be traveling with me and " .. noctowl:GetDisplayName() .. ".")
+	
+	GAME:WaitFrames(20)
+	SOUND:PlayBattleSE('EVT_Emote_Shock_2')
+	GeneralFunctions.EmoteAndPause(growlithe, "Shock", false)
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Shocked")
+	UI:WaitShowDialogue("W-what!? B-but!W-why,[pause=10] ruff!?[script=0]", {function() return GeneralFunctions.)
+	UI:WaitShowDialogue("I want to adventure with everybody else,[pause=10] ruff![script=0]", {function() return GeneralFunctions.Hop(growlithe) end})
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("You know how I worry,[pause=10] " .. growlithe:GetDisplayName() .. "...[pause=0] I want you close by so I can keep an eye on you.")
+	GAME:WaitFrames(20)
+	
+	GeneralFunctions.Complain(growlithe)
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("I never get to go on adventures with " .. zigzagoon:GetDisplayName() .. " because you always stick me on sentry duty...")
+	UI:WaitShowDialogue("I've been looking forward to this expedition so I could adventure again with him and everybody else.")
+	UI:WaitShowDialogue("Please,[pause=10] let me be on the teams with everybody else,[pause=10] ruff![script=0]", {function() return GeneralFunctions.Hop(growlithe) end})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue(".........")
+	]]--
 end

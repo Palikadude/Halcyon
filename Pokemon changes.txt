@@ -14,7 +14,7 @@ Charcadet: Has Psybeam, Shadow Sneak, and Flamethrower via level up now, shiftin
 Riolu: Learns Force Palm at 11 and Feint at 15 instead of the other way around.
 Shinx: Learns Spark at 11 and Baby Doll Eyes at 13 instead of the other way around.
 Phanpy: Now learns Mud-Slap at 8 and Bulldoze at 22.
-Yamper: Ability Ball Fetch changed to Static until Ball Fetch is properly implemented. Learns Spark at 15 and Roar at 20, instead of the other way around.
+Yamper: Learns Spark at 15 and Roar at 20, instead of the other way around.
 Rockruff: Learns Rock Throw at 12 and Howl at 15 instead of the other way around. 
 
 

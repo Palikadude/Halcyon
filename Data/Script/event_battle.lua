@@ -726,6 +726,151 @@ function BATTLE_SCRIPT.SenseiInteract(owner, ownerChar, context, args)
 end
 
 
+--Guild member interact script. The logic should be mostly the same between them all,
+--so having them in one place (for now at least) is easiest. Personality will change to reflect
+--who you're actually talking to.
+function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
+	local chara = context.User
+	local target = context.Target
+	local action_cancel = context.CancelState
+	local turn_cancel = context.TurnCancel
+	
+	action_cancel.Cancel = true
+
+  if COMMON.CanTalk(target) then
+    
+    UI:SetSpeaker(target)
+
+    local ratio = target.HP * 100 // target.MaxHP
+    
+    local mon = _DATA:GetMonster(target.BaseForm.Species)
+    local form = mon.Forms[target.BaseForm.Form]
+    	
+    local personality = 51
+	
+	local dungeon = GAME:GetCurrentDungeon().Name:ToLocal()
+	local segment = _ZONE.CurrentMapID.Segment
+        
+    local personality_group = COMMON.PERSONALITY[personality]
+    local pool = {}
+    local key = ""
+    if ratio <= 25 then
+      UI:SetSpeakerEmotion("Pain")
+      pool = personality_group.PINCH
+      key = "TALK_PINCH_%04d"
+    elseif ratio <= 50 then
+      UI:SetSpeakerEmotion("Worried")
+      pool = personality_group.HALF
+      key = "TALK_HALF_%04d"
+    else
+      pool = personality_group.FULL
+      key = "TALK_FULL_%04d"
+    end
+    
+    local running_pool = {table.unpack(pool)}
+    local valid_quote = false
+    local chosen_quote = ""
+    
+    while not valid_quote and #running_pool > 0 do
+      valid_quote = true
+
+
+      local chosen_idx = math.random(1, #running_pool)
+  	  local chosen_pool_idx = running_pool[chosen_idx]
+	  
+	  --for use with [(name)] replacing
+	  local char_list = {}
+	  local char_count = 0
+	  
+      chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
+
+	  --[(stuff)] indicates that the item inside (in this case stuff) is a pokemon's identifer and should be fed to CharacterEssentials to get their name. THANKS NO NICKNAME ENTHUSIASTS I HATE YOU
+	  --NOTE/TODO: This breaks for characters who have _ (or other special chars) in their character call name. If this situation pops up, either address it here or remove the underscore from all instances of that character call name.
+	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
+		char_count = char_count + 1
+		char_list[char_count] = i
+	  end
+	  
+	  for i = 1, #char_list, 1 do
+		chosen_quote = string.gsub(chosen_quote, "%[%(" .. char_list[i] .. "%)%]", CharacterEssentials.GetCharacterName(char_list[i]))
+	  end
+
+  	
+      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
+      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
+
+      if string.find(chosen_quote, "%[move%]") then
+        local moves = {}
+  	    for move_idx = 0, 3 do
+  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
+  	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
+  	      end
+  	    end
+  	    if #moves > 0 then
+  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
+  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+      
+      if string.find(chosen_quote, "%[kind%]") then
+  	    if GAME:GetCurrentFloor().TeamSpawns.CanPick then
+          local team_spawn = GAME:GetCurrentFloor().TeamSpawns:Pick(GAME.Rand)
+  	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
+  	      if chosen_list.Count > 0 then
+  	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
+  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
+            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
+  	      else
+  	        valid_quote = false
+  	      end
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+      
+      if string.find(chosen_quote, "%[item%]") then
+        if GAME:GetCurrentFloor().ItemSpawns.CanPick then
+          local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
+          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+	
+	
+  	  if not valid_quote then
+        PrintInfo("Rejected "..chosen_quote)
+  	    table.remove(running_pool, chosen_idx)
+  	    chosen_quote = ""
+  	  end
+    end
+    -- PrintInfo("Selected "..chosen_quote)
+	
+	local oldDir = target.CharDir
+    DUNGEON:CharTurnToChar(target, chara)
+  
+  
+    UI:WaitShowDialogue(chosen_quote)
+  
+    target.CharDir = oldDir
+  else
+  
+    UI:ResetSpeaker()
+	
+	local chosen_quote = RogueEssence.StringKey("TALK_CANT"):ToLocal()
+    chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
+	
+    UI:WaitShowDialogue(chosen_quote)
+  
+  end
+end
+
+
+
+
+
 
 
 function BATTLE_SCRIPT.SynergyScarfAttack(owner, ownerChar, context, args)

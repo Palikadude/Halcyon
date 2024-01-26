@@ -735,7 +735,28 @@ SV.Chapter4 =
 SV.Chapter5 = 
 {
 	ShowedTitleCard = false,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
-	FinishedExpeditionAddress = false--Did the address about the expedition starting today?
+	FinishedExpeditionAddress = false,--Did the address about the expedition starting today?
+	ReadyForExpedition = false,--Talked to Penticus to ready up for the expedition?
+	
+	FinishedVastSteppeIntro = false,--Did the player see the intro cutscene for Vast Steppe?
+	EnteredVastSteppe = false,--did player enter the steppe?
+	LostSteppe = false,--did player die in steppe?
+	
+	FinishedSearingTunnelBedtime = false,--Did the player see the nighttime scene for Searing Tunnel?
+	FinishedSearingTunnelIntro = false,--Did the player see the intro cutscene for Searing Tunnel?
+	EnteredSearingTunnel = false,--did player enter the tunnel?
+	LostTunnel = false,--did player die in the tunnel or to the boss?
+	EncounteredBoss = false, --Did the player encounter the slugmas?
+	LostToBoss = false,--Did the player lose to the boss?
+	
+	FinishedMountWindsweptBedtime = false,--Did the player see the nighttime cutscene for Mt. Windswept?
+	FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
+	EnteredMountain = false,--did player enter Mt. Windswept?
+	LostMountain = false,--did player die in Mt. Windswept?
+	DiedToWind = false,--did player's last run die to the time limit?
+	
+	
+	NeedGiveSupplies = false--does penticus/phileas need to give supplies out?
 }
 
 
@@ -749,10 +770,12 @@ SV.Chapter6 =
 --info related to guild member sidequests.
 SV.GuildSidequests = 
 {
+	--Last known levels for guild members. These start being used on the expedition.
+	--If you level them up more during the expedition, they'll keep more of their levels when you do stuff with them later.
 	ZigzagoonLevel = 19,
 	GrowlitheLevel = 17,
-	SnubbullLevel = 16,
-	AudinoLevel = 18,
+	SnubbullLevel = 18,
+	AudinoLevel = 17,
 	MareepLevel = 19,
 	CranidosLevel = 20,
 	BreloomLevel = 33,

@@ -7,6 +7,7 @@ require 'ground.metano_town.metano_town_ch_1'
 require 'ground.metano_town.metano_town_ch_2'
 require 'ground.metano_town.metano_town_ch_3'
 require 'ground.metano_town.metano_town_ch_4'
+require 'ground.metano_town.metano_town_ch_5'
 require 'menu.single_deal_menu'
 
 local MapStrings = {}
@@ -88,7 +89,9 @@ function metano_town.PlotScripting()
 			metano_town_ch_3.MerchantIntro()
 		end	
 	elseif SV.ChapterProgression.Chapter == 4 then
-		metano_town_ch_4.SetupGround()	
+		metano_town_ch_4.SetupGround()		
+	elseif SV.ChapterProgression.Chapter == 5 then
+		metano_town_ch_5.SetupGround()	
 	else
 		GAME:FadeIn(20)
 	end

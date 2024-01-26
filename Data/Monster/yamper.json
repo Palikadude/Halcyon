@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.23.0",
 "Object": {
 "$type": "RogueEssence.Data.MonsterData, RogueEssence",
 "Name": {
@@ -186,7 +186,7 @@
 "PromoteForm": 0,
 "Element1": "electric",
 "Element2": "none",
-"Intrinsic1": "static",
+"Intrinsic1": "ball_fetch",
 "Intrinsic2": "none",
 "Intrinsic3": "rattled",
 "LevelSkills": [

@@ -10,6 +10,7 @@ require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_1'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_2'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_3'
 require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_4'
+require 'ground.guild_guildmasters_room.guild_guildmasters_room_ch_5'
 
 -- Package name
 local guild_guildmasters_room = {}
@@ -89,6 +90,8 @@ function guild_guildmasters_room.PlotScripting()
 		else 
 			GAME:FadeIn(20)
 		end
+	elseif SV.ChapterProgression.Chapter == 5 then
+		guild_guildmasters_room_ch_5.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end
@@ -100,6 +103,21 @@ end
 function guild_guildmasters_room.Tropius_Action(obj, activator)
  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
  assert(pcall(load("guild_guildmasters_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Tropius_Action(...,...)"), obj, activator))
+end
+
+function guild_guildmasters_room.Noctowl_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_guildmasters_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Noctowl_Action(...,...)"), obj, activator))
+end
+
+function guild_guildmasters_room.Breloom_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_guildmasters_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Breloom_Action(...,...)"), obj, activator))
+end
+
+function guild_guildmasters_room.Girafarig_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_guildmasters_room_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), obj, activator))
 end
 
 function guild_guildmasters_room.Teammate1_Action(chara, activator)

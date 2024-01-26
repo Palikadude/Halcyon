@@ -67,7 +67,6 @@ V0.5.0
 -Mido can now sell Flame and Toxic orbs.
 -Illuminant Riverbed has had its generation updated a bit to make it look more like a river is flowing through it. Thank you Touhou Project for the update!
 -Illuminant Riverbed now has you skipping across rocks to cross the river. Thank you Touhou Project for the update!
--Flabebe has been added to Apricorn Grove. It was always supposed to be there, I just forgot to add it before.
 -All Starters mod now has a wonderful UI for selecting your hero/partner created by MistressNebula!
 -All Starters can now be enabled alongside No Nicknames.
 	-Note: If you already have All Starters or No Nicknames installed in your mod folder, delete their folders and then reinstall with the new versions in the Halcyon Mods folder.
@@ -82,3 +81,5 @@ V0.5.0
 -Fixed bad sorting on items that were edited from base PMDO (typically to change their price). Let me know if any items still sort strangely.
 -Some dialogue regarding the player's strange feeling has been edited slightly to better illustrate how that feeling feels.
 -snorlax passerby has been changed to Makuhita.
+-Yamper now has Ball Fetch instead of Static as Ball Fetch now works properly.
+-Fixed a number of minor typos.

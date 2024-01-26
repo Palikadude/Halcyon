@@ -101,7 +101,13 @@ function guild_third_floor_lobby.PlotScripting()
 				guild_third_floor_lobby_ch_4.SetupGround()
 			end			
 		elseif SV.ChapterProgression.Chapter == 5 then
-			GAME:FadeIn(20)
+			if not SV.Chapter5.FinishedExpeditionAddress then
+				guild_third_floor_lobby_ch_5.ExpeditionAddress()
+			elseif SV.Chapter5.ReadyForExpedition then
+				guild_third_floor_lobby_ch_5.SecondExpeditionAddress()
+			else
+				GAME:FadeIn(20)
+			end
 		else
 			GAME:FadeIn(20)
 		end

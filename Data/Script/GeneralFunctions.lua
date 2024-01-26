@@ -310,6 +310,35 @@ function GeneralFunctions.EightWayMove(chara, x, y, run, speed)
 	GROUND:MoveToPosition(chara, x, y, run, speed)
 end
 
+--Opposite of above; move straight then diagonally. Same as OSRS path finding hence the name.
+--only moves in 8 directions 
+function GeneralFunctions.EightWayMoveRS(chara, x, y, run, speed)
+
+	local diffX = x - chara.Position.X
+	local diffY = y - chara.Position.Y
+
+	local xSign = 1
+	local ySign = 1
+	
+	if diffX < 0 then xSign = -1 end
+	if diffY < 0 then ySign = -1 end
+
+	diffX = math.abs(diffX)
+	diffY = math.abs(diffY)
+	
+	local diffDiff = math.abs(diffX - diffY)
+		
+	if diffX < diffY then
+		GROUND:MoveToPosition(chara, chara.Position.X, chara.Position.Y + (diffDiff * ySign), run, speed)
+	elseif math.abs(diffX) > math.abs(diffY) then
+		GROUND:MoveToPosition(chara, chara.Position.X + (diffDiff * xSign), chara.Position.Y, run, speed)
+	end
+	
+	GROUND:MoveToPosition(chara, x, y, run, speed)
+end
+
+
+
 --shortcut for doing hero dialogue (i.e., no sfx, no nameplate at the start)
 function GeneralFunctions.HeroDialogue(chara, str, emotion)
 	UI:SetSpeaker('', false, chara.CurrentForm.Species, chara.CurrentForm.Form, chara.CurrentForm.Skin, chara.CurrentForm.Gender)
@@ -684,16 +713,20 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 	local bufferTable = {'dummy', 'dummy', 'dummy', 'dummy'}
 	
 	for i = 1, assemblyCount, 1 do
+		print("i = " .. tostring(i))
 		p = GAME:GetPlayerAssemblyMember(i - found)
 		tbl = LTBL(p)
+		print(p.Importance)
 		--print(tbl.Importance)
 		--print(p.Nickname)
 		if tbl.Importance == 'Hero' then --hero goes in slot 1
 			GAME:RemovePlayerAssembly(i-found)
+			print("HERO FOUND")
 			bufferTable[1] = p
 			found = found + 1
 		elseif tbl.Importance == 'Partner' then --partner in slot 2
 			GAME:RemovePlayerAssembly(i-found)
+			print("PARTNER FOUND")
 			bufferTable[2] = p
 			found = found + 1
 			--if spawn then --call teammate 1 spawner
@@ -714,6 +747,7 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 	
 	--add characters back into team in order, set leader to 1st member
 	for i = 1, found - 1, 1 do
+		print("ADDING CHARACTER BACK!")
 		GAME:AddPlayerTeam(bufferTable[i])
 	end
 	
@@ -733,7 +767,7 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 
 	
 	if spawn then 	
-		COMMON.RespawnAllies()
+		COMMON.RespawnAllies(true)
 		--AI:SetCharacterAI(CH('Teammate1'), "ai.ground_partner", CH('PLAYER'),CH('Teammate1').Position)
 	end
 	_DATA.Save:UpdateTeamProfile(true)
@@ -976,6 +1010,21 @@ function GeneralFunctions.GetItemArticle(item, uppercase)
 	
 	return article
 end
+
+--a or an before the given Color Coded string
+function GeneralFunctions.GetColoredStringArticle(str, uppercase)
+	if uppercase == nil then uppercase = false end 
+	
+	local article = 'a'
+	local first_letter = string.upper(string.sub(str, 16, 16))
+
+	if first_letter == "A" or first_letter == 'E' or first_letter == 'I' or first_letter == 'O' or first_letter == 'U' then article = 'an' end
+	
+	if uppercase then article = FirstToUpper(article) end
+	
+	return article
+end
+
 
 --gives adventurer points
 function GeneralFunctions.RewardPoints(amount, silent)
@@ -1719,3 +1768,67 @@ function GeneralFunctions.PrintMissionType(mission)
 		PrintInfo("=====OUTLAW_ITEM=====")
   end
 end 
+
+
+function GeneralFunctions.Kangashkhan_Rock_Interact(obj, activator)
+	local hero = CH('PLAYER')
+    local partner = CH('Teammate1')
+    partner.IsInteracting = true
+    GROUND:CharSetAnim(partner, 'None', true)
+    GROUND:CharSetAnim(hero, 'None', true)		
+    GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+    GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
+	
+	
+	local state = 0
+
+	while state > - 1 do 
+		local has_items = GAME:GetPlayerBagCount() > 0
+		local has_equipment = GAME:GetPlayerEquippedCount() > 0
+		local has_storage = GAME:GetPlayerStorageCount() > 0
+				
+		local choices = { { STRINGS:FormatKey('MENU_STORAGE_STORE'), has_items or has_equipment},
+		{ STRINGS:FormatKey('MENU_STORAGE_TAKE_ITEM'), has_storage},
+		{ STRINGS:FormatKey('MENU_STORAGE_STORE_ALL'), has_items},
+		{ STRINGS:FormatKey('MENU_STORAGE_MONEY'), true},
+		{ "Save", true},
+		{ STRINGS:FormatKey("MENU_CANCEL"), true}}	
+	
+		UI:ResetSpeaker()
+		UI:SetCenter(true)
+		UI:SetAutoFinish(true)
+		UI:BeginChoiceMenu("What would you like to do?", choices, 1, #choices)
+		UI:WaitForChoice()
+		local result = UI:ChoiceResult()
+		UI:SetCenter(false)
+		UI:SetAutoFinish(false)
+		
+		
+		if result == 1 then
+			UI:StorageMenu()
+			UI:WaitForChoice()
+		elseif result == 2 then
+			UI:WithdrawMenu()
+			UI:WaitForChoice()
+		elseif result == 3 then
+			GeneralFunctions.SendInvToStorage(true, false, true)
+			UI:SetCenter(true)
+			UI:WaitShowDialogue("All unequipped items have been stored.")
+			UI:SetCenter(false)
+		elseif result == 4 then
+			UI:BankMenu()
+			UI:WaitForChoice()
+		elseif result == 5 then
+			state = -1
+			GeneralFunctions.PromptSaveAndQuit()
+		else
+			state = -1
+		end
+	end
+	
+	partner.IsInteracting = false
+	
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	
+end

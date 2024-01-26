@@ -98,7 +98,8 @@ function guild_heros_room.CheckTriggerEvent()
 		GAME:UnlockDungeon("electric_maze")--unlock new mazes at ledian dojo
 		GAME:UnlockDungeon("bug_maze")--unlock new mazes at ledian dojo
 		GAME:WaitFrames(60)
-		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)end
+		GeneralFunctions.PromptChapterSaveAndQuit("guild_heros_room", "Main_Entrance_Marker", 2)
+	end
 		
 end
 
@@ -147,6 +148,12 @@ function guild_heros_room.PlotScripting()
 			else
 				GAME:FadeIn(20)
 			end
+		elseif SV.ChapterProgression.Chapter == 5 then 
+			if not SV.Chapter5.ShowedTitleCard then
+				guild_heros_room_ch_5.ShowTitleCard()
+			else
+				GAME:FadeIn(20)
+			end			
 		else
 			GAME:FadeIn(20)
 		end

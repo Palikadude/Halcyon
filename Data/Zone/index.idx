@@ -795,6 +795,30 @@
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
 "SortOrder": 0
+},
+"cloven_ruins": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"ExpPercent": 100,
+"Level": -1,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"BagSize": -1,
+"Rescues": 0,
+"CountedFloors": 0,
+"Rogue": 0,
+"Grounds": [],
+"Maps": [],
+"Name": {
+"DefaultText": "Cloven Ruins",
+"LocalTexts": {}
+},
+"Released": false,
+"Comment": "",
+"SortOrder": 0
 }
 }
 }
