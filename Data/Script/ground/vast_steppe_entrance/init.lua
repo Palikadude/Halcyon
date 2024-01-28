@@ -70,7 +70,19 @@ function vast_steppe_entrance.GameLoad(map)
 end
 
 function vast_steppe_entrance.PlotScripting()
-  GAME:FadeIn(20)
+  if SV.ChapterProgression.Chapter == 5 then
+	if not SV.Chapter5.FinishedSteppeIntro then
+		vast_steppe_entrance_ch_5.ArrivalCutscene()
+	elseif SV.Chapter5.PlayEscapeSteppeScene then
+		vast_steppe_entrance_ch_5.EscapedCutscene()
+	elseif SV.Chapter5.PlayDiedSteppeScene then 
+		vast_steppe_entrance_ch_5.DiedCutscene()
+	else
+		vast_steppe_entrance_ch_5.SetupGround()
+	end
+  else
+	GAME:FadeIn(20)
+  end
 end 
 
 
@@ -96,6 +108,11 @@ function vast_steppe_entrance.Kangaskhan_Rock_Action(obj, activator)
 	GeneralFunctions.Kangashkhan_Rock_Interact(obj, activator)
 end
 
+--Guild members
+function vast_steppe_entrance.Dungeon_Entrance_Touch(obj, activator)
+	--This ground is only available during chapter 5.
+	vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
+end
 
 --Guild members
 function vast_steppe_entrance.Tropius_Action(obj, activator)

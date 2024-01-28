@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.23.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "PMDC.Data.RarityData, PMDC",
 "RarityMap": {
@@ -7398,7 +7398,7 @@
 ]
 },
 "unown": {
-"5": [
+"1": [
 "xcl_family_unown_00",
 "xcl_family_unown_01",
 "xcl_family_unown_02",

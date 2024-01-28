@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -13,14 +13,8 @@
 }
 },
 "Desc": {
-"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. Bug-type Pokémon like it the most.",
-"LocalTexts": {
-"fr": "Aliment qui remplit légèrement l'Estomac du Pokémon. Augmente le Q.I. des membres de l'équipe de secours qui en mangent. Plaît particulièrement aux Pokémon de type Insecte.",
-"de": "Nahrungsmittel, dass den Magen des Pokémons einigermaßen füllt und die Basiswerte permanent erhöht. Käfer-Pokémon mögen es am liebsten.",
-"it": "Una gelatina che riempie un po' la pancia e che aumenta permanentemente le statistiche del Pokémon. È la preferita dei Pokémon di tipo Coleottero.",
-"ko": "먹으면 포만감을 약간 회복하고 스탯을 영구적으로 증가시킨다. 벌레타입 포켓몬이 좋아한다.",
-"zh-hans": "一种食物，食用后回复少量满腹度，并永久提高能力值。虫属性的宝可梦最喜欢吃。"
-}
+"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. It usually boosts Speed, and Bug-type Pokémon like it the most.",
+"LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
@@ -123,8 +117,10 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.GummiEvent, PMDC",
-"TargetElement": "bug"
+"$type": "PMDC.Dungeon.VitaGummiEvent, PMDC",
+"TargetElement": "bug",
+"RequireBase": true,
+"BoostedStat": 5
 }
 }
 ],

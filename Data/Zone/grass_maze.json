@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,8 +9,10 @@
 "Released": true,
 "Comment": "In the second set of training mazes. Unlocked in Chapter 3.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": 7,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -340,7 +342,7 @@
 "Connection": 1
 }
 ],
-"ClumpFactor": 20,
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -348,7 +350,8 @@
 "Max": 7
 }
 },
-"Ally": false
+"Ally": false,
+"ClumpFactor": 20
 }
 },
 {
@@ -423,7 +426,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "FloorSpan": 5,
 "ZoneSteps": [
@@ -592,6 +596,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 },
 {
@@ -630,6 +638,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 },
 {
@@ -668,6 +680,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 },
 {
@@ -706,6 +722,10 @@
 "SpawnFeatures": [
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 },
 {
@@ -756,7 +776,8 @@
 "Spawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": []

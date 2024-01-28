@@ -247,6 +247,7 @@ end
 function ledian_dojo.ShowMazeMenu(dungeon_entrances)
   --check for unlock of dungeons
   local open_dests = {}
+  local default_choice = 1
   for ii = 1,#dungeon_entrances,1 do
     if GAME:DungeonUnlocked(dungeon_entrances[ii]) then
 	  local zone_summary = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dungeon_entrances[ii])
@@ -275,9 +276,12 @@ function ledian_dojo.ShowMazeMenu(dungeon_entrances)
     
     UI:ResetSpeaker()
     --SOUND:PlaySE("Menu/Skip")
-    UI:DestinationMenu(open_dests)
+    UI:DestinationMenu(open_dests, default_choice)
 	UI:WaitForChoice()
-	dest = UI:ChoiceResult()
+	local result = UI:ChoiceResult()
+	if result ~= nil then 
+		dest = open_dests[result].Dest
+	end
   end
   
   if dest:IsValid() then

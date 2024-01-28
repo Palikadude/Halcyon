@@ -83,3 +83,6 @@ V0.5.0
 -snorlax passerby has been changed to Makuhita.
 -Yamper now has Ball Fetch instead of Static as Ball Fetch now works properly.
 -Fixed a number of minor typos.
+-Updated the "Where would you like to explore?" dungeon choice menu. Resembles Sky's a bit more now, and is compatible with more recent PMDO versions.
+-Updated Gummis to reflect new Vanilla PMDO behavior. Check Almotz's almanac for information! New behavior should allow for a more even distribution of stat boosts.
+-Updated Vitamins to reflect new Vanilla PMDO behavior. This means their boost is slightly stronger than before.

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.23.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -710,8 +710,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 5,
-"Max": 7
+"Min": 6,
+"Max": 8
 }
 },
 "Ally": false,
@@ -1482,8 +1482,8 @@
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
-"Min": 6,
-"Max": 8
+"Min": 7,
+"Max": 9
 }
 },
 "Ally": false,
@@ -2574,7 +2574,7 @@
 },
 {
 "Spawn": 2,
-"Rate": 2,
+"Rate": 5,
 "Range": {
 "Min": 0,
 "Max": 14
@@ -2589,13 +2589,13 @@
 {
 "BaseForm": {
 "Species": "plusle",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 13,
-"Max": 14
+"Min": 14,
+"Max": 15
 },
 "SpecifiedSkills": [
 "spark",
@@ -2628,13 +2628,13 @@
 {
 "BaseForm": {
 "Species": "minun",
-"Form": -1,
+"Form": 0,
 "Skin": "",
 "Gender": -1
 },
 "Level": {
-"Min": 13,
-"Max": 14
+"Min": 14,
+"Max": 15
 },
 "SpecifiedSkills": [
 "spark",
@@ -2666,7 +2666,7 @@
 }
 ]
 },
-"Rate": 6,
+"Rate": 8,
 "Range": {
 "Min": 0,
 "Max": 14
@@ -3194,7 +3194,7 @@
 }
 ]
 },
-"Rate": 10,
+"Rate": 6,
 "Range": {
 "Min": 0,
 "Max": 7
@@ -3323,7 +3323,7 @@
 }
 ]
 },
-"Rate": 10,
+"Rate": 6,
 "Range": {
 "Min": 0,
 "Max": 7
@@ -3413,7 +3413,7 @@
 }
 ]
 },
-"Rate": 9,
+"Rate": 6,
 "Range": {
 "Min": 7,
 "Max": 14
@@ -3542,7 +3542,7 @@
 }
 ]
 },
-"Rate": 7,
+"Rate": 5,
 "Range": {
 "Min": 7,
 "Max": 14

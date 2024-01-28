@@ -7,7 +7,7 @@ vast_steppe_entrance_ch_5 = {}
 
 function vast_steppe_entrance_ch_5.SetupGround()	
 
-	if not SV.Chapter5.EnteredVastSteppe then 
+	if not SV.Chapter5.EnteredSteppe then 
 		local noctowl, tropius, mareep, cranidos, zigzagoon, growlithe, breloom, girafarig = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Noctowl', 352, 280, Direction.DownLeft},
@@ -19,6 +19,14 @@ function vast_steppe_entrance_ch_5.SetupGround()
 			{'Breloom', 336, 408, Direction.Down},
 			{'Girafarig', 336, 440, Direction.Up}
 		})
+			
+		--set rin and coco to spawn from the spawners, then spawn them
+		GROUND:SpawnerSetSpawn("TEAMMATE_2", GAME:GetPlayerPartyMember(2))
+		local audino = GROUND:SpawnerDoSpawn("TEAMMATE_2")
+			
+		GROUND:SpawnerSetSpawn("TEAMMATE_3", GAME:GetPlayerPartyMember(3))
+		local snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_3")
+		
 	else
 	
 	end
@@ -202,20 +210,24 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeaker(zigzagoon)
 	--UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Hmm...[pause=0] " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. ",[pause=10] you've been through this mystery dungeon before,[pause=10] right?")
-	UI:WaitShowDialogue("Is there anything you can tell us about it?[pause=0] I want to be prepared for what's ahead!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(girafarig)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("That's right![pause=0] Actually,[pause=10] we've conquered all the dungeons we're gonna be traveling through!")
+	UI:WaitShowDialogue("That's right![pause=0] In fact,[pause=10] we've conquered all the dungeons we're gonna be traveling through!")
 	GAME:WaitFrames(20)
 	
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("Is there anything you can tell us about this dungeon?[pause=0] I want to be prepared for what's ahead!")
+
+	UI:SetSpeaker(girafarig)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("As for how this one is,[pause=10] let me remember...")
+	UI:WaitShowDialogue("Hmm,[pause=10] let me think...")
 	GAME:WaitFrames(60)
 	GeneralFunctions.EmoteAndPause(girafarig, "Sweating", true)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("Oh rear![pause=0] I can't seem to recall![script=0][pause=0] How embarassing...", {function() GROUND:CharAnimateTurnTo(tropius, Direction.Right, 4) end})
+	--wrap in a branch coroutine so the script = 0 tag does not make you wait for the action to finish. Do not need to join the coroutine back in.
+	UI:WaitShowDialogue("Oh rear![pause=0] I can't seem to recall what this dungeon's like![pause=0][script=0] How embarassing...", {function() TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(tropius, Direction.Right, 4) end) end})
 	GAME:WaitFrames(12)
 	
 	GROUND:CharAnimateTurnTo(breloom, Direction.Up, 4)
@@ -244,7 +256,8 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:WaitShowDialogue("My memory's a bit sharper than " .. girafarig:GetDisplayName() .. "'s,[pause=10] so I can tell you all about " .. zone:GetColoredName() .. "!")
 	GAME:WaitFrames(20)
 	UI:WaitShowDialogue("The layout is a lot more open than most mystery dungeons.[pause=0] It's unlike any I've seen before!")
-	UI:WaitShowDialogue("The Pokémon here also like to stay in packs.[script=0][pause=0] It'll be rare to find one fighting by itself.", {function() GROUND:MoveInDirection(tropius, Direction.Right, 24, false, 1) end})
+	--wrap in a branch coroutine so the script = 0 tag does not make you wait for the action to finish. Do not need to join the coroutine back in.
+	UI:WaitShowDialogue("The Pokémon here also like to stay in packs.[pause=0][script=0] It'll be rare to find one fighting by itself.", {function() TASK:BranchCoroutine(function() GROUND:MoveInDirection(tropius, Direction.Right, 24, false, 1) end) end})
 	UI:WaitShowDialogue("Combine that with the open layout,[pause=10] and it's real easy to get swarmed by a bunch of enemies at once!")
 	GAME:WaitFrames(20)
 	
@@ -273,7 +286,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 
 	UI:SetSpeaker(snubbull)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Swarmed?[pause=0] I don't know if I can take on so many opponents at once!")
+	UI:WaitShowDialogue("Swarmed?[pause=0] I can't take on that many opponents at the same time!")
 	GAME:WaitFrames(20)
 
 	UI:SetSpeaker(cranidos)
@@ -283,7 +296,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("But it sounds like t-things could go b-badly if we're not careful...")
-	GAME:WaitFrames(30)
+	GAME:WaitFrames(22)
 
 	--Worry not says phileas. That's why we have our strategy of larger teams after all. Guildmaster? Guildmaster??	
 	GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4)
@@ -319,7 +332,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	GAME:WaitFrames(10)
 	UI:WaitShowDialogue("As explained back at the guild,[pause=10] we will be grouping up into larger teams.")
 	UI:WaitShowDialogue("These larger teams should make overcoming the dungeon more managable.")
-	UI:WaitShowDialogue("The Guildmaster simply needs to select the members for each group.[pause=0] [script=0]Guildmaster,[script=0][pause=10] if you would?", {function() GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4) end})
+	UI:WaitShowDialogue("All we need is for the Guildmaster to select the group members.[pause=0][script=0] Guildmaster,[pause=10] if you would?", {function() TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4) end) end})--wrap in a branch coroutine so the script = 0 tag does not make you wait for the action to finish. Do not need to join the coroutine back in.
 	GAME:WaitFrames(50)
 	
 	GeneralFunctions.EmoteAndPause(noctowl, "Question", true)
@@ -329,7 +342,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
 	
-	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(30)
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(50)
 											UI:WaitShowDialogue(".........[pause=40]") end)
 	coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(noctowl, Direction.Right, 4) 
 											GROUND:MoveInDirection(noctowl, Direction.Right, 24, false, 1) end)
@@ -365,6 +378,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	GAME:WaitFrames(10)
 	GeneralFunctions.Recoil(tropius, "Hurt", 10, 10, true, false)
+	GAME:WaitFrames(10)
 	GROUND:CharTurnToCharAnimated(tropius, noctowl, 4)
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Surprised")
@@ -373,7 +387,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	--todo: an emotion for noctowl here maybe? he never really shows emotion, but the guildmaster is acting odd here too.
 	UI:SetSpeaker(noctowl)
-	UI:WaitShowDialogue("You need to choose how to split up the guild members.")
+	UI:WaitShowDialogue("We need you to decide how to split up the guild members.")
 	GAME:WaitFrames(20)
 	
 	--... Oh, right! Of course!	
@@ -381,7 +395,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeakerEmotion("Stunned")
 	UI:WaitShowDialogue("Oh,[pause=10] right![pause=0] Of course!")
 
-	GAME:WaitFrames(4)	
+	GAME:WaitFrames(10)	
 	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
 	GROUND:CharAnimateTurnTo(noctowl, Direction.Down, 4)
 	
@@ -396,8 +410,8 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:WaitShowDialogue("If you're struggling,[pause=10] come see us by the supply bag and we'll give you some supplies to help!")
 	
 	GAME:WaitFrames(20)
-	UI:WaitShowDialogue("Without further ado,[pause=10] let me announce the first set of teams.")
-	UI:WaitShowDialogue("Team one will be " .. snubbull:GetDisplayName() .. ",[pause=10] " .. audino:GetDisplayName() .. ",[pause=10] " .. partner:GetDisplayName() .. ",[pause=10] and " .. hero:GetDisplayName() .. ".")
+	UI:WaitShowDialogue("Without further ado,[pause=10] let me announce the teams!")
+	UI:WaitShowDialogue("For team one,[pause=10] we have " .. snubbull:GetDisplayName() .. ",[pause=10] " .. audino:GetDisplayName() .. ",[pause=10] " .. partner:GetDisplayName() .. ",[pause=10] and " .. hero:GetDisplayName() .. ".")
 	GAME:WaitFrames(10)
 	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(2)
 											GROUND:CharAnimateTurnTo(growlithe, Direction.Right, 4)
@@ -432,7 +446,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(tropius)
-	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("And team two will be " .. mareep:GetDisplayName() .. ",[pause=10] " .. cranidos:GetDisplayName() .. ",[pause=10] and " .. zigzagoon:GetDisplayName() .. "!")
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("And for team two,[pause=10] we have " .. mareep:GetDisplayName() .. ",[pause=10] " .. cranidos:GetDisplayName() .. ",[pause=10] and " .. zigzagoon:GetDisplayName() .. "!")
 								 end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) 
 											GROUND:CharAnimateTurnTo(growlithe, Direction.UpRight, 4)										
@@ -499,7 +513,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Um,[pause=10] " .. tropius:GetDisplayName() .. "...[pause=0] What about me,[pause=10] ruff?")
-	
+	GAME:WaitFrames(10)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
 											GROUND:CharAnimateTurnTo(zigzagoon, Direction.UpRight, 4)
 											end)
@@ -534,7 +548,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("You didn't call my name![pause=0] What team am I on?")
+	UI:WaitShowDialogue("You didn't call my name![pause=0] What team am I on,[pause=10] ruff?")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(tropius)
@@ -561,7 +575,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	--Penticus, please...
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue(tropius:GetDisplayName() .. ",[pause=10] please! I was really looking forward to adventuring with everyone,[pause=10] ruff!")
+	UI:WaitShowDialogue("But I was really looking forward to adventuring with everyone,[pause=10] ruff!")
 	UI:WaitShowDialogue("I know you want to keep me safe,[pause=10] but I never get to go on any actual adventures,[pause=10] ruff!")
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Please,[pause=10] let me go with the others,[pause=10] ruff!")
@@ -587,6 +601,14 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:WaitShowDialogue("Yes.[pause=0] I shouldn't coddle you so much,[pause=10] it isn't fair to you.")
 	UI:WaitShowDialogue("Join " .. zigzagoon:GetDisplayName() .. "'s team for this mystery dungeon.[pause=0] Just...[pause=30] be careful,[pause=10] OK?")
 	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue(" ")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue(mareep:GetDisplayName() .. ",[pause=10] " .. cranidos:GetDisplayName() .. ",[pause=10] " .. zigzagoon:GetDisplayName() .. "...[pause=0] All of you...[pause=0] Stay safe,[pause=10] OK?")
 	GAME:WaitFrames(20)
 	
@@ -652,8 +674,36 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	--Clean up the existing spawns, then call SetupGround to spawn them in.
 	GeneralFunctions.DefaultParty(false)
+	--reinitialize the hero and partner variables after respawning the party.
+	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch.
+	hero = CH('PLAYER')
+	partner = CH('Teammate1')
 	
-	--Setup Rin and Coco.
+	--Setup Coco and Rin.
+	local snubbull_id = RogueEssence.Dungeon.MonsterID("snubbull", 0, "normal", Gender.Female)
+	local snubbull_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, snubbull_id, SV.GuildSidequests.SnubbullLevel, "run_away", 0)
+	snubbull_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	snubbull_monster.Nickname = CharacterEssentials.GetCharacterName('Snubbull', true)
+	snubbull_monster.MetAt = "Adventurer's Guild"
+	snubbull_monster.IsPartner = true
+	snubbull_monster.IsFounder = true
+	
+	--snubbull's stats are kinda dookie in comparison to audino, so boost her up a bit.
+	snubbull_monster.MaxHPBonus = 1
+	snubbull_monster.AtkBonus = 1
+	snubbull_monster.SpeedBonus = 5
+	
+	snubbull_monster:ReplaceSkill("bite", 0, true)
+	snubbull_monster:ReplaceSkill("lick", 1, true)
+	snubbull_monster:ReplaceSkill("smelling_salts", 2, true)
+	snubbull_monster:ReplaceSkill("charm", 3, false)
+		
+	GAME:AddPlayerTeam(snubbull_monster)
+	snubbull_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    snubbull_monster.ActionEvents:Add(talk_evt)
+	snubbull_monster:RefreshTraits()
+
 	local audino_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
 	local audino_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, audino_id, SV.GuildSidequests.AudinoLevel, "regenerator", 0)
 	audino_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
@@ -673,35 +723,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
     audino_monster.ActionEvents:Add(talk_evt)
 	audino_monster:RefreshTraits()
 	
-	local snubbull_id = RogueEssence.Dungeon.MonsterID("snubbull", 0, "normal", Gender.Female)
-	local snubbull_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, snubbull_id, SV.GuildSidequests.SnubbullLevel, "run_away", 0)
-	snubbull_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
-	snubbull_monster.Nickname = CharacterEssentials.GetCharacterName('Snubbull', true)
-	snubbull_monster.MetAt = "Adventurer's Guild"
-	snubbull_monster.IsPartner = true
-	snubbull_monster.IsFounder = true
-	
-	--snubbull's stats are kinda dookie in comparison to audino, so boost her up a bit.
-	snubbull_monster.MaxHPBonus = 3
-	snubbull_monster.AtkBonus = 2
-	snubbull_monster.SpeedBonus = 6
-	
-	snubbull_monster:ReplaceSkill("bite", 0, true)
-	snubbull_monster:ReplaceSkill("lick", 1, true)
-	snubbull_monster:ReplaceSkill("smelling_salts", 2, true)
-	snubbull_monster:ReplaceSkill("charm", 3, false)
-		
-	GAME:AddPlayerTeam(snubbull_monster)
-	snubbull_monster:FullRestore()
-	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
-    snubbull_monster.ActionEvents:Add(talk_evt)
-	snubbull_monster:RefreshTraits()
-	
-	GROUND:CharEndAnim(partner)	
-	GROUND:CharEndAnim(hero)	
-	GROUND:CharSetEmote(partner, "", 0)
-	GAME:MoveCamera(0, 0, 1, true)
-	
+
 
 	GAME:GetCurrentGround():RemoveTempChar(breloom)
 	GAME:GetCurrentGround():RemoveTempChar(girafarig)
@@ -715,33 +737,25 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	GAME:GetCurrentGround():RemoveTempChar(mareep)
 		
 	vast_steppe_entrance_ch_5.SetupGround()
+
+	  	
+	GROUND:CharEndAnim(partner)	
+	GROUND:CharEndAnim(hero)	
+	GROUND:CharSetEmote(partner, "", 0)
+	GROUND:TeleportTo(hero, 240, 344, Direction.Down)
+	GROUND:TeleportTo(partner, 240, 312, Direction.Down)
+	GAME:MoveCamera(0, 0, 1, true)
 	
-	--set rin and coco to spawn from the spawners, then spawn them
-	GROUND:SpawnerSetSpawn("TEAMMATE_2", GAME:GetPlayerPartyMember(2))
-	audino = GROUND:SpawnerDoSpawn("TEAMMATE_2")
-		
-	GROUND:SpawnerSetSpawn("TEAMMATE_3", GAME:GetPlayerPartyMember(3))
-	snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_3")
-	  
+	
 	GAME:WaitFrames(20)
 	GAME:FadeIn(60)
 
-	SV.Chapter5.FinishedVastSteppeIntro = true
+	SV.Chapter5.FinishedSteppeIntro = true
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
 	GAME:CutsceneMode(false)
 	
 end 
-
-function vast_steppe_entrance_ch_5.DiedCutscene()
-
-end
-
-function vast_steppe_entrance_ch_5.EscapedCutscene()
-
-end
-
-
 
 
 function vast_steppe_entrance_ch_5.Tropius_Action(chara, activator)
@@ -783,6 +797,99 @@ end
 function vast_steppe_entrance_ch_5.Cranidos_Action(chara, activator)
 
 end 
+
+
+
+
+
+function vast_steppe_entrance_ch_5.DiedCutscene()
+
+end
+
+function vast_steppe_entrance_ch_5.EscapedCutscene()
+
+end
+
+--todo
+function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
+
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local audino = CH('Teammate2')
+	local snubbull = CH('Teammate3')
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("vast_steppe") 
+	
+	local result = false
+	
+	GROUND:CharSetAnim(partner, "None", true)
+	GROUND:CharSetAnim(hero, "None", true)
+	local coro1 = TASK:BranchCoroutine(function() result = GeneralFunctions.StartPartnerYesNo("Are we all set to head out,[pause=10] " .. hero:GetDisplayName() .. "?") end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharTurnToCharAnimated(audino, hero, 4) GROUND:CharSetAnim(audino, "None", true) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharTurnToCharAnimated(snubbull, hero, 4) GROUND:CharSetAnim(snubbull, "None", true) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GAME:WaitFrames(10)		
+	if result then 
+		GROUND:Hide('Dungeon_Entrance')
+
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 264, 184, false, 1)
+												GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+												GROUND:CharSetAnim(partner, "None", true) end)	
+		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 232, 184, false, 1)
+												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+												GROUND:CharSetAnim(hero, "None", true) end) 
+		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(256, 192) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(snubbull, 272, 216, false, 1)
+												GROUND:CharAnimateTurnTo(snubbull, Direction.Up, 4) 
+												GROUND:CharSetAnim(snubbull, "None", true) end)
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+												GeneralFunctions.EightWayMove(audino, 224, 216, false, 1)
+												GROUND:CharAnimateTurnTo(audino, Direction.Up, 4)
+												GROUND:CharSetAnim(audino, "None", true) end)
+		TASK:JoinCoroutines({coro1, coro2})
+		
+		
+		UI:SetSpeaker(snubbull)
+	
+		
+		if not SV.Chapter5.EnteredSteppe then 
+			UI:WaitShowDialogue("All prepared you two?[pause=0] Perfect. " .. STRINGS:Format("\\u266A") .. "[pause=0]\nLet us be off!")
+		else 
+			UI:WaitShowDialogue("All prepared you two?[pause=0] Perfect. " .. STRINGS:Format("\\u266A") .. "[pause=0]\nNo more failing!")
+		end 
+		
+		
+		
+		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
+												GROUND:MoveInDirection(partner, Direction.Up, 100, false, 1) end)			
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+												GROUND:CharAnimateTurnTo(hero, Direction.Up, 4)
+												GROUND:MoveInDirection(hero, Direction.Up, 100, false, 1) end)		
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(24)
+												GROUND:MoveInDirection(audino, Direction.Up, 90, false, 1) end)			
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(26)
+													  GROUND:MoveInDirection(snubbull, Direction.Up, 90, false, 1) end)	
+		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) GAME:FadeOut(false, 40) end)
+
+
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})	
+		
+		GeneralFunctions.EndConversation(partner)
+		SV.Chapter5.EnteredSteppe = true
+		GAME:EnterDungeon("vast_steppe", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+
+		
+	else
+		UI:WaitShowDialogue("OK.[pause=0] Let's do what we need to do,[pause=10] and we'll move on then!")
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EndConversation(partner) end)
+		coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(snubbull, audino, 4) GROUND:CharEndAnim(snubbull) end)
+		coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(audino, snubbull, 4) GROUND:CharEndAnim(audino) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+	end
+
+end
 --[[
 function vast_steppe_entrance_ch_5.Oddish_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "Hi weird lady![pause=0] I hope you're doing OK in here![pause=0]\nI brought you some flowers to cheer you up!", "Happy", false)

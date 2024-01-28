@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.23.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -15624,7 +15624,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -16202,7 +16202,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -16780,7 +16780,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -17358,7 +17358,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -17936,7 +17936,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -18514,7 +18514,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -19092,7 +19092,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -19670,7 +19670,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -20248,7 +20248,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -20826,7 +20826,7 @@
 "Width": 8,
 "Height": 8
 },
-"Tags": 1
+"Tags": 0
 },
 {
 "Bounds": {
@@ -249130,6 +249130,48 @@
 "Y": 248,
 "Width": 32,
 "Height": 32
+}
+},
+{
+"EntName": "Dungeon_Entrance",
+"Direction": 0,
+"EntEnabled": true,
+"EntOrder": 0,
+"triggerType": 2,
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"Passable": false,
+"CurrentAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "",
+"FrameTime": 1,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": -1,
+"Alpha": 255,
+"AnimFlip": 0
+},
+"AnimTime": {
+"Ticks": 0
+},
+"Cycles": 0,
+"DrawOffset": {
+"X": 0,
+"Y": 0
+},
+"Collider": {
+"X": 208,
+"Y": 176,
+"Width": 96,
+"Height": 8
 }
 }
 ],

@@ -1354,6 +1354,35 @@ function GeneralFunctions.StartPartnerConversation(dialogue, emotion, heroTurn)
 	
 end 
 
+--used to start a conversation between the player and the partner that's a YesNo Prompt
+function GeneralFunctions.StartPartnerYesNo(dialogue, emotion, heroTurn, defaultToNo)
+	if heroTurn == nil then heroTurn = true end
+	if emotion == nil then emotion = 'Normal' end	
+	if defaultToNo == nil then defaultToNo = true end
+	
+	
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local result = false
+	partner.IsInteracting = true
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion(emotion)
+	GROUND:CharSetAnim(partner, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+		
+    GROUND:CharTurnToCharAnimated(partner, hero, 4)
+
+	local coro1 = TASK:BranchCoroutine(function() UI:ChoiceMenuYesNo(dialogue, defaultToNo) 
+												  UI:WaitForChoice()
+												  result = UI:ChoiceResult() end)
+	--hero turns towards partner during their dialogue
+	local coro2 = TASK:BranchCoroutine(function() if heroTurn then GROUND:CharTurnToCharAnimated(hero, partner, 4) end end)								  
+	TASK:JoinCoroutines({coro1, coro2})
+
+	return result
+end 
+
+
 --character hops twice and makes angry noise 
 function GeneralFunctions.Complain(chara, emote)
 	if emote == nil then emote = false end 
@@ -1607,6 +1636,16 @@ function GeneralFunctions.PrintPlotVariables()
 	print("BreloomGirafarigConvo = " .. tostring(SV.Chapter3.BreloomGirafarigConvo))
 
 end 
+
+function GeneralFunctions.GetStatEXP(chara)
+	print("HP Stat EXP = " .. tostring(chara.MaxHPBonus))
+	print("Attack Stat EXP = " .. tostring(chara.AtkBonus))
+	print("Defense Stat EXP = " .. tostring(chara.DefBonus))
+	print("Sp. Atk Stat EXP = " .. tostring(chara.MAtkBonus))
+	print("Sp. Def Stat EXP = " .. tostring(chara.MDefBonus))
+	print("Speed Stat EXP = " .. tostring(chara.SpeedBonus))
+end
+
 
 function GeneralFunctions.TableContains(table, val)
 	for i=1,#table do

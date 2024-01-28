@@ -331,6 +331,7 @@ end
 -- Helper Functions
 -----------------------
 --Reimplemented, modified version of common's showdestination menu. 
+--This is a bit messy since the original showdestination menu had a bunch of stuff updated from it, so be aware if things break in the future with it.
 function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   
   --Story dungeons and their corresponding "entrance ground" used for story cutscenes during the relevant chapter.
@@ -368,7 +369,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	      zone_name = STRINGS:Format("\\uE10F ") .. zone_name --open letter
       end
       table.insert(open_dests, { Name=zone_name, Title=zone_title, Dest=RogueEssence.Dungeon.ZoneLoc(dungeon_entrances[ii], 0, 0, 0) })
-		end
+	end
   end
   
   --check for unlock of grounds
@@ -383,68 +384,71 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
   end
   
   local dest = RogueEssence.Dungeon.ZoneLoc.Invalid
-  if #open_dests == 1 then
-    if open_dests[1].Dest.StructID.Segment < 0 then
-	  --single ground entry
-      UI:ResetSpeaker()
-      
-	  UI:ChoiceMenuYesNo(STRINGS:FormatKey("DLG_ASK_ENTER_GROUND", open_dests[1].Name))
-      UI:WaitForChoice()
-      if UI:ChoiceResult() then
-	    dest = open_dests[1].Dest
-	  end
-	else
-	  --single dungeon entry
-      UI:ResetSpeaker()
-      SOUND:PlaySE("Menu/Skip")
-	  UI:DungeonChoice(open_dests[1].Name, open_dests[1].Dest)
-      UI:WaitForChoice()
-      if UI:ChoiceResult() then
-	    dest = open_dests[1].Dest
-	  end
-	end
-  elseif #open_dests > 1 then
-    
-    UI:ResetSpeaker()
-    SOUND:PlaySE("Menu/Skip")
-    UI:DestinationMenu(open_dests)
-	UI:WaitForChoice()
-	dest = UI:ChoiceResult()
-  end
+  local choice = 1
+  local confirm = false
+  local ask_dest
   
-  if dest:IsValid() then
-	--confirm the choice
-	UI:ResetSpeaker()
-	UI:SetCenter(true)
-	local dest_name = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(dest.ID):GetColoredName()
-	UI:ChoiceMenuYesNo(dest_name .. " is the destination.\nIs that correct?")
-	UI:WaitForChoice()
-	local confirm = UI:ChoiceResult()
-	UI:SetCenter(false)
-	if confirm then
-		SOUND:FadeOutBGM(60)
-		GAME:FadeOut(false, 60)
-		GeneralFunctions.EndConversation(CH('Teammate1'))--end the conversation that was started with the partner before we enter the dungeon.
-		if dest.StructID.Segment > -1 then
-		  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
-			GAME:WaitFrames(120)--wait a bit before going to the ground
-			SV.partner.Spawn = "Default"--set partner spawn area as the default for the map.
-			GAME:EnterZone("master_zone", -1, dungeon_entrance_mapping[dest.ID], 0)
-		  else
-			GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
-		  end
-		else
-		  GAME:EnterZone(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint)
+  --overhauled this quite a bit from original ShowDestinationMenu. 
+  --TODO (potentially)!!!: Needs to be adapted to handle overworld grounds and 1 ground / 1 dungeon scenarios potentially in the future.
+  --For how to do that, check audino's version. I basically removed most of that functionality since I didn't envision myself needing to use it...
+  if #open_dests >= 1 then
+    SOUND:PlaySE("Menu/Skip")
+	while true do
+      UI:ResetSpeaker()
+      UI:DestinationMenu(open_dests, choice)
+	  UI:WaitForChoice()
+	  choice = UI:ChoiceResult()
+	
+	  --stop showing the menu if cancel was pressed
+	  if choice == nil then
+		break
+	  end
+	  
+	  ask_dest = open_dests[choice].Dest
+      
+	  if ask_dest.StructID.Segment >= 0 then	  
+	    --chosen dungeon entry
+        --confirm the choice
+		UI:ResetSpeaker(false)
+		UI:SetAutoFinish(true)
+		UI:SetCenter(true)
+		local dest_name = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get(ask_dest.ID):GetColoredName()
+		UI:ChoiceMenuYesNo(dest_name .. " is the destination.\nIs that correct?")
+		UI:WaitForChoice()
+		local confirm = UI:ChoiceResult()
+		UI:SetCenter(false)
+		UI:SetAutoFinish(false)
+		UI:ResetSpeaker()
+		if confirm then
+		  dest = ask_dest
+		  break
 		end
-	else
-	  --end the conversation that was started before the menu was opened. Need to do it like this with the else statements or it causes a backend error as it would try to run this function AFTER entering the dungeon (for some reason).
-	  GeneralFunctions.EndConversation(CH('Teammate1'))
+	  end
 	end
-  else 
-	  --end the conversation that was started before the menu was opened. Need to do it like this with the else statements or it causes a backend error as it would try to run this function AFTER entering the dungeon (for some reason).
-  GeneralFunctions.EndConversation(CH('Teammate1'))
+  else
+    PrintInfo("No valid destinations found!")
   end
 
+
+  if dest:IsValid() then
+	SOUND:FadeOutBGM(60)
+	GAME:FadeOut(false, 60)
+	GeneralFunctions.EndConversation(CH('Teammate1'))--end the conversation that was started with the partner before we enter the dungeon.
+	if dest.StructID.Segment > -1 then
+	  if SV.ChapterProgression.CurrentStoryDungeon == dest.ID then --go to the ground outside instead as it's the current story dungeon.
+		GAME:WaitFrames(120)--wait a bit before going to the ground
+	    SV.partner.Spawn = "Default"--set partner spawn area as the default for the map.
+		GAME:EnterZone("master_zone", -1, dungeon_entrance_mapping[dest.ID], 0)
+	  else
+	    GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
+      end
+    else
+	  GAME:EnterZone(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint)
+    end
+  else
+	--end the conversation that was started before the menu was opened. Need to do it like this with the else statements or it causes a backend error as it would try to run this function AFTER entering the dungeon (for some reason).
+	GeneralFunctions.EndConversation(CH('Teammate1'))
+  end
 
 end
 

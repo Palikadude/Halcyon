@@ -124,40 +124,93 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundGummiEvent(context, args)
   else
     sound = args.Sound
   end
+  
+  --what type boosts what stat.
+  local gummi_stat = {
+	water = RogueEssence.Data.Stat.HP,
+	dark = RogueEssence.Data.Stat.HP,
+	normal = RogueEssence.Data.Stat.HP,
+
+	ice = RogueEssence.Data.Stat.MDef,
+	grass = RogueEssence.Data.Stat.MDef,
+	fairy = RogueEssence.Data.Stat.MDef,
+
+	dragon = RogueEssence.Data.Stat.Attack,
+	ground = RogueEssence.Data.Stat.Attack,
+	fighting = RogueEssence.Data.Stat.Attack,
+
+	psychic = RogueEssence.Data.Stat.MAtk,
+	ghost = RogueEssence.Data.Stat.MAtk,
+	fire = RogueEssence.Data.Stat.MAtk,
+	
+	poison = RogueEssence.Data.Stat.Defense,
+	steel = RogueEssence.Data.Stat.Defense,
+	rock = RogueEssence.Data.Stat.Defense,
+
+	electric = RogueEssence.Data.Stat.Speed,
+	flying = RogueEssence.Data.Stat.Speed,
+	bug = RogueEssence.Data.Stat.Speed
+  }
 
   local type_matchup = PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element1)
   type_matchup = type_matchup + PMDC.Dungeon.PreTypeEvent.CalculateTypeMatchup(target_element, context.User.Element2)
   -- print("Type matchup: " .. tostring(type_matchup) .. " with " .. target_element)
   local heal = 5
-  local stats = {}
-  if target_element == _DATA.DefaultElement or context.User.Element1 == target_element or context.User.Element2 == target_element then
-    heal = 20
-    table.insert(stats, RogueEssence.Data.Stat.HP)
-    table.insert(stats, RogueEssence.Data.Stat.Attack)
-    table.insert(stats, RogueEssence.Data.Stat.Defense)
-    table.insert(stats, RogueEssence.Data.Stat.MAtk)
-    table.insert(stats, RogueEssence.Data.Stat.MDef)
-    table.insert(stats, RogueEssence.Data.Stat.Speed)
-  elseif type_matchup < PMDC.Dungeon.PreTypeEvent.NRM_2 then
-    heal = 10
-    table.insert(stats, RogueEssence.Data.Stat.Attack)
-    table.insert(stats, RogueEssence.Data.Stat.MAtk)
-  elseif type_matchup > PMDC.Dungeon.PreTypeEvent.NRM_2 then
-    heal = 10
-    table.insert(stats, RogueEssence.Data.Stat.Defense)
-    table.insert(stats, RogueEssence.Data.Stat.MDef)
-  else
-    heal = 5
-    table.insert(stats, RogueEssence.Data.Stat.HP)
-    table.insert(stats, RogueEssence.Data.Stat.Speed)
-  end
-
+  local boosted = false
+  
   UI:ResetSpeaker()
   SOUND:PlayBattleSE(sound)
-  for _, stat in ipairs(stats) do
-    AddStat(stat, context)
+  if target_element == _DATA.DefaultElement or context.User.Element1 == target_element or context.User.Element2 == target_element then
+	--type match
+	heal = 20
+    boosted = BoostStat(RogueEssence.Data.Stat.HP, 2, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Attack, 2, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Defense, 2, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.MAtk, 2, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.MDef, 2, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Speed, 2, context.User) or boosted
+  elseif type_matchup > PMDC.Dungeon.PreTypeEvent.NRM_2 then
+  --Super effective
+	heal = 10
+	--this is a messy way of doing this visually cleanly to the user, but i couldn't come up with something smarter. I guess you could put it all in a table but that's the same shit really.
+	local hp_boost = 1
+	local atk_boost = 1
+	local def_boost = 1
+	local spatk_boost = 1
+	local spdef_boost = 1
+	local speed_boost = 1
+	
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.HP then hp_boost = 2 end
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.Attack then atk_boost = 2 end
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.Defense then def_boost = 2 end
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.MAtk then spatk_boost = 2 end
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.MDef then spdef_boost = 2 end
+	if gummi_stat[args.TargetElement] == RogueEssence.Data.Stat.Speed then speed_boost = 2 end
+	
+	--print(tostring(hp_boost) .. tostring(atk_boost) .. tostring(def_boost) .. tostring(spatk_boost) .. tostring(spdef_boost) .. tostring(speed_boost))
+	
+    boosted = BoostStat(RogueEssence.Data.Stat.HP, hp_boost, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Attack, atk_boost, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Defense, def_boost, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.MAtk, spatk_boost, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.MDef, spdef_boost, context.User) or boosted
+    boosted = BoostStat(RogueEssence.Data.Stat.Speed, speed_boost, context.User) or boosted
+  elseif type_matchup == PMDC.Dungeon.PreTypeEvent.NRM_2 then
+  --neutral
+    heal = 10
+    boosted = BoostStat(gummi_stat[args.TargetElement], 2, context.User) or boosted
+  elseif type_matchup > PMDC.Dungeon.PreTypeEvent.N_E_2 then 
+  --Not very effective 
+    heal = 5
+    boosted = BoostStat(gummi_stat[args.TargetElement], 1, context.User) or boosted
+  else
+  --No effect
+	heal = 5
   end
 
+  if not boosted then
+    UI:WaitShowDialogue(RogueEssence.Text.FormatGrammar(RogueEssence.StringKey("MSG_NOTHING_HAPPENED"):ToLocal()))
+  end
 
   if args.PrintGummiFillBelly then
     if heal > 15 then
@@ -172,6 +225,13 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundGummiEvent(context, args)
     context.User.Fullness = context.User.MaxFullness
     context.User.FullnessRemainder = 0
   end
+  
+  	--print("HP Stat EXP = " .. tostring(context.User.MaxHPBonus))
+	--print("Attack Stat EXP = " .. tostring(context.User.AtkBonus))
+	--print("Defense Stat EXP = " .. tostring(context.User.DefBonus))
+	--print("Sp. Atk Stat EXP = " .. tostring(context.User.MAtkBonus))
+	--print("Sp. Def Stat EXP = " .. tostring(context.User.MDefBonus))
+	--print("Speed Stat EXP = " .. tostring(context.User.SpeedBonus))
 end
 
 function GROUND_ITEM_EVENT_SCRIPT.GroundWonderGummiEvent(context, args)
@@ -281,6 +341,13 @@ function GROUND_ITEM_EVENT_SCRIPT.GroundVitaminEvent(context, args)
   if not boosted then
     UI:WaitShowDialogue(RogueEssence.Text.FormatGrammar(RogueEssence.StringKey("MSG_NOTHING_HAPPENED"):ToLocal()))
   end
+  
+    --print("HP Stat EXP = " .. tostring(context.User.MaxHPBonus))
+	--print("Attack Stat EXP = " .. tostring(context.User.AtkBonus))
+	--print("Defense Stat EXP = " .. tostring(context.User.DefBonus))
+	--print("Sp. Atk Stat EXP = " .. tostring(context.User.MAtkBonus))
+	--print("Sp. Def Stat EXP = " .. tostring(context.User.MDefBonus))
+	--print("Speed Stat EXP = " .. tostring(context.User.SpeedBonus))
 end
 
 function BoostStat(stat, change, target)
@@ -292,9 +359,10 @@ function BoostStat(stat, change, target)
   lookup_table[RogueEssence.Data.Stat.HP] = function()
     prev_stat = target.MaxHP
     target.MaxHPBonus = math.min(target.MaxHPBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.MaxHP == prev_stat and target.MaxHPBonus <  PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.MaxHPBonus = target.MaxHPBonus + 1
-    end
+	--if the boost given is not enough to get a visual stat point, keep boosting until it is.
+    --while (target.MaxHP == prev_stat and target.MaxHPBonus <  PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.MaxHPBonus = target.MaxHPBonus + 1
+    --end
     target.HP = target.MaxHP
     new_stat = target.MaxHP
   end
@@ -302,45 +370,45 @@ function BoostStat(stat, change, target)
   lookup_table[RogueEssence.Data.Stat.Attack] = function()
     prev_stat = target.BaseAtk
     target.AtkBonus = math.min(target.AtkBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.BaseAtk == prev_stat and target.AtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.AtkBonus = target.AtkBonus + 1
-    end
+    --while (target.BaseAtk == prev_stat and target.AtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.AtkBonus = target.AtkBonus + 1
+    --end
     new_stat = target.BaseAtk
   end
 
   lookup_table[RogueEssence.Data.Stat.Defense] = function()
     prev_stat = target.BaseDef
     target.DefBonus = math.min(target.DefBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.BaseDef == prev_stat and target.DefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.DefBonus = target.DefBonus + 1
-    end
+    --while (target.BaseDef == prev_stat and target.DefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.DefBonus = target.DefBonus + 1
+    --end
     new_stat = target.BaseDef
   end
 
   lookup_table[RogueEssence.Data.Stat.MAtk] = function()
     prev_stat = target.BaseMAtk
     target.MAtkBonus = math.min(target.MAtkBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.BaseMAtk == prev_stat and target.MAtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.MAtkBonus = target.MAtkBonus + 1
-    end
+    --while (target.BaseMAtk == prev_stat and target.MAtkBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.MAtkBonus = target.MAtkBonus + 1
+    --end
     new_stat = target.BaseMAtk
   end
 
   lookup_table[RogueEssence.Data.Stat.MDef] = function()
     prev_stat = target.BaseMDef
     target.MDefBonus = math.min(target.MDefBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.BaseMDef == prev_stat and target.MDefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.MDefBonus = target.MDefBonus + 1
-    end
+    --while (target.BaseMDef == prev_stat and target.MDefBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.MDefBonus = target.MDefBonus + 1
+    --end
     new_stat = target.BaseMDef
   end
 
   lookup_table[RogueEssence.Data.Stat.Speed] = function()
     prev_stat = target.BaseSpeed
     target.SpeedBonus = math.min(target.SpeedBonus + change, PMDC.Data.MonsterFormData.MAX_STAT_BOOST)
-    while (target.BaseSpeed == prev_stat and target.SpeedBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
-      target.SpeedBonus = target.SpeedBonus + 1
-    end
+    --while (target.BaseSpeed == prev_stat and target.SpeedBonus < PMDC.Data.MonsterFormData.MAX_STAT_BOOST) do
+    --  target.SpeedBonus = target.SpeedBonus + 1
+    --end
     new_stat = target.BaseSpeed
   end
 
@@ -352,6 +420,7 @@ function BoostStat(stat, change, target)
   else
     return false
   end
+ 
 end
 
 

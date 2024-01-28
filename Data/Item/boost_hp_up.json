@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -53,7 +53,7 @@
 {
 "$type": "RogueEssence.Ground.ScriptItemEvent, RogueEssence",
 "Script": "GroundVitaminEvent",
-"ArgTable": "{ BoostedStat = \"hp\", Change = 3 }",
+"ArgTable": "{ BoostedStat = \"hp\", Change = 4 }",
 "GroundUsageType": 5,
 "Selection": 1
 }
@@ -134,7 +134,7 @@
 "Value": {
 "$type": "PMDC.Dungeon.VitaminEvent, PMDC",
 "BoostedStat": 0,
-"Change": 3
+"Change": 4
 }
 },
 {

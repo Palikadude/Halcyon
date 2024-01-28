@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.23.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "apricorn_grove": {
@@ -133,7 +133,7 @@
 },
 "beginner_lesson": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 5,
 "LevelCap": true,
 "KeepSkills": false,
@@ -165,7 +165,7 @@
 },
 "bug_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 13,
 "LevelCap": false,
 "KeepSkills": false,
@@ -240,7 +240,7 @@
 },
 "electric_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 13,
 "LevelCap": false,
 "KeepSkills": false,
@@ -272,7 +272,7 @@
 },
 "fire_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,
@@ -304,7 +304,7 @@
 },
 "flying_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 10,
 "LevelCap": false,
 "KeepSkills": false,
@@ -336,7 +336,7 @@
 },
 "grass_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,
@@ -533,7 +533,7 @@
 },
 "normal_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 5,
 "LevelCap": false,
 "KeepSkills": false,
@@ -640,7 +640,7 @@
 },
 "rock_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 10,
 "LevelCap": false,
 "KeepSkills": false,
@@ -766,7 +766,7 @@
 },
 "water_maze": {
 "$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
-"ExpPercent": 0,
+"ExpPercent": 100,
 "Level": 7,
 "LevelCap": false,
 "KeepSkills": false,

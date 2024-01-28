@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -7,16 +7,14 @@
 "LocalTexts": {
 "fr": "Gelée Rouge",
 "de": "Rotgummi",
-"ko": "빨간구미"
+"it": "Gommarossa",
+"ko": "빨간구미",
+"zh-hans": "红色软糖"
 }
 },
 "Desc": {
-"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. Fire-type Pokémon like it the most.",
-"LocalTexts": {
-"fr": "Aliment qui remplit légèrement l'Estomac du Pokémon. Augmente le Q.I. des membres de l'équipe de secours qui en mangent. Plaît particulièrement aux Pokémon de type Feu.",
-"de": "Nahrungsmittel, dass den Magen des Pokémons einigermaßen füllt und die Basiswerte permanent erhöht. Feuer-Pokémon mögen es am liebsten.",
-"ko": "먹으면 포만감을 약간 회복하고 스탯을 영구적으로 증가시킨다. 불타입 포켓몬이 좋아한다."
-}
+"DefaultText": "A food item that somewhat fills the Pokémon's belly, and permanently boosts its stats. It usually boosts Special Attack, and Fire-type Pokémon like it the most.",
+"LocalTexts": {}
 },
 "Released": true,
 "Comment": "",
@@ -48,8 +46,9 @@
 "UseAction": {
 "$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
 "CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
 },
 "TargetAlignments": 1,
 "TileEmitter": {
@@ -118,8 +117,10 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.GummiEvent, PMDC",
-"TargetElement": "fire"
+"$type": "PMDC.Dungeon.VitaGummiEvent, PMDC",
+"TargetElement": "fire",
+"RequireBase": true,
+"BoostedStat": 3
 }
 }
 ],

@@ -738,9 +738,12 @@ SV.Chapter5 =
 	FinishedExpeditionAddress = false,--Did the address about the expedition starting today?
 	ReadyForExpedition = false,--Talked to Penticus to ready up for the expedition?
 	
-	FinishedVastSteppeIntro = false,--Did the player see the intro cutscene for Vast Steppe?
-	EnteredVastSteppe = false,--did player enter the steppe?
+	FinishedSteppeIntro = false,--Did the player see the intro cutscene for Vast Steppe?
+	EnteredSteppe = false,--did player enter the steppe?
 	LostSteppe = false,--did player die in steppe?
+	PlayEscapeSteppeScene = false,--Do we need to play the escaped from dungeon scene when loading this map?
+	PlayDiedSteppeScene = false,--Do we need to play the died in dungeon scene when loading this map?
+	
 	
 	FinishedSearingTunnelBedtime = false,--Did the player see the nighttime scene for Searing Tunnel?
 	FinishedSearingTunnelIntro = false,--Did the player see the intro cutscene for Searing Tunnel?
@@ -774,8 +777,8 @@ SV.GuildSidequests =
 	--If you level them up more during the expedition, they'll keep more of their levels when you do stuff with them later.
 	ZigzagoonLevel = 19,
 	GrowlitheLevel = 17,
-	SnubbullLevel = 18,
-	AudinoLevel = 17,
+	SnubbullLevel = 17,
+	AudinoLevel = 16,
 	MareepLevel = 19,
 	CranidosLevel = 20,
 	BreloomLevel = 33,
