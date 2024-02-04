@@ -858,12 +858,12 @@ function GeneralFunctions.PromptSaveAndQuit()
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved!")
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(10)--prevent mashing issues
 	elseif result == 2 then 
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved! Returning to title.")
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(10)
 		GAME:FadeOut(false, 40)
 		GAME:RestartToTitle()
 	end
@@ -879,7 +879,7 @@ function GeneralFunctions.PromptSave()
 		GAME:GroundSave()
 		UI:ResetSpeaker()
 		UI:WaitShowDialogue("Game saved!")
-		GAME:WaitFrames(20)
+		GAME:WaitFrames(10)--prevent mashing issues
 	end
 end
 

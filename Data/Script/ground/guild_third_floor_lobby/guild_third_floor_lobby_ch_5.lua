@@ -582,7 +582,7 @@ function guild_third_floor_lobby_ch_5.ExpeditionAddress()
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue("O-oh,[pause=10] I don't really care what we find![pause=0] I'm just glad to be out exploring again!")
-	UI:WaitShowDialogue("It'll be a n-nice change of pace from having to do c-chores!")
+	UI:WaitShowDialogue("It'll be a nice change of pace from having to do chores!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(cranidos)

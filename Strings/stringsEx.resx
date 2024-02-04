@@ -4059,6 +4059,93 @@
   <data name="TALK_PINCH_1161" xml:space="preserve">
     <value>Urf... C-can't get the Apricorn... At t-this rate...</value>
     <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  <data name="TALK_FULL_2000" xml:space="preserve">
+    <value>Let's do our best, [player]!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2001" xml:space="preserve">
+    <value>I've got you covered with my [move]!</value>
+    <comment>Generic partner comment</comment>  </data>
+  <data name="TALK_FULL_2002" xml:space="preserve">
+    <value>We should get a move on!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2003" xml:space="preserve">
+    <value>Let's be on the lookout for any [kind].</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2004" xml:space="preserve">
+    <value>I've got your back, [player]!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2005" xml:space="preserve">
+    <value>We won't let any [kind] beat us, right [player]?</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2006" xml:space="preserve">
+    <value>Be sure to grab any [item] you find!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2007" xml:space="preserve">
+    <value>I'll go with you, [player]!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2008" xml:space="preserve">
+    <value>Let's keep going!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2009" xml:space="preserve">
+    <value>We should be careful. There's no telling what could be ahead!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_FULL_2010" xml:space="preserve">
+    <value>This is gonna be a great adventure, I just know it!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+
+
+  <data name="TALK_HALF_2000" xml:space="preserve">
+    <value>This is getting tough...</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_HALF_2001" xml:space="preserve">
+    <value>Urf! This is rough, but I can keep going!</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_HALF_2002" xml:space="preserve">
+    <value>I'm starting to feel weak...</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+
+
+
+  <data name="TALK_PINCH_2000" xml:space="preserve">
+    <value>No... Please, no more... Help me, [player]...</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_PINCH_2001" xml:space="preserve">
+    <value>Urgh... I can't take any more... I'm going to faint...</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+  <data name="TALK_PINCH_2002" xml:space="preserve">
+    <value>I'm about to collapse... P-please, help me...</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+
+
+  <data name="TALK_WAIT_2000" xml:space="preserve">
+    <value>You probably should never see this wait message.</value>
+    <comment>Expedition - Snubbull comment</comment>  </data>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

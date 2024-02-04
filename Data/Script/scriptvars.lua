@@ -741,9 +741,9 @@ SV.Chapter5 =
 	FinishedSteppeIntro = false,--Did the player see the intro cutscene for Vast Steppe?
 	EnteredSteppe = false,--did player enter the steppe?
 	LostSteppe = false,--did player die in steppe?
-	PlayEscapeSteppeScene = false,--Do we need to play the escaped from dungeon scene when loading this map?
-	PlayDiedSteppeScene = false,--Do we need to play the died in dungeon scene when loading this map?
-	
+	EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
+	DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
+	SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
 	
 	FinishedSearingTunnelBedtime = false,--Did the player see the nighttime scene for Searing Tunnel?
 	FinishedSearingTunnelIntro = false,--Did the player see the intro cutscene for Searing Tunnel?

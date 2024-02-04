@@ -73,12 +73,12 @@ function vast_steppe_entrance.PlotScripting()
   if SV.ChapterProgression.Chapter == 5 then
 	if not SV.Chapter5.FinishedSteppeIntro then
 		vast_steppe_entrance_ch_5.ArrivalCutscene()
-	elseif SV.Chapter5.PlayEscapeSteppeScene then
-		vast_steppe_entrance_ch_5.EscapedCutscene()
-	elseif SV.Chapter5.PlayDiedSteppeScene then 
-		vast_steppe_entrance_ch_5.DiedCutscene()
+	elseif SV.Chapter5.EscapedSteppe or SV.Chapter5.DiedSteppe then
+		vast_steppe_entrance_ch_5.SetupGround()
+		vast_steppe_entrance_ch_5.FailedCutscene()
 	else
 		vast_steppe_entrance_ch_5.SetupGround()
+		GAME:FadeIn(20)
 	end
   else
 	GAME:FadeIn(20)
@@ -94,14 +94,14 @@ function vast_steppe_entrance.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
  end
 
-function vast_steppe_entrance.Teammate2_Action(chara, activator)
+function vast_steppe_entrance.Teammate2_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), obj, activator))
 end
 
-function vast_steppe_entrance.Teammate3_Action(chara, activator)
+function vast_steppe_entrance.Teammate3_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+ assert(pcall(load("vast_steppe_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Audino_Action(...,...)"), obj, activator))
 end
 
 function vast_steppe_entrance.Kangaskhan_Rock_Action(obj, activator)

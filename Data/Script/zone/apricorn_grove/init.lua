@@ -40,7 +40,7 @@ end
 function apricorn_grove.ExitSegment(zone, result, rescue, segmentID, mapID)
   GeneralFunctions.RestoreIdleAnim()
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  PrintInfo("=>> ExitSegment_apricorn_grove (Illuminant Riverbed) result "..tostring(result).." segment "..tostring(segmentID))
+  PrintInfo("=>> ExitSegment_apricorn_grove (Apricorn Grove) result "..tostring(result).." segment "..tostring(segmentID))
   
 	GAME:SetRescueAllowed(false)
 	

@@ -2598,13 +2598,13 @@
 "Max": 15
 },
 "SpecifiedSkills": [
-"spark",
+"electro_ball",
 "helping_hand",
-"encore",
+"swift",
 "thunder_wave"
 ],
 "Intrinsic": "",
-"Tactic": "wander_dumb",
+"Tactic": "wander_dumb_two_range",
 "SpawnConditions": [],
 "SpawnFeatures": [
 {
@@ -3735,7 +3735,7 @@
 "horn_attack",
 "pursuit",
 "rage",
-"scary_face"
+"payback"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -3774,7 +3774,7 @@
 "horn_attack",
 "pursuit",
 "rage",
-"scary_face"
+"payback"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -3825,7 +3825,7 @@
 "horn_attack",
 "pursuit",
 "rage",
-"scary_face"
+"payback"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -3863,7 +3863,7 @@
 "SpecifiedSkills": [
 "stomp",
 "milk_drink",
-"bide",
+"defense_curl",
 "growl"
 ],
 "Intrinsic": "",
@@ -3903,7 +3903,7 @@
 "horn_attack",
 "pursuit",
 "rage",
-"scary_face"
+"payback"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -3954,7 +3954,7 @@
 "horn_attack",
 "pursuit",
 "rage",
-"scary_face"
+"payback"
 ],
 "Intrinsic": "",
 "Tactic": "wander_dumb",
@@ -3992,7 +3992,7 @@
 "SpecifiedSkills": [
 "stomp",
 "milk_drink",
-"bide",
+"defense_curl",
 "growl"
 ],
 "Intrinsic": "",
