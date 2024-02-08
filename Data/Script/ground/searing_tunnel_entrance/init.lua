@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.searing_tunnel_entrance.searing_tunnel_entrance_ch_5'
 
 -- Package name
 local searing_tunnel_entrance = {}

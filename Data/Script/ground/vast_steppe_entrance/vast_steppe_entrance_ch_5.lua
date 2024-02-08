@@ -596,7 +596,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("You didn't call my name![pause=0] Shouldn't I be on team two,[pause=10] with " .. zigzagoon:GetDisplayName() .. ",[pause=10] ruff?")
+	UI:WaitShowDialogue("You didn't call my name![pause=0] Shouldn't I be on team two,[pause=10] with " .. zigzagoon:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(tropius)
@@ -607,9 +607,9 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	--...But... I want to adventure with Almotz! And everyone else!
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("B-but...[pause=0] You said the rest of us would get split into two teams,[pause=10] ruff!")
+	UI:WaitShowDialogue("B-but...[pause=0] You said the rest of us would get split into two teams!")
 	UI:WaitShowDialogue("I want to adventure with " .. zigzagoon:GetDisplayName() .. "![pause=0] And everyone else too,[pause=10] ruff!")
-	UI:WaitShowDialogue("Why do I have to go with you,[pause=10] ruff?")
+	UI:WaitShowDialogue("Why do I have to go with you?")
 	GAME:WaitFrames(20)
 	
 	
@@ -624,7 +624,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("But I was really looking forward to adventuring with everyone,[pause=10] ruff!")
-	UI:WaitShowDialogue("I know you want to keep me safe,[pause=10] but I never get to go on any actual adventures,[pause=10] ruff!")
+	UI:WaitShowDialogue("I know you want to keep me safe,[pause=10] but I never get to go on any actual adventures!")
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Please,[pause=10] let me go with the others,[pause=10] ruff!")
 	GAME:WaitFrames(20)
@@ -637,7 +637,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Yes![pause=0] More than anything,[pause=10] ruff!")
+	UI:WaitShowDialogue("Ruff![pause=0] More than anything!!")
 
 	GAME:WaitFrames(40)
 	UI:SetSpeaker(tropius)
@@ -648,9 +648,11 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	GeneralFunctions.EmoteAndPause(growlithe, "Exclaim", true)
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Inspired")
+	GROUND:CharSetAnim(growlithe, "Idle", true)
 	UI:WaitShowDialogue("R-really!?[pause=0] You mean it!?[script=0]", {function() GeneralFunctions.Hop(growlithe) end})
 	GAME:WaitFrames(20)
 	
+	GROUND:CharEndAnim(growlithe)
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Yes.[pause=0] I shouldn't coddle you so much,[pause=10] it's not fair to you.")
@@ -731,11 +733,12 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	GAME:FadeOut(false, 60)
 	
 	--Clean up the existing spawns, then call SetupGround to spawn them in.
-	GeneralFunctions.DefaultParty(false)
+	--GeneralFunctions.DefaultParty(false)
 	--reinitialize the hero and partner variables after respawning the party.
 	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch.
-	hero = CH('PLAYER')
-	partner = CH('Teammate1')
+	--hero = CH('PLAYER')
+	--partner = CH('Teammate1')
+	--partner.CollisionDisabled = true
 	
 	--Setup Coco and Rin.
 	local snubbull_id = RogueEssence.Dungeon.MonsterID("snubbull", 0, "normal", Gender.Female)
@@ -950,7 +953,7 @@ function vast_steppe_entrance_ch_5.Girafarig_Action(chara, activator)
 end 
 
 function vast_steppe_entrance_ch_5.Growlithe_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "We gotta be real careful,[pause=10] like " .. CharacterEssentials.GetCharacterName("Tropius") .. " asked,[pause=10] ruff!", "Normal", false)
+	GeneralFunctions.StartConversation(chara, "We gotta be real careful,[pause=10] like " .. CharacterEssentials.GetCharacterName("Tropius") .. " asked.", "Normal", false)
 	UI:SetSpeakerEmotion("Joyous")
 	UI:WaitShowDialogue("Even so,[pause=10] this is gonna be so much fun,[pause=10] ruff![pause=0] Let's finish getting ready and get going!")
 	GeneralFunctions.EndConversation(chara)

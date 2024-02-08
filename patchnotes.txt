@@ -86,3 +86,4 @@ V0.5.0
 -Updated the "Where would you like to explore?" dungeon choice menu. Resembles Sky's a bit more now, and is compatible with more recent PMDO versions.
 -Updated Gummis to reflect new Vanilla PMDO behavior. Check Almotz's almanac for information! New behavior should allow for a more even distribution of stat boosts.
 -Updated Vitamins to reflect new Vanilla PMDO behavior. This means their boost is slightly stronger than before.
+-Update Ezalor's info blurb to better reflect that he can reteach you ANY move you've forgotten, not just level-up moves.

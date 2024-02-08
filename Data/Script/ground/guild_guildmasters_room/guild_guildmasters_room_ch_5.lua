@@ -29,7 +29,7 @@ function guild_guildmasters_room_ch_5.Tropius_Action(chara, activator)
 	GeneralFunctions.StartConversation(chara, "i'm overseeing the discussion. Ready to go?")
 	--Set flags needed for the expedition, and send home characters in slots 3/4.
 	GAME:SetCanRecruit(false)--disable recruiting for duration of expedition
-	
+	SV.Chapter5.ReadyForExpedition = true
 	
 	GeneralFunctions.EndConversation(chara)
 end

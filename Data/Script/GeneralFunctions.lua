@@ -688,6 +688,8 @@ end
 --Just those two if others is false, allow other party members to remain in 3/4 slot if false
 --if spawn is true run spawners for teammates 1 (through 3 if applicable)
 --this is somewhat shoddily written, i feel like it will break with the right conditions...
+--currently de-equips held items and causes a potential phantom glitch if called on a ground map and then you give control back to player without reinitializing/disabling partner collision...
+-- should look into rewriting this, honestly.
 function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 	--Clear party 
 	local partyCount = GAME:GetPlayerPartyCount()

@@ -744,6 +744,7 @@ SV.Chapter5 =
 	EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
 	DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
 	SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
+	AudinoForgotHealBell = false,--Did you make Rin forget Heal Bell during her time in your party?
 	
 	FinishedSearingTunnelBedtime = false,--Did the player see the nighttime scene for Searing Tunnel?
 	FinishedSearingTunnelIntro = false,--Did the player see the intro cutscene for Searing Tunnel?
