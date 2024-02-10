@@ -278,9 +278,9 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:CharTurnToCharAnimated(hero, partner, 4)
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("What do you say,[pause=10] " .. hero:GetDisplayName() .. "?[pause=0] Are you feeling up to it?")
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(10)
 	GeneralFunctions.DoAnimation(hero, 'Nod')
-	GAME:WaitFrames(20)	
+	GAME:WaitFrames(10)	
 	
 	UI:WaitShowDialogue("Alright!")
 	GROUND:CharTurnToCharAnimated(partner, audino, 4)
@@ -304,7 +304,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 											GAME:FadeOut(false, 60) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
-	GAME:WaitFrames(90)
+	GAME:WaitFrames(80)
 	
 	--unhide them if they didn't get here before you
 	if not SV.Chapter5.LostSteppe then
@@ -450,7 +450,6 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	local stopEating = false 
 	UI:SetSpeaker('', false, "", -1, "", RogueEssence.Data.Gender.Unknown)
-	GAME:WaitFrames(60)--don't load in too fast. give it a second to transition properly.
 	SOUND:LoopSE('Dinner Eating')
 	local coro1 = TASK:BranchCoroutine(function() GAME:FadeIn(40) end)
 	local coro2 = TASK:BranchCoroutine(function() GAME:MoveCamera(248, 168, 180, false)
@@ -535,6 +534,13 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:AddMapStatus("darkness")
 	
 	
+	--Kino tells you to sleep. Also says that Phileas is still up to help guard. he doesnt need much sleep and he's best adapted for keeping watch at night
+	--partner, hero, growlithe, and zigzagoon discuss the fun they've been having.
+	--talk about their partners. talk about what might be at the end of the expedition
+	--it's zigzagoon's first expedition, but growlithe has been with the guild as long as he can remember so he's been on them before (though not when he was young)
+	--they eventually decide to go to sleep, partner and hero chat briefly, partner goes to sleep. Hero thinks about the strange feeling getting stronger. 
+	--Hasn't brought it up because there hasn't been much reason to (could be more bullshit)
+	--eventually decides he needs to get some rest and goes to sleep.
 	GAME:FadeIn(40)
 	SOUND:LoopSE('AMB_Fire_Loud')
 	
@@ -551,16 +557,181 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:CharEndAnim(noctowl)
 	GAME:WaitFrames(30)
 	
-	GROUND:CharAnimateTurnTo(breloom, Drection.Left, 4)
-
+	GROUND:CharAnimateTurnTo(breloom, Direction.Left, 4)
+	GeneralFunctions.EightWayMoveRS(breloom, 312, 158, false, 1)
+	GeneralFunctions.EightWayMoveRS(breloom, 240, 144, false, 1)
+	GROUND:CharAnimateTurnTo(breloom, Direction.UpRight, 4)
+	UI:SetSpeaker(breloom)
+	UI:WaitShowDialogue("Don't stay up too late guys.[pause=0] Everyone else has already gone to sleep!")
+	
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharEndAnim(partner) GROUND:CharTurnToCharAnimated(partner, breloom, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) GROUND:CharEndAnim(hero) GROUND:CharTurnToCharAnimated(hero, breloom, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) GROUND:CharEndAnim(growlithe) GROUND:CharTurnToCharAnimated(growlithe, breloom, 4) end)
+	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharEndAnim(zigzagoon) GROUND:CharTurnToCharAnimated(zigzagoon, breloom, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	UI:WaitShowDialogue("This next dungeon's a doozy.[pause=0] You're gonna want to be all rested up to tackle it tomorrow.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("Don't worry,[pause=10] " .. breloom:GetDisplayName() .. ",[pause=10] we'll turn in soon.[pause=0] The excitement of the day's been keeping us up!")
+	GAME:WaitFrames(20)
  
-	--Kino tells you to sleep. Also says that Phileas is still up to help guard. he doesnt need much sleep and he's best adapted for keeping watch at night
-	--partner, hero, growlithe, and zig discuss the fun they've been having.
-	--talk about their partners. talk about what might be at the end of the expedition
-	--it's zig's first expedition, but growlithe has been with the guild as long as he can remember so he's been on them before (though not when he was young)
-	--they eventually decide to go to sleep, partner and hero chat briefly, partner goes to sleep. Hero thinks about the strange feeling getting stronger. 
-	--Hasn't brought it up because there hasn't been much reason to (could be more bullshit)
-	--eventually decides he needs to get some rest and goes to sleep.
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("Say,[pause=10] " .. breloom:GetDisplayName() .. "...[pause=0] You said everyone else is asleep,[pause=10] but " .. noctowl:GetDisplayName() .. " is still awake.")
+	UI:WaitShowDialogue("Shouldn't he be getting some rest as well?")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharTurnToChar(breloom, partner)
+	UI:SetSpeaker(breloom)
+	UI:WaitShowDialogue("Nah,[pause=10] " .. noctowl:GetDisplayName() .. " doesn't sleep much at night.[pause=0] A " .. _DATA:GetMonster('noctowl'):GetColoredName() .. " like him is built for the night!")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Though,[pause=10] now that I think of it,[pause=10] I'm not sure when he gets his shut-eye...")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Anyways,[pause=10] there's no need to fret over him.[pause=0] He's responsible,[pause=10] he'll find his rest where he can.")
+	UI:WaitShowDialogue("Speaking of,[pause=10] I'd better get some myself.[pause=0] Catch you all in the morning!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Ruff![pause=0] Good night,[pause=10] " .. breloom:GetDisplayName() .. "!")
+	
+	GAME:WaitFrames(12)
+	GROUND:CharTurnToCharAnimated(breloom, growlithe, 4)
+	UI:SetSpeaker(breloom)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Night to you too![pause=0] Make sure you don't stay up too much longer.")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Joyous")
+	--todo: improve breloom animations here if animations get added.
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(growlithe, zigzagoon, 4)
+											GROUND:CharSetEmote(growlithe, "glowing", 0)
+											UI:WaitShowDialogue("I dunno how I'm gonna get to sleep,[pause=10] ruff![pause=0] I'm still too worked up![pause=0] Today was so much fun!") end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+											GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											GROUND:CharTurnToCharAnimated(partner, growlithe, 4) end)
+	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(breloom, Direction.Up, 4)
+											GeneralFunctions.EightWayMove(breloom, 192, 120, false, 1) 
+											GeneralFunctions.EightWayMoveRS(breloom, bed9X + 13, bed9Y + 10, false, 1) 
+											GROUND:CharAnimateTurnTo(breloom, Direction.Down, 4)					
+											end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(20)
+	GROUND:CharSetEmote(growlithe, "", 0)
+	UI:SetSpeaker(partner)
+	UI:SetSpeakerEmotion("Inspired")
+	--he doesnt actually fall asleep immediately
+	GROUND:CharSetAction(breloom, RogueEssence.Ground.FrameGroundAction(noctowl.Position, noctowl.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Sleep"), 0))
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("I know right?[pause=0] It was awesome adventuring with " .. audino:GetDisplayName() .. " and " .. snubbull:GetDisplayName() .. "!") 
+											UI:WaitShowDialogue("despite being the chef/chore doer, they're both really skilled adventurers") end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharTurnToCharAnimated(growlithe, partner, 4 ) end)
+	TASK:JoinCoroutines({coro1, coro2})
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("Yeah![pause=0] And I was able to learn a lot from " .. mareep:GetDisplayName() .. " and " .. cranidos:GetDisplayName() .. ".")
+	UI:WaitShowDialogue("I wrote down a lot in the almanac I brought along with me!")
+	--these notes are gonna be about movement speed in his almanac later
+	
+	--hero zones out
+	GROUND:EntTurn(hero, Direction.Down)
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(growlithe)
+	UI:WaitShowDialogue("(they're really strong too especially ganlon, )")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("(Yeah ganlon is really strong, but i noticed he gets less spear-headed around shuca")
+	--really excited to see who we get to team up with tomorrow
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("(omg yeah he's such a little bitch i stg loooool")
+	UI:WaitShowDialogue("(I remember when noctowl asked him to teach us some shit...")
+	GAME:WaitFrames(20)
+
+	--use this to flag the side conversation to stop
+	local stopTalking = false
+
+	--hero zones out during this conversation
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.HeroDialogue(hero, "(.........)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(Today really was fun,[pause=10] but...)", "Normal") 
+											GeneralFunctions.HeroDialogue(hero, "(The strange tension...[pause=0] I've been feeling it ever since " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " got back.)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(It's even been getting a little more intense each day we've been on the road.[pause=0] It's alarming..)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(At first,[pause=10] I thought that maybe I was confusing it with the excitement of the expedition.)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(And while I am enjoying the expedition,[pause=10] I'm certain now this tension is something different from that excitement.)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(It's almost like it's compelling me to keep moving forwards on this trip.)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(I would have done that anyway,[pause=10] considering how great it is to be on a big adventure with all the Pokémon at the guild,[pause=10] but...)", "Normal")
+											GeneralFunctions.HeroDialogue(hero, "(It does make me wonder why I'm having these strange feelings in the first place.[pause=0] What do they mean?)", "Normal") 
+											stopTalking = true
+											GeneralFunctions.HeroDialogue(hero, "(What triggered them all those times in the past?[pause=0] Why is the feeling growing stronger with each day that passes on this expedition?)", "Normal") 
+											GeneralFunctions.HeroDialogue(hero, "(Could they be related to whatever we're going to find on this expedition?)", "Normal") 
+											end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+											while not stopTalking then 
+												GROUND:CharSetAnim(partner, "Idle", true)
+												GROUND:CharSetEmote(partner, "happy", 0)
+												GAME:WaitFrames(60)
+												GROUND:CharEndAnim(partner)
+												GROUND:CharSetEmote(partner, "", 0)
+												GAME:WaitFrames(40)
+												if stopTalking then break end												
+												
+												GROUND:CharSetAnim(growlithe, "Idle", true)
+												GROUND:CharSetEmote(growlithe, "happy", 0)
+												GAME:WaitFrames(60)
+												GROUND:CharEndAnim(growlithe)
+												GROUND:CharSetEmote(growlithe, "", 0)
+												GAME:WaitFrames(40)			
+												if stopTalking then break end
+
+												GROUND:CharSetAnim(zigzagoon, "Idle", true)
+												GROUND:CharSetEmote(zigzagoon, "happy", 0)
+												GAME:WaitFrames(60)
+												GROUND:CharEndAnim(zigzagoon)
+												GROUND:CharSetEmote(zigzagoon, "", 0)
+												GAME:WaitFrames(40)				
+											end
+											
+											GROUND:CharTurnToChar(partner, hero, 4)
+											GROUND:CharTurnToChar(growlithe, hero, 4)
+											GROUND:CharTurnToChar(zigzagoon, hero, 4)
+	TASK:JoinCoroutines({coro1, coro2})
+
+	GAME:WaitFrames(30)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue(hero:GetDisplayName() .. "!")
+	
+	GeneralFunctions.EmoteAndPause(hero, "Exclaim", true)
+	GAME:WaitFrames(10)
+	GROUND:CharTurnToCharAnimated(hero, partner, 4)
+	
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Are you feeling alright?[pause=0] You looked pretty zoned out there.")
+	UI:WaitShowDialogue("You must be feeling pretty exhausted after today!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Well,[pause=10] it is getting pretty late.[pause=0] We should all hit the hay for the night.")
+	UI:WaitShowDialogue("We need our sleep if we're gonna do our best tomorrow!")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(zigzagoon)
+	UI:WaitShowDialogue("Agreed.[pause=0] My mind's still pretty excited,[pause=10] but I'll have to do")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Good night everyone,[pause=10] ruff!")
+	
+	
 	
 
 end
