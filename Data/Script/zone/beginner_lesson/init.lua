@@ -9,7 +9,7 @@ function beginner_lesson.Init(zone)
     --Set team to just player+partner, then add Ledian. Set current lesson to beginner
 	SV.Tutorial.Lesson = 'beginner_lesson';
 	
-    GeneralFunctions.DefaultParty(false, false, true)
+    GeneralFunctions.DefaultParty(false)
 	--move partner to assembly for the tutorial after setting party to default
 	local p = GAME:GetPlayerPartyMember(1)
 	GAME:RemovePlayerTeam(1)

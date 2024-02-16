@@ -23,10 +23,10 @@ function vast_steppe_entrance_ch_5.SetupGround()
 			
 		--set rin and coco to spawn from the spawners, then spawn them
 		GROUND:SpawnerSetSpawn("TEAMMATE_2", GAME:GetPlayerPartyMember(2))
-		local audino = GROUND:SpawnerDoSpawn("TEAMMATE_2")
+		local snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_2")
 			
 		GROUND:SpawnerSetSpawn("TEAMMATE_3", GAME:GetPlayerPartyMember(3))
-		local snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_3")
+		local audino = GROUND:SpawnerDoSpawn("TEAMMATE_3")
 		
 	else
 		local noctowl, tropius = 
@@ -37,14 +37,14 @@ function vast_steppe_entrance_ch_5.SetupGround()
 			
 		--set rin and coco to spawn from the spawners, then spawn them
 		GROUND:SpawnerSetSpawn("TEAMMATE_2", GAME:GetPlayerPartyMember(2))
-		local audino = GROUND:SpawnerDoSpawn("TEAMMATE_2")
+		local snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_2")
 			
 		GROUND:SpawnerSetSpawn("TEAMMATE_3", GAME:GetPlayerPartyMember(3))
-		local snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_3")
+		local audino = GROUND:SpawnerDoSpawn("TEAMMATE_3")
 		
 		--teleport them to their new spot.
-		GROUND:TeleportTo(audino, 224, 216, Direction.Up)
-		GROUND:TeleportTo(snubbull, 272, 216, Direction.Up)
+		GROUND:TeleportTo(snubbull, 224, 216, Direction.Right)
+		GROUND:TeleportTo(audino, 272, 216, Direction.Left)
 	end
 end
 
@@ -562,23 +562,23 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Um,[pause=10] " .. tropius:GetDisplayName() .. "...[pause=0] What about me,[pause=10] ruff?")
 	GAME:WaitFrames(10)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
+	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
 											GROUND:CharAnimateTurnTo(zigzagoon, Direction.UpRight, 4)
 											end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
 											GROUND:CharAnimateTurnTo(cranidos, Direction.UpRight, 4) end)
-	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
 											GROUND:CharAnimateTurnTo(mareep, Direction.UpRight, 4)
 											end)
-	coro5 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(audino, Direction.Up, 4) end)
-	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
+	coro4 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(audino, Direction.Up, 4) end)
+	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
 											GROUND:CharAnimateTurnTo(snubbull, Direction.Up, 4) 
 											end)							 
-	coro7 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
-	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+	coro6 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
+	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											GROUND:CharAnimateTurnTo(hero, Direction.Up, 4) end)
 
-	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8})	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7})	
 	
 	GAME:WaitFrames(10)
 	
@@ -637,7 +637,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	UI:SetSpeaker(growlithe)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Ruff![pause=0] More than anything!!")
+	UI:WaitShowDialogue("Ruff![pause=0] More than anything!")
 
 	GAME:WaitFrames(40)
 	UI:SetSpeaker(tropius)
@@ -751,7 +751,6 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	--snubbull's stats are kinda dookie in comparison to audino, so boost her up a bit.
 	snubbull_monster.MaxHPBonus = 1
-	snubbull_monster.AtkBonus = 1
 	snubbull_monster.SpeedBonus = 5
 	
 	snubbull_monster:ReplaceSkill("bite", 0, true)
@@ -812,10 +811,10 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 		
 	--set rin and coco to spawn from the spawners, then spawn them
 	GROUND:SpawnerSetSpawn("TEAMMATE_2", GAME:GetPlayerPartyMember(2))
-	audino = GROUND:SpawnerDoSpawn("TEAMMATE_2")
+	snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_2")
 		
 	GROUND:SpawnerSetSpawn("TEAMMATE_3", GAME:GetPlayerPartyMember(3))
-	snubbull = GROUND:SpawnerDoSpawn("TEAMMATE_3")
+	audino = GROUND:SpawnerDoSpawn("TEAMMATE_3")
 
 	GROUND:Unhide('Supply_Bag')
 	  	
@@ -829,7 +828,8 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	
 	GAME:WaitFrames(20)
 	GAME:FadeIn(60)
-
+	
+	partner.CollisionDisabled = true--redisable partner's collision. Something is causing this to be set to false earlier in the script...
 	SV.Chapter5.FinishedSteppeIntro = true
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
@@ -1066,6 +1066,9 @@ function vast_steppe_entrance_ch_5.FailedCutscene()
 	AI:DisableCharacterAI(partner)
 	GROUND:TeleportTo(partner, 264, 184, Direction.Right)
 	GROUND:TeleportTo(hero, 232, 184, Direction.Left)
+	
+	GROUND:EntTurn(snubbull, Direction.Up)
+	GROUND:EntTurn(audino, Direction.Up)
 
 	GROUND:CharSetAnim(tropius, "Idle", true)	
 	GROUND:CharSetAnim(noctowl, "Idle", true)
@@ -1176,7 +1179,7 @@ function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 232, 184, false, 1)
 												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
 												GROUND:CharSetAnim(hero, "None", true) end) 
-		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(256, 192) end)
+		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, nil, nil, 256, 192) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(audino, 272, 216, false, 1)
@@ -1195,7 +1198,7 @@ function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		if not SV.Chapter5.EnteredSteppe then 
 			UI:WaitShowDialogue("All prepared you two?[pause=0] Perfect. " .. STRINGS:Format("\\u266A") .. "[pause=0]\nLet us be off!")
 		else 
-			UI:WaitShowDialogue("All prepared you two?[pause=0] Perfect. " .. STRINGS:Format("\\u266A") .. "[pause=0]\nNo more failing!")
+			UI:WaitShowDialogue("All prepared you two?[pause=0] Perfect. " .. STRINGS:Format("\\u266A") .. "[pause=0]\nNo failing this time!")
 		end 
 		
 		

@@ -81,15 +81,77 @@ function searing_tunnel_entrance.Teammate1_Action(chara, activator)
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
  end
 
-function searing_tunnel_entrance.Teammate2_Action(chara, activator)
+function searing_tunnel_entrance.Teammate2_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Action(...,...)"), obj, activator))
 end
 
-function searing_tunnel_entrance.Teammate3_Action(chara, activator)
+function searing_tunnel_entrance.Teammate3_Action(obj, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), obj, activator))
 end
+
+function searing_tunnel_entrance.Kangaskhan_Rock_Action(obj, activator)
+	GeneralFunctions.Kangashkhan_Rock_Interact(obj, activator)
+end
+
+--Guild members
+function searing_tunnel_entrance.Dungeon_Entrance_Touch(obj, activator)
+	--This ground is only available during chapter 5.
+	searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
+end
+
+--Guild members
+function searing_tunnel_entrance.Tropius_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Tropius_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Noctowl_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Noctowl_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Breloom_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Breloom_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Girafarig_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Girafarig_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Growlithe_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Growlithe_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Zigzagoon_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Zigzagoon_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Snubbull_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Snubbull_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Audino_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Audino_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Cranidos_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Cranidos_Action(...,...)"), obj, activator))
+end
+
+function searing_tunnel_entrance.Mareep_Action(obj, activator)
+ DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("searing_tunnel_entrance_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Mareep_Action(...,...)"), obj, activator))
+end
+
 
 return searing_tunnel_entrance
 

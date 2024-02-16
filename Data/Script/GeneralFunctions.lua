@@ -690,13 +690,14 @@ end
 --this is somewhat shoddily written, i feel like it will break with the right conditions...
 --currently de-equips held items and causes a potential phantom glitch if called on a ground map and then you give control back to player without reinitializing/disabling partner collision...
 -- should look into rewriting this, honestly.
-function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
+
+--defunct, old version
+function GeneralFunctions.DefaultParty(spawn, others)
 	--Clear party 
 	local partyCount = GAME:GetPlayerPartyCount()
 	local p = 0
 	local tbl = 0
 	others = others or false
-	in_dungeon = in_dungeon or false
 	
 	--this depends on partner and hero not being able to be shifted out of slot 1 and 2... keep in mind
     for i = partyCount,1,-1 do
@@ -753,12 +754,7 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 		GAME:AddPlayerTeam(bufferTable[i])
 	end
 	
-	--TODO: Remove this when audino updates set team leader index to work in dungeons. Only dungeon init scripts should have the in dungeon parameter set
-	if in_dungeon then
-		_DATA.Save.ActiveTeam.LeaderIndex = 0
-	else 
-		GAME:SetTeamLeaderIndex(0)--this doesn't work in dungeons right now
-	end
+	GAME:SetTeamLeaderIndex(0)
 	
 	
 	--guests are temporary and are for plot or missions. Delete them all, if they're needed again, whatever put them into your team will place them back in
@@ -777,6 +773,64 @@ function GeneralFunctions.DefaultParty(spawn, others, in_dungeon)
 		
 		
 end
+
+
+--[[todo next PMDO update to replace old version: the call will be _DUNGEON/_GROUND:SwitchTeam(slot1, slot2)
+--sets the team to be player and partner.
+function GeneralFunctions.DefaultParty(spawn, destructive)
+	--destructive flag makes it so party members discarded are NOT put in assembly and are straight up deleted.
+	--useful for the expedition.
+	if destructive == nil then destructive = false end
+	
+	local hero, partner
+	local p, tbl
+	
+	for i = partyCount,1,-1 do
+		p = GAME:GetPlayerPartyMember(i-1)
+		tbl = LTBL(p)
+		if tbl.Importance == 'Hero' then 
+			hero = p
+		elseif tbl.Importance == 'Partner' then
+			partner = p
+		else--remove them if they aren't the player and partner.
+			if not destructive then --DESTROY the party member permanently if destructive
+				GAME:AddPlayerAssembly(p)
+			end
+			GAME:RemovePlayerTeam(i-1)
+		end
+	end
+	
+	--Retrieve Player/Partner from assembly if they're there for some reason.
+	
+	
+	
+	--Swap the slots of player/partner around until player is slot 0 and partner is slot 1.
+	
+	
+	
+	
+	--set slot 0 to the leader just in case player was not in slot 0.
+	GAME:SetTeamLeaderIndex(0)
+	
+	
+	--guests are temporary and are for plot or missions. Delete them all, if they're needed again, whatever put them into your team will place them back in
+	local guestCount = GAME:GetPlayerGuestCount()
+	for i = 1, guestCount, 1 do 
+		local g = GAME:RemovePlayerGuest(i-1)
+	end
+
+	
+	if spawn then 	
+		COMMON.RespawnAllies(true)
+		--AI:SetCharacterAI(CH('Teammate1'), "ai.ground_partner", CH('PLAYER'),CH('Teammate1').Position)
+	end
+	_DATA.Save:UpdateTeamProfile(true)
+
+		
+		
+end
+]]--
+
 
 --does a monologue, centering the text, having it appear instantly and turning off the keysound, then turn centering and auto finish off after.
 function GeneralFunctions.Monologue(str)

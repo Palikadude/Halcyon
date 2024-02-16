@@ -746,10 +746,11 @@ SV.Chapter5 =
 	SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
 	AudinoForgotHealBell = false,--Did you make Rin forget Heal Bell during her time in your party?
 	
-	FinishedSearingTunnelBedtime = false,--Did the player see the nighttime scene for Searing Tunnel?
-	FinishedSearingTunnelIntro = false,--Did the player see the intro cutscene for Searing Tunnel?
-	EnteredSearingTunnel = false,--did player enter the tunnel?
+	FinishedTunnelIntro = false,--Did the player see the nighttime+intro cutscene for Searing Tunnel?
+	EnteredTunnel = false,--did player enter the tunnel?
 	LostTunnel = false,--did player die in the tunnel or to the boss?
+	EscapedTunnel = false,--Do we need to play the escaped from dungeon scene when loading this map?
+	DiedTunnel = false,--Do we need to play the died in dungeon scene when loading this map?
 	EncounteredBoss = false, --Did the player encounter the slugmas?
 	LostToBoss = false,--Did the player lose to the boss?
 	
@@ -758,7 +759,8 @@ SV.Chapter5 =
 	EnteredMountain = false,--did player enter Mt. Windswept?
 	LostMountain = false,--did player die in Mt. Windswept?
 	DiedToWind = false,--did player's last run die to the time limit?
-	
+	EscapedMountain = false,--Do we need to play the escaped from dungeon scene when loading this map?
+	DiedMountain = false,--Do we need to play the died in dungeon scene when loading this map?
 	
 	NeedGiveSupplies = false--does penticus/phileas need to give supplies out?
 }
@@ -777,13 +779,13 @@ SV.GuildSidequests =
 	--Last known levels for guild members. These start being used on the expedition.
 	--If you level them up more during the expedition, they'll keep more of their levels when you do stuff with them later.
 	ZigzagoonLevel = 19,
-	GrowlitheLevel = 17,
+	GrowlitheLevel = 16,
 	SnubbullLevel = 17,
 	AudinoLevel = 16,
 	MareepLevel = 19,
-	CranidosLevel = 20,
-	BreloomLevel = 33,
-	GirafarigLevel = 32
+	CranidosLevel = 20
+--	BreloomLevel = 33,
+--	GirafarigLevel = 32
 }
 
 ----------------------------------

@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -31,7 +31,6 @@
 "IsPartner": false,
 "Nickname": "Magcargo",
 "ActionEvents": [],
-"HP": 125,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -105,6 +104,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 100,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -127,6 +127,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 2,
 "StatusRange": 2,
 "SelfStatusRange": 2
@@ -134,6 +136,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -141,6 +145,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -148,6 +154,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -189,7 +197,7 @@
 },
 "Level": 18,
 "EXP": 0,
-"MaxHPBonus": 68,
+"MaxHPBonus": 94,
 "AtkBonus": 0,
 "DefBonus": 0,
 "MAtkBonus": 0,
@@ -268,7 +276,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -342,6 +349,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -364,6 +372,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -371,6 +381,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -378,6 +390,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -385,6 +399,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -505,7 +521,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -579,6 +594,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -601,6 +617,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -608,6 +626,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -615,6 +635,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -622,6 +644,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -742,7 +766,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -816,6 +839,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -838,6 +862,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -845,6 +871,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -852,6 +880,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -859,6 +889,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -979,7 +1011,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1053,6 +1084,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1075,6 +1107,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -1082,6 +1116,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1089,6 +1125,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1096,6 +1134,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1216,7 +1256,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1290,6 +1329,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1312,6 +1352,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -1319,6 +1361,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1326,6 +1370,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1333,6 +1379,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1453,7 +1501,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1527,6 +1574,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1549,6 +1597,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -1556,6 +1606,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1563,6 +1615,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1570,6 +1624,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1690,7 +1746,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1764,6 +1819,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1786,6 +1842,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -1793,6 +1851,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1800,6 +1860,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1807,6 +1869,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -1927,7 +1991,6 @@
 "IsPartner": false,
 "Nickname": "Slugma",
 "ActionEvents": [],
-"HP": 32,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -2001,6 +2064,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
+"HP": 32,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -2023,6 +2087,8 @@
 "AttackPattern": 1,
 "PositionPattern": 0,
 "IQ": 36,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 1,
 "StatusRange": 1,
 "SelfStatusRange": 1
@@ -2030,6 +2096,8 @@
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -2037,6 +2105,8 @@
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -2044,6 +2114,8 @@
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
 "IQ": 164,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0
@@ -2249,14 +2321,14 @@
 {
 "Loc": {
 "X": 0,
-"Y": -1
+"Y": 1
 },
 "Dir": 7
 },
 {
 "Loc": {
 "X": -1,
-"Y": -1
+"Y": 1
 },
 "Dir": 1
 }

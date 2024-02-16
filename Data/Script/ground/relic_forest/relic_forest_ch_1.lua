@@ -551,7 +551,6 @@ end
 --the duo wiped trying to make it back to town
 function relic_forest_ch_1.WipedInForest()
 	--reset party
-	--GeneralFunctions.DefaultParty(true, false)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	GAME:CutsceneMode(true)
