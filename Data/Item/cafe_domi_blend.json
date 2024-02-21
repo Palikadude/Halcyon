@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.25.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -23,9 +23,6 @@
 "CannotDrop": false,
 "BagEffect": false,
 "ItemStates": [
-{
-"$type": "PMDC.Dungeon.EdibleState, PMDC"
-},
 {
 "$type": "PMDC.Dungeon.DrinkState, PMDC"
 }

@@ -69,7 +69,25 @@ function searing_tunnel_entrance.GameLoad(map)
 end
 
 function searing_tunnel_entrance.PlotScripting()
-  GAME:FadeIn(20)
+  if SV.ChapterProgression.Chapter == 5 then
+	if not SV.Chapter5.FinishedTunnelIntro then
+		searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
+	elseif SV.Chapter5.PlayTempTunnelScene then
+		searing_tunnel_entrance_ch_5.SetupGround()
+		if SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+			searing_tunnel_entrance_ch_5.RetreatedCutscene()
+		elseif SV.Chapter5.TunnelLastExitReason == 'Died' then
+			searing_tunnel_entrance_ch_5.DiedCutscene()
+		else
+			searing_tunnel_entrance_ch_5.EscapedCutscene()
+		end
+	else
+		searing_tunnel_entrance_ch_5.SetupGround()
+		GAME:FadeIn(20)
+	end
+  else
+	GAME:FadeIn(20)
+  end
 end 
 
 

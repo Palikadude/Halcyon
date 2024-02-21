@@ -557,29 +557,38 @@ function relic_forest_ch_1.WipedInForest()
 	AI:DisableCharacterAI(partner)
 	UI:ResetSpeaker()
 	GAME:MoveCamera(294, 520, 1, false)
-	GROUND:TeleportTo(hero, 276, 512, Direction.Down)
-	GROUND:TeleportTo(partner, 308, 512, Direction.Down)
+	GROUND:TeleportTo(hero, 276, 512, Direction.Left)
+	GROUND:TeleportTo(partner, 308, 512, Direction.Right)
 	GROUND:CharSetAnim(partner, 'EventSleep', true)
 	GROUND:CharSetAnim(hero, 'EventSleep', true)
 
 	GAME:FadeIn(40)
+	--SOUND:PlayBGM('In The Depths of the Pit.ogg', true) --the music has a bit of a delay to starting, so i think having it fade in as soon as the map loads is OK.
+
+	GAME:WaitFrames(110)--slightly less than 120 frames so that the sleep animation doesnt barely start another frame before waking
 	
-	GAME:WaitFrames(120)
-	local coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake') end)
-	local coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') end)
-	TASK:JoinCoroutines({coro1, coro2})
-	
-	coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
-	coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
+	coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake')
+											 GAME:WaitFrames(10) 
+											 GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+											 GAME:WaitFrames(40)
+											 GeneralFunctions.LookAround(hero, 3, 4, false, false, false, Direction.Left)
+											 end)
+	coro2 = TASK:BranchCoroutine(function () GAME:WaitFrames(10)
+											 GeneralFunctions.DoAnimation(partner, 'Wake')
+											 GAME:WaitFrames(15) 
+											 GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+											 GAME:WaitFrames(40)
+											 GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Right)
+											 end)
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	GAME:WaitFrames(20)
-	
-	coro1 = TASK:BranchCoroutine(function () GeneralFunctions.LookAround(hero, 2, 4, false, false, false, Direction.Right) end)
-	coro2 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.Left) end)
+	coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) --so he rotates down
+											 GROUND:CharTurnToCharAnimated(hero, partner, 4) end)
+	coro2 = TASK:BranchCoroutine(function () GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
 	TASK:JoinCoroutines({coro1, coro2})
+
 	
-	GAME:WaitFrames(20)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion('Pain')
 	GeneralFunctions.EmoteAndPause(partner, 'Sweating', true)	
@@ -603,10 +612,10 @@ function relic_forest_ch_1.WipedInForest()
 	UI:WaitShowDialogue("Let's give it another shot,[pause=10] " .. hero:GetDisplayName() .. "![script=0]", {function() return GeneralFunctions.Hop(partner) end})
 	GAME:WaitFrames(20)
 
-	coro1 = TASK:BranchCoroutine(function() GROUND:MoveToPosition(partner, 308, 612, false, 1) end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.WaitThenMove(hero, 276, 612, false, 1, 20) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) GROUND:MoveToPosition(partner, 308, 612, false, 1) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)  GROUND:MoveToPosition(hero, 276, 612, false, 1) end)
 	GAME:WaitFrames(60)
-	SOUND:FadeOutBGM()
+	SOUND:FadeOutBGM(40)
 	GAME:FadeOut(false, 40)
 	TASK:JoinCoroutines({coro1, coro2})	
 	

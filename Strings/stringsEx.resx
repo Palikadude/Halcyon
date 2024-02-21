@@ -4026,7 +4026,7 @@
     <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>
 
   <data name="TALK_PINCH_1150" xml:space="preserve">
-    <value>T-this forest... It's t-too tough... H-help, [player]...</value>
+    <value>Th-this forest... It's t-too tough... H-help, [player]...</value>
     <comment>Apricorn Grove - Pre Glade - Chapter 4 Comment</comment>  </data>		
   <data name="TALK_PINCH_1151" xml:space="preserve">
     <value>Our first r-real adventure... N-no... S-sorry, [player]...</value>
@@ -4057,7 +4057,7 @@
     <value>N-no... We n-need... T-the Apricorn...</value>
     <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>		
   <data name="TALK_PINCH_1161" xml:space="preserve">
-    <value>Urf... C-can't get the Apricorn... At t-this rate...</value>
+    <value>Urf... C-can't get the Apricorn... At th-this rate...</value>
     <comment>Apricorn Grove - Found Apricorn, Did Not Retrieve Yet - Chapter 4 Comment</comment>  </data>
 	
 	

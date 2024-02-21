@@ -76,6 +76,11 @@ function vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
 		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 47, 0, false, false) --Go to Searing Tunnel Entrance ground map
 
 	else--generic win/loss. Works for both cases outside chapter 5 since there's no end of dungeon map.
+		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then 
+			--Other zones have a 20 frame wait on not winning, so adding this here for consistency.
+			GAME:WaitFrames(20)
+		end
+			
 		SV.TemporaryFlags.Dinnertime = true 
 		SV.TemporaryFlags.Bedtime = true
 		SV.TemporaryFlags.MorningWakeup = true 
@@ -84,7 +89,7 @@ function vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
 		--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor
 		local exit_ground = 6
 		if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
-		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true) --Go to Crooked Den ground map
+		GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true)
 	end
 end
 	

@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.searing_tunnel_midpoint.searing_tunnel_midpoint_ch_5'
 
 -- Package name
 local searing_tunnel_midpoint = {}
@@ -35,7 +36,7 @@ end
 --Engine callback function
 function searing_tunnel_midpoint.Enter(map)
 
-  apricorn_glade.PlotScripting()
+  searing_tunnel_midpoint.PlotScripting()
 
 end
 
@@ -69,13 +70,106 @@ function searing_tunnel_midpoint.GameLoad(map)
 end
 
 function searing_tunnel_midpoint.PlotScripting()
-  GAME:FadeIn(20)
+  if SV.ChapterProgression.Chapter == 5 then
+	
+  else 
+    GAME:FadeIn(20)
+  end
 end 
 
 
 -------------------------------
 -- Entities Callbacks
 -------------------------------
+function searing_tunnel_midpoint.North_Exit_Touch(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker(false)
+  UI:SetCenter(true)
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)		
+  UI:ChoiceMenuYesNo("Would you like to continue?", true)
+  UI:WaitForChoice()
+  local yesnoResult = UI:ChoiceResult()
+  UI:SetCenter(false)
+  if yesnoResult then 
+	if SV.ChapterProgression.Chapter == 5 then 
+		searing_tunnel_midpoint_ch_5.ContinueScene()
+	else
+		--GROUND:Hide('North_Exit')
+		--local coro1 = TASK:BranchCoroutine(function() GROUND:MoveInDirection(partner, Direction.Up, 90, false, 1) end)
+		--local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:MoveInDirection(hero, Direction.Up, 90, false, 1) end)
+		--local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
+		--											  GAME:FadeOut(false, 60) end)
+		--TASK:JoinCoroutines({coro1, coro2, coro3})
+		GAME:FadeOut(false, 60)
+		partner.IsInteracting = false
+		GROUND:CharEndAnim(partner)
+		GROUND:CharEndAnim(hero)	
+		GAME:EnterDungeon("searing_tunnel", 1, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+	end
+  end
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)	
+end
+
+
+function searing_tunnel_midpoint.South_Exit_Touch(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  UI:ResetSpeaker(false)
+  UI:SetCenter(true)
+  local hero = CH('PLAYER')
+  local partner = CH('Teammate1')
+  local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("searing_tunnel")
+  partner.IsInteracting = true
+  GROUND:CharSetAnim(partner, 'None', true)
+  GROUND:CharSetAnim(hero, 'None', true)
+  
+	
+  local exit_ground = ''
+  --During Chapter 5, return to the dungeon entrance instead.
+  if SV.ChapterProgression.Chapter == 5 then
+	exit_ground = 'searing_tunnel_entrance'
+	UI:ChoiceMenuYesNo("Would you like to return\nto " .. zone:GetColoredName() .. "'s entrance?", true)
+  else
+	exit_ground = 'guild_dining_room'
+	if SV.TemporaryFlags.MissionCompleted then exit_ground = 'guild_second_floor' end 
+	UI:ChoiceMenuYesNo("Would you like to return\nto Metano Town?", true)
+  end
+  UI:WaitForChoice()
+  local yesnoResult = UI:ChoiceResult()
+  UI:SetCenter(false)
+  if yesnoResult then 
+	SOUND:FadeOutBGM(60)
+	GAME:FadeOut(false, 60)
+	partner.IsInteracting = false
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)	
+	GAME:WaitFrames(60)
+	if SV.ChapterProgression.Chapter == 5 then 
+		SV.Chapter5.PlayTempTunnelScene = true
+		SV.Chapter5.TunnelLastExitReason = 'Retreated'
+	else 
+		SV.TemporaryFlags.Dinnertime = true 
+		SV.TemporaryFlags.Bedtime = true
+		SV.TemporaryFlags.MorningWakeup = true 
+		SV.TemporaryFlags.MorningAddress = true 
+	end
+	GAME:EnterGroundMap(exit_ground, "Main_Entrance_Marker")
+  end
+  partner.IsInteracting = false
+  GROUND:CharEndAnim(partner)
+  GROUND:CharEndAnim(hero)	
+end
+
+function searing_tunnel_midpoint.Kangaskhan_Rock_Action(obj, activator)
+	GeneralFunctions.Kangashkhan_Rock_Interact(obj, activator)
+end
+
+
 function searing_tunnel_midpoint.Teammate1_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PartnerEssentials.GetPartnerDialogue(CH('Teammate1'))
@@ -83,12 +177,20 @@ function searing_tunnel_midpoint.Teammate1_Action(chara, activator)
 
 function searing_tunnel_midpoint.Teammate2_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+  if SV.ChapterProgression.Chapter == 5 then--growlithe dialogue
+	searing_tunnel_midpoint_ch_5.Growlithe_Action(chara, activator)
+  else
+	GeneralFunctions.GroundInteract(activator, chara)
+  end
 end
 
 function searing_tunnel_midpoint.Teammate3_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
-  COMMON.GroundInteract(activator, chara, true)
+  if SV.ChapterProgression.Chapter == 5 then--zigzagoon dialogue
+	searing_tunnel_midpoint_ch_5.Growlithe_Action(chara, activator)
+  else
+	GeneralFunctions.GroundInteract(activator, chara)
+  end
 end
 
 return searing_tunnel_midpoint

@@ -84,7 +84,7 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.TemporaryFlags.MorningWakeup = true 
 			SV.TemporaryFlags.MorningAddress = true 
 		
-			GAME:EnterGroundMap('luminous_spring', 'Main_Entrance_Marker') --Go to Crooked Den, end dungeon run in the ground rather than here 
+			GAME:EnterGroundMap('luminous_spring', 'Main_Entrance_Marker') --Go to Luminous Spring, end dungeon run in the ground rather than here 
 
 		else--for chapter 2, dont show results and dont set generic end flags
 			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 20, 0, false, false) --Go to Luminous Spring 

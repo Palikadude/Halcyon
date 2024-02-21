@@ -744,15 +744,17 @@ SV.Chapter5 =
 	EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
 	DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
 	SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
-	AudinoForgotHealBell = false,--Did you make Rin forget Heal Bell during her time in your party?
 	
 	FinishedTunnelIntro = false,--Did the player see the nighttime+intro cutscene for Searing Tunnel?
 	EnteredTunnel = false,--did player enter the tunnel?
 	LostTunnel = false,--did player die in the tunnel or to the boss?
-	EscapedTunnel = false,--Do we need to play the escaped from dungeon scene when loading this map?
-	DiedTunnel = false,--Do we need to play the died in dungeon scene when loading this map?
+	TunnelLastExitReason = '',--Why did the player exit the tunnel to the entrance? Should be Died, Escaped, or Retreated
+	PlayTempTunnelScene = false,--Do we need to play a one time scene outside the tunnel for having died/escaped/retreated?
+	PlayedMidpointIntro = false,--Did you do the first "Let's go forward!" cutscene for the midpoint?
 	EncounteredBoss = false, --Did the player encounter the slugmas?
-	LostToBoss = false,--Did the player lose to the boss?
+	DefeatedBoss = false, --Did the player defeat the slugmas?
+	DiedToBoss = false,--Did the player lose to the boss ever?
+	JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
 	
 	FinishedMountWindsweptBedtime = false,--Did the player see the nighttime cutscene for Mt. Windswept?
 	FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
@@ -812,11 +814,12 @@ SV.ApricornGrove =
 SV.SearingTunnel = 
 {
 	LavaFlowDirection = "None",--TopStraight, BottomStraight, DiagonalDown, DiagonalUp, or None
-	LavaCountdown = -1--Used to determine how long until the lava flow changes?
+	LavaCountdown = -1,--Used to determine how long until the lava flow changes?
+	DiedPastCheckpoint = false--Used to flag whether you died in depths/crucible. Needed for cutscenes on wiping and waking up back in the checkpoint.
 }
 
 --to be renamed
-SV.TerrakionDungeon = 
+SV.ClovenRuins = 
 {
 	BoulderCountdown = -1--Used to determine when boulder falls should happen and resolve.
 }

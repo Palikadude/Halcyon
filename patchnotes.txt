@@ -84,6 +84,9 @@ V0.5.0
 -Yamper now has Ball Fetch instead of Static as Ball Fetch now works properly.
 -Fixed a number of minor typos.
 -Updated the "Where would you like to explore?" dungeon choice menu. Resembles Sky's a bit more now, and is compatible with more recent PMDO versions.
--Updated Gummis to reflect new Vanilla PMDO behavior. Check Almotz's almanac for information! New behavior should allow for a more even distribution of stat boosts.
+-Updated Gummis to better reflect new Vanilla PMDO behavior. Check Almotz's almanac for information! New behavior should allow for a more even distribution of stat boosts. They're a tad stronger at boosting than in base PMDO, however.
 -Updated Vitamins to reflect new Vanilla PMDO behavior. This means their boost is slightly stronger than before.
 -Update Ezalor's info blurb to better reflect that he can reteach you ANY move you've forgotten, not just level-up moves.
+-Cafe items can no longer be eaten by Pluck, Gluttony's stealing effect, Bug Bite, etc.
+-Some pre-existing scenes have been cleaned up a little in terms of choreography (how the characters move, turn, timings of these, etc.) to improve the scene's look.
+-Updated the description of the Synergy Scarves to be a bit more clear on their main effect.

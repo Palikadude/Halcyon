@@ -731,6 +731,20 @@ end
 
 function COMMON.PayDungeonCartPrice(price)
   COMMON.ClearPlayerPrices()
+  
+  -- clear map prices if not on mat
+  local item_count = _ZONE.CurrentMap.Items.Count
+  for item_idx = 0, item_count-1, 1 do
+    local map_item = _ZONE.CurrentMap.Items[item_idx]
+	if map_item.Price > 0 then
+	  local tile = _ZONE.CurrentMap.Tiles[map_item.TileLoc.X][map_item.TileLoc.Y]
+	  -- only subtract price if on shop mat
+	  if tile.Effect.ID ~= "area_shop" then
+	    map_item.Price = 0
+	  end
+	end
+  end
+  
   GAME:RemoveFromPlayerMoney(price)
   
   local security_price = COMMON.GetShopPriceState()

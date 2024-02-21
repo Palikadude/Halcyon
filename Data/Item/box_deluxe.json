@@ -3,36 +3,48 @@
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
-"DefaultText": "Endurance Tonic",
-"LocalTexts": {}
+"DefaultText": "Deluxe Box",
+"LocalTexts": {
+"de": "Luxusbox",
+"it": "Tecalusso",
+"zh-hans": "豪华宝箱"
+}
 },
 "Desc": {
-"DefaultText": "A bitter tonic fermented by Dion. Gives the Endurance Tonic status to the Pokémon that drinks it for a few turns, preventing them from fainting, even if they move around.",
-"LocalTexts": {}
+"DefaultText": "A box that is extravagant and opulent. It looks like something is inside.",
+"LocalTexts": {
+"de": "Diese Box ist extravagant und üppig. Sieht so aus, als wäre etwas drinnen.",
+"it": "Un forziere sfarzoso e stravagante. Probabilmente contiene qualcosa.",
+"zh-hans": "豪华奢侈的宝箱。里面似乎有什么东西。"
+}
 },
 "Released": true,
-"Comment": "Cafe food item.",
-"Sprite": "Bottle_Purple",
-"Icon": 7,
-"SortCategory": 6,
-"Price": 0,
+"Comment": "",
+"Sprite": "Chest_Gold",
+"Icon": 17,
+"SortCategory": 16,
+"Price": 100,
 "Rarity": 0,
 "MaxStack": 0,
 "CannotDrop": false,
 "BagEffect": false,
-"ItemStates": [
-{
-"$type": "PMDC.Dungeon.DrinkState, PMDC"
-}
-],
+"ItemStates": [],
 "GroundUseActions": [],
 "UseAction": {
-"$type": "RogueEssence.Dungeon.SelfAction, RogueEssence",
-"CharAnimData": {
-"$type": "RogueEssence.Dungeon.CharAnimFrameType, RogueEssence",
-"ActionType": 0
+"$type": "RogueEssence.Dungeon.AttackAction, RogueEssence",
+"HitTiles": false,
+"BurstTiles": 0,
+"Emitter": {
+"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
+"LocHeight": 0
 },
-"TargetAlignments": 1,
+"WideAngle": 0,
+"CharAnimData": {
+"$type": "RogueEssence.Dungeon.CharAnimProcess, RogueEssence",
+"Process": 0,
+"AnimOverride": 0
+},
+"TargetAlignments": 0,
 "TileEmitter": {
 "$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
 "LocHeight": 0
@@ -54,7 +66,7 @@
 "LagBehindTime": 0
 },
 "Explosion": {
-"TargetAlignments": 1,
+"TargetAlignments": 0,
 "HitTiles": false,
 "Range": 0,
 "Speed": 0,
@@ -91,76 +103,17 @@
 "OnActions": [],
 "BeforeExplosions": [],
 "BeforeHits": [],
-"OnHits": [
-{
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.StatusStateBattleEvent, PMDC",
-"States": [
-{
-"$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
-"Counter": 5
-}
-],
-"StatusID": "endurance_tonic",
-"AffectTarget": true,
-"SilentCheck": false,
-"Anonymous": false,
-"TriggerMsg": {
-"Key": null
-},
-"Anims": []
-}
-},
-{
-"Key": {
-"str": [
-0
-]
-},
-"Value": {
-"$type": "PMDC.Dungeon.RestoreBellyEvent, PMDC",
-"BoostAnims": [],
-"Heal": 5,
-"Msg": false,
-"AddMaxBelly": 0,
-"NeedFullBelly": false
-}
-}
-],
+"OnHits": [],
 "OnHitTiles": [],
 "AfterActions": [],
 "ElementEffects": [],
 "IntroFX": [],
 "HitFX": {
-"Delay": 15,
-"Sound": "DUN_Berry",
+"Delay": 0,
+"Sound": "",
 "Emitter": {
-"$type": "RogueEssence.Content.SingleEmitter, RogueEssence",
-"LocHeight": 0,
-"finished": false,
-"Offset": 0,
-"Anim": {
-"$type": "RogueEssence.Content.StaticAnim, RogueEssence",
-"Anim": {
-"AnimIndex": "Circle_Small_Blue_In",
-"FrameTime": 2,
-"StartFrame": -1,
-"EndFrame": -1,
-"AnimDir": -1,
-"Alpha": 255,
-"AnimFlip": 0
-},
-"TotalTime": 0,
-"Cycles": 1,
-"FrameOffset": 0
-},
-"Layer": 2,
-"UseDest": false
+"$type": "RogueEssence.Content.EmptyFiniteEmitter, RogueEssence",
+"LocHeight": 0
 },
 "ScreenMovement": {
 "MinShake": 0,
@@ -174,7 +127,7 @@
 "AnimOverride": 0
 }
 },
-"UsageType": 5,
+"UsageType": 7,
 "ArcThrow": false,
 "BreakOnThrow": false,
 "ThrowAnim": {

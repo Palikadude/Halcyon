@@ -204,8 +204,8 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  --mon_id = RogueEssence.Dungeon.MonsterID("voltorb", 0, "normal", Gender.Male)
-	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 1, "", 0))
+	  mon_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0))
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
 		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3
@@ -223,10 +223,10 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	  --mon_id = RogueEssence.Dungeon.MonsterID("onix", 0, "normal", Gender.Female)
-	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,10, "", 0))
-	  --_DATA.Save.ActiveTeam:SetRank("normal")
-	  --_DATA.Save:UpdateTeamProfile(true)
+	  mon_id = RogueEssence.Dungeon.MonsterID("zigzagoon", 0, "normal", Gender.Female)
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,19, "", 0))
+	  _DATA.Save.ActiveTeam:SetRank("normal")
+	  _DATA.Save:UpdateTeamProfile(true)
 	  
 
 		GAME:GivePlayerItem('seed_reviver')	  
@@ -364,7 +364,7 @@ function DebugTools:OnUpgrade()
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
  
  --for terrakion's dungeon boulder variable timer
- if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
+ if SV.ClovenRuins.BoulderCountdown == nil then SV.ClovenRuins.BoulderCountdown = -1 end
  
  --For Searing Tunnel's boss fight
  if SV.SearingTunnel.LavaFlowDirection == nil then SV.SearingTunnel.LavaFlowDirection = 'None' end

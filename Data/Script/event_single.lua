@@ -109,7 +109,7 @@ function SINGLE_CHAR_SCRIPT.ShopCheckout(owner, ownerChar, context, args)
 		  -- check to see if the shopkeeper can see the player and warp there
 		  local near_mat = false
 		  local dirs = { Direction.Down, Direction.DownLeft, Direction.Left, Direction.UpLeft, Direction.Up, Direction.UpRight, Direction.Right, Direction.DownRight }
-		  for idx, dir in pairs(dirs) do
+		  for idx, dir in ipairs(dirs) do
             if COMMON.ShopTileCheck(baseLoc, dir) then
 		      near_mat = true
 		    end
@@ -371,6 +371,7 @@ function SINGLE_CHAR_SCRIPT.OutlawFloor(owner, ownerChar, context, args)
 		if mission.Type == COMMON.MISSION_TYPE_OUTLAW_FLEE then
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(outlaw)
+			UI:SetSpeakerEmotion("Surprised")
 			UI:WaitShowDialogue("Waah! A-adventurers! Run for it!")
 			local leaderDir = _DUNGEON.ActiveTeam.Leader.CharDir
 			outlaw.CharDir = leaderDir
@@ -1453,23 +1454,23 @@ function SINGLE_CHAR_SCRIPT.RockfallTemors(owner, ownerChar, context, args)
 	--args.TurnsBetweenTremors - how many turns after one tremor should another trigger? Much less during the bossfight.
 	if context.User == nil then
 		--failsafes
-		if SV.TerrakionDungeon.BoulderCountdown == nil then SV.TerrakionDungeon.BoulderCountdown = -1 end
+		if SV.ClovenRuins.BoulderCountdown == nil then SV.ClovenRuins.BoulderCountdown = -1 end
 		
 		--reset the counter when we go past 0. -1 or else it would end up taking 1 more turn than intended
-		if SV.TerrakionDungeon.BoulderCountdown < 0 then
-			SV.TerrakionDungeon.BoulderCountdown = args.TurnsBetweenTremors - 1
+		if SV.ClovenRuins.BoulderCountdown < 0 then
+			SV.ClovenRuins.BoulderCountdown = args.TurnsBetweenTremors - 1
 		end
 		
 		--when there's only ShadowDuration turns left, trigger the shadow spawns.
-		if SV.TerrakionDungeon.BoulderCountdown == args.ShadowDuration then
+		if SV.ClovenRuins.BoulderCountdown == args.ShadowDuration then
 			SINGLE_CHAR_SCRIPT.QueueRockFall(owner, ownerChar, context, args)
 		end
 		
-		if SV.TerrakionDungeon.BoulderCountdown == 0 then
+		if SV.ClovenRuins.BoulderCountdown == 0 then
 			SINGLE_CHAR_SCRIPT.ResolveRockFall(owner, ownerChar, context, args)
 		end 
 		
-		SV.TerrakionDungeon.BoulderCountdown = SV.TerrakionDungeon.BoulderCountdown - 1
+		SV.ClovenRuins.BoulderCountdown = SV.ClovenRuins.BoulderCountdown - 1
 	end
 
 end

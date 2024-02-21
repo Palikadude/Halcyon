@@ -776,6 +776,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	audino_monster:ReplaceSkill("heal_bell", 1, false)
 	audino_monster:ReplaceSkill("disarming_voice", 2, true)
 	audino_monster:ReplaceSkill("helping_hand", 3, false)
+	
 		
 	GAME:AddPlayerTeam(audino_monster)
 	audino_monster:FullRestore()
@@ -783,6 +784,8 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
     audino_monster.ActionEvents:Add(talk_evt)
 	audino_monster:RefreshTraits()
 	
+	--prevent heal bell from being unlearned.
+	GAME:LockSkill(GAME:GetPlayerPartyMember(3), 1)
 
 
 	GAME:GetCurrentGround():RemoveTempChar(breloom)
@@ -1063,6 +1066,7 @@ function vast_steppe_entrance_ch_5.FailedCutscene()
 	local coro1, coro2, coro3
 	
 	GAME:CutsceneMode(true)
+	SOUND:StopBGM()
 	AI:DisableCharacterAI(partner)
 	GROUND:TeleportTo(partner, 264, 184, Direction.Right)
 	GROUND:TeleportTo(hero, 232, 184, Direction.Left)
@@ -1072,38 +1076,43 @@ function vast_steppe_entrance_ch_5.FailedCutscene()
 
 	GROUND:CharSetAnim(tropius, "Idle", true)	
 	GROUND:CharSetAnim(noctowl, "Idle", true)
+	GAME:MoveCamera(256, 192, 1, false)
 		
 	if SV.Chapter5.DiedSteppe then 
 		GROUND:CharSetAnim(partner, "EventSleep", true)
 		GROUND:CharSetAnim(hero, "EventSleep", true)
-		
-		GAME:MoveCamera(256, 192, 1, false)
-		
+				
 		GAME:FadeIn(40)
-		GAME:WaitFrames(120)
-		
-		coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake') end)
-		coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') end)
-
+		SOUND:PlayBGM('Sky Peak Prairie.ogg', true)
+		GAME:WaitFrames(110)--slightly less than 120 frames so that the sleep animation doesnt barely start another frame before waking
+	
+		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, 'Wake')
+												GAME:WaitFrames(10) 
+												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+												GAME:WaitFrames(40)
+												GeneralFunctions.LookAround(hero, 3, 4, false, false, false, Direction.Left)
+												end)
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+												GeneralFunctions.DoAnimation(partner, 'Wake')
+												GAME:WaitFrames(15) 
+												GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+												GAME:WaitFrames(40)
+												GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Right)
+												end)
 		TASK:JoinCoroutines({coro1, coro2})
-		
-		coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
-		coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
-		TASK:JoinCoroutines({coro1, coro2})
-		
-		GAME:WaitFrames(20)
-		
-		coro1 = TASK:BranchCoroutine(function () GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.Right) end)
-		coro2 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GeneralFunctions.LookAround(hero, 2, 4, false, false, false, Direction.Left) end)
-		TASK:JoinCoroutines({coro1, coro2})	
-		
+				
 		GAME:WaitFrames(30)
 		
 		coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
 		coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
+		TASK:JoinCoroutines({coro1, coro2})
 	elseif SV.Chapter5.EscapedSteppe then
 		GROUND:EntTurn(hero, Direction.Down)
 		GROUND:EntTurn(partner, Direction.Down)
+
+		GAME:FadeIn(40)
+		SOUND:PlayBGM('Sky Peak Prairie.ogg', true)
+		GAME:WaitFrames(20)
 	end
 
 	--todo: if snubbull gets eventsleep/wake animations, use them here.
@@ -1179,7 +1188,7 @@ function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 232, 184, false, 1)
 												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
 												GROUND:CharSetAnim(hero, "None", true) end) 
-		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, nil, nil, 256, 192) end)
+		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, false, nil, 256, 192) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(audino, 272, 216, false, 1)
@@ -1202,6 +1211,7 @@ function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		end 
 		
 		
+		GAME:WaitFrames(10)
 		
 		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Up, 4)
 												GROUND:MoveInDirection(partner, Direction.Up, 100, false, 1) end)			

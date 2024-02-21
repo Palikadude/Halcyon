@@ -549,7 +549,7 @@ function GeneralFunctions.PanCamera(startX, startY, toPlayer, speed, endX, endY)
 	speed = speed or 1
 	startX = startX or GAME:GetCameraCenter().X
 	startY = startY or GAME:GetCameraCenter().Y
-	toPlayer = toPlayer or true
+	if toPlayer == nil then toPlayer = true end
 	local difference = 0
 	local duration = 0
 	
@@ -692,6 +692,7 @@ end
 -- should look into rewriting this, honestly.
 
 --defunct, old version
+--[[
 function GeneralFunctions.DefaultParty(spawn, others)
 	--Clear party 
 	local partyCount = GAME:GetPlayerPartyCount()
@@ -773,9 +774,8 @@ function GeneralFunctions.DefaultParty(spawn, others)
 		
 		
 end
+]]--
 
-
---[[todo next PMDO update to replace old version: the call will be _DUNGEON/_GROUND:SwitchTeam(slot1, slot2)
 --sets the team to be player and partner.
 function GeneralFunctions.DefaultParty(spawn, destructive)
 	--destructive flag makes it so party members discarded are NOT put in assembly and are straight up deleted.
@@ -784,8 +784,9 @@ function GeneralFunctions.DefaultParty(spawn, destructive)
 	
 	local hero, partner
 	local p, tbl
+	local party_count = GAME:GetPlayerPartyCount()
 	
-	for i = partyCount,1,-1 do
+	for i = party_count,1,-1 do
 		p = GAME:GetPlayerPartyMember(i-1)
 		tbl = LTBL(p)
 		if tbl.Importance == 'Hero' then 
@@ -801,18 +802,55 @@ function GeneralFunctions.DefaultParty(spawn, destructive)
 	end
 	
 	--Retrieve Player/Partner from assembly if they're there for some reason.
+	if hero == nil or partner == nil then
+		local assembly_count = GAME:GetPlayerAssemblyCount()
+		for i = assembly_count, 1, -1 do 
+			p = GAME:GetPlayerAssemblyMember(i-1)
+			tbl = LTBL(p) 
+			if tbl.Importance == 'Hero' then 
+				GAME:RemovePlayerAssembly(i-1)
+				GAME:AddPlayerTeam(p)
+				--grab hero from the PARTY! Not from the previously established p. They're last at this point.
+				hero = GAME:GetPlayerPartyMember(GAME:GetPlayerPartyCount() - 1)
+			elseif tbl.Importance == 'Partner' then 
+				GAME:RemovePlayerAssembly(i-1)
+				GAME:AddPlayerTeam(p)
+				--grab partner from the PARTY! Not from the previously established p. They're last at this point.
+				partner = GAME:GetPlayerPartyMember(GAME:GetPlayerPartyCount() - 1)			end
+		end
+	end
 	
-	
-	
-	--Swap the slots of player/partner around until player is slot 0 and partner is slot 1.
-	
-	
-	
+	--Sanity check. If Hero and Partner are still nil, we have an issue!!
+	--This typically is gonna happen if you save and reload scripts in debugging... So encase the slot swapping in the else to avoid bug outs during debugging.
+	if hero == nil or partner == nil then
+		PrintInfo("Hero or partner was NOT FOUND! Where the hell are they???")
+	else
+		--Swap the slots of player/partner around until player is slot 0 and partner is slot 1.
+		--_DATA.Save.ActiveTeam:GetCharIndex(p) returns a charIndex for the p (character) in question. From there, .Char checks the actual slot.
+		 if _DATA.Save.ActiveTeam:GetCharIndex(hero).Char ~= 0 then	
+			--A different call is needed if in a dungeon or in overworld, so check if we're in a dungeon or not.
+			if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+				_DUNGEON:SwitchTeam(0, _DATA.Save.ActiveTeam:GetCharIndex(hero).Char)
+			else 
+				_GROUND:SwitchTeam(0, _DATA.Save.ActiveTeam:GetCharIndex(hero).Char)
+			end 
+		end
+		
+		--Given that the party size is 2 at this point, and the previous check would swap player and partner around, this check is probably unneeded.
+		--But I'm gonna put it here just in case, and also in case i decide to expand on this functionality in the future somehow.
+		if _DATA.Save.ActiveTeam:GetCharIndex(partner).Char ~= 1 then	
+			--A different call is needed if in a dungeon or in overworld, so check if we're in a dungeon or not.
+			if RogueEssence.GameManager.Instance.CurrentScene == RogueEssence.Dungeon.DungeonScene.Instance then
+				_DUNGEON:SwitchTeam(1, _DATA.Save.ActiveTeam:GetCharIndex(partner).Char)
+			else 
+				_GROUND:SwitchTeam(1, _DATA.Save.ActiveTeam:GetCharIndex(partner).Char)
+			end 
+		end
+	end
 	
 	--set slot 0 to the leader just in case player was not in slot 0.
 	GAME:SetTeamLeaderIndex(0)
-	
-	
+		
 	--guests are temporary and are for plot or missions. Delete them all, if they're needed again, whatever put them into your team will place them back in
 	local guestCount = GAME:GetPlayerGuestCount()
 	for i = 1, guestCount, 1 do 
@@ -829,7 +867,6 @@ function GeneralFunctions.DefaultParty(spawn, destructive)
 		
 		
 end
-]]--
 
 
 --does a monologue, centering the text, having it appear instantly and turning off the keysound, then turn centering and auto finish off after.

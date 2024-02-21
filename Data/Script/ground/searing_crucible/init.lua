@@ -35,7 +35,7 @@ end
 --Engine callback function
 function searing_crucible.Enter(map)
 
-  apricorn_glade.PlotScripting()
+  searing_crucible.PlotScripting()
 
 end
 

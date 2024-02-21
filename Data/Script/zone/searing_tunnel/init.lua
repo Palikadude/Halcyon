@@ -5,40 +5,171 @@
 ]]--
 -- Commonly included lua functions and data
 require 'common'
+require 'GeneralFunctions'
 
--- Package name
 local searing_tunnel = {}
-
--------------------------------
--- Zone Callbacks
--------------------------------
----searing_tunnel.Init(zone)
---Engine callback function
+--------------------------------------------------
+-- Map Callbacks
+--------------------------------------------------
 function searing_tunnel.Init(zone)
-
-
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  PrintInfo("=>> Init_searing_tunnel")
+  --Mark this as the last dungeon entered.
+  SV.TemporaryFlags.LastDungeonEntered = 'searing_tunnel'
+  
 end
 
----searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
---Engine callback function
 function searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
-
-
+	if rescuing ~= true then
+		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
+	end
 end
 
----searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
---Engine callback function
+function searing_tunnel.Rescued(zone, mail)
+  COMMON.Rescued(zone, mail)
+end
+
+
 function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
+	GeneralFunctions.RestoreIdleAnim()
+	DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+    GAME:SetRescueAllowed(false)
+	--Below function removes escorts and job items for relevant jobs; run on all segments, escort really shouldn't follow you past the halfway point anyway.
+	--Base Sky behavior kicks you out of the dungeon if you have an escort instead of proceding to the next segment...
+	--I think even though it may be weird they just "disappear" upon exiting the segment, this approach is fine and best from a gameplay perspective.
+	COMMON.ExitDungeonMissionCheck(zone.ID, segmentID)
 
+	if segmentID == 0 then --Searing Tunnel Exit Segment
+	  PrintInfo("=>> ExitSegment_searing_tunnel (Searing Tunnel) result "..tostring(result).." segment "..tostring(segmentID))
 
+		--Died or Escaped
+		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
+			GAME:WaitFrames(20)
+			if SV.ChapterProgression.Chapter == 5 then
+				SV.Chapter5.LostTunnel = true--if escaped or died, they "lost" in the tunnel. Probably won't use it for anything, since it'll take your team long to get through canonically no matter what, but let's mark it for now anyways in case I want to use this.
+				if result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then--Died
+					SV.Chapter5.PlayTempTunnelScene = true
+					SV.Chapter5.TunnelLastExitReason = 'Died'
+					--I use the components of the general function version of this so I can have the textbox pop up after the results screen
+					--this saves the game, so it must be called 2nd to last.
+					GAME:EndDungeonRun(result, "master_zone", -1, 47, 0, true, true)
+					UI:SetSpeaker(GAME:GetPlayerPartyMember(2))--set growlithe as speaker 
+					UI:SetSpeakerEmotion("Pain")
+					UI:WaitShowDialogue("Ruff...[pause=0] We got too reckless...")
+					GAME:WaitFrames(20)
+					GAME:EnterZone("master_zone", -1, 47, 0)--Exit back to Searing Tunnel Entrance
+
+				else--Escaped
+					SV.Chapter5.PlayTempTunnelScene = true
+					SV.Chapter5.TunnelLastExitReason = 'Escaped'
+					GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 47, 0, true, true) --Go to Searing Tunnel Entrance ground map
+				end			
+			else 
+				--Generic first segment death/escape.
+				SV.TemporaryFlags.Dinnertime = true 
+				SV.TemporaryFlags.Bedtime = true
+				SV.TemporaryFlags.MorningWakeup = true 
+				SV.TemporaryFlags.MorningAddress = true 
+				
+				--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor
+				local exit_ground = 6
+				if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
+				
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true)--go to dinner or the 2nd floor depending on whether a mission was done or not.
+			end 
+		
+		--Cleared
+		else
+			--During both Chapter 5 and generic situations, go to the midway point ground, but also end the run. 
+			--The first and second half are treated as two different dungeons for the sake of replays/results.	
+			--there are alternatives (only end the run on death, only end the run on leaving the dungeon itself) but this is less satisfactory as replays will be less organized and more random in what segments they actually contain.
+			if SV.ChapterProgression.Chapter == 5 then 
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 48, 0, false, false)
+			else
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
+			end
+		end 
+
+	elseif segmentID == 1 then --Searing Depths Exit Segment
+	  PrintInfo("=>> ExitSegment_searing_depths (Searing Depths) result "..tostring(result).." segment "..tostring(segmentID))
+		
+		--Died
+		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then
+			GAME:WaitFrames(20)
+			SV.SearingTunnel.DiedPastCheckpoint = true
+			if SV.ChapterProgression.Chapter == 5 then
+				SV.Chapter5.LostTunnel = true
+				--I use the components of the general function version of this so I can have the textbox pop up after the results screen
+				--this saves the game, so it must be called 2nd to last.
+				GAME:EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
+				UI:SetSpeaker(GAME:GetPlayerPartyMember(2))--set growlithe as speaker 
+				UI:SetSpeakerEmotion("Pain")
+				UI:WaitShowDialogue("Ruff...[pause=0] We got too reckless...")
+				GAME:WaitFrames(20)
+				GAME:EnterZone("master_zone", -1, 48, 0)--Exit back to Searing Tunnel Midpoint
+			else 
+				--handle generic flag setting in the overworld's "Want go back?" function
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
+			end 
+		
+		--Escaped - Do not go back to the checkpoint ground, and instead leave the dungeon altogether.
+		elseif result == RogueEssence.Data.GameProgress.ResultType.Escaped then
+			GAME:WaitFrames(20)
+			if SV.ChapterProgression.Chapter == 5 then
+				SV.Chapter5.LostTunnel = true
+				SV.Chapter5.PlayTempTunnelScene = true
+				SV.Chapter5.TunnelLastExitReason = 'Escaped'
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 47, 0, true, true) --Go to Searing Tunnel Entrance ground map		
+			else
+				SV.TemporaryFlags.Dinnertime = true 
+				SV.TemporaryFlags.Bedtime = true
+				SV.TemporaryFlags.MorningWakeup = true 
+				SV.TemporaryFlags.MorningAddress = true 
+				
+				--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor
+				local exit_ground = 6
+				if SV.TemporaryFlags.MissionCompleted then exit_ground = 22 end 
+				
+				--I use the components of the general function version of this so I can have the textbox pop up after the results screen
+				GeneralFunctions.EndDungeonRun(result, "master_zone", -1, exit_ground, 0, true, true)--go to dinner or the 2nd floor depending on whether a mission was done or not.
+			end
+		--Cleared
+		else
+			--Set generic day end flags if chapter is not 5. 
+			--Regardless of chapter, proceed to the ground map for Searing Crucible.
+			if SV.ChapterProgression.Chapter ~= 5 then
+				--set generic flags for generic end of day / start of next day.
+				SV.TemporaryFlags.Dinnertime = true 
+				SV.TemporaryFlags.Bedtime = true
+				SV.TemporaryFlags.MorningWakeup = true 
+				SV.TemporaryFlags.MorningAddress = true 
+			end 	
+			GAME:EnterGroundMap('searing_crucible', 'Main_Entrance_Marker')
+			
+		end 
+		
+	else--Searing Crucible Exit Segment
+	  PrintInfo("=>> ExitSegment_searing_crucible (Searing Crucible) result "..tostring(result).." segment "..tostring(segmentID))
+	  --This segment is only accessible during Chapter 5, for the boss fight.
+		
+		--died to boss
+		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
+			SV.SearingTunnel.DiedPastCheckpoint = true
+			SV.Chapter5.LostToBoss = true
+			SV.Chapter5.JustDiedToBoss = true
+			SV.Chapter5.LostTunnel = true
+			GAME:EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
+			UI:SetSpeaker(GAME:GetPlayerPartyMember(2))--set growlithe as speaker 
+			UI:SetSpeakerEmotion("Pain")
+			UI:WaitShowDialogue("Ruff...[pause=0] We got too reckless...")
+			GAME:WaitFrames(20)
+			GAME:EnterZone("master_zone", -1, 48, 0)--Exit back to Searing Tunnel Midpoint
+		else--beat boss
+			SV.Chapter5.DefeatedBoss = true
+			GeneralFunctions.EndDungeonRun(result, "master_zone", -1, 49, 0, false, false) --Go to Searing Crucible ground map
+		end
+	end 
 end
-
----searing_tunnel.Rescued(zone, name, mail)
---Engine callback function
-function searing_tunnel.Rescued(zone, name, mail)
-
-
-end
+	
 
 return searing_tunnel
-

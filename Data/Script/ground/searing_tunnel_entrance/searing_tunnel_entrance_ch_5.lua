@@ -7,10 +7,10 @@ searing_tunnel_entrance_ch_5 = {}
 
 function searing_tunnel_entrance_ch_5.SetupGround()	
 	if not SV.Chapter5.EnteredTunnel then 
-		local noctowl, tropius, mareep, cranidos, snubbull, audino, breloom, girafarig, tail = 
+		local tropius, noctowl, mareep, cranidos, snubbull, audino, breloom, girafarig, tail = 
 		CharacterEssentials.MakeCharactersFromList({
-			{'Noctowl', 336, 112, Direction.Left},
-			{'Tropius', 304, 112, Direction.Right},
+			{'Tropius', 336, 112, Direction.Left},
+			{'Noctowl', 304, 112, Direction.Right},
 			{'Mareep', 276, 260, Direction.UpLeft},
 			{'Cranidos', 240, 260, Direction.UpRight},
 			{'Snubbull', 276, 224, Direction.DownLeft},
@@ -30,7 +30,7 @@ function searing_tunnel_entrance_ch_5.SetupGround()
 		local noctowl, tropius = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Noctowl', 336, 112, Direction.Left},
-			{'Tropius', 304, 112, Direction.Right}
+			{'Tropius', 376, 128, Direction.Down}
 		})
 			
 		--set rin and coco to spawn from the spawners, then spawn them
@@ -41,8 +41,8 @@ function searing_tunnel_entrance_ch_5.SetupGround()
 		local zigzagoon = GROUND:SpawnerDoSpawn("TEAMMATE_3")
 		
 		--teleport them to their new spot.
-		GROUND:TeleportTo(growlithe, 224, 216, Direction.Up)
-		GROUND:TeleportTo(zigzagoon, 272, 216, Direction.Up)
+		GROUND:TeleportTo(growlithe, 360, 152, Direction.Right)
+		GROUND:TeleportTo(zigzagoon, 392, 152, Direction.Left)
 	end
 end
 
@@ -183,14 +183,16 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 											GROUND:CharAnimateTurnTo(cranidos, Direction.DownLeft, 4) end)
 	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
 											GROUND:CharEndAnim(mareep) 
-											AI:DisableCharacterAI(mareep)										
+											AI:DisableCharacterAI(mareep)	
+											GROUND:CharSetEmote(mareep, "", 0)
 											GROUND:CharAnimateTurnTo(mareep, Direction.DownLeft, 4) end)
 	local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
 											GROUND:CharEndAnim(zigzagoon) 
 											GROUND:CharAnimateTurnTo(zigzagoon, Direction.Left, 4) end)
 	local coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(8)
 											GROUND:CharEndAnim(growlithe) 
-											AI:DisableCharacterAI(growlithe)										
+											AI:DisableCharacterAI(growlithe)		
+											GROUND:CharSetEmote(growlithe, "", 0)
 											GROUND:CharAnimateTurnTo(growlithe, Direction.Left, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6})
 	
@@ -260,7 +262,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:SetSpeaker(snubbull)
 	UI:SetSpeakerEmotion("Special0")
 	UI:WaitShowDialogue("A culinary adventure,[pause=10] of course. "  .. STRINGS:Format("\\u266A") .. "[pause=0]\nIt's time to prepare my next masterpiece!")
-	UI:WaitShowDialogue("I found some Rabuta Berries during our travels that I think will make an excellent dish if blanched.") 
+	UI:WaitShowDialogue("I found some Rabuta Berries during our travels that I think will make an excellent dinner blanched.") 
 	GAME:WaitFrames(20)
 	UI:SetSpeakerEmotion("Happy")
 	UI:WaitShowDialogue(hero:GetDisplayName() .. ",[pause=10] " .. partner:GetDisplayName() .. "...[pause=0] Thank you for accompanying " .. audino:GetDisplayName() .. " and I today.")
@@ -280,7 +282,8 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	GAME:WaitFrames(10)
 	UI:SetSpeaker(audino)
-	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(snubbull, 352, 112, false, 1) 
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(snubbull, Direction.UpRight, 4)
+											GeneralFunctions.EightWayMove(snubbull, 352, 112, false, 1) 
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(60) 
 											GROUND:CharAnimateTurnTo(audino, Direction.UpRight, 4)
@@ -305,12 +308,12 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeaker(audino)
 	UI:WaitShowDialogue("Well sure![pause=0] I know we're d-done with the steppe,[pause=10] so we don't have to team up anymore...")
-	UI:WaitShowDialogue("I r-really enjoyed adventuring with you two today,[pause=10] so I thought we could k-keep it going!")
+	UI:WaitShowDialogue("But I r-really enjoyed adventuring with you two today,[pause=10] so I thought we could k-keep it going!")
 	UI:WaitShowDialogue("Just because we're not assigned to each other anymore doesn't mean we can't still work together!")
 	UI:WaitShowDialogue("And d-don't worry about having no experience cooking.[pause=0] You'll just be helping out!")
 	UI:SetSpeakerEmotion("Happy")
 	GROUND:CharSetEmote(audino, "glowing", 0)
-	UI:WaitShowDialogue("B-besides,[pause=10] with some of the " .. '"delicacies" that ' .. snubbull:GetDisplayName() .. " makes...[br]...sometimes I feel like she doesn't have any experience either!")
+	UI:WaitShowDialogue("B-besides,[pause=10] with some of the " .. '"delicacies" that ' .. snubbull:GetDisplayName() .. " makes...[br]...sometimes I feel like she doesn't have any cooking experience either!")
 	GAME:WaitFrames(20)
 	
 	GROUND:CharSetEmote(audino, "", 0)
@@ -338,11 +341,14 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:WaitShowDialogue("Wonderful![pause=0] Let's get to work then!")
 	GAME:WaitFrames(20)
 	
-	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 352, 152, false, 1) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
+											GeneralFunctions.EightWayMove(partner, 352, 160, false, 1) end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(32) 
-											GeneralFunctions.EightWayMove(hero, 352, 152, false, 1) end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(28)
-											GeneralFunctions.EightWayMove(audino, 352, 152, false, 1) end)
+											GROUND:CharAnimateTurnTo(hero, Direction.DownRight, 4)
+											GeneralFunctions.EightWayMove(hero, 352, 160, false, 1) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(36)
+											--GROUND:CharAnimateTurnTo(audino, Direction.UpRight, 4)
+											GeneralFunctions.EightWayMove(audino, 352, 160, false, 1) end)
 	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(120)
 											SOUND:FadeOutBGM(60)
 											GAME:FadeOut(false, 60) end)
@@ -391,12 +397,12 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:TeleportTo(hero, bed1X + 13, bed1Y + 10, Direction.Down) 
 	GROUND:TeleportTo(partner, bed2X + 13, bed2Y + 10, Direction.Down) 
 	GROUND:TeleportTo(growlithe, bed3X + 13, bed3Y + 10, Direction.Down) 
-	GROUND:TeleportTo(zigzagoon, bed4X + 13, bed4Y + 10, Direction.Up) 
+	GROUND:TeleportTo(zigzagoon, bed4X + 13, bed4Y + 10, Direction.Right) 
 	GROUND:TeleportTo(audino, bed5X + 13, bed5Y + 10, Direction.Up) 
-	GROUND:TeleportTo(snubbull, bed6X + 13, bed6Y + 10, Direction.Up) 
-	GROUND:TeleportTo(mareep, bed7X + 13, bed7Y + 10, Direction.Up) 
-	GROUND:TeleportTo(cranidos, bed8X + 13, bed8Y + 10, Direction.Up) 
-	GROUND:TeleportTo(girafarig, bed9X + 13, bed9Y + 10, Direction.Down) 
+	GROUND:TeleportTo(snubbull, bed6X + 13, bed6Y + 10, Direction.Down) 
+	GROUND:TeleportTo(mareep, bed7X + 13, bed7Y + 10, Direction.Right) 
+	GROUND:TeleportTo(cranidos, bed8X + 13, bed8Y + 10, Direction.Right) 
+	GROUND:TeleportTo(girafarig, bed9X + 13, bed9Y + 10, Direction.Left) 
 	GROUND:TeleportTo(breloom, bed10X + 13, bed10Y + 10, Direction.Down) 
 	GROUND:TeleportTo(tropius, bed11X + 13, bed11Y + 10, Direction.Down) 
 	GROUND:TeleportTo(noctowl, bed12X + 13, bed12Y + 10, Direction.Down) 
@@ -452,11 +458,10 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 													RogueElements.Loc(0, 0), 
 													false, 
 													"Food10")
-	local food11 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Food", 1, 0, 0), 
+	local food11 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ItemAnimData("Banana_Yellow", 1, 0, 0), --itemanimdata for the banana instead!
 													RogueElements.Rect(bed11X + 13, bed11Y + 17, 16, 16),
 													RogueElements.Loc(0, 0), 
 													false,
-													--RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action, --need this as the overload instead of the false for itemanimdata
 													"Food11")	
 	local food12 = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("Food", 1, 0, 0), 
 													RogueElements.Rect(bed12X + 13, bed12Y + 17, 16, 16),
@@ -601,12 +606,16 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:CharEndAnim(noctowl)
 	GAME:WaitFrames(30)
 	
+	--expeditionTODO: Make this camera movement cleaner
 	GROUND:CharAnimateTurnTo(breloom, Direction.Left, 4)
 	GeneralFunctions.EightWayMoveRS(breloom, 312, 158, false, 1)
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMoveRS(breloom, 240, 144, false, 1) 
 											GROUND:CharAnimateTurnTo(breloom, Direction.UpRight, 4)
 											end)
-	coro2 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, nil, nil, 264, 140) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(28)
+											GAME:MoveCamera(264, 168, 16, false)
+											GAME:MoveCamera(264, 140, 28, false)
+											end)
 	TASK:JoinCoroutines({coro1, coro2})
 	
 	UI:SetSpeaker(breloom)
@@ -623,17 +632,22 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(zigzagoon)
-	UI:WaitShowDialogue("Don't worry,[pause=10] " .. breloom:GetDisplayName() .. ",[pause=10] we'll turn in soon.")
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Today was just so exciting,[pause=10] it's hard to fall asleep!")
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("Don't worry,[pause=10] " .. breloom:GetDisplayName() .. ",[pause=10] we'll turn in soon.")
+											UI:SetSpeakerEmotion("Happy")
+											UI:WaitShowDialogue("Today was just so exciting,[pause=10] it's hard to fall asleep!")
+											end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(16)
+											GROUND:CharTurnToCharAnimated(breloom, zigzagoon, 4) 
+											end)
+	TASK:JoinCoroutines({coro1, coro2})
 	GAME:WaitFrames(20)
  
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Say,[pause=10] " .. breloom:GetDisplayName() .. "...[pause=0] You said everyone else is asleep,[pause=10] but " .. noctowl:GetDisplayName() .. " is still awake.")
 	UI:WaitShowDialogue("Shouldn't he be getting some rest as well?")
-	GAME:WaitFrames(20)
+	GAME:WaitFrames(12)
 	
-	GROUND:CharTurnToChar(breloom, partner)
+	GROUND:CharTurnToCharAnimated(breloom, partner, 4)
 	UI:SetSpeaker(breloom)
 	UI:WaitShowDialogue("Nah,[pause=10] " .. noctowl:GetDisplayName() .. " doesn't sleep much at night.[pause=0] A " .. _DATA:GetMonster('noctowl'):GetColoredName() .. " like him is built for the night!")
 	UI:SetSpeakerEmotion("Worried")
@@ -683,12 +697,15 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:SetSpeakerEmotion("Happy")
 
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("I know right?[pause=0] It was awesome adventuring with " .. audino:GetDisplayName() .. " and " .. snubbull:GetDisplayName() .. "!") 
-											UI:WaitShowDialogue("Even though they usually stick to work around the guild,[pause=10] they're very skilled adventurers!") end)
+											UI:WaitShowDialogue("Even though they usually stick to work around the guild,[pause=10] they're very skilled adventurers!")
+											UI:WaitShowDialogue("I'm glad we got to team up with them.[pause=0] I had a nice time helping them prepare dinner too!")
+											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharTurnToCharAnimated(growlithe, partner, 4 ) end)
-	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) 	--kino lies down here, but doesn't fall asleep immediately	
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(18) GROUND:CharAnimateTurnTo(zigzagoon, Direction.UpLeft, 4 ) end)
+	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) 	--kino lies down here, but doesn't fall asleep immediately	
 											GROUND:CharSetAction(breloom, RogueEssence.Ground.FrameGroundAction(breloom.Position, breloom.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex("Sleep"), 0))
 											end)
-	TASK:JoinCoroutines({coro1, coro2})
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(zigzagoon)
@@ -698,8 +715,6 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:WaitShowDialogue("My alamancs are gonna be chock-full of new information by the time this expedition is over!")
 	--these notes are gonna be about movement speed in his almanac later. Also L-Shaped positioning
 	
-	--hero zones out
-	GROUND:EntTurn(hero, Direction.Down)
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(growlithe)
 	UI:WaitShowDialogue("I'm just happy to be adventuring with everyone again,[pause=10] ruff!")
@@ -715,6 +730,8 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	--really excited to see who we get to team up with tomorrow
 	
 	GAME:WaitFrames(20)
+	--hero zones out
+	GROUND:EntTurn(hero, Direction.Down)
 	UI:SetSpeaker(partner)
 	UI:WaitShowDialogue("Teaming up would be awesome,[pause=10] but I don't know how much you'd learn from studying us.")
 	UI:SetSpeakerEmotion("Happy")
@@ -732,7 +749,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("That would be fantastic,[pause=10] go ahead!")
+	UI:WaitShowDialogue("I'm game![pause=0] Let's do it!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(zigzagoon)
@@ -742,26 +759,27 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	local stopTalking = false
 	
 	SOUND:FadeOutSE('AMB_Fire_Loud', 60)	
-	GAME:WaitFrames(30)
+	GAME:WaitFrames(20)
 	--he falls asleep
 	GROUND:CharSetAnim(breloom, "Sleep", true)
-	GAME:WaitFrames(30)
+	GAME:WaitFrames(10)
+	GAME:MoveCamera(213, 140, 51, false)
+	GAME:WaitFrames(20)
 	UI:SetSpeaker('', false, hero.CurrentForm.Species, hero.CurrentForm.Form, hero.CurrentForm.Skin, hero.CurrentForm.Gender)
 	UI:SetSpeakerEmotion("Worried")
-	GAME:MoveCamera(213, 140, false, 51)
 	--hero zones out during this conversation
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("(.........)")
 											UI:WaitShowDialogue("(Today was fun,[pause=10] but something's been bothering me and I can't get my mind off of it.)") 
 											UI:WaitShowDialogue("(The strange tension...[pause=0] I've been feeling it ever since " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " got back.)")
 											UI:WaitShowDialogue("(What's more is that it's been growing a little more intense each day we've been on the road.)")
-											UI:WaitShowDialogue("(I thought that maybe I was confusing it with the excitement of the expedition...)")
-											UI:WaitShowDialogue("(And while I am enjoying the expedition,[pause=10] I'm certain now this tension is something different.)")
-											UI:WaitShowDialogue("(It's almost like it's compelling me to keep moving forward.[pause=0] I would have done that anyways,[pause=10] but...)")
+											UI:WaitShowDialogue("(I thought that maybe I was just excited about the expedition...)")
+											UI:WaitShowDialogue("(And while I am excited,[pause=10] I'm certain now this tension is something different.)")
+											UI:WaitShowDialogue("(It's like it's urging me to keep moving forward.[pause=0] I would have done that anyways,[pause=10] but...)")
 											stopTalking = true
 											UI:WaitShowDialogue("(It does make me wonder why I'm having these strange feelings in the first place.[pause=0] What do they mean?)") 
-											UI:WaitShowDialogue("(What triggered[script=0] them all those times in the past?", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "question", 1) end) end}) 
-											UI:WaitShowDialogue("(Why is the feeling growing stronger[script=0] with each day that passes on this expedition?)", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "happy", 4) end) end}) 
-											UI:WaitShowDialogue("(Could they be related to[script=0] this expedition somehow?)", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "happy", 4) end) end})  
+											UI:WaitShowDialogue("(What triggered[script=0] them all those times in the past?)", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "question", 1) end) end}) 
+											UI:WaitShowDialogue("(Why is the feeling growing stronger[script=0] with each day that passes on this expedition?)", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "happy", 3) end) end}) 
+											UI:WaitShowDialogue("(Could [script=0]they be related somehow?)", {function() TASK:BranchCoroutine(function() GROUND:CharSetEmote(partner, "happy", 3) end) end})  
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											while not stopTalking do 
@@ -810,18 +828,18 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Are you feeling alright?[pause=0] I kept calling your name but you weren't responding!")
-	UI:WaitShowDialogue("You looked pretty zoned out.[pause=0] You must be feeling pretty exhausted after today!")
+	UI:WaitShowDialogue("You looked zoned out.[pause=0] You must be feeling pretty exhausted after today!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, growlithe, 4)
 	GROUND:CharTurnToCharAnimated(hero, zigzagoon, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Well,[pause=10] it is getting pretty late.[pause=0] I'm sure all of us are exhausted after today!")
+	UI:WaitShowDialogue("Well,[pause=10] it is getting late.[pause=0] I'm sure all of us are exhausted after today!")
 	UI:WaitShowDialogue("Let's hit the hay for the night.[pause=0] We need our sleep if we're gonna do our best tomorrow!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(zigzagoon)
-	UI:WaitShowDialogue("Agreed.[pause=0] My mind's still racing,[pause=10] but I'll just have to do my best to sleep anyways!")
+	UI:WaitShowDialogue("Agreed.[pause=0] My mind's still racing,[pause=10] but I'll just have to try to sleep anyways!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(growlithe)
@@ -951,10 +969,10 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:WaitShowDialogue(breloom:GetDisplayName() .. "![pause=0] It's t-time to get up!")
 	
 	GAME:WaitFrames(20)
-	SOUND:FadeOutBGM(60)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue(breloom:GetDisplayName() .. "?")
-	
+
+	SOUND:FadeOutBGM(60)	
 	GAME:WaitFrames(20)
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMoveRS(audino, 160, 144, false, 1)
 											GeneralFunctions.EightWayMove(audino, 160, 121, false, 1) end)
@@ -964,8 +982,9 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	coro5 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(mareep, audino, 4, Direction.Up) end)
 	coro6 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(zigzagoon, audino, 4, Direction.UpLeft) end)
 	coro7 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(girafarig, audino, 4, Direction.UpRight) end)
+	coro8 = TASK:BranchCoroutine(function() GeneralFunctions.FaceMovingCharacter(snubbull, audino, 4, Direction.UpLeft) end)
 	
-	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7})
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8})
 
 	GAME:WaitFrames(10)
 	GeneralFunctions.Complain(audino)
@@ -983,9 +1002,10 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GAME:WaitFrames(10)
 	UI:SetSpeaker(audino)
 	UI:SetSpeakerEmotion("Sigh")
-	UI:WaitShowDialogue("T-this may take a while...")
+	UI:WaitShowDialogue("Th-this may take a while...")
+	GAME:WaitFrames(10)
 	GROUND:CharAnimateTurnTo(audino, Direction.DownRight, 4)
-	UI:SetSpeakerEmotion("Normal")
+	--UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("Could the rest of you please start packing up the camp while I wake him up?")
 	GAME:WaitFrames(40)
 	
@@ -1040,50 +1060,50 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:WaitShowDialogue("Once we pass through it,[pause=10] we'll be at the foot of the mountains where " .. ruins:GetColoredName() .. " are!")
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToChar(tropius, breloom)
-	UI:WaitShowDialogue(breloom:GetDisplayName() .. ",[pause=10] now that you're awake,[pause=10] could you tell us about this mystery dungeon?")
+	UI:WaitShowDialogue(breloom:GetDisplayName() .. ",[pause=10] now that you're finally awake,[pause=10] could you tell us about this mystery dungeon?")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(breloom)
 	UI:WaitShowDialogue("Sure thing,[pause=10] Guildmaster!")
 	GAME:WaitFrames(10)
 	
-	coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
-											GROUND:MoveInDirection(breloom, Direction.Up, 16, false, 1) 
-											GROUND:CharAnimateTurnTo(breloom, Direction.Down, 4)
-											end)
-	coro2 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(noctowl, "Walk", Direction.Down, Direction.Up, 8, 1, 1) end)
+	--coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+	--										GROUND:MoveInDirection(breloom, Direction.Up, 16, false, 1) 
+	--										GROUND:CharAnimateTurnTo(breloom, Direction.Down, 4)
+	--										end)
+	--coro2 = TASK:BranchCoroutine(function() GROUND:AnimateInDirection(noctowl, "Walk", Direction.Down, Direction.Up, 8, 1, 1) end)
 	
-	TASK:JoinCoroutines({coro1, coro2})
+	--TASK:JoinCoroutines({coro1, coro2})
 
 
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("The tunnel is long and narrow.[pause=0] It shouldn't be too hard for you to find your way forward.")
 											UI:WaitShowDialogue("But,[pause=10] like the name suggests,[pause=10] this place is also hot hot hot![pause=0] There's lava everywhere!")
 											UI:SetSpeakerEmotion("Worried")
 											UI:WaitShowDialogue("...Well,[pause=10] sort of.")
-											UI:WaitShowDialogue("The lava in the tunnel is inconsistent.[pause=0] Sometimes there's lava and other times there's none at all!")
-											UI:WaitShowDialogue("Once we got far enough,[pause=10] there'd even be way too much lava![pause=0] We had a lot of trouble when that happened.")
+											UI:WaitShowDialogue("The lava in the tunnel is... inconsistent?[pause=0] Sometimes there's lava and other times there's none at all!")
+											UI:WaitShowDialogue("Once we got far enough,[pause=10] the tunnel would be flooded with lava![pause=0] We had a lot of trouble in those parts.")
 											UI:WaitShowDialogue("You should all be careful and change up how you maneuver based on the lava level!")
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) 
 											GROUND:CharAnimateTurnTo(growlithe, Direction.Left, 4)										
 											end)
 	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(14) 
-											GROUND:CharAnimateTurnTo(zigzagoon, Direction.UpLeft, 4)										
+											GROUND:CharAnimateTurnTo(zigzagoon, Direction.Left, 4)										
 											end)
 	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(18) 
 											GROUND:CharAnimateTurnTo(cranidos, Direction.UpLeft, 4)
 											end)
 	coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) 
-											GROUND:CharAnimateTurnTo(mareep, Direction.UpLeft, 4)
+											GROUND:CharAnimateTurnTo(mareep, Direction.Left, 4)
 											end)
 	coro6 = TASK:BranchCoroutine(function() GAME:WaitFrames(22) 
-											GROUND:CharAnimateTurnTo(snubbull, Direction.UpLeft, 4)
+											GROUND:CharAnimateTurnTo(snubbull, Direction.Left, 4)
 											end)	
 	coro7 = TASK:BranchCoroutine(function() GAME:WaitFrames(14) 
 											GROUND:CharAnimateTurnTo(audino, Direction.UpLeft, 4)
 											end)	
 	coro8 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
-											GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
+											GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 											end)	
 	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(30) 
 											GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
@@ -1098,7 +1118,8 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 											UI:WaitShowDialogue("With all that lava,[pause=10] everyone should prepare for burns and Fire-type opponents.")
 											--UI:WaitShowDialogue("Maybe i make a comment about the unstability being especially worrying") --KINO will comment on the instability being strange. Tropius doesn't need to be the one to foreshadow every time, too spoonfeedy i think.
 											UI:WaitShowDialogue("I want all our teams to take caution when traveling through here.[pause=0] Make sure to keep each other safe!")
-											UI:WaitShowDialogue("Speaking of teams,[pause=10] it's time to announce the groups!")
+											UI:WaitShowDialogue("And remember,[pause=10] " .. noctowl:GetDisplayName() .. " and I have extra supplies if you're struggling with the dungeon.")
+											UI:WaitShowDialogue("Now,[pause=10] it's time to announce the teams!")
 											UI:WaitShowDialogue("Our first team will be " .. mareep:GetDisplayName() .. ",[pause=10] " .. cranidos:GetDisplayName() .. ",[pause=10] " .. audino:GetDisplayName() .. ",[pause=10] and " .. snubbull:GetDisplayName() .. ".")
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) 
@@ -1123,8 +1144,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 											GROUND:CharAnimateTurnTo(partner, Direction.UpRight, 4)
 											end)	
 	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(14) 
-											GROUND:MoveInDirection(breloom, Direction.Down, 16, false, 1)
-											GROUND:CharAnimateTurnTo(breloom, Direction.UpRight, 4)
+											GROUND:CharAnimateTurnTo(breloom, Direction.Up, 4)
 											end)	
 	--coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(30) 
 	--										GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4)
@@ -1158,20 +1178,30 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10})	
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(snubbull)
-	UI:WaitShowDialogue("I say something about them being pretty strong with all the outlaws they go after.")
+	local heal_bell = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("heal_bell")
+	UI:SetSpeaker(audino)
+	UI:WaitShowDialogue("I guess w-we're teaming up this time![pause=0] I'll do my best to keep us healthy with " .. heal_bell:GetColoredName() .. "!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(cranidos)
-	UI:WaitShowDialogue("I say something rude about them being the maids of the guild-")
+	UI:WaitShowTimedDialogue("Hmmph,[pause=10] stuck with the housekeepers of the-", 40)
 	GAME:WaitFrames(20)
 	
+	GeneralFunctions.DoubleHop(mareep)
+	GROUND:CharSetEmote(mareep, "happy", 0)
+	GROUND:CharSetAnim(mareep, "Idle", true)
 	UI:SetSpeaker(mareep)
-	UI:WaitShowDialogue("I interrupt in my usual ditzy way. (they're all girls?)")
+	UI:SetSpeakerEmotion("Happy")
+	UI:WaitShowDialogue("Ya-a-a-ay![pause=0] I've never been on an adventure with you two before!")
+	UI:WaitShowDialogue("I'm amped to see what you ga-a-a-als can do![pause=0] Aren't you as well,[pause=10] " .. cranidos:GetDisplayName() .. "?")
 	GAME:WaitFrames(20)
 	
+	GROUND:CharEndAnim(mareep)
+	GROUND:CharSetEmote(mareep, "", 0)
 	UI:SetSpeaker(cranidos)
-	UI:WaitShowDialogue("I fold like the pussy-whipped bitch that I am.")
+	UI:SetSpeakerEmotion("Surprised")
+	GROUND:CharSetEmote(cranidos, "sweating", 1)
+	UI:WaitShowDialogue("Oh,[pause=10] uh...[pause=0] Yeah![pause=0] I can't wait!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(tropius)
@@ -1249,7 +1279,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue(growlithe:GetDisplayName() .. "...[pause=0] This place is very dangerous.")
-											UI:WaitShowDialogue("Please...[pause=0] Don't be too reckless,[pause=10] and stay safe.") 
+											UI:WaitShowDialogue("Please...[pause=0] Don't be too reckless,[pause=10] OK?") 
 											end)
 	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(12)
 											GROUND:CharAnimateTurnTo(growlithe, Direction.UpLeft, 4)
@@ -1270,7 +1300,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	coro9 = TASK:BranchCoroutine(function() GAME:WaitFrames(20)
 											GROUND:CharAnimateTurnTo(hero, Direction.UpRight, 4) end)
 	coro10 = TASK:BranchCoroutine(function() GAME:WaitFrames(14)
-											 GROUND:CharAnimateTurnTo(breloom, Direction.UpRight, 4) end)
+											 GROUND:CharAnimateTurnTo(breloom, Direction.Up, 4) end)
 	coro11 = TASK:BranchCoroutine(function() GAME:WaitFrames(18)
 											 GROUND:CharAnimateTurnTo(girafarig, Direction.Up, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10, coro11})
@@ -1283,7 +1313,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GROUND:CharTurnToCharAnimated(tropius, partner, 4)
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("This goes for you two and " .. zigzagoon:GetDisplayName() .. " as well.[pause=0] Protect each other in there.")
+	UI:WaitShowDialogue("That goes for you two and " .. zigzagoon:GetDisplayName() .. " as well.[pause=0] Protect each other in there.")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(partner)
@@ -1293,13 +1323,13 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Thank you.[pause=0] I'm placing my trust in you,[pause=10] I know you all can do it.")
+	UI:WaitShowDialogue("Thank you.[pause=0] I'm putting my trust in you.")
 	GAME:WaitFrames(30)
 	
 	
 	GROUND:EntTurn(tropius, Direction.Down)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("...That covers everything on the docket.[pause=0] We should all get moving.")
+	UI:WaitShowDialogue("...That covers everything.[pause=0] We should all get moving.")
 	UI:WaitShowDialogue("Like before,[pause=10] take some time now to prepare yourselves.")
 	UI:WaitShowDialogue("When your team is ready,[pause=10] head into the tunnel towards our last stop before " .. ruins:GetColoredName() .. ".")
 	UI:SetSpeakerEmotion("Happy")
@@ -1352,10 +1382,10 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	--Default the party DESTRUCTIVELY to delete Rin and Coco.
 	GeneralFunctions.DefaultParty(false, true)
 	--reinitialize the hero and partner variables after respawning the party.
-	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch.
-	--hero = CH('PLAYER')
-	--partner = CH('Teammate1')
-	--partner.CollisionDisabled = true
+	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch. dunno why, since i thought i fixed default party...
+	hero = CH('PLAYER')
+	partner = CH('Teammate1')
+	partner.CollisionDisabled = true
 	
 	--Setup Hyko and Almotz.
 	local growlithe_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
@@ -1409,10 +1439,10 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GAME:GetCurrentGround():RemoveTempChar(cranidos)
 	GAME:GetCurrentGround():RemoveTempChar(mareep)
 		
-	noctowl, tropius, mareep, cranidos, snubbull, audino, breloom, girafarig, tail = 
+	tropius, noctowl, mareep, cranidos, snubbull, audino, breloom, girafarig, tail = 
 		CharacterEssentials.MakeCharactersFromList({
-			{'Noctowl', 336, 112, Direction.Left},
-			{'Tropius', 304, 112, Direction.Right},
+			{'Tropius', 336, 112, Direction.Left},
+			{'Noctowl', 304, 112, Direction.Right},
 			{'Mareep', 276, 260, Direction.UpLeft},
 			{'Cranidos', 240, 260, Direction.UpRight},
 			{'Snubbull', 276, 224, Direction.DownLeft},
@@ -1457,6 +1487,8 @@ function searing_tunnel_entrance_ch_5.Noctowl_Action(chara, activator)
 	--Guildmaster insisted on handing out potential supplies to your team, so talk to him.
 	--...Why does the Guildmaster worry over Hyko so much? There's a reason... But it's not my story to tell.
 	
+	--He sleeps if you die and visit him. This is where he finds his rest after all.
+	
 end 
 
 function searing_tunnel_entrance_ch_5.Breloom_Action(chara, activator)
@@ -1494,98 +1526,138 @@ function searing_tunnel_entrance_ch_5.Cranidos_Action(chara, activator)
 end 
 
 
+function searing_tunnel_entrance_ch_5.RetreatedCutscene()
+
+end 
 
 
-
-function searing_tunnel_entrance_ch_5.FailedCutscene()
+function searing_tunnel_entrance_ch_5.DiedCutscene()
 
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
-	local snubbull = CH('Teammate2')
-	local audino = CH('Teammate3')
+	local growlithe = CH('Teammate2')
+	local zigzagoon = CH('Teammate3')
 	local tropius = CH('Tropius')
 	local noctowl = CH('Noctowl')
-	local coro1, coro2, coro3
+	local coro1, coro2, coro3, coro4
 	
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
-	GROUND:TeleportTo(partner, 264, 184, Direction.Right)
-	GROUND:TeleportTo(hero, 232, 184, Direction.Left)
+	SOUND:StopBGM()
+	GROUND:TeleportTo(partner, 396, 184, Direction.Right)
+	GROUND:TeleportTo(hero, 356, 184, Direction.Left)
 	
-	GROUND:EntTurn(snubbull, Direction.Up)
-	GROUND:EntTurn(audino, Direction.Up)
-
-	GROUND:CharSetAnim(tropius, "Idle", true)	
 	GROUND:CharSetAnim(noctowl, "Idle", true)
-		
-	if SV.Chapter5.DiedSteppe then 
-		GROUND:CharSetAnim(partner, "EventSleep", true)
-		GROUND:CharSetAnim(hero, "EventSleep", true)
-		
-		GAME:MoveCamera(256, 192, 1, false)
-		
-		GAME:FadeIn(40)
-		GAME:WaitFrames(120)
-		
-		coro1 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(hero, 'Wake') end)
-		coro2 = TASK:BranchCoroutine(function () GeneralFunctions.DoAnimation(partner, 'Wake') end)
+	GAME:MoveCamera(384, 148, 1, false)
+	--148
+	
+	--todo: if growlithe gets eventsleep/wake animations, use them here.
+	GROUND:CharSetAnim(partner, "EventSleep", true)
+	GROUND:CharSetAnim(hero, "EventSleep", true)
+	GAME:WaitFrames(10)--to offset their breathing cycles
+	GROUND:CharSetAnim(growlithe, "Sleep", true)
+	GROUND:CharSetAnim(zigzagoon, "EventSleep", true)
+			
+	GAME:FadeIn(40)
+	SOUND:PlayBGM('Spring Cave.ogg', true)
+	GAME:WaitFrames(60)
+	
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Surprised")
+	UI:WaitShowDialogue("H-hey![pause=0] Are you all OK!?[pause=0] " .. growlithe:GetDisplayName() .. "!?")
+	GAME:WaitFrames(30)
+	
+	UI:SetSpeaker(growlithe)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("...Huh?")
+	GAME:WaitFrames(10)
+	
+	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.DoAnimation(hero, 'Wake')
+											GAME:WaitFrames(10) 
+											GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+											GAME:WaitFrames(40)
+											GeneralFunctions.LookAround(hero, 3, 4, false, false, false, Direction.Left)
+											end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10)
+											GeneralFunctions.DoAnimation(partner, 'Wake')
+											GAME:WaitFrames(15) 
+											GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+											GAME:WaitFrames(40)
+											GeneralFunctions.LookAround(partner, 3, 4, false, false, true, Direction.Right)
+											end)	
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+											GeneralFunctions.DoAnimation(zigzagoon, 'Wake')
+											GAME:WaitFrames(10) 
+											GROUND:CharAnimateTurnTo(zigzagoon, Direction.Down, 4)
+											GAME:WaitFrames(40)
+											GeneralFunctions.LookAround(zigzagoon, 3, 4, false, false, true, Direction.Down)
+											end)
+	coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(26) 
+										    GeneralFunctions.DoAnimation(growlithe, 'Rumble')
+											GAME:WaitFrames(12)
+											GROUND:CharAnimateTurnTo(growlithe, Direction.Down, 4)
+											GAME:WaitFrames(40)
+											GeneralFunctions.LookAround(growlithe, 3, 4, false, false, false, Direction.Down) 
+											end)
 
-		TASK:JoinCoroutines({coro1, coro2})
-		
-		coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
-		coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
-		TASK:JoinCoroutines({coro1, coro2})
-		
-		GAME:WaitFrames(20)
-		
-		coro1 = TASK:BranchCoroutine(function () GeneralFunctions.LookAround(partner, 2, 4, false, false, false, Direction.Right) end)
-		coro2 = TASK:BranchCoroutine(function () GAME:WaitFrames(10) GeneralFunctions.LookAround(hero, 2, 4, false, false, false, Direction.Left) end)
-		TASK:JoinCoroutines({coro1, coro2})	
-		
-		GAME:WaitFrames(30)
-		
-		coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Down, 4) end)
-		coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Down, 4) end)
-	elseif SV.Chapter5.EscapedSteppe then
-		GROUND:EntTurn(hero, Direction.Down)
-		GROUND:EntTurn(partner, Direction.Down)
-	end
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+	GAME:WaitFrames(30)
+	
+	coro1 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(hero, Direction.Up, 4) end)
+	coro2 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(partner, Direction.Up, 4) end)
+	coro3 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(zigzagoon, Direction.Up, 4) end)
+	coro4 = TASK:BranchCoroutine(function () GROUND:CharAnimateTurnTo(growlithe, Direction.Up, 4) end)
+	
+	TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 
-	--todo: if snubbull gets eventsleep/wake animations, use them here.
-	UI:SetSpeaker(partner)
-	UI:SetSpeakerEmotion('Pain')
-	GROUND:CharSetEmote(partner, 'sweating', 1)		
-	UI:WaitShowDialogue("Ugh...[pause=0] This steppe is no joke!")
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Surprised")
+	GROUND:CharSetEmote(tropius, "sweating", 1)
+	UI:WaitShowDialogue("Are you alright!?[pause=0] What happened!?")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(snubbull)
+	UI:SetSpeaker(partner)
+	UI:WaitShowDialogue("We're OK,[pause=10] Guildmaster.[pause=0] Just encountered some trouble in the tunnel.")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(growlithe)
+	UI:WaitShowDialogue("Yeah,[pause=10] but it's nothing we can't handle,[pause=10] ruff!")
+	UI:WaitShowDialogue("We'll get it done for sure next time!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(tropius)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("It's definitely as difficult as " .. CharacterEssentials.GetCharacterName("Breloom") .. " made it out to be!")
+	UI:WaitShowDialogue("If you say so...[pause=0] But please,[pause=10] be more careful!")
+	UI:WaitShowDialogue("I don't want to see you wiped out like that again.")
+	GAME:WaitFrames(10)
+	GROUND:CharAnimateTurnTo(tropius, Direction.UpLeft, 4)
+	GAME:WaitFrames(60)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	
+	UI:WaitShowDialogue("Here,[pause=10] these supplies should help you get through the tunnel.[pause=0] Please,[pause=10] take them!")
+	GAME:WaitFrames(20)
+	GeneralFunctions.RewardItem("food_apple")
+	GeneralFunctions.RewardItem("berry_oran")
+	GeneralFunctions.RewardItem("berry_oran")
+	GeneralFunctions.RewardItem("berry_leppa")
+	GeneralFunctions.RewardItem("berry_rawst")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Good luck,[pause=10] and stay safe.[pause=0] I know you can do it.")
 	GAME:WaitFrames(20)
 	
-	UI:SetSpeaker(partner)
-	--UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("We can't give up though![pause=0] We just have to try again![script=0]", {function() TASK:BranchCoroutine(function() GeneralFunctions.Hop(partner) end) end})
-	GAME:WaitFrames(20)
-	
-	UI:SetSpeaker(audino)
-	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Y-yeah![pause=0] The supplies " .. CharacterEssentials.GetCharacterName("Noctowl") .. " has should make our next try easier too!")
-	UI:WaitShowDialogue("Let's grab those and we'll do it for sure this time!")
-	
-	GAME:WaitFrames(20)
 	GeneralFunctions.PanCamera()
 
-	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(audino, snubbull, 4) end)
-	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharTurnToCharAnimated(snubbull, audino, 4) end)
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharTurnToCharAnimated(growlithe, zigzagoon, 4) end)
 	coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
-	GROUND:CharEndAnim(tropius)
 	GROUND:CharEndAnim(noctowl)
-	SV.Chapter5.DiedSteppe = false
-	SV.Chapter5.EscapedSteppe = false
-	SV.Chapter5.NeedGiveSupplies = true
+	SV.Chapter5.PlayTempTunnelScene = false
 
 	AI:EnableCharacterAI(partner)
 	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
@@ -1594,9 +1666,111 @@ function searing_tunnel_entrance_ch_5.FailedCutscene()
 	
 end
 
+function searing_tunnel_entrance_ch_5.EscapedCutscene()
+
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local growlithe = CH('Teammate2')
+	local zigzagoon = CH('Teammate3')
+	local tropius = CH('Tropius')
+	local noctowl = CH('Noctowl')
+	local coro1, coro2, coro3, coro4
+	
+	GAME:CutsceneMode(true)
+	SOUND:StopBGM()
+	AI:DisableCharacterAI(partner)
+	GROUND:TeleportTo(partner, 396, 184, Direction.Up)
+	GROUND:TeleportTo(hero, 356, 184, Direction.Up)
+	GROUND:EntTurn(zigzagoon, Direction.Down)
+	GROUND:EntTurn(growlithe, Direction.Down)
+	
+	GROUND:CharSetAnim(noctowl, "Idle", true)
+	GAME:MoveCamera(384, 148, 1, false)
+			
+	GAME:FadeIn(40)
+	SOUND:PlayBGM('Spring Cave.ogg', true)
+	GAME:WaitFrames(20)
+		
+	UI:SetSpeaker(zigzagoon)
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("Hmm...[pause=0] It's tough in there...")
+	GAME:WaitFrames(20)
+
+	UI:SetSpeaker(tropius)
+	UI:SetSpeakerEmotion("Surprised")
+	GROUND:CharSetEmote(tropius, "sweating", 1)
+	UI:WaitShowDialogue("Are you alright!?[pause=0] What happened!?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(partner)
+	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("We're OK,[pause=10] Guildmaster.[pause=0] We encountered some trouble in the tunnel so we decided to retreat.") end)
+	coro2 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(growlithe, Direction.Up, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharAnimateTurnTo(zigzagoon, Direction.Up, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(growlithe)
+	UI:WaitShowDialogue("Yeah,[pause=10] but it's nothing we can't handle,[pause=10] ruff!")
+	UI:WaitShowDialogue("We'll get it done for sure next time!")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(tropius)
+	UI:WaitShowDialogue("Hmm,[pause=10] alright...[pause=0] I'm just glad you decided to escape rather than endanger yourselves further.")
+	GAME:WaitFrames(10)
+	GROUND:CharAnimateTurnTo(tropius, Direction.UpLeft, 4)
+	GAME:WaitFrames(60)
+	GROUND:CharAnimateTurnTo(tropius, Direction.Down, 4)
+	
+	UI:WaitShowDialogue("Here,[pause=10] these supplies should help you get through the tunnel.[pause=0] Please,[pause=10] take them!")
+	GAME:WaitFrames(20)
+	GeneralFunctions.RewardItem("food_apple")
+	GeneralFunctions.RewardItem("berry_oran")
+	GeneralFunctions.RewardItem("berry_rawst")
+	
+	GAME:WaitFrames(20)
+	UI:SetSpeaker(tropius)
+	UI:WaitShowDialogue("Good luck,[pause=10] and stay safe.[pause=0] I know you can do it!")
+	GAME:WaitFrames(20)
+	
+	
+	GeneralFunctions.PanCamera()
+
+	coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharTurnToCharAnimated(growlithe, zigzagoon, 4) end)
+	coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
+	TASK:JoinCoroutines({coro1, coro2, coro3})
+	
+	GROUND:CharEndAnim(noctowl)
+	SV.Chapter5.PlayTempTunnelScene = false
+
+	AI:EnableCharacterAI(partner)
+	AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+	GROUND:CharTurnToChar(partner, hero)
+	GAME:CutsceneMode(false)
+end
+
+function searing_tunnel_entrance_ch_5.RetreatedCutscene()
+
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	local growlithe = CH('Teammate2')
+	local zigzagoon = CH('Teammate3')
+	local tropius = CH('Tropius')
+	local noctowl = CH('Noctowl')
+	local coro1, coro2, coro3, coro4
+	
+	GAME:CutsceneMode(true)
+	GROUND:Hide('Dungeon_Entrance')
+	SOUND:StopBGM()
+	AI:DisableCharacterAI(partner)
+	GROUND:TeleportTo(hero, 544, 148, Direction.Left)
+	GROUND:TeleportTo(partner, 544, 172, Direction.Left)
+	GROUND:TeleportTo(growlithe, 560, 144, Direction.Left)
+	GROUND:TeleportTo(zigzagoon, 560, 176, Direction.Left)
+	GROUND:TeleportTo(tropius, 376, 128, Direction.Down)
+end
 
 
---todo
 function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 
 	local hero = CH('PLAYER')
@@ -1610,31 +1784,52 @@ function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 	GROUND:CharSetAnim(partner, "None", true)
 	GROUND:CharSetAnim(hero, "None", true)
 	local coro1 = TASK:BranchCoroutine(function() result = GeneralFunctions.StartPartnerYesNo("Are we ready to roll out,[pause=10] " .. hero:GetDisplayName() .. "?") end)
-	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharTurnToCharAnimated(growlithe, hero, 4) GROUND:CharSetAnim(audino, "None", true) end)
-	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharTurnToCharAnimated(zigzagoon, hero, 4) GROUND:CharSetAnim(snubbull, "None", true) end)
+	local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GROUND:CharTurnToCharAnimated(growlithe, hero, 4) GROUND:CharSetAnim(growlithe, "None", true) end)
+	local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(16) GROUND:CharTurnToCharAnimated(zigzagoon, hero, 4) GROUND:CharSetAnim(zigzagoon, "None", true) end)
 	
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	GAME:WaitFrames(10)		
 	if result then 
 		GROUND:Hide('Dungeon_Entrance')
-
+		local face_direction = Direction.DownLeft
+		if SV.Chapter5.TunnelLastExitReason ~= '' then 
+			face_direction = Direction.Left
+		end
+		
 		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 480, 176, false, 1)
-												GROUND:CharAnimateTurnTo(partner, Direction.Down, 4)
+												GROUND:CharAnimateTurnTo(partner, face_direction, 4)
 												GROUND:CharSetAnim(partner, "None", true) end)	
 		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(hero, 480, 144, false, 1)
-												GROUND:CharAnimateTurnTo(hero, Direction.Down, 4)
+												GROUND:CharAnimateTurnTo(hero, face_direction, 4)
 												GROUND:CharSetAnim(hero, "None", true) end) 
-		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, nil, nil, 256, 192) end)
+		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, false, nil, GAME:GetCameraCenter().X, 168) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
-		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(growlithe, 448, 148, false, 1)
-												GROUND:CharAnimateTurnTo(growlithe, Direction.Right, 4) 
-												GROUND:CharSetAnim(growlithe, "None", true) end)
-		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
-												GeneralFunctions.EightWayMove(zigzagoon, 448, 172, false, 1)
-												GROUND:CharAnimateTurnTo(zigzagoon, Direction.Right, 4)
-												GROUND:CharSetAnim(zigzagoon, "None", true) end)
-		TASK:JoinCoroutines({coro1, coro2})
+		--different movement pattern depending on where they are
+		if SV.Chapter5.TunnelLastExitReason == '' then--haven't entered yet
+			coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(growlithe, 448, 148, false, 1)
+													GROUND:CharAnimateTurnTo(growlithe, Direction.Right, 4) 
+													GROUND:CharSetAnim(growlithe, "None", true) end)
+			coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
+													GeneralFunctions.EightWayMove(zigzagoon, 432, 216, false, 1)
+													GeneralFunctions.EightWayMove(zigzagoon, 448, 172, false, 1)
+													GROUND:CharAnimateTurnTo(zigzagoon, Direction.Right, 4)
+													GROUND:CharSetAnim(zigzagoon, "None", true) end)
+		elseif SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+		
+		else--died or escaped 
+			coro1 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) 
+													GeneralFunctions.EightWayMoveRS(growlithe, 448, 148, false, 1)
+													GROUND:CharAnimateTurnTo(growlithe, Direction.Right, 4) 
+													GROUND:CharSetAnim(growlithe, "None", true) end)
+			coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMoveRS(zigzagoon, 448, 172, false, 1)
+													GROUND:CharAnimateTurnTo(zigzagoon, Direction.Right, 4)
+													GROUND:CharSetAnim(zigzagoon, "None", true) end)
+		end
+		
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.FaceMovingCharacter(hero, growlithe) end)
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(10) GeneralFunctions.FaceMovingCharacter(partner, zigzagoon) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
 		
 		
 		UI:SetSpeaker(growlithe)
@@ -1649,7 +1844,7 @@ function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		end 
 		
 		
-		
+		GAME:WaitFrames(10)
 		coro1 = TASK:BranchCoroutine(function() GROUND:CharAnimateTurnTo(partner, Direction.Right, 4)
 												GROUND:MoveInDirection(partner, Direction.Right, 72, false, 1) end)			
 		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6)
@@ -1657,7 +1852,7 @@ function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 												GROUND:MoveInDirection(hero, Direction.Right, 72, false, 1) end)		
 		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(24)
 												GROUND:MoveInDirection(growlithe, Direction.Right, 72, false, 1) end)			
-		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(26)
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(30)
 													  GROUND:MoveInDirection(zigzagoon, Direction.Right, 72, false, 1) end)	
 		local coro5 = TASK:BranchCoroutine(function() GAME:WaitFrames(40) GAME:FadeOut(false, 40) end)
 
@@ -1672,8 +1867,8 @@ function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 	else
 		UI:WaitShowDialogue("OK.[pause=0] Let's get ourselves ready,[pause=10] and we'll move out then!")
 		coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EndConversation(partner) end)
-		coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(snubbull, audino, 4) GROUND:CharEndAnim(snubbull) end)
-		coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(audino, snubbull, 4) GROUND:CharEndAnim(audino) end)
+		coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(growlithe, zigzagoon, 4) GROUND:CharEndAnim(growlithe) end)
+		coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4) GROUND:CharEndAnim(zigzagoon) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 	end
 
