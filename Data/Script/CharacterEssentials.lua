@@ -749,6 +749,15 @@ local characters = {
 			gender = Gender.Male,
 			form = 1,--he is scarfed
 			skin = "normal"
+		},	
+
+		Magcargo = {
+			species = "magcargo",
+			nickname = 'Morkot',--tzhaar words mishmashed togehter
+			instance = 'Magcargo',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
 		},
 		
 		--Inn Passersby

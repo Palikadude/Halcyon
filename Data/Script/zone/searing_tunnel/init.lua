@@ -99,6 +99,7 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 			SV.SearingTunnel.DiedPastCheckpoint = true
 			if SV.ChapterProgression.Chapter == 5 then
 				SV.Chapter5.LostTunnel = true
+				SV.Chapter5.TunnelMidpointState = 'DeathArrival'
 				--I use the components of the general function version of this so I can have the textbox pop up after the results screen
 				--this saves the game, so it must be called 2nd to last.
 				GAME:EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
@@ -155,9 +156,10 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 		--died to boss
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 			SV.SearingTunnel.DiedPastCheckpoint = true
-			SV.Chapter5.LostToBoss = true
+			SV.Chapter5.DiedToBoss = true
 			SV.Chapter5.JustDiedToBoss = true
 			SV.Chapter5.LostTunnel = true
+			SV.Chapter5.TunnelMidpointState = 'DeathArrival'
 			GAME:EndDungeonRun(result, "master_zone", -1, 48, 0, true, true)
 			UI:SetSpeaker(GAME:GetPlayerPartyMember(2))--set growlithe as speaker 
 			UI:SetSpeakerEmotion("Pain")

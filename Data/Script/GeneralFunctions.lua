@@ -215,10 +215,8 @@ function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections
 			local numDir = GeneralFunctions.DirToNum(currentDir)
 			local diff = 0
 			local rand = 0
-			repeat
-				rand = math.random(0, 7)--pick a random direction
-				diff = math.abs(numDir - rand)
-			until (diff > 1 and diff < 7)--chosen direction must be at least 90 degrees different 
+			rand = math.random(2, 6)--pick a random turn angle of at least 90 degrees
+			rand = (numDir + rand)%8 --calculate chosen direction
 			dir = GeneralFunctions.NumToDir(rand)
 			GROUND:CharAnimateTurnTo(chara, dir, turnframes)
 			GAME:WaitFrames(20)--pause
@@ -1208,10 +1206,13 @@ function GeneralFunctions.RankUp(leftover_points)
 	--bag is full - equipped count is separate from bag and most be included in the calc
 	if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 		UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
-		GAME:GivePlayerStorageItem(item.ID, amount)
+		GAME:GivePlayerStorageItem(item.ID)
 	else
-		GAME:GivePlayerItem(item.ID, amount)
+		GAME:GivePlayerItem(item.ID)
 	end
+	
+	UI:SetCenter(false)
+
 	
 	--silently award any leftover points.
 	if leftover_points > 0 then GeneralFunctions.RewardPoints(leftover_points, true) end

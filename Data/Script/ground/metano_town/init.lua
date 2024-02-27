@@ -2126,7 +2126,7 @@ function metano_town.Appraisal_Action(obj, activator)
 			if result == 1 then
 				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				if bag_count > 0 then
-					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Choose'], "A"))
+					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Choose'], STRINGS:LocalKeyString(26)))
 					state = 1
 				else
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Bag_Empty']))
@@ -2155,7 +2155,9 @@ function metano_town.Appraisal_Action(obj, activator)
 			local total = #cart * price
 			
 			if total > GAME:GetPlayerMoney() then
+				UI:SetSpeakerEmotion("Determined")
 				UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_No_Money']))
+				UI:SetSpeakerEmotion("Normal")
 				state = 1
 			else
 				local msg
@@ -2166,9 +2168,9 @@ function metano_town.Appraisal_Action(obj, activator)
 					else
 						item = GAME:GetPlayerBagItem(cart[1].Slot)
 					end
-					msg = STRINGS:Format(MapStrings['Appraisal_Choose_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), item:GetDisplayName())
+					msg = STRINGS:Format(MapStrings['Appraisal_Choose_One'], total, item:GetDisplayName())
 				else
-					msg = STRINGS:Format(MapStrings['Appraisal_Choose_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
+					msg = STRINGS:Format(MapStrings['Appraisal_Choose_Multi'], total)
 				end
 				UI:ChoiceMenuYesNo(msg, false)
 				UI:WaitForChoice()
@@ -2187,29 +2189,41 @@ function metano_town.Appraisal_Action(obj, activator)
 							GAME:TakePlayerBagItem(cart[ii].Slot, true)
 						end
 						
-						local itemEntry = _DATA:GetItem(box.HiddenValue)
-						local treasure_choice = { Box = box, Item = RogueEssence.Dungeon.InvItem(box.HiddenValue,false,itemEntry.MaxStack)}
+						local treasure_item = box.HiddenValue
+						--this is a safeguard to catch boxes without anything in them. Mostly useful for debugging.
+						if treasure_item == nil or treasure_item == '' then treasure_item = 'food_apple' end
+						local itemEntry = _DATA:GetItem(treasure_item)
+						local treasure_choice = { Box = box, Item = RogueEssence.Dungeon.InvItem(treasure_item,false,itemEntry.MaxStack)}
 						table.insert(treasure, treasure_choice)
 						
-						-- note high rarity items
-						if itemEntry.Rarity > 0 then
-							SV.unlocked_trades[box.HiddenValue] = true
-						end
+						-- note high rarity items --this is PMDO vanilla code that unlocks family items in sableye's shop after you get it from a chest; not needed here (right now anyway).
+						--if itemEntry.Rarity > 0 then
+						--	SV.unlocked_trades[treasure_item] = true
+						--end
 					end
 					SOUND:PlayBattleSE("DUN_Money")
 					GAME:RemoveFromPlayerMoney(total)
 					cart = {}
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_Start']))
 					
-					GROUND:MoveInDirection(chara, Direction.Up, 18, false, 2)
-					GROUND:Hide("Appraisal_Owner")
+					--Sneasel should ready herself, then scratch once for each box he has to open
 					GAME:WaitFrames(10)
-					local shake = RogueEssence.Content.ScreenMover(0, 8, 30)
-					GROUND:MoveScreen(shake)
-					SOUND:PlayBattleSE("DUN_Explosion")
+					GROUND:CharAnimateTurnTo(chara, Direction.Up, 4)
+					GAME:WaitFrames(10)
+					GROUND:CharSetAnim(chara, 'Charge', true)
 					GAME:WaitFrames(60)
-					GROUND:Unhide("Appraisal_Owner")
-					GROUND:MoveInDirection(chara, Direction.Down, 18, false, 2)
+					
+					--Do a fury swipes for each box we gotta open
+					for i=1,(total / price),1
+					do
+						SOUND:PlayBattleSE('DUN_Fury_Swipes')
+						GeneralFunctions.DoAnimation(chara, 'MultiScratch')
+					end
+					GROUND:CharSetAnim(chara, "None", true)
+					GAME:WaitFrames(20)
+					
+					GROUND:CharAnimateTurnTo(chara, Direction.Down, 4)
+					GAME:WaitFrames(10)
 					
 					SOUND:PlayFanfare("Fanfare/Treasure")
 					UI:WaitShowDialogue(STRINGS:Format(MapStrings['Appraisal_End']))

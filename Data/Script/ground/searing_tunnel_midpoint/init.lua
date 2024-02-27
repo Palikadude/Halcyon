@@ -71,7 +71,13 @@ end
 
 function searing_tunnel_midpoint.PlotScripting()
   if SV.ChapterProgression.Chapter == 5 then
-	
+	if not SV.Chapter5.PlayedMidpointIntro then
+	  searing_tunnel_midpoint_ch_5.FirstArrival()
+	elseif SV.SearingTunnel.DiedPastCheckpoint then 
+		searing_tunnel_midpoint_ch_5.WipedCutscene()
+	else 
+		searing_tunnel_midpoint_ch_5.SetupGround()
+	end
   else 
     GAME:FadeIn(20)
   end
@@ -108,7 +114,7 @@ function searing_tunnel_midpoint.North_Exit_Touch(obj, activator)
 		partner.IsInteracting = false
 		GROUND:CharEndAnim(partner)
 		GROUND:CharEndAnim(hero)	
-		GAME:EnterDungeon("searing_tunnel", 1, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
+		GAME:EnterDungeon("searing_tunnel", 1, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 	end
   end
   partner.IsInteracting = false
@@ -152,6 +158,7 @@ function searing_tunnel_midpoint.South_Exit_Touch(chara, activator)
 	if SV.ChapterProgression.Chapter == 5 then 
 		SV.Chapter5.PlayTempTunnelScene = true
 		SV.Chapter5.TunnelLastExitReason = 'Retreated'
+		SV.Chapter5.TunnelMidpointState = 'RepeatArrival'
 	else 
 		SV.TemporaryFlags.Dinnertime = true 
 		SV.TemporaryFlags.Bedtime = true

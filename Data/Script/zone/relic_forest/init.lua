@@ -88,7 +88,7 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 		SV.TemporaryFlags.MorningAddress = true 
 		
 		if result == RogueEssence.Data.GameProgress.ResultType.Cleared then	
-			GAME:EnterGroundMap('relic_forest', 'Main_Entrance_Marker') --Go to Crooked Den, end dungeon run in the ground rather than here 
+			GAME:EnterGroundMap('relic_forest', 'Main_Entrance_Marker') --Go to Relic Forest Sanctum, end dungeon run in the ground rather than here 
 		else 
 			--Go to dinner if a mission wasn't completed, otherwise, go to 2nd floor. This probably won't be used since missions shouldnt get in relic forest
 			local exit_ground = 6

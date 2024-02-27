@@ -751,6 +751,7 @@ SV.Chapter5 =
 	TunnelLastExitReason = '',--Why did the player exit the tunnel to the entrance? Should be Died, Escaped, or Retreated
 	PlayTempTunnelScene = false,--Do we need to play a one time scene outside the tunnel for having died/escaped/retreated?
 	PlayedMidpointIntro = false,--Did you do the first "Let's go forward!" cutscene for the midpoint?
+	TunnelMidpointState = 'FirstArrival',--What scene needs to play, and how do we handle midpoint respawning for almotz and hyko? can be FirstArrival, RepeatArrival, DeathArrival.
 	EncounteredBoss = false, --Did the player encounter the slugmas?
 	DefeatedBoss = false, --Did the player defeat the slugmas?
 	DiedToBoss = false,--Did the player lose to the boss ever?

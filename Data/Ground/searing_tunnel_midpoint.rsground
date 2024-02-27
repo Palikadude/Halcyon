@@ -31933,7 +31933,7 @@
 "ScriptVars": null
 },
 "EntName": "TEAMMATE_2",
-"Direction": 1,
+"Direction": 5,
 "EntEnabled": true,
 "EntOrder": 0,
 "triggerType": 0,
@@ -31941,8 +31941,8 @@
 0
 ],
 "Collider": {
-"X": 268,
-"Y": 172,
+"X": 172,
+"Y": 292,
 "Width": 16,
 "Height": 16
 }
@@ -32030,7 +32030,7 @@
 ],
 "Collider": {
 "X": 268,
-"Y": 196,
+"Y": 292,
 "Width": 16,
 "Height": 16
 }
