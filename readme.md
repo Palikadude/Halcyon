@@ -74,4 +74,5 @@ If you helped in some way and aren't listed here (probably because I forgot, sor
 * NeoGeoThomas — For putting the first trailer together
 * borzoiteeth — for inspiring the game in the first place
 * Clover Guild - Sanity checks, feedback, and being PMD bros
+* Phanon - Assistance with Skytemple shenanigans
 * [SkyTemple](https://skytemple.org/) community — For helping me figure out base Explorer's behavior for some cutscenes and functions

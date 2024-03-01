@@ -479,7 +479,7 @@ function crooked_den_ch_3.FirstPreBossScene()
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("Get ready,[pause=10] " .. hero:GetDisplayName() .. "![pause=0] Here they come!")
 
-	COMMON.BossTransition(hero)
+	COMMON.BossTransition()
 	GAME:CutsceneMode(false)
 	SV.Chapter3.EncounteredBoss = true
 	--enter fight

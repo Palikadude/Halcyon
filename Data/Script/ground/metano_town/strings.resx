@@ -569,7 +569,7 @@
     <value>Deal</value>
   </data>
   <data name="Shop_Buy_One" xml:space="preserve">
-    <value>{2} {1}? That will be [color=#00FFFF]{0}[color] \uE024.</value>
+    <value>[A/An] {1}? That will be [color=#00FFFF]{0}[color] \uE024.</value>
   </data>
   <data name="Shop_Sell_Complete" xml:space="preserve">
     <value>A done deal! \u266A\n Thank you \u266A</value>
@@ -833,7 +833,7 @@
     <value>I can [color=#00FFFF]{0}[color] \uE024 for that {1}. Is that acceptable?</value>
   </data>
   <data name="TM_Shop_Buy_One" xml:space="preserve">
-    <value>{2} {1} will cost you [color=#00FFFF]{0}[color] \uE024.</value>
+    <value>[A/An] {1} will cost you [color=#00FFFF]{0}[color] \uE024.</value>
   </data>
   <data name="TM_Shop_Sell_Complete" xml:space="preserve">
     <value>Another closed sale! \u266a Thank you my friends! \u266a</value>

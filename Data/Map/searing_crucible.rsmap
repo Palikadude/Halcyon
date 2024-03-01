@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.24.0",
+"Version": "0.7.25.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -29,7 +29,7 @@
 "serializationDir": 0,
 "IsFounder": false,
 "IsPartner": false,
-"Nickname": "Magcargo",
+"Nickname": "Morkot",
 "ActionEvents": [],
 "ProxyName": "",
 "ProxySprite": {
@@ -104,7 +104,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 100,
+"HP": 120,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -197,7 +197,7 @@
 },
 "Level": 18,
 "EXP": 0,
-"MaxHPBonus": 94,
+"MaxHPBonus": 127,
 "AtkBonus": 0,
 "DefBonus": 0,
 "MAtkBonus": 0,
@@ -206,19 +206,23 @@
 "BaseSkills": [
 {
 "SkillNum": "incinerate",
-"Charges": 18
+"Charges": 18,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "clear_smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -271,7 +275,7 @@
 "X": 12,
 "Y": 8
 },
-"serializationDir": 1,
+"serializationDir": 0,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -451,19 +455,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -514,9 +522,9 @@
 "dead": false,
 "serializationLoc": {
 "X": 13,
-"Y": 9
+"Y": 10
 },
-"serializationDir": 1,
+"serializationDir": 2,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -696,19 +704,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -759,9 +771,9 @@
 "dead": false,
 "serializationLoc": {
 "X": 13,
-"Y": 12
+"Y": 11
 },
-"serializationDir": 3,
+"serializationDir": 2,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -777,7 +789,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 1
+"Gender": 2
 },
 "ProxyAtk": -1,
 "ProxyDef": -1,
@@ -928,7 +940,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 1
+"Gender": 2
 },
 "Level": 13,
 "EXP": 0,
@@ -941,19 +953,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -1006,7 +1022,7 @@
 "X": 12,
 "Y": 13
 },
-"serializationDir": 3,
+"serializationDir": 4,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -1186,19 +1202,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -1249,9 +1269,9 @@
 "dead": false,
 "serializationLoc": {
 "X": 8,
-"Y": 12
+"Y": 11
 },
-"serializationDir": 5,
+"serializationDir": 6,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -1267,7 +1287,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 2
+"Gender": 1
 },
 "ProxyAtk": -1,
 "ProxyDef": -1,
@@ -1418,7 +1438,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 2
+"Gender": 1
 },
 "Level": 13,
 "EXP": 0,
@@ -1431,19 +1451,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -1496,7 +1520,7 @@
 "X": 9,
 "Y": 13
 },
-"serializationDir": 5,
+"serializationDir": 4,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -1676,19 +1700,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -1739,9 +1767,9 @@
 "dead": false,
 "serializationLoc": {
 "X": 8,
-"Y": 9
+"Y": 10
 },
-"serializationDir": 7,
+"serializationDir": 6,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -1757,7 +1785,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 1
+"Gender": 2
 },
 "ProxyAtk": -1,
 "ProxyDef": -1,
@@ -1908,7 +1936,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 1
+"Gender": 2
 },
 "Level": 13,
 "EXP": 0,
@@ -1921,19 +1949,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [
@@ -1986,7 +2018,7 @@
 "X": 9,
 "Y": 8
 },
-"serializationDir": 7,
+"serializationDir": 0,
 "IsFounder": false,
 "IsPartner": false,
 "Nickname": "Slugma",
@@ -2002,7 +2034,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 2
+"Gender": 1
 },
 "ProxyAtk": -1,
 "ProxyDef": -1,
@@ -2153,7 +2185,7 @@
 "Species": "slugma",
 "Form": 0,
 "Skin": "normal",
-"Gender": 2
+"Gender": 1
 },
 "Level": 13,
 "EXP": 0,
@@ -2166,19 +2198,23 @@
 "BaseSkills": [
 {
 "SkillNum": "ember",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "rock_throw",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 },
 {
 "SkillNum": "smog",
-"Charges": 16
+"Charges": 16,
+"CanForget": true
 },
 {
 "SkillNum": "yawn",
-"Charges": 15
+"Charges": 15,
+"CanForget": true
 }
 ],
 "BaseIntrinsics": [

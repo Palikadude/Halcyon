@@ -273,10 +273,10 @@ function SpawnOutlaw(origin, radius, mission_num)
 	local mob_data = RogueEssence.Dungeon.CharData(true)
 	local base_form_idx = 0
 	local form = _DATA:GetMonster(mission.Target).Forms[base_form_idx]
-	-- local gender = form:RollGender(RogueElements.MathUtils.Rand)
+	-- local gender = form:RollGender(_DATA.Save.Rand)
 	mob_data.BaseForm = RogueEssence.Dungeon.MonsterID(mission.Target, base_form_idx, "normal", GeneralFunctions.NumToGender(mission.TargetGender))
 	mob_data.Level = math.floor(MISSION_GEN.EXPECTED_LEVEL[mission.Zone] * 1.2)
-	local ability = form:RollIntrinsic(RogueElements.MathUtils.Rand, 3)
+	local ability = form:RollIntrinsic(_DATA.Save.Rand, 3)
 	mob_data.BaseIntrinsics[0] = ability
 	local new_mob = RogueEssence.Dungeon.Character(mob_data)
 	--Old move learning logic

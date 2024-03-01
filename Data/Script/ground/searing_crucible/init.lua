@@ -6,6 +6,7 @@
 -- Commonly included lua functions and data
 require 'common'
 require 'PartnerEssentials'
+require 'ground.searing_crucible.searing_crucible_ch_5'
 
 -- Package name
 local searing_crucible = {}

@@ -814,7 +814,7 @@ function metano_town.Shop_Action(obj, activator)
 			else
 				if #cart == 1 then
 					local name = catalog[cart[1]].Item:GetDisplayName()
-					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name, GeneralFunctions.GetItemArticle(catalog[cart[1]].Item, true))
+					msg = STRINGS:Format(MapStrings['Shop_Buy_One'], total, name)
 				else
 					msg = STRINGS:Format(MapStrings['Shop_Buy_Multi'], total)
 				end
@@ -1024,7 +1024,7 @@ function metano_town.TM_Action(obj, activator)
 			else
 				if #cart == 1 then
 					local name = catalog[cart[1]].Item:GetDisplayName()
-					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_One'], total, name, GeneralFunctions.GetItemArticle(catalog[cart[1]].Item, true))
+					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_One'], total, name)
 				else
 					msg = STRINGS:Format(MapStrings['TM_Shop_Buy_Multi'], total)
 				end

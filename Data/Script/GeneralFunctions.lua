@@ -336,6 +336,13 @@ function GeneralFunctions.EightWayMoveRS(chara, x, y, run, speed)
 end
 
 
+function GeneralFunctions.SlowAnimateInDirection(chara, animation, animDir, movedir, dist, animspeed, pause_dur)
+	local dist_traveled = 0
+	
+	if animation == nil then animation = 'Walk' end
+	if animspeed == nil then animspeed = 1 end
+	
+end
 
 --shortcut for doing hero dialogue (i.e., no sfx, no nameplate at the start)
 function GeneralFunctions.HeroDialogue(chara, str, emotion)
@@ -1060,13 +1067,13 @@ function GeneralFunctions.RewardItem(itemID, money, amount)
 
 		local item = RogueEssence.Dungeon.InvItem(itemID, false, amount)
 		
-		local article = "a"
+		--local article = "a"
 		
-		local first_letter = string.upper(string.sub(_DATA:GetItem(item.ID).Name:ToLocal(), 1, 1))
+		--local first_letter = string.upper(string.sub(_DATA:GetItem(item.ID).Name:ToLocal(), 1, 1))
 		
-		if first_letter == "A" or first_letter == 'E' or first_letter == 'I' or first_letter == 'O' or first_letter == 'U' then article = 'an' end
+		--if first_letter == "A" or first_letter == 'E' or first_letter == 'I' or first_letter == 'O' or first_letter == 'U' then article = 'an' end
 
-		UI:WaitShowDialogue("Team " .. GAME:GetTeamName() .. " received " .. article .. " " .. item:GetDisplayName() ..".[pause=40]") 
+		UI:WaitShowDialogue(STRINGS:Format("Team " .. GAME:GetTeamName() .. " received [a/an] " .. item:GetDisplayName() ..".[pause=40]")) 
 		
 		--bag is full - equipped count is separate from bag and must be included in the calc
 		if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
@@ -1088,6 +1095,11 @@ local function FirstToUpper(str)
 	return (str:gsub("^%l", string.upper))
 end
 
+
+
+--These are depreciated: The text tag [a/an] is replacing them. Capitalize the tag if needed. Remember to encase in a STRINGS:Format() when doing this! ex: UI:WaitShowDialogue(STRINGS:Format("I'd love [a/an] dogshit right about now!"))
+--it's the official, standard PMDO way of doing it but these were made before that existed/I was aware of the tag.
+--[[
 --a or an before an item?
 function GeneralFunctions.GetItemArticle(item, uppercase)
 	if uppercase == nil then uppercase = false end 
@@ -1115,7 +1127,7 @@ function GeneralFunctions.GetColoredStringArticle(str, uppercase)
 	
 	return article
 end
-
+]]--
 
 --gives adventurer points
 function GeneralFunctions.RewardPoints(amount, silent)
