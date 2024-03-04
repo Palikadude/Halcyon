@@ -9,6 +9,7 @@ function SingleItemDealMenu()
     -- cost: the cost that will be displayed next to the item
     function SingleItemDealMenu:initialize(title, item, cost)
         assert(self, "SingleItemDealMenu:initialize(): self is nil!")
+        self.item = item.ID
 
         self.result = false -- output variable
 
@@ -16,10 +17,14 @@ function SingleItemDealMenu()
         local TITLE_HEIGHT = 16
         local LINE_HEIGHT = 12
         local VERT_SPACE = 14
+        local itemdata = _DATA:GetItem(item.ID)
         local options = {
             {STRINGS:FormatKey("MENU_SHOP_BUY"), cost <= GAME:GetPlayerMoney(), function() self:Choose(true)  end}, -- locked if not enough money
             {STRINGS:FormatKey("MENU_CANCEL"),   true,                          function() self:Choose(false) end}
         }
+        if itemdata.UsageType == RogueEssence.Data.ItemData.UseType.Learn then
+            table.insert(options, 2, {STRINGS:FormatKey("MENU_INFO"), true, function() self:OpenInfo() end})
+        end
         local default = 0 -- normally default to buy
         if cost > GAME:GetPlayerMoney() then default = 1 end -- default to refuse if not enough money
 
@@ -37,7 +42,7 @@ function SingleItemDealMenu()
                 RogueElements.Loc(RogueEssence.Content.GraphicsManager.ScreenWidth - 16, self.description_box.Bounds.Top)
         ))
         self.menu = RogueEssence.Menu.ScriptableSingleStripMenu(
-                16, self.description_box.Bounds.Top - VERT_SPACE*2 - RogueEssence.Content.GraphicsManager.MenuBG.TileHeight * 2,
+                16, self.description_box.Bounds.Top - VERT_SPACE*#options - RogueEssence.Content.GraphicsManager.MenuBG.TileHeight * 2,
                 1, options, default, function() self:Choose() end
         )
 
@@ -95,6 +100,10 @@ function SingleItemDealMenu()
         -- return false if nil
         self.result = buy or false
         _MENU:RemoveMenu()
+    end
+
+    function SingleItemDealMenu:OpenInfo()
+        _MENU:AddMenu(RogueEssence.Menu.TeachInfoMenu(self.item), false)
     end
 
 
