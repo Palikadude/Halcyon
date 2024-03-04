@@ -91,3 +91,4 @@ V0.5.0
 -Some pre-existing scenes have been cleaned up a little in terms of choreography (how the characters move, turn, timings of these, etc.) to improve the scene's look.
 -Updated the description of the Synergy Scarves to be a bit more clear on their main effect.
 -Fixed Team Style having less HP than they should due to a PMDO update reducing the effectiveness of hidden EVs.
+-Replaced Stunky in Crooked Cavern with Purrloin. Avoids an issue with Stunky being a town mon, and also avoids an issue with aftermath breaking your items after defeating stunky to get your item back.

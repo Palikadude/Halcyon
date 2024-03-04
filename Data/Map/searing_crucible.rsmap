@@ -2272,11 +2272,7 @@
 "Status": {
 "steam": {
 "ID": "steam",
-"StatusStates": [
-{
-"$type": "RogueEssence.Dungeon.MapWeatherState, RogueEssence"
-}
-],
+"StatusStates": [],
 "Emitter": {
 "$type": "RogueEssence.Content.OverlayEmitter, RogueEssence",
 "LocHeight": 0,
@@ -5654,7 +5650,136 @@
 "Name": "New Deco",
 "Layer": 0,
 "Visible": true,
-"Anims": []
+"Anims": [
+{
+"MapLoc": {
+"X": 240,
+"Y": 96
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Lava_Pool_Disconnected",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 0
+}
+},
+{
+"MapLoc": {
+"X": 240,
+"Y": 408
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Lava_Pool_Disconnected",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 1
+}
+},
+{
+"MapLoc": {
+"X": 360,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Lava_Pool_Connected",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 0
+}
+},
+{
+"MapLoc": {
+"X": 120,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Lava_Pool_Connected",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 1
+}
+},
+{
+"MapLoc": {
+"X": 312,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Small_Lava_Stream",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 0
+}
+},
+{
+"MapLoc": {
+"X": 168,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Small_Lava_Stream",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 1
+}
+},
+{
+"MapLoc": {
+"X": 264,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Big_Lava_Stream",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 0
+}
+},
+{
+"MapLoc": {
+"X": 216,
+"Y": 192
+},
+"ObjectAnim": {
+"$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
+"AnimIndex": "Spring_Cave_Pit_Big_Lava_Stream",
+"FrameTime": 4,
+"StartFrame": -1,
+"EndFrame": -1,
+"AnimDir": 0,
+"Alpha": 255,
+"AnimFlip": 1
+}
+}
+]
 }
 ],
 "Tiles": [

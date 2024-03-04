@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.22.0",
+"Version": "0.7.25.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -17,6 +17,7 @@
 "TeamSize": -1,
 "MoneyRestrict": false,
 "BagRestrict": -1,
+"KeepTreasure": false,
 "BagSize": -1,
 "Persistent": false,
 "Rescues": 0,
@@ -2145,7 +2146,7 @@
 {
 "Spawn": {
 "BaseForm": {
-"Species": "stunky",
+"Species": "purrloin",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -2157,10 +2158,9 @@
 "SpecifiedSkills": [
 "thief",
 "scratch",
-"poison_gas",
-"screech"
+"assist"
 ],
-"Intrinsic": "",
+"Intrinsic": "limber",
 "Tactic": "thief",
 "SpawnConditions": [],
 "SpawnFeatures": [
@@ -2174,6 +2174,11 @@
 "Denominator": 0
 },
 "Odds": 0
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },
@@ -2335,35 +2340,6 @@
 {
 "Spawn": {
 "BaseForm": {
-"Species": "stunky",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"thief",
-"scratch",
-"poison_gas",
-"screech"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-}
-]
-},
-"Rate": 10
-},
-{
-"Spawn": {
-"BaseForm": {
 "Species": "mankey",
 "Form": 0,
 "Skin": "",
@@ -2389,6 +2365,47 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+}
+]
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "purrloin",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thief",
+"scratch",
+"assist"
+],
+"Intrinsic": "limber",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
+"Odds": 0
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },
@@ -2516,7 +2533,7 @@
 {
 "Spawn": {
 "BaseForm": {
-"Species": "stunky",
+"Species": "purrloin",
 "Form": 0,
 "Skin": "",
 "Gender": -1
@@ -2528,10 +2545,9 @@
 "SpecifiedSkills": [
 "thief",
 "scratch",
-"poison_gas",
-"screech"
+"assist"
 ],
-"Intrinsic": "",
+"Intrinsic": "limber",
 "Tactic": "thief",
 "SpawnConditions": [],
 "SpawnFeatures": [
@@ -2545,6 +2561,11 @@
 "Denominator": 0
 },
 "Odds": 0
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },
@@ -2706,35 +2727,6 @@
 {
 "Spawn": {
 "BaseForm": {
-"Species": "stunky",
-"Form": 0,
-"Skin": "",
-"Gender": -1
-},
-"Level": {
-"Min": 8,
-"Max": 10
-},
-"SpecifiedSkills": [
-"thief",
-"scratch",
-"poison_gas",
-"screech"
-],
-"Intrinsic": "",
-"Tactic": "thief",
-"SpawnConditions": [],
-"SpawnFeatures": [
-{
-"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
-}
-]
-},
-"Rate": 10
-},
-{
-"Spawn": {
-"BaseForm": {
 "Species": "mankey",
 "Form": 0,
 "Skin": "",
@@ -2760,6 +2752,47 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+}
+]
+},
+"Rate": 10
+},
+{
+"Spawn": {
+"BaseForm": {
+"Species": "purrloin",
+"Form": 0,
+"Skin": "",
+"Gender": -1
+},
+"Level": {
+"Min": 8,
+"Max": 10
+},
+"SpecifiedSkills": [
+"thief",
+"scratch",
+"assist"
+],
+"Intrinsic": "limber",
+"Tactic": "thief",
+"SpawnConditions": [],
+"SpawnFeatures": [
+{
+"$type": "PMDC.LevelGen.MobSpawnUnrecruitable, PMDC"
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
+"Odds": 0
+},
+{
+"$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+"StartAt": 3,
+"Remove": false
 }
 ]
 },
