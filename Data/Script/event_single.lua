@@ -771,8 +771,8 @@ function SINGLE_CHAR_SCRIPT.DrawLavaPool(leftBottom, rightBottom, remove_lava)
 	DUNGEON:MoveScreen(RogueEssence.Content.ScreenMover(2, 4, 30))
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		--luacast the number value for the flip type needed to the RogueEssence SpriteFlip version
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_left, RogueElements.Loc(leftX * 24, leftY * 24)))
@@ -833,8 +833,8 @@ function SINGLE_CHAR_SCRIPT.DrawStraightFlow(leftBottom, rightBottom, remove_lav
 	
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
 		--right needs to be offset on x axis by -24
@@ -879,8 +879,8 @@ function SINGLE_CHAR_SCRIPT.DrawStraightFlow(leftBottom, rightBottom, remove_lav
 	
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
@@ -983,8 +983,8 @@ function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(leftBottom, rightBottom, remove_lav
 
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
 		--right needs to be offset on x axis by -24
@@ -1031,8 +1031,8 @@ function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(leftBottom, rightBottom, remove_lav
 	
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_small_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
 		--right needs to be offset on x axis by -24
@@ -1078,8 +1078,8 @@ function SINGLE_CHAR_SCRIPT.DrawDiagonalFlow(leftBottom, rightBottom, remove_lav
 	
 	--vfx
 	if remove_lava then
-		map.Decorations[0].Anims:RemoveAt(0)
-		map.Decorations[0].Anims:RemoveAt(0)
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
+		map.Decorations[0].Anims:RemoveAt(2)--Two decorations are placed on the map that shouldn't be removed, so 2 is where we need to delete from.
 	else
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_left, RogueElements.Loc(leftX * 24, leftY * 24 + leftOffsetY)))
 		map.Decorations[0].Anims:Add(RogueEssence.Ground.GroundAnim(lava_anim_big_right, RogueElements.Loc(rightX * 24 - 24, rightY * 24 + rightOffsetY)))
@@ -1205,10 +1205,12 @@ function SINGLE_CHAR_SCRIPT.LavaFlowHandler(owner, ownerChar, context, args)
 		
 		--When there's only Nothing Duration left, remove lava.
 		if SV.SearingTunnel.LavaCountdown == args.NothingDuration then
+			GAME:WaitFrames(20)--Pause a bit so it doesn't insta clear as soon as the map turn is done.
 			SINGLE_CHAR_SCRIPT.RemoveLavaFlow(owner, ownerChar, context, args)
 		end
 		
 		if SV.SearingTunnel.LavaCountdown == 0 then
+			GAME:WaitFrames(20)--Pause a bit so it doesn't insta clear as soon as the map turn is done.
 			SINGLE_CHAR_SCRIPT.QueueLavaFlow(owner, ownerChar, context, args)
 		end 
 		

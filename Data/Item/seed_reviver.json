@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.23.0",
+"Version": "0.7.25.0",
 "Object": {
 "$type": "RogueEssence.Data.ItemData, RogueEssence",
 "Name": {
@@ -228,7 +228,8 @@
 },
 "Value": {
 "$type": "PMDC.Dungeon.AutoReviveEvent, PMDC",
-"AskToUse": false,
+"AskToUse": true,
+"DefaultYes": true,
 "ChangeTo": "seed_plain"
 }
 }

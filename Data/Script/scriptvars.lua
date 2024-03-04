@@ -814,7 +814,7 @@ SV.ApricornGrove =
 
 SV.SearingTunnel = 
 {
-	LavaFlowDirection = "None",--TopStraight, BottomStraight, DiagonalDown, DiagonalUp, or None
+	LavaFlowDirection = "TopStraight",--TopStraight, BottomStraight, DiagonalDown, DiagonalUp, or None. Defaults to TopStraight as the boss fight starts with the lava spawned straight at the top.
 	LavaCountdown = -1,--Used to determine how long until the lava flow changes?
 	DiedPastCheckpoint = false--Used to flag whether you died in depths/crucible. Needed for cutscenes on wiping and waking up back in the checkpoint.
 }

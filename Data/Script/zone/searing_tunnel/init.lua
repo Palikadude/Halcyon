@@ -23,6 +23,13 @@ function searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
 	if rescuing ~= true then
 		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
 	end
+	
+	if segmentID == 2 then
+		--Setup variables for the lava flow handler. The boss fight starts with TopStraight alignment, so set these up here for the program to handle it correctly.
+		SV.SearingTunnel.LavaFlowDirection = 'TopStraight'
+		SV.SearingTunnel.LavaCountdown = -1--The script will default this to a proper value.
+	end
+	
 end
 
 function searing_tunnel.Rescued(zone, mail)
