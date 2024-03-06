@@ -36,6 +36,8 @@ function vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
   PrintInfo("=>> ExitSegment_vast_steppe (Vast Steppe) result "..tostring(result).." segment "..tostring(segmentID))
   
 	GAME:SetRescueAllowed(false)
+	--always clear the Thief flag when leaving the dungeon via any means. UpdateDailyFlags does take care of this, but that won't always be called when leaving this dungeon.
+	SV.adventure.Thief = false
 	
 	--[[Different dungeon result typeS (cleared, died, etc)
 	       public enum ResultType

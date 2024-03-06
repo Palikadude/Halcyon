@@ -149,6 +149,8 @@ function searing_tunnel_midpoint.South_Exit_Touch(chara, activator)
   local yesnoResult = UI:ChoiceResult()
   UI:SetCenter(false)
   if yesnoResult then 
+	--Clear thief flag when leaving the dungeon.		
+	SV.adventure.Thief = false
 	SOUND:FadeOutBGM(60)
 	GAME:FadeOut(false, 60)
 	partner.IsInteracting = false

@@ -623,7 +623,9 @@ function searing_crucible_ch_5.SecondPreBossScene()
 end
 
 function searing_crucible_ch_5.DefeatedBoss()
-	--growlithe is the one to bail the team out; important as it shows keeping him on the sidelines is a selfish, paranoid choice on the guildmaster's behalf
+	--magcargo is actually defeated, and offers his neck metaphorically to the stone, party explains that they didn't even want to fight
+	--magcargo explains he thought the outlanders were causing all the issues the tunnel's been experiencing
+	--after they disappear, partner should mention that he's glad hyko and almotz were there. Just him and the palyer wouldn't have been able to deal with all those enemies at once
 	--this took so long to sort out, it's probably night by now! We have to hurry ahead!
 	--commenting on his exit being as dramatic as his entrance (with sweatdrops)
 end

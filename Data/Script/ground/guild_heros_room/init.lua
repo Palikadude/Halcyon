@@ -87,7 +87,7 @@ function guild_heros_room.CheckTriggerEvent()
 	end
 	
 	--Start Chapter 5 a few in game days after beating Apricorn Grove.
-	if SV.ChapterProgression.Chapter == 4 and SV.Chapter4.FinishedGrove and SV.ChapterProgression.DaysPassed >= SV.ChapterProgression.DaysToReach and not SV.Chapter4.DemoThankYou then
+	if SV.ChapterProgression.Chapter == 4 and SV.Chapter4.FinishedGrove and SV.ChapterProgression.DaysPassed >= SV.ChapterProgression.DaysToReach then
 		SV.ChapterProgression.Chapter = 5
 		SV.TemporaryFlags.MorningAddress = false--unflag the generic address so the special one can play 
 		SV.TemporaryFlags.MorningWakeup = false--unflag the generic wakeup so the card can play out properly

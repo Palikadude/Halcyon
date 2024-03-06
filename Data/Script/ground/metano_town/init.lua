@@ -148,6 +148,7 @@ function metano_town.North_Exit_Touch(obj, activator)
 	partner.IsInteracting = false
 	GROUND:CharEndAnim(partner)
 	GROUND:CharEndAnim(hero)	
+	SV.partner.Spawn = "Default"--default partner spawn, since it could be a bunch of things before this, but it should be default for wherever we end up after the dungeon.
 	GAME:EnterDungeon("illuminant_riverbed", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, true)
   end
   partner.IsInteracting = false
@@ -440,6 +441,7 @@ function metano_town.ShowDestinationMenu(dungeon_entrances,ground_entrances)
 	    SV.partner.Spawn = "Default"--set partner spawn area as the default for the map.
 		GAME:EnterZone("master_zone", -1, dungeon_entrance_mapping[dest.ID], 0)
 	  else
+	    SV.partner.Spawn = "Default"--default partner spawn, since it could be a bunch of things before this, but it should be default for wherever we end up after the dungeon.
 	    GAME:EnterDungeon(dest.ID, dest.StructID.Segment, dest.StructID.ID, dest.EntryPoint, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
       end
     else

@@ -70,7 +70,17 @@ function searing_crucible.GameLoad(map)
 end
 
 function searing_crucible.PlotScripting()
-  GAME:FadeIn(20)
+	if SV.ChapterProgression.Chapter == 5 then
+		if SV.Chapter5.DefeatedBoss then 
+			GAME:FadeIn(20)
+		elseif not SV.Chapter5.EncounteredBoss then
+			searing_crucible_ch_5.FirstPreBossScene()
+		else
+			GAME:FadeIn(20)
+		end
+	else
+		GAME:FadeIn(20)
+	end
 end 
 
 

@@ -756,8 +756,8 @@ SV.Chapter5 =
 	DefeatedBoss = false, --Did the player defeat the slugmas?
 	DiedToBoss = false,--Did the player lose to the boss ever?
 	JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
+	SpokeToNoctowlTunnel = false,--Did you get some extra info about Hyko and Penticus's relation from Phileas?
 	
-	FinishedMountWindsweptBedtime = false,--Did the player see the nighttime cutscene for Mt. Windswept?
 	FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
 	EnteredMountain = false,--did player enter Mt. Windswept?
 	LostMountain = false,--did player die in Mt. Windswept?

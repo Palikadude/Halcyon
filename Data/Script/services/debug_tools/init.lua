@@ -358,19 +358,74 @@ function DebugTools:OnUpgrade()
  if SV.ApricornGrove.InDungeon == nil then SV.ApricornGrove.InDungeon = false end
  
  
- --Fix old chapter 2 and before saves that have bad cafe variables
+ --for pre chapter 5 saves
+ if SV.Chapter5 == nil then SV.Chapter5 = {} end
+ 
+ if SV.Chapter5.ShowedTitleCard == nil then SV.Chapter5.ShowedTitleCard = false end
+ if SV.Chapter5.FinishedExpeditionAddress == nil then SV.Chapter5.FinishedExpeditionAddress = false end
+ if SV.Chapter5.ReadyForExpedition == nil then SV.Chapter5.ReadyForExpedition = false end
+ if SV.Chapter5.FinishedSteppeIntro == nil then SV.Chapter5.FinishedSteppeIntro = false end
+ if SV.Chapter5.EnteredSteppe == nil then SV.Chapter5.EnteredSteppe = false end
+ if SV.Chapter5.LostSteppe == nil then SV.Chapter5.LostSteppe = false end
+ if SV.Chapter5.EscapedSteppe == nil then SV.Chapter5.EscapedSteppe = false end
+ if SV.Chapter5.DiedSteppe == nil then SV.Chapter5.DiedSteppe = false end
+ if SV.Chapter5.SpokeToTropiusSteppe == nil then SV.Chapter5.SpokeToTropiusSteppe = false end
+ if SV.Chapter5.FinishedTunnelIntro == nil then SV.Chapter5.FinishedTunnelIntro = false end
+ if SV.Chapter5.EnteredTunnel == nil then SV.Chapter5.EnteredTunnel = false end
+ if SV.Chapter5.LostTunnel == nil then SV.Chapter5.LostTunnel = false end
+ if SV.Chapter5.TunnelLastExitReason == nil then SV.Chapter5.TunnelLastExitReason = '' end
+ if SV.Chapter5.PlayTempTunnelScene == nil then SV.Chapter5.PlayTempTunnelScene = false end
+ if SV.Chapter5.PlayedMidpointIntro == nil then SV.Chapter5.PlayedMidpointIntro = false end
+ if SV.Chapter5.TunnelMidpointState == nil then SV.Chapter5.TunnelMidpointState = 'FirstArrival' end
+ if SV.Chapter5.EncounteredBoss == nil then SV.Chapter5.EncounteredBoss = false end
+ if SV.Chapter5.DefeatedBoss == nil then SV.Chapter5.DefeatedBoss = false end
+ if SV.Chapter5.DiedToBoss == nil then SV.Chapter5.DiedToBoss = false end
+ if SV.Chapter5.JustDiedToBoss == nil then SV.Chapter5.JustDiedToBoss = false end
+ if SV.Chapter5.SpokeToNoctowlTunnel == nil then SV.Chapter5.SpokeToNoctowlTunnel = false end
+ if SV.Chapter5.FinishedMountWindsweptIntro == nil then SV.Chapter5.FinishedMountWindsweptIntro = false end
+ if SV.Chapter5.EnteredMountain == nil then SV.Chapter5.EnteredMountain = false end
+ if SV.Chapter5.LostMountain == nil then SV.Chapter5.LostMountain = false end
+ if SV.Chapter5.DiedToWind == nil then SV.Chapter5.DiedToWind = false end
+ if SV.Chapter5.EscapedMountain == nil then SV.Chapter5.EscapedMountain = false end
+ if SV.Chapter5.DiedMountain == nil then SV.Chapter5.DiedMountain = false end
+ if SV.Chapter5.NeedGiveSupplies == nil then SV.Chapter5.NeedGiveSupplies = false end
+ 
+ 
+
+ --for terrakion's dungeon boulder variable timer
+ if SV.ClovenRuins == nil then SV.ClovenRuins = {} end
+ 
+ if SV.ClovenRuins.BoulderCountdown == nil then SV.ClovenRuins.BoulderCountdown = -1 end
+ 
+ --For Searing Tunnel's boss fight
+ if SV.SearingTunnel == nil then SV.SearingTunnel = {} end
+ 
+ if SV.SearingTunnel.DiedPastCheckpoint == nil then SV.SearingTunnel.DiedPastCheckpoint = false end
+ if SV.SearingTunnel.LavaFlowDirection == nil then SV.SearingTunnel.LavaFlowDirection = 'TopStraight' end
+ if SV.SearingTunnel.LavaCountdown == nil then SV.SearingTunnel.LavaCountdown = -1 end
+ 
+ if SV.GuildSidequests == nil then SV.GuildSidequests = {} end
+ 
+ if SV.GuildSidequests.ZigzagoonLevel == nil then SV.GuildSidequests.ZigzagoonLevel = 19 end 
+ if SV.GuildSidequests.GrowlitheLevel == nil then SV.GuildSidequests.GrowlitheLevel = 16 end 
+ if SV.GuildSidequests.SnubbullLevel == nil then SV.GuildSidequests.SnubbullLevel = 17 end 
+ if SV.GuildSidequests.AudinoLevel == nil then SV.GuildSidequests.AudinoLevel = 16 end 
+ if SV.GuildSidequests.MareepLevel == nil then SV.GuildSidequests.MareepLevel = 19 end 
+ if SV.GuildSidequests.CranidosLevel == nil then SV.GuildSidequests.CranidosLevel = 20 end 
+ --if SV.GuildSidequests.BreloomLevel == nil then SV.GuildSidequests.BreloomLevel = 33 end 
+ --if SV.GuildSidequests.GirafarigLevel == nil then SV.GuildSidequests.GirafarigLevel = 32 end 
+ 
+ 
+ if SV.adventure == nil then SV.adventure = {} end 
+ if SV.adventure.Thief == nil then SV.adventure.Thief = false end
+ 
+  --Fix old chapter 2 and before saves that have bad cafe variables
  --Curse you sunkern
  if type(SV.metano_cafe.CafeSpecial) == "number" then SV.metano_cafe.CafeSpecial = "" SV.metano_cafe.BoughtSpecial = false end
  if type(SV.metano_cafe.FermentedItem) == "number" then SV.metano_cafe.FermentedItem = "" SV.metano_cafe.ItemFinishedFermenting = false end
  
  if SV.DungeonFlags.GenericEnding == nil then SV.DungeonFlags.GenericEnding = false end
  
- --for terrakion's dungeon boulder variable timer
- if SV.ClovenRuins.BoulderCountdown == nil then SV.ClovenRuins.BoulderCountdown = -1 end
- 
- --For Searing Tunnel's boss fight
- if SV.SearingTunnel.LavaFlowDirection == nil then SV.SearingTunnel.LavaFlowDirection = 'None' end
- if SV.SearingTunnel.LavaCountdown == nil then SV.SearingTunnel.LavaCountdown = -1 end
  
  --dungeon unlocks that didnt exist for old versions
  if SV.ChapterProgression.Chapter >= 3 and not GAME:DungeonUnlocked("crooked_cavern") then

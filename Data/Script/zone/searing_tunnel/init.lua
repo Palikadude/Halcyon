@@ -52,6 +52,8 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 		--Died or Escaped
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 			GAME:WaitFrames(20)
+			--clear the Thief flag when dying/escaping segment 0. Do not clear it when winning as they remember you until you leave the dungeon or until you die.
+			SV.adventure.Thief = false
 			if SV.ChapterProgression.Chapter == 5 then
 				SV.Chapter5.LostTunnel = true--if escaped or died, they "lost" in the tunnel. Probably won't use it for anything, since it'll take your team long to get through canonically no matter what, but let's mark it for now anyways in case I want to use this.
 				if result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then--Died
@@ -99,6 +101,9 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 	elseif segmentID == 1 then --Searing Depths Exit Segment
 	  PrintInfo("=>> ExitSegment_searing_depths (Searing Depths) result "..tostring(result).." segment "..tostring(segmentID))
+		--clear the Thief flag when exiting segment 1 in any way. Winning means you're done or are going to the boss (which you can only win or die in, both of which would clear the flag and the segment itself doesn't have kecs to get angry at you in so clearing here covers it)
+		--Dying or escaping means you either died (causing forgiveness) or left the dungeon (also causing forgiveness).
+		SV.adventure.Thief = false
 		
 		--Died
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared and result ~= RogueEssence.Data.GameProgress.ResultType.Escaped then

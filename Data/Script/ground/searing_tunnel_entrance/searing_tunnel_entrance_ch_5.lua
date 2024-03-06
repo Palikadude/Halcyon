@@ -757,11 +757,11 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("I'm game![pause=0] Let's do it!")
+	UI:WaitShowDialogue("That would be great![pause=0] Let's do it!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(zigzagoon)
-	UI:WaitShowDialogue("OK,[pause=10] great![pause=0] Let me start with what I learned about moves that affect movement...")
+	UI:WaitShowDialogue("Alright![pause=0] Let me start with what I learned about moves that affect movement...")
 
 	--use this to flag the side conversation to stop
 	local stopTalking = false
@@ -836,13 +836,13 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Are you feeling alright?[pause=0] I kept calling your name but you weren't responding!")
-	UI:WaitShowDialogue("You looked zoned out.[pause=0] You must be feeling pretty exhausted after today!")
+	UI:WaitShowDialogue("You looked zoned out.[pause=0] You must be feeling pretty exhausted!")
 	
 	GAME:WaitFrames(20)
 	GROUND:CharTurnToCharAnimated(partner, growlithe, 4)
 	GROUND:CharTurnToCharAnimated(hero, zigzagoon, 4)
 	UI:SetSpeakerEmotion("Normal")
-	UI:WaitShowDialogue("Well,[pause=10] it is getting late.[pause=0] I'm sure all of us are exhausted after today!")
+	UI:WaitShowDialogue("Well,[pause=10] it is getting late.[pause=0] I'm sure we're all tired after today!")
 	UI:WaitShowDialogue("Let's hit the hay for the night.[pause=0] We need our sleep if we're gonna do our best tomorrow!")
 	
 	GAME:WaitFrames(20)

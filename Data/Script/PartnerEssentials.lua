@@ -35,10 +35,16 @@ function PartnerEssentials.InitializePartnerSpawn(dir, customPosition)
 	elseif SV.partner.Spawn ~= 'Default' then
 		local player = CH('PLAYER')
 		local marker = MRKR(SV.partner.Spawn)
-		dir = dir or marker.Direction or partner.Direction
 		
-		
-		GROUND:TeleportTo(partner, marker.Position.X, marker.Position.Y, dir)
+		--Failsafe. Sometimes the spawn variable isn't handled properly, and you get to a map with an invalid marker.
+		--If this happens, act as though the marker is 'Default'. I.e. do nothing.
+		--The bug this failsafe fixes sometimes happens in normal gameplay but typically doesn't cause any visible issues. This is more of an issue with debugging requiring a map reload depending on how you get to it.
+		if marker ~= nil then 
+			dir = dir or marker.Direction or partner.Direction
+			GROUND:TeleportTo(partner, marker.Position.X, marker.Position.Y, dir)
+		else
+			print('partner position marker failsafe hit')
+		end
 	end	
 	
 

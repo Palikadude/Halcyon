@@ -52,7 +52,7 @@ function apricorn_glade_ch_4.FirstArrivalCutscene()
 	--GeneralFunctions.EmoteAndPause(partner, "Exclaim", true)
 	UI:SetSpeaker(partner)
 	UI:SetSpeakerEmotion("Inspired")
-	UI:WaitShowDialogue("Wow,[pause=10] this clearing is huge![pause=0] There's all kinds of different kinds of Apricorns here too!")
+	UI:WaitShowDialogue("Wow,[pause=10] this clearing is huge![pause=0] There's all kinds of different Apricorns here too!")
 	GAME:WaitFrames(10)
 		
 	coro1 = TASK:BranchCoroutine(function() GeneralFunctions.MoveCamera(160, 432, 2) 

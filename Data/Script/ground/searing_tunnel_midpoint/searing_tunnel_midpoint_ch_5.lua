@@ -111,7 +111,7 @@ function searing_tunnel_midpoint_ch_5.ContinueScene()
 	UI:SetSpeakerEmotion("Happy")
 	
 	if SV.Chapter5.TunnelMidpointState == 'FirstArrival' then
-		UI:WaitShowDialogue("All set,[pause=10] ruff?[pause=0] Alright![pause=0] Let's do it!")
+		UI:WaitShowDialogue("All set,[pause=10] ruff?[pause=0] Alright![pause=0] This tunnel is as good as done!")
 	elseif SV.Chapter5.TunnelMidpointState == 'DeathArrival' then
 		UI:WaitShowDialogue("All set,[pause=10] ruff?[pause=0] Alright![pause=0] We'll get it done this time!")
 	else--RepeatArrival
@@ -368,7 +368,7 @@ function searing_tunnel_midpoint_ch_5.WipedCutscene()
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("It seems likely...")
 		UI:SetSpeakerEmotion("Pain")
-		UI:WaitShowDialogue("I'd hate to get beat by them again.[pause=0] My fur's still a bit singed!")
+		UI:WaitShowDialogue("I'd hate to get beat by them again.[pause=0] My fur's still singed!")
 		GAME:WaitFrames(20)
 		
 		
@@ -380,7 +380,7 @@ function searing_tunnel_midpoint_ch_5.WipedCutscene()
 		UI:WaitShowDialogue(growlithe:GetDisplayName() .. "'s right.[pause=0] We're so close,[pause=10] we can't stop now!")
 		UI:WaitShowDialogue("Let's give it another try![pause=0] I know we can get through this time!")
 	else
-		UI:WaitShowDialogue("Yeah.[pause=0] We need to work harder this next attempt.[pause=0] But we can do this!")
+		UI:WaitShowDialogue("Yeah.[pause=0] We need to work harder next time.[pause=0] But we can do this!")
 		--UI:WaitShowDialogue("We've got to be close to the end,[pause=10] we can't give up now!")
 		UI:WaitShowDialogue("C'mon,[pause=10] everyone,[pause=10] let's give it another shot!")
 	end

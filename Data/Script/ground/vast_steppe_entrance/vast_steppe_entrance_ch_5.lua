@@ -773,7 +773,7 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	audino_monster.IsFounder = true
 	
 	audino_monster:ReplaceSkill("double_slap", 0, true)
-	audino_monster:ReplaceSkill("heal_bell", 1, false)
+	audino_monster:ReplaceSkill("heal_bell", 1, true)
 	audino_monster:ReplaceSkill("disarming_voice", 2, true)
 	audino_monster:ReplaceSkill("helping_hand", 3, false)
 	
@@ -894,7 +894,7 @@ function vast_steppe_entrance_ch_5.Tropius_Action(chara, activator)
 		GROUND:CharAnimateTurnTo(chara, Direction.Right, 4)
 		UI:SetSpeakerEmotion("Worried")
 		UI:WaitShowDialogue("There's plenty of other things to worry about,[pause=10] after all...")
-		GAME:WaitFrames(30)
+		GAME:WaitFrames(40)
 		
 		GROUND:CharTurnToCharAnimated(chara, hero, 4)
 		UI:SetSpeakerEmotion("Normal")
