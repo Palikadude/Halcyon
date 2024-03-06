@@ -216,9 +216,9 @@ function DeliveryCheck(context, targetName, mission)
 			_DUNGEON.ShowMap = _DUNGEON.MinimapState.None
 			-- Take from inventory first before held items 
 			if inv_slot:IsValid() then 
-				GAME:TakePlayerBagItem(inv_slot.Slot)
+				GAME:TakePlayerBagItem(inv_slot.Slot, true)
 			else 
-				GAME:TakePlayerEquippedItem(team_slot.Slot)
+				GAME:TakePlayerEquippedItem(team_slot.Slot, true)
 			end
 			GAME:WaitFrames(20)
 			UI:SetSpeaker(context.Target)

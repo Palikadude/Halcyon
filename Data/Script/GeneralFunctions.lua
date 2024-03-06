@@ -893,7 +893,7 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney, keepEquips)
 	if sendItems then 
 		for i = 1, itemCount, 1 do
 			item = GAME:GetPlayerBagItem(0)
-			GAME:TakePlayerBagItem(0)
+			GAME:TakePlayerBagItem(0, true)
 			GAME:GivePlayerStorageItem(item)
 		end
 		
@@ -902,7 +902,7 @@ function GeneralFunctions.SendInvToStorage(sendItems, sendMoney, keepEquips)
 			for i = 1, GAME:GetPlayerPartyCount(), 1 do
 				item = GAME:GetPlayerEquippedItem(i-1)
 				if item.ID ~= "" then 
-					GAME:TakePlayerEquippedItem(i-1)
+					GAME:TakePlayerEquippedItem(i-1, true)
 					GAME:GivePlayerStorageItem(item)
 				end
 			end
@@ -1063,10 +1063,13 @@ function GeneralFunctions.RankUp(leftover_points)
 	--bag is full - equipped count is separate from bag and most be included in the calc
 	if GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount() >= GAME:GetPlayerBagLimit() then
 		UI:WaitShowDialogue("The " .. item:GetDisplayName() .. " was sent to storage.")
-		GAME:GivePlayerStorageItem(item.ID, amount)
+		GAME:GivePlayerStorageItem(item.ID)
 	else
-		GAME:GivePlayerItem(item.ID, amount)
+		GAME:GivePlayerItem(item.ID)
 	end
+	
+	UI:SetCenter(false)
+
 	
 	--silently award any leftover points.
 	if leftover_points > 0 then GeneralFunctions.RewardPoints(leftover_points, true) end

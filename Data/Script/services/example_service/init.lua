@@ -26,9 +26,9 @@ end
       ExampleService class gc method
       Essentially called when the garbage collector collects the service.
   ---------------------------------------------------------------]]
-function ExampleService:__gc()
-  PrintInfo('*****************ExampleService:__gc()')
-end
+--function ExampleService:__gc()
+--  PrintInfo('*****************ExampleService:__gc()')
+--end
 
 --[[---------------------------------------------------------------
     ExampleService:OnInit()

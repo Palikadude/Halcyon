@@ -1201,7 +1201,7 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
 	while i <= itemCount - 1 do 
 		item = GAME:GetPlayerBagItem(i)
 		if string.sub(item.ID, 1, 7) == "mission" then
-			GAME:TakePlayerBagItem(i)
+			GAME:TakePlayerBagItem(i, true)
 			itemCount = itemCount - 1
 		else
 			i = i + 1 
@@ -1212,7 +1212,7 @@ function COMMON.ExitDungeonMissionCheck(zoneId, segmentID)
 	for i = 1, GAME:GetPlayerPartyCount(), 1 do
 		item = GAME:GetPlayerEquippedItem(i-1)
 		if string.sub(item.ID, 1, 7) == "mission" then
-			GAME:TakePlayerEquippedItem(i-1)
+			GAME:TakePlayerEquippedItem(i-1, true)
 		end
 	end
 	

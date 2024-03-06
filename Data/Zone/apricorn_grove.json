@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.17.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,6 +9,7 @@
 "Released": true,
 "Comment": "4th dungeon of the game.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
 "KeepSkills": false,
@@ -557,6 +558,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 8
@@ -870,6 +872,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -953,7 +956,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -1488,6 +1492,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 8
@@ -1801,6 +1806,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1884,7 +1890,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -2419,6 +2426,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -2732,6 +2740,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2815,7 +2824,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -3350,6 +3360,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -3663,6 +3674,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -3746,7 +3758,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -4281,6 +4294,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -4594,6 +4608,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -4677,7 +4692,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -5212,6 +5228,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -5525,6 +5542,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -5608,7 +5626,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -6143,6 +6162,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -6456,6 +6476,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -6539,7 +6560,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -7074,6 +7096,7 @@
 "Max": 11
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 4,
 "Max": 6
@@ -7387,6 +7410,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -7470,7 +7494,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -8957,7 +8982,8 @@
 "Spawns": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": [

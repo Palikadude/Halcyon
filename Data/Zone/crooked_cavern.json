@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.14.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,8 +9,10 @@
 "Released": true,
 "Comment": "3rd Dungeon of the game.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -255,6 +257,7 @@
 "Max": 7
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 9
@@ -415,6 +418,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -498,7 +502,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 0,
@@ -736,6 +741,7 @@
 "Max": 7
 },
 "AllowDeadEnd": false,
+"TraverseFloor": false,
 "Halls": {
 "Min": 6,
 "Max": 9
@@ -896,6 +902,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -979,7 +986,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 "Range": {
 "Min": 5,
@@ -2120,6 +2128,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2157,6 +2169,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2198,6 +2214,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2479,6 +2499,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2516,6 +2540,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2557,6 +2585,10 @@
 },
 {
 "$type": "PMDC.LevelGen.MobSpawnAltColor, PMDC",
+"Chance": {
+"Numerator": 1,
+"Denominator": 0
+},
 "Odds": 0
 }
 ]
@@ -2762,7 +2794,8 @@
 "ModStates": []
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
@@ -2781,7 +2814,8 @@
 "MapID": "chapter_3_boss_fight"
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -2812,7 +2846,8 @@
 }
 }
 ],
-"IsRelevant": false
+"IsRelevant": false,
+"Comment": ""
 }
 ],
 "GroundMaps": [

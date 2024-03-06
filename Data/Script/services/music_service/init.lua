@@ -26,9 +26,9 @@ end
       MusicService class gc method
       Essentially called when the garbage collector collects the service.
   ---------------------------------------------------------------]]
-function MusicService:__gc()
-  PrintInfo('*****************MusicService:__gc()')
-end
+--function MusicService:__gc()
+--  PrintInfo('*****************MusicService:__gc()')
+--end
 
 --[[---------------------------------------------------------------
     MusicService:OnInit()

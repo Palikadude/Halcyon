@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.16.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,8 +9,10 @@
 "Released": true,
 "Comment": "Chapter 1 - First dungeon of the game",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": -1,
 "LevelCap": false,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -431,6 +433,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -567,7 +570,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -977,6 +981,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1113,7 +1118,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -1523,6 +1529,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -1659,7 +1666,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -2069,6 +2077,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2205,7 +2214,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.GridFloorGen, RogueEssence",
@@ -2615,6 +2625,7 @@
 "Connection": 1
 }
 ],
+"IncludeHalls": false,
 "Spawn": {
 "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
 "Amount": {
@@ -2751,7 +2762,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -3127,7 +3139,8 @@
 "ArgTable": "{}"
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": [

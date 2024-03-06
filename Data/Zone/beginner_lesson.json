@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.7.4.0",
+"Version": "0.7.24.0",
 "Object": {
 "$type": "RogueEssence.Data.ZoneData, RogueEssence",
 "Name": {
@@ -9,8 +9,10 @@
 "Released": true,
 "Comment": "First tutorial lesson at Ledian Dojo.",
 "NoEXP": false,
+"ExpPercent": 100,
 "Level": 5,
 "LevelCap": true,
+"KeepSkills": false,
 "TeamRestrict": false,
 "TeamSize": -1,
 "MoneyRestrict": false,
@@ -101,7 +103,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
@@ -181,7 +184,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
@@ -261,7 +265,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
@@ -341,7 +346,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 },
 {
 "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
@@ -421,7 +427,8 @@
 }
 }
 }
-]
+],
+"Comment": ""
 }
 ],
 "ZoneSteps": [
@@ -452,7 +459,8 @@
 }
 }
 ],
-"IsRelevant": true
+"IsRelevant": true,
+"Comment": ""
 }
 ],
 "GroundMaps": []
