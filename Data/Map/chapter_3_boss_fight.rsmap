@@ -856,8 +856,9 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
-"CheckClearStatus": "map_clear_check"
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "LuaBeginBattleEvent",
+"ArgTable": "{}"
 }
 },
 {

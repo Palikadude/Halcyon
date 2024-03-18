@@ -503,15 +503,14 @@ function crooked_den_ch_3.DiedToBoss()
 	
 	GROUND:Hide(partner.EntName)
 	GROUND:Hide(hero.EntName)
-	
-	
-	GAME:WaitFrames(60)
+		
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	
-	GAME:MoveCamera(180, 120, 1, false)
-		
+	GAME:MoveCamera(180, 120, 1, false)		
 	GAME:CutsceneMode(true)
+
+	GAME:WaitFrames(60)
 	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(20)
@@ -625,8 +624,8 @@ function crooked_den_ch_3.DefeatedBoss()
 	AI:DisableCharacterAI(partner)
 	SOUND:StopBGM()
 	
-	GAME:WaitFrames(60)
 	GAME:CutsceneMode(true)
+	GAME:WaitFrames(60)
 	GAME:FadeIn(40)
 	
 	GAME:WaitFrames(30)
@@ -725,14 +724,13 @@ end
 
 --player died to boss, came back: play a different scene to reflect this and get back into the fight faster.
 function crooked_den_ch_3.SecondPreBossScene()
-local hero = CH('PLAYER')
+	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')
 	local sandile, luxio, glameow, cacnea = CharacterEssentials.MakeCharactersFromList({{"Sandile", 172, 72, Direction.Down},
 																						{"Luxio", 172, 120, Direction.Up},
 																						{"Glameow", 144, 104, Direction.UpRight},
 																						{"Cacnea", 200, 104, Direction.UpLeft}})
 	
-	GAME:WaitFrames(60)
 	GAME:CutsceneMode(true)
 	AI:DisableCharacterAI(partner)
 	GeneralFunctions.StartTremble(sandile)
@@ -740,6 +738,7 @@ local hero = CH('PLAYER')
 	GROUND:TeleportTo(partner, 156, 256, Direction.Up)
 	GAME:MoveCamera(180, 120, 1, false)
 	SOUND:StopBGM()
+	GAME:WaitFrames(60)
 	
 	UI:WaitShowTitle(GAME:GetCurrentGround().Name:ToLocal(), 20)
 	GAME:WaitFrames(60)

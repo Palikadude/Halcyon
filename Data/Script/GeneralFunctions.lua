@@ -193,6 +193,7 @@ end
 
 --chara looks around in a rotations amount of directions, turning for turnframes frames, 
 --ending facing in enddir direction. if alldirections is true, can look in all directions, otherwise can only face +-2 from original direction
+--NOTE:Skemple uses 15 for waits for this sort of generic feature.
 function GeneralFunctions.LookAround(chara, rotations, turnframes, allDirections, sound, startLeft, enddir)
 
 
@@ -380,39 +381,40 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	if emote == 'Happy' then
 		emt = "happy"
 		sfx = "EVT_Emote_Startled_2"
-		pause = 20--test this one 
+		pause = 20--this one is accurate
 	elseif emote == 'Notice' then --this one is the 3 lines
 		emt = "notice"
 		sfx = 'EVT_Emote_Exclaim'
-		pause = 30
+		pause = 30--this should be more like 20
 	elseif emote == 'Exclaim' then --this one is the !
 		emt = "exclaim"
 		sfx = 'EVT_Emote_Exclaim_2'
-		pause = 20
+		pause = 20--this should be like, 25? To cover the entirety of it. 30 to give extra time to it...
 	elseif emote == 'Glowing' then 
 		emt = "glowing"
 		sfx = 'EVT_Emote_Startled_2'
-		pause = 20--test this one
+		pause = 20--test this one - should be like 22?
 	elseif emote == 'Sweating' then
 		emt = "sweating"
 		sfx = 'EVT_Emote_Sweating'
-		pause = 40 
+		pause = 40 --should be like 26
 	elseif emote == 'Question' then
 		emt = "question"
 		sfx = 'EVT_Emote_Confused'
-		pause = 40
+		pause = 40--this is fine
 	elseif emote == 'Angry' then
 		emt = "angry"
 		sfx = 'EVT_Emote_Complain_2'
-		pause = 40 --test this one
+		pause = 40 --Should be like 20ish for one repetition
+		if repetitions == 1 then repetitions = 2 end--Do it twice for default case; once is kinda short and weird looking.
 	elseif emote == 'Shock' then
 		emt = "shock"
 		sfx = 'EVT_Emote_Shock'
-		pause = 40
+		pause = 40--should be like 30?
 	else--sweatdrop
 		emt = "sweatdrop"
 		sfx = 'EVT_Emote_Sweatdrop'
-		pause = 40
+		pause = 40--should be 50
 	end
 	
 	GROUND:CharSetEmote(chara, emt, repetitions)
@@ -422,6 +424,81 @@ function GeneralFunctions.EmoteAndPause(chara, emote, sound, repetitions)
 	end	
 	GAME:WaitFrames(pause)
 end
+
+
+--Some serious spaghetti code being crafted here...
+--Precise EmoteAndPause that has pause values that are much closer to the actual duration of the Emote's duration.
+--If I had more foresight and care early on, the original EmoteAndPause would have these values
+--To avoid breaking all the precise timings that were probably adjusted with manual waits and such in older scripts,
+--make a new function for this instead of overwriting the old values.
+function GeneralFunctions.EmoteAndPausePrecise(chara, emote, sound, repetitions)
+	local sfx = 'null'
+	local emt = 'null'
+	local pause = 0
+	
+	if repetitions == nil then repetitions = 1 end
+	
+	if emote == 'Happy' then
+		emt = "happy"
+		sfx = "EVT_Emote_Startled_2"
+		pause = 20
+	elseif emote == 'Notice' then --this one is the 3 lines
+		emt = "notice"
+		sfx = 'EVT_Emote_Exclaim'
+		pause = 20
+	elseif emote == 'Exclaim' then --this one is the !
+		emt = "exclaim"
+		sfx = 'EVT_Emote_Exclaim_2'
+		pause = 25
+	elseif emote == 'Glowing' then 
+		emt = "glowing"
+		sfx = 'EVT_Emote_Startled_2'
+		pause = 22
+	elseif emote == 'Sweating' then
+		emt = "sweating"
+		sfx = 'EVT_Emote_Sweating'
+		pause = 26 --should be like 26
+	elseif emote == 'Question' then
+		emt = "question"
+		sfx = 'EVT_Emote_Confused'
+		pause = 40--this is fine
+	elseif emote == 'Angry' then
+		emt = "angry"
+		sfx = 'EVT_Emote_Complain_2'
+		pause = 40 --Should be like 20ish for one repetition
+		if repetitions == 1 then repetitions = 2 end--Do it twice for default case; once is kinda short and weird looking.
+	elseif emote == 'Shock' then
+		emt = "shock"
+		sfx = 'EVT_Emote_Shock'
+		pause = 30--should be like 30?
+	else--sweatdrop
+		emt = "sweatdrop"
+		sfx = 'EVT_Emote_Sweatdrop'
+		pause = 50--should be 50
+	end
+	
+	GROUND:CharSetEmote(chara, emt, repetitions)
+	
+	if sound and sfx ~= 'null' then 
+		SOUND:PlayBattleSE(sfx)
+	end	
+	GAME:WaitFrames(pause)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --generic function to do an animation once then go back to the anim you were doing before (i.e. nod, get up, be surprised) 
 --Has standardized wait times

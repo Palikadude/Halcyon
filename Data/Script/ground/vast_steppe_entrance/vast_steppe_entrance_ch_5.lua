@@ -1160,7 +1160,6 @@ end
 
 
 
---todo
 function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 
 	local hero = CH('PLAYER')
@@ -1229,6 +1228,8 @@ function vast_steppe_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		
 		GeneralFunctions.EndConversation(partner)
 		SV.Chapter5.EnteredSteppe = true
+		--Reset this flag if you go in case you go in without taking anything.
+		SV.Chapter5.NeedGiveSupplies = false
 		GAME:EnterDungeon("vast_steppe", 0, 0, 0, RogueEssence.Data.GameProgress.DungeonStakes.Risk, true, false)
 
 		

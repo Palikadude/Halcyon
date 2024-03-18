@@ -2375,8 +2375,9 @@
 ]
 },
 "Value": {
-"$type": "PMDC.Dungeon.BeginBattleEvent, PMDC",
-"CheckClearStatus": "map_clear_check"
+"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
+"Script": "LuaBeginBattleEvent",
+"ArgTable": "{ CustomClearEvent = 'LavaBossClear'}"
 }
 }
 ],
@@ -11252,8 +11253,8 @@
 "X": 7,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -11287,8 +11288,8 @@
 "X": 7,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -11989,8 +11990,8 @@
 "X": 8,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -12726,8 +12727,8 @@
 "X": 9,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -12761,8 +12762,8 @@
 "X": 9,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -13463,8 +13464,8 @@
 "X": 10,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -13498,8 +13499,8 @@
 "X": 10,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -14200,8 +14201,8 @@
 "X": 11,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -14235,8 +14236,8 @@
 "X": 11,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -14937,8 +14938,8 @@
 "X": 12,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -14972,8 +14973,8 @@
 "X": 12,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -15674,8 +15675,8 @@
 "X": 13,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -16411,8 +16412,8 @@
 "X": 14,
 "Y": 8
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }
@@ -16446,8 +16447,8 @@
 "X": 14,
 "Y": 9
 },
-"ID": "",
-"Revealed": false,
+"ID": "flowing_lava",
+"Revealed": true,
 "Owner": 0,
 "TileStates": []
 }

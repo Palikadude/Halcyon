@@ -726,14 +726,14 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(growlithe)
 	UI:WaitShowDialogue("I'm just happy to be adventuring with everyone again,[pause=10] ruff!")
-	UI:WaitShowDialogue("Sentry duty is so boring...[pause=0] I much prefer being out with everyone in the guild!")
+	UI:WaitShowDialogue("Sentry duty is so boring...[pause=0] I much prefer being out in the field with everyone in the guild!")
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("It's nice to be out in the field,[pause=10] ruff![pause=0] I can't wait to adventure more tomorrow!")
+	UI:WaitShowDialogue("I can't wait to adventure more tomorrow!")
 	
 	GAME:WaitFrames(20)
 	UI:SetSpeaker(zigzagoon)
 	UI:SetSpeakerEmotion("Happy")
-	UI:WaitShowDialogue("Same here![pause=0] Adventuring with everyone here is gonna teach me so much!")
+	UI:WaitShowDialogue("Same here![pause=0] I can learn so much more being with everyone than I could alone!")
 	UI:WaitShowDialogue("I'm hoping I'll get to learn from you too,[pause=10] " .. partner:GetDisplayName() .. " and " .. hero:GetDisplayName() .. "![pause=0] It'd be great if we got paired tomorrow!")
 	--really excited to see who we get to team up with tomorrow
 	
@@ -777,7 +777,7 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:SetSpeakerEmotion("Worried")
 	--hero zones out during this conversation
 	coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("(.........)")
-											UI:WaitShowDialogue("(Today was fun,[pause=10] but something's been bothering me and I can't get my mind off of it.)") 
+											UI:WaitShowDialogue("(Today was fun,[pause=10] but something's been bothering me...[pause=0] I can't get my mind off of it.)") 
 											UI:WaitShowDialogue("(The strange tension...[pause=0] I've been feeling it ever since " .. breloom:GetDisplayName() .. " and " .. girafarig:GetDisplayName() .. " got back.)")
 											UI:WaitShowDialogue("(What's more is that it's been growing a little more intense each day we've been on the road.)")
 											UI:WaitShowDialogue("(I thought that maybe I was just excited about the expedition...)")
@@ -1186,9 +1186,8 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8, coro9, coro10})	
 	GAME:WaitFrames(20)
 	
-	local heal_bell = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("heal_bell")
 	UI:SetSpeaker(audino)
-	UI:WaitShowDialogue("I guess w-we're teaming up this time![pause=0] I'll do my best to keep us healthy with " .. heal_bell:GetColoredName() .. "!")
+	UI:WaitShowDialogue("I guess w-we're teaming up this time![pause=0] We'll do our best!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(cranidos)
@@ -1333,7 +1332,6 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("Thank you.[pause=0] I'm putting my trust in you.")
 	GAME:WaitFrames(30)
-	
 	
 	GROUND:EntTurn(tropius, Direction.Down)
 	UI:SetSpeakerEmotion("Normal")
@@ -1489,48 +1487,320 @@ function searing_tunnel_entrance_ch_5.Tropius_Action(chara, activator)
 	--Will hand out the supplies if needed this time. Will be in a bit of a panic if you wipe. You can also
 	--speak to him after wiping to the boss, which prompts Hyko to get you to not give details about the boss
 	--since he wouldn't want the guildmaster to flip
+	if not SV.Chapter5.EnteredTunnel then
+		GeneralFunctions.StartConversation(chara, "Team " .. GAME:GetTeamName() .. "...[pause=0] I'm trusting you to get through this next dungeon safely.", "Worried")
+		UI:WaitShowDialogue("So if you're having any issues...[pause=0] Please come see me.[pause=0] I'll do what I can to help.")
+	elseif SV.Chapter5.TunnelLastExitReason == 'Died' then
+		GeneralFunctions.StartConversation(chara, "Please be more careful on your next attempt.[pause=0] I'd hate to see you all wiped out again!", "Worried")
+	elseif SV.Chapter5.TunnelLastExitReason == 'Escaped' then
+		GeneralFunctions.StartConversation(chara, "Good luck and stay safe on your next attempt.[pause=0] Don't be afraid to escape again if things go south!", "Normal")
+	elseif SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+		GeneralFunctions.StartConversation(chara, "Good luck and stay safe on your next attempt.[pause=0]\nAnd remember,[pause=10] only come back here if you need to!", "Normal")
+	end
+	
+	--Say something extra if you've encountered the boss.
+	--TODO: Improve this. Dialogue and choreography could use a tuneup.
+	if SV.Chapter5.EncounteredBoss and not SV.Chapter5.GrowlitheTropiusBossInterrupt then
+		local partner = CH('Teammate1')
+		local hero = CH('PLAYER')
+		local growlithe = CH('Teammate2')
+		local zigzagoon = CH('Teammate3')
+		
+		GAME:WaitFrames(40)
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Hey,[pause=10] Guildmaster,[pause=10] there is actually something we could use some help with.")
+		GAME:WaitFrames(20)
+		
+		GROUND:CharTurnToChar(chara, partner)
+		UI:SetSpeaker(chara)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Oh?[pause=0] What would that be?")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		local coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Well,[pause=10] at the end of this dungeon,[pause=10] there's-", 40) end)
+		local coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(20) 
+													  GROUND:CharSetAnim(growlithe, "None", true)
+													  GeneralFunctions.EmoteAndPause(growlithe, "Exclaim", true)
+													  end)
+		TASK:JoinCoroutines({coro1, coro2})
+		GROUND:CharTurnToCharAnimated(growlithe, chara, 4)
+		UI:SetSpeaker(growlithe)
+		UI:SetSpeakerEmotion("Surprised")
+		coro1 = TASK:BranchCoroutine(function() UI:WaitShowDialogue("P-probably gonna be a ton of lava![pause=0] We could use advice on how to get past it,[pause=10] ruff!") end)
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharTurnToCharAnimated(chara, growlithe, 4) end)
+		local coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) GROUND:CharTurnToCharAnimated(partner, growlithe, 4) end)
+		local coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) GROUND:CharTurnToCharAnimated(hero, growlithe, 4) end)
+		local coro5 = TASK:BranchCoroutine(function() GROUND:CharSetAnim(zigzagoon, "None", true) GROUND:CharAnimateTurnTo(zigzagoon, Direction.Up, 4) end)
+		
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5})
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(chara)
+		coro1 = TASK:BranchCoroutine(function()	UI:WaitShowDialogue("Oh,[pause=10] is that all?[pause=0] All you have to look around for the safe way forward.")
+												UI:WaitShowDialogue("No matter what,[pause=10] the lava should never completely block your way.")
+												UI:WaitShowDialogue("You can even take shortcuts over the lava if you're clever with your moves,[pause=10] so keep that in mind!")
+												end)
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(6) GROUND:CharTurnToCharAnimated(partner, chara, 4) end)
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) GROUND:CharTurnToCharAnimated(hero, chara, 4) end)
+		coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) GROUND:CharTurnToCharAnimated(zigzagoon, chara, 4) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+	
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(growlithe)
+		GROUND:CharSetEmote(growlithe, "sweating", 1)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Th-thanks,[pause=10] " .. chara:GetDisplayName() .. "![pause=0] We'll be sure to remember all that,[pause=10] ruff!")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(chara)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Of course,[pause=10] " .. growlithe:GetDisplayName() .. ",[pause=10] I'm happy I could help![pause=0] Good luck,[pause=10] and stay safe!")
+		GAME:WaitFrames(20)
+		
+
+		--teleport over to them to reduce the gap if the reason you're out here is due to retreating.
+		if SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+			GAME:FadeOut(false, 20)
+			AI:DisableCharacterAI(partner)
+			GROUND:TeleportTo(partner, 408, 172, Direction.Right)
+			GROUND:TeleportTo(hero, 408, 196, Direction.UpRight)
+			GROUND:CharTurnToChar(zigzagoon, growlithe)
+			GROUND:CharTurnToChar(growlithe, partner)
+			GROUND:CharEndAnim(chara)
+			GROUND:EntTurn(chara, Direction.Down)
+			GROUND:CharTurnToCharAnimated(partner, growlithe, 4)
+			AI:SetCharacterAI(partner, "ai.ground_partner", CH('PLAYER'), partner.Position)
+			AI:EnableCharacterAI(partner)
+			GAME:WaitFrames(20)
+			GAME:FadeIn(20)
+		else
+			GROUND:CharEndAnim(chara)
+			GROUND:EntTurn(chara, Direction.Down)
+			GROUND:CharTurnToCharAnimated(partner, growlithe, 4)
+		end
+
+		--[[
+		--This will probably look a little weird depending on how weird you can get the player/partner before talking to Penticus.
+		if SV.Chapter5.TunnelLastExitReason == 'Retreated' then 
+			AI:DisableCharacterAI(partner)
+			coro1 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 408, 196, false, 1) 
+													GROUND:CharSetAnim(partner, "None", true)
+													GROUND:CharTurnToChar(partner, growlithe) 
+													end)
+			coro2 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(hero, zigzagoon, 4)
+													GeneralFunctions.EightWayMove(hero, 408, 172, false, 1)
+													GROUND:CharSetAnim(hero, "None", true)
+													GROUND:CharTurnToChar(hero, zigzagoon)
+													end)
+			coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(4)
+													GeneralFunctions.FaceMovingCharacter(growlithe, hero, 4, Direction.Left) end)
+			coro4 = TASK:BranchCoroutine(function() GAME:WaitFrames(16)
+													GeneralFunctions.FaceMovingCharacter(zigzagoon, partner, 4, Direction.Left) end)
+			TASK:JoinCoroutines({coro1, coro2, coro3, coro4})
+			AI:EnableCharacterAI(partner)
+		end
+		]]--
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		coro1 = TASK:BranchCoroutine(function() UI:WaitShowTimedDialogue("Hey,[pause=10] that wasn't what-", 40) end)
+		coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(8) GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4) end)
+		coro3 = TASK:BranchCoroutine(function() GAME:WaitFrames(12) GROUND:CharTurnToCharAnimated(hero, growlithe, 4) end)
+		TASK:JoinCoroutines({coro1, coro2, coro3})
+		GAME:WaitFrames(10)
+		
+		UI:SetSpeaker(growlithe)
+		GROUND:CharTurnToCharAnimated(growlithe, partner, 4)
+		UI:SetSpeakerEmotion("Pain")
+		GROUND:CharSetEmote(growlithe, "sweating", 1)
+		UI:WaitShowDialogue("(Shhh![pause=0] Not so loud,[pause=10] ruff.)")
+		UI:WaitShowDialogue("(I know you wanted to ask him about the " .. _DATA:GetMonster('slugma'):GetColoredName() .. " tribe we encountered...)")
+		UI:WaitShowDialogue("(But if he knew about them,[pause=10] there's no way he'd let me keep adventuring with everyone.)")
+		UI:WaitShowDialogue("(He'd get too worried,[pause=10] and stop me from going back in with you guys...)")
+		UI:WaitShowDialogue("(I know we can handle this ourselves.[pause=0] So please don't let him know,[pause=10] ruff...)")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("(Well...[pause=30] alright.[pause=0] We won't say anything to him about the tribe then.)")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("(We'll just have to get past them ourselves![pause=0] I'm sure all four of us can do it if we work together!)")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(growlithe)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("(That's the spirit,[pause=10] ruff![pause=0] Let's get back in there and do this,[pause=10] ruff!)")
+		GAME:WaitFrames(20)
+		
+		GROUND:CharTurnToCharAnimated(growlithe, zigzagoon, 4)
+		GROUND:CharTurnToCharAnimated(zigzagoon, growlithe, 4)
+		GROUND:CharEndAnim(zigzagoon)
+		GROUND:CharEndAnim(growlithe)
+		SV.Chapter5.GrowlitheTropiusBossInterrupt = true		
+	end
+	
+	GeneralFunctions.EndConversation(chara)
+	
 end 
 
 function searing_tunnel_entrance_ch_5.Noctowl_Action(chara, activator)
 	--Guildmaster insisted on handing out potential supplies to your team, so talk to him.
 	--...Why does the Guildmaster worry over Hyko so much? There's a reason... But it's not my story to tell.
 	
+	if SV.Chapter5.EnteredTunnel then 
 	--He sleeps if you die and visit him. This is where he finds his rest after all.
+		UI:ResetSpeaker(false)
+		UI:SetCenter(true)
+		GeneralFunctions.StartConversation(chara, "(" .. chara:GetDisplayName() .. " is sleeping.)\n(He must be catching up on his sleep...)", "Normal", false, false, false)
+		UI:SetCenter(false)
+		GeneralFunctions.EndConversation(chara, false)
+	elseif SV.Chapter5.SpokeToNoctowlTunnel then
+		GeneralFunctions.StartConversation(chara, "As I said earlier,[pause=10] the Guildmaster has insisted that he be the one to hand out supplies for your party.")
+		UI:WaitShowDialogue("If you struggle with this dungeon,[pause=10] be sure to see him.")
+		GeneralFunctions.EndConversation(chara)
+	else
+		local partner = CH('Teammate1')
+		
+		GeneralFunctions.StartConversation(chara, "The Guildmaster has insisted that he be the one to hand out supplies for your party.")
+		UI:WaitShowDialogue("If you struggle with this dungeon,[pause=10] be sure to see him.")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(partner)
+		UI:WaitShowDialogue("OK,[pause=10] we'll be sure to speak with him in case we have trouble!")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("But,[pause=10] um,[pause=10] " .. chara:GetDisplayName() .. ",[pause=10] I have to ask...")
+		UI:WaitShowDialogue("Would this have anything to do with " .. CharacterEssentials.GetCharacterName("Growlithe") .. " being paired with us?")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(chara)
+		UI:WaitShowDialogue("...[pause=30]It seems likely,[pause=10] yes.")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Why does the Guildmaster worry so much about " .. CharacterEssentials.GetCharacterName("Growlithe") .. "?")
+		UI:WaitShowDialogue("I've never seen him as serious as he is when it comes to " .. CharacterEssentials.GetCharacterName("Growlithe") .. "'s safety!")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(chara)
+		UI:WaitShowDialogue("There is a reason he frets over him the way that he does...[pause=0] But it is not my place to tell.")
+		UI:WaitShowDialogue("I do not wish to overstep any boundaries.[pause=0] I hope you understand.")
+		GAME:WaitFrames(20)
+		
+		UI:SetSpeaker(partner)
+		UI:SetSpeakerEmotion("Sad")
+		GROUND:CharSetEmote(partner, "sweating", 1)
+		UI:WaitShowDialogue("Oh,[pause=10] that's alright,[pause=10] I understand.[pause=0] It does make me wonder,[pause=10] though...")
+
+		SV.Chapter5.SpokeToNoctowlTunnel = true
+		GeneralFunctions.EndConversation(chara)
+		
+	end
+	
 	
 end 
 
 function searing_tunnel_entrance_ch_5.Breloom_Action(chara, activator)
 	--Reiterates how the place is unstable. It's strange, since he's heard of this place before, and it was never said to be unstable then! (his memory is good so HMMM)
+	GeneralFunctions.StartConversation(chara, "Be careful in the tunnel.[pause=0] All that lava in there is unstable!")
+	UI:WaitShowDialogue("You'll need to change your strategy depending on the lava level if you don't wanna end up crispy!")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("It's strange though...[pause=0] I've heard of this place before me and " .. CharacterEssentials.GetCharacterName("Girafarig") .. " came through here.")
+	UI:WaitShowDialogue("None of what I heard ever mentioned the lava level being so erratic!")
+	UI:WaitShowDialogue("I feel like someone would have mentioned it...[pause=0] It's definitely what I remember most about this place!")	
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Girafarig_Action(chara, activator)
 	--Tells you about treasure boxes
+	GeneralFunctions.StartConversation(chara, "Have you two found any Treasure Boxes yet?")
+	UI:WaitShowDialogue(CharacterEssentials.GetCharacterName("Breloom") .. ",[pause=10] " .. CharacterEssentials.GetCharacterName("Tail") .. ",[pause=10] and managed to hind a whole bunch on our scouting trip!")
+	UI:WaitShowDialogue("Enemies,[pause=10] especially strong ones,[pause=10] in tough dungeons like the ones on this expedition carry them sometimes!")
+	UI:WaitShowDialogue("Just defeat them and their Treasure Box is all yours!")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("Though,[pause=10] I've noticed that not all enemies seem capable of having treasure on them...[pause=0] I wonder why that is?")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Anyways...[pause=0] You'll need to visit " .. CharacterEssentials.GetCharacterName("Sneasel") .. " back in Metano Town to get them opened.")
+	UI:WaitShowDialogue("The type of items inside Treasure Boxes can't be found any other way...[br]...So make sure to store away any that you come across for when we get back home!")
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Growlithe_Action(chara, activator)
-
+	--I'm heat resistant!
+	if not SV.Chapter5.EnteredTunnel then
+	
+	elseif SV.Chapter5.GrowlitheTropiusBossInterrupt then
+	
+	elseif SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+	
+	else--last exit reason was Died or Escaped
+	
+	end
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Zigzagoon_Action(chara, activator)
-
+	if not SV.Chapter5.EnteredTunnel then
+	
+	elseif SV.Chapter5.GrowlitheTropiusBossInterrupt then
+	
+	elseif SV.Chapter5.TunnelLastExitReason == 'Retreated' then
+	
+	else--last exit reason was Died or Escaped
+	
+	end
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Audino_Action(chara, activator)
 	--We're bound to get burned with all the lava and fire-types in there. Heal bell will be useful for us in there!
-
+	local heal_bell = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Skill]:Get("heal_bell")
+  	GeneralFunctions.StartConversation(chara, "We're bound to get b-burned with all the Fire-types and lava in there...", "Worried", false)
+	GAME:WaitFrames(20)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("...We'll be a-alright,[pause=10] though![pause=0] I have " .. heal_bell:GetColoredName() .. " to keep us healthy!")
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Snubbull_Action(chara, activator)
-
-
+	GeneralFunctions.StartConversation(chara, "This dungeon is scorching hot.[pause=0] We'll need to take caution or we'll end up cooked by the heat!", "Worried", false)
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("...Though,[pause=10] I wonder if cooking food with the lava in a place like this gives it a unique taste.")
+	UI:SetSpeakerEmotion("Special0")
+	UI:WaitShowDialogue("I suppose there's only one way to find out. " .. STRINGS:Format("\\u266A"))
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Mareep_Action(chara, activator)
-
+	GeneralFunctions.StartConversation(chara, "We're gonna have a grea-a-a-at adventure gals![pause=0] This is gonna be a fun team up!", "Happy", false)
+	
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_entrance_ch_5.Cranidos_Action(chara, activator)
-
+	if not SV.Chapter5.SpokeToCranidosTunnel then
+		GeneralFunctions.StartConversation(chara, CharacterEssentials.GetCharacterName("Mareep") .. ",[pause=10] I know you're excited to team up and all,[pause=10] but don't get careless.", "Worried", false)
+		UI:WaitShowDialogue("You should stay close to me while we're inside the tunnel.")
+		UI:WaitShowDialogue("That way I can take all the Fire-type attacks for you...[pause=0] I'd hate to see your wool get burned up.")
+		GAME:WaitFrames(40)
+		GeneralFunctions.EmoteAndPause(chara, "Exclaim", true)
+		GROUND:CharTurnToCharAnimated(chara, CH('PLAYER'), 4)
+		GeneralFunctions.Complain(chara)
+		GROUND:CharSetAnim(chara, "None", true)
+		GROUND:CharSetEmote(chara, "angry", 0)
+		UI:SetSpeakerEmotion("Angry")
+		UI:WaitShowDialogue("H-hey![pause=0] This is a private conversation!")
+		UI:WaitShowDialogue("Shouldn't you greenhorns be getting yourselves ready!?")
+		UI:WaitShowDialogue("Stop eavesdropping on real adventurers like myself and " .. CharacterEssentials.GetCharacterName("Mareep") .. "![pause=0] G-get lost!")
+		GROUND:CharSetEmote(chara, "", 0)
+		SV.Chapter5.SpokeToCranidosTunnel = true
+	else
+		GeneralFunctions.StartConversation(chara, "I already told you two to buzz off![pause=0] This dungeon is no joke,[pause=10] so stop wasting your time bothering me!", "Angry")
+	end
+	GeneralFunctions.EndConversation(chara)
 end 
 
 
@@ -1660,7 +1930,6 @@ function searing_tunnel_entrance_ch_5.DiedCutscene()
 	coro3 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, hero, 4) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})
 	
-	GROUND:CharEndAnim(noctowl)
 	SV.Chapter5.PlayTempTunnelScene = false
 
 	AI:EnableCharacterAI(partner)
@@ -1911,7 +2180,7 @@ function searing_tunnel_entrance_ch_5.Dungeon_Entrance_Touch(obj, activator)
 		coro2 = TASK:BranchCoroutine(function() GeneralFunctions.EightWayMove(partner, 480, 144, false, 1)
 												GROUND:CharAnimateTurnTo(partner, face_direction, 4)
 												GROUND:CharSetAnim(partner, "None", true) end) 
-		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, false, nil, GAME:GetCameraCenter().X, 168) end)
+		coro3 = TASK:BranchCoroutine(function() GeneralFunctions.PanCamera(nil, nil, false, 1, GAME:GetCameraCenter().X, 168) end)
 		TASK:JoinCoroutines({coro1, coro2, coro3})
 		
 		--different movement pattern depending on where they are

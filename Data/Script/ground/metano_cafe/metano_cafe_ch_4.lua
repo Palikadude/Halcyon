@@ -84,7 +84,6 @@ function metano_cafe_ch_4.Cranidos_Action(chara, activator)
 			UI:SetSpeakerEmotion("Surprised")
 			UI:WaitShowDialogue("U-umm![pause=0] I m-mean...")
 			GAME:WaitFrames(20)
-			--TODO: Get a blushing portrait for cranidos here! :3
 			UI:SetSpeakerEmotion("Special0")
 			UI:WaitShowDialogue("D-don't you rookies have anything better to do than laze around here?[pause=0] Go do something productive for once!")
 			SV.Chapter4.CranidosBlush = true

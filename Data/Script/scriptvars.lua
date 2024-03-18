@@ -757,6 +757,8 @@ SV.Chapter5 =
 	DiedToBoss = false,--Did the player lose to the boss ever?
 	JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
 	SpokeToNoctowlTunnel = false,--Did you get some extra info about Hyko and Penticus's relation from Phileas?
+	SpokeToCranidosTunnel = false,--Did you get to see Ganlon trying to be protective of Shuca?
+	GrowlitheTropiusBossInterrupt = false,--did Hyko stop you from telling Penticus about the boss?
 	
 	FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
 	EnteredMountain = false,--did player enter Mt. Windswept?

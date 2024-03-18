@@ -180,7 +180,7 @@ function DebugTools:OnNewGame()
 
 	  
 	  local mon_id = RogueEssence.Dungeon.MonsterID("turtwig", 0, "normal", Gender.Male)
-	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
+	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 100, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
 	  p.IsFounder = true
@@ -189,7 +189,7 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
 	  mon_id = RogueEssence.Dungeon.MonsterID("piplup", 0, "normal", Gender.Male)
-	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0)
+	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 100, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
 	  p.IsFounder = true
@@ -205,7 +205,7 @@ function DebugTools:OnNewGame()
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
 	  mon_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 16, "", 0))
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 100, "", 0))
 	  _DATA.Save.ActiveTeam.Players[2].Nickname = 'Hyko'
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
@@ -225,7 +225,7 @@ function DebugTools:OnNewGame()
 		
 	  --audino 
 	  mon_id = RogueEssence.Dungeon.MonsterID("zigzagoon", 0, "normal", Gender.Female)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,19, "", 0))
+	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,100, "", 0))
 	  _DATA.Save.ActiveTeam.Players[3].Nickname = 'Almotz'
 	  _DATA.Save.ActiveTeam:SetRank("normal")
 	  _DATA.Save:UpdateTeamProfile(true)
