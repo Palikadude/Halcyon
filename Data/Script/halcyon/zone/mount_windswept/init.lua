@@ -22,8 +22,7 @@ end
 ---mount_windswept.EnterSegment(zone, rescuing, segmentID, mapID)
 --Engine callback function
 function mount_windswept.EnterSegment(zone, rescuing, segmentID, mapID)
-
-
+	GeneralFunctions.CheckAllowSetRescue(zone.ID)
 end
 
 ---mount_windswept.ExitSegment(zone, result, rescue, segmentID, mapID)

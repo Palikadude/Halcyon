@@ -20,7 +20,7 @@ function apricorn_grove.Init(zone)
 end
 
 function apricorn_grove.EnterSegment(zone, rescuing, segmentID, mapID)
-	
+	GeneralFunctions.CheckAllowSetRescue(zone.ID)
 	--without this check, entering the apricorn grove grounds (entrance/glade) after officially entering the dungeon
 	--would call the EnterSegment callback and trigger the InDungeon flag to become true.
 	if segmentID == 0 then
@@ -54,7 +54,6 @@ function apricorn_grove.ExitSegment(zone, result, rescue, segmentID, mapID)
             Rescue
         }
 		]]--
-	GeneralFunctions.CheckAllowSetRescue(zone.ID) 
 	local exited = COMMON.ExitDungeonMissionCheck(result, rescue, zone.ID, segmentID)
 
 	if exited == true then

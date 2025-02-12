@@ -29,6 +29,15 @@ function searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
 		SV.SearingTunnel.LavaFlowDirection = 'TopStraight'
 		SV.SearingTunnel.LavaCountdown = -1--The script will default this to a proper value.
 	end
+  
+  if segmentID == 0
+    --Only allow rescues in the first segment.
+	  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
+  else 
+    --Disallow rescues for later half segments, and for the boss fight.
+    GAME:SetRescueAllowed(false)
+  end
+
 	
 end
 
@@ -49,8 +58,6 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 	if segmentID == 0 then --Searing Tunnel Exit Segment
 	  PrintInfo("=>> ExitSegment_searing_tunnel (Searing Tunnel) result "..tostring(result).." segment "..tostring(segmentID))
 	  
-	  --Only allow rescues in the first segment.
-	  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
 	  local exited = COMMON.ExitDungeonMissionCheck(result, rescue, zone.ID, segmentID)
 	  
 	  if exited == true then
@@ -106,10 +113,7 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 
 	elseif segmentID == 1 then --Searing Depths Exit Segment
 		PrintInfo("=>> ExitSegment_searing_depths (Searing Depths) result "..tostring(result).." segment "..tostring(segmentID))
-	
-		--Disallow rescues for later half segments
-		GAME:SetRescueAllowed(false)
-		
+			
 		--clear the Thief flag when exiting segment 1 in any way. Winning means you're done or are going to the boss (which you can only win or die in, both of which would clear the flag and the segment itself doesn't have kecs to get angry at you in so clearing here covers it)
 		--Dying or escaping means you either died (causing forgiveness) or left the dungeon (also causing forgiveness).
 		SV.adventure.Thief = false
@@ -171,10 +175,7 @@ function searing_tunnel.ExitSegment(zone, result, rescue, segmentID, mapID)
 	else--Searing Crucible Exit Segment
 	  PrintInfo("=>> ExitSegment_searing_crucible (Searing Crucible) result "..tostring(result).." segment "..tostring(segmentID))
 	  --This segment is only accessible during Chapter 5, for the boss fight.
-	  
-	  --Disallow rescues for boss fight segments
-	  GAME:SetRescueAllowed(false)
-	 
+    
 		--died to boss
 		if result ~= RogueEssence.Data.GameProgress.ResultType.Cleared then
 			SV.SearingTunnel.DiedPastCheckpoint = true

@@ -20,6 +20,8 @@ function vast_steppe.Init(zone)
 end
 
 function vast_steppe.EnterSegment(zone, rescuing, segmentID, mapID)
+  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
+
 	if rescuing ~= true then
 		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
 	end
@@ -34,7 +36,6 @@ function vast_steppe.ExitSegment(zone, result, rescue, segmentID, mapID)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   PrintInfo("=>> ExitSegment_vast_steppe (Vast Steppe) result "..tostring(result).." segment "..tostring(segmentID))
   
-  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
   local exited = COMMON.ExitDungeonMissionCheck(result, rescue, zone.ID, segmentID)
   --always clear the Thief flag when leaving the dungeon via any means. UpdateDailyFlags does take care of this, but that won't always be called when leaving this dungeon.
   SV.adventure.Thief = false

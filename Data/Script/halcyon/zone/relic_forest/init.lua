@@ -73,9 +73,6 @@ function relic_forest.ExitSegment(zone, result, rescue, segmentID, mapID)
 			end
 		end
 	else--generic case (no special cutscenes to be played)
-		--This shouldn't be needed, but just in case.
-		COMMON.ExitDungeonMissionCheck(zone.ID, segmentID)
-		
 		--set generic flags for generic end of day / start of next day.
 		SV.TemporaryFlags.Dinnertime = true 
 		SV.TemporaryFlags.Bedtime = true

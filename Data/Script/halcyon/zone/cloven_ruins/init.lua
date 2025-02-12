@@ -22,15 +22,14 @@ end
 ---cloven_ruins.EnterSegment(zone, rescuing, segmentID, mapID)
 --Engine callback function
 function cloven_ruins.EnterSegment(zone, rescuing, segmentID, mapID)
-
-
+	GeneralFunctions.CheckAllowSetRescue(zone.ID)
 end
 
 ---cloven_ruins.ExitSegment(zone, result, rescue, segmentID, mapID)
 --Engine callback function
 function cloven_ruins.ExitSegment(zone, result, rescue, segmentID, mapID)
   GeneralFunctions.RestoreIdleAnim()
-	GeneralFunctions.CheckAllowSetRescue(zone.ID) 
+
 	local exited = COMMON.ExitDungeonMissionCheck(result, rescue, zone.ID, segmentID)
 
 	if exited == true then

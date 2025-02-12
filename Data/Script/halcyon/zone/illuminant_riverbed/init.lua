@@ -14,6 +14,7 @@ function illuminant_riverbed.Init(zone)
 end
 
 function illuminant_riverbed.EnterSegment(zone, rescuing, segmentID, mapID)
+	GeneralFunctions.CheckAllowSetRescue(zone.ID)
 	if rescuing ~= true then
 		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
 	end
@@ -42,7 +43,6 @@ function illuminant_riverbed.ExitSegment(zone, result, rescue, segmentID, mapID)
             Rescue
         }
 		]]--
-		GeneralFunctions.CheckAllowSetRescue(zone) 
 	local exited = COMMON.ExitDungeonMissionCheck(result, rescue, zone.ID, segmentID)
 
   if exited == true then
