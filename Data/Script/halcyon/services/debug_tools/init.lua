@@ -120,13 +120,15 @@ function DebugTools:OnNewGame()
 		--_DATA.Save.ActiveTeam.Players[1].SpeedBonus = 1
 		
 	  --audino 
-	  mon_id = RogueEssence.Dungeon.MonsterID("zigzagoon", 0, "normal", Gender.Female)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,100, "", 0))
-	  _DATA.Save.ActiveTeam.Players[3].Nickname = 'Almotz'
+	  --mon_id = RogueEssence.Dungeon.MonsterID("zigzagoon", 0, "normal", Gender.Female)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id,100, "", 0))
+	  --_DATA.Save.ActiveTeam.Players[3].Nickname = 'Almotz'
 	 
-	    _DATA.Save.ActiveTeam:SetRank("normal")
+	    _DATA.Save.ActiveTeam:SetRank("bronze")
 	    _DATA.Save:UpdateTeamProfile(true)
-
+		SV.ChapterProgression.UnlockedAssembly = true
+		SV.ChapterProgression.Chapter = 5
+		
 		--GAME:GivePlayerItem('seed_reviver')	  
 		--GAME:GivePlayerItem('seed_reviver')	  
 		--GAME:GivePlayerItem('seed_reviver')	  

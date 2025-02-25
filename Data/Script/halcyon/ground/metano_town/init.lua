@@ -2847,6 +2847,25 @@ function metano_town.Assembly_Action(obj, activator)
     GeneralFunctions.TurnTowardsLocation(hero, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
     GeneralFunctions.TurnTowardsLocation(partner, obj.Position.X + obj.Width // 2, obj.Position.Y + obj.Height // 2)
 	
+	--A note prevents use of assembly during Chapter 5's prep
+	if SV.ChapterProgression.Chapter == 5 then
+		UI:ResetSpeaker(false)
+		UI:SetCenter(true)
+		UI:WaitShowDialogue("Oh?[pause=0] There's a note on the signpost...")
+		UI:WaitShowDialogue('"The assembly is closed while the Adventurer' .. "'s" .. ' Guild is away on an expedition!"')
+		UI:WaitShowDialogue('"Sorry for any inconvenience!"[pause=30]\n-' .. CharacterEssentials.GetCharacterName("Audino"))
+		UI:SetCenter(false)
+	
+	    partner.IsInteracting = false
+	    AI:EnableCharacterAI(partner)
+	    AI:SetCharacterAI(partner, "origin.ai.ground_partner", CH('PLAYER'), partner.Position)
+	    GROUND:CharEndAnim(partner)
+	    GROUND:CharEndAnim(hero)
+		
+		return
+	end
+	
+	
 	UI:ResetSpeaker()
 	UI:SetCenter(true)
 	UI:SetAutoFinish(true)

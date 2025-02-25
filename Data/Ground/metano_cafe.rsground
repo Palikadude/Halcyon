@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.8.0.0",
+"Version": "0.8.8.0",
 "Object": {
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 1,
@@ -131361,6 +131361,7 @@
 "EntName": "Cafe_Owner",
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "serializationLoc": {
 "X": 136,
 "Y": 93
@@ -131412,6 +131413,7 @@
 "BaseIntrinsics": [
 "none"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",
@@ -131455,6 +131457,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131497,6 +131500,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 2,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131539,6 +131543,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 1,
 "ObjectAnim": {
 "$type": "RogueEssence.Content.ObjAnimData, RogueEssence",
@@ -131623,6 +131628,7 @@
 "BaseIntrinsics": [
 "none"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",
@@ -131655,6 +131661,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131711,6 +131718,7 @@
 "BaseIntrinsics": [
 "none"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",
@@ -131743,6 +131751,7 @@
 "Direction": 6,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131799,6 +131808,7 @@
 "BaseIntrinsics": [
 "none"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",
@@ -131831,6 +131841,7 @@
 "Direction": 2,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "EntityCallbacks": [
 0
@@ -131849,6 +131860,7 @@
 "Direction": -1,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 220,
@@ -131862,6 +131874,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 272,
@@ -131875,6 +131888,7 @@
 "Direction": 6,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 36,
@@ -131888,6 +131902,7 @@
 "Direction": 2,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 108,
@@ -131901,6 +131916,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 72,
@@ -131914,6 +131930,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 72,
@@ -131927,6 +131944,7 @@
 "Direction": 6,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 196,
@@ -131940,6 +131958,7 @@
 "Direction": 2,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 268,
@@ -131953,6 +131972,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 232,
@@ -131966,6 +131986,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 232,
@@ -131979,6 +132000,7 @@
 "Direction": 6,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 268,
@@ -131992,6 +132014,7 @@
 "Direction": 2,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 340,
@@ -132005,6 +132028,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -132018,6 +132042,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 304,
@@ -132031,6 +132056,7 @@
 "Direction": 6,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 320,
@@ -132044,6 +132070,7 @@
 "Direction": 4,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 360,
@@ -132057,6 +132084,7 @@
 "Direction": 2,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 384,
@@ -132070,6 +132098,7 @@
 "Direction": 0,
 "EntEnabled": true,
 "EntOrder": 0,
+"InteractOrder": 0,
 "triggerType": 0,
 "Collider": {
 "X": 360,

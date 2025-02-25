@@ -32,7 +32,7 @@ function searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
   
   if segmentID == 0
     --Only allow rescues in the first segment.
-	  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
+    GeneralFunctions.CheckAllowSetRescue(zone.ID) 
   else 
     --Disallow rescues for later half segments, and for the boss fight.
     GAME:SetRescueAllowed(false)

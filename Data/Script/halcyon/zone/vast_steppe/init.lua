@@ -20,8 +20,7 @@ function vast_steppe.Init(zone)
 end
 
 function vast_steppe.EnterSegment(zone, rescuing, segmentID, mapID)
-  GeneralFunctions.CheckAllowSetRescue(zone.ID) 
-
+    GeneralFunctions.CheckAllowSetRescue(zone.ID) 
 	if rescuing ~= true then
 		COMMON.BeginDungeon(zone.ID, segmentID, mapID)
 	end

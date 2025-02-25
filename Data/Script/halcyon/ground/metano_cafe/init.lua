@@ -10,6 +10,7 @@ require 'halcyon.GeneralFunctions'
 require 'halcyon.CharacterEssentials'
 require 'halcyon.ground.metano_cafe.metano_cafe_ch_3'
 require 'halcyon.ground.metano_cafe.metano_cafe_ch_4'
+require 'halcyon.ground.metano_cafe.metano_cafe_ch_5'
 require 'halcyon.menu.ferment_menu'
 require 'halcyon.menu.single_deal_menu'
 -- Package name
@@ -67,7 +68,9 @@ function metano_cafe.PlotScripting()
 	if SV.ChapterProgression.Chapter == 3 then
 		metano_cafe_ch_3.SetupGround()
 	elseif SV.ChapterProgression.Chapter == 4 then
-		metano_cafe_ch_4.SetupGround()
+		metano_cafe_ch_4.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 5 then
+		metano_cafe_ch_5.SetupGround()
 	else 
 		GAME:FadeIn(20)
 	end 
@@ -291,7 +294,6 @@ function metano_cafe.Cafe_Action(obj, activator)
 	GROUND:CharTurnToChar(hero, owner)
 	local coro1 = TASK:BranchCoroutine(function() GROUND:CharTurnToCharAnimated(partner, owner, 4) end)
 
-
 	--He has a new type of drink he can serve
 	if SV.metano_cafe.NewDrinkUnlocked then
 		UI:SetSpeakerEmotion("Happy")
@@ -300,6 +302,19 @@ function metano_cafe.Cafe_Action(obj, activator)
 		SV.metano_cafe.NewDrinkUnlocked = false
 		GAME:WaitFrames(20)
 	end 
+	
+	--He gives a free Domi Blend before the expedition
+	if SV.ChapterProgression.Chapter == 5 and not SV.Chapter5.GotFreeCafeItem then
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Expedition_Item_Intro_1']))
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Expedition_Item_Intro_2']))
+		UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Expedition_Item_Intro_3']))
+		GAME:WaitFrames(20)
+		GeneralFunctions.RewardItem("cafe_domi_blend")
+		GAME:WaitFrames(20)
+		SV.Chapter5.GotFreeCafeItem = true
+	end
 	
 	--he has a fermented item to give you
 	if SV.metano_cafe.FermentedItem ~= "" and SV.metano_cafe.ItemFinishedFermenting then
@@ -357,6 +372,13 @@ function metano_cafe.Cafe_Action(obj, activator)
 				local ferment_item_entry = RogueEssence.Data.DataManager.Instance:GetItem(SV.metano_cafe.FermentedItem)
 				if ferment_item_entry.MaxStack > 1 then ferment_item.Amount = ferment_item_entry.MaxStack end--for multi-use items, like the apple cider
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Already_Fermenting'], ferment_item:GetDisplayName()))
+			--Can't brew items if you're about to go on the expedition
+			--This is to safeguard you against using up items that you may potentially want to use on the expedition, rather than lock them away here for the duration of it
+			elseif SV.ChapterProgression.Chapter == 5 then
+				UI:SetSpeakerEmotion("Worried")
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Expedition_Prevent_Fermenting_1']))
+				UI:SetSpeakerEmotion("Normal")
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Expedition_Prevent_Fermenting_2']))
 			else		
 				UI:SetSpeakerEmotion("Normal")
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Cafe_Ferment_Prompt']))

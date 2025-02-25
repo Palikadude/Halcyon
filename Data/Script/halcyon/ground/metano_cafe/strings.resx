@@ -116,13 +116,16 @@
     <value>You received the {0} from {1}![pause=40]</value>
   </data>
   <data name="Cafe_Expedition_Item_Intro_1" xml:space="preserve">
-    <value>You two are leaving on that expedition tomorrow right?</value>
+    <value>You two are leaving on an expedition today,[pause=10] right?</value>
   </data>
   <data name="Cafe_Expedition_Item_Intro_2" xml:space="preserve">
-    <value>Have a little something on the house.[pause=0] I hope it keeps you in high spirits on your journey!</value>
+    <value>Lucky for you,[pause=10] I'm having a special deal today![pause=0] A free drink to share for all visitors!</value>
+  </data>
+  <data name="Cafe_Expedition_Item_Intro_3" xml:space="preserve">
+    <value>So please,[pause=10] take this,[pause=10] it's on the house.[pause=0] I hope it helps you on your journey!</value>
   </data>
   <data name="Cafe_Expedition_Prevent_Fermenting_1" xml:space="preserve">
-    <value>You two have that expedition tomorrow.[pause=0] It'll take too long for me to ferment anything before you leave.</value>
+    <value>You two are leaving on that expedition today.[pause=0] It'll take too long for me to ferment anything before you leave.</value>
   </data>
   <data name="Cafe_Expedition_Prevent_Fermenting_2" xml:space="preserve">
     <value>Come see me after your journey,[pause=10] and I'll gladly ferment something for you!</value>

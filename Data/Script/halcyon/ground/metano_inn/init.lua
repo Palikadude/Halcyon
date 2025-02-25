@@ -9,6 +9,7 @@ require 'halcyon.PartnerEssentials'
 require 'halcyon.ground.metano_inn.metano_inn_ch_2'
 require 'halcyon.ground.metano_inn.metano_inn_ch_3'
 require 'halcyon.ground.metano_inn.metano_inn_ch_4'
+require 'halcyon.ground.metano_inn.metano_inn_ch_5'
 
 -- Package name
 local metano_inn = {}
@@ -73,7 +74,9 @@ function metano_inn.PlotScripting()
 	elseif SV.ChapterProgression.Chapter == 3 then
 		metano_inn_ch_3.SetupGround()
 	elseif SV.ChapterProgression.Chapter == 4 then
-		metano_inn_ch_4.SetupGround()
+		metano_inn_ch_4.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 5 then
+		metano_inn_ch_5.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

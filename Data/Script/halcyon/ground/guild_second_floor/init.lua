@@ -14,6 +14,7 @@ require 'halcyon.ground.guild_second_floor.guild_second_floor_ch_1'
 require 'halcyon.ground.guild_second_floor.guild_second_floor_ch_2'
 require 'halcyon.ground.guild_second_floor.guild_second_floor_ch_3'
 require 'halcyon.ground.guild_second_floor.guild_second_floor_ch_4'
+require 'halcyon.ground.guild_second_floor.guild_second_floor_ch_5'
 
 
 -- Package name
@@ -111,6 +112,8 @@ function guild_second_floor.PlotScripting()
 			else
 				guild_second_floor_ch_4.SetupGround()
 			end
+		elseif SV.ChapterProgression.Chapter == 5 then
+			guild_second_floor_ch_5.SetupGround()
 		else
 			GAME:FadeIn(20)
 		end
@@ -153,6 +156,15 @@ function guild_second_floor.Event_Trigger_1_Touch(obj, activator)
 end
 
 
+---------------------------------
+-- Event Object
+-- This is a temporary object created by a script used for temporary objects events that only happen
+-- that only exist when certain story flag conditions are met.
+---------------------------------
+function guild_second_floor.Event_Object_1_Action(obj, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+ assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Event_Object_1_Action(...,...)"), obj, activator))
+end
 
 
 
@@ -685,6 +697,21 @@ end
 function guild_second_floor.Silcoon_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Silcoon_Action(...,...)"), chara, activator))
+end
+
+function guild_second_floor.Roselia_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Roselia_Action(...,...)"), chara, activator))
+end
+
+function guild_second_floor.Ludicolo_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Ludicolo_Action(...,...)"), chara, activator))
+end
+
+function guild_second_floor.Spinda_Action(chara, activator)
+  DEBUG.EnableDbgCoro() --Enable debugging this coroutine
+  assert(pcall(load("guild_second_floor_ch_" .. tostring(SV.ChapterProgression.Chapter) .. ".Spinda_Action(...,...)"), chara, activator))
 end
 
 

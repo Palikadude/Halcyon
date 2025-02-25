@@ -797,6 +797,26 @@ local characters = {
 			gender = Gender.Male,
 			form = 0,
 			skin = "normal"
+		},		
+		
+		--Inn Passersby
+		Corvisquire = {
+			species = "corvisquire",
+			nickname = 'Passerby',
+			instance = 'Passerby_1',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
+		},		
+		
+		--Inn Passerby
+		Ribombee = {
+			species = "ribombee",
+			nickname = 'Passerby',
+			instance = 'Passerby_1',
+			gender = Gender.Male,
+			form = 0,
+			skin = "normal"
 		}
 			
 	}
