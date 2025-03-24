@@ -69,7 +69,8 @@ V0.5.0
 -Illuminant Riverbed now has you skipping across rocks to cross the river. Thank you Touhou Project for the update!
 -All Starters mod now has a wonderful UI for selecting your hero/partner created by MistressNebula!
 -All Starters can now be enabled alongside No Nicknames.
-	-Note: If you already have All Starters or No Nicknames installed in your mod folder, delete their folders and then reinstall with the new versions in the Halcyon Mods folder.
+-All Starters and No Nickname are now built into Halcyon itself, thank you MistressNebula! No more need to add them as separate mods. To enable them, go to the settings menu on the Title Screen, then press left or right to move to the Halcyon Settings page. You can press [confirm] at this point to select different options within that menu to toggle the Mods.
+	-Note: If you already have All Starters or No Nicknames installed in your mod folder, you may now delete these.
 -Added Quick seed. It temporarily boosts movement speed (as you would expect).
 -Metano Town Kecleon shop now sells Quick seeds, Slow Orbs, and Gravelerocks.
 -Some general item prices like seeds have been adjusted slightly. Adjusted the prices of TMs to better correlate to how good the TM is. Orbs have been scaled a bit differently, typically to be cheaper.

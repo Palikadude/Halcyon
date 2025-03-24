@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.8.0.0",
+"Version": "0.8.9.0",
 "Object": {
 "$type": "RogueEssence.Dungeon.Map, RogueEssence",
 "Name": {
@@ -106,7 +106,7 @@
 "FullnessRemainder": 0,
 "MaxFullness": 100,
 "StatusEffects": {},
-"MustHitNext": false,
+"MissChain": 0,
 "EXPMarked": false,
 "Tactic": {
 "Name": {
@@ -126,7 +126,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
@@ -137,7 +138,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
@@ -146,7 +148,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 }
 ]
 },
@@ -221,6 +224,7 @@
 "BaseIntrinsics": [
 "sand_veil"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {
 "dig": true,
 "rock_smash": true
@@ -354,7 +358,7 @@
 "FullnessRemainder": 0,
 "MaxFullness": 100,
 "StatusEffects": {},
-"MustHitNext": false,
+"MissChain": 0,
 "EXPMarked": false,
 "Tactic": {
 "Name": {
@@ -374,7 +378,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
@@ -385,7 +390,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
@@ -394,7 +400,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 }
 ]
 },
@@ -469,6 +476,7 @@
 "BaseIntrinsics": [
 "sand_veil"
 ],
+"FormIntrinsicSlot": -1,
 "Relearnables": {
 "rock_smash": true
 },

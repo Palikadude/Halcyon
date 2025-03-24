@@ -1,7 +1,43 @@
 ﻿{
-"Version": "0.8.8.0",
+"Version": "0.8.9.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"falling_rock_shadow": {
+"Name": {
+"DefaultText": "Falling Rock Shadow",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"flowing_lava": {
+"Name": {
+"DefaultText": "Flowing Lava",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Used for the 2nd boss fight's special effect.\r\n\r\nDoesn't affect fire types. Burns other types, and applies a typed 1/16 damage to them for standing on it. Gives 20% boost to power if a fire type stands on the tile and uses a fire move.",
+"SortOrder": 0
+},
+"river_stone_diamond": {
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"river_stone_round": {
+"Name": {
+"DefaultText": "River Stone",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
 "stairs_back_down": {
 "Name": {
 "DefaultText": "Stairs",
@@ -72,42 +108,6 @@
 },
 "Released": true,
 "Comment": "Up",
-"SortOrder": 0
-},
-"falling_rock_shadow": {
-"Name": {
-"DefaultText": "Falling Rock Shadow",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"flowing_lava": {
-"Name": {
-"DefaultText": "Flowing Lava",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Used for the 2nd boss fight's special effect.\r\n\r\nDoesn't affect fire types. Burns other types, and applies a typed 1/16 damage to them for standing on it. Gives 20% boost to power if a fire type stands on the tile and uses a fire move.",
-"SortOrder": 0
-},
-"river_stone_diamond": {
-"Name": {
-"DefaultText": "River Stone",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"river_stone_round": {
-"Name": {
-"DefaultText": "River Stone",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
 "SortOrder": 0
 }
 }

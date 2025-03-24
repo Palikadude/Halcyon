@@ -1,6 +1,5 @@
 -Make sure Audino fixes groundactionhop to have the waitframe at the peak of the jump. Review Hop and DoubleHop against Explorers once this is done.
 -Slower walking speed updates now that it's possible in ch5 guild scene and ch5 boss first encounter
--Textbox fade outs on story deaths (audino must fix the current method for this)
 -Remove the .5 second delay before songs kick in. PMD2 seems to have them just kick in immediately, and PMDO scenes seem a bit ehhhhh with the music being slightly off with how it starts playing.
 -review options for map being too large to not have to scroll in illuminant riverbed
 -Rocks that block you in illuminant riverbed possibly instead of it being an invisible water wall in the river

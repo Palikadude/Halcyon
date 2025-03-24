@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.8.0.0",
+"Version": "0.8.9.0",
 "Object": {
 "$type": "RogueEssence.Data.AITactic, RogueEssence",
 "Name": {
@@ -21,12 +21,15 @@
 "stairs_go_up",
 "stairs_go_down"
 ],
+"Factor": 0,
+"Omniscient": false,
 "IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.AvoidFoesCornerPlan, PMDC",
@@ -35,7 +38,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
@@ -46,7 +50,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
@@ -55,7 +60,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
@@ -64,7 +70,8 @@
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
 "StatusRange": 0,
-"SelfStatusRange": 4
+"SelfStatusRange": 4,
+"AbandonRangeOnHit": true
 }
 ]
 }

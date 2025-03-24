@@ -88,6 +88,7 @@ function metano_town_ch_2.SetupGround()
 												true, 
 												"Event_Trigger_4")
 												
+			--NPCs will get pushed outside of the large trigger area if it's not flagged as passible (i.e. no collision)
 			tantrumBlock.Passable = true
 												
 			tantrumBlock:ReloadEvents()
@@ -1372,7 +1373,7 @@ function metano_town_ch_2.Medicham_Linoone_Conversation(chara, activator)
 	UI:SetSpeaker(linoone)
 	UI:WaitShowDialogue("Oh,[pause=10] it's great.[pause=0] I've been able to apply some methods it talks about to achieve a more peaceful state of mind.")
 	GROUND:CharSetEmote(linoone, "sweating", 1)
-	UI:SetSpeakerEmotion("Pain")
+	UI:SetSpeakerEmotion("Sad")
 	UI:WaitShowDialogue("Though it's been more difficult to keep a level head as of late...")
 	
 	GAME:WaitFrames(20)

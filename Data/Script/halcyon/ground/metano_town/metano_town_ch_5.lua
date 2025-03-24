@@ -34,7 +34,8 @@ function metano_town_ch_5.SetupGround()
 
 	
 	local cranidos, mareep, gloom, nidorina, electrike, audino, numel, wooper_girl, wooper_boy,
-		  meditite, luxray, machamp, oddish, azumarill, metapod, silcoon = 
+		  meditite, medicham, machamp, oddish, azumarill, metapod, silcoon, marill, jigglypuff, 
+		  spheal = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Cranidos', 1180, 1304, Direction.UpLeft},
 			{'Mareep', 1204, 1304, Direction.Left},
@@ -46,16 +47,23 @@ function metano_town_ch_5.SetupGround()
 			{'Wooper_Girl', 328, 1000, Direction.DownLeft},
 			{'Wooper_Boy', 328, 1040, Direction.UpLeft},
 			{'Meditite', 296, 1020, Direction.Right},
-			{'Luxray', 304, 656, Direction.UpLeft},
+			{'Medicham', 888, 240, Direction.UpRight},			
 			{'Machamp', 464, 464, Direction.Left},
-			{'Oddish', 472, 648, Direction.Up},
+			{'Oddish', 864, 600, Direction.Up},
 			{'Azumarill', 888, 712, Direction.Down},
 			{'Metapod', 'Cafe_Seat_1'},
-			{'Silcoon', 'Cafe_Seat_2'}
+			{'Silcoon', 'Cafe_Seat_2'},
+			{'Marill', 1184, 1144, Direction.DownRight},
+			{'Jigglypuff', 1224, 1144, Direction.DownLeft},
+			{'Spheal', 1204, 1176, Direction.Up}
 		})
 	
-	AI:SetCharacterAI(luxray, "halcyon.ai.ground_default", RogueElements.Loc(luxray.Position.X-16, luxray.Position.Y-16), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
 	AI:SetCharacterAI(machamp, "halcyon.ai.ground_default", RogueElements.Loc(machamp.Position.X-16, machamp.Position.Y-16), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+	AI:SetCharacterAI(oddish, "halcyon.ai.ground_default", RogueElements.Loc(oddish.Position.X-16, oddish.Position.Y-16), RogueElements.Loc(32, 32), 1, 16, 32, 40, 180)
+	
+	AI:SetCharacterAI(jigglypuff, "halcyon.ai.ground_talking", true, 240, 60, 50, false, 'Default', {marill, spheal})
+	AI:SetCharacterAI(marill, "halcyon.ai.ground_talking", true, 240, 60, 130, false, 'Default', {jigglypuff, spheal})
+	AI:SetCharacterAI(spheal, "halcyon.ai.ground_talking", true, 240, 60, 0, false, 'Default', {jigglypuff, marill})
 
 
 	
@@ -167,4 +175,68 @@ function metano_town_ch_5.Silcoon_Action(chara, activator)
 	GeneralFunctions.EndConversation(chara)
 end
 
+--Mountain - the cold turned her back or was too much for her?
+--Cave - ironic, given her current living situation? The lack of sun got to her and she now submits herself to it willingly as a weird self punishment?
+function metano_town_ch_5.Oddish_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "The weird lady told me an awesome story about an adventure she had in a cave a long time ago!", "Inspired")
+	UI:SetSpeakerEmotion("Normal")
+	UI:WaitShowDialogue("Then she said she was tired and wanted to rest alone,[pause=10] so she made me leave.")
+	GROUND:CharSetAnim(chara, "Idle", true)
+	GROUND:CharSetEmote(chara, "glowing", 0)
+	UI:SetSpeakerEmotion("Joyous")
+	UI:WaitShowDialogue("She's a really nice Pokémon![pause=0] I hope she can tell me another story soon!")
+	GROUND:CharSetEmote(chara, "", 0)
+	GeneralFunctions.EndConversation(chara)
+end
 
+
+function metano_town_ch_5.Numel_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "I've been working really hard so my momma will make me more Lava Cakes!", "Happy")
+	UI:SetSpeakerEmotion("Joyous")
+	UI:WaitShowDialogue("They're so yummy,[pause=10] it's worth all the hard work!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_5.Machamp_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "Me daughter is off makin' merry wit' her new pals.")
+	UI:SetSpeakerEmotion("Joyous")
+	GROUND:CharSetEmote(chara, "glowing", 0)
+	UI:WaitShowDialogue("Hoohoo![pause=0] I'm so happy fer her![pause=0] It's been real tough fer her to make any friends,[pause=10] y'know!")
+	GROUND:CharSetEmote(chara, "", 0)
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_5.Medicham_Action(chara, activator)
+	--Strength is not everything. A sharp mind is just as, if not more important.
+	--Clever thinking can help you to overcome any challenges you may face.
+	--It would be wise to keep that in mind on your upcoming journey!
+	GeneralFunctions.StartConversation(chara, "Everything strength not is.[pause=0] Just is a sharp mind as,[pause=10] if not important more.")
+	UI:WaitShowDialogue("Help you can clever thinking to overcome any challenges face you may.")
+	UI:WaitShowDialogue("Wise it would be to keep in mind that on your journey upcoming!")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_5.Spheal_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_5.Marill_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.EndConversation(chara)
+end 
+
+function metano_town_ch_5.Jigglypuff_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_5.Nidorina_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.EndConversation(chara)
+end
+
+function metano_town_ch_5.Gloom_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.EndConversation(chara)
+end

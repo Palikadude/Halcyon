@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.8.2.0",
+"Version": "0.8.9.0",
 "Object": {
 "$type": "PMDC.Data.RarityData, PMDC",
 "RarityMap": {
@@ -3425,6 +3425,18 @@
 "xcl_family_mankey_03"
 ]
 },
+"annihilape": {
+"3": [
+"xcl_family_mankey_00"
+],
+"2": [
+"xcl_family_mankey_01"
+],
+"1": [
+"xcl_family_mankey_02",
+"xcl_family_mankey_03"
+]
+},
 "mantyke": {
 "3": [
 "xcl_family_mantine_00"
@@ -5541,17 +5553,29 @@
 "xcl_family_sneasel_03"
 ]
 },
+"sneasler": {
+"3": [
+"xcl_family_sneasel_00"
+],
+"2": [
+"xcl_family_sneasel_01"
+],
+"1": [
+"xcl_family_sneasel_02",
+"xcl_family_sneasel_03"
+]
+},
 "snivy": {
 "3": [
 "xcl_family_snivy_00"
 ],
 "2": [
-"xcl_family_snivy_01",
-"xcl_family_snivy_04"
+"xcl_family_snivy_01"
 ],
 "1": [
 "xcl_family_snivy_02",
-"xcl_family_snivy_03"
+"xcl_family_snivy_03",
+"xcl_family_snivy_04"
 ]
 },
 "servine": {
@@ -5559,12 +5583,12 @@
 "xcl_family_snivy_00"
 ],
 "2": [
-"xcl_family_snivy_01",
-"xcl_family_snivy_04"
+"xcl_family_snivy_01"
 ],
 "1": [
 "xcl_family_snivy_02",
-"xcl_family_snivy_03"
+"xcl_family_snivy_03",
+"xcl_family_snivy_04"
 ]
 },
 "serperior": {
@@ -5572,12 +5596,12 @@
 "xcl_family_snivy_00"
 ],
 "2": [
-"xcl_family_snivy_01",
-"xcl_family_snivy_04"
+"xcl_family_snivy_01"
 ],
 "1": [
 "xcl_family_snivy_02",
-"xcl_family_snivy_03"
+"xcl_family_snivy_03",
+"xcl_family_snivy_04"
 ]
 },
 "munchlax": {
@@ -6189,6 +6213,19 @@
 ]
 },
 "ursaring": {
+"3": [
+"xcl_family_teddiursa_00"
+],
+"2": [
+"xcl_family_teddiursa_01",
+"xcl_family_teddiursa_04"
+],
+"1": [
+"xcl_family_teddiursa_02",
+"xcl_family_teddiursa_03"
+]
+},
+"ursaluna": {
 "3": [
 "xcl_family_teddiursa_00"
 ],
@@ -6957,6 +6994,18 @@
 "xcl_family_wooper_03"
 ]
 },
+"clodsire": {
+"3": [
+"xcl_family_wooper_00"
+],
+"2": [
+"xcl_family_wooper_01"
+],
+"1": [
+"xcl_family_wooper_02",
+"xcl_family_wooper_03"
+]
+},
 "wurmple": {
 "3": [
 "xcl_family_wurmple_00",
@@ -7076,6 +7125,18 @@
 ]
 },
 "linoone": {
+"3": [
+"xcl_family_zigzagoon_00"
+],
+"2": [
+"xcl_family_zigzagoon_01"
+],
+"1": [
+"xcl_family_zigzagoon_02",
+"xcl_family_zigzagoon_03"
+]
+},
+"obstagoon": {
 "3": [
 "xcl_family_zigzagoon_00"
 ],

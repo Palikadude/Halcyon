@@ -1,5 +1,5 @@
 ﻿{
-"Version": "0.8.2.0",
+"Version": "0.8.9.0",
 "Object": {
 "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
 "ammo_cacnea_spike": {
@@ -8,10 +8,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Cacnea Spike",
 "LocalTexts": {
@@ -32,10 +35,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Corsola Twig",
 "LocalTexts": {
@@ -56,10 +62,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Geo Pebble",
 "LocalTexts": {
@@ -80,10 +89,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Iron Thorn",
 "LocalTexts": {
@@ -104,10 +116,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.AmmoState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Stick",
 "LocalTexts": {
@@ -128,10 +143,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Big Apricorn",
 "LocalTexts": {
@@ -150,10 +168,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Black Apricorn",
 "LocalTexts": {
@@ -172,10 +193,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Blue Apricorn",
 "LocalTexts": {
@@ -196,10 +220,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Brown Apricorn",
 "LocalTexts": {
@@ -220,10 +247,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Green Apricorn",
 "LocalTexts": {
@@ -244,10 +274,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Plain Apricorn",
 "LocalTexts": {
@@ -268,10 +301,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Purple Apricorn",
 "LocalTexts": {
@@ -292,10 +328,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Red Apricorn",
 "LocalTexts": {
@@ -316,10 +355,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "White Apricorn",
 "LocalTexts": {
@@ -340,10 +382,13 @@
 "UsageType": 3,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.RecruitState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Yellow Apricorn",
 "LocalTexts": {
@@ -364,14 +409,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Aspear Berry",
 "LocalTexts": {
@@ -397,14 +445,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Cheri Berry",
 "LocalTexts": {
@@ -430,14 +481,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Chesto Berry",
 "LocalTexts": {
@@ -463,14 +517,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Leppa Berry",
 "LocalTexts": {
@@ -496,14 +553,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Lum Berry",
 "LocalTexts": {
@@ -529,14 +589,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Oran Berry",
 "LocalTexts": {
@@ -562,14 +625,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.2.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Pecha Berry",
 "LocalTexts": {
@@ -595,14 +661,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Persim Berry",
 "LocalTexts": {
@@ -628,14 +697,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.BerryState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Rawst Berry",
 "LocalTexts": {
@@ -661,14 +733,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Calcium",
 "LocalTexts": {
@@ -694,14 +769,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Carbos",
 "LocalTexts": {
@@ -727,14 +805,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "HP Up",
 "LocalTexts": {
@@ -760,14 +841,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Iron",
 "LocalTexts": {
@@ -793,14 +877,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Nectar",
 "LocalTexts": {
@@ -822,14 +909,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Protein",
 "LocalTexts": {
@@ -855,14 +945,17 @@
 "UsageType": 5,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.DrinkState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Zinc",
 "LocalTexts": {
@@ -887,6 +980,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Dainty Box",
 "LocalTexts": {
@@ -904,6 +1000,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Deluxe Box",
 "LocalTexts": {
@@ -921,6 +1020,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Glittery Box",
 "LocalTexts": {
@@ -938,6 +1040,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Heavy Box",
 "LocalTexts": {
@@ -955,6 +1060,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Light Box",
 "LocalTexts": {
@@ -972,6 +1080,9 @@
 "Icon": 17,
 "UsageType": 7,
 "States": [],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Nifty Box",
 "LocalTexts": {
@@ -984,20 +1095,109 @@
 "Comment": "",
 "SortOrder": 16
 },
+"cafe_apple_cider": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 7,
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"MaxStack": 4,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Apple Cider",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Cafe food item.",
+"SortOrder": 4
+},
+"cafe_cheri_bomb": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 0,
+"UsageType": 3,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.AmmoState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Cheri Bomb",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Cafe ammo item.",
+"SortOrder": 2
+},
+"cafe_domi_blend": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 7,
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Domi Blend",
+"LocalTexts": {
+"": ""
+}
+},
+"Released": true,
+"Comment": "Cafe food item.",
+"SortOrder": 6
+},
+"cafe_endurance_tonic": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 7,
+"UsageType": 5,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.DrinkState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Endurance Tonic",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Cafe food item.",
+"SortOrder": 6
+},
 "food_apple": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": 2,
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Apple",
 "LocalTexts": {
@@ -1019,14 +1219,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Big Apple",
 "LocalTexts": {
@@ -1049,14 +1252,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Huge Apple",
 "LocalTexts": {
@@ -1079,14 +1285,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.FoodState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Chestnut",
 "LocalTexts": {
@@ -1109,14 +1318,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Black Gummi",
 "LocalTexts": {
@@ -1137,14 +1349,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Blue Gummi",
 "LocalTexts": {
@@ -1165,14 +1380,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Brown Gummi",
 "LocalTexts": {
@@ -1193,14 +1411,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Clear Gummi",
 "LocalTexts": {
@@ -1221,14 +1442,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Gold Gummi",
 "LocalTexts": {
@@ -1249,14 +1473,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Grass Gummi",
 "LocalTexts": {
@@ -1277,14 +1504,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Gray Gummi",
 "LocalTexts": {
@@ -1305,14 +1535,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Green Gummi",
 "LocalTexts": {
@@ -1333,14 +1566,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Magenta Gummi",
 "LocalTexts": {
@@ -1361,14 +1597,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Orange Gummi",
 "LocalTexts": {
@@ -1389,14 +1628,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Pink Gummi",
 "LocalTexts": {
@@ -1417,14 +1659,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Purple Gummi",
 "LocalTexts": {
@@ -1445,14 +1690,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Red Gummi",
 "LocalTexts": {
@@ -1473,14 +1721,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Royal Gummi",
 "LocalTexts": {
@@ -1501,14 +1752,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Silver Gummi",
 "LocalTexts": {
@@ -1529,14 +1783,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Sky Gummi",
 "LocalTexts": {
@@ -1557,14 +1814,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "White Gummi",
 "LocalTexts": {
@@ -1585,14 +1845,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Wonder Gummi",
 "LocalTexts": {
@@ -1611,14 +1874,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.GummiState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Yellow Gummi",
 "LocalTexts": {
@@ -1633,20 +1899,65 @@
 "Comment": "",
 "SortOrder": 5
 },
+"held_aspear_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Aspear Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
+"held_band_of_passage": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Band of Passage",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "For use within the beginner lesson tutorial.",
+"SortOrder": 1
+},
 "held_black_belt": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": -1,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Black Belt",
 "LocalTexts": {
@@ -1671,14 +1982,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Black Glasses",
 "LocalTexts": {
@@ -1703,14 +2017,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Blank Guard",
 "LocalTexts": {
@@ -1735,14 +2052,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Charcoal",
 "LocalTexts": {
@@ -1761,16 +2081,40 @@
 "Comment": "",
 "SortOrder": 1
 },
+"held_cheri_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Cheri Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
 "held_defense_scarf": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": 14,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Defense Scarf",
 "LocalTexts": {
@@ -1788,14 +2132,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Draco Guard",
 "LocalTexts": {
@@ -1820,14 +2167,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Dragon Scale",
 "LocalTexts": {
@@ -1852,14 +2202,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Dread Guard",
 "LocalTexts": {
@@ -1884,14 +2237,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Earth Guard",
 "LocalTexts": {
@@ -1916,14 +2272,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Fist Guard",
 "LocalTexts": {
@@ -1948,14 +2307,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Flame Guard",
 "LocalTexts": {
@@ -1980,14 +2342,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Hard Stone",
 "LocalTexts": {
@@ -2012,14 +2377,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Icicle Guard",
 "LocalTexts": {
@@ -2044,14 +2412,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Insect Guard",
 "LocalTexts": {
@@ -2070,20 +2441,44 @@
 "Comment": "",
 "SortOrder": 1
 },
+"held_insomniascope": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 15,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Insomniascope",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
 "held_iron_plate": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": -1,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Iron Guard",
 "LocalTexts": {
@@ -2108,14 +2503,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Magnet",
 "LocalTexts": {
@@ -2140,14 +2538,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Meadow Guard",
 "LocalTexts": {
@@ -2172,14 +2573,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Metal Coat",
 "LocalTexts": {
@@ -2204,14 +2608,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Mind Guard",
 "LocalTexts": {
@@ -2236,14 +2643,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Miracle Seed",
 "LocalTexts": {
@@ -2268,14 +2678,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Mystic Water",
 "LocalTexts": {
@@ -2300,14 +2713,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Never-Melt Ice",
 "LocalTexts": {
@@ -2326,20 +2742,65 @@
 "Comment": "",
 "SortOrder": 1
 },
+"held_pecha_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Pecha Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
+"held_persim_band": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Persim Band",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
 "held_pink_bow": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": -1,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Pink Bow",
 "LocalTexts": {
@@ -2359,14 +2820,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Pixie Guard",
 "LocalTexts": {
@@ -2391,14 +2855,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Poison Barb",
 "LocalTexts": {
@@ -2423,10 +2890,13 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Power Band",
 "LocalTexts": {
@@ -2438,16 +2908,40 @@
 "Comment": "",
 "SortOrder": 1
 },
+"held_rawst_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Rawst Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 1
+},
 "held_reunion_cape": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": -1,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Reunion Cape",
 "LocalTexts": {
@@ -2466,14 +2960,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Sharp Beak",
 "LocalTexts": {
@@ -2498,14 +2995,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Silk Scarf",
 "LocalTexts": {
@@ -2530,14 +3030,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Silver Powder",
 "LocalTexts": {
@@ -2562,14 +3065,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Sky Guard",
 "LocalTexts": {
@@ -2594,14 +3100,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Soft Sand",
 "LocalTexts": {
@@ -2626,10 +3135,13 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Special Band",
 "LocalTexts": {
@@ -2647,14 +3159,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Spell Tag",
 "LocalTexts": {
@@ -2679,14 +3194,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Splash Guard",
 "LocalTexts": {
@@ -2711,14 +3229,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Spooky Guard",
 "LocalTexts": {
@@ -2743,14 +3264,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Stone Guard",
 "LocalTexts": {
@@ -2769,20 +3293,44 @@
 "Comment": "",
 "SortOrder": 1
 },
+"held_synergy_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.HeldState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Synergy Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
+"SortOrder": 1
+},
 "held_toxic_plate": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": -1,
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Toxic Guard",
 "LocalTexts": {
@@ -2807,14 +3355,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Twisted Spoon",
 "LocalTexts": {
@@ -2839,14 +3390,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Warp Scarf",
 "LocalTexts": {
@@ -2866,14 +3420,17 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EquipState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Zap Guard",
 "LocalTexts": {
@@ -2898,10 +3455,13 @@
 "UsageType": 0,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.HeldState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Zinc Band",
 "LocalTexts": {
@@ -2918,10 +3478,13 @@
 "UsageType": 2,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.MachineState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Recall Box",
 "LocalTexts": {
@@ -2934,16 +3497,115 @@
 "Comment": "",
 "SortOrder": 12
 },
+"mission_lost_band": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Lost Band",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"mission_lost_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Lost Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"mission_lost_specs": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 15,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Lost Specs",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"mission_stolen_band": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Stolen Band",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"mission_stolen_scarf": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 14,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Stolen Scarf",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"mission_stolen_specs": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 15,
+"UsageType": 0,
+"States": [],
+"MaxStack": 0,
+"CannotDrop": true,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Stolen Specs",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
 "orb_all_aim": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": 9,
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "All-Aim Orb",
 "LocalTexts": {
@@ -2962,10 +3624,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "All-Dodge Orb",
 "LocalTexts": {
@@ -2986,10 +3651,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Cleanse Orb",
 "LocalTexts": {
@@ -3008,10 +3676,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Endure Orb",
 "LocalTexts": {
@@ -3032,10 +3703,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Escape Orb",
 "LocalTexts": {
@@ -3054,10 +3728,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Fill-In Orb",
 "LocalTexts": {
@@ -3078,10 +3755,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Foe-Hold Orb",
 "LocalTexts": {
@@ -3100,10 +3780,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Foe-Seal Orb",
 "LocalTexts": {
@@ -3122,10 +3805,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Freeze Orb",
 "LocalTexts": {
@@ -3146,10 +3832,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Halving Orb",
 "LocalTexts": {
@@ -3170,10 +3859,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Invert Orb",
 "LocalTexts": {
@@ -3192,10 +3884,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Luminous Orb",
 "LocalTexts": {
@@ -3214,10 +3909,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Mirror Orb",
 "LocalTexts": {
@@ -3238,10 +3936,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Mug Orb",
 "LocalTexts": {
@@ -3262,10 +3963,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Nullify Orb",
 "LocalTexts": {
@@ -3286,10 +3990,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Petrify Orb",
 "LocalTexts": {
@@ -3308,10 +4015,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Pierce Orb",
 "LocalTexts": {
@@ -3332,10 +4042,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Rebound Orb",
 "LocalTexts": {
@@ -3356,10 +4069,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Revival Orb",
 "LocalTexts": {
@@ -3380,10 +4096,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Rollcall Orb",
 "LocalTexts": {
@@ -3402,10 +4121,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Scanner Orb",
 "LocalTexts": {
@@ -3424,10 +4146,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Slow Orb",
 "LocalTexts": {
@@ -3448,10 +4173,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Slumber Orb",
 "LocalTexts": {
@@ -3470,10 +4198,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Spurn Orb",
 "LocalTexts": {
@@ -3492,10 +4223,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Stayaway Orb",
 "LocalTexts": {
@@ -3515,10 +4249,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Totter Orb",
 "LocalTexts": {
@@ -3537,10 +4274,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Trapbust Orb",
 "LocalTexts": {
@@ -3561,10 +4301,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Trap-See Orb",
 "LocalTexts": {
@@ -3585,10 +4328,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Trawl Orb",
 "LocalTexts": {
@@ -3607,10 +4353,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.OrbState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Weather Orb",
 "LocalTexts": {
@@ -3631,14 +4380,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Blast Seed",
 "LocalTexts": {
@@ -3658,14 +4410,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Blinker Seed",
 "LocalTexts": {
@@ -3686,14 +4441,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Hunger Seed",
 "LocalTexts": {
@@ -3714,14 +4472,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Ice Seed",
 "LocalTexts": {
@@ -3741,14 +4502,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Plain Seed",
 "LocalTexts": {
@@ -3761,20 +4525,48 @@
 "Comment": "",
 "SortOrder": 7
 },
+"seed_quick": {
+"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
+"Icon": 4,
+"UsageType": 4,
+"States": [
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.EdibleState"
+},
+{
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
+"type": "PMDC.Dungeon.SeedState"
+}
+],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
+"Name": {
+"DefaultText": "Quick Seed",
+"LocalTexts": {}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 7
+},
 "seed_reviver": {
 "$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
 "Icon": 4,
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": true,
 "Name": {
 "DefaultText": "Reviver Seed",
 "LocalTexts": {
@@ -3793,14 +4585,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Sleep Seed",
 "LocalTexts": {
@@ -3819,14 +4614,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Vile Seed",
 "LocalTexts": {
@@ -3844,14 +4642,17 @@
 "UsageType": 4,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.EdibleState"
 },
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.SeedState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Warp Seed",
 "LocalTexts": {
@@ -3874,6 +4675,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Attract",
 "LocalTexts": {
@@ -3902,6 +4706,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Captivate",
 "LocalTexts": {
@@ -3930,6 +4737,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Cut",
 "LocalTexts": {
@@ -3958,6 +4768,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Defog",
 "LocalTexts": {
@@ -3986,6 +4799,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Embargo",
 "LocalTexts": {
@@ -4014,6 +4830,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Endure",
 "LocalTexts": {
@@ -4042,6 +4861,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM False Swipe",
 "LocalTexts": {
@@ -4070,6 +4892,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Flash",
 "LocalTexts": {
@@ -4098,6 +4923,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Infestation",
 "LocalTexts": {
@@ -4126,6 +4954,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Psych Up",
 "LocalTexts": {
@@ -4154,6 +4985,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Quash",
 "LocalTexts": {
@@ -4182,6 +5016,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Recycle",
 "LocalTexts": {
@@ -4210,6 +5047,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Snatch",
 "LocalTexts": {
@@ -4238,6 +5078,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Swagger",
 "LocalTexts": {
@@ -4266,6 +5109,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Telekinesis",
 "LocalTexts": {
@@ -4294,6 +5140,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Torment",
 "LocalTexts": {
@@ -4322,6 +5171,9 @@
 "type": "RogueEssence.Dungeon.ItemIDState"
 }
 ],
+"MaxStack": 0,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "TM Whirlpool",
 "LocalTexts": {
@@ -4346,10 +5198,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.WandState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Totter Wand",
 "LocalTexts": {
@@ -4368,10 +5223,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.WandState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Transfer Wand",
 "LocalTexts": {
@@ -4391,10 +5249,13 @@
 "UsageType": 1,
 "States": [
 {
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
+"assembly": "PMDC, Version=0.8.9.0, Culture=neutral, PublicKeyToken=null",
 "type": "PMDC.Dungeon.WandState"
 }
 ],
+"MaxStack": 9,
+"CannotDrop": false,
+"BagEffect": false,
 "Name": {
 "DefaultText": "Vanish Wand",
 "LocalTexts": {
@@ -4407,324 +5268,6 @@
 "Released": true,
 "Comment": "",
 "SortOrder": 3
-},
-"cafe_apple_cider": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 7,
-"UsageType": 5,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.DrinkState"
-}
-],
-"Name": {
-"DefaultText": "Apple Cider",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Cafe food item.",
-"SortOrder": 4
-},
-"cafe_cheri_bomb": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 0,
-"UsageType": 3,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.AmmoState"
-}
-],
-"Name": {
-"DefaultText": "Cheri Bomb",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Cafe ammo item.",
-"SortOrder": 2
-},
-"cafe_domi_blend": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 7,
-"UsageType": 5,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.DrinkState"
-}
-],
-"Name": {
-"DefaultText": "Domi Blend",
-"LocalTexts": {
-"": ""
-}
-},
-"Released": true,
-"Comment": "Cafe food item.",
-"SortOrder": 6
-},
-"cafe_endurance_tonic": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 7,
-"UsageType": 5,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.DrinkState"
-}
-],
-"Name": {
-"DefaultText": "Endurance Tonic",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Cafe food item.",
-"SortOrder": 6
-},
-"held_aspear_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Aspear Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_band_of_passage": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Band of Passage",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "For use within the beginner lesson tutorial.",
-"SortOrder": 1
-},
-"held_cheri_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Cheri Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_insomniascope": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 15,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Insomniascope",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_pecha_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Pecha Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_persim_band": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Persim Band",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_rawst_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Rawst Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 1
-},
-"held_synergy_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.HeldState"
-}
-],
-"Name": {
-"DefaultText": "Synergy Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "Only works when another synergy scarf is worn by a nearby ally.\r\nBoosts all stats by 10%.\r\nActs as a pass scarf in a pinch.\r\n\r\n",
-"SortOrder": 1
-},
-"mission_lost_band": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Lost Band",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"mission_lost_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Lost Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"mission_lost_specs": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 15,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Lost Specs",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"mission_stolen_band": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Stolen Band",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"mission_stolen_scarf": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 14,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Stolen Scarf",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"mission_stolen_specs": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 15,
-"UsageType": 0,
-"States": [],
-"Name": {
-"DefaultText": "Stolen Specs",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
-"seed_quick": {
-"$type": "RogueEssence.Data.ItemEntrySummary, RogueEssence",
-"Icon": 4,
-"UsageType": 4,
-"States": [
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.EdibleState"
-},
-{
-"assembly": "PMDC, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null",
-"type": "PMDC.Dungeon.SeedState"
-}
-],
-"Name": {
-"DefaultText": "Quick Seed",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 7
 }
 }
 }
