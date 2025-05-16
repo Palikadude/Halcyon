@@ -280,7 +280,7 @@ COMMON.PERSONALITY[312] = {
 	WAIT = {1000}
 }
 
---Expedition - Shuca Ally Dialogue
+--Expedition - Ganlon Ally Dialogue - Angry, Shuca is critical
 COMMON.PERSONALITY[313] = { 
 	FULL = {3130, 3131, 3132, 3133, 3134},
 	HALF = {3130, 3131, 3132},
@@ -288,6 +288,29 @@ COMMON.PERSONALITY[313] = {
 	WAIT = {1000}
 }
 
+--Expedition - Ganlon Ally Dialogue - Tender, talking to critical Shuca
+COMMON.PERSONALITY[314] = { 
+	FULL = {3140, 3141, 3142, 3143, 3144},
+	HALF = {3140, 3141, 3142},
+	PINCH = {3140, 3141, 3142},
+	WAIT = {1000}
+}
+
+--Expedition - Shuca Ally Dialogue
+COMMON.PERSONALITY[315] = { 
+	FULL = {3150, 3151, 3152, 3153, 3154},
+	HALF = {3150, 3151, 3152},
+	PINCH = {3150, 3151, 3152},
+	WAIT = {1000}
+}
+
+--Expedition - Shuca Ally Dialogue - Talking to Ganlon
+COMMON.PERSONALITY[316] = { 
+	FULL = {3160, 3161, 3162, 3163, 3164},
+	HALF = {3160, 3161, 3162},
+	PINCH = {3160, 3161, 3162},
+	WAIT = {1000}
+}
 
 
 

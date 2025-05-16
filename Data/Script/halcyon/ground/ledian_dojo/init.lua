@@ -9,6 +9,7 @@ require 'halcyon.PartnerEssentials'
 require 'halcyon.ground.ledian_dojo.ledian_dojo_ch_2'
 require 'halcyon.ground.ledian_dojo.ledian_dojo_ch_3'
 require 'halcyon.ground.ledian_dojo.ledian_dojo_ch_4'
+require 'halcyon.ground.ledian_dojo.ledian_dojo_ch_5'
 
 
 -- Package name

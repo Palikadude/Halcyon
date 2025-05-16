@@ -1452,6 +1452,11 @@ function SINGLE_CHAR_SCRIPT.LavaChipDamage(owner, ownerChar, context, args)
 	local damage = chara.MaxHP / 16
 	damage = type_effectiveness * damage
 	damage = math.floor(damage / 4)--you need to divide by 4 again, as type effectiveness is 4 times the real value that gets used.
+	
+	--round damage up to 1 from 0 if not outright immune.
+	if damage == 0 and type_effectiveness ~= 0 then
+		damage = 1
+	end
 
 	if damage > 0 then
 		local searingAnimData = RogueEssence.Content.AnimData("Weather_Ball_Fire_2", 3)
@@ -1628,7 +1633,6 @@ function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, context, args)
 				SV.Chapter1.TutorialProgression = 10
 				GAME:WaitFrames(20)
 			end 		
-	end
     elseif args.Floor == 2 then
 	  	if SV.Chapter1.TutorialProgression < 2 then
 				SOUND:PlayFanfare("Fanfare/Note")
@@ -1688,7 +1692,8 @@ function SINGLE_CHAR_SCRIPT.RelicForestTutorial(owner, ownerChar, context, args)
 				UI:WaitShowDialogue("If either you or your partner faint,[pause=10] you will both be ejected from the dungeon![pause=0] So work together to get through danger!")
 				SV.Chapter1.TutorialProgression = 6 
 				GAME:WaitFrames(20)
-    end
+		end
+	end
   end
 end
 

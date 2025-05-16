@@ -100,7 +100,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 141,
+"HP": 81,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -127,7 +127,7 @@
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0,
-"AbandonRangeOnHit": true
+"AbandonRangeOnHit": false
 },
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
@@ -149,7 +149,7 @@
 "AttackRange": 0,
 "StatusRange": 0,
 "SelfStatusRange": 0,
-"AbandonRangeOnHit": true
+"AbandonRangeOnHit": false
 }
 ]
 },
@@ -220,7 +220,7 @@
 "BaseIntrinsics": [
 ""
 ],
-"FormIntrinsicSlot": -1,
+"FormIntrinsicSlot": 0,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",

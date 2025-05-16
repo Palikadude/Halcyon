@@ -200,6 +200,12 @@ function guild_second_floor.Mission_Board_Action(obj, activator)
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
 		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 5 then--right before expedition
+		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should take any jobs right now.", "Worried")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Let's focus on preparing for the expedition instead.")
+		UI:WaitShowDialogue("We can leave the posted jobs to the other adventuring teams while we're gone!")
+		GeneralFunctions.EndConversation(partner)
 	else
 	  --Mission Board
 	  partner.IsInteracting = true
@@ -240,6 +246,12 @@ function guild_second_floor.Outlaw_Board_Action(obj, activator)
 		local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("crooked_cavern")
 		GeneralFunctions.StartPartnerConversation(hero:GetDisplayName() .. "![pause=0] We already have a mission to do!")
 		UI:WaitShowDialogue("We have to get over to " .. zone:GetColoredName() .. " and help " .. CharacterEssentials.GetCharacterName("Sandile") .. " get away from Team [color=#FFA5FF]Style[color].[pause=0] Let's get a move on!")
+		GeneralFunctions.EndConversation(partner)
+	elseif SV.ChapterProgression.Chapter == 5 then--right before expedition
+		GeneralFunctions.StartPartnerConversation("Hmm...[pause=0] I don't think we should take any jobs right now.", "Worried")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("Let's focus on preparing for the expedition instead.")
+		UI:WaitShowDialogue("We can leave the posted jobs to the other adventuring teams while we're gone!")
 		GeneralFunctions.EndConversation(partner)
 	else
 	  --Outlaw Board

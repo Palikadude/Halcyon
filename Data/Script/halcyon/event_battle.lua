@@ -731,36 +731,51 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 			--Run a check to see if Shuca is nearby. If she's next to Ganlon, ganlon acts timid.
 			--Additionally, if you're smart enough to use team mode to talk to Ganlon as Shuca, get ANOTHER personality set where he's blushing.
 			--Otherwise, Ganlon's an asshole.
+			
+			--Shuca should always be in the last party slot.
+			local shuca = GAME:GetPlayerPartyMember(3)
+			
+			--Check Shuca's health. Ganlon will have different dialogue if she's on critical HP.
+			local shucaHealthRatio = shuca.HP * 100 // shuca.MaxHP
+			
 			local tbl = LTBL(chara)
 			if tbl.Importance == CharacterEssentials.GetCharacterName('Mareep', true) then
-				UI:SetSpeakerEmotion("Special1")--Blushing 
-				personality = 312
+				if shucaHealthRatio <= 25 then 
+					UI:SetSpeakerEmotion("Sad")
+					personality = 314
+				else 
+					UI:SetSpeakerEmotion("Special1")--Blushing 
+					personality = 312
+				end
 			else
 				--Check if he's next to shuca if you're not shuca.
 				local nextToShuca = false
-				for i = 0, GAME:GetPlayerPartyCount() - 1, 1 do 
-					local partymember = GAME:GetPlayerPartyMember(i)
-					tbl = LTBL(partymember)
-					if tbl.Importance == 'Shuca' and not partymember.Dead and (partymember.CharLoc - target.CharLoc):Dist8() <= 1 then 
-						nextToShuca = true 
-						break
-					end
-				end
+				if (shuca.CharLoc - target.CharLoc):Dist8() <= 1 and not shuca.Dead then nextToShuca = true end
 				
-				if nextToShuca then 
-					personality = 311
+				if shucaHealthRatio <= 25 then
+					UI:SetSpeakerEmotion("Angry")
+					personality = 313--He's mad at you that Shuca's in danger, irrespective of distance between him and Shuca
+				elseif nextToShuca then 
+					personality = 311--timid when next to Shuca
 				else 				
-					UI:SetSpeakerEmotion("Determined")
+					UI:SetSpeakerEmotion("Determined")--Jerk if she isn't next to him
 					personality = 310
 				end
 			end
-			elseif target_importance == CharacterEssentials.GetCharacterName('Mareep', true) then 
-				personality = 313
+		elseif target_importance == CharacterEssentials.GetCharacterName('Mareep', true) then 
+			local tbl = LTBL(chara)
+			if tbl.Importance == CharacterEssentials.GetCharacterName('Cranidos', true) then	
+				UI:SetSpeakerEmotion("Happy")
+				personality = 316
+			else 
+				personality = 315
 			end
+		end
 	else--For chapters down the road
 		
 	end
-				
+	print("personality: " .. tostring(personality))
+			
     local personality_group = COMMON.PERSONALITY[personality]
     local pool = {}
     local key = ""

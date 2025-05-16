@@ -43,10 +43,11 @@ If you're having trouble installing the game, or have any questions, comments, f
 ### Spriting credits:
 * Edan Momu — guild exterior and partial interior sprite work
 * D4yz — guild interior tilesets and original guild decorations pixel art
-* Jaifain — Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Snubbull, Cranidos, Girafarig, and Zigzagoon; <br>
+* Jaifain — Eating and Posing sprites for Growlithe, Breloom, Noctowl, Tropius, Snubbull, Cranidos, Girafarig, and Zigzagoon. Special animations for Slugma and Magcargo; <br>
 River animations for Illuminant Riverbed's Entrance, Metano Town, Metano Outskirts, and Altere Pond. <br>
 Anima core and anima root animations. Scarfed Sandile Portraits. Giving up animations for Magcargo/Slugma.
 * Baroness Faron — Audino upwards eating + posing sprites
+* Emmuffin - Additional guild member eating animations. Terrakion sprites and animations
 * Happysmily — Shuckle's cafe animations, sandile scarf sprites
 * Cait_Sith — Luxio fainting animation
 * NanaelJustice — Cleaning up staircases inside guild and adding some detail to them

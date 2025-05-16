@@ -354,6 +354,8 @@ end
 
 --shortcut for doing hero dialogue (i.e., no sfx, no nameplate at the start)
 function GeneralFunctions.HeroDialogue(chara, str, emotion)
+	if emotion == nil then emotion = "Normal" end
+
 	UI:SetSpeaker('', false, chara.CurrentForm.Species, chara.CurrentForm.Form, chara.CurrentForm.Skin, chara.CurrentForm.Gender)
 	UI:SetSpeakerEmotion(emotion)
 	UI:WaitShowDialogue(str)
@@ -497,6 +499,7 @@ end
 --If I had more foresight and care early on, the original EmoteAndPause would have these values
 --To avoid breaking all the precise timings that were probably adjusted with manual waits and such in older scripts,
 --make a new function for this instead of overwriting the old values.
+--[[
 function GeneralFunctions.EmoteAndPausePrecise(chara, emote, sound, repetitions)
 	local sfx = 'null'
 	local emt = 'null'
@@ -550,7 +553,7 @@ function GeneralFunctions.EmoteAndPausePrecise(chara, emote, sound, repetitions)
 	end	
 	GAME:WaitFrames(pause)
 end
-
+]]--
 
 
 
@@ -1088,6 +1091,21 @@ function GeneralFunctions.Recoil(chara, anim, height, duration, sound, emote)
 	GROUND:CharWaitAction(chara, hop_action)
 	if emote then GROUND:CharSetEmote(chara, "", 0) end
 	
+end
+
+--Do an animation, posing on its last frame. Wait for the duration of this animation.
+function GeneralFunctions.PoseAndWait(chara, anim)
+	local pose_action = RogueEssence.Ground.PoseGroundAction(chara.Position, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim))
+	GROUND:CharSetAction(chara, pose_action)
+	GROUND:CharWaitAction(chara, pose_action)
+end
+
+--Same as above, but does the animation in reverse.
+function GeneralFunctions.ReversePoseAndWait(chara, anim)
+	local pose_action = RogueEssence.Ground.ReverseGroundAction(chara.Position, chara.LocHeight, chara.Direction, RogueEssence.Content.GraphicsManager.GetAnimIndex(anim))
+	GROUND:CharSetAction(chara, pose_action)
+	GROUND:CharWaitAction(chara, pose_action)
+	GROUND:CharEndAnim(chara)
 end
 
 
@@ -1641,7 +1659,7 @@ function GeneralFunctions.DeathFadeOutDialogue(chara, dialogue, emotion)
 	UI:SetSpeakerEmotion(emotion)
 	UI:WaitShowDialogue(dialogue)
 	UI:SetAutoFinish(true)
-	UI:WaitShowTimedDialogue(string.gsub(dialogue, "%[pause=0%]", "") .. "[script=0]", 60, {function() return GAME:FadeOutFront(false, 60) end})--remove pause=0 to stop unneeded pauses
+	UI:WaitShowTimedDialogue(string.gsub(dialogue, "%[pause=0%]", "") .. "[script=0]", 60, {function() return GAME:FadeInFront(false, 60) end})--remove pause=0 to stop unneeded pauses
 	UI:SetAutoFinish(false)
 	GAME:FadeInFront(1)--Quickly undo the fade out on the text layer once the text is cleared - a regular fade out set up on top of this will still be in effect after clearing this
 end

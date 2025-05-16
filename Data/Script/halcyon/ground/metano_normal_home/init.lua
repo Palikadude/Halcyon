@@ -8,6 +8,7 @@ require 'origin.common'
 require 'halcyon.PartnerEssentials'
 require 'halcyon.ground.metano_normal_home.metano_normal_home_ch_2'
 require 'halcyon.ground.metano_normal_home.metano_normal_home_ch_4'
+require 'halcyon.ground.metano_normal_home.metano_normal_home_ch_5'
 
 -- Package name
 local metano_normal_home = {}

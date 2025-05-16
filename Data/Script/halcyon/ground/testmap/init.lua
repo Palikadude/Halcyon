@@ -654,6 +654,441 @@ end
 
 
 
+function testmap.Chapter_5_Setup()
+	SV.ChapterProgression.Chapter = 5
+	
+	GAME:UnlockDungeon('relic_forest')
+	GAME:UnlockDungeon('illuminant_riverbed')
+	GAME:UnlockDungeon('crooked_cavern')
+	GAME:UnlockDungeon('beginner_lesson')
+	GAME:UnlockDungeon('normal_maze')
+	GAME:UnlockDungeon('fire_maze')
+	GAME:UnlockDungeon('water_maze')
+	GAME:UnlockDungeon('grass_maze')
+	GAME:UnlockDungeon('apricorn_grove')
+	GAME:UnlockDungeon('flying_maze')
+	GAME:UnlockDungeon('rock_maze')	
+	GAME:UnlockDungeon('bug_maze')
+	GAME:UnlockDungeon('electric_maze')
+	SV.ChapterProgression.CurrentStoryDungeon = ''
+	_DATA.Save.ActiveTeam:SetRank("bronze")
+	SV.ChapterProgression.UnlockedAssembly = true
+	
+	SV.Chapter1 = 
+	{
+		PlayedIntroCutscene = true,
+		PartnerEnteredForest = true,--Did partner go into the forest yet?
+		PartnerCompletedForest = true,--Did partner complete solo run of first dungeon?
+		PartnerMetHero = true,--Finished partner meeting hero cutscene in the relic forest?
+		TeamCompletedForest = true, --completed backtrack to town?
+		TeamJoinedGuild = true,--team officially joined guild? this flag lets you walk around guild without triggering cutscenes to talk to different guildmates
+
+		--these flags mark whether you've talked to your new guild buddies yet. Need to talk to them all to go to sleep and end the chapter.
+		MetSnubbull = true,--talked to snubbull?
+		MetZigzagoon = true,
+		MetCranidosMareep = true,
+		MetBreloomGirafarig = true,
+		MetAudino = true,
+		
+		--partner dialogue flag on second floor
+		PartnerSecondFloorDialogue = 0,
+		TutorialProgression = 10
+	}
+	
+	SV.Chapter2 = 
+	{
+		FirstMorningMeetingDone = true,--completed the first morning cutscene with the guild?
+		StartedTraining = true,--started the training at ledian dojo?
+		SkippedTutorial = false,--chose to do the training maze instead of the tutorial?
+		FinishedTraining = true,--finished the preliminary training at ledian dojo?
+		FinishedDojoCutscenes = true,--finished the last chapter 2 cutscene in ledian dojo that plays after finishing first maze/lesson?
+		FinishedMarketIntro = true,--partner showed the hero the market?
+		FinishedNumelTantrum = true,--watched numel's tantrum?
+		FinishedFirstDay = true,--finished first day of chapter 2?
+		FinishedCameruptRequestScene = true,--finished second morning address cutscene with the guild? (this only plays once, even if you die on the second day)
+		
+		EnteredRiver = true,--has player and partner attempted the dungeon of the chapter yet? used for a few npcs to mark that a day has passed since the initial request (i.e. you failed at least once)
+		FinishedRiver = true,--player and partner have finished the dungeon and made it to Numel?
+		
+		TropiusGaveReviver = true,--did tropius give the free one off reviver seed?
+		WooperIntro = true--talked to the wooper siblings? if not play their little cutscene
+	}
+		
+	SV.Chapter3 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 3 title card.
+		FinishedOutlawIntro = true,--did shuca and ganlon teach you about outlaws?
+		MetTeamStyle = true,--did you meet team style?
+		FinishedCafeCutscene = true,--did partner point out the cafe's open?
+		EnteredCavern = true,--did duo enter the dungeon?
+		FailedCavern = false,--did duo die in cavern to either dungeon or the boss?
+		EncounteredBoss = true,--did duo find team style in the dungeon yet?
+		LostToBoss = false,--did duo die to boss?
+		EscapedBoss = false,--due team use an escape orb to escape boss?
+		DefeatedBoss = true, --did duo defeat team style?
+		RootSceneTransition = true, --Used to remember where in the root scene we are after transitioning away to show the root 
+		FinishedRootScene = true, --Showed root scene? This is used to mark the first half of chapter 3 (the non filler portion) as having been completed or not
+		FinishedMerchantIntro = true, --Did merchant intro cutscene?
+		--DemoThankYou = false,--Showed demo thank you? Not needed for future versions.
+
+		TropiusGaveWand = true,--did tropius give some wands to help the duo?
+		BreloomGirafarigConvo = true, --talked to breloom/girafarig about their expedition?
+		PostBossSpokeToCranidos = true -- Talked to cranidos in town after beating boss? Used to flag the partner to mention not being able to impress cranidos.
+	}
+	
+	SV.Chapter4 = 
+	{
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 4 title card.
+		FinishedFirstAddress = true,--Did you get the address regarding your mission for the chapter and the expedition?
+		FinishedAssemblyIntro = true,--did audino teach you about her assembly?
+		FinishedSignpostCutscene = true,--Did audino show you her signpost for the assembly by the cafe?
+		EnteredGrove = true,--has player set foot at all into the grove yet?
+		BacktrackedOutGroveYet = true,--has player ever backtracked out the entrance of the grove yet? if not, give them a cutscene explaining what just happened
+		ReachedGlade = true, --has player reached the glade yet?
+		FinishedGrove = true,--has player finished the grove for good?
+		FinishedBedtimeCutscene = true,--has player watched the bedtime cutscene? this is the last cutscene of this chapter
+		
+		TropiusGaveAdvice = true,--did you speak with Tropius day one?
+		SpokeToRelicanthDayOne = true,--did you speak with relicanth day one?
+		HeardRelicanthStory = false,--did you hear with relicanth's story? (TO BE USED ONCE STORY IS CREATED)
+		MedichamMachampArgument = false,--did you see machamp and medicham arguing over their mailbox?
+		CranidosBlush = false,--did Cranidos accidentally spill the beans on being a softy towards mareep?
+		WoopersMedititeConvo = false,--did you see woopers and meditite talk to each other?
+		DemoThankYou = true--Showed demo thank you?
+
+	}
+end
+
+
+function testmap.Chapter5_1_Action(chara, activator)
+	testmap.Chapter_5_Setup()
+
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 5 before expedition leave!")
+end
+
+
+function testmap.Chapter5_2_Action(chara, activator)
+	testmap.Chapter_5_Setup()
+	
+	SV.Chapter5 = {
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
+		TalkedToSnubbull = false,--Did player talk to Snubbull at the Kec Shop?
+		SawZigzagoonFamilyCutscene = false,--Did Almotz's family see him off?
+		GotFreeCafeItem = false,--Did Dion give you the free cafe drink?
+		FinishedExpeditionAddress = true,--Did the address about the expedition starting today?
+		ReadyForExpedition = true,--Talked to Penticus to ready up for the expedition?
+		
+		FinishedSteppeIntro = true,--Did the player see the intro cutscene for Vast Steppe?
+		EnteredSteppe = false,--did player enter the steppe?
+		LostSteppe = false,--did player die in steppe?
+		EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
+		SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
+		
+		FinishedTunnelIntro = false,--Did the player see the nighttime+intro cutscene for Searing Tunnel?
+		EnteredTunnel = false,--did player enter the tunnel?
+		LostTunnel = false,--did player die in the tunnel or to the boss?
+		TunnelLastExitReason = '',--Why did the player exit the tunnel to the entrance? Should be Died, Escaped, or Retreated
+		PlayTempTunnelScene = false,--Do we need to play a one time scene outside the tunnel for having died/escaped/retreated?
+		PlayedMidpointIntro = false,--Did you do the first "Let's go forward!" cutscene for the midpoint?
+		TunnelMidpointState = 'FirstArrival',--What scene needs to play, and how do we handle midpoint respawning for almotz and hyko? can be FirstArrival, RepeatArrival, DeathArrival.
+		EncounteredBoss = false, --Did the player encounter the slugmas?
+		DefeatedBoss = false, --Did the player defeat the slugmas?
+		DiedToBoss = false,--Did the player lose to the boss ever?
+		JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
+		SpokeToNoctowlTunnel = false,--Did you get some extra info about Hyko and Penticus's relation from Phileas?
+		SpokeToCranidosTunnel = false,--Did you get to see Ganlon trying to be protective of Shuca?
+		GrowlitheTropiusBossInterrupt = false,--did Hyko stop you from telling Penticus about the boss?
+		
+		FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
+		EnteredMountain = false,--did player enter Mt. Windswept?
+		LostMountain = false,--did player die in Mt. Windswept?
+		DiedToWind = false,--did player's last run die to the time limit?
+		EscapedMountain = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedMountain = false,--Do we need to play the died in dungeon scene when loading this map?
+		
+		NeedGiveSupplies = false--does penticus/phileas need to give supplies out?
+	}
+	
+	--Default the party DESTRUCTIVELY to delete extra mons.
+	GeneralFunctions.DefaultParty(false, true)
+	--reinitialize the hero and partner variables after respawning the party.
+	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch. dunno why, since i thought i fixed default party...
+	hero = CH('PLAYER')
+	partner = CH('Teammate1')
+	partner.CollisionDisabled = true
+	
+	--Setup Coco and Rin.
+	local snubbull_id = RogueEssence.Dungeon.MonsterID("snubbull", 0, "normal", Gender.Female)
+	local snubbull_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, snubbull_id, SV.GuildSidequests.SnubbullLevel, "run_away", 0)
+	snubbull_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	snubbull_monster.Nickname = CharacterEssentials.GetCharacterName('Snubbull', true)
+	snubbull_monster.MetAt = "Adventurer's Guild"
+	snubbull_monster.IsPartner = true
+	snubbull_monster.IsFounder = true
+	
+	--snubbull's stats are kinda dookie in comparison to audino, so boost her up a bit.
+	snubbull_monster.MaxHPBonus = 1
+	snubbull_monster.SpeedBonus = 5
+	
+	snubbull_monster:ReplaceSkill("bite", 0, true)
+	snubbull_monster:ReplaceSkill("lick", 1, true)
+	snubbull_monster:ReplaceSkill("smelling_salts", 2, true)
+	snubbull_monster:ReplaceSkill("charm", 3, false)
+		
+	GAME:AddPlayerTeam(snubbull_monster)
+	snubbull_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    snubbull_monster.ActionEvents:Add(talk_evt)
+	snubbull_monster:RefreshTraits()
+
+	local audino_id = RogueEssence.Dungeon.MonsterID("audino", 0, "normal", Gender.Female)
+	local audino_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, audino_id, SV.GuildSidequests.AudinoLevel, "regenerator", 0)
+	audino_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	audino_monster.Nickname = CharacterEssentials.GetCharacterName('Audino', true)
+	audino_monster.MetAt = "Adventurer's Guild"
+	audino_monster.IsPartner = true
+	audino_monster.IsFounder = true
+	
+	audino_monster:ReplaceSkill("double_slap", 0, true)
+	audino_monster:ReplaceSkill("heal_bell", 1, true)
+	audino_monster:ReplaceSkill("disarming_voice", 2, true)
+	audino_monster:ReplaceSkill("helping_hand", 3, false)
+	
+		
+	GAME:AddPlayerTeam(audino_monster)
+	audino_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    audino_monster.ActionEvents:Add(talk_evt)
+	audino_monster:RefreshTraits()
+	
+	--prevent heal bell from being unlearned.
+	GAME:LockSkill(GAME:GetPlayerPartyMember(3), 1)
+
+	--Assign importances to identify who they are. Do this instead of just checking species just in case randomizers down the road or something.
+	local sTbl = LTBL(GAME:GetPlayerPartyMember(2))
+	local aTbl = LTBL(GAME:GetPlayerPartyMember(3))
+	
+	sTbl.Importance = snubbull_monster.Nickname
+	aTbl.Importance = audino_monster.Nickname
+		
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Vast Steppe!")
+end
+
+
+
+
+function testmap.Chapter5_3_Action(chara, activator)
+	testmap.Chapter_5_Setup()
+	
+	SV.Chapter5 = {
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
+		TalkedToSnubbull = false,--Did player talk to Snubbull at the Kec Shop?
+		SawZigzagoonFamilyCutscene = false,--Did Almotz's family see him off?
+		GotFreeCafeItem = false,--Did Dion give you the free cafe drink?
+		FinishedExpeditionAddress = true,--Did the address about the expedition starting today?
+		ReadyForExpedition = true,--Talked to Penticus to ready up for the expedition?
+		
+		FinishedSteppeIntro = true,--Did the player see the intro cutscene for Vast Steppe?
+		EnteredSteppe = true,--did player enter the steppe?
+		LostSteppe = false,--did player die in steppe?
+		EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
+		SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
+		
+		FinishedTunnelIntro = true,--Did the player see the nighttime+intro cutscene for Searing Tunnel?
+		EnteredTunnel = false,--did player enter the tunnel?
+		LostTunnel = false,--did player die in the tunnel or to the boss?
+		TunnelLastExitReason = '',--Why did the player exit the tunnel to the entrance? Should be Died, Escaped, or Retreated
+		PlayTempTunnelScene = false,--Do we need to play a one time scene outside the tunnel for having died/escaped/retreated?
+		PlayedMidpointIntro = false,--Did you do the first "Let's go forward!" cutscene for the midpoint?
+		TunnelMidpointState = 'FirstArrival',--What scene needs to play, and how do we handle midpoint respawning for almotz and hyko? can be FirstArrival, RepeatArrival, DeathArrival.
+		EncounteredBoss = false, --Did the player encounter the slugmas?
+		DefeatedBoss = false, --Did the player defeat the slugmas?
+		DiedToBoss = false,--Did the player lose to the boss ever?
+		JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
+		SpokeToNoctowlTunnel = false,--Did you get some extra info about Hyko and Penticus's relation from Phileas?
+		SpokeToCranidosTunnel = false,--Did you get to see Ganlon trying to be protective of Shuca?
+		GrowlitheTropiusBossInterrupt = false,--did Hyko stop you from telling Penticus about the boss?
+		
+		FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
+		EnteredMountain = false,--did player enter Mt. Windswept?
+		LostMountain = false,--did player die in Mt. Windswept?
+		DiedToWind = false,--did player's last run die to the time limit?
+		EscapedMountain = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedMountain = false,--Do we need to play the died in dungeon scene when loading this map?
+		
+		NeedGiveSupplies = false--does penticus/phileas need to give supplies out?
+	}
+	
+	--Setup Hyko and Almotz.
+	--Default the party DESTRUCTIVELY to delete extra mons.
+	GeneralFunctions.DefaultParty(false, true)
+	--reinitialize the hero and partner variables after respawning the party.
+	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch. dunno why, since i thought i fixed default party...
+	hero = CH('PLAYER')
+	partner = CH('Teammate1')
+	partner.CollisionDisabled = true
+	
+	local growlithe_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
+	local growlithe_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, growlithe_id, SV.GuildSidequests.GrowlitheLevel, "flash_fire", 0)
+	growlithe_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	growlithe_monster.Nickname = CharacterEssentials.GetCharacterName('Growlithe', true)
+	growlithe_monster.MetAt = "Adventurer's Guild"
+	growlithe_monster.IsPartner = true
+	growlithe_monster.IsFounder = true
+	
+	growlithe_monster:ReplaceSkill("flame_wheel", 0, true)
+	growlithe_monster:ReplaceSkill("bite", 1, true)
+	growlithe_monster:ReplaceSkill("close_combat", 2, true)
+	growlithe_monster:ReplaceSkill("roar", 3, false)
+		
+	GAME:AddPlayerTeam(growlithe_monster)
+	growlithe_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    growlithe_monster.ActionEvents:Add(talk_evt)
+	growlithe_monster:RefreshTraits()
+
+	local zigzagoon_id = RogueEssence.Dungeon.MonsterID("zigzagoon", 0, "normal", Gender.Male)
+	local zigzagoon_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, zigzagoon_id, SV.GuildSidequests.ZigzagoonLevel, "pickup", 0)
+	zigzagoon_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	zigzagoon_monster.Nickname = CharacterEssentials.GetCharacterName('Zigzagoon', true)
+	zigzagoon_monster.MetAt = "Adventurer's Guild"
+	zigzagoon_monster.IsPartner = true
+	zigzagoon_monster.IsFounder = true
+	
+	zigzagoon_monster:ReplaceSkill("headbutt", 0, true)
+	zigzagoon_monster:ReplaceSkill("helping_hand", 1, false)
+	zigzagoon_monster:ReplaceSkill("pin_missile", 2, true)
+	zigzagoon_monster:ReplaceSkill("odor_sleuth", 3, false)
+		
+	GAME:AddPlayerTeam(zigzagoon_monster)
+	zigzagoon_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    zigzagoon_monster.ActionEvents:Add(talk_evt)
+	zigzagoon_monster:RefreshTraits()
+	
+	--Assign importances to identify who they are. Do this instead of just checking species just in case randomizers down the road or something.
+	local gTbl = LTBL(GAME:GetPlayerPartyMember(2))
+	local zTbl = LTBL(GAME:GetPlayerPartyMember(3))
+	
+	gTbl.Importance = growlithe_monster.Nickname
+	zTbl.Importance = zigzagoon_monster.Nickname
+		
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Searing Tunnel!")
+end
+
+
+
+
+function testmap.Chapter5_4_Action(chara, activator)
+	testmap.Chapter_5_Setup()
+	
+	SV.Chapter5 = {
+		ShowedTitleCard = true,--Did the generic wakeup for the first day? Need a variable for this due to chapter 5 title card.
+		TalkedToSnubbull = false,--Did player talk to Snubbull at the Kec Shop?
+		SawZigzagoonFamilyCutscene = false,--Did Almotz's family see him off?
+		GotFreeCafeItem = false,--Did Dion give you the free cafe drink?
+		FinishedExpeditionAddress = true,--Did the address about the expedition starting today?
+		ReadyForExpedition = true,--Talked to Penticus to ready up for the expedition?
+		
+		FinishedSteppeIntro = true,--Did the player see the intro cutscene for Vast Steppe?
+		EnteredSteppe = true,--did player enter the steppe?
+		LostSteppe = false,--did player die in steppe?
+		EscapedSteppe = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedSteppe = false,--Do we need to play the died in dungeon scene when loading this map?
+		SpokeToTropiusSteppe = false,--Did you talk to tropius outside the steppe and get his foreshadowing/deferral?
+		
+		FinishedTunnelIntro = true,--Did the player see the nighttime+intro cutscene for Searing Tunnel?
+		EnteredTunnel = true,--did player enter the tunnel?
+		LostTunnel = false,--did player die in the tunnel or to the boss?
+		TunnelLastExitReason = '',--Why did the player exit the tunnel to the entrance? Should be Died, Escaped, or Retreated
+		PlayTempTunnelScene = false,--Do we need to play a one time scene outside the tunnel for having died/escaped/retreated?
+		PlayedMidpointIntro = true,--Did you do the first "Let's go forward!" cutscene for the midpoint?
+		TunnelMidpointState = 'FirstArrival',--What scene needs to play, and how do we handle midpoint respawning for almotz and hyko? can be FirstArrival, RepeatArrival, DeathArrival.
+		EncounteredBoss = true, --Did the player encounter the slugmas?
+		DefeatedBoss = true, --Did the player defeat the slugmas?
+		DiedToBoss = false,--Did the player lose to the boss ever?
+		JustDiedToBoss = false,--Did the player JUST die to the boss? This is a temporary flag that gets cleared after the boss death cutscene plays.
+		SpokeToNoctowlTunnel = false,--Did you get some extra info about Hyko and Penticus's relation from Phileas?
+		SpokeToCranidosTunnel = false,--Did you get to see Ganlon trying to be protective of Shuca?
+		GrowlitheTropiusBossInterrupt = false,--did Hyko stop you from telling Penticus about the boss?
+		
+		FinishedMountWindsweptIntro = false,--Did the player see the intro cutscene for Mt. Windswept?
+		EnteredMountain = false,--did player enter Mt. Windswept?
+		LostMountain = false,--did player die in Mt. Windswept?
+		DiedToWind = false,--did player's last run die to the time limit?
+		EscapedMountain = false,--Do we need to play the escaped from dungeon scene when loading this map?
+		DiedMountain = false,--Do we need to play the died in dungeon scene when loading this map?
+		
+		NeedGiveSupplies = false--does penticus/phileas need to give supplies out?
+	}
+	
+	--Setup Ganlon and Shuca.
+	--Default the party DESTRUCTIVELY to delete Hyko and Almotz.
+	GeneralFunctions.DefaultParty(false, true)
+	--reinitialize the hero and partner variables after respawning the party.
+	--Failing to do this has later functions try to teleport the "old" versions of them, causing a phantom glitch. dunno why, since i thought i fixed default party...
+	hero = CH('PLAYER')
+	partner = CH('Teammate1')
+	partner.CollisionDisabled = true
+	
+	--Setup Ganlon and Shuca.
+	local cranidos_id = RogueEssence.Dungeon.MonsterID("cranidos", 0, "normal", Gender.Male)
+	local cranidos_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, cranidos_id, SV.GuildSidequests.CranidosLevel, "mold_breaker", 0)
+	cranidos_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	cranidos_monster.Nickname = CharacterEssentials.GetCharacterName('Cranidos', true)
+	cranidos_monster.MetAt = "Adventurer's Guild"
+	cranidos_monster.IsPartner = true
+	cranidos_monster.IsFounder = true
+	
+	cranidos_monster:ReplaceSkill("headbutt", 0, true)
+	cranidos_monster:ReplaceSkill("pursuit", 1, false)
+	cranidos_monster:ReplaceSkill("iron_head", 2, true)
+	cranidos_monster:ReplaceSkill("smack_down", 3, true)
+		
+	GAME:AddPlayerTeam(cranidos_monster)
+	cranidos_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    cranidos_monster.ActionEvents:Add(talk_evt)
+	cranidos_monster:RefreshTraits()
+
+	local mareep_id = RogueEssence.Dungeon.MonsterID("mareep", 0, "normal", Gender.Female)
+	local mareep_monster = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mareep_id, SV.GuildSidequests.MareepLevel, "static", 0)
+	mareep_monster.Discriminator = _DATA.Save.Rand:Next()--tbh idk what this is lol
+	mareep_monster.Nickname = CharacterEssentials.GetCharacterName('Mareep', true)
+	mareep_monster.MetAt = "Adventurer's Guild"
+	mareep_monster.IsPartner = true
+	mareep_monster.IsFounder = true
+	
+	mareep_monster:ReplaceSkill("thunder_shock", 0, true)
+	mareep_monster:ReplaceSkill("thunder_wave", 1, false)
+	mareep_monster:ReplaceSkill("take_down", 2, true)
+	mareep_monster:ReplaceSkill("flatter", 3, false)
+		
+	GAME:AddPlayerTeam(mareep_monster)
+	mareep_monster:FullRestore()
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("GuildmateInteract")
+    mareep_monster.ActionEvents:Add(talk_evt)
+	mareep_monster:RefreshTraits()
+	
+	
+	--Assign importances to identify who they are. Do this instead of just checking species just in case randomizers down the road or something.
+	local cTbl = LTBL(GAME:GetPlayerPartyMember(2))
+	local mTbl = LTBL(GAME:GetPlayerPartyMember(3))
+	
+	cTbl.Importance = cranidos_monster.Nickname
+	mTbl.Importance = mareep_monster.Nickname
+		
+	UI:ResetSpeaker()
+	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Mt. Windswept!")
+end
+
+
+
 
 
 

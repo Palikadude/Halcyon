@@ -6,10 +6,12 @@ require 'halcyon.CharacterEssentials'
 metano_cafe_ch_5 = {}
 
 function metano_cafe_ch_5.SetupGround()
-	local gulpin, lickitung = 
+	local gulpin, lickitung, cleffa, aggron = 
 		CharacterEssentials.MakeCharactersFromList({
 			{'Gulpin', 'Cafe_Table_2'},
-			{'Lickitung', 'Cafe_Table_1'}
+			{'Lickitung', 'Cafe_Table_1'},
+			{'Cleffa', 'Cafe_Table_13'},
+			{'Aggron', 'Cafe_Table_15'}
 		})
 	
 		
@@ -33,8 +35,15 @@ function metano_cafe_ch_5.Gulpin_Action(chara, activator)
 	GeneralFunctions.EndConversation(chara)
 end 
 
+function metano_cafe_ch_5.Cleffa_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "alo")
+	GeneralFunctions.EndConversation(chara)
+end 
 
-
+function metano_cafe_ch_5.Aggron_Action(chara, activator)
+	GeneralFunctions.StartConversation(chara, "alo")
+	GeneralFunctions.EndConversation(chara)
+end 
 --[[
 	GeneralFunctions.StartConversation(chara, "You two are leaving on some sort of expedition today,[pause=10] aren't you?[pause=0] You should take some of " .. CharacterEssentials.GetCharacterName("Shuckle") .. "'s drinks along with you.")
 	UI:WaitShowDialogue("You never know what might happen on a trip like that.[pause=0] His drinks could come in handy in a pinch.")

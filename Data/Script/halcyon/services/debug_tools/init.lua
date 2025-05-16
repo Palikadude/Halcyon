@@ -81,7 +81,8 @@ function DebugTools:OnNewGame()
 	  tbl.Importance = 'Hero'
 	  p.IsFounder = true
 	  p.IsPartner = true
-	  p.Nickname = 'Palika'
+	  --p.Nickname = 'Palika'
+	  p.Nickname = 'BIG AF NAME'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
 	  mon_id = RogueEssence.Dungeon.MonsterID("piplup", 0, "normal", Gender.Male)
@@ -90,7 +91,8 @@ function DebugTools:OnNewGame()
 	  tbl.Importance = 'Partner'
 	  p.IsFounder = true
 	  p.IsPartner = true
-	  p.Nickname = 'Genshi'
+	  --p.Nickname = 'Genshi'
+	  p.Nickname = 'LONG NAME!!'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
 	  _DATA.Save.ActiveTeam:SetRank("bronze")

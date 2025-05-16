@@ -1,6 +1,10 @@
 -Make sure Audino fixes groundactionhop to have the waitframe at the peak of the jump. Review Hop and DoubleHop against Explorers once this is done.
+-Adjust generic morning scene possibly? Have Hyko stand in the middle, closer to Penticus, and also move in a way that suggests he's getting a one-on-one sorta assignment talk before he walks off
+	-if not this, at least try to put another hint earlier on about the two's relationship
 -Slower walking speed updates now that it's possible in ch5 guild scene and ch5 boss first encounter
 -Remove the .5 second delay before songs kick in. PMD2 seems to have them just kick in immediately, and PMDO scenes seem a bit ehhhhh with the music being slightly off with how it starts playing.
 -review options for map being too large to not have to scroll in illuminant riverbed
 -Rocks that block you in illuminant riverbed possibly instead of it being an invisible water wall in the river
 -Add apology option to Rin if you bully her too much
+--Review yellow vs blue text tagging for guild allies during expedition. PMD2 leaves them as blue in cutscenes and shit, but it's a tricky call to make.
+-Redo anima core chapter 3 scene. Update to be the area we find in the expedition + make it become unstable as opposed to deactivated.

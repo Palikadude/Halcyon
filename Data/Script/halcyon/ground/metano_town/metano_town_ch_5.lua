@@ -9,6 +9,27 @@ function metano_town_ch_5.SetupGround()
 	GROUND:Hide('Swap_Owner')
 	GROUND:Hide('Swap')
 	
+	--block player from leaving town north or east 
+	local northBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+									RogueElements.Rect(232, 8, 40, 8),
+									RogueElements.Loc(0, 0), 
+									true, 
+									"Event_Trigger_1")
+									
+	local eastBlock = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData("", 1), 
+									RogueElements.Rect(1496, 592, 8, 144),
+									RogueElements.Loc(0, 0), 
+									true, 
+									"Event_Trigger_2")	
+										
+	northBlock:ReloadEvents()
+	eastBlock:ReloadEvents()
+
+	GAME:GetCurrentGround():AddTempObject(northBlock)
+	GAME:GetCurrentGround():AddTempObject(eastBlock)
+	
+	
+	
 	local growlithe = CH('Growlithe')
 	
 	if not SV.Chapter5.TalkedToSnubbull then
@@ -92,7 +113,7 @@ end
 function metano_town_ch_5.Cranidos_Action(chara, activator)
 	local item = RogueEssence.Dungeon.InvItem("machine_recall_box")
 	GeneralFunctions.StartConversation(chara, "You greenhorns better get all your moves in order before we leave.")
-	UI:WaitShowDialogue("The only way you'll be able to remember old moves on the road is a " .. item:GetDisplayName() .. ",[pause=10] and those are a pretty rare find.")
+	UI:WaitShowDialogue("The only way you'll be able to remember old moves on the road is a " .. item:GetDisplayName() .. ",[pause=10] and those are a rare find.")
 	UI:SetSpeakerEmotion("Determined")
 	UI:WaitShowDialogue("I don't wanna hear your bellyaching later because you're too lazy to take care of it now!")
 	GeneralFunctions.EndConversation(chara)
@@ -217,26 +238,101 @@ function metano_town_ch_5.Medicham_Action(chara, activator)
 end
 
 function metano_town_ch_5.Spheal_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.StartConversation(chara, "An expedition?[pause=0] Sounds like hungry work![pause=0] Make sure to pack lots of food!")
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("Oh![pause=30] And be sure to share the treasure with me if it ends up being something yummy!")
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_town_ch_5.Marill_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.StartConversation(chara, "Good luck on the expedition![pause=0] I hope you all make a big discovery!", "Happy")
 	GeneralFunctions.EndConversation(chara)
 end 
 
 function metano_town_ch_5.Jigglypuff_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "")
+	GeneralFunctions.StartConversation(chara, "Take care on your expedition.[pause=0] For a trip like that, you'll be on the road for some time,[pause=10] so make sure to pack lots of supplies.")
+	UI:WaitShowDialogue("You should also leave some items with " .. CharacterEssentials.GetCharacterName('Kangaskhan') .. ".")
+	UI:WaitShowDialogue("I'm sure you'll encounter some spots where you can restock using her storage,[pause=10] so try to leave some stuff in reserve!")
 	GeneralFunctions.EndConversation(chara)
 end
 
 function metano_town_ch_5.Nidorina_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "")
-	GeneralFunctions.EndConversation(chara)
+	metano_town_ch_5.Nidorina_Gloom_Dialogue(chara, activator)
 end
 
 function metano_town_ch_5.Gloom_Action(chara, activator)
-	GeneralFunctions.StartConversation(chara, "")
-	GeneralFunctions.EndConversation(chara)
+	metano_town_ch_5.Nidorina_Gloom_Dialogue(chara, activator)
+end
+
+function metano_town_ch_5.Nidorina_Gloom_Dialogue(chara, activator)
+	local nidorina = CH('Nidorina')
+	local gloom = CH('Gloom')
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	
+	partner.IsInteracting = true
+	GROUND:CharSetAnim(gloom, 'None', true)
+	GROUND:CharSetAnim(nidorina, 'None', true)
+	GROUND:CharSetAnim(hero, 'None', true)
+	GROUND:CharSetAnim(partner, 'None', true)
+	
+	UI:SetSpeaker(gloom)
+	UI:WaitShowDialogue("Did you hear that the guild's going on some big adventure?")
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(nidorina)
+	UI:WaitShowDialogue("Yeah.[pause=0] So?")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharSetAnim(gloom, "Idle", true)
+	UI:SetSpeaker(gloom)
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("I've been thinking about all the sorts of things they could encounter on their trip!")
+	UI:WaitShowDialogue("They could find awesome treasure,[pause=10] or fight a really tough Pokémon,[pause=10] or discover a totally new part of the world!")
+	UI:WaitShowDialogue("There's so much that could happen![pause=0] What do you think they'll find?")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharSetAnim(gloom, "None", true)
+	UI:SetSpeaker(nidorina)
+	UI:WaitShowDialogue("...[pause=30]Meh.[pause=0] I don't care.[pause=0] Adventurers are lame,[pause=10] anyways.")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharSetEmote(gloom, "sweating", 1)
+	UI:SetSpeaker(gloom)
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("O-oh.[pause=0] Too bad...")
+	
+	
+	GROUND:CharEndAnim(gloom)
+	GROUND:CharEndAnim(nidorina)
+	GROUND:CharEndAnim(partner)
+	GROUND:CharEndAnim(hero)
+	partner.IsInteracting = false
+end
+
+
+
+
+function metano_town_ch_5.Event_Trigger_1_Touch(obj, activator)
+	local zone = _DATA.DataIndices[RogueEssence.Data.DataManager.DataType.Zone]:Get("illuminant_riverbed")
+
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GeneralFunctions.StartPartnerConversation("There's no time for any adventures in " .. zone:GetColoredName() .. "![pause=0] We have to prepare for the expedition!")
+	UI:WaitShowDialogue("When you feel we're ready,[pause=10] we need to go see the Guildmaster in his office.")
+	UI:WaitShowDialogue("After that we'll be on the road in no time!")
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("Ooooh,[pause=10] it's so exciting![pause=0] Let's go finish preparing,[pause=10] " .. hero:GetDisplayName() .. "!")	
+	GeneralFunctions.EndConversation(partner)
+end
+
+function metano_town_ch_5.Event_Trigger_2_Touch(obj, activator)
+	local hero = CH('PLAYER')
+	local partner = CH('Teammate1')
+	GeneralFunctions.StartPartnerConversation("There's no time to go on any adventures![pause=0] We have to prepare for the expedition!")
+	UI:WaitShowDialogue("When you feel we're ready,[pause=10] we need to go see the Guildmaster in his office.")
+	UI:WaitShowDialogue("After that we'll be on the road in no time!")
+	UI:SetSpeakerEmotion("Inspired")
+	UI:WaitShowDialogue("Ooooh,[pause=10] it's so exciting![pause=0] Let's go finish preparing,[pause=10] " .. hero:GetDisplayName() .. "!")	
+	GeneralFunctions.EndConversation(partner)
 end

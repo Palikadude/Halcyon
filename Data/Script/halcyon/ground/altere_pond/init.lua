@@ -10,6 +10,7 @@ require 'halcyon.ground.altere_pond.altere_pond_ch_1'
 require 'halcyon.ground.altere_pond.altere_pond_ch_2'
 require 'halcyon.ground.altere_pond.altere_pond_ch_3'
 require 'halcyon.ground.altere_pond.altere_pond_ch_4'
+require 'halcyon.ground.altere_pond.altere_pond_ch_5'
 
 -- Package name
 local altere_pond = {}
@@ -55,7 +56,9 @@ function altere_pond.PlotScripting()
 			altere_pond_ch_1.PartnerHeroReturn()
 		end 		
 	elseif SV.ChapterProgression.Chapter == 2 then
-		altere_pond_ch_2.SetupGround()
+		altere_pond_ch_2.SetupGround()	
+	elseif SV.ChapterProgression.Chapter == 5 then
+		altere_pond_ch_5.SetupGround()
 	else
 		GAME:FadeIn(20)
 	end

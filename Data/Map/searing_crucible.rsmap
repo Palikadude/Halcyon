@@ -23,8 +23,8 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 13,
-"Y": 4
+"X": 11,
+"Y": 7
 },
 "serializationDir": 0,
 "ProxyName": "",
@@ -100,7 +100,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 120,
+"HP": 150,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -198,7 +198,7 @@
 },
 "Level": 18,
 "EXP": 0,
-"MaxHPBonus": 127,
+"MaxHPBonus": 177,
 "AtkBonus": 0,
 "DefBonus": 0,
 "MAtkBonus": 0,
@@ -278,7 +278,7 @@
 "dead": false,
 "serializationLoc": {
 "X": 12,
-"Y": 0
+"Y": 8
 },
 "serializationDir": 0,
 "ProxyName": "",
@@ -531,7 +531,7 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 18,
+"X": 13,
 "Y": 10
 },
 "serializationDir": 2,
@@ -785,7 +785,7 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 18,
+"X": 13,
 "Y": 11
 },
 "serializationDir": 2,
@@ -1040,7 +1040,7 @@
 "dead": false,
 "serializationLoc": {
 "X": 12,
-"Y": 19
+"Y": 13
 },
 "serializationDir": 4,
 "ProxyName": "",
@@ -1293,7 +1293,7 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 1,
+"X": 8,
 "Y": 11
 },
 "serializationDir": 6,
@@ -1548,7 +1548,7 @@
 "dead": false,
 "serializationLoc": {
 "X": 9,
-"Y": 20
+"Y": 13
 },
 "serializationDir": 4,
 "ProxyName": "",
@@ -1801,7 +1801,7 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 1,
+"X": 8,
 "Y": 10
 },
 "serializationDir": 6,
@@ -2056,7 +2056,7 @@
 "dead": false,
 "serializationLoc": {
 "X": 9,
-"Y": 0
+"Y": 8
 },
 "serializationDir": 0,
 "ProxyName": "",

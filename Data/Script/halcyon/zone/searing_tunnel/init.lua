@@ -30,7 +30,7 @@ function searing_tunnel.EnterSegment(zone, rescuing, segmentID, mapID)
 		SV.SearingTunnel.LavaCountdown = -1--The script will default this to a proper value.
 	end
   
-  if segmentID == 0
+  if segmentID == 0 then
     --Only allow rescues in the first segment.
     GeneralFunctions.CheckAllowSetRescue(zone.ID) 
   else 

@@ -72,11 +72,11 @@ end
 function searing_crucible.PlotScripting()
 	if SV.ChapterProgression.Chapter == 5 then
 		if SV.Chapter5.DefeatedBoss then 
-			GAME:FadeIn(20)
+			searing_crucible_ch_5.DefeatedBoss()
 		elseif not SV.Chapter5.EncounteredBoss then
 			searing_crucible_ch_5.FirstPreBossScene()
 		else
-			GAME:FadeIn(20)
+			searing_crucible_ch_5.SecondPreBossScene()
 		end
 	else
 		GAME:FadeIn(20)
