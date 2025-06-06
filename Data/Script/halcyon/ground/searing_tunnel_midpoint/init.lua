@@ -196,7 +196,7 @@ end
 function searing_tunnel_midpoint.Teammate3_Action(chara, activator)
   DEBUG.EnableDbgCoro() --Enable debugging this coroutine
   if SV.ChapterProgression.Chapter == 5 then--zigzagoon dialogue
-	searing_tunnel_midpoint_ch_5.Growlithe_Action(chara, activator)
+	searing_tunnel_midpoint_ch_5.Zigzagoon_Action(chara, activator)
   else
 	GeneralFunctions.GroundInteract(activator, chara)
   end

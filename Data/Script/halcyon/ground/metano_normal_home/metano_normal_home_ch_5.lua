@@ -122,7 +122,6 @@ function metano_normal_home_ch_5.Farewell_Cutscene()
 	(nods)
 	Yeah! You're all right!
 	
-	
 	]]--
 	
 	

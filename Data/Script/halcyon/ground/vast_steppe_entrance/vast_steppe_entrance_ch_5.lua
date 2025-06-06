@@ -791,8 +791,8 @@ function vast_steppe_entrance_ch_5.ArrivalCutscene()
 	local sTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local aTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	sTbl.Importance = snubbull_monster.Nickname
-	aTbl.Importance = audino_monster.Nickname
+	sTbl.Importance = "Snubbull"
+	aTbl.Importance = "Audino"
 
 	GAME:GetCurrentGround():RemoveTempChar(breloom)
 	GAME:GetCurrentGround():RemoveTempChar(girafarig)

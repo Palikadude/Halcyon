@@ -1171,7 +1171,7 @@ function searing_crucible_ch_5.DefeatedBoss()
 	
 	UI:SetSpeaker(zigzagoon)
 	UI:SetSpeakerEmotion("Worried")
-	UI:WaitShowDialogue("Hm.[pause=0] So the tunnel's lava hasn't always been like how it is now...")
+	UI:WaitShowDialogue("Hmm.[pause=0] So the tunnel's lava hasn't always been like how it is now...")
 	UI:WaitShowDialogue("I wonder what's causing the issue then?")
 	GAME:WaitFrames(20)
 	

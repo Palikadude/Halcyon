@@ -76,23 +76,23 @@ function DebugTools:OnNewGame()
 
 	  
 	  local mon_id = RogueEssence.Dungeon.MonsterID("turtwig", 0, "normal", Gender.Male)
-	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 10, "", 0)
+	  local p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 20, "", 0)
 	  local tbl = LTBL(p)
 	  tbl.Importance = 'Hero'
 	  p.IsFounder = true
 	  p.IsPartner = true
 	  --p.Nickname = 'Palika'
-	  p.Nickname = 'BIG AF NAME'
+	  p.Nickname = 'BIG_AF_NAME'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
 	  mon_id = RogueEssence.Dungeon.MonsterID("piplup", 0, "normal", Gender.Male)
-	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 10, "", 0)
+	  p = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 20, "", 0)
 	  tbl = LTBL(p)
 	  tbl.Importance = 'Partner'
 	  p.IsFounder = true
 	  p.IsPartner = true
 	  --p.Nickname = 'Genshi'
-	  p.Nickname = 'LONG NAME!!'
+	  p.Nickname = 'LONG_NAME!!'
 	  _DATA.Save.ActiveTeam.Players:Add(p)
 	  
 	  _DATA.Save.ActiveTeam:SetRank("bronze")
@@ -102,9 +102,9 @@ function DebugTools:OnNewGame()
 	  talk_evt = RogueEssence.Dungeon.BattleScriptEvent("PartnerInteract")
 	  _DATA.Save.ActiveTeam.Players[1].ActionEvents:Add(talk_evt)
 	  
-	  mon_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
-	  _DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 100, "", 0))
-	  _DATA.Save.ActiveTeam.Players[2].Nickname = 'Hyko'
+	  --mon_id = RogueEssence.Dungeon.MonsterID("growlithe", 0, "normal", Gender.Male)
+	  --_DATA.Save.ActiveTeam.Players:Add(_DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 100, "", 0))
+	  --_DATA.Save.ActiveTeam.Players[2].Nickname = 'Hyko'
 	  
 	  --This is a scrapped feature where you would have started with some bonuses to your stats.
 		--_DATA.Save.ActiveTeam.Players[0].MaxHPBonus = 3

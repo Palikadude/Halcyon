@@ -870,8 +870,8 @@ function testmap.Chapter5_2_Action(chara, activator)
 	local sTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local aTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	sTbl.Importance = snubbull_monster.Nickname
-	aTbl.Importance = audino_monster.Nickname
+	sTbl.Importance = "Snubbull"
+	aTbl.Importance = "Audino"
 		
 	UI:ResetSpeaker()
 	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Vast Steppe!")
@@ -974,8 +974,8 @@ function testmap.Chapter5_3_Action(chara, activator)
 	local gTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local zTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	gTbl.Importance = growlithe_monster.Nickname
-	zTbl.Importance = zigzagoon_monster.Nickname
+	gTbl.Importance = "Growlithe"
+	zTbl.Importance = "Zigzagoon"
 		
 	UI:ResetSpeaker()
 	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Searing Tunnel!")
@@ -1080,8 +1080,8 @@ function testmap.Chapter5_4_Action(chara, activator)
 	local cTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local mTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	cTbl.Importance = cranidos_monster.Nickname
-	mTbl.Importance = mareep_monster.Nickname
+	cTbl.Importance = "Cranidos"
+	mTbl.Importance = "Mareep"
 		
 	UI:ResetSpeaker()
 	UI:WaitShowDialogue("Chapter progression set: Chapter 5 right before Mt. Windswept!")

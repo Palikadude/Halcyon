@@ -1056,7 +1056,7 @@ end
 function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
 	anim = anim or 'Walk'
 	height = height or 6
-	duration = duration or height
+	duration = duration or height + 1--one more duration than height makes the hop hang for a frame at the peak, like explorers.
 	if pause == nil then pause = true end
 	
 	if sound then

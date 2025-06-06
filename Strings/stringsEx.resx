@@ -4074,26 +4074,35 @@
     <value>Keep an eye out for [item]. I'm working on a new recipe using one. \u266A</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
    <data name="TALK_FULL_3001" xml:space="preserve">
-    <value>Snubbull Expedition Comment 2</value>
+    <value>Let's hurry to the next base camp. I want to start preparing dinner before sunset!</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
    <data name="TALK_FULL_3002" xml:space="preserve">
-    <value>Snubbull Expedition Comment 3</value>
+    <value>We should stay together. It'd be catastrophic if one of us got singled out!</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
    <data name="TALK_FULL_3003" xml:space="preserve">
-    <value>Snubbull Expedition Comment 4</value>
+    <value>What sort of discovery will we make on this expedition? Something succulent, I hope. \u266A</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
-   <data name="TALK_FULL_3004" xml:space="preserve">
-    <value>Snubbull Expedition Comment 5</value>
-    <comment>Expedition - Snubbull comment</comment>  </data>
- 
+    <data name="TALK_FULL_3004" xml:space="preserve">
+    <value>[{Hero}][{Partner}]This is our first time adventuring together, [player]. Let's make it a fantastic one. \u266A</value>
+    <comment>Expedition - Snubbull comment - To Hero/Partner</comment>  </data>
+   <data name="TALK_FULL_3005" xml:space="preserve">
+    <value>[{Hero}][{Partner}]????????????????????????????????????</value>
+    <comment>Expedition - Snubbull comment - to Hero/Partner</comment>  </data>
+   <data name="TALK_FULL_3006" xml:space="preserve">``
+    <value>[{Audino}]Ah, [player]. I'd like for you to taste some of my new Kasib sauté once we reach camp. \u266A</value>
+    <comment>Expedition - Snubbull comment - to Audino</comment>  </data>
+   <data name="TALK_FULL_3007" xml:space="preserve">``
+    <value>[{Audino}]We may be a bit rusty, but let's show [slot1] and [slot2] how it's done.</value>
+    <comment>Expedition - Snubbull comment - to Audino</comment>  </data>
+	
   <data name="TALK_HALF_3000" xml:space="preserve">
-    <value>Snubbull Half HP 1</value>
+    <value>This scratch is nothing. Any chef worth their salt can handle a cut or two. \u266A</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
   <data name="TALK_HALF_3001" xml:space="preserve">
-    <value>Snubbull Half HP 2</value>
+    <value>I'm alright. I'm no pushover, you know!</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
   <data name="TALK_HALF_3002" xml:space="preserve">
-    <value>Snubbull Half HP 3</value>
+    <value>Oh my, this damage is troubling... Though you should know I'm capable of taking it!</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
 
   <data name="TALK_PINCH_3000" xml:space="preserve">
@@ -4109,39 +4118,49 @@
 	
 	
   <data name="TALK_FULL_3010" xml:space="preserve">
-    <value>Audino Expedition Comment 1</value>
+    <value>I'll support us with my [move] as best I can!</value>
     <comment>Expedition - Audino comment</comment>  </data>
-   <data name="TALK_FULL_3011" xml:space="preserve">
-    <value>Audino Expedition Comment 2</value>
+  <data name="TALK_FULL_3011" xml:space="preserve">
+    <value>I don't like h-hurting others... But I'll f-fight if I have to!</value>
     <comment>Expedition - Audino comment</comment>  </data>
-   <data name="TALK_FULL_3012" xml:space="preserve">
-    <value>Audino Expedition Comment 3</value>
+  <data name="TALK_FULL_3012" xml:space="preserve">
+    <value>This is so much more fun than chores! Hooray!</value>
     <comment>Expedition - Audino comment</comment>  </data>
-   <data name="TALK_FULL_3013" xml:space="preserve">
-    <value>Audino Expedition Comment 4</value>
-    <comment>Expedition - Audino comment</comment>  </data>
-   <data name="TALK_FULL_3014" xml:space="preserve">
-    <value>Audino Expedition Comment 5</value>
-    <comment>Expedition - Audino comment</comment>  </data>
+  <data name="TALK_FULL_3013" xml:space="preserve">
+    <value>[(Breloom)] said the Pokémon here fight in packs, so let's\ns-stay close together!</value>
+    <comment>Expedition - Audino comment</comment>  </data>  
+  <data name="TALK_FULL_3014" xml:space="preserve">
+    <value>[{Hero}][{Partner}]TO DO</value>
+    <comment>Expedition - Audino comment - To Hero/Partner</comment>  </data>
+  <data name="TALK_FULL_3015" xml:space="preserve">
+    <value>[{Hero}][{Partner}]It's been a while since [slot3] and I went on an adventure together. We're usually too busy with work around the guild.</value>
+    <comment>Expedition - Audino comment - To Hero/Partner</comment>  </data>	
+  <data name="TALK_FULL_3016" xml:space="preserve">
+    <value>[{Snubbull}]Don't get distracted looking for ingredients, [player]... We h-have to focus on getting to the base camp!</value>
+    <comment>Expedition - Audino comment - To Snubbull</comment>  </data>
+  <data name="TALK_FULL_3017" xml:space="preserve">
+    <value>[{Snubbull}]You have a n-new dish you want me to try? O-oh, maybe later...</value>
+    <comment>Expedition - Audino comment - To Snubbull</comment>  </data>
+
  
   <data name="TALK_HALF_3010" xml:space="preserve">
-    <value>Audino Half HP 1</value>
+    <value>O-ow... It's s-starting to hurt...</value>
     <comment>Expedition - Audino comment</comment>  </data>
   <data name="TALK_HALF_3011" xml:space="preserve">
-    <value>Audino Half HP 2</value>
+    <value>C-can we rest? I n-need a moment to c-collect myself...</value>
     <comment>Expedition - Audino comment</comment>  </data>
   <data name="TALK_HALF_3012" xml:space="preserve">
-    <value>Audino Half HP 3</value>
+    <value>Th-this? It's no problem! I can k-keep going, really!</value>
     <comment>Expedition - Audino comment</comment>  </data>
 
   <data name="TALK_PINCH_3010" xml:space="preserve">
-    <value>Audino Pinch HP 1</value>
+    <value>Th-this is s-still better th-than... doing ch-chores...</value>
     <comment>Expedition - Audino comment</comment>  </data>
   <data name="TALK_PINCH_3011" xml:space="preserve">
-    <value>Audino Pinch HP 2</value>
+    <value>I h-have no m-more strength... P-Please, [player], h-help...</value>
     <comment>Expedition - Audino comment</comment>  </data>
   <data name="TALK_PINCH_3012" xml:space="preserve">
-    <value>Audino Pinch HP 3</value>
+    <value>I-It's no pr-problem... I-It's n-no problem... It's n-no pr-problem...</value>
     <comment>Expedition - Audino comment</comment>  </data>
 	
 	
@@ -4178,7 +4197,7 @@
     <value>[(Tropius)]...</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
   <data name="TALK_PINCH_3022" xml:space="preserve">
-    <value>Growlithe Pinch HP seg 0 3</value>
+    <value>Ruff... S-sorry, [(Zigzagoon)]...</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
 	
 	
@@ -4301,20 +4320,20 @@
     <value>Pokémon that live in [color=#FFC663]Searing Tunnel[color] include [kind]... Okay! Noted!</value>
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3061" xml:space="preserve">
-    <value>I'm glad to be out adventuring with [(Growlithe)] again... Oh! And you too, [player]!</value>
-    <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
-   <data name="TALK_FULL_3062" xml:space="preserve">
     <value>I have to be careful with my almanac in a place like this... I don't want my papers to burn!</value>
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
-   <data name="TALK_FULL_3063" xml:space="preserve">
+   <data name="TALK_FULL_3062" xml:space="preserve">
     <value>Hmm. It's best if we take a calculated approach here.</value>
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
-   <data name="TALK_FULL_3064" xml:space="preserve">
+   <data name="TALK_FULL_3063" xml:space="preserve">
     <value>[item] can be found here? Wait, let me write that down...</value>
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>  
-  <data name="TALK_FULL_3065" xml:space="preserve">
+  <data name="TALK_FULL_3064" xml:space="preserve">
     <value>If we all work together, we'll get to the next base camp in no time!</value>
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
+   <data name="TALK_FULL_3065" xml:space="preserve">
+    <value>[{Hero}][{Partner}]I'm glad to be out adventuring with [(Growlithe)] again... Oh! And you too, [player]!</value>
+    <comment>Expedition - Zigzagoon comment - First Segment - To Hero/Partner</comment>  </data>
  
   <data name="TALK_HALF_3060" xml:space="preserve">
     <value>I've taken some damage. Do we have any spare \uE0A3[color=FFCEFF]Oran Berries[color]?</value>
@@ -5959,7 +5978,7 @@ As he is a volunteer, he won't be staying with you once you leave.
     <value>My baby is lost in this dungeon! His apple\ncan't hold out forever! Please, somebody, help!</value>
     <comment>Mission Body - Parent Child - Appletun and Applin</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_011" xml:space="preserve">
-    <value>Please find [color=#00FF00]Aron[color]!\nHe probably munched too much metal and can't move!</value>
+    <value>Please find [color=#00FF00]Aron[color]! He probably\nmunched too much metal and can't move!</value>
     <comment>Mission Body - Parent Child - Aggron and Aron</comment>  </data>
   <data name="MISSION_BODY_SPECIAL_CHILD_012" xml:space="preserve">
     <value>I can't find my baby [color=#00FF00]Smoochum[color]! She may\nhave got lost while examining things with her lips!</value>

@@ -73,6 +73,7 @@ end
 
 
 function guild_second_floor_ch_4.Snubbull_Action(chara, activator)
+	local kecleon_species = _DATA:GetMonster('kecleon'):GetColoredName()
 	if not SV.Chapter4.FinishedGrove then
 		GeneralFunctions.StartConversation(chara, "Apricorns are finally in stock at the Kecleon Shop,[pause=10] but that dish of mine will have to wait.")
 		UI:SetSpeakerEmotion("Special0")

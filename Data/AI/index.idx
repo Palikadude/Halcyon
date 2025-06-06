@@ -13,17 +13,6 @@
 "Comment": "",
 "SortOrder": 0
 },
-"super_flee_stairs": {
-"$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
-"Assignable": false,
-"Name": {
-"DefaultText": "Super Flee Stairs",
-"LocalTexts": {}
-},
-"Released": true,
-"Comment": "",
-"SortOrder": 0
-},
 "wander_dumb_one_range": {
 "$type": "RogueEssence.Data.AIEntrySummary, RogueEssence",
 "Assignable": false,

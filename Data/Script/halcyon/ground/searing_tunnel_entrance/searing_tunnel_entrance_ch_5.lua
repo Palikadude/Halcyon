@@ -1436,8 +1436,8 @@ function searing_tunnel_entrance_ch_5.ArrivalDinnerNightAndAddressCutscene()
 	local gTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local zTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	gTbl.Importance = growlithe_monster.Nickname
-	zTbl.Importance = zigzagoon_monster.Nickname
+	gTbl.Importance = "Growlithe"
+	zTbl.Importance = "Zigzagoon"
 	
 
 

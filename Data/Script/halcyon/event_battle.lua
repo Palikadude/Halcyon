@@ -306,8 +306,170 @@ end
 
 
 
+--Use this in Interact scripts to replace wildcards, then return a chosen string from the personality with wildcards replaced.
+function ChooseQuote(chara, target, key, running_pool, mission)
+	local valid_quote = false
+	local chosen_quote = ""
+	
+	--For mission relevant quotes. This feels like kinda a bad implementation since it's a copy and paste
+	--of something being done already in the PartnerInteract, but... Oh well? This is the simplest/cleanest way i could think of handling it in this subfunction.
+	--TODO: Reevaluate down the road potentially a cleaner way? Probably not needed.
+	local tbl = LTBL(target)
+	local outlaw = nil
+	local rescuee = nil
+	local mission = nil
+	local objective_item = nil
+	local escort = tbl.EscortMissionNum
+	if tbl.MissionNumber ~= nil then
+		mission = SV.TakenBoard[tbl.MissionNumber]
+		if tbl.MissionType == COMMON.MISSION_BOARD_MISSION then
+			rescuee = COMMON.FindNpcWithTable(false, "Mission", tbl.MissionNumber)
+		elseif tbl.MissionType == COMMON.MISSION_BOARD_OUTLAW then
+			outlaw = COMMON.FindNpcWithTable(true, "Mission", tbl.MissionNumber)
+		end
+				
+		if mission.Type == COMMON.MISSION_TYPE_LOST_ITEM then 
+			objective_item = mission.Item
+		end
+	end
+	
+	
+	
+	
+	
+    while not valid_quote and #running_pool > 0 do
+	  valid_quote = true
+      local chosen_idx = math.random(1, #running_pool)
+  	  local chosen_pool_idx = running_pool[chosen_idx]
+	  
+	  --for use with [(name)] replacing
+	  local char_list = {}
+	  local char_count = 0
+	  
+      chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
 
+	  --[(stuff)] indicates that the item inside (in this case stuff) is a pokemon's identifer and should be fed to CharacterEssentials to get their name. THANKS NO NICKNAME ENTHUSIASTS I HATE YOU
+	  --NOTE/TODO: This breaks for characters who have _ (or other special chars) in their character call name. If this situation pops up, either address it here or remove the underscore from all instances of that character call name.
+	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
+		char_count = char_count + 1
+		char_list[char_count] = i
+	  end
+	  
+	  for i = 1, #char_list, 1 do
+		chosen_quote = string.gsub(chosen_quote, "%[%(" .. char_list[i] .. "%)%]", CharacterEssentials.GetCharacterName(char_list[i]))
+	  end
 
+      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
+      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
+	  
+	  --These are tags that should show up at the very start of the string, though it doesn't matter where you place them.
+	  --Check for a tag in the style of [{POKEMON_NAME}], given as the species.
+	  --So if a tag exists in the string, check if our current character is tagged. If they are, they can view the line. If they aren't, they can't view the line.
+	  --If no tag in this manner exists for the string, then any character can view the line.
+	  local chara_tbl = LTBL(chara)
+	  if string.find(chosen_quote, "%[%{(%a+)%}%]") then
+		valid_quote = false  
+		if string.find(chosen_quote, "%[%{" .. chara_tbl.Importance .. "%}%]") then
+			valid_quote = true
+		end
+		--remove any of these types of tags once we're done checking them.
+		chosen_quote = string.gsub(chosen_quote, "%[%{(%a+)%}%]", "")
+	  end 
+	  --Remove all instances of a single character enclosed in a bracket, as they're just used for the above tagging.
+	  chosen_quote = string.gsub(chosen_quote, "%[%a%]", "")
+		
+	  
+	  
+	  --For naming specific characters in the given slot in the party. Useful when color tagging is relevant!
+	  --Given slot1, it will put character in slot1's name instead.
+	  if string.find(chosen_quote, "%[slot") then
+		  for i = 1, GAME:GetPlayerPartyCount(), 1 do
+			chosen_quote = string.gsub(chosen_quote, "%[slot" .. tostring(i) .. "%]", GAME:GetPlayerPartyMember(i-1):GetDisplayName(true))
+		  end
+	  end
+	  
+      if string.find(chosen_quote, "%[move%]") then
+        local moves = {}
+  	    for move_idx = 0, 3 do
+  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
+  	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
+  	      end
+  	    end
+  	    if #moves > 0 then
+  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
+  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+     
+      if string.find(chosen_quote, "%[kind%]") then
+  	    if GAME:GetCurrentFloor().TeamSpawns.CanPick then
+          local team_spawn = GAME:GetCurrentFloor().TeamSpawns:Pick(GAME.Rand)
+  	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
+  	      if chosen_list.Count > 0 then
+  	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
+  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
+            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
+  	      else
+  	        valid_quote = false
+  	      end
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+     
+      if string.find(chosen_quote, "%[item%]") then
+        if GAME:GetCurrentFloor().ItemSpawns.CanPick then
+          local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
+          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+ 	
+	      
+      if string.find(chosen_quote, "%[mission_client%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(mission.Client):GetColoredName())
+		elseif escort ~= nil then 
+		    chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(SV.TakenBoard[escort].Client):GetColoredName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+ 
+	   if string.find(chosen_quote, "%[mission_target%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(mission.Target):GetColoredName())
+  	   	elseif escort ~= nil then 
+		  chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(SV.TakenBoard[escort].Target):GetColoredName())
+        else
+  	      valid_quote = false
+  	    end
+      end
+	  
+	  
+	  if string.find(chosen_quote, "%[mission_item%]") then
+        if mission ~= nil then
+          chosen_quote = string.gsub(chosen_quote, "%[mission_item%]", RogueEssence.Dungeon.InvItem(mission.Item):GetDisplayName())
+  	    else
+  	      valid_quote = false
+  	    end
+      end
+  
+	
+	
+  	  if not valid_quote then
+        PrintInfo("Rejected "..chosen_quote)
+  	    table.remove(running_pool, chosen_idx)
+  	    chosen_quote = ""
+  	  end
+
+    end
+    PrintInfo("Selected "..chosen_quote .. " from pool of " .. tostring(#running_pool))	
+	return chosen_quote
+end 
 
 --special Halcyon script for the partner
 function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
@@ -433,113 +595,8 @@ function BATTLE_SCRIPT.PartnerInteract(owner, ownerChar, context, args)
     local valid_quote = false
     local chosen_quote = ""
     
-    while not valid_quote and #running_pool > 0 do
-      valid_quote = true
-
-
-      local chosen_idx = math.random(1, #running_pool)
-  	  local chosen_pool_idx = running_pool[chosen_idx]
-	  
-	  --for use with [(name)] replacing
-	  local char_list = {}
-	  local char_count = 0
-	  
-      chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
-
-	  --[(stuff)] indicates that the item inside (in this case stuff) is a pokemon's identifer and should be fed to CharacterEssentials to get their name. THANKS NO NICKNAME ENTHUSIASTS I HATE YOU
-	  --NOTE/TODO: This breaks for characters who have _ (or other special chars) in their character call name. If this situation pops up, either address it here or remove the underscore from all instances of that character call name.
-	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
-		char_count = char_count + 1
-		char_list[char_count] = i
-	  end
-	  
-	  for i = 1, #char_list, 1 do
-		chosen_quote = string.gsub(chosen_quote, "%[%(" .. char_list[i] .. "%)%]", CharacterEssentials.GetCharacterName(char_list[i]))
-	  end
-
-  	
-      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
-      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
-
-      if string.find(chosen_quote, "%[move%]") then
-        local moves = {}
-  	    for move_idx = 0, 3 do
-  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
-  	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
-  	      end
-  	    end
-  	    if #moves > 0 then
-  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
-  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-      
-      if string.find(chosen_quote, "%[kind%]") then
-  	    if GAME:GetCurrentFloor().TeamSpawns.CanPick then
-          local team_spawn = GAME:GetCurrentFloor().TeamSpawns:Pick(GAME.Rand)
-  	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
-  	      if chosen_list.Count > 0 then
-  	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
-  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
-            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
-  	      else
-  	        valid_quote = false
-  	      end
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-      
-      if string.find(chosen_quote, "%[item%]") then
-        if GAME:GetCurrentFloor().ItemSpawns.CanPick then
-          local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
-          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-  	
-	      
-      if string.find(chosen_quote, "%[mission_client%]") then
-        if mission ~= nil then
-          chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(mission.Client):GetColoredName())
-		elseif escort ~= nil then 
-		    chosen_quote = string.gsub(chosen_quote, "%[mission_client%]", _DATA:GetMonster(SV.TakenBoard[escort].Client):GetColoredName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-	 
-	   if string.find(chosen_quote, "%[mission_target%]") then
-        if mission ~= nil then
-          chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(mission.Target):GetColoredName())
-  	   	elseif escort ~= nil then 
-		  chosen_quote = string.gsub(chosen_quote, "%[mission_target%]", _DATA:GetMonster(SV.TakenBoard[escort].Target):GetColoredName())
-        else
-  	      valid_quote = false
-  	    end
-      end
-	  
-	  
-	  if string.find(chosen_quote, "%[mission_item%]") then
-        if mission ~= nil then
-          chosen_quote = string.gsub(chosen_quote, "%[mission_item%]", RogueEssence.Dungeon.InvItem(mission.Item):GetDisplayName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-	  
-	
-	
-  	  if not valid_quote then
-        PrintInfo("Rejected "..chosen_quote)
-  	    table.remove(running_pool, chosen_idx)
-  	    chosen_quote = ""
-  	  end
-    end
-    -- PrintInfo("Selected "..chosen_quote)
+	--Choose a quote, replacing wildcards in the process.
+    chosen_quote = ChooseQuote(chara, target, key, running_pool)
 	
 	local oldDir = target.CharDir
     DUNGEON:CharTurnToChar(target, chara)
@@ -703,11 +760,11 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 	--Check story flags and also the species of the char to figure out who's talking and what they'd say.
 	if SV.ChapterProgression.Chapter == 5 then
 		--Expedition arc. Check importance flag that identifies who they are to get personality. Start personalities at 300 for NPCs
-		if target_importance == CharacterEssentials.GetCharacterName('Snubbull', true) then 
+		if target_importance == "Snubbull" then 
 			personality = 300
-		elseif target_importance == CharacterEssentials.GetCharacterName('Audino', true) then 
+		elseif target_importance == "Audino" then 
 			personality = 301
-		elseif target_importance == CharacterEssentials.GetCharacterName('Growlithe', true) then 
+		elseif target_importance == "Growlithe" then 
 			if segment == 2 then--Boss fight. Dialogue same regardless of boss death status.
 				personality = 304
 			elseif SV.Chapter5.DiedToBoss then--If in segment 0 or 1, and you've died to the boss, different dialogue.
@@ -717,7 +774,7 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 			elseif segment == 0 then -- didnt die to boss
 				personality = 302
 			end 
-		elseif target_importance == CharacterEssentials.GetCharacterName('Zigzagoon', true) then 
+		elseif target_importance == "Zigzagoon" then 
 			if segment == 2 then--Boss fight. Dialogue same regardless of boss death status.
 				personality = 308
 			elseif SV.Chapter5.DiedToBoss then--If in segment 0 or 1, and you've died to the boss, different dialogue.
@@ -727,7 +784,7 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 			elseif segment == 0 then -- didnt die to boss
 				personality = 306
 			end 		
-		elseif target_importance == CharacterEssentials.GetCharacterName('Cranidos', true) then 
+		elseif target_importance == "Cranidos" then 
 			--Run a check to see if Shuca is nearby. If she's next to Ganlon, ganlon acts timid.
 			--Additionally, if you're smart enough to use team mode to talk to Ganlon as Shuca, get ANOTHER personality set where he's blushing.
 			--Otherwise, Ganlon's an asshole.
@@ -739,7 +796,7 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 			local shucaHealthRatio = shuca.HP * 100 // shuca.MaxHP
 			
 			local tbl = LTBL(chara)
-			if tbl.Importance == CharacterEssentials.GetCharacterName('Mareep', true) then
+			if tbl.Importance == "Mareep" then
 				if shucaHealthRatio <= 25 then 
 					UI:SetSpeakerEmotion("Sad")
 					personality = 314
@@ -762,9 +819,9 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
 					personality = 310
 				end
 			end
-		elseif target_importance == CharacterEssentials.GetCharacterName('Mareep', true) then 
+		elseif target_importance == "Mareep" then 
 			local tbl = LTBL(chara)
-			if tbl.Importance == CharacterEssentials.GetCharacterName('Cranidos', true) then	
+			if tbl.Importance == "Cranidos" then	
 				UI:SetSpeakerEmotion("Happy")
 				personality = 316
 			else 
@@ -796,82 +853,8 @@ function BATTLE_SCRIPT.GuildmateInteract(owner, ownerChar, context, args)
     local valid_quote = false
     local chosen_quote = ""
     
-    while not valid_quote and #running_pool > 0 do
-      valid_quote = true
-
-
-      local chosen_idx = math.random(1, #running_pool)
-  	  local chosen_pool_idx = running_pool[chosen_idx]
-	  
-	  --for use with [(name)] replacing
-	  local char_list = {}
-	  local char_count = 0
-	  
-      chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
-
-	  --[(stuff)] indicates that the item inside (in this case stuff) is a pokemon's identifer and should be fed to CharacterEssentials to get their name. THANKS NO NICKNAME ENTHUSIASTS I HATE YOU
-	  --NOTE/TODO: This breaks for characters who have _ (or other special chars) in their character call name. If this situation pops up, either address it here or remove the underscore from all instances of that character call name.
-	  for i in string.gmatch(chosen_quote, "%[%((%a+)%)%]") do
-		char_count = char_count + 1
-		char_list[char_count] = i
-	  end
-	  
-	  for i = 1, #char_list, 1 do
-		chosen_quote = string.gsub(chosen_quote, "%[%(" .. char_list[i] .. "%)%]", CharacterEssentials.GetCharacterName(char_list[i]))
-	  end
-
-  	
-      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
-      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
-
-      if string.find(chosen_quote, "%[move%]") then
-        local moves = {}
-  	    for move_idx = 0, 3 do
-  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
-  	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
-  	      end
-  	    end
-  	    if #moves > 0 then
-  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
-  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-      
-      if string.find(chosen_quote, "%[kind%]") then
-  	    if GAME:GetCurrentFloor().TeamSpawns.CanPick then
-          local team_spawn = GAME:GetCurrentFloor().TeamSpawns:Pick(GAME.Rand)
-  	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
-  	      if chosen_list.Count > 0 then
-  	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
-  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
-            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
-  	      else
-  	        valid_quote = false
-  	      end
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-      
-      if string.find(chosen_quote, "%[item%]") then
-        if GAME:GetCurrentFloor().ItemSpawns.CanPick then
-          local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
-          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
-  	    else
-  	      valid_quote = false
-  	    end
-      end
-	
-	
-  	  if not valid_quote then
-        PrintInfo("Rejected "..chosen_quote)
-  	    table.remove(running_pool, chosen_idx)
-  	    chosen_quote = ""
-  	  end
-    end
-    -- PrintInfo("Selected "..chosen_quote)
+	--Choose a quote, replacing wildcards in the process.
+    chosen_quote = ChooseQuote(chara, target, key, running_pool)
 	
 	local oldDir = target.CharDir
     DUNGEON:CharTurnToChar(target, chara)

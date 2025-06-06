@@ -29,11 +29,62 @@ end
 
 
 function searing_tunnel_midpoint_ch_5.Growlithe_Action(chara, activator)
-
+	local slugma_species = _DATA:GetMonster('slugma'):GetColoredName()
+	if SV.Chapter5.GrowlitheTropiusBossInterrupt then -- Use these lines if you attempted to tell the Guildmaster about the boss in the way.
+		GeneralFunctions.StartConversation(chara, "Thank you again for not tattling to " .. CharacterEssentials.GetCharacterName("Tropius") .. ".[pause=0] It means a lot to me,[pause=10] ruff.")
+		UI:WaitShowDialogue("It'll be tough for us to battle this tribe of " .. slugma_species .. "...[pause=0] But I know we can do it,[pause=10] ruff!")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("We'll show " .. CharacterEssentials.GetCharacterName("Tropius") .. " we're capable![pause=0] Let's do this,[pause=10] ruff!")
+	elseif SV.Chapter5.DiedToBoss then -- If you've died to the boss at all, then use those lines (unless the special Penticus dialogue was triggered)
+		GeneralFunctions.StartConversation(chara, "We can’t lose heart now,[pause=10] ruff!")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("We’ll beat that tribe of " .. slugma_species .. " and make it to the next base camp this time,[pause=10] ruff!")
+	elseif SV.Chapter5.TunnelMidpointState == 'FirstArrival' then
+		GeneralFunctions.StartConversation(chara, "This last part's gonna be challenging![pause=0] But I know we can handle it,[pause=10] ruff!")
+		UI:WaitShowDialogue("Whenever you feel ready,[pause=10] let's continue on,[pause=10] ruff!")
+	elseif SV.Chapter5.TunnelMidpointState == 'DeathArrival' then
+		GeneralFunctions.StartConversation(chara, "This last part isn't easy...", "Pain")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("But there's no giving up now,[pause=10] ruff!")
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("I'm sure we can do it if we try again.[pause=0] Let's do it,[pause=10] ruff!")
+	else--RepeatArrival
+		GeneralFunctions.StartConversation(chara, "We made it back to the midpoint,[pause=10] ruff!")
+		UI:WaitShowDialogue("Let's move forward and get to the next base camp,[pause=10] ruff!")
+	end
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_midpoint_ch_5.Zigzagoon_Action(chara, activator)
-
+	local slugma_species = _DATA:GetMonster('slugma'):GetColoredName()
+	if SV.Chapter5.GrowlitheTropiusBossInterrupt then -- Use these lines if you attempted to tell the Guildmaster about the boss in the way.
+		GeneralFunctions.StartConversation(chara, "It may have been wise to ask the Guildmaster for help with the " .. slugma_species .. " tribe...", "Worried")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("...[pause=30]But I'd rather keep adventuring with " ..CH('Teammate2'):GetDisplayName() .. ",[pause=10] even if it's dangerous.")
+		UI:SetSpeakerEmotion("Determined")
+		UI:WaitShowDialogue(CH('PLAYER'):GetDisplayName() .. ",[pause=10] " .. CH('Teammate1'):GetDisplayName() .. "...[pause=0] We're gonna have to do this on our own.[pause=0] Let's make sure we're ready!")
+	elseif SV.Chapter5.DiedToBoss then -- If you've died to the boss at all, then use those lines (unless the special Penticus dialogue was triggered)
+		GeneralFunctions.StartConversation(chara, "Hmm.[pause=0] That " .. slugma_species .. " tribe is likely to attack us again...", "Worried")
+		UI:SetSpeakerEmotion("Pain")
+		GROUND:CharSetEmote(chara, "sweating", 1)
+		UI:WaitShowDialogue("We’ll have to be better prepared this time.[pause=0] I don’t want to end up roasted!")
+	elseif SV.Chapter5.TunnelMidpointState == 'FirstArrival' then
+		GeneralFunctions.StartConversation(chara, "We can use the Kangaskhan Rock here to prepare for the last stretch.")
+		GROUND:CharSetEmote(chara, "sweating", 1)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("Don't dawdle though.[pause=0] I'll overheat if we stay here too long!")
+	elseif SV.Chapter5.TunnelMidpointState == 'DeathArrival' then
+		GeneralFunctions.StartConversation(chara, "This cave's getting tougher...[pause=0] and hotter!", "Pain")
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("If you have extra supplies in storage,[pause=10] you should take them out using the Kangaskhan Rock.[pause=0] We'll need them!")
+	else--RepeatArrival
+		GeneralFunctions.StartConversation(chara, "Let's quickly make our preparations using the Kangaskhan Rock.")
+		UI:WaitShowDialogue("This time,[pause=10] we should head towards the end of the tunnel.")
+		GROUND:CharSetEmote(chara, "sweating", 1)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("No more backtracking![pause=0] I don't want to spend any more time in this inferno than we need to!")
+	end
+	GeneralFunctions.EndConversation(chara)
 end 
 
 function searing_tunnel_midpoint_ch_5.ContinueScene()
@@ -370,7 +421,6 @@ function searing_tunnel_midpoint_ch_5.WipedCutscene()
 		UI:SetSpeakerEmotion("Pain")
 		UI:WaitShowDialogue("I'd hate to get beat by them again.[pause=0] My fur's still singed!")
 		GAME:WaitFrames(20)
-		
 		
 		UI:SetSpeaker(growlithe)
 		UI:WaitShowDialogue("...But we can't give up![pause=0] We'll just have to try to get through there again,[pause=10] ruff!")

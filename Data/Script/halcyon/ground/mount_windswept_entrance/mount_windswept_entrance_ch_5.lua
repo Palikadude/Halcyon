@@ -70,8 +70,8 @@ function mount_windswept_entrance_ch_5.SetParty()
 	local cTbl = LTBL(GAME:GetPlayerPartyMember(2))
 	local mTbl = LTBL(GAME:GetPlayerPartyMember(3))
 	
-	cTbl.Importance = cranidos_monster.Nickname
-	mTbl.Importance = mareep_monster.Nickname
+	cTbl.Importance = "Cranidos"
+	mTbl.Importance = "Mareep"
 end
 
 
