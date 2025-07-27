@@ -30,6 +30,7 @@ COMMON.MISSION_BOARD_TAKEN = 2
 -- It might be better just to have a flag on each mission that marks if it's "valid" but this works
 COMMON.FLEE_BACKREFERENCE = -2
 
+COMMON.PERSONALITY = {}
 
 --indexing on these start at 1000
 COMMON.PERSONALITY[50] = { --Hero
@@ -570,67 +571,108 @@ end
 function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   action_cancel.Cancel = true
   -- TODO: create a charstate for being unable to talk and have talk-interfering statuses cause it
-  if target:GetStatusEffect("sleep") == nil and target:GetStatusEffect("freeze") == nil then
+  if COMMON.CanTalk(target) then
     
-    local ratio = target.HP * 100 // target.MaxHP
-    
-    local mon = RogueEssence.Data.DataManager.Instance:GetMonster(target.BaseForm.Species)
+    UI:SetSpeaker(target)
+    local mon = _DATA:GetMonster(target.BaseForm.Species)
     local form = mon.Forms[target.BaseForm.Form]
+    local ratio = target.HP * 100 // target.MaxHP
     
     local personality = form:GetPersonalityType(target.Discriminator)
     
+    local key_pool = {}
+    
+    
     local personality_group = COMMON.PERSONALITY[personality]
-    local pool = {}
-    local key = ""
-    if ratio <= 25 then
-      UI:SetSpeakerEmotion("Pain")
-      pool = personality_group.PINCH
-      key = "TALK_PINCH_%04d"
-    elseif ratio <= 50 then
-      UI:SetSpeakerEmotion("Worried")
-      pool = personality_group.HALF
-      key = "TALK_HALF_%04d"
+    if personality_group ~= nil then
+      local num_pool = {}
+      local key = ""
+      if ratio <= 25 then
+        UI:SetSpeakerEmotion("Pain")
+        num_pool = personality_group.PINCH
+        key = "TALK_PINCH_%04d"
+      elseif ratio <= 50 then
+        UI:SetSpeakerEmotion("Worried")
+        num_pool = personality_group.HALF
+        key = "TALK_HALF_%04d"
+      else
+        num_pool = personality_group.FULL
+        key = "TALK_FULL_%04d"
+      end
+      
+      for ii = 1, #num_pool, 1 do
+        local chosen_pool_idx = num_pool[ii]
+        local formatted_key = string.format(key, chosen_pool_idx)
+        table.insert(key_pool, formatted_key)
+      end
+      
     else
-      pool = personality_group.FULL
-      key = "TALK_FULL_%04d"
+    
+      local key = ""
+      if target:GetStatusEffect("confuse") ~= nil then
+        UI:SetSpeakerEmotion("Dizzy")
+        key = "TALK_%02d_DIZZY_%03d"
+      elseif ratio <= 25 then
+        UI:SetSpeakerEmotion("Pain")
+        key = "TALK_%02d_PINCH_%03d"
+      elseif ratio <= 50 then
+        UI:SetSpeakerEmotion("Worried")
+        key = "TALK_%02d_HALF_%03d"
+      else
+        key = "TALK_%02d_FULL_%03d"
+      end
+    
+      local pool_idx = 0
+      while true do
+      
+        local formatted_key = string.format(key, personality, pool_idx)
+        if not RogueEssence.StringKey.HasValue(formatted_key) then
+          break
+        end
+        
+        table.insert(key_pool, formatted_key)
+      
+        pool_idx = pool_idx + 1
+      end
     end
     
-    local running_pool = {table.unpack(pool)}
-    local valid_quote = false
-    local chosen_quote = ""
     
-    while not valid_quote and #running_pool > 0 do
-      valid_quote = true
-      local chosen_idx = math.random(1, #running_pool)
-  	  local chosen_pool_idx = running_pool[chosen_idx]
-      chosen_quote = RogueEssence.StringKey(string.format(key, chosen_pool_idx)):ToLocal()
+    local running_pool = {}
+    
+    for ii = 1, #key_pool, 1 do
+	  
+      local formatted_key = key_pool[ii]
+
+      local valid_quote = true
+      local test_quote = RogueEssence.StringKey(formatted_key):ToLocal()
   	
-      chosen_quote = string.gsub(chosen_quote, "%[player%]", chara:GetDisplayName(true))
-      chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
+      test_quote = string.gsub(test_quote, "%[player%]", chara:GetDisplayName(true))
+      test_quote = string.gsub(test_quote, "%[myname%]", target:GetDisplayName(true))
       
-      if string.find(chosen_quote, "%[move%]") then
+      if string.find(test_quote, "%[move%]") then
         local moves = {}
   	    for move_idx = 0, 3 do
-  	      if target.BaseSkills[move_idx].SkillNum > 0 then
+  	      if target.BaseSkills[move_idx].SkillNum ~= "" then
   	        table.insert(moves, target.BaseSkills[move_idx].SkillNum)
   	      end
   	    end
   	    if #moves > 0 then
-  	      local chosen_move = RogueEssence.Data.DataManager.Instance:GetSkill(moves[math.random(1, #moves)])
-  	      chosen_quote = string.gsub(chosen_quote, "%[move%]", chosen_move:GetIconName())
+  	      local chosen_move = _DATA:GetSkill(moves[math.random(1, #moves)])
+  	      test_quote = string.gsub(test_quote, "%[move%]", chosen_move:GetIconName())
   	    else
   	      valid_quote = false
   	    end
       end
       
-      if string.find(chosen_quote, "%[kind%]") then
+      if string.find(test_quote, "%[kind%]") then
   	    if GAME:GetCurrentFloor().TeamSpawns.CanPick then
           local team_spawn = GAME:GetCurrentFloor().TeamSpawns:Pick(GAME.Rand)
   	      local chosen_list = team_spawn:ChooseSpawns(GAME.Rand)
+          
   	      if chosen_list.Count > 0 then
   	        local chosen_mob = chosen_list[math.random(0, chosen_list.Count-1)]
-  	        local mon = RogueEssence.Data.DataManager.Instance:GetMonster(chosen_mob.BaseForm.Species)
-            chosen_quote = string.gsub(chosen_quote, "%[kind%]", mon:GetColoredName())
+  	        local mon = _DATA:GetMonster(chosen_mob.BaseForm.Species)
+            test_quote = string.gsub(test_quote, "%[kind%]", mon:GetColoredName())
   	      else
   	        valid_quote = false
   	      end
@@ -639,38 +681,36 @@ function COMMON.DungeonInteract(chara, target, action_cancel, turn_cancel)
   	    end
       end
       
-      if string.find(chosen_quote, "%[item%]") then
+      if string.find(test_quote, "%[item%]") then
         if GAME:GetCurrentFloor().ItemSpawns.CanPick then
           local item = GAME:GetCurrentFloor().ItemSpawns:Pick(GAME.Rand)
-          chosen_quote = string.gsub(chosen_quote, "%[item%]", item:GetDisplayName())
+          test_quote = string.gsub(test_quote, "%[item%]", item:GetDisplayName())
   	    else
   	      valid_quote = false
   	    end
       end
   	
-  	  if not valid_quote then
-        -- PrintInfo("Rejected "..chosen_quote)
-  	    table.remove(running_pool, chosen_idx)
-  	    chosen_quote = ""
+  	  if valid_quote then
+        table.insert(running_pool, test_quote)
   	  end
     end
-    -- PrintInfo("Selected "..chosen_quote)
 	
-	local oldDir = target.CharDir
+    local chosen_idx = math.random(1, #running_pool)
+    local chosen_quote = running_pool[chosen_idx]
+	
+    local oldDir = target.CharDir
     DUNGEON:CharTurnToChar(target, chara)
   
-    UI:SetSpeaker(target)
-  
-    UI:WaitShowDialogue(chosen_quote)
+    UI:WaitShowDialogue(STRINGS:Format(chosen_quote))
   
     target.CharDir = oldDir
   else
   
     UI:ResetSpeaker()
-	
-	local chosen_quote = RogueEssence.StringKey("TALK_CANT"):ToLocal()
+  
+    local chosen_quote = RogueEssence.StringKey("TALK_CANT"):ToLocal()
     chosen_quote = string.gsub(chosen_quote, "%[myname%]", target:GetDisplayName(true))
-	
+  
     UI:WaitShowDialogue(chosen_quote)
   
   end
