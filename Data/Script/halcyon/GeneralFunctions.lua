@@ -1664,6 +1664,18 @@ function GeneralFunctions.DeathFadeOutDialogue(chara, dialogue, emotion)
 	GAME:FadeInFront(1)--Quickly undo the fade out on the text layer once the text is cleared - a regular fade out set up on top of this will still be in effect after clearing this
 end
 
+--[[
+--must use numbers for emotes here. Audino's solution for deathfadeoutdialogue starting next version.
+if _DATA.CurrentReplay == nil then
+  local scripts = RogueEssence.Menu.DialogueBox.CreateScripts({function() return GAME:FadeOutFront(false, 60) end})
+  local empty_action = LUA_ENGINE:MakeLuaAction(function() end)
+  local hackDlg = _MENU:CreateBox(chara.CurrentForm, chara:GetDisplayName(), RogueEssence.Content.EmoteStyle(2), RogueEssence.Menu.SpeakerPortrait.DefaultLoc, false, RogueEssence.Menu.DialogueBox.SOUND_EFFECT, RogueEssence.Menu.DialogueBox.SPEAK_FRAMES, empty_action, 60, false, false, false, RogueEssence.Menu.DialogueBox.DefaultBounds, scripts, dialogue .. "[script=0]")
+  hackDlg:SetTextProgress(string.len(dialogue))
+  UI:SetCustomDialogue(hackDlg)
+  UI:WaitDialog()
+end
+]]--
+
 
 --character hops twice and makes angry noise 
 function GeneralFunctions.Complain(chara, emote)

@@ -99,6 +99,16 @@ function metano_town_ch_5.Snubbull_Action(chara, activator)
 
 end 
 
+function metano_town_ch_5.Snubbull_Kecleon_Cutscene()
+	--[[
+	
+	
+	
+	]]--
+	
+end
+
+
 function metano_town_ch_5.Mareep_Action(chara, activator)
 	local hero = CH('PLAYER')
 	local partner = CH('Teammate1')

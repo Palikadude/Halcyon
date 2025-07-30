@@ -44,7 +44,7 @@ function metano_normal_home_ch_5.Farewell_Cutscene()
 	GAME:WaitFrames(20)	
 	
 	SOUND:FadeOutBGM(60)
-	GeneralFunctions.PanCamera(nil, nil, false, nil, 184, 112)
+	GeneralFunctions.PanCamera(nil, nil, false, 1.5, 184, 112)
 	GAME:WaitFrames(20)
 	
 	SOUND:PlayBGM("Sympathy.ogg", true)
@@ -113,17 +113,80 @@ function metano_normal_home_ch_5.Farewell_Cutscene()
 	Linoone: Your brother's right, Almotz.
 	I'm worried about all the trouble and dangers you'll face on your journey ahead...
 	But you're a smart and capable Pokemon. I know you'll do great.
-	Just stay safe, okay? We don't want to see you hurt. Keep your wits about you, OK?
+	Just stay safe, okay? We don't want to see you hurt. Keep your wits about you!
 	
 	Furret: And don't push yourself too hard. Make sure you get plenty of rest!
-	I know this expedition is very important and a lot of work, but you have to take care of yourself, you know?
+	I know this expedition is very important and a lot of work, but you have to take care of yourself too, you know?
 	
 	zigzagoon: Mom... Dad...
 	(nods)
-	Yeah! You're all right!
+	Yeah! You're right! I can do this!
+	I'm gonna try my absolute hardest! I'll learn and do everything that I can!
+	I'll make you and everyone else proud!
+		
+	Linoone: I know you will. And when you come back home...
+	...Be sure to share with me all your writings. I'd love to read about your adventure!
+		
+	Timmi: Oh, I'd love it if you brought home a really cool treasure! Something really awesome!
+		
+	Furret: Hey, you know what I'd love...?
+	
+	*hugs his son*
+	
+	Furret: ...A hug!
+	
+	zigzagoon: Dad...
+	
+	Linoone: You know, I'd love one too.
+
+	Sentret: Oh, me too!
+	
+	(her and timmi join in)
+	
+	Zigzagoon: Mom... Timmi...
+	
+	(pause, hug eventually ends)
+	
+	zigzagoon: ...Well, I'd better get going. I still need to prepare with Hyko for our long journey ahead.
+	
+	(slowly walks away while they watch him, then he turns back towards them)
+	
+	zigzagoon: Goodbye, everyone. I'll... I'll do my best!
+	
+	Timmi: Bye, Almotz! Hope you find lots of cool stuff!
+		
+	Furret: Good luck! Don't push yourself too hard!
+	
+	Linoone: Almotz... enjoy the expedition. I know how fulfilling adventuring is for you.
+	Just... come back home safe.
+	
+	zigzagoon: (nods (or jumps because no nod anim)) I will! See you all again soon!
+
+	(walks away, eventually finds you and the player just eavesdropping in)
+	
+	zigzagoon (surprised): O-oh! Player, partner! H-how long have you been standing there?
+	
+	Partner (Sweating): U-um, a little while, sorry. We didn't mean to intrude on you like this...
+	
+	zigzagoon: No, it's okay. It is a little embarrassing, but...
+	I care about my family a lot, so it doesn't bother me if other people know that.
+	
+	Partner: Aww, that's sweet, Almotz. I can see your family cares about you deeply too.
+
+	zigzagoon: Heheh...
+	
+	(pause)
+	
+	Zigzagoon: Well, I'd better go prepare for the expedition.
+	(sigh) I know Hyko probably hasn't gotten much work done without me...
+	
+	Partner: Hero and I should go get ready too. Let's make this expedition a success, Almotz!
+	
+	zigzagoon (nod): Yeah! Let's all do our best! 
+	
+	(All turn towards the camera and strike a pose - afer a short pause, Almotz leaves, and you get control back)
 	
 	]]--
-	
 	
 	SV.Chapter5.SawZigzagoonFamilyCutscene = true
 	
@@ -131,7 +194,7 @@ end
 
 --Have fun! Make sure to get plenty of rest!
 function metano_normal_home_ch_5.Furret_Action(chara, activator)
-
+	GeneralFunctions.StartConversation(chara, "Oh, you two must be friends of my son!")
 	GeneralFunctions.EndConversation(chara)
 end
 
