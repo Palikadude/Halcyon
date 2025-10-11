@@ -103,3 +103,4 @@ V0.5.0
 -When the partner and an NPC overlap in the overworld, the NPC is now given priority when talking to the stack of them. This will help prevent talking to the partner when you mean to talk to an NPC.
 -Fixed a mistake where Katrine was male instead of female in Metano Town's overworld.
 -Added Decoy Seeds to Apricorn Grove to help guard against Bug Bite pineco.
+-Updated Linoone and Zigzagoon portraits.

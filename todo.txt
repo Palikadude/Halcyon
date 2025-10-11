@@ -1,4 +1,3 @@
--Make sure Audino fixes groundactionhop to have the waitframe at the peak of the jump. Review Hop and DoubleHop against Explorers once this is done.
 -Make sure audino fixes charwaitaction. Relevant for ground hop / double hop which is still slightly off, and relevant for Magcargo/Slugma animations in boss win scene.
 -Adjust generic morning scene possibly? Have Hyko stand in the middle, closer to Penticus, and also move in a way that suggests he's getting a one-on-one sorta assignment talk before he walks off
 	-if not this, at least try to put another hint earlier on about the two's relationship

@@ -904,7 +904,7 @@ function searing_crucible_ch_5.DefeatedBoss()
 	TASK:JoinCoroutines({coro1, coro2, coro3, coro4, coro5, coro6, coro7, coro8})	
 	GAME:WaitFrames(20)
 	
-	
+	SOUND:PlayBGM('In The Depths of the Pit.ogg', false)
 	UI:WaitShowDialogue("Outlanders...[pause=0] I do not know what to say.")
 	UI:WaitShowDialogue("Your forgiveness...[pause=0] it speaks volumes.[pause=0] I see now that you never harbored any ill will towards my clan.")
 	--he bows again
@@ -1091,6 +1091,7 @@ function searing_crucible_ch_5.DefeatedBoss()
 	--magcargo explodes to leave
 	coro1 = TASK:BranchCoroutine(function() GROUND:MoveScreen(RogueEssence.Content.ScreenMover(3, 6, 30))
 											GAME:WaitFrames(10)	
+											SOUND:StopBGM()
 											SOUND:PlayBattleSE("_UNK_EVT_003")
 											local arriveAnim = RogueEssence.Content.StaticAnim(RogueEssence.Content.AnimData("Sacred_Fire_Ranger", 3), 1)
 											arriveAnim:SetupEmitted(RogueElements.Loc(magcargo.Position.X + 8, magcargo.Position.Y), 32, RogueElements.Dir8.Down)
@@ -1154,7 +1155,7 @@ function searing_crucible_ch_5.DefeatedBoss()
 	UI:WaitShowDialogue("Yeah,[pause=10] that was a scary scene![pause=0] Things could have gone badly for us!")
 	UI:SetSpeakerEmotion("Normal")
 	UI:WaitShowDialogue("I'm just glad you were here, " .. growlithe:GetDisplayName() .. " and " .. zigzagoon:GetDisplayName() .. ".")
-	UI:WaitShowDialogue("I don't think we would have been able to make them come to their senses if it was just me and " .. hero:GetDisplayName() .. "!")
+	UI:WaitShowDialogue("I don't think we could've make them come to their senses if it was just me and " .. hero:GetDisplayName() .. "!")
 	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(growlithe)
@@ -1167,7 +1168,6 @@ function searing_crucible_ch_5.DefeatedBoss()
 	GAME:WaitFrames(60)
 	GROUND:CharAnimateTurnTo(zigzagoon, Direction.Up, 4)
 	GAME:WaitFrames(20)
-	
 	
 	UI:SetSpeaker(zigzagoon)
 	UI:SetSpeakerEmotion("Worried")

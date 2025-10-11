@@ -760,7 +760,10 @@ function guild_second_floor_ch_1.Cranidos_Action(chara, activator)
 		GAME:WaitFrames(40)
 		
 		GROUND:CharSetEmote(partner, "sweatdrop", 1)
-		GeneralFunctions.EmoteAndPause(hero, 'Sweatdrop', true)
+		SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
+		GAME:WaitFrames(6)
+		GROUND:CharSetEmote(hero, "sweatdrop", 1)
+		GAME:WaitFrames(50)
 		GeneralFunctions.HeroDialogue(hero, "(Sweetie?)", "Stunned")
 		GAME:WaitFrames(20)
 		

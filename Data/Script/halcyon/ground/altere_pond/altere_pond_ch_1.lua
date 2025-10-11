@@ -322,6 +322,7 @@ function altere_pond_ch_1.PartnerHeroReturn()
 	SOUND:FadeOutBGM()	
 	GAME:FadeOut(false, 40)
 	GAME:CutsceneMode(false)
+	GAME:WaitFrames(30)--slight delay before loading next map to give the transition a moment to breathe
 	GAME:EnterGroundMap("metano_altere_transition", "Main_Entrance_Marker")
 	
 	

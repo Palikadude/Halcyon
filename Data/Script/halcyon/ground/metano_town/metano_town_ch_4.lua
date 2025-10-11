@@ -274,7 +274,7 @@ end
 
 function metano_town_ch_4.Zigzagoon_Action(chara, activator)
 	if not SV.Chapter4.FinishedGrove then
-		GeneralFunctions.StartConversation(chara, "This expedition sounds absolutely amazing![pause=0] I've never been on one before!", "Happy")
+		GeneralFunctions.StartConversation(chara, "This expedition sounds absolutely amazing![pause=0] I've never been on one before!", "Inspired")
 		UI:WaitShowDialogue("I hope I can learn a lot on it![pause=0] I'll be sure to write down everything I learn in my almanacs!")
 		UI:WaitShowDialogue("Plus,[pause=10] it's been a while since " .. CharacterEssentials.GetCharacterName("Growlithe") .. " and I have been on an adventure!")
 		UI:WaitShowDialogue("He's always stuck on sentry duty,[pause=10] so it'll be great to adventure with him again!")

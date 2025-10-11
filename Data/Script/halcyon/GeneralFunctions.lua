@@ -1030,9 +1030,9 @@ function GeneralFunctions.Monologue(str)
 	UI:SetCenter(false)
 end 
 
---TODO/NOTE: The hop functions currently don't wait a frame at the peak of the jump like EoS. Need Audino to address base function to fix. When fixed, they should look a bit better.
+--CORO_JUMP_HAPPY_FUNC_SERIES equivalent with more options to boot
 function GeneralFunctions.Hop(chara, anim, height, duration, pause, sound)
-	anim = anim or 'Walk'
+	anim = anim or GROUND:CharGetAnim(chara)
 	height = height or 10
 	duration = duration or height + 1--one more duration than height makes the hop hang for a frame at the peak, like explorers.
 	if pause == nil then pause = true end
@@ -1053,8 +1053,9 @@ function GeneralFunctions.Hop(chara, anim, height, duration, pause, sound)
 end
 
 --do two hops instead of just one
+--CORO_JUMP_ANGRY_FUNC_SERIES equivalent with more options to boot
 function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
-	anim = anim or 'Walk'
+	anim = anim or GROUND:CharGetAnim(chara)
 	height = height or 6
 	duration = duration or height + 1--one more duration than height makes the hop hang for a frame at the peak, like explorers.
 	if pause == nil then pause = true end
@@ -1065,7 +1066,7 @@ function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
 	
 	local animId = RogueEssence.Content.GraphicsManager.GetAnimIndex(anim)
 	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
-	GAME:WaitFrames(duration + 2)--need to pause no matter what here because only one hop will show otherwise. Need to wait an extra 2 frames, so we can pause for 1 frame between jumps like EoS (the 2nd frame gets eaten up at the start of the jump i think)
+	GAME:WaitFrames(duration+1)--need to pause no matter what here because only one hop will show otherwise. Need to wait an extra 1 frames, so we can pause for 1 frame between jumps like EoS
 	GROUND:CharSetAction(chara, RogueEssence.Ground.HopGroundAction(chara.Position, chara.Direction, animId, height, duration))
 
 	if pause then --only pause on 2nd hop if pause needed
@@ -1074,7 +1075,7 @@ function GeneralFunctions.DoubleHop(chara, anim, height, duration, pause, sound)
 
 end
 
-
+--CORO_JUMP_SURPRISE_FUNC_SERIES equivalent with more options to boot
 function GeneralFunctions.Recoil(chara, anim, height, duration, sound, emote)
 
 	anim = anim or 'Hurt'
@@ -1655,14 +1656,56 @@ end
 --Displays the line, then fades out the textbox like in explorers once the box is cleared.
 --Have to use a bit of a hack to get it to look just right - But should look normal to the player.
 function GeneralFunctions.DeathFadeOutDialogue(chara, dialogue, emotion)
-	UI:SetSpeaker(chara)
-	UI:SetSpeakerEmotion(emotion)
-	UI:WaitShowDialogue(dialogue)
-	UI:SetAutoFinish(true)
-	UI:WaitShowTimedDialogue(string.gsub(dialogue, "%[pause=0%]", "") .. "[script=0]", 60, {function() return GAME:FadeInFront(false, 60) end})--remove pause=0 to stop unneeded pauses
-	UI:SetAutoFinish(false)
+    UI:SetSpeaker(chara)
+    UI:SetSpeakerEmotion(emotion)
+    UI:WaitShowDialogue(dialogue)
+
+    if _DATA.CurrentReplay == nil then
+      local scripts = RogueEssence.Menu.DialogueBox.CreateScripts({function() return GAME:FadeOutFront(false, 60) end})
+      local empty_action = LUA_ENGINE:MakeLuaAction(function() end)
+      local hackDlg = _MENU:CreateBox(chara.CurrentForm, chara:GetDisplayName(), RogueEssence.Content.EmoteStyle(GeneralFunctions.EmotionToNumber(emotion)), RogueEssence.Menu.SpeakerPortrait.DefaultLoc, false, RogueEssence.Menu.DialogueBox.SOUND_EFFECT, RogueEssence.Menu.DialogueBox.SPEAK_FRAMES, empty_action, 60, false, false, false, RogueEssence.Menu.DialogueBox.DefaultBounds, scripts, dialogue .. "[script=0]")
+      hackDlg:SetTextProgress(string.len(dialogue))
+      UI:SetCustomDialogue(hackDlg)
+      UI:WaitDialog()
+    end
+	
 	GAME:FadeInFront(1)--Quickly undo the fade out on the text layer once the text is cleared - a regular fade out set up on top of this will still be in effect after clearing this
+
 end
+
+--For when emotions needed to be converted to their relevant index number (used in DeathFadeOutDialogue for example)
+function GeneralFunctions.EmotionToNumber(emotion)
+	
+	if emotion == 'Teary-Eyed' then emotion = 'TearyEyed' end --the table definitions don't play nicely with hyphens, so remove it when checking into the table.
+
+	local emotionTable = 
+   {
+		Normal = 0,
+		Happy = 1,
+		Pain = 2,
+		Angry = 3,
+		Worried = 4,
+		Sad = 5,
+		Crying = 6,
+		Shouting = 7,
+		TearyEyed = 8,
+		Determined = 9,
+		Joyous = 10,
+		Inspired = 11,
+		Surprised = 12,
+		Dizzy = 13,
+		Special0 = 14,
+		Special1 = 15,
+		Sigh = 16,
+		Stunned = 17,
+		Special2 = 18,
+		Special3 = 19
+	}
+	
+	return emotionTable[emotion]
+	
+end
+
 
 --[[
 --must use numbers for emotes here. Audino's solution for deathfadeoutdialogue starting next version.
@@ -1674,6 +1717,17 @@ if _DATA.CurrentReplay == nil then
   UI:SetCustomDialogue(hackDlg)
   UI:WaitDialog()
 end
+
+function GeneralFunctions.DeathFadeOutDialogue(chara, dialogue, emotion)
+	UI:SetSpeaker(chara)
+	UI:SetSpeakerEmotion(emotion)
+	UI:WaitShowDialogue(dialogue)
+	UI:SetAutoFinish(true)
+	UI:WaitShowTimedDialogue(string.gsub(dialogue, "%[pause=0%]", "") .. "[script=0]", 60, {function() return GAME:FadeInFront(false, 60) end})--remove pause=0 to stop unneeded pauses
+	UI:SetAutoFinish(false)
+	GAME:FadeInFront(1)--Quickly undo the fade out on the text layer once the text is cleared - a regular fade out set up on top of this will still be in effect after clearing this
+end
+
 ]]--
 
 

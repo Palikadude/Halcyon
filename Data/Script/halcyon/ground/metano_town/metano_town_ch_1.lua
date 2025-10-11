@@ -415,9 +415,10 @@ function metano_town_ch_1.EnterGuild()
 	
 	GAME:WaitFrames(60)
 	GROUND:CharSetEmote(partner, "sweatdrop", 1)
+	GAME:WaitFrames(6)
 	GROUND:CharSetEmote(hero, "sweatdrop", 1)
 	SOUND:PlayBattleSE('EVT_Emote_Sweatdrop')
-	GAME:WaitFrames(60)
+	GAME:WaitFrames(54)
 	
 	--hyko is easily excitable
 	GeneralFunctions.HeroDialogue(hero, '(...)', 'Stunned')
@@ -441,7 +442,7 @@ function metano_town_ch_1.EnterGuild()
 	--hyko returns
 	GROUND:Unhide('Growlithe')
 	coro1 = TASK:BranchCoroutine(metano_town_ch_1.GrowlitheReturn)
-	coro2 = TASK:BranchCoroutine(function() metano_town_ch_1.TeamWatchGrowlithe(hero) end)
+	coro2 = TASK:BranchCoroutine(function() GAME:WaitFrames(4) metano_town_ch_1.TeamWatchGrowlithe(hero) end)
 	coro3 = TASK:BranchCoroutine(function() metano_town_ch_1.TeamWatchGrowlithe(partner) end)
 	TASK:JoinCoroutines({coro1, coro2, coro3})	
 

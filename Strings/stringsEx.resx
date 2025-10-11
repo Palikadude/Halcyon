@@ -4086,7 +4086,7 @@
     <value>[{Hero}][{Partner}]This is our first time adventuring together, [player]. Let's make it a fantastic one. \u266A</value>
     <comment>Expedition - Snubbull comment - To Hero/Partner</comment>  </data>
    <data name="TALK_FULL_3005" xml:space="preserve">
-    <value>[{Hero}][{Partner}]????????????????????????????????????</value>
+    <value>[{Hero}][{Partner}]Ah, [player]. Care to try some of this pickled \uE0A3[color=FFCEFF]Watmel Berry[color] I packed?</value>
     <comment>Expedition - Snubbull comment - to Hero/Partner</comment>  </data>
    <data name="TALK_FULL_3006" xml:space="preserve">``
     <value>[{Audino}]Ah, [player]. I'd like for you to taste some of my new Kasib sauté once we reach camp. \u266A</value>
@@ -4106,13 +4106,13 @@
     <comment>Expedition - Snubbull comment</comment>  </data>
 
   <data name="TALK_PINCH_3000" xml:space="preserve">
-    <value>Snubbull Pinch HP 1</value>
+    <value>An \uE0A3[color=FFCEFF]Oran Berry[color], please... P-poached, if possible...</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
   <data name="TALK_PINCH_3001" xml:space="preserve">
-    <value>Snubbull Pinch HP 2</value>
+    <value>Th-this is nothing. I've h-had worse accidents in the k-kitchen, y-you know...</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
   <data name="TALK_PINCH_3002" xml:space="preserve">
-    <value>Snubbull Pinch HP 3</value>
+    <value>C-can't go down h-here... Too m-many recipes l-left unfinished...</value>
     <comment>Expedition - Snubbull comment</comment>  </data>
 
 	
@@ -4130,7 +4130,7 @@
     <value>[(Breloom)] said the Pokémon here fight in packs, so let's\ns-stay close together!</value>
     <comment>Expedition - Audino comment</comment>  </data>  
   <data name="TALK_FULL_3014" xml:space="preserve">
-    <value>[{Hero}][{Partner}]TO DO</value>
+    <value>[{Hero}][{Partner}]I'm having a lot of fun adventuring with you, [player]! I h-hope we can go on more, even after the expedition!</value>
     <comment>Expedition - Audino comment - To Hero/Partner</comment>  </data>
   <data name="TALK_FULL_3015" xml:space="preserve">
     <value>[{Hero}][{Partner}]It's been a while since [slot3] and I went on an adventure together. We're usually too busy with work around the guild.</value>
@@ -4165,154 +4165,142 @@
 	
 	
   <data name="TALK_FULL_3020" xml:space="preserve">
-    <value>Growlithe expedition - seg 0 1</value>
+    <value>Sniff, sniff... Smells like there's a [kind] around here, ruff!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3021" xml:space="preserve">
-    <value>Growlithe expedition - seg 0 2</value>
+    <value>Ruff! My [move]'s the best around, just wait and see!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3022" xml:space="preserve">
-    <value>Growlithe expedition - seg 0 3</value>
+    <value>I've never been in a place like this before, ruff! So many new sights and smells!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3023" xml:space="preserve">
-    <value>Growlithe expedition - seg 0 4</value>
+    <value>Ruff! I hope you're having as much fun as I am, [player]!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3024" xml:space="preserve">
-    <value>Growlithe expedition - seg 0 5</value>
+    <value>[{Hero}][{Partner}]Ruff! Let's show [(Tropius)] he's got nothing to worry about!</value>
+    <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
+   <data name="TALK_FULL_3025" xml:space="preserve">
+    <value>[{Hero}][{Partner}]Don't worry about [(Tropius)], ruff. He always worries about me.</value>
+    <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
+   <data name="TALK_FULL_3026" xml:space="preserve">
+    <value>[{Zigzagoon}]It's gotta be tricky writing in your book in a place like this, ruff... Be careful!</value>
+    <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
+   <data name="TALK_FULL_3027" xml:space="preserve">
+    <value>[{Zigzagoon}]Remember that [item] we found on that one adventure together? I hope we find one here too, ruff!</value>
+    <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
+   <data name="TALK_FULL_3028" xml:space="preserve">
+    <value>[{Zigzagoon}]I'm glad [(Tropius)] let me stay with you, [player]. I'm so happy to adventure with you again, ruff, ruff!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
  
   <data name="TALK_HALF_3020" xml:space="preserve">
     <value>It's getting... ruff! But I'm not giving up yet!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
   <data name="TALK_HALF_3021" xml:space="preserve">
-    <value>Growlithe Half HP seg 0 2</value>
+    <value>This? I'm fine, ruff! I just need to be more careful!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
   <data name="TALK_HALF_3022" xml:space="preserve">
-    <value>Growlithe Half HP seg 0 3</value>
+    <value>Arf... It's just a scratch, ruff! No need to worry about me!</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
 
   <data name="TALK_PINCH_3020" xml:space="preserve">
-    <value>Whimper... C-can't take anymore...</value>
+    <value>C-can't take anymore... *whimper*</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
   <data name="TALK_PINCH_3021" xml:space="preserve">
-    <value>[(Tropius)]...</value>
+    <value>[(Tropius)]... I w-was careless...</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
   <data name="TALK_PINCH_3022" xml:space="preserve">
     <value>Ruff... S-sorry, [(Zigzagoon)]...</value>
     <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
-	
+  <data name="TALK_PINCH_3023" xml:space="preserve">
+    <value>D-don't want... the a-adventure to end... Aroo...</value>
+    <comment>Expedition - Growlithe comment - First Segment</comment>  </data>
 	
 	
   <data name="TALK_FULL_3030" xml:space="preserve">
-    <value>Growlithe expedition - seg 1 1</value>
+    <value>Not far to go now, ruff! Let's get to that base camp!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3031" xml:space="preserve">
-    <value>Growlithe expedition - seg 1 2</value>
+    <value>The tunnel's heating up as we go deeper. That's no problem for me though, ruff!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3032" xml:space="preserve">
-    <value>Growlithe expedition - seg 1 3</value>
+    <value>The area looks different now, ruff. I wonder what we'll see next!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3033" xml:space="preserve">
-    <value>Growlithe expedition - seg 1 4</value>
+    <value>[{Hero}][{Partner}]I don't want our adventure together to end... but we gotta reach the base camp, ruff!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3034" xml:space="preserve">
-    <value>Growlithe expedition - seg 1 5</value>
+    <value>[{Zigzagoon}]I know it's getting hotter... but try and hold out, ruff! We're almost there!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
  
   <data name="TALK_HALF_3030" xml:space="preserve">
-    <value>Growlithe Half HP seg 1 1</value>
+    <value>The Pokémon are getting tougher... but they're still no match for me, ruff!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
   <data name="TALK_HALF_3031" xml:space="preserve">
-    <value>Growlithe Half HP seg 1 2</value>
-    <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
-  <data name="TALK_HALF_3032" xml:space="preserve">
-    <value>Growlithe Half HP seg 1 3</value>
+    <value>Ruff, the tunnel's getting more dangerous...  I need to be more careful!</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
 
   <data name="TALK_PINCH_3030" xml:space="preserve">
-    <value>Growlithe Pinch HP seg 1 1</value>
+    <value>C-can't give up now... G-gotta show [(Tropius)] I'm... w-woof...</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
   <data name="TALK_PINCH_3031" xml:space="preserve">
-    <value>Growlithe Pinch HP seg 1 2</value>
+    <value>C-come too far... H-having too much f-fun... to s-stop now...</value>
     <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
-  <data name="TALK_PINCH_3032" xml:space="preserve">
-    <value>Growlithe Pinch HP seg 1 3</value>
-    <comment>Expedition - Growlithe comment - Second Segment</comment>  </data>
-	
+
 	
 	 
   <data name="TALK_FULL_3040" xml:space="preserve">
-    <value>Growlithe expedition - boss 1</value>
+    <value>We can't lose, ruff! Or ([Tropius]) will... ruff...</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
-   <data name="TALK_FULL_3041" xml:space="preserve">
-    <value>Growlithe expedition - boss 2</value>
+  <data name="TALK_FULL_3041" xml:space="preserve">
+    <value>Watch out! The lava is dangerous if you're not a Fire-type like me, ruff!</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
-   <data name="TALK_FULL_3042" xml:space="preserve">
-    <value>Growlithe expedition - boss 3</value>
+  <data name="TALK_FULL_3042" xml:space="preserve">
+    <value>There's a lot of them, grr... But we can beat them, as long as we work together, ruff!</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
-   <data name="TALK_FULL_3043" xml:space="preserve">
-    <value>Growlithe expedition - boss 4 - Boss</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-   <data name="TALK_FULL_3044" xml:space="preserve">
-    <value>Growlithe expedition - boss 5 - Boss</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
+  <data name="TALK_FULL_3043" xml:space="preserve">
+    <value>We'll have to fight if they won't listen to us, ruff!</value>
+    <comment>Expedition - Growlithe comment - Boss</comment>  </data>
+  <data name="TALK_FULL_3044" xml:space="preserve">
+    <value>This adventure's gotten serious... but really exciting too, ruff, ruff!</value>
+    <comment>Expedition - Growlithe comment - Boss</comment>  </data>
  
   <data name="TALK_HALF_3040" xml:space="preserve">
-    <value>Growlithe Half HP boss 1</value>
+    <value>They're stronger than they look, ruff...</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
   <data name="TALK_HALF_3041" xml:space="preserve">
-    <value>Growlithe Half HP boss 2</value>
+    <value>They're not making this easy, ruff... But I can't give up now, we're so close!</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
   <data name="TALK_HALF_3042" xml:space="preserve">
-    <value>Growlithe Half HP boss 3</value>
+    <value>I won't let a little damage stop me from putting up a fight, ruff!</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
 
   <data name="TALK_PINCH_3040" xml:space="preserve">
-    <value>Growlithe Pinch HP boss 1</value>
+    <value>D-don't let... [(Tropius)] know a-about this... whimper...</value>
     <comment>Expedition - Growlithe comment - Boss</comment>  </data>
   <data name="TALK_PINCH_3041" xml:space="preserve">
-    <value>Growlithe Pinch HP boss 2 - Boss</value>
+    <value>I-I'm still... having a b-blast... aroo...</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
   <data name="TALK_PINCH_3042" xml:space="preserve">
-    <value>Growlithe Pinch HP boss 3 - Boss</value>
+    <value>I-I'm sorry... can't f-fight much longer, woof...</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
 	
 	
 
   <data name="TALK_FULL_3050" xml:space="preserve">
-    <value>Growlithe expedition - died to boss 1</value>
+    <value>Even if we lost to that [color=#00FF00]Slugma[color] tribe... I'm still enjoying adventuring with you, ruff!</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
    <data name="TALK_FULL_3051" xml:space="preserve">
-    <value>Growlithe expedition - died to boss 2</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-   <data name="TALK_FULL_3052" xml:space="preserve">
-    <value>Growlithe expedition - died to boss 3</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-   <data name="TALK_FULL_3053" xml:space="preserve">
-    <value>Growlithe expedition - died to boss 4</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-   <data name="TALK_FULL_3054" xml:space="preserve">
-    <value>Growlithe expedition - died to boss 5</value>
+    <value>We'll get past those [color=#00FF00]Slugma[color] for sure this time, ruff!</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
  
   <data name="TALK_HALF_3050" xml:space="preserve">
-    <value>Growlithe Half HP died to boss 1</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-  <data name="TALK_HALF_3051" xml:space="preserve">
-    <value>Growlithe Half HP died to boss 2</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-  <data name="TALK_HALF_3052" xml:space="preserve">
-    <value>Growlithe Half HP died to boss 3</value>
+    <value>Don't worry, I'm fine, ruff! This is just a warmup for those [color=#00FF00]Slugma[color]!</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
 
   <data name="TALK_PINCH_3050" xml:space="preserve">
-    <value>Growlithe Pinch HP died to boss 1</value>
+    <value>G-going down... without e-even seeing those [color=#00FF00]Slugma[color] again... aroo...</value>
     <comment>Expedition - Growlithe comment</comment>  </data>
-  <data name="TALK_PINCH_3051" xml:space="preserve">
-    <value>Growlithe Pinch HP died to boss 2</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
-  <data name="TALK_PINCH_3052" xml:space="preserve">
-    <value>Growlithe Pinch HP died to boss 3</value>
-    <comment>Expedition - Growlithe comment</comment>  </data>
+
 	
 	
 
@@ -4333,6 +4321,15 @@
     <comment>Expedition - Zigzagoon comment - First Segment</comment>  </data>
    <data name="TALK_FULL_3065" xml:space="preserve">
     <value>[{Hero}][{Partner}]I'm glad to be out adventuring with [(Growlithe)] again... Oh! And you too, [player]!</value>
+    <comment>Expedition - Zigzagoon comment - First Segment - To Hero/Partner</comment>  </data>
+   <data name="TALK_FULL_3066" xml:space="preserve">
+    <value>[{Hero}][{Partner}]Even in a place this hot, this pair up is a lot nicer than our first. [(Cranidos)] can be a real jerk...</value>
+    <comment>Expedition - Zigzagoon comment - First Segment - To Hero/Partner</comment>  </data>
+   <data name="TALK_FULL_3067" xml:space="preserve">
+    <value>[{Growlithe}]Good to have you off sentry duty and out here in the field with me, [player].</value>
+    <comment>Expedition - Zigzagoon comment - First Segment - To Hero/Partner</comment>  </data>
+   <data name="TALK_FULL_3068" xml:space="preserve">
+    <value>[{Growlithe}]I've worked on some new synergies for us since our last adventure, [player]! First, I lead with [color=#00FF00]Odor Sleuth[color], then you...</value>
     <comment>Expedition - Zigzagoon comment - First Segment - To Hero/Partner</comment>  </data>
  
   <data name="TALK_HALF_3060" xml:space="preserve">
@@ -4370,10 +4367,10 @@
     <value>[kind]... Did we see any Pokémon like that earlier? I need to reference my almanac... </value>
     <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3073" xml:space="preserve">
-    <value>Zigzagoon expedition - seg 1 4</value>
+    <value>[{Hero}][{Partner}]I hope you're faring better in this heat than I am, [player]...</value>
     <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
    <data name="TALK_FULL_3074" xml:space="preserve">
-    <value>Zigzagoon expedition - seg 1 5</value>
+    <value>[{Growlithe}]I envy your heat resistance right about now, [slot3]...</value>
     <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
  
   <data name="TALK_HALF_3070" xml:space="preserve">
@@ -4382,9 +4379,6 @@
   <data name="TALK_HALF_3071" xml:space="preserve">
     <value>Sweltering AND bruised... Not a pleasant combination.</value>
     <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
-  <data name="TALK_HALF_3072" xml:space="preserve">
-    <value>Zigzagoon Half HP seg 1 3</value>
-    <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
 
   <data name="TALK_PINCH_3070" xml:space="preserve">
     <value>I'm g-getting... c-crispy... Help...</value>
@@ -4392,84 +4386,59 @@
   <data name="TALK_PINCH_3071" xml:space="preserve">
     <value>The h-heat... is too m-much...</value>
     <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
-  <data name="TALK_PINCH_3072" xml:space="preserve">
-    <value>Zigzagoon Pinch HP seg 1 3</value>
-    <comment>Expedition - Zigzagoon comment - Second Segment</comment>  </data>
-	
 	
 	 
   <data name="TALK_FULL_3080" xml:space="preserve">
-    <value>Zigzagoon expedition - boss 1</value>
+    <value>The lava seems to be powering them up... be careful!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
    <data name="TALK_FULL_3081" xml:space="preserve">
-    <value>Zigzagoon expedition - boss 2</value>
+    <value>The lava flow looks volatile, it might change course any second. Stay alert, and watch the ground!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
    <data name="TALK_FULL_3082" xml:space="preserve">
-    <value>Zigzagoon expedition - boss 3</value>
+    <value>This won't be easy... We need to coordinate if we wanna make it through this uncharred!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
    <data name="TALK_FULL_3083" xml:space="preserve">
-    <value>Zigzagoon expedition - boss 4</value>
+    <value>So, this tribe of [color=#00FF00]Slugma[color] live here. I should write that down... wait, now's not the time!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
    <data name="TALK_FULL_3084" xml:space="preserve">
-    <value>Zigzagoon expedition - boss 5</value>
+    <value>Hmm. [(Magcargo)] seems to be much stronger than the [color=#00FF00]Slugma[color] he leads. Let's act accordingly!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
  
   <data name="TALK_HALF_3080" xml:space="preserve">
-    <value>Zigzagoon Half HP boss 1</value>
+    <value>They've burnt me somewhat, but I won't concede yet!</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
   <data name="TALK_HALF_3081" xml:space="preserve">
-    <value>Zigzagoon Half HP boss 2</value>
+    <value>Yowch! The floor's making my feet smoulder...</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
   <data name="TALK_HALF_3082" xml:space="preserve">
-    <value>Zigzagoon Half HP boss 3</value>
+    <value>Urgh! These [color=#00FF00]Slugma[color] are no pushovers...</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
 
   <data name="TALK_PINCH_3080" xml:space="preserve">
-    <value>Zigzagoon Pinch HP boss 1</value>
+    <value>They're too m-much... C-can't cool d-down... I'm g-gonna faint...</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
   <data name="TALK_PINCH_3081" xml:space="preserve">
-    <value>Zigzagoon Pinch HP boss 2</value>
+    <value>T-they scorched me g-good... I-I can't c-continue...</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
   <data name="TALK_PINCH_3082" xml:space="preserve">
-    <value>Zigzagoon Pinch HP boss 3</value>
+    <value>N-no... My almanac's g-gonna burn up... at this rate...</value>
     <comment>Expedition - Zigzagoon comment - Boss</comment>  </data>
 	
 	
 
   <data name="TALK_FULL_3090" xml:space="preserve">
-    <value>Zigzagoon expedition - died to boss 1</value>
+    <value>Luckily, my almanac seems to have survived getting scorched by all those [color=#00FF00]Slugma[color].</value>
     <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
    <data name="TALK_FULL_3091" xml:space="preserve">
-    <value>Zigzagoon expedition - died to boss 2</value>
+    <value>I hope those [color=#00FF00]Slugma[color] don't ambush us again...</value>
     <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-   <data name="TALK_FULL_3092" xml:space="preserve">
-    <value>Zigzagoon expedition - died to boss 3</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-   <data name="TALK_FULL_3093" xml:space="preserve">
-    <value>Zigzagoon expedition - died to boss 4</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-   <data name="TALK_FULL_3094" xml:space="preserve">
-    <value>Zigzagoon expedition - died to boss 5</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
- 
+
   <data name="TALK_HALF_3090" xml:space="preserve">
-    <value>Zigzagoon Half HP died to boss 1</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-  <data name="TALK_HALF_3091" xml:space="preserve">
-    <value>Zigzagoon Half HP died to boss 2</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-  <data name="TALK_HALF_3092" xml:space="preserve">
-    <value>Zigzagoon Half HP died to boss 3</value>
+    <value>Hmm... Even having gone through once already, this tunnel is still a challenge!</value>
     <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
 
   <data name="TALK_PINCH_3090" xml:space="preserve">
-    <value>Zigzagoon Pinch HP died to boss 1</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-  <data name="TALK_PINCH_3091" xml:space="preserve">
-    <value>Zigzagoon Pinch HP died to boss 2</value>
-    <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
-  <data name="TALK_PINCH_3092" xml:space="preserve">
-    <value>Zigzagoon Pinch HP died to boss 3</value>
+    <value>C-couldn't even m-make it... b-back to the c-crucible...</value>
     <comment>Expedition - Zigzagoon comment - Died to Boss</comment>  </data>
 
 

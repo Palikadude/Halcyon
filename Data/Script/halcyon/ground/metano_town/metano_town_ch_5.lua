@@ -133,6 +133,10 @@ function metano_town_ch_5.Audino_Action(chara, activator)
 
 end
 
+
+--Need to highlight better chemistry between these two. They're very tell don't show right now.
+--Hyko is a hyperactive, idiot-savantish type puppy dog, almotz is a cheery, but is the straight man nerd to play off of.
+--Have this play into that, and edit some of the chapter 4/5 dialogue to help accomodate as well I think.
 function metano_town_ch_5.Growlithe_Action(chara, activator)
 
 end
